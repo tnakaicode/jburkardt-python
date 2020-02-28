@@ -1,0 +1,218 @@
+Sun Jan 26 19:18:05 2020
+
+ISBN_TEST
+  Python version: 3.6.9
+  Test the ISBN library.
+
+CH_IS_DIGIT_TEST
+  Python version: 3.6.9
+  CH_IS_DIGIT is TRUE if a character is a decimal digit.
+
+         0  "0"  True
+         1  "1"  True
+         2  "2"  True
+         3  "3"  True
+         4  "4"  True
+         5  "5"  True
+         6  "6"  True
+         7  "7"  True
+         8  "8"  True
+         9  "9"  True
+        10  "X"  False
+        11  "?"  False
+        12  " "  False
+
+CH_IS_DIGIT_TEST:
+  Normal end of execution.
+
+CH_IS_ISBN_DIGIT_TEST
+  Python version: 3.6.9
+  CH_IS_ISBN_DIGIT is TRUE if a character is an ISBN digit.
+
+  "0"  True
+  "1"  True
+  "2"  True
+  "3"  True
+  "4"  True
+  "5"  True
+  "6"  True
+  "7"  True
+  "8"  True
+  "9"  True
+  "X"  True
+  "x"  True
+  "Y"  False
+  "*"  False
+  "?"  False
+  " "  False
+
+CH_IS_ISBN_DIGIT_TEST:
+  Normal end of execution.
+
+CH_TO_DIGIT_TEST
+  Python version: 3.6.9
+  CH_TO_DIGIT: character -> decimal digit
+
+         0  "0"         0
+         1  "1"         1
+         2  "2"         2
+         3  "3"         3
+         4  "4"         4
+         5  "5"         5
+         6  "6"         6
+         7  "7"         7
+         8  "8"         8
+         9  "9"         9
+        10  "X"        -1
+        11  "?"        -1
+        12  " "        -1
+
+CH_TO_DIGIT_TEST:
+  Normal end of execution.
+
+I4_TO_ISBN_DIGIT_TEST
+  Python version: 3.6.9
+  I4_TO_ISBN_DIGIT converts digits 0 to 10 to an ISBN digit.
+
+         0     "0"
+         1     "1"
+         2     "2"
+         3     "3"
+         4     "4"
+         5     "5"
+         6     "6"
+         7     "7"
+         8     "8"
+         9     "9"
+        10     "X"
+
+I4_TO_ISBN_DIGIT_TEST:
+  Normal end of execution.
+
+I4VEC_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_PRINT prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+I4VEC_PRINT_TEST:
+  Normal end of execution.
+
+ISBN_CHECK_DIGIT_CALCULATE_TEST
+  Python version: 3.6.9
+  ISBN_CHECK_DIGIT_CALCULATE calculates the 10-th digit
+  (the check digit) of a 10-digit ISBN.
+
+  Check digit of "0-306-40615-2" is "2", expecting "2"
+  Check digit of "0 8493 9640" is "9", expecting "9"
+  Check digit of "158488059" is "7", expecting "7"
+  Check digit of "246897531" is "6", expecting "6"
+  Check digit of "135798642" is "4", expecting "4"
+
+ISBN_CHECK_DIGIT_CALCULATE_TEST:
+  Normal end of execution.
+
+ISBN_IS_VALID_TEST
+  Python version: 3.6.9
+  ISBN_IS_VALID reports whether a ISBN is valid.
+
+  Validity of "0-306-40615-2" is True, expecting True
+  Validity of "0-326-40615-2" is False, expecting False
+  Validity of "0 8493 9640 9" is True, expecting True
+  Validity of "0 8493 9640 3" is False, expecting False
+  Validity of "0-3870-9654-X" is True, expecting True
+  Validity of "0-201-38597-x" is True, expecting True
+
+ISBN_IS_VALID_TEST:
+  Normal end of execution.
+
+ISBN_DIGIT_TO_I4_TEST
+  Python version: 3.6.9
+  ISBN_DIGIT_TO_I4 converts an ISBN digit to an I4
+
+  "0"       0
+  "1"       1
+  "2"       2
+  "3"       3
+  "4"       4
+  "5"       5
+  "6"       6
+  "7"       7
+  "8"       8
+  "9"       9
+  "X"      10
+  "x"      10
+  "Y"      -1
+  "*"      -1
+  "?"      -1
+  " "      -1
+
+ISBN_DIGIT_TO_I4_TEST:
+  Normal end of execution.
+
+S_TO_DIGITS_TEST
+  Python version: 3.6.9
+  S_TO_DIGITS: string -> digit vector
+
+  Test string: "34E94-70.6"
+
+  Extracted 5 digits:
+
+     0       3
+     1       4
+     2       9
+     3       4
+     4       7
+
+  Test string: "34E94-70.6"
+
+  Extracted 7 digits:
+
+     0       3
+     1       4
+     2       9
+     3       4
+     4       7
+     5       0
+     6       6
+
+S_TO_DIGITS_TEST
+  Normal end of execution.
+
+S_TO_ISBN_DIGITS_TEST
+  Python version: 3.6.9
+  S_TO_ISBN_DIGITS: string -> ISBN digit vector
+
+  Test string: "34E9X-70.6"
+
+  Extracted 5 digits:
+
+     0       3
+     1       4
+     2       9
+     3      10
+     4       7
+
+  Test string: "34E9X-70.6"
+
+  Extracted 7 digits:
+
+     0       3
+     1       4
+     2       9
+     3      10
+     4       7
+     5       0
+     6       6
+
+S_TO_ISBN_DIGITS_TEST
+  Normal end of execution.
+
+ISBN_TEST:
+  Normal end of execution.
+Sun Jan 26 19:18:06 2020

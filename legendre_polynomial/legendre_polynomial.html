@@ -1,0 +1,164 @@
+<html>
+
+  <head>
+    <title>
+      LEGENDRE_POLYNOMIAL - Legendre Polynomials
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      LEGENDRE_POLYNOMIAL <br> Legendre Polynomials
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>LEGENDRE_POLYNOMIAL</b>,
+      a Python library which
+      evaluates the Legendre polynomial and associated functions.
+    </p>
+
+    <p>
+      The Legendre polynomial P(n,x) can be defined by:
+      <pre>
+        P(0,x) = 1
+        P(1,x) = x
+        P(n,x) = (2*n-1)/n * x * P(n-1,x) - (n-1)/n * P(n-2,x)
+      </pre>
+      where n is a nonnegative integer.
+    </p>
+
+    <p>
+      The N zeroes of P(n,x) are the abscissas used for Gauss-Legendre
+      quadrature of the integral of a function F(X) with weight function 1
+      over the interval [-1,1].
+    </p>
+
+    <p>
+      The Legendre polynomials are orthogonal under the inner product defined
+      as integration from -1 to 1:
+      <pre>
+        Integral ( -1 <= x <= 1 ) P(i,x) * P(j,x) dx 
+          = 0 if i =/= j
+          = 2 / ( 2*i+1 ) if i = j.
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>LEGENDRE_POLYNOMIAL</b> is available in
+      <a href = "../../c_src/legendre_polynomial/legendre_polynomial.html">a C version</a> and
+      <a href = "../../cpp_src/legendre_polynomial/legendre_polynomial.html">a C++ version</a> and
+      <a href = "../../f_src/legendre_polynomial/legendre_polynomial.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/legendre_polynomial/legendre_polynomial.html">a MATLAB version</a> and
+      <a href = "../../py_src/legendre_polynomial/legendre_polynomial.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/bernstein_polynomial/bernstein_polynomial.html">
+      BERNSTEIN_POLYNOMIAL</a>,
+      a Python library which
+      evaluates the Bernstein polynomials, 
+      useful for uniform approximation of functions;
+    </p>
+
+    <p>
+      <a href = "../../py_src/chebyshev_polynomial/chebyshev_polynomial.html">
+      CHEBYSHEV_POLYNOMIAL</a>,
+      a Python library which
+      considers the Chebyshev polynomials T(i,x), U(i,x), V(i,x) and W(i,x).
+      Functions are provided to evaluate the polynomials, determine their zeros, 
+      produce their polynomial coefficients, produce related quadrature rules,
+      project other functions onto these polynomial bases, and integrate
+      double and triple products of the polynomials.
+    </p>
+
+    <p>
+      <a href = "../../py_src/gegenbauer_polynomial/gegenbauer_polynomial.html">
+      GEGENBAUER_POLYNOMIAL</a>,
+      a Python library which
+      evaluates the Gegenbauer polynomial and associated functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/legendre_product_polynomial/legendre_product_polynomial.html">
+      LEGENDRE_PRODUCT_POLYNOMIAL</a>,
+      a Python library which
+      defines Legendre product polynomials, creating a multivariate 
+      polynomial as the product of univariate Legendre polynomials.
+    </p>
+
+    <p>
+      <a href = "../../py_src/legendre_shifted_polynomial/legendre_shifted_polynomial.html">
+      LEGENDRE_SHIFTED_POLYNOMIAL</a>,
+      a Python library which
+      evaluates the shifted Legendre polynomial, with domain [0,1].
+    </p>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      POLPAK</a>,
+      a Python library which
+      evaluates a variety of mathematical functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_values/test_values.html">
+      TEST_VALUES</a>,
+      a Python library which
+      supplies test values of various mathematical functions.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "legendre_polynomial.py">legendre_polynomial.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "legendre_polynomial.sh">legendre_polynomial.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "legendre_polynomial.txt">legendre_polynomial.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

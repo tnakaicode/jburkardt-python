@@ -1,0 +1,195 @@
+<html>
+
+  <head>
+    <title>
+      COMPASS_SEARCH - The Compass Search Optimization Algorithm
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      COMPASS_SEARCH <br> The Compass Search Optimization Algorithm
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>COMPASS_SEARCH</b>,
+      a Python library which 
+      seeks the minimizer of a scalar function of several variables
+      using compass search, a direct search algorithm 
+      that does not use derivatives.
+    </p>
+
+    <p>
+      The algorithm, which goes back to Fermi and Metropolis, is easy to describe.  
+      The algorithm begins with a starting point X, and a step size DELTA.
+    </p>
+
+    <p>
+      For each dimension I, the algorithm considers perturbing X(I) by adding
+      or subtracting DELTA.
+    </p>
+
+    <p>
+      If a perturbation is found which decreases the function, this becomes the
+      new X.  Otherwise DELTA is halved.
+    </p>
+
+    <p>
+      The iteration halts when DELTA reaches a minimal value.
+    </p> 
+
+    <p>
+      The algorithm is not guaranteed to find a global minimum.  It can, for 
+      instance, easily be attracted to a local minimum.  Moreover, the algorithm
+      can diverge if, for instance, the function decreases as the argument goes
+      to infinity.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        [ <i>x</i>, <i>fx</i>, <i>k</i> ] = <b>compass_search</b> ( <i>f</i>, <i>m</i>, <i>x</i>, 
+          <i>delta_tol</i>, <i>delta</i>, <i>k_max</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>f</i> is the name of the function, of the form "def f ( m, x )",
+          returning a single real scalar value.
+        </li>
+        <li>
+          <i>m</i> is the number of variables.
+        </li>
+        <li>
+          <i>x</i> is an M-vector containing a starting point for the iteration.
+        </li>
+        <li>
+          <i>delta_tol</i> is the minimum allowed size of DELTA, and must be positive.
+        </li>
+        <li>
+          <i>delta</i> is the starting stepsize.
+        </li>
+        <li>
+          <i>k_max</i> is the maximum number of steps allowed.  This is the only
+          way to avoid an infinite loop if the function decreases as it goes to infinity.
+        </li>
+        <li>
+          <i>x</i> is the program's estimate for the minimizer of the
+          function;
+        </li>
+        <li>
+          <i>fx</i> is the function value at x.
+        </li>
+        <li>
+          <i>k</i> is the number of steps taken.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>COMPASS_SEARCH</b> is available in
+      <a href = "../../c_src/compass_search/compass_search.html">a C version</a> and
+      <a href = "../../cpp_src/compass_search/compass_search.html">a C++ version</a> and
+      <a href = "../../f_src/compass_search/compass_search.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/compass_search/compass_search.html">a MATLAB version</a> and
+      <a href = "../../py_src/compass_search/compass_search.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/asa047/asa047.html">
+      ASA047</a>,
+      a Python library which
+      minimizes a scalar function of several variables using the Nelder-Mead algorithm.
+    </p>
+
+    <p>
+      <a href = "../../py_src/toms178/toms178.html">
+      TOMS178</a>,
+      a Python library which
+      optimizes a scalar functional of multiple variables
+      using the Hooke-Jeeves method, by Arthur Kaupe.
+      This is a version of ACM TOMS algorithm 178.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      John Burkardt
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Tamara Kolda, Robert Michael Lewis, Virginia Torczon,<br>
+          Optimization by Direct Search: New Perspectives on Some Classical 
+          and Modern Methods,<br>
+          SIAM Review,<br>
+          Volume 45, Number 3, 2003, pages 385-482.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "compass_search.py">compass_search.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "compass_search.sh">compass_search.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "compass_search.txt">compass_search.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 20 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

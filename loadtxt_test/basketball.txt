@@ -1,0 +1,31 @@
+ID  Name  Position  Height  Weight  SponsorBucks  ShoeSponsor  CareerStage  Age
+ 1  Adam  forward   192     218      561          yes          veteran      29
+ 2  Bill  center    218     251       60          no           middle       35
+ 3  Clay  forward   197     221     1312          no           rookie       22
+ 4  Dale  forward   192     219     1359          no           rookie       22
+ 5  Evan  forward   198     223      362          yes          veteran      29
+ 6  Fred  guard     166     188     1536          yes          rookie       21
+ 7  Gale  forward   195     221      694          no           veteran      25
+ 8  Hank  guard     182     199     1678          yes          rookie       21
+ 9  Iain  guard     189     199      385          yes          middle       27
+10  Jake  forward   205     232     1416          no           rookie       24
+11  Kyle  center    206     246      314          no           middle       29
+12  Lyle  guard     185     207     1497          yes          rookie       23
+13  Mike  guard     172     183     1383          yes          rookie       24
+14  Nate  guard     169     183     1034          yes          rookie       24
+15  Odad  guard     185     197      178          yes          middle       29
+16  Pete  forward   215     232      434          no           middle       30
+17  Quin  guard     158     184      162          yes          veteran      29
+18  Rafe  guard     190     207      648          yes          middle       27
+19  Stan  center    195     235      481          no           middle       28
+20  Trig  guard     192     200      427          yes          middle       32
+21  Unit  forward   202     220      542          no           middle       31
+22  Vole  forward   184     213       12          no           middle       32
+23  Wade  forward   190     215     1179          no           rookie       22
+24  Xand  guard     178     193     1078          no           rookie       21
+25  Yang  guard     185     200      213          yes          middle       31
+26  Zeke  forward   191     218     1855          no           rookie       19
+27  Zzaa  center    196     235       47          no           veteran      32
+28  Zzab  forward   198     221     1409          no           rookie       22
+29  Zzac  center    207     247     1065          no           veteran      27
+30  Zzad  center    201     244     1111          yes          middle       25

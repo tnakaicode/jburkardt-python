@@ -1,0 +1,460 @@
+Sun Feb  2 08:30:47 2020
+
+R8ROW_TEST
+  Python version:
+  Test the R8ROW library.
+
+I4_LOG_10_TEST
+  Python version: 3.6.9
+  I4_LOG_10: whole part of log base 10,
+
+  X, I4_LOG_10
+
+     0             0
+     1             0
+     2             0
+     3             0
+     9             0
+    10             1
+    11             1
+    99             1
+   101             2
+    -1             0
+    -2             0
+    -3             0
+    -9             0
+
+I4_LOG_10_TEST
+  Normal end of execution.
+
+I4MAT_PRINT_TEST:
+  Python version: 3.6.9
+  Test I4MAT_PRINT, which prints an I4MAT.
+
+  A 5 x 6 integer matrix:
+
+  Col:       0        1        2        3        4        5  
+  Row
+    0:      11       12       13       14       15       16  
+    1:      21       22       23       24       25       26  
+    2:      31       32       33       34       35       36  
+    3:      41       42       43       44       45       46  
+    4:      51       52       53       54       55       56  
+
+I4MAT_PRINT_TEST:
+  Normal end of execution.
+
+I4MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  I4MAT_PRINT_SOME prints some of an I4MAT.
+
+  Here is I4MAT, rows 0:2, cols 3:5:
+
+  Col:       3        4        5  
+  Row
+    0:      14       15       16  
+    1:      24       25       26  
+    2:      34       35       36  
+
+I4MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8ROW_COMPARE_TEST
+  R8ROW_COMPARE compares rows of an R8ROW,
+  returning -1, 0 or +1 for comparison.
+
+  Matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           0             1             2             0             1  
+      1 :           1             2             0             1             2  
+      2 :           2             0             1             2             0  
+      3 :           0             1             2             0             1  
+      4 :           1             2             0             1             2  
+      5 :           2             0             1             2             0  
+
+  C(I,J) = Row I compare Row J:
+
+  Col:       0        1        2        3        4        5  
+  Row
+    0:       0       -1       -1        0       -1       -1  
+    1:       1        0       -1        1        0       -1  
+    2:       1        1        0        1        1        0  
+    3:       0       -1       -1        0       -1       -1  
+    4:       1        0       -1        1        0       -1  
+    5:       1        1        0        1        1        0  
+
+R8ROW_COMPARE_TEST:
+  Normal end of execution.
+
+R8ROW_INDICATOR_TEST
+  R8ROW_INDICATOR creates an "indicator" R8ROW.
+
+  The indicator matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :          11            12            13            14  
+      1 :          21            22            23            24  
+      2 :          31            32            33            34  
+      3 :          41            42            43            44  
+      4 :          51            52            53            54  
+
+R8ROW_INDICATOR_TEST
+  Normal end of execution.
+
+R8ROW_MAX_TEST
+  R8ROW_MAX computes maximums of an R8ROW.
+
+  The matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             2             3             4  
+      1 :           5             6             7             8  
+      2 :           9            10            11            12  
+
+  Row maximums:
+
+     0:             4
+     1:             8
+     2:            12
+
+R8ROW_MAX_TEST:
+  Normal end of execution.
+
+R8ROW_MEAN_TEST
+  R8ROW_MEAN computes row means of an R8ROW.
+
+  The matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             2             3             4  
+      1 :           5             6             7             8  
+      2 :           9            10            11            12  
+
+  The row means:
+
+     0:            10
+     1:            26
+     2:            42
+
+R8ROW_MEAN_TEST:
+  Normal end of execution.
+
+R8ROW_MIN_TEST
+  R8ROW_MIN computes minimums of an R8ROW.
+
+  The matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             2             3             4  
+      1 :           5             6             7             8  
+      2 :           9            10            11            12  
+
+  Row minimums:
+
+     0:             1
+     1:             5
+     2:             9
+
+R8ROW_MIN_TEST:
+  Normal end of execution.
+
+R8ROW_PRINT_TEST
+  R8ROW_PRINT prints an R8ROW.
+
+  Here is an R8ROW:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8ROW_PRINT_TEST:
+  Normal end of execution.
+
+R8ROW_PRINT_SOME_TEST
+  R8ROW_PRINT_SOME prints some of an R8ROW.
+
+  Here is an R8ROW:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8ROW_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8ROW_RUNNING_AVERAGE_TEST
+  R8ROW_RUNNING_AVERAGE returns M sets of running averages
+  of an MxN R8ROW.
+
+  Random R8ROW:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    -1.72373      -4.00822      -4.07409      -4.97242       7.88645  
+      1 :     9.34476      -1.13633       1.74308       8.46256       7.61271  
+      2 :     7.44264      -3.35065       1.01959      0.261285      -3.15344  
+      3 :     3.42543      -4.34257        6.3201      -3.58183      -4.88731  
+      4 :     1.22961       4.50949        6.9593      -4.79575      -1.09546  
+
+  Col:       5             6             7             8             9       
+  Row
+      0 :     8.68726         5.381       3.96875       3.61549       5.71707  
+      1 :    -3.29504       3.42494      -2.16568        0.5054       -3.2344  
+      2 :     0.27443       7.91824       6.42238       4.25807     -0.510063  
+      3 :     7.34331       1.80691      0.954827      0.422931       7.37504  
+      4 :   -0.993016       8.67966      -2.22029      -1.80605        7.3699  
+
+  Running averages:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           0      -1.72373      -2.86597      -3.26868      -3.69462  
+      1 :           0       9.34476       4.10422       3.31717       4.60352  
+      2 :           0       7.44264         2.046       1.70386       1.34322  
+      3 :           0       3.42543     -0.458567       1.80099      0.455285  
+      4 :           0       1.22961       2.86955        4.2328       1.97566  
+
+  Col:       5             6             7             8             9       
+  Row
+      0 :     -1.3784      0.299208       1.02518       1.39312       1.64005  
+      1 :     5.20536       3.78862       3.73667       2.99888       2.72182  
+      2 :    0.443886      0.415643       1.48744       2.10431       2.34362  
+      3 :   -0.613235      0.712856      0.869149      0.879859      0.829089  
+      4 :     1.36144       0.96903       2.07055       1.53419       1.16306  
+
+  Col:      10       
+  Row
+      0 :     2.04776  
+      1 :      2.1262  
+      2 :     2.05825  
+      3 :     1.48368  
+      4 :     1.78374  
+
+R8ROW_RUNNING_AVERAGE_TEST:
+  Normal end of execution.
+
+R8ROW_RUNNING_SUM_TEST
+  R8ROW_RUNNING_SUM returns the M running sums of an R8ROW.
+
+  Random R8ROW:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    -1.72373      -4.00822      -4.07409      -4.97242       7.88645  
+      1 :     9.34476      -1.13633       1.74308       8.46256       7.61271  
+      2 :     7.44264      -3.35065       1.01959      0.261285      -3.15344  
+      3 :     3.42543      -4.34257        6.3201      -3.58183      -4.88731  
+      4 :     1.22961       4.50949        6.9593      -4.79575      -1.09546  
+
+  Col:       5             6             7             8             9       
+  Row
+      0 :     8.68726         5.381       3.96875       3.61549       5.71707  
+      1 :    -3.29504       3.42494      -2.16568        0.5054       -3.2344  
+      2 :     0.27443       7.91824       6.42238       4.25807     -0.510063  
+      3 :     7.34331       1.80691      0.954827      0.422931       7.37504  
+      4 :   -0.993016       8.67966      -2.22029      -1.80605        7.3699  
+
+  Running sums:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           0      -1.72373      -5.73194      -9.80604      -14.7785  
+      1 :           0       9.34476       8.20843       9.95151       18.4141  
+      2 :           0       7.44264       4.09199       5.11158       5.37287  
+      3 :           0       3.42543     -0.917133       5.40297       1.82114  
+      4 :           0       1.22961       5.73909       12.6984       7.90265  
+
+  Col:       5             6             7             8             9       
+  Row
+      0 :    -6.89201       1.79525       7.17625        11.145       14.7605  
+      1 :     26.0268       22.7317       26.1567        23.991       24.4964  
+      2 :     2.21943       2.49386       10.4121       16.8345       21.0925  
+      3 :    -3.06617       4.27714       6.08404       7.03887        7.4618  
+      4 :     6.80719       5.81418       14.4938       12.2735       10.4675  
+
+  Col:      10       
+  Row
+      0 :     20.4776  
+      1 :      21.262  
+      2 :     20.5825  
+      3 :     14.8368  
+      4 :     17.8374  
+
+R8ROW_RUNNING_SUM_TEST:
+  Normal end of execution.
+
+R8ROW_SUM_TEST
+  R8ROW_SUM computes sums of an R8ROW.
+
+  The matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             2             3             4  
+      1 :           5             6             7             8  
+      2 :           9            10            11            12  
+
+  The row sums:
+
+     0:            10
+     1:            26
+     2:            42
+
+R8ROW_SUM_TEST:
+  Normal end of execution.
+
+R8ROW_SWAP_TEST
+  R8ROW_SWAP swaps two rows of an R8ROW.
+
+  The original matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             2             3             4  
+      1 :           5             6             7             8  
+      2 :           9            10            11            12  
+
+  Swap rows 0 and 2
+
+  The modified matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           9            10            11            12  
+      1 :           5             6             7             8  
+      2 :           1             2             3             4  
+
+R8ROW_SWAP_TEST:
+  Normal end of execution.
+
+R8ROW_TO_R8VEC_TEST
+  R8ROW_TO_R8VEC converts an R8ROW to an R8VEC.
+
+  The array of rows:
+
+  Col:       0             1             2             3       
+  Row
+      0 :          11            12            13            14  
+      1 :          21            22            23            24  
+      2 :          31            32            33            34  
+
+  The resulting vector of rows:
+
+     0:            11
+     1:            12
+     2:            13
+     3:            14
+     4:            21
+     5:            22
+     6:            23
+     7:            24
+     8:            31
+     9:            32
+    10:            33
+    11:            34
+
+R8ROW_TO_R8VEC_TEST:
+  Normal end of execution.
+
+R8ROW_TRANSPOSE_PRINT_TEST
+  R8ROW_TRANSPOSE_PRINT prints an R8ROW.
+
+  Here is an R8ROW, transposed:
+
+  Row:       0             1             2             3       
+  Col
+      0 :          11            21            31            41  
+      1 :          12            22            32            42  
+      2 :          13            23            33            43  
+
+R8ROW_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+R8ROW_TRANSPOSE_PRINT_SOME_TEST
+  R8ROW_TRANSPOSE_PRINT_SOME prints some of an R8ROW, transposed.
+
+  R8ROW, rows 0:2, cols 3:5:
+
+  Row:       0             1             2       
+  Col
+      3 :          14            24            34  
+      4 :          15            25            35  
+      5 :          16            26            36  
+
+R8ROW_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8ROW_UNIFORM_AB_TEST
+  R8ROW_UNIFORM_AB computes a random R8ROW.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8ROW:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     0.31051     -0.603288     -0.629637      -0.98897  
+      1 :     4.73791      0.545467       1.69723       4.38502  
+      2 :     3.97706     -0.340259       1.40784       1.10451  
+      3 :     2.37017     -0.737026       3.52804     -0.432731  
+      4 :     1.49184       2.80379       3.78372     -0.918299  
+
+R8ROW_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8ROW_VARIANCE_TEST
+  R8ROW_VARIANCE computes variances of an R8ROW.
+
+  The matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             2             3             4  
+      1 :           5             6             7             8  
+      2 :           9            10            11            12  
+
+  The row variances:
+
+     0:       1.66667
+     1:       1.66667
+     2:       1.66667
+
+R8ROW_VARIANCE_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8ROW_TEST:
+  Normal end of execution.
+Sun Feb  2 08:30:47 2020

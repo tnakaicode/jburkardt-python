@@ -1,0 +1,17 @@
+Mon Jan 20 18:01:12 2020
+
+cube_distance_test:
+  Python version: 3.6.9
+  Test cube_distance.
+
+  Using N = 10000 sample points,
+  Estimated mean distance = 0.660907
+  Exact mean distace =      0.661707
+  Estimated variance      = 0.0616149
+  Graphics saved as "cube_distance_histogram.png"
+  Graphics saved as "cube_distance_pdf.png"
+  Graphics saved as "cube_distance_compare.png"
+
+cube_distance_test:
+  Normal end of execution.
+Mon Jan 20 18:01:30 2020

@@ -1,0 +1,154 @@
+Fri Jan 24 08:30:40 2020
+
+FLORIDA_CVT_GEO_TESTS
+  Python version: 3.6.9
+  Test the FLORIDA_CVT_GEO library.
+
+FLORIDA_CENTROID_GEO_TEST:
+  Python version: 3.6.9
+  FLORIDA_CENTROID_GEO can estimate the centroids of
+  the Voronoi cells associated with a set of points
+  within the boundaries of Florida,
+  expressed as longitudes and latitudes.
+
+  Centroids estimated using 5000 sample points.
+
+   I  City             G Lon     G Lat     C Lon     C Lat
+
+   0  Pensacola       -87.20     30.43    -86.59     30.69
+   1  Tallahassee     -84.25     30.46    -84.60     30.36
+   2  Jacksonville    -81.66     30.34    -81.72     30.16
+   3  Tampa           -82.48     27.97    -82.13     27.59
+   4  Gainesville     -82.32     29.65    -82.52     29.65
+   5  Orlando         -81.30     28.42    -81.20     28.11
+   6  Miami           -80.21     25.78    -80.81     26.25
+
+  Graphics data saved as "florida_centroid_geo.png"
+
+FLORIDA_CVT_GEOMETRIC_TEST:
+  Python version: 3.6.9
+  FLORIDA_CVT_GEOMETRIC can estimate the geometric centroidal
+  Voronoi tessellation (CVT) of a set of points
+  within the boundaries of Florida,
+  expressed as longitudes and latitudes.
+
+  Graphics data saved as "florida_cvt_geo.png"
+
+FLORIDA_DISTRICT_READER_TEST:
+  Python version: 3.6.9
+  FLORIDA_DISTRICT_READER reads a file "florida_district.txt"
+  and returns the longitude, latitude, and name of a city in
+  each Florida congressional district.
+
+ #  City                      Longitude       Latitude
+
+ 0  Chumuckla               -87.237222       30.776389
+ 1  Tallahassee             -84.253333       30.455000
+ 2  Gainesville             -82.324722       29.651944
+ 3  Callahan                -81.830833       30.560833
+ 4  Jacksonville            -81.661389       30.336944
+ 5  Jacksonville Beach      -81.396111       30.284167
+ 6  Winter Park             -81.346667       28.596111
+ 7  Rockledge               -80.732778       28.325000
+ 8  Kissimmee               -81.412778       28.303889
+ 9  Orlando                 -81.298889       28.415833
+10  Spring Hill             -82.547778       28.478889
+11  Palm Harbor             -82.753889       28.083889
+12  Indian Shores           -82.843333       27.850556
+13  Tampa                   -82.476389       27.968056
+14  Lakeland                -81.958889       28.041111
+15  Longboat Key            -82.644722       27.396944
+16  Okeechobee              -80.833333       27.233333
+17  Jupiter                 -80.105000       26.926111
+18  Bonita Springs          -81.790833       26.349722
+19  Miramar                 -80.282500       25.978889
+20  Boca Raton              -80.100000       26.368611
+21  West Palm Beach         -80.064167       26.709722
+22  Weston                  -80.388056       26.107500
+23  Miami Gardens           -80.269722       25.941944
+24  Hialeah                 -80.293889       25.860556
+25  Kendall                 -80.356667       25.666667
+26  Miami                   -80.208889       25.775278
+
+  Graphics data saved as "florida_district.png"
+
+FLORIDA_POINT_DISPLAY_TEST:
+  Python version: 3.6.9
+  FLORIDA_POINT_DISPLAY can display a set of points
+  within the boundaries of Florida,
+  expressed as longitudes and latitudes.
+
+  Graphics data saved as "florida_point_display.png"
+
+FLORIDA_SAMPLE_GEO_TEST:
+  Python version: 3.6.9
+  FLORIDA_SAMPLE_GEO returns a given number of random
+  sample points within the boundaries of Florida,
+  expressed as longitudes and latitudes.
+
+  Requesting 100 sample points:
+
+  FLORIDA_POINT_DISPLAY can display the sample points.
+
+  Graphics data saved as "florida_sample_geo.png"
+
+FLORIDA_SHAPE_DISPLAY_TEST:
+  FLORIDA_SHAPE_DISPLAY displays the shape of Florida.
+
+  Plot saved as "florida_shape_display.png"
+
+FLORIDA_SHAPE_READ_TEST:
+  Python version: 3.6.9
+  FLORIDA_SHAPE_READ returns informaition defining
+  a low-resolution polygonal model of Florida.
+
+  Longitude/Latitude, Florida Polygon Vertices:
+
+     0:          -81.5           30.72
+     1:         -81.48           30.68
+     2:         -81.45            30.7
+     3:         -81.43           30.68
+     4:         -81.45           30.57
+     5:         -81.43           30.52
+     6:         -81.47           30.55
+     7:         -81.48           30.62
+......  ..............  ..............
+   568:         -81.52           30.72
+
+  Plot saved as "florida_shape_read.png"
+
+FLORIDA_VORONOI_DISPLAY_TEST:
+  Python version: 3.6.9
+  FLORIDA_VORONOI_DISPLAY can display a set of points
+  within the boundaries of Florida,
+  expressed as longitudes and latitudes,
+  and the Voronoi diagram they generate.
+
+  Graphics data saved as "florida_voronoi_display.png"
+
+POLYGON_CONTAINS_POINT_TEST
+  Python version: 3.6.9
+  POLYGON_CONTAINS_POINT determines if
+  a point is in a polygon.
+
+  The polygon vertices:
+
+   0    0.0000    0.0000
+   1    1.0000    0.0000
+   2    2.0000    1.0000
+   3    1.0000    2.0000
+   4    0.0000    2.0000
+
+        X         Y     Inside?
+
+      1.00      1.00    True
+      3.00      4.00    False
+      0.00      2.00    False
+      0.50     -0.25    False
+
+POLYGON_CONTAINS_POINT_TEST
+  Normal end of execution.
+
+FLORIDA_CVT_GEO_TESTS
+  Normal end of execution.
+Fri Jan 24 08:31:42 2020

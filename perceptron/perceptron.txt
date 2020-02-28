@@ -1,0 +1,89 @@
+Sat Feb  1 15:36:24 2020
+
+perceptron
+  Python version: 3.6.9
+  The Perceptron.
+  Data file: index, rpm, vibration, rating
+  Rating is 0 for bad, 1 for good.
+  Use the perceptron algorithm to determine a
+  classifier f(rpm,vibration) -> {0, 1}
+
+  Generator Ratings
+
+  Number of generators = 56
+  56 good generators, and 56 bad generators
+  562 <= RPM <= 939
+  79 <= VIB <= 585
+  GOOD: mean RPM = 740.75, mean VIB = 447.286
+  BAD:  mean RPM = 741.964, mean VIB = 219.857
+  79 <= VIB <= 585
+  Graphics saved as "perceptron_data.png"
+  All training data classified on step 8
+
+  Perceptron weights:
+  f(x) = -0.541674 + 0.397848 * r + 0.740477 * v
+
+
+  Index    x*w  (0<x*w)  Rating
+
+      0   -0.21      0      0
+      1    0.07      1      1
+      2    0.07      1      1
+      3    0.06      1      1
+      4    0.12      1      1
+      5   -0.01      0      0
+      6   -0.29      0      0
+      7   -0.23      0      0
+      8    0.10      1      1
+      9   -0.02      0      0
+     10   -0.05      0      0
+     11    0.21      1      1
+     12   -0.11      0      0
+     13    0.18      1      1
+     14   -0.21      0      0
+     15   -0.23      0      0
+     16    0.17      1      1
+     17    0.23      1      1
+     18   -0.22      0      0
+     19    0.24      1      1
+     20    0.23      1      1
+     21    0.20      1      1
+     22   -0.11      0      0
+     23   -0.21      0      0
+     24    0.14      1      1
+     25    0.12      1      1
+     26   -0.10      0      0
+     27   -0.09      0      0
+     28    0.12      1      1
+     29   -0.06      0      0
+     30    0.20      1      1
+     31   -0.17      0      0
+     32   -0.11      0      0
+     33    0.20      1      1
+     34   -0.08      0      0
+     35   -0.23      0      0
+     36    0.24      1      1
+     37    0.29      1      1
+     38   -0.12      0      0
+     39   -0.21      0      0
+     40    0.30      1      1
+     41   -0.08      0      0
+     42   -0.13      0      0
+     43   -0.16      0      0
+     44    0.10      1      1
+     45    0.21      1      1
+     46   -0.21      0      0
+     47   -0.10      0      0
+     48    0.26      1      1
+     49    0.22      1      1
+     50    0.17      1      1
+     51    0.28      1      1
+     52    0.28      1      1
+     53   -0.14      0      0
+     54    0.19      1      1
+     55   -0.18      0      0
+  Graphics saved as "perceptron_classifier.png"
+
+perceptron
+  Normal end of execution.
+Sat Feb  1 15:36:25 2020

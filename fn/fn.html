@@ -1,0 +1,583 @@
+<html>
+
+  <head>
+    <title>
+      FN - The Fullerton Function Library
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      FN <br> The Fullerton Function Library.
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>FN</b>,
+      a Python library which
+      approximates elementary and special functions using Chebyshev polynomials;
+      functions include Airy, Bessel I, Bessel J, Bessel K, Bessel Y, beta, 
+      confluent hypergeometric, cosine integral, Dawson's integral, 
+      digamma (psi), error, exponential integral, gamma, hyperbolic cosine
+      integral, hyperbolic sine integral, incomplete gamma, log gamma, 
+      logarithmic integral, Pochhammer, psi, sine integral, Spence;
+      by Wayne Fullerton.
+    </p>
+
+    <p>
+      The original version of the library provided routines for
+      single precision complex, single precision real, and
+      double precision real arguments and used the prefixes
+      "C" and "D" to indicate the complex and double precision versions.
+    </p>
+
+    <p>
+      This scheme has been modified for consistency, and also
+      to avoid conflict with the names of functions commonly
+      provided by various compilers.  The prefixes "C4_", "R4_"
+      and "R8_" are used to indicate functions for single precision complex,
+      single precision real, and double precision real arguments.
+      For example, the sine function can be calculated by the functions
+      <b>C4_SIN</b>, <b>R4_SIN</b> or <b>R8_SIN</b>.
+    </p>
+
+    <p>
+      The original, true, correct version of FN
+      is available through NETLIB:
+              <a href = "http://www.netlib.org/fn/index.html">
+                         http://www.netlib.org/fn/index.html</a>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>FN</b> is available in
+      <a href = "../../c_src/fn/fn.html">a C version</a> and
+      <a href = "../../cpp_src/fn/fn.html">a C++ version</a> and
+      <a href = "../../f_src/fn/fn.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/fn/fn.html">a MATLAB version</a> and
+      <a href = "../../py_src/fn/fn.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/c4lib/c4lib.html">
+      C4LIB</a>,
+      a Python library which
+      implements certain elementary functions for single precision complex variables;
+    </p>
+
+    <p>
+      <a href = "../../py_src/c8lib/c8lib.html">
+      C8LIB</a>,
+      a Python library which
+      implements certain elementary functions for double precision complex variables;
+    </p>
+
+    <p>
+      <a href = "../../py_src/clausen/clausen.html">
+      CLAUSEN</a>,
+      a Python library which
+      evaluates a Chebyshev interpolant to the Clausen function Cl2(x).
+    </p>
+
+    <p>
+      <a href = "../../py_src/legendre_polynomial/legendre_polynomial.html">
+      LEGENDRE_POLYNOMIAL</a>,
+      a Python library which
+      evaluates the Legendre polynomial and associated functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/machine/machine.html">
+      MACHINE</a>,
+      a Python library which
+      stores the appropriate values of machine constants for a given machine.
+    </p>
+
+    <p>
+      <a href = "../../py_src/r4lib/r4lib.html">
+      R4LIB</a>,
+      a Python library which
+      contains many utility routines, using "R4" or
+      "single precision real" arithmetic.
+    </p>
+
+    <p>
+      <a href = "../../py_src/r8lib/r8lib.html">
+      R8LIB</a>,
+      a Python library which
+      contains many utility routines, using "R8" or
+      "double precision real" arithmetic.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_values/test_values.html">
+      TEST_VALUES</a>,
+      a Python library which
+      supplies test values of various mathematical functions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Wayne Fullerton,<br>
+          Portable Special Function Routines,<br>
+          in Portability of Numerical Software,<br>
+          edited by Wayne Cowell,<br>
+          Lecture Notes in Computer Science, Volume 57, pages 452-483,<br>
+          Springer 1977,<br>
+          ISBN: 978-3-540-08446-4,<br>
+          LC: QA297.W65.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "machine.py">machine.py</a>,
+          returns machine dependent constants.
+        </li>
+        <li>
+          <a href = "r8_acos.py">r8_acos.py</a>,
+          evaluates the arc-cosine of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_acosh.py">r8_acosh.py</a>,
+          evaluates the arc-hyperbolic cosine of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_admp.py">r8_admp.py</a>,
+          modulus and phase of the derivative of the Airy function.
+        </li>
+        <li>
+          <a href = "r8_ai.py">r8_ai.py</a>,
+          evaluates the Airy function Ai of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_aid.py">r8_aid.py</a>,
+          evaluates the derivative of the Airy function Ai of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_aide.py">r8_aide.py</a>,
+          exponentially scaled derivative, Airy function Ai of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_aie.py">r8_aie.py</a>,
+          evaluates the exponentially scaled Airy function Ai of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_aimp.py">r8_aimp.py</a>,
+          evaluates the modulus and phase of the Airy function.
+        </li>
+        <li>
+          <a href = "r8_aint.py">r8_aint.py</a>,
+          truncates an R8 argument to an integer.
+        </li>
+        <li>
+          <a href = "r8_asin.py">r8_asin.py</a>,
+          evaluates the arc-sine of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_asinh.py">r8_asinh.py</a>,
+          evaluates the arc-sine of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_atan.py">r8_atan.py</a>,
+          evaluates the arc-tangent of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_atan2.py">r8_atan2.py</a>,
+          evaluates the arc-tangent of two R8 arguments.
+        </li>
+        <li>
+          <a href = "r8_atanh.py">r8_atanh.py</a>,
+          evaluates the arc-hyperbolic tangent of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_b0mp.py">r8_b0mp.py</a>,
+          evaluates the modulus and phase for the Bessel J0 and Y0 functions.
+        </li>
+        <li>
+          <a href = "r8_b1mp.py">r8_b1mp.py</a>,
+          evaluates the modulus and phase for the Bessel J1 and Y1 functions.
+        </li>
+        <li>
+          <a href = "r8_besi0.py">r8_besi0.py</a>,
+          evaluates the Bessel function I of order 0 of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_besi1.py">r8_besi1.py</a>,
+          evaluates the Bessel function I of order 1 of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_besj0.py">r8_besj0.py</a>,
+          evaluates the Bessel function J of order 0 of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_besj1.py">r8_besj1.py</a>,
+          evaluates the Bessel function J of order 1 of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_besk0.py">r8_besk0.py</a>,
+          evaluates the Bessel function K of order 0 of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_besk0e.py">r8_besk0e.py</a>,
+          evaluates the exponentially scaled Bessel function K0(X).
+        </li>
+        <li>
+          <a href = "r8_besk1.py">r8_besk1.py</a>,
+          evaluates the Bessel function K of order 1 of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_besk1e.py">r8_besk1e.py</a>,
+          evaluates the exponentially scaled Bessel function K1(X).
+        </li>
+        <li>
+          <a href = "r8_beskes.py">r8_beskes.py</a>,
+          evaluates a sequence of exponentially scaled K Bessel functions at X.
+        </li>
+        <li>
+          <a href = "r8_besks.py">r8_besks.py</a>,
+          evaluates a sequence of K Bessel functions at X.
+        </li>
+        <li>
+          <a href = "r8_besy0.py">r8_besy0.py</a>,
+          evaluates the Bessel function Y of order 0 of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_besy1.py">r8_besy1.py</a>,
+          evaluates the Bessel function Y of order 1 of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_beta.py">r8_beta.py</a>,
+          evaluates the beta function of R8 arguments.
+        </li>
+        <li>
+          <a href = "r8_betai.py">r8_betai.py</a>,
+          evaluates the incomplete beta ratio of R8 arguments.
+        </li>
+        <li>
+          <a href = "r8_bi.py">r8_bi.py</a>,
+          evaluates the Airy function Bi of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_bid.py">r8_bid.py</a>,
+          evaluates the derivative of the Airy function Bi of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_bide.py">r8_bide.py</a>,
+          exponentially scaled derivative, Airy function Bi of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_bie.py">r8_bie.py</a>,
+          evaluates the exponentially scaled Airy function Bi of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_binom.py">r8_binom.py</a>,
+          evaluates the binomial coefficient using R8 arithmetic.
+        </li>
+        <li>
+          <a href = "r8_cbrt.py">r8_cbrt.py</a>,
+          computes the cube root of an R8.
+        </li>
+        <li>
+          <a href = "r8_chi.py">r8_chi.py</a>,
+          evaluates the hyperbolic cosine integral of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_chu.py">r8_chu.py</a>,
+          evaluates the confluent hypergeometric function of R8 arguments.
+        </li>
+        <li>
+          <a href = "r8_chu_scaled.py">r8_chu_scaled.py</a>,
+          scaled confluent hypergeometric function of R8 arguments.
+        </li>
+        <li>
+          <a href = "r8_ci.py">r8_ci.py</a>,
+          evaluates the cosine integral Ci of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_cin.py">r8_cin.py</a>,
+          evaluates the alternate cosine integral Cin of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_cinh.py">r8_cinh.py</a>,
+          evaluates the alternate hyperbolic cosine integral Cinh of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_cos.py">r8_cos.py</a>,
+          evaluates the cosine of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_cos_deg.py">r8_cos_deg.py</a>,
+          evaluates the cosine of an R8 argument in degrees.
+        </li>
+        <li>
+          <a href = "r8_cosh.py">r8_cosh.py</a>,
+          evaluates the hyperbolic cosine of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_cot.py">r8_cot.py</a>,
+          evaluates the cotangent of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_csevl.py">r8_csevl.py</a>,
+          evaluates a Chebyshev series.
+        </li>
+        <li>
+          <a href = "r8_dawson.py">r8_dawson.py</a>,
+          evaluates Dawson's integral of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_e1.py">r8_e1.py</a>,
+          evaluates the exponential integral E1 for an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_ei.py">r8_ei.py</a>,
+          evaluates the exponential integral Ei for an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_erf.py">r8_erf.py</a>,
+          evaluates the error function of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_exp.py">r8_exp.py</a>,
+          evaluates the exponential of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_exprel.py">r8_exprel.py</a>,
+          evaluates the exponential relative error term of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_fac.py">r8_fac.py</a>,
+          evaluates the factorial of an I4 argument.
+        </li>
+        <li>
+          <a href = "r8_gami.py">r8_gami.py</a>,
+          evaluates the incomplete gamma function for an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_gamic.py">r8_gamic.py</a>,
+          evaluates the complementary incomplete gamma function.
+        </li>
+        <li>
+          <a href = "r8_gamit.py">r8_gamit.py</a>,
+          evaluates Tricomi's incomplete gamma function for an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_gaml.py">r8_gaml.py</a>,
+          evaluates bounds for an R8 argument of the gamma function.
+        </li>
+        <li>
+          <a href = "r8_gamma.py">r8_gamma.py</a>,
+          evaluates the gamma function of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_gamr.py">r8_gamr.py</a>,
+          evaluates the reciprocal gamma function of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_gmic.py">r8_gmic.py</a>,
+          complementary incomplete gamma, small X, A near negative integer.
+        </li>
+        <li>
+          <a href = "r8_gmit.py">r8_gmit.py</a>,
+          Tricomi's incomplete gamma function for small X.
+        </li>
+        <li>
+          <a href = "r8_inits.py">r8_inits.py</a>,
+          initializes a Chebyshev series.
+        </li>
+        <li>
+          <a href = "r8_int.py">r8_int.py</a>,
+          returns the integer part of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_knus.py">r8_knus.py</a>,
+          computes a sequence of K Bessel functions.
+        </li>
+        <li>
+          <a href = "r8_lbeta.py">r8_lbeta.py</a>,
+          evaluates the logarithm of the beta function of R8 arguments.
+        </li>
+        <li>
+          <a href = "r8_lgams.py">r8_lgams.py</a>,
+          evaluates the log of |gamma(x)| and sign, for an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_lgic.py">r8_lgic.py</a>,
+          evaluates the log complementary incomplete gamma function for large X.
+        </li>
+        <li>
+          <a href = "r8_lgit.py">r8_lgit.py</a>,
+          evaluates the log of Tricomi's incomplete gamma function.
+        </li>
+        <li>
+          <a href = "r8_lgmc.py">r8_lgmc.py</a>,
+          evaluates the log gamma correction factor for an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_li.py">r8_li.py</a>,
+          evaluates the logarithmic integral for an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_lngam.py">r8_lngam.py</a>,
+          evaluates the log of the absolute value of gamma of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_lnrel.py">r8_lnrel.py</a>,
+          evaluates log ( 1 + X ) for an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_log.py">r8_log.py</a>,
+          evaluates the logarithm of an R8.
+        </li>
+        <li>
+          <a href = "r8_log10.py">r8_log10.py</a>,
+          evaluates the logarithm, base 10, of an R8.
+        </li>
+        <li>
+          <a href = "r8_machar.py">r8_machar.py</a>,
+          determines double precision machine constants.
+        </li>
+        <li>
+          <a href = "r8_pak.py">r8_pak.py</a>,
+          packs a base 2 exponent into an R8.
+        </li>
+        <li>
+          <a href = "r8_poch.py">r8_poch.py</a>,
+          evaluates Pochhammer's function of R8 arguments.
+        </li>
+        <li>
+          <a href = "r8_poch1.py">r8_poch1.py</a>,
+          evaluates a quantity related to Pochhammer's symbol.
+        </li>
+        <li>
+          <a href = "r8_psi.py">r8_psi.py</a>,
+          evaluates the psi function of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_rand.py">r8_rand.py</a>,
+          generates a uniformly distributed random number.
+        </li>
+        <li>
+          <a href = "r8_randgs.py">r8_randgs.py</a>,
+          generates a normally distributed random number.
+        </li>
+        <li>
+          <a href = "r8_random.py">r8_random.py</a>,
+          generates a uniformly distributed random number.
+        </li>
+        <li>
+          <a href = "r8_ren.py">r8_ren.py</a>,
+          is a simple random number generator.
+        </li>
+        <li>
+          <a href = "r8_shi.py">r8_shi.py</a>,
+          evaluates the hyperbolic sine integral Shi of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_si.py">r8_si.py</a>,
+          evaluates the sine integral Si of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_sifg.py">r8_sifg.py</a>,
+          is a utility routine.
+        </li>
+        <li>
+          <a href = "r8_sin.py">r8_sin.py</a>,
+          evaluates the sine of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_sin_deg.py">r8_sin_deg.py</a>,
+          evaluates the sine of an R8 argument in degrees.
+        </li>
+        <li>
+          <a href = "r8_sinh.py">r8_sinh.py</a>,
+          evaluates the hyperbolic sine of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_spence.py">r8_spence.py</a>,
+          evaluates a form of Spence's function for an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_sqrt.py">r8_sqrt.py</a>,
+          computes the square root of an R8.
+        </li>
+        <li>
+          <a href = "r8_tan.py">r8_tab.py</a>,
+          evaluates the tangent of an R8 argument.
+        </li>
+        <li>
+          <a href = "r8_tanh.py">r8_tanh.py</a>,
+          evaluates the hyperbolic tangent of an R8 argument.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>,
+          prints out the current YMDHMS date as a timestamp.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "fn.py">fn.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "fn.sh">fn.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "fn.txt">fn.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

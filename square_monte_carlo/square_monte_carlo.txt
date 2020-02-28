@@ -1,0 +1,730 @@
+Mon Feb  3 07:59:58 2020
+
+SQUARE_MONTE_CARLO_TEST
+  Python version: 3.6.9
+  Test the SQUARE_MONTE_CARLO library.
+
+I4VEC_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_PRINT prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+I4VEC_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_TRANSPOSE_PRINT prints an I4VEC
+  with 5 entries to a row, and an optional title.
+
+  My array:  
+       1
+       2
+       3
+       4
+       5
+       6
+       7
+       8
+       9
+      10
+
+      11
+      12
+
+
+I4VEC_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4VEC_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+
+  The random vector:
+
+     0     -35
+     1     187
+     2     149
+     3      69
+     4      25
+     5     -81
+     6     -23
+     7     -67
+     8     -87
+     9      90
+    10     -82
+    11      35
+    12      20
+    13     127
+    14     139
+    15    -100
+    16     170
+    17       5
+    18     -72
+    19     -96
+
+I4VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Row
+      0 :
+          11  
+          12  
+          13  
+          14  
+          15  
+
+      1 :
+          21  
+          22  
+          23  
+          24  
+          25  
+
+      2 :
+          31  
+          32  
+          33  
+          34  
+          35  
+
+      3 :
+          41  
+          42  
+          43  
+          44  
+          45  
+
+
+  Col: 
+      5       
+
+  Row
+      0 :
+          16  
+
+      1 :
+          26  
+
+      2 :
+          36  
+
+      3 :
+          46  
+
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col: 
+      3       
+      4       
+      5       
+
+  Row
+      0 :
+          14  
+          15  
+          16  
+
+      1 :
+          24  
+          25  
+          26  
+
+      2 :
+          34  
+          35  
+          36  
+
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT prints an R8MAT.
+
+  Here is an R8MAT, transposed:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+          11  
+          21  
+          31  
+          41  
+
+      1 :
+          12  
+          22  
+          32  
+          42  
+
+      2 :
+          13  
+          23  
+          33  
+          43  
+
+
+R8MAT_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.
+
+  R8MAT, rows 0:2, cols 3:5:
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      3 :
+          14  
+          24  
+          34  
+
+      4 :
+          15  
+          25  
+          35  
+
+      5 :
+          16  
+          26  
+          36  
+
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_01 computes a random R8MAT.
+
+  0 <= X <= 1
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+
+  Row
+      0 :
+    0.218418  
+   0.0661187  
+   0.0617272  
+  0.00183837  
+
+      1 :
+    0.956318  
+    0.257578  
+    0.449539  
+    0.897504  
+
+      2 :
+    0.829509  
+    0.109957  
+    0.401306  
+    0.350752  
+
+      3 :
+    0.561695  
+    0.043829  
+    0.754673  
+   0.0945448  
+
+      4 :
+    0.415307  
+    0.633966  
+    0.797287  
+   0.0136169  
+
+
+R8MAT_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_AB computes a random R8MAT.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+
+  Row
+      0 :
+     0.31051  
+   -0.603288  
+   -0.629637  
+    -0.98897  
+
+      1 :
+     4.73791  
+    0.545467  
+     1.69723  
+     4.38502  
+
+      2 :
+     3.97706  
+   -0.340259  
+     1.40784  
+     1.10451  
+
+      3 :
+     2.37017  
+   -0.737026  
+     3.52804  
+   -0.432731  
+
+      4 :
+     1.49184  
+     2.80379  
+     3.78372  
+   -0.918299  
+
+
+R8MAT_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+MONOMIAL_VALUE_TEST
+  Python version: 3.6.9
+  Use monomial_value() to evaluate some monomials
+  in dimensions 1 through 3.
+
+  Spatial dimension M =  1
+
+  Exponents:
+      -1
+
+
+   V(X)         
+      X(0)
+
+
+      0.111111  
+    9.0000
+
+         0.125  
+    8.0000
+
+           0.2  
+    5.0000
+
+      0.333333  
+    3.0000
+
+            -1  
+   -1.0000
+
+
+  Spatial dimension M =  2
+
+  Exponents:
+      -1
+      -2
+
+
+   V(X)         
+      X(0)
+      X(1)
+
+
+    -0.0277778  
+   -1.0000
+    6.0000
+
+     -0.111111  
+   -1.0000
+    3.0000
+
+    0.00680272  
+    3.0000
+    7.0000
+
+       0.03125  
+    8.0000
+   -2.0000
+
+     0.0277778  
+    9.0000
+    2.0000
+
+
+  Spatial dimension M =  3
+
+  Exponents:
+      -3
+      -3
+       5
+
+
+   V(X)         
+      X(0)
+      X(1)
+      X(2)
+
+
+        0.0625  
+    8.0000
+   -1.0000
+   -2.0000
+
+   -0.00137174  
+    1.0000
+    9.0000
+   -1.0000
+
+   0.000244141  
+    2.0000
+    8.0000
+    1.0000
+
+       1.21363  
+    6.0000
+    5.0000
+    8.0000
+
+      0.158766  
+    3.0000
+    9.0000
+    5.0000
+
+
+MONOMIAL_VALUE_TEST
+  Normal end of execution.
+
+SQUARE01_AREA_TEST
+  Python version: 3.6.9
+  SQUARE01_AREA returns the area of the unit square.
+
+  SQUARE01_AREA() = 1
+
+SQUARE01_AREA_TEST
+  Normal end of execution.
+
+SQUARE01_MONOMIAL_INTEGRAL_TEST
+  Python version: 3.6.9
+  SQUARE01_MONOMIAL_INTEGRAL returns the integral of a monomial
+  over the interior of the unit square in 2D.
+  Compare with a Monte Carlo estimate.
+
+  Number of sample points used is 4192
+
+  Ex  Ey     MC-Estimate           Exact      Error
+
+   5   3       0.0407015       0.0416667     0.00097
+   0   3         0.24772            0.25      0.0023
+   3   3       0.0617648          0.0625     0.00074
+   7   2       0.0409558       0.0416667     0.00071
+   3   6       0.0347451       0.0357143     0.00097
+   3   4       0.0490791            0.05     0.00092
+   5   3       0.0407015       0.0416667     0.00097
+   4   0        0.205635             0.2      0.0056
+   2   7       0.0408387       0.0416667     0.00083
+   6   7       0.0167397       0.0178571      0.0011
+   1   3        0.124093           0.125     0.00091
+   2   4        0.065838       0.0666667     0.00083
+   4   1         0.10114             0.1      0.0011
+   0   3         0.24772            0.25      0.0023
+   7   6       0.0166817       0.0178571      0.0012
+   2   1        0.167784        0.166667      0.0011
+   7   1       0.0630248          0.0625     0.00052
+   2   5       0.0546923       0.0555556     0.00086
+   6   1       0.0721531       0.0714286     0.00072
+   5   0        0.172018        0.166667      0.0054
+
+SQUARE01_MONOMIAL_INTEGRAL_TEST:
+  Normal end of execution.
+
+SQUARE01_MONTE_CARLO_TEST
+  Python version: 3.6.9
+  Use SQUARE01_SAMPLE to estimate integrals 
+  along the interior of the unit square in 2D.
+
+         N
+           1
+              X^2
+             Y^2
+             X^4
+           X^2Y^2
+             Y^4
+           X^6
+
+
+         1
+               1
+       0.0477066
+        0.914543
+      0.00227592
+       0.0436297
+        0.836389
+     0.000108576
+
+         2
+               1
+        0.430283
+        0.159937
+        0.251606
+        0.108923
+       0.0497802
+        0.165457
+
+         4
+               1
+       0.0582811
+        0.296405
+      0.00758902
+       0.0235164
+        0.131721
+      0.00111726
+
+         8
+               1
+        0.370143
+        0.232241
+        0.257654
+       0.0909072
+        0.153583
+        0.186543
+
+        16
+               1
+        0.408361
+        0.331811
+        0.268311
+        0.132152
+        0.154455
+        0.192756
+
+        32
+               1
+        0.288494
+        0.398708
+        0.151374
+        0.133698
+         0.27324
+       0.0943414
+
+        64
+               1
+        0.326911
+        0.278037
+        0.182559
+       0.0849809
+        0.146277
+        0.123686
+
+       128
+               1
+        0.335382
+        0.373194
+        0.196099
+        0.119282
+        0.235611
+        0.136597
+
+       256
+               1
+         0.32321
+        0.345012
+        0.189779
+        0.101983
+        0.212009
+        0.135089
+
+       512
+               1
+        0.341191
+        0.307699
+        0.206467
+        0.106259
+        0.181644
+        0.146794
+
+      1024
+               1
+        0.339862
+        0.333855
+        0.210056
+        0.111993
+        0.200664
+         0.15314
+
+      2048
+               1
+        0.336076
+        0.331653
+        0.203245
+        0.111579
+        0.197363
+        0.145473
+
+      4096
+               1
+        0.327404
+        0.323945
+        0.193703
+        0.108703
+        0.192395
+        0.136906
+
+      8192
+               1
+         0.33204
+        0.329884
+        0.198447
+        0.109315
+        0.196472
+        0.141332
+
+     16384
+               1
+        0.329688
+        0.336893
+        0.195917
+        0.111486
+        0.202777
+        0.138902
+
+     32768
+               1
+        0.333032
+        0.330336
+        0.200011
+         0.10949
+        0.197202
+        0.142954
+
+     65536
+               1
+        0.331851
+        0.333021
+         0.19838
+         0.11126
+        0.199688
+        0.141424
+
+
+     Exact
+  %14.6g 1.0
+  %14.6g 0.3333333333333333
+  %14.6g 0.3333333333333333
+  %14.6g 0.2
+  %14.6g 0.1111111111111111
+  %14.6g 0.2
+  %14.6g 0.14285714285714285
+
+
+SQUARE01_MONTE_CARLO_TEST:
+  Normal end of execution.
+
+SQUARE01_SAMPLE_TEST
+  Python version: 3.6.9
+  SQUARE01_SAMPLE samples the unit square.
+
+  Sample points in the unit square.
+
+  Row: 
+      0       
+      1       
+
+  Col
+      0 :
+    0.218418  
+    0.956318  
+
+      1 :
+    0.829509  
+    0.561695  
+
+      2 :
+    0.415307  
+   0.0661187  
+
+      3 :
+    0.257578  
+    0.109957  
+
+      4 :
+    0.043829  
+    0.633966  
+
+      5 :
+   0.0617272  
+    0.449539  
+
+      6 :
+    0.401306  
+    0.754673  
+
+      7 :
+    0.797287  
+  0.00183837  
+
+      8 :
+    0.897504  
+    0.350752  
+
+      9 :
+   0.0945448  
+   0.0136169  
+
+
+SQUARE01_SAMPLE_TEST
+  Normal end of execution.
+
+SQUARE_MONTE_CARLO_TEST:
+  Normal end of execution.
+Mon Feb  3 07:59:59 2020

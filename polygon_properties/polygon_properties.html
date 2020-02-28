@@ -1,0 +1,402 @@
+<html>
+
+  <head>
+    <title>
+      POLYGON_PROPERTIES - Compute Properties of an Arbitrary Polygon
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      POLYGON_PROPERTIES <br> Compute Properties of an Arbitrary Polygon
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>POLYGON_PROPERTIES</b>,
+      a Python library which
+      computes properties of an arbitrary polygon in the plane, defined
+      by a sequence of vertices, including 
+      <ul>
+        <li>
+          angles;
+        </li>
+        <li>
+          area;
+        </li>
+        <li>
+          centroid;
+        </li>
+        <li>
+          containment of a point;
+        </li>
+        <li>
+          diameter;
+        </li>
+        <li>
+          expand polygon outward by H;
+        </li>
+        <li>
+          inradius of regular polygon to area, outradius side length;
+        </li>
+        <li>
+          integral over polygon of 1, x, x^2, xy, y, y^2;
+        </li>
+        <li>
+          is polygon convex?;
+        </li>
+        <li>
+          lattice area;
+        </li>
+        <li>
+          outradius of regular polygon to area, inradius, side length;
+        </li>
+        <li>
+          perimeter;
+        </li>
+        <li>
+          perimeter integral;
+        </li>
+        <li>
+          point to polygon distance;
+        </li>
+        <li>
+          point to nearest point on polygon;
+        </li>
+        <li>
+          sampling uniformly;
+        </li>
+        <li>
+          side length of regular polygon to area, inradius, outradius;
+        </li>
+        <li>
+          triangulation (decomposition into N-3 triangles).
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>POLYGON_PROPERTIES</b> is available in
+      <a href = "../../c_src/polygon_properties/polygon_properties.html">a C version</a> and
+      <a href = "../../cpp_src/polygon_properties/polygon_properties.html">a C++ version</a> and
+      <a href = "../../f_src/polygon_properties/polygon_properties.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/polygon_properties/polygon_properties.html">a MATLAB version</a> and
+     <a href = "../../py_src/polygon_properties/polygon_properties.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/polygon_integrals/polygon_integrals.html">
+      POLYGON_INTEGRALS</a>,
+      a Python library which
+      returns the exact value of the integral of any monomial
+      over the interior of a polygon in 2D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polygon_monte_carlo/polygon_monte_carlo.html">
+      POLYGON_MONTE_CARLO</a>,
+      a Python library which
+      applies a Monte Carlo method to estimate the integral of a function
+      over the interior of a polygon in 2D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polygon_triangulate/polygon_triangulate.html">
+      POLYGON_TRIANGULATE</a>,
+      a Python library which
+      triangulates a possibly nonconvex polygon,
+      and which can use gnuplot to display the external edges and 
+      internal diagonals of the triangulation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/toms112/toms112.html">
+      TOMS112</a>,
+      a Python library which
+      determines whether a point is contained in a polygon,
+      by Moshe Shimrat.
+      This is a version of ACM TOMS algorithm 112.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Gerard Bashein, Paul Detmer,<br>
+          Centroid of a Polygon,<br>
+          in Graphics Gems IV,<br>
+          edited by Paul Heckbert,<br>
+          AP Professional, 1994,<br>
+          ISBN: 0123361559,<br>
+          LC: T385.G6974.
+        </li>
+        <li>      
+          SF Bockman,<br>
+          Generalizing the Formula for Areas of Polygons to Moments,<br>
+          American Mathematical Society Monthly,<br>
+          Volume 96, Number 2, February 1989, pages 131-132.
+        </li>
+        <li>
+          Adrian Bowyer, John Woodwark,<br>
+          A Programmer's Geometry,<br>
+          Butterworths, 1983,<br>
+          ISBN: 0408012420.
+        </li>
+        <li>
+          Peter Schorn, Frederick Fisher,<br>
+          Testing the Convexity of a Polygon,<br>
+          in Graphics Gems IV,<br>
+          edited by Paul Heckbert,<br>
+          AP Professional, 1994,<br>
+          ISBN: 0123361559,<br>
+          LC: T385.G6974.
+        </li>
+        <li>
+          Moshe Shimrat,<br>
+          Algorithm 112:
+          Position of Point Relative to Polygon,<br>
+          Communications of the ACM,<br>
+          Volume 5, Number 8, August 1962, page 434.
+        </li>
+        <li>
+          Allen VanGelder,<br>
+          Efficient Computation of Polygon Area and Polyhedron Volume,<br>
+          in Graphics Gems V, <br>
+          edited by Alan Paeth,<br>
+          AP Professional, 1995,<br>
+          ISBN: 0125434553,<br>
+          LC: T385.G6975.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "angle_half.py">angle_half.py</a>
+          finds half an angle.
+        </li>
+        <li>
+          <a href = "angle_radian.py">angle_radian.py</a>
+          returns the angle in radians swept out between two rays.
+        </li>
+        <li>
+          <a href = "i4_ceiling.py">i4_ceiling.py</a>
+          returns the smallest I4 that is not smaller than an R8.
+        </li>
+        <li>
+          <a href = "i4_modp.py">i4_modp.py</a>
+          returns the nonnegative remainder of I4 division.
+        </li>
+        <li>
+          <a href = "i4_wrap.py">i4_wrap.py</a>
+          forces an I4 to lie between given limits by wrapping.
+        </li>
+        <li>
+          <a href = "polygon_angles.py">polygon_angles.py</a>
+          computes the interior angles of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_area.py">polygon_area.py</a>
+          computes the area of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_area_2.py">polygon_area_2.py</a>
+          computes the area of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_centroid.py">polygon_centroid.py</a>
+          computes the centroid of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_centroid_2.py">polygon_centroid_2.py</a>
+          computes the centroid of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_contains_point.py">polygon_contains_point.py</a>
+          finds if a point is inside a simple polygon.
+        </li>
+        <li>
+          <a href = "polygon_contains_point_2.py">polygon_contains_point_2.py</a>
+          is a point inside a convex polygon.
+        </li>
+        <li>
+          <a href = "polygon_diameter.py">polygon_diameter.py</a>
+          computes the diameter of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_expand.py">polygon_expand.py</a>
+          expands a polygon.
+        </li>
+        <li>
+          <a href = "polygon_inrad_data.py">polygon_inrad_data.py</a>
+          determines polygonal data from its inner radius.
+        </li>
+        <li>
+          <a href = "polygon_integral_1.py">polygon_integral_1.py</a>
+          integrates the function 1 over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_x.py">polygon_integral_x.py</a>
+          integrates the function X over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_xx.py">polygon_integral_xx.py</a>
+          integrates the function X*X over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_xy.py">polygon_integral_xy.py</a>
+          integrates the function X*Y over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_y.py">polygon_integral_y.py</a>
+          integrates the function Y over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_yy.py">polygon_integral_yy.py</a>
+          integrates the function Y*Y over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_is_convex.py">polygon_is_convex.py</a>
+          determines whether a polygon is convex.
+        </li>
+        <li>
+          <a href = "polygon_lattice_area.py">polygon_lattice_area.py</a>
+          computes the area of a lattice polygon.
+        </li>
+        <li>
+          <a href = "polygon_outrad_data.py">polygon_outrad_data.py</a>
+          determines polygonal data from its outer radius.
+        </li>
+        <li>
+          <a href = "polygon_perimeter.py">polygon_perimeter.py</a>
+          determines the length of the perimeter of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_perimeter_quad.py">polygon_perimeter_quad.py</a>
+          estimates the integral of a scalar function over the perimeter of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_point_dist.py">polygon_point_dist.py</a>
+          distance ( polygon, point ).
+        </li>
+        <li>
+          <a href = "polygon_point_near.py">polygon_point_near.py</a>
+          computes the nearest point on a polygon.
+        </li>
+        <li>
+          <a href = "polygon_sample.py">polygon_sample.py</a>
+          returns sample points from a polygon.
+        </li>
+        <li>
+          <a href = "polygon_side_data.py">polygon_side_data.py</a>
+          determines polygonal data from its side length.
+        </li>
+        <li>
+          <a href = "polygon_triangulate.py">polygon_triangulate.py</a>
+          triangulates a polygon.
+        </li>
+        <li>
+          <a href = "r8_atan2.py">r8_atan2.py</a>
+          computes the arc-tangent of a ratio of R8 values.
+        </li>
+        <li>
+          <a href = "r8mat_solve.py">r8mat_solve.py</a>
+          uses Gauss-Jordan elimination to solve an N by N linear system.
+        </li>
+        <li>
+          <a href = "r8mat_transpose_print.py">r8mat_transpose_print.py</a>
+          prints an R8MAT, transposed.
+        </li>
+        <li>
+          <a href = "r8mat_transpose_print_some.py">r8mat_transpose_print_some.py</a>
+          prints some of an R8MAT, transposed.
+        </li>
+        <li>
+          <a href = "r8vec_print.py">r8vec_print.py</a>
+          prints an R8VEC.
+        </li>
+        <li>
+          <a href = "segment_point_dist.py">segment_point_dist.py</a>
+          distance ( line segment, point ).
+        </li>
+        <li>
+          <a href = "segment_point_near.py">segment_point_near.py</a>
+          nearest point on line segment to point.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>
+          prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <a href = "triangle_area.py">triangle_area.py</a>
+          computes the area of a triangle.
+        </li>
+        <li>
+          <a href = "triangle_barycentric.py">triangle_barycentric.py</a>
+          finds the barycentric coordinates of a point.
+        </li>
+        <li>
+          <a href = "triangle_contains_point_1.py">triangle_contains_point_1.py</a>
+          finds if a point is inside a triangle.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "polygon_properties.py">polygon_properties.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "polygon_properties.sh">polygon_properties.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "polygon_properties.txt">polygon_properties.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

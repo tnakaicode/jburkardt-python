@@ -1,0 +1,1097 @@
+Sun Feb  2 08:32:30 2020
+
+RBF_INTERP_1D_TEST:
+  Python version: 3.6.9
+  Test the RBF_INTERP_1D library.
+
+PHI1_TEST
+  PHI1 evaluates the multiquadric radial basis function.
+
+  R:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+  R0 = 4
+
+  PHI1(R,R0) = sqrt ( R^2 + R0^2 ):
+
+     0:       4.12311
+     1:       4.47214
+     2:             5
+     3:       5.65685
+     4:       6.40312
+
+PHI2_TEST
+  PHI2 evaluates the inverse multiquadric radial basis function.
+
+  R:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+  R0 = 4
+
+  PHI2(R,R0) = 1 / sqrt ( R^2 + R0^2 ):
+
+     0:      0.242536
+     1:      0.223607
+     2:           0.2
+     3:      0.176777
+     4:      0.156174
+
+PHI3_TEST
+  PHI3 evaluates the thin plate spline radial basis function.
+
+  R:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+  R0 = 0.25
+
+  PHI3(R,R0) = thin plate spline):
+
+     0:       1.38629
+     1:       8.31777
+     2:       22.3642
+     3:       44.3614
+     4:       74.8933
+
+PHI4_TEST
+  PHI2 evaluates the gaussian radial basis function.
+
+  R:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+  R0 = 4
+
+  PHI4(R,R0) = Gaussian:
+
+     0:      0.969233
+     1:      0.882497
+     2:       0.75484
+     3:      0.606531
+     4:      0.457833
+
+RBF_WEIGHT_TEST:
+  RBF_WEIGHT computes the weights associated with the
+  data abscissa values XD.
+
+  Weights:
+
+     0:        2.7089
+     1:       1.43543
+     2:      -2.14159
+     3:       8.67487
+     4:      -7.11459
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #1
+  using radial basis function phi1
+  Scale factor R0 = 1.05882
+  Number of data points = 18
+    0.0000    4.0000
+    1.0000    5.0000
+    2.0000    6.0000
+    4.0000    6.0000
+    5.0000    5.0000
+    6.0000    3.0000
+    7.0000    1.0000
+    8.0000    1.0000
+    9.0000    1.0000
+   10.0000    3.0000
+   11.0000    4.0000
+   12.0000    4.0000
+   13.0000    3.0000
+   14.0000    3.0000
+   15.0000    4.0000
+   16.0000    4.0000
+   17.0000    3.0000
+   18.0000    0.0000
+
+  L2 interpolation error averaged per interpolant node = 4.75055e-15
+
+
+  Normalized length of piecewise linear interpolant = 3.13553
+  Normalized length of polynomial interpolant       = 3.30163
+
+  Created plot file "p01_data.png".
+  Created plot file "p01_phi1_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #1
+  using radial basis function phi2
+  Scale factor R0 = 1.05882
+  Number of data points = 18
+    0.0000    4.0000
+    1.0000    5.0000
+    2.0000    6.0000
+    4.0000    6.0000
+    5.0000    5.0000
+    6.0000    3.0000
+    7.0000    1.0000
+    8.0000    1.0000
+    9.0000    1.0000
+   10.0000    3.0000
+   11.0000    4.0000
+   12.0000    4.0000
+   13.0000    3.0000
+   14.0000    3.0000
+   15.0000    4.0000
+   16.0000    4.0000
+   17.0000    3.0000
+   18.0000    0.0000
+
+  L2 interpolation error averaged per interpolant node = 1.64696e-16
+
+
+  Normalized length of piecewise linear interpolant = 3.13553
+  Normalized length of polynomial interpolant       = 3.27743
+
+  Created plot file "p01_data.png".
+  Created plot file "p01_phi2_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #1
+  using radial basis function phi3
+  Scale factor R0 = 1.05882
+  Number of data points = 18
+    0.0000    4.0000
+    1.0000    5.0000
+    2.0000    6.0000
+    4.0000    6.0000
+    5.0000    5.0000
+    6.0000    3.0000
+    7.0000    1.0000
+    8.0000    1.0000
+    9.0000    1.0000
+   10.0000    3.0000
+   11.0000    4.0000
+   12.0000    4.0000
+   13.0000    3.0000
+   14.0000    3.0000
+   15.0000    4.0000
+   16.0000    4.0000
+   17.0000    3.0000
+   18.0000    0.0000
+
+  L2 interpolation error averaged per interpolant node = 4.84093e-15
+
+
+  Normalized length of piecewise linear interpolant = 3.13553
+  Normalized length of polynomial interpolant       = 3.27966
+
+  Created plot file "p01_data.png".
+  Created plot file "p01_phi3_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #1
+  using radial basis function phi4
+  Scale factor R0 = 1.05882
+  Number of data points = 18
+    0.0000    4.0000
+    1.0000    5.0000
+    2.0000    6.0000
+    4.0000    6.0000
+    5.0000    5.0000
+    6.0000    3.0000
+    7.0000    1.0000
+    8.0000    1.0000
+    9.0000    1.0000
+   10.0000    3.0000
+   11.0000    4.0000
+   12.0000    4.0000
+   13.0000    3.0000
+   14.0000    3.0000
+   15.0000    4.0000
+   16.0000    4.0000
+   17.0000    3.0000
+   18.0000    0.0000
+
+  L2 interpolation error averaged per interpolant node = 2.12592e-16
+
+
+  Normalized length of piecewise linear interpolant = 3.13553
+  Normalized length of polynomial interpolant       = 3.28618
+
+  Created plot file "p01_data.png".
+  Created plot file "p01_phi4_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #2
+  using radial basis function phi1
+  Scale factor R0 = 1.82353
+  Number of data points = 18
+    0.0000    0.0000
+    1.3400    5.0000
+    5.0000    8.6600
+   10.0000   10.0000
+   10.6000   10.4000
+   10.7000   12.0000
+   10.7050   28.6000
+   10.8000   30.2000
+   11.4000   30.6000
+   19.6000   30.6000
+   20.2000   30.2000
+   20.2950   28.6000
+   20.3000   12.0000
+   20.4000   10.4000
+   21.0000   10.0000
+   26.0000    8.6600
+   29.6600    5.0000
+   31.0000    0.0000
+
+  L2 interpolation error averaged per interpolant node = 0.00223787
+
+
+  Normalized length of piecewise linear interpolant = 2.66086
+  Normalized length of polynomial interpolant       = 420406
+
+  Created plot file "p02_data.png".
+  Created plot file "p02_phi1_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #2
+  using radial basis function phi2
+  Scale factor R0 = 1.82353
+  Number of data points = 18
+    0.0000    0.0000
+    1.3400    5.0000
+    5.0000    8.6600
+   10.0000   10.0000
+   10.6000   10.4000
+   10.7000   12.0000
+   10.7050   28.6000
+   10.8000   30.2000
+   11.4000   30.6000
+   19.6000   30.6000
+   20.2000   30.2000
+   20.2950   28.6000
+   20.3000   12.0000
+   20.4000   10.4000
+   21.0000   10.0000
+   26.0000    8.6600
+   29.6600    5.0000
+   31.0000    0.0000
+
+  L2 interpolation error averaged per interpolant node = 2.93119e-05
+
+
+  Normalized length of piecewise linear interpolant = 2.66086
+  Normalized length of polynomial interpolant       = 143170
+
+  Created plot file "p02_data.png".
+  Created plot file "p02_phi2_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #2
+  using radial basis function phi3
+  Scale factor R0 = 1.82353
+  Number of data points = 18
+    0.0000    0.0000
+    1.3400    5.0000
+    5.0000    8.6600
+   10.0000   10.0000
+   10.6000   10.4000
+   10.7000   12.0000
+   10.7050   28.6000
+   10.8000   30.2000
+   11.4000   30.6000
+   19.6000   30.6000
+   20.2000   30.2000
+   20.2950   28.6000
+   20.3000   12.0000
+   20.4000   10.4000
+   21.0000   10.0000
+   26.0000    8.6600
+   29.6600    5.0000
+   31.0000    0.0000
+
+  L2 interpolation error averaged per interpolant node = 2.19154e-09
+
+
+  Normalized length of piecewise linear interpolant = 2.66086
+  Normalized length of polynomial interpolant       = 15.5421
+
+  Created plot file "p02_data.png".
+  Created plot file "p02_phi3_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #2
+  using radial basis function phi4
+  Scale factor R0 = 1.82353
+  Number of data points = 18
+    0.0000    0.0000
+    1.3400    5.0000
+    5.0000    8.6600
+   10.0000   10.0000
+   10.6000   10.4000
+   10.7000   12.0000
+   10.7050   28.6000
+   10.8000   30.2000
+   11.4000   30.6000
+   19.6000   30.6000
+   20.2000   30.2000
+   20.2950   28.6000
+   20.3000   12.0000
+   20.4000   10.4000
+   21.0000   10.0000
+   26.0000    8.6600
+   29.6600    5.0000
+   31.0000    0.0000
+
+  L2 interpolation error averaged per interpolant node = 0.044974
+
+
+  Normalized length of piecewise linear interpolant = 2.66086
+  Normalized length of polynomial interpolant       = 1.44445e+07
+
+  Created plot file "p02_data.png".
+  Created plot file "p02_phi4_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #3
+  using radial basis function phi1
+  Scale factor R0 = 1.5
+  Number of data points = 11
+    0.0000    0.0000
+    2.0000   10.0000
+    3.0000   10.0000
+    5.0000   10.0000
+    6.0000   10.0000
+    8.0000   10.0000
+    9.0000   10.5000
+   11.0000   15.0000
+   12.0000   50.0000
+   14.0000   60.0000
+   15.0000   85.0000
+
+  L2 interpolation error averaged per interpolant node = 8.24084e-14
+
+
+  Normalized length of piecewise linear interpolant = 1.68472
+  Normalized length of polynomial interpolant       = 1.88165
+
+  Created plot file "p03_data.png".
+  Created plot file "p03_phi1_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #3
+  using radial basis function phi2
+  Scale factor R0 = 1.5
+  Number of data points = 11
+    0.0000    0.0000
+    2.0000   10.0000
+    3.0000   10.0000
+    5.0000   10.0000
+    6.0000   10.0000
+    8.0000   10.0000
+    9.0000   10.5000
+   11.0000   15.0000
+   12.0000   50.0000
+   14.0000   60.0000
+   15.0000   85.0000
+
+  L2 interpolation error averaged per interpolant node = 1.87631e-15
+
+
+  Normalized length of piecewise linear interpolant = 1.68472
+  Normalized length of polynomial interpolant       = 1.84919
+
+  Created plot file "p03_data.png".
+  Created plot file "p03_phi2_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #3
+  using radial basis function phi3
+  Scale factor R0 = 1.5
+  Number of data points = 11
+    0.0000    0.0000
+    2.0000   10.0000
+    3.0000   10.0000
+    5.0000   10.0000
+    6.0000   10.0000
+    8.0000   10.0000
+    9.0000   10.5000
+   11.0000   15.0000
+   12.0000   50.0000
+   14.0000   60.0000
+   15.0000   85.0000
+
+  L2 interpolation error averaged per interpolant node = 2.46647e-14
+
+
+  Normalized length of piecewise linear interpolant = 1.68472
+  Normalized length of polynomial interpolant       = 1.76283
+
+  Created plot file "p03_data.png".
+  Created plot file "p03_phi3_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #3
+  using radial basis function phi4
+  Scale factor R0 = 1.5
+  Number of data points = 11
+    0.0000    0.0000
+    2.0000   10.0000
+    3.0000   10.0000
+    5.0000   10.0000
+    6.0000   10.0000
+    8.0000   10.0000
+    9.0000   10.5000
+   11.0000   15.0000
+   12.0000   50.0000
+   14.0000   60.0000
+   15.0000   85.0000
+
+  L2 interpolation error averaged per interpolant node = 6.22726e-15
+
+
+  Normalized length of piecewise linear interpolant = 1.68472
+  Normalized length of polynomial interpolant       = 1.99582
+
+  Created plot file "p03_data.png".
+  Created plot file "p03_phi4_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #4
+  using radial basis function phi1
+  Scale factor R0 = 0.142857
+  Number of data points = 8
+    0.0000    0.0000
+    0.0500    0.7000
+    0.1000    1.0000
+    0.2000    1.0000
+    0.8000    0.3000
+    0.8500    0.0500
+    0.9000    0.1000
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 2.07414e-15
+
+
+  Normalized length of piecewise linear interpolant = 3.25908
+  Normalized length of polynomial interpolant       = 3.57598
+
+  Created plot file "p04_data.png".
+  Created plot file "p04_phi1_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #4
+  using radial basis function phi2
+  Scale factor R0 = 0.142857
+  Number of data points = 8
+    0.0000    0.0000
+    0.0500    0.7000
+    0.1000    1.0000
+    0.2000    1.0000
+    0.8000    0.3000
+    0.8500    0.0500
+    0.9000    0.1000
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 1.82904e-16
+
+
+  Normalized length of piecewise linear interpolant = 3.25908
+  Normalized length of polynomial interpolant       = 3.46533
+
+  Created plot file "p04_data.png".
+  Created plot file "p04_phi2_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #4
+  using radial basis function phi3
+  Scale factor R0 = 0.142857
+  Number of data points = 8
+    0.0000    0.0000
+    0.0500    0.7000
+    0.1000    1.0000
+    0.2000    1.0000
+    0.8000    0.3000
+    0.8500    0.0500
+    0.9000    0.1000
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 3.17061e-15
+
+
+  Normalized length of piecewise linear interpolant = 3.25908
+  Normalized length of polynomial interpolant       = 3.48487
+
+  Created plot file "p04_data.png".
+  Created plot file "p04_phi3_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #4
+  using radial basis function phi4
+  Scale factor R0 = 0.142857
+  Number of data points = 8
+    0.0000    0.0000
+    0.0500    0.7000
+    0.1000    1.0000
+    0.2000    1.0000
+    0.8000    0.3000
+    0.8500    0.0500
+    0.9000    0.1000
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 5.869e-16
+
+
+  Normalized length of piecewise linear interpolant = 3.25908
+  Normalized length of polynomial interpolant       = 4.08924
+
+  Created plot file "p04_data.png".
+  Created plot file "p04_phi4_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #5
+  using radial basis function phi1
+  Scale factor R0 = 0.125
+  Number of data points = 9
+    0.0000    0.0000
+    0.1000    0.9000
+    0.2000    0.9500
+    0.3000    0.9000
+    0.4000    0.1000
+    0.5000    0.0500
+    0.6000    0.0500
+    0.8000    0.2000
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 8.57458e-16
+
+
+  Normalized length of piecewise linear interpolant = 3.2218
+  Normalized length of polynomial interpolant       = 3.557
+
+  Created plot file "p05_data.png".
+  Created plot file "p05_phi1_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #5
+  using radial basis function phi2
+  Scale factor R0 = 0.125
+  Number of data points = 9
+    0.0000    0.0000
+    0.1000    0.9000
+    0.2000    0.9500
+    0.3000    0.9000
+    0.4000    0.1000
+    0.5000    0.0500
+    0.6000    0.0500
+    0.8000    0.2000
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 4.53771e-17
+
+
+  Normalized length of piecewise linear interpolant = 3.2218
+  Normalized length of polynomial interpolant       = 3.4901
+
+  Created plot file "p05_data.png".
+  Created plot file "p05_phi2_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #5
+  using radial basis function phi3
+  Scale factor R0 = 0.125
+  Number of data points = 9
+    0.0000    0.0000
+    0.1000    0.9000
+    0.2000    0.9500
+    0.3000    0.9000
+    0.4000    0.1000
+    0.5000    0.0500
+    0.6000    0.0500
+    0.8000    0.2000
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 7.4098e-16
+
+
+  Normalized length of piecewise linear interpolant = 3.2218
+  Normalized length of polynomial interpolant       = 3.40139
+
+  Created plot file "p05_data.png".
+  Created plot file "p05_phi3_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #5
+  using radial basis function phi4
+  Scale factor R0 = 0.125
+  Number of data points = 9
+    0.0000    0.0000
+    0.1000    0.9000
+    0.2000    0.9500
+    0.3000    0.9000
+    0.4000    0.1000
+    0.5000    0.0500
+    0.6000    0.0500
+    0.8000    0.2000
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 3.44961e-16
+
+
+  Normalized length of piecewise linear interpolant = 3.2218
+  Normalized length of polynomial interpolant       = 4.18483
+
+  Created plot file "p05_data.png".
+  Created plot file "p05_phi4_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #6
+  using radial basis function phi1
+  Scale factor R0 = 10
+  Number of data points = 49
+  595.0000    0.6440
+  605.0000    0.6220
+  615.0000    0.6380
+  625.0000    0.6490
+  635.0000    0.6520
+  645.0000    0.6390
+  655.0000    0.6460
+  665.0000    0.6570
+  675.0000    0.6520
+  685.0000    0.6550
+  695.0000    0.6440
+  705.0000    0.6630
+  715.0000    0.6630
+  725.0000    0.6680
+  735.0000    0.6760
+  745.0000    0.6760
+  755.0000    0.6860
+  765.0000    0.6790
+  775.0000    0.6780
+  785.0000    0.6830
+  795.0000    0.6940
+  805.0000    0.6990
+  815.0000    0.7100
+  825.0000    0.7300
+  835.0000    0.7630
+  845.0000    0.8120
+  855.0000    0.9070
+  865.0000    1.0440
+  875.0000    1.3360
+  885.0000    1.8810
+  895.0000    2.1690
+  905.0000    2.0750
+  915.0000    1.5980
+  925.0000    1.2110
+  935.0000    0.9160
+  945.0000    0.7460
+  955.0000    0.6720
+  965.0000    0.6270
+  975.0000    0.6150
+  985.0000    0.6070
+  995.0000    0.6060
+  1005.0000    0.6090
+  1015.0000    0.6030
+  1025.0000    0.6010
+  1035.0000    0.6030
+  1045.0000    0.6010
+  1055.0000    0.6110
+  1065.0000    0.6010
+  1075.0000    0.6080
+
+  L2 interpolation error averaged per interpolant node = 6.86339e-16
+
+
+  Normalized length of piecewise linear interpolant = 2.68209
+  Normalized length of polynomial interpolant       = 2.71105
+
+  Created plot file "p06_data.png".
+  Created plot file "p06_phi1_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #6
+  using radial basis function phi2
+  Scale factor R0 = 10
+  Number of data points = 49
+  595.0000    0.6440
+  605.0000    0.6220
+  615.0000    0.6380
+  625.0000    0.6490
+  635.0000    0.6520
+  645.0000    0.6390
+  655.0000    0.6460
+  665.0000    0.6570
+  675.0000    0.6520
+  685.0000    0.6550
+  695.0000    0.6440
+  705.0000    0.6630
+  715.0000    0.6630
+  725.0000    0.6680
+  735.0000    0.6760
+  745.0000    0.6760
+  755.0000    0.6860
+  765.0000    0.6790
+  775.0000    0.6780
+  785.0000    0.6830
+  795.0000    0.6940
+  805.0000    0.6990
+  815.0000    0.7100
+  825.0000    0.7300
+  835.0000    0.7630
+  845.0000    0.8120
+  855.0000    0.9070
+  865.0000    1.0440
+  875.0000    1.3360
+  885.0000    1.8810
+  895.0000    2.1690
+  905.0000    2.0750
+  915.0000    1.5980
+  925.0000    1.2110
+  935.0000    0.9160
+  945.0000    0.7460
+  955.0000    0.6720
+  965.0000    0.6270
+  975.0000    0.6150
+  985.0000    0.6070
+  995.0000    0.6060
+  1005.0000    0.6090
+  1015.0000    0.6030
+  1025.0000    0.6010
+  1035.0000    0.6030
+  1045.0000    0.6010
+  1055.0000    0.6110
+  1065.0000    0.6010
+  1075.0000    0.6080
+
+  L2 interpolation error averaged per interpolant node = 4.03407e-17
+
+
+  Normalized length of piecewise linear interpolant = 2.68209
+  Normalized length of polynomial interpolant       = 2.71456
+
+  Created plot file "p06_data.png".
+  Created plot file "p06_phi2_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #6
+  using radial basis function phi3
+  Scale factor R0 = 10
+  Number of data points = 49
+  595.0000    0.6440
+  605.0000    0.6220
+  615.0000    0.6380
+  625.0000    0.6490
+  635.0000    0.6520
+  645.0000    0.6390
+  655.0000    0.6460
+  665.0000    0.6570
+  675.0000    0.6520
+  685.0000    0.6550
+  695.0000    0.6440
+  705.0000    0.6630
+  715.0000    0.6630
+  725.0000    0.6680
+  735.0000    0.6760
+  745.0000    0.6760
+  755.0000    0.6860
+  765.0000    0.6790
+  775.0000    0.6780
+  785.0000    0.6830
+  795.0000    0.6940
+  805.0000    0.6990
+  815.0000    0.7100
+  825.0000    0.7300
+  835.0000    0.7630
+  845.0000    0.8120
+  855.0000    0.9070
+  865.0000    1.0440
+  875.0000    1.3360
+  885.0000    1.8810
+  895.0000    2.1690
+  905.0000    2.0750
+  915.0000    1.5980
+  925.0000    1.2110
+  935.0000    0.9160
+  945.0000    0.7460
+  955.0000    0.6720
+  965.0000    0.6270
+  975.0000    0.6150
+  985.0000    0.6070
+  995.0000    0.6060
+  1005.0000    0.6090
+  1015.0000    0.6030
+  1025.0000    0.6010
+  1035.0000    0.6030
+  1045.0000    0.6010
+  1055.0000    0.6110
+  1065.0000    0.6010
+  1075.0000    0.6080
+
+  L2 interpolation error averaged per interpolant node = 4.48009e-15
+
+
+  Normalized length of piecewise linear interpolant = 2.68209
+  Normalized length of polynomial interpolant       = 2.70318
+
+  Created plot file "p06_data.png".
+  Created plot file "p06_phi3_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #6
+  using radial basis function phi4
+  Scale factor R0 = 10
+  Number of data points = 49
+  595.0000    0.6440
+  605.0000    0.6220
+  615.0000    0.6380
+  625.0000    0.6490
+  635.0000    0.6520
+  645.0000    0.6390
+  655.0000    0.6460
+  665.0000    0.6570
+  675.0000    0.6520
+  685.0000    0.6550
+  695.0000    0.6440
+  705.0000    0.6630
+  715.0000    0.6630
+  725.0000    0.6680
+  735.0000    0.6760
+  745.0000    0.6760
+  755.0000    0.6860
+  765.0000    0.6790
+  775.0000    0.6780
+  785.0000    0.6830
+  795.0000    0.6940
+  805.0000    0.6990
+  815.0000    0.7100
+  825.0000    0.7300
+  835.0000    0.7630
+  845.0000    0.8120
+  855.0000    0.9070
+  865.0000    1.0440
+  875.0000    1.3360
+  885.0000    1.8810
+  895.0000    2.1690
+  905.0000    2.0750
+  915.0000    1.5980
+  925.0000    1.2110
+  935.0000    0.9160
+  945.0000    0.7460
+  955.0000    0.6720
+  965.0000    0.6270
+  975.0000    0.6150
+  985.0000    0.6070
+  995.0000    0.6060
+  1005.0000    0.6090
+  1015.0000    0.6030
+  1025.0000    0.6010
+  1035.0000    0.6030
+  1045.0000    0.6010
+  1055.0000    0.6110
+  1065.0000    0.6010
+  1075.0000    0.6080
+
+  L2 interpolation error averaged per interpolant node = 1.96221e-17
+
+
+  Normalized length of piecewise linear interpolant = 2.68209
+  Normalized length of polynomial interpolant       = 2.75474
+
+  Created plot file "p06_data.png".
+  Created plot file "p06_phi4_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #7
+  using radial basis function phi1
+  Scale factor R0 = 1.66667
+  Number of data points = 4
+    0.0000    1.0000
+    1.0000    2.0000
+    4.0000    2.0000
+    5.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 5.55112e-16
+
+
+  Normalized length of piecewise linear interpolant = 2.63961
+  Normalized length of polynomial interpolant       = 3.5492
+
+  Created plot file "p07_data.png".
+  Created plot file "p07_phi1_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #7
+  using radial basis function phi2
+  Scale factor R0 = 1.66667
+  Number of data points = 4
+    0.0000    1.0000
+    1.0000    2.0000
+    4.0000    2.0000
+    5.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 3.33067e-16
+
+
+  Normalized length of piecewise linear interpolant = 2.63961
+  Normalized length of polynomial interpolant       = 3.04052
+
+  Created plot file "p07_data.png".
+  Created plot file "p07_phi2_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #7
+  using radial basis function phi3
+  Scale factor R0 = 1.66667
+  Number of data points = 4
+    0.0000    1.0000
+    1.0000    2.0000
+    4.0000    2.0000
+    5.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 9.30536e-16
+
+
+  Normalized length of piecewise linear interpolant = 2.63961
+  Normalized length of polynomial interpolant       = 5.18776
+
+  Created plot file "p07_data.png".
+  Created plot file "p07_phi3_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #7
+  using radial basis function phi4
+  Scale factor R0 = 1.66667
+  Number of data points = 4
+    0.0000    1.0000
+    1.0000    2.0000
+    4.0000    2.0000
+    5.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 1.66533e-16
+
+
+  Normalized length of piecewise linear interpolant = 2.63961
+  Normalized length of polynomial interpolant       = 3.63017
+
+  Created plot file "p07_data.png".
+  Created plot file "p07_phi4_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #8
+  using radial basis function phi1
+  Scale factor R0 = 0.181818
+  Number of data points = 12
+   -1.0000    1.0000
+   -0.8000    0.6400
+   -0.6000    0.3600
+   -0.4000    0.1600
+   -0.2000    0.0400
+    0.0000    0.0000
+    0.2000    0.0400
+    0.2000    0.0500
+    0.4000    0.1600
+    0.6000    0.3600
+    0.8000    0.6400
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 2.43797e-09
+
+
+  Normalized length of piecewise linear interpolant = 2.31939
+  Normalized length of polynomial interpolant       = 341.084
+
+  Created plot file "p08_data.png".
+  Created plot file "p08_phi1_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #8
+  using radial basis function phi2
+  Scale factor R0 = 0.181818
+  Number of data points = 12
+   -1.0000    1.0000
+   -0.8000    0.6400
+   -0.6000    0.3600
+   -0.4000    0.1600
+   -0.2000    0.0400
+    0.0000    0.0000
+    0.2000    0.0400
+    0.2000    0.0500
+    0.4000    0.1600
+    0.6000    0.3600
+    0.8000    0.6400
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 1.52297e-10
+
+
+  Normalized length of piecewise linear interpolant = 2.31939
+  Normalized length of polynomial interpolant       = 272.133
+
+  Created plot file "p08_data.png".
+  Created plot file "p08_phi2_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #8
+  using radial basis function phi3
+  Scale factor R0 = 0.181818
+  Number of data points = 12
+   -1.0000    1.0000
+   -0.8000    0.6400
+   -0.6000    0.3600
+   -0.4000    0.1600
+   -0.2000    0.0400
+    0.0000    0.0000
+    0.2000    0.0400
+    0.2000    0.0500
+    0.4000    0.1600
+    0.6000    0.3600
+    0.8000    0.6400
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 3.14917e-10
+
+
+  Normalized length of piecewise linear interpolant = 2.31939
+  Normalized length of polynomial interpolant       = 28.0957
+
+  Created plot file "p08_data.png".
+  Created plot file "p08_phi3_poly.png".
+
+RBF_INTERP_1D_TEST01:
+  Interpolate data from TEST_INTERP problem #8
+  using radial basis function phi4
+  Scale factor R0 = 0.181818
+  Number of data points = 12
+   -1.0000    1.0000
+   -0.8000    0.6400
+   -0.6000    0.3600
+   -0.4000    0.1600
+   -0.2000    0.0400
+    0.0000    0.0000
+    0.2000    0.0400
+    0.2000    0.0500
+    0.4000    0.1600
+    0.6000    0.3600
+    0.8000    0.6400
+    1.0000    1.0000
+
+  L2 interpolation error averaged per interpolant node = 1.77984e-10
+
+
+  Normalized length of piecewise linear interpolant = 2.31939
+  Normalized length of polynomial interpolant       = 709.805
+
+  Created plot file "p08_data.png".
+  Created plot file "p08_phi4_poly.png".
+
+RBF_INTERP_1D_TEST:
+  Normal end of execution.
+Sun Feb  2 08:32:38 2020

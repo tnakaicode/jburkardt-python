@@ -1,0 +1,35 @@
+Tue Jan 28 08:24:54 2020
+
+normal01_multivariate_distance_test:
+  Python version: 3.6.9
+  Test normal01_multivariate_distance.
+
+randn_test
+  randn samples a multivariate unit normal value.
+
+5 samples of 10-dimensional unit normal vectors
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :   0.0464493      0.338031     -0.414015    -0.0931521     -0.426288  
+      1 :  -0.0270948      0.268183      0.583171       1.68071       1.05819  
+      2 :    -1.36522     -0.123328    -0.0339194      0.956657     0.0350065  
+      3 :   -0.318513      -1.69301       1.86629     -0.752595      0.866598  
+      4 :    -1.43268      0.403572      -1.60381     0.0180957       0.65397  
+      5 :      0.8506       1.14962      -1.72491         1.106     -0.227814  
+      6 :     1.34507       2.46969      0.086071     0.0688611     -0.358546  
+      7 :   0.0187361      0.319054     -0.127943      -1.90787     -0.673359  
+      8 :    0.377204      0.700341       -1.6041      0.157872      -1.53024  
+      9 :    0.128828     0.0887328     -0.466479     -0.373401       1.40787  
+
+  Using N = 10000 sample points,
+  Estimated mean distance = 4.35594
+  Estimated variance      = 0.965911
+  Graphics saved as "normal01_multivariate_distance_histogram.png"
+  Graphics saved as "normal01_multivariate_distance_pdf.png"
+  Graphics saved as "normal01_multivariate_distance_compare.png"
+  Graphics saved as "normal01_multivariate_distance_plot.png"
+
+normal01_multivariate_distance_test:
+  Normal end of execution.
+Tue Jan 28 08:25:02 2020

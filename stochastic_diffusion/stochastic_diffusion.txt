@@ -1,0 +1,98 @@
+Mon Feb  3 07:59:59 2020
+
+stochastic_diffusion_test
+  Python version: 3.6.9
+  Test stochastic_diffusion.
+
+diffusivity_1d_xk_test:
+  Python version: 3.6.9
+  Test diffusivity_1d_pwc.
+
+  Graphics saved as "diffusivity_1d_pwc.png".
+
+diffusivity_1d_pwc_test:
+  Normal end of execution.
+
+diffusivity_1d_xk_test:
+  Python version: 3.6.9
+  Test diffusivity_1d_xk.
+
+diffusivity_1d_xk_contour
+  Display the stochastic diffusivity function
+  defined by DIFFUSIVITY_1D_XK.
+
+  Graphics saved as "diffusivity_1d_xk.png".
+
+diffusivity_1d_xk_test:
+  Normal end of execution.
+
+diffusivity_2d_bnt_test:
+  Python version: 3.6.9
+  Test diffusivity_2d_bnt.
+
+diffusivity_2d_bnt_contour
+  Display contour or surface plots of the stochastic
+  diffusivity function defined by DIFFUSIVITY_2D_BNT.
+
+  Graphics saved as "diffusivity_2d_bnt.png".
+
+diffusivity_2d_bnt_test:
+  Normal end of execution.
+
+diffusivity_2d_elman_test:
+  Python version: 3.6.9
+  Test diffusivity_2d_elman.
+
+diffusivity_2d_elman_contour
+  Display contour or surface plots of the stochastic
+  diffusivity function defined by DIFFUSIVITY_2D_ELMAN.
+
+  Graphics saved as "diffusivity_2d_elman.png".
+
+diffusivity_2d_elman_test:
+  Normal end of execution.
+
+diffusivity_2d_jvb_test:
+  Python version: 3.6.9
+  Test diffusivity_2d_jvb.
+
+diffusivity_2d_jvb_contour
+  Display contour or surface plots of the stochastic
+  diffusivity function defined by diffusivity_2d_jvb.
+
+  Graphics saved as "diffusivity_2d_jvb.png".
+
+diffusivity_2d_jvb_test:
+  Normal end of execution.
+
+diffusivity_2d_ntw_test:
+  Python version: 3.6.9
+  Test diffusivity_2d_ntw.
+
+diffusivity_2d_ntw_contour
+  Display contour or surface plots of the stochastic
+  diffusivity function defined by diffusivity_2d_ntw.
+
+  Graphics saved as "diffusivity_2d_ntw.png".
+
+diffusivity_2d_ntw_test:
+  Normal end of execution.
+
+diffusivity_2d_pwc_test:
+  Python version: 3.6.9
+  Test diffusivity_2d_pwc.
+
+diffusivity_2d_pwc_contour
+  Display contour or surface plots of the stochastic
+  diffusivity function defined by diffusivity_2d_pwc.
+
+  Underlying grid is 4 elements wide (X) and 5 high (Y)
+
+  Graphics saved as "diffusivity_2d_pwc.png".
+
+diffusivity_2d_pwc_test:
+  Normal end of execution.
+
+stochastic_diffusion_test:
+  Normal end of execution.
+Mon Feb  3 08:00:03 2020

@@ -1,0 +1,150 @@
+<html>
+
+  <head>
+    <title>
+      ALPERT_RULE - Alpert Quadrature for regular, log singular, and power singular functions
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      ALPERT_RULE<br>
+      Alpert Quadrature for regular, log singular, and power singular functions
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>ALPERT_RULE</b>,
+      a Python library which
+      has tabulated values that define Alpert quadrature rules of a number
+      of orders of accuracy for functions that are regular, log singular,
+      or power singular.
+    </p>
+
+    <p>
+      The rules defined here assume that the integral is to be taken over the
+      interval [0,1].  The interval is divided into N+1 intervals.  The leftmost
+      and rightmost intervals are handled in a special way, depending on whether
+      a particular kind of singularity is expected.
+    </p>
+
+    <p>
+      A singularity may exist at the left endpoint, x = 0.  The cases are:
+      <ul>
+        <li>
+          <i>regular</i>, no singularity;
+        </li>
+        <li>
+          <i>power</i>, the integrand has the form g(x)=x^(-1/2)*phi(x)+psi(x);
+        </li>
+        <li>
+          <i>log</i>, the integrand has the form g(x)=phi(x)*log(x)+psi(x);
+        </li>
+      </ul>
+      In case one, the regular Alpert rule is used in both end intervals.
+      In case two, the power singular Alpert rule is used in the leftmost interval.
+      In case three, the log singular Alpert rule is used in the leftmost interval.
+    </p>  
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>ALPERT_RULE</b> is available in
+      <a href = "../../c_src/alpert_rule/alpert_rule.html">a C version</a> and
+      <a href = "../../cpp_src/alpert_rule/alpert_rule.html">a C++ version</a> and
+      <a href = "../../f_src/alpert_rule/alpert_rule.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/alpert_rule/alpert_rule.html">a MATLAB version</a> and
+      <a href = "../../py_src/alpert_rule/alpert_rule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/disk_rule/disk_rule.html">
+      DISK_RULE</a>,
+      a Python library which
+      computes quadrature rules 
+      over the interior of the general disk in 2D, 
+      with radius RC and center (XC,YC).
+    </p>
+
+    <p>
+      <a href = "../../py_src/disk01_rule/disk01_rule.html">
+      DISK01_RULE</a>,
+      a Python library which
+      computes quadrature rules 
+      over the interior of the unit disk in 2D, with center (0,0) and radius 1.
+    </p>
+
+    <p>
+      <a href = "../../py_src/quadrule/quadrule.html">
+      QUADRULE</a>,
+      a Python library which
+      contains 1-dimensional quadrature rules.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Bradley Alpert,<br>
+          Hybrid Gauss-Trapezoidal Quadrature Rules,<br>
+          SIAM Journal on Scientific Computing, <br>
+          Volume 20, Number 5, pages 1551-1584, 1999.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "alpert_rule.py">alpert_rule.py</a>
+          the source code.
+        </li>
+        <li>
+          <a href = "alpert_rule.sh">alpert_rule.sh</a>
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "alpert_rule.txt">alpert_rule.txt</a>
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 17 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

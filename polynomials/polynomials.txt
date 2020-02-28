@@ -1,0 +1,653 @@
+Sat Feb  1 15:36:30 2020
+
+POLYNOMIALS
+  Python version: 3.6.9
+  Test the POLYNOMIALS library.
+
+BUTCHER_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  butcher: [-1.4393333333, +0.219]
+        16       -0.93923623        0.17221536
+        32        -1.0968088        0.16197944
+        64         -1.218607         0.1354706
+       128        -1.1469826        0.20012365
+       256        -1.1635509          0.186426
+       512        -1.2611865        0.16438617
+      1024        -1.3017625        0.18193983
+      2048        -1.3289019         0.1806981
+      4096        -1.3039854        0.19705967
+      8192         -1.333097        0.19678596
+     16384        -1.3673942        0.19555627
+
+BUTCHER_TEST:
+  Normal end of execution.
+
+CAMEL_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  camel: [ -1.031628453489616, ? ]:
+        16          2.342937         286.83359
+        32       -0.56565671         323.50352
+        64       -0.99620102         325.12668
+       128        -1.0273859         379.33082
+       256       -0.68186958         307.37549
+       512         -1.015374         352.32362
+      1024        -1.0028786         338.51349
+      2048        -1.0016441         374.72284
+      4096        -1.0084598         375.34184
+      8192        -1.0300572         379.92558
+     16384        -1.0315199         399.00819
+
+CAMEL_TEST:
+  Normal end of execution.
+
+CAMERA_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  camera: [-270397.4, +270202.6]
+        16        -46966.469         87607.588
+        32        -46583.374         131880.99
+        64        -107842.06         96384.786
+       128        -115095.89         102371.48
+       256        -123199.99         125799.98
+       512        -132145.03         166292.18
+      1024        -158207.06         142974.84
+      2048        -148419.68         149261.74
+      4096        -167042.06         152023.38
+      8192        -199173.19         186346.33
+     16384        -188996.59         195186.78
+
+CAMERA_TEST:
+  Normal end of execution.
+
+CAPRASSE_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  caprasse: [-3.1800966258, +4.4852773332]
+        16        -1.1226408          3.568584
+        32        -1.6474497         3.5646288
+        64        -2.3032262            3.3464
+       128        -1.4093599         3.3841489
+       256        -2.1880554         3.7446468
+       512        -2.1566691         3.9496681
+      1024        -2.6810841         3.8717549
+      2048        -2.5089131         3.9548127
+      4096        -2.7086256         4.2402308
+      8192        -2.9173371         4.2522687
+     16384        -2.8636638         4.2956871
+
+CAPRASSE_TEST:
+  Normal end of execution.
+
+CYCLIC5_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  cyclic5: [-30000, +50000]
+        16        -9991.3699         6422.0691
+        32          -2145.46         4624.1816
+        64        -4222.7013         7624.4576
+       128        -14992.439         6112.1236
+       256        -8174.9702         11483.644
+       512        -8628.7181         23099.338
+      1024        -13808.801         14629.627
+      2048        -19021.724         35545.028
+      4096        -16946.406         28357.557
+      8192        -17621.745         26592.285
+     16384        -21133.528         33712.667
+
+CYCLIC5_TEST:
+  Normal end of execution.
+
+CYCLIC7_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  cyclic7: [-5.0, +7.0]
+        16       -0.18181283        0.29432324
+        32       -0.15663074        0.24255663
+        64       -0.16138621        0.54274916
+       128       -0.64205099        0.90471332
+       256       -0.38664099         0.4517013
+       512       -0.94620073        0.58315863
+      1024        -1.5731949        0.96671019
+      2048        -2.8940778         1.0480151
+      4096        -1.8736787         1.3937264
+      8192        -2.6149667         1.3622428
+     16384        -1.8007469          2.363799
+
+CYCLIC7_TEST:
+  Normal end of execution.
+
+CYCLIC8_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  cyclic8: [-8.0, +8.0]
+        16      -0.057869173         0.4040071
+        32      -0.062239653       0.085081656
+        64       -0.11871792       0.045069958
+       128       -0.27457994        0.42183464
+       256       -0.19535866        0.27257318
+       512       -0.48900454        0.46127499
+      1024       -0.55066444        0.27500777
+      2048       -0.52842597        0.66598204
+      4096       -0.75418402        0.72146592
+      8192        -1.2867817         2.1938337
+     16384        -1.2925889        0.96031178
+
+CYCLIC8_TEST:
+  Normal end of execution.
+
+GOLDSTEIN_PRICE_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  goldstein_price: [ 3, ? ]:
+        16         51.126762         820896.25
+        32         105.54597         203980.59
+        64         10.929573         724262.78
+       128         3.8173448         798623.04
+       256          9.765103          867929.3
+       512         8.2212511         969804.72
+      1024         5.0500142         932723.56
+      2048         4.4923539         940076.85
+      4096         3.0521693          955370.7
+      8192          3.052851         1001207.6
+     16384         3.0889651         1004841.2
+
+GOLDSTEIN_PRICE_TEST:
+  Normal end of execution.
+
+HAIRER_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  hairer: [-1875.25, -48.25]
+        16        -926.04112        -155.03248
+        32        -1032.1236        -204.22139
+        64        -923.24307        -199.04507
+       128        -1315.0816         -135.9057
+       256        -1023.7182        -114.43377
+       512        -1309.2908        -112.66196
+      1024        -1316.0296        -97.738953
+      2048        -1525.3222        -93.393539
+      4096        -1474.1266        -68.406628
+      8192        -1491.7672        -73.468227
+     16384        -1493.3569        -64.931418
+
+HAIRER_TEST:
+  Normal end of execution.
+
+HEART_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  heart: [-1.36775, +1.74345327935]
+        16        0.11400526         1.0073429
+        32        0.33667546         1.0259575
+        64       -0.34992183         1.2892407
+       128      -0.072258744         1.0525021
+       256       -0.47544864         1.4855549
+       512       -0.39839352         1.3603319
+      1024       -0.46795562          1.460674
+      2048       -0.51019817         1.4163847
+      4096        -0.5522869         1.5590095
+      8192       -0.77897477         1.5751637
+     16384        -0.7811037         1.5408105
+
+HEART_TEST:
+  Normal end of execution.
+
+HIMMELBLAU_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  himmelblau: [0, ?]
+        16         3.3446125          535.1188
+        32         13.655508         697.02438
+        64         1.9671939         653.91876
+       128        0.93911542         833.24651
+       256        0.95895384         657.06209
+       512        0.78488697         753.40858
+      1024       0.034160517         723.87032
+      2048      0.0086696949         799.51371
+      4096       0.094442323          758.8565
+      8192       0.012979499         801.82259
+     16384       0.011881931         837.84701
+
+HIMMELBLAU_TEST:
+  Normal end of execution.
+
+HUNECKE_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  hunecke: [-1436.515078155, +161.120543283]
+        16        -787.37431        -37.151792
+        32        -1101.7665        -73.779568
+        64        -1145.1583        -1.1219142
+       128          -1187.43         11.155422
+       256         -1286.887        -1.4634351
+       512        -1235.7902         42.278695
+      1024         -1230.098         66.519786
+      2048        -1246.8785         98.972822
+      4096        -1340.0398         85.469889
+      8192         -1263.167         98.622754
+     16384        -1330.1698         129.82889
+
+HUNECKE_TEST:
+  Normal end of execution.
+
+KEARFOTT_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  kearfott: [ 0, ? ]:
+        16         1.8906884         73.360385
+        32        0.60020712         102.14373
+        64         1.1089319         76.760052
+       128        0.86830459         97.633853
+       256        0.44032396         109.96424
+       512        0.20450634         122.71984
+      1024        0.23088758         130.90753
+      2048        0.29238038         151.91167
+      4096         0.2187191         158.58629
+      8192        0.14541503         157.67936
+     16384        0.04625697         183.66099
+
+KEARFOTT_TEST:
+  Normal end of execution.
+
+LV3_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  lv3: [-9.35, +14.8 ]
+        16         -5.505976         2.3591925
+        32        -2.4111965         4.2213949
+        64        -8.7249261           5.11858
+       128        -6.1961183         5.0457201
+       256        -7.5299192         8.2467731
+       512        -7.9920129         6.5630835
+      1024        -6.5846246          8.049175
+      2048        -8.7683948         8.1907741
+      4096        -7.4715828         7.9498358
+      8192        -8.5198527         8.0636334
+     16384        -8.7896512         8.1588368
+
+LV3_TEST:
+  Normal end of execution.
+
+LV4_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  lv4: [-20.8, +22.8]
+        16        -6.8848937         4.1510841
+        32        -1.2407291         5.8874088
+        64        -8.3774179          8.796273
+       128        -8.1570453         11.197693
+       256        -8.6077054         7.9487207
+       512        -7.7025697         10.065551
+      1024        -9.8900494         11.028189
+      2048        -7.9788239         9.9161882
+      4096        -11.257609         12.147122
+      8192        -11.739144          12.86061
+     16384        -11.561053         12.518081
+
+LV4_TEST:
+  Normal end of execution.
+
+MAGNETISM6_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  magnetism6: [-0.25, +280.0]
+        16         56.497685         176.95767
+        32         20.379747          155.4025
+        64         13.068286         198.97601
+       128          25.95516         174.67173
+       256         22.106663         191.07683
+       512         12.901629         216.42836
+      1024         7.5973547         194.56726
+      2048         3.7885021         219.99147
+      4096          6.675756         237.34871
+      8192         4.2613871          219.9844
+     16384          3.135742          233.3861
+
+MAGNETISM6_TEST:
+  Normal end of execution.
+
+MAGNETISM7_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  magnetism7: [-0.25, +330.0]
+        16          2.618009         8.6149912
+        32        0.84013542         7.7905611
+        64        0.10419705          9.155543
+       128        0.85844115         8.6331763
+       256        0.84481253         9.8951262
+       512        0.64885368         9.9182501
+      1024        0.55839943         10.079292
+      2048        0.21709923         11.768571
+      4096        0.16899743         10.572754
+      8192        0.10734926         11.301094
+     16384       0.055077004         10.795513
+
+MAGNETISM7_TEST:
+  Normal end of execution.
+
+QUADRATIC_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  quadratic: [ -2, ? ]:
+        16         14839.882         48437.546
+        32         9845.9599         38301.328
+        64          9014.247         42640.416
+       128         8896.8628         51065.164
+       256         7826.4518         52802.304
+       512         5740.1929         50460.374
+      1024         3763.5377         55927.901
+      2048         4614.0956         56865.908
+      4096         2543.6166         63334.067
+      8192         3816.7853          67292.05
+     16384         2150.4381         59774.276
+
+QUADRATIC_TEST:
+  Normal end of execution.
+
+RD_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  rd: [-36.71269068, +10.40560403]
+        16        -25.280868         4.4971163
+        32        -21.911604         6.1641868
+        64         -31.84508         5.3140294
+       128        -28.185931         8.4685994
+       256        -32.223958         9.2807554
+       512        -34.371847          8.712662
+      1024        -32.766074         9.4303876
+      2048        -33.705675         9.9432448
+      4096        -33.412589         10.057844
+      8192         -35.70089         9.5147254
+     16384        -34.981167         10.188773
+
+RD_TEST:
+  Normal end of execution.
+
+REIMER5_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  reimer5: [-5.0, +5.0]
+        16        -2.3614219          2.704558
+        32        -3.9726956        0.98625751
+        64        -3.2170007          2.032756
+       128        -3.4835047         2.8895155
+       256          -3.19482         2.7631171
+       512        -4.4773954         3.3703699
+      1024          -4.15839         3.4946049
+      2048        -4.6165214         3.0626765
+      4096        -4.4325067         3.2068212
+      8192          -4.82365          3.729308
+     16384        -4.8540543         4.3975442
+
+REIMER5_TEST:
+  Normal end of execution.
+
+REIMER6_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  reimer6: [-937501, +937499]
+        16        -216406.12         143249.85
+        32        -198041.22         162876.89
+        64        -259952.01         263578.36
+       128        -356140.05         284512.09
+       256         -392049.9         351816.82
+       512        -300184.01         381708.35
+      1024        -344592.34         401510.85
+      2048        -318159.97         405190.34
+      4096        -397220.48         396754.81
+      8192        -435313.68         442697.45
+     16384        -511761.06         425393.65
+
+REIMER6_TEST:
+  Normal end of execution.
+
+ROSENBROCK_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  rosenbrock: [ 0, ? ]:
+        16         3279.0466         25302.945
+        32         640.12323         37067.048
+        64         251.72482         49858.143
+       128         724.18495         39743.876
+       256         111.01037         53190.697
+       512         90.868441         52432.713
+      1024         389.44889         43715.112
+      2048         30.919429         58801.745
+      4096         33.864178         49426.124
+      8192         62.229505         58722.932
+     16384         26.189543         61525.896
+
+ROSENBROCK_TEST:
+  Normal end of execution.
+
+SCHWEFEL_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  schwefel: [ 0, ? ]:
+        16         26.206988         14952.377
+        32         19.243326         14409.129
+        64         27.781311         14362.915
+       128         13.005732         15596.643
+       256         2.6939381         18210.459
+       512          6.329847         17679.399
+      1024         1.7332467         19542.942
+      2048         1.7114028          20728.87
+      4096         3.9456338         20875.809
+      8192         1.0483197         22272.867
+     16384        0.35752552          22289.12
+
+SCHWEFEL_TEST:
+  Normal end of execution.
+
+SMITH1_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  smith1: [ ?, ? ]:
+        16         31894.877         261820.28
+        32         20766.653         181182.48
+        64         18646.857            274074
+       128         8275.6721         401170.87
+       256          9830.832         279646.51
+       512         6128.9482         356302.32
+      1024         4283.7641          374814.2
+      2048         205.84684          361051.8
+      4096         1562.0473         429562.69
+      8192         208.50129          432714.5
+     16384         2868.3284          441846.3
+
+SMITH1_TEST:
+  Normal end of execution.
+
+SMITH2_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  smith2: [ ?, ? ]:
+        16        -94691.414        -755.57154
+        32        -124454.03        -70.644062
+        64        -184497.41        -117.36135
+       128        -251690.68        -7.3680079
+       256        -117923.94        -13.407028
+       512        -206312.47         31.613133
+      1024        -213457.53         74.941914
+      2048        -272728.31          131.6698
+      4096        -246718.78         173.50166
+      8192        -240054.65         178.45867
+     16384        -293327.45         144.01461
+
+SMITH2_TEST:
+  Normal end of execution.
+
+VIRASORO_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  virasoro: [-29.0, +21.0]
+        16        -5.0955358         12.389102
+        32        -9.3289073         10.020152
+        64        -7.5594879         14.226507
+       128         -11.84792         16.425009
+       256        -11.171451         16.602328
+       512        -14.359431         16.911366
+      1024         -14.55245         17.375681
+      2048        -15.727895         18.570218
+      4096        -18.106397         19.247367
+      8192         -16.22808          19.66358
+     16384         -17.44106         19.832349
+
+VIRASORO_TEST:
+  Normal end of execution.
+
+WRIGHT_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  wright: [-30.25, 40.0 ]
+        16        -10.817691        -8.3255698
+        32        -10.899346         -8.701144
+        64        -11.404511        -8.4697314
+       128        -11.567559        -7.6674167
+       256        -11.257783        -8.0654057
+       512        -11.502241        -8.1931694
+      1024        -11.638623        -7.9919771
+      2048        -11.644806        -7.7427484
+      4096        -11.780178        -7.7074929
+      8192        -11.886952         -7.684722
+     16384        -11.982057        -7.5578121
+
+WRIGHT_TEST:
+  Normal end of execution.
+
+ZAKHAROV_TEST:
+  Python version: 3.6.9
+  Use N sample values of a polynomial over its domain to estimate
+  its minimum Pmin and maximum Pmax
+
+         N           Pmin             Pmax
+
+  zakharov: [ 0, ? ]:
+        16         307.25725         7805013.8
+        32         509.67237         3601280.2
+        64         28.847531          12197333
+       128         25.392643          10302062
+       256         40.421319          12283122
+       512         15.046792          12467983
+      1024         16.192156          15759352
+      2048         2.5501975          17513518
+      4096         10.208001          16560274
+      8192         7.4469137          18107393
+     16384         5.9848339          23794094
+
+ZAKHAROV_TEST:
+  Normal end of execution.
+
+POLYNOMIALS
+  Normal end of execution.
+Sat Feb  1 15:36:36 2020

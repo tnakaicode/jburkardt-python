@@ -1,0 +1,179 @@
+<html>
+
+  <head>
+    <title>
+      SIMPLEX_GM_RULE - Grundmann-Moeller Quadrature Rules for the Simplex in M dimensions
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      SIMPLEX_GM_RULE <br> Grundmann-Moeller Quadrature Rules for the Simplex in M dimensions
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>SIMPLEX_GM_RULE</b>,
+      a Python library which
+      defines Grundmann-Moeller quadrature rules 
+      over the interior of a simplex in M dimensions.
+    </p>
+
+    <p>
+      The user can choose the spatial dimension M, thus defining the region
+      to be a triangle (M = 2), tetrahedron (M = 3) or a general M-dimensional
+      simplex.
+    </p>
+
+    <p>
+      The user chooses the index <b>S</b> of the rule.  Rules are available
+      with index <b>S</b> = 0 on up.  A rule of index <b>S</b> will exactly
+      integrate any polynomial of total degree <b>2*S+1</b> or less.
+    </p>
+
+    <p>
+      The rules are defined on the unit M-dimensional simplex.  A simple
+      linear transformation can be used to map the vertices and weights
+      to an arbitrary simplex, while preserving the accuracy of the rule.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>SIMPLEX_GM_RULE</b> is available in
+      <a href = "../../c_src/simplex_gm_rule/simplex_gm_rule.html">a C version</a> and
+      <a href = "../../cpp_src/simplex_gm_rule/simplex_gm_rule.html">a C++ version</a> and
+      <a href = "../../f_src/simplex_gm_rule/simplex_gm_rule.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/simplex_gm_rule/simplex_gm_rule.html">a MATLAB version</a> and
+      <a href = "../../py_src/simplex_gm_rule/simplex_gm_rule.html">a Python version</a>.
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/annulus_rule/annulus_rule.html">
+      ANNULUS_RULE</a>,
+      a Python library which
+      computes a quadrature rule for estimating integrals of a function 
+      over the interior of a circular annulus in 2D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/simplex_grid/simplex_grid.html">
+      SIMPLEX_GRID</a>,
+      a Python library which
+      generates a regular grid of points 
+      over the interior of an arbitrary simplex in M dimensions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Paul Bratley, Bennett Fox, Linus Schrage,<br>
+          A Guide to Simulation,<br>
+          Second Edition,<br>
+          Springer, 1987,<br>
+          ISBN: 0387964673,<br>
+          LC: QA76.9.C65.B73.
+        </li>
+        <li>
+          Bennett Fox,<br>
+          Algorithm 647:
+          Implementation and Relative Efficiency of Quasirandom
+          Sequence Generators,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 12, Number 4, December 1986, pages 362-376.
+        </li>
+        <li>
+          Axel Grundmann, Michael Moeller,<br>
+          Invariant Integration Formulas for the N-Simplex
+          by Combinatorial Methods,<br>
+          SIAM Journal on Numerical Analysis,<br>
+          Volume 15, Number 2, April 1978, pages 282-290.
+        </li>
+        <li>
+          Pierre LEcuyer,<br>
+          Random Number Generation,<br>
+          in Handbook of Simulation,<br>
+          edited by Jerry Banks,<br>
+          Wiley, 1998,<br>
+          ISBN: 0471134031,<br>
+          LC: T57.62.H37.
+        </li>
+        <li>
+          Peter Lewis, Allen Goodman, James Miller,<br>
+          A Pseudo-Random Number Generator for the System/360,<br>
+          IBM Systems Journal,<br>
+          Volume 8, 1969, pages 136-143.
+        </li>
+        <li>
+          Albert Nijenhuis, Herbert Wilf,<br>
+          Combinatorial Algorithms for Computers and Calculators,<br>
+          Second Edition,<br>
+          Academic Press, 1978,<br>
+          ISBN: 0-12-519260-6,<br>
+          LC: QA164.N54.
+        </li>
+        <li>
+          ML Wolfson, HV Wright,<br>
+          Algorithm 160:
+          Combinatorial of M Things Taken N at a Time,<br>
+          Communications of the ACM,<br>
+          Volume 6, Number 4, April 1963, page 161.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "simplex_gm_rule.py">simplex_gm_rule.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "simplex_gm_rule.sh">simplex_gm_rule.sh</a>,
+          a script which runs the tests.
+        </li>
+        <li>
+          <a href = "simplex_gm_rule.txt">simplex_gm_rule.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 03 March 2017.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

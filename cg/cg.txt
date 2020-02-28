@@ -1,0 +1,519 @@
+Mon Jan 20 18:19:08 2020
+
+CG_TEST
+  Python version: 3.6.9
+  Test the CG library.
+
+ORTH_RANDOM_TEST
+  Python version: 3.6.9
+  ORTH_RANDOM computes a random orthogal matrix.
+
+  ORTH_RANDOM matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :   -0.559743     -0.371903    -0.0337166       0.68224      0.285986  
+      1 :    0.188708     -0.906112     0.0432361     -0.368531     0.0752686  
+      2 :   -0.404357    -0.0795868     -0.732356     -0.200174     -0.503733  
+      3 :   -0.423174      0.184571     -0.114406     -0.542494      0.692437  
+      4 :    0.555425     0.0157436     -0.668999      0.253702      0.423476  
+
+ORTH_RANDOM_TEST:
+  Normal end of execution.
+
+PDS_RANDOM_TEST
+  Python version: 3.6.9
+  PDS_RANDOM computes the PDS_RANDOM matrix.
+
+  PDS_RANDOM matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.497055        0.1657    -0.0383139     -0.136355     0.0927247  
+      1 :      0.1657      0.873143     0.0517221    -0.0475388    -0.0540219  
+      2 :  -0.0383139     0.0517221      0.614563    0.00896361      0.239044  
+      3 :   -0.136355    -0.0475388    0.00896361      0.446983     0.0594034  
+      4 :   0.0927247    -0.0540219      0.239044     0.0594034      0.549504  
+
+PDS_RANDOM_TEST
+  Normal end of execution.
+
+R8_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8_NORMAL_01 generates normally distributed
+  random values.
+  Using initial random number seed = 123456789
+
+  1.679040
+  -0.566060
+  1.212934
+  1.269381
+  -1.666087
+  -2.242464
+  0.039675
+  0.673068
+  -0.275127
+  2.164005
+  0.297785
+  2.044536
+  1.398819
+  -1.242985
+  -0.067084
+  -0.794396
+  -0.523768
+  -0.350567
+  0.131700
+  0.537380
+
+R8_NORMAL_01_TEST
+  Normal end of execution.
+
+R8_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R8MAT_HOUSE_AXH_TEST
+  Python version: 3.6.9
+  R8MAT_HOUSE_AXH multiplies a matrix A times a
+  compact Householder matrix.
+
+  Matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    -2.81582      -4.33881      -4.38273      -4.98162       3.59097  
+      1 :     4.56318      -2.42422      -0.50461       3.97504       3.40847  
+      2 :     3.29509      -3.90043     -0.986937      -1.49248      -3.76896  
+      3 :    0.616954      -4.56171       2.54673      -4.05455      -4.92488  
+      4 :   -0.846929       1.33966       2.97287      -4.86383      -2.39697  
+
+  Compact vector V so column 3 of H*A is packed:
+
+     0:             0
+     1:             0
+     2:     -0.788819
+     3:      0.399863
+     4:      0.466771
+
+  Householder matrix H:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             0             0  
+      1 :           0             1             0             0             0  
+      2 :           0             0     -0.244469      0.630839      0.736395  
+      3 :           0             0      0.630839      0.680219     -0.373289  
+      4 :           0             0      0.736395     -0.373289       0.56425  
+
+  Indirect product A*H:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    -2.81582      -4.33881      0.573215      -7.49385       0.65837  
+      1 :     4.56318      -2.42422       5.14095       1.11322     0.0678026  
+      2 :     3.29509      -3.90043      -3.47568     -0.230898      -2.29629  
+      3 :    0.616954      -4.56171      -6.80702      0.686997      0.610057  
+      4 :   -0.846929       1.33966      -5.56019     -0.538306       2.65233  
+
+  Direct product A*H:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    -2.81582      -4.33881      0.573215      -7.49385       0.65837  
+      1 :     4.56318      -2.42422       5.14095       1.11322     0.0678026  
+      2 :     3.29509      -3.90043      -3.47568     -0.230898      -2.29629  
+      3 :    0.616954      -4.56171      -6.80702      0.686997      0.610057  
+      4 :   -0.846929       1.33966      -5.56019     -0.538306       2.65233  
+
+  H*A should pack column 3:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    -2.81582      -4.33881      -4.38273      -4.98162       3.59097  
+      1 :     4.56318      -2.42422      -0.50461       3.97504       3.40847  
+      2 :    -1.04002     -0.937652       4.03706       -5.7746      -3.95052  
+      3 :     2.81449      -6.06358  -4.44089e-16      -1.88388      -4.83284  
+      4 :     1.71831      -0.41352  -4.44089e-16      -2.32995      -2.28953  
+
+R8MAT_HOUSE_AXH_TEST
+  Normal end of execution.
+
+R8MAT_HOUSE_FORM_TEST
+  Python version: 3.6.9
+  R8MAT_HOUSE_FORM forms a Householder
+  matrix from its compact form.
+
+  Compact vector form V:
+
+     0:             0
+     1:             0
+     2:             1
+     3:             2
+     4:             3
+
+  Householder matrix H:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             0             0  
+      1 :           0             1             0             0             0  
+      2 :           0             0      0.857143     -0.285714     -0.428571  
+      3 :           0             0     -0.285714      0.428571     -0.857143  
+      4 :           0             0     -0.428571     -0.857143     -0.285714  
+
+R8MAT_HOUSE_FORM_TEST
+  Normal end of execution.
+
+R8MAT_MM_TEST
+  Python version: 3.6.9
+  R8MAT_MM computes a matrix-matrix product C = A * B;
+
+  A:
+
+  Col:       0             1             2       
+  Row
+      0 :           1             0             0  
+      1 :           1             1             0  
+      2 :           1             2             1  
+      3 :           1             3             3  
+
+  B:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             1             1             1  
+      1 :           0             1             2             3  
+      2 :           0             0             1             3  
+
+  C = A*B:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             1             1             1  
+      1 :           1             2             3             4  
+      2 :           1             3             6            10  
+      3 :           1             4            10            19  
+
+R8MAT_MM_TEST
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_AB computes a random R8MAT.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     0.31051     -0.603288     -0.629637      -0.98897  
+      1 :     4.73791      0.545467       1.69723       4.38502  
+      2 :     3.97706     -0.340259       1.40784       1.10451  
+      3 :     2.37017     -0.737026       3.52804     -0.432731  
+      4 :     1.49184       2.80379       3.78372     -0.918299  
+
+R8MAT_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC_HOUSE_COLUMN_TEST
+  Python version: 3.6.9
+  R8VEC_HOUSE_COLUMN returns the compact form of
+  a Householder matrix that "packs" a column
+  of a matrix.
+
+  Matrix A:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     1.09209       2.07654      0.219145       2.00653  
+      1 :     4.78159      0.330594       3.16983       3.77337  
+      2 :     4.14755       1.28789      0.308636       3.98643  
+      3 :     2.80848      0.549784       2.24769    0.00919186  
+
+  Working on column K = 0
+
+  Householder matrix H:
+
+  Col:       0             1             2             3       
+  Row
+      0 :   -0.155781     -0.682069     -0.591626     -0.400615  
+      1 :   -0.682069      0.597486      -0.34914     -0.236418  
+      2 :   -0.591626      -0.34914      0.697156     -0.205068  
+      3 :   -0.400615     -0.236418     -0.205068       0.86114  
+
+  Product H*A:
+
+  Col:       0             1             2             3       
+  Row
+      0 :    -7.01042      -1.53117      -3.27924      -5.24844  
+      1 :-8.88178e-16      -1.79845        1.1053     -0.508058  
+      2 :-1.77636e-15     -0.558841      -1.48213      0.272729  
+      3 :-8.88178e-16     -0.700714       1.03509      -2.50551  
+
+  Working on column K = 1
+
+  Householder matrix H:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             0             0             0  
+      1 :           0     -0.895014     -0.278112     -0.348717  
+      2 :           0     -0.278112      0.959184    -0.0511776  
+      3 :           0     -0.348717    -0.0511776       0.93583  
+
+  Product H*A:
+
+  Col:       0             1             2             3       
+  Row
+      0 :    -7.01042      -1.53117      -3.27924      -5.24844  
+      1 : 1.59868e-15       2.00941     -0.938018       1.25258  
+      2 :-1.41139e-15   7.63278e-17      -1.78201      0.531121  
+      3 :-4.30552e-16             0      0.659083      -2.18152  
+
+  Working on column K = 2
+
+  Householder matrix H:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             0             0             0  
+      1 :           0             1             0             0  
+      2 :           0             0     -0.937906      0.346889  
+      3 :           0             0      0.346889      0.937906  
+
+  Product H*A:
+
+  Col:       0             1             2             3       
+  Row
+      0 :    -7.01042      -1.53117      -3.27924      -5.24844  
+      1 : 1.59868e-15       2.00941     -0.938018       1.25258  
+      2 : 1.17439e-15  -7.15884e-17       1.89999      -1.25489  
+      3 : -8.9341e-16   2.64773e-17   1.11022e-16      -1.86183  
+
+R8VEC_HOUSE_COLUMN_TEST
+  Normal end of execution.
+
+R8VEC_NORM_TEST
+  Python version: 3.6.9
+  R8VEC_NORM computes the L2 norm of an R8VEC.
+
+  Input vector:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+  L2 norm = 1.62017
+
+R8VEC_NORM_TEST:
+  Normal end of execution.
+
+R8VEC_NORM_AFFINE_TEST
+  Python version: 3.6.9
+  R8VEC_NORM_AFFINE computes the L2 norm of
+  the difference of two R8VECs.
+
+  R8VEC_NORM_AFFINE(X,Y) = 1.22756
+  R8VEC_NORM (X-Y):        1.22756
+
+R8VEC_NORM_AFFINE_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_AB computes a random R8VEC.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:       0.31051
+     1:       4.73791
+     2:       3.97706
+     3:       2.37017
+     4:       1.49184
+     5:     -0.603288
+     6:      0.545467
+     7:     -0.340259
+     8:     -0.737026
+     9:       2.80379
+
+R8VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R83_CG_TEST
+  Python version: 3.6.9
+  R83_CG applies CG to an R83 matrix.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 8.47455e-16
+  Norm of error ||x1-x2|| = 4.1616e-16
+
+R83_CG_TEST
+  Normal end of execution.
+
+R83S_CG_TEST
+  Python version: 3.6.9
+  R83S_CG applies CG to an R83S matrix.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 8.47455e-16
+  Norm of error ||x1-x2|| = 4.1616e-16
+
+R83T_CG_TEST
+  Python version: 3.6.9
+  R83T_CG applies CG to an R83T matrix.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 8.47455e-16
+  Norm of error ||x1-x2|| = 4.1616e-16
+
+R8GE_CG_TEST
+  Python version: 3.6.9
+  R8GE_CG applies CG to an R8GE matrix.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 6.32283e-14
+  Norm of error ||x1-x2|| = 6.79288e-14
+
+R8GE_CG_TEST
+  Normal end of execution.
+
+R8PBU_CG_TEST
+  Python version: 3.6.9
+  R8PBU_CG applies CG to an R8PBU matrix.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 8.47455e-16
+  Norm of error ||x1-x2|| = 4.1616e-16
+
+R8SD_CG_TEST
+  Python version: 3.6.9
+  R8SD_CG applies CG to an R8SD matrix.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 8.47455e-16
+  Norm of error ||x1-x2|| = 4.1616e-16
+
+CG_TEST:
+  Normal end of execution.
+Mon Jan 20 18:19:08 2020

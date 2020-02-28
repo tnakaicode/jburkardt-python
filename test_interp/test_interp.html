@@ -1,0 +1,256 @@
+<html>
+
+  <head>
+    <title>
+      TEST_INTERP - Interpolation Test Data
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TEST_INTERP <br> Interpolation Test Data
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TEST_INTERP</b>,
+      a Python library which
+      defines data that may be used to test interpolation algorithms.
+    </p>
+
+    <p>
+      The following sets of data are available:
+      <ol>
+        <li>
+          <a href = "p01_plot.png">p01_plot.png</a>, 
+          18 data points, 2 dimensions.
+          This example is due to Hans-Joerg Wenz.
+          It is an example of good data, which is dense enough in areas
+          where the expected curvature of the interpolant is large.
+          Good results can be expected with almost any reasonable
+          interpolation method.
+        </li>
+        <li>
+          <a href = "p02_plot.png">p02_plot.png</a>,
+          18 data points, 2 dimensions.  
+          This example is due to ETY Lee of Boeing.
+          Data near the corners is more dense than in regions of small curvature.
+          A local interpolation method will produce a more plausible
+          interpolant than a nonlocal interpolation method, such as
+          cubic splines.
+        </li>
+        <li>
+          <a href = "p03_plot.png">p03_plot.png</a>,
+          11 data points, 2 dimensions.  
+          This example is due to Fred Fritsch and Ralph Carlson.
+          This data can cause problems for interpolation methods.
+          There are sudden changes in direction, and at the same time,
+          sparsely-placed data.  This can cause an interpolant to overshoot
+          the data in a way that seems implausible.
+        </li>
+        <li>
+          <a href = "p04_plot.png">p04_plot.png</a>,
+          8 data points, 2 dimensions.  
+          This example is due to Larry Irvine, Samuel Marin and Philip Smith.
+          This data can cause problems for interpolation methods.
+          There are sudden changes in direction, and at the same time,
+          sparsely-placed data.  This can cause an interpolant to overshoot
+          the data in a way that seems implausible.
+        </li>
+        <li>
+          <a href = "p05_plot.png">p05_plot.png</a>,
+          9 data points, 2 dimensions. 
+          This example is due to Larry Irvine, Samuel Marin and Philip Smith.
+          This data can cause problems for interpolation methods.
+          There are sudden changes in direction, and at the same time,
+          sparsely-placed data.  This can cause an interpolant to overshoot
+          the data in a way that seems implausible.
+        </li>
+        <li>
+          <a href = "p06_plot.png">p06_plot.png</a>,
+          49 data points, 2 dimensions.  
+          The data is due to deBoor and Rice.
+          The data represents a temperature dependent property of titanium.
+          The data has been used extensively as an example in spline
+          approximation with variably-spaced knots.
+          DeBoor considers two sets of knots:
+          (595,675,755,835,915,995,1075)
+          and
+          (595,725,850,910,975,1040,1075).
+        </li>
+        <li>
+          <a href = "p07_plot.png">p07_plot.png</a>,
+          4 data points, 2 dimensions.  
+          The data is a simple symmetric set of 4 points,
+          for which it is interesting to develop the Shepard interpolants
+          for varying values of the exponent p.
+        </li>
+        <li>
+          <a href = "p08_plot.png">p08_plot.png</a>,
+          12 data points, 2 dimensions.  
+          This is equally spaced data for y = x^2,
+          except for one extra point whose x value is close to another, but whose 
+          y value is not so close.  A small disagreement in nearby data can 
+          become a disaster.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TEST_INTERP</b> is available in
+      <a href = "../../c_src/test_interp/test_interp.html">a C version</a> and
+      <a href = "../../cpp_src/test_interp/test_interp.html">a C++ version</a> and
+      <a href = "../../f_src/test_interp/test_interp.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/test_interp/test_interp.html">a MATLAB version</a> and
+      <a href = "../../py_src/test_interp/test_interp.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/barycentric_interp_1d/barycentric_interp_1d.html">
+      BARYCENTRIC_INTERP_1D</a>,
+      a Python library which
+      defines and evaluates the barycentric Lagrange polynomial p(x) 
+      which interpolates a set of data, so that p(x(i)) = y(i).
+      The barycentric approach means that very high degree polynomials can
+      safely be used.
+    </p>
+
+    <p>
+      <a href = "../../py_src/lagrange_interp_1d/lagrange_interp_1d.html">
+      LAGRANGE_INTERP_1D</a>,
+      a Python library which
+      defines and evaluates the Lagrange polynomial p(x) 
+      which interpolates a set of data, so that p(x(i)) = y(i).
+    </p>
+
+    <p>
+      <a href = "../../py_src/nearest_interp_1d/nearest_interp_1d.html">
+      NEAREST_INTERP_1D</a>,
+      a Python library which
+      interpolates a set of data using a piecewise constant interpolant
+      defined by the nearest neighbor criterion.
+    </p>
+
+    <p>
+      <a href = "../../py_src/newton_interp_1d/newton_interp_1d.html">
+      NEWTON_INTERP_1D</a>,
+      a Python library which
+      finds a polynomial interpolant to data using Newton divided differences.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pwl_interp_1d/pwl_interp_1d.html">
+      PWL_INTERP_1D</a>,
+      a Python library which
+      interpolates a set of data using a piecewise linear function.
+    </p>
+
+    <p>
+      <a href = "../../py_src/shepard_interp_1d/shepard_interp_1d.html">
+      SHEPARD_INTERP_1D</a>,
+      a Python library which
+      defines and evaluates Shepard interpolants to 1D data,
+      based on inverse distance weighting.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp_1d/test_interp_1d.html">
+      TEST_INTERP_1D</a>,
+      a Python library which
+      defines test problems for interpolation of data y(x),
+      depending on a 2D argument.
+    </p>
+
+    <p>
+      <a href = "../../py_src/vandermonde_interp_1d/vandermonde_interp_1d.html">
+      VANDERMONDE_INTERP_1D</a>,
+      a Python library which
+      finds a polynomial interpolant to data y(x) of a 1D argument, by
+      setting up and solving a linear system for the polynomial coefficients,
+      involving the Vandermonde matrix.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_interp.py">test_interp.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "test_interp.sh">test_interp.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "test_interp.txt">test_interp.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Plots of piecewise linear interpolants to the data:
+      <ul>
+        <li>
+          <a href = "p01_plot.png">p01_plot.png</a>
+        </li>
+        <li>
+          <a href = "p02_plot.png">p02_plot.png</a>
+        </li>
+        <li>
+          <a href = "p03_plot.png">p03_plot.png</a>
+        </li>
+        <li>
+          <a href = "p04_plot.png">p04_plot.png</a>
+        </li>
+        <li>
+          <a href = "p05_plot.png">p05_plot.png</a>
+        </li>
+        <li>
+          <a href = "p06_plot.png">p06_plot.png</a>
+        </li>
+        <li>
+          <a href = "p07_plot.png">p07_plot.png</a>
+        </li>
+        <li>
+          <a href = "p08_plot.png">p08_plot.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 July 2017.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

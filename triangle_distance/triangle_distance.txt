@@ -1,0 +1,186 @@
+Wed Feb  5 08:01:51 2020
+
+triangle_distance_test:
+  Python version: 3.6.9
+  Test triangle_distance.
+
+triangle_distance_histogram_test
+  Test triangle_distance_histogram.
+
+  Number of sample points N = 10000
+
+  Equilateral triangle vertices:
+
+  ( 0, 0 )
+  ( 1, 0 )
+  ( 0.5, 0.866025 )
+  Graphics saved as "triangle_distance_histogram_equilateral.png"
+
+  Unit right triangle vertices:
+
+  ( 0, 0 )
+  ( 1, 0 )
+  ( 0, 1 )
+  Graphics saved as "triangle_distance_histogram_right011.png"
+
+  345 right triangle Vertices:
+
+  ( 0, 0 )
+  ( 3, 0 )
+  ( 0, 4 )
+  Graphics saved as "triangle_distance_histogram_right345.png"
+
+  scalene triangle Vertices:
+
+  ( 0.75, 0.9 )
+  ( 0, 0.2 )
+  ( 0.95, 0.65 )
+  Graphics saved as "triangle_distance_histogram_scalene.png"
+
+triangle_distance_stats_test
+  Test triangle_distance_stats
+
+  Number of sample points N = 10000
+
+  Equilateral triangle vertices:
+
+  ( 0, 0 )
+  ( 1, 0 )
+  ( 0.5, 0.866025 )
+
+  Estimated mu  = 0.365545
+  Exact mu      = 0.364792
+  Estimated var = 0.0340064
+
+  Unit right triangle vertices:
+
+  ( 0, 0 )
+  ( 1, 0 )
+  ( 0, 1 )
+
+  Estimated mu  = 0.415684
+  Exact mu      = 0.414293
+  Estimated var = 0.0502526
+
+  345 right triangle Vertices:
+
+  ( 0, 0 )
+  ( 3, 0 )
+  ( 0, 4 )
+
+  Estimated mu  = 1.461
+  Estimated var = 0.65757
+
+  scalene triangle Vertices:
+
+  ( 0.75, 0.9 )
+  ( 0, 0.2 )
+  ( 0.95, 0.65 )
+
+  Estimated mu  = 0.30138
+  Estimated var = 0.0379604
+
+triangle_equilateral_distance_pdf_test
+  Test triangle_equilateral_distance_pdf,
+  probability density function for the distance D between
+  between a pair of random points in an equilateral triangle.
+
+  Triangle vertices:
+
+  ( 0, 0 )
+  ( 1, 0 )
+  ( 0.5, 0.866025 )
+  Graphics saved as "triangle_equilateral_distance_pdf.png"
+  Graphics saved as "triangle_equilateral_distance_compare.png"
+
+triangle_right_distance_pdf_test
+  Test triangle_right_distance_pdf,
+  probability density function for the distance D between
+  a pair of random points in a right triangle.
+
+  Triangle vertices:
+
+  ( 0, 0 )
+  ( 5, 0 )
+  ( 0, 12 )
+  Graphics saved as "triangle_right_distance_pdf.png"
+  Graphics saved as "triangle_right_distance_compare.png"
+
+triangle_right_error_test
+  Test triangle_right_error,
+  which reports right triangle error a^2+b^2-c^2
+
+  Triangle #1:
+
+  ( 0, 0 )
+  ( 3, 0 )
+  ( 0, 4 )
+  Right triangle error is 0
+
+  Triangle #2:
+
+  ( 4, 0 )
+  ( 0, 0 )
+  ( 0, 3 )
+  Right triangle error is 0
+
+  Triangle #3:
+
+  ( 0.1, 0 )
+  ( 3, 0.2 )
+  ( 0.3, 4 )
+  Right triangle error is 2.76
+
+  Triangle #4:
+
+  ( 0.939936, 0.900267 )
+  ( 0.807928, 0.621619 )
+  ( 0.54155, 0.184348 )
+  Right triangle error is -0.314018
+
+triangle_sample_test
+  Test triangle_sample, which uniformly samples a triangle.
+
+  Number of points N = 2500
+
+  Vertices:
+  V1 =     0.750000      0.900000
+  V2 =     0.000000      0.200000
+  V3 =     0.950000      0.650000
+  Graphics saved as "triangle_sample_test.png"
+
+triangle_sides_test
+  Test triangle_sides,
+  which reports the lengths of the sides of a triangle.
+
+  Triangle #1:
+
+  ( 0, 0 )
+  ( 3, 0 )
+  ( 0, 4 )
+  a = 3, b = 4, c = 5
+
+  Triangle #2:
+
+  ( 4, 0 )
+  ( 0, 0 )
+  ( 0, 3 )
+  a = 3, b = 4, c = 5
+
+  Triangle #3:
+
+  ( 0.1, 0 )
+  ( 3, 0.2 )
+  ( 0.3, 4 )
+  a = 2.90689, b = 4.005, c = 4.66154
+
+  Triangle #4:
+
+  ( 0.293295, 0.609843 )
+  ( 0.0995313, 0.177332 )
+  ( 0.0916071, 0.434769 )
+  a = 0.257559, b = 0.267075, c = 0.47393
+
+triangle_distance_test:
+  Normal end of execution.
+Wed Feb  5 08:01:52 2020

@@ -1,0 +1,127 @@
+<html>
+
+  <head>
+    <title>
+      HANKEL_PDS - Cholesky Factors Generating Positive Definite Symmetric Hankel Matrices
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      HANKEL_PDS <br> Cholesky Factors Generating Positive Definite Symmetric Hankel Matrices
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>HANKEL_PDS</b>,
+      a Python library which
+      can compute a lower triangular matrix L which is the Cholesky factor
+      of a positive definite (symmetric) Hankel matrix H, that is,
+      H = L * L'.
+    </p>
+
+    <p>
+      A Hankel matrix is a matrix which is constant along all antidiagonals.  
+      A schematic of a 5x5 Hankel matrix would be:
+      <pre>
+        a  b  c  d  e
+        b  c  d  e  f
+        c  d  e  f  g
+        d  e  f  g  h
+        e  f  g  h  i
+      </pre>
+    </p>
+
+    <p>
+      Let J represent the exchange matrix, formed by reverse the order
+      of the columns of the identity matrix.
+      If H is a Hankel matrix, then J*H and J*H are Toeplitz matrices,
+      and similarly in the other direction.  Hence many algorithms
+      that apply to one class can be easily adapted to the other.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>HANKEL_PDS</b> is available in
+      <a href = "../../c_src/hankel_pds/hankel_pds.html">a C version</a> and
+      <a href = "../../cpp_src/hankel_pds/hankel_pds.html">a C++ version</a> and
+      <a href = "../../f_src/hankel_pds/hankel_pds.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/hankel_pds/hankel_pds.html">a MATLAB version</a> and
+      <a href = "../../py_src/hankel_pds/hankel_pds.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/hankel_cholesky/hankel_cholesky.html">
+      HANKEL_CHOLESKY</a>,
+      a Python library which
+      computes the upper Cholesky factor R of a nonnegative definite symmetric
+      Hankel matrix H so that H = R' * R..
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          S Al-Homidan, M Alshahrani,<br>
+          Positive Definite Hankel Matrices Using Cholesky Factorization,<br>
+          Computational Methods in Applied Mathematics,<br>
+          Volume 9, Number 3, 2009, pages 221-225.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hankel_pds.py">hankel_pds.py</a>.
+          the source code.
+        </li>
+        <li>
+          <a href = "hankel_pds.sh">hankel_pds.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "hankel_pds.txt">hankel_pds.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 26 January 2017.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

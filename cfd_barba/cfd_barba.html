@@ -1,0 +1,277 @@
+<html>
+
+  <head>
+    <title>
+      CFD_BARBA - Python Scripts for Lorena Barba's "12 Steps to Navier-Stokes"
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      CFD_BARBA <br> Python Scripts for Lorena Barba's "12 Steps to Navier-Stokes"
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>CFD_BARBA</b>,
+      a Python library which
+      contains plain Python scripts of some of the iPython workbooks
+      associated with the "12 Steps to Navier-Stokes" presentation
+      by Lorena Barba.
+    </p>
+
+    <p>
+      These scripts have been modified and simplified, to run in a
+      standard Python environment.  Some of the notes and comments in
+      the original iPython notebooks have been retained.
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          1D linear convection
+        </li>
+        <li>
+          1D nonlinear convection
+        </li>
+        <li>
+          1D diffusion
+        </li>
+        <li>
+          1D Burgers equation
+        </li>
+        <li>
+          2D linear convection
+        </li>
+        <li>
+          2D nonlinear convection
+        </li>
+        <li>
+          2D diffusion
+        </li>
+        <li>
+          2D Burgers equation
+        </li>
+        <li>
+          2D Laplace equation
+        </li>
+        <li>
+          2D Poisson convection
+        </li>
+        <li>
+          2D Navier-Stokes cavity flow convection
+        </li>
+        <li>
+          2D Navier-Stokes channel flow.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>CFD_BARBA</b> is available in
+      <a href = "../../py_src/cfd_barba/cfd_barba.html">a Python version</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cfd_barba.sh">cfd_barba.sh</a>,
+          runs all the tests.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "step01.py">step01.py</a>,
+          set up and solve the 1D linear convection equation.
+        </li>
+        <li>
+          <a href = "step01_initial.png">step01_initial.png</a>,
+          a plot of the initial condition.
+        </li>
+        <li>
+          <a href = "step01_final.png">step01_final.png</a>,
+          a plot of the final solution.
+        </li>
+        <li>
+          <a href = "step02.py">step02.py</a>,
+          set up and solve the 1D nonlinear convection equation.
+        </li>
+        <li>
+          <a href = "step02_final.png">step02_final.png</a>,
+          a plot of the final solution.
+        </li>
+        <li>
+          <a href = "step03.py">step03.py</a>,
+          set up and solve the 1D diffusion equation.
+        </li>
+        <li>
+          <a href = "step03_final.png">step03_final.png</a>,
+          a plot of the final solution.
+        </li>
+        <li>
+          <a href = "step04.py">step04.py</a>,
+          set up and solve the 1D Burgers equation.
+        </li>
+        <li>
+          <a href = "step04_initial.png">step04_initial.png</a>,
+          a plot of the initial condition.
+        </li>
+        <li>
+          <a href = "step04_final.png">step04_final.png</a>,
+          a plot of the final computed and exact solutions.
+        </li>
+        <li>
+          <a href = "step05.py">step05.py</a>,
+          set up and solve the 2D linear convection equation.
+        </li>
+        <li>
+          <a href = "step05_initial.png">step05_initial.png</a>,
+          a plot of the initial condition.
+        </li>
+        <li>
+          <a href = "step05_final1.png">step05_final1.png</a>,
+          a plot of the final computed solution using nested for loops.
+        </li>
+        <li>
+          <a href = "step05_final2.png">step05_final2.png</a>,
+          a plot of the final computed solution using array operations.
+        </li>
+        <li>
+          <a href = "step06.py">step06.py</a>,
+          set up and solve the 2D nonlinear convection equation.
+        </li>
+        <li>
+          <a href = "step06_initial_u.png">step06_initial_u.png</a>,
+          a plot of the initial condition for u.
+        </li>
+        <li>
+          <a href = "step06_initial_v.png">step06_initial_v.png</a>,
+          a plot of the initial condition for v.
+        </li>
+        <li>
+          <a href = "step06_final_u.png">step06_final_u.png</a>,
+          a plot of the final computed solution for u.
+        </li>
+        <li>
+          <a href = "step06_final_v.png">step06_final_v.png</a>,
+          a plot of the final computed solution for v.
+        </li>
+        <li>
+          <a href = "step07.py">step07.py</a>,
+          set up and solve the 2D diffusion equation.
+        </li>
+        <li>
+          <a href = "step07_initial.png">step07_initial.png</a>,
+          a plot of the initial condition.
+        </li>
+        <li>
+          <a href = "step07_10.png">step07_10.png</a>,
+          a plot of the solution after 10 steps.
+        </li>
+        <li>
+          <a href = "step07_14.png">step07_14.png</a>,
+          a plot of the solution after 14 steps.
+        </li>
+        <li>
+          <a href = "step07_50.png">step07_50.png</a>,
+          a plot of the solution after 50 steps.
+        </li>
+        <li>
+          <a href = "step08.py">step08.py</a>,
+          set up and solve the 2D Burgers equation.
+        </li>
+        <li>
+          <a href = "step08_initial.png">step08_initial.png</a>,
+          a plot of the initial condition.
+        </li>
+        <li>
+          <a href = "step08_final.png">step08_final.png</a>,
+          a plot of the final solutions.
+        </li>
+        <li>
+          <a href = "step09.py">step09.py</a>,
+          set up and solve the 2D Laplace equation.
+        </li>
+        <li>
+          <a href = "step09_initial.png">step09_initial.png</a>,
+          a plot of the initial condition.
+        </li>
+        <li>
+          <a href = "step09_final.png">step09_final.png</a>,
+          a plot of the final solutions.
+        </li>
+        <li>
+          <a href = "step10.py">step10.py</a>,
+          set up and solve the 2D Poisson equation.
+        </li>
+        <li>
+          <a href = "step10_final.png">step10_final.png</a>,
+          a plot of the final solutions.
+        </li>
+        <li>
+          <a href = "step11.py">step11.py</a>,
+          set up and solve the 2D Navier-Stokes equations for the driven cavity.
+        </li>
+        <li>
+          <a href = "step11_100.png">step11_100.png</a>,
+          a plot of the solution after 100 time steps.
+        </li>
+        <li>
+          <a href = "step11_700.png">step11_700.png</a>,
+          a plot of the solution after 700 time steps.
+        </li>
+        <li>
+          <a href = "step12.py">step12.py</a>,
+          set up and solve the 2D Navier-Stokes equations for the channel.
+        </li>
+        <li>
+          <a href = "step12_trimmed.png">step12_trimmed.png</a>,
+          a plot of the solution using 1/3 of the data in each direction.
+        </li>
+        <li>
+          <a href = "step12_all.png">step12_all.png</a>,
+          a plot of the solution using all the data.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 May 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

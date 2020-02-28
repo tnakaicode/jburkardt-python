@@ -1,0 +1,44 @@
+Fri Jan 24 08:30:40 2020
+
+FEM_TO_XML_TEST:
+  Python version: 3.6.9
+  Read mesh data from FEM files.
+  Write mesh data to equivalent XML file.
+
+  Using common file prefix "cheby9"
+
+  Number of nodes =  9
+  Spatial dimension =  1
+
+  Number of elements =  8
+  Element order =  2
+
+MESH_BASE_ZERO:
+  The element indexing appears to be 0-based!
+  No conversion is necessary.
+  Using common file prefix "rectangle"
+
+  Number of nodes =  20
+  Spatial dimension =  2
+
+  Number of elements =  24
+  Element order =  3
+
+MESH_BASE_ZERO:
+  The element indexing appears to be 0-based!
+  No conversion is necessary.
+  Using common file prefix "tet_mesh"
+
+  Number of nodes =  8
+  Spatial dimension =  3
+
+  Number of elements =  6
+  Element order =  4
+
+MESH_BASE_ZERO:
+  The element indexing appears to be 0-based!
+  No conversion is necessary.
+
+FEM_TO_XML_TEST:
+  Normal end of execution.
+Fri Jan 24 08:30:40 2020

@@ -1,0 +1,132 @@
+<html>
+
+  <head>
+    <title>
+      cvxopt_svm
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      cvxopt_svm
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>cvxopt_svm</b>,
+      a Python program which
+      solves a support vector machine (SVM) problem by formulating it
+      as a quadratic programming problem to be solved by cvxopt().
+    </p>
+
+    <p>
+      We are given m data pairs (x_i,y_i), with each y_i being a "grade"
+      of -1 or +1.  We also assume that the data is linearly separable,
+      that is, that at least one straight line can be which splits the
+      data into positive and negative graded items.
+    </p>
+
+    <p>
+      An SVM can be thought of as a function f(x)=x'*w+b such that
+      f(x_i) is negative when y_i is -1 and positive when y_i is +1.
+      Moreover, the formula is "optimal" in the sense that the
+      line f(x)=0 optimally separates the two sets of data with
+      the widest possible margin, and for which the closest positive
+      and negative graded data items have f(x) equal to +1 or -1,
+      respectively.
+    </p>
+
+    <p>
+      The SVM problem can be described as solving:
+      <pre>
+        minimize    w'w
+        subject to yi ( x'wi+b) >= 1 for 1 <= i <= m
+      </pre>
+    </p>
+
+    <p>
+      The cvxopt package includes a quadratic programming option to find x:
+      <pre>
+       minimize   1/2 x' P x + q' x
+       subject to G x <= h
+                  A x = b
+      </pre>
+    </p>
+
+    <p>
+      This program demonstrates how to read our problem data and arrange 
+      them in a format that allows us to call the cvxopt solver solvers.qp().
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>cvxopt_svm</b> is available in
+      <a href = "../../py_src/cvxopt_svm/cvxopt_svm.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cvxopt_svm.py">cvxopt_svm.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "cvxopt_svm.sh">cvxopt_svm.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "cvxopt_svm.txt">cvxopt_svm.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cvxopt_svm.png">cvxopt_svm.png</a>,
+          a plot of the data and the separating SVM line.
+        </li>
+        <li>
+          <a href = "jet_engine.txt">jet_engine.txt</a>,
+          the data file, containing 56 values of index, rpm, vib, grade.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 01 April 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

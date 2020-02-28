@@ -1,0 +1,472 @@
+Sun Feb  2 08:30:46 2020
+
+R8LT_TEST
+  Python version:
+  Test the R8LT library.
+
+I4_LOG_10_TEST
+  Python version: 3.6.9
+  I4_LOG_10: whole part of log base 10,
+
+  X, I4_LOG_10
+
+     0             0
+     1             0
+     2             0
+     3             0
+     9             0
+    10             1
+    11             1
+    99             1
+   101             2
+    -1             0
+    -2             0
+    -3             0
+    -9             0
+
+I4_LOG_10_TEST
+  Normal end of execution.
+
+R8_UNIFORM_01_TEST
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R8GE_PRINT_TEST
+  R8GE_PRINT prints an R8GE matrix.
+
+  Here is an R8GE:
+
+  Col:       0             1             2             3             4       
+  Row      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8GE_PRINT_TEST:
+  Normal end of execution.
+
+R8GE_PRINT_SOME_TEST
+  R8GE_PRINT_SOME prints some of an R8GE matrix.
+
+  Rows 0:2, Cols 3:5:
+
+  Col:       3             4             5       
+  Row      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8GE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8GE_TO_R8LT_TEST
+  R8GE_TO_R8LT converts an R8GE matrix to R8LT format.
+
+  The random R8GE matrix:
+
+  Col:       0             1             2             3       
+  Row      0 :    0.218418     0.0661187     0.0617272    0.00183837  
+      1 :    0.956318      0.257578      0.449539      0.897504  
+      2 :    0.829509      0.109957      0.401306      0.350752  
+      3 :    0.561695      0.043829      0.754673     0.0945448  
+      4 :    0.415307      0.633966      0.797287     0.0136169  
+
+  The R8LT matrix:
+
+  Col:       0             1             2             3       
+  Row      0 :    0.218418             0             0             0  
+      1 :    0.956318      0.257578             0             0  
+      2 :    0.829509      0.109957      0.401306             0  
+      3 :    0.561695      0.043829      0.754673     0.0945448  
+      4 :    0.415307      0.633966      0.797287     0.0136169  
+
+R8GE_TO_R8LT_TEST:
+  Normal end of execution.
+
+R8LT_DET_TEST
+  R8LT_DET computes the determinant of an R8LT matrix.
+
+  The matrix A:
+
+  Col:       0             1             2             3             4       
+  Row      0 :    0.218418             0             0             0             0  
+      1 :    0.956318     0.0661187             0             0             0  
+      2 :    0.829509      0.257578      0.633966             0             0  
+      3 :    0.561695      0.109957     0.0617272      0.401306             0  
+      4 :    0.415307      0.043829      0.449539      0.754673      0.797287  
+
+  Determinant is 0.00292934
+
+R8LT_DET_TEST
+  Normal end of execution.
+
+R8LT_INDICATOR_TEST
+  R8LT_INDICATOR sets up an indicator matrix in R8LT format
+
+  Matrix rows M =    5
+  Matrix columns N = 4
+
+  The indicator matrix:
+
+  Col:       0             1             2             3       
+  Row      0 :          11             0             0             0  
+      1 :          21            22             0             0  
+      2 :          31            32            33             0  
+      3 :          41            42            43            44  
+      4 :          51            52            53            54  
+
+R8LT_INDICATOR_TEST
+  Normal end of execution.
+
+R8LT_INVERSE_TEST
+  R8LT_INVERSE computes the inverse of an R8LT matrix.
+
+  The matrix A:
+
+  Col:       0             1             2             3             4       
+  Row      0 :    0.218418             0             0             0             0  
+      1 :    0.956318     0.0661187             0             0             0  
+      2 :    0.829509      0.257578      0.633966             0             0  
+      3 :    0.561695      0.109957     0.0617272      0.401306             0  
+      4 :    0.415307      0.043829      0.449539      0.754673      0.797287  
+
+  The inverse matrix B:
+
+  Col:       0             1             2             3             4       
+  Row      0 :     4.57837             0             0             0             0  
+      1 :    -66.2199       15.1243             0             0             0  
+      2 :     20.9143      -6.14495       1.57737             0             0  
+      3 :     8.51892      -3.19883     -0.242625       2.49186             0  
+      4 :    -18.6004       5.66117     -0.659722      -2.35868       1.25425  
+
+  The product A * B:
+
+  Col:       0             1             2             3             4       
+  Row      0 :           1             0             0             0             0  
+      1 :           0             1             0             0             0  
+      2 :           0             0             1             0             0  
+      3 :           0             0             0             1             0  
+      4 :           0             0             0   2.22045e-16             1  
+
+R8LT_INVERSE_TEST
+  Normal end of execution.
+
+R8LT_MM_TEST
+  R8LT_MM computes C = A * B for R8LT matrices.
+
+  The matrix A:
+
+  Col:       0             1             2             3             4       
+  Row      0 :           1             0             0             0             0  
+      1 :           1             1             0             0             0  
+      2 :           1             1             1             0             0  
+      3 :           1             1             1             1             0  
+      4 :           1             1             1             1             1  
+
+  The product C = A * A
+
+  Col:       0             1             2             3             4       
+  Row      0 :           1             0             0             0             0  
+      1 :           2             1             0             0             0  
+      2 :           3             2             1             0             0  
+      3 :           4             3             2             1             0  
+      4 :           5             4             3             2             1  
+
+R8LT_MM_TEST
+  Normal end of execution.
+
+R8LT_MTM_TEST
+  R8LT_MTM computes C = A' * B for R8LT matrices.
+
+  The matrix A:
+
+  Col:       0             1             2             3             4       
+  Row      0 :           1             0             0             0             0  
+      1 :           1             1             0             0             0  
+      2 :           1             1             1             0             0  
+      3 :           1             1             1             1             0  
+      4 :           1             1             1             1             1  
+
+  The product C = A' * A
+
+  Col:       0             1             2             3             4       
+  Row      0 :           5             4             3             2             1  
+      1 :           4             4             3             2             1  
+      2 :           3             3             3             2             1  
+      3 :           2             2             2             2             1  
+      4 :           1             1             1             1             1  
+
+R8LT_MTM_TEST
+  Normal end of execution.
+
+R8LT_MTV_TEST
+  R8LT_MTV computes A'*x for an R8LT matrix.
+
+  The matrix A:
+
+  Col:       0             1             2             3       
+  Row      0 :          11             0             0             0  
+      1 :          21            22             0             0  
+      2 :          31            32            33             0  
+      3 :          41            42            43            44  
+      4 :          51            52            53            54  
+
+  The vector x
+
+     0             1
+     1             2
+     2             3
+     3             4
+     4             5
+
+  b = A'*x:
+
+     0           565
+     1           568
+     2           536
+     3           446
+
+R8LT_MTV_TEST
+  Normal end of execution.
+
+R8LT_MV_TEST
+  R8LT_MV computes A*x for an R8LT matrix.
+
+  The matrix A:
+
+  Col:       0             1             2             3       
+  Row      0 :          11             0             0             0  
+      1 :          21            22             0             0  
+      2 :          31            32            33             0  
+      3 :          41            42            43            44  
+      4 :          51            52            53            54  
+
+  The vector x
+
+     0             1
+     1             2
+     2             3
+     3             4
+
+  b = A*x:
+
+     0            11
+     1            65
+     2           194
+     3           430
+     4           530
+
+R8LT_MV_TEST
+  Normal end of execution.
+
+R8LT_PRINT_TEST
+  R8LT_PRINT prints an R8LT matrix.
+
+  The R8LT matrix:
+
+  Col:       0             1             2             3             4       
+  Row      0 :          11             0             0             0             0  
+      1 :          21            22             0             0             0  
+      2 :          31            32            33             0             0  
+      3 :          41            42            43            44             0  
+
+  Col:       5       
+  Row
+R8LT_PRINT_TEST:
+  Normal end of execution.
+
+R8LT_PRINT_SOME_TEST
+  R8LT_PRINT_SOME prints some of an R8LT matrix.
+
+  Rows 1-3, Columns 1-2:
+
+  Col:       1             2       
+  Row      1 :          22             0  
+      2 :          32            33  
+      3 :          42            43  
+
+R8LT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8LT_RANDOM_TEST
+  R8LT_RANDOM randomizes an R8LT matrix.
+
+  Matrix order M, N = 5, 4
+
+  Matrix A:
+
+  Col:       0             1             2             3       
+  Row      0 :    0.218418             0             0             0  
+      1 :    0.956318     0.0661187             0             0  
+      2 :    0.829509      0.257578      0.633966             0  
+      3 :    0.561695      0.109957     0.0617272      0.401306  
+      4 :    0.415307      0.043829      0.449539      0.754673  
+
+R8LT_RANDOM_TEST
+  Normal end of execution.
+
+R8LT_SL_TEST
+  R8LT_SL solves A*x=b for an R8LT matrix A.
+
+  The R8LT matrix:
+
+  Col:       0             1             2             3             4       
+  Row      0 :           1             0             0             0             0  
+      1 :           1             2             0             0             0  
+      2 :           1             2             3             0             0  
+      3 :           1             2             3             4             0  
+      4 :           1             2             3             4             5  
+
+  Solution:
+
+     0             1
+     1             2
+     2             3
+     3             4
+     4             5
+
+R8LT_SL_TEST
+  Normal end of execution.
+
+R8LT_SLT_TEST
+  R8LT_SLT solves A'*x=b for an R8LT matrix A
+
+  The R8LT matrix:
+
+  Col:       0             1             2             3             4       
+  Row      0 :           1             0             0             0             0  
+      1 :           1             2             0             0             0  
+      2 :           1             2             3             0             0  
+      3 :           1             2             3             4             0  
+      4 :           1             2             3             4             5  
+
+  Solution to transposed system:
+
+     0             1
+     1             2
+     2             3
+     3             4
+     4             5
+
+R8LT_SLT_TEST
+  Normal end of execution.
+
+R8LT_TO_R8GE_TEST
+  R8LT_TO_R8GE converts an R8LT matrix to R8GE format.
+
+  The R8LT matrix:
+
+  Col:       0             1             2             3             4       
+  Row      0 :          11             0             0             0             0  
+      1 :          21            22             0             0             0  
+      2 :          31            32            33             0             0  
+      3 :          41            42            43            44             0  
+
+  Col:       5       
+  Row
+  The R8GE matrix: 
+
+  Col:       0             1             2             3             4       
+  Row      0 :          11             0             0             0             0  
+      1 :          21            22             0             0             0  
+      2 :          31            32            33             0             0  
+      3 :          41            42            43            44             0  
+
+  Col:       5       
+  Row      0 :           0  
+      1 :           0  
+      2 :           0  
+      3 :           0  
+
+R8LT_TO_R8GE_TEST:
+  Normal end of execution.
+
+R8LT_ZEROS_TEST
+  R8LT_ZEROS zeros out space for an R8LT matrix.
+
+  Matrix A:
+
+  Col:       0             1             2             3       
+  Row      0 :           0             0             0             0  
+      1 :           0             0             0             0  
+      2 :           0             0             0             0  
+      3 :           0             0             0             0  
+      4 :           0             0             0             0  
+
+R8LT_ZEROS_TEST:
+  Normal end of execution.
+
+R8VEC_INDICATOR1_TEST
+  R8VEC_INDICATOR1 returns the 1-based indicator matrix.
+
+  The 1-based indicator vector:
+
+     0             1
+     1             2
+     2             3
+     3             4
+     4             5
+     5             6
+     6             7
+     7             8
+     8             9
+     9            10
+
+R8VEC_INDICATOR1_TEST
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0       123.456
+     1         5e-06
+     2        -1e+06
+     3       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8LT_TEST:
+  Normal end of execution.
+Sun Feb  2 08:30:46 2020

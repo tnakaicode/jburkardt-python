@@ -1,0 +1,239 @@
+<html>
+
+  <head>
+    <title>
+      GEGENBAUER_POLYNOMIAL - Gegenbauer Polynomials
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      GEGENBAUER_POLYNOMIAL <br> Gegenbauer Polynomials
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>GEGENBAUER_POLYNOMIAL</b>,
+      a Python library which
+      evaluates Gegenbauer polynomials and associated functions.
+    </p>
+
+    <p>
+      The Gegenbauer polynomial C(n,alpha,x) can be defined by:
+      <pre>
+        C(0,alpha,x) = 1
+        C(1,alpha,x) = 2 * alpha * x
+        C(n,alpha,x) = (1/n) * ( 2*x*(n+alpha-1) * C(n-1,alpha,x) - (n+2*alpha-2) * C(n-2,alpha,x) )
+      </pre>
+      where n is a nonnegative integer, and -1/2 < alpha, 0 =/= alpha.
+    </p>
+
+    <p>
+      The N zeroes of C(n,alpha,x) are the abscissas used for Gauss-Gegenbauer
+      quadrature of the integral of a function F(X) with weight function 
+      (1-x^2)^(alpha-1/2) over the interval [-1,1].
+    </p>
+
+    <p>
+      The Gegenbauer polynomials are orthogonal under the inner product defined
+      as weighted integration from -1 to 1:
+      <pre>
+        Integral ( -1 <= x <= 1 ) (1-x^2)^(alpha-1/2) * C(i,alpha,x) * C(j,alpha,x) dx 
+          = 0 if i =/= j
+          = pi * 2^(1-2*alpha) * Gamma(n+2*alpha) / n! / (n+alpha) / (Gamma(alpha))^2 if i = j.
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>GEGENBAUER_POLYNOMIAL</b> is available in
+      <a href = "../../c_src/gegenbauer_polynomial/gegenbauer_polynomial.html">a C version</a> and
+      <a href = "../../cpp_src/gegenbauer_polynomial/gegenbauer_polynomial.html">a C++ version</a> and
+      <a href = "../../f_src/gegenbauer_polynomial/gegenbauer_polynomial.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/gegenbauer_polynomial/gegenbauer_polynomial.html">a MATLAB version</a> and
+      <a href = "../../py_src/gegenbauer_polynomial/gegenbauer_polynomial.html">a Python version</a>..
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/bernstein_polynomial/bernstein_polynomial.html">
+      BERNSTEIN_POLYNOMIAL</a>,
+      a Python library which
+      evaluates the Bernstein polynomials, 
+      useful for uniform approximation of functions;
+    </p>
+
+    <p>
+      <a href = "../../py_src/chebyshev_polynomial/chebyshev_polynomial.html">
+      CHEBYSHEV_POLYNOMIAL</a>,
+      a Python library which
+      considers the Chebyshev polynomials T(i,x), U(i,x), V(i,x) and W(i,x).
+      Functions are provided to evaluate the polynomials, determine their zeros, 
+      produce their polynomial coefficients, produce related quadrature rules,
+      project other functions onto these polynomial bases, and integrate
+      double and triple products of the polynomials.
+    </p>
+
+    <p>
+      <a href = "../../py_src/gegenbauer_cc/gegenbauer_cc.html">
+      GEGENBAUER_CC</a>,
+      a Python library which
+      estimates the Gegenbauer weighted integral of a function f(x)
+      using a Clenshaw-Curtis approach.
+    </p>
+
+    <p>
+      <a href = "../../py_src/legendre_polynomial/legendre_polynomial.html">
+      LEGENDRE_POLYNOMIAL</a>,
+      a Python library which
+      evaluates the Legendre polynomial and associated functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/legendre_shifted_polynomial/legendre_shifted_polynomial.html">
+      LEGENDRE_SHIFTED_POLYNOMIAL</a>,
+      a Python library which
+      evaluates the shifted Legendre polynomial, with domain [0,1].
+    </p>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      POLPAK</a>,
+      a Python library which
+      evaluates a variety of mathematical functions.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gamma_values.py">gamma_values.py</a>,
+          returns selected values of the Gamma function.
+        </li>
+        <li>
+          <a href = "gegenbauer_alpha_check.py">gegenbauer_alpha_check.py</a>,
+          checks that the Gegenbauer parameter ALPHA is legal.
+        </li>
+        <li>
+          <a href = "gegenbauer_ek_compute.py">gegenbauer_ek_compute.py</a>,
+          computes a Gegenbauer quadrature rule using the Elhay-Kautsky algorithm.
+        </li>
+        <li>
+          <a href = "gegenbauer_integral.py">gegenbauer_integral.py</a>,
+          evaluates the integral of a monomial with Gegenbauer weight.
+        </li>
+        <li>
+          <a href = "gegenbauer_polynomial_value.py">gegenbauer_polynomial_value.py</a>,
+          evaluates the Gegenbauer polynomials C(n,alpha,x).
+        </li>
+        <li>
+          <a href = "gegenbauer_polynomial_values.py">gegenbauer_polynomial_values.py</a>,
+          returns selected values of the Gegenbauer polynomials C(n,alpha,x).
+        </li>
+        <li>
+          <a href = "gegenbauer_ss_compute.py">gegenbauer_ss_compute.py</a>,
+          computes a Gegenbauer quadrature rule using the Stroud-Secrest algorithm.
+        </li>
+        <li>
+          <a href = "hyper_2f1_values.py">hyper_2f1_values.py</a>,
+          returns selected values of the hypergeometric function F(A,B,C,X).
+        </li>
+        <li>
+          <a href = "imtqlx.py">imtqlx.py</a>
+          diagonalizes a symmetric tridiagonal matrix.
+        </li>
+        <li>
+          <a href = "psi_values.py">psi_values.py</a>
+          returns some values of the Psi or Digamma function.
+        </li>
+        <li>
+          <a href = "r8_epsilon.py">r8_epsilon.py</a>,
+          returns the R8 roundoff unit.
+        </li>
+        <li>
+          <a href = "r8_gamma.py">r8_gamma.py</a>,
+          returns the gamma function of an R8.
+        </li>
+        <li>
+          <a href = "r8_hyper_2f1.py">r8_hyper_2f1.py</a>,
+          evaluates the hypergeometric function F(A,B,C,X).
+        </li>
+        <li>
+          <a href = "r8_psi.py">r8_psi.py</a>, 
+          returns the Psi function;
+        </li>
+        <li>
+          <a href = "r8_uniform_ab.py">r8_uniform_ab.py</a>,
+          returns a scaled pseudorandom R8;
+        </li>
+        <li>
+          <a href = "r8vec_print.py">r8vec_print.py</a>,
+          prints an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_reverse.py">r8vec_reverse.py</a>,
+          copies the elements of an R8VEC in reverse order.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>,
+          prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gegenbauer_polynomial.py">gegenbauer_polynomial.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "gegenbauer_polynomial.sh">gegenbauer_polynomial.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "gegenbauer_polynomial.txt">
+          gegenbauer_polynomial.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 24 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

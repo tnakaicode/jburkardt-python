@@ -1,0 +1,270 @@
+Tue Jan 28 08:24:30 2020
+
+L4LIB_TEST
+  Python version: 3.6.9
+  Test the L4LIB library.
+
+I4_TO_L4_TEST
+  I4_TO_L4 converts an I4 to an L4.
+
+  I4   L4
+
+  -5  True
+  -4  True
+  -3  True
+  -2  True
+  -1  True
+   0  False
+   1  True
+   2  True
+   3  True
+   4  True
+   5  True
+
+I4_TO_L4_TEST
+  Normal end of execution.
+
+I4_TO_L4VEC_TEST
+  I4_TO_L4VEC converts an I4 to an L4VEC.
+
+  I4   L4VEC
+
+   0:  0 0 0 0 0 0 0 0
+   1:  0 0 0 0 0 0 0 1
+   2:  0 0 0 0 0 0 1 0
+   3:  0 0 0 0 0 0 1 1
+   4:  0 0 0 0 0 1 0 0
+   5:  0 0 0 0 0 1 0 1
+   6:  0 0 0 0 0 1 1 0
+   7:  0 0 0 0 0 1 1 1
+   8:  0 0 0 0 1 0 0 0
+   9:  0 0 0 0 1 0 0 1
+  10:  0 0 0 0 1 0 1 0
+
+I4_TO_L4VEC_TEST
+  Normal end of execution.
+
+L4_TO_I4_TEST
+  L4_TO_I4 converts an L4 to an I4.
+
+      L4   I4
+
+   False    0
+    True    1
+
+L4_TO_I4_TEST
+  Normal end of execution.
+
+L4_TO_S_TEST
+  L4_TO_S converts an L4 to a string.
+
+      L4   S
+
+   False    False
+    True    True
+
+L4_TO_S_TEST
+  Normal end of execution.
+
+L4_UNIFORM_TEST
+  L4_UNIFORM returns random logical values
+
+  0
+  1
+  1
+  1
+  0
+  0
+  0
+  0
+  0
+  1
+
+L4_UNIFORM_TEST
+  Normal end of execution
+
+L4_XOR_TEST
+  L4_XOR computes the exclusive OR of two L4's
+
+      L1      L2  L4_XOR(L1,L2)
+
+   False   False    False
+   False    True     True
+    True   False     True
+    True    True    False
+
+L4_XOR_TEST
+  Normal end of execution.
+
+L4MAT_PRINT_TEST:
+  L4MAT_PRINT prints an L4MAT.
+
+  A 5 x 3 integer matrix:
+
+  Col:  0 1 2 3 4 5 6 7 8 91011
+  Row
+    0:  F F F F T T T T T T F F
+    1:  T F F T T F T F F F T T
+    2:  T F F F F F T T T F F T
+    3:  T F T F F T F F F T T T
+    4:  F T T F F F T F F T T F
+
+L4MAT_PRINT_TEST:
+  Normal end of execution.
+
+L4MAT_PRINT_SOME_TEST
+  L4MAT_PRINT_SOME prints some of an L4MAT.
+
+  Here is L4MAT, rows 0:2, cols 3:5:
+
+  Col:  3 4 5
+  Row
+    0:  F T T
+    1:  T F T
+    2:  T F F
+
+L4MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+L4MAT_TRANSPOSE_PRINT_TEST:
+  L4MAT_TRANSPOSE_PRINT prints an L4MAT transposed.
+
+  A 5 x 12 integer matrix:
+
+  Row:  0 1 2 3 4
+  Col
+    0:  F T T T F
+    1:  F F F F T
+    2:  F F F T T
+    3:  F T F F F
+    4:  T T F F F
+    5:  T F F T F
+    6:  T T T F T
+    7:  T F T F F
+    8:  T F T F F
+    9:  T F F T T
+   10:  F T F T T
+   11:  F T T T F
+
+L4MAT_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+L4MAT_TRANSPOSE_PRINT_SOME_TEST
+  L4MAT_TRANSPOSE_PRINT_SOME prints some of an L4MAT, transposed.
+
+  Here is L4MAT, rows 0:2, cols 3:5:
+
+  Row:  0 1 2
+  Col
+    3:  F T T
+    4:  T F F
+    5:  T T F
+
+L4MAT_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+L4MAT_UNIFORM_TEST
+  L4MAT_UNIFORM computes a random L4MAT.
+
+  Initial seed is 123456789
+
+  Random L4MAT:
+
+  Col:  0 1 2 3
+  Row
+    0:  F F F F
+    1:  T F F T
+    2:  T F F F
+    3:  T F T F
+    4:  F T T F
+
+L4MAT_UNIFORM_TEST:
+  Normal end of execution.
+
+L4VEC_NEXT_TEST
+  L4VEC_NEXT generates logical vectors of dimension N one at a time.
+
+  Vector size N = 2
+
+   0:    False  False
+   1:    False  True
+   2:    True  False
+   3:    True  True
+
+  Vector size N = 3
+
+   0:    False  False  False
+   1:    False  False  True
+   2:    False  True  False
+   3:    False  True  True
+   4:    True  False  False
+   5:    True  False  True
+   6:    True  True  False
+   7:    True  True  True
+
+L4VEC_NEXT_TEST:
+  Normal end of execution.
+
+L4VEC_PRINT_TEST
+  L4VEC_PRINT prints an L4VEC.
+
+  Here is an L4VEC:
+
+     0  F
+     1  T
+     2  T
+     3  T
+     4  F
+     5  F
+     6  F
+     7  F
+     8  F
+     9  T
+
+L4VEC_PRINT_TEST:
+  Normal end of execution.
+
+L4VEC_UNIFORM_TEST
+  L4VEC_UNIFORM computes a random L4VEC.
+
+  Initial seed is 123456789
+
+  Random L4VEC:
+
+     0  F
+     1  T
+     2  T
+     3  T
+     4  F
+     5  F
+     6  F
+     7  F
+     8  F
+     9  T
+
+L4VEC_UNIFORM_TEST:
+  Normal end of execution.
+
+S_TO_L4_TEST
+  S_TO_L4 reads logical data from a string.
+
+        S   L4
+
+  "0      "  False
+  "F      "  False
+  "f      "  False
+  "1      "  True
+  "T      "  True
+  "t      "  True
+  "  0    "  False
+  "  1  0 "  True
+  "  01   "  False
+  "  Talse"  True
+
+S_TO_L4_TEST
+  Normal end of execution.
+
+L4LIB_TEST:
+  Normal end of execution.
+
+Tue Jan 28 08:24:31 2020

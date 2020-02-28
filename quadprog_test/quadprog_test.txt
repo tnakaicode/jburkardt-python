@@ -1,0 +1,34 @@
+Fri Jan 31 19:04:57 2020
+
+quadprog_test
+  Python version: 3.6.9
+  Test quadprog()
+  which solves quadratic programming problems.
+
+  minimize    1/2 x H x - f x
+  subject to: A x >= b
+
+  H should be positive definite symmetric.
+
+quadprog_test01
+  minimize    1/2 x1^2 + x2^2 - x1x2 - 2x1 - 6x2
+  subject to:  x1 +  x2 <= 2
+              -x1 + 2x2 <= 2
+              2x1 +  x2 <= 3
+
+  Solution vector x = [ 0.666667, 1.33333 ]:
+  Function value at x is -8.22222
+
+quadprog_test02
+  minimize    65/2 x^2 - 22xy + 7y^2 - 16xz + 7yz + 5/2z^2
+              - 13x + 15y + 7z
+  subject to:  x + 2y + z <=  3
+              2x      + z <=  2
+              -x + 2y - z <= -2
+
+  Solution vector x = [ -0.490257, -1.57755, -0.664848 ]:
+  Function value at x is -10.4949
+
+quadprog_test
+  Normal end of execution.
+Fri Jan 31 19:04:57 2020

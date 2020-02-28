@@ -1,0 +1,9 @@
+
+PGMB_WRITE_TEST:
+  Python version: 3.6.9
+  PGMB_WRITE writes a binary PGM graphics file.
+
+  Graphics data stored in file "pgmb_io.pgm".
+
+PGMB_WRITE_TEST:
+  Normal end of execution.

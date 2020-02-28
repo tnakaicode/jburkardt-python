@@ -1,0 +1,1079 @@
+Sun Feb  2 08:30:45 2020
+
+R83_TEST
+  Python version:
+  Test the R83 library.
+
+I4_LOG_10_TEST
+  Python version: 3.6.9
+  I4_LOG_10: whole part of log base 10,
+
+  X, I4_LOG_10
+
+     0             0
+     1             0
+     2             0
+     3             0
+     9             0
+    10             1
+    11             1
+    99             1
+   101             2
+    -1             0
+    -2             0
+    -3             0
+    -9             0
+
+I4_LOG_10_TEST
+  Normal end of execution.
+
+R8_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R83_CG_TEST
+  R83_CG applies CG to an R83 matrix.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 8.47455e-16
+  Norm of error ||x1-x2|| = 4.1616e-16
+
+R83_CG_TEST
+  Normal end of execution.
+
+R83_CR_FA_TEST
+  R83_CR_FA factors a real tridiagonal matrix;
+  Once the matrix has been factored, we can call
+  R83_CR_SL to solve a linear system.
+
+  Matrix order N = 5
+  Demonstrate multiple system solution method.
+
+
+  System matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+    3:                                        -1             2            -1
+    4:                                                      -1             2
+
+  Solve linear system number 1
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  Solve linear system number 2
+
+  Solution:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+
+R83_CR_FA_TEST
+  Normal end of execution.
+
+R83_CR_SL_TEST
+  R83_CR_SL solves a factored system
+  after R83_CR_FA has factored it..
+
+  Matrix order N = 5
+  Demonstrate multiple system solution method.
+
+
+  System matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+    3:                                        -1             2            -1
+    4:                                                      -1             2
+
+  Solve linear system number 1
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  Solve linear system number 2
+
+  Solution:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+
+R83_CR_SL_TEST
+  Normal end of execution.
+
+R83_CR_SLS_TEST
+  R83_CR_SLS solves linear systems by cyclic reduction
+  after the R83 matrix has been factored by R83_CR_FA.
+
+  Matrix order N = 5
+  Demonstrate multiple system solution method.
+
+
+  System matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+    3:                                        -1             2            -1
+    4:                                                      -1             2
+
+  Solutions:
+
+  Col: 
+      0       
+      1       
+
+  Row
+      0 :
+           0  
+           1  
+
+      1 :
+           0  
+           1  
+
+      2 :
+           0  
+           1  
+
+      3 :
+           0  
+           1  
+
+      4 :
+           3  
+           1  
+
+
+R83_CR_SLS_TEST
+  Normal end of execution.
+
+R83_DIF2_TEST
+  R83_DIF2 sets an R83 matrix to the second difference.
+  We check three cases, M<N, M=N, M>N.
+
+  Second difference in R83 format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+
+  Second difference in R83 format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+    3:                                        -1             2            -1
+    4:                                                      -1             2
+
+  Second difference in R83 format:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:             2            -1              
+    1:            -1             2            -1
+    2:                          -1             2
+    3:                                        -1
+
+R83_DIF2_TEST
+  Normal end of execution.
+
+R83_GS_SL_TEST
+  R83_GS_SL applies Gauss-Seidel iteration with an R83 matrix
+  to solve a linear system A*x=b.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 4.51901e-05
+  Norm of error ||x1-x2|| = 0.000529646
+
+R83_GS_SL_TEST
+  Normal end of execution.
+
+R83_INDICATOR_TEST
+  R83_INDICATOR returns an indicator matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  R83 indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:            11            12                                          
+    1:            21            22            23                            
+    2:                          32            33            34              
+
+  R83 indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:            11            12                                          
+    1:            21            22            23                            
+    2:                          32            33            34              
+    3:                                        43            44            45
+    4:                                                      54            55
+
+  R83 indicator matrix:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:            11            12              
+    1:            21            22            23
+    2:                          32            33
+    3:                                        43
+
+R83_INDICATOR_TEST
+  Normal end of execution.
+
+R83_JAC_SL_TEST
+  R83_JAC_SL applies Jacobi iteration with an R83 matrix
+  to solve a linear system A*x=b.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 0.0023461
+  Norm of error ||x1-x2|| = 0.0289483
+
+R83_JAC_SL_TEST
+  Normal end of execution.
+
+R83_MTV_TEST
+  R83_MV computes b=A'*x, where A is an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Product comparison:
+
+       0:        2.13105       2.13105
+       1:        3.19882       3.19882
+       2:       0.904971      0.904971
+       3:        0.32987       0.32987
+       4:              0             0
+
+  Product comparison:
+
+       0:        2.13105       2.13105
+       1:        3.19882       3.19882
+       2:         1.3448        1.3448
+       3:        2.97599       2.97599
+       4:        3.80469       3.80469
+
+  Product comparison:
+
+       0:        2.13105       2.13105
+       1:        3.19882       3.19882
+       2:         1.3448        1.3448
+
+R83_MTV_TEST
+  Normal end of execution.
+
+R83_MV_TEST
+  R83_MV computes b=A*x, where A is an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Product comparison:
+
+       0:        1.87744       1.87744
+       1:        2.27806       2.27806
+       2:        2.04317       2.04317
+
+  Product comparison:
+
+       0:        1.87744       1.87744
+       1:        2.27806       2.27806
+       2:        1.77866       1.77866
+       3:        5.11343       5.11343
+       4:        2.25344       2.25344
+
+  Product comparison:
+
+       0:        1.87744       1.87744
+       1:        2.27806       2.27806
+       2:        1.60335       1.60335
+       3:        0.32987       0.32987
+       4:              0             0
+
+R83_MV_TEST
+  Normal end of execution.
+
+R83_PRINT_TEST
+  R83_PRINT prints an R83 matrix.
+
+  R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:            11            12                                          
+    1:            21            22            23                            
+    2:                          32            33            34              
+    3:                                        43            44            45
+    4:                                                      54            55
+
+R83_PRINT_TEST
+  Normal end of execution.
+
+R83_PRINT_SOME_TEST
+  R83_PRINT_SOME prints some of an R83 matrix.
+
+  Rows 1-4, Cols 1-3:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:            22            23              
+    2:            32            33            34
+    3:                          43            44
+    4:                                        54
+
+R83_PRINT_SOME_TEST
+  Normal end of execution.
+
+R83_RANDOM_TEST
+  R83_RANDOM randomizes an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Random R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:      0.218418      0.829509                                          
+    1:      0.956318      0.561695     0.0661187                            
+    2:                    0.415307      0.257578      0.109957              
+
+  Random R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:      0.218418      0.829509                                          
+    1:      0.956318      0.561695     0.0661187                            
+    2:                    0.415307      0.257578      0.043829              
+    3:                                  0.109957      0.633966      0.449539
+    4:                                               0.0617272      0.401306
+
+  Random R83 matrix:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:      0.218418      0.829509              
+    1:      0.956318      0.561695     0.0661187
+    2:                    0.415307      0.257578
+    3:                                  0.109957
+
+R83_RANDOM_TEST
+  Normal end of execution.
+
+R83_RES_TEST
+  R83_RES computes b-A*x, where A is an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Residual A*x-b:
+
+     0:             0
+     1:             0
+     2:             0
+
+  Residual A*x-b:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+     4:             0
+
+  Residual A*x-b:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+     4:             0
+
+R83_RES_TEST
+  Normal end of execution.
+
+R83_TO_R8GE_TEST
+  R83_TO_R8GE converse an R83 matrix to R8GE format.
+  We check three cases, M<N, M=N, M>N.
+
+  R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:      0.218418      0.829509                                          
+    1:      0.956318      0.561695     0.0661187                            
+    2:                    0.415307      0.257578      0.109957              
+
+  R8GE matrix:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Row
+      0 :
+    0.218418  
+    0.829509  
+           0  
+           0  
+           0  
+
+      1 :
+    0.956318  
+    0.561695  
+   0.0661187  
+           0  
+           0  
+
+      2 :
+           0  
+    0.415307  
+    0.257578  
+    0.109957  
+           0  
+
+
+  R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:      0.218418      0.829509                                          
+    1:      0.956318      0.561695     0.0661187                            
+    2:                    0.415307      0.257578      0.043829              
+    3:                                  0.109957      0.633966      0.449539
+    4:                                               0.0617272      0.401306
+
+  R8GE matrix:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Row
+      0 :
+    0.218418  
+    0.829509  
+           0  
+           0  
+           0  
+
+      1 :
+    0.956318  
+    0.561695  
+   0.0661187  
+           0  
+           0  
+
+      2 :
+           0  
+    0.415307  
+    0.257578  
+    0.043829  
+           0  
+
+      3 :
+           0  
+           0  
+    0.109957  
+    0.633966  
+    0.449539  
+
+      4 :
+           0  
+           0  
+           0  
+   0.0617272  
+    0.401306  
+
+
+  R83 matrix:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:      0.218418      0.829509              
+    1:      0.956318      0.561695     0.0661187
+    2:                    0.415307      0.257578
+    3:                                  0.109957
+
+  R8GE matrix:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+    0.218418  
+    0.829509  
+           0  
+
+      1 :
+    0.956318  
+    0.561695  
+   0.0661187  
+
+      2 :
+           0  
+    0.415307  
+    0.257578  
+
+      3 :
+           0  
+           0  
+    0.109957  
+
+      4 :
+           0  
+           0  
+           0  
+
+
+R83_TO_R8GE_TEST
+  Normal end of execution.
+
+R83_ZEROS_TEST
+  R83_ZEROS zeros an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Zeroed R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             0             0                                          
+    1:             0             0             0                            
+    2:                           0             0             0              
+
+  Zeroed R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             0             0                                          
+    1:             0             0             0                            
+    2:                           0             0             0              
+    3:                                         0             0             0
+    4:                                                       0             0
+
+  Zeroed R83 matrix:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:             0             0              
+    1:             0             0             0
+    2:                           0             0
+    3:                                         0
+
+R83_ZEROS_TEST
+  Normal end of execution.
+
+R8GE_MTV_TEST
+  Python version: 3.6.9
+  R8GE_MTV computes a matrix product b=A'*x for an R8GE matrix.
+
+  The matrix A:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Row
+      0 :
+          11  
+          12  
+          13  
+          14  
+          15  
+
+      1 :
+          21  
+          22  
+          23  
+          24  
+          25  
+
+      2 :
+          31  
+          32  
+          33  
+          34  
+          35  
+
+
+  The vector x:
+
+     0:             1
+     1:             2
+     2:             3
+
+  The vector b=A'*x:
+
+     0:           146
+     1:           152
+     2:           158
+     3:           164
+     4:           170
+
+  The matrix A:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Row
+      0 :
+          11  
+          12  
+          13  
+          14  
+          15  
+
+      1 :
+          21  
+          22  
+          23  
+          24  
+          25  
+
+      2 :
+          31  
+          32  
+          33  
+          34  
+          35  
+
+      3 :
+          41  
+          42  
+          43  
+          44  
+          45  
+
+      4 :
+          51  
+          52  
+          53  
+          54  
+          55  
+
+
+  The vector x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  The vector b=A'*x:
+
+     0:           565
+     1:           580
+     2:           595
+     3:           610
+     4:           625
+
+  The matrix A:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+          11  
+          12  
+          13  
+
+      1 :
+          21  
+          22  
+          23  
+
+      2 :
+          31  
+          32  
+          33  
+
+      3 :
+          41  
+          42  
+          43  
+
+      4 :
+          51  
+          52  
+          53  
+
+
+  The vector x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  The vector b=A'*x:
+
+     0:           565
+     1:           580
+     2:           595
+
+R8GE_MTV_TEST
+  Normal end of execution.
+
+R8GE_MV_TEST
+  Python version: 3.6.9
+  R8GE_MV computes a matrix product b=A*x for an R8GE matrix.
+
+  The matrix A:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+
+  Row
+      0 :
+          11  
+          12  
+          13  
+          14  
+
+      1 :
+          21  
+          22  
+          23  
+          24  
+
+      2 :
+          31  
+          32  
+          33  
+          34  
+
+      3 :
+          41  
+          42  
+          43  
+          44  
+
+      4 :
+          51  
+          52  
+          53  
+          54  
+
+
+  The vector X:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  The vector b=A*x:
+
+     0:           130
+     1:           230
+     2:           330
+     3:           430
+
+R8GE_MV_TEST
+  Normal end of execution.
+
+R8GE_PRINT_TEST
+  Python version: 3.6.9
+  R8GE_PRINT prints an R8GE matrix.
+
+  Here is an R8GE:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Row
+      0 :
+          11  
+          12  
+          13  
+          14  
+          15  
+
+      1 :
+          21  
+          22  
+          23  
+          24  
+          25  
+
+      2 :
+          31  
+          32  
+          33  
+          34  
+          35  
+
+      3 :
+          41  
+          42  
+          43  
+          44  
+          45  
+
+
+  Col: 
+      5       
+
+  Row
+      0 :
+          16  
+
+      1 :
+          26  
+
+      2 :
+          36  
+
+      3 :
+          46  
+
+
+R8GE_PRINT_TEST:
+  Normal end of execution.
+
+R8GE_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8GE_PRINT_SOME prints some of an R8GE matrix.
+
+  Rows 0:2, Cols 3:5:
+
+  Col: 
+      3       
+      4       
+      5       
+
+  Row
+      0 :
+          14  
+          15  
+          16  
+
+      1 :
+          24  
+          25  
+          26  
+
+      2 :
+          34  
+          35  
+          36  
+
+
+R8GE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8VEC_INDICATOR1_TEST
+  Python version: 3.6.9
+  R8VEC_INDICATOR1 returns the 1-based indicator matrix.
+
+  The 1-based indicator vector:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8VEC_INDICATOR1_TEST
+  Normal end of execution.
+
+R8VEC_NORM_TEST
+  Python version: 3.6.9
+  R8VEC_NORM computes the L2 norm of an R8VEC.
+
+  Input vector:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+  L2 norm = 1.62017
+
+R8VEC_NORM_TEST:
+  Normal end of execution.
+
+R8VEC_NORM_AFFINE_TEST
+  Python version: 3.6.9
+  R8VEC_NORM_AFFINE computes the L2 norm of
+  the difference of two R8VECs.
+
+  R8VEC_NORM_AFFINE(X,Y) = 1.22756
+  R8VEC_NORM (X-Y):        1.22756
+
+R8VEC_NORM_AFFINE_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8VEC2_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC2_PRINT prints a pair of R8VEC's.
+
+  Print a pair of R8VEC's:
+
+       0:              0             0
+       1:            0.2          0.04
+       2:            0.4          0.16
+       3:            0.6          0.36
+       4:            0.8          0.64
+       5:              1             1
+
+R8VEC2_PRINT_TEST:
+  Normal end of execution.
+
+R83_TEST:
+  Normal end of execution.
+Sun Feb  2 08:30:45 2020

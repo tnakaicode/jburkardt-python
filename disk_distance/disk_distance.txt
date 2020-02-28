@@ -1,0 +1,19 @@
+Thu Jan 23 08:10:27 2020
+
+DISK_DISTANCE_TEST:
+  Python version: 3.6.9
+  Test DISK_DISTANCE.
+
+  Using N = 10000 sample points,
+  Estimated mean distance = 0.908911
+  Exact mean distance     = 0.905415
+  Estimated variance      = 0.18331
+  Exact variance          = 0.180224
+  Graphics saved as "disk_distance_histogram.png"
+  Graphics saved as "disk_distance_pdf.png"
+
+  Graphics saved as "disk_distance_compare.png"
+
+DISK_DISTANCE_TEST:
+  Normal end of execution.
+Thu Jan 23 08:11:19 2020

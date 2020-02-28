@@ -1,0 +1,322 @@
+Tue Jan 28 08:30:21 2020
+
+NORMAL_TEST:
+  Python version: 3.6.9
+  Test the NORMAL library.
+
+R8_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+TIMESTAMP_TEST:
+  Python version: 3.6.9
+  TIMESTAMP prints a timestamp of the current date and time.
+
+Tue Jan 28 08:30:21 2020
+
+TIMESTAMP_TEST:
+  Normal end of execution.
+
+C8_NORMAL_01_TEST
+  Python version: 3.6.9
+  C8_NORMAL_01 computes pseudonormal complex values.
+
+  The initial seed is 123456789
+
+       1  ( 1.679040, -0.472769 )
+       2  ( -0.566060, -0.231124 )
+       3  ( 1.212934, 0.535037 )
+       4  ( 1.269381, 1.049543 )
+       5  ( -1.666087, -1.865228 )
+       6  ( -2.242464, 0.735809 )
+       7  ( 0.039675, -1.350736 )
+       8  ( 0.673068, 0.007775 )
+       9  ( -0.275127, 0.374940 )
+      10  ( 2.164005, 0.185600 )
+
+C8_NORMAL_01_TEST:
+  Normal end of execution.
+
+I4_NORMAL_AB_TEST
+  Python version: 3.6.9
+  I4_NORMAL_AB computes integer pseudonormal values with
+  mean MU and standard deviation SIGMA.
+
+  MU = 10
+  SIGMA = 2
+  SEED = 123456789
+
+   0            13
+   1             8
+   2            12
+   3            12
+   4             6
+   5             5
+   6            10
+   7            11
+   8             9
+   9            14
+
+I4_NORMAL_AB_TEST
+  Normal end of execution.
+
+R8_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8_NORMAL_01 generates normally distributed
+  random values.
+  Using initial random number seed = 123456789
+
+  1.679040
+  -0.566060
+  1.212934
+  1.269381
+  -1.666087
+  -2.242464
+  0.039675
+  0.673068
+  -0.275127
+  2.164005
+  0.297785
+  2.044536
+  1.398819
+  -1.242985
+  -0.067084
+  -0.794396
+  -0.523768
+  -0.350567
+  0.131700
+  0.537380
+
+R8_NORMAL_01_TEST
+  Normal end of execution.
+
+R8_NORMAL_AB_TEST
+  Python version: 3.6.9
+  R8_NORMAL_AB generates normally distributed values
+  with given mean and standard deviation.
+  Using initial random number seed = 123456789
+  MEAN = 100
+  STD = 10
+
+  116.79
+  94.3394
+  112.129
+  112.694
+  83.3391
+  77.5754
+  100.397
+  106.731
+  97.2487
+  121.64
+  102.978
+  120.445
+  113.988
+  87.5701
+  99.3292
+  92.056
+  94.7623
+  96.4943
+  101.317
+  105.374
+
+R8_NORMAL_AB_TEST
+  Normal end of execution.
+
+R8MAT_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8MAT_NORMAL_01 returns a matrix of Normal 01 values
+
+  SEED = 123456789
+
+  Matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     1.67904      -0.56606       1.21293       1.26938  
+      1 :    -1.66609      -2.24246     0.0396749      0.673068  
+      2 :   -0.275127         2.164      0.297785       2.04454  
+      3 :     1.39882      -1.24299    -0.0670837     -0.794396  
+      4 :   -0.523768     -0.350567        0.1317       0.53738  
+
+R8MAT_NORMAL_01_TEST:
+  Normal end of execution.
+
+R8MAT_NORMAL_AB_TEST
+  Python version: 3.6.9
+  R8MAT_NORMAL_AB returns a matrix of Normal AB values
+
+  Mean = 100
+  Standard deviation = 5
+  SEED = 123456789
+
+  Matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     108.395       97.1697       106.065       106.347  
+      1 :     91.6696       88.7877       100.198       103.365  
+      2 :     98.6244        110.82       101.489       110.223  
+      3 :     106.994       93.7851       99.6646        96.028  
+      4 :     97.3812       98.2472       100.658       102.687  
+
+R8MAT_NORMAL_AB_TEST:
+  Normal end of execution.
+
+R8VEC_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8VEC_NORMAL_01 returns a vector of Normal 01 values
+
+  SEED = 123456789
+
+  Vector:
+
+     0:       1.67904
+     1:      -0.56606
+     2:       1.21293
+     3:       1.26938
+     4:      -1.66609
+     5:      -2.24246
+     6:     0.0396749
+     7:      0.673068
+     8:     -0.275127
+     9:         2.164
+
+R8VEC_NORMAL_01_TEST:
+  Normal end of execution.
+
+R8VEC_NORMAL_AB_TEST
+  Python version: 3.6.9
+  R8VEC_NORMAL_AB returns a vector of Normal AB values
+
+  Mean = 15
+  Standard deviation = 0.25
+  SEED = 123456789
+
+  Vector:
+
+     0:       15.4198
+     1:       14.8585
+     2:       15.3032
+     3:       15.3173
+     4:       14.5835
+     5:       14.4394
+     6:       15.0099
+     7:       15.1683
+     8:       14.9312
+     9:        15.541
+
+R8VEC_NORMAL_AB_TEST:
+  Normal end of execution.
+
+NORMAL_TEST:
+  Normal end of execution.
+Tue Jan 28 08:30:21 2020

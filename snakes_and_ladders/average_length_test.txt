@@ -1,0 +1,8 @@
+
+AVERAGE_LENGTH
+  Python version: 3.6.9
+  Estimate the average length of a game of snakes and ladders.
+Average number of moves is 37
+
+AVERAGE_LENGTH
+  Normal end of execution.

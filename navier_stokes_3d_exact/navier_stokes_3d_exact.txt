@@ -1,0 +1,238 @@
+Tue Jan 28 18:18:35 2020
+
+NS3DE_TEST
+  Python version: 3.6.9
+  Test the NS3DE library.
+
+R8_ERF_TEST:
+  Python version: 3.6.9
+  R8_ERF evaluates the error function.
+
+      X            ERF(X)    R8_ERF(X)
+
+             0                         0                         0
+           0.1        0.1124629160182849        0.1124629160182849
+           0.2        0.2227025892104785        0.2227025892104785
+           0.3        0.3286267594591274        0.3286267594591273
+           0.4        0.4283923550466685        0.4283923550466684
+           0.5        0.5204998778130465        0.5204998778130465
+           0.6        0.6038560908479259        0.6038560908479259
+           0.7        0.6778011938374185        0.6778011938374184
+           0.8        0.7421009647076605        0.7421009647076605
+           0.9        0.7969082124228321        0.7969082124228322
+             1        0.8427007929497149        0.8427007929497148
+           1.1        0.8802050695740817        0.8802050695740817
+           1.2        0.9103139782296354        0.9103139782296354
+           1.3        0.9340079449406524        0.9340079449406524
+           1.4        0.9522851197626488        0.9522851197626487
+           1.5        0.9661051464753106        0.9661051464753108
+           1.6         0.976348383344644         0.976348383344644
+           1.7        0.9837904585907746        0.9837904585907746
+           1.8        0.9890905016357306        0.9890905016357308
+           1.9        0.9927904292352575        0.9927904292352574
+             2        0.9953222650189527        0.9953222650189527
+
+R8_ERF_TEST
+  Normal end of execution.
+
+R8VEC_AMAX_TEST
+  Python version: 3.6.9
+  R8VEC_AMAX computes the maximum absolute value entry in an R8VEC.
+
+  Input vector:
+
+     0:      -5.63163
+     1:       9.12635
+     2:       6.59018
+     3:       1.23391
+     4:      -1.69386
+     5:      -8.67763
+     6:      -4.84844
+     7:      -7.80086
+     8:      -9.12342
+     9:       2.67931
+
+  Max Abs = 9.12635
+
+R8VEC_AMAX_TEST:
+  Normal end of execution.
+
+R8VEC_AMIN_TEST
+  Python version: 3.6.9
+  R8VEC_AMIN computes the minimum absolute entry in an R8VEC.
+
+  Input vector:
+
+     0:      -5.63163
+     1:       9.12635
+     2:       6.59018
+     3:       1.23391
+     4:      -1.69386
+     5:      -8.67763
+     6:      -4.84844
+     7:      -7.80086
+     8:      -9.12342
+     9:       2.67931
+
+  Min Abs = 1.23391
+
+R8VEC_AMIN_TEST:
+  Normal end of execution.
+
+R8VEC_MAX_TEST
+  Python version: 3.6.9
+  R8VEC_MAX computes the maximum entry in an R8VEC.
+
+  Input vector:
+
+     0:      -5.63163
+     1:       9.12635
+     2:       6.59018
+     3:       1.23391
+     4:      -1.69386
+     5:      -8.67763
+     6:      -4.84844
+     7:      -7.80086
+     8:      -9.12342
+     9:       2.67931
+
+  Max = 9.12635
+
+R8VEC_MAX_TEST:
+  Normal end of execution.
+
+R8VEC_MIN_TEST
+  Python version: 3.6.9
+  R8VEC_MIN computes the minimum entry in an R8VEC.
+
+  Input vector:
+
+     0:      -5.63163
+     1:       9.12635
+     2:       6.59018
+     3:       1.23391
+     4:      -1.69386
+     5:      -8.67763
+     6:      -4.84844
+     7:      -7.80086
+     8:      -9.12342
+     9:       2.67931
+
+  Min = -9.12342
+
+R8VEC_MIN_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_AB computes a random R8VEC.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:       0.31051
+     1:       4.73791
+     2:       3.97706
+     3:       2.37017
+     4:       1.49184
+     5:     -0.603288
+     6:      0.545467
+     7:     -0.340259
+     8:     -0.737026
+     9:       2.80379
+
+R8VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+UVWP_BURGERS_TEST
+  Python version: 3.6.9
+  UVWP samples the Burgers solution.
+  Estimate the range of velocity and pressure
+  at the initial time T = 0, using a region that is
+  the cube centered at (0,0,0) with "radius" 1.0,
+  Viscosity NU = 0.25
+
+           Minimum       Maximum
+
+  U:        -1.99265         1.99163
+  V:        -1.98972         1.98812
+  W:       -0.995071        0.995105
+  P:        -3.91927     -0.00134687
+
+UVWP_BURGERS_TEST:
+  Normal end of execution.
+
+RESID_BURGERS_TEST
+  Python version: 3.6.9
+  RESID_BURGERS evaluates the Burgers residual.
+  Sample at the initial time T = 0, using a region that is
+  the cube centered at (0,0,0) with "radius" 1.0,
+  Viscosity NU = 0.25
+
+           Minimum       Maximum
+
+  Ur:               0               0
+  Vr:               0               0
+  Wr:               0     2.22045e-16
+  Pr:               0               0
+
+RESID_BURGERS_TEST:
+  Normal end of execution.
+
+UVWP_ETHIER_TEST
+  Python version: 3.6.9
+  UVWP_ETHIER evaluates the Ethier solution.
+  Estimate the range of velocity and pressure
+  at the initial time T = 0, using a region that is
+  the cube centered at (0,0,0) with "radius" 1.0,
+  Parameter A = 0.785398
+  Parameter D = 1.5708
+
+           Minimum       Maximum
+
+  U:        -2.96676         1.47141
+  V:        -3.10466         1.53906
+  W:        -3.00826         1.36061
+  P:      0.00587719         5.50593
+
+UVWP_ETHIER_TEST:
+  Normal end of execution.
+
+RESID_ETHIER_TEST
+  Python version: 3.6.9
+  RESID_ETHIER evaluates the Ethier residual.
+  Sample the residuals
+  at the initial time T = 0, using a region that is
+  the cube centered at (0,0,0) with "radius" 1.0,
+  Parameter A = 0.785398
+  Parameter D = 1.5708
+
+           Minimum       Maximum
+
+  Ur:               0     3.55271e-15
+  Vr:               0     3.55271e-15
+  Wr:               0     3.55271e-15
+  Pr:               0     3.33067e-16
+
+RESID_ETHIER_TEST:
+  Normal end of execution.
+
+NS3DE_TEST:
+  Normal end of execution.
+Tue Jan 28 18:18:35 2020

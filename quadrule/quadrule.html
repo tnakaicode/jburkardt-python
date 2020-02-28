@@ -1,0 +1,463 @@
+<html>
+
+  <head>
+    <title>
+      QUADRULE - Quadrature Rules
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      QUADRULE <br> Quadrature Rules
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>QUADRULE</b>,
+      a Python library which
+      sets up a variety of
+      quadrature rules, used to approximate the integral of a function
+      over various domains in 1D.
+    </p>
+
+    <p>
+      QUADRULE returns the abscissas and weights for a variety of
+      one dimensional quadrature rules for approximating the integral
+      of a function.  The best rule is generally Gauss-Legendre quadrature,
+      but other rules offer special features, including the ability to
+      handle certain weight functions, to approximate an integral
+      on an infinite integration region, or to estimate the approximation
+      error.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>QUADRULE</b> is available in
+      <a href = "../../c_src/quadrule/quadrule.html">a C version</a> and
+      <a href = "../../cpp_src/quadrule/quadrule.html">a C++ version</a> and
+      <a href = "../../f_src/quadrule/quadrule.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/quadrule/quadrule.html">a MATLAB version</a> and
+      <a href = "../../py_src/quadrule/quadrule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/alpert_rule/alpert_rule.html">
+      ALPERT_RULE</a>,
+      a Python library which
+      can set up an Alpert quadrature rule for functions which are 
+      regular, log(x) singular, or 1/sqrt(x) singular.
+    </p>
+
+    <p>
+      <a href = "../../py_src/disk_rule/disk_rule.html">
+      DISK_RULE</a>,
+      a Python library which
+      computes quadrature rules 
+      over the interior of the general disk in 2D, 
+      with radius RC and center (XC,YC).
+    </p>
+
+    <p>
+      <a href = "../../py_src/disk01_rule/disk01_rule.html">
+      DISK01_RULE</a>,
+      a Python library which
+      computes quadrature rules 
+      over the interior of the unit disk in 2D, with center (0,0) and radius 1.
+    </p>
+
+    <p>
+      <a href = "../../py_src/exactness/exactness.html">
+      EXACTNESS</a>,
+      a Python library which
+      investigates the exactness of quadrature rules that estimate the
+      integral of a function with a density, such as 1, exp(-x) or
+      exp(-x^2), over an interval such as [-1,+1], [0,+oo) or (-oo,+oo).
+    </p>
+
+    <p>
+      <a href = "../../py_src/kronrod/kronrod.html">
+      KRONROD</a>,
+      a Python library which
+      can compute a Gauss and Gauss-Kronrod pair of quadrature rules
+      of arbitrary order,
+      by Robert Piessens, Maria Branders.
+    </p>
+
+    <p>
+      <a href = "../../py_src/truncated_normal/truncated_normal.html">
+      TRUNCATED_NORMAL</a>,
+      a Python library which 
+      works with the truncated normal distribution over [A,B], or
+      [A,+oo) or (-oo,B], returning the probability density function (PDF),
+      the cumulative density function (CDF), the inverse CDF, the mean,
+      the variance, and sample values.
+    </p>
+
+    <p>
+      <a href = "../../py_src/truncated_normal_rule/truncated_normal_rule.html">
+      TRUNCATED_NORMAL_RULE</a>,
+      a Python program which 
+      computes a quadrature rule for a normal distribution that has been
+      truncated to [A,+oo), (-oo,B] or [A,B].
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "bashforth_set.py">bashforth_set.py</a>, 
+          sets abscissas and weights for Adams-Bashforth quadrature.
+        </li>
+        <li>
+          <a href = "chebyshev_set.py">chebyshev_set.py</a>,
+          sets abscissas and weights for Chebyshev quadrature.
+        </li>
+        <li>
+          <a href = "chebyshev1_compute.py">chebyshev1_compute.py</a>, 
+          computes abscissas and weights for Chebyshev Type 1 quadrature.
+        </li>
+        <li>
+          <a href = "chebyshev1_integral.py">chebyshev1_integral.py</a>
+          evaluates a Chebyshev type 1 monomial integral.
+        </li>
+        <li>
+          <a href = "chebyshev1_set.py">chebyshev1_set.py</a>, 
+          sets abscissas and weights for Chebyshev Type 1 quadrature.
+        </li>
+        <li>
+          <a href = "chebyshev2_compute.py">chebyshev2_compute.py</a>, 
+          computes abscissas and weights for Chebyshev Type 2 quadrature.
+        </li>
+        <li>
+          <a href = "chebyshev2_integral.py">chebyshev2_integral.py</a>
+          evaluates a Chebyshev type 2 monomial integral.
+        </li>
+        <li>
+          <a href = "chebyshev2_set.py">chebyshev2_set.py</a>, 
+          sets abscissas and weights for Chebyshev Type 2 quadrature.
+        </li>
+        <li>
+          <a href = "chebyshev3_compute.py">chebyshev3_compute.py</a>, 
+          computes abscissas and weights for Chebyshev Type 3 quadrature.
+        </li>
+        <li>
+          <a href = "chebyshev3_integral.py">chebyshev3_integral.py</a>
+          evaluates a Chebyshev type 3 monomial integral.
+        </li>
+        <li>
+          <a href = "chebyshev3_set.py">chebyshev3_set.py</a>, 
+          sets abscissas and weights for Chebyshev Type 3 quadrature.
+        </li>
+        <li>
+          <a href = "clenshaw_curtis_compute.py">clenshaw_curtis_compute.py</a>, 
+          computes abscissas and weights for Clenshaw-Curtis quadrature.
+        </li>
+        <li>
+          <a href = "clenshaw_curtis_set.py">clenshaw_curtis_set.py</a>, 
+          sets abscissas and weights for Clenshaw-Curtis quadrature.
+        </li>
+        <li>
+          <a href = "fejer1_compute.py">fejer1_compute.py</a>, 
+          computes abscissas and weights for Fejer type 1 quadrature.
+        </li>
+        <li>
+          <a href = "fejer1_set.py">fejer1_set.py</a>, 
+          sets abscissas and weights for Fejer type 1 quadrature.
+        </li>
+        <li>
+          <a href = "fejer2_compute.py">fejer2_compute.py</a>, 
+          computes abscissas and weights for Fejer type 2 quadrature.
+        </li>
+        <li>
+          <a href = "fejer2_set.py">fejer2_set.py</a>, 
+          sets abscissas and weights for Fejer type 2 quadrature.
+        </li>
+        <li>
+          <a href = "gamma_values.py">gamma_values.py</a>,
+          returns selected values of the gamma function.
+        </li>
+        <li>
+          <a href = "gegenbauer_integral.py">gegenbauer_integral.py</a>
+          evaluates a Gegenbauer monomial integral.
+        </li>
+        <li>
+          <a href = "gegenbauer_ss_compute.m">gegenbauer_ss_compute.m</a>
+          computes a Gauss-Gegenbauer quadrature rule.
+        </li>
+        <li>
+          <a href = "gen_hermite_ek_compute.py">gen_hermite_ek_compute.py</a>,
+          computes abscissas and weights of a generalized Hermite quadrature rule 
+          using the Elhay-Kautsky method.
+        </li>
+        <li>
+          <a href = "gen_hermite_integral.py">gen_hermite_integral.py</a>,
+          returns the value of a generalized Hermite monomial integral.
+        </li>
+        <li>
+          <a href = "gen_laguerre_ek_compute.py">gen_laguerre_ek_compute.py</a>,
+          computes abscissas and weights of a generalized Laguerre quadrature
+          rule using the Elhay-Kautsky method.
+        </li>
+        <li>
+          <a href = "gen_laguerre_integral.py">gen_laguerre_integral.py</a>,
+          returns the value of a generalized Laguerre monomial integral.
+        </li>
+        <li>
+          <a href = "hermite_ek_compute.py">hermite_ek_compute.py</a>,
+          computes abscissas and weights of a Hermite quadrature rule 
+          using the Elhay-Kautsky method.
+        </li>
+        <li>
+          <a href = "hermite_integral.py">hermite_integral.py</a>,
+          returns the value of a Hermite monomial integral.
+        </li>
+        <li>
+          <a href = "hermite_set.py">hermite_set.py</a>,
+          sets abscissas and weights for Hermite quadrature
+          with density exp(-x^2).
+        </li>
+        <li>
+          <a href = "hermite_gk16_set.py">hermite_gk16_set.py</a>,
+          sets a Genz-Keister Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_gk18_set.py">hermite_gk18_set.py</a>,
+          sets a Genz-Keister Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_gk22_set.py">hermite_gk22_set.py</a>,
+          sets a Genz-Keister Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_gk24_set.py">hermite_gk24_set.py</a>,
+          sets a Genz-Keister Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_1_set.py">hermite_1_set.py</a>,
+          sets abscissas and weights for Hermite quadrature
+          with density 1.
+        </li>
+        <li>
+          <a href = "hermite_probabilist_set.py">hermite_probabilist_set.py</a>,
+          sets abscissas and weights for Hermite quadrature
+          with a density preferred for probability applications.
+        </li>
+        <li>
+          <a href = "hyper_2f1_values.py">hyper_2f1_values.py</a>, 
+          returns some values of the 2F1 hypergeometric function.
+        </li>
+        <li>
+          <a href = "imtqlx.py">imtqlx.py</a>
+          diagonalizes a symmetric tridiagonal matrix.
+        </li>
+        <li>
+          <a href = "kronrod_set.py">kronrod_set.py</a>,
+          sets abscissas and weights for Gauss-Kronrod quadrature.
+        </li>
+        <li>
+          <a href = "jacobi_ek_compute.py">jacobi_ek_compute.py</a>,
+          computes abscissas and weights of a Jacobi quadrature rule 
+          using the Elhay-Kautsky method.
+        </li>
+        <li>
+          <a href = "jacobi_integral.py">jacobi_integral.py</a>
+          evaluates a Jacobi monomial integral.
+        </li>
+        <li>
+          <a href = "laguerre_ek_compute.py">laguerre_ek_compute.py</a>,
+          computes abscissas and weights of a Laguerre quadrature rule 
+          using the Elhay-Kautsky method.
+        </li>
+        <li>
+          <a href = "laguerre_integral.py">laguerre_integral.py</a>
+          evaluates a Laguerre monomial integral.
+        </li>
+        <li>
+          <a href = "laguerre_set.py">laguerre_set.py</a>, 
+          sets abscissas and weights for Gauss-Laguerre quadrature
+          with weight rho(x)=exp(-x).
+        </li>
+        <li>
+          <a href = "laguerre_1_set.py">laguerre_1_set.py</a>, 
+          sets abscissas and weights for Gauss-Laguerre quadrature
+          with weight rho(x)=1.
+        </li>
+        <li>
+          <a href = "legendre_dr_compute.py">legendre_dr_compute.py</a>,
+          computes abscissas and weights of a Legendre quadrature rule 
+          using the Davis-Rabinowitz method.
+        </li>
+        <li>
+          <a href = "legendre_ek_compute.py">legendre_ek_compute.py</a>,
+          computes abscissas and weights of a Legendre quadrature rule 
+          using the Elhay-Kautsky method.
+        </li>
+        <li>
+          <a href = "legendre_integral.py">legendre_integral.py</a>
+          evaluates a Legendre monomial integral.
+        </li>
+        <li>
+          <a href = "legendre_set.py">legendre_set.py</a>, 
+          sets abscissas and weights for Gauss-Legendre quadrature.
+        </li>
+        <li>
+          <a href = "lobatto_compute.py">lobatto_compute.py</a>, 
+          computes abscissas and weights for Lobatto quadrature.
+        </li>
+        <li>
+          <a href = "lobatto_set.py">lobatto_set.py</a>, 
+          sets abscissas and weights for Lobatto quadrature.
+        </li>
+        <li>
+          <a href = "moulton_set.py">moulton_set.py</a>, 
+          sets abscissas and weights for Adams-Moulton quadrature.
+        </li>
+        <li>
+          <a href = "nc_compute_weights.py">nc_compute_weights.py</a>,
+          computes weights for a Newton-Cotes quadrature rule.
+        </li>
+        <li>
+          <a href = "ncc_compute.py">ncc_compute.py</a>,
+          computes a Newton-Cotes Closed quadrature rule.
+        </li>
+        <li>
+          <a href = "ncc_set.py">ncc_set.py</a>, 
+          sets abscissas and weights for Newton-Cotes closed quadrature.
+        </li>
+        <li>
+          <a href = "nco_compute.py">nco_compute.py</a>,
+          computes a Newton-Cotes Open quadrature rule.
+        </li>
+        <li>
+          <a href = "nco_set.py">nco_set.py</a>, 
+          sets abscissas and weights for Newton-Cotes open quadrature.
+        </li>
+        <li>
+          <a href = "ncoh_compute.py">ncoh_compute.py</a>, 
+          computes abscissas and weights for Newton-Cotes open half quadrature.
+        </li>
+        <li>
+          <a href = "ncoh_set.py">ncoh_set.py</a>, 
+          sets abscissas and weights for Newton-Cotes open half quadrature.
+        </li>
+        <li>
+          <a href = "patterson_set.py">patterson_set.py</a>, 
+          sets abscissas and weights for Gauss-Patterson quadrature.
+        </li>
+        <li>
+          <a href = "psi_values.py">psi_values.py</a>, 
+          returns some values of the Psi function;
+        </li>
+        <li>
+          <a href = "r8_epsilon.py">r8_epsilon.py</a>,
+          returns the R8 roundoff unit.
+        </li>
+        <li>
+          <a href = "r8_factorial.py">r8_factorial.py</a>,
+          evaluates the factorial function.
+        </li>
+        <li>
+          <a href = "r8_factorial_values.py">r8_factorial_values.py</a>,
+          returns selected values of the factorial function.
+        </li>
+        <li>
+          <a href = "r8_factorial2.py">r8_factorial2.py</a>,
+          evaluates the double factorial function.
+        </li>
+        <li>
+          <a href = "r8_gamma.py">r8_gamma.py</a>,
+          evaluates the gamma function.
+        </li>
+        <li>
+          <a href = "r8_hyper_2f1.py">r8_hyper_2f1.py</a>, 
+          evaluates the hypergeometric function 2F1.
+        </li>
+        <li>
+          <a href = "r8_psi.py">r8_psi.py</a>, 
+          returns the Psi function;
+        </li>
+        <li>
+          <a href = "r8vec_diff_norm_li.py">r8vec_diff_norm_li.py</a>,
+          returns the L-infinity norm of the difference of two R8VEC's.
+        </li>
+        <li>
+          <a href = "r8vec_indicator1.py">r8vec_indicator1.py</a>,
+          evaluates the 1-based indicator vector (1,2,3,...) as an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_linspace.py">r8vec_linspace.py</a>,
+          creates an R8VEC of linearly spaced data.
+        </li>
+        <li>
+          <a href = "r8vec_print.py">r8vec_print.py</a>,
+          prints an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_reverse.py">r8vec_reverse.py</a>,
+          copies the elements of an R8VEC in reverse order.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_ab.py">r8vec_uniform_ab.py</a>,
+          returns a scaled pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "radau_set.py">radau_set.py</a>, 
+          sets abscissas and weights for Radau quadrature.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>,
+          returns the YMDHMS date as a timestamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "quadrule_test.py">quadrule_test.py</a>, 
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "quadrule_test.sh">quadrule_test.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "quadrule_test.txt">quadrule_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 19 November 2015.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

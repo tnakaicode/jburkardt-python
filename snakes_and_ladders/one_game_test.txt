@@ -1,0 +1,34 @@
+You rolled 3 and moved to 3 .
+You rolled 4 and moved to 7 .
+You rolled 1 and moved to 8 .
+You rolled 6 and moved to 14 .
+You rolled 2 and moved to 16 and took a snake down to 6.
+You rolled 3 and moved to 9 and took a ladder up to 31 .
+You rolled 6 and moved to 37 .
+You rolled 6 and moved to 43 .
+You rolled 2 and moved to 45 .
+You rolled 2 and moved to 47 .
+You rolled 6 and moved to 53 .
+You rolled 3 and moved to 56 and took a snake down to 53.
+You rolled 3 and moved to 56 and took a snake down to 53.
+You rolled 4 and moved to 57 .
+You rolled 3 and moved to 60 .
+You rolled 3 and moved to 63 .
+You rolled 1 and moved to 64 and took a snake down to 60.
+You rolled 1 and moved to 61 .
+You rolled 5 and moved to 66 .
+You rolled 6 and moved to 72 .
+You rolled 5 and moved to 77 .
+You rolled 4 and moved to 81 .
+You rolled 6 and moved to 87 and took a snake down to 24.
+You rolled 6 and moved to 30 .
+You rolled 4 and moved to 34 .
+You rolled 6 and moved to 40 .
+You rolled 5 and moved to 45 .
+You rolled 1 and moved to 46 .
+You rolled 5 and moved to 51 and took a ladder up to 67 .
+You rolled 5 and moved to 72 .
+You rolled 2 and moved to 74 .
+You rolled 4 and moved to 78 .
+You rolled 1 and moved to 79 .
+You rolled 1 and moved to 80 and took a ladder up to 100 and you won after 34 moves!

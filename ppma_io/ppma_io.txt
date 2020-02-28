@@ -1,0 +1,10 @@
+Sat Feb  1 15:36:37 2020
+
+PPMA_WRITE_TEST:
+  PPMA_WRITE writes an ASCII PPM graphics file.
+
+  Graphics data stored in file "ppma_io.ppm".
+
+PPMA_WRITE_TEST:
+  Normal end of execution.
+Sat Feb  1 15:36:37 2020

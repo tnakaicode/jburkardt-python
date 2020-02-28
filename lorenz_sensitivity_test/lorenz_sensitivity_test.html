@@ -1,0 +1,173 @@
+<html>
+
+  <head>
+    <title>
+      lorenz_sensitivity_test
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      lorenz_sensitivity_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>lorenz_sensitivity_test</b>,
+      a Python program which
+      demonstrates sensitivity to initial conditions in the Lorenz system,
+      using an approach suggested by John D Cook.
+    </p>
+
+    <p>
+      The Lorenz system, originally intended as a simplified model of
+      atmospheric convection, has instead become a standard example of
+      sensitive dependence on initial conditions; that is, tiny differences
+      in the starting condition for the system rapidly become magnified.
+      The system also exhibits what is known as the "Lorenz attractor",
+      that is, the collection of trajectories for different starting points
+      tends to approach a peculiar butterfly-shaped region.
+    </p>
+
+    <p>
+      The Lorenz system includes three ordinary differential equations:
+      <pre>
+        dx/dt = sigma ( y - x )
+        dy/dt = x ( rho - z ) - y
+        dz/dt = xy - beta z
+      </pre>
+      where the parameters beta, rho and sigma are usually assumed to be
+      positive.  The classic case uses the parameter values
+      <pre>
+        beta = 8 / 3
+        rho = 28
+        sigma - 10
+      </pre>
+    </p>
+
+    <p>
+      The initial conditions for this system are not often specified; rather,
+      investigators simply note that the trajectories associated with two very
+      close starting points will eventually separate.  In this program, 
+      we consider two initial conditions at t=0:
+      <pre>
+        x1 = 1
+        y1 = 1
+        z1 = 1
+      </pre>
+      and
+      <pre>
+        x1 = 1
+        y1 = 1
+        z1 = 1.00001
+      </pre>
+      and allow the system to evolve over 0 &leq; t &leq; 40.  Plotting
+      the values of x1-x2 over time shows the rather large and chaotic
+      variation in the solutions.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>lorenz_sensitivity_test</b> is available in
+      <a href = "../../m_src/lorenz_sensitivity_test/lorenz_sensitivity_test.html">a MATLAB version</a> and
+      <a href = "../../py_src/lorenz_sensitivity_test/lorenz_sensitivity_test.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Original Python program by John D Cook.
+      Modifications by John Burkardt.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/lorenz_ode/lorenz_ode.html">
+      lorenz_ode</a>,
+      a Python program which
+      approximates solutions to the Lorenz system,
+      creating graphics output using matplotlib.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          John Cook,<br>
+          A different view of the Lorenz system,<br>
+          https://www.johndcook.com/blog/<br>
+          26 January 2020.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lorenz_sensitivity_test.py">lorenz_sensitivity_test.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "lorenz_sensitivity_test.sh">lorenz_sensitivity_test.sh</a>,
+          runs all the tests
+        </li>
+        <li>
+          <a href = "lorenz_sensitivity_test.txt">lorenz_sensitivity_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lorenz_sensitivity_test_x1z1.png">lorenz_sensitivity_test_x1z1.png</a>,
+          a phase plot of (X1(T),Z1(T))
+        </li>
+        <li>
+          <a href = "lorenz_sensitivity_test_xdif.png">lorenz_sensitivity_test_xdif.png</a>,
+          a plot of (T,X1(T)-X2(T)).
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 26 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

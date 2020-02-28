@@ -1,0 +1,318 @@
+Tue Jan 28 08:24:36 2020
+
+LINPLUS_C8_TEST:
+  Python version: 3.6.9
+  Test the LINPLUS_C8 library.
+
+
+C8_LE_L2_TEST
+  Python version: 3.6.9
+  C8_LE_L2 evalues (C1 <= C2) using the L2 norm.
+
+       C1=C8_UNIFORM_01          C2=C8_UNIFORM_01          L3=C8_LE_L2(C1,C2)
+     ---------------------     ---------------------     ---------------------
+
+  (    0.449860,   -0.126667)  (   -0.843197,   -0.344280)  True
+  (    0.589627,    0.260090)  (    0.391140,    0.323400)  False
+  (   -0.139466,   -0.156136)  (   -0.236066,    0.077459)  True
+  (    0.018599,   -0.633214)  (    0.892850,    0.010314)  True
+  (   -0.560465,    0.763795)  (    0.306357,    0.026275)  False
+  (    0.500804,   -0.779931)  (    0.350471,    0.016555)  False
+  (    0.434989,   -0.266623)  (   -0.200947,    0.270711)  False
+  (   -0.097460,    0.901881)  (   -0.770245,   -0.314307)  False
+  (   -0.889181,    0.265655)  (   -0.779871,   -0.551160)  True
+  (    0.031360,   -0.433556)  (    0.249089,    0.578743)  True
+
+C8_LE_L2_TEST:
+  Normal end of execution.
+
+C8_NORM_L2_TEST
+  Python version: 3.6.9
+  C8_NORM_L2 computes the L2 norm of a C8.
+
+       C1=C8_UNIFORM_01          R2=C8_NORM_L21(C1)
+     ---------------------     ---------------------
+
+  (    0.449860,   -0.126667)      0.467352
+  (   -0.843197,   -0.344280)      0.910774
+  (    0.589627,    0.260090)      0.644443
+  (    0.391140,    0.323400)      0.507521
+  (   -0.139466,   -0.156136)      0.209354
+  (   -0.236066,    0.077459)      0.248450
+  (    0.018599,   -0.633214)      0.633487
+  (    0.892850,    0.010314)      0.892909
+  (   -0.560465,    0.763795)      0.947367
+  (    0.306357,    0.026275)      0.307481
+
+C8_NORM_L2_TEST:
+  Normal end of execution.
+
+C8_UNIFORM_01_TEST
+  Python version: 3.6.9
+  C8_UNIFORM_01 computes pseudorandom complex values
+  in the unit circle.
+
+  The initial seed is 123456789
+
+       0  ( 0.44986, -0.126667 )
+       1  ( -0.843197, -0.34428 )
+       2  ( 0.589627, 0.26009 )
+       3  ( 0.39114, 0.3234 )
+       4  ( -0.139466, -0.156136 )
+       5  ( -0.236066, 0.0774593 )
+       6  ( 0.0185993, -0.633214 )
+       7  ( 0.89285, 0.0103136 )
+       8  ( -0.560465, 0.763795 )
+       9  ( 0.306357, 0.0262752 )
+
+C8_UNIFORM_01_TEST:
+  Normal end of execution.
+
+C8MAT_PRINT_TEST
+  Python version: 3.6.9
+  C8MAT_PRINT prints an C8MAT.
+
+  Here is a C8MAT:
+
+  Col:              0                           1                           2              
+  Row
+      0 :          10             1i           10             2i           10             3i 
+      1 :          20             1i           20             2i           20             3i 
+      2 :          30             1i           30             2i           30             3i 
+      3 :          40             1i           40             2i           40             3i 
+
+C8MAT_PRINT_TEST:
+  Normal end of execution.
+
+C8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  C8MAT_PRINT_SOME prints some of an C8MAT.
+
+  Here is a C8MAT:
+
+  Col:              3                           4                           5              
+  Row
+      0 :          10             4i           10             5i           10             6i 
+      1 :          20             4i           20             5i           20             6i 
+      2 :          30             4i           30             5i           30             6i 
+
+C8MAT_PRINT_SOME_TEST:
+  Normal end of execution. 
+
+C8VEC_INDICATOR_TEST
+  Python version: 3.6.9
+  C8VEC_INDICATOR returns the indicator vector.
+
+  The indicator vector:
+
+     0             1            -1
+     1             2            -2
+     2             3            -3
+     3             4            -4
+     4             5            -5
+     5             6            -6
+     6             7            -7
+     7             8            -8
+     8             9            -9
+     9            10           -10
+
+C8VEC_INDICATOR_TEST:
+  Normal end of execution.
+
+C8VEC_PRINT_TEST
+  Python version: 3.6.9
+  C8VEC_PRINT prints an C8VEC.
+
+  Here is a C8VEC:
+
+     0             1             2
+     1             3             4
+     2             5             6
+     3             7             8
+
+C8VEC_PRINT_TEST:
+  Normal end of execution.
+
+C8VEC_SORT_A_L2_TEST
+  Python version: 3.6.9
+  C8VEC_SORT_A_L2 sorts a C8VEC by L2 norm.
+
+  The unsorted vector:
+
+     0       0.44986     -0.126667
+     1     -0.843197      -0.34428
+     2      0.589627       0.26009
+     3       0.39114        0.3234
+     4     -0.139466     -0.156136
+     5     -0.236066     0.0774593
+     6     0.0185993     -0.633214
+     7       0.89285     0.0103136
+     8     -0.560465      0.763795
+     9      0.306357     0.0262752
+
+   I                  A(I)                   ||A(I)||
+
+   0  (     -0.139466,     -0.156136)        0.209354
+   1  (     -0.236066,     0.0774593)         0.24845
+   2  (      0.306357,     0.0262752)        0.307481
+   3  (       0.44986,     -0.126667)        0.467352
+   4  (       0.39114,        0.3234)        0.507521
+   5  (     0.0185993,     -0.633214)        0.633487
+   6  (      0.589627,       0.26009)        0.644443
+   7  (       0.89285,     0.0103136)        0.892909
+   8  (     -0.843197,      -0.34428)        0.910774
+   9  (     -0.560465,      0.763795)        0.947367
+
+C8VEC_SORT_A_L2_TEST:
+  Normal end of execution.
+
+C8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  C8VEC_UNIFORM_01 computes pseudorandom complex values
+  in the unit circle.
+
+  The initial seed is 123456789
+
+       0  ( 0.449860, -0.126667 )
+       1  ( -0.843197, -0.344280 )
+       2  ( 0.589627, 0.260090 )
+       3  ( 0.391140, 0.323400 )
+       4  ( -0.139466, -0.156136 )
+       5  ( -0.236066, 0.077459 )
+       6  ( 0.018599, -0.633214 )
+       7  ( 0.892850, 0.010314 )
+       8  ( -0.560465, 0.763795 )
+       9  ( 0.306357, 0.026275 )
+
+C8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+C8VEC_UNITY_TEST
+  Python version: 3.6.9
+  C8VEC_UNITY returns the N roots of unity.
+
+  The N roots of unity:
+
+     0             1             0
+     1      0.866025           0.5
+     2           0.5      0.866025
+     3   6.12323e-17             1
+     4          -0.5      0.866025
+     5     -0.866025           0.5
+     6            -1   1.22465e-16
+     7     -0.866025          -0.5
+     8          -0.5     -0.866025
+     9  -1.83697e-16            -1
+    10           0.5     -0.866025
+    11      0.866025          -0.5
+
+C8VEC_UNITY_TEST:
+  Normal end of execution.
+
+I4VEC_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_PRINT prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+I4VEC_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4VEC_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+
+  The random vector:
+
+     0     -35
+     1     187
+     2     149
+     3      69
+     4      25
+     5     -81
+     6     -23
+     7     -67
+     8     -87
+     9      90
+    10     -82
+    11      35
+    12      20
+    13     127
+    14     139
+    15    -100
+    16     170
+    17       5
+    18     -72
+    19     -96
+
+I4VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+SORT_SAFE_RC_TEST
+  Python version: 3.6.9
+  SORT_SAFE_RC sorts objects externally.
+  This function does not use persistent memory.
+
+  Unsorted array:
+
+     0       5
+     1      20
+     2      17
+     3      12
+     4       9
+     5       2
+     6       6
+     7       3
+     8       1
+     9      13
+    10       2
+    11       9
+    12       9
+    13      16
+    14      16
+    15       1
+    16      18
+    17       8
+    18       2
+    19       1
+
+  Sorted array:
+
+     0       1
+     1       1
+     2       1
+     3       2
+     4       2
+     5       2
+     6       3
+     7       5
+     8       6
+     9       8
+    10       9
+    11       9
+    12       9
+    13      12
+    14      13
+    15      16
+    16      16
+    17      17
+    18      18
+    19      20
+
+SORT_SAFE_RC_TEST:
+  Normal end of execution.
+
+LINPLUS_C8_TEST:
+  Normal end of execution.
+Tue Jan 28 08:24:36 2020

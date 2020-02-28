@@ -1,0 +1,24 @@
+Fri Jan 31 10:49:21 2020
+
+cvxopt_svm
+  Python version: 3.6.9
+  Support Vector Machine.
+
+  Jet Engine Ratings:
+
+  Number of engines = 56
+  28 good engines, and 28 bad engines
+  562 <= RPM <= 939
+  79 <= VIB <= 585
+  GOOD: mean RPM = 740.75, mean VIB = 447.286
+  BAD:  mean RPM = 741.964, mean VIB = 219.857
+  79 <= VIB <= 585
+
+  SVM classifier
+  f(x) = 0.0092523 x0 + 0.0311996 x1 + -17.6249
+
+  Graphics saved as "cvxopt_svm.png"
+
+cvxopt_svm
+  Normal end of execution.
+Fri Jan 31 10:49:22 2020

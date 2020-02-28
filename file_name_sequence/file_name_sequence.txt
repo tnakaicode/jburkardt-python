@@ -1,0 +1,104 @@
+Fri Jan 24 08:30:40 2020
+
+FILE_NAME_SEQUENCE_TEST:
+  Python version
+  FILE_NAME_SEQUENCE generates a numeric sequence of file names.
+
+FILE_NAME_SEQUENCE_TEST01:
+  FILE_NAME = PREFIX + STR(I) + SUFFIX
+  PREFIX = "frado_"
+  SUFFIX = "_lives.txt"
+  0 <= I <= 12
+  Numbers do NOT include leading zeros.
+
+     0:  "frado_0_lives.txt"
+     1:  "frado_1_lives.txt"
+     2:  "frado_2_lives.txt"
+     3:  "frado_3_lives.txt"
+     4:  "frado_4_lives.txt"
+     5:  "frado_5_lives.txt"
+     6:  "frado_6_lives.txt"
+     7:  "frado_7_lives.txt"
+     8:  "frado_8_lives.txt"
+     9:  "frado_9_lives.txt"
+    10:  "frado_10_lives.txt"
+    11:  "frado_11_lives.txt"
+    12:  "frado_12_lives.txt"
+
+FILE_NAME_SEQUENCE_TEST01:
+  Normal end of execution.
+
+FILE_NAME_SEQUENCE_TEST02:
+  FILE_NAME(I) = '%s%d%s' % ( PREFIX, I, SUFFIX )
+  PREFIX = "fredo_"
+  SUFFIX = "_lives.txt"
+  0 <= I <= 12
+  Numbers do NOT include leading zeros.
+
+     0:  "fredo_0_lives.txt"
+     1:  "fredo_1_lives.txt"
+     2:  "fredo_2_lives.txt"
+     3:  "fredo_3_lives.txt"
+     4:  "fredo_4_lives.txt"
+     5:  "fredo_5_lives.txt"
+     6:  "fredo_6_lives.txt"
+     7:  "fredo_7_lives.txt"
+     8:  "fredo_8_lives.txt"
+     9:  "fredo_9_lives.txt"
+    10:  "fredo_10_lives.txt"
+    11:  "fredo_11_lives.txt"
+    12:  "fredo_12_lives.txt"
+
+FILE_NAME_SEQUENCE_TEST02:
+  Normal end of execution.
+
+FILE_NAME_SEQUENCE_TEST03:
+  FILE_NAME(I) = '%s%02d%s' % ( PREFIX, I, SUFFIX )
+  PREFIX = "frido_"
+  SUFFIX = "_lives.txt"
+  0 <= I <= 12
+  Numbers include leading zeros.
+
+     0:  "frido_00_lives.txt"
+     1:  "frido_01_lives.txt"
+     2:  "frido_02_lives.txt"
+     3:  "frido_03_lives.txt"
+     4:  "frido_04_lives.txt"
+     5:  "frido_05_lives.txt"
+     6:  "frido_06_lives.txt"
+     7:  "frido_07_lives.txt"
+     8:  "frido_08_lives.txt"
+     9:  "frido_09_lives.txt"
+    10:  "frido_10_lives.txt"
+    11:  "frido_11_lives.txt"
+    12:  "frido_12_lives.txt"
+
+FILE_NAME_SEQUENCE_TEST03:
+  Normal end of execution.
+
+FILE_NAME_SEQUENCE_TEST04
+  FILE_NAME = FILE_NAME_INC ( FILE_NAME )
+  First FILE_NAME = "frodo_000_lives.txt"
+  Number of file names = 12
+  Numbers may include leading zeros.
+
+     0:  "frodo_000_lives.txt"
+     1:  "frodo_001_lives.txt"
+     2:  "frodo_002_lives.txt"
+     3:  "frodo_003_lives.txt"
+     4:  "frodo_004_lives.txt"
+     5:  "frodo_005_lives.txt"
+     6:  "frodo_006_lives.txt"
+     7:  "frodo_007_lives.txt"
+     8:  "frodo_008_lives.txt"
+     9:  "frodo_009_lives.txt"
+    10:  "frodo_010_lives.txt"
+    11:  "frodo_011_lives.txt"
+    12:  "frodo_012_lives.txt"
+
+FILE_NAME_SEQUENCE_TEST04:
+  Normal end of execution.
+
+FILE_NAME_SEQUENCE:
+  Normal end of execution.
+Fri Jan 24 08:30:40 2020

@@ -1,0 +1,274 @@
+<html>
+
+  <head>
+    <title>
+      QUATERNIONS - Quaternion Arithmetic
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      QUATERNIONS <br> Quaternion Arithmetic
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>QUATERNIONS</b>,
+      a Python library which
+      carries out some simple arithmetic operations for quaternions.
+    </p>
+
+    <p>
+      Rotations in 3D can be represented in a number of ways, including
+      quaternions, a rotation matrix, and a combination of a rotation axis
+      and rotation angle.  This library includes functions to convert
+      a rotation from one representation to another, and to apply a rotation
+      to a given vector.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>QUATERNIONS</b> is available in
+      <a href = "../../c_src/quaternions/quaternioins.html">a C version</a> and
+      <a href = "../../cpp_src/quaternions/quaternioins.html">a C++ version</a> and
+      <a href = "../../f_src/quaternions/quaternioins.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/quaternions/quaternioins.html">a MATLAB version</a> and
+      <a href = "../../py_src/quaternions/quaternioins.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/c4lib/c4lib.html">
+      C4LIB</a>,
+      a Python library which
+      implements certain elementary functions for 
+      single precision complex (C4) variables.
+    </p>
+
+    <p>
+      <a href = "../../py_src/c8lib/c8lib.html">
+      C8LIB</a>,
+      a Python library which
+      implements certain elementary functions for 
+      double precision complex (C8) variables;
+    </p>
+
+    <p>
+      <a href = "../../py_src/complex_numbers/complex_numbers.html">
+      COMPLEX_NUMBERS</a>,
+      a Python program which
+      demonstrates some simple features involved in the use of
+      complex numbers.
+    </p>
+
+    <p>
+      <a href = "../../py_src/i4lib/i4lib.html">
+      I4LIB</a>,
+      a Python library which
+      contains many utility routines, using "I4" or "single precision integer"
+      arithmetic.
+    </p>
+
+    <p>
+      <a href = "../../py_src/r8lib/r8lib.html">
+      R8LIB</a>,
+      a Python library which
+      contains many utility routines, using "R8" or
+      "double precision real" arithmetic.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Jack Kuipers,<br>
+          Quaternions and Rotation Sequences,<br>
+          Princeton, 1998,<br>
+          ISBN: 0691102988,<br>
+          LC: QA196.K85.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "degrees_to_radians.py">
+          degrees_to_radians.m</a>,
+          converts an angle in degrees to one in radians;
+        </li>
+        <li>
+          <a href = "q8_conjugate.py">
+          q8_conjugate.m</a>,
+          conjugates a quaternion;
+        </li>
+        <li>
+          <a href = "q8_exponentiate.py">
+          q8_exponentiate.m</a>,
+          exponentiates a quaternion;
+        </li>
+        <li>
+          <a href = "q8_inverse.py">
+          q8_inverse.m</a>,
+          inverts a quaternion;
+        </li>
+        <li>
+          <a href = "q8_multiply.py">
+          q8_multiply.m</a>,
+          multiplies two quaternions;
+        </li>
+        <li>
+          <a href = "q8_multiply2.py">
+          q8_multiply2.m</a>,
+          multiplies two quaternions using a matrix;
+        </li>
+        <li>
+          <a href = "q8_norm.py">
+          q8_norm.m</a>,
+          computes the L2 norm of a quaternion;
+        </li>
+        <li>
+          <a href = "q8_normal_01.py">
+          q8_normal_01.m</a>,
+          selects a normally distributed quaternion;
+        </li>
+        <li>
+          <a href = "q8_transpose_print.py">
+          q8_transpose_print.m</a>,
+          prints a quaterion "transposed", or as a row vector.
+        </li>
+        <li>
+          <a href = "r8_acos.py">
+          r8_acos.m</a>,
+          computes the inverse cosine of C;
+        </li>
+        <li>
+          <a href = "r8mat_print.py">
+          r8mat_print.m</a>,
+          prints an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_print_some.py">
+          r8mat_print_some.m</a>,
+          prints some of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8vec_print.py">
+          r8vec_print.m</a>,
+          prints an R8VEC;
+        </li>
+        <li>
+          <a href = "r8vec_uniform_01.py">
+          r8vec_uniform_01.m</a>,
+          returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "radians_to_degrees.py">
+          radians_to_degrees.m</a>,
+          converts an angle in radians to one in degrees;
+        </li>
+        <li>
+          <a href = "rotation_axis_vector.py">
+          rotation_axis_vector.m</a>,
+          rotates a vector about an axis vector in 3D;
+        </li>
+        <li>
+          <a href = "rotation_axis2mat.py">
+          rotation_axis2mat.m</a>,
+          converts a rotation from axis to matrix format in 3D;
+        </li>
+        <li>
+          <a href = "rotation_axis2quat.py">
+          rotation_axis2quat.m</a>,
+          converts a rotation from axis to quaternion format in 3D;
+        </li>
+        <li>
+          <a href = "rotation_mat_vector.py">
+          rotation_mat_vector.m</a>,
+          applies a matrix rotation to a vector in 3D;
+        </li>
+        <li>
+          <a href = "rotation_mat2axis.py">
+          rotation_mat2axis.m</a>,
+          converts a rotation from matrix to axis format in 3D;
+        </li>
+        <li>
+          <a href = "rotation_mat2quat.py">
+          rotation_mat2quat.m</a>,
+          converts a rotation from matrix to quaternion format in 3D;
+        </li>
+        <li>
+          <a href = "rotation_quat_vector.py">
+          rotation_quat_vector.m</a>,
+          applies a quaternion rotation to a vector in 3D;
+        </li>
+        <li>
+          <a href = "rotation_quat2axis.py">
+          rotation_quat2axis.m</a>,
+          converts a rotation from quaternion to axis format in 3D;
+        </li>
+        <li>
+          <a href = "rotation_quat2mat.py">
+          rotation_quat2mat.m</a>,
+          converts a rotation from quaternion to matrix format in 3D;
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.m</a>,
+          prints the current YMDHMS date as a timestamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "quaternions.py">quaternions.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "quaternions.sh">quaternions.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "quaternions.txt">quaternions.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 31 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,146 @@
+Fri Jan 24 17:51:30 2020
+
+GEGENBAUER_CC_TEST
+  Python version: 3.6.9
+  Test the GEGENBAUER_CC library.
+
+CHEBYSHEV_EVEN1_TEST:
+  Python version: 3.6.9
+  CHEBYSHEV_EVEN1 computes the even Chebyshev coefficients
+  of a function F, using the extreme points of Tn(x).
+
+  Computed and Exact Coefficients:
+
+       0:       0.447782      0.447782
+       1:      -0.705669     -0.705669
+       2:      0.0680358     0.0680358
+       3:    -0.00480972   -0.00480972
+
+CHEBYSHEV_EVEN1_TEST
+  Normal end of execution.
+
+CHEBYSHEV_EVEN2_TEST:
+  Python version: 3.6.9
+  CHEBYSHEV_EVEN2 computes the even Chebyshev coefficients
+  of a function F, using the zeros of Tn(x).
+
+  Computed Coefficients:
+
+     0:      0.447782
+     1:     -0.705668
+     2:     0.0679919
+     3:   -0.00244922
+
+CHEBYSHEV_EVEN2_TEST
+  Normal end of execution.
+
+GEGENBAUER_CC1_TEST:
+  Python version: 3.6.9
+  GEGENBAUER_CC1 estimates the Gegenbauer integral of
+  a function f(x) using a Clenshaw-Curtis type approach
+  based on the extreme points of Tn(x).
+
+  Value = 0.915449
+  Exact = 0.915451
+
+GEGENBAUER_CC1_TEST
+  Normal end of execution.
+
+GEGENBAUER_CC2_TEST:
+  Python version: 3.6.9
+  GEGENBAUER_CC2 estimates the Gegenbauer integral of
+  a function f(x) using a Clenshaw-Curtis type approach
+  based on the zeros of Tn(x).
+
+  Value = 0.915452
+  Exact = 0.915451
+
+GEGENBAUER_CC2_TEST
+  Normal end of execution.
+
+I4_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+         1       -35
+         2       187
+         3       149
+         4        69
+         5        25
+         6       -81
+         7       -23
+         8       -67
+         9       -87
+        10        90
+        11       -82
+        12        35
+        13        20
+        14       127
+        15       139
+        16      -100
+        17       170
+        18         5
+        19       -72
+        20       -96
+
+I4_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8_MOP_TEST
+  Python version: 3.6.9
+  R8_MOP evaluates (-1.0)^I4 as an R8.
+
+    I4  R8_MOP(I4)
+
+   -57  -1.0
+    92   1.0
+    66   1.0
+    12   1.0
+   -17  -1.0
+   -87  -1.0
+   -49  -1.0
+   -78   1.0
+   -92   1.0
+    27  -1.0
+
+R8_MOP_TEST
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC2_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC2_PRINT prints a pair of R8VEC's.
+
+  Print a pair of R8VEC's:
+
+       0:              0             0
+       1:            0.2          0.04
+       2:            0.4          0.16
+       3:            0.6          0.36
+       4:            0.8          0.64
+       5:              1             1
+
+R8VEC2_PRINT_TEST:
+  Normal end of execution.
+
+GEGENBAUER_CC_TEST:
+  Normal end of execution.
+Fri Jan 24 17:51:30 2020

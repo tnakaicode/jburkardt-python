@@ -1,0 +1,149 @@
+<html>
+
+  <head>
+    <title>
+      RKF45 - Runge-Kutta-Fehlberg ODE Solver
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      RKF45 <br> Runge-Kutta-Fehlberg ODE Solver
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>RKF45</b>,
+      a Python library which 
+      implements the Watt and Shampine RKF45 solver
+      for systems of ordinary differential equations (ODE's).
+    </p>
+
+    <p>
+      The RKF45 ODE solver is a Runge-Kutta-Fehlberg algorithm for
+      solving an ordinary differential equation, with automatic error
+      estimation using rules of order 4 and 5. 
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>RKF45</b> is available in
+      <a href = "../../c_src/rkf45/rkf45.html">a C version</a> and
+      <a href = "../../cpp_src/rkf45/rkf45.html">a C++ version</a> and
+      <a href = "../../f_src/rkf45/rkf45.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/rkf45/rkf45.html">a MATLAB version</a> and
+      <a href = "../../py_src/rkf45/rkf45.html">a PYTHON version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/lorenz_ode/lorenz_ode.html">
+      LORENZ_ODE</a>,
+      a Python program which
+      approximates solutions to the Lorenz system
+      of ordinary differential equations (ODE's)
+      creating graphics output using matplotlib.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk4/rk4.html">
+      RK4</a>,
+      a Python library which
+      applies the fourth order Runge-Kutta (RK) algorithm to estimate the
+      solution of an ordinary differential equation (ODE) at the next time step.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      This Python implementation was written by Peter Monk.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Erwin Fehlberg,<br>
+          Low-order Classical Runge-Kutta Formulas with Stepsize Control,<br>
+          NASA Technical Report R-315, 1969.
+        </li>
+        <li>
+          Lawrence Shampine, Herman Watts, S Davenport,<br>
+          Solving Non-stiff Ordinary Differential Equations - 
+          The State of the Art,<br>
+          SIAM Review,<br>
+          Volume 18, pages 376-411, 1976.
+        </li>
+        <li>
+          The source code for Shampine and Watt's original FORTRAN77 
+          routine is available at
+          <a href = "http://www.netlib.org/ode/">
+                     http://www.netlib.org/ode/</a>
+          the NETLIB ODE web site.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "rkf45.py">rf45.py</a>, the source code;
+        </li>
+        <li>
+          <a href = "rkf45.sh">rf45.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "rkf45_test.py">rkf45_test.py</a>,
+          the sample test code;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "f_lor.py">f_lor.py</a>,
+          a file which defines the Lorenz oscillator.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 08 May 2012.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,23 @@
+Fri Sep 30 08:17:30 2016
+
+DIJKSTRA_DISTANCE_TEST:
+  Python version: 2.7.5
+  DIJKSTRA_DISTANCE uses Dijkstra's algorithm to determine the minimum
+  distance from node 0 to each node in a graph,
+  given the distances between each pair of nodes.
+
+  Distance matrix:
+
+    0    40    15   Inf   Inf   Inf 
+   40     0    20    10    25     6 
+   15    20     0   100   Inf   Inf 
+  Inf    10   100     0   Inf   Inf 
+  Inf    25   Inf   Inf     0     8 
+  Inf     6   Inf   Inf     8     0 
+
+  Distance to node 0:
+       0       35       15       45       49       41 
+
+DIJKSTRA_DISTANCE_TEST
+  Normal end of execution.
+Fri Sep 30 08:17:30 2016

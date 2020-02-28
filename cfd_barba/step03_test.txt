@@ -1,0 +1,8 @@
+
+STEP03:
+  Python version: 3.6.5
+  The 1D diffusion equation.
+  Saved final solution in file "step03_final.png".
+
+STEP03:
+  Normal end of execution.

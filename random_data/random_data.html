@@ -1,0 +1,240 @@
+<html>
+
+  <head>
+    <title>
+      RANDOM_DATA - Generation of random data
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      RANDOM_DATA <br> Generation of random data
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>RANDOM_DATA</b>, 
+      a Python library which 
+      uses a random number generator (RNG) to sample points for
+      various probability distributions, spatial dimensions, and geometries,
+      including the M-dimensional cube, ellipsoid, simplex and sphere. 
+    </p>
+
+    <p>
+      Most of these routines assume that there is an available source
+      of pseudorandom numbers, distributed uniformly in the unit
+      interval [0,1].  In this package, that role is played by the
+      routine R8_UNIFORM_01, which allows us some portability.  
+      We can get the same results in a variety of languages.
+      In general, however, it would be more efficient to use the
+      language-specific random number generator for this purpose.
+    </p>
+
+    <p>
+      If we have a source of pseudorandom values in [0,1], it's trivial 
+      to generate pseudorandom points in any line segment; it's easy to 
+      take pairs of pseudorandom values to sample a square, or triples to 
+      sample a cube.  It's easy to see how to deal with square region that
+      is translated from the origin, or scaled by different amounts in
+      either axis, or given a rigid rotation.  The same simple transformations
+      can be applied to higher dimensional cubes, without giving us any
+      concern.
+    </p>
+
+    <p>
+      For all these simple shapes, which are just generalizations of 
+      a square, we can easily see how to generate sample points that
+      we can guarantee will lie inside the region; in most cases, we
+      can also guarantee that these points will tend to be <i>uniformly
+      distributed</i>, that is, every subregion can expect to contain 
+      a number of points proportional to its share of the total area. 
+    </p>
+
+    <p>
+      However, we will <b>not</b> achieve uniform distribution in the
+      simple case of a rectangle of nonequal sides <b>[0,A]</b> x <b>[0,B]</b>,
+      if we naively scale the random values <b>(u1,u2)</b> to 
+      <b>(A*u1,B*u2)</b>.  In that case, the expected point density of
+      a wide, short region will differ from that of a narrow tall region.
+      The absence of uniformity is most obvious if the points are plotted.
+    </p>
+
+    <p>
+      If you realize that uniformity is desirable, and easily lost,
+      it is possible to adjust the approach so that rectangles are
+      properly handled.
+    </p>
+
+    <p>
+      But rectangles are much too simple.  We are interested in circles,
+      triangles, and other shapes.  Once the geometry of the region 
+      becomes more "interesting", there are two common ways to continue.  
+    </p>
+
+    <p>
+      In the <i>acceptance-rejection method</i>, 
+      uniform points are generated in a superregion that encloses the 
+      region.  Then, points that do not lie within the region are rejected. 
+      More points are generated until enough have been accepted to satisfy the 
+      needs.  If a circle was the region of interest, for instance, we
+      could surround it with a box, generate points in the box, and throw
+      away those points that don't actually lie in the circle.  The resulting
+      set of samples will be a uniform sampling of the circle.
+    </p>
+
+    <p>
+      In the <i>direct mapping</i> method, a formula or mapping
+      is determined so that each time a set of values is taken from
+      the pseudorandom number generator, it is guaranteed to correspond
+      to a point in the region.  For the circle problem, we can use
+      one uniform random number to choose an angle between 0 and 2 PI,
+      the other to choose a radius.  (The radius must be chosen in
+      an appropriate way to guarantee uniformity, however.)  Thus,
+      every time we input two uniform random values, we get a pair
+      (R,T) that corresponds to a point in the circle.
+    </p>
+ 
+    <p>
+      The acceptance-rejection method can be simple to program, and 
+      can handle arbitrary regions.  The direct mapping method is 
+      less sensitive to variations in the aspect ratio of a region 
+      and other irregularities.  However, direct mappings are only 
+      known for certain common mathematical shapes.
+    </p>
+
+    <p>
+      Points may also be generated according to a nonuniform density.
+      This creates an additional complication in programming.  However,
+      there are some cases in which it is possible to use direct mapping
+      to turn a stream of scalar uniform random values into a set of
+      multivariate data that is governed by a normal distribution.
+    </p>
+
+    <p>
+      Another way to generate points replaces the uniform pseudorandom number
+      generator by a <i>quasirandom number generator</i>.  The main difference
+      is that successive elements of a quasirandom sequence may be highly
+      correlated (bad for certain Monte Carlo applications) but will tend
+      to cover the region in a much more regular way than pseudorandom
+      numbers.  Any process that uses uniform random numbers to carry out
+      sampling can easily be modified to do the same sampling with
+      a quasirandom sequence like the Halton sequence, for instance.
+    </p>
+
+    <p>
+      The library includes a routine that can write the resulting 
+      data points to a file.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>RANDOM_DATA</b> is available in
+      <a href = "../../c_src/random_data/random_data.html">a C version</a> and
+      <a href = "../../cpp_src/random_data/random_data.html">a C++ version</a> and
+      <a href = "../../f_src/random_data/random_data.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/random_data/random_data.html">a MATLAB version</a> and
+      <a href = "../../py_src/random_data/random_data.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/asa183/asa183.html">
+      ASA183</a>,
+      a Python library which
+      implements the Wichman-Hill pseudorandom number generator.
+    </p>
+
+    <p>
+      <a href = "../../py_src/ball_grid/ball_grid.html">
+      BALL_GRID</a>, 
+      a Python library which 
+      computes grid points that lie inside a ball.
+    </p>
+
+    <p>
+      <a href = "../../py_src/simplex_coordinates/simplex_coordinates.html">
+      SIMPLEX_COORDINATES</a>, 
+      a Python library which
+      computes the Cartesian coordinates of the vertices of a regular
+      simplex in M dimensions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tetrahedron_grid/tetrahedron_grid.html">
+      TETRAHEDRON_GRID</a>, 
+      a Python library which 
+      computes a tetrahedral grid of points.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangle_grid/triangle_grid.html">
+      TRIANGLE_GRID</a>, 
+      a Python library which 
+      computes a triangular grid of points.
+    </p>
+
+    <p>
+      <a href = "../../py_src/uniform/uniform.html">
+      UNIFORM</a>, 
+      a Python library which
+      samples the uniform random distribution.
+    </p>
+
+    <p>
+      <a href = "../../py_src/van_der_corput/van_der_corput.html">
+      VAN_DER_CORPUT</a>,
+      a Python library which
+      computes elements of a 1D van der Corput Quasi Monte Carlo (QMC) sequence
+      using a simple interface.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "random_data.py">random_data.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "random_data.sh">random_data.sh</a>, 
+          runs all the test programs.
+        </li>
+        <li>
+          <a href = "random_data.txt">random_data.txt</a>, 
+          output from the sample calling program.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 01 February 2020.
+    </i>
+
+    <!-- John Burkardt -->
+ 
+  </body>
+
+</html>

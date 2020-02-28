@@ -1,0 +1,164 @@
+<html>
+
+  <head>
+    <title>
+      BROWNIAN_MOTION_SIMULATION - Simulation of Brownian Motion in M Dimensions
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      BROWNIAN_MOTION_SIMULATION <br> Simulation of Brownian Motion in M Dimensions
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>BROWNIAN_MOTION_SIMULATION</b>,
+      a Python library which
+      simulates Brownian motion in an M-dimensional region.
+    </p>
+
+    <p>
+      Brownian motion is a physical phenomenon which can be observed, for
+      instance, when a small particle is immersed in a liquid.  The particle
+      will move as though under the influence of random forces of varying
+      direction and magnitude.  
+    </p>
+
+    <p>
+      There is a mathematical idealization of this motion, and from there a computational
+      discretization that allows us to simulate the successive positions of
+      a particle undergoing Brownian motion.  
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <i>x</i> = <b>brownian_motion_simulation</b> ( <i>n</i>, <i>m</i>, <i>d</i>, <i>t</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>n</i> is the number of time steps to take (default 1000);
+        </li>
+        <li>
+          <i>m</i> is the spatial dimension, (default 2);
+        </li>
+        <li>
+          <i>d</i> is the diffusion coefficient, (default 10.0);
+        </li>
+        <li>
+          <i>t</i> is the total time interval (default 1.0);
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>BROWNIAN_MOTION_SIMULATON</b> is available in
+      <a href = "../../c_src/brownian_motion_simulation/brownian_motion_simulation.html">a C version</a> and
+      <a href = "../../cpp_src/brownian_motion_simulation/brownian_motion_simulation.html">a C++ version</a> and
+      <a href = "../../f_src/brownian_motion_simulation/brownian_motion_simulation.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/brownian_motion_simulation/brownian_motion_simulation.html">a MATLAB version</a> and
+      <a href = "../../py_src/brownian_motion_simulation/brownian_motion_simulation.html">a Python version.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/duel_simulation/duel_simulation.html">
+      DUEL_SIMULATION</a>, 
+      a Python program which
+      simulates N repetitions of a duel between two players, each of
+      whom has a known firing accuracy.
+    </p>
+
+    <p>
+      <a href = "../../py_src/snakes_and_ladders/snakes_and_ladders.html">
+      SNAKES_AND_LADDERS</a>,
+      Python programs which
+      simulate the game of Snakes and Ladders.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "brownian_motion_simulation.py">brownian_motion_simulation.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "brownian_motion_simulation.sh">brownian_motion_simulation.sh</a>,
+          runs the tests.
+        </li>
+        <li>
+          <a href = "brownian_motion_simulation.txt">brownian_motion_simulation.txt</a>
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Some plots are made by the test program.
+      <ul>
+        <li>
+          <a href = "motion_1d.png">motion_1d.png</a>,
+          a plot of a Brownian motion trajectory in 1D, with time as second dimension.
+        </li>
+        <li>
+          <a href = "motion_2d.png">motion_2d.png</a>,
+          a plot of a Brownian motion trajectory in 2D.
+        </li>
+        <li>
+          <a href = "motion_3d.png">motion_3d.png</a>,
+          a plot of a Brownian motion trajectory in 3D.
+        </li>
+        <li>
+          <a href = "displacement_1d.png">displacement_1d.png</a>,
+          a plot of squared displacements, averaged over several 1D Brownian motions.
+        </li>
+        <li>
+          <a href = "displacement_2d.png">displacement_2d.png</a>,
+          a plot of squared displacements, averaged over several 2D Brownian motions.
+        </li>
+        <li>
+          <a href = "displacement_3d.png">displacement_3d.png</a>,
+          a plot of squared displacements, averaged over several 3D Brownian motions.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 30 September 2012.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

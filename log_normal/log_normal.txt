@@ -1,0 +1,380 @@
+Tue Jan 28 08:24:37 2020
+
+LOG_NORMAL_TEST
+  Python version: 3.6.9
+  Test the LOG_NORMAL library.
+
+LOG_NORMAL_CDF_TEST
+  Python version: 3.6.9
+  LOG_NORMAL_CDF evaluates the Log Normal CDF
+  LOG_NORMAL_CDF_INV inverts the Log Normal CDF.
+  LOG_NORMAL_PDF evaluates the Log Normal PDF
+
+  PDF parameter MU =                          1
+  PDF parameter SIGMA =                     0.5
+
+       X            PDF           CDF            CDF_INV
+
+        1.84269        0.320041        0.218418         1.84269
+        6.38999       0.0289652        0.956318         6.38999
+        4.37591        0.115871        0.829509         4.37591
+        2.93772        0.268345        0.561695         2.93772
+        2.44255        0.319271        0.415307         2.44255
+         1.2806         0.20066       0.0661187          1.2806
+        1.96322        0.328846        0.257578         1.96322
+          1.472        0.255411        0.109957           1.472
+        1.15726        0.160368        0.043829         1.15726
+        3.22582        0.233263        0.633966         3.22582
+
+LOG_NORMAL_CDF_TEST
+  Normal end of execution.
+
+LOG_NORMAL_SAMPLE_TEST
+  Python version: 3.6.9
+  LOG_NORMAL_MEAN computes the Log Normal mean
+  LOG_NORMAL_SAMPLE samples the Log Normal distribution
+  LOG_NORMAL_VARIANCE computes the Log Normal variance.
+
+  PDF parameter MU =                         1
+  PDF parameter SIGMA =                    0.5
+  PDF mean =                           3.08022
+  PDF variance =                       2.69476
+
+  Sample size =       1000
+  Sample mean =            3.08493
+  Sample variance =        2.63391
+  Sample maximum =         11.3816
+  Sample minimum =         0.63615
+
+LOG_NORMAL_SAMPLE_TEST
+  Normal end of execution.
+
+NORMAL_01_CDF_TEST
+  Python version: 3.6.9
+  NORMAL_01_CDF evaluates the Normal 01 CDF
+  NORMAL_01_CDF_INV inverts the Normal 01 CDF.
+  NORMAL_01_PDF evaluates the Normal 01 PDF
+
+       X            PDF           CDF            CDF_INV
+
+        1.67904       0.0974392        0.953428         1.67904
+       -0.56606        0.339884        0.285677        -0.56606
+        1.21293        0.191179        0.887423         1.21293
+        1.26938        0.178244        0.897847         1.26938
+       -1.66609       0.0995733       0.0478481        -1.66609
+       -2.24246       0.0322815       0.0124657        -2.24246
+      0.0396749        0.398628        0.515824       0.0396749
+       0.673068        0.318081        0.749548        0.673068
+      -0.275127        0.384125        0.391609       -0.275127
+          2.164       0.0383732        0.984768           2.164
+
+NORMAL_01_CDF_TEST
+  Normal end of execution.
+
+NORMAL_01_CDF_VALUES_TEST:
+  Python version: 3.6.9
+  NORMAL_01_CDF_VALUES stores values of the unit normal CDF.
+
+      X         NORMAL_01_CDF(X)
+
+      0.000000        0.5000000000000000
+      0.100000        0.5398278372770290
+      0.200000        0.5792597094391030
+      0.300000        0.6179114221889526
+      0.400000        0.6554217416103242
+      0.500000        0.6914624612740131
+      0.600000        0.7257468822499270
+      0.700000        0.7580363477769270
+      0.800000        0.7881446014166033
+      0.900000        0.8159398746532405
+      1.000000        0.8413447460685429
+      1.500000        0.9331927987311419
+      2.000000        0.9772498680518208
+      2.500000        0.9937903346742240
+      3.000000        0.9986501019683699
+      3.500000        0.9997673709209645
+      4.000000        0.9999683287581669
+
+NORMAL_01_CDF_VALUES_TEST:
+  Normal end of execution.
+
+NORMAL_01_SAMPLE_TEST
+  Python version: 3.6.9
+  NORMAL_01_MEAN computes the Normal 01 mean
+  NORMAL_01_SAMPLE samples the Normal 01 distribution
+  NORMAL_01_VARIANCE returns the Normal 01 variance.
+
+  PDF mean =                   0
+  PDF variance =               1
+
+  Sample size =       1000
+  Sample mean =         0.00581875
+  Sample variance =       0.998375
+  Sample maximum =         3.32858
+  Sample minimum =        -3.02975
+
+NORMAL_01_SAMPLE_TEST
+  Normal end of execution.
+
+NORMAL_CDF_TEST
+  Python version: 3.6.9
+  NORMAL_CDF evaluates the Normal CDF
+  NORMAL_CDF_INV inverts the Normal CDF.
+  NORMAL_PDF evaluates the Normal PDF
+
+  PDF parameter A =                        100
+  PDF parameter B =                         15
+
+       X            PDF           CDF            CDF_INV
+
+        125.186      0.00649595        0.953428         125.186
+        91.5091       0.0226589        0.285677         91.5091
+        118.194       0.0127453        0.887423         118.194
+        119.041       0.0118829        0.897847         119.041
+        75.0087      0.00663822       0.0478481         75.0087
+         66.363       0.0021521       0.0124657          66.363
+        100.595       0.0265752        0.515824         100.595
+        110.096       0.0212054        0.749548         110.096
+        95.8731       0.0256084        0.391609         95.8731
+         132.46      0.00255821        0.984768          132.46
+
+NORMAL_CDF_TEST
+  Normal end of execution.
+
+NORMAL_SAMPLE_TEST
+  Python version: 3.6.9
+  NORMAL_MEAN computes the Normal mean
+  NORMAL_SAMPLE samples the Normal distribution
+  NORMAL_VARIANCE returns the Normal variance.
+
+  PDF parameter A =                100
+  PDF parameter B =                 15
+  PDF mean =                       100
+  PDF variance =                   225
+
+  Sample size =       1000
+  Sample mean =            100.087
+  Sample variance =        224.634
+  Sample maximum =         149.929
+  Sample minimum =         54.5537
+
+NORMAL_SAMPLE_TEST
+  Normal end of execution.
+
+R8_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R8POLY_PRINT_TEST
+  Python version: 3.6.9
+  R8POLY_PRINT prints an R8POLY.
+
+  The R8POLY:
+
+  p(x) =   9 * x^5
+         + 0.78 * x^4
+         + 56 * x^2
+         - 3.4 * x
+         + 12
+
+R8POLY_PRINT_TEST:
+  Normal end of execution.
+
+R8POLY_VALUE_HORNER_TEST
+  Python version: 3.6.9
+  R8POLY_VALUE_HORNER evaluates a polynomial at a point
+  using Horners method.
+
+  The polynomial coefficients:
+
+  p(x) =   1 * x^4
+         - 10 * x^3
+         + 35 * x^2
+         - 50 * x
+         + 24
+
+   I    X    P(X)
+
+   0    0.0000              24
+   1    0.3333         10.8642
+   2    0.6667         3.45679
+   3    1.0000               0
+   4    1.3333       -0.987654
+   5    1.6667       -0.691358
+   6    2.0000               0
+   7    2.3333        0.493827
+   8    2.6667        0.493827
+   9    3.0000               0
+  10    3.3333       -0.691358
+  11    3.6667       -0.987654
+  12    4.0000               0
+  13    4.3333         3.45679
+  14    4.6667         10.8642
+  15    5.0000              24
+
+R8POLY_VALUE_HORNER_TEST:
+  Normal end of execution.
+
+R8VEC_MAX_TEST
+  Python version: 3.6.9
+  R8VEC_MAX computes the maximum entry in an R8VEC.
+
+  Input vector:
+
+     0:      -5.63163
+     1:       9.12635
+     2:       6.59018
+     3:       1.23391
+     4:      -1.69386
+     5:      -8.67763
+     6:      -4.84844
+     7:      -7.80086
+     8:      -9.12342
+     9:       2.67931
+
+  Max = 9.12635
+
+R8VEC_MAX_TEST:
+  Normal end of execution.
+
+R8VEC_MEAN_TEST
+  Python version: 3.6.9
+  R8VEC_MEAN computes the mean of an R8VEC.
+
+  Input vector:
+
+     0:      -2.81582
+     1:       4.56318
+     2:       3.29509
+     3:      0.616954
+     4:     -0.846929
+     5:      -4.33881
+     6:      -2.42422
+     7:      -3.90043
+     8:      -4.56171
+     9:       1.33966
+
+  Value = -0.907304
+
+R8VEC_MEAN_TEST:
+  Normal end of execution.
+
+R8VEC_MIN_TEST
+  Python version: 3.6.9
+  R8VEC_MIN computes the minimum entry in an R8VEC.
+
+  Input vector:
+
+     0:      -5.63163
+     1:       9.12635
+     2:       6.59018
+     3:       1.23391
+     4:      -1.69386
+     5:      -8.67763
+     6:      -4.84844
+     7:      -7.80086
+     8:      -9.12342
+     9:       2.67931
+
+  Min = -9.12342
+
+R8VEC_MIN_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_AB computes a random R8VEC.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:       0.31051
+     1:       4.73791
+     2:       3.97706
+     3:       2.37017
+     4:       1.49184
+     5:     -0.603288
+     6:      0.545467
+     7:     -0.340259
+     8:     -0.737026
+     9:       2.80379
+
+R8VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC_VARIANCE_TEST
+  Python version: 3.6.9
+  R8VEC_VARIANCE computes the variance of an R8VEC.
+
+  Input vector:
+
+     0:      -2.81582
+     1:       4.56318
+     2:       3.29509
+     3:      0.616954
+     4:     -0.846929
+     5:      -4.33881
+     6:      -2.42422
+     7:      -3.90043
+     8:      -4.56171
+     9:       1.33966
+
+  Value = 10.5549
+
+R8VEC_VARIANCE_TEST:
+  Normal end of execution.
+
+LOG_NORMAL_TEST:
+  Normal end of execution.
+Tue Jan 28 08:24:38 2020

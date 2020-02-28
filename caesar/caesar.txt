@@ -1,0 +1,74 @@
+Mon Jan 20 18:08:58 2020
+
+CAESAR_TEST
+  Python version: 3.6.9
+  Test the CAESAR library.
+
+  S2 = S_TO_CAESAR ( S1, K ), varying K.
+
+   K  ---------------S1----------------  ---------------S2----------------
+
+  -5  "A man, a plan, a canal: Panama!"  "V hvi, v kgvi, v xvivg: Kvivhv!"
+  -4  "A man, a plan, a canal: Panama!"  "W iwj, w lhwj, w ywjwh: Lwjwiw!"
+  -3  "A man, a plan, a canal: Panama!"  "X jxk, x mixk, x zxkxi: Mxkxjx!"
+  -2  "A man, a plan, a canal: Panama!"  "Y kyl, y njyl, y aylyj: Nylyky!"
+  -1  "A man, a plan, a canal: Panama!"  "Z lzm, z okzm, z bzmzk: Ozmzlz!"
+   0  "A man, a plan, a canal: Panama!"  "A man, a plan, a canal: Panama!"
+   1  "A man, a plan, a canal: Panama!"  "B nbo, b qmbo, b dbobm: Qbobnb!"
+   2  "A man, a plan, a canal: Panama!"  "C ocp, c rncp, c ecpcn: Rcpcoc!"
+   3  "A man, a plan, a canal: Panama!"  "D pdq, d sodq, d fdqdo: Sdqdpd!"
+   4  "A man, a plan, a canal: Panama!"  "E qer, e tper, e gerep: Tereqe!"
+   5  "A man, a plan, a canal: Panama!"  "F rfs, f uqfs, f hfsfq: Ufsfrf!"
+
+  S2 = S_TO_CAESAR ( S1,  K ).
+  S3 = S_TO_CAESAR ( S2, -K )
+
+   K  ------------S1------------  ------------S2------------  ------------S3------------
+
+  -5  "The key is under the mat"  "Ocz fzt dn piyzm ocz hvo"  "The key is under the mat"
+  -4  "The key is under the mat"  "Pda gau eo qjzan pda iwp"  "The key is under the mat"
+  -3  "The key is under the mat"  "Qeb hbv fp rkabo qeb jxq"  "The key is under the mat"
+  -2  "The key is under the mat"  "Rfc icw gq slbcp rfc kyr"  "The key is under the mat"
+  -1  "The key is under the mat"  "Sgd jdx hr tmcdq sgd lzs"  "The key is under the mat"
+   0  "The key is under the mat"  "The key is under the mat"  "The key is under the mat"
+   1  "The key is under the mat"  "Uif lfz jt voefs uif nbu"  "The key is under the mat"
+   2  "The key is under the mat"  "Vjg mga ku wpfgt vjg ocv"  "The key is under the mat"
+   3  "The key is under the mat"  "Wkh nhb lv xqghu wkh pdw"  "The key is under the mat"
+   4  "The key is under the mat"  "Xli oic mw yrhiv xli qex"  "The key is under the mat"
+   5  "The key is under the mat"  "Ymj pjd nx zsijw ymj rfy"  "The key is under the mat"
+
+  S2 = S_TO_CAESAR ( S1, K ), varying K.
+
+   K  ---------------S2---------------------------------------------------
+
+   0  "The only thing we have to fear is fear itself."
+   1  "Uif pomz uijoh xf ibwf up gfbs jt gfbs jutfmg."
+   2  "Vjg qpna vjkpi yg jcxg vq hgct ku hgct kvugnh."
+   3  "Wkh rqob wklqj zh kdyh wr ihdu lv ihdu lwvhoi."
+   4  "Xli srpc xlmrk ai lezi xs jiev mw jiev mxwipj."
+   5  "Ymj tsqd ymnsl bj mfaj yt kjfw nx kjfw nyxjqk."
+   6  "Znk utre znotm ck ngbk zu lkgx oy lkgx ozykrl."
+   7  "Aol vusf aopun dl ohcl av mlhy pz mlhy pazlsm."
+   8  "Bpm wvtg bpqvo em pidm bw nmiz qa nmiz qbamtn."
+   9  "Cqn xwuh cqrwp fn qjen cx onja rb onja rcbnuo."
+  10  "Dro yxvi drsxq go rkfo dy pokb sc pokb sdcovp."
+  11  "Esp zywj estyr hp slgp ez qplc td qplc tedpwq."
+  12  "Ftq azxk ftuzs iq tmhq fa rqmd ue rqmd ufeqxr."
+  13  "Gur bayl guvat jr unir gb srne vf srne vgfrys."
+  14  "Hvs cbzm hvwbu ks vojs hc tsof wg tsof whgszt."
+  15  "Iwt dcan iwxcv lt wpkt id utpg xh utpg xihtau."
+  16  "Jxu edbo jxydw mu xqlu je vuqh yi vuqh yjiubv."
+  17  "Kyv fecp kyzex nv yrmv kf wvri zj wvri zkjvcw."
+  18  "Lzw gfdq lzafy ow zsnw lg xwsj ak xwsj alkwdx."
+  19  "Max hger mabgz px atox mh yxtk bl yxtk bmlxey."
+  20  "Nby ihfs nbcha qy bupy ni zyul cm zyul cnmyfz."
+  21  "Ocz jigt ocdib rz cvqz oj azvm dn azvm donzga."
+  22  "Pda kjhu pdejc sa dwra pk bawn eo bawn epoahb."
+  23  "Qeb lkiv qefkd tb exsb ql cbxo fp cbxo fqpbic."
+  24  "Rfc mljw rfgle uc fytc rm dcyp gq dcyp grqcjd."
+  25  "Sgd nmkx sghmf vd gzud sn edzq hr edzq hsrdke."
+  26  "The only thing we have to fear is fear itself."
+
+CAESAR_TEST:
+  Normal end of execution.
+Mon Jan 20 18:08:58 2020

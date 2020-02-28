@@ -1,0 +1,2843 @@
+Sat Jan 18 11:59:55 2020
+
+BARYCENTRIC_INTERP_1D_TEST:
+  Python version: 3.6.9
+  Test the BARYCENTRIC_INTERP_1D library.
+  The R8LIB library is needed.
+  These test needs the TEST_INTERP_1D library.
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 4
+
+  Data array:
+
+     0:              0              -1
+     1:           0.25              -1
+     2:           0.75               2
+     3:              1               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby1_04.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 8
+
+  Data array:
+
+     0:              0              -1
+     1:      0.0495156              -1
+     2:       0.188255              -1
+     3:        0.38874               2
+     4:        0.61126               2
+     5:       0.811745               1
+     6:       0.950484               1
+     7:              1               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby1_08.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 16
+
+  Data array:
+
+     0:              0              -1
+     1:      0.0109262              -1
+     2:      0.0432273              -1
+     3:      0.0954915              -1
+     4:       0.165435              -1
+     5:           0.25              -1
+     6:       0.345492               2
+     7:       0.447736               2
+......  ..............  ..............
+    15:              1               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby1_16.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 32
+
+  Data array:
+
+     0:              0              -1
+     1:     0.00256534              -1
+     2:       0.010235              -1
+     3:      0.0229304              -1
+     4:      0.0405211              -1
+     5:      0.0628267              -1
+     6:      0.0896183              -1
+     7:       0.120621              -1
+......  ..............  ..............
+    31:              1               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby1_32.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 64
+
+  Data array:
+
+     0:              0              -1
+     1:    0.000621539              -1
+     2:     0.00248461              -1
+     3:     0.00558459              -1
+     4:     0.00991376              -1
+     5:      0.0154614              -1
+     6:      0.0222136              -1
+     7:      0.0301537              -1
+......  ..............  ..............
+    63:              1               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby1_64.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 1000
+
+  Data array:
+
+     0:              0              -1
+     1:    2.47234e-06              -1
+     2:    9.88934e-06              -1
+     3:    2.22509e-05              -1
+     4:     3.9557e-05              -1
+     5:    6.18073e-05              -1
+     6:    8.90017e-05              -1
+     7:     0.00012114              -1
+......  ..............  ..............
+   999:              1               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby1_1000.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 4
+
+  Data array:
+
+     0:              0               1
+     1:           0.25            0.25
+     2:           0.75             2.5
+     3:              1               4
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby1_04.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 8
+
+  Data array:
+
+     0:              0               1
+     1:      0.0495156        0.851453
+     2:       0.188255        0.435235
+     3:        0.38874        0.332437
+     4:        0.61126         1.66756
+     5:       0.811745         2.87047
+     6:       0.950484         3.70291
+     7:              1               4
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby1_08.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 16
+
+  Data array:
+
+     0:              0               1
+     1:      0.0109262        0.967221
+     2:      0.0432273        0.870318
+     3:      0.0954915        0.713525
+     4:       0.165435        0.503696
+     5:           0.25            0.25
+     6:       0.345492        0.072949
+     7:       0.447736        0.686415
+......  ..............  ..............
+    15:              1               4
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby1_16.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 32
+
+  Data array:
+
+     0:              0               1
+     1:     0.00256534        0.992304
+     2:       0.010235        0.969295
+     3:      0.0229304        0.931209
+     4:      0.0405211        0.878437
+     5:      0.0628267         0.81152
+     6:      0.0896183        0.731145
+     7:       0.120621        0.638137
+......  ..............  ..............
+    31:              1               4
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby1_32.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 64
+
+  Data array:
+
+     0:              0               1
+     1:    0.000621539        0.998135
+     2:     0.00248461        0.992546
+     3:     0.00558459        0.983246
+     4:     0.00991376        0.970259
+     5:      0.0154614        0.953616
+     6:      0.0222136        0.933359
+     7:      0.0301537        0.909539
+......  ..............  ..............
+    63:              1               4
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby1_64.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 1000
+
+  Data array:
+
+     0:              0               1
+     1:    2.47234e-06        0.999993
+     2:    9.88934e-06         0.99997
+     3:    2.22509e-05        0.999933
+     4:     3.9557e-05        0.999881
+     5:    6.18073e-05        0.999815
+     6:    8.90017e-05        0.999733
+     7:     0.00012114        0.999637
+......  ..............  ..............
+   999:              1               4
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby1_1000.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 4
+
+  Data array:
+
+     0:              0              -0
+     1:           0.25        0.379687
+     2:           0.75         1.49297
+     3:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby1_04.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 8
+
+  Data array:
+
+     0:              0              -0
+     1:      0.0495156       -0.233633
+     2:       0.188255         0.40015
+     3:        0.38874      0.00401283
+     4:        0.61126         1.29446
+     5:       0.811745        0.705402
+     6:       0.950484        -1.21883
+     7:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby1_08.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 16
+
+  Data array:
+
+     0:              0              -0
+     1:      0.0109262       -0.122268
+     2:      0.0432273       -0.241124
+     3:      0.0954915      -0.0272441
+     4:       0.165435        0.340281
+     5:           0.25        0.379687
+     6:       0.345492        0.083212
+     7:       0.447736       0.0788165
+......  ..............  ..............
+    15:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby1_16.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 32
+
+  Data array:
+
+     0:              0              -0
+     1:     0.00256534      -0.0333719
+     2:       0.010235       -0.116009
+     3:      0.0229304       -0.203051
+     4:      0.0405211       -0.241898
+     5:      0.0628267       -0.195872
+     6:      0.0896183      -0.0620459
+     7:       0.120621        0.124523
+......  ..............  ..............
+    31:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby1_32.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 64
+
+  Data array:
+
+     0:              0              -0
+     1:    0.000621539     -0.00836299
+     2:     0.00248461      -0.0323673
+     3:     0.00558459      -0.0688756
+     4:     0.00991376       -0.113036
+     5:      0.0154614       -0.158804
+     6:      0.0222136       -0.199608
+     7:      0.0301537       -0.229067
+......  ..............  ..............
+    63:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby1_64.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 1000
+
+  Data array:
+
+     0:              0              -0
+     1:    2.47234e-06    -3.36224e-05
+     2:    9.88934e-06    -0.000134472
+     3:    2.22509e-05    -0.000302497
+     4:     3.9557e-05    -0.000537609
+     5:    6.18073e-05    -0.000839687
+     6:    8.90017e-05     -0.00120857
+     7:     0.00012114     -0.00164408
+......  ..............  ..............
+   999:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby1_1000.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 4
+
+  Data array:
+
+     0:              0        -1.50423
+     1:           0.25         -1.3734
+     2:           0.75         1.50423
+     3:              1         1.53082
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby1_04.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 8
+
+  Data array:
+
+     0:              0        -1.50423
+     1:      0.0495156        -1.49414
+     2:       0.188255        -1.43772
+     3:        0.38874        0.502522
+     4:        0.61126         1.46537
+     5:       0.811745         1.51362
+     6:       0.950484         1.52738
+     7:              1         1.53082
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby1_08.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 16
+
+  Data array:
+
+     0:              0        -1.50423
+     1:      0.0109262        -1.50224
+     2:      0.0432273        -1.49559
+     3:      0.0954915        -1.48159
+     4:       0.165435        -1.45206
+     5:           0.25         -1.3734
+     6:       0.345492       -0.867922
+     7:       0.447736         1.23974
+......  ..............  ..............
+    15:              1         1.53082
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby1_16.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 32
+
+  Data array:
+
+     0:              0        -1.50423
+     1:     0.00256534        -1.50377
+     2:       0.010235        -1.50237
+     3:      0.0229304        -1.49991
+     4:      0.0405211        -1.49619
+     5:      0.0628267        -1.49088
+     6:      0.0896183        -1.48342
+     7:       0.120621        -1.47283
+......  ..............  ..............
+    31:              1         1.53082
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby1_32.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 64
+
+  Data array:
+
+     0:              0        -1.50423
+     1:    0.000621539        -1.50412
+     2:     0.00248461        -1.50379
+     3:     0.00558459        -1.50322
+     4:     0.00991376        -1.50243
+     5:      0.0154614        -1.50137
+     6:      0.0222136        -1.50005
+     7:      0.0301537        -1.49843
+......  ..............  ..............
+    63:              1         1.53082
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby1_64.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 1000
+
+  Data array:
+
+     0:              0        -1.50423
+     1:    2.47234e-06        -1.50423
+     2:    9.88934e-06        -1.50423
+     3:    2.22509e-05        -1.50422
+     4:     3.9557e-05        -1.50422
+     5:    6.18073e-05        -1.50422
+     6:    8.90017e-05        -1.50421
+     7:     0.00012114        -1.50421
+......  ..............  ..............
+   999:              1         1.53082
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby1_1000.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 4
+
+  Data array:
+
+     0:              0              16
+     1:           0.25        -10.1153
+     2:           0.75        -7.76263
+     3:              1         13.3791
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby1_04.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 8
+
+  Data array:
+
+     0:              0              16
+     1:      0.0495156        -3.29024
+     2:       0.188255         9.45586
+     3:        0.38874         6.34917
+     4:        0.61126         14.5226
+     5:       0.811745         4.39835
+     6:       0.950484        -8.65807
+     7:              1         13.3791
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby1_08.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 16
+
+  Data array:
+
+     0:              0              16
+     1:      0.0109262         14.0959
+     2:      0.0432273        -1.62332
+     3:      0.0954915         4.52013
+     4:       0.165435        -1.03855
+     5:           0.25        -10.1153
+     6:       0.345492        -12.1159
+     7:       0.447736        -8.32828
+......  ..............  ..............
+    15:              1         13.3791
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby1_16.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 32
+
+  Data array:
+
+     0:              0              16
+     1:     0.00256534         15.8915
+     2:       0.010235          14.322
+     3:      0.0229304         8.55769
+     4:      0.0405211       -0.603468
+     5:      0.0628267         -3.3362
+     6:      0.0896183         3.75148
+     7:       0.120621       -0.201555
+......  ..............  ..............
+    31:              1         13.3791
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby1_32.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 64
+
+  Data array:
+
+     0:              0              16
+     1:    0.000621539         15.9936
+     2:     0.00248461         15.8982
+     3:     0.00558459         15.4896
+     4:     0.00991376         14.4227
+     5:      0.0154614         12.3183
+     6:      0.0222136         8.94853
+     7:      0.0301537         4.51909
+......  ..............  ..............
+    63:              1         13.3791
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby1_64.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 1000
+
+  Data array:
+
+     0:              0              16
+     1:    2.47234e-06              16
+     2:    9.88934e-06              16
+     3:    2.22509e-05              16
+     4:     3.9557e-05              16
+     5:    6.18073e-05         15.9999
+     6:    8.90017e-05         15.9999
+     7:     0.00012114         15.9998
+......  ..............  ..............
+   999:              1         13.3791
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby1_1000.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 4
+
+  Data array:
+
+     0:              0        0.367879
+     1:           0.25               1
+     2:           0.75       0.0183156
+     3:              1      0.00012341
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby1_04.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 8
+
+  Data array:
+
+     0:              0        0.367879
+     1:      0.0495156        0.525658
+     2:       0.188255        0.940824
+     3:        0.38874        0.734931
+     4:        0.61126        0.123917
+     5:       0.811745      0.00641628
+     6:       0.950484     0.000389419
+     7:              1      0.00012341
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby1_08.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 16
+
+  Data array:
+
+     0:              0        0.367879
+     1:      0.0109262        0.400717
+     2:      0.0432273        0.504555
+     3:      0.0954915        0.682518
+     4:       0.165435        0.891883
+     5:           0.25               1
+     6:       0.345492        0.864246
+     7:       0.447736        0.534945
+......  ..............  ..............
+    15:              1      0.00012341
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby1_16.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 32
+
+  Data array:
+
+     0:              0        0.367879
+     1:     0.00256534        0.375468
+     2:       0.010235          0.3986
+     3:      0.0229304        0.438248
+     4:      0.0405211        0.495542
+     5:      0.0628267          0.5709
+     6:      0.0896183        0.662618
+     7:       0.120621        0.765043
+......  ..............  ..............
+    31:              1      0.00012341
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby1_32.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 64
+
+  Data array:
+
+     0:              0        0.367879
+     1:    0.000621539        0.369711
+     2:     0.00248461        0.375228
+     3:     0.00558459        0.384496
+     4:     0.00991376        0.397618
+     5:      0.0154614        0.414727
+     6:      0.0222136        0.435968
+     7:      0.0301537        0.461479
+......  ..............  ..............
+    63:              1      0.00012341
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby1_64.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 1000
+
+  Data array:
+
+     0:              0        0.367879
+     1:    2.47234e-06        0.367887
+     2:    9.88934e-06        0.367909
+     3:    2.22509e-05        0.367945
+     4:     3.9557e-05        0.367996
+     5:    6.18073e-05        0.368061
+     6:    8.90017e-05        0.368141
+     7:     0.00012114        0.368236
+......  ..............  ..............
+   999:              1      0.00012341
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby1_1000.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 4
+
+  Data array:
+
+     0:              0               1
+     1:           0.25         2.71828
+     2:           0.75               0
+     3:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby1_04.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 8
+
+  Data array:
+
+     0:              0               1
+     1:      0.0495156         1.21904
+     2:       0.188255          2.1234
+     3:        0.38874         4.73489
+     4:        0.61126               0
+     5:       0.811745               0
+     6:       0.950484               0
+     7:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby1_08.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 16
+
+  Data array:
+
+     0:              0               1
+     1:      0.0109262         1.04467
+     2:      0.0432273         1.18876
+     3:      0.0954915         1.46516
+     4:       0.165435         1.93816
+     5:           0.25         2.71828
+     6:       0.345492         3.98272
+     7:       0.447736          5.9951
+......  ..............  ..............
+    15:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby1_16.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 32
+
+  Data array:
+
+     0:              0               1
+     1:     0.00256534         1.01031
+     2:       0.010235         1.04179
+     3:      0.0229304         1.09606
+     4:      0.0405211         1.17596
+     5:      0.0628267          1.2857
+     6:      0.0896183         1.43114
+     7:       0.120621         1.62009
+......  ..............  ..............
+    31:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby1_32.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 64
+
+  Data array:
+
+     0:              0               1
+     1:    0.000621539         1.00249
+     2:     0.00248461         1.00999
+     3:     0.00558459         1.02259
+     4:     0.00991376         1.04045
+     5:      0.0154614          1.0638
+     6:      0.0222136         1.09292
+     7:      0.0301537         1.12819
+......  ..............  ..............
+    63:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby1_64.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 1000
+
+  Data array:
+
+     0:              0               1
+     1:    2.47234e-06         1.00001
+     2:    9.88934e-06         1.00004
+     3:    2.22509e-05         1.00009
+     4:     3.9557e-05         1.00016
+     5:    6.18073e-05         1.00025
+     6:    8.90017e-05         1.00036
+     7:     0.00012114         1.00048
+......  ..............  ..............
+   999:              1               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby1_1000.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 4
+
+  Data array:
+
+     0:              0       0.0384615
+     1:           0.25        0.137931
+     2:           0.75        0.137931
+     3:              1       0.0384615
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby1_04.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 8
+
+  Data array:
+
+     0:              0       0.0384615
+     1:      0.0495156       0.0469624
+     2:       0.188255       0.0932967
+     3:        0.38874         0.44685
+     4:        0.61126         0.44685
+     5:       0.811745       0.0932967
+     6:       0.950484       0.0469624
+     7:              1       0.0384615
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby1_08.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 16
+
+  Data array:
+
+     0:              0       0.0384615
+     1:      0.0109262       0.0401295
+     2:      0.0432273        0.045737
+     3:      0.0954915       0.0575947
+     4:       0.165435       0.0820116
+     5:           0.25        0.137931
+     6:       0.345492        0.295221
+     7:       0.447736         0.78545
+......  ..............  ..............
+    15:              1       0.0384615
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby1_16.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 32
+
+  Data array:
+
+     0:              0       0.0384615
+     1:     0.00256534       0.0388438
+     2:       0.010235       0.0400209
+     3:      0.0229304       0.0420884
+     4:      0.0405211       0.0452241
+     5:      0.0628267       0.0497214
+     6:      0.0896183       0.0560497
+     7:       0.120621       0.0649652
+......  ..............  ..............
+    31:              1       0.0384615
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby1_32.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 64
+
+  Data array:
+
+     0:              0       0.0384615
+     1:    0.000621539       0.0385536
+     2:     0.00248461       0.0388317
+     3:     0.00558459        0.039301
+     4:     0.00991376       0.0399705
+     5:      0.0154614       0.0408534
+     6:      0.0222136       0.0419675
+     7:      0.0301537       0.0433359
+......  ..............  ..............
+    63:              1       0.0384615
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby1_64.png".
+
+LAGCHEBY1_INTERP_1D_TEST:
+  LAGCHEBY1_INTERP_1D uses Chebyshev Type 1 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 1000
+
+  Data array:
+
+     0:              0       0.0384615
+     1:    2.47234e-06       0.0384619
+     2:    9.88934e-06        0.038463
+     3:    2.22509e-05       0.0384648
+     4:     3.9557e-05       0.0384674
+     5:    6.18073e-05       0.0384707
+     6:    8.90017e-05       0.0384747
+     7:     0.00012114       0.0384795
+......  ..............  ..............
+   999:              1       0.0384615
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby1_1000.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 4
+
+  Data array:
+
+     0:      0.0954915              -1
+     1:       0.345492               2
+     2:       0.654508               2
+     3:       0.904508               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby2_04.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 8
+
+  Data array:
+
+     0:      0.0301537              -1
+     1:       0.116978              -1
+     2:           0.25              -1
+     3:       0.413176               2
+     4:       0.586824               2
+     5:           0.75               2
+     6:       0.883022               1
+     7:       0.969846               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby2_08.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 16
+
+  Data array:
+
+     0:     0.00851345              -1
+     1:      0.0337639              -1
+     2:      0.0748914              -1
+     3:       0.130496              -1
+     4:       0.198683              -1
+     5:       0.277131              -1
+     6:       0.363169               2
+     7:       0.453866               2
+......  ..............  ..............
+    15:       0.991487               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby2_16.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 32
+
+  Data array:
+
+     0:     0.00226404              -1
+     1:     0.00903565              -1
+     2:      0.0202535              -1
+     3:       0.035816              -1
+     4:      0.0555823              -1
+     5:      0.0793732              -1
+     6:       0.106973              -1
+     7:       0.138133              -1
+......  ..............  ..............
+    31:       0.997736               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby2_32.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 64
+
+  Data array:
+
+     0:    0.000583887              -1
+     1:     0.00233418              -1
+     2:      0.0052468              -1
+     3:     0.00931494              -1
+     4:      0.0145291              -1
+     5:      0.0208771              -1
+     6:      0.0283441              -1
+     7:      0.0369127              -1
+......  ..............  ..............
+    63:       0.999416               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby2_64.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 1000
+
+  Data array:
+
+     0:    2.46247e-06              -1
+     1:    9.84986e-06              -1
+     2:    2.21621e-05              -1
+     3:    3.93991e-05              -1
+     4:    6.15606e-05              -1
+     5:    8.86464e-05              -1
+     6:    0.000120656              -1
+     7:     0.00015759              -1
+......  ..............  ..............
+   999:       0.999998               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lagcheby2_1000.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 4
+
+  Data array:
+
+     0:      0.0954915        0.713525
+     1:       0.345492        0.072949
+     2:       0.654508         1.92705
+     3:       0.904508         3.42705
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby2_04.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 8
+
+  Data array:
+
+     0:      0.0301537        0.909539
+     1:       0.116978        0.649067
+     2:           0.25            0.25
+     3:       0.413176        0.479055
+     4:       0.586824         1.52094
+     5:           0.75             2.5
+     6:       0.883022         3.29813
+     7:       0.969846         3.81908
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby2_08.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 16
+
+  Data array:
+
+     0:     0.00851345         0.97446
+     1:      0.0337639        0.898708
+     2:      0.0748914        0.775326
+     3:       0.130496        0.608513
+     4:       0.198683        0.403952
+     5:       0.277131        0.168608
+     6:       0.363169        0.179011
+     7:       0.453866        0.723195
+......  ..............  ..............
+    15:       0.991487         3.94892
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby2_16.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 32
+
+  Data array:
+
+     0:     0.00226404        0.993208
+     1:     0.00903565        0.972893
+     2:      0.0202535        0.939239
+     3:       0.035816        0.892552
+     4:      0.0555823        0.833253
+     5:      0.0793732         0.76188
+     6:       0.106973         0.67908
+     7:       0.138133        0.585601
+......  ..............  ..............
+    31:       0.997736         3.98642
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby2_32.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 64
+
+  Data array:
+
+     0:    0.000583887        0.998248
+     1:     0.00233418        0.992997
+     2:      0.0052468         0.98426
+     3:     0.00931494        0.972055
+     4:      0.0145291        0.956413
+     5:      0.0208771        0.937369
+     6:      0.0283441        0.914968
+     7:      0.0369127        0.889262
+......  ..............  ..............
+    63:       0.999416          3.9965
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby2_64.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 1000
+
+  Data array:
+
+     0:    2.46247e-06        0.999993
+     1:    9.84986e-06         0.99997
+     2:    2.21621e-05        0.999934
+     3:    3.93991e-05        0.999882
+     4:    6.15606e-05        0.999815
+     5:    8.86464e-05        0.999734
+     6:    0.000120656        0.999638
+     7:     0.00015759        0.999527
+......  ..............  ..............
+   999:       0.999998         3.99999
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lagcheby2_1000.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 4
+
+  Data array:
+
+     0:      0.0954915      -0.0272441
+     1:       0.345492        0.083212
+     2:       0.654508         1.58779
+     3:       0.904508       -0.964071
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby2_04.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 8
+
+  Data array:
+
+     0:      0.0301537       -0.229067
+     1:       0.116978        0.102971
+     2:           0.25        0.379687
+     3:       0.413176      0.00575836
+     4:       0.586824         1.08424
+     5:           0.75         1.49297
+     6:       0.883022       -0.623146
+     7:       0.969846       -0.989979
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby2_08.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 16
+
+  Data array:
+
+     0:     0.00851345      -0.0995934
+     1:      0.0337639       -0.236575
+     2:      0.0748914       -0.142517
+     3:       0.130496        0.180829
+     4:       0.198683        0.414725
+     5:       0.277131        0.306888
+     6:       0.363169       0.0401961
+     7:       0.453866        0.100817
+......  ..............  ..............
+    15:       0.991487       -0.372488
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby2_16.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 32
+
+  Data array:
+
+     0:     0.00226404      -0.0296077
+     1:     0.00903565       -0.104699
+     2:      0.0202535       -0.189347
+     3:       0.035816       -0.239347
+     4:      0.0555823       -0.219724
+     5:      0.0793732       -0.119408
+     6:       0.106973       0.0425017
+     7:       0.138133        0.221615
+......  ..............  ..............
+    31:       0.997736       -0.107042
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby2_32.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 64
+
+  Data array:
+
+     0:    0.000583887     -0.00786146
+     1:     0.00233418      -0.0304876
+     2:      0.0052468      -0.0651006
+     3:     0.00931494       -0.107384
+     4:      0.0145291        -0.15192
+     5:      0.0208771       -0.192747
+     6:      0.0283441       -0.223975
+     7:      0.0369127       -0.240405
+......  ..............  ..............
+    63:       0.999416      -0.0281767
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby2_64.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 1000
+
+  Data array:
+
+     0:    2.46247e-06    -3.34882e-05
+     1:    9.84986e-06    -0.000133935
+     2:    2.21621e-05     -0.00030129
+     3:    3.93991e-05    -0.000535465
+     4:    6.15606e-05    -0.000836339
+     5:    8.86464e-05     -0.00120376
+     6:    0.000120656     -0.00163753
+     7:     0.00015759     -0.00213743
+......  ..............  ..............
+   999:       0.999998    -0.000119673
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lagcheby2_1000.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 4
+
+  Data array:
+
+     0:      0.0954915        -1.48159
+     1:       0.345492       -0.867922
+     2:       0.654508         1.48159
+     3:       0.904508         1.52362
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby2_04.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 8
+
+  Data array:
+
+     0:      0.0301537        -1.49843
+     1:       0.116978        -1.47421
+     2:           0.25         -1.3734
+     3:       0.413176         0.99101
+     4:       0.586824         1.45332
+     5:           0.75         1.50423
+     6:       0.883022         1.52163
+     7:       0.969846         1.52879
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby2_08.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 16
+
+  Data array:
+
+     0:     0.00851345        -1.50269
+     1:      0.0337639        -1.49766
+     2:      0.0748914        -1.48769
+     3:       0.130496         -1.4689
+     4:       0.198683        -1.42995
+     5:       0.277131         -1.3207
+     6:       0.363169       -0.442028
+     7:       0.453866         1.26382
+......  ..............  ..............
+    15:       0.991487         1.53027
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby2_16.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 32
+
+  Data array:
+
+     0:     0.00226404        -1.50383
+     1:     0.00903565        -1.50259
+     2:      0.0202535        -1.50044
+     3:       0.035816        -1.49722
+     4:      0.0555823        -1.49269
+     5:      0.0793732        -1.48643
+     6:       0.106973        -1.47779
+     7:       0.138133        -1.46564
+......  ..............  ..............
+    31:       0.997736         1.53067
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby2_32.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 64
+
+  Data array:
+
+     0:    0.000583887        -1.50412
+     1:     0.00233418        -1.50381
+     2:      0.0052468        -1.50329
+     3:     0.00931494        -1.50254
+     4:      0.0145291        -1.50155
+     5:      0.0208771        -1.50032
+     6:      0.0283441         -1.4988
+     7:      0.0369127        -1.49699
+......  ..............  ..............
+    63:       0.999416         1.53078
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby2_64.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 1000
+
+  Data array:
+
+     0:    2.46247e-06        -1.50423
+     1:    9.84986e-06        -1.50423
+     2:    2.21621e-05        -1.50422
+     3:    3.93991e-05        -1.50422
+     4:    6.15606e-05        -1.50422
+     5:    8.86464e-05        -1.50421
+     6:    0.000120656        -1.50421
+     7:     0.00015759         -1.5042
+......  ..............  ..............
+   999:       0.999998         1.53082
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lagcheby2_1000.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 4
+
+  Data array:
+
+     0:      0.0954915         4.52013
+     1:       0.345492        -12.1159
+     2:       0.654508        -3.14148
+     3:       0.904508        -3.33255
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby2_04.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 8
+
+  Data array:
+
+     0:      0.0301537         4.51909
+     1:       0.116978         1.08462
+     2:           0.25        -10.1153
+     3:       0.413176         5.72191
+     4:       0.586824         14.8226
+     5:           0.75        -7.76263
+     6:       0.883022        -5.66445
+     7:       0.969846         1.26904
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby2_08.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 16
+
+  Data array:
+
+     0:     0.00851345         14.8281
+     1:      0.0337639         2.57055
+     2:      0.0748914       -0.295557
+     3:       0.130496        -3.68097
+     4:       0.198683         10.9972
+     5:       0.277131        -6.46116
+     6:       0.363169        -6.82356
+     7:       0.453866        -8.62306
+......  ..............  ..............
+    15:       0.991487         12.2752
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby2_16.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 32
+
+  Data array:
+
+     0:     0.00226404         15.9155
+     1:     0.00903565         14.6834
+     2:      0.0202535         9.99223
+     3:       0.035816          1.5274
+     4:      0.0555823        -3.88354
+     5:      0.0793732         1.09607
+     6:       0.106973         3.82071
+     7:       0.138133         -5.6219
+......  ..............  ..............
+    31:       0.997736          13.316
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby2_32.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 64
+
+  Data array:
+
+     0:    0.000583887         15.9944
+     1:     0.00233418         15.9102
+     2:      0.0052468          15.549
+     3:     0.00931494         14.6028
+     4:      0.0145291         12.7221
+     5:      0.0208771          9.6647
+     6:      0.0283441         5.52935
+     7:      0.0369127        0.995313
+......  ..............  ..............
+    63:       0.999416         13.3788
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby2_64.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 1000
+
+  Data array:
+
+     0:    2.46247e-06              16
+     1:    9.84986e-06              16
+     2:    2.21621e-05              16
+     3:    3.93991e-05              16
+     4:    6.15606e-05         15.9999
+     5:    8.86464e-05         15.9999
+     6:    0.000120656         15.9998
+     7:     0.00015759         15.9996
+......  ..............  ..............
+   999:       0.999998         13.3791
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lagcheby2_1000.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 4
+
+  Data array:
+
+     0:      0.0954915        0.682518
+     1:       0.345492        0.864246
+     2:       0.654508       0.0729461
+     3:       0.904508      0.00105512
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby2_04.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 8
+
+  Data array:
+
+     0:      0.0301537        0.461479
+     1:       0.116978         0.75343
+     2:           0.25               1
+     3:       0.413176        0.653102
+     4:       0.586824        0.162804
+     5:           0.75       0.0183156
+     6:       0.883022       0.0016426
+     7:       0.969846     0.000250799
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby2_08.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 16
+
+  Data array:
+
+     0:     0.00851345        0.393351
+     1:      0.0337639        0.473251
+     2:      0.0748914        0.612254
+     3:       0.130496        0.795725
+     4:       0.198683         0.95874
+     5:       0.277131        0.988292
+     6:       0.363169        0.814718
+     7:       0.453866        0.514284
+......  ..............  ..............
+    15:       0.991487     0.000151211
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby2_16.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 32
+
+  Data array:
+
+     0:     0.00226404        0.374573
+     1:     0.00903565         0.39494
+     2:      0.0202535        0.429757
+     3:       0.035816        0.479987
+     4:      0.0555823        0.546199
+     5:      0.0793732        0.627623
+     6:       0.106973        0.720863
+     7:       0.138133        0.818544
+......  ..............  ..............
+    31:       0.997736      0.00013029
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby2_32.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 64
+
+  Data array:
+
+     0:    0.000583887          0.3696
+     1:     0.00233418        0.374781
+     2:      0.0052468        0.383481
+     3:     0.00931494        0.395791
+     4:      0.0145291         0.41183
+     5:      0.0208771        0.431729
+     6:      0.0283441        0.455618
+     7:      0.0369127        0.483599
+......  ..............  ..............
+    63:       0.999416     0.000125151
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby2_64.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 1000
+
+  Data array:
+
+     0:    2.46247e-06        0.367887
+     1:    9.84986e-06        0.367908
+     2:    2.21621e-05        0.367945
+     3:    3.93991e-05        0.367995
+     4:    6.15606e-05        0.368061
+     5:    8.86464e-05         0.36814
+     6:    0.000120656        0.368235
+     7:     0.00015759        0.368343
+......  ..............  ..............
+   999:       0.999998     0.000123417
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lagcheby2_1000.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 4
+
+  Data array:
+
+     0:      0.0954915         1.46516
+     1:       0.345492         3.98272
+     2:       0.654508               0
+     3:       0.904508               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby2_04.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 8
+
+  Data array:
+
+     0:      0.0301537         1.12819
+     1:       0.116978         1.59666
+     2:           0.25         2.71828
+     3:       0.413176         5.22108
+     4:       0.586824               0
+     5:           0.75               0
+     6:       0.883022               0
+     7:       0.969846               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby2_08.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 16
+
+  Data array:
+
+     0:     0.00851345         1.03464
+     1:      0.0337639          1.1446
+     2:      0.0748914         1.34927
+     3:       0.130496         1.68537
+     4:       0.198683         2.21384
+     5:       0.277131         3.02988
+     6:       0.363169         4.27453
+     7:       0.453866         6.14392
+......  ..............  ..............
+    15:       0.991487               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby2_16.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 32
+
+  Data array:
+
+     0:     0.00226404          1.0091
+     1:     0.00903565          1.0368
+     2:      0.0202535         1.08439
+     3:       0.035816         1.15403
+     4:      0.0555823         1.24898
+     5:      0.0793732         1.37368
+     6:       0.106973         1.53402
+     7:       0.138133         1.73765
+......  ..............  ..............
+    31:       0.997736               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby2_32.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 64
+
+  Data array:
+
+     0:    0.000583887         1.00234
+     1:     0.00233418         1.00938
+     2:      0.0052468         1.02121
+     3:     0.00931494         1.03796
+     4:      0.0145291         1.05984
+     5:      0.0208771         1.08709
+     6:      0.0283441         1.12005
+     7:      0.0369127         1.15911
+......  ..............  ..............
+    63:       0.999416               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby2_64.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 1000
+
+  Data array:
+
+     0:    2.46247e-06         1.00001
+     1:    9.84986e-06         1.00004
+     2:    2.21621e-05         1.00009
+     3:    3.93991e-05         1.00016
+     4:    6.15606e-05         1.00025
+     5:    8.86464e-05         1.00035
+     6:    0.000120656         1.00048
+     7:     0.00015759         1.00063
+......  ..............  ..............
+   999:       0.999998               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lagcheby2_1000.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 4
+
+  Data array:
+
+     0:      0.0954915       0.0575947
+     1:       0.345492        0.295221
+     2:       0.654508        0.295221
+     3:       0.904508       0.0575947
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby2_04.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 8
+
+  Data array:
+
+     0:      0.0301537       0.0433359
+     1:       0.116978       0.0638138
+     2:           0.25        0.137931
+     3:       0.413176        0.570177
+     4:       0.586824        0.570177
+     5:           0.75        0.137931
+     6:       0.883022       0.0638138
+     7:       0.969846       0.0433359
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby2_08.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 16
+
+  Data array:
+
+     0:     0.00851345       0.0397521
+     1:      0.0337639         0.04398
+     2:      0.0748914       0.0524336
+     3:       0.130496       0.0682438
+     4:       0.198683       0.0992141
+     5:       0.277131        0.167587
+     6:       0.363169        0.348155
+     7:       0.453866        0.824514
+......  ..............  ..............
+    15:       0.991487       0.0397521
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby2_16.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 32
+
+  Data array:
+
+     0:     0.00226404       0.0387986
+     1:     0.00903565       0.0398333
+     2:      0.0202535       0.0416395
+     3:       0.035816       0.0443524
+     4:      0.0555823       0.0481911
+     5:      0.0793732       0.0534969
+     6:       0.106973       0.0608014
+     7:       0.138133       0.0709483
+......  ..............  ..............
+    31:       0.997736       0.0387986
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby2_32.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 64
+
+  Data array:
+
+     0:    0.000583887       0.0385481
+     1:     0.00233418       0.0388091
+     2:      0.0052468       0.0392494
+     3:     0.00931494       0.0398769
+     4:      0.0145291        0.040703
+     5:      0.0208771       0.0417434
+     6:      0.0283441       0.0430183
+     7:      0.0369127       0.0445534
+......  ..............  ..............
+    63:       0.999416       0.0385481
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby2_64.png".
+
+LAGCHEBY2_INTERP_1D_TEST:
+  LAGCHEBY2_INTERP_1D uses Chebyshev Type 2 spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 1000
+
+  Data array:
+
+     0:    2.46247e-06       0.0384619
+     1:    9.84986e-06        0.038463
+     2:    2.21621e-05       0.0384648
+     3:    3.93991e-05       0.0384674
+     4:    6.15606e-05       0.0384706
+     5:    8.86464e-05       0.0384747
+     6:    0.000120656       0.0384794
+     7:     0.00015759       0.0384849
+......  ..............  ..............
+   999:       0.999998       0.0384619
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lagcheby2_1000.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 4
+
+  Data array:
+
+     0:          0.125              -1
+     1:          0.375               2
+     2:          0.625               2
+     3:          0.875               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lageven_04.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 8
+
+  Data array:
+
+     0:         0.0625              -1
+     1:         0.1875              -1
+     2:         0.3125              -1
+     3:         0.4375               2
+     4:         0.5625               2
+     5:         0.6875               2
+     6:         0.8125               1
+     7:         0.9375               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lageven_08.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 16
+
+  Data array:
+
+     0:        0.03125              -1
+     1:        0.09375              -1
+     2:        0.15625              -1
+     3:        0.21875              -1
+     4:        0.28125              -1
+     5:        0.34375               2
+     6:        0.40625               2
+     7:        0.46875               2
+......  ..............  ..............
+    15:        0.96875               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lageven_16.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 32
+
+  Data array:
+
+     0:       0.015625              -1
+     1:       0.046875              -1
+     2:       0.078125              -1
+     3:       0.109375              -1
+     4:       0.140625              -1
+     5:       0.171875              -1
+     6:       0.203125              -1
+     7:       0.234375              -1
+......  ..............  ..............
+    31:       0.984375               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lageven_32.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 64
+
+  Data array:
+
+     0:      0.0078125              -1
+     1:      0.0234375              -1
+     2:      0.0390625              -1
+     3:      0.0546875              -1
+     4:      0.0703125              -1
+     5:      0.0859375              -1
+     6:       0.101562              -1
+     7:       0.117188              -1
+......  ..............  ..............
+    63:       0.992188               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lageven_64.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #1.
+  Number of data points = 1000
+
+  Data array:
+
+     0:         0.0005              -1
+     1:         0.0015              -1
+     2:         0.0025              -1
+     3:         0.0035              -1
+     4:         0.0045              -1
+     5:         0.0055              -1
+     6:         0.0065              -1
+     7:         0.0075              -1
+......  ..............  ..............
+   999:         0.9995               1
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p01_lageven_1000.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 4
+
+  Data array:
+
+     0:          0.125           0.625
+     1:          0.375            0.25
+     2:          0.625            1.75
+     3:          0.875            3.25
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lageven_04.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 8
+
+  Data array:
+
+     0:         0.0625          0.8125
+     1:         0.1875          0.4375
+     2:         0.3125          0.0625
+     3:         0.4375           0.625
+     4:         0.5625           1.375
+     5:         0.6875           2.125
+     6:         0.8125           2.875
+     7:         0.9375           3.625
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lageven_08.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 16
+
+  Data array:
+
+     0:        0.03125         0.90625
+     1:        0.09375         0.71875
+     2:        0.15625         0.53125
+     3:        0.21875         0.34375
+     4:        0.28125         0.15625
+     5:        0.34375          0.0625
+     6:        0.40625          0.4375
+     7:        0.46875          0.8125
+......  ..............  ..............
+    15:        0.96875          3.8125
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lageven_16.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 32
+
+  Data array:
+
+     0:       0.015625        0.953125
+     1:       0.046875        0.859375
+     2:       0.078125        0.765625
+     3:       0.109375        0.671875
+     4:       0.140625        0.578125
+     5:       0.171875        0.484375
+     6:       0.203125        0.390625
+     7:       0.234375        0.296875
+......  ..............  ..............
+    31:       0.984375         3.90625
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lageven_32.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 64
+
+  Data array:
+
+     0:      0.0078125        0.976562
+     1:      0.0234375        0.929688
+     2:      0.0390625        0.882812
+     3:      0.0546875        0.835938
+     4:      0.0703125        0.789062
+     5:      0.0859375        0.742188
+     6:       0.101562        0.695312
+     7:       0.117188        0.648438
+......  ..............  ..............
+    63:       0.992188         3.95312
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lageven_64.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #2.
+  Number of data points = 1000
+
+  Data array:
+
+     0:         0.0005          0.9985
+     1:         0.0015          0.9955
+     2:         0.0025          0.9925
+     3:         0.0035          0.9895
+     4:         0.0045          0.9865
+     5:         0.0055          0.9835
+     6:         0.0065          0.9805
+     7:         0.0075          0.9775
+......  ..............  ..............
+   999:         0.9995           3.997
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p02_lageven_1000.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 4
+
+  Data array:
+
+     0:          0.125        0.149921
+     1:          0.375       0.0191345
+     2:          0.625         1.40158
+     3:          0.875       -0.478131
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lageven_04.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 8
+
+  Data array:
+
+     0:         0.0625       -0.197097
+     1:         0.1875        0.398783
+     2:         0.3125        0.187878
+     3:         0.4375       0.0481793
+     4:         0.5625        0.864086
+     5:         0.6875         1.69535
+     6:         0.8125         0.69261
+     7:         0.9375        -1.24051
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lageven_08.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 16
+
+  Data array:
+
+     0:        0.03125       -0.231713
+     1:        0.09375      -0.0376632
+     2:        0.15625        0.305667
+     3:        0.21875        0.420852
+     4:        0.28125        0.293858
+     5:        0.34375       0.0880779
+     6:        0.40625      0.00128048
+     7:        0.46875        0.165473
+......  ..............  ..............
+    15:        0.96875        -1.01026
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lageven_16.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 32
+
+  Data array:
+
+     0:       0.015625        -0.15998
+     1:       0.046875       -0.237701
+     2:       0.078125       -0.125989
+     3:       0.109375       0.0571279
+     4:       0.140625        0.234299
+     5:       0.171875        0.361029
+     6:       0.203125        0.418523
+     7:       0.234375        0.407206
+......  ..............  ..............
+    31:       0.984375       -0.624193
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lageven_32.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 64
+
+  Data array:
+
+     0:      0.0078125      -0.0925661
+     1:      0.0234375       -0.205389
+     2:      0.0390625       -0.241652
+     3:      0.0546875       -0.222149
+     4:      0.0703125       -0.164463
+     5:      0.0859375      -0.0832496
+     6:       0.101562      0.00950394
+     7:       0.117188         0.10422
+......  ..............  ..............
+    63:       0.992188       -0.344842
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lageven_64.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #3.
+  Number of data points = 1000
+
+  Data array:
+
+     0:         0.0005     -0.00674175
+     1:         0.0015      -0.0198785
+     2:         0.0025       -0.032559
+     3:         0.0035      -0.0447905
+     4:         0.0045      -0.0565801
+     5:         0.0055      -0.0679349
+     6:         0.0065      -0.0788619
+     7:         0.0075      -0.0893681
+......  ..............  ..............
+   999:         0.9995      -0.0241531
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p03_lageven_1000.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 4
+
+  Data array:
+
+     0:          0.125        -1.47113
+     1:          0.375               0
+     2:          0.625         1.47113
+     3:          0.875         1.52084
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lageven_04.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 8
+
+  Data array:
+
+     0:         0.0625        -1.49097
+     1:         0.1875        -1.43824
+     2:         0.3125        -1.19029
+     3:         0.4375         1.19029
+     4:         0.5625         1.43824
+     5:         0.6875         1.49097
+     6:         0.8125         1.51372
+     7:         0.9375         1.52638
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lageven_08.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 16
+
+  Data array:
+
+     0:        0.03125         -1.4982
+     1:        0.09375        -1.48214
+     2:        0.15625          -1.457
+     3:        0.21875        -1.41214
+     4:        0.28125        -1.31019
+     5:        0.34375       -0.896055
+     6:        0.40625        0.896055
+     7:        0.46875         1.31019
+......  ..............  ..............
+    15:        0.96875         1.52872
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lageven_16.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 32
+
+  Data array:
+
+     0:       0.015625        -1.50134
+     1:       0.046875        -1.49475
+     2:       0.078125        -1.48678
+     3:       0.109375        -1.47696
+     4:       0.140625        -1.46453
+     5:       0.171875        -1.44834
+     6:       0.203125        -1.42635
+     7:       0.234375        -1.39486
+......  ..............  ..............
+    31:       0.984375         1.52979
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lageven_32.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 64
+
+  Data array:
+
+     0:      0.0078125        -1.50282
+     1:      0.0234375         -1.4998
+     2:      0.0390625        -1.49651
+     3:      0.0546875        -1.49291
+     4:      0.0703125        -1.48893
+     5:      0.0859375        -1.48452
+     6:       0.101562        -1.47962
+     7:       0.117188        -1.47413
+......  ..............  ..............
+    63:       0.992188         1.53031
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lageven_64.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #4.
+  Number of data points = 1000
+
+  Data array:
+
+     0:         0.0005        -1.50414
+     1:         0.0015        -1.50396
+     2:         0.0025        -1.50378
+     3:         0.0035         -1.5036
+     4:         0.0045        -1.50342
+     5:         0.0055        -1.50324
+     6:         0.0065        -1.50306
+     7:         0.0075        -1.50287
+......  ..............  ..............
+   999:         0.9995         1.53079
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p04_lageven_1000.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 4
+
+  Data array:
+
+     0:          0.125        -1.79798
+     1:          0.375       -0.258664
+     2:          0.625         7.61085
+     3:          0.875          -8.325
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lageven_04.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 8
+
+  Data array:
+
+     0:         0.0625        -3.38709
+     1:         0.1875         9.22252
+     2:         0.3125        -4.48318
+     3:         0.4375        -5.59725
+     4:         0.5625         2.01118
+     5:         0.6875         3.59227
+     6:         0.8125          4.0559
+     7:         0.9375        -10.3216
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lageven_08.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 16
+
+  Data array:
+
+     0:        0.03125          3.9156
+     1:        0.09375         4.36639
+     2:        0.15625        -4.63014
+     3:        0.21875         4.72684
+     4:        0.28125        -5.22843
+     5:        0.34375        -12.1829
+     6:        0.40625          7.7171
+     7:        0.46875        -5.45308
+......  ..............  ..............
+    15:        0.96875        0.578438
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lageven_16.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 32
+
+  Data array:
+
+     0:       0.015625         12.2455
+     1:       0.046875        -2.71688
+     2:       0.078125        0.710721
+     3:       0.109375         3.31324
+     4:       0.140625        -5.99793
+     5:       0.171875         2.16924
+     6:       0.203125         10.6049
+     7:       0.234375        -4.28243
+......  ..............  ..............
+    31:       0.984375         9.65549
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lageven_32.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 64
+
+  Data array:
+
+     0:      0.0078125         15.0098
+     1:      0.0234375         8.27879
+     2:      0.0390625       0.0124645
+     3:      0.0546875        -3.85921
+     4:      0.0703125        -1.65221
+     5:      0.0859375         2.94612
+     6:       0.101562         4.52219
+     7:       0.117188         1.01309
+......  ..............  ..............
+    63:       0.992188         12.4541
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lageven_64.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #5.
+  Number of data points = 1000
+
+  Data array:
+
+     0:         0.0005         15.9959
+     1:         0.0015         15.9629
+     2:         0.0025          15.897
+     3:         0.0035         15.7984
+     4:         0.0045         15.6676
+     5:         0.0055         15.5048
+     6:         0.0065         15.3108
+     7:         0.0075         15.0862
+......  ..............  ..............
+   999:         0.9995         13.3795
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p05_lageven_1000.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 4
+
+  Data array:
+
+     0:          0.125        0.778801
+     1:          0.375        0.778801
+     2:          0.625        0.105399
+     3:          0.875      0.00193045
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lageven_04.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 8
+
+  Data array:
+
+     0:         0.0625        0.569783
+     1:         0.1875        0.939413
+     2:         0.3125        0.939413
+     3:         0.4375        0.569783
+     4:         0.5625        0.209611
+     5:         0.6875       0.0467706
+     6:         0.8125      0.00632972
+     7:         0.9375     0.000519575
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lageven_08.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 16
+
+  Data array:
+
+     0:        0.03125        0.465043
+     1:        0.09375        0.676634
+     2:        0.15625        0.868815
+     3:        0.21875        0.984496
+     4:        0.28125        0.984496
+     5:        0.34375        0.868815
+     6:        0.40625        0.676634
+     7:        0.46875        0.465043
+......  ..............  ..............
+    15:        0.96875     0.000257208
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lageven_16.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 32
+
+  Data array:
+
+     0:       0.015625        0.415237
+     1:       0.046875        0.516771
+     2:       0.078125        0.623344
+     3:       0.109375        0.728763
+     4:       0.140625        0.825797
+     5:       0.171875        0.906961
+     6:       0.203125        0.965455
+     7:       0.234375        0.996101
+......  ..............  ..............
+    31:       0.984375      0.00017886
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lageven_32.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 64
+
+  Data array:
+
+     0:      0.0078125        0.391223
+     1:      0.0234375        0.439864
+     2:      0.0390625        0.490704
+     3:      0.0546875         0.54316
+     4:      0.0703125        0.596544
+     5:      0.0859375        0.650077
+     6:       0.101562        0.702901
+     7:       0.117188        0.754103
+......  ..............  ..............
+    63:       0.992188     0.000148715
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lageven_64.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #6.
+  Number of data points = 1000
+
+  Data array:
+
+     0:         0.0005        0.369352
+     1:         0.0015        0.372307
+     2:         0.0025        0.375274
+     3:         0.0035        0.378251
+     4:         0.0045        0.381241
+     5:         0.0055        0.384242
+     6:         0.0065        0.387253
+     7:         0.0075        0.390276
+......  ..............  ..............
+   999:         0.9995     0.000124899
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p06_lageven_1000.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 4
+
+  Data array:
+
+     0:          0.125         1.64872
+     1:          0.375         4.48169
+     2:          0.625               0
+     3:          0.875               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lageven_04.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 8
+
+  Data array:
+
+     0:         0.0625         1.28403
+     1:         0.1875           2.117
+     2:         0.3125         3.49034
+     3:         0.4375          5.7546
+     4:         0.5625               0
+     5:         0.6875               0
+     6:         0.8125               0
+     7:         0.9375               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lageven_08.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 16
+
+  Data array:
+
+     0:        0.03125         1.13315
+     1:        0.09375         1.45499
+     2:        0.15625         1.86825
+     3:        0.21875         2.39888
+     4:        0.28125         3.08022
+     5:        0.34375         3.95508
+     6:        0.40625         5.07842
+     7:        0.46875         6.52082
+......  ..............  ..............
+    15:        0.96875               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lageven_16.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 32
+
+  Data array:
+
+     0:       0.015625         1.06449
+     1:       0.046875         1.20623
+     2:       0.078125         1.36684
+     3:       0.109375         1.54883
+     4:       0.140625         1.75505
+     5:       0.171875         1.98874
+     6:       0.203125         2.25353
+     7:       0.234375         2.55359
+......  ..............  ..............
+    31:       0.984375               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lageven_32.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 64
+
+  Data array:
+
+     0:      0.0078125         1.03174
+     1:      0.0234375         1.09829
+     2:      0.0390625         1.16912
+     3:      0.0546875         1.24452
+     4:      0.0703125         1.32478
+     5:      0.0859375         1.41023
+     6:       0.101562         1.50118
+     7:       0.117188           1.598
+......  ..............  ..............
+    63:       0.992188               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lageven_64.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #7.
+  Number of data points = 1000
+
+  Data array:
+
+     0:         0.0005           1.002
+     1:         0.0015         1.00602
+     2:         0.0025         1.01005
+     3:         0.0035          1.0141
+     4:         0.0045         1.01816
+     5:         0.0055         1.02224
+     6:         0.0065         1.02634
+     7:         0.0075         1.03045
+......  ..............  ..............
+   999:         0.9995               0
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p07_lageven_1000.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 4
+
+  Data array:
+
+     0:          0.125         0.06639
+     1:          0.375        0.390244
+     2:          0.625        0.390244
+     3:          0.875         0.06639
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lageven_04.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 8
+
+  Data array:
+
+     0:         0.0625       0.0496509
+     1:         0.1875       0.0928882
+     2:         0.3125        0.221453
+     3:         0.4375        0.719101
+     4:         0.5625        0.719101
+     5:         0.6875        0.221453
+     6:         0.8125       0.0928882
+     7:         0.9375       0.0496509
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lageven_08.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 16
+
+  Data array:
+
+     0:        0.03125         0.04353
+     1:        0.09375       0.0571301
+     2:        0.15625        0.078025
+     3:        0.21875        0.112231
+     4:        0.28125        0.172856
+     5:        0.34375        0.290579
+     6:        0.40625        0.532225
+     7:        0.46875        0.911032
+......  ..............  ..............
+    15:        0.96875         0.04353
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lageven_16.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 32
+
+  Data array:
+
+     0:       0.015625       0.0408799
+     1:       0.046875        0.046442
+     2:       0.078125       0.0531976
+     3:       0.109375       0.0615052
+     4:       0.140625       0.0718647
+     5:       0.171875       0.0849863
+     6:       0.203125        0.101901
+     7:       0.234375        0.124136
+......  ..............  ..............
+    31:       0.984375       0.0408799
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lageven_32.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 64
+
+  Data array:
+
+     0:      0.0078125       0.0396434
+     1:      0.0234375       0.0421742
+     2:      0.0390625       0.0449512
+     3:      0.0546875       0.0480069
+     4:      0.0703125       0.0513792
+     5:      0.0859375       0.0551123
+     6:       0.101562       0.0592584
+     7:       0.117188       0.0638792
+......  ..............  ..............
+    63:       0.992188       0.0396434
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lageven_64.png".
+
+LAGEVEN_INTERP_1D_TEST:
+  LAGEVEN_INTERP_1D uses even spacing for data points.
+  Interpolate data from TEST_INTERP_1D problem #8.
+  Number of data points = 1000
+
+  Data array:
+
+     0:         0.0005       0.0385356
+     1:         0.0015       0.0386844
+     2:         0.0025        0.038834
+     3:         0.0035       0.0389845
+     4:         0.0045       0.0391358
+     5:         0.0055       0.0392881
+     6:         0.0065       0.0394412
+     7:         0.0075       0.0395951
+......  ..............  ..............
+   999:         0.9995       0.0385356
+
+  Averaged L2 interpolation error = 0
+  Created plot file "p08_lageven_1000.png".
+
+BARYCENTRIC_INTERP_1D_TEST:
+  Normal end of execution.
+Sat Jan 18 12:01:36 2020

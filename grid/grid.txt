@@ -1,0 +1,291 @@
+Fri Jan 24 18:05:40 2020
+
+GRID_TEST
+  Python version: 3.6.9
+  Test the GRID library.
+
+GRID_GENERATE_TESTS:
+  GRID_GENERATE_TEST generates a specific grid.
+
+GRID_GENERATE_TEST
+  Python version: 3.6.9
+  GRID_GENERATE randomly chooses a given number of
+  points on a uniform grid.
+
+  Spatial dimension =  2
+  Number of points =   10
+  Random number SEED = 123456789
+  Centering option =   1
+
+  Grid points:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           0             1  
+      2 :    0.333333             0  
+      3 :    0.333333      0.333333  
+      4 :    0.333333      0.666667  
+      5 :    0.333333             1  
+      6 :    0.666667             0  
+      7 :    0.666667      0.666667  
+      8 :           1             0  
+      9 :           1             1  
+
+GRID_GENERATE_TEST:
+  Normal end of execution.
+
+  Repeat with a different seed from the first run.
+
+GRID_GENERATE_TEST
+  Python version: 3.6.9
+  GRID_GENERATE randomly chooses a given number of
+  points on a uniform grid.
+
+  Spatial dimension =  2
+  Number of points =   10
+  Random number SEED = 987654321
+  Centering option =   1
+
+  Grid points:
+
+  Row:       0             1       
+  Col
+      0 :           0      0.666667  
+      1 :           0             1  
+      2 :    0.333333             0  
+      3 :    0.333333      0.333333  
+      4 :    0.333333      0.666667  
+      5 :    0.666667             0  
+      6 :    0.666667      0.333333  
+      7 :    0.666667             1  
+      8 :           1      0.333333  
+      9 :           1             1  
+
+GRID_GENERATE_TEST:
+  Normal end of execution.
+
+  Repeat with the same seed as the first run.
+
+GRID_GENERATE_TEST
+  Python version: 3.6.9
+  GRID_GENERATE randomly chooses a given number of
+  points on a uniform grid.
+
+  Spatial dimension =  2
+  Number of points =   10
+  Random number SEED = 123456789
+  Centering option =   1
+
+  Grid points:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           0             1  
+      2 :    0.333333             0  
+      3 :    0.333333      0.333333  
+      4 :    0.333333      0.666667  
+      5 :    0.333333             1  
+      6 :    0.666667             0  
+      7 :    0.666667      0.666667  
+      8 :           1             0  
+      9 :           1             1  
+
+GRID_GENERATE_TEST:
+  Normal end of execution.
+
+  Repeat with different centering values.
+
+GRID_GENERATE_TEST
+  Python version: 3.6.9
+  GRID_GENERATE randomly chooses a given number of
+  points on a uniform grid.
+
+  Spatial dimension =  2
+  Number of points =   10
+  Random number SEED = 123456789
+  Centering option =   1
+
+  Grid points:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           0             1  
+      2 :    0.333333             0  
+      3 :    0.333333      0.333333  
+      4 :    0.333333      0.666667  
+      5 :    0.333333             1  
+      6 :    0.666667             0  
+      7 :    0.666667      0.666667  
+      8 :           1             0  
+      9 :           1             1  
+
+GRID_GENERATE_TEST:
+  Normal end of execution.
+
+GRID_GENERATE_TEST
+  Python version: 3.6.9
+  GRID_GENERATE randomly chooses a given number of
+  points on a uniform grid.
+
+  Spatial dimension =  2
+  Number of points =   10
+  Random number SEED = 123456789
+  Centering option =   2
+
+  Grid points:
+
+  Row:       0             1       
+  Col
+      0 :         0.2           0.2  
+      1 :         0.2           0.8  
+      2 :         0.4           0.2  
+      3 :         0.4           0.4  
+      4 :         0.4           0.6  
+      5 :         0.4           0.8  
+      6 :         0.6           0.2  
+      7 :         0.6           0.6  
+      8 :         0.8           0.2  
+      9 :         0.8           0.8  
+
+GRID_GENERATE_TEST:
+  Normal end of execution.
+
+GRID_GENERATE_TEST
+  Python version: 3.6.9
+  GRID_GENERATE randomly chooses a given number of
+  points on a uniform grid.
+
+  Spatial dimension =  2
+  Number of points =   10
+  Random number SEED = 123456789
+  Centering option =   3
+
+  Grid points:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           0          0.75  
+      2 :        0.25             0  
+      3 :        0.25          0.25  
+      4 :        0.25           0.5  
+      5 :        0.25          0.75  
+      6 :         0.5             0  
+      7 :         0.5           0.5  
+      8 :        0.75             0  
+      9 :        0.75          0.75  
+
+GRID_GENERATE_TEST:
+  Normal end of execution.
+
+GRID_GENERATE_TEST
+  Python version: 3.6.9
+  GRID_GENERATE randomly chooses a given number of
+  points on a uniform grid.
+
+  Spatial dimension =  2
+  Number of points =   10
+  Random number SEED = 123456789
+  Centering option =   4
+
+  Grid points:
+
+  Row:       0             1       
+  Col
+      0 :        0.25          0.25  
+      1 :        0.25             1  
+      2 :         0.5          0.25  
+      3 :         0.5           0.5  
+      4 :         0.5          0.75  
+      5 :         0.5             1  
+      6 :        0.75          0.25  
+      7 :        0.75          0.75  
+      8 :           1          0.25  
+      9 :           1             1  
+
+GRID_GENERATE_TEST:
+  Normal end of execution.
+
+GRID_GENERATE_TEST
+  Python version: 3.6.9
+  GRID_GENERATE randomly chooses a given number of
+  points on a uniform grid.
+
+  Spatial dimension =  2
+  Number of points =   10
+  Random number SEED = 123456789
+  Centering option =   5
+
+  Grid points:
+
+  Row:       0             1       
+  Col
+      0 :       0.125         0.125  
+      1 :       0.125         0.875  
+      2 :       0.375         0.125  
+      3 :       0.375         0.375  
+      4 :       0.375         0.625  
+      5 :       0.375         0.875  
+      6 :       0.625         0.125  
+      7 :       0.625         0.625  
+      8 :       0.875         0.125  
+      9 :       0.875         0.875  
+
+GRID_GENERATE_TEST:
+  Normal end of execution.
+
+GRID_GENERATE_TESTS:
+  Normal end of execution.
+
+GRID_SIDE_TEST
+  Python version: 3.6.9
+  GRID_SIDE returns the smallest N_SIDE, such that
+  N <= NSIDE^M
+
+  M      N  NSIDE  NSIDE^M
+
+  2     10      4     16
+  2    100     10    100
+  2   1000     32   1024
+  2  10000    100  10000
+
+  3     10      3     27
+  3    100      5    125
+  3   1000     10   1000
+  3  10000     22  10648
+
+  4     10      2     16
+  4    100      4    256
+  4   1000      6   1296
+  4  10000     10  10000
+
+GRID_SIDE_TEST:
+  Normal end of execution.
+
+TUPLE_NEXT_FAST_TEST
+  Python version: 3.6.9
+  TUPLE_NEXT_FAST returns the next "tuple", that is,
+  a vector of N integers, each between 1 and M.
+
+  M = 3
+  N = 2
+
+   0           1           1  
+   1           1           2  
+   2           1           3  
+   3           2           1  
+   4           2           2  
+   5           2           3  
+   6           3           1  
+   7           3           2  
+   8           3           3  
+
+TUPLE_NEXT_FAST_TEST:
+  Normal end of execution.
+
+GRID_TEST:
+  Normal end of execution.
+Fri Jan 24 18:05:41 2020

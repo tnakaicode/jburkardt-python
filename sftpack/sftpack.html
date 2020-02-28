@@ -1,0 +1,242 @@
+<html>
+
+  <head>
+    <title>
+      SFTPACK - "Slow" Fourier Transforms
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      SFTPACK <br> "Slow" Fourier Transforms
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>SFTPACK</b>,
+      a Python library which
+      carries out some "slow" Fourier transforms, that is, Fourier
+      transforms without the techniques that allow for very fast
+      computation.
+    </p>
+
+    <p>
+      The intention is to make the underlying calculation clear,
+      and to provide a simple check and comparison of timing and usage
+      for the fast calculations.
+    </p>
+
+    <p>
+      The fast Fourier transform is a highly efficient procedure.  However,
+      the coding of the algorithm, and the conventions for indexing, ordering,
+      and normalization, can make it quite difficult to understand what is
+      being done, or even to see how to use the software correctly.  This
+      means that a coding error or mistaken use can be undetected.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>SFTPACK</b> is available in
+      <a href = "../../c_src/sftpack/sftpack.html">a C version</a> and
+      <a href = "../../cpp_src/sftpack/sftpack.html">a C++ version</a> and
+      <a href = "../../f_src/sftpack/sftpack.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/sftpack/sftpack.html">a MATLAB version</a> and
+      <a href = "../../py_src/sftpack/sftpack.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/c8lib/c8lib.html">
+      C8LIB</a>,
+      a Python library which
+      implements certain elementary functions for double precision complex variables;
+    </p>
+
+    <p>
+      <a href = "../../py_src/cosine_transform/cosine_transform.html">
+      COSINE_TRANSFORM</a>,
+      a Python library which
+      demonstrates some simple properties of the discrete cosine transform (DCT).
+    </p>
+
+    <p>
+      <a href = "../../py_src/sine_transform/sine_transform.html">
+      SINE_TRANSFORM</a>,
+      a Python library which
+      demonstrates some simple properties of the discrete sine transform.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          William Briggs, Van Emden Henson,<br>
+          The DFT: An Owner's Manual for the Discrete Fourier Transform,<br>
+          SIAM, 1995,<br>
+          ISBN13: 978-0-898713-42-8,<br>
+          LC: QA403.5.B75.
+        </li>
+        <li>
+          Ralph Hartley,<br>
+          A More Symmetrical Fourier Analysis Applied to Transmission
+          Problems,<br>
+          Proceedings of the Institute of Radio Engineers,<br>
+          Volume 30, 1942, pages 144-150.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "c8mat_print.py">c8mat_print.py</a>,
+          prints a C8MAT.
+        </li>
+        <li>
+          <a href = "c8mat_print_some.py">c8mat_print_some.py</a>,
+          prints some of a C8MAT.
+        </li>
+        <li>
+          <a href = "c8mat_sft.py">c8mat_sft.py</a>,
+          computes a "slow" forward or backward Fourier transform of a C8MAT.
+        </li>
+        <li>
+          <a href = "c8mat_uniform_01.py">c8mat_uniform_01.py</a>,
+          returns a unit pseudorandom C8MAT.
+        </li>
+        <li>
+          <a href = "c8vec_indicator.py">c8vec_indicator.py</a>,
+          returns the indicator vector as a C8VEC.
+        </li>
+        <li>
+          <a href = "c8vec_print.py">c8vec_print.py</a>,
+          prints a C8VEC.
+        </li>
+        <li>
+          <a href = "c8vec_print_part.py">c8vec_print_part.py</a>,
+          prints "part" of a C8VEC.
+        </li>
+        <li>
+          <a href = "c8vec_sft.py">c8vec_sft.py</a>,
+          computes a "slow" forward or backward Fourier transform of a C8VEC.
+        </li>
+        <li>
+          <a href = "c8vec_uniform_01.py">c8vec_uniform_01.py</a>,
+          returns a unit pseudorandom C8VEC.
+        </li>
+        <li>
+          <a href = "i4_modp.py">i4_modp.py</a>,
+          returns the nonnegative remainder of integer division;
+        </li>
+        <li>
+          <a href = "i4_wrap.py">i4_wrap.py</a>,
+          forces an integer to lie between given limits by wrapping.
+        </li>
+        <li>
+          <a href = "r8vec_indicator1.py">r8vec_indicator1.py</a>,
+          evaluates the 1-based indicator vector (1,2,3,...) as an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_permute_cyclic.py">r8vec_permute_cyclic.py</a>,
+          performs a cyclic permutation of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_print.py">r8vec_print.py</a>,
+          prints an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_print_part.py">r8vec_print_part.py</a>,
+          prints "part" of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_sct.py">r8vec_sct.py</a>,
+          computes a "slow" forward or backward cosine transform of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_sft.py">r8vec_sft.py</a>,
+          computes a "slow" forward or backward Fourier transform of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_sht.py">r8vec_sht.py</a>,
+          computes a "slow" forward or backward Hartley transform of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_sqct.py">r8vec_sqct.py</a>,
+          computes a "slow" forward or backward quarter cosine transform of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_sqst.py">r8vec_sqst.py</a>,
+          computes a "slow" forward or backward quarter sine transform of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_sst.py">r8vec_sst.py</a>,
+          computes a "slow" forward or backward sine transform of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_swt.py">r8vec_swt.py</a>,
+          computes a "slow" forward or backward wavelet transform of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_ab.py">r8vec_uniform_ab.py</a>,
+          returns a scaled pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>,
+          prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sftpack.py">sftpack.py</a>, 
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "sftpack.sh">sftpack.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "sftpack.txt">sftpack.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 June 2015.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

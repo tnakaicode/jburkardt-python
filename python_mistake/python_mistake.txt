@@ -1,0 +1,28 @@
+Fri Jan 31 18:20:13 2020
+
+python_mistake:
+  Python version: 3.6.9
+  Demonstrate some python mistakes.
+
+python_mistake01:
+  Show that A=B is not the right way to copy arrays.
+
+  Use "=" to copy an array
+
+  a =                         [ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10.]
+  (Bad) b = a =               [ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10.]
+  Do stuff to b, but do not touch a...
+  a =                         [-1. -1. -1. -1.  1.  1.  1.  1.  1.  1.]
+  b =                         [-1. -1. -1. -1.  1.  1.  1.  1.  1.  1.]
+
+  Repeat, but use COPY rather than "="
+
+  a =                         [ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10.]
+  (Correct) b = a.copy() =    [ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10.]
+  Do stuff to b, but do not touch a...
+  a =                         [ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10.]
+  b =                         [-1. -1. -1. -1.  1.  1.  1.  1.  1.  1.]
+
+python_mistake:
+  Normal end of execution.
+Fri Jan 31 18:20:13 2020

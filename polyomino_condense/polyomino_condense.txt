@@ -1,0 +1,113 @@
+Sat Feb  1 15:36:36 2020
+
+POLYOMINO_CONDENSE_TEST:
+  Python version: 3.6.9
+  POLYOMINO_CONDENSE "cleans up" a matrix that is supposed
+  to represent a polyomino:
+  * nonzero entries are set to 1:
+  * initial and final zero rows and columns are deleted.
+
+  The initial (3,3) polynomino P:
+
+ 0
+ 1
+ 1
+
+ 1
+ 1
+ 0
+
+ 0
+ 1
+ 0
+
+
+  The condensed (3,3) polynomino Q:
+
+ 0
+ 1
+ 1
+
+ 1
+ 1
+ 0
+
+ 0
+ 1
+ 0
+
+
+  The initial (3,3) polynomino P:
+
+ 0
+ 1
+ 2
+
+ 1
+ 3
+ 0
+
+ 0
+ -9
+ 0
+
+
+  The condensed (3,3) polynomino Q:
+
+ 0
+ 1
+ 1
+
+ 1
+ 1
+ 0
+
+ 0
+ 1
+ 0
+
+
+  The initial (3,4) polynomino P:
+
+ 0
+ 0
+ 0
+ 0
+
+ 1
+ 3
+ 0
+ 0
+
+ 0
+ 0
+ 0
+ 0
+
+
+  The condensed (1,2) polynomino Q:
+
+ 1
+ 1
+
+
+  The initial (2,4) polynomino P:
+
+ 0
+ 0
+ 0
+ 0
+
+ 0
+ 0
+ 0
+ 0
+
+
+  The condensed (0,0) polynomino Q:
+
+  [ Null matrix ]
+
+POLYOMINO_CONDENSE_TEST:
+  Normal end of execution.
+Sat Feb  1 15:36:36 2020

@@ -1,0 +1,373 @@
+Wed Feb  5 13:04:16 2020
+
+WEDGE_MONTE_CARLO_TEST
+  Python version: 3.6.9
+  Test the WEDGE_MONTE_CARLO library.
+
+I4VEC_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_PRINT prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+I4VEC_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_TRANSPOSE_PRINT prints an I4VEC
+  with 5 entries to a row, and an optional title.
+
+  My array:  
+       1       2       3       4       5       6       7       8       9      10
+      11      12
+
+I4VEC_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4VEC_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+
+  The random vector:
+
+     0     -35
+     1     187
+     2     149
+     3      69
+     4      25
+     5     -81
+     6     -23
+     7     -67
+     8     -87
+     9      90
+    10     -82
+    11      35
+    12      20
+    13     127
+    14     139
+    15    -100
+    16     170
+    17       5
+    18     -72
+    19     -96
+
+I4VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+MONOMIAL_VALUE_TEST
+  Python version: 3.6.9
+  Use monomial_value() to evaluate some monomials
+  in dimensions 1 through 3.
+
+  Spatial dimension M =  1
+
+  Exponents:
+      -1
+
+   V(X)               X(0)
+
+      0.111111      9.0000
+         0.125      8.0000
+           0.2      5.0000
+      0.333333      3.0000
+            -1     -1.0000
+
+  Spatial dimension M =  2
+
+  Exponents:
+      -1      -2
+
+   V(X)               X(0)      X(1)
+
+    -0.0277778     -1.0000    6.0000
+     -0.111111     -1.0000    3.0000
+    0.00680272      3.0000    7.0000
+       0.03125      8.0000   -2.0000
+     0.0277778      9.0000    2.0000
+
+  Spatial dimension M =  3
+
+  Exponents:
+      -3      -3       5
+
+   V(X)               X(0)      X(1)      X(2)
+
+        0.0625      8.0000   -1.0000   -2.0000
+   -0.00137174      1.0000    9.0000   -1.0000
+   0.000244141      2.0000    8.0000    1.0000
+       1.21363      6.0000    5.0000    8.0000
+      0.158766      3.0000    9.0000    5.0000
+
+MONOMIAL_VALUE_TEST
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT prints an R8MAT.
+
+  Here is an R8MAT, transposed:
+
+  Row:       0             1             2             3       
+  Col
+      0 :          11            21            31            41  
+      1 :          12            22            32            42  
+      2 :          13            23            33            43  
+
+R8MAT_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.
+
+  R8MAT, rows 0:2, cols 3:5:
+
+  Row:       0             1             2       
+  Col
+      3 :          14            24            34  
+      4 :          15            25            35  
+      5 :          16            26            36  
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_AB computes a random R8MAT.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     0.31051     -0.603288     -0.629637      -0.98897  
+      1 :     4.73791      0.545467       1.69723       4.38502  
+      2 :     3.97706     -0.340259       1.40784       1.10451  
+      3 :     2.37017     -0.737026       3.52804     -0.432731  
+      4 :     1.49184       2.80379       3.78372     -0.918299  
+
+R8MAT_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+WEDGE01_MONOMIAL_INTEGRAL_TEST:
+  Python version: 3.6.9
+  WEDGE01_MONOMIAL_INTEGRAL computes the integral of a monomial
+  over the interior of the unit wedge in 3D.
+  Compare with a Monte Carlo estimate.
+
+  Number of sample points used is 500000
+
+   E1  E2  E3     MC-Estimate      Exact           Error
+
+   0   1   0        0.334005        0.333333     0.000671188
+   1   1   0       0.0832295       0.0833333     0.000103827
+   2   1   0       0.0332287       0.0333333     0.000104636
+   3   1   0       0.0165956       0.0166667     7.10513e-05
+   4   1   0      0.00947676      0.00952381     4.70455e-05
+   5   1   0      0.00592082      0.00595238     3.15582e-05
+   0   2   0         0.16723        0.166667     0.000563403
+   1   2   0       0.0333201       0.0333333     1.31985e-05
+   2   2   0       0.0110809       0.0111111     3.01685e-05
+   3   2   0      0.00474163       0.0047619     2.02775e-05
+   4   2   0      0.00236822      0.00238095     1.27356e-05
+   0   3   0        0.100465             0.1     0.000464539
+   1   3   0       0.0166754       0.0166667     8.74233e-06
+   2   3   0      0.00475203       0.0047619     9.87335e-06
+   3   3   0      0.00177873      0.00178571     6.98096e-06
+   0   4   0       0.0670572       0.0666667     0.000390577
+   1   4   0      0.00953842      0.00952381     1.46059e-05
+   2   4   0      0.00237809      0.00238095     2.86435e-06
+   0   5   0       0.0479511        0.047619     0.000332057
+   1   5   0      0.00596749      0.00595238     1.51106e-05
+   0   6   0       0.0359987       0.0357143     0.000284374
+   0   1   1    -0.000313845               0     0.000313845
+   1   1   1    -0.000150269               0     0.000150269
+   2   1   1    -5.73599e-05               0     5.73599e-05
+   3   1   1    -2.56684e-05               0     2.56684e-05
+   4   1   1    -1.42167e-05               0     1.42167e-05
+   0   2   1    -5.87471e-05               0     5.87471e-05
+   1   2   1    -5.59034e-05               0     5.59034e-05
+   2   2   1    -1.86814e-05               0     1.86814e-05
+   3   2   1    -6.53274e-06               0     6.53274e-06
+   0   3   1      2.7634e-05               0      2.7634e-05
+   1   3   1    -2.51577e-05               0     2.51577e-05
+   2   3   1    -8.23313e-06               0     8.23313e-06
+   0   4   1     6.12626e-05               0     6.12626e-05
+   1   4   1    -1.20647e-05               0     1.20647e-05
+   0   5   1     7.40331e-05               0     7.40331e-05
+   0   1   2        0.111388        0.111111     0.000277047
+   1   1   2       0.0277235       0.0277778     5.42389e-05
+   2   1   2       0.0110637       0.0111111      4.7453e-05
+   3   1   2      0.00552581      0.00555556     2.97468e-05
+   0   2   2       0.0557778       0.0555556     0.000222226
+   1   2   2       0.0110969       0.0111111     1.42435e-05
+   2   2   2      0.00368661       0.0037037     1.70951e-05
+   0   3   2       0.0335121       0.0333333     0.000178756
+   1   3   2      0.00555356      0.00555556     1.99926e-06
+   0   4   2       0.0223733       0.0222222     0.000151059
+   0   1   3     -0.00013338               0      0.00013338
+   1   1   3    -7.23879e-05               0     7.23879e-05
+   2   1   3    -2.82981e-05               0     2.82981e-05
+   0   2   3     2.88375e-06               0     2.88375e-06
+   1   2   3    -2.14755e-05               0     2.14755e-05
+   0   3   3     3.54422e-05               0     3.54422e-05
+   0   1   4       0.0668889       0.0666667     0.000222198
+   1   1   4       0.0166303       0.0166667     3.63933e-05
+   0   2   4        0.033507       0.0333333     0.000173699
+   0   1   5    -9.66453e-05               0     9.66453e-05
+
+WEDGE01_MONOMIAL_INTEGRAL_TEST:
+  Normal end of execution.
+
+WEDGE01_MONTE_CARLO_TEST
+  Python version: 3.6.9
+  Use WEDGE01_SAMPLE for a Monte Carlo estimate of an
+  integral over the interior of the unit wedge in 3D.
+
+         N        1               X               Y               Z                X^2            XY              Z^2            X^3
+
+         1               1        0.867886       0.0254803        0.123391        0.753226        0.022114       0.0152253        0.653715
+         2               1        0.334286        0.310076       -0.440504        0.136338       0.0662521         0.30936        0.062017
+         4               1        0.277164         0.14829       -0.812702        0.139137       0.0375949        0.749292       0.0793129
+         8               1        0.315984        0.337347       -0.141956        0.161208       0.0681841        0.130774        0.103442
+        16               1        0.307463        0.315327         0.19375        0.140347       0.0812156        0.447464       0.0778203
+        32               1        0.308952        0.355892       -0.145337        0.135733       0.0916267        0.315629       0.0723115
+        64               1         0.32878        0.304804        0.130211        0.166761       0.0759253        0.314265        0.105102
+       128               1        0.338684        0.318797      -0.0144669        0.174893       0.0732268        0.361755        0.108481
+       256               1        0.326424        0.350059      -0.0452982        0.165104       0.0847417        0.312929         0.10076
+       512               1        0.310707        0.343038       0.0156344        0.151195       0.0779385        0.314584       0.0892454
+      1024               1        0.336508        0.328384       -0.020843        0.171212       0.0817678        0.314866        0.104494
+      2048               1        0.337542        0.334927      -0.0171698        0.168322       0.0868239        0.336835        0.100226
+      4096               1        0.332109        0.335048     -0.00508344        0.165275       0.0832678        0.326477       0.0988976
+      8192               1        0.332154        0.329244      0.00490948        0.165365       0.0824993        0.338957       0.0989495
+     16384               1        0.331892        0.336805     -0.00264762        0.166759       0.0828449        0.333197        0.100773
+     32768               1        0.332006        0.332594     0.000155373        0.165295       0.0828243        0.330301       0.0988825
+     65536               1        0.332382        0.334483     -0.00713768        0.165773       0.0835444        0.333493       0.0991654
+
+     Exact               1        0.333333        0.333333               0        0.166667       0.0833333        0.333333             0.1
+
+WEDGE01_MONTE_CARLO_TEST
+  Normal end of execution.
+
+WEDGE01_SAMPLE_TEST
+  Python version: 3.6.9
+  WEDGE01_SAMPLE samples the unit wedge.
+
+  Sample points in the unit wedge.
+
+  Row:       0             1             2       
+  Col
+      0 :    0.867886     0.0254803      0.123391  
+      1 :     0.17747      0.548585     -0.780086  
+      2 :    0.491102     0.0715676     -0.100922  
+      3 :    0.642508      0.198073     -0.996323  
+      4 :    0.030769      0.298101     -0.972766  
+      5 :   0.0627591     0.0716318     -0.984975  
+      6 :    0.372621     0.0253558     -0.296743  
+      7 :    0.103523      0.701007      0.123325  
+      8 :    0.144825      0.765863      0.195834  
+      9 :    0.582081     0.0951856     -0.629372  
+
+WEDGE01_SAMPLE_TEST
+  Normal end of execution.
+
+WEDGE01_VOLUME_TEST
+  Python version: 3.6.9
+  WEDGE01_VOLUME returns the volume of the unit wedge.
+
+  WEDGE01_VOLUME() = 1
+
+WEDGE01_VOLUME_TEST
+  Normal end of execution.
+
+WEDGE_MONTE_CARLO_TEST
+  Normal end of execution.
+Wed Feb  5 13:05:05 2020

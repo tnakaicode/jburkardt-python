@@ -1,0 +1,75 @@
+
+FEM1D_CLASSES_TEST
+  Built-in test case with dx =  1.0
+mesh.coordinates()= [0. 1. 2. 3. 4. 5.]
+mesh.cells()= [[0 1 2 3 4]
+ [1 2 3 4 5]]
+sfns.size()-3= 0
+
+elt integral() err= 1.1102230246251565e-16
+integral(deriv) err= 0.0
+integral(x) err= 5.551115123125783e-17
+integral(x**2) err= 2.7755575615628914e-17
+integral(x**2) err= 2.7755575615628914e-17
+integral(x,phi) err= 1.1102230246251565e-16
+integral(x**2,phi) err= 2.220446049250313e-16
+
+
+V.Ndofs()-correct= 0
+V.size()-correct= 0
+
+error in integral x over [ 0.0 , 5.0 ]= 0.0
+error in integral 1 over [ 0.0 , 5.0 ]= 8.881784197001252e-16
+error in integral x**2 over [ 0.0 , 5.0 ]= 0.0
+error in integral x**3 over [ 0.0 , 5.0 ]= 2.842170943040401e-14
+error in integral x**4 over [ 0.0 , 5.0 ]= 0.04166666666674246  (should be nonzero.)
+
+norm(V.dofpts()-correct)= 0.0
+error A00= 2.7755575615628914e-17
+error A01= 1.3877787807814457e-17
+error A02= -6.938893903907228e-18
+error A11= 0.0
+error A12= 1.3877787807814457e-17
+
+error A22= 5.551115123125783e-17
+error A23= 1.3877787807814457e-17
+error A24= -6.938893903907228e-18
+error A33= 0.0
+error A34= 1.3877787807814457e-17
+
+norm(A*f-b)= 3.3993498887762956e-17
+Norm difference matrices= 1.0198049666328888e-16
+
+error B00= 5.551115123125783e-17
+error B01= 4.163336342344337e-17
+error B02= 0.0
+error B11= -1.1102230246251565e-16
+error B12= 0.0
+
+error B22= 1.1102230246251565e-16
+error B23= 2.7755575615628914e-17
+error B24= 0.0
+error B33= 0.0
+error B34= -2.7755575615628914e-17
+
+Laplace Matrix
+error C00*3= 0.0
+error C01*3= -4.440892098500626e-16
+error C02*3= 1.6653345369377348e-16
+error C11*3= 8.881784197001252e-16
+error C12*3= 0.0
+
+error C22*3= 0.0
+error C23*3= -4.440892098500626e-16
+error C24*3= 1.6653345369377348e-16
+error C33*3= 8.881784197001252e-16
+error C34*3= 0.0
+
+const soln Laplace, norm check= 2.0350724194510405e-15
+soln=x Laplace, norm check= 6.89411847443645e-15
+soln=x**2 Laplace, norm check= 2.4293344041495592e-14
+norm check (rhs d/dx+Neumann, const soln)= 2.1499376424746292e-16
+norm check (d/dx+Dirichlet soln=x)= 4.710277376051325e-16
+
+FEM1D_CLASSES
+  Normal end of execution.

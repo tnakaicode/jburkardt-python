@@ -1,0 +1,10 @@
+Thu Jan 30 16:10:57 2020
+
+humps_euler
+  Python version: 3.6.9
+  Test humps_fun.
+  Graphics saved as "humps_euler.png"
+
+humps_euler_test:
+  Normal end of execution.
+Thu Jan 30 16:10:57 2020

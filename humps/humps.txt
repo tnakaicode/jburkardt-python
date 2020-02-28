@@ -1,0 +1,40 @@
+Sun Jan 26 09:12:57 2020
+humps_test
+  Python version
+  Test humps.
+
+humps_antideriv_test
+  Python version
+  Test humps_antideriv.
+  Graphics saved as "humps_antideriv.png"
+
+humps_antideriv_test:
+  Normal end of execution.
+
+humps_fun_test
+  Python version
+  Test humps_fun.
+  Graphics saved as "humps_fun.png"
+
+humps_fun_test:
+  Normal end of execution.
+
+humps_deriv_test
+  Python version
+  Test humps_deriv.
+  Graphics saved as "humps_deriv.png"
+
+humps_deriv_test:
+  Normal end of execution.
+
+humps_deriv2_test
+  Python version
+  Test humps_deriv2.
+  Graphics saved as "humps_deriv2.png"
+
+humps_deriv_test:
+  Normal end of execution.
+
+humps_test:
+  Normal end of execution.
+Sun Jan 26 09:12:58 2020

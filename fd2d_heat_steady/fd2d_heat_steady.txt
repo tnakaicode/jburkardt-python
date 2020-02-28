@@ -1,0 +1,11 @@
+Fri Jan 24 08:29:53 2020
+
+FD2D_HEAT_STEADY_TEST:
+  Python version
+  Test the FD2D_HEAT_STEADY library.
+
+  Plotfile saved as "fd2d_heat_steady_test01.png".
+
+FD2D_HEAT_STEADY_TEST:
+  Normal end of execution.
+Fri Jan 24 08:30:29 2020

@@ -1,0 +1,568 @@
+Mon Feb  3 07:59:23 2020
+
+SIMPLEX_COORDINATES_TEST
+  Python version: 3.6.9
+  Test the SIMPLEX_COORDINATES library.
+
+R8_FACTORIAL_TEST
+  Python version: 3.6.9
+  R8_FACTORIAL evaluates the factorial function.
+
+      N                     Exact
+                  Computed
+     0                         1                         1
+     1                         1                         1
+     2                         2                         2
+     3                         6                         6
+     4                        24                        24
+     5                       120                       120
+     6                       720                       720
+     7                      5040                      5040
+     8                     40320                     40320
+     9                    362880                    362880
+    10                   3628800                   3628800
+    11                  39916800                  39916800
+    12                 479001600                 479001600
+    13                6227020800                6227020800
+    14               87178291200               87178291200
+    15             1307674368000             1307674368000
+    16            20922789888000            20922789888000
+    17           355687428096000           355687428096000
+    18          6402373705728000          6402373705728000
+    19      1.21645100408832e+17      1.21645100408832e+17
+    20      2.43290200817664e+18      2.43290200817664e+18
+    25     1.551121004333099e+25     1.551121004333099e+25
+    50     3.041409320171338e+64     3.041409320171338e+64
+   100    9.332621544394415e+157     9.33262154439441e+157
+   150    5.713383956445855e+262     5.71338395644585e+262
+
+R8_FACTORIAL_TEST
+  Normal end of execution.
+
+R8_FACTORIAL_VALUES_TEST:
+  Python version: 3.6.9
+  R8_FACTORIAL_VALUES returns values of the real factorial function.
+
+          N          R8_FACTORIAL(N)
+
+         0               1
+         1               1
+         2               2
+         3               6
+         4              24
+         5             120
+         6             720
+         7            5040
+         8           40320
+         9          362880
+        10      3.6288e+06
+        11     3.99168e+07
+        12     4.79002e+08
+        13     6.22702e+09
+        14     8.71783e+10
+        15     1.30767e+12
+        16     2.09228e+13
+        17     3.55687e+14
+        18     6.40237e+15
+        19     1.21645e+17
+        20      2.4329e+18
+        25     1.55112e+25
+        50     3.04141e+64
+       100    9.33262e+157
+       150    5.71338e+262
+
+R8_FACTORIAL_VALUES_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT prints an R8MAT.
+
+  Here is an R8MAT, transposed:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+          11  
+          21  
+          31  
+          41  
+
+      1 :
+          12  
+          22  
+          32  
+          42  
+
+      2 :
+          13  
+          23  
+          33  
+          43  
+
+
+R8MAT_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.
+
+  R8MAT, rows 0:2, cols 3:5:
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      3 :
+          14  
+          24  
+          34  
+
+      4 :
+          15  
+          25  
+          35  
+
+      5 :
+          16  
+          26  
+          36  
+
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+SIMPLEX_COORDINATES1_TEST
+  Python version: 3.6.9
+  Test SIMPLEX_COORDINATES1
+
+  Simplex vertex coordinates:
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      0 :
+           1  
+           0  
+           0  
+
+      1 :
+   -0.333333  
+    0.942809  
+           0  
+
+      2 :
+   -0.333333  
+   -0.471405  
+    0.816497  
+
+      3 :
+   -0.333333  
+   -0.471405  
+   -0.816497  
+
+
+  Side length =     1.63299
+  Volume =          0.5132
+  Expected volume = 0.5132
+
+  Dot product matrix:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+           1  
+   -0.333333  
+   -0.333333  
+   -0.333333  
+
+      1 :
+   -0.333333  
+           1  
+   -0.333333  
+   -0.333333  
+
+      2 :
+   -0.333333  
+   -0.333333  
+           1  
+   -0.333333  
+
+      3 :
+   -0.333333  
+   -0.333333  
+   -0.333333  
+           1  
+
+
+SIMPLEX_COORDINATES1_TEST
+  Normal end of execution.
+
+SIMPLEX_COORDINATES1_TEST
+  Python version: 3.6.9
+  Test SIMPLEX_COORDINATES1
+
+  Simplex vertex coordinates:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+           1  
+           0  
+           0  
+           0  
+
+      1 :
+       -0.25  
+    0.968246  
+           0  
+           0  
+
+      2 :
+       -0.25  
+   -0.322749  
+    0.912871  
+           0  
+
+      3 :
+       -0.25  
+   -0.322749  
+   -0.456435  
+    0.790569  
+
+      4 :
+       -0.25  
+   -0.322749  
+   -0.456435  
+   -0.790569  
+
+
+  Side length =     1.58114
+  Volume =          0.145577
+  Expected volume = 0.145577
+
+  Dot product matrix:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Col
+      0 :
+           1  
+       -0.25  
+       -0.25  
+       -0.25  
+       -0.25  
+
+      1 :
+       -0.25  
+           1  
+       -0.25  
+       -0.25  
+       -0.25  
+
+      2 :
+       -0.25  
+       -0.25  
+           1  
+       -0.25  
+       -0.25  
+
+      3 :
+       -0.25  
+       -0.25  
+       -0.25  
+           1  
+       -0.25  
+
+      4 :
+       -0.25  
+       -0.25  
+       -0.25  
+       -0.25  
+           1  
+
+
+SIMPLEX_COORDINATES1_TEST
+  Normal end of execution.
+
+SIMPLEX_COORDINATES2_TEST
+  Python version: 3.6.9
+  Test SIMPLEX_COORDINATES2
+
+  Simplex vertex coordinates:
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      0 :
+     0.96225  
+    -0.19245  
+    -0.19245  
+
+      1 :
+    -0.19245  
+     0.96225  
+    -0.19245  
+
+      2 :
+    -0.19245  
+    -0.19245  
+     0.96225  
+
+      3 :
+    -0.57735  
+    -0.57735  
+    -0.57735  
+
+
+  Side length =     1.63299
+  Volume =          0.5132
+  Expected volume = 0.5132
+
+  Dot product matrix:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+           1  
+   -0.333333  
+   -0.333333  
+   -0.333333  
+
+      1 :
+   -0.333333  
+           1  
+   -0.333333  
+   -0.333333  
+
+      2 :
+   -0.333333  
+   -0.333333  
+           1  
+   -0.333333  
+
+      3 :
+   -0.333333  
+   -0.333333  
+   -0.333333  
+           1  
+
+
+SIMPLEX_COORDINATES2_TEST
+  Normal end of execution.
+
+SIMPLEX_COORDINATES2_TEST
+  Python version: 3.6.9
+  Test SIMPLEX_COORDINATES2
+
+  Simplex vertex coordinates:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+    0.963525  
+   -0.154508  
+   -0.154508  
+   -0.154508  
+
+      1 :
+   -0.154508  
+    0.963525  
+   -0.154508  
+   -0.154508  
+
+      2 :
+   -0.154508  
+   -0.154508  
+    0.963525  
+   -0.154508  
+
+      3 :
+   -0.154508  
+   -0.154508  
+   -0.154508  
+    0.963525  
+
+      4 :
+        -0.5  
+        -0.5  
+        -0.5  
+        -0.5  
+
+
+  Side length =     1.58114
+  Volume =          0.145577
+  Expected volume = 0.145577
+
+  Dot product matrix:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Col
+      0 :
+           1  
+       -0.25  
+       -0.25  
+       -0.25  
+       -0.25  
+
+      1 :
+       -0.25  
+           1  
+       -0.25  
+       -0.25  
+       -0.25  
+
+      2 :
+       -0.25  
+       -0.25  
+           1  
+       -0.25  
+       -0.25  
+
+      3 :
+       -0.25  
+       -0.25  
+       -0.25  
+           1  
+       -0.25  
+
+      4 :
+       -0.25  
+       -0.25  
+       -0.25  
+       -0.25  
+           1  
+
+
+SIMPLEX_COORDINATES2_TEST
+  Normal end of execution.
+
+SIMPLEX_VOLUME_TEST
+  Python version: 3.6.9
+  SIMPLEX_VOLUME returns the volume of a simplex
+  in M dimensions.
+
+  Triangle:
+
+  Row: 
+      0       
+      1       
+
+  Col
+      0 :
+           0  
+           0  
+
+      1 :
+           7  
+           2  
+
+      2 :
+           4  
+           4  
+
+
+  Volume = 10
+
+  Tetrahedron:
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      0 :
+           0  
+           0  
+           0  
+
+      1 :
+           7  
+           2  
+           0  
+
+      2 :
+           4  
+           4  
+           0  
+
+      3 :
+           0  
+           0  
+           6  
+
+
+  Volume = 20
+
+SIMPLEX_VOLUME_TEST
+  Normal end of execution.
+
+SIMPLEX01_VOLUME_TEST
+  Python version: 3.6.9
+  SIMPLEX01_VOLUME returns the volume of the unit simplex
+  in M dimensions.
+
+   M   Volume
+
+   1  1
+   2  0.5
+   3  0.166667
+   4  0.0416667
+   5  0.00833333
+   6  0.00138889
+   7  0.000198413
+   8  2.48016e-05
+   9  2.75573e-06
+
+SIMPLEX01_VOLUME_TEST
+  Normal end of execution.
+
+SIMPLEX_COORDINATES_TEST:
+  Normal end of execution.
+Mon Feb  3 07:59:23 2020

@@ -1,0 +1,21 @@
+Sat Jan 18 12:01:45 2020
+
+BROWNIAN_MOTION_SIMULATION_TEST
+  Python version
+  Test the BROWNIAN_MOTION_SIMULATION library.
+
+  Plot saved as "motion_1d.png".
+
+  Plot saved as "motion_2d.png".
+
+  Plot saved as "motion_3d.png".
+
+  Plot saved as "displacement_1.png".
+
+  Plot saved as "displacement_2.png".
+
+  Plot saved as "displacement_3.png".
+
+BROWNIAN_MOTION_SIMULATION_TEST
+  Normal end of execution.
+Sat Jan 18 12:02:01 2020

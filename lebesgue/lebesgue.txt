@@ -1,0 +1,5 @@
+Tue Jan 28 08:24:33 2020
+
+LEBESGUE_CHEBYSHEV1_TEST:
+  Python version: 3.6.9
+  Analyze Chebyshev1 points.

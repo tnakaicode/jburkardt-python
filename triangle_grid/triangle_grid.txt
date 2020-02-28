@@ -1,0 +1,175 @@
+Wed Feb  5 08:01:52 2020
+
+TRIANGLE_GRID_TEST
+  Python version: 3.6.9
+  Test the TRIANGLE_GRID library.
+
+R82COL_PRINT_PART_TEST
+  Python version: 3.6.9
+  R82COL_PRINT_PART prints an R82COL.
+
+  Output with MAX_PRINT = 2
+
+     0              11              12
+     1              21              22  ...more entries...
+
+  Output with MAX_PRINT = 5
+
+     0              11              12
+     1              21              22
+     2              31              32
+  ....  ..............  ..............
+     9             101             102
+
+  Output with MAX_PRINT = 25
+
+     0              11              12
+     1              21              22
+     2              31              32
+     3              41              42
+     4              51              52
+     5              61              62
+     6              71              72
+     7              81              82
+     8              91              92
+     9             101             102
+
+R82COL_PRINT_PART_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_WRITE_TEST:
+  Python version: 3.6.9
+  Test R8MAT_WRITE, which writes an R8MAT to a file.
+
+  Created file "r8mat_write_test.txt".
+
+R8MAT_WRITE_TEST:
+  Normal end of execution.
+
+TIMESTAMP_TEST:
+  Python version: 3.6.9
+  TIMESTAMP prints a timestamp of the current date and time.
+
+Wed Feb  5 08:01:53 2020
+
+TIMESTAMP_TEST:
+  Normal end of execution.
+
+TRIANGLE_GRID_DISPLAY_TEST:
+  Python version: 3.6.9
+  TRIANGLE_GRID_DISPLAY displays a grid of points in a triangle.
+
+  Graphics data saved in file "triangle_grid_display.png"
+
+TRIANGLE_GRID_DISPLAY_TEST:
+  Normal end of execution.
+
+TRIANGLE_GRID_COUNT_TEST:
+  Python version: 3.6.9
+  TRIANGLE_GRID_COUNT can count the points in a triangular grid
+  with N+1 points on a side, based on any triangle.
+
+     N        NG
+
+     1         3
+     2         6
+     3        10
+     4        15
+     5        21
+    10        66
+    15       136
+    20       231
+    25       351
+    50      1326
+   100      5151
+
+TRIANGLE_GRID_COUNT_TEST:
+  Normal end of execution.
+
+TRIANGLE_GRID_POINTS_TEST:
+  Python version: 3.6.9
+  TRIANGLE_GRID_POINTS defines a triangular grid
+  with N+1 points on a side, based on any triangle.
+
+  Input value of N is 15
+  Number of grid points will be 136
+
+  Triangle vertices:
+
+  Col:       0             1       
+  Row
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5      0.866025  
+
+  Part of the grid point array:
+
+     0             0.5        0.866025
+     1        0.533333         0.80829
+     2        0.566667        0.750555
+     3             0.6         0.69282
+     4        0.633333        0.635085
+     5        0.666667         0.57735
+     6             0.7        0.519615
+     7        0.733333         0.46188
+     8        0.766667        0.404145
+     9             0.8         0.34641
+    10        0.833333        0.288675
+    11        0.866667         0.23094
+    12             0.9        0.173205
+    13        0.933333         0.11547
+    14        0.966667        0.057735
+    15               1               0
+    16        0.466667         0.80829
+    17             0.5        0.750555
+  ....  ..............  ..............
+   135               0               0
+
+  Data written to the file "triangle_grid_points.xy".
+
+  Graphics data saved in file "triangle_grid_points.png"
+
+TRIANGLE_GRID_POINTS_TEST:
+  Normal end of execution.
+
+TRIANGLE_GRID_TEST:
+  Normal end of execution.
+Wed Feb  5 08:01:53 2020

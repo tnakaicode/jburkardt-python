@@ -1,0 +1,175 @@
+Wed Feb  5 08:01:53 2020
+
+TRIANGLE_INTERPOLATE_TEST
+  Python version: 3.6.9
+  Test the TRIANGLE_INTERPOLATE library.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_WRITE_TEST:
+  Python version: 3.6.9
+  Test R8MAT_TRANSPOSE_WRITE, which writes the transpose of an R8MAT to a file.
+
+  Created file "r8mat_transpose_write_test.txt".
+
+R8MAT_TRANSPOSE_WRITE_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+TRIANGLE_INTERPOLATE_LINEAR_TEST
+  Python version: 3.6.9
+  TRIANGLE_INTERPOLATE_LINEAR uses linear interpolation
+  on vertex data to estimate values in the interior.
+
+       X               Y               V(1)            V(2)            V(3)
+
+               0               1               1               0               0
+               5               0               0               1               0
+               4               4               0               0               1
+
+         4.67598        0.876463
+       0.0220851
+         0.76432
+        0.213595
+
+         3.12563         2.73728
+        0.250537
+        0.127777
+        0.621687
+
+         1.17889         1.17003
+        0.742864
+        0.150345
+         0.10679
+
+         1.57257         1.01005
+        0.668403
+        0.246185
+       0.0854121
+
+          3.9462         0.34337
+         0.20378
+        0.761322
+       0.0348975
+
+           3.311         0.49507
+        0.329523
+         0.62909
+       0.0413867
+
+         3.99497         1.52577
+        0.131281
+        0.520097
+        0.348623
+
+        0.180196         1.09386
+        0.957124
+      0.00869157
+       0.0341847
+
+         2.42968         2.53392
+        0.407757
+       0.0607026
+        0.531541
+
+        0.572425        0.927439
+        0.883309
+        0.105659
+       0.0110326
+
+
+TRIANGLE_INTERPOLATE_LINEAR_TEST:
+  Normal end of execution.
+
+UNIFORM_IN_TRIANGLE_MAP1_TEST
+  Python version: 3.6.9
+  UNIFORM_IN_TRIANGLE_MAP1 maps uniform
+  points into a triangle.
+
+  Number of points N =          1000
+  Initial random number SEED =  123456789
+
+  V1 =     0.750000      0.900000
+  V2 =     0.000000      0.200000
+  V3 =     0.950000      0.650000
+  Final random number SEED =    1328042058
+
+  Data written to "uniform_in_triangle_map1.txt".
+
+UNIFORM_IN_TRIANGLE_MAP1_TEST:
+  Normal end of execution.
+
+TRIANGLE_INTERPOLATE_TEST:
+  Normal end of execution.
+Wed Feb  5 08:01:53 2020

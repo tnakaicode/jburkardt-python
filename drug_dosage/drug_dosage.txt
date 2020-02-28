@@ -1,0 +1,8 @@
+
+DRUG_DOSAGE:
+  Python version
+  Simulate the variation over time of the concentration
+  of a medicinal drug in the bloodstream.
+
+DRUG_DOSAGE:
+  Normal end of execution.

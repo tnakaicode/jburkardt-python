@@ -1,0 +1,6 @@
+Tue Jan 28 08:24:39 2020
+
+lorenz_sensitivity_test:
+  Python version: 3.6.9
+  Demonstrate sensitive dependence on initial data for the Lorenz system.
+  This program is based on the work of John D Cook.

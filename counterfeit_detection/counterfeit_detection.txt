@@ -1,0 +1,174 @@
+Sun Jan 19 19:22:53 2020
+
+counterfeit_detection_test
+  Python version: 3.6.9
+  Test counterfeit_detection.
+
+counterfeit_detection_brute_test
+  Python version: 3.6.9
+  Test counterfeit_detection_brute,
+  which seeks to identify multiple counterfeit coins among n coins
+  using brute force.
+
+  There were 7 fakes
+
+  Indices of fakes:
+
+  0:  4  35.9715
+  1:  10  35.9715
+  2:  35  35.9715
+  3:  46  35.9715
+  4:  81  35.9715
+  5:  84  35.9715
+  6:  99  35.9715
+
+  The function found 7 suspects.
+
+  Indices of suspects:
+
+  0:  4  35.9715
+  1:  10  35.9715
+  2:  35  35.9715
+  3:  46  35.9715
+  4:  81  35.9715
+  5:  84  35.9715
+  6:  99  35.9715
+
+counterfeit_detection_combinatorial_test
+  Python version: 3.6.9
+  Test counterfeit_detection_combinatorial,
+  which can identify one counterfeit coin among 2^logn-1 coins
+  using just logn comparisons.
+
+  7 coins were checked
+  The fake coin was number 6
+  3 comparisons were made
+  The suspected coin is number 6
+
+counterfeit_detection_compressed_test
+  Python version: 3.6.9
+  Test counterfeit_detection_compressed,
+  which seeks to identify multiple counterfeit coins among n coins
+  using compressed sensing techniques.
+  There are 100 coins to check.
+  The correct coin weight is 17
+
+  There were 3 fakes
+
+     Fake  Index  Weight::
+
+        0:    45  17.5
+        1:    49  17.5
+        2:    65  17.5
+
+  20 random subsets were weighed.
+  The function found 100 suspects.
+
+  Suspect  Index  Weight:
+
+        0:     0  17
+        1:     1  17
+        2:     2  17
+        3:     3  17
+        4:     4  17
+        5:     5  17
+        6:     6  17
+        7:     7  17
+        8:     8  17
+        9:     9  17
+       10:    10  17
+       11:    11  17
+       12:    12  17
+       13:    13  17
+       14:    14  17
+       15:    15  17
+       16:    16  17
+       17:    17  17
+       18:    18  17
+       19:    19  17
+       20:    20  17
+       21:    21  17
+       22:    22  17
+       23:    23  17
+       24:    24  17
+       25:    25  17
+       26:    26  17
+       27:    27  17
+       28:    28  17
+       29:    29  17
+       30:    30  17
+       31:    31  17
+       32:    32  17
+       33:    33  17
+       34:    34  17
+       35:    35  17
+       36:    36  17
+       37:    37  17
+       38:    38  17
+       39:    39  17
+       40:    40  17
+       41:    41  17
+       42:    42  17
+       43:    43  17
+       44:    44  17
+       45:    45  17.5
+       46:    46  17
+       47:    47  17
+       48:    48  17
+       49:    49  17.5
+       50:    50  17
+       51:    51  17
+       52:    52  17
+       53:    53  17
+       54:    54  17
+       55:    55  17
+       56:    56  17
+       57:    57  17
+       58:    58  17
+       59:    59  17
+       60:    60  17
+       61:    61  17
+       62:    62  17
+       63:    63  17
+       64:    64  17
+       65:    65  17.5
+       66:    66  17
+       67:    67  17
+       68:    68  17
+       69:    69  17
+       70:    70  17
+       71:    71  17
+       72:    72  17
+       73:    73  17
+       74:    74  17
+       75:    75  17
+       76:    76  17
+       77:    77  17
+       78:    78  17
+       79:    79  17
+       80:    80  17
+       81:    81  17
+       82:    82  17
+       83:    83  17
+       84:    84  17
+       85:    85  17
+       86:    86  17
+       87:    87  17
+       88:    88  17
+       89:    89  17
+       90:    90  17
+       91:    91  17
+       92:    92  17
+       93:    93  17
+       94:    94  17
+       95:    95  17
+       96:    96  17
+       97:    97  17
+       98:    98  17
+       99:    99  17
+
+  The test failed.
+
+counterfeit_detection_test:
+  Normal end of execution.
+Sun Jan 19 19:22:53 2020

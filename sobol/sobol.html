@@ -1,0 +1,233 @@
+<html>
+
+  <head>
+    <title>
+      SOBOL - The Sobol Quasirandom Sequence
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      SOBOL <br> The Sobol Quasirandom Sequence
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>SOBOL</b>,
+      a Python library which
+      computes elements of the Sobol quasirandom sequence.
+    </p>
+
+    <p>
+      A quasirandom or low discrepancy sequence, such as the Faure,
+      Halton, Hammersley, Niederreiter or Sobol sequences, is
+      "less random" than a pseudorandom number sequence, but
+      more useful for such tasks as approximation of integrals in
+      higher dimensions, and in global optimization.
+      This is because low discrepancy sequences tend to sample
+      space "more uniformly" than random numbers.  Algorithms
+      that use such sequences may have superior convergence.
+    </p>
+
+    <p>
+      SOBOL is an adaptation of the INSOBL and GOSOBL routines
+      in ACM TOMS Algorithm 647 and ACM TOMS Algorithm 659.  The original
+      code can only compute the "next" element of the sequence.  The
+      revised code allows the user to specify the index of any desired element.
+    </p>
+
+    <p>
+      A remark by Joe and Kuo shows how to extend the algorithm from
+      the original maximum spatial dimension of 40 up to a maximum
+      spatial dimension of 1111.  These changes have been implemented
+      in the FORTRAN90 and C++ versions of the program.
+    </p>
+
+    <p>
+      The original, true, correct versions of ACM TOMS Algorithm 647
+      and ACM TOMS Algorithm 659
+      are available in the TOMS subdirectory of
+      <a href = "http://www.netlib.org/">the NETLIB web site</a>.
+      The version displayed here has been converted to Python,
+      and other internal changes have been made.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "../../txt/mit_license.txt">the MIT license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>SOBOL</b> is available in
+      <a href = "../../cpp_src/sobol/sobol.html">a C++ version</a> and
+      <a href = "../../f_src/sobol/sobol.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/sobol/sobol.html">a MATLAB version</a> and
+      <a href = "../../py_src/sobol/sobol.html">a Python version</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/halton/halton.html">
+      HALTON</a>,
+      a Python library which
+      computes elements of a Halton Quasi Monte Carlo (QMC) sequence,
+      using a simple interface.
+    </p>
+
+    <p>
+      <a href = "../../py_src/hammersley/hammersley.html">
+      HAMMERSLEY</a>,
+      a Python library which
+      computes elements of a Hammersley Quasi Monte Carlo (QMC) sequence,
+      using a simple interface.
+    </p>
+
+    <p>
+      <a href = "../../py_src/normal/normal.html">
+      NORMAL</a>,
+      a Python library which
+      contains random number generators (RNG's) for normally distributed values.
+    </p>
+
+    <p>
+      <a href = "../../py_src/van_der_corput/van_der_corput.html">
+      VAN_DER_CORPUT</a>,
+      a Python library which
+      computes elements of a 1D van der Corput Quasi Monte Carlo (QMC) sequence
+      using a simple interface.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      This Python implementation was written by Corrado Chisari.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          IA Antonov, VM Saleev,<br>
+          An Economic Method of Computing LP Tau-Sequences,<br>
+          USSR Computational Mathematics and Mathematical Physics,<br>
+          Volume 19, 1980, pages 252-256.
+        </li>
+        <li>
+          Paul Bratley, Bennett Fox,<br>
+          Algorithm 659:
+          Implementing Sobol's Quasirandom Sequence Generator,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 14, Number 1, March 1988, pages 88-100.
+        </li>
+        <li>
+          Paul Bratley, Bennett Fox, Harald Niederreiter,<br>
+          Implementation and Tests of Low Discrepancy Sequences,<br>
+          ACM Transactions on Modeling and Computer Simulation,<br>
+          Volume 2, Number 3, July 1992, pages 195-213.
+        </li>
+        <li>
+          Paul Bratley, Bennett Fox, Linus Schrage,<br>
+          A Guide to Simulation,<br>
+          Second Edition,<br>
+          Springer, 1987,<br>
+          ISBN: 0387964673,<br>
+          LC: QA76.9.C65.B73.
+        </li>
+        <li>
+          Bennett Fox,<br>
+          Algorithm 647:
+          Implementation and Relative Efficiency of Quasirandom
+          Sequence Generators,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 12, Number 4, December 1986, pages 362-376.
+        </li>
+        <li>
+          Stephen Joe, Frances Kuo,<br>
+          Remark on Algorithm 659:
+          Implementing Sobol's Quasirandom Sequence Generator,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 29, Number 1, March 2003, pages 49-57.
+        </li>
+        <li>
+          Harald Niederreiter,<br>
+          Random Number Generation and quasi-Monte Carlo Methods,<br>
+          SIAM, 1992,<br>
+          ISBN13: 978-0-898712-95-7,<br>
+          LC: QA298.N54.
+        </li>
+        <li>
+          William Press, Brian Flannery, Saul Teukolsky, William Vetterling,<br>
+          Numerical Recipes in FORTRAN: The Art of Scientific Computing,<br>
+          Second Edition,<br>
+          Cambridge University Press, 1992,<br>
+          ISBN: 0-521-43064-X,<br>
+          LC: QA297.N866.
+        </li>
+        <li>
+          Ilya Sobol,<br>
+          Uniformly Distributed Sequences with an Additional Uniform
+          Property,<br>
+          USSR Computational Mathematics and Mathematical Physics,<br>
+          Volume 16, 1977, pages 236-242.
+        </li>
+        <li>
+          Ilya Sobol, YL Levitan,<br>
+          The Production of Points Uniformly Distributed in a Multidimensional
+          Cube (in Russian),<br>
+          Preprint IPM Akademii Nauk SSSR,<br>
+          Number 40, Moscow 1976.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sobol.py">sobol.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "sobol.sh">sobol.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "sobol.txt">sobol.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 February 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

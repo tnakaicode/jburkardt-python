@@ -1,0 +1,207 @@
+<html>
+
+  <head>
+    <title>
+      FLORIDA_CVT_GEO - Geometric Centroidal Voronoi Tessellation of Florida
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      FLORIDA_CVT_GEO <br> Geometric Centroidal Voronoi Tessellation of Florida
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>FLORIDA_CVT_GEO</b>,
+      Python functions which
+      explore the creation of a centroidal Voronoi Tessellation (CVT) of
+      the state of Florida, based solely on geometric considerations.
+    </p>
+
+    <p>
+      The function florida_sample_geo() can return a set of points drawn
+      uniformly at random from the interior of Florida.
+    </p>
+
+    <p>
+      Using the Florida border polygon definition, florida_point_display()
+      can display a set of points representing locations in Florida,
+      specified by their longitude and latitude.
+    </p>
+
+    <p>
+      Given a set of points in Florida, florida_voronoi_display() can show the
+      resulting Voronoi diagram.  Note that, because of shortcomings in
+      MATLAB's voronoi() command, some tricks had to be used to get a
+      satisfactory plot.  In particular, because rays to infinity are not
+      returned, an auxilliary frame of points was added around Florida,
+      which fixes that problem, while causing the display of somewhat
+      spurious cell boundary lines well outside of the region of interest.
+    </p>
+
+    <p>
+      Given a set of points in Florida, florida_centroid_geo() can estimate
+      the centroids of the "in-Florida" Voronoi cells.
+    </p>
+
+    <p>
+      The function florida_cvt_geo() can estimate the location of generator
+      points corresponding to a centroidal Voronoi tessellation of the
+      geometric information in Florida.
+    </p>
+
+    <p>
+      The function florida_district_reader() can read a file containing a 
+      list of Florida's 27 congressional districts and the location of 
+      a representative town in each district.
+    </p>
+
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>FLORIDA_CVT_GEO</b> is available in
+      <a href = "../../m_src/florida_cvt_geo/florida_cvt_geo.html">a MATLAB version</a> and
+      <a href = "../../py_src/florida_cvt_geo/florida_cvt_geo.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/cvt_1d_lloyd/cvt_1d_lloyd.html">
+      CVT_1D_LLOYD</a>,
+      a Python program which 
+      constructs a CVT in one dimension using Lloyd's method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/cvt_2d_sampling/cvt_2d_sampling.html">
+      CVT_2D_SAMPLING</a>,
+      a Python program which
+      computes an N-point Centroidal Voronoi Tessellation (CVT)
+      within the unit square [0,1]x[0,1], under a uniform density,
+      using sampling to estimate the Voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/florida_cvt_pop/florida_cvt_pop.html">
+      FLORIDA_CVT_POP</a>,
+      Python programs which
+      explore the creation of a centroidal Voronoi Tessellation (CVT) of
+      the state of Florida, based on population density.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Qiang Du, Vance Faber, Max Gunzburger,<br>
+          Centroidal Voronoi Tessellations: Applications and Algorithms,<br>
+          SIAM Review,<br>
+          Volume 41, Number 4, December 1999, pages 637-676.
+        </li>
+        <li>
+          Lili Ju, Qiang Du, Max Gunzburger,<br>
+          Probabilistic methods for centroidal Voronoi tessellations
+          and their parallel implementations,<br>
+          Parallel Computing,<br>
+          Volume 28, 2002, pages 1477-1500.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "florida_cvt_geo.py">florida_cvt_geo.py</a>
+          the source code.
+        </li>
+         <li>
+          <a href = "florida_cvt_geo.sh">florida_cvt_geo.sh</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "florida_cvt_geo.txt">florida_cvt_geo.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "florida_centroid_geo.png">florida_centroid_geo.png</a>
+        </li>
+        <li>
+          <a href = "florida_cvt_geo.png">florida_cvt_geo.png</a>
+        </li>
+        <li>
+          <a href = "florida_district.txt">florida_district.txt</a>
+          a CSV file containing Florida Congressional District data,
+          including district number, a representative town, and the
+          longitude and latitude of that town.
+        </li>
+        <li>
+          <a href = "florida_district.png">florida_district.png</a>
+        </li>
+        <li>
+          <a href = "florida_point_display.png">florida_point_display.png</a>
+        </li>
+        <li>
+          <a href = "florida_sample_geo.png">florida_sample_geo.png</a>
+        </li>
+        <li>
+          <a href = "florida_shape.txt">florida_shape.txt</a>,
+          the longitude and latitude of the Florida polygonal vertices.
+        </li>
+        <li>
+          <a href = "florida_shape_display.png">florida_shape_display.png</a>
+        </li>
+        <li>
+          <a href = "florida_shape_read.png">florida_shape_read.png</a>
+        </li>
+        <li>
+          <a href = "florida_voronoi_display.png">florida_voronoi_display.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 05 November 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

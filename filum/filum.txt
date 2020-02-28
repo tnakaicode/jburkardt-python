@@ -1,0 +1,27 @@
+Fri Jan 24 08:30:40 2020
+
+FILUM_TEST
+  Python version: 3.6.9
+  Test the FILUM library.
+
+FILE_COLUMN_COUNT_TEST:
+  Python version: 3.6.9
+  Count the number of columns in a typical text file line.
+
+  Number of columns in "r8mat_write_test.txt" is 3
+
+FILE_COLUMN_COUNT_TEST:
+  Normal end of execution.
+
+FILE_ROW_COUNT_TEST:
+  Python version: 3.6.9
+  Count the number of rows in a text file.
+
+  Number of rows in "i4mat_write_test.txt" is 5
+
+FILE_ROW_COUNT_TEST:
+  Normal end of execution.
+
+FILUM_TEST:
+  Normal end of execution.
+Fri Jan 24 08:30:40 2020

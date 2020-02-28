@@ -1,0 +1,72 @@
+Sun Jan 19 19:24:19 2020
+
+COSINE_TRANSFORM_TEST
+  Python version: 3.6.9
+  Test the COSINE_TRANSFORM library.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+COSINE_TRANSFORM_DATA_TEST:
+  Python version: 3.6.9
+  COSINE_TRANSFORM_DATA does a cosine transform of data
+  defined by a vector.
+
+  Apply the transform, then its inverse.
+  Let R be a random N vector.
+  Let S be the transform of D.
+  Let T be the transform of E.
+  Then R and T will be equal.
+
+     I      R(I)        S(I)        T(I)
+
+     0    0.218418    1.830309    0.218418
+     1    0.956318    0.493766    0.956318
+     2    0.829509    0.205323    0.829509
+     3    0.561695   -0.534515    0.561695
+     4    0.415307   -0.189003    0.415307
+     5    0.066119   -0.440911    0.066119
+     6    0.257578    0.020582    0.257578
+     7    0.109957   -0.377745    0.109957
+     8    0.043829   -0.053802    0.043829
+     9    0.633966    0.046265    0.633966
+
+COSINE_TRANSFORM_DATA_TEST
+  Normal end of execution.
+
+COSINE_TRANSFORM_TEST:
+  Normal end of execution.
+Sun Jan 19 19:24:19 2020

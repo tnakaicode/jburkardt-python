@@ -1,0 +1,33 @@
+Thu Jan 23 08:11:19 2020
+
+DUEL_ONCE_TEST:
+  Python version: 3.6.9
+  DUEL_ONCE simulates a single duel between combatants
+  who fire alternately at each other, with known probabilities
+  of hitting the other.
+
+  In this example, the one shot probabilities are:
+  Player[0]: 0.1
+  Player[1]: 0.15
+
+  Result of this duel:
+  Player 0 survived after 7 turns
+
+DUEL_SIMULATION_TEST:
+  Python version: 3.6.9
+  DUEL_SIMULATION repeatedly simulates a duel between combatants
+  who fire alternately at each other, with known probabilities
+  of hitting the other.
+
+  In this example, the one shot probabilities are:
+  Player[0]: 0.1
+  Player[1]: 0.15
+
+  The number of duels to fight is 1000
+
+  Result of the duels:
+  Player 0 winning percentage is 0.439
+  Player 1 winning percentage is 0.561
+
+  The average number of shots fired was 8.125
+Thu Jan 23 08:11:19 2020

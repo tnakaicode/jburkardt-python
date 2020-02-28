@@ -1,0 +1,19 @@
+Mon Feb  3 07:59:43 2020
+
+square_distance_test:
+  Python version: 3.6.9
+  Test square_distance.
+
+  Using N = 10000 sample points,
+  Estimated mean distance = 0.524086
+  Exact mean distance     = 0.521405
+  Estimated variance      = 0.060201
+  Exact variance          = 0.0614697
+  Graphics saved as "square_distance_histogram.png"
+  Graphics saved as "square_distance_pdf.png"
+  Graphics saved as "square_distance_compare.png"
+
+square_distance_test:
+  Normal end of execution.
+
+Mon Feb  3 07:59:44 2020

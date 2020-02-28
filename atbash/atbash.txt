@@ -1,0 +1,21 @@
+Fri Jan 17 19:57:40 2020
+
+ATBASH_TEST
+
+  Python version: 3.6.9
+  ATBASH_ENCRYPT encrypts a plain text using the Atbash
+  substitution cipher.
+  ATBASH_ENCRYPT can also decrypt an encryted text.
+
+PLAIN:   "A man, a plan, a canal - Panama!"
+CRYPT:   "Z nzm, z kozm, z xzmzo - Kzmznz!"
+DECRYPT: "A man, a plan, a canal - Panama!"
+
+
+PLAIN:   "There are a thousand hacking at the branches of evil for every one who is striking at its root."
+CRYPT:   "Gsviv ziv z gslfhzmw szxprmt zg gsv yizmxsvh lu vero uli vevib lmv dsl rh hgirprmt zg rgh illg."
+DECTYPT: "There are a thousand hacking at the branches of evil for every one who is striking at its root."
+
+ATBASH_TEST
+  Normal end of execution.
+Fri Jan 17 19:57:40 2020

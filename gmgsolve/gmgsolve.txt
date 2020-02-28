@@ -1,0 +1,18 @@
+Sat Jan 25 12:06:13 2020
+
+VCYCLE_TEST:
+  Python version: 3.6.9
+  VCYCLE applies one V-cycle to a matrix.
+step 0, rel error=1.937586e-01
+step 1, rel error=3.762144e-02
+step 2, rel error=7.417582e-03
+step 3, rel error=1.552965e-03
+step 4, rel error=3.782356e-04
+step 5, rel error=1.126136e-04
+step 6, rel error=3.808544e-05
+step 7, rel error=1.346628e-05
+step 8, rel error=4.808143e-06
+step 9, rel error=1.717181e-06
+step 10, rel error=6.123138e-07
+step 11, rel error=2.180019e-07
+step 12, rel error=7.751894e-08

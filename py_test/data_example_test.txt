@@ -1,0 +1,55 @@
+Sat Feb  1 15:37:41 2020
+
+Y_TEST:
+  Python version: 3.6.9
+  Y(V0,G)(T) is a function defining the height of a ball
+  at time T, with initial velocity V0 and gravity force G.
+
+  First case:
+  Initial velocity = 3
+  Gravity = 9.81
+  0  0
+  1  -1.905
+  2  -13.62
+  3  -35.145
+  4  -66.48
+  5  -107.625
+  6  -158.58
+  7  -219.345
+  8  -289.92
+  9  -370.305
+  10  -460.5
+
+  Second case:
+  Initial velocity = -3
+  Gravity = 9.81
+  0  -0
+  1  -7.905
+  2  -25.62
+  3  -53.145
+  4  -90.48
+  5  -137.625
+  6  -194.58
+  7  -261.345
+  8  -337.92
+  9  -424.305
+  10  -520.5
+
+  Third case:
+  Initial velocity = 96
+  Gravity = 32
+  0  0
+  1  80
+  2  128
+  3  144
+  4  128
+  5  80
+  6  0
+  7  -112
+  8  -256
+  9  -432
+  10  -640
+
+Y_TEST:
+  Normal end of execution.
+Sat Feb  1 15:37:41 2020

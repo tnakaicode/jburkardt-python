@@ -1,0 +1,65 @@
+Sun Feb  2 08:33:23 2020
+
+ROT13_TEST
+  Python version: 3.6.9
+  Test the ROT13 library.
+
+CH_TO_ROT13_TEST
+  Python version: 3.6.9
+  CH_TO_ROT13 "encodes" characters using ROT13
+  (and digits using ROT5).
+  A second application of the function returns the
+  original character.
+
+            CH  : ABCDEFGHIJKLMNOPQRSTUVWXYZ
+      ROT13(CH) : NOPQRSTUVWXYZABCDEFGHIJKLM
+ROT13(ROT13(CH)): ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+            CH  : CH_TO_ROT13 "encodes" characters using ROT13
+      ROT13(CH) : PU_GB_EBG68 "rapbqrf" punenpgref hfvat EBG68
+ROT13(ROT13(CH)): CH_TO_ROT13 "encodes" characters using ROT13
+
+CH_TO_ROT13_TEST:
+  Normal end of execution.
+
+S_QUOTE_TEST
+  Python version: 3.6.9
+  S_QUOTE quotes a string S1 with a mark MARK.
+
+  ----S1----  ---MARK---  ----S2----
+
+  Hi, Bob!    "           "Hi, Bob!"
+  De          Loop        LoopDeLoop
+
+S_QUOTE_TEST
+  Normal end of execution.
+
+S_TO_ROT13_TEST
+  Python version: 3.6.9
+  S_TO_ROT13 applies the ROT13 cipher to a string.
+
+  S2 = S_TO_ROT13 ( S1 ).
+
+  -------------------S1-------------------  -------------------S2-------------------
+
+  "abcdefghijklmnopqrstuvwxyz"              "nopqrstuvwxyzabcdefghijklm"            
+  "Cher"                                    "Pure"                                  
+  "James Thurston Howell III"               "Wnzrf Guhefgba Ubjryy VVV"             
+  "The bill is $1,205,837.49 so pay now!"   "Gur ovyy vf $6,750,382.94 fb cnl abj!" 
+
+  S2 = S_TO_ROT13 ( S1 ).
+  S3 = S_TO_ROT13 ( S2 ).
+
+  -------------------S1-------------------  -------------------S3-------------------
+
+  "abcdefghijklmnopqrstuvwxyz"              "abcdefghijklmnopqrstuvwxyz"            
+  "Cher"                                    "Cher"                                  
+  "James Thurston Howell III"               "James Thurston Howell III"             
+  "The bill is $1,205,837.49 so pay now!"   "The bill is $1,205,837.49 so pay now!" 
+
+S_TO_ROT13_TEST:
+  Normal end of execution.
+
+ROT13_TEST:
+  Normal end of execution.
+Sun Feb  2 08:33:23 2020

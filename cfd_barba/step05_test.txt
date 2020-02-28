@@ -1,0 +1,10 @@
+
+STEP05:
+  Python version: 3.6.5
+  The 2D linear convection equation.
+  Saved initial solution in file "step05_initial.png".
+  Saved final1 solution in file "step05_final1.png".
+  Saved final2 solution in file "step05_final2.png".
+
+STEP05:
+  Normal end of execution.

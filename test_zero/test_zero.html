@@ -1,0 +1,400 @@
+<html>
+
+  <head>
+    <title>
+      TEST_ZERO - Zero Finder Tests
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TEST_ZERO <br> Zero Finder Tests
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TEST_ZERO</b>, 
+      a Python library which
+      defines a number of nonlinear functions.
+    </p>
+
+    <p>
+      The nonlinear functions are intended for use in demonstrating or
+      testing zero finder algorithms, that is, programs that seek a 
+      root of a scalar equation F(X)=0.  
+    </p>
+
+    <p>
+      The functions, which are accessible by number, are
+      <ol>
+        <li>
+          f(x) = sin ( x ) - x / 2.
+        </li>
+        <li>
+          f(x) = 2 * x - exp ( - x ).
+        </li>
+        <li>
+          f(x) = x * exp ( - x ).
+        </li>
+        <li>
+          f(x) = exp ( x ) - 1 / ( 10 * x )^2.
+        </li>
+        <li>
+          f(x) = ( x + 3 ) * ( x - 1 )^2.
+        </li>
+        <li>
+          f(x) = exp ( x ) - 2 - 1 / ( 10 * x )^2 + 2 / ( 100 * x )^3.
+        </li>
+        <li>
+          f(x) = x^3.
+        </li>
+        <li>
+          f(x) = cos ( x ) - x.
+        </li>
+        <li>
+          the Newton Baffler.
+        </li>
+        <li>
+          the Repeller.
+        </li>
+        <li>
+          the Pinhead.
+        </li>
+        <li>
+          Flat Stanley.
+        </li>
+        <li>
+          Lazy Boy.
+        </li>
+        <li>
+          the Camel.
+        </li>
+        <li>
+          a pathological function for Newton's method.
+        </li>
+        <li>
+          Kepler's Equation.
+        </li>
+        <li>
+          f(x) = x^3 - 2*x - 5, Wallis's function.
+        </li>
+        <li>
+          f(x) = (x-1)^7, written term by term.
+        </li>
+        <li>
+          f(x) = cos(100*x)-4*erf(30*x-10)
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TEST_ZERO</b> is available in
+      <a href = "../../c_src/test_zero/test_zero.html">a C version</a> and
+      <a href = "../../cpp_src/test_zero/test_zero.html">a C++ version</a> and
+      <a href = "../../f_src/test_zero/test_zero.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/test_zero/test_zero.html">a MATLAB version</a> and
+      <a href = "../../py_src/test_zero/test_zero.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/bisection_rc/bisection_rc.html">
+      BISECTION_RC</a>,
+      a Python library which
+      seeks a solution to the equation F(X)=0 using bisection
+      within a user-supplied change of sign interval [A,B].
+      The procedure is written using reverse communication (RC).
+    </p>
+
+    <p>
+      <a href = "../../py_src/zero_rc/zero_rc.html">
+      ZERO_RC</a>,
+      a Python library which
+      seeks solutions of a scalar nonlinear equation f(x) = 0, 
+      or a system of nonlinear equations,
+      using reverse communication.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          George Donovan, Arnold Miller, Timothy Moreland,<br>
+          Pathological Functions for Newton's Method,<br>
+          American Mathematical Monthly, January 1993, pages 53-58.
+        </li>
+        <li>
+          Peter Colwell,<br>
+          Solving Kepler's Equation Over Three Centuries,<br>
+          Willmann-Bell, 1993
+        </li>
+        <li>
+          Arnold Krommer, Christoph Ueberhuber,<br>
+          Numerical Integration on Advanced Systems,<br>
+          Springer, 1994.
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      PNG images of the graphs of some of the functions were made using MATLAB:
+      <ul>
+        <li>
+          <a href = "p01_fx.png">p01_fx.png</a>, 
+          an image of P01_FX(X) over [-4,+4].
+        </li>
+        <li>
+          <a href = "p02_fx.png">p02_fx.png</a>, 
+          an image of P02_FX(X) over [-0.5, +3.0].
+        </li>
+        <li>
+          <a href = "p03_fx.png">p03_fx.png</a>, 
+          an image of P03_FX(X) over [-0.1,+4].
+        </li>
+        <li>
+          <a href = "p04_fx.png">p04_fx.png</a>, 
+          an image of P04_FX(X) over [-4,+2].
+        </li>
+        <li>
+          <a href = "p05_fx.png">p05_fx.png</a>, 
+          an image of P05_FX(X) over [-4,+2].
+        </li>
+        <li>
+          <a href = "p06_fx.png">p06_fx.png</a>, 
+          an image of P06_FX(X) over [-4,+2].
+        </li>
+        <li>
+          <a href = "p07_fx.png">p07_fx.png</a>, 
+          an image of P07_FX(X) over [-1,+1].
+        </li>
+        <li>
+          <a href = "p08_fx.png">p08_fx.png</a>, 
+          an image of P08_FX(X) over [-4,+4].
+        </li>
+        <li>
+          <a href = "p09_fx.png">p09_fx.png</a>, 
+          an image of P09_FX(X) over [5,7].
+        </li>
+        <li>
+          <a href = "p10_fx.png">p10_fx.png</a>, 
+          an image of P10_FX(X) over [-2,+2].
+        </li>
+        <li>
+          <a href = "p11_fx.png">p11_fx.png</a>, 
+          an image of P11_FX(X) over [+1,+10].
+        </li>
+        <li>
+          <a href = "p12_fx.png">p12_fx.png</a>, 
+          an image of P12_FX(X) over [-0.5,+0.5].
+        </li>
+        <li>
+          <a href = "p13_fx.png">p13_fx.png</a>, 
+          an image of P13_FX(X) over [0,100].
+        </li>
+        <li>
+          <a href = "p14_fx.png">p14_fx.png</a>, 
+          an image of P14_FX(X) over [-0.5,+2.0].
+        </li>
+        <li>
+          <a href = "p15_fx.png">p15_fx.png</a>, 
+          an image of P15_FX(X) over [-4,+4].
+        </li>
+        <li>
+          <a href = "p16_fx.png">p16_fx.png</a>, 
+          an image of P16_FX(X) over [0,50].
+        </li>
+        <li>
+          <a href = "p17_fx.png">p17_fx.png</a>, 
+          an image of P17_FX(X) over [-2,+4].
+        </li>
+        <li>
+          <a href = "p18_fx.png">p18_fx.png</a>, 
+          an image of P18_FX(X) over [0.988,1.012].
+        </li>
+        <li>
+          <a href = "p19_fx.png">p19_fx.png</a>, 
+          an image of P19_FX(X) over [0.0,1.0].
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "p00.py">p00.py</a>, 
+          returns information for any problem, given its index.
+        </li>
+        <li>
+          <a href = "p01.py">p01.py</a>, 
+          returns information for problem 01.
+        </li>
+        <li>
+          <a href = "p02.py">p02.py</a>, 
+          returns information for problem 02.
+        </li>
+        <li>
+          <a href = "p03.py">p03.py</a>, 
+          returns information for problem 03.
+        </li>
+        <li>
+          <a href = "p04.py">p04.py</a>, 
+          returns information for problem 04.
+        </li>
+        <li>
+          <a href = "p05.py">p05.py</a>, 
+          returns information for problem 05.
+        </li>
+        <li>
+          <a href = "p06.py">p06.py</a>, 
+          returns information for problem 06.
+        </li>
+        <li>
+          <a href = "p07.py">p07.py</a>, 
+          returns information for problem 07.
+        </li>
+        <li>
+          <a href = "p08.py">p08.py</a>, 
+          returns information for problem 08.
+        </li>
+        <li>
+          <a href = "p09.py">p09.py</a>, 
+          returns information for problem 09.
+        </li>
+        <li>
+          <a href = "p10.py">p10.py</a>, 
+          returns information for problem 10.
+        </li>
+        <li>
+          <a href = "p11.py">p11.py</a>, 
+          returns information for problem 11.
+        </li>
+        <li>
+          <a href = "p12.py">p12.py</a>, 
+          returns information for problem 12.
+        </li>
+        <li>
+          <a href = "p13.py">p13.py</a>, 
+          returns information for problem 13.
+        </li>
+        <li>
+          <a href = "p14.py">p14.py</a>, 
+          returns information for problem 14.
+        </li>
+        <li>
+          <a href = "p15.py">p15.py</a>, 
+          returns information for problem 15.
+        </li>
+        <li>
+          <a href = "p16.py">p16.py</a>, 
+          returns information for problem 16.
+        </li>
+        <li>
+          <a href = "p17.py">p17.py</a>, 
+          returns information for problem 17.
+        </li>
+1        <li>
+          <a href = "p18.py">p18.py</a>, 
+          returns information for problem 18.
+        </li>
+        <li>
+          <a href = "p19.py">p19.py</a>, 
+          returns information for problem 19.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Methods and utility functions:
+      <ul>
+        <li>
+          <a href = "bisection.py">bisection.py</a>, 
+          carries out the bisection method on any problem.
+        </li>
+        <li>
+          <a href = "brent.py">brent.py</a>, 
+          carries out Brent's method on any problem.
+        </li>
+        <li>
+          <a href = "muller.py">muller.py</a>, 
+          carries out Muller's method on any problem.
+        </li>
+        <li>
+          <a href = "newton.py">newton.py</a>, 
+          carries out Newton's method on any problem.
+        </li>
+        <li>
+          <a href = "r8_cube_root.py">r8_cube_root.py</a>, 
+          computes the cube root of an R8.
+        </li>
+        <li>
+          <a href = "r8_sign.py">r8_sign.py</a>, 
+          returns the sign of an R8.
+        </li>
+        <li>
+          <a href = "r8poly2_rroot.py">r8poly2_rroot.py</a>, 
+          returns the real parts of the roots of a quadratic polynomial.
+        </li>
+        <li>
+          <a href = "regula_falsi.py">regula_falsi.py</a>, 
+          carries out the regula falsi method on any problem.
+        </li>
+        <li>
+          <a href = "secant.py">secant.py</a>, 
+          carries out the secant method on any problem.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>, 
+          prints the YMDHMS date as a timestamp.
+        </li>
+        <li>
+          <a href = "test_zero.py">test_zero.py</a>, 
+          tests the library.
+        </li>
+        <li>
+          <a href = "test_zero.sh">test_zero.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "test_zero.txt">test_zero.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 December 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

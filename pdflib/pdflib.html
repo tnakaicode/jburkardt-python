@@ -1,0 +1,431 @@
+<html>
+
+  <head>
+    <title>
+      PDFLIB - Evaluate and Sample Probability Density Functions
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      PDFLIB <br> Evaluate and Sample Probability Density Functions
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>PDFLIB</b>,
+      a Python library which
+      evaluates Probability Density Functions (PDF's)
+      and produces random samples from them,
+      including beta, binomial, chi, exponential, gamma, inverse chi,
+      inverse gamma, multinomial, normal, scaled inverse chi, and uniform.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>PDFLIB</b> is available in
+      <a href = "../../c_src/pdflib/pdflib.html">a C version</a> and
+      <a href = "../../cpp_src/pdflib/pdflib.html">a C++ version</a> and
+      <a href = "../../f_src/pdflib/pdflib.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/pdflib/pdflib.html">a MATLAB version</a> and
+      <a href = "../../py_src/pdflib/pdflib.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/log_normal_truncated_ab/log_normal_truncated_ab.html">
+      LOG_NORMAL_TRUNCATED_AB</a>,
+      a Python library which 
+      returns quantities associated with the log normal Probability
+      Distribution Function (PDF) truncated to the interval [A,B].
+    </p>
+
+    <p>
+      <a href = "../../py_src/prob/prob.html">
+      PROB</a>,
+      a Python library which
+      evaluates, samples, inverts, and characterizes a number of 
+      Probability Density Functions (PDF's) 
+      and Cumulative Density Functions (CDF's), including anglit, arcsin,
+      benford, birthday, bernoulli, beta_binomial, beta, binomial, bradford,
+      burr, cardiod, cauchy, chi, chi squared, circular, cosine, deranged,
+      dipole, dirichlet mixture, discrete, empirical, english sentence and
+      word length, error, exponential, extreme values, f, fisk, folded normal,
+      frechet, gamma, generalized logistic, geometric, gompertz, gumbel,
+      half normal, hypergeometric, inverse gaussian, laplace, levy, logistic,
+      log normal, log series, log uniform, lorentz, maxwell, multinomial,
+      nakagami, negative binomial, normal, pareto, planck, poisson,
+      power, quasigeometric, rayleigh, reciprocal, runs, sech, semicircular,
+      student t, triangle, uniform, von mises, weibull, zipf.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rnglib/rnglib.html">
+      RNGLIB</a>,
+      a Python library which
+      implements a random number generator (RNG) with splitting facilities,
+      allowing multiple independent streams to be computed,
+      by L'Ecuyer and Cote.
+    </p>
+
+    <p>
+      <a href = "../../py_src/walker_sample/walker_sample.html">
+      WALKER_SAMPLE</a>,
+      a Python library which
+      efficiently samples a discrete probability vector using
+      Walker sampling.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "i4_binomial_pdf.py">i4_binomial_pdf.py</a>,
+          evaluates the binomial PDF.
+        </li>
+        <li>
+          <a href = "i4_binomial_sample.py">i4_binomial_sample.py</a>,
+          generates a binomial random deviate.
+        </li>
+        <li>
+          <a href = "i4_uniform_ab.py">i4_uniform_ab.py</a>,
+          returns a random I4 between A and B.
+        </li>
+        <li>
+          <a href = "i4vec_multinomial_pdf.py">i4vec_multinomial_pdf.py</a>,
+          evaluates the multinomial PDF.
+        </li>
+        <li>
+          <a href = "i4vec_multinomial_sample.py">.i4vec_multinomial_sample.py</a>,
+          generates a multinomial random deviate.
+        </li>
+        <li>
+          <a href = "r8_beta_pdf.py">r8_beta_pdf.py</a>,
+          evaluates the PDF of a beta distribution.
+        </li>
+        <li>
+          <a href = "r8_beta_sample.py">r8_beta_sample.py</a>,
+          generates a beta random deviate.
+        </li>
+        <li>
+          <a href = "r8_chi_pdf.py">r8_chi_pdf.py</a>,
+          evaluates the PDF of a chi square distribution.
+        </li>
+        <li>
+          <a href = "r8_chi_sample.py">r8_chi_sample.py</a>,
+          generates a chi square random deviate.
+        </li>
+        <li>
+          <a href = "r8_choose.py">r8_choose.py</a>,
+          computes the binomial coefficient C(N,K) as an R8.
+        </li>
+        <li>
+          <a href = "r8_exponential_01_pdf.py">r8_exponential_01_pdf.py</a>,
+          PDF of a standard exponential distribution.
+        </li>
+        <li>
+          <a href = "r8_exponential_01_sample.py">r8_exponential_01_sample.py</a>,
+          samples the standard exponential PDF.
+        </li>
+        <li>
+          <a href = "r8_exponential_pdf.py">r8_exponential_pdf.py</a>,
+          PDF of a general exponential distribution.
+        </li>
+        <li>
+          <a href = "r8_exponential_sample.py">r8_exponential_sample.py</a>,
+          samples the general exponential PDF.
+        </li>
+        <li>
+          <a href = "r8_gamma_01_pdf.py">r8_gamma_01_pdf.py</a>,
+          evaluates the PDF of a standard gamma distribution.
+        </li>
+        <li>
+          <a href = "r8_gamma_01_sample.py">r8_gamma_01_sample.py</a>,
+          samples the standard gamma distribution.
+        </li>
+        <li>
+          <a href = "r8_gamma_log.py">r8_gamma_log.py</a>,
+          evaluates the logarithm of the gamma function.
+        </li>
+        <li>
+          <a href = "r8_gamma_pdf.py">r8_gamma_pdf.py</a>,
+          evaluates the PDF of a gamma distribution.
+        </li>
+        <li>
+          <a href = "r8_gamma_sample.py">r8_gamma_sample.py</a>,
+          generates a gamma random deviate.
+        </li>
+        <li>
+          <a href = "r8_invchi_pdf.py">r8_invchi_pdf.py</a>,
+          evaluates the PDF of an inverse chi-squared distribution.
+        </li>
+        <li>
+          <a href = "r8_invchi_sample.py">r8_invchi_sample.py</a>,
+          samples an inverse chi-squared distribution.
+        </li>
+        <li>
+          <a href = "r8_invgam_pdf.py">r8_invgam_pdf.py</a>,
+          evaluates the PDF of an inverse gamma distribution.
+        </li>
+        <li>
+          <a href = "r8_invgam_sample.py">r8_invgam_sample.py</a>,
+          samples an inverse gamma distribution.
+        </li>
+        <li>
+          <a href = "r8_normal_01_pdf.py">r8_normal_01_pdf.py</a>,
+          evaluates the PDF of a standard normal distribution.
+        </li>
+        <li>
+          <a href = "r8_normal_01_sample.py">r8_normal_01_sample.py</a>,
+          returns a unit pseudonormal R8.
+        </li>
+        <li>
+          <a href = "r8_normal_pdf.py">r8_normal_pdf.py</a>,
+          evaluates the PDF of a normal distribution.
+        </li>
+        <li>
+          <a href = "r8_normal_sample.py">r8_normal_sample.py</a>,
+          generates a normal random deviate.
+        </li>
+        <li>
+          <a href = "r8_scinvchi_pdf.py">r8_scinvchi_pdf.py</a>,
+          PDF for a scaled inverse chi square distribution.
+        </li>
+        <li>
+          <a href = "r8_scinvchi_sample.py">r8_scinvchi_sample.py</a>,
+          sample a scaled inverse chi square distribution.
+        </li>
+        <li>
+          <a href = "r8_uniform_01_pdf.py">r8_uniform_01_pdf.py</a>,
+          evaluates the PDF of a standard uniform distribution.
+        </li>
+        <li>
+          <a href = "r8_uniform_01_sample.py">r8_uniform_01_sample.py</a>,
+          generates a uniform random deviate from [0,1].
+        </li>
+        <li>
+          <a href = "r8_uniform_ab.py">r8_uniform_ab.py</a>,
+          returns a scaled pseudorandom R8.
+        </li>
+        <li>
+          <a href = "r8_uniform_pdf.py">r8_uniform_pdf.py</a>,
+          evaluates the PDF of a uniform distribution.
+        </li>
+        <li>
+          <a href = "r8_uniform_sample.py">r8_uniform_sample.py</a>,
+          generates a uniform random deviate.
+        </li>
+        <li>
+          <a href = "r8ge.py">r8ge.py</a>, 
+          functions to apply to a matrix stored in the R8GE format
+          used for general matrices.
+        </li>
+        <li>
+          <a href = "r8mat_norm_fro_affine.py">r8mat_norm_fro_affine.py</a>,
+          returns the Frobenius norm of the difference of two R8MAT's.
+        </li>
+        <li>
+          <a href = "r8mat_uniform_01.py">r8mat_uniform_01.py</a>,
+          returns a unit pseudorandom R8MAT.
+        </li>
+        <li>
+          <a href = "r8po.py">r8po.py</a>, 
+          functions to apply to a matrix stored in the R8PO format
+          used for positive definite symmetric matrices.
+        </li>
+        <li>
+          <a href = "r8ut.py">r8ut.py</a>, 
+          functions to apply to a matrix stored in the R8UT format
+          used for upper triangular matrices.
+        </li>
+        <li>
+          <a href = "r8vec_indicator1.py">r8vec_indicator1.py</a>,
+          sets an R8VEC to the indicator1 vector.
+        </li>
+        <li>
+          <a href = "r8vec_multinormal_pdf.py">r8vec_multinormal_pdf.py</a>,
+          evaluates a multivariate normal PDF.
+        </li>
+        <li>
+          <a href = "r8vec_multinormal_sample.py">r8vec_multinormal_sample.py</a>,
+          samples a multivariate normal PDF.
+        </li>
+        <li>
+          <a href = "r8vec_norm.py">r8vec_norm.py</a>,
+          computes the L2 norm of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_print.py">r8vec_print.py</a>,
+          prints an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_01.py">r8vec_uniform_01.py</a>,
+          returns a random R8VEC with values in [0,1].
+        </li>
+        <li>
+          <a href = "r8vec_uniform_ab.py">r8vec_uniform_ab.py</a>,
+          returns a random R8VEC with values in [A,B].
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>
+          prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      RNGLIB Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "antithetic_get.py">antithetic_get.py</a>
+          queries the antithetic value for a given generator.
+        </li>
+        <li>
+          <a href = "antithetic_memory.py">antithetic_memory.py</a>
+          stores the antithetic value for all generators.
+        </li>
+        <li>
+          <a href = "antithetic_set.py">antithetic_set.py</a>
+          sets the antithetic value for a given generator.
+        </li>
+        <li>
+          <a href = "cg_get.py">cg_get.py</a>
+          queries the CG values for a given generator.
+        </li>
+        <li>
+          <a href = "cg_memory.py">cg_memory.py</a>
+          stores the CG values for all generators.
+        </li>
+        <li>
+          <a href = "cg_set.py">cg_set.py</a>
+          sets the CG values for a given generator.
+        </li>
+        <li>
+          <a href = "cgn_get.py">cgn_get.py</a>
+          gets the current generator index.
+        </li>
+        <li>
+          <a href = "cgn_memory.py">cgn_memory.py</a>
+          stores the current generator index.
+        </li>
+        <li>
+          <a href = "cgn_set.py">cgn_set.py</a>
+          sets the current generator index.
+        </li>
+        <li>
+          <a href = "i4_uni.py">i4_uni.py</a>
+          generates a random positive integer.
+        </li>
+        <li>
+          <a href = "ig_get.py">ig_get.py</a>
+          queries the IG values for a given generator.
+        </li>
+        <li>
+          <a href = "ig_memory.py">ig_memory.py</a>
+          stores the IG values for all generators.
+        </li>
+        <li>
+          <a href = "ig_set.py">ig_set.py</a>
+          sets the IG values for a given generator.
+        </li>
+        <li>
+          <a href = "init_generator.py">init_generator.py</a>
+          sets the state of generator G to initial, last or new seed.
+        </li>
+        <li>
+          <a href = "initialize.py">initialize.py</a>
+          initializes the random number library.
+        </li>
+        <li>
+          <a href = "initialized_get.py">initialized_get.py</a>
+          queries the INITIALIZED value.
+        </li>
+        <li>
+          <a href = "initialized_memory.py">initialized_memory.py</a>
+          stores the INITIALIZED value.
+        </li>
+        <li>
+          <a href = "initialized_set.py">initialized_set.py</a>
+          sets the INITIALIZED value.
+        </li>
+        <li>
+          <a href = "lg_get.py">lg_get.py</a>
+          queries the LG values for a given generator.
+        </li>
+        <li>
+          <a href = "lg_memory.py">lg_memory.py</a>
+          stores the LG values for all generators.
+        </li>
+        <li>
+          <a href = "lg_set.py">lg_set.py</a>
+          sets the LG values for a given generator.
+        </li>
+        <li>
+          <a href = "multmod.py">multmod.py</a>
+          carries out modular multiplication.
+        </li>
+        <li>
+          <a href = "r8_uni_01.py">r8_uni_01.py</a>
+          returns a uniform random real number in [0,1].
+        </li>
+        <li>
+          <a href = "set_initial_seed.py">set_initial_seed.py</a>
+          resets the initial seed and state for all generators.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "pdflib.py">pdflib.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "pdflib.sh">pdflib.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "pdflib.txt">pdflib.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

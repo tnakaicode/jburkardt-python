@@ -1,0 +1,356 @@
+<html>
+
+  <head>
+    <title>
+      EXACTNESS - Exactness of Quadrature Rules
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      EXACTNESS <br> Exactness of Quadrature Rules
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>EXACTNESS</b>,
+      a Python library which
+      investigates the exactness of quadrature rules that estimate the
+      integral of a function with a density, such as 1, exp(-x) or
+      exp(-x^2), over an interval such as [-1,+1], [0,+oo) or (-oo,+oo).
+    </p>
+
+    <p>
+      A 1D quadrature rule estimates I(f), the integral of a function f(x)
+      over an interval [a,b] with density rho(x):
+      <pre>
+        I(f) = integral ( a < x < b ) f(x) rho(x) dx
+      </pre>
+      by a n-point quadrature rule of weights w and points x:
+      <pre>
+        Q(f) = sum ( 1 <= i <= n ) w(i) f(x(i))
+      </pre>
+    </p>
+
+    <p>
+      Most quadrature rules come in a family of various sizes.  A quadrature
+      rule of size n is said to have exactness p if it is true that the
+      quadrature estimate is exactly equal to the exact integral for every
+      monomial (and hence, polynomial) whose degree is p or less.
+    </p>
+
+    <p>
+      This program allows the user to specify a quadrature rule, a size n,
+      and a degree p_max.  It then computes and compares the exact integral
+      and quadrature estimate for monomials of degree 0 through p_max, so
+      that the user can analyze the results.
+    </p>
+
+    <p>
+      Common densities include:
+      <ul>
+        <li>
+          Chebyshev Type 1 density 1/sqrt(1-x^2), over [-1,+1],
+        </li>
+        <li>
+          Chebyshev Type 2 density sqrt(1-x^2), over [-1,+1].
+        </li>
+        <li>
+          Gegenbauer density (1-x^2)^(lambda-1/2), over [-1,+1].
+        </li>
+        <li>
+          Hermite (physicist) density 1/sqrt(pi) exp(-x^2), over (-oo,+oo).
+        </li>
+        <li>
+          Hermite (probabilist) density 1/sqrt(2*pi) exp(-x^2/2), over (-oo,+oo).
+        </li>
+        <li>
+          Hermite (unit) density 1, over (-oo,+oo).
+        </li>
+        <li>
+          Jacobi density (1-x)^alpha*(1+x)^beta, over [-1,+1].
+        </li>
+        <li>
+          Laguerre (standard) density exp(-1), over [0,+oo).
+        </li>
+        <li>
+          Laguerre (unit) density 1, over [0,+oo).
+        </li>
+        <li>
+          Legendre density 1, over [-1,+1].
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Common quadrature rules include:
+      <ul>
+        <li>
+          Clenshaw-Curtis quadrature for Legendre density, 
+          exactness = n - 1;
+        </li>
+        <li>
+          Fejer Type 1 quadrature for Legendre density, 
+          exactness = n - 1;
+        </li>
+        <li>
+          Fejer Type 2 quadrature for Legendre density, 
+          exactness = n - 1;
+        </li>
+        <li>
+          Gauss-Chebyshev Type 1 quadrature, exactness = 2 * n - 1;
+        </li>
+        <li>
+          Gauss-Chebyshev Type 2 quadrature, exactness = 2 * n - 1;
+        </li>
+        <li>
+          Gauss-Gegenbauer quadrature, exactness = 2 * n - 1;
+        </li>
+        <li>
+          Gauss-Hermite quadrature, exactness = 2 * n - 1;
+        </li>
+        <li>
+          Gauss-Laguerre quadrature, exactness = 2 * n - 1;
+        </li>
+        <li>
+          Gauss-Legendre quadrature, exactness = 2 * n - 1;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>EXACTNESS</b> is available in
+      <a href = "../../c_src/exactness/exactness.html">a C version</a> and
+      <a href = "../../cpp_src/exactness/exactness.html">a C++ version</a> and
+      <a href = "../../f_src/exactness/exactness.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/exactness/exactness.html">a MATLAB version</a> and
+      <a href = "../../py_src/exactness/exactness.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/quadrule/quadrule.html">
+      QUADRULE</a>,
+      a Python library which
+      defines quadrature rules for approximating an integral over a 1D domain.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Philip Davis, Philip Rabinowitz,<br>
+          Methods of Numerical Integration,<br>
+          Second Edition,<br>
+          Dover, 2007,<br>
+          ISBN: 0486453391,<br>
+          LC: QA299.3.D28.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "chebyshev1_exactness.py">chebyshev1_exactness.py</a>, 
+          monomial exactness for the Chebyshev1 integral.
+        </li>
+        <li>
+          <a href = "chebyshev1_integral.py">chebyshev1_integral.py</a>, 
+          evaluates a monomial Chebyshev1 integral.
+        </li>
+        <li>
+          <a href = "chebyshev1_set.py">chebyshev1_set.py</a>,
+          sets a Chebyshev Type 1 rule.
+        </li>
+        <li>
+          <a href = "chebyshev2_exactness.py">chebyshev2_exactness.py</a>, 
+          monomial exactness for the Chebyshev2 integral.
+        </li>
+        <li>
+          <a href = "chebyshev2_integral.py">chebyshev2_integral.py</a>, 
+          evaluates a monomial Chebyshev2 integral.
+        </li>
+        <li>
+          <a href = "chebyshev2_set.py">chebyshev2_set.py</a>,
+          sets a Chebyshev Type 2 rule.
+        </li>
+        <li>
+          <a href = "chebyshev3_exactness.py">chebyshev3_exactness.py</a>, 
+          monomial exactness for the Chebyshev1 integral with Chebyshev3 quadrature.
+        </li>
+        <li>
+          <a href = "chebyshev3_set.py">chebyshev3_set.py</a>,
+          sets a Chebyshev Type 3 rule.
+        </li>
+        <li>
+          <a href = "clenshaw_curtis_exactness.py">clenshaw_curtis_exactness.py</a>, 
+          monomial exactness for the Legendre integral with Clenshaw-Curtis quadrature.
+        </li>
+        <li>
+          <a href = "clenshaw_curtis_set.py">clenshaw_curtis_set.py</a>,
+          sets a Clenshaw-Curtis rule.
+        </li>
+        <li>
+          <a href = "fejer1_exactness.py">fejer1_exactness.py</a>, 
+          monomial exactness for the Legendre integral with Fejer Type 1 quadrature.
+        </li>
+        <li>
+          <a href = "fejer1_set.py">fejer1_set.py</a>,
+          sets a Fejer type 1 rule.
+        </li>
+        <li>
+          <a href = "fejer2_exactness.py">fejer2_exactness.py</a>, 
+          monomial exactness for the Legendre integral with Fejer Type 2 quadrature.
+        </li>
+        <li>
+          <a href = "fejer2_set.py">fejer2_set.py</a>,
+          sets a Fejer type 2 rule.
+        </li>
+        <li>
+          <a href = "gamma_values.py">gamma_values.py</a>,
+          returns selected values of the gamma function.
+        </li>
+        <li>
+          <a href = "gegenbauer_exactness.py">gegenbauer_exactness.py</a>, 
+          monomial exactness for the Gegenbauer integral.
+        </li>
+        <li>
+          <a href = "gegenbauer_integral.py">gegenbauer_integral.py</a>, 
+          evaluates a monomial Gegenbauer integral.
+        </li>
+        <li>
+          <a href = "hermite_1_exactness.py">hermite_1_exactness.py</a>, 
+          monomial exactness for the Hermite 1 integral.
+        </li>
+        <li>
+          <a href = "hermite_1_set.py">hermite_1_set.py</a>,
+          sets a Gauss-Hermite rule for density 1.
+        </li>
+        <li>
+          <a href = "hermite_exactness.py">hermite_exactness.py</a>, 
+          monomial exactness for the Hermite integral.
+        </li>
+        <li>
+          <a href = "hermite_integral.py">hermite_integral.py</a>, 
+          evaluates a monomial Hermite integral.
+        </li>
+        <li>
+          <a href = "hermite_set.py">hermite_set.py</a>,
+          sets a Gauss-Hermite rule for density exp(-x^2).
+        </li>
+        <li>
+          <a href = "laguerre_1_exactness.py">laguerre_1_exactness.py</a>, 
+          monomial exactness for the Laguerre 1 integral.
+        </li>
+        <li>
+          <a href = "laguerre_1_set.py">laguerre_1_set.py</a>,
+          sets a Gauss-Laguerre rule for density 1.
+        </li>
+        <li>
+          <a href = "laguerre_exactness.py">laguerre_exactness.py</a>, 
+          monomial exactness for the Laguerre integral.
+        </li>
+        <li>
+          <a href = "laguerre_integral.py">laguerre_integral.py</a>, 
+          evaluates a monomial Laguerre integral.
+        </li>
+        <li>
+          <a href = "laguerre_set.py">laguerre_set.py</a>,
+          sets a Gauss-Laguerre rule for density exp(-x).
+        </li>
+        <li>
+          <a href = "legendre_exactness.py">legendre_exactness.py</a>, 
+          monomial exactness for the Legendre integral.
+        </li>
+        <li>
+          <a href = "legendre_integral.py">legendre_integral.py</a>, 
+          evaluates a monomial Legendre integral.
+        </li>
+        <li>
+          <a href = "legendre_set.py">legendre_set.py</a>,
+          sets a Gauss-Legendre rule for density 1.
+        </li>
+        <li>
+          <a href = "r8_factorial.py">r8_factorial.py</a>,
+          evaluates the factorial function.
+        </li>
+        <li>
+          <a href = "r8_factorial_values.py">r8_factorial_values.py</a>,
+          returns selected values of the factorial function.
+        </li>
+        <li>
+          <a href = "r8_factorial2.py">r8_factorial2.py</a>,
+          evaluates the double factorial function.
+        </li>
+        <li>
+          <a href = "r8_factorial2_values.py">r8_factorial2_values.py</a>,
+          returns selected values of the double factorial function.
+        </li>
+        <li>
+          <a href = "r8_gamma.py">r8_gamma.py</a>,
+          evaluates the gamma function.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>,
+          prints the YMDHMS date as a timestamp
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "exactness.py">exactness.py</a>,
+          calls all the test.
+        </li>
+        <li>
+          <a href = "exactness.sh">exactness.sh</a>,
+          runs all the test.
+        </li>
+        <li>
+          <a href = "exactness.txt">exactness.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

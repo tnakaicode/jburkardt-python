@@ -1,0 +1,8 @@
+Tue Jan 28 08:24:50 2020
+
+NAS
+  Python version: 3.6.9
+  The NAS kernel benchmark programy.
+
+ Program          Error         FP Ops     Seconds      MFLOPS
+

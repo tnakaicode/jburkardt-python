@@ -1,0 +1,99 @@
+Sat Jan 18 12:01:38 2020
+
+BLACK_SCHOLES_TEST
+  Python version: 3.6.9
+  Test the BLACK_SCHOLES library.
+
+ASSET_PATH_TEST:
+  Demonstrate the simulation of an asset price path.
+
+  The asset price at time 0,     S0    = 2.000000
+  The asset expected growth rate MU    = 0.100000
+  The asset volatility           SIGMA = 0.300000
+  The expiry date                T1    = 1.000000
+  The number of time steps       N     = 100
+  Figure saved as "asset_path.png"
+
+  Partial results:
+
+       0               2
+       1         2.06019
+       2         2.04319
+       3         1.98666
+       4         1.93806
+       5         1.88336
+       6         1.86014
+       7         1.85734
+  ......  ..............
+     100         1.39894
+
+  Full results written to "asset_path.txt".
+
+BINOMIAL_TEST:
+  A demonstration of the binomial method
+  for option valuation.
+
+  The asset price at time 0, S0    = 2.000000
+  The exercise price         E     = 1.000000
+  The interest rate          R     = 0.050000
+  The asset volatility       SIGMA = 0.250000
+  The expiry date            T1    = 3.000000
+  The number of intervals    M     = 256
+
+  The option value is 1.144756
+
+BSF_TEST:
+  A demonstration of the Black-Scholes formula
+  for option valuation.
+
+  The asset price at time T0, S0    = 2.000000
+  The time                    T0    = 0.000000
+  The exercise price          E     = 1.000000
+  The interest rate           R     = 0.050000
+  The asset volatility        SIGMA = 0.250000
+  The expiry date             T1    = 3.000000
+
+  The option value C = 1.144743
+
+FORWARD_TEST:
+  A demonstration of the forward difference method
+  for option valuation.
+
+  The exercise price        E =     4
+  The interest rate         R =     0.03
+  The asset volatility      SIGMA = 0.5
+  The expiry date           T1 =    1
+  The number of space steps NX =    11
+  The number of time steps  NT =    29
+  The value of              SMAX =  10
+
+       Initial          Option
+       Value            Value
+
+               1      0.00139363
+               2       0.0373367
+               3        0.223638
+               4         0.62721
+               5         1.20992
+               6         1.91439
+               7         2.69543
+               8         3.52261
+               9         4.37638
+              10         5.24428
+
+MC_TEST:
+  A demonstration of the Monte Carlo method
+  for option valuation.
+
+  The asset price at time 0, S0    = 2.000000
+  The exercise price         E     = 1.000000
+  The interest rate          R     = 0.050000
+  The asset volatility       SIGMA = 0.250000
+  The expiry date            T1    = 3.000000
+  The number of simulations  M     = 1000000
+
+  The confidence interval is [ 1.143245, 1.146774 ]
+
+BLACK_SCHOLES_TEST
+  Normal end of execution.
+Sat Jan 18 12:01:45 2020

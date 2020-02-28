@@ -1,0 +1,2986 @@
+Thu Sep 13 09:31:14 2018
+
+GEOMETRY_TEST
+  Python version: 3.6.5
+  Test the GEOMETRY library.
+
+ANGLE_DEGREE_TEST:
+  Python version: 3.6.5
+  ANGLE_DEGREE computes an angle;
+
+           X           Y       Theta  atan2(y,x)  ANGLE_DEGREE
+
+    1.000000    0.000000    0.000000    0.000000    0.000000
+    0.866025    0.500000   30.000000   30.000000   30.000000
+    0.500000    0.866025   60.000000   60.000000   60.000000
+    0.000000    1.000000   90.000000   90.000000   90.000000
+   -0.500000    0.866025  120.000000  120.000000  120.000000
+   -0.866025    0.500000  150.000000  150.000000  150.000000
+   -1.000000    0.000000  180.000000  180.000000  180.000000
+   -0.866025   -0.500000  210.000000  -150.000000  210.000000
+   -0.500000   -0.866025  240.000000  -120.000000  240.000000
+   -0.000000   -1.000000  270.000000  -90.000000  270.000000
+    0.500000   -0.866025  300.000000  -60.000000  300.000000
+    0.866025   -0.500000  330.000000  -30.000000  330.000000
+    1.000000   -0.000000  360.000000   -0.000000  360.000000
+
+ANGLE_HALF_TEST:
+  Python version: 3.6.5
+  ANGLE_HALF is given P1, P2, P3, forming an angle;
+  It finds P4 so P4, P2, P3 is half the angle.
+
+  Original Angle    Half Angle
+
+    0.000000    0.000000
+    0.523599    0.261799
+    1.047198    0.523599
+    1.570796    0.785398
+    2.094395    1.047198
+    2.617994    1.308997
+    3.141593    1.570796
+    3.665191    4.974188
+    4.188790    5.235988
+    4.712389    5.497787
+    5.235988    5.759587
+    5.759587    6.021386
+    6.283185    6.283185
+
+ANGLE_RADIAN_TEST:
+  Python version: 3.6.5
+  ANGLE_RADIAN computes an angle in radians;
+
+           X           Y       Theta  atan2(y,x)  ANGLE_RADIAN
+
+    1.000000    0.000000    0.000000    0.000000    0.000000
+    0.866025    0.500000   30.000000    0.523599    0.523599
+    0.500000    0.866025   60.000000    1.047198    1.047198
+    0.000000    1.000000   90.000000    1.570796    1.570796
+   -0.500000    0.866025  120.000000    2.094395    2.094395
+   -0.866025    0.500000  150.000000    2.617994    2.617994
+   -1.000000    0.000000  180.000000    3.141593    3.141593
+   -0.866025   -0.500000  210.000000   -2.617994    3.665191
+   -0.500000   -0.866025  240.000000   -2.094395    4.188790
+   -0.000000   -1.000000  270.000000   -1.570796    4.712389
+    0.500000   -0.866025  300.000000   -1.047198    5.235988
+    0.866025   -0.500000  330.000000   -0.523599    5.759587
+    1.000000   -0.000000  360.000000   -0.000000    6.283185
+
+BALL01_VOLUME_TEST
+  Python version: 3.6.5
+  BALL01_VOLUME returns the volume of the unit ball.
+
+  BALL01_VOLUME() = 4.18879
+
+BALL01_VOLUME_TEST
+  Normal end of execution.
+
+CIRCLE_AREA_TEST
+  CIRCLE_AREA computes the area of a circle of radius R.
+
+      R            Area
+
+    1.000000    3.141593
+    2.000000   12.566371
+    4.000000   50.265482
+    8.000000  201.061930
+
+CIRCLE_IMP_POINT_DIST_2D_TEST
+  CIRCLE_IMP_POINT_DIST_2D checks, by finding the
+  distance D from a point (X,Y) to a circle.
+
+  Circle has center (0.000000,0.000000) and radius 5.000000
+
+       X       Y       D
+
+   -5.6316    9.1264    5.7241
+    6.5902    1.2339    1.7047
+   -1.6939   -8.6776    3.8414
+   -4.8484   -7.8009    4.1848
+   -9.1234    2.6793    4.5087
+   -8.7655   -1.0092    3.8234
+   -1.9739    5.0935    0.4626
+    5.9457   -9.9632    6.6025
+    7.9501   -2.9850    3.4920
+   -8.1091   -9.7277    7.6643
+
+CIRCLE_IMP_PRINT_2D_TEST
+  CIRCLE_IMP_PRINT_2D prints a circle definition.
+
+  An example circle:
+
+  Radius = 2.000000
+  Center = ( 5.000000,  -2.000000 )
+
+CIRCLE_LUNE_ANGLE_BY_HEIGHT_2D_TEST
+  CIRCLE_LUNE_ANGLE_BY_HEIGHT_2D computes the angle of a
+  circular lune based on the "height" of the circular triangle.
+
+      R            H        Angle
+
+    2.000000   -2.000000    6.283185
+    2.000000   -1.666667    5.111814
+    2.000000   -1.333333    4.601048
+    2.000000   -1.000000    4.188790
+    2.000000   -0.666667    3.821266
+    2.000000   -0.333333    3.476489
+    2.000000    0.000000    3.141593
+    2.000000    0.333333    2.806696
+    2.000000    0.666667    2.461919
+    2.000000    1.000000    2.094395
+    2.000000    1.333333    1.682137
+    2.000000    1.666667    1.171371
+    2.000000    2.000000    0.000000
+
+CIRCLE_LUNE_AREA_BY_ANGLE_2D_TEST
+  CIRCLE_LUNE_AREA_BY_ANGLE_2D computes the area of a
+  circular lune, defined by joining the endpoints
+  of a circular arc.
+
+      R            Theta1      Theta2        Area
+
+    2.000000    0.000000    0.000000    0.000000
+    2.000000    0.000000    0.523599    0.047198
+    2.000000    0.000000    1.047198    0.362344
+    2.000000    0.000000    1.570796    1.141593
+    2.000000    0.000000    2.094395    2.456739
+    2.000000    0.000000    2.617994    4.235988
+    2.000000    0.000000    3.141593    6.283185
+    2.000000    0.000000    3.665191    8.330383
+    2.000000    0.000000    4.188790   10.109631
+    2.000000    0.000000    4.712389   11.424778
+    2.000000    0.000000    5.235988   12.204026
+    2.000000    0.000000    5.759587   12.519173
+    2.000000    0.000000    6.283185   12.566371
+
+CIRCLE_LUNE_AREA_BY_HEIGHT_2D_TEST
+  CIRCLE_LUNE_AREA_BY_HEIGHT_2D computes the area of a
+  circular lune based on the "height" of the circular triangle.
+
+      R            H        Area
+
+    2.000000   -2.000000   12.566371
+    2.000000   -1.666667   12.066198
+    2.000000   -1.333333   11.189712
+    2.000000   -1.000000   10.109631
+    2.000000   -0.666667    8.899612
+    2.000000   -0.333333    7.610320
+    2.000000    0.000000    6.283185
+    2.000000    0.333333    4.956051
+    2.000000    0.666667    3.666759
+    2.000000    1.000000    2.456739
+    2.000000    1.333333    1.376659
+    2.000000    1.666667    0.500173
+    2.000000    2.000000    0.000000
+
+CIRCLE_LUNE_HEIGHT_BY_ANGLE_2D_TEST
+  CIRCLE_LUNE_HEIGHT_BY_ANGLE_2D computes the height of
+  the triangle of a circular lune, given the subtended angle.
+
+      R            Angle        Height
+
+    2.000000    0.000000    2.000000
+    2.000000    0.523599    1.931852
+    2.000000    1.047198    1.732051
+    2.000000    1.570796    1.414214
+    2.000000    2.094395    1.000000
+    2.000000    2.617994    0.517638
+    2.000000    3.141593    0.000000
+    2.000000    3.665191   -0.517638
+    2.000000    4.188790   -1.000000
+    2.000000    4.712389   -1.414214
+    2.000000    5.235988   -1.732051
+    2.000000    5.759587   -1.931852
+    2.000000    6.283185   -2.000000
+
+CIRCLE_SECTOR_AREA_2D_TEST
+  CIRCLE_SECTOR__AREA2D computes the area of a
+  circular sector, defined by joining the endpoints
+  of a circular arc.
+
+      R            Theta1      Theta2        Area
+
+    2.000000    0.000000    0.000000    0.000000
+    2.000000    0.000000    0.523599    1.047198
+    2.000000    0.000000    1.047198    2.094395
+    2.000000    0.000000    1.570796    3.141593
+    2.000000    0.000000    2.094395    4.188790
+    2.000000    0.000000    2.617994    5.235988
+    2.000000    0.000000    3.141593    6.283185
+    2.000000    0.000000    3.665191    7.330383
+    2.000000    0.000000    4.188790    8.377580
+    2.000000    0.000000    4.712389    9.424778
+    2.000000    0.000000    5.235988   10.471976
+    2.000000    0.000000    5.759587   11.519173
+    2.000000    0.000000    6.283185   12.566371
+
+CIRCLE_TRIANGLE_AREA_2D_TEST
+  CIRCLE_TRIANGLE_AREA_2D computes the area of a
+  circular triangle.
+
+      R            Theta1      Theta2        Area
+
+    2.000000    0.000000    0.000000    0.000000
+    2.000000    0.000000    0.523599    1.000000
+    2.000000    0.000000    1.047198    1.732051
+    2.000000    0.000000    1.570796    2.000000
+    2.000000    0.000000    2.094395    1.732051
+    2.000000    0.000000    2.617994    1.000000
+    2.000000    0.000000    3.141593    0.000000
+    2.000000    0.000000    3.665191   -1.000000
+    2.000000    0.000000    4.188790   -1.732051
+    2.000000    0.000000    4.712389   -2.000000
+    2.000000    0.000000    5.235988   -1.732051
+    2.000000    0.000000    5.759587   -1.000000
+    2.000000    0.000000    6.283185   -0.000000
+
+CIRCLE01_LENGTH_TEST
+  Python version: 3.6.5
+  CIRCLE01_LENGTH returns the length of the unit circle.
+
+  CIRCLE01_LENGTH() = 6.28319
+
+CIRCLE01_LENGTH_TEST
+  Normal end of execution.
+
+CIRCLES_INTERSECT_AREA_2D_TEST
+  CIRCLES_INTERSECT_AREA_2D determines the area of the
+  intersection of two circes of radius R1 and R2,
+  with a distance D between the centers.
+
+      R1      R2       D    Area
+
+  1.000000  0.500000  1.500000  0.000000
+  1.000000  0.500000  1.000000  0.350767
+  1.000000  0.500000  0.500000  0.785398
+  1.000000  1.000000  1.500000  0.453312
+  1.000000  1.000000  1.000000  1.228370
+  1.000000  1.000000  0.000000  3.141593
+
+CIRCLES_INTERSECT_POINTS_2D_TEST
+  CIRCLES_INTERSECT_POINTS_2D determines the intersections of
+  two circles in 2D.
+
+  The first circle:
+
+  Radius = 5.000000
+  Center = ( 0.000000,  0.000000 )
+
+  The second circle:
+
+  Radius = 0.500000
+  Center = ( 5.000000,  5.000000 )
+
+  The circles do not intersect.
+
+  The second circle:
+
+  Radius = 5.000000
+  Center = ( 7.071068,  7.071068 )
+
+  The circles intersect at two points:
+
+    X       Y
+
+  3.535329  3.535739
+  3.535739  3.535329
+
+  The second circle:
+
+  Radius = 3.000000
+  Center = ( 4.000000,  0.000000 )
+
+  The circles intersect at two points:
+
+    X       Y
+
+  4.000000  3.000000
+  4.000000  -3.000000
+
+  The second circle:
+
+  Radius = 3.000000
+  Center = ( 6.000000,  0.000000 )
+
+  The circles intersect at two points:
+
+    X       Y
+
+  4.333333  2.494438
+  4.333333  -2.494438
+
+  The second circle:
+
+  Radius = 5.000000
+  Center = ( 0.000000,  0.000000 )
+
+  The circles coincide (infinite intersection).
+
+CONE_VOLUME_TEST
+  CONE_VOLUME computes the volume of a cone.
+
+        R        H        ConeVolume
+
+      1.00000000      1.00000000      1.04719755
+      1.00000000      2.00000000      2.09439510
+      1.00000000      4.00000000      4.18879020
+      1.00000000      8.00000000      8.37758041
+      1.00000000     16.00000000     16.75516082
+
+      1.00000000      1.00000000      1.04719755
+      2.00000000      1.00000000      4.18879020
+      4.00000000      1.00000000     16.75516082
+      8.00000000      1.00000000     67.02064328
+     16.00000000      1.00000000    268.08257311
+
+CONE_VOLUME_TEST
+  Normal end of execution.
+
+CUBE01_VOLUME_TEST
+  Python version: 3.6.5
+  CUBE01_VOLUME returns the volume of the unit cube.
+
+  CUBE01_VOLUME() = 1
+
+CUBE01_VOLUME_TEST
+  Normal end of execution.
+
+DEGREES_TO_RADIANS_TEST
+  DEGREES_TO_RADIANS converts an angle from degrees
+  to radians;
+
+  Degrees     Radians     Degrees
+
+  -60.000000   -1.047198  -60.000000
+  -30.000000   -0.523599  -30.000000
+    0.000000    0.000000    0.000000
+   30.000000    0.523599   30.000000
+   60.000000    1.047198   60.000000
+   90.000000    1.570796   90.000000
+  120.000000    2.094395  120.000000
+  150.000000    2.617994  150.000000
+  180.000000    3.141593  180.000000
+  210.000000    3.665191  210.000000
+  240.000000    4.188790  240.000000
+  270.000000    4.712389  270.000000
+  300.000000    5.235988  300.000000
+  330.000000    5.759587  330.000000
+  360.000000    6.283185  360.000000
+  390.000000    6.806784  390.000000
+  420.000000    7.330383  420.000000
+
+DISK01_AREA_TEST
+  Python version: 3.6.5
+  DISK01_AREA returns the area of the unit disk.
+
+  DISK01_AREA() = 3.14159
+
+DISK01_AREA_TEST
+  Normal end of execution.
+
+DISK01_QUARTER_AREA_TEST
+  Python version: 3.6.5
+  DISK01_QUARTER_AREA returns the area of the unit quarter disk.
+
+  DISK01_QUARTER_AREA() = 0.785398
+
+DISK01_QUARTER_AREA_TEST
+  Normal end of execution.
+
+ELLIPSE_AREA1_TEST
+  Python version: 3.6.5
+  ELLIPSE_AREA1 computes the area of an ellipse.
+
+  R = 10
+
+  Matrix A in ellipse definition x*A*x=r^2
+
+  Col:       0             1       
+  Row
+      0 :           5             1  
+      1 :           1             2  
+  Area = 104.72
+
+ELLIPSE_AREA1_TEST
+  Normal end of execution.
+
+ELLIPSE_AREA2_TEST
+  Python version: 3.6.5
+  ELLIPSE_AREA2 computes the area of an ellipse.
+
+  Ellipse: 5 * x^2 + 2 * xy + 2 * y^2 = 10
+  Area = 104.72
+
+ELLIPSE_AREA2_TEST
+  Normal end of execution.
+
+ELLIPSE_AREA3_TEST
+  Python version: 3.6.5
+  ELLIPSE_AREA3 computes the area of an ellipse.
+
+  Ellipse: (x/10)^2 + (y/3.33333)^2 = 1
+  Area = 104.72
+
+ELLIPSE_AREA3_TEST
+  Normal end of execution.
+
+ELLIPSE_POINT_NEAR_TEST:
+  ELLIPSE_POINT_NEAR is given a point P, and
+  finds the nearest point PN on an ellipse in 2D.
+
+  The ellipse is (X/A)^2 + (Y/B)^2 = 1
+
+  A = 3.000000
+  B = 2.000000
+
+           P                PN
+
+   -1.200000    3.900000     -0.823689    1.923138
+   -0.800000    3.600000     -0.583461    1.961810
+   -0.400000    3.300000     -0.309401    1.989335
+    0.000000    3.000000      0.000000    2.000000
+    0.400000    2.700000      0.344958    1.986734
+    0.800000    2.400000      0.723898    1.940902
+    1.200000    2.100000      1.132592    1.851994
+    1.600000    1.800000      1.562334    1.707384
+    2.000000    1.500000      1.995923    1.493138
+    2.400000    1.200000      2.400000    1.200000
+    2.800000    0.900000      2.719790    0.843996
+    3.200000    0.600000      2.908697    0.489662
+    3.600000    0.300000      2.984218    0.204879
+    4.000000    0.000000      3.000000    0.000000
+    4.400000   -0.300000      2.992027   -0.145716
+    4.800000   -0.600000      2.976051   -0.252210
+    5.200000   -0.900000      2.958199   -0.332704
+
+ELLIPSE_POINT_NEAR_TEST
+  Normal end of execution.
+
+ELLIPSOID_VOLUME_TEST
+  Python version: 3.6.5
+  ELLIPSOID_VOLUME computes the volume of the ellipsoid
+    (X-V)' * A * (X-V) <= R * R.
+
+  M = 3
+
+  A:
+
+  Col:       0             1             2       
+  Row
+      0 :           9             3             3  
+      1 :           3             5             3  
+      2 :           3             3             3  
+
+  V:
+
+     0:             2
+     1:             3
+     2:             1
+
+  Volume =       0.698132
+
+ELLIPSOID_VOLUME_TEST
+  Normal end of execution.
+
+HYPERBALL01_VOLUME_TEST
+  Python version: 3.6.5
+  HYPERBALL01_VOLUME returns the volume of the unit hyperball
+  in M dimensions.
+
+   M  Volume
+
+   1  2
+   2  3.14159
+   3  4.18879
+   4  4.9348
+   5  5.26379
+   6  5.16771
+   7  4.72477
+   8  4.05871
+   9  3.29851
+  10  2.55016
+
+HYPERBALL01_VOLUME_TEST
+  Normal end of execution.
+
+HYPERCUBE01_VOLUME_TEST
+  Python version: 3.6.5
+  HYPERCUBE01_VOLUME returns the volume of the unit hypercube
+  in M dimensions.
+
+  HYPERCUBE01_VOLUME(3) = 1
+
+HYPERCUBE01_VOLUME_TEST
+  Normal end of execution.
+
+HYPERSPHERE01_AREA_TEST
+  Python version: 3.6.5
+  HYPERSPHERE01_AREA returns the volume of the unit hypersphere.
+
+   M  Area
+
+   1  2
+   2  6.28319
+   3  12.5664
+   4  19.7392
+   5  26.3189
+   6  31.0063
+   7  33.0734
+   8  32.4697
+   9  29.6866
+  10  25.5016
+
+HYPERSPHERE01_AREA_TEST
+  Normal end of execution.
+
+I4_MODP_TEST
+  Python version: 3.6.5
+  I4_MODP factors a number
+  into a multiple M and a positive remainder R.
+
+    Number   Divisor  Multiple Remainder
+
+       107        50         2         7
+       107       -50        -2         7
+      -107        50        -3        43
+      -107       -50         3        43
+
+  Repeat using Python % Operator:
+
+       107        50         2         7
+       107       -50        -3       -43
+      -107        50        -3        43
+      -107       -50         2        -7
+
+I4_MODP_TEST
+  Normal end of execution.
+
+I4_WRAP_TEST
+  Python version: 3.6.5
+  I4_WRAP forces an integer to lie within given limits.
+
+  ILO = 4
+  IHI = 8
+
+     I  I4_WRAP(I)
+
+     -10       5
+      -9       6
+      -8       7
+      -7       8
+      -6       4
+      -5       5
+      -4       6
+      -3       7
+      -2       8
+      -1       4
+       0       5
+       1       6
+       2       7
+       3       8
+       4       4
+       5       5
+       6       6
+       7       7
+       8       8
+       9       4
+      10       5
+      11       6
+      12       7
+      13       8
+      14       4
+      15       5
+      16       6
+      17       7
+      18       8
+      19       4
+      20       5
+
+I4_WRAP_TEST
+  Normal end of execution.
+
+LINE_EXP2IMP_TEST
+  LINE_EXP2IMP converts explicit to implicit lines.
+
+  Implicit line A, B, C = 1.000000  2.000000  3.000000
+
+  The point P1:
+
+     0:          -0.6
+     1:          -1.2
+
+  The point P2:
+
+     0:          -1.2
+     1:          -0.9
+  Recovered A, B, C =  0.238095  0.476190  0.714286
+
+LINE_EXP2IMP_TEST:
+  Normal end of execution.
+
+LINE_EXP_PERP_TEST
+  LINE_EXP_PERP is given an explicit line (P1,P2),
+  and another point P3.  It then finds a point
+  P4 on (P1,P2) so that (P1,P2) is perpendicular
+  to (P3,P4).
+
+  Point P1:
+
+     0:             1
+     1:             3
+
+  Point P2:
+
+     0:             4
+     1:             0
+
+  Point P3:
+
+     0:             0
+     1:             0
+
+  Point P4:
+
+     0:             2
+     1:             2
+
+  Point P3:
+
+     0:             5
+     1:            -1
+
+  Point P4:
+
+     0:             5
+     1:            -1
+
+  Point P3:
+
+     0:             5
+     1:             3
+
+  Point P4:
+
+     0:             3
+     1:             1
+
+LINE_EXP_PERP_TEST:
+  Normal end of execution.
+
+LINES_EXP_INT_TEST
+  LINES_EXP_INT finds intersections of
+  two explicit lines in 2D.
+
+
+  P1  0.000000  2.000000
+  P2  4.000000  0.000000
+
+  Q1  0.000000  -1.000000
+  Q2  1.000000  0.000000
+  Intersection at 2.000000  1.000000
+
+  P1  0.000000  2.000000
+  P2  4.000000  0.000000
+
+  Q1  0.000000  0.250000
+  Q2  0.500000  0.000000
+  Lines are parallel, no intersection.
+
+  P1  0.000000  2.000000
+  P2  4.000000  0.000000
+
+  Q1  0.000000  2.000000
+  Q2  4.000000  0.000000
+  Lines are coincident.
+
+LINE_EXP_INT_TEST:
+  Normal end of execution.
+
+LINES_IMP_INT_TEST
+  LINES_IMP_INT finds the intersection of
+  two lines written in implicit form.
+
+  Line 1 coefficients:  1.000000  2.000000  -4.000000
+  Line 2 coefficients:  1.000000  -1.000000  -1.000000
+  Intersection at 2.000000  1.000000
+
+  Line 1 coefficients:  1.000000  2.000000  -4.000000
+  Line 2 coefficients:  2.000000  4.000000  -1.000000
+  Lines are parallel, no intersection.
+
+  Line 1 coefficients:  1.000000  2.000000  -4.000000
+  Line 2 coefficients:  -3.000000  -6.000000  12.000000
+  Lines are coincident.
+
+LINES_IMP_INT_TEST:
+  Normal end of execution.
+
+POLYGON_ANGLES_TEST
+  Python version: 3.6.5
+  POLYGON_ANGLES computes the angles of a polygon.
+
+  Number of polygonal vertices = 6
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           2             1  
+      3 :           3             0  
+      4 :           3             2  
+      5 :           1             1  
+
+  Polygonal angles in degrees:
+
+         0              45
+         1             135
+         2             270
+         3              45
+         4         63.4349
+         5         161.565
+
+POLYGON_ANGLES_TEST
+  Normal end of execution.
+
+POLYGON_AREA_TEST
+  Python version: 3.6.5
+  POLYGON_AREA computes the area of a polygon.
+
+  Number of polygonal vertices = 4
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :           2             1  
+      2 :           1             2  
+      3 :           0             1  
+
+  Exact area is        2
+  The computed area is 2
+
+  Number of polygonal vertices = 8
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           3             0  
+      2 :           3             3  
+      3 :           2             3  
+      4 :           2             1  
+      5 :           1             1  
+      6 :           1             2  
+      7 :           0             2  
+
+  Exact area is        6
+  The computed area is 6
+
+POLYGON_AREA_TEST
+  Normal end of execution.
+
+POLYGON_AREA_2_TEST
+  Python version: 3.6.5
+  POLYGON_AREA_2 computes the area of a polygon.
+
+  Number of polygonal vertices = 4
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :           2             1  
+      2 :           1             2  
+      3 :           0             1  
+
+  Exact area is        2
+  The computed area is 2
+
+  Number of polygonal vertices = 8
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           3             0  
+      2 :           3             3  
+      3 :           2             3  
+      4 :           2             1  
+      5 :           1             1  
+      6 :           1             2  
+      7 :           0             2  
+
+  Exact area is        6
+  The computed area is 6
+
+POLYGON_AREA_2_TEST
+  Normal end of execution.
+
+POLYGON_CENTROID_TEST
+  Python version: 3.6.5
+  POLYGON_CENTROID computes the centroid of a polygon.
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :           2             1  
+      2 :           1             2  
+      3 :           0             1  
+
+  POLYGON_CENTROID:
+
+     0:             1
+     1:             1
+
+POLYGON_CENTROID_TEST
+  Normal end of execution.
+
+POLYGON_CENTROID_2_TEST
+  Python version: 3.6.5
+  POLYGON_CENTROID_2 computes the centroid of a polygon.
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :           2             1  
+      2 :           1             2  
+      3 :           0             1  
+
+  POLYGON_CENTROID_2:
+
+     0:             1
+     1:             1
+
+POLYGON_CENTROID_2_TEST
+  Normal end of execution.
+
+POLYGON_CONTAINS_POINT_TEST
+  Python version: 3.6.5
+  POLYGON_CONTAINS_POINT determines if
+  a point is in a polygon.
+
+  The polygon vertices:
+
+       0:              0             0
+       1:              1             0
+       2:              2             1
+       3:              1             2
+       4:              0             2
+
+        X         Y     Inside?
+
+      1.00      1.00    True
+      3.00      4.00    False
+      0.00      2.00    False
+      0.50     -0.25    False
+
+POLYGON_CONTAINS_POINT_TEST
+  Normal end of execution.
+
+POLYGON_CONTAINS_POINT_2_TEST
+  Python version: 3.6.5
+  POLYGON_CONTAINS_POINT_2 determines if
+  a point is in a polygon.
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           2             1  
+      3 :           1             2  
+      4 :           0             2  
+
+          P          Inside
+
+               1               1    1
+               3               4    0
+               0               2    1
+             0.5           -0.25    0
+
+POLYGON_CONTAINS_POINT_2_TEST
+  Normal end of execution.
+
+POLYGON_DIAMETER_TEST
+  Python version: 3.6.5
+  POLYGON_DIAMETER computes the diameter of a polygon.
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :           2             1  
+      2 :           1             2  
+      3 :           0             1  
+
+  Diameter ( computed ) 2
+  Diameter ( exact )    2
+
+POLYGON_DIAMETER_TEST
+  Normal end of execution.
+
+POLYGON_EXPAND_TEST
+  Python version: 3.6.5
+  POLYGON_EXPAND "expands" a polygon by an amount H.
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           5             1  
+      2 :           2             4  
+      3 :           1             3  
+
+  The expansion amount H = 0.5
+
+  The expanded polygon:
+
+  Row:       0             1       
+  Col
+      0 :         0.5           0.5  
+      1 :     6.20711           0.5  
+      2 :           2       4.70711  
+      3 :         0.5       3.20711  
+
+POLYGON_EXPAND_TEST
+  Normal end of execution.
+
+POLYGON_INRAD_DATA_TEST
+  Python version: 3.6.5
+  POLYGON_INRAD_DATA uses the inradius of a regular polygon
+  to determine the area, outradius, and side length.
+
+  Number of polygonal sides = 3
+
+  Assuming RADIN = 1
+    AREA =   5.19615
+    RADOUT = 2
+    SIDE =   3.4641
+
+  Number of polygonal sides = 4
+
+  Assuming RADIN = 1
+    AREA =   4
+    RADOUT = 1.41421
+    SIDE =   2
+
+  Number of polygonal sides = 5
+
+  Assuming RADIN = 1
+    AREA =   3.63271
+    RADOUT = 1.23607
+    SIDE =   1.45309
+
+POLYGON_INRAD_DATA_TEST
+  Normal end of execution.
+
+POLYGON_INTEGRAL_1_TEST
+  Python version: 3.6.5
+  POLYGON_INTEGRAL_1 integrates 1 over a polygon
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           1             1  
+      3 :           0             1  
+
+  1:                 1
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+  1:                 5
+
+POLYGON_INTEGRAL_1_TEST
+  Normal end of execution.
+
+POLYGON_INTEGRAL_X_TEST
+  Python version: 3.6.5
+  POLYGON_INTEGRAL_X integrates x over a polygon
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           1             1  
+      3 :           0             1  
+
+  x:               0.5
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+  x:           11.6667
+
+POLYGON_INTEGRAL_X_TEST
+  Normal end of execution.
+
+POLYGON_INTEGRAL_XX_TEST
+  Python version: 3.6.5
+  POLYGON_INTEGRAL_XX integrates x^2 over a polygon
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           1             1  
+      3 :           0             1  
+
+  x^2:          0.333333
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+  x^2:           29.1667
+
+POLYGON_INTEGRAL_XX_TEST
+  Normal end of execution.
+
+POLYGON_INTEGRAL_XY_TEST
+  Python version: 3.6.5
+  POLYGON_INTEGRAL_XY integrates x*y over a polygon
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           1             1  
+      3 :           0             1  
+
+  x*y:              0.25
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+  x*y:           35.8333
+
+POLYGON_INTEGRAL_XY_TEST
+  Normal end of execution.
+
+POLYGON_INTEGRAL_Y_TEST
+  Python version: 3.6.5
+  POLYGON_INTEGRAL_Y integrates y over a polygon
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           1             1  
+      3 :           0             1  
+
+  y:               0.5
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+  y:                15
+
+POLYGON_INTEGRAL_Y_TEST
+  Normal end of execution.
+
+POLYGON_INTEGRAL_YY_TEST
+  Python version: 3.6.5
+  POLYGON_INTEGRAL_YY integrates y^2 over a polygon
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           1             1  
+      3 :           0             1  
+
+  y^2:          0.333333
+
+  The polygon vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+  y^2:           48.3333
+
+POLYGON_INTEGRAL_YY_TEST
+  Normal end of execution.
+
+POLYGON_IS_CONVEX_TEST
+  Python version: 3.6.5
+  POLYGON_IS_CONVEX determines if a polygon is convex.
+
+  A point:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+  The polygon is degenerate and convex.
+
+  A line:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             2  
+  The polygon is degenerate and convex.
+
+  A triangle:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           2             0  
+      2 :           1             0  
+  The polygon is convex and counterclockwise.
+
+  A CCW triangle:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           0             2  
+  The polygon is not convex.
+
+  A CW triangle:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           0             2  
+      2 :           1             0  
+  The polygon is convex and counterclockwise.
+
+  Polygon with large angle:
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :           2             0  
+      2 :           3             1  
+      3 :           0             1  
+  The polygon is not convex.
+
+  Polygon with huge angle:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :         0.5           0.5  
+      2 :           1             0  
+      3 :           1             1  
+      4 :           0             1  
+  The polygon is not convex.
+
+  A five-pointed star:
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :   -0.809017      0.587785  
+      2 :    0.309017     -0.951057  
+      3 :    0.309017      0.951057  
+      4 :   -0.809017     -0.587785  
+  The polygon is not convex.
+
+  A hexagon:
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :         0.5      0.866025  
+      2 :        -0.5      0.866025  
+      3 :          -1   1.22465e-16  
+      4 :        -0.5     -0.866025  
+      5 :         0.5     -0.866025  
+  The polygon is not convex.
+
+  A triangle twice:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           2             0  
+      2 :           1             1  
+      3 :           0             0  
+      4 :           2             0  
+      5 :           1             1  
+  The polygon is not convex.
+
+  Square knot:
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :           3             0  
+      2 :           3             3  
+      3 :           0             3  
+      4 :           0             1  
+      5 :           2             1  
+      6 :           2             2  
+      7 :           1             1  
+  The polygon is not convex.
+
+POLYGON_IS_CONVEX_TEST
+  Normal end of execution.
+
+POLYGON_LATTICE_AREA_TEST
+  Python version: 3.6.5
+  POLYGON_LATTICE_AREA returns the "area"
+  of a polygon, measured in lattice points.
+
+  Number of interior lattice points = 5
+  Number of boundary lattice points = 6
+  Area of polygon is 7
+
+POLYGON_LATTICE_AREA_TEST
+  Normal end of execution.
+
+POLYGON_OUTRAD_DATA_TEST
+  Python version: 3.6.5
+  POLYGON_OUTRAD_DATA uses the outradius of a regular polygon
+  to determine the area, inradius, and sidelength.
+
+  Number of polygonal sides = 3
+
+  Assuming RADOUT = 1
+    AREA =   1.29904
+    RADIN =  0.5
+    SIDE =   1.73205
+
+  Number of polygonal sides = 4
+
+  Assuming RADOUT = 1
+    AREA =   2
+    RADIN =  0.707107
+    SIDE =   1.41421
+
+  Number of polygonal sides = 5
+
+  Assuming RADOUT = 1
+    AREA =   2.37764
+    RADIN =  0.809017
+    SIDE =   1.17557
+
+POLYGON_OUTRAD_DATA_TEST
+  Normal end of execution.
+
+POLYGON_PERIMETER_TEST
+  Python version: 3.6.5
+  POLYGON_PERIMETER computes the perimeter of a polygon.
+
+  Vertices of polygon V1:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           1             1  
+      3 :           0             1  
+
+  Perimeter of V1 = 4
+
+  Vertices of polygon V2:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+  Perimeter of V2 = 10.5571
+
+POLYGON_PERIMETER_TEST
+  Normal end of execution.
+
+POLYGON_PERIMETER_QUAD_TEST
+  Python version: 3.6.5
+  POLYGON_PERIMETER_QUAD estimates the integral of
+  a function over the perimeter of a polygon using
+  the composite midpoint rule over each side.
+
+  Vertices of polygon V1:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           1             1  
+      3 :           0             1  
+
+  Using HMAX = 0.5, estimated integral of 1 over perimeter = 4
+
+  Using HMAX = 1, estimated integral of x^2 over perimeter = 1.5
+  Using HMAX = 0.5, estimated integral of x^2 over perimeter = 1.625
+  Using HMAX = 0.25, estimated integral of x^2 over perimeter = 1.65625
+
+  Vertices of polygon V2:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+  Using HMAX = 0.5, estimated integral of 1 over perimeter = 10.5571
+
+  Using HMAX = 1, estimated integral of x^2 over perimeter = 60.9706
+  Using HMAX = 0.5, estimated integral of x^2 over perimeter = 61.1854
+  Using HMAX = 0.25, estimated integral of x^2 over perimeter = 61.2383
+
+POLYGON_PERIMETER_TEST
+  Normal end of execution.
+
+POLYGON_POINT_DIST_TEST
+  Python version: 3.6.5
+  POLYGON_POINT_DIST computes polygon-point distance.
+
+  Vertices of polygon:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+       X             Y             DIST
+
+               4               5         1.41421
+               2               3        0.485071
+              -2              -1         3.60555
+
+POLYGON_POINT_DIST_TEST
+  Normal end of execution.
+
+POLYGON_POINT_NEAR_TEST
+  Python version: 3.6.5
+  POLYGON_POINT_NEAR computes nearest point on polygon.
+
+  Vertices of polygon:
+
+  Row:       0             1       
+  Col
+      0 :           1             1  
+      1 :           4             3  
+      2 :           2             5  
+
+       X             Y             XN             YN
+
+               4               5               3               4
+               2               3         1.52941         3.11765
+              -2              -1               1               1
+
+POLYGON_POINT_NEAR_TEST
+  Normal end of execution.
+
+POLYGON_SIDE_DATA_TEST
+  Python version: 3.6.5
+  POLYGON_SIDE_DATA uses the side length of a regular polygon
+  to compute the area, inradius, and outradius.
+
+  Number of polygonal sides = 3
+
+  Assuming SIDE = 1
+    AREA =   0.866025
+    RADIN =  0.288675
+    RADOUT = 0.57735
+
+  Number of polygonal sides = 4
+
+  Assuming SIDE = 1
+    AREA =   2
+    RADIN =  0.5
+    RADOUT = 0.707107
+
+  Number of polygonal sides = 5
+
+  Assuming SIDE = 1
+    AREA =   3.44095
+    RADIN =  0.688191
+    RADOUT = 0.850651
+
+POLYGON_SIDE_DATA_TEST
+  Normal end of execution.
+
+POLYGON_TRIANGULATE_TEST
+  Python version: 3.6.5
+  Triangulate the comb_10 polygon.
+
+  Triangles
+
+  Col:       0        1        2  
+  Row
+    0:       2        0        1  
+    1:       4        2        3  
+    2:       6        4        5  
+    3:       8        6        7  
+    4:       9        6        8  
+    5:       2        9        0  
+    6:       4        9        2  
+    7:       6        9        4  
+
+POLYGON_TRIANGULATE_TEST:
+  Normal end of execution.
+
+PYRAMID_VOLUME_TEST
+  Python version: 3.6.5
+  PYRAMID_VOLUME returns the volume of a pyramid.
+
+     Radius     Height     Volume
+
+    2.9658    9.6069  112.6662
+    8.4656    6.0553  578.6090
+    4.7378    1.5951   47.7381
+    3.3182    1.9896   29.2087
+    1.3945    6.7057   17.3858
+
+PYRAMID_VOLUME_TEST
+  Normal end of execution.
+
+PYRAMID01_VOLUME_TEST
+  Python version: 3.6.5
+  PYRAMID01_VOLUME returns the volume of the unit pyramid.
+
+  PYRAMID01_VOLUME() = 1.33333
+
+PYRAMID01_VOLUME_TEST
+  Normal end of execution.
+
+R8_ACOS_TEST
+  Python version: 3.6.5
+  R8_ACOS computes the arc-cosine of an angle.
+
+       C            R8_ACOS(C)        ACOS(C)
+
+        -1.16667         3.14159
+              -1         3.14159         3.14159
+       -0.833333         2.55591         2.55591
+       -0.666667         2.30052         2.30052
+            -0.5          2.0944          2.0944
+       -0.333333         1.91063         1.91063
+       -0.166667         1.73824         1.73824
+               0          1.5708          1.5708
+        0.166667         1.40335         1.40335
+        0.333333         1.23096         1.23096
+             0.5          1.0472          1.0472
+        0.666667        0.841069        0.841069
+        0.833333        0.585686        0.585686
+               1               0               0
+         1.16667               0
+
+R8_ACOS_TEST
+  Normal end of execution.
+
+R8_ATAN_TEST
+  Python version: 3.6.5
+  R8_ATAN computes the arc-tangent given Y and X;
+  ATAN2 is the system version of this routine.
+
+  X     Y     ATAN2(Y,X)   R8_ATAN(Y,X)
+
+      1.000000      0.000000      0.000000      0.000000
+      1.000000      1.000000      0.785398      0.785398
+      0.000000      1.000000      1.570796      1.570796
+     -1.000000      1.000000      2.356194      2.356194
+     -1.000000      0.000000      3.141593      3.141593
+     -1.000000     -1.000000     -2.356194      3.926991
+      0.000000     -1.000000     -1.570796      4.712389
+      1.000000     -1.000000     -0.785398      5.497787
+
+R8_ATAN_TEST
+  Normal end of execution
+
+R8_SIGN_TEST
+  Python version: 3.6.5
+  R8_SIGN returns the sign of an R8.
+
+     R8     R8_SIGN(R8)
+
+   -1.2500        -1
+   -0.2500        -1
+    0.0000         1
+    0.5000         1
+    9.0000         1
+
+R8_SIGN_TEST
+  Normal end of execution.
+
+R8_UNIFORM_01_TEST
+  Python version: 3.6.5
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R8_UNIFORM_AB_TEST
+  Python version: 3.6.5
+  R8_UNIFORM_AB returns random values in a given range:
+  [ A, B ]
+
+  For this problem:
+  A = 10.000000
+  B = 20.000000
+
+  12.184183
+  19.563176
+  18.295092
+  15.616954
+  14.153071
+  10.661187
+  12.575778
+  11.099568
+  10.438290
+  16.339657
+
+R8_UNIFORM_AB_TEST
+  Normal end of execution
+
+R8MAT_DET_4D_TEST
+  Python version: 3.6.5
+  R8MAT_DET_4D determinant of a 4 by 4 matrix
+
+  Matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             1             1             1  
+      1 :           1            10           100          1000  
+      2 :           1             4            16            64  
+      3 :           1             2             4             8  
+
+  R8MAT_DET_4D computes determinant: -2592
+  Exact determinant is -2592
+
+R8MAT_DET_4D_TEST
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.5
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.5
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_SOLVE_TEST
+  Python version: 3.6.5
+  R8MAT_SOLVE solves linear systems.
+
+  The linear system:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             2             3            14             7  
+      1 :           4             5             6            32            16  
+      2 :           7             8             0            23             7  
+
+  Factored matrix and solutions:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             1             1  
+      1 :           0             1             0             2             0  
+      2 :           0             0             1             3             2  
+
+R8MAT_SOLVE_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.5
+  R8MAT_TRANSPOSE_PRINT prints an R8MAT.
+
+  Here is an R8MAT, transposed:
+
+  Row:       0             1             2             3       
+  Col
+      0 :          11            21            31            41  
+      1 :          12            22            32            42  
+      2 :          13            23            33            43  
+
+R8MAT_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST
+  Python version: 3.6.5
+  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.
+
+  R8MAT, rows 0:2, cols 3:5:
+
+  Row:       0             1             2       
+  Col
+      3 :          14            24            34  
+      4 :          15            25            35  
+      5 :          16            26            36  
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.5
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.5
+  R8VEC_TRANSPOSE_PRINT prints an R8VEC "tranposed",
+  that is, placing multiple entries on a line.
+  The vector X:               1           2.1           3.2           4.3           5.4
+                            6.5           7.6           8.7           9.8          10.9
+                             11
+
+R8VEC_TRANSPOSE_PRINT_TEST
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.5
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_AB_TEST
+  Python version: 3.6.5
+  R8VEC_UNIFORM_AB computes a random R8VEC.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:       0.31051
+     1:       4.73791
+     2:       3.97706
+     3:       2.37017
+     4:       1.49184
+     5:     -0.603288
+     6:      0.545467
+     7:     -0.340259
+     8:     -0.737026
+     9:       2.80379
+
+R8VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC2_PRINT_TEST
+  Python version: 3.6.5
+  R8VEC2_PRINT prints a pair of R8VEC's.
+
+  Print a pair of R8VEC's:
+
+       0:              0             0
+       1:            0.2          0.04
+       2:            0.4          0.16
+       3:            0.6          0.36
+       4:            0.8          0.64
+       5:              1             1
+
+R8VEC2_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC3_PRINT_TEST
+  Python version: 3.6.5
+  R8VEC3_PRINT prints an R8VEC.
+
+  X, X^2, X+X^2's:
+
+       0:              0             0             0
+       1:            0.2          0.04          0.24
+       2:            0.4          0.16          0.56
+       3:            0.6          0.36          0.96
+       4:            0.8          0.64          1.44
+       5:              1             1             2
+
+R8VEC3_PRINT_TEST:
+  Normal end of execution.
+
+RADIANS_TO_DEGREES_TEST
+  RADIANS_TO_DEGREES converts an angle from radians
+  to degrees;
+
+  Degrees     Radians     Degrees
+
+  -60.000000   -1.047198  -60.000000
+  -30.000000   -0.523599  -30.000000
+    0.000000    0.000000    0.000000
+   30.000000    0.523599   30.000000
+   60.000000    1.047198   60.000000
+   90.000000    1.570796   90.000000
+  120.000000    2.094395  120.000000
+  150.000000    2.617994  150.000000
+  180.000000    3.141593  180.000000
+  210.000000    3.665191  210.000000
+  240.000000    4.188790  240.000000
+  270.000000    4.712389  270.000000
+  300.000000    5.235988  300.000000
+  330.000000    5.759587  330.000000
+  360.000000    6.283185  360.000000
+  390.000000    6.806784  390.000000
+  420.000000    7.330383  420.000000
+
+SEGMENT_POINT_DIST_TEST
+  Python version: 3.6.5
+  SEGMENT_POINT_DIST computes the distance from a point to a line segment.
+
+  Segment endpoint 1:
+
+     0:             1
+     1:             2
+
+  Segment endpoint 2:
+
+     0:             3
+     1:             4
+
+  Test point P
+
+     0:             2
+     1:             3
+
+  Distance to segment = 0
+
+  Test point P
+
+     0:             4
+     1:             5
+
+  Distance to segment = 1.41421
+
+  Test point P
+
+     0:             1
+     1:             4
+
+  Distance to segment = 1.41421
+
+  Test point P
+
+     0:             0
+     1:             0
+
+  Distance to segment = 2.23607
+
+SEGMENT_POINT_DIST_TEST
+  Normal end of execution.
+
+SEGMENT_POINT_NEAR_TEST
+  SEGMENT_POINT_NEAR computes the nearest point
+  from a line segment to a point in 2D.
+
+  TEST = 0
+  P1 =       0.218418      0.956318
+  P2 =       0.829509      0.561695
+  P =        0.415307      0.066119
+  PN =       0.763049      0.604613
+  DIST =     0.641015
+  T =        0.891243
+
+  TEST = 1
+  P1 =       0.257578      0.109957
+  P2 =       0.043829      0.633966
+  P =        0.061727      0.449539
+  PN =       0.110880      0.469589
+  DIST =     0.053085
+  T =        0.686309
+
+  TEST = 2
+  P1 =       0.401306      0.754673
+  P2 =       0.797287      0.001838
+  P =        0.897504      0.350752
+  PN =       0.675252      0.233851
+  DIST =     0.251122
+  T =        0.691815
+
+SEGMENT_POINT_NEAR_TEST
+  Normal end of execution.
+
+SIMPLEX01_VOLUME_TEST
+  Python version: 3.6.5
+  SIMPLEX01_VOLUME returns the volume of the unit simplex
+  in M dimensions.
+
+   M   Volume
+
+   1  1
+   2  0.5
+   3  0.166667
+   4  0.0416667
+   5  0.00833333
+   6  0.00138889
+   7  0.000198413
+   8  2.48016e-05
+   9  2.75573e-06
+
+SIMPLEX01_VOLUME_TEST
+  Normal end of execution.
+
+SPHERE_TRIANGLE_SIDES_TO_ANGLES_TEST
+  SPHERE_TRIANGLE_SIDES_TO_ANGLES takes the sides of a
+  spherical triangle and determines the angles.
+
+  A       = 2.058867 (radians)
+  A       = 117.964369 (degrees)
+  Correct = 117.966667 (radians)
+
+  B       = 1.627136 (radians)
+  B       = 93.228029 (degrees)
+  Correct = 93.230000 (radians)
+
+  C       = 1.227740 (radians)
+  C       = 70.344308 (degrees)
+  Correct = 70.343333 (radians)
+
+SPHERE01_AREA_TEST
+  Python version: 3.6.5
+  SPHERE01_AREA returns the volume of the unit sphere.
+
+  SPHERE01_AREA() =  12.5664
+
+SPHERE01_AREA_TEST
+  Normal end of execution.
+
+SPHERE01_AREA_VALUES_TEST:
+  Python version: 3.6.5
+  SPHERE01_AREA_VALUES stores areas of the unit sphere in N dimensions.
+
+      N         SPHERE01_AREA(N)
+
+             1        2.0000000000000000
+             2        6.2831853071795862
+             3       12.5663706143591707
+             4       19.7392088021787195
+             5       26.3189450695716189
+             6       31.0062766802998198
+             7       33.0733617923198082
+             8       32.4696970113341479
+             9       29.6865801246483585
+            10       25.5016403987734499
+            11       20.7251426732889001
+            12       16.0231532262550687
+            13       11.8381738121826796
+            14        8.3897034104910890
+            15        5.7216492123495666
+            16        3.7652900857422908
+            17        2.3966788175913640
+            18        1.4786259590003079
+            19        0.8858104195716824
+            20        0.5161378278002812
+
+SPHERE01_AREA_VALUES_TEST:
+  Normal end of execution.
+
+SPHERE01_VOLUME_VALUES_TEST:
+  Python version: 3.6.5
+  SPHERE01_VOLUME_VALUES stores values of the SPHERE01_VOLUME function.
+
+      N         SPHERE01_VOLUME(X)
+
+             1        2.0000000000000000
+             2        3.1415926535897931
+             3        4.1887902047863914
+             4        4.9348022005446790
+             5        5.2637890139143249
+             6        5.1677127800499703
+             7        4.7247659703314007
+             8        4.0587121264167676
+             9        3.2985089027387069
+            10        2.5501640398773451
+            11        1.8841038793899001
+            12        1.3352627688545891
+            13        0.9106287547832831
+            14        0.5992645293207921
+            15        0.3814432808233045
+            16        0.2353306303588932
+            17        0.1409811069171390
+            18        0.0821458866111282
+            19        0.0466216010300885
+            20        0.0258068913900141
+
+SPHERE01_VOLUME_VALUES_TEST:
+  Normal end of execution.
+
+TETRAHEDRON_BARYCENTRIC_TEST
+  TETRAHEDRON_BARYCENTRIC converts XYZ to XSI.
+  We are computing the XSI coordinates just to verify
+  that the points are inside the tetrahedron.
+
+  Tetrahedron vertices
+
+  Row:       0             1             2       
+  Col
+      0 :           1             4             3  
+      1 :           2             4             3  
+      2 :           1             6             3  
+      3 :           1             4             4  
+
+  (X,Y,Z)   (XSI1,XSI2,XSI3,XSI4):
+
+  1.388984  4.014574  3.001498    0.602231  0.388984  0.007287  0.001498
+  1.112721  4.008224  3.058079    0.825088  0.112721  0.004112  0.058079
+  1.120614  4.021312  3.232467    0.636262  0.120614  0.010656  0.232467
+  1.035017  4.095236  3.058308    0.859057  0.035017  0.047618  0.058308
+  1.227945  4.054928  3.006983    0.737607  0.227945  0.027464  0.006983
+  1.831312  4.032399  3.029986    0.122502  0.831312  0.016200  0.029986
+  1.063531  4.826294  3.067761    0.455560  0.063531  0.413147  0.067761
+  1.019699  4.000548  3.036171    0.943856  0.019699  0.000274  0.036171
+  1.345321  4.003678  3.014342    0.638498  0.345321  0.001839  0.014342
+  1.266859  4.014596  3.020022    0.705821  0.266859  0.007298  0.020022
+
+TETRAHEDRON_BARYCENTRIC_TEST
+  Normal end of execution.
+
+TETRAHEDRON_CENTROID_TEST
+  Python version: 3.6.5
+  TETRAHEDRON_CENTROID computes the centroid of a tetrahedron
+
+  Tetrahedron vertices:
+
+  Row:       0             1             2       
+  Col
+      0 :           0      0.942809     -0.333333  
+      1 :   -0.816496     -0.816496     -0.333333  
+      2 :    0.816496     -0.816496     -0.333333  
+      3 :           0             0             1  
+  Centroid:               0     -0.172546       2.5e-07
+
+TETRAHEDRON_CENTROID_TEST
+  Normal end of execution.
+
+TETRAHEDRON_SAMPLE_TEST
+  TETRAHEDRON_SAMPLE samples a tetrahedron.
+  We are computing the XSI coordinates just to verify
+  that the points are inside the tetrahedron.
+
+  Tetrahedron vertices
+
+  Row:       0             1             2       
+  Col
+      0 :           1             4             3  
+      1 :           2             4             3  
+      2 :           1             6             3  
+      3 :           1             4             4  
+
+  (X,Y,Z)   (XSI1,XSI2,XSI3,XSI4):
+
+  1.388984  4.014574  3.001498    0.602231  0.388984  0.007287  0.001498
+  1.112721  4.008224  3.058079    0.825088  0.112721  0.004112  0.058079
+  1.120614  4.021312  3.232467    0.636262  0.120614  0.010656  0.232467
+  1.035017  4.095236  3.058308    0.859057  0.035017  0.047618  0.058308
+  1.227945  4.054928  3.006983    0.737607  0.227945  0.027464  0.006983
+  1.831312  4.032399  3.029986    0.122502  0.831312  0.016200  0.029986
+  1.063531  4.826294  3.067761    0.455560  0.063531  0.413147  0.067761
+  1.019699  4.000548  3.036171    0.943856  0.019699  0.000274  0.036171
+  1.345321  4.003678  3.014342    0.638498  0.345321  0.001839  0.014342
+  1.266859  4.014596  3.020022    0.705821  0.266859  0.007298  0.020022
+
+TETRAHEDRON_SAMPLE_TEST
+  Normal end of execution.
+
+TETRAHEDRON_VOLUME_TEST
+  Python version: 3.6.5
+  TETRAHEDRON_VOLUME computes the volume of a tetrahedron
+
+  Tetrahedron vertices
+
+  Row:       0             1             2       
+  Col
+      0 :           0      0.942809     -0.333333  
+      1 :   -0.816496     -0.816496     -0.333333  
+      2 :    0.816496     -0.816496     -0.333333  
+      3 :           0             0             1  
+
+  Volume = 0.638429
+
+TETRAHEDRON_VOLUME_TEST
+  Normal end of execution.
+
+TETRAHEDRON01_VOLUME_TEST
+  Python version: 3.6.5
+  TETRAHEDRON01_VOLUME returns the volume of the unit tetrahedron.
+
+  TETRAHEDRON01_VOLUME() = 0.166667
+
+TETRAHEDRON01_VOLUME_TEST
+  Normal end of execution.
+
+TRIANGLE_ANGLES_TEST
+  Python version: 3.6.5
+  TRIANGLE_ANGLES computes the angles of a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           0             0  
+      2 :           1             0  
+
+      Radians      Degrees
+
+      0.785398            45
+        1.5708            90
+      0.785398            45
+
+TRIANGLE_ANGLES_TEST
+  Normal end of execution.
+
+TRIANGLE_AREA_TEST
+  Python version: 3.6.5
+  TRIANGLE_AREA computes the area of a triangle.
+
+  Triangle vertices (columns)
+
+  Col:       0             1             2       
+  Row
+      0 :           0             0             1  
+      1 :           1             0             0  
+
+  Triangle area is 0.5
+
+TRIANGLE_AREA_TEST
+  Normal end of execution.
+
+TRIANGLE_BARYCENTRIC_TEST
+  TRIANGLE_BARYCENTRIC converts XY coordinates
+  to barycentric XSI coordinates in a triangle;
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           0             0  
+      2 :           1             0  
+
+   X       Y     XSI
+
+    0.250000    0.250000      0.500000    0.250000    0.250000
+    0.750000    0.250000      0.000000    0.750000    0.250000
+    1.000000    1.000000     -1.000000    1.000000    1.000000
+   11.000000    0.500000    -10.500000   11.000000    0.500000
+    0.000000    1.000000     -0.000000    0.000000    1.000000
+    0.500000  -10.000000     10.500000    0.500000  -10.000000
+    0.600000    0.600000     -0.200000    0.600000    0.600000
+
+TRIANGLE_BARYCENTRIC_TEST
+  Normal end of execution.
+
+TRIANGLE_CENTROID_TEST
+  Python version: 3.6.5
+  TRIANGLE_CENTROID computes the centroid of a triangle
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           0             1  
+
+  Centroid:
+
+     0:      0.333333
+     1:      0.333333
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5      0.866025  
+
+  Centroid:
+
+     0:           0.5
+     1:      0.288675
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5            10  
+
+  Centroid:
+
+     0:           0.5
+     1:       3.33333
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :          10             2  
+
+  Centroid:
+
+     0:       3.66667
+     1:      0.666667
+
+TRIANGLE_CENTROID_TEST
+  Normal end of execution.
+
+TRIANGLE_CIRCUMCIRCLE_TEST
+  Python version: 3.6.5
+  TRIANGLE_CIRCUMCIRCLE computes the circumcenter of a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           0             1  
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           0             1  
+
+  Circumcenter
+
+     0:           0.5
+     1:           0.5
+
+  Circumradius: 0.707107
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5      0.866025  
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5      0.866025  
+
+  Circumcenter
+
+     0:           0.5
+     1:      0.288675
+
+  Circumradius: 0.57735
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5            10  
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5            10  
+
+  Circumcenter
+
+     0:           0.5
+     1:        4.9875
+
+  Circumradius: 5.0125
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :          10             2  
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :          10             2  
+
+  Circumcenter
+
+     0:           0.5
+     1:          23.5
+
+  Circumradius: 23.5053
+
+TRIANGLE_CIRCUMCIRCLE_TEST
+  Normal end of execution.
+
+TRIANGLE_CONTAINS_POINT_TEST
+  Python version: 3.6.5
+  TRIANGLE_CONTAINS_POINT reports if a point
+  is inside a triangle
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           0             0  
+      2 :           1             0  
+
+     X       Y     Inside
+
+        0.25        0.25  True
+        0.75        0.25  True
+           1           1  False
+          11         0.5  False
+           0           1  True
+         0.5         -10  False
+         0.6         0.6  False
+
+  Repeat the test, but reverse the triangle vertex ordering.
+
+  Triangle vertices (reversed):
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :           0             0  
+      2 :           0             1  
+
+     X       Y     Inside
+
+        0.25        0.25  False
+        0.75        0.25  False
+           1           1  False
+          11         0.5  False
+           0           1  False
+         0.5         -10  False
+         0.6         0.6  False
+
+TRIANGLE_CONTAINS_POINT_TEST
+  Normal end of execution.
+
+TRIANGLE_CONTAINS_POINT_1_TEST
+  Python version: 3.6.5
+  TRIANGLE_CONTAINS_POINT_1 reports if a point
+  is inside a triangle
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           0             0  
+      2 :           1             0  
+
+     X       Y     Inside
+
+        0.25        0.25  True
+        0.75        0.25  True
+           1           1  False
+          11         0.5  False
+           0           1  True
+         0.5         -10  False
+         0.6         0.6  False
+
+  Repeat the test, but reverse the triangle vertex ordering.
+
+  Triangle vertices (reversed):
+
+  Row:       0             1       
+  Col
+      0 :           1             0  
+      1 :           0             0  
+      2 :           0             1  
+
+     X       Y     Inside
+
+        0.25        0.25  True
+        0.75        0.25  True
+           1           1  False
+          11         0.5  False
+           0           1  True
+         0.5         -10  False
+         0.6         0.6  False
+
+TRIANGLE_CONTAINS_POINT_1_TEST
+  Normal end of execution.
+
+TRIANGLE_DIAMETER_TEST
+  Python version: 3.6.5
+  TRIANGLE_DIAMETER computes the diameter of
+  the SMALLEST circle around a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           1             5  
+      2 :          -2             2  
+
+  Diameter = 6
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           5             4  
+      2 :           6             6  
+
+  Diameter = 4.47214
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           1             5  
+      2 :           4             2  
+
+  Diameter = 4.24264
+
+TRIANGLE_DIAMETER_TEST
+  Normal end of execution.
+
+TRIANGLE_EDGE_LENGTH_TEST
+  Python version: 3.6.5
+  TRIANGLE_EDGE_LENGTH computes the edge lengths
+  of a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           1             5  
+      2 :          -2             2  
+
+  EDGE_LENGTHS:
+
+     0:       4.24264
+     1:       4.24264
+     2:             6
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           5             4  
+      2 :           6             6  
+
+  EDGE_LENGTHS:
+
+     0:       2.23607
+     1:       2.23607
+     2:       4.47214
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           1             5  
+      2 :           4             2  
+
+  EDGE_LENGTHS:
+
+     0:       4.24264
+     1:       4.24264
+     2:             0
+
+TRIANGLE_EDGE_LENGTH_TEST
+  Normal end of execution.
+
+TRIANGLE_INCIRCLE_TEST
+  Python version: 3.6.5
+  TRIANGLE_INCIRCLE computes the incircle of a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           0             0  
+      2 :           1             0  
+
+  Incenter
+
+     0:      0.292893
+     1:      0.292893
+
+  Incircle radius is 0.292893
+
+TRIANGLE_INCIRCLE_TEST
+  Normal end of execution.
+
+TRIANGLE_ORIENTATION_TEST
+  Python version: 3.6.5
+  TRIANGLE_ORIENTATION_determines orientation
+  of a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           1             5  
+      2 :          -2             2  
+
+  The points are counterclockwise.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             5  
+      1 :           4             2  
+      2 :           1            -1  
+
+  The points are clockwise.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             5  
+      1 :           2             7  
+      2 :           3             9  
+
+  The points are colinear.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           1             5  
+      1 :           4             2  
+      2 :           1             5  
+
+  The points are not distinct.
+
+TRIANGLE_ORIENTATION_TEST
+  Normal end of execution.
+
+TRIANGLE_ORTHOCENTER_TEST
+  Python version: 3.6.5
+  TRIANGLE_ORTHOCENTER computes the orthocenter of a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           0             1  
+
+  Orthocenter
+
+     0:             0
+     1:             0
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5      0.866025  
+
+  Orthocenter
+
+     0:           0.5
+     1:      0.288675
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5            10  
+
+  Orthocenter
+
+     0:           0.5
+     1:         0.025
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :          10             2  
+
+  Orthocenter
+
+     0:            10
+     1:           -45
+
+TRIANGLE_ORTHOCENTER_TEST
+  Normal end of execution.
+
+TRIANGLE_POINT_DIST_TEST
+  Python version: 3.6.5
+  TRIANGLE_POINT_DIST computes the distance
+  between a point and a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           0             0  
+      2 :           1             0  
+
+       P       DIST
+
+        0.25        0.25        0.25
+        0.75        0.25           0
+           1           1    0.707107
+          11         0.5     10.0125
+           0           1           0
+         0.5         -10          10
+         0.6         0.6    0.141421
+
+TRIANGLE_POINT_DIST_TEST
+  Normal end of execution.
+
+TRIANGLE_POINT_NEAR_TEST
+  Python version: 3.6.5
+  TRIANGLE_POINT_NEAR computes the nearest
+  triangle point to a point.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           0             0  
+      2 :           1             0  
+
+           P                PN
+
+        0.25        0.25             0        0.25
+        0.75        0.25          0.75        0.25
+           1           1           0.5         0.5
+          11         0.5             1           0
+           0           1             0           1
+         0.5         -10           0.5           0
+         0.6         0.6           0.5         0.5
+
+TRIANGLE_POINT_NEAR_TEST
+  Normal end of execution.
+
+TRIANGLE_QUALITY_TEST
+  Python version: 3.6.5
+  TRIANGLE_QUALITY computes the quality of a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           0             1  
+
+  Quality = 0.828427
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5      0.866025  
+
+  Quality = 1
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :         0.5            10  
+
+  Quality = 0.189775
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :          10             2  
+
+  Quality = 0.00833469
+
+TRIANGLE_QUALITY_TEST
+  Normal end of execution.
+
+TRIANGLE_REFERENCE_SAMPLE_TEST
+  Python version: 3.6.5
+  TRIANGLE_REFERENCE_SAMPLE samples the reference triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           1             0  
+      2 :           0             1  
+
+  Sample points (X,Y) and (XSI1,XSI2,XSI3) coordinates:
+
+   0.0204151    0.446937      0.532648   0.0204151    0.446937
+    0.399196    0.511578      0.089226    0.399196    0.511578
+    0.601833   0.0426098      0.355557    0.601833   0.0426098
+    0.451716   0.0558054      0.492479    0.451716   0.0558054
+   0.0766307    0.132723      0.790646   0.0766307    0.132723
+    0.136762    0.111688       0.75155    0.136762    0.111688
+    0.155411    0.478076      0.366513    0.155411    0.478076
+    0.891268   0.0016415      0.107091    0.891268   0.0016415
+    0.615076    0.332291     0.0526331    0.615076    0.332291
+    0.303294  0.00418694      0.692519    0.303294  0.00418694
+
+TRIANGLE_REFERENCE_SAMPLE_TEST
+  Normal end of execution.
+
+TRIANGLE_SAMPLE_TEST
+  Python version: 3.6.5
+  TRIANGLE_SAMPLE samples a triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           1             5  
+      2 :          -2             2  
+
+  Sample points (X,Y) and (XSI1,XSI2,XSI3) coordinates:
+
+     1.25713     2.06125      0.532648   0.0204151    0.446937
+   -0.267055     3.19759      0.089226    0.399196    0.511578
+     1.93884      3.8055      0.355557    0.601833   0.0426098
+     2.31002     3.35515      0.492479    0.451716   0.0558054
+     2.97377     2.22989      0.790646   0.0766307    0.132723
+     2.91959     2.41029       0.75155    0.136762    0.111688
+    0.665309     2.46623      0.366513    0.155411    0.478076
+     1.31635      4.6738      0.107091    0.891268   0.0016415
+    0.161026     3.84523     0.0526331    0.615076    0.332291
+       3.065     2.90988      0.692519    0.303294  0.00418694
+
+TRIANGLE_SAMPLE_TEST
+  Normal end of execution.
+
+TRIANGLE_XSI_TO_XY_TEST
+  Python version: 3.6.5
+  TRIANGLE_XSI_TO_XY converts XSI to XY coordinates.
+
+  We verify that (X,Y) -> (XSI1,XSI2,XSI3) -> (X,Y)
+  works properly.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           1             5  
+      2 :          -2             2  
+
+  Sample points:
+
+
+         1         3    0.333333  0.333333  0.333333
+         1         3
+
+         3         0     1.16667  -0.666667       0.5
+         3  2.22045e-16
+
+   1.25713   2.06125    0.532648  0.0204151  0.446937
+   1.25713   2.06125
+
+  -0.267055   3.19759    0.089226  0.399196  0.511578
+  -0.267055   3.19759
+
+   1.93884    3.8055    0.355557  0.601833  0.0426098
+   1.93884    3.8055
+
+   2.31002   3.35515    0.492479  0.451716  0.0558054
+   2.31002   3.35515
+
+   2.97377   2.22989    0.790646  0.0766307  0.132723
+   2.97377   2.22989
+
+   2.91959   2.41029     0.75155  0.136762  0.111688
+   2.91959   2.41029
+
+  0.665309   2.46623    0.366513  0.155411  0.478076
+  0.665309   2.46623
+
+   1.31635    4.6738    0.107091  0.891268  0.0016415
+   1.31635    4.6738
+
+TRIANGLE_XSI_TO_XY_TEST
+  Normal end of execution.
+
+TRIANGLE_XY_TO_XSI_TEST
+  Python version: 3.6.5
+  TRIANGLE_XY_TO_XSI converts XY to XSI coordinates.
+
+  We verify that (X,Y) -> (XSI1,XSI2,XSI3) -> (X,Y)
+  works properly.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           4             2  
+      1 :           1             5  
+      2 :          -2             2  
+
+  Sample points:
+
+
+         1         3    0.333333  0.333333  0.333333
+         1         3
+
+         3         0     1.16667  -0.666667       0.5
+         3  2.22045e-16
+
+   1.25713   2.06125    0.532648  0.0204151  0.446937
+   1.25713   2.06125
+
+  -0.267055   3.19759    0.089226  0.399196  0.511578
+  -0.267055   3.19759
+
+   1.93884    3.8055    0.355557  0.601833  0.0426098
+   1.93884    3.8055
+
+   2.31002   3.35515    0.492479  0.451716  0.0558054
+   2.31002   3.35515
+
+   2.97377   2.22989    0.790646  0.0766307  0.132723
+   2.97377   2.22989
+
+   2.91959   2.41029     0.75155  0.136762  0.111688
+   2.91959   2.41029
+
+  0.665309   2.46623    0.366513  0.155411  0.478076
+  0.665309   2.46623
+
+   1.31635    4.6738    0.107091  0.891268  0.0016415
+   1.31635    4.6738
+
+TRIANGLE_XY_TO_XSI_TEST
+  Normal end of execution.
+
+TRIANGLE01_AREA_TEST
+  Python version: 3.6.5
+  TRIANGLE01_AREA computes the area of the unit triangle.
+
+  Triangle vertices (columns)
+
+  Col:       0             1             2       
+  Row
+      0 :           0             0             1  
+      1 :           1             0             0  
+
+  Triangle area is 0.5
+
+TRIANGLE01_AREA_TEST
+  Normal end of execution.
+
+TRIANGLE01_SAMPLE_TEST
+  Python version: 3.6.5
+  TRIANGLE01_SAMPLE samples the unit triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           0             0  
+      2 :           1             0  
+
+  Sample points (X,Y):
+
+
+  Sample points:
+
+  Row:       0             1       
+  Col
+      0 :    0.867886     0.0254803  
+      1 :    0.138259      0.210636  
+      2 :    0.202708      0.329918  
+      3 :    0.112803      0.689309  
+      4 :    0.642508      0.198073  
+      5 :    0.844955      0.014506  
+      6 :    0.346508       0.63118  
+      7 :   0.0242126      0.292589  
+      8 :    0.372621     0.0253558  
+      9 :    0.408253     0.0761431  
+
+TRIANGLE01_SAMPLE_TEST
+  Normal end of execution.
+
+WEDGE01_VOLUME_TEST
+  Python version: 3.6.5
+  WEDGE01_VOLUME returns the volume of the unit wedge.
+
+  WEDGE01_VOLUME() = 1
+
+WEDGE01_VOLUME_TEST
+  Normal end of execution.
+
+GEOMETRY_TEST:
+  Normal end of execution.
+Thu Sep 13 09:31:14 2018

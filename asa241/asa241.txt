@@ -1,0 +1,361 @@
+Fri Jan 17 19:57:40 2020
+
+ASA241_TEST:
+  Test the ASA241 library.
+
+NORMAL_01_CDF_VALUES_TEST:
+  Python version: 3.6.9
+  NORMAL_01_CDF_VALUES stores values of the unit normal CDF.
+
+      X         NORMAL_01_CDF(X)
+
+      0.000000        0.5000000000000000
+      0.100000        0.5398278372770290
+      0.200000        0.5792597094391030
+      0.300000        0.6179114221889526
+      0.400000        0.6554217416103242
+      0.500000        0.6914624612740131
+      0.600000        0.7257468822499270
+      0.700000        0.7580363477769270
+      0.800000        0.7881446014166033
+      0.900000        0.8159398746532405
+      1.000000        0.8413447460685429
+      1.500000        0.9331927987311419
+      2.000000        0.9772498680518208
+      2.500000        0.9937903346742240
+      3.000000        0.9986501019683699
+      3.500000        0.9997673709209645
+      4.000000        0.9999683287581669
+
+NORMAL_01_CDF_VALUES_TEST:
+  Normal end of execution.
+
+R4_HUGE_TEST
+  Python version: 3.6.9
+  R4_HUGE returns a "huge" R4;
+
+    R4_HUGE = 1e+30
+
+R4_HUGE_TEST
+  Normal end of execution.
+
+R4_NORMAL_01_CDF_INVERSE_TEST:
+  R4_NORMAL_01_CDF_INVERSE takes FX = NormalCDF ( X ) and computes
+  an estimate X2, of the corresponding input argument X,
+  accurate to about 7 decimal places.
+
+      X                       FX               X2
+
+                       0                     0.5                       0
+                     0.1       0.539827837277029      0.1000000025017257
+                     0.2       0.579259709439103      0.1999999962846442
+                     0.3      0.6179114221889526      0.2999999864219961
+                     0.4      0.6554217416103242      0.3999999882997702
+                     0.5      0.6914624612740131        0.50000000785661
+                     0.6       0.725746882249927      0.6000000271476026
+                     0.7       0.758036347776927      0.7000000182366261
+                     0.8      0.7881446014166033      0.7999999807418356
+                     0.9      0.8159398746532405      0.8999999597170599
+                       1      0.8413447460685429      0.9999999976269962
+                     1.5      0.9331927987311419       1.499999896294564
+                       2      0.9772498680518208       2.000000215572599
+                     2.5       0.993790334674224       2.499999996732579
+                       3      0.9986501019683699       2.999999648798706
+                     3.5      0.9997673709209645        3.49999984646461
+                       4      0.9999683287581669       4.000000310311475
+
+R4POLY_PRINT_TEST
+  Python version: 3.6.9
+  R4POLY_PRINT prints an R4POLY.
+
+  The R8POLY:
+
+  p(x) =            9 * x^5
+                  + 0.78 * x^4
+                  + 56 * x^2
+                  - 3.4 * x
+                  + 12
+
+  The R8POLY:
+
+  p(x) =            0.78 * x^4
+                  + 56 * x^2
+                  - 3.4 * x
+                  + 12
+
+  The R8POLY:
+
+  p(x) =            12
+
+  The R8POLY:
+
+  p(x) = 0
+
+R4POLY_PRINT_TEST:
+  Normal end of execution.
+
+R4POLY_VALUE_TEST
+  Python version: 3.6.9
+  R4POLY_VALUE evaluates a polynomial at a point
+  using a naive method.
+
+  The polynomial coefficients:
+
+  p(x) =            1 * x^4
+                  - 10 * x^3
+                  + 35 * x^2
+                  - 50 * x
+                  + 24
+
+   I    X    P(X)
+
+   0    0.0000              24
+   1    0.3333         10.8519
+   2    0.6667         3.25926
+   3    1.0000              -1
+   4    1.3333        -4.14815
+   5    1.6667        -8.40741
+   6    2.0000             -16
+   7    2.3333        -29.1481
+   8    2.6667        -50.0741
+   9    3.0000             -81
+  10    3.3333        -124.148
+  11    3.6667        -181.741
+  12    4.0000            -256
+  13    4.3333        -349.148
+  14    4.6667        -463.407
+  15    5.0000            -601
+
+R4POLY_VALUE_TEST:
+  Normal end of execution.
+
+R4VEC_IS_ZERO_TEST
+  Python version: 3.6.9
+  R4VEC_IS_ZERO is TRUE if an R8VEC contains
+  only zero entries.
+
+  X:               0             1             0
+  X contains at least one nonzero entry.
+
+  X:               0             0             0
+  X contains only zero entries.
+
+  X:              -3           -99         -87.3
+  X contains at least one nonzero entry.
+
+R4VEC_IS_ZERO_TEST
+  Normal end of execution.
+
+R4VEC_PRINT_TEST
+  Python version: 3.6.9
+  R4VEC_PRINT prints an R4VEC.
+
+  Here is an R4VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R4VEC_PRINT_TEST:
+  Normal end of execution.
+
+R4VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R4VEC_TRANSPOSE_PRINT prints an R4VEC "tranposed",
+  that is, placing multiple entries on a line.
+  The vector X:        0.218418      0.956318      0.829509      0.561695      0.415307
+                      0.0661187      0.257578      0.109957      0.043829      0.633966
+                      0.0617272      0.449539
+
+R4VEC_TRANSPOSE_PRINT_TEST
+  Normal end of execution.
+
+R4VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R4VEC_UNIFORM_01 computes a random R4VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R4VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8_HUGE_TEST
+  Python version: 3.6.9
+  R8_HUGE returns a "huge" R8;
+
+    R8_HUGE = 1.79769e+308
+
+R8_HUGE_TEST
+  Normal end of execution.
+
+R8_NORMAL_01_CDF_INVERSE_TEST:
+  R8_NORMAL_01_CDF_INVERSE takes FX = NormalCDF ( X ) and computes
+  an estimate X2, of the corresponding input argument X,
+  accurate to about 16 decimal places.
+
+      X                       FX               X2
+
+                       0                     0.5                       0
+                     0.1       0.539827837277029     0.09999999999999999
+                     0.2       0.579259709439103      0.1999999999999999
+                     0.3      0.6179114221889526      0.2999999999999998
+                     0.4      0.6554217416103242                     0.4
+                     0.5      0.6914624612740131      0.4999999999999998
+                     0.6       0.725746882249927      0.6000000000000016
+                     0.7       0.758036347776927      0.6999999999999998
+                     0.8      0.7881446014166033      0.7999999999999998
+                     0.9      0.8159398746532405                     0.9
+                       1      0.8413447460685429                       1
+                     1.5      0.9331927987311419                     1.5
+                       2      0.9772498680518208                       2
+                     2.5       0.993790334674224       2.500000000000004
+                       3      0.9986501019683699       2.999999999999997
+                     3.5      0.9997673709209645       3.499999999999983
+                       4      0.9999683287581669                       4
+
+R8POLY_PRINT_TEST
+  Python version: 3.6.9
+  R8POLY_PRINT prints an R8POLY.
+
+  The R8POLY:
+
+  p(x) =            9 * x^5
+                  + 0.78 * x^4
+                  + 56 * x^2
+                  - 3.4 * x
+                  + 12
+
+  The R8POLY:
+
+  p(x) =            0.78 * x^4
+                  + 56 * x^2
+                  - 3.4 * x
+                  + 12
+
+  The R8POLY:
+
+  p(x) =            12
+
+  The R8POLY:
+
+  p(x) = 0
+
+R8POLY_PRINT_TEST:
+  Normal end of execution.
+
+R8POLY_VALUE_TEST
+  Python version: 3.6.9
+  R8POLY_VALUE evaluates a polynomial at a point
+  using a naive method.
+
+  The polynomial coefficients:
+
+  p(x) =            1 * x^4
+                  - 10 * x^3
+                  + 35 * x^2
+                  - 50 * x
+                  + 24
+
+   I    X    P(X)
+
+   0    0.0000              24
+   1    0.3333         10.8519
+   2    0.6667         3.25926
+   3    1.0000              -1
+   4    1.3333        -4.14815
+   5    1.6667        -8.40741
+   6    2.0000             -16
+   7    2.3333        -29.1481
+   8    2.6667        -50.0741
+   9    3.0000             -81
+  10    3.3333        -124.148
+  11    3.6667        -181.741
+  12    4.0000            -256
+  13    4.3333        -349.148
+  14    4.6667        -463.407
+  15    5.0000            -601
+
+R8POLY_VALUE_TEST:
+  Normal end of execution.
+
+R8VEC_IS_ZERO_TEST
+  Python version: 3.6.9
+  R8VEC_IS_ZERO is TRUE if an R8VEC contains
+  only zero entries.
+
+  X:               0             1             0
+  X contains at least one nonzero entry.
+
+  X:               0             0             0
+  X contains only zero entries.
+
+  X:              -3           -99         -87.3
+  X contains at least one nonzero entry.
+
+R8VEC_IS_ZERO_TEST
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_TRANSPOSE_PRINT prints an R8VEC "tranposed",
+  that is, placing multiple entries on a line.
+  The vector X:        0.218418      0.956318      0.829509      0.561695      0.415307
+                      0.0661187      0.257578      0.109957      0.043829      0.633966
+                      0.0617272      0.449539
+
+R8VEC_TRANSPOSE_PRINT_TEST
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+ASA241_TEST:
+  Normal end of execution.
+Fri Jan 17 19:57:40 2020

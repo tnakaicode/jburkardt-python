@@ -1,0 +1,20 @@
+Mon Feb  3 07:59:15 2020
+
+SHALLOW_WATER_1D_TEST:
+  Compute a solution of the discrete shallow water equations
+  over a 1-dimensional domain.
+
+SHALLOW_WATER_1D:
+  Python version: 3.6.9
+
+  X  values saved in file "sw1d_x.txt"
+  T  values saved in file "sw1d_t.txt"
+  H  values saved in file "sw1d_h.txt"
+  UH values saved in file "sw1d_uh.txt"
+
+SHALLOW_WATER_1D:
+  Normal end of execution.
+
+SHALLOW_WATER_1D_TEST:
+  Normal end of execution.
+Mon Feb  3 07:59:15 2020

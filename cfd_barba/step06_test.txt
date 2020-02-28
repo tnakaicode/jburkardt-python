@@ -1,0 +1,11 @@
+
+STEP06:
+  Python version: 3.6.5
+  The 2D nonlinear convection equation.
+  Saved initial solution in file "step06_initial_u.png".
+  Saved initial solution in file "step06_initial_v.png".
+  Saved final solution in file "step06_final_u.png".
+  Saved final solution in file "step06_final_v.png".
+
+STEP06:
+  Normal end of execution.

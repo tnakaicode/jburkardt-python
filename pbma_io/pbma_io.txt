@@ -1,0 +1,8 @@
+
+PBMA_WRITE_TEST:
+  PBMA_WRITE writes an ASCII PBM graphics file.
+
+  Graphics data stored in file "pbma_io.pbm".
+
+PBMA_WRITE_TEST:
+  Normal end of execution.

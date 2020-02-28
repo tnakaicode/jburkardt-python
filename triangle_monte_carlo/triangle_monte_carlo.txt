@@ -1,0 +1,292 @@
+Wed Feb  5 08:01:53 2020
+
+TRIANGLE_MONTE_CARLO_TESTS
+  Python version: 3.6.9
+  Test the TRIANGLE_MONTE_CARLO library.
+
+REFERENCE_TO_PHYSICAL_T3_TEST:
+  Python version: 3.6.9
+  REFERENCE_TO_PHYSICAL_T3 maps points in a reference triangle
+  to points in a physical triangle.
+
+  XY triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           2             0  
+      1 :           3             4  
+      2 :           0             3  
+
+  Apply map to RS triangle vertices.
+  Recover XY vertices (2,0), (3,4) and (0,3).
+
+  V(0) = ( 2, 0 )
+  V(1) = ( 3, 4 )
+  V(2) = ( 0, 3 )
+
+REFERENCE_TO_PHYSICAL_T3_TEST:
+  Normal end of execution.
+
+TRIANGLE01_SAMPLE_TEST
+  Python version: 3.6.9
+  TRIANGLE01_SAMPLE samples the unit triangle.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           0             0  
+      2 :           1             0  
+
+  Sample points:
+
+  Row:       0             1       
+  Col
+      0 :    0.867886     0.0254803  
+      1 :    0.138259      0.210636  
+      2 :    0.202708      0.329918  
+      3 :    0.112803      0.689309  
+      4 :    0.642508      0.198073  
+      5 :    0.844955      0.014506  
+      6 :    0.346508       0.63118  
+      7 :   0.0242126      0.292589  
+      8 :    0.372621     0.0253558  
+      9 :    0.408253     0.0761431  
+
+TRIANGLE01_SAMPLE_TEST
+  Normal end of execution.
+
+TRIANGLE_MONTE_CARLO_TEST
+  TRIANGLE_MONTE_CARLO estimates an integral over
+  a general triangle using the Monte Carlo method.
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           2             0  
+      1 :           3             4  
+      2 :           0             3  
+
+         N        1               X               Y 
+             X^2               XY             Y^2             X^3
+
+         1
+         691.964
+         15.7117
+         49.5376
+         64.5542
+         391.431
+         621.349
+         210.331
+
+         2
+         28.2114
+         128.405
+         217.217
+         122.285
+         24.3627
+         83.4116
+          11.701
+
+         4
+         97.7888
+         186.384
+         321.041
+         383.247
+          109.51
+         33.8802
+         161.689
+
+         8
+         276.986
+          200.06
+         116.893
+         223.802
+         66.5596
+         274.406
+         149.278
+
+        16
+         159.257
+          145.06
+         114.644
+         188.252
+         189.311
+          73.377
+         207.395
+
+        32
+         211.626
+          141.95
+          146.26
+         96.3389
+           157.3
+          99.985
+          163.77
+
+        64
+         200.269
+         142.903
+         143.097
+         175.252
+         155.647
+         179.902
+         141.383
+
+       128
+         157.119
+         186.501
+          166.07
+         196.817
+         201.068
+         158.993
+         206.222
+
+       256
+         188.642
+         167.382
+         164.565
+         155.928
+          174.93
+         183.025
+         170.801
+
+       512
+         156.457
+          176.77
+         187.183
+         171.955
+         152.832
+         157.869
+         164.929
+
+      1024
+         169.867
+         169.208
+         172.097
+         167.011
+         160.758
+         162.303
+         164.792
+
+      2048
+         175.728
+         172.044
+          169.97
+         168.847
+         172.218
+         168.419
+         168.575
+
+      4096
+         164.826
+         178.071
+         174.238
+         176.893
+         165.793
+          168.86
+         170.819
+
+      8192
+         168.596
+         168.444
+         171.625
+         167.545
+         166.924
+          169.88
+         170.828
+
+     16384
+          168.53
+         167.889
+         168.243
+         169.878
+         167.596
+         168.246
+         170.517
+
+     32768
+         168.033
+         167.118
+         168.697
+         167.681
+         169.218
+         167.947
+         168.324
+
+     65536
+         169.665
+         170.451
+         169.129
+         168.754
+         169.375
+         168.556
+         168.148
+
+
+TRIANGLE_MONTE_CARLO_TEST:
+  Normal end of execution.
+
+TRIANGLE_MONTE_CARLO_TEST01
+  Integrate xy^3
+  Integration region is the unit triangle.
+  Use an increasing number of points N.
+
+     N          XY^3
+
+         1        0.034854
+         2        0.001403
+         4        0.016035
+         8        0.015451
+        16        0.004655
+        32        0.009818
+        64        0.008298
+       128        0.007687
+       256        0.006712
+       512        0.008354
+      1024        0.008811
+      2048        0.008127
+      4096        0.008282
+      8192        0.008287
+     16384        0.008374
+     32768        0.008486
+     65536        0.008360
+
+  Triangle vertices:
+
+  Row:       0             1       
+  Col
+      0 :           2             0  
+      1 :           3             4  
+      2 :           0             3  
+
+TRIANGLE_MONTE_CARLO_TEST02
+  Integrate xy^3
+  Integration region is a general triangle.
+  Use an increasing number of points N.
+
+     N          XY^3
+
+         1      691.964152
+         2       32.624653
+         4      321.916444
+         8      124.029652
+        16      108.055033
+        32      204.353691
+        64      176.548690
+       128      162.920038
+       256      154.270024
+       512      156.512585
+      1024      185.732881
+      2048      166.774536
+      4096      168.752864
+      8192      168.471772
+     16384      168.680305
+     32768      171.491438
+     65536      169.037903
+
+TRIANGLE_MONTE_CARLO_TESTS:
+  Normal end of execution.
+Wed Feb  5 08:02:08 2020

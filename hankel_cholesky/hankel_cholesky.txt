@@ -1,0 +1,55 @@
+Sun Jan 26 09:12:56 2020
+
+HANKEL_CHOLESKY_TEST
+  Python version: 3.6.9
+  Test the HANKEL_CHOLESKY library.
+
+HANKEL_CHOLESKY_UPPER_TEST
+  HANKEL_CHOLESKY_UPPER is given a Hankel matrix H and 
+  computes an upper triangular matrix R such that 
+  H = R' * R
+
+  The Hankel matrix H:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :   0.0477066     0.0144415      0.918915      0.524497       18.4544  
+      1 :   0.0144415      0.918915      0.524497       18.4544       15.1218  
+      2 :    0.918915      0.524497       18.4544       15.1218       372.102  
+      3 :    0.524497       18.4544       15.1218       372.102       395.538  
+      4 :     18.4544       15.1218       372.102       395.538       7525.98  
+
+  R computed by NUMPY.LINALG.CHOLESKY:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.218418     0.0661187       4.20713       2.40134       84.4911  
+      1 :           0      0.956318      0.257578       19.1313       9.97088  
+      2 :           0             0      0.829509      0.109957       16.9598  
+      3 :           0             0             0      0.561695      0.043829  
+      4 :           0             0             0             0      0.415307  
+
+  R computed by R8MAT_CHOLESKY_FACTOR_UPPER:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.218418     0.0661187       4.20713       2.40134       84.4911  
+      1 :           0      0.956318      0.257578       19.1313       9.97088  
+      2 :           0             0      0.829509      0.109957       16.9598  
+      3 :           0             0             0      0.561695      0.043829  
+      4 :           0             0             0             0      0.415307  
+
+  R computed by HANKEL_CHOLESKY:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.218418     0.0661187       4.20713       2.40134       84.4911  
+      1 :           0      0.956318      0.257578       19.1313       9.97088  
+      2 :           0             0      0.829509      0.109957       16.9598  
+      3 :           0             0             0      0.561695      0.043829  
+      4 :           0             0             0             0      0.415307  
+
+HANKEL_CHOLESKY_TEST
+  Normal end of execution.
+
+Sun Jan 26 09:12:56 2020

@@ -1,0 +1,139 @@
+<html>
+
+  <head>
+    <title>
+      complex_numbers_test - Complex Numbers in C Programming
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      complex_numbers_test <br> Complex Numbers in C Programming
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>complex_numbers_test</b>,
+      a Python program which
+      demonstrates some of the features of using complex numbers.
+    </p>
+
+    <p>
+      The first issue is how to declare a complex variable, including
+      the choice of precision, whether the variable is a scalar, vector, 
+      or array, and whether the variable is initialized with a value, 
+      or assigned one.
+    </p>
+
+    <p>
+      A second issue concerns the question of how a complex variable is
+      to be printed out.
+    </p>
+
+    <p>
+      Another issue concerns how a complex variable is to operated on
+      by the arithmetic operators of addition, subtraction, multiplication,
+      division, and exponentiation.
+    </p>
+
+    <p>
+      The language also provides a number of intrinsic functions that
+      can be applied to a complex variable.  The names of these functions
+      can sometimes be easy to forget.  
+    </p>
+
+    <p>
+      Another issue concerns the details of double precision calculation.
+      Even a single accidental use of a single precision function name
+      in a double precision computation can result in the loss of half
+      the digits of accuracy.  
+    </p>
+
+    <p>
+      An unusual feature of the implementation of complex numbers in
+      Python is that a complex number can be defined by a statement like
+      <blockquote>
+        z = 1 + 2j;
+      </blockquote>
+      where the string "2j" is interpreted as "2 times the imaginary unit".
+      But this does NOT mean that j by itself means the imaginary unit.
+      No, the imaginary unit is represented by "1j".  So you cannot set the 
+      imaginary unit by
+      <blockquote>
+        a = j;
+      </blockquote>
+      Instead, you would have to write
+      <blockquote>
+        a = 1j;
+      </blockquote>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>complex_numbers_test</b> is available in
+      <a href = "../../c_src/complex_numbers_test/complex_numbers_test.html">a C version</a> and
+      <a href = "../../cpp_src/complex_numbers_test/ccomplex_numbers_test.html">a C++ version</a> and
+      <a href = "../../f_src/complex_numbers_test/complex_numbers_test.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/complex_numbers_test/complex_numbers_test.html">a MATLAB version</a> and
+      <a href = "../../py_src/complex_numbers_test/complex_numbers_test.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../c_src/c8lib/c8lib.html">
+      C8LIB</a>,
+      a C library which
+      implements certain elementary functions for "C8" or
+      double precision complex variables;
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "complex_numbers_test.py">complex_numbers_test.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "complex_numbers_test.sh">complex_numbers_test.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "complex_numbers_test.txt">complex_numbers_test.txt</a>,
+          the output file;
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 May 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

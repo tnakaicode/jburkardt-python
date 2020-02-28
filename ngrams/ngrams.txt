@@ -1,0 +1,40 @@
+Tue Jan 28 08:24:53 2020
+
+NGRAM_SCORE_TEST1:
+  Python version: 3.6.9
+  NGRAM_SCORE tests a string or text against English ngram statistics.
+  Here we do a test against English monograms.
+
+  Apparently, you want to remove all nonalphabetic information,
+  and uppercase your text.  But you may wish to preserve spaces.
+
+  HELLOWORLD length = 10, score = -12.9534
+  HELLO WORLD length = 11, score = -24.5943
+  helloworld length = 10, score = -116.409
+  HELLO, WORLD! length = 13, score = -47.8761
+  Hello, world! length = 13, score = -140.996
+  HELLOWORLD.txt length = 11, score = -24.5943
+  desiderata.txt length = 1820, score = -6475.16
+
+NGRAM_SCORE_TEST1:
+  Normal end of execution.
+
+NGRAM_SCORE_TEST2:
+  Python version: 3.6.9
+  NGRAM_SCORE tests a string or text against English ngram statistics.
+  Here we do a test against English bigrams.
+
+  Apparently, you want to remove all nonalphabetic information,
+  and uppercase your text.  But you may wish to preserve spaces.
+
+  HELLOWORLD length = 10, score = -21.2958
+  HELLO WORLD length = 11, score = -42.0963
+  helloworld length = 10, score = -104.723
+  HELLO, WORLD! length = 13, score = -65.3681
+  Hello, world! length = 13, score = -139.631
+  HELLOWORLD.txt length = 11, score = -32.9317
+  desiderata.txt length = 1820, score = -10834
+
+NGRAM_SCORE_TEST2:
+  Normal end of execution.
+Tue Jan 28 08:24:54 2020

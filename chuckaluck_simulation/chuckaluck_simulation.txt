@@ -1,0 +1,31 @@
+Sun Jan 19 19:13:04 2020
+
+chuckaluck_simulation_test:
+  Python version: 3.6.9
+  Test chuckaluck_simulation.
+
+  Graphics saved as "chuckaluck_frequency.png"
+Graphics saved as " chuckaluck_history.png ".
+
+chuckaluck_probability_test:
+  chuckaluck_probability estimates the probability of
+  0, 1, 2, or 3 matches in chuckaluck, by simulating
+  n games.
+
+        n        0        1        2        3
+
+        1  0.000000  1.000000  0.000000  0.000000
+       10  0.400000  0.500000  0.100000  0.000000
+      100  0.580000  0.300000  0.110000  0.010000
+     1000  0.562000  0.355000  0.076000  0.007000
+    10000  0.584000  0.341800  0.068900  0.005300
+   100000  0.578030  0.348340  0.068830  0.004800
+  1000000  0.578901  0.346944  0.069471  0.004684
+
+  Exact:   0.578704  0.347222  0.069444  0.004630
+
+chuckaluck_simulation_test:
+  Normal end of execution.
+
+Sun Jan 19 19:13:08 2020
+Sun Jan 19 19:13:08 2020

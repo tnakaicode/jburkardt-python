@@ -1,0 +1,126 @@
+<html>
+
+  <head>
+    <title>
+      KRONROD - Gauss-Kronrod Quadrature Rules
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      KRONROD <br> Gauss-Kronrod Quadrature Rules
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>KRONROD</b>,
+      a Python library which
+      computes both a Gauss quadrature rule of order N, and the
+      Gauss-Kronrod rule of order 2*N+1.
+    </p>
+
+    <p>
+      A pair of Gauss and Gauss-Kronrod quadrature rules are typically
+      used to provide an error estimate for an integral.  The integral
+      is estimated using the Gauss rule, and then the Gauss-Kronrod
+      rule provides a higher precision estimate.  The difference between
+      the two estimates is taken as an approximation to the level
+      of error.
+    </p>
+
+    <p>
+      The advantage of using a Gauss and Gauss-Kronrod pair is that
+      the second rule, which uses 2*N+1 points, actually includes the
+      N points in the previous Gauss rule.  This means that the function
+      values from that computation can be reused.  This efficiency comes
+      at the cost of a mild reduction in the degree of polynomial precision
+      of the Gauss-Kronrod rule.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>KRONROD</b> is available in
+      <a href = "../../c_src/kronrod/kronrod.html">a C version</a> and
+      <a href = "../../cpp_src/kronrod/kronrod.html">a C++ version</a> and
+      <a href = "../../f_src/kronrod/kronrod.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/kronrod/kronrod.html">a MATLAB version</a> and
+      <a href = "../../py_src/kronrod/kronrod.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/quad_serial/quad_serial.html">
+      QUAD_SERIAL</a>,
+      a Python program which
+      approximates an integral using a quadrature rule,
+      and is intended as a starting point for parallelization exercises.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Robert Piessens, Maria Branders,<br>
+          A Note on the Optimal Addition of Abscissas to Quadrature Formulas
+          of Gauss and Lobatto,<br>
+          Mathematics of Computation,<br>
+          Volume 28, Number 125, January 1974, pages 135-139.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "kronrod.py">kronrod.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "kronrod.sh">kronrod.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "kronrod.txt">kronrod.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 05 October 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

@@ -1,0 +1,733 @@
+<html>
+
+  <head>
+    <title>
+      LAGRANGE_INTERP_1D - Polynomial Interpolation in 1D using Lagrange Polynomials
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      LAGRANGE_INTERP_1D <br> Polynomial Interpolation in 1D using Lagrange Polynomials
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>LAGRANGE_INTERP_1D</b>,
+      a Python library which
+      defines and evaluates the Lagrange polynomial p(x) 
+      which interpolates a set of data, so that p(x(i)) = y(i).
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>LAGRANGE_INTERP_1D</b> is available in
+      <a href = "../../c_src/lagrange_interp_1d/lagrange_interp_1d.html">a C version</a> and
+      <a href = "../../cpp_src/lagrange_interp_1d/lagrange_interp_1d.html">a C++ version</a> and
+      <a href = "../../f_src/lagrange_interp_1d/lagrange_interp_1d.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/lagrange_interp_1d/lagrange_interp_1d.html">a MATLAB version</a> and
+      <a href = "../../py_src/lagrange_interp_1d/lagrange_interp_1d.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/barycentric_interp_1d/barycentric_interp_1d.html">
+      BARYCENTRIC_INTERP_1D</a>,
+      a Python library which
+      defines and evaluates the barycentric Lagrange polynomial p(x) 
+      which interpolates a set of data, so that p(x(i)) = y(i).
+      The barycentric approach means that very high degree polynomials can
+      safely be used.
+    </p>
+
+    <p>
+      <a href = "../../py_src/chebyshev_interp_1d/chebyshev_interp_1d.html">
+      CHEBYSHEV_INTERP_1D</a>,
+      a Python library which
+      determines the combination of Chebyshev polynomials which 
+      interpolates a set of data, so that p(x(i)) = y(i).
+    </p>
+
+    <p>
+      <a href = "../../py_src/nearest_interp_1d/nearest_interp_1d.html">
+      NEAREST_INTERP_1D</a>,
+      a Python library which
+      interpolates a set of data using a piecewise constant interpolant
+      defined by the nearest neighbor criterion.
+    </p>
+
+    <p>
+      <a href = "../../py_src/newton_interp_1d/newton_interp_1d.html">
+      NEWTON_INTERP_1D</a>,
+      a Python library which
+      finds a polynomial interpolant to data using Newton divided differences.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pwl_interp_1d/pwl_interp_1d.html">
+      PWL_INTERP_1D</a>,
+      a Python library which
+      interpolates a set of data using a piecewise linear function.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rbf_interp_1d/rbf_interp_1d.html">
+      RBF_INTERP_1D</a>,
+      a Python library which
+      defines and evaluates radial basis function (RBF) interpolants 
+      to 1D data.
+    </p>
+
+    <p>
+      <a href = "../../py_src/shepard_interp_1d/shepard_interp_1d.html">
+      SHEPARD_INTERP_1D</a>,
+      a Python library which
+      defines and evaluates Shepard interpolants to 1D data,
+      based on inverse distance weighting.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp_1d/test_interp_1d.html">
+      TEST_INTERP_1D</a>,
+      a Python library which
+      defines test problems for interpolation of data y(x),
+      depending on a 2D argument.
+    </p>
+
+    <p>
+      <a href = "../../py_src/vandermonde_interp_1d/vandermonde_interp_1d.html">
+      VANDERMONDE_INTERP_1D</a>,
+      a Python library which
+      finds a polynomial interpolant to data y(x) of a 1D argument, by
+      setting up and solving a linear system for the polynomial coefficients,
+      involving the Vandermonde matrix.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lagrange_interp_1d.py">lagrange_interp_1d.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "lagrange_interp_1d.sh">lagrange_interp_1d.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "lagrange_interp_1d.txt">lagrange_interp_1d.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for Problem 1:
+      <ul>
+        <li>
+          <a href = "p01_dataeven_4.png">p01_dataeven_4.png</a>
+        </li>
+        <li>
+          <a href = "p01_lageven_4.png">p01_lageven_4.png</a>
+        </li>
+        <li>
+          <a href = "p01_dataeven_8.png">p01_dataeven_8.png</a>
+        </li>
+        <li>
+          <a href = "p01_lageven_8.png">p01_lageven_8.png</a>
+        </li>
+        <li>
+          <a href = "p01_dataeven_16.png">p01_dataeven_16.png</a>
+        </li>
+        <li>
+          <a href = "p01_lageven_16.png">p01_lageven_16.png</a>
+        </li>
+        <li>
+          <a href = "p01_dataeven_32.png">p01_dataeven_32.png</a>
+        </li>
+        <li>
+          <a href = "p01_lageven_32.png">p01_lageven_32.png</a>
+        </li>
+        <li>
+          <a href = "p01_dataeven_64.png">p01_dataeven_64.png</a>
+        </li>
+        <li>
+          <a href = "p01_lageven_64.png">p01_lageven_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for Problem p02:
+      <ul>
+        <li>
+          <a href = "p02_dataeven_4.png">p02_dataeven_4.png</a>
+        </li>
+        <li>
+          <a href = "p02_lageven_4.png">p02_lageven_4.png</a>
+        </li>
+        <li>
+          <a href = "p02_dataeven_8.png">p02_dataeven_8.png</a>
+        </li>
+        <li>
+          <a href = "p02_lageven_8.png">p02_lageven_8.png</a>
+        </li>
+        <li>
+          <a href = "p02_dataeven_16.png">p02_dataeven_16.png</a>
+        </li>
+        <li>
+          <a href = "p02_lageven_16.png">p02_lageven_16.png</a>
+        </li>
+        <li>
+          <a href = "p02_dataeven_32.png">p02_dataeven_32.png</a>
+        </li>
+        <li>
+          <a href = "p02_lageven_32.png">p02_lageven_32.png</a>
+        </li>
+        <li>
+          <a href = "p02_dataeven_64.png">p02_dataeven_64.png</a>
+        </li>
+        <li>
+          <a href = "p02_lageven_64.png">p02_lageven_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p03:
+      <ul>
+        <li>
+          <a href = "p03_dataeven_4.png">p03_dataeven_4.png</a>
+        </li>
+        <li>
+          <a href = "p03_lageven_4.png">p03_lageven_4.png</a>
+        </li>
+        <li>
+          <a href = "p03_dataeven_8.png">p03_dataeven_8.png</a>
+        </li>
+        <li>
+          <a href = "p03_lageven_8.png">p03_lageven_8.png</a>
+        </li>
+        <li>
+          <a href = "p03_dataeven_16.png">p03_dataeven_16.png</a>
+        </li>
+        <li>
+          <a href = "p03_lageven_16.png">p03_lageven_16.png</a>
+        </li>
+        <li>
+          <a href = "p03_dataeven_32.png">p03_dataeven_32.png</a>
+        </li>
+        <li>
+          <a href = "p03_lageven_32.png">p03_lageven_32.png</a>
+        </li>
+        <li>
+          <a href = "p03_dataeven_64.png">p03_dataeven_64.png</a>
+        </li>
+        <li>
+          <a href = "p03_lageven_64.png">p03_lageven_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p04:
+      <ul>
+        <li>
+          <a href = "p04_dataeven_4.png">p04_dataeven_4.png</a>
+        </li>
+        <li>
+          <a href = "p04_lageven_4.png">p04_lageven_4.png</a>
+        </li>
+        <li>
+          <a href = "p04_dataeven_8.png">p04_dataeven_8.png</a>
+        </li>
+        <li>
+          <a href = "p04_lageven_8.png">p04_lageven_8.png</a>
+        </li>
+        <li>
+          <a href = "p04_dataeven_16.png">p04_dataeven_16.png</a>
+        </li>
+        <li>
+          <a href = "p04_lageven_16.png">p04_lageven_16.png</a>
+        </li>
+        <li>
+          <a href = "p04_dataeven_32.png">p04_dataeven_32.png</a>
+        </li>
+        <li>
+          <a href = "p04_lageven_32.png">p04_lageven_32.png</a>
+        </li>
+        <li>
+          <a href = "p04_dataeven_64.png">p04_dataeven_64.png</a>
+        </li>
+        <li>
+          <a href = "p04_lageven_64.png">p04_lageven_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p05:
+      <ul>
+        <li>
+          <a href = "p05_dataeven_4.png">p05_dataeven_4.png</a>,
+        </li>
+        <li>
+          <a href = "p05_lageven_4.png">p05_lageven_4.png</a>
+        </li>
+        <li>
+          <a href = "p05_dataeven_8.png">p05_dataeven_8.png</a>
+        </li>
+        <li>
+          <a href = "p05_lageven_8.png">p05_lageven_8.png</a>
+        </li>
+        <li>
+          <a href = "p05_dataeven_16.png">p05_dataeven_16.png</a>
+        </li>
+        <li>
+          <a href = "p05_lageven_16.png">p05_lageven_16.png</a>
+        </li>
+        <li>
+          <a href = "p05_dataeven_32.png">p05_dataeven_32.png</a>
+        </li>
+        <li>
+          <a href = "p05_lageven_32.png">p05_lageven_32.png</a>
+        </li>
+        <li>
+          <a href = "p05_dataeven_64.png">p05_dataeven_64.png</a>
+        </li>
+        <li>
+          <a href = "p05_lageven_64.png">p05_lageven_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p06:
+      <ul>
+        <li>
+          <a href = "p06_dataeven_4.png">p06_dataeven_4.png</a>
+        </li>
+        <li>
+          <a href = "p06_lageven_4.png">p06_lageven_4.png</a>
+        </li>
+        <li>
+          <a href = "p06_dataeven_8.png">p06_dataeven_8.png</a>
+        </li>
+        <li>
+          <a href = "p06_lageven_8.png">p06_lageven_8.png</a>
+        </li>
+        <li>
+          <a href = "p06_dataeven_16.png">p06_dataeven_16.png</a>
+        </li>
+        <li>
+          <a href = "p06_lageven_16.png">p06_lageven_16.png</a>
+        </li>
+        <li>
+          <a href = "p06_dataeven_32.png">p06_dataeven_32.png</a>
+        </li>
+        <li>
+          <a href = "p06_lageven_32.png">p06_lageven_32.png</a>
+        </li>
+        <li>
+          <a href = "p06_dataeven_64.png">p06_dataeven_64.png</a>
+        </li>
+        <li>
+          <a href = "p06_lageven_64.png">p06_lageven_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p07:
+      <ul>
+        <li>
+          <a href = "p07_dataeven_4.png">p07_dataeven_4.png</a>
+        </li>
+        <li>
+          <a href = "p07_lageven_4.png">p07_lageven_4.png</a>
+        </li>
+        <li>
+          <a href = "p07_dataeven_8.png">p07_dataeven_8.png</a>
+        </li>
+        <li>
+          <a href = "p07_lageven_8.png">p07_lageven_8.png</a>
+        </li>
+        <li>
+          <a href = "p07_dataeven_16.png">p07_dataeven_16.png</a>
+        </li>
+        <li>
+          <a href = "p07_lageven_16.png">p07_lageven_16.png</a>
+        </li>
+        <li>
+          <a href = "p07_dataeven_32.png">p07_dataeven_32.png</a>
+        </li>
+        <li>
+          <a href = "p07_lageven_32.png">p07_lageven_32.png</a>
+        </li>
+        <li>
+          <a href = "p07_dataeven_64.png">p07_dataeven_64.png</a>
+        </li>
+        <li>
+          <a href = "p07_lageven_64.png">p07_lageven_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p08:
+      <ul>
+        <li>
+          <a href = "p08_dataeven_4.png">p08_dataeven_4.png</a>
+        </li>
+        <li>
+          <a href = "p08_lageven_4.png">p08_lageven_4.png</a>
+        </li>
+        <li>
+          <a href = "p08_dataeven_8.png">p08_dataeven_8.png</a>
+        </li>
+        <li>
+          <a href = "p08_lageven_8.png">p08_lageven_8.png</a>
+        </li>
+        <li>
+          <a href = "p08_dataeven_16.png">p08_dataeven_16.png</a>
+        </li>
+        <li>
+          <a href = "p08_lageven_16.png">p08_lageven_16.png</a>
+        </li>
+        <li>
+          <a href = "p08_dataeven_32.png">p08_dataeven_32.png</a>
+        </li>
+        <li>
+          <a href = "p08_lageven_32.png">p08_lageven_32.png</a>
+        </li>
+        <li>
+          <a href = "p08_dataeven_64.png">p08_dataeven_64.png</a>
+        </li>
+        <li>
+          <a href = "p08_lageven_64.png">p08_lageven_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>lagrange_interp_1d_test02()</b> plots the data and Lagrange interpolant
+      for Chebyshev spacing.
+      <ul>
+        <li>
+          <a href = "p01_datacheby_4.png">p01_datacheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p01_lagcheby_4.png">p01_lagcheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p01_datacheby_8.png">p01_datacheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p01_lagcheby_8.png">p01_lagcheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p01_datacheby_16.png">p01_datacheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p01_lagcheby_16.png">p01_lagcheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p01_datacheby_32.png">p01_datacheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p01_lagcheby_32.png">p01_lagcheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p01_datacheby_64.png">p01_datacheby_64.png</a>
+        </li>
+        <li>
+          <a href = "p01_lagcheby_64.png">p01_lagcheby_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for Problem p02:
+      <ul>
+        <li>
+          <a href = "p02_datacheby_4.png">p02_datacheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p02_lagcheby_4.png">p02_lagcheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p02_datacheby_8.png">p02_datacheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p02_lagcheby_8.png">p02_lagcheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p02_datacheby_16.png">p02_datacheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p02_lagcheby_16.png">p02_lagcheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p02_datacheby_32.png">p02_datacheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p02_lagcheby_32.png">p02_lagcheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p02_datacheby_64.png">p02_datacheby_64.png</a>
+        </li>
+        <li>
+          <a href = "p02_lagcheby_64.png">p02_lagcheby_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p03:
+      <ul>
+        <li>
+          <a href = "p03_datacheby_4.png">p03_datacheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p03_lagcheby_4.png">p03_lagcheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p03_datacheby_8.png">p03_datacheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p03_lagcheby_8.png">p03_lagcheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p03_datacheby_16.png">p03_datacheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p03_lagcheby_16.png">p03_lagcheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p03_datacheby_32.png">p03_datacheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p03_lagcheby_32.png">p03_lagcheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p03_datacheby_64.png">p03_datacheby_64.png</a>
+        </li>
+        <li>
+          <a href = "p03_lagcheby_64.png">p03_lagcheby_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p04:
+      <ul>
+        <li>
+          <a href = "p04_datacheby_4.png">p04_datacheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p04_lagcheby_4.png">p04_lagcheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p04_datacheby_8.png">p04_datacheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p04_lagcheby_8.png">p04_lagcheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p04_datacheby_16.png">p04_datacheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p04_lagcheby_16.png">p04_lagcheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p04_datacheby_32.png">p04_datacheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p04_lagcheby_32.png">p04_lagcheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p04_datacheby_64.png">p04_datacheby_64.png</a>
+        </li>
+        <li>
+          <a href = "p04_lagcheby_64.png">p04_lagcheby_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p05:
+      <ul>
+        <li>
+          <a href = "p05_datacheby_4.png">p05_datacheby_4.png</a>,
+        </li>
+        <li>
+          <a href = "p05_lagcheby_4.png">p05_lagcheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p05_datacheby_8.png">p05_datacheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p05_lagcheby_8.png">p05_lagcheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p05_datacheby_16.png">p05_datacheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p05_lagcheby_16.png">p05_lagcheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p05_datacheby_32.png">p05_datacheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p05_lagcheby_32.png">p05_lagcheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p05_datacheby_64.png">p05_datacheby_64.png</a>
+        </li>
+        <li>
+          <a href = "p05_lagcheby_64.png">p05_lagcheby_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p06:
+      <ul>
+        <li>
+          <a href = "p06_datacheby_4.png">p06_datacheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p06_lagcheby_4.png">p06_lagcheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p06_datacheby_8.png">p06_datacheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p06_lagcheby_8.png">p06_lagcheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p06_datacheby_16.png">p06_datacheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p06_lagcheby_16.png">p06_lagcheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p06_datacheby_32.png">p06_datacheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p06_lagcheby_32.png">p06_lagcheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p06_datacheby_64.png">p06_datacheby_64.png</a>
+        </li>
+        <li>
+          <a href = "p06_lagcheby_64.png">p06_lagcheby_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p07:
+      <ul>
+        <li>
+          <a href = "p07_datacheby_4.png">p07_datacheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p07_lagcheby_4.png">p07_lagcheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p07_datacheby_8.png">p07_datacheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p07_lagcheby_8.png">p07_lagcheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p07_datacheby_16.png">p07_datacheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p07_lagcheby_16.png">p07_lagcheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p07_datacheby_32.png">p07_datacheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p07_lagcheby_32.png">p07_lagcheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p07_datacheby_64.png">p07_datacheby_64.png</a>
+        </li>
+        <li>
+          <a href = "p07_lagcheby_64.png">p07_lagcheby_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Images for problem p08:
+      <ul>
+        <li>
+          <a href = "p08_datacheby_4.png">p08_datacheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p08_lagcheby_4.png">p08_lagcheby_4.png</a>
+        </li>
+        <li>
+          <a href = "p08_datacheby_8.png">p08_datacheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p08_lagcheby_8.png">p08_lagcheby_8.png</a>
+        </li>
+        <li>
+          <a href = "p08_datacheby_16.png">p08_datacheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p08_lagcheby_16.png">p08_lagcheby_16.png</a>
+        </li>
+        <li>
+          <a href = "p08_datacheby_32.png">p08_datacheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p08_lagcheby_32.png">p08_lagcheby_32.png</a>
+        </li>
+        <li>
+          <a href = "p08_datacheby_64.png">p08_datacheby_64.png</a>
+        </li>
+        <li>
+          <a href = "p08_lagcheby_64.png">p08_lagcheby_64.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 26 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

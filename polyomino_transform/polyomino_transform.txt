@@ -1,0 +1,146 @@
+Sat Feb  1 15:36:37 2020
+
+POLYOMINO_TRANSFORM_TEST:
+  Python version: 3.6.9
+  POLYOMINO_TRANSFORM can transform a polyomino.
+  Generate all 8 combinations of rotation and reflection
+  applied to a polyomino represented by a binary matrix.
+
+  The given polyomino P
+
+ 0
+ 1
+ 1
+
+ 1
+ 1
+ 0
+
+ 0
+ 1
+ 0
+
+
+  P after 0 reflections and 0 rotations:
+
+ 0
+ 1
+ 1
+
+ 1
+ 1
+ 0
+
+ 0
+ 1
+ 0
+
+
+  P after 0 reflections and 1 rotations:
+
+ 1
+ 0
+ 0
+
+ 1
+ 1
+ 1
+
+ 0
+ 1
+ 0
+
+
+  P after 0 reflections and 2 rotations:
+
+ 0
+ 1
+ 0
+
+ 0
+ 1
+ 1
+
+ 1
+ 1
+ 0
+
+
+  P after 0 reflections and 3 rotations:
+
+ 0
+ 1
+ 0
+
+ 1
+ 1
+ 1
+
+ 0
+ 0
+ 1
+
+
+  P after 1 reflections and 0 rotations:
+
+ 1
+ 1
+ 0
+
+ 0
+ 1
+ 1
+
+ 0
+ 1
+ 0
+
+
+  P after 1 reflections and 1 rotations:
+
+ 0
+ 1
+ 0
+
+ 1
+ 1
+ 1
+
+ 1
+ 0
+ 0
+
+
+  P after 1 reflections and 2 rotations:
+
+ 0
+ 1
+ 0
+
+ 1
+ 1
+ 0
+
+ 0
+ 1
+ 1
+
+
+  P after 1 reflections and 3 rotations:
+
+ 0
+ 0
+ 1
+
+ 1
+ 1
+ 1
+
+ 0
+ 1
+ 0
+
+
+POLYOMINO_TRANSFORM_TEST:
+  Normal end of execution.
+Sat Feb  1 15:36:37 2020

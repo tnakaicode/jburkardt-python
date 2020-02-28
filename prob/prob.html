@@ -1,0 +1,870 @@
+<html>
+
+  <head>
+    <title>
+      PROB - Probability Density Functions
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      PROB <br> Probability Density Functions
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>PROB</b>,
+      a Python library which 
+      handles various discrete and
+      continuous probability density functions
+      ("PDF's").
+    </p>
+
+    <p>
+      For a discrete variable X, PDF(X) is the probability that the value 
+      X will occur; for a continuous variable, PDF(X) is the probability 
+      density of X, that is, the probability of a value between X and X+dX
+      is PDF(X) * dX.
+    </p>
+
+    <p>
+      The corresponding cumulative density functions or "CDF"'s are also
+      handled.  For a discrete or continuous variable, CDF(X) is the
+      probability that the variable takes on a value less than or equal to X.
+    </p>
+
+    <p>
+      In some cases, the inverse of the CDF can easily be computed.
+      If 
+      <pre><b>
+        X = CDF_INV ( P ) 
+      </b></pre>
+      then we are asserting that the value <b>X</b> has a cumulative
+      probability density function of <b>P</b>, in other words, 
+      the probability that the variable is less than or equal to <b>X</b>
+      is <b>P</b>.  If the CDF cannot be analytically inverted, there
+      are simple ways to try to estimate the inverse.  Depending on
+      the PDF, these methods may be rapid and accurate, or not.
+    </p>
+
+    <p>
+      For most distributions, the <i>mean</i> or "average value" or 
+      "expected value" is also available.  For a discrete variable, MEAN 
+      is simply the sum of the products X * PDF(X); for a continuous
+      variable, MEAN is the integral of X * PDF(X) over the range.
+      For the distributions covered here, the means are known beforehand,
+      and no summation or integration is required.
+    </p>
+
+    <p>
+      For most distributions, the <i>variance</i> is available.  For a 
+      discrete variable, the variance is the sum of the products 
+      ( X - MEAN )^2 * PDF(X); for a continuous variable, the 
+      variance is the integral of ( X - MEAN )^2 * PDF(X) over the range.
+      The square root of the variance is known as the <i>standard
+      deviation</i>.  For the distributions covered here, the variances are
+      often known beforehand, and no summation or integration is required.
+    </p>
+
+    <p>
+      For many of the distributions, it is possible to repeatedly
+      request "samples", that is, a pseudorandom sequence of realizations 
+      of the PDF.  These samples are always associated with an integer
+      seed, which controls the calculation.  Using the same seed as input
+      will guarantee the same sample value on output.  Ultimately, a
+      random number generator must be invoked internally.  In most cases,
+      the current code will call a routine called R8_UNIFORM or
+      <b>I4_UNIFORM</b>, each of which in turn calls a routine called
+      <b>R8_UNIFORM_01</b>.  You may prefer a different random number generator
+      for this purpose.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>PROB</b> is available in
+      <a href = "../../c_src/prob/prob.html">a C version</a> and
+      <a href = "../../cpp_src/prob/prob.html">a C++ version</a> and
+      <a href = "../../f_src/prob/prob.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/prob/prob.html">a MATLAB version</a> and
+      <a href = "../../py_src/prob/prob.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/log_normal/log_normal.html">
+      LOG_NORMAL</a>,
+      a Python library which 
+      returns quantities associated with the log normal Probability
+      Distribution Function (PDF).
+    </p>
+
+    <p>
+      <a href = "../../py_src/log_normal_truncated_ab/log_normal_truncated_ab.html">
+      LOG_NORMAL_TRUNCATED_AB</a>,
+      a Python library which 
+      returns quantities associated with the log normal Probability
+      Distribution Function (PDF) truncated to the interval [A,B].
+    </p>
+
+    <p>
+      <a href = "../../py_src/normal/normal.html">
+      NORMAL</a>, 
+      a Python library which
+      samples the normal distribution.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pdflib/pdflib.html">
+      PDFLIB</a>,
+      a Python library which
+      evaluates Probability Density Functions (PDF's)
+      and produces random samples from them,
+      including beta, binomial, chi, exponential, gamma, inverse chi,
+      inverse gamma, multinomial, normal, scaled inverse chi, and uniform.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_values/test_values.html">
+      TEST_VALUES</a>, 
+      a Python library which
+      contains sample values for a number of distributions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/truncated_normal/truncated_normal.html">
+      TRUNCATED_NORMAL</a>,
+      a Python library which 
+      works with the truncated normal distribution over [A,B], or
+      [A,+oo) or (-oo,B], returning the probability density function (PDF),
+      the cumulative density function (CDF), the inverse CDF, the mean,
+      the variance, and sample values.
+    </p>
+
+    <p>
+      <a href = "../../py_src/uniform/uniform.html">
+      UNIFORM</a>,
+      a Python library which
+      samples the uniform distribution.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "angle.py">angle.py</a> 
+          the Angle distribution.
+        </li>
+        <li>
+          <a href = "anglit.py">anglit.py</a> 
+          the Anglit distribution.
+        </li>
+        <li>
+          <a href = "arcsin.py">arcsin.py</a> 
+          the Arcsin distribution.
+        </li>
+        <li>
+          <a href = "benford.py">benford.py</a> 
+          the Benford distribution.
+        </li>
+        <li>
+          <a href = "bernoulli.py">bernoulli.py</a> 
+          the Bernoulli distribution.
+        </li>
+        <li>
+          <a href = "bessel_i0.py">bessel_i0.py</a>
+          evaluates the I0 Bessel function.
+        </li>
+        <li>
+          <a href = "bessel_i0_values.py">bessel_i0_values.py</a>
+          returns some values of the I0 Bessel function.
+        </li>
+        <li>
+          <a href = "bessel_i1.py">bessel_i1.py</a>
+          evaluates the I1 Bessel function.
+        </li>
+        <li>
+          <a href = "bessel_i1_values.py">bessel_i1_values.py</a>
+          returns some values of the I1 Bessel function.
+        </li>
+        <li>
+          <a href = "beta.py">beta.py</a> 
+          the Beta distribution.
+        </li>
+        <li>
+          <a href = "beta_binomial.py">beta_binomial.py</a> 
+          the Beta Binomial distribution.
+        </li>
+        <li>
+          <a href = "beta_cdf_values.py">beta_cdf_values.py</a>
+          returns some values of the Beta CDF.
+        </li>
+        <li>
+          <a href = "beta_inc.py">beta_inc.py</a>
+          returns the value of the incomplete Beta function.
+        </li>
+        <li>
+          <a href = "beta_inc_values.py">beta_inc_values.py</a>
+          returns some values of the incomplete Beta function.
+        </li>
+        <li>
+          <a href = "beta_values.py">beta_values.py</a>
+          returns some values of the Beta function.
+        </li>
+        <li>
+          <a href = "binomial.py">binomial.py</a> 
+          the Binomial distribution.
+        </li>
+        <li>
+          <a href = "birthday.py">birthday.py</a> 
+          the Birthday distribution.
+        </li>
+        <li>
+          <a href = "bradford.py">bradford.py</a> 
+          the Bradford distribution.
+        </li>
+        <li>
+          <a href = "buffon_box.py">buffon_box.py</a> 
+          the Buffon Box distribution.
+        </li>
+        <li>
+          <a href = "buffon.py">buffon.py</a> 
+          the Buffon distribution.
+        </li>
+        <li>
+          <a href = "burr.py">burr.py</a> 
+          the Burr distribution.
+        </li>
+        <li>
+          <a href = "cardioid.py">cardioid.py</a> 
+          the Cardioid distribution.
+        </li>
+        <li>
+          <a href = "cauchy.py">cauchy.py</a> 
+          the Cauchy distribution.
+        </li>
+        <li>
+          <a href = "chebyshev1.py">chebyshev1.py</a> 
+          the Chebyshev1 distribution.
+        </li>
+        <li>
+          <a href = "chi.py">chi.py</a> 
+          the Chi distribution.
+        </li>
+        <li>
+          <a href = "chi_square.py">chi_square.py</a> 
+          the Chi Square distribution.
+        </li>
+        <li>
+          <a href = "chi_square_noncentral.py">chi_square_noncentral.py</a> 
+          the Chi Square Noncentral distribution.
+        </li>
+        <li>
+          <a href = "circular_normal.py">circular_normal.py</a> 
+          the Circular Normal distribution.
+        </li>
+        <li>
+          <a href = "circular_normal_01.py">circular_normal_01.py</a> 
+          the Circular Normal 01 distribution.
+        </li>
+        <li>
+          <a href = "cosine.py">cosine.py</a> 
+          the Cosine distribution.
+        </li>
+        <li>
+          <a href = "coupon.py">coupon.py</a> 
+          the Coupon distribution.
+        </li>
+        <li>
+          <a href = "coupon_complete.py">coupon_complete.py</a> 
+          the Coupon Complete distribution.
+        </li>
+        <li>
+          <a href = "deranged.py">deranged.py</a> 
+          the Deranged distribution.
+        </li>
+        <li>
+          <a href = "digamma.py">digamma.py</a> 
+          evaluates the psi or digamma function.
+        </li>
+        <li>
+          <a href = "dipole.py">dipole.py</a> 
+          the Dipole distribution.
+        </li>
+        <li>
+          <a href = "dirichlet.py">dirichlet.py</a> 
+          the Dirichlet distribution.
+        </li>
+        <li>
+          <a href = "dirichlet_mix.py">dirichlet_mix.py</a> 
+          the Dirichlet Mix distribution.
+        </li>
+        <li>
+          <a href = "discrete.py">discrete.py</a> 
+          the Discrete distribution.
+        </li>
+        <li>
+          <a href = "disk.py">disk.py</a> 
+          the Disk distribution.
+        </li>
+        <li>
+          <a href = "empirical_discrete.py">empirical_discrete.py</a> 
+          the Empirical Discrete distribution.
+        </li>
+        <li>
+          <a href = "english_letter.py">english_letter.py</a>
+          the English Letter distribution.
+        </li>
+        <li>
+          <a href = "english_sentence_length.py">english_sentence_length.py</a>
+          the English Sentence Length distribution.
+        </li>
+        <li>
+          <a href = "english_word_length.py">english_word_length.py</a>
+          the English Word Length distribution.
+        </li>
+        <li>
+          <a href = "erlang.py">erlang.py</a> 
+          the Erlang distribution.
+        </li>
+        <li>
+          <a href = "exponential.py">exponential.py</a> 
+          the Exponential distribution.
+        </li>
+        <li>
+          <a href = "exponential_01.py">exponential_01.py</a> 
+          the Exponential 01 distribution.
+        </li>
+        <li>
+          <a href = "extreme_values.py">extreme_values.py</a> 
+          the Extreme Values distribution.
+        </li>
+        <li>
+          <a href = "f.py">f.py</a> 
+          the F distribution.
+        </li>
+        <li>
+          <a href = "fermi_dirac.py">fermi_dirac.py</a> 
+          the Fermi Dirac distribution.
+        </li>
+        <li>
+          <a href = "fisher.py">fisher.py</a> 
+          the Fisher distribution.
+        </li>
+        <li>
+          <a href = "fisk.py">fisk.py</a> 
+          the Fisk distribution.
+        </li>
+        <li>
+          <a href = "folded_normal.py">folded_normal.py</a> 
+          the Folded Normal distribution.
+        </li>
+        <li>
+          <a href = "frechet.py">frechet.py</a> 
+          the Frechet distribution.
+        </li>
+        <li>
+          <a href = "gamma.py">gamma.py</a> 
+          the Gamma distribution.
+        </li>
+        <li>
+          <a href = "gamma_inc.py">gamma_inc.py</a>
+          evaluates the incomplete gamma function.
+        </li>
+        <li>
+          <a href = "gamma_inc_values.py">gamma_inc_values.py</a>
+          returns some values of the incomplete gamma function.
+        </li>
+        <li>
+          <a href = "gamma_values.py">gamma_values.py</a>
+          returns some values of the gamma function.
+        </li>
+        <li>
+          <a href = "gamma_log_values.py">gamma_log_values.py</a>
+          returns some values of the logarithm of the gamma function.
+        </li>
+        <li>
+          <a href = "genlogistic.py">genlogistic.py</a> 
+          the Genlogistic distribution.
+        </li>
+        <li>
+          <a href = "geometric.py">geometric.py</a> 
+          the Geometric distribution.
+        </li>
+        <li>
+          <a href = "gompertz.py">gompertz.py</a> 
+          the Gompertz distribution.
+        </li>
+        <li>
+          <a href = "gumbel.py">gumbel.py</a> 
+          the Gumbel distribution.
+        </li>
+        <li>
+          <a href = "half_normal.py">half_normal.py</a> 
+          the Half Normal distribution.
+        </li>
+        <li>
+          <a href = "hypergeometric.py">hypergeometric.py</a> 
+          the Hypergeometric distribution.
+        </li>
+        <li>
+          <a href = "i4_choose.py">i4_choose.py</a>,
+          computes the binomial coefficient C(N,K) as an I4.
+        </li>
+        <li>
+          <a href = "i4_choose_log.py">i4_choose_log.py</a>,
+          computes the logarithm of the binomial coefficient C(N,K) as an I4.
+        </li>
+        <li>
+          <a href = "i4_is_power_of_10.py">i4_is_power_of_10.py</a>,
+          reports whether an I4 is a power of 10.
+        </li>
+        <li>
+          <a href = "i4_uniform_ab.py">i4_uniform_ab.py</a>,
+          returns a scaled uniform I4 between A and B.
+        </li>
+        <li>
+          <a href = "i4vec_max.py">i4vec_max.py</a>,
+          returns the maximum entry in an I4VEC.
+        </li>
+        <li>
+          <a href = "i4mat_print.py">i4mat_print.py</a>,
+          prints an I4MAT.
+        </li>
+        <li>
+          <a href = "i4mat_print_some.py">i4mat_print_some.py</a>,
+          prints some of an I4MAT.
+        </li>
+        <li>
+          <a href = "i4row_max.py">i4row_max.py</a>,
+          returns the row maximums of an I4ROW.
+        </li>
+        <li>
+          <a href = "i4row_mean.py">i4row_mean.py</a>,
+          returns the row means of an I4ROW.
+        </li>
+        <li>
+          <a href = "i4row_min.py">i4row_min.py</a>,
+          returns the minimums of an I4ROW.
+        </li>
+        <li>
+          <a href = "i4row_variance.py">i4row_variance.py</a>,
+          returns the variances of an I4ROW.
+        </li>
+        <li>
+          <a href = "i4vec_mean.py">i4vec_mean.py</a>,
+          returns the mean of an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_min.py">i4vec_min.py</a>,
+          returns the minimum entry in an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_print.py">i4vec_print.py</a>,
+          prints an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_run_count.py">i4vec_run_count.py</a>,
+          counts the runs in an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_sum.py">i4vec_sum.py</a>,
+          sums the entries in an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_uniform_ab.py">i4vec_uniform_ab.py</a>,
+          returns an I4VEC whose entries are uniformly random between A and B.
+        </li>
+        <li>
+          <a href = "i4vec_unique_count.py">i4vec_unique_count.py</a>,
+          counts the unique elements in an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_variance.py">i4vec_variance.py</a>,
+          returns the variance of an I4VEC.
+        </li>
+        <li>
+          <a href = "inverse_gaussian.py">inverse_gaussian.py</a>,
+          the Inverse Gaussian distribution.
+        </li>
+        <li>
+          <a href = "laplace.py">laplace.py</a>,
+          the Laplace distribution.
+        </li>
+        <li>
+          <a href = "levy.py">levy.py</a>,
+          the Levy distribution.
+        </li>
+        <li>
+          <a href = "log_normal.py">log_normal.py</a>,
+          the Log Normal distribution.
+        </li>
+        <li>
+          <a href = "log_series.py">log_series.py</a>,
+          the Log Series distribution.
+        </li>
+        <li>
+          <a href = "log_uniform.py">log_uniform.py</a>,
+          the Log Uniform distribution.
+        </li>
+        <li>
+          <a href = "logistic.py">logistic.py</a>,
+          the Logistic distribution.
+        </li>
+        <li>
+          <a href = "lorentz.py">lorentz.py</a>,
+          the Lorentz distribution.
+        </li>
+        <li>
+          <a href = "maxwell.py">maxwell.py</a>,
+          the Maxwell distribution.
+        </li>
+        <li>
+          <a href = "multinomial.py">multinomial.py</a>,
+          the Multinomial distribution.
+        </li>
+        <li>
+          <a href = "multinomial_coef.py">multinomial_coef.py</a>,
+          evaluates the multinomial coefficient.
+        </li>
+        <li>
+          <a href = "multinoulli.py">multinoulli.py</a>,
+          the Multinoulli distribution.
+        </li>
+        <li>
+          <a href = "nakagami.py">nakagami.py</a>,
+          the Nakagami distribution.
+        </li>
+        <li>
+          <a href = "negative_binomial.py">negative_binomial.py</a>,
+          the Negative Binomial distribution.
+        </li>
+        <li>
+          <a href = "normal_01.py">normal_01.py</a>,
+          the Normal 01 distribution.
+        </li>
+        <li>
+          <a href = "normal_01_cdf_values.py">normal_01_cdf_values.py</a>,
+          returns some values of the Normal CDF with mean 0 and variance 1.
+        </li>
+        <li>
+          <a href = "normal.py">normal.py</a>,
+          the Normal distribution.
+        </li>
+        <li>
+          <a href = "normal_truncated_ab.py">normal_truncated_ab.py</a>,
+          the Normal Truncated AB distribution.
+        </li>
+        <li>
+          <a href = "normal_truncated_a.py">normal_truncated_a.py</a>,
+          the Normal Truncated A distribution.
+        </li>
+        <li>
+          <a href = "normal_truncated_b.py">normal_truncated_b.py</a>,
+          the Normal Truncated B distribution.
+        </li>
+        <li>
+          <a href = "owen_values.py">owen_values.py</a>,
+          selected values of Owen's T function.
+        </li>
+        <li>
+          <a href = "pareto.py">pareto.py</a>,
+          the Pareto distribution.
+        </li>
+        <li>
+          <a href = "pearson_05.py">pearson_05.py</a>,
+          the Pearson 05 distribution.
+        </li>
+        <li>
+          <a href = "poisson.py">poisson.py</a>,
+          the Poisson distribution.
+        </li>
+        <li>
+          <a href = "power.py">power.py</a>, 
+          the Power distribution.
+        </li>
+        <li>
+          <a href = "psi_values.py">psi_values.py</a> 
+          returns selected values of the psi function.
+        </li>
+        <li>
+          <a href = "quasigeometric.py">quasigeometric.py</a>,
+          the Quasigeometric distribution.
+        </li>
+        <li>
+          <a href = "r8_beta.py">r8_beta.py</a>,
+          evaluates the beta function.
+        </li>
+        <li>
+          <a href = "r8_csc.py">r8_csc.py</a>,
+          evaluates the cosecant function.
+        </li>
+        <li>
+          <a href = "r8_epsilon.py">r8_epsilon.py</a>,
+          evaluates the machine epsilon.
+        </li>
+        <li>
+          <a href = "r8_erf.py">r8_erf.py</a>,
+          the error function Erf(x).
+        </li>
+        <li>
+          <a href = "r8_factorial.py">r8_factorial.py</a>,
+          evaluates the factorial function.
+        </li>
+        <li>
+          <a href = "r8_factorial_values.py">r8_factorial_values.py</a>,
+          returns selected values of the factorial function.
+        </li>
+        <li>
+          <a href = "r8_gamma.py">r8_gamma.py</a>,
+          evaluates the gamma function.
+        </li>
+        <li>
+          <a href = "r8_gamma_log.py">r8_gamma_log.py</a>,
+          evaluates the logarithm of the gamma function.
+        </li>
+        <li>
+          <a href = "r8_gamma_log_int.py">r8_gamma_log_int.py</a>,
+          evaluates the logarithm of the gamma function for an integer argument.
+        </li>
+        <li>
+          <a href = "r8_huge.py">r8_huge.py</a>,
+          returns a "huge" R8;
+        </li>
+        <li>
+          <a href = "r8_uniform_01.py">r8_uniform_01.py</a>,
+          returns a unit pseudorandom R8.
+        </li>
+        <li>
+          <a href = "r8_zeta.py">r8_zeta.py</a>,
+          returns an estimate of the Zeta function.
+        </li>
+        <li>
+          <a href = "r8mat_print.py">r8mat_print.py</a>, 
+          prints an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_print_some.py">r8mat_print_some.py</a>, 
+          prints some of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8poly_print.py">r8poly_print.py</a>, 
+          prints a polynomial;
+        </li>
+        <li>
+          <a href = "r8poly_value_horner.py">r8poly_value_horner.py</a>, 
+          evaluates a polynomial using Horner's method;
+        </li>
+        <li>
+          <a href = "r8row_max.py">r8row_max.py</a>,
+          computes the row maximums of an R8ROW.
+        </li>
+        <li>
+          <a href = "r8row_mean.py">r8row_mean.py</a>,
+          computes the row means of an R8ROW.
+        </li>
+        <li>
+          <a href = "r8row_min.py">r8row_min.py</a>,
+          computes the row minimums of an R8ROW.
+        </li>
+        <li>
+          <a href = "r8row_variance.py">r8row_variance.py</a>,
+          computes the row variances of an R8ROW.
+        </li>
+        <li>
+          <a href = "r8vec_dot_product.py">r8vec_dot_product.py</a>,
+          returns the dot product of two R8VEC's.
+        </li>
+        <li>
+          <a href = "r8vec_max.py">r8vec_max.py</a>,
+          returns the maximum entry in an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_mean.py">r8vec_mean.py</a>,
+          returns the mean of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_min.py">r8vec_min.py</a>,
+          returns the minimum entry in an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_norm.py">r8vec_norm.py</a>,
+          returns the L2 norm of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_print.py">r8vec_print.py</a>,
+          prints an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_sum.py">r8vec_sum.py</a>,
+          returns the sum of the entries of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_transpose_print.py">r8vec_transpose_print.py</a>,
+          prints the 'transpose' of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_01.py">r8vec_uniform_01.py</a>,
+          returns an R8VEC whose entries are uniformly random between 0.0 and 1.0.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_ab.py">r8vec_uniform_ab.py</a>,
+          returns an R8VEC whose entries are uniformly random between A and B.
+        </li>
+        <li>
+          <a href = "r8vec_variance.py">r8vec_variance.py</a>,
+          returns the variance of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec2_print.py">r8vec2_print.py</a>,
+          prints a pair of R8VEC's.
+        </li>
+        <li>
+          <a href = "rayleigh.py">rayleigh.py</a>, 
+          the Rayleigh distribution.
+        </li>
+        <li>
+          <a href = "reciprocal.py">reciprocal.py</a>, 
+          the Reciprocal distribution.
+        </li>
+        <li>
+          <a href = "sech.py">sech.py</a>, 
+          the Sech distribution.
+        </li>
+        <li>
+          <a href = "semicircular.py">semicircular.py</a>, 
+          the Semicircular distribution.
+        </li>
+        <li>
+          <a href = "sin_power_int.py">sin_power_int.py</a>, 
+          returns the value of the integral of the N-th power of 
+          the sine function;
+        </li>
+        <li>
+          <a href = "sin_power_int_values.py">sin_power_int_values.py</a>
+          returns some values of the integral of the N-th power of the
+          sine function;
+        </li>
+        <li>
+          <a href = "stirling2.py">stirling2.py</a>, 
+          computes Stirling numbers of the second kind.
+        </li>
+        <li>
+          <a href = "student.py">student.py</a>, 
+          the Student distribution.
+        </li>
+        <li>
+          <a href = "student_noncentral.py">student_noncentral.py</a>, 
+          the Student Noncentral distribution.
+        </li>
+        <li>
+          <a href = "tfn.py">tfn.py</a>, 
+          evaluates Owen's T function.
+        </li>
+        <li>
+          <a href = "triangle.py">triangle.py</a>, 
+          the Triangle distribution.
+        </li>
+        <li>
+          <a href = "triangular.py">triangular.py</a>, 
+          the Triangular distribution.
+        </li>
+        <li>
+          <a href = "trigamma.py">trigamma.py</a>, 
+          the Trigamma function.
+        </li>
+        <li>
+          <a href = "trigamma_values.py">trigamma_values.py</a>, 
+          selected values of the Trigamma function.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a> 
+          returns the current YMDHMS date as a timestamp.
+        </li>
+        <li>
+          <a href = "uniform.py">uniform.py</a>, 
+          the Uniform distribution.
+        </li>
+        <li>
+          <a href = "uniform_01.py">uniform_01.py</a>, 
+          the Uniform 01 distribution.
+        </li>
+        <li>
+          <a href = "uniform_01_order.py">uniform_01_order.py</a>, 
+          the Uniform 01 Order distribution.
+        </li>
+        <li>
+          <a href = "uniform_discrete.py">uniform_discrete.py</a>, 
+          the Uniform Discrete distribution.
+        </li>
+        <li>
+          <a href = "uniform_nsphere.py">uniform_nsphere.py</a>, 
+          the Uniform Npshere distribution.
+        </li>
+        <li>
+          <a href = "von_mises.py">von_mises.py</a> 
+          the Von Mises distribution.
+        </li>
+        <li>
+          <a href = "weibull.py">weibull.py</a> 
+          the Weibull distribution.
+        </li>
+        <li>
+          <a href = "weibull_discrete.py">weibull_discrete.py</a> 
+          the Weibull Discrete distribution.
+        </li>
+        <li>
+          <a href = "zipf.py">zipf.py</a> 
+          the Zipf distribution.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "prob.py">prob.py</a>,
+          calls all the tests;
+        </li>
+        <li>
+          <a href = "prob.sh">prob.sh</a>,
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "prob.txt">prob.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 31 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

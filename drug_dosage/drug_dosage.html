@@ -1,0 +1,150 @@
+<html>
+
+  <head>
+    <title>
+      DRUG_DOSAGE - Simulation of Medicinal Drug Blood Levels
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      DRUG_DOSAGE <br> Simulation of Medicinal Drug Blood Levels
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>DRUG_DOSAGE</b>,
+      a Python program which 
+      simulates the variation in the blood levels of
+      a medicinal drug being administered at specific dosages and times over
+      a course of treatment.  The level should rise about a given medicinal
+      level for some time, but stay below the toxic level.
+    </p>
+
+    <p>
+      The drug level can be modeled by a pair of first-order linear 
+      differential equations.  If we define:
+<pre>
+  A = medicine_in_intestines,
+  B = plasma_level.  
+</pre>
+    then the governing differential equations are:
+<pre>
+  dA/dt = - absorption_rate * A + intake
+  dB/dt = - excretion_rate  * B + absorption_rate * A
+</pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>DRUG_DOSAGE</b> is available in
+      <a href = "../../m_src/zero_rc/zero_rc.html">a MATLAB version</a> and
+      <a href = "../../py_src/zero_rc/zero_rc.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/fd_predator_prey/fd_predator_prey.html">
+      FD_PREDATOR_PREY</a>,
+      a Python program which
+      applies the finite difference method (FDM) to a predator-prey system
+      with time dependence and no spatial variation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_heat_explicit/fd1d_heat_explicit.html">
+      FD1D_HEAT_EXPLICIT</a>,
+      a Python program which
+      uses the finite difference method and explicit time stepping
+      to solve the time dependent heat equation in 1D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/lorenz_ode/lorenz_ode.html">
+      LORENZ_ODE</a>,
+      a Python program which
+      approximates solutions to the Lorenz system,
+      creating graphics output using matplotlib.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Soraya Dhillon, Andrzej Kostrzewski,<br>
+          Clinical Pharmacokinetics,<br>
+          Pharamceutical Press, 2006<br>
+          ISBN: 978-0-85369-571-4.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "drug_dosage.py">drug_dosage.py</a>,
+          the source code.
+        </li>
+
+        <li>
+          <a href = "drug_dosage.sh">drug_dosage.sh</a>,
+          runs the test.
+        </li>
+        <li>
+          <a href = "drug_dosage.txt">drug_dosage.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "drug_dosage_levels.txt">drug_dosage_levels.txt</a>,
+          the drug concentration over time.
+        </li>
+        <li>
+          <a href = "drug_dosage.png">drug_dosage.png</a>,
+          a plot of the drug level over time.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 21 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

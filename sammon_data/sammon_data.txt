@@ -1,0 +1,49 @@
+Mon Feb  3 07:58:37 2020
+
+SAMMON_DATA_TEST:
+  Python version: 3.6.9
+  Generate data for SAMMON tests.
+
+DATA_CIRCLE
+  Generate 8 data points around a circle
+  of radius R = 1.216866
+  and center C = ( 0.528432, 4.132099 )
+  with initial angle THETA0 = 3.111666
+  plus the center point.
+
+  Test data written to "sammon_circle.txt".
+
+DATA_HELIX
+  Generate 20 data points along a helix.
+
+  Test data written to "sammon_helix.txt".
+
+DATA_IRIS
+  Fisher's iris data.
+  Number of points M = 147
+  Spatial dimension N = 5
+
+  Test data written to "sammon_iris.txt".
+
+DATA_LINEAR
+  Generate 9 data points along a straight line
+  in 9-dimensional space.
+
+  Test data written to "sammon_linear.txt".
+
+DATA_NONLINEAR
+  Generate 29 data points along a nonlinear curve.
+  Spatial dimension M = 5
+
+  Test data written to sammon_nonlinear.txt".
+
+DATA_SIMPLEX
+  Generate 75 data points at vertices of a simplex
+  with a standard deviation of 0.200000
+  Spatial dimension M = 4
+
+  Test data written to "sammon_simplex.txt".
+
+SAMMON_DATA_TEST:
+  Normal end of execution.
+Mon Feb  3 07:58:37 2020

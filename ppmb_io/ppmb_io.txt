@@ -1,0 +1,10 @@
+Sat Feb  1 15:36:37 2020
+
+PPMB_WRITE_TEST:
+  PPMB_WRITE writes a binary PPM graphics file.
+
+  Graphics data stored in file "ppmb_io.ppm".
+
+PPMB_WRITE_TEST:
+  Normal end of execution.
+Sat Feb  1 15:36:38 2020

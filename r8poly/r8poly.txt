@@ -1,0 +1,1545 @@
+Sun Feb  2 08:30:46 2020
+
+R8POLY_TEST
+  Python version: 3.6.9
+  Test the R8POLY library.
+
+R8_SIGN_TEST
+  Python version: 3.6.9
+  R8_SIGN returns the sign of an R8.
+
+     R8     R8_SIGN(R8)
+
+   -1.2500        -1
+   -0.2500        -1
+    0.0000         1
+    0.5000         1
+    9.0000         1
+
+R8_SIGN_TEST
+  Normal end of execution.
+
+R82POLY2_PRINT_TEST
+  R82POLY2_PRINT prints an R82POLY2,
+  a quadratic polynomial in x and y.
+
+  Coefficients a, b, c, d, e, f:
+  1  2  3  4  5  6
+
+  p(x,y) = 1 * x^2 + 2 * y^2 + 3 * xy
+         + 4 * x + 5 * y + 6
+
+R82POLY2_PRINT_TEST:
+  Normal end of execution.
+
+R82POLY2_TYPE_TEST
+  R82POLY2_TYPE determines the type of a second order
+  equation in two variables.
+
+
+  p(x,y) = 9 * x^2 + -4 * y^2 + 0 * xy
+         + -36 * x + -24 * y + -36
+  Type = 1
+  The set of solutions forms a hyperbola.
+
+  p(x,y) = 4 * x^2 + 1 * y^2 + -4 * xy
+         + 3 * x + -4 * y + 1
+  Type = 2
+  The set of solutions forms a parabola.
+
+  p(x,y) = 9 * x^2 + 16 * y^2 + 0 * xy
+         + 36 * x + -32 * y + -92
+  Type = 3
+  The set of solutions forms an ellipse.
+
+  p(x,y) = 1 * x^2 + 1 * y^2 + 0 * xy
+         + -6 * x + -10 * y + 115
+  Type = 4
+  The set of solutions forms an imaginary ellipse.
+  (There are no real solutions).
+
+  p(x,y) = 0 * x^2 + 0 * y^2 + 1 * xy
+         + 3 * x + -1 * y + -3
+  Type = 5
+  The set of solutions forms a pair of intersecting lines.
+
+  p(x,y) = 1 * x^2 + 2 * y^2 + 0 * xy
+         + -2 * x + 16 * y + 33
+  Type = 6
+  The set of solutions is a single point.
+
+  p(x,y) = 0 * x^2 + 1 * y^2 + 0 * xy
+         + 0 * x + -6 * y + 8
+  Type = 7
+  The set of solutions form a pair of distinct parallel lines.
+
+  p(x,y) = 0 * x^2 + 1 * y^2 + 0 * xy
+         + 0 * x + -6 * y + 10
+  Type = 8
+  The set of solutions forms a pair of imaginary parallel lines.
+  (There are no real solutions).
+
+  p(x,y) = 0 * x^2 + 1 * y^2 + 0 * xy
+         + 0 * x + -2 * y + 1
+  Type = 9
+  The set of solutions forms a pair of coincident lines.
+
+  p(x,y) = 0 * x^2 + 0 * y^2 + 0 * xy
+         + 2 * x + -1 * y + 1
+  Type = 10
+  The set of solutions forms a single line.
+
+  p(x,y) = 0 * x^2 + 0 * y^2 + 0 * xy
+         + 0 * x + 0 * y + 0
+  Type = 11
+  The set of solutions is all space.
+
+  p(x,y) = 0 * x^2 + 0 * y^2 + 0 * xy
+         + 0 * x + 0 * y + 1
+  Type = 12
+  The set of solutions is empty.
+
+R82POLY2_TYPE_TEST:
+  Normal end of execution.
+
+R8MAT_INVERSE_3D_TEST
+  R8MAT_INVERSE_3D inverts a 3 by 3 matrix.
+
+  Matrix A to be inverted:
+
+  Col:       0             1             2       
+  Row
+      0 :           1             2             3  
+      1 :           4             5             6  
+      2 :           7             8             0  
+
+  Inverse matrix B:
+
+  Col:       0             1             2       
+  Row
+      0 :    -1.77778      0.888889     -0.111111  
+      1 :     1.55556     -0.777778      0.222222  
+      2 :   -0.111111      0.222222     -0.111111  
+
+  Product C = A * B:
+
+  Col:       0             1             2       
+  Row
+      0 :           1  -1.11022e-16             0  
+      1 : 5.55112e-16             1             0  
+      2 : 1.77636e-15  -8.88178e-16             1  
+
+R8MAT_INVERSE_3D_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8POLY_ADD_TEST
+  Python version: 3.6.9
+  R8POLY_ADD adds two R8POLY's.
+
+  Polynomial A:
+
+  p(x) =     5.5 * x^5
+           + 4.4 * x^4
+           + 3.3 * x^3
+           + 2.2 * x^2
+           + 1.1 * x
+
+  Polynomial B:
+
+  p(x) =   - 5.5 * x^5
+           + 8.3 * x^3
+           + 7.2 * x^2
+           - 2.1 * x
+           + 1
+
+  Polynomial C = A+B:
+
+  p(x) =     4.4 * x^4
+           + 11.6 * x^3
+           + 9.4 * x^2
+           - 1 * x
+           + 1
+
+R8POLY_ADD_TEST:
+  Normal end of execution.
+
+r8poly_ant_coef_test
+  r8poly_ant_coef() computes the coefficients of the
+  antiderivative of a polynomial
+
+  Polynomial p(x):
+
+  p(x) =     1 * x^5
+           + 2 * x^4
+           + 3 * x^3
+           + 4 * x^2
+           + 5 * x
+           + 6
+
+  Antideriv(p(x)):
+
+  p(x) =     0.166667 * x^6
+           + 0.4 * x^5
+           + 0.75 * x^4
+           + 1.33333 * x^3
+           + 2.5 * x^2
+           + 6 * x
+
+r8poly_ant_coef_test:
+  Normal end of execution.
+
+r8poly_ant_value_test
+  Python version: 3.6.9
+  r8poly_ant_value evaluates the antiderivative of a polynomial at a point
+  using a naive method.
+
+  The polynomial coefficients:
+
+  p(x) =     1 * x^4
+           - 10 * x^3
+           + 35 * x^2
+           - 50 * x
+           + 24
+
+   I    X    antiP(X)
+
+   0    0.0000               0
+   1    0.3333         5.62428
+   2    0.6667         7.87819
+   3    1.0000         8.36667
+   4    1.3333         8.15144
+   5    1.6667         7.84979
+   6    2.0000         7.73333
+   7    2.3333         7.82675
+   8    2.6667         8.00658
+   9    3.0000             8.1
+  10    3.3333         7.98354
+  11    3.6667         7.68189
+  12    4.0000         7.46667
+  13    4.3333         7.95514
+  14    4.6667         10.2091
+  15    5.0000         15.8333
+
+r8poly_ant_value_test:
+  Normal end of execution.
+
+R8POLY_DEGREE_TEST
+  Python version: 3.6.9
+  R8POLY_DEGREE determines the degree of an R8POLY.
+
+  The R8POLY:
+
+  p(x) =     4 * x^3
+           + 3 * x^2
+           + 2 * x
+           + 1
+  Dimensioned degree = 3,  Actual degree = 3
+
+  The R8POLY:
+
+  p(x) =     3 * x^2
+           + 2 * x
+           + 1
+  Dimensioned degree = 3,  Actual degree = 2
+
+  The R8POLY:
+
+  p(x) =     4 * x^3
+           + 2 * x
+           + 1
+  Dimensioned degree = 3,  Actual degree = 3
+
+  The R8POLY:
+
+  p(x) =     1
+  Dimensioned degree = 3,  Actual degree = 0
+
+  The R8POLY:
+
+  p(x) = 0
+  Dimensioned degree = 3,  Actual degree = 0
+
+R8POLY_DEGREE_TEST:
+  Normal end of execution.
+
+R8POLY_DERIV_TEST
+  R8POLY_DERIV computes the coefficients of
+  the derivative of a polynomial.
+
+  The initial polynomial
+
+  p(x) =     1 * x^4
+           - 10 * x^3
+           + 35 * x^2
+           - 50 * x
+           + 24
+
+  The derivative of order 0
+
+  p(x) =     1 * x^4
+           - 10 * x^3
+           + 35 * x^2
+           - 50 * x
+           + 24
+
+  The derivative of order 1
+
+  p(x) =     4 * x^3
+           - 30 * x^2
+           + 70 * x
+           - 50
+
+  The derivative of order 2
+
+  p(x) =     12 * x^2
+           - 60 * x
+           + 70
+
+  The derivative of order 3
+
+  p(x) =     24 * x
+           - 60
+
+  The derivative of order 4
+
+  p(x) = 0
+
+r8poly_division_test
+  Python version: 3.6.9
+  r8poly_division computes the quotient and
+  remainder for polynomial division.
+
+  The polynomial to be divided, A:
+
+  p(x) =     1 * x^3
+           + 2 * x^2
+           - 5 * x
+           - 6
+
+  The divisor polynomial, B:
+
+  p(x) =     1 * x
+           - 2
+
+  The quotient polynomial, Q:
+
+  p(x) =     1 * x^2
+           + 4 * x
+           + 3
+
+  The remainder polynomial, R:
+
+  p(x) = 0
+
+  The polynomial to be divided, A:
+
+  p(x) =     1 * x^4
+           + 3 * x^3
+           + 2 * x^2
+           + 5 * x
+           - 2
+
+  The divisor polynomial, B:
+
+  p(x) =     1 * x^2
+           + 1 * x
+           - 3
+
+  The quotient polynomial, Q:
+
+  p(x) =     1 * x^2
+           + 2 * x
+           + 3
+
+  The remainder polynomial, R:
+
+  p(x) =     8 * x
+           + 7
+
+  The polynomial to be divided, A:
+
+  p(x) =     1 * x^3
+           - 2 * x^2
+           - 4
+
+  The divisor polynomial, B:
+
+  p(x) =     1 * x
+           - 3
+
+  The quotient polynomial, Q:
+
+  p(x) =     1 * x^2
+           + 1 * x
+           + 3
+
+  The remainder polynomial, R:
+
+  p(x) =     5
+
+r8poly_division_test:
+  Normal end of execution.
+
+R8POLY_LAGRANGE_0_TEST
+  R8POLY_LAGRANGE_0 evaluates the Lagrange
+  factor W(X) at a point.
+
+  The number of data points is 5
+
+  Abscissas:
+
+     0:             0
+     1:             1
+     2:             2
+     3:             3
+     4:             4
+
+      X          W(X)
+
+    0.000000  0.000000e+00
+    0.222222  3.224441e+00
+    0.444444  3.489983e+00
+    0.666667  2.304527e+00
+    0.888889  7.207573e-01
+    1.111111  -5.988247e-01
+    1.333333  -1.316872e+00
+    1.555556  -1.356162e+00
+    1.777778  -8.345611e-01
+    2.000000  0.000000e+00
+    2.222222  8.345611e-01
+    2.444444  1.356162e+00
+    2.666667  1.316872e+00
+    2.888889  5.988247e-01
+    3.111111  -7.207573e-01
+    3.333333  -2.304527e+00
+    3.555556  -3.489983e+00
+    3.777778  -3.224441e+00
+    4.000000  0.000000e+00
+
+R8POLY_LAGRANGE_0_TEST:
+  Normal end of execution.
+
+R8POLY_LAGRANGE_1_TEST
+  R8POLY_LAGRANGE_1 evaluates the Lagrange
+  factor W(X) at a point.
+
+  The number of data points is 5
+
+  Abscissas:
+
+     0:             0
+     1:             1
+     2:             2
+     3:             3
+     4:             4
+
+      X          W(X)
+
+      0.000000     24.000000
+      0.222222      6.536199
+      0.444444     -3.020271
+      0.666667     -6.864198
+      0.888889     -6.897729
+      1.111111     -4.730376
+      1.333333     -1.679012
+      1.555556      1.232129
+      1.777778      3.271453
+      2.000000      4.000000
+      2.222222      3.271453
+      2.444444      1.232129
+      2.666667     -1.679012
+      2.888889     -4.730376
+      3.111111     -6.897729
+      3.333333     -6.864198
+      3.555556     -3.020271
+      3.777778      6.536199
+      4.000000     24.000000
+
+R8POLY_LAGRANGE_1_TEST:
+  Normal end of execution.
+
+R8POLY_LAGRANGE_2_TEST
+  R8POLY_LAGRANGE_2 evaluates the Lagrange
+  factor W"(X) at a point.
+
+  The number of data points is 5
+
+  Abscissas:
+
+     0:             0
+     1:             1
+     2:             2
+     3:             3
+     4:             4
+
+      X          W"(X)
+
+     0.000000  -1.000000e+02
+     0.222222  -5.903978e+01
+     0.444444  -2.861454e+01
+     0.666667  -7.407407e+00
+     0.888889  5.898491e+00
+     1.111111  1.262003e+01
+     1.333333  1.407407e+01
+     1.555556  1.157750e+01
+     1.777778  6.447188e+00
+     2.000000  0.000000e+00
+     2.222222  -6.447188e+00
+     2.444444  -1.157750e+01
+     2.666667  -1.407407e+01
+     2.888889  -1.262003e+01
+     3.111111  -5.898491e+00
+     3.333333  7.407407e+00
+     3.555556  2.861454e+01
+     3.777778  5.903978e+01
+     4.000000  1.000000e+02
+
+R8POLY_LAGRANGE_2_TEST:
+  Normal end of execution.
+
+R8POLY_LAGRANGE_COEF_TEST
+  R8POLY_LAGRANGE_COEF returns the coefficients
+  for a Lagrange basis polynomial.
+
+  Abscissas:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  The Lagrange basis polynomial:
+
+  p(x) =     0.0416667 * x^4
+           - 0.583333 * x^3
+           + 2.95833 * x^2
+           - 6.41667 * x
+           + 5
+
+  The Lagrange basis polynomial:
+
+  p(x) =   - 0.166667 * x^4
+           + 2.16667 * x^3
+           - 9.83333 * x^2
+           + 17.8333 * x
+           - 10
+
+  The Lagrange basis polynomial:
+
+  p(x) =     0.25 * x^4
+           - 3 * x^3
+           + 12.25 * x^2
+           - 19.5 * x
+           + 10
+
+  The Lagrange basis polynomial:
+
+  p(x) =   - 0.166667 * x^4
+           + 1.83333 * x^3
+           - 6.83333 * x^2
+           + 10.1667 * x
+           - 5
+
+  The Lagrange basis polynomial:
+
+  p(x) =     0.0416667 * x^4
+           - 0.416667 * x^3
+           + 1.45833 * x^2
+           - 2.08333 * x
+           + 1
+
+R8POLY_LAGRANGE_COEF_TEST:
+  Normal end of execution.
+
+R8POLY_LAGRANGE_FACTOR_TEST
+  R8POLY_LAGRANGE_FACTOR evaluates the Lagrange
+  factor W(X) at a point.
+
+  For this test, we use 5 functions.
+
+  Abscissas:
+
+     0:             0
+     1:           0.8
+     2:           1.6
+     3:           2.4
+     4:           3.2
+
+      X          W(X)          W(X)
+
+    4.500000  131.818050  274.542900
+    4.000000   39.321600  112.230400
+    3.500000    5.925150   32.142900
+    3.000000   -1.108800    2.030400
+    2.500000   -0.267750   -2.857100
+    2.000000    0.460800    0.230400
+    1.500000   -0.160650    1.542900
+    1.000000   -0.369600   -1.169600
+    0.500000    0.846450   -2.657100
+    0.000000    0.000000    9.830400
+
+R8POLY_LAGRANGE_FACTOR_TEST:
+  Normal end of execution.
+
+r8poly_lagrange_value_test
+  r8poly_lagrange_value() evaluates a Lagrange
+  interpolating polynomial at a point.
+
+  Number of data points = #d 5
+
+  Abscissas:
+
+     0:             0
+     1:             1
+     2:             2
+     3:             3
+     4:             4
+
+  Here are the values of the functions at
+  several points:
+
+      X          L1          L2          L3      L4
+          L5
+
+    0.000000
+    1.000000
+    0.000000
+   -0.000000
+    0.000000
+   -0.000000
+
+    0.500000
+    0.273438
+    1.093750
+   -0.546875
+    0.218750
+   -0.039062
+
+    1.000000
+   -0.000000
+    1.000000
+    0.000000
+   -0.000000
+    0.000000
+
+    1.500000
+   -0.039062
+    0.468750
+    0.703125
+   -0.156250
+    0.023438
+
+    2.000000
+    0.000000
+   -0.000000
+    1.000000
+    0.000000
+   -0.000000
+
+    2.500000
+    0.023438
+   -0.156250
+    0.703125
+    0.468750
+   -0.039062
+
+    3.000000
+   -0.000000
+    0.000000
+   -0.000000
+    1.000000
+    0.000000
+
+    3.500000
+   -0.039062
+    0.218750
+   -0.546875
+    1.093750
+    0.273438
+
+    4.000000
+    0.000000
+   -0.000000
+    0.000000
+   -0.000000
+    1.000000
+
+
+  And the derivatives:
+
+      X          L1         L2         L3
+     L4         L5
+
+    0.000000
+   -2.083333
+    4.000000
+   -3.000000
+    1.333333
+   -0.250000
+
+    0.500000
+   -0.916667
+    0.708333
+    0.375000
+   -0.208333
+    0.041667
+
+    1.000000
+   -0.250000
+   -0.833333
+    1.500000
+   -0.500000
+    0.083333
+
+    1.500000
+    0.041667
+   -1.125000
+    1.125000
+   -0.041667
+    0.000000
+
+    2.000000
+    0.083333
+   -0.666667
+    0.000000
+    0.666667
+   -0.083333
+
+    2.500000
+    0.000000
+    0.041667
+   -1.125000
+    1.125000
+   -0.041667
+
+    3.000000
+   -0.083333
+    0.500000
+   -1.500000
+    0.833333
+    0.250000
+
+    3.500000
+   -0.041667
+    0.208333
+   -0.375000
+   -0.708333
+    0.916667
+
+    4.000000
+    0.250000
+   -1.333333
+    3.000000
+   -4.000000
+    2.083333
+
+
+r8poly_lagrange_value_test:
+  Normal end of execution.
+
+r8poly_multiply_test
+  Python version: 3.6.9
+  r8poly_multiply multiplies two polynomials.
+
+  The factor A:
+
+  p(x) =     1 * x
+           + 1
+
+  The factor B:
+
+  p(x) =   - 1 * x
+           + 1
+
+  The product C = A*B:
+
+  p(x) =   - 1 * x^2
+           + 1
+
+  The factor A:
+
+  p(x) =     3 * x^2
+           + 2 * x
+           + 1
+
+  The factor B:
+
+  p(x) =   - 2 * x
+           + 1
+
+  The product C = A*B:
+
+  p(x) =   - 6 * x^3
+           - 1 * x^2
+           + 1
+
+r8poly_multiply_test:
+  Normal end of execution.
+
+R8POLY_POWER_TEST
+  Python version: 3.6.9
+  R8POLY_POWER takes a polynomial to a power.
+
+  The polynomial A:
+
+  p(x) =   - 1 * x
+           + 2
+
+  Raised to the power 3:
+
+  p(x) =   - 1 * x^3
+           + 6 * x^2
+           - 12 * x
+           + 8
+
+  The polynomial A:
+
+  p(x) =     1 * x^2
+           + 1 * x
+
+  Raised to the power 2:
+
+  p(x) =     1 * x^4
+           + 2 * x^3
+           + 1 * x^2
+
+R8POLY_POWER_TEST
+  Normal end of execution.
+
+R8POLY_PRINT_TEST
+  Python version: 3.6.9
+  R8POLY_PRINT prints an R8POLY.
+
+  The R8POLY:
+
+  p(x) =     9 * x^5
+           + 0.78 * x^4
+           + 56 * x^2
+           - 3.4 * x
+           + 12
+
+  The R8POLY:
+
+  p(x) =     0.78 * x^4
+           + 56 * x^2
+           - 3.4 * x
+           + 12
+
+  The R8POLY:
+
+  p(x) =     12
+
+  The R8POLY:
+
+  p(x) = 0
+
+R8POLY_PRINT_TEST:
+  Normal end of execution.
+
+R8POLY_SHIFT_TEST
+  R8POLY_SHIFT shifts an R8POLY p(x) to q(z)
+  where z=scale*x+shift.
+
+  p(x):
+
+  p(x) =     2 * x^2
+           - 1 * x
+           + 6
+
+  z = scale * x + shift
+  Scale = 2
+  Shift = 3
+
+  q(z):
+
+  p(x) =     0.5 * x^2
+           - 3.5 * x
+           + 12
+
+  Expected q(z):
+
+  p(x) =     0.5 * x^2
+           - 3.5 * x
+           + 12
+
+R8POLY_SHIFT_TEST:
+  Normal end of execution.
+
+R8POLY_VALUE_TEST
+  Python version: 3.6.9
+  R8POLY_VALUE evaluates a polynomial at a point
+  using a naive method.
+
+  The polynomial coefficients:
+
+  p(x) =     1 * x^4
+           - 10 * x^3
+           + 35 * x^2
+           - 50 * x
+           + 24
+
+   I    X    P(X)
+
+   0    0.0000              24
+   1    0.3333         10.8642
+   2    0.6667         3.45679
+   3    1.0000               0
+   4    1.3333       -0.987654
+   5    1.6667       -0.691358
+   6    2.0000               0
+   7    2.3333        0.493827
+   8    2.6667        0.493827
+   9    3.0000               0
+  10    3.3333       -0.691358
+  11    3.6667       -0.987654
+  12    4.0000               0
+  13    4.3333         3.45679
+  14    4.6667         10.8642
+  15    5.0000              24
+
+R8POLY_VALUE_TEST:
+  Normal end of execution.
+
+R8POLY_VALUE_HORNER_TEST
+  Python version: 3.6.9
+  R8POLY_VALUE_HORNER evaluates a polynomial at a point
+  using Horners method.
+
+  The polynomial coefficients:
+
+  p(x) =     1 * x^4
+           - 10 * x^3
+           + 35 * x^2
+           - 50 * x
+           + 24
+
+   I    X    P(X)
+
+   0    0.0000              24
+   1    0.3333         10.8642
+   2    0.6667         3.45679
+   3    1.0000               0
+   4    1.3333       -0.987654
+   5    1.6667       -0.691358
+   6    2.0000               0
+   7    2.3333        0.493827
+   8    2.6667        0.493827
+   9    3.0000               0
+  10    3.3333       -0.691358
+  11    3.6667       -0.987654
+  12    4.0000               0
+  13    4.3333         3.45679
+  14    4.6667         10.8642
+  15    5.0000              24
+
+R8POLY_VALUE_HORNER_TEST:
+  Normal end of execution.
+
+R8POLY_VALUES_HORNER_TEST
+  Python version: 3.6.9
+  R8POLY_VALUES_HORNER evaluates a polynomial at a
+  point, using Horner's method.
+
+  The polynomial:
+
+  p(x) =     1 * x^4
+           - 10 * x^3
+           + 35 * x^2
+           - 50 * x
+           + 24
+
+  X, P(X):
+
+       0:              0            24
+       1:       0.333333       10.8642
+       2:       0.666667       3.45679
+       3:              1             0
+       4:        1.33333     -0.987654
+       5:        1.66667     -0.691358
+       6:              2             0
+       7:        2.33333      0.493827
+       8:        2.66667      0.493827
+       9:              3             0
+      10:        3.33333     -0.691358
+      11:        3.66667     -0.987654
+      12:              4             0
+      13:        4.33333       3.45679
+      14:        4.66667       10.8642
+      15:              5            24
+
+R8POLY_VALUES_HORNER_TEST:
+  Normal end of execution.
+
+R8POLY2_EX_TEST
+  R8POLY2_EX finds the extreme value
+  of a parabola determined by three points.
+
+  Parabolic coefficients:
+  A = 2.000000, B = -4.000000, C = 10.000000
+
+  Point 1: (1,8)
+  Point 1: (2,10)
+  Point 1: (3,16)
+
+  R8POLY2_EX returns XMIN = 1.000000, YMIN = 8.000000
+
+R8POLY2_EX_TEST:
+  Normal end of execution.
+
+R8POLY2_EX2_TEST
+  R8POLY2_EX2 finds the extreme value
+  of a parabola determined by three points.
+
+  Parabolic coefficients:
+  A = 2.000000, B = -4.000000, C = 10.000000
+
+  Point 1: (1,8)
+  Point 1: (2,10)
+  Point 1: (3,16)
+
+
+  R8POLY2_EX2 returns XMIN = 1.000000, YMIN = 8.000000
+  and A = 2.000000, B = -4.000000, C = 10.000000
+
+R8POLY2_EX2_TEST:
+  Normal end of execution.
+
+R8POLY2_ROOT_TEST
+  R8POLY2_ROOT finds quadratic equation roots.
+
+         A         B         C   R1.real   R1.imag   R2.real   R2.imag
+
+    2.0000   -2.0000  -24.0000    4.0000   -0.0000   -3.0000    0.0000
+    1.0000  -20.0000  100.0000   10.0000   -0.0000   10.0000    0.0000
+    1.0000   -2.0000   10.0000    1.0000    3.0000    1.0000   -3.0000
+
+R8POLY2_ROOT_TEST
+  Normal end of execution.
+
+R8POLY2_RROOT_TEST
+  R8POLY2_RROOT finds the real parts of quadratic equation roots.
+
+         A         B         C     R1         R2
+
+    2.0000   -2.0000  -24.0000    4.0000   -3.0000
+    1.0000  -20.0000  100.0000   10.0000   10.0000
+    1.0000   -2.0000   10.0000    1.0000    1.0000
+    1.0000    0.0000    1.0000   -0.0000   -0.0000
+    1.0000   -6.0000   10.0000    3.0000    3.0000
+
+R8POLY2_RROOT_TEST
+  Normal end of execution.
+
+R8POLY2_VAL_TEST
+  R8POLY2_VAL evaluates a parabola given
+  3 data points.
+
+  Our parabola will be 2*x^2 + 3 * x + 1.
+
+  Case 1: 3 distinct data points:
+
+     -1.000000      0.000000
+      1.000000      6.000000
+      3.000000     28.000000
+
+  Sampled data:
+
+  X, Y, Y, Y"
+
+      0.000000      1.000000      3.000000      4.000000
+      1.000000      6.000000      7.000000      4.000000
+      2.000000     15.000000     11.000000      4.000000
+      3.000000     28.000000     15.000000      4.000000
+
+  Case 2: X1=X2, X3 distinct:
+
+     -1.000000      0.000000
+     -1.000000     -1.000000
+      3.000000     28.000000
+
+  Sampled data:
+
+  X, Y, Y, Y"
+
+      0.000000      1.000000      3.000000      4.000000
+      1.000000      6.000000      7.000000      4.000000
+      2.000000     15.000000     11.000000      4.000000
+      3.000000     28.000000     15.000000      4.000000
+
+  Case 3: X1=X2=X3:
+
+     -1.000000      0.000000
+     -1.000000     -1.000000
+     -1.000000      4.000000
+
+  Sampled data:
+
+  X, Y, Y, Y"
+
+      0.000000      1.000000      3.000000      4.000000
+      1.000000      6.000000      7.000000      4.000000
+      2.000000     15.000000     11.000000      4.000000
+      3.000000     28.000000     15.000000      4.000000
+
+R8POLY2_VAL_TEST:
+  Normal end of execution.
+
+R8POLY2_VAL2_TEST
+  R8POLY2_VAL2 evaluates parabolas through
+  3 points in a table
+
+  Our data tables will actually be parabolas:
+    A: 2*x^2 + 3 * x + 1.
+    B: 4*x^2 - 2 * x + 5.
+
+       0      0.000000      1.000000      5.000000
+       1      2.000000     15.000000     17.000000
+       2      4.000000     45.000000     61.000000
+       3      6.000000     91.000000    137.000000
+       4      8.000000    153.000000    245.000000
+
+  Interpolated data:
+
+  LEFT, X, Y1, Y2
+
+         1      1.000000      6.000000      7.000000
+         2      3.000000     28.000000     35.000000
+         3      5.000000     66.000000     95.000000
+         3      7.000000    120.000000    187.000000
+         3      9.000000    190.000000    311.000000
+
+R8POLY2_VAL2_TEST:
+  Normal end of execution.
+
+R8POLY3_ROOT_TEST
+  R8POLY3_ROOT finds roots of cubic equations.
+
+
+  Polynomial coefficients:
+
+  A = 1.000000, B = -6.000000, C = 11.000000, D = -6.000000
+
+  Roots:
+
+  1.000000  0.000000
+  3.000000  0.000000
+  2.000000  0.000000
+
+  Polynomial coefficients:
+
+  A = 9.000000, B = -36.000000, C = 54.000000, D = -27.000000
+
+  Roots:
+
+  1.000000  0.000000
+  1.500000  0.866025
+  1.500000  -0.866025
+
+  Polynomial coefficients:
+
+  A = 1.000000, B = -5.000000, C = 8.000000, D = -4.000000
+
+  Roots:
+
+  1.000000  0.000000
+  2.000000  0.000000
+  2.000000  -0.000000
+
+  Polynomial coefficients:
+
+  A = 1.000000, B = -8.000000, C = 25.000000, D = -26.000000
+
+  Roots:
+
+  2.000000  0.000000
+  3.000000  2.000000
+  3.000000  -2.000000
+
+R8POLY3_ROOT_TEST
+  Normal end of execution.
+
+R8POLY4_ROOT_TEST
+  R8POLY4_ROOT finds roots of quartic equations.
+
+  A = 1.000000
+  B = -10.000000
+  C = 35.000000
+  D = -50.000000
+  E = 24.000000
+
+  Roots:
+
+  4.000000  0.000000
+  1.000000  0.000000
+  3.000000  0.000000
+  2.000000  0.000000
+
+  A = 1.000000
+  B = -5.000000
+  C = 1.000000
+  D = 21.000000
+  E = -18.000000
+
+  Roots:
+
+  3.000000  0.000000
+  3.000000  0.000000
+  1.000000  0.000000
+  -2.000000  0.000000
+
+  A = 1.000000
+  B = -22.000000
+  C = 141.000000
+  D = -220.000000
+  E = 100.000000
+
+  Roots:
+
+  10.000000  0.000000
+  10.000000  0.000000
+  1.000000  0.000000
+  1.000000  0.000000
+
+  A = 1.000000
+  B = -16.000000
+  C = 72.000000
+  D = -128.000000
+  E = 80.000000
+
+  Roots:
+
+  10.000000  0.000000
+  2.000000  0.000000
+  2.000000  0.000000
+  2.000000  0.000000
+
+  A = 1.000000
+  B = -20.000000
+  C = 150.000000
+  D = -500.000000
+  E = 625.000000
+
+  Roots:
+
+  5.000000  0.000000
+  5.000000  0.000000
+  5.000000  0.000000
+  5.000000  0.000000
+
+  A = 1.000000
+  B = 2.000000
+  C = 1.000000
+  D = 8.000000
+  E = -12.000000
+
+  Roots:
+
+  -0.000000  2.000000
+  -0.000000  -2.000000
+  1.000000  0.000000
+  -3.000000  0.000000
+
+  A = 1.000000
+  B = 0.000000
+  C = 13.000000
+  D = 0.000000
+  E = 36.000000
+
+  Roots:
+
+  0.000000  3.000000
+  0.000000  2.000000
+  0.000000  -2.000000
+  -0.000000  -3.000000
+
+R8POLY4_ROOT_TEST
+  Normal end of execution.
+
+R8VEC_EVEN_TEST
+  R8VEC_EVEN computes N evenly spaced values
+  between XLO and XHI.
+
+  XLO = 0.000000
+  XHI = 99.000000
+  while N = 10
+
+  Resulting array:
+
+     0:             0
+     1:            11
+     2:            22
+     3:            33
+     4:            44
+     5:            55
+     6:            66
+     7:            77
+     8:            88
+     9:            99
+
+R8VEC_EVEN_TEST:
+  Normal end of execution.
+
+R8VEC_EVEN_SELECT_TEST
+  R8VEC_EVEN_SELECT returns the I-th of N evenly spaced values
+  between XLO and XHI.
+
+  XLO = 0.000000
+  XHI = 99.000000
+  while N = 10
+
+  X(2) = 11
+  X(5) = 44
+  X(8) = 77
+
+R8VEC_EVEN_SELECT_TEST:
+  Normal end of execution.
+
+R8VEC_INDICATOR1_TEST
+  Python version: 3.6.9
+  R8VEC_INDICATOR1 returns the 1-based indicator matrix.
+
+  The 1-based indicator vector:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8VEC_INDICATOR1_TEST
+  Normal end of execution.
+
+R8VEC_IS_DISTINCT_TEST
+  Python version: 3.6.9
+  R8VEC_IS_DISTINCT computes the maximum entry in an R8VEC.
+
+  Input vector:
+
+     0:             1
+     1:             2
+     2:             5
+     3:             3
+     4:             4
+  Array entries are distinct.
+
+  Input vector:
+
+     0:             1
+     1:             2
+     2:             5
+     3:             2
+     4:             4
+  Array entries are NOT distinct.
+
+R8VEC_IS_DISTINCT_TEST:
+  Normal end of execution.
+
+R8VEC_IS_ZERO_TEST
+  Python version: 3.6.9
+  R8VEC_IS_ZERO is TRUE if an R8VEC contains
+  only zero entries.
+
+  X:
+  
+             0
+             1
+             0
+
+  X contains at least one nonzero entry.
+
+  X:
+  
+             0
+             0
+             0
+
+  X contains only zero entries.
+
+  X:
+  
+            -3
+           -99
+         -87.3
+
+  X contains at least one nonzero entry.
+
+R8VEC_IS_ZERO_TEST
+  Normal end of execution.
+
+R8VEC_LINSPACE_TEST
+  Python version: 3.6.9
+  R8VEC_LINSPACE returns evenly spaced values between A and B.
+
+  The linspace vector:
+
+     0:            10
+     1:          12.5
+     2:            15
+     3:          17.5
+     4:            20
+
+R8VEC_LINSPACE_TEST
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_TRANSPOSE_PRINT prints an R8VEC "tranposed",
+  that is, placing multiple entries on a line.
+  The vector X:
+  
+      0.218418
+      0.956318
+      0.829509
+      0.561695
+      0.415307
+
+               
+  
+     0.0661187
+      0.257578
+      0.109957
+      0.043829
+      0.633966
+
+               
+  
+     0.0617272
+      0.449539
+
+
+R8VEC_TRANSPOSE_PRINT_TEST
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8VEC2_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC2_PRINT prints a pair of R8VEC's.
+
+  Print a pair of R8VEC's:
+
+       0:              0             0
+       1:            0.2          0.04
+       2:            0.4          0.16
+       3:            0.6          0.36
+       4:            0.8          0.64
+       5:              1             1
+
+R8VEC2_PRINT_TEST:
+  Normal end of execution.
+
+ROOTS_TO_R8POLY_TEST
+  Python version: 3.6.9
+  ROOTS_TO_R8POLY is given N real roots,
+  and constructs the coefficient vector
+  of the corresponding polynomial.
+
+  N real roots:
+
+     0:             1
+     1:            -4
+     2:             3
+     3:             0
+     4:             3
+
+  The polynomial:
+
+  p(x) =     1 * x^5
+           - 3 * x^4
+           - 13 * x^3
+           + 51 * x^2
+           - 36 * x
+
+ROOTS_TO_R8POLY_TEST:
+  Normal end of execution.
+
+TIMESTAMP_TEST:
+  Python version: 3.6.9
+  TIMESTAMP prints a timestamp of the current date and time.
+
+Sun Feb  2 08:30:47 2020
+
+TIMESTAMP_TEST:
+  Normal end of execution.
+
+R8POLY_TEST:
+  Normal end of execution.
+Sun Feb  2 08:30:47 2020

@@ -1,0 +1,367 @@
+Sat Feb  1 15:36:22 2020
+
+PARTITION_PROBLEM_TEST:
+  Python version: 3.6.9
+  Test the PARTITION_PROBLEM library.
+
+PARTITION_BRUTE_TESTS:
+  Python version: 3.6.9
+  PARTITION_BRUTE_TEST calls PARTITION_BRUTE with a particular.
+  set of weights.
+
+PARTITION_BRUTE_TEST:
+  PARTITION_BRUTE seeks a balanced partition using brute force.
+  Partition a set of N integers W so that the subsets
+  have equal sums.
+
+     I        W0        W1
+
+     0                  19
+     1        17
+     2                  13
+     3         9
+     4         6
+        --------  --------
+              32        32
+
+  Discrepancy = 0
+
+PARTITION_BRUTE_TEST:
+  Normal end of execution.
+
+PARTITION_BRUTE_TEST:
+  PARTITION_BRUTE seeks a balanced partition using brute force.
+  Partition a set of N integers W so that the subsets
+  have equal sums.
+
+     I        W0        W1
+
+     0                 484
+     1                 114
+     2                 205
+     3                 288
+     4       506
+     5       503
+     6                 201
+     7                 127
+     8       410
+        --------  --------
+            1419      1419
+
+  Discrepancy = 0
+
+PARTITION_BRUTE_TEST:
+  Normal end of execution.
+
+PARTITION_BRUTE_TEST:
+  PARTITION_BRUTE seeks a balanced partition using brute force.
+  Partition a set of N integers W so that the subsets
+  have equal sums.
+
+     I        W0        W1
+
+     0                 771
+     1       121
+     2                 281
+     3                 854
+     4       885
+     5                 734
+     6       486
+     7      1003
+     8        83
+     9        62
+        --------  --------
+            2640      2640
+
+  Discrepancy = 0
+
+PARTITION_BRUTE_TEST:
+  Normal end of execution.
+
+PARTITION_BRUTE_TEST:
+  PARTITION_BRUTE seeks a balanced partition using brute force.
+  Partition a set of N integers W so that the subsets
+  have equal sums.
+
+     I        W0        W1
+
+     0                   2
+     1                  10
+     2                   3
+     3         8
+     4                   5
+     5                   7
+     6         9
+     7         5
+     8         3
+     9         2
+        --------  --------
+              27        27
+
+  Discrepancy = 0
+
+PARTITION_BRUTE_TEST:
+  Normal end of execution.
+
+PARTITION_BRUTE_TEST:
+  PARTITION_BRUTE seeks a balanced partition using brute force.
+  Partition a set of N integers W so that the subsets
+  have equal sums.
+
+     I        W0        W1
+
+     0                   3
+     1                   4
+     2                   3
+     3                   1
+     4         3
+     5         2
+     6         3
+     7         2
+     8         1
+        --------  --------
+              11        11
+
+  Discrepancy = 0
+
+PARTITION_BRUTE_TEST:
+  Normal end of execution.
+
+PARTITION_BRUTE_TESTS:
+  Normal end of execution.
+
+PARTITION_COUNT_TESTS:
+  Python version: 3.6.9
+  PARTITION_COUNT_TEST calls PARTITION_COUNT with a particular
+  set of weights.
+
+PARTITION_COUNT_TEST:
+  PARTITION_COUNT counts the number of exact solutions
+  of the partition problem.
+
+     I        W
+
+     0        19
+     1        17
+     2        13
+     3         9
+     4         6
+
+  Number of solutions = 2
+
+PARTITION_COUNT_TEST:
+  Normal end of execution.
+
+PARTITION_COUNT_TEST:
+  PARTITION_COUNT counts the number of exact solutions
+  of the partition problem.
+
+     I        W
+
+     0       484
+     1       114
+     2       205
+     3       288
+     4       506
+     5       503
+     6       201
+     7       127
+     8       410
+
+  Number of solutions = 2
+
+PARTITION_COUNT_TEST:
+  Normal end of execution.
+
+PARTITION_COUNT_TEST:
+  PARTITION_COUNT counts the number of exact solutions
+  of the partition problem.
+
+     I        W
+
+     0       771
+     1       121
+     2       281
+     3       854
+     4       885
+     5       734
+     6       486
+     7      1003
+     8        83
+     9        62
+
+  Number of solutions = 2
+
+PARTITION_COUNT_TEST:
+  Normal end of execution.
+
+PARTITION_COUNT_TEST:
+  PARTITION_COUNT counts the number of exact solutions
+  of the partition problem.
+
+     I        W
+
+     0         2
+     1        10
+     2         3
+     3         8
+     4         5
+     5         7
+     6         9
+     7         5
+     8         3
+     9         2
+
+  Number of solutions = 46
+
+PARTITION_COUNT_TEST:
+  Normal end of execution.
+
+PARTITION_COUNT_TEST:
+  PARTITION_COUNT counts the number of exact solutions
+  of the partition problem.
+
+     I        W
+
+     0         3
+     1         4
+     2         3
+     3         1
+     4         3
+     5         2
+     6         3
+     7         2
+     8         1
+
+  Number of solutions = 48
+
+PARTITION_COUNT_TEST:
+  Normal end of execution.
+
+PARTITION_COUNT_TESTS:
+  Normal end of execution.
+
+SUBSET_NEXT_TEST
+  Python version: 3.6.9
+  SUBSET_NEXT generates all subsets of an N set.
+
+  (empty set)
+
+  4
+
+  3
+
+  3
+  4
+
+  2
+
+  2
+  4
+
+  2
+  3
+
+  2
+  3
+  4
+
+  1
+
+  1
+  4
+
+  1
+  3
+
+  1
+  3
+  4
+
+  1
+  2
+
+  1
+  2
+  4
+
+  1
+  2
+  3
+
+  1
+  2
+  3
+  4
+
+  0
+
+  0
+  4
+
+  0
+  3
+
+  0
+  3
+  4
+
+  0
+  2
+
+  0
+  2
+  4
+
+  0
+  2
+  3
+
+  0
+  2
+  3
+  4
+
+  0
+  1
+
+  0
+  1
+  4
+
+  0
+  1
+  3
+
+  0
+  1
+  3
+  4
+
+  0
+  1
+  2
+
+  0
+  1
+  2
+  4
+
+  0
+  1
+  2
+  3
+
+  0
+  1
+  2
+  3
+  4
+
+
+SUBSET_NEXT_TEST:
+  Normal end of execution.
+
+PARTITION_PROBLEM_TEST:
+  Normal end of execution.
+Sat Feb  1 15:36:22 2020

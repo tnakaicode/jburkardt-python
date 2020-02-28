@@ -1,0 +1,15 @@
+Tue Jan 28 08:24:38 2020
+
+LORENZ_ODE_TEST
+  Python version: 3.6.9
+  Compute solutions of the Lorenz system.
+  Plot solution components (T,X(T)), (T,Y(T)), and (T,Z(T)).
+  Plot (X(T),Y(T),Z(T)).
+
+  Graphics data saved as "lorenz_ode_components.png"
+
+  Graphics data saved as "lorenz_ode_3d.png"
+
+LORENZ_ODE_TEST:
+  Normal end of execution.
+Tue Jan 28 08:24:39 2020

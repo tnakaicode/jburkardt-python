@@ -1,0 +1,7 @@
+
+mario:
+  Python version: 3.7.3
+  Draw a picture of Mario, using colored squares.
+
+mario:
+  Normal end of execution.

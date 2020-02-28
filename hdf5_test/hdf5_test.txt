@@ -1,0 +1,82 @@
+Sun Jan 26 09:12:57 2020
+
+HDF5_TEST:
+  Python version: 3.6.9
+  Tests for the HDF5 library.
+
+HDF5_TEST01:
+  Python version
+  Create a writeable file "test01.h5".
+
+HDF5_TEST02:
+  Python version
+  Create a file "test02.h5" containing a dataset.
+
+HDF5_TEST03:
+  Python version
+  Create a file "test03.h5" containing a dataset
+  and store data in the dataset.
+
+  Dataset written to file "test03.h5":
+
+  dset_data[0,0] = 1
+  dset_data[0,1] = 2
+  dset_data[0,2] = 3
+  dset_data[0,3] = 4
+  dset_data[0,4] = 5
+  dset_data[0,5] = 6
+  dset_data[1,0] = 7
+  dset_data[1,1] = 8
+  dset_data[1,2] = 9
+  dset_data[1,3] = 10
+  dset_data[1,4] = 11
+  dset_data[1,5] = 12
+  dset_data[2,0] = 13
+  dset_data[2,1] = 14
+  dset_data[2,2] = 15
+  dset_data[2,3] = 16
+  dset_data[2,4] = 17
+  dset_data[2,5] = 18
+  dset_data[3,0] = 19
+  dset_data[3,1] = 20
+  dset_data[3,2] = 21
+  dset_data[3,3] = 22
+  dset_data[3,4] = 23
+  dset_data[3,5] = 24
+
+HDF5_TEST04:
+  Python version
+  Open the file "test03.h5";
+  Open a dataset
+  read data from the dataset.
+
+  Dataset read from file "test03.h5":
+
+  dset_data[0,0] = 1
+  dset_data[0,1] = 2
+  dset_data[0,2] = 3
+  dset_data[0,3] = 4
+  dset_data[0,4] = 5
+  dset_data[0,5] = 6
+  dset_data[1,0] = 7
+  dset_data[1,1] = 8
+  dset_data[1,2] = 9
+  dset_data[1,3] = 10
+  dset_data[1,4] = 11
+  dset_data[1,5] = 12
+  dset_data[2,0] = 13
+  dset_data[2,1] = 14
+  dset_data[2,2] = 15
+  dset_data[2,3] = 16
+  dset_data[2,4] = 17
+  dset_data[2,5] = 18
+  dset_data[3,0] = 19
+  dset_data[3,1] = 20
+  dset_data[3,2] = 21
+  dset_data[3,3] = 22
+  dset_data[3,4] = 23
+  dset_data[3,5] = 24
+
+HDF5_TEST:
+  Normal end of execution.
+Sun Jan 26 09:12:57 2020

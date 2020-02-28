@@ -1,0 +1,30 @@
+Sat Jan 18 12:01:38 2020
+
+BISECT_TEST:
+  Python version: 3.6.9
+  BISECT seeks a root of a nonlinear equation using bisection.
+  Wallis.x = 2.5
+  Wallis.a = 2, Wallis.b = 2.5
+  Wallis.a = 2, Wallis.b = 2.25
+  Wallis.a = 2, Wallis.b = 2.125
+  Wallis.a = 2.0625, Wallis.b = 2.125
+  Wallis.a = 2.09375, Wallis.b = 2.125
+  Wallis.a = 2.09375, Wallis.b = 2.10938
+  Wallis.a = 2.09375, Wallis.b = 2.10156
+  Wallis.a = 2.09375, Wallis.b = 2.09766
+  Wallis.a = 2.09375, Wallis.b = 2.0957
+  Wallis.a = 2.09375, Wallis.b = 2.09473
+  Wallis.a = 2.09424, Wallis.b = 2.09473
+  Wallis.a = 2.09448, Wallis.b = 2.09473
+  Wallis.a = 2.09448, Wallis.b = 2.0946
+  Wallis.a = 2.09454, Wallis.b = 2.0946
+  Wallis.a = 2.09454, Wallis.b = 2.09457
+  Wallis.a = 2.09454, Wallis.b = 2.09456
+  Wallis.a = 2.09455, Wallis.b = 2.09456
+  Wallis.a = 2.09455, Wallis.b = 2.09455
+  Wallis.a = 2.09455, Wallis.b = 2.09455
+  Wallis.a = 2.09455, Wallis.b = 2.09455
+
+BISECT_TEST:
+  Normal end of execution.
+Sat Jan 18 12:01:38 2020

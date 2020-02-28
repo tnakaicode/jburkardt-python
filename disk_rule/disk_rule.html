@@ -1,0 +1,274 @@
+<html>
+
+  <head>
+    <title>
+      DISK_RULE - Quadrature Rules for the General Disk
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      DISK_RULE <br> Quadrature Rules for the General Disk
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>DISK_RULE</b>,
+      a Python library which
+      computes a quadrature rule 
+      over the interior of the general disk in 2D,
+      with radius RC and center (XC,YC).
+    </p>
+
+    <p>
+      The user specifies values NT and NR, where NT is the number of equally
+      spaced angles, and NR controls the number of radial points, the center of
+      the disk (XC,YC), and the radius of the disk RC.  The program
+      returns vectors W(NR*NT), X(NR*NT) and Y(NR*NT), which define the rule Q(f).
+    </p>
+
+    <p>
+      To use a rule that is equally powerful in R and T, typically, set
+      NT = 2 * NR.
+    </p>
+
+     <p>
+      Given NT, NR, and the quadrature vectors W, X, Y, the integral I(f) is estimated
+      by Q(f) as follows:
+      <pre>
+        s = 0.0
+        for k in range ( 0, nr * nt ):
+          s = s + w[k] * f(x[k],y[k])
+        area = pi * rc ** 2
+        q = area * s
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>DISK_RULE</b> is available in
+      <a href = "../../c_src/disk_rule/disk_rule.html">a C version</a> and
+      <a href = "../../cpp_src/disk_rule/disk_rule.html">a C++ version</a> and
+      <a href = "../../f_src/disk_rule/disk_rule.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/disk_rule/disk_rule.html">a MATLAB version</a> and
+      <a href = "../../py_src/disk_rule/disk_rule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/annulus_rule/annulus_rule.html">
+      ANNULUS_RULE</a>,
+      a Python library which
+      computes a quadrature rule for estimating integrals of a function 
+      over the interior of a circular annulus in 2D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/disk01_rule/disk01_rule.html">
+      DISK01_RULE</a>,
+      a Python library which
+      computes quadrature rules 
+      over the interior of the unit disk in 2D, with center (0,0) and radius 1.
+    </p>
+
+    <p>
+      <a href = "../../py_src/quadrule/quadrule.html">
+      QUADRULE</a>,
+      a Python library which
+      defines quadrature rules for approximating an integral over a 1D domain.
+    </p>
+
+    <p>
+      <a href = "../../py_src/truncated_normal_rule/truncated_normal_rule.html">
+      TRUNCATED_NORMAL_RULE</a>,
+      a Python program which 
+      computes a quadrature rule for a normal probability density function
+      (PDF), also called a Gaussian distribution, that has been
+      truncated to [A,+oo), (-oo,B] or [A,B].
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Philip Davis, Philip Rabinowitz,<br>
+          Methods of Numerical Integration,<br>
+          Second Edition,<br>
+          Dover, 2007,<br>
+          ISBN: 0486453391,<br>
+          LC: QA299.3.D28.
+        </li>
+        <li>
+          Sylvan Elhay, Jaroslav Kautsky,<br>
+          Algorithm 655: IQPACK, FORTRAN Subroutines for the Weights of 
+          Interpolatory Quadrature,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 13, Number 4, December 1987, pages 399-415.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "disk_rule_compute.py">disk_rule_compute.py</a>,
+          computes a quadrature rule for the general disk.
+        </li>
+        <li>
+          <a href = "disk01_area.py">disk01_area.py</a>, 
+          returns the area of the unit disk.
+        </li>
+        <li>
+          <a href = "disk01_monomial_integral.py">disk01_monomial_integral.py</a>,
+          returns monomial integrals in the unit disk in 2D.
+        </li>
+        <li>
+          <a href = "disk01_rule.py">disk01_rule.py</a>,
+          computes a quadrature rule for the unit disk.
+        </li>
+        <li>
+          <a href = "disk01_sample.py">disk01_sample.py</a>, 
+          returns uniform sample points from the unit disk.
+        </li>
+        <li>
+          <a href = "gamma_values.py">gamma_values.py</a>,
+          returns selected values of the gamma function;
+        </li>
+        <li>
+          <a href = "i4vec_print.py">i4vec_print.py</a>,
+          prints an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_transpose_print.py">i4vec_transpose_print.py</a>,
+          prints an I4VEC "transposed", that is, 5 entries to a line.
+        </li>
+        <li>
+          <a href = "i4vec_uniform_ab.py">i4vec_uniform_ab.py</a>, 
+          returns a scaled pseudorandom I4VEC.
+        </li>
+        <li>
+          <a href = "imtqlx.py">imtqlx.py</a>,
+          diagonalizes a symmetric tridiagonal matrix.
+        </li>
+        <li>
+          <a href = "legendre_ek_compute.py">legendre_ek_compute.py</a>,
+          Legendre quadrature rule by the Elhay-Kautsky method.
+        </li>
+        <li>
+          <a href = "monomial_value.py">monomial_value.py</a>, 
+          evaluates a monomial.
+        </li>
+        <li>
+          <a href = "r8_gamma.py">r8_gamma.py</a>,
+          returns the gamma function of an R8.
+        </li>
+        <li>
+          <a href = "r8_normal_01.py">r8_normal_01.py</a>,
+          returns a unit pseudonormal R8;
+        </li>
+        <li>
+          <a href = "r8_uniform_01.py">r8_uniform_01.py</a>,
+          returns a unit pseudorandom R8.
+        </li>
+        <li>
+          <a href = "r8mat_print.py">r8mat_print.py</a>,
+          prints an R8MAT.
+        </li>
+        <li>
+          <a href = "r8mat_print_some.py">r8mat_print_some.py</a>,
+          prints some of an R8MAT.
+        </li>
+        <li>
+          <a href = "r8mat_transpose_print.py">r8mat_transpose_print.py</a>,
+          prints an R8MAT, transposed.
+        </li>
+        <li>
+          <a href = "r8mat_transpose_print_some.py">r8mat_transpose_print_some.py</a>,
+          prints some of an R8MAT, transposed.
+        </li>
+        <li>
+          <a href = "r8mat_uniform_ab.py">r8mat_uniform_ab.py</a>,
+          returns a scaled pseudorandom R8MAT.
+        </li>
+        <li>
+          <a href = "r8vec_normal_01.py">r8vec_normal_01.py</a>,
+          returns an R8VEC of normally distributed values.
+        </li>
+        <li>
+          <a href = "r8vec_print.py">r8vec_print.py</a>,
+          prints an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_transpose_print.py">r8vec_transpose_print.py</a>,
+          prints an R8VEC "transposed".
+        </li>
+        <li>
+          <a href = "r8vec_uniform_01.py">r8vec_uniform_01.py</a>,
+          returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>,
+          prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "disk_rule.py">disk_rule.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "disk_rule.sh">disk_rule.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "disk_rule.txt">disk_rule.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 22 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

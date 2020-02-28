@@ -1,0 +1,600 @@
+<html>
+
+  <head>
+    <title>
+      GEOMETRY - Geometric Calculations
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      GEOMETRY <br> Geometric Calculations
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>GEOMETRY</b>,
+      a Python library which
+      carries out geometric calculations in 2, 3 and N space.
+    </p>
+
+    <p>
+      These calculations include angles, areas, containment, distances,
+      intersections, lengths, and volumes.
+    </p>
+
+    <p>
+      Some geometric objects can be described in a variety of ways.
+      For instance, a line has implicit, explicit and parametric
+      representations.  The names of routines often will specify
+      the representation used, and there are routines to convert
+      from one representation to another.
+    </p>
+
+    <p>
+      Another useful task is the delineation of a standard geometric
+      object.  For instance, there is a routine that will return
+      the location of the vertices of an octahedron, and others to
+      produce a series of "equally spaced" points on a circle, ellipse,
+      sphere, or within the interior of a triangle.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>GEOMETRY</b> is available in
+      <a href = "../../c_src/geometry/geometry.html">a C version</a> and
+      <a href = "../../cpp_src/geometry/geometry.html">a C++ version</a> and
+      <a href = "../../f_src/geometry/geometry.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/geometry/geometry.html">a MATLAB version</a> and
+      <a href = "../../py_src/geometry/geometry.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <h3 align = "center">
+      Source code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "angle_degree.py">angle_degree.py</a>, 
+          computes an angle in degrees.
+        </li>
+        <li>
+          <a href = "angle_half.py">angle_half.py</a>
+          finds half an angle.
+        </li>
+        <li>
+          <a href = "angle_radian.py">angle_radian.py</a>
+          returns the angle in radians swept out between two rays.
+        </li>
+        <li>
+          <a href = "ball01_volume.py">
+          ball01_volume.py</a>,
+          returns the volume of the unit ball.
+        </li>
+        <li>
+          <a href = "circl_sector_area.py">
+          circle_sector_area.py</a>,
+          returns the area of a circle.
+        </li>
+        <li>
+          <a href = "circle01_length.py">
+          circle01_length.py</a>,
+          returns the length of the unit circle.
+        </li>
+        <li>
+          <a href = "cone_volume.py">
+          cone_volume.py</a>,
+          returns the volume of a cone.
+        </li>
+        <li>
+          <a href = "cube01_volume.py">
+          cube01_volume.py</a>,
+          returns the volume of the unit cube.
+        </li>
+        <li>
+          <a href = "degrees_to_radians.py">
+          degrees_to_radians.py</a>,
+          converts an angle from degrees_to_radians.
+        </li>
+        <li>
+          <a href = "disk01_area.py">
+          disk01_area.py</a>,
+          returns the area of the unit disk.
+        </li>
+        <li>
+          <a href = "disk01_quarter_area.py">
+          disk01_quarter_area.py</a>,
+          returns the area of the unit quarter disk.
+        </li>
+        <li>
+          <a href = "ellipse_area1.py">
+          ellipse_area1.py</a>,
+          computes the area of the ellipse x'*A*x=r^2;
+        </li>
+        <li>
+          <a href = "ellipse_area2.py">
+          ellipse_area2.py</a>,
+          computes the area of the ellipse a*x^2+b*xy+c*y^2=d.
+        </li>
+        <li>
+          <a href = "ellipse_area3.py">
+          ellipse_area3.py</a>,
+          computes the area of the ellipse (x/r1)^2+(y/r2)^2=1.
+        </li>
+        <li>
+          <a href = "ellipse_point_near.py">
+          ellipse_point_near.py</a>,
+          returns the nearest point on an ellipse in 2D;
+        </li>
+        <li>
+          <a href = "ellipsoid_volume.py">
+          ellipsoid_volume.py</a>,
+          returns the volume of an ellipsoid.
+        </li>
+        <li>
+          <a href = "hyperball01_volume.py">
+          hyperball01_volume.py</a>,
+          returns the volume of the unit hyperball.
+        </li>
+        <li>
+          <a href = "hypercube01_volume.py">
+          hypercube01_volume.py</a>,
+          returns the volume of the unit hypercube.
+        </li>
+        <li>
+          <a href = "hypersphere01_area.py">
+          hypersphere01_area.py</a>,
+          returns the area of the unit hypersphere.
+        </li>
+        <li>
+          <a href = "i4_modp.py">
+          i4_modp.py</a>,
+          returns the nonnegative remainder of integer division;
+        </li>
+        <li>
+          <a href = "i4_wrap.py">
+          i4_wrap.py</a>,
+          forces an integer to lie in a given range;
+        </li>
+        <li>
+          <a href = "line_exp_perp.py">
+          line_exp_perp.py</a>,
+          returns a line perpendicular to an explicit line in 2D;
+        </li>
+        <li>
+          <a href = "line_exp2imp.py">
+          line_exp2imp.py</a>,
+          converts an explicit line to an implicit line in 2D;
+        </li>
+        <li>
+          <a href = "line_imp2exp.py">
+          line_imp2exp.py</a>,
+          converts an implicit line to an explicit line in 2D;
+        </li>
+        <li>
+          <a href = "lines_exp_int.py">
+          lines_exp_int.py</a>,
+          finds the intersection of two explicit lines in 2D;
+        </li>
+        <li>
+          <a href = "lines_imp_int.py">
+          lines_imp_int.py</a>,
+          finds the intersection of two implicit lines in 2D;
+        </li>
+        <li>
+          <a href = "polygon_angles.py">polygon_angles.py</a>
+          computes the interior angles of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_area.py">polygon_area.py</a>
+          computes the area of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_area_2.py">polygon_area_2.py</a>
+          computes the area of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_centroid.py">polygon_centroid.py</a>
+          computes the centroid of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_centroid_2.py">polygon_centroid_2.py</a>
+          computes the centroid of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_contains_point.py">polygon_contains_point.py</a>
+          finds if a point is inside a simple polygon.
+        </li>
+        <li>
+          <a href = "polygon_contains_point_2.py">polygon_contains_point_2.py</a>
+          is a point inside a convex polygon.
+        </li>
+        <li>
+          <a href = "polygon_diameter.py">polygon_diameter.py</a>
+          computes the diameter of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_expand.py">polygon_expand.py</a>
+          expands a polygon.
+        </li>
+        <li>
+          <a href = "polygon_inrad_data.py">polygon_inrad_data.py</a>
+          determines polygonal data from its inner radius.
+        </li>
+        <li>
+          <a href = "polygon_integral_1.py">polygon_integral_1.py</a>
+          integrates the function 1 over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_x.py">polygon_integral_x.py</a>
+          integrates the function X over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_xx.py">polygon_integral_xx.py</a>
+          integrates the function X*X over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_xy.py">polygon_integral_xy.py</a>
+          integrates the function X*Y over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_y.py">polygon_integral_y.py</a>
+          integrates the function Y over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_integral_yy.py">polygon_integral_yy.py</a>
+          integrates the function Y*Y over a polygon.
+        </li>
+        <li>
+          <a href = "polygon_is_convex.py">polygon_is_convex.py</a>
+          determines whether a polygon is convex.
+        </li>
+        <li>
+          <a href = "polygon_lattice_area.py">polygon_lattice_area.py</a>
+          computes the area of a lattice polygon.
+        </li>
+        <li>
+          <a href = "polygon_outrad_data.py">polygon_outrad_data.py</a>
+          determines polygonal data from its outer radius.
+        </li>
+        <li>
+          <a href = "polygon_perimeter.py">polygon_perimeter.py</a>
+          determines the length of the perimeter of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_perimeter_quad.py">polygon_perimeter_quad.py</a>
+          estimates the integral of a scalar function over the perimeter of a polygon.
+        </li>
+        <li>
+          <a href = "polygon_point_dist.py">polygon_point_dist.py</a>
+          distance ( polygon, point ).
+        </li>
+        <li>
+          <a href = "polygon_point_near.py">polygon_point_near.py</a>
+          computes the nearest point on a polygon.
+        </li>
+        <li>
+          <a href = "polygon_sample.py">polygon_sample.py</a>
+          returns sample points from a polygon.
+        </li>
+        <li>
+          <a href = "polygon_side_data.py">polygon_side_data.py</a>
+          determines polygonal data from its side length.
+        </li>
+        <li>
+          <a href = "polygon_triangulate.py">polygon_triangulate.py</a>
+          triangulates a polygon.
+        </li>
+        <li>
+          <a href = "pyramid_volume.py">pyramid_volume.py</a>
+          returns the volume of a pyramid.
+        </li>
+        <li>
+          <a href = "pyramid01_volume.py">pyramid01_volume.py</a>
+          returns the volume of the unit pyramid.
+        </li>
+        <li>
+          <a href = "r8_acos.py">r8_acos.py</a>,
+          returns the arc-cosine of an R8.
+        </li>
+        <li>
+          <a href = "r8_atan.py">r8_atan.py</a>
+          computes the arc-tangent of a ratio of R8 values.
+        </li>
+        <li>
+          <a href = "r8_sign.py">r8_sign.py</a>,
+          returns the sign of an R8.
+        </li>
+        <li>
+          <a href = "r8_uniform_01.py">r8_uniform_01.py</a>
+          returns random R8 values in [0,1].
+        </li>
+        <li>
+          <a href = "r8_uniform_ab.py">r8_uniform_ab.py</a>
+          returns random R8 values in [A,B].
+        </li>
+        <li>
+          <a href = "r8mat_det_4d.py">
+          r8mat_det_4d.py</a>,
+          computes the determinant of a 4x4 R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_print.py">
+          r8mat_print.py</a>,
+          prints an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_print_some.py">
+          r8mat_print_some.py</a>,
+          prints some of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_solve.py">
+          r8mat_solve.py</a>,
+          solves an N by N linear system with multiple right hand sides.
+        </li>
+        <li>
+          <a href = "r8mat_transpose_print.py">
+          r8mat_transpose_print.py</a>,
+          prints the transpose of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_transpose_print_some.py">
+          r8mat_transpose_print_some.py</a>,
+          prints some of the transpose of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8vec_print.py">
+          r8vec_print.py</a>,
+          prints an R8VEC;
+        </li>
+        <li>
+          <a href = "r8vec_uniform_01.py">
+          r8vec_uniform_01.py</a>,
+          returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_ab.py">
+          r8vec_uniform_ab.py</a>,
+          returns a pseudorandom R8VEC in [A,B].
+        </li>
+        <li>
+          <a href = "r8vec2_print.py">
+          r8vec2_print.py</a>,
+          prints a pair of R8VEC's;
+        </li>
+        <li>
+          <a href = "r8vec3_print.py">
+          r8vec3_print.py</a>,
+          prints a triple of R8VEC's;
+        </li>
+        <li>
+          <a href = "radians_to_degrees.py">
+          radians_to_degrees.py</a>,
+          converts an angle from radians to degrees.
+        </li>
+        <li>
+          <a href = "segment_point_dist_2d.py">
+          segment_point_dist_2d.py</a>,
+          computes the distance between a point and a line segment in 2D;
+        </li>
+        <li>
+          <a href = "segment_point_near_2d.py">
+          segment_point_near_2d.py</a>,
+          returns the nearest line segment point to a point in 2D;
+        </li>
+        <li>
+          <a href = "simplex01_volume.py">
+          simplex01_volume.py</a>,
+          returns the volume of the unit simplex.
+        </li>
+        <li>
+          <a href = "sphere_triangle_sides_to_angles.py">
+          sphere_triangle_sides_to_angles.py</a>,
+          computes spherical triangle angles in 3D.
+        </li>
+        <li>
+          <a href = "sphere01_area.py">
+          sphere01_area.py</a>,
+          area of unit sphere in ND.
+        </li>
+        <li>
+          <a href = "sphere01_area_values.py">
+          sphere01_area_values.py</a>,
+          tabulated areas of unit sphere in ND.
+        </li>
+        <li>
+          <a href = "sphere01_volume_values.py">
+          sphere01_volume_values.py</a>,
+          tabulated volumes of unit sphere in ND.
+        </li>
+        <li>
+          <a href = "tetrahedron_barycentric.py">
+          tetrahedron_barycentric.py</a>,
+          returns the barycentric coordinates of points in a general tetrahedron.
+        </li>
+        <li>
+          <a href = "tetrahedron_centroid.py">
+          tetrahedron_centroid.py</a>,
+          returns the centroid of a general tetrahedron.
+        </li>
+        <li>
+          <a href = "tetrahedron_sample.py">
+          tetrahedron_sample.py</a>,
+          samples points from a general tetrahedron.
+        </li>
+        <li>
+          <a href = "tetrahedron_volume.py">
+          tetrahedron_volume.py</a>,
+          returns the volume of a general tetrahedron.
+        </li>
+        <li>
+          <a href = "tetrahedron01_volume.py">
+          tetrahedron01_volume.py</a>,
+          returns the volume of the unit tetrahedron.
+        </li>
+        <li>
+          <a href = "timestamp.py">
+          timestamp.py</a>,
+          prints the current YMDHMS date as a timestamp;
+        </li>
+        <li>
+          <a href = "triangle_angles.py">
+          triangle_angles.py</a>,
+          returns the angles of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_area.py">
+          triangle_area.py</a>,
+          returns the area of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_barycentric.py">
+          triangle_barycentric.py</a>,
+          returns the barycentric coordinates of a point in a triangle.
+        </li>
+        <li>
+          <a href = "triangle_centroid.py">
+          triangle_centroid.py</a>,
+          returns the centroid of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_circumcircle.py">
+          triangle_circumcircle.py</a>,
+          returns the circumcenter of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_contains_point.py">
+          triangle_contains_point.py</a>,
+          determines if a point is in a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_contains_point_1.py">
+          triangle_contains_point_1.py</a>,
+          determines if a point is in a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_diameter.py">
+          triangle_diameter.py</a>,
+          returns the diameter of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_edge_length.py">
+          triangle_edge_length.py</a>,
+          returns the edge lengths of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_incircle.py">
+          triangle_incircle.py</a>,
+          returns the incircle of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_orientation.py">
+          triangle_orientation.py</a>,
+          returns the orientation of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_orthocenter.py">
+          triangle_orthocenter.py</a>,
+          returns the orthocenter of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_point_dist.py">
+          triangle_point_dist.py</a>,
+          returns the distance of point to a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_point_near.py">
+          triangle_point_near.py</a>,
+          returns the nearest point on a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_quality.py">
+          triangle_quality.py</a>,
+          returns the shape quality of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_reference_sample.py">
+          triangle_reference_sample.py</a>,
+          randomly samples a point from the reference triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_sample.py">
+          triangle_sample.py</a>,
+          randomly samples a point from a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_xsi_to_xy.py">
+          triangle_xsi_to_xy.py</a>,
+          converts barycentric to cartesian coordinates in a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_xy_to_xsi.py">
+          triangle_xy_to_xsi.py</a>,
+          converts cartesian to barycentric coordinates in a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle01_area.py">
+          triangle01_area.py</a>,
+          returns the area of the unit triangle.
+        </li>
+        <li>
+          <a href = "triangle01_sample.py">
+          triangle01_sample.py</a>,
+          samples the unit triangle.
+        </li>
+        <li>
+          <a href = "wedge01_volume.py">
+          wedge01_volume.py</a>,
+          returns the volume of the unit wedge.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "geometry.py">geometry.py</a>, 
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "geometry.sh">geometry.sh</a>, runs all the tests.
+        </li>
+        <li>
+          <a href = "geometry.txt">geometry.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p:
+
+    <hr>
+
+    <i>
+      Last revised on 24 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

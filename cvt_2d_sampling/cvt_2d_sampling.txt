@@ -1,0 +1,18 @@
+Sat Jan 18 20:59:02 2020
+
+CVT_2D_SAMPLING
+  Python version: 3.6.9
+  Use sampling to approximate Lloyd's algorithm
+  in the 2D unit square.
+
+  Number of generators is 16
+  Number of iterations is 20
+  Number of 1d samples is 100
+  Number of 2d samples is 10000
+  Graphics saved as " initial.png "
+  Graphics saved as " final.png "
+
+CVT_2D_SAMPLING
+  Normal end of execution.
+
+Sat Jan 18 20:59:16 2020

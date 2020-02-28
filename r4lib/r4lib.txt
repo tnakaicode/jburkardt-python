@@ -1,0 +1,320 @@
+Sun Feb  2 08:30:45 2020
+
+R4LIB_TEST
+  Python version:
+  Test the R4LIB library.
+
+R4_EXP_TEST
+  Python version: 3.6.9
+  R4_EXP returns the exponential of a real number.
+
+        X           R4_EXP(X)
+
+           -80             0
+           -70             0
+           -60   8.75651e-27
+           -50   1.92875e-22
+           -40   4.24835e-18
+           -30   9.35762e-14
+           -20   2.06115e-09
+           -10   4.53999e-05
+             0             1
+            10       22026.5
+            20   4.85165e+08
+            30   1.06865e+13
+            40   2.35385e+17
+            50   5.18471e+21
+            60   1.14201e+26
+            70         1e+30
+            80         1e+30
+
+R4_EXP_TEST
+  Normal end of execution.
+
+R4_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R4_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R4_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R4_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R4_UNIFORM_01_TEST
+  Normal end of execution.
+
+R4_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R4_UNIFORM_AB returns random values in a given range:
+  [ A, B ]
+
+  For this problem:
+  A = 10.000000
+  B = 20.000000
+
+  12.184183
+  19.563176
+  18.295092
+  15.616954
+  14.153071
+  10.661187
+  12.575778
+  11.099568
+  10.438290
+  16.339657
+
+R4_UNIFORM_AB_TEST
+  Normal end of execution
+
+R4MAT_PRINT_TEST
+  Python version: 3.6.9
+  R4MAT_PRINT prints an R4MAT.
+
+  Here is an R4MAT:
+
+  Col:       0             1             2       
+  Row
+      0 :          11            12            13  
+      1 :          21            22            23  
+      2 :          31            32            33  
+      3 :          41            42            43  
+
+R4MAT_PRINT_TEST:
+  Normal end of execution.
+
+R4MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R4MAT_PRINT_SOME prints some of an R4MAT.
+
+  Here is an R4MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R4MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R4MAT_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R4MAT_UNIFORM_01 computes a random R4MAT.
+
+  0 <= X <= 1
+  Initial seed is 123456789
+
+  Random R4MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :    0.218418     0.0661187     0.0617272    0.00183837  
+      1 :    0.956318      0.257578      0.449539      0.897504  
+      2 :    0.829509      0.109957      0.401306      0.350752  
+      3 :    0.561695      0.043829      0.754673     0.0945448  
+      4 :    0.415307      0.633966      0.797287     0.0136169  
+
+R4MAT_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R4MAT_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R4MAT_UNIFORM_AB computes a random R4MAT.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Uniform R4MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     0.31051     -0.603288     -0.629637      -0.98897  
+      1 :     4.73791      0.545467       1.69723       4.38502  
+      2 :     3.97706     -0.340259       1.40784       1.10451  
+      3 :     2.37017     -0.737026       3.52804     -0.432731  
+      4 :     1.49184       2.80379       3.78372     -0.918299  
+
+R4MAT_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R4VEC_COVARIANCE_TEST:
+  R4VEC_COVARIANCE computes the covariance of two R4VECs.
+
+  Vector V1:
+1
+0
+
+
+  Vector V2:
+0.218418
+0
+
+  Covariance(V1,V2) = 0.109209
+
+  Vector V2:
+0.828195
+0.478159
+
+  Covariance(V1,V2) = 0.175018
+
+  Vector V2:
+0.414755
+0.718376
+
+  Covariance(V1,V2) = -0.151811
+
+  Vector V2:
+3.43939e-17
+0.561695
+
+  Covariance(V1,V2) = -0.280848
+
+  Vector V2:
+-0.207654
+0.359666
+
+  Covariance(V1,V2) = -0.28366
+
+  Vector V2:
+-0.0572605
+0.0330594
+
+  Covariance(V1,V2) = -0.0451599
+
+  Vector V2:
+-0.257578
+3.15442e-17
+
+  Covariance(V1,V2) = -0.128789
+
+  Vector V2:
+-0.0952254
+-0.0549784
+
+  Covariance(V1,V2) = -0.0201235
+
+  Vector V2:
+-0.0219145
+-0.037957
+
+  Covariance(V1,V2) = 0.00802126
+
+  Vector V2:
+-1.16458e-16
+-0.633966
+
+  Covariance(V1,V2) = 0.316983
+
+  Vector V2:
+0.0308636
+-0.0534573
+
+  Covariance(V1,V2) = 0.0421605
+
+  Vector V2:
+0.389312
+-0.224769
+
+  Covariance(V1,V2) = 0.307041
+
+R4VEC_COVARIANCE_TEST
+  Normal end of execution.
+
+R4VEC_PRINT_TEST
+  Python version: 3.6.9
+  R4VEC_PRINT prints an R4VEC.
+
+  Here is an R4VEC:
+
+     0       123.456
+     1         5e-06
+     2        -1e+06
+     3       3.14159
+
+R4VEC_PRINT_TEST:
+  Normal end of execution.
+
+R4VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R4VEC_UNIFORM_01 computes a random R4VEC.
+
+  Initial seed is 123456789
+
+  Uniform R4VEC:
+
+     0      0.218418
+     1      0.956318
+     2      0.829509
+     3      0.561695
+     4      0.415307
+     5     0.0661187
+     6      0.257578
+     7      0.109957
+     8      0.043829
+     9      0.633966
+
+R4VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R4VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R4VEC_UNIFORM_AB computes a random R4VEC.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Uniform R4VEC:
+
+     0       0.31051
+     1       4.73791
+     2       3.97706
+     3       2.37017
+     4       1.49184
+     5     -0.603288
+     6      0.545467
+     7     -0.340259
+     8     -0.737026
+     9       2.80379
+
+R4VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+TIMESTAMP_TEST:
+  Python version: 3.6.9
+  TIMESTAMP prints a timestamp of the current date and time.
+
+Sun Feb  2 08:30:45 2020
+
+TIMESTAMP_TEST:
+  Normal end of execution.
+
+R4LIB_TEST:
+  Normal end of execution.
+Sun Feb  2 08:30:45 2020

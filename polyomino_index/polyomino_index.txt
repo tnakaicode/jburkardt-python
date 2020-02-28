@@ -1,0 +1,45 @@
+Sat Feb  1 15:36:36 2020
+
+POLYOMINO_INDEX_TEST
+  POLYOMINO_INDEX assigns an index to each nonzero entry
+  of a polyomino.
+
+  The polyomino P:
+
+ 1
+ 0
+ 1
+ 1
+
+ 1
+ 1
+ 1
+ 0
+
+ 0
+ 1
+ 1
+ 0
+
+
+  PIN: Index vector for P:
+
+ 1
+ 0
+ 2
+ 3
+
+ 4
+ 5
+ 6
+ 0
+
+ 0
+ 7
+ 8
+ 0
+
+
+POLYOMINO_INDEX_TEST
+  Normal end of execution.
+Sat Feb  1 15:36:36 2020

@@ -1,0 +1,177 @@
+<html>
+
+  <head>
+    <title>
+      POLYOMINO_EMBED - Embed a Polyomino in a Region
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      POLYOMINO_EMBED <br> Embed a Polyomino in a Region
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>POLYOMINO_EMBED</b>,
+      a Python library which
+      is given matrices defining a region R and a polyomino P, and determines
+      the number of possible embeddings of the polyomino into the region, and
+      the translations necessary to achieve them.
+    </p>
+
+    <p>
+      A region R is a subset of an MRxNR grid of squares.
+    </p>
+
+    <p>
+      A polyomino P is a subset of an MPxNP grid of squares.
+    </p>
+
+    <p>
+      Both objects are represented by binary matrices, with the property that
+      there are no initial or final zero rows or columns.
+    </p>
+
+    <p>
+      For this computation, we regard P as a "fixed" polyomino; in other words,
+      no reflections or rotations will be allowed.
+    </p>
+
+    <p>
+      An "embedding" of P into R is an offset (MI,NJ) such that 
+<pre>
+  P(I,J) = R(I+MI,J+NJ) 
+  for 1 <=  I <=    MP, 1 <=  J <=    NP, and 
+  for 0 <= MI <= MR-MP, 0 <= MJ <= NR-NP.
+</pre>
+      We can detect an embedding simply by taking what amounts to a kind of
+      dot product of P with a corresponding subregion of R.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>POLYOMINO_EMBED</b> is available in 
+      <a href = "../../c_src/polyomino_embed/polyomino_embed.html">a C version</a> and
+      <a href = "../../cpp_src/polyomino_embed/polyomino_embed.html">a C++ version</a> and
+      <a href = "../../f_src/polyomino_embed/polyomino_embed.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/polyominoes/polyomino_embed.html">a MATLAB version</a> and
+      <a href = "../../py_src/polyomino_embed/polyomino_embed.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/pentominoes/pentominoes.html">
+      PENTOMINOES</a>,
+      a Python library which
+      provides some utilities for manipulating pentominoes.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polyomino_condense/polyomino_condense.html">
+      POLYOMINO_CONDENSE</a>,
+      a Python program which
+      cleans up a matrix that represents a polyomino by setting all nonzero
+      entries to 1, and removing initial and final rows and columns of zeros.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polyomino_enumerate/polyomino_enumerate.html">
+      POLYOMINO_ENUMERATE</a>,
+      a Python library which
+      enumerates chiral, fixed and free polyominoes up to a moderate order.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polyomino_index/polyomino_index.html">
+      POLYOMINO_INDEX</a>,
+      a Python library which
+      is given a matrix defining a polyomino P, and determines
+      a correspondingly shaped matrix which contains an index for each
+      nonzero entry in P.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polyomino_lp_write/polyomino_lp_write.html">
+      POLYOMINO_LP_WRITE</a>,
+      a Python program which
+      writes an LP file describing a (binary) integer programming problem
+      related to the tiling of a region R by copies of polyomino
+      shapes, with possible reflections and rotations.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polyomino_transform/polyomino_transform.html">
+      POLYOMINO_TRANSFORM</a>,
+      a Python program which
+      applies reflection and rotation transforms to the matrix that
+      represents a polyomino.
+    </p>
+
+    <h3>
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Solomon Golomb,<br>
+          Polyominoes: Puzzles, Patterns, Problems, and Packings,<br>
+          Princeton University Press, 1996,<br>
+          ISBN: 9780691024448
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "polyomino_embed.py">polyomino_embed.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "polyomino_embed.sh">polyomino_embed.sh</a>,
+          runs the tests.
+        </li>
+        <li>
+          <a href = "polyomino_embed.txt">polyomino_embed.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 09 May 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

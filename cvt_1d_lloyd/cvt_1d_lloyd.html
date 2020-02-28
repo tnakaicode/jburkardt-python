@@ -1,0 +1,213 @@
+<html>
+
+  <head>
+    <title>
+      CVT_1D_LLOYD - Centroidal Voronoi Tessellation in [0,1]
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      CVT_1D_LLOYD <br> Centroidal Voronoi Tessellation in [0,1]
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>CVT_1D_LLOYD</b>,
+      a Python program which 
+      allows the user to carry out Lloyd's algorithm for a 
+      Centroidal Voronoi Tessellation (CVT) in the interval [0,1].
+    </p>
+
+    <p>
+      The determination of the Voronoi regions is carried out using
+      exact techniques.
+    </p>
+
+    <p>
+      For <b>n</b> generators, the solution is known in advance:
+      <blockquote>
+        x(i) = ( 2 * i - 1 ) / ( 2 * n )
+      </blockquote>
+      Lloyd's iterative algorithm starts from an arbitrary vector <b>x</b>, 
+      however, so it is interesting to see how the approximate solution 
+      evolves toward the correct answer.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>cvt_1d_lloyd</b> ( <i>n</i>, <i>it_num</i>, <i>init</i>, <i>prefix</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>n</i> is the number of generators;
+        </li>
+        <li>
+          <i>it_num</i> is the number of iterative steps to take.
+        </li>
+        <li>
+          <i>init</i> is 0 for random initialization, 1 for a "squashed" in which the
+          starting values are confined to a small region.
+        </li>
+        <li>
+          <i>prefix</i> is a string such as 'random_' or 'squashed_' which is
+          used to name the energy, motion, and evolution graphics files.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>CVT_1D_LLOYD</b> is available in
+      <a href = "../../m_src/cvt_1d_lloyd/cvt_1d_lloyd.html">a MATLAB version</a> and
+      <a href = "../../py_src/cvt_1d_lloyd/cvt_1d_lloyd.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/cvt_2d_sampling/cvt_2d_sampling.html">
+      CVT_2D_SAMPLING</a>,
+      a Python program which
+      computes an N-point Centroidal Voronoi Tessellation (CVT)
+      within the unit square [0,1]x[0,1], under a uniform density,
+      using sampling to estimate the Voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/florida_cvt_geo/florida_cvt_geo.html">
+      FLORIDA_CVT_GEO</a>,
+      Python functions which
+      explore the creation of a centroidal Voronoi Tessellation (CVT) of
+      the state of Florida, based solely on geometric considerations.
+    </p>
+
+    <p>
+      <a href = "../../py_src/florida_cvt_pop/florida_cvt_pop.html">
+      FLORIDA_CVT_POP</a>,
+      Python programs which
+      explore the creation of a centroidal Voronoi Tessellation (CVT) of
+      the state of Florida, based on population density.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Franz Aurenhammer,<br>
+          Voronoi diagrams - 
+          a study of a fundamental geometric data structure,<br>
+          ACM Computing Surveys,<br>
+          Volume 23, Number 3, pages 345-405, September 1991.
+        </li>
+        <li>
+          Qiang Du, Vance Faber, Max Gunzburger,<br>
+          Centroidal Voronoi Tessellations: Applications and Algorithms,<br>
+          SIAM Review, Volume 41, 1999, pages 637-676.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cvt_1d_lloyd.py">cvt_1d_lloyd.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "cvt_1d_lloyd_test.sh">cvt_1d_lloyd_test.sh</a> 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "cvt_1d_lloyd_test.txt">cvt_1d_lloyd_test.txt</a> 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>RANDOM</b> sets the random initial values, 
+      using 40 generators and 400 steps.
+      <ul>
+        <li>
+          <a href = "random_energy.png">random_energy.png</a> 
+          a PNG image of the "energy" of the partition, which is the averaged 
+          sum of squares of the distances between each sample point and its 
+          nearest generator.
+        </li>
+        <li>
+          <a href = "random_evolution.png">random_evolution.png</a> 
+          a PNG image of the evolution or trajectories of the generators as the
+          iteration proceeds.
+        </li>
+        <li>
+          <a href = "random_motion.png">random_motion.png</a> 
+          a PNG image of the "motion" of the generators, which is the averaged
+          distance each generator moves during an iteration.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>SQUASHED</b> sets the "squashed" initial values between 0.01 and 0.02,
+      using 40 generators and 400 steps.
+      <ul>
+        <li>
+          <a href = "squashed_energy.png">squashed_energy.png</a> 
+          a PNG image of the "energy" of the partition, which is the averaged 
+          sum of squares of the distances between each sample point and its 
+          nearest generator.
+        </li>
+        <li>
+          <a href = "squashed_evolution.png">squashed_evolution.png</a> 
+          a PNG image of the evolution or trajectories of the generators as the
+          iteration proceeds.
+        </li>
+        <li>
+          <a href = "squashed_motion.png">squashed_motion.png</a> 
+          a PNG image of the "motion" of the generators, which is the averaged
+          distance each generator moves during an iteration.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 September 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

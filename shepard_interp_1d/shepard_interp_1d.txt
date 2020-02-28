@@ -1,0 +1,1165 @@
+Mon Feb  3 07:59:16 2020
+
+SHEPARD_INTERP_1D_TEST
+  Python version: 3.6.9
+  Test the SHEPARD_INTERP_1D library.
+
+P00_DATA_TEST tests P00_DATA
+  Python version: 3.6.9
+  P00_DATA returns the actual (MxN) data for any problem.
+
+  Problem 1
+  DATA_NUM = 18
+  DIM_NUM  = 2
+
+  Data array:
+
+  Row:       0             1       
+  Col
+      0 :           0             4  
+      1 :           1             5  
+      2 :           2             6  
+      3 :           4             6  
+      4 :           5             5  
+      5 :           6             3  
+      6 :           7             1  
+      7 :           8             1  
+      8 :           9             1  
+      9 :          10             3  
+     10 :          11             4  
+     11 :          12             4  
+     12 :          13             3  
+     13 :          14             3  
+     14 :          15             4  
+     15 :          16             4  
+     16 :          17             3  
+     17 :          18             0  
+
+  Problem 2
+  DATA_NUM = 18
+  DIM_NUM  = 2
+
+  Data array:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :        1.34             5  
+      2 :           5          8.66  
+      3 :          10            10  
+      4 :        10.6          10.4  
+      5 :        10.7            12  
+      6 :      10.705          28.6  
+      7 :        10.8          30.2  
+      8 :        11.4          30.6  
+      9 :        19.6          30.6  
+     10 :        20.2          30.2  
+     11 :      20.295          28.6  
+     12 :        20.3            12  
+     13 :        20.4          10.4  
+     14 :          21            10  
+     15 :          26          8.66  
+     16 :       29.66             5  
+     17 :          31             0  
+
+  Problem 3
+  DATA_NUM = 11
+  DIM_NUM  = 2
+
+  Data array:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :           2            10  
+      2 :           3            10  
+      3 :           5            10  
+      4 :           6            10  
+      5 :           8            10  
+      6 :           9          10.5  
+      7 :          11            15  
+      8 :          12            50  
+      9 :          14            60  
+     10 :          15            85  
+
+  Problem 4
+  DATA_NUM = 8
+  DIM_NUM  = 2
+
+  Data array:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :        0.05           0.7  
+      2 :         0.1             1  
+      3 :         0.2             1  
+      4 :         0.8           0.3  
+      5 :        0.85          0.05  
+      6 :         0.9           0.1  
+      7 :           1             1  
+
+  Problem 5
+  DATA_NUM = 9
+  DIM_NUM  = 2
+
+  Data array:
+
+  Row:       0             1       
+  Col
+      0 :           0             0  
+      1 :         0.1           0.9  
+      2 :         0.2          0.95  
+      3 :         0.3           0.9  
+      4 :         0.4           0.1  
+      5 :         0.5          0.05  
+      6 :         0.6          0.05  
+      7 :         0.8           0.2  
+      8 :           1             1  
+
+  Problem 6
+  DATA_NUM = 49
+  DIM_NUM  = 2
+
+  Data array:
+
+  Row:       0             1       
+  Col
+      0 :         595         0.644  
+      1 :         605         0.622  
+      2 :         615         0.638  
+      3 :         625         0.649  
+      4 :         635         0.652  
+      5 :         645         0.639  
+      6 :         655         0.646  
+      7 :         665         0.657  
+      8 :         675         0.652  
+      9 :         685         0.655  
+     10 :         695         0.644  
+     11 :         705         0.663  
+     12 :         715         0.663  
+     13 :         725         0.668  
+     14 :         735         0.676  
+     15 :         745         0.676  
+     16 :         755         0.686  
+     17 :         765         0.679  
+     18 :         775         0.678  
+     19 :         785         0.683  
+     20 :         795         0.694  
+     21 :         805         0.699  
+     22 :         815          0.71  
+     23 :         825          0.73  
+     24 :         835         0.763  
+     25 :         845         0.812  
+     26 :         855         0.907  
+     27 :         865         1.044  
+     28 :         875         1.336  
+     29 :         885         1.881  
+     30 :         895         2.169  
+     31 :         905         2.075  
+     32 :         915         1.598  
+     33 :         925         1.211  
+     34 :         935         0.916  
+     35 :         945         0.746  
+     36 :         955         0.672  
+     37 :         965         0.627  
+     38 :         975         0.615  
+     39 :         985         0.607  
+     40 :         995         0.606  
+     41 :        1005         0.609  
+     42 :        1015         0.603  
+     43 :        1025         0.601  
+     44 :        1035         0.603  
+     45 :        1045         0.601  
+     46 :        1055         0.611  
+     47 :        1065         0.601  
+     48 :        1075         0.608  
+
+  Problem 7
+  DATA_NUM = 4
+  DIM_NUM  = 2
+
+  Data array:
+
+  Row:       0             1       
+  Col
+      0 :           0             1  
+      1 :           1             2  
+      2 :           4             2  
+      3 :           5             1  
+
+  Problem 8
+  DATA_NUM = 12
+  DIM_NUM  = 2
+
+  Data array:
+
+  Row:       0             1       
+  Col
+      0 :          -1             1  
+      1 :        -0.8          0.64  
+      2 :        -0.6          0.36  
+      3 :        -0.4          0.16  
+      4 :        -0.2          0.04  
+      5 :           0             0  
+      6 :         0.2          0.04  
+      7 :     0.20001          0.05  
+      8 :         0.4          0.16  
+      9 :         0.6          0.36  
+     10 :         0.8          0.64  
+     11 :           1             1  
+
+P00_DATA_TEST:
+  Normal end of execution.
+
+P00_DATA_NUM_TEST
+  Python version: 3.6.9
+  P00_DATA_NUM returns the number of data points for any problem.
+
+  Problem   Data Num
+
+        1         18
+        2         18
+        3         11
+        4          8
+        5          9
+        6         49
+        7          4
+        8         12
+
+P00_DATA_NUM_TEST:
+  Normal end of execution.
+
+P00_DIM_NUM_TEST
+  Python version: 3.6.9
+  P00_DIM_NUM returns the spatial dimension for any problem.
+
+  Problem  Dimension
+
+        1          2
+        2          2
+        3          2
+        4          2
+        5          2
+        6          2
+        7          2
+        8          2
+
+P00_DIM_NUM_TEST:
+  Normal end of execution.
+
+P00_PROB_NUM_TEST
+  Python version: 3.6.9
+  P00_PROB_NUM returns the number of test problems.
+
+  TEST_INTERP includes 8 test problems.
+
+P00_PROB_NUM_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT prints an R8MAT.
+
+  Here is an R8MAT, transposed:
+
+  Row:       0             1             2             3       
+  Col
+      0 :          11            21            31            41  
+      1 :          12            22            32            42  
+      2 :          13            23            33            43  
+
+R8MAT_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.
+
+  R8MAT, rows 0:2, cols 3:5:
+
+  Row:       0             1             2       
+  Col
+      3 :          14            24            34  
+      4 :          15            25            35  
+      5 :          16            26            36  
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8VEC_NORM_TEST
+  Python version: 3.6.9
+  R8VEC_NORM computes the L2 norm of an R8VEC.
+
+  Input vector:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+  L2 norm = 1.62017
+
+R8VEC_NORM_TEST:
+  Normal end of execution.
+
+R8VEC_NORM_AFFINE_TEST
+  Python version: 3.6.9
+  R8VEC_NORM_AFFINE computes the L2 norm of
+  the difference of two R8VECs.
+
+  R8VEC_NORM_AFFINE(X,Y) = 1.22756
+  R8VEC_NORM (X-Y):        1.22756
+
+R8VEC_NORM_AFFINE_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_AB computes a random R8VEC.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:       0.31051
+     1:       4.73791
+     2:       3.97706
+     3:       2.37017
+     4:       1.49184
+     5:     -0.603288
+     6:      0.545467
+     7:     -0.340259
+     8:     -0.737026
+     9:       2.80379
+
+R8VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC2_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC2_PRINT prints a pair of R8VEC's.
+
+  Print a pair of R8VEC's:
+
+       0:              0             0
+       1:            0.2          0.04
+       2:            0.4          0.16
+       3:            0.6          0.36
+       4:            0.8          0.64
+       5:              1             1
+
+R8VEC2_PRINT_TEST:
+  Normal end of execution.
+
+SHEPARD_BASIS_1D_TEST:
+  Python version: 3.6.9
+  SHEPARD_BASIS_1D evaluates the Shepard 1D basis
+  functions.
+
+  Using power P = 2
+
+  The Shepard basis functions:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             0             0             0  
+      1 :    0.887921     0.0986578      0.010962    0.00245961  
+      2 :    0.481964      0.481964     0.0301227    0.00595017  
+      3 :    0.097897      0.881073     0.0179811     0.0030487  
+      4 :           0             1             0             0  
+      5 :   0.0368852      0.922131     0.0368852    0.00409836  
+      6 :   0.0804268      0.723841       0.18096     0.0147723  
+      7 :   0.0821097      0.447042      0.447042      0.023807  
+      8 :   0.0466321      0.186528      0.746114     0.0207254  
+      9 :   0.0116402     0.0377141      0.942854    0.00779218  
+     10 :           0             0             1             0  
+     11 :  0.00793883      0.019604      0.960598     0.0118592  
+     12 :   0.0240964     0.0542169       0.86747     0.0542169  
+     13 :   0.0395051     0.0824243      0.741818      0.136252  
+     14 :   0.0484157     0.0948948      0.593093      0.263597  
+     15 :   0.0479398     0.0891442      0.431458      0.431458  
+     16 :   0.0386266     0.0686695      0.274678      0.618026  
+     17 :   0.0245585     0.0419965      0.144845        0.7886  
+     18 :    0.011272     0.0186333     0.0570644       0.91303  
+     19 :  0.00271694    0.00435918     0.0121088      0.980815  
+     20 :           0             0             0             1  
+
+SHEPARD_BASIS_1D_TEST:
+  Normal end of execution.
+
+SHEPARD_VALUE_1D_TEST:
+  Python version: 3.6.9
+  SHEPARD_VALUE_1D evaluates a Shepard 1D interpolant.
+
+  Using power P = 2
+
+  Table of interpolant values:
+
+       0:              0           -28
+       1:            0.5      -23.5644
+       2:              1       -7.9524
+       3:            1.5       6.41966
+       4:              2            10
+       5:            2.5       8.55738
+       6:              3       5.93188
+       7:            3.5       2.45174
+       8:              4      -2.05181
+       9:            4.5      -6.22928
+      10:              5            -8
+      11:            5.5      -5.78983
+      12:              6       1.71084
+      13:            6.5       15.8564
+      14:              7       37.5512
+      15:            7.5       65.9937
+      16:              8       97.5279
+      17:            8.5       126.327
+      18:              9       147.325
+      19:            9.5       158.763
+      20:             10           162
+
+SHEPARD_VALUE_1D_TEST:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #1.
+  Use Shepard interpolation with P = 0
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 0.392837
+
+  Normalized length of piecewise linear interpolant = 3.13553
+  Normalized length of Shepard interpolant          = 1
+
+  Created plot file "p01_data.png"
+  Created plot file "p01_0.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #1.
+  Use Shepard interpolation with P = 1
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.13553
+  Normalized length of Shepard interpolant          = 2.19381
+
+  Created plot file "p01_data.png"
+  Created plot file "p01_1.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #1.
+  Use Shepard interpolation with P = 2
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.13553
+  Normalized length of Shepard interpolant          = 1.89564
+
+  Created plot file "p01_data.png"
+  Created plot file "p01_2.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #1.
+  Use Shepard interpolation with P = 4
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.13553
+  Normalized length of Shepard interpolant          = 1.8338
+
+  Created plot file "p01_data.png"
+  Created plot file "p01_4.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #1.
+  Use Shepard interpolation with P = 8
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.13553
+  Normalized length of Shepard interpolant          = 1.86378
+
+  Created plot file "p01_data.png"
+  Created plot file "p01_8.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #2.
+  Use Shepard interpolation with P = 0
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 2.58162
+
+  Normalized length of piecewise linear interpolant = 2.66086
+  Normalized length of Shepard interpolant          = 1
+
+  Created plot file "p02_data.png"
+  Created plot file "p02_0.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #2.
+  Use Shepard interpolation with P = 1
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.66086
+  Normalized length of Shepard interpolant          = 2.44574
+
+  Created plot file "p02_data.png"
+  Created plot file "p02_1.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #2.
+  Use Shepard interpolation with P = 2
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.66086
+  Normalized length of Shepard interpolant          = 2.33282
+
+  Created plot file "p02_data.png"
+  Created plot file "p02_2.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #2.
+  Use Shepard interpolation with P = 4
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.66086
+  Normalized length of Shepard interpolant          = 2.15025
+
+  Created plot file "p02_data.png"
+  Created plot file "p02_4.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #2.
+  Use Shepard interpolation with P = 8
+  Number of data points = 18
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.66086
+  Normalized length of Shepard interpolant          = 1.89203
+
+  Created plot file "p02_data.png"
+  Created plot file "p02_8.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #3.
+  Use Shepard interpolation with P = 0
+  Number of data points = 11
+
+  L2 interpolation error averaged per interpolant node = 7.87737
+
+  Normalized length of piecewise linear interpolant = 1.68472
+  Normalized length of Shepard interpolant          = 1
+
+  Created plot file "p03_data.png"
+  Created plot file "p03_0.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #3.
+  Use Shepard interpolation with P = 1
+  Number of data points = 11
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 1.68472
+  Normalized length of Shepard interpolant          = 1.5534
+
+  Created plot file "p03_data.png"
+  Created plot file "p03_1.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #3.
+  Use Shepard interpolation with P = 2
+  Number of data points = 11
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 1.68472
+  Normalized length of Shepard interpolant          = 1.35841
+
+  Created plot file "p03_data.png"
+  Created plot file "p03_2.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #3.
+  Use Shepard interpolation with P = 4
+  Number of data points = 11
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 1.68472
+  Normalized length of Shepard interpolant          = 1.34872
+
+  Created plot file "p03_data.png"
+  Created plot file "p03_4.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #3.
+  Use Shepard interpolation with P = 8
+  Number of data points = 11
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 1.68472
+  Normalized length of Shepard interpolant          = 1.36823
+
+  Created plot file "p03_data.png"
+  Created plot file "p03_8.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #4.
+  Use Shepard interpolation with P = 0
+  Number of data points = 8
+
+  L2 interpolation error averaged per interpolant node = 0.149984
+
+  Normalized length of piecewise linear interpolant = 3.25908
+  Normalized length of Shepard interpolant          = 1
+
+  Created plot file "p04_data.png"
+  Created plot file "p04_0.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #4.
+  Use Shepard interpolation with P = 1
+  Number of data points = 8
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.25908
+  Normalized length of Shepard interpolant          = 1.98029
+
+  Created plot file "p04_data.png"
+  Created plot file "p04_1.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #4.
+  Use Shepard interpolation with P = 2
+  Number of data points = 8
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.25908
+  Normalized length of Shepard interpolant          = 1.86801
+
+  Created plot file "p04_data.png"
+  Created plot file "p04_2.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #4.
+  Use Shepard interpolation with P = 4
+  Number of data points = 8
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.25908
+  Normalized length of Shepard interpolant          = 1.88162
+
+  Created plot file "p04_data.png"
+  Created plot file "p04_4.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #4.
+  Use Shepard interpolation with P = 8
+  Number of data points = 8
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.25908
+  Normalized length of Shepard interpolant          = 1.92152
+
+  Created plot file "p04_data.png"
+  Created plot file "p04_8.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #5.
+  Use Shepard interpolation with P = 0
+  Number of data points = 9
+
+  L2 interpolation error averaged per interpolant node = 0.143324
+
+  Normalized length of piecewise linear interpolant = 3.2218
+  Normalized length of Shepard interpolant          = 1
+
+  Created plot file "p05_data.png"
+  Created plot file "p05_0.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #5.
+  Use Shepard interpolation with P = 1
+  Number of data points = 9
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.2218
+  Normalized length of Shepard interpolant          = 2.19384
+
+  Created plot file "p05_data.png"
+  Created plot file "p05_1.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #5.
+  Use Shepard interpolation with P = 2
+  Number of data points = 9
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.2218
+  Normalized length of Shepard interpolant          = 1.89234
+
+  Created plot file "p05_data.png"
+  Created plot file "p05_2.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #5.
+  Use Shepard interpolation with P = 4
+  Number of data points = 9
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.2218
+  Normalized length of Shepard interpolant          = 1.85528
+
+  Created plot file "p05_data.png"
+  Created plot file "p05_4.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #5.
+  Use Shepard interpolation with P = 8
+  Number of data points = 9
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 3.2218
+  Normalized length of Shepard interpolant          = 1.88946
+
+  Created plot file "p05_data.png"
+  Created plot file "p05_8.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #6.
+  Use Shepard interpolation with P = 0
+  Number of data points = 49
+
+  L2 interpolation error averaged per interpolant node = 0.0530251
+
+  Normalized length of piecewise linear interpolant = 2.68209
+  Normalized length of Shepard interpolant          = 1
+
+  Created plot file "p06_data.png"
+  Created plot file "p06_0.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #6.
+  Use Shepard interpolation with P = 1
+  Number of data points = 49
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.68209
+  Normalized length of Shepard interpolant          = 2.43272
+
+  Created plot file "p06_data.png"
+  Created plot file "p06_1.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #6.
+  Use Shepard interpolation with P = 2
+  Number of data points = 49
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.68209
+  Normalized length of Shepard interpolant          = 1.73311
+
+  Created plot file "p06_data.png"
+  Created plot file "p06_2.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #6.
+  Use Shepard interpolation with P = 4
+  Number of data points = 49
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.68209
+  Normalized length of Shepard interpolant          = 1.6757
+
+  Created plot file "p06_data.png"
+  Created plot file "p06_4.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #6.
+  Use Shepard interpolation with P = 8
+  Number of data points = 49
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.68209
+  Normalized length of Shepard interpolant          = 1.699
+
+  Created plot file "p06_data.png"
+  Created plot file "p06_8.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #7.
+  Use Shepard interpolation with P = 0
+  Number of data points = 4
+
+  L2 interpolation error averaged per interpolant node = 0.25
+
+  Normalized length of piecewise linear interpolant = 2.63961
+  Normalized length of Shepard interpolant          = 1
+
+  Created plot file "p07_data.png"
+  Created plot file "p07_0.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #7.
+  Use Shepard interpolation with P = 1
+  Number of data points = 4
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.63961
+  Normalized length of Shepard interpolant          = 1.76174
+
+  Created plot file "p07_data.png"
+  Created plot file "p07_1.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #7.
+  Use Shepard interpolation with P = 2
+  Number of data points = 4
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.63961
+  Normalized length of Shepard interpolant          = 1.70587
+
+  Created plot file "p07_data.png"
+  Created plot file "p07_2.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #7.
+  Use Shepard interpolation with P = 4
+  Number of data points = 4
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.63961
+  Normalized length of Shepard interpolant          = 1.6854
+
+  Created plot file "p07_data.png"
+  Created plot file "p07_4.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #7.
+  Use Shepard interpolation with P = 8
+  Number of data points = 4
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.63961
+  Normalized length of Shepard interpolant          = 1.69451
+
+  Created plot file "p07_data.png"
+  Created plot file "p07_8.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #8.
+  Use Shepard interpolation with P = 0
+  Number of data points = 12
+
+  L2 interpolation error averaged per interpolant node = 0.101554
+
+  Normalized length of piecewise linear interpolant = 2.31939
+  Normalized length of Shepard interpolant          = 1
+
+  Created plot file "p08_data.png"
+  Created plot file "p08_0.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #8.
+  Use Shepard interpolation with P = 1
+  Number of data points = 12
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.31939
+  Normalized length of Shepard interpolant          = 1.80617
+
+  Created plot file "p08_data.png"
+  Created plot file "p08_1.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #8.
+  Use Shepard interpolation with P = 2
+  Number of data points = 12
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.31939
+  Normalized length of Shepard interpolant          = 1.57572
+
+  Created plot file "p08_data.png"
+  Created plot file "p08_2.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #8.
+  Use Shepard interpolation with P = 4
+  Number of data points = 12
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.31939
+  Normalized length of Shepard interpolant          = 1.61322
+
+  Created plot file "p08_data.png"
+  Created plot file "p08_4.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST01:
+  Python version: 3.6.9
+  Interpolate data from TEST_INTERP problem #8.
+  Use Shepard interpolation with P = 8
+  Number of data points = 12
+
+  L2 interpolation error averaged per interpolant node = 0
+
+  Normalized length of piecewise linear interpolant = 2.31939
+  Normalized length of Shepard interpolant          = 1.65868
+
+  Created plot file "p08_data.png"
+  Created plot file "p08_8.0_shepard.png".
+
+SHEPARD_INTERP_1D_TEST01:
+  Normal end of execution.
+
+SHEPARD_INTERP_1D_TEST:
+  Normal end of execution.
+Mon Feb  3 07:59:23 2020

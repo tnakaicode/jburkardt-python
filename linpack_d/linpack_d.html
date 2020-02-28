@@ -1,0 +1,163 @@
+<html>
+
+  <head>
+    <title>
+      LINPACK_D - Linear Algebra Library - Double Precision Real
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      LINPACK_D <br> Linear Algebra Library <br> Double Precision Real
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>LINPACK_D</b>,
+      a Python library which
+      solves systems of linear equations for a variety
+      of matrix types and storage modes,
+      by Jack Dongarra, Jim Bunch, Cleve Moler, Pete Stewart.
+    </p>
+
+    <p>
+      MATLAB already provides a wide set of linear equation solvers.
+      This (partial) set of LINPACK routines is provided just for
+      testing and comparison.
+    </p>
+
+    <p>
+      LINPACK has officially been superseded by the LAPACK library.  The LAPACK
+      library uses more modern algorithms and code structure.  However,
+      the LAPACK library can be extraordinarily complex; what is done
+      in a single LINPACK routine may correspond to 10 or 20 utility
+      routines in LAPACK.  This is fine if you treat LAPACK as a black
+      box.  But if you wish to learn how the algorithm works, or
+      to adapt it, or to convert the code to another language, this
+      is a real drawback.  This is one reason I still keep a copy
+      of LINPACK around.
+    </p>
+
+    <p>
+      Versions of LINPACK in various arithmetic precisions are available
+      through <a href = "http://www.netlib.org/">the NETLIB web site</a>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>LINPACK_D</b> is available in
+      <a href = "../../c_src/linpack_d/linpack_d.html">a C version</a> and
+      <a href = "../../cpp_src/linpack_d/linpack_d.html">a C++ version</a> and
+      <a href = "../../f_src/linpack_d/linpack_d.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/linpack_d/linpack_d.html">a MATLAB version</a> and
+      <a href = "../../py_src/linpack_d/linpack_d.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/condition/condition.html">
+      CONDITION</a>,
+      a Python library which
+      implements methods of computing or estimating the condition number 
+      of a matrix.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_mat/test_mat.html">
+      TEST_MAT</a>,
+      a Python library which
+      defines test matrices.
+    </p>
+
+    <p>
+      <a href = "../../py_src/wathen/wathen.html">
+      WATHEN</a>,
+      a Python library which
+      compares storage schemes (full, banded, sparse triplet, sparse) and 
+      solution strategies (A\x, Linpack, conjugate gradient) for linear systems
+      involving the Wathen matrix, which can arise when solving a 
+      problem using the finite element method (FEM).
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Original FORTRAN77 version by Jack Dongarra, Jim Bunch, Cleve Moler, Pete Stewart.
+      Python version by John Burkardt.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Jack Dongarra, Jim Bunch, Cleve Moler, Pete Stewart,<br>
+          LINPACK User's Guide,<br>
+          SIAM, 1979,<br>
+          ISBN13: 978-0-898711-72-1,<br>
+          LC: QA214.L56.
+        </li>
+        <li>
+          Charles Lawson, Richard Hanson, David Kincaid, Fred Krogh,<br>
+          Algorithm 539,
+          Basic Linear Algebra Subprograms for Fortran Usage,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 5, Number 3, September 1979, pages 308-323.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "linpack_d.py">
+          linpack_d.py</a>, the source code;
+        </li>
+        <li>
+          <a href = "linpack_d.sh">
+          linpack_d.sh</a>, runs all the tests;
+        </li>
+        <li>
+          <a href = "linpack_d.txt">linpack_d.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

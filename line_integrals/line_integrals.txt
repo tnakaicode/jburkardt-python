@@ -1,0 +1,170 @@
+Tue Jan 28 08:24:35 2020
+
+LINE_INTEGRALS_TEST
+  Python version: 3.6.9
+  Test the LINE_INTEGRALS library.
+
+I4_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+         1       -35
+         2       187
+         3       149
+         4        69
+         5        25
+         6       -81
+         7       -23
+         8       -67
+         9       -87
+        10        90
+        11       -82
+        12        35
+        13        20
+        14       127
+        15       139
+        16      -100
+        17       170
+        18         5
+        19       -72
+        20       -96
+
+I4_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_AB computes a random R8VEC.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:       0.31051
+     1:       4.73791
+     2:       3.97706
+     3:       2.37017
+     4:       1.49184
+     5:     -0.603288
+     6:      0.545467
+     7:     -0.340259
+     8:     -0.737026
+     9:       2.80379
+
+R8VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+LINE01_LENGTH_TEST
+  Python version: 3.6.9
+  LINE01_LENGTH returns the length of the unit line.
+
+  LINE01_LENGTH() = 1
+
+LINE01_LENGTH_TEST
+  Normal end of execution.
+
+LINE01_MONOMIAL_INTEGRAL_TEST
+  Python version: 3.6.9
+  LINE01_MONOMIAL_INTEGRAL computes integrals of monomials
+  along the length of the unit line in 1D.
+  Compare with a Monte Carlo estimate.
+
+  Number of sample points used is 4192
+
+   E     MC-Estimate      Exact           Error
+
+   0               1               1           0
+   1        0.498925             0.5      0.0011
+   2        0.332937        0.333333      0.0004
+   3        0.250201            0.25      0.0002
+   4        0.200574             0.2     0.00057
+   5        0.167439        0.166667     0.00077
+   6        0.143718        0.142857     0.00086
+   7        0.125885           0.125     0.00088
+   8        0.111981        0.111111     0.00087
+   9        0.100832             0.1     0.00083
+  10       0.0916921       0.0909091     0.00078
+
+LINE01_MONOMIAL_INTEGRAL_TEST:
+  Normal end of execution.
+
+LINE01_SAMPLE_TEST
+  Python version: 3.6.9
+  LINE01_SAMPLE samples the unit line.
+
+  Sample points in the unit line.
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+LINE01_SAMPLE_TEST
+  Normal end of execution.
+
+MONOMIAL_VALUE_1D_TEST
+  Python version: 3.6.9
+  MONOMIAL_VALUE_1D evaluates a monomial of a 1D argument.
+
+      X^(-1)       X^(0)       X^(1)       X^(2)       X^(5)
+
+     1.61026           1     0.62102    0.385665    0.092369
+    0.105532           1     9.47581      89.791       76398
+    0.125721           1     7.95411     63.2679     31838.9
+    0.210955           1     4.74035     22.4709     2393.59
+    0.335156           1     2.98368     8.90238     236.464
+
+MONOMIAL_VALUE_1D_TEST
+  Normal end of execution.
+
+LINE_INTEGRALS_TEST:
+  Normal end of execution.
+Tue Jan 28 08:24:35 2020

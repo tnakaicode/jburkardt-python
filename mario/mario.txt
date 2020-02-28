@@ -1,0 +1,9 @@
+Thu Sep 13 10:40:09 2018
+
+MARIO:
+  Python version
+  Draw a picture of Mario, using colored squares.
+
+MARIO:
+  Normal end of execution.
+Thu Sep 13 10:40:12 2018

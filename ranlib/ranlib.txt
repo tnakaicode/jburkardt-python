@@ -1,0 +1,982 @@
+Sun Feb  2 08:32:24 2020
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+RANLIB_TEST
+  Python version: 3.6.9
+  Test the RANLIB library.
+
+RANLIB_TEST_GENBET
+  GENBET generates Beta deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 1000
+
+  Parameters:
+
+  A = 6.4999
+  B = 7.66391
+
+  Sample data range:               0.0590955         0.83501
+  Sample mean, variance:            0.461185       0.0169405
+  Distribution mean, variance       0.458909       0.0163753
+
+GENBET_TEST
+  Normal end of execution.
+
+GENCHI_TEST
+  GENCHI generates Chi-square deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 1000
+
+  Parameters:
+
+  DF = 6.4999
+
+  Sample data range:                0.346677         25.8286
+  Sample mean, variance:             6.53591         14.4705
+  Distribution mean, variance         6.4999         12.9998
+
+GENCHI_TEST
+  Normal end of execution.
+
+GENEXP_TEST
+  GENEXP generates exponential deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 1000
+
+  Parameters:
+
+  MU =   6.30545
+
+  Sample data range:             0.000758901         39.5328
+  Sample mean, variance:              6.2853         40.1683
+  Distribution mean, variance        6.30545         39.7587
+
+GENEXP_TEST
+  Normal end of execution.
+
+RANLIB_TEST_GENF
+  Test GENF,
+  which generates F deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 10000
+
+  Parameters:
+
+  DFN =   7.2777
+  DFD =   8.70217
+
+  Sample data range:               0.0298811         29.6318
+  Sample mean, variance:             1.31494         1.46549
+  Distribution mean, variance        1.29841         1.37742
+
+GENF_TEST
+  Normal end of execution.
+
+GENGAM_TEST
+  GENGAM generates Gamma deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 1000
+
+  Parameters:
+
+  A = 6.4999
+  R = 7.66391
+
+  Sample data range:                 0.22456         3.05807
+  Sample mean, variance:             1.17507        0.177328
+  Distribution mean, variance        1.17908          0.1814
+
+GENGAM_TEST
+  Normal end of execution.
+
+GENMN_TEST
+  GENMN generates multivariate normal deviates.
+  Warning! - No test code has been provided.
+
+GENMN_TEST:
+  Normal end of execution.
+
+GENMUL_TEST
+  Python version: 3.6.9
+  GENMUL generates a multinomial random deviate.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  Try 10 successive trials:
+
+    
+28
+15
+ 5
+37
+15
+
+    
+35
+ 7
+ 7
+33
+18
+
+    
+39
+16
+ 6
+22
+17
+
+    
+31
+14
+ 5
+30
+20
+
+    
+44
+ 9
+ 6
+32
+ 9
+
+    
+36
+13
+ 3
+34
+14
+
+    
+39
+11
+ 4
+31
+15
+
+    
+40
+ 7
+ 4
+25
+24
+
+    
+37
+14
+ 3
+31
+15
+
+    
+30
+12
+ 9
+30
+19
+
+
+GENMUL_TEST:
+  Normal end of execution.
+
+GENNCH_TEST
+  GENNCH generates noncentral Chi-square deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 1000
+
+  Parameters:
+
+  DF =    6.8888
+  XNONC = 1.48087
+
+  Sample data range:                0.819308         27.3249
+  Sample mean, variance:             8.31481          19.201
+  Distribution mean, variance        8.36967         19.7011
+
+GENNCH_TEST
+  Normal end of execution.
+
+GENNF_TEST
+  GENNF generates noncentral F deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 10000
+
+  Parameters:
+
+  DFN =   7.2777
+  DFD =   8.70217
+  XNONC = 0.822309
+
+  Sample data range:               0.0522895         20.3529
+  Sample mean, variance:             1.46807         1.68193
+  Distribution mean, variance        1.44512         1.69784
+
+GENNF_TEST
+  Normal end of execution.
+
+GENNOR_TEST:
+  GENNOR generates normal deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 1000
+
+  Parameters:
+
+  MU =   2.22199
+  SD =   3.02663
+
+  Sample data range:                -7.29457         13.0079
+  Sample mean, variance:             2.23376         9.19249
+  Distribution mean, variance        2.22199         9.16047
+
+GENNOR_TEST
+  Normal end of execution.
+
+GENPRM_TEST
+  Python version: 3.6.9
+  GENPRM generates a random permutation.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  Array:   
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+  Permuted:
+5
+0
+4
+2
+3
+8
+9
+6
+7
+1
+
+
+GENPRM_TEST:
+  Normal end of execution.
+
+GENUNF_TEST:
+  GENUNF generates uniform deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 1000
+
+  Parameters:
+
+  A = 6.4999
+  B = 14.1638
+
+  Sample data range:                 6.50123         14.1577
+  Sample mean, variance:             10.3083         4.88394
+  Distribution mean, variance        10.3319         4.89462
+
+GENUNF_TEST
+  Normal end of execution.
+
+IGNBIN_TEST
+  IGNBIN generates binomial deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 10000
+
+  Parameters:
+
+  NN = 12
+  PP = 0.740434
+
+  Sample data range:                       3              12
+  Sample mean, variance:              8.8692         2.26232
+  Distribution mean, variance        8.88521          2.3063
+
+IGNBIN_TEST
+  Normal end of execution.
+
+IGNNBN_TEST
+  IGNNBN generates negative binomial deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 10000
+
+  Parameters:
+
+  NN = 13
+  PP = 0.740434
+
+  Sample data range:                       0              17
+  Sample mean, variance:               4.564         6.24793
+  Distribution mean, variance        4.55727         6.15486
+
+IGNNBN_TEST
+  Normal end of execution.
+
+IGNPOI_TEST
+  IGNPOI generates Poisson deviates.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 1000
+
+  Parameters:
+
+  MU = 12.4164
+
+  Sample data range:                       1              25
+  Sample mean, variance:              12.344          12.298
+  Distribution mean, variance        12.4164         12.4164
+
+IGNPOI_TEST
+  Normal end of execution.
+
+IGNUIN_TEST
+  Python version: 3.6.9
+  IGNUIN generates uniformly distributed integers in a range.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+
+  N = 10
+
+  Parameters:
+
+  LOW  = 222
+  HIGH = 972
+
+  847
+  570
+  689
+  674
+  332
+  758
+  361
+  252
+  626
+  794
+
+IGNUIN_TEST
+  Normal end of execution.
+
+LENNOB_TEST
+  Python version: 3.6.9
+  LENNOB returns the length of string to the last nonblank.
+
+  LEN  LENNOB  ---------S---------
+
+    8           8  "Hi, Bob!"
+   23          18  "  How   are   you?     "
+    4           0  "    "
+
+LENNOB_TEST
+  Normal end of execution.
+
+LOW_LEVEL_TEST
+  Python version: 3.6.9
+  Test the lower level random number generators.
+
+  Five of the 32 generators will be tested.
+  We generate 100000 numbers, reset the block
+  and do it again.  No disagreements should occur.
+
+INITIALIZE:
+  The RNGLIB package has been initialized.
+  Testing generator 1
+  Testing generator 5
+  Testing generator 10
+  Testing generator 20
+  Testing generator 32
+
+  Number of disagreements found was 0
+
+LOW_LEVEL_TEST
+  Normal end of execution.
+
+PHRTSD_TEST
+  Python version: 3.6.9
+  PHRTSD converts a phrase into two numeric seeds.
+
+  Phrase: "A1"
+  Seeds:  297715297  395612060
+
+  Phrase: "shazam"
+  Seeds:  810103054  104790073
+
+  Phrase: "Happy birthday"
+  Seeds:  948353268  801147965
+
+PHRTSD_TEST:
+  Normal end of execution.
+
+PRCOMP_TEST
+  PRCOMP prints and compares covariance information.
+  Warning! - No test code has been provided.
+
+PRCOMP_TEST:
+  Normal end of execution.
+
+R4_EXP_TEST
+  Python version: 3.6.9
+  R4_EXP returns the exponential of a real number.
+
+        X           R4_EXP(X)
+
+           -80             0
+           -70             0
+           -60   8.75651e-27
+           -50   1.92875e-22
+           -40   4.24835e-18
+           -30   9.35762e-14
+           -20   2.06115e-09
+           -10   4.53999e-05
+             0             1
+            10       22026.5
+            20   4.85165e+08
+            30   1.06865e+13
+            40   2.35385e+17
+            50   5.18471e+21
+            60   1.14201e+26
+            70         1e+30
+            80         1e+30
+
+R4_EXP_TEST
+  Normal end of execution.
+
+R4_EXPONENTIAL_TEST
+  Python version: 3.6.9
+  R4_EXPONENTIAL samples the exponential distribution.
+
+  0.082351
+  0.084188
+  0.145816
+  0.373512
+  1.300662
+  0.223208
+  0.197499
+  0.463073
+  0.189966
+  0.883375
+  0.127458
+  1.004645
+  0.393576
+  0.656724
+  0.199304
+  0.049759
+  0.050218
+  0.416410
+  0.300146
+  0.244824
+
+R4_EXPONENTIAL_TEST
+  Normal end of execution.
+
+R4VEC_COVARIANCE_TEST:
+  R4VEC_COVARIANCE computes the covariance of two R4VECs.
+
+  Vector V1:
+1
+0
+
+
+  Vector V2:
+0.123928
+0
+
+  Covariance(V1,V2) = 0.061964
+
+  Vector V2:
+0.859645
+0.496316
+
+  Covariance(V1,V2) = 0.181664
+
+  Vector V2:
+0.489533
+0.847895
+
+  Covariance(V1,V2) = -0.179181
+
+  Vector V2:
+2.80782e-17
+0.458552
+
+  Covariance(V1,V2) = -0.229276
+
+  Vector V2:
+-0.116828
+0.202352
+
+  Covariance(V1,V2) = -0.15959
+
+  Vector V2:
+-0.115449
+0.0666544
+
+  Covariance(V1,V2) = -0.0910516
+
+  Vector V2:
+-0.745887
+9.13448e-17
+
+  Covariance(V1,V2) = -0.372944
+
+  Vector V2:
+-0.263007
+-0.151847
+
+  Covariance(V1,V2) = -0.0555798
+
+  Vector V2:
+-0.177817
+-0.307988
+
+  Covariance(V1,V2) = 0.0650855
+
+  Vector V2:
+-7.47519e-17
+-0.40693
+
+  Covariance(V1,V2) = 0.203465
+
+  Vector V2:
+0.397443
+-0.688391
+
+  Covariance(V1,V2) = 0.542917
+
+  Vector V2:
+0.60534
+-0.349493
+
+  Covariance(V1,V2) = 0.477417
+
+R4VEC_COVARIANCE_TEST
+  Normal end of execution.
+
+R8_EXPONENTIAL_TEST
+  Python version: 3.6.9
+  R8_EXPONENTIAL samples the exponential distribution.
+
+  0.026952
+  0.139951
+  0.649361
+  0.543810
+  0.475531
+  0.333831
+  0.484229
+  0.698627
+  0.432778
+  1.211338
+  0.078197
+  0.558433
+  0.143692
+  0.304750
+  0.538502
+  0.906956
+  0.563085
+  1.392085
+  0.198820
+  0.062818
+
+R8_EXPONENTIAL_TEST
+  Normal end of execution.
+
+R8VEC_COVARIANCE_TEST:
+  R8VEC_COVARIANCE computes the covariance of two R8VECs.
+
+  Vector V1:
+1
+0
+
+
+  Vector V2:
+0.503727
+0
+
+  Covariance(V1,V2) = 0.251863
+
+  Vector V2:
+0.159295
+0.0919688
+
+  Covariance(V1,V2) = 0.0336629
+
+  Vector V2:
+0.374955
+0.64944
+
+  Covariance(V1,V2) = -0.137243
+
+  Vector V2:
+5.03422e-17
+0.822151
+
+  Covariance(V1,V2) = -0.411075
+
+  Vector V2:
+-0.314001
+0.543866
+
+  Covariance(V1,V2) = -0.428934
+
+  Vector V2:
+-0.553521
+0.319575
+
+  Covariance(V1,V2) = -0.436548
+
+  Vector V2:
+-0.601027
+7.36045e-17
+
+  Covariance(V1,V2) = -0.300513
+
+  Vector V2:
+-0.359188
+-0.207377
+
+  Covariance(V1,V2) = -0.0759053
+
+  Vector V2:
+-0.157901
+-0.273493
+
+  Covariance(V1,V2) = 0.0577959
+
+  Vector V2:
+-2.56729e-18
+-0.0139757
+
+  Covariance(V1,V2) = 0.00698783
+
+  Vector V2:
+0.383241
+-0.663794
+
+  Covariance(V1,V2) = 0.523518
+
+  Vector V2:
+0.783093
+-0.452119
+
+  Covariance(V1,V2) = 0.617606
+
+R8VEC_COVARIANCE_TEST
+  Normal end of execution.
+
+SETCOV_TEST
+  Python version: 3.6.9
+  SETCOV aets a covariance matrix.
+
+  Number of variables P = 3
+  Common correlation = 0.25
+  Variances:
+    
+0.5
+0.2
+0.9
+
+
+  Covariance matrix:
+
+    
+0.500000
+0.079057
+0.167705
+
+    
+0.079057
+0.200000
+0.106066
+
+    
+0.167705
+0.106066
+0.900000
+
+
+SETCOV_TEST
+  Normal end of execution.
+
+SEXPO_TEST
+  Python version: 3.6.9
+  SEXPO generates exponentially distributed
+  random values.
+
+  0.392897
+  1.957450
+  0.071320
+  0.120305
+  0.944687
+  1.995147
+  1.717409
+  0.284834
+  2.036888
+  1.688923
+  0.839825
+  0.857379
+  1.907682
+  0.698521
+  1.631880
+  1.580024
+  1.087684
+  6.030942
+  1.004441
+  0.283505
+
+SEXPO_TEST
+  Normal end of execution.
+
+SGAMMA_TEST
+  Python version: 3.6.9
+  SGAMA generates gamma distributed random values.
+
+  0.083967
+  0.027781
+  0.243798
+  0.270589
+  0.074371
+  0.221302
+  0.188699
+  0.065395
+  0.229992
+  0.333197
+  0.023972
+  0.589673
+  0.064493
+  0.093439
+  1.354472
+  0.131442
+  0.517017
+  0.000483
+  0.028403
+  0.746629
+
+SGAMMA_TEST
+  Normal end of execution.
+
+SNORM_TEST
+  Python version: 3.6.9
+  SNORM generates normally distributed
+  random values.
+
+  -0.276305
+  -0.070436
+  -0.798956
+  -0.471933
+  -0.067601
+  1.000538
+  -0.777514
+  1.448163
+  -0.256137
+  -0.455772
+  1.476813
+  -1.523165
+  -1.564552
+  -0.652906
+  -1.259176
+  0.310483
+  -0.685628
+  0.225481
+  1.118316
+  -0.826598
+
+SNORM_TEST
+  Normal end of execution.
+
+SPOFA_TEST
+  SPOFA computes the LU factors of a positive definite symmetric matrix,
+
+  Matrix A:
+
+    
+2
+-1
+0
+0
+0
+
+    
+-1
+2
+-1
+0
+0
+
+    
+0
+-1
+2
+-1
+0
+
+    
+0
+0
+-1
+2
+-1
+
+    
+0
+0
+0
+-1
+2
+
+
+  Call SPOFA to factor the matrix.
+
+  Upper triangular factor U:
+
+    
+ 1.41421
+-0.707107
+       0
+       0
+       0
+
+    
+       0
+ 1.22474
+-0.816497
+       0
+       0
+
+    
+       0
+       0
+  1.1547
+-0.866025
+       0
+
+    
+       0
+       0
+       0
+ 1.11803
+-0.894427
+
+    
+       0
+       0
+       0
+       0
+ 1.09545
+
+
+  Product Ut * U:
+
+    
+       2
+      -1
+       0
+       0
+       0
+
+    
+      -1
+       2
+      -1
+       0
+       0
+
+    
+       0
+      -1
+       2
+      -1
+       0
+
+    
+       0
+       0
+      -1
+       2
+      -1
+
+    
+       0
+       0
+       0
+      -1
+       2
+
+
+SPOFA_TEST
+  Normal end of execution.
+
+STATS_TEST
+  Python version: 3.6.9
+  STATS computes min, max, mean and variance for a vector.
+
+  Vector X:
+    
+1
+2
+3
+4
+5
+
+
+  1 <= X <= 5
+  Mean = 3, Variance = 2.5
+
+STATS_TEST:
+  Normal end of execution.
+
+TRSTAT_TEST
+  Python version: 3.6.9
+  TRSTAT returns the mean and variance for distributions.
+
+  Distribution: "unf"
+  Distribution parameters:                10              20
+  Distribution mean, variance             15         8.33333
+
+TRSTAT_TEST
+  Normal end of execution.
+
+RANLIB_TEST:
+  Normal end of execution.
+Sun Feb  2 08:32:30 2020

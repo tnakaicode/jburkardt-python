@@ -1,0 +1,19 @@
+Thu Sep 13 14:53:09 2018
+
+QUAD_SERIAL:
+  Python version: 3.6.5
+  Estimate the integral of f(x) from A to B.
+  f(x) = 50 / ( pi * ( 2500 * x * x + 1 ) ).
+
+  A        = 0
+  B        = 10
+  N        = 10000000
+  Exact    = 0.499363
+
+  Estimate = 0.499371
+  Error    = 7.90784e-06
+  Time     = 7.12821
+
+QUAD_SERIAL:
+  Normal end of execution.
+Thu Sep 13 14:53:16 2018

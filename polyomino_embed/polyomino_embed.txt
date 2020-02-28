@@ -1,0 +1,167 @@
+Sat Feb  1 15:36:36 2020
+
+POLYOMINO_EMBED_TEST:
+  Python version: 3.6.9
+  Test the POLYOMINO_EMBED library.
+
+POLYOMINO_EMBED_NUMBER_TEST:
+  POLYOMINO_EMBED_NUMBER reports the number of ways a
+  fixed polyomino can be embedded in a region.
+
+  The given region R:
+
+ 0
+ 1
+ 1
+ 1
+
+ 1
+ 1
+ 0
+ 1
+
+ 1
+ 1
+ 1
+ 1
+
+ 1
+ 0
+ 1
+ 1
+
+
+  The given polyomino P:
+
+ 0
+ 1
+
+ 0
+ 1
+
+ 1
+ 1
+
+
+  As a fixed polyomino, P can be embedded in R in 3 ways.
+
+POLYOMINO_EMBED_NUMBER_TEST:
+  Normal end of execution.
+
+POLYOMINO_EMBED_LIST_TEST:
+  POLYOMINO_EMBED_LIST lists the offsets used
+  to embed a fixed polyomino in a region.
+
+  The given region R:
+
+ 0
+ 1
+ 1
+ 1
+
+ 1
+ 1
+ 0
+ 1
+
+ 1
+ 1
+ 1
+ 1
+
+ 1
+ 0
+ 1
+ 1
+
+
+  The given polyomino P:
+
+ 0
+ 1
+
+ 0
+ 1
+
+ 1
+ 1
+
+
+  As a fixed polyomino, P can be embedded in R in 3 ways
+
+  Embedding number 0:
+
+ 0
+ 2
+ 1
+ 1
+
+ 1
+ 2
+ 0
+ 1
+
+ 2
+ 2
+ 1
+ 1
+
+ 1
+ 0
+ 1
+ 1
+
+
+  Embedding number 1:
+
+ 0
+ 1
+ 1
+ 2
+
+ 1
+ 1
+ 0
+ 2
+
+ 1
+ 1
+ 2
+ 2
+
+ 1
+ 0
+ 1
+ 1
+
+
+  Embedding number 2:
+
+ 0
+ 1
+ 1
+ 1
+
+ 1
+ 1
+ 0
+ 2
+
+ 1
+ 1
+ 1
+ 2
+
+ 1
+ 0
+ 2
+ 2
+
+
+POLYOMINO_EMBED_LIST_TEST:
+  Normal end of execution.
+
+POLYOMINO_EMBED_TEST:
+  Normal end of execution.
+
+Sat Feb  1 15:36:36 2020

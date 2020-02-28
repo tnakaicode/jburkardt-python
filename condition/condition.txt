@@ -1,0 +1,736 @@
+Sun Jan 19 19:38:30 2020
+
+CONDITION_TEST
+  Python version: 3.6.9
+  Test the CONDITION library.
+
+COMBIN_TEST
+  Python version: 3.6.9
+  COMBIN computes the COMBIN matrix.
+
+  COMBIN matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :        11.8           9.6           9.6           9.6  
+      1 :         9.6          11.8           9.6           9.6  
+      2 :         9.6           9.6          11.8           9.6  
+      3 :         9.6           9.6           9.6          11.8  
+
+COMBIN_TEST
+  Normal end of execution.
+
+CONEX1_TEST
+  Python version: 3.6.9
+  CONEX1 computes the CONEX1 matrix.
+
+  CONEX1 matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1            -1      -45.2468             0  
+      1 :           0             1       22.6234      -22.6234  
+      2 :           0             1       23.6234      -23.6234  
+      3 :           0             0             0       22.6234  
+
+CONEX1_TEST
+  Normal end of execution.
+
+CONEX2_TEST
+  Python version: 3.6.9
+  CONEX2 computes the CONEX2 matrix.
+
+  CONEX2 matrix:
+
+  Col:       0             1             2       
+  Row
+      0 :           1      0.998046            -2  
+      1 :           0      0.044202     -0.044202  
+      2 :           0             0             1  
+
+CONEX2_TEST
+  Normal end of execution.
+
+CONEX3_TEST
+  Python version: 3.6.9
+  CONEX3 computes the CONEX3 matrix.
+
+  CONEX3 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             0             0  
+      1 :          -1             1             0             0             0  
+      2 :          -1            -1             1             0             0  
+      3 :          -1            -1            -1             1             0  
+      4 :          -1            -1            -1            -1            -1  
+
+CONEX3_TEST
+  Normal end of execution.
+
+CONEX4_TEST
+  Python version: 3.6.9
+  CONEX4 computes the CONEX4 matrix.
+
+  CONEX4 matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           7            10             8             7  
+      1 :           6             8            10             9  
+      2 :           5             7             9            10  
+      3 :           5             7             6             5  
+
+CONEX4_TEST
+  Normal end of execution.
+
+I4VEC_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_PRINT prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+I4VEC_PRINT_TEST:
+  Normal end of execution.
+
+KAHAN_TEST
+  Python version: 3.6.9
+  KAHAN computes the KAHAN matrix.
+
+  KAHAN matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.216686     -0.211538     -0.211538     -0.211538     -0.211538  
+      1 :           0     0.0469527    -0.0458372    -0.0458372    -0.0458372  
+      2 :           0             0      0.010174   -0.00993227   -0.00993227  
+      3 :           0             0             0    0.00220456   -0.00215218  
+      4 :           0             0             0             0   0.000477696  
+
+KAHAN_TEST
+  Normal end of execution.
+
+R8_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8_NORMAL_01 generates normally distributed
+  random values.
+  Using initial random number seed = 123456789
+
+  1.679040
+  -0.566060
+  1.212934
+  1.269381
+  -1.666087
+  -2.242464
+  0.039675
+  0.673068
+  -0.275127
+  2.164005
+  0.297785
+  2.044536
+  1.398819
+  -1.242985
+  -0.067084
+  -0.794396
+  -0.523768
+  -0.350567
+  0.131700
+  0.537380
+
+R8_NORMAL_01_TEST
+  Normal end of execution.
+
+R8_SIGN_TEST
+  Python version: 3.6.9
+  R8_SIGN returns the sign of an R8.
+
+     R8     R8_SIGN(R8)
+
+   -1.2500        -1
+   -0.2500        -1
+    0.0000         1
+    0.5000         1
+    9.0000         1
+
+R8_SIGN_TEST
+  Normal end of execution.
+
+R8_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R8_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8_UNIFORM_AB returns random values in a given range:
+  [ A, B ]
+
+  For this problem:
+  A = 10.000000
+  B = 20.000000
+
+  12.184183
+  19.563176
+  18.295092
+  15.616954
+  14.153071
+  10.661187
+  12.575778
+  11.099568
+  10.438290
+  16.339657
+
+R8_UNIFORM_AB_TEST
+  Normal end of execution
+
+R8GE_FA_TEST01
+  Python version: 3.6.9
+  For a matrix in general storage,
+  R8GE_FA computes the LU factors,
+  R8GE_SL solves a factored system.
+
+  Matrix order N = 10
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+     5:             1
+     6:             1
+     7:             1
+     8:             1
+     9:             1
+
+  Solution of transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8GE_FA_TEST01
+  Normal end of execution.
+
+R8GE_FA_TEST02
+  Python version: 3.6.9
+  For a matrix in general storage,
+  R8GE_FA computes the LU factors,
+  R8GE_SL solves a factored system.
+
+  Matrix order N = 5
+
+  The matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.218418     0.0661187     0.0617272    0.00183837      0.859097  
+      1 :    0.956318      0.257578      0.449539      0.897504      0.840847  
+      2 :    0.829509      0.109957      0.401306      0.350752      0.123104  
+      3 :    0.561695      0.043829      0.754673     0.0945448    0.00751236  
+      4 :    0.415307      0.633966      0.797287     0.0136169      0.260303  
+
+  The compressed LU factors:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.956318      0.257578      0.449539      0.897504      0.840847  
+      1 :   -0.228395      0.522106      0.602062     -0.376149     -0.104858  
+      2 :   -0.867399      0.217324      0.614552     -0.510026     -0.507943  
+      3 :   -0.587352       0.20582     -0.231419     -0.391459     -0.511487  
+      4 :   -0.434277    -0.0139612     0.0803036     -0.610161      0.939815  
+
+  The pivot vector P:
+
+     0       1
+     1       4
+     2       3
+     3       3
+     4       4
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+R8GE_FA_TEST02
+  Normal end of execution.
+
+R8MAT_NORM_L1_TEST
+  Python version: 3.6.9
+  R8MAT_NORM_L1 computes the L1 norm of an R8MAT;
+
+  A:
+
+  Col:       0             1             2             3       
+  Row
+      0 :          -3            -4            -4            -5  
+      1 :           5            -2            -1             4  
+      2 :           3            -4            -1            -1  
+      3 :           1            -5             3            -4  
+      4 :          -1             1             3            -5  
+
+  Computed L1 norm = 19
+
+R8MAT_NORM_L1_TEST
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_01 computes a random R8MAT.
+
+  0 <= X <= 1
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :    0.218418     0.0661187     0.0617272    0.00183837  
+      1 :    0.956318      0.257578      0.449539      0.897504  
+      2 :    0.829509      0.109957      0.401306      0.350752  
+      3 :    0.561695      0.043829      0.754673     0.0945448  
+      4 :    0.415307      0.633966      0.797287     0.0136169  
+
+R8MAT_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_AB computes a random R8MAT.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     0.31051     -0.603288     -0.629637      -0.98897  
+      1 :     4.73791      0.545467       1.69723       4.38502  
+      2 :     3.97706     -0.340259       1.40784       1.10451  
+      3 :     2.37017     -0.737026       3.52804     -0.432731  
+      4 :     1.49184       2.80379       3.78372     -0.918299  
+
+R8MAT_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC_MAX_ABS_INDEX_TEST
+  Python version: 3.6.9
+  R8VEC_MAX_ABS_INDEX: index of entry of maximum absolute value
+
+  Input vector:
+
+     0:      -5.63163
+     1:       9.12635
+     2:       6.59018
+     3:       1.23391
+     4:      -1.69386
+     5:      -8.67763
+     6:      -4.84844
+     7:      -7.80086
+     8:      -9.12342
+     9:       2.67931
+
+  Maximum index: 1
+
+R8VEC_MAX_ABS_INDEX_TEST:
+  Normal end of execution.
+
+R8VEC_NORM_TEST
+  Python version: 3.6.9
+  R8VEC_NORM computes the L2 norm of an R8VEC.
+
+  Input vector:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+  L2 norm = 1.62017
+
+R8VEC_NORM_TEST:
+  Normal end of execution.
+
+R8VEC_NORM_L1_TEST
+  Python version: 3.6.9
+  R8VEC_NORM_L1 computes the L1 norm of an R8VEC.
+
+  Input vector:
+
+     0:      -5.63163
+     1:       9.12635
+     2:       6.59018
+     3:       1.23391
+     4:      -1.69386
+     5:      -8.67763
+     6:      -4.84844
+     7:      -7.80086
+     8:      -9.12342
+     9:       2.67931
+
+  L1 norm = 57.4056
+
+R8VEC_NORM_L1_TEST:
+  Normal end of execution.
+
+R8VEC_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8VEC_NORMAL_01 returns a vector of Normal 01 values
+
+  SEED = 123456789
+
+  Vector:
+
+     0:       1.67904
+     1:      -0.56606
+     2:       1.21293
+     3:       1.26938
+     4:      -1.66609
+     5:      -2.24246
+     6:     0.0396749
+     7:      0.673068
+     8:     -0.275127
+     9:         2.164
+
+R8VEC_NORMAL_01_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_AB computes a random R8VEC.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:       0.31051
+     1:       4.73791
+     2:       3.97706
+     3:       2.37017
+     4:       1.49184
+     5:     -0.603288
+     6:      0.545467
+     7:     -0.340259
+     8:     -0.737026
+     9:       2.80379
+
+R8VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_UNIT_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_UNIT returns a random R8VEC
+  on the surface of the unit M sphere.
+
+
+  Vector:
+
+     0:      0.559743
+     1:     -0.188708
+     2:      0.404357
+     3:      0.423174
+     4:     -0.555425
+
+  Vector:
+
+     0:     -0.700707
+     1:     0.0123973
+     2:      0.210315
+     3:    -0.0859695
+     4:       0.67619
+
+  Vector:
+
+     0:      0.106795
+     1:      0.733237
+     2:      0.501662
+     3:     -0.445775
+     4:    -0.0240584
+
+  Vector:
+
+     0:     -0.687688
+     1:     -0.453412
+     2:     -0.303477
+     3:      0.114009
+     4:      0.465195
+
+  Vector:
+
+     0:     -0.571363
+     1:     -0.512344
+     2:     -0.314941
+     3:     -0.510312
+     4:      0.226806
+
+R8VEC_UNIFORM_UNIT_TEST:
+  Normal end of execution.
+
+COND_TEST
+  Python version: 3.6.9
+  COND is the condition number estimator built into Python.
+
+  Matrix               Order   Condition        Estimate
+
+         Combinatorial     4              10              10
+                CONEX1     4           80601           80601
+                CONEX2     3          601.97          601.97
+                CONEX3     5              80              80
+                CONEX4     4            4488            4488
+                 KAHAN     4         646.712         646.712
+                RANDOM     4          14.534          14.534
+                RANDOM     4          33.906          33.906
+                RANDOM     4         115.558         115.558
+                RANDOM     4         159.911         159.911
+                RANDOM     4         24.2573         24.2573
+
+COND_TEST
+  Normal end of execution.
+
+CONDITION_HAGER_TEST
+  Python version: 3.6.9
+  CONDITION_HAGER estimates the L1 condition number
+  for a matrix in general storage.
+
+  Matrix               Order   Condition         Hager
+
+         Combinatorial     4              10              10
+                CONEX1     4           80601          810.02
+                CONEX2     3          601.97          601.97
+                CONEX3     5              80              80
+                CONEX4     4            4488            4488
+                 KAHAN     4         646.712         646.712
+                RANDOM     4          14.534         14.2289
+                RANDOM     4          33.906          33.906
+                RANDOM     4         115.558         106.835
+                RANDOM     4         159.911         159.911
+                RANDOM     4         24.2573         24.2573
+
+CONDITION_HAGER_TEST
+  Normal end of execution.
+
+CONDITION_LINPACK_TEST
+  Python version: 3.6.9
+  CONDITION_LINPACK estimates the L1 condition number
+  for a matrix in general storage.
+
+  Matrix               Order   Condition       Linpack
+
+         Combinatorial     4              10               7
+                CONEX1     4           80601         565.586
+                CONEX2     3          601.97         7.50657
+                CONEX3     5              80               5
+                CONEX4     4            4488         3238.09
+                 KAHAN     4         646.712         574.664
+                RANDOM     4          14.534         12.4043
+                RANDOM     4          33.906         26.8497
+                RANDOM     4         115.558          92.555
+                RANDOM     4         159.911         123.868
+                RANDOM     4         24.2573         15.2399
+
+CONDITION_LINPACK_TEST
+  Normal end of execution.
+
+CONDITION_SAMPLE1_TEST
+  Python version: 3.6.9
+  CONDITION_SAMPLE1 estimates the L1 condition number using sampling
+  for a matrix in general storage.
+
+  Matrix                 Samples Order   Condition        Estimate
+
+         Combinatorial        10     4              10               7
+         Combinatorial      1000     4              10         8.24759
+         Combinatorial    100000     4              10         9.76287
+
+                CONEX1        10     4           80601         4.99847
+                CONEX1      1000     4           80601         18.3682
+                CONEX1    100000     4           80601         520.504
+
+                CONEX2        10     3          601.97          14.949
+                CONEX2      1000     3          601.97         159.888
+                CONEX2    100000     3          601.97         355.028
+
+                CONEX3        10     5              80         2.61088
+                CONEX3      1000     5              80         7.96625
+                CONEX3    100000     5              80         28.0306
+
+                CONEX4        10     4            4488         8.41562
+                CONEX4      1000     4            4488         46.1566
+                CONEX4    100000     4            4488         468.309
+
+                 KAHAN        10     4         646.712         16.8529
+                 KAHAN      1000     4         646.712         42.5583
+                 KAHAN    100000     4         646.712         109.167
+
+                RANDOM        10     4          14.534         6.79828
+                RANDOM      1000     4          14.534         10.6241
+                RANDOM    100000     4          14.534         13.5177
+
+                RANDOM        10     4          33.906         4.76243
+                RANDOM      1000     4          33.906         13.1686
+                RANDOM    100000     4          33.906         27.2128
+
+                RANDOM        10     4         115.558         4.07354
+                RANDOM      1000     4         115.558         27.9498
+                RANDOM    100000     4         115.558         93.7709
+
+                RANDOM        10     4         159.911         7.01917
+                RANDOM      1000     4         159.911         15.2952
+                RANDOM    100000     4         159.911         80.2269
+
+                RANDOM        10     4         24.2573         6.47105
+                RANDOM      1000     4         24.2573         13.2073
+                RANDOM    100000     4         24.2573         22.0218
+
+CONDITION_SAMPLE1_TEST
+  Normal end of execution.
+
+CONDITION_TEST:
+  Normal end of execution.
+Sun Jan 19 19:39:14 2020

@@ -1,0 +1,590 @@
+Wed Feb  5 08:01:33 2020
+
+TETRAHEDRON01_MONTE_CARLO_TESTS
+  Python version: 3.6.9
+  Test the TETRAHEDRON01_MONTE_CARLO library.
+
+I4VEC_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_PRINT prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+I4VEC_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_TRANSPOSE_PRINT prints an I4VEC
+  with 5 entries to a row, and an optional title.
+
+  My array:  
+       1
+       2
+       3
+       4
+       5
+       6
+       7
+       8
+       9
+      10
+
+      11
+      12
+
+
+I4VEC_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4VEC_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+
+  The random vector:
+
+     0     -35
+     1     187
+     2     149
+     3      69
+     4      25
+     5     -81
+     6     -23
+     7     -67
+     8     -87
+     9      90
+    10     -82
+    11      35
+    12      20
+    13     127
+    14     139
+    15    -100
+    16     170
+    17       5
+    18     -72
+    19     -96
+
+I4VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+MONOMIAL_VALUE_TEST
+  Python version: 3.6.9
+  Use monomial_value() to evaluate some monomials
+  in dimensions 1 through 3.
+
+  Spatial dimension M =  1
+
+  Exponents:
+      -1
+
+
+   V(X)         
+      X(0)
+
+
+      0.111111  
+    9.0000
+
+         0.125  
+    8.0000
+
+           0.2  
+    5.0000
+
+      0.333333  
+    3.0000
+
+            -1  
+   -1.0000
+
+
+  Spatial dimension M =  2
+
+  Exponents:
+      -1
+      -2
+
+
+   V(X)         
+      X(0)
+      X(1)
+
+
+    -0.0277778  
+   -1.0000
+    6.0000
+
+     -0.111111  
+   -1.0000
+    3.0000
+
+    0.00680272  
+    3.0000
+    7.0000
+
+       0.03125  
+    8.0000
+   -2.0000
+
+     0.0277778  
+    9.0000
+    2.0000
+
+
+  Spatial dimension M =  3
+
+  Exponents:
+      -3
+      -3
+       5
+
+
+   V(X)         
+      X(0)
+      X(1)
+      X(2)
+
+
+        0.0625  
+    8.0000
+   -1.0000
+   -2.0000
+
+   -0.00137174  
+    1.0000
+    9.0000
+   -1.0000
+
+   0.000244141  
+    2.0000
+    8.0000
+    1.0000
+
+       1.21363  
+    6.0000
+    5.0000
+    8.0000
+
+      0.158766  
+    3.0000
+    9.0000
+    5.0000
+
+
+MONOMIAL_VALUE_TEST
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Row
+      0 :
+          11  
+          12  
+          13  
+          14  
+          15  
+
+      1 :
+          21  
+          22  
+          23  
+          24  
+          25  
+
+      2 :
+          31  
+          32  
+          33  
+          34  
+          35  
+
+      3 :
+          41  
+          42  
+          43  
+          44  
+          45  
+
+
+  Col: 
+      5       
+
+  Row
+      0 :
+          16  
+
+      1 :
+          26  
+
+      2 :
+          36  
+
+      3 :
+          46  
+
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col: 
+      3       
+      4       
+      5       
+
+  Row
+      0 :
+          14  
+          15  
+          16  
+
+      1 :
+          24  
+          25  
+          26  
+
+      2 :
+          34  
+          35  
+          36  
+
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT prints an R8MAT.
+
+  Here is an R8MAT, transposed:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+          11  
+          21  
+          31  
+          41  
+
+      1 :
+          12  
+          22  
+          32  
+          42  
+
+      2 :
+          13  
+          23  
+          33  
+          43  
+
+
+R8MAT_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.
+
+  R8MAT, rows 0:2, cols 3:5:
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      3 :
+          14  
+          24  
+          34  
+
+      4 :
+          15  
+          25  
+          35  
+
+      5 :
+          16  
+          26  
+          36  
+
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_AB computes a random R8MAT.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+
+  Row
+      0 :
+     0.31051  
+   -0.603288  
+   -0.629637  
+    -0.98897  
+
+      1 :
+     4.73791  
+    0.545467  
+     1.69723  
+     4.38502  
+
+      2 :
+     3.97706  
+   -0.340259  
+     1.40784  
+     1.10451  
+
+      3 :
+     2.37017  
+   -0.737026  
+     3.52804  
+   -0.432731  
+
+      4 :
+     1.49184  
+     2.80379  
+     3.78372  
+   -0.918299  
+
+
+R8MAT_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+TETRAHEDRON01_MONTE_CARLO_TEST
+  Python version: 3.6.9
+  TETRAHEDRON01_SAMPLE can be used to estimate integrals
+  over the unit tetrahedron using the Monte Carlo method.
+  Compare with exact values returned by 
+  TETRAHEDRON_MONOMIAL_INTEGRAL.
+
+  Number of sample points used is 4192
+
+  Ex  Ey  Ez     MC-Estimate      Exact           Error
+
+   0   0   0        0.166667        0.166667           0
+   0   0   1       0.0413718       0.0416667     0.00029
+   0   0   2       0.0165098       0.0166667     0.00016
+   0   0   3      0.00828332      0.00833333       5e-05
+   0   1   0       0.0416317       0.0416667     3.5e-05
+   0   1   1      0.00827531      0.00833333     5.8e-05
+   0   1   2      0.00273194      0.00277778     4.6e-05
+   0   1   3      0.00116758      0.00119048     2.3e-05
+   0   2   0       0.0165018       0.0166667     0.00016
+   0   2   1      0.00276951      0.00277778     8.3e-06
+   0   2   2     0.000784884     0.000793651     8.8e-06
+   0   2   3     0.000292169     0.000297619     5.5e-06
+   0   3   0      0.00811291      0.00833333     0.00022
+   0   3   1      0.00118868      0.00119048     1.8e-06
+   0   3   2     0.000297023     0.000297619       6e-07
+   0   3   3     9.81799e-05     9.92063e-05       1e-06
+   1   0   0       0.0416734       0.0416667     6.7e-06
+   1   0   1      0.00817139      0.00833333     0.00016
+   1   0   2      0.00268252      0.00277778     9.5e-05
+   1   0   3      0.00114358      0.00119048     4.7e-05
+   1   1   0      0.00838004      0.00833333     4.7e-05
+   1   1   1      0.00137025      0.00138889     1.9e-05
+   1   1   2      0.00038193     0.000396825     1.5e-05
+   1   1   3     0.000140955      0.00014881     7.9e-06
+   1   2   0      0.00278426      0.00277778     6.5e-06
+   1   2   1     0.000393528     0.000396825     3.3e-06
+   1   2   2     9.62722e-05     9.92063e-05     2.9e-06
+   1   2   3     3.15096e-05     3.30688e-05     1.6e-06
+   1   3   0      0.00118823      0.00119048     2.2e-06
+   1   3   1     0.000148482      0.00014881     3.3e-07
+   1   3   2     3.25608e-05     3.30688e-05     5.1e-07
+   1   3   3     9.60372e-06     9.92063e-06     3.2e-07
+   2   0   0       0.0168692       0.0166667      0.0002
+   2   0   1      0.00272847      0.00277778     4.9e-05
+   2   0   2      0.00075755     0.000793651     3.6e-05
+   2   0   3     0.000280062     0.000297619     1.8e-05
+   2   1   0      0.00283389      0.00277778     5.6e-05
+   2   1   1     0.000395751     0.000396825     1.1e-06
+   2   1   2     9.54467e-05     9.92063e-05     3.8e-06
+   2   1   3     3.09608e-05     3.30688e-05     2.1e-06
+   2   2   0     0.000803078     0.000793651     9.4e-06
+   2   2   1      9.8966e-05     9.92063e-05     2.4e-07
+   2   2   2     2.12827e-05     2.20459e-05     7.6e-07
+   2   2   3     6.19862e-06     6.61376e-06     4.2e-07
+   2   3   0     0.000299022     0.000297619     1.4e-06
+   2   3   1     3.30027e-05     3.30688e-05     6.6e-08
+   2   3   2     6.43774e-06     6.61376e-06     1.8e-07
+   2   3   3     1.70702e-06     1.80375e-06     9.7e-08
+   3   0   0      0.00855041      0.00833333     0.00022
+   3   0   1       0.0011797      0.00119048     1.1e-05
+   3   0   2     0.000283257     0.000297619     1.4e-05
+   3   0   3     9.21137e-05     9.92063e-05     7.1e-06
+   3   1   0      0.00123659      0.00119048     4.6e-05
+   3   1   1      0.00015128      0.00014881     2.5e-06
+   3   1   2     3.22126e-05     3.30688e-05     8.6e-07
+   3   1   3     9.32737e-06     9.92063e-06     5.9e-07
+   3   2   0     0.000305507     0.000297619     7.9e-06
+   3   2   1     3.36147e-05     3.30688e-05     5.5e-07
+   3   2   2     6.46534e-06     6.61376e-06     1.5e-07
+   3   2   3     1.69869e-06     1.80375e-06     1.1e-07
+   3   3   0     0.000100207     9.92063e-05       1e-06
+   3   3   1     1.00213e-05     9.92063e-06       1e-07
+   3   3   2     1.76656e-06     1.80375e-06     3.7e-08
+   3   3   3     4.26312e-07     4.50938e-07     2.5e-08
+
+TETRAHEDRON01_MONTE_CARLO_TEST:
+  Normal end of execution.
+
+TETRAHEDRON01_SAMPLE_TEST
+  Python version: 3.6.9
+  TETRAHEDRON01_SAMPLE samples the unit tetrahedron.
+
+  Sample points in the unit tetrahedron.
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      0 :
+    0.653014  
+   0.0191719  
+   0.0802331  
+
+      1 :
+    0.122743  
+    0.379417  
+    0.189469  
+
+      2 :
+    0.436322  
+   0.0635846  
+    0.388548  
+
+      3 :
+    0.118269  
+   0.0364603  
+    0.029345  
+
+      4 :
+   0.0138444  
+    0.134129  
+    0.301972  
+
+      5 :
+   0.0207729  
+   0.0237097  
+    0.286511  
+
+      6 :
+    0.288996  
+   0.0196653  
+    0.466915  
+
+      7 :
+   0.0792463  
+    0.536617  
+    0.149631  
+
+      8 :
+   0.0966452  
+     0.51108  
+   0.0596006  
+
+      9 :
+    0.366347  
+   0.0599075  
+    0.203121  
+
+
+TETRAHEDRON01_SAMPLE_TEST
+  Normal end of execution.
+
+TETRAHEDRON01_VOLUME_TEST
+  Python version: 3.6.9
+  TETRAHEDRON01_VOLUME returns the volume of the unit tetrahedron.
+
+  TETRAHEDRON01_VOLUME() = 0.166667
+
+TETRAHEDRON01_VOLUME_TEST
+  Normal end of execution.
+
+TETRAHEDRON01_MONTE_CARLO_TESTS:
+  Normal end of execution.
+Wed Feb  5 08:01:34 2020

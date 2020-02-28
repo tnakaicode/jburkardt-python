@@ -1,0 +1,319 @@
+<html>
+
+  <head>
+    <title>
+      ELLIPTIC_INTEGRAL - Elliptic Integrals
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      ELLIPTIC_INTEGRAL <br> Elliptic Integrals
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>ELLIPTIC_INTEGRAL</b>,
+      a Python library which
+      evaluates elliptic integral functions using Carlson's elliptic
+      functions.
+    </p>
+
+    <p>
+      The complete and incomplete elliptic integrals of the first, second and 
+      third kind can be evaluated, with parameters A (angle in degrees), 
+      K (sine of A) or M (the modulus, K^2).
+    </p>
+
+    <p>
+      Routines are also supplied to evaluate Jacobi's elliptic functions CN,
+      DN and SN.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>ELLIPTIC_INTEGRAL</b> is available in
+      <a href = "../../c_src/elliptic_integral/elliptic_integral.html">a C version</a> and
+      <a href = "../../cpp_src/elliptic_integral/elliptic_integral.html">a C++ version</a> and
+      <a href = "../../f77_src/elliptic_integral/elliptic_integral.html">a FORTRAN77 version</a> and
+      <a href = "../../f_src/elliptic_integral/elliptic_integral.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/elliptic_integral/elliptic_integral.html">a MATLAB version</a> and
+      <a href = "../../py_src/elliptic_integral/elliptic_integral.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/test_values/test_values.html">
+      TEST_VALUES</a>,
+      a Python library which
+      supplies test values of various mathematical functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/toms577/toms577.html">
+      TOMS577</a>,
+      a Python library which
+      evaluates Carlson's elliptic integral functions RC, RD, RF and RJ.
+      This is a version of ACM TOMS algorithm 577;
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Bille Carlson,<br>
+          Computing Elliptic Integrals by Duplication,<br>
+          Numerische Mathematik,<br>
+          Volume 33, 1979, pages 1-16.
+        </li>
+        <li>
+          Bille Carlson, Elaine Notis,<br>
+          Algorithm 577, Algorithms for Incomplete Elliptic Integrals,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 7, Number 3, pages 398-403, September 1981.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "elliptic_ea.py">elliptic_ea.py</a>
+          evaluates the complete elliptic integral E(A).
+        </li>
+        <li>
+          <a href = "elliptic_ea_values.py">elliptic_ea_values.py</a>
+          returns values of the complete elliptic integral E(A).
+        </li>
+        <li>
+          <a href = "elliptic_ek.py">elliptic_ek.py</a>
+          evaluates the complete elliptic integral E(K).
+        </li>
+        <li>
+          <a href = "elliptic_ek_values.py">elliptic_ek_values.py</a>
+          returns values of the complete elliptic integral E(K).
+        </li>
+        <li>
+          <a href = "elliptic_em.py">elliptic_em.py</a>
+          evaluates the complete elliptic integral E(M).
+        </li>
+        <li>
+          <a href = "elliptic_em_values.py">elliptic_em_values.py</a>
+          returns values of the complete elliptic integral E(M).
+        </li>
+        <li>
+          <a href = "elliptic_fa.py">elliptic_fa.py</a>
+          evaluates the complete elliptic integral F(A).
+        </li>
+        <li>
+          <a href = "elliptic_fa_values.py">elliptic_fa_values.py</a>
+          returns values of the complete elliptic integral F(A).
+        </li>
+        <li>
+          <a href = "elliptic_fk.py">elliptic_fk.py</a>
+          evaluates the complete elliptic integral F(K).
+        </li>
+        <li>
+          <a href = "elliptic_fk_values.py">elliptic_fk_values.py</a>
+          returns values of the complete elliptic integral F(K).
+        </li>
+        <li>
+          <a href = "elliptic_fm.py">elliptic_fm.py</a>
+          evaluates the complete elliptic integral F(M).
+        </li>
+        <li>
+          <a href = "elliptic_fm_values.py">elliptic_fm_values.py</a>
+          returns values of the complete elliptic integral F(M).
+        </li>
+        <li>
+          <a href = "elliptic_pia.py">elliptic_pia.py</a>
+          evaluates the complete elliptic integral Pi(N,A).
+        </li>
+        <li>
+          <a href = "elliptic_pia_values.py">elliptic_pia_values.py</a>
+          returns values of the complete elliptic integral Pi(N,A).
+        </li>
+        <li>
+          <a href = "elliptic_pik.py">elliptic_pik.py</a>
+          evaluates the complete elliptic integral Pi(N,K).
+        </li>
+        <li>
+          <a href = "elliptic_pik_values.py">elliptic_pik_values.py</a>
+          returns values of the complete elliptic integral Pi(N,K).
+        </li>
+        <li>
+          <a href = "elliptic_pim.py">elliptic_pim.py</a>
+          evaluates the complete elliptic integral Pi(N,M).
+        </li>
+        <li>
+          <a href = "elliptic_pim_values.py">elliptic_pim_values.py</a>
+          returns values of the complete elliptic integral Pi(N,M).
+        </li>
+        <li>
+          <a href = "elliptic_inc_ea.py">elliptic_inc_ea.py</a>
+          evaluates the incomplete elliptic integral E(PHI,A).
+        </li>
+        <li>
+          <a href = "elliptic_inc_ea_values.py">elliptic_inc_ea_values.py</a>
+          returns values of the incomplete elliptic integral E(PHI,A).
+        </li>
+        <li>
+          <a href = "elliptic_inc_ek.py">elliptic_inc_ek.py</a>
+          evaluates the incomplete elliptic integral E(PHI,K).
+        </li>
+        <li>
+          <a href = "elliptic_inc_ek_values.py">elliptic_inc_ek_values.py</a>
+          returns values of the incomplete elliptic integral E(PHI,K).
+        </li>
+        <li>
+          <a href = "elliptic_inc_em.py">elliptic_inc_em.py</a>
+          evaluates the incomplete elliptic integral E(PHI,M).
+        </li>
+        <li>
+          <a href = "elliptic_inc_em_values.py">elliptic_inc_em_values.py</a>
+          returns values of the incomplete elliptic integral E(PHI,M).
+        </li>
+        <li>
+          <a href = "elliptic_inc_fa.py">elliptic_inc_fa.py</a>
+          evaluates the incomplete elliptic integral F(PHI,A).
+        </li>
+        <li>
+          <a href = "elliptic_inc_fa_values.py">elliptic_inc_fa_values.py</a>
+          returns values of the incomplete elliptic integral F(PHI,A).
+        </li>
+        <li>
+          <a href = "elliptic_inc_fk.py">elliptic_inc_fk.py</a>
+          evaluates the incomplete elliptic integral F(PHI,K).
+        </li>
+        <li>
+          <a href = "elliptic_inc_fk_values.py">elliptic_inc_fk_values.py</a>
+          returns values of the incomplete elliptic integral F(PHI,K).
+        </li>
+        <li>
+          <a href = "elliptic_inc_fm.py">elliptic_inc_fm.py</a>
+          evaluates the incomplete elliptic integral F(PHI,M).
+        </li>
+        <li>
+          <a href = "elliptic_inc_fm_values.py">elliptic_inc_fm_values.py</a>
+          returns values of the incomplete elliptic integral F(PHI,M).
+        </li>
+        <li>
+          <a href = "elliptic_inc_pia.py">elliptic_inc_pia.py</a>
+          evaluates the incomplete elliptic integral Pi(PHI,N,A).
+        </li>
+        <li>
+          <a href = "elliptic_inc_pia_values.py">elliptic_inc_pia_values.py</a>
+          returns values of the incomplete elliptic integral Pi(PHI,N,A).
+        </li>
+        <li>
+          <a href = "elliptic_inc_pik.py">elliptic_inc_pik.py</a>
+          evaluates the incomplete elliptic integral Pi(PHI,N,K).
+        </li>
+        <li>
+          <a href = "elliptic_inc_pik_values.py">elliptic_inc_pik_values.py</a>
+          returns values of the incomplete elliptic integral Pi(N,K).
+        </li>
+        <li>
+          <a href = "elliptic_inc_pim.py">elliptic_inc_pim.py</a>
+          evaluates the incomplete elliptic integral Pi(N,M).
+        </li>
+        <li>
+          <a href = "elliptic_inc_pim_values.py">elliptic_inc_pim_values.py</a>
+          returns values of the incomplete elliptic integral Pi(N,M).
+        </li>
+        <li>
+          <a href = "jacobi_cn.py">jacobi_cn.py</a>
+          evaluates the Jacobi elliptic function CN(U,M).
+        </li>
+        <li>
+          <a href = "jacobi_cn_values.py">jacobi_cn_values.py</a>
+          returns some values of the Jacobi elliptic function CN(U,M).
+        </li>
+        <li>
+          <a href = "jacobi_dn.py">jacobi_dn.py</a>
+          evaluates the Jacobi elliptic function DN(U,M).
+        </li>
+        <li>
+          <a href = "jacobi_dn_values.py">jacobi_dn_values.py</a>
+          returns some values of the Jacobi elliptic function DN(U,M.
+        </li>
+        <li>
+          <a href = "jacobi_sn.py">jacobi_sn.py</a>
+          evaluates the Jacobi elliptic function SN(U,M).
+        </li>
+        <li>
+          <a href = "jacobi_sn_values.py">jacobi_sn_values.py</a>
+          returns some values of the Jacobi elliptic function SN((U,M.
+        </li>
+        <li>
+          <a href = "rc.py">rc.py</a>
+          computes the elementary integral RC(X,Y).
+        </li>
+        <li>
+          <a href = "rd.py">rd.py</a>
+          computes an incomplete elliptic integral of the second kind, RD(X,Y,Z).
+        </li>
+        <li>
+          <a href = "rf.py">rf.py</a>
+          computes an incomplete elliptic integral of the first kind, RF(X,Y,Z).
+        </li>
+        <li>
+          <a href = "rj.py">rj.py</a>
+          computes an incomplete elliptic integral of the third kind, RJ(X,Y,Z,P).
+        </li>
+        <li>
+          <a href = "sncndn.py">sncndn.py</a>,
+          evaluates Jacobi elliptic functions SN(U,M), CN(U,M), DN(U,M).
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>,
+          prints the YMDHMS date as a timestamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "elliptic_integral.py">elliptic_integral.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "elliptic_integral.sh">elliptic_integral.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "elliptic_integral.txt">elliptic_integral.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 26 June 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

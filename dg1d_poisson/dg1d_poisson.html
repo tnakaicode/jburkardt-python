@@ -1,0 +1,180 @@
+<html>
+
+  <head>
+    <title>
+      DG1D_POISSON - Discontinuous Galerkin Solution of 1D Poisson Equation
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      DG1D_POISSON <br> Discontinuous Galerkin Solution of 1D Poisson Equation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>DG1D_POISSON</b>,
+      a Python library which 
+      uses the Discontinuous Galerkin Method (DG) to approximate a 
+      solution of the 1D Poisson Equation.  
+      The code is based on a MATLAB code written by Beatrice Riviere,
+      and later translated to Python by Alex Lindsay.
+    </p>
+
+    <p>
+      A 1D version of the Poisson equation has the form
+      <pre>
+        - ( K(x) u'(x) )' = f(x)  for 0 < x < 1
+ 
+        u(0) = 1
+        u(1) = 0
+      </pre>
+      Here, we will assume that K(x) = 1.
+    </p>
+
+    <p>
+      DG1D_POISSON computes an approximate discrete solution to the problem,
+      using a version of the Discontinuous Galerkin method.  The interval
+      [0,1] is divided into equal subintervals, over each of which a set
+      of basis monomials are defined, centered at the midpoint of
+      the subinterval, and normalized to have unit value at the subinterval
+      endpoints.
+    </p>
+
+    <p>
+      The discontinous Galerkin equations are then set up as the linear
+      system A*c=b, where c represents the coefficients of the basis functions.
+      The result of solving this system can then be used to tabulate, evaluate,
+      or plot the approximate DG solution function.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>DG1D_POISSON</b> is available in
+      <a href = "../../m_src/dg1d_poisson/dg1d_poisson.html">a MATLAB version</a> and
+      <a href = "../../py_src/dg1d_poisson/dg1d_poisson.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/fd1d_advection_lax_wendroff/fd1d_advection_lax_wendroff.html">
+      FD1D_ADVECTION_LAX_WENDROFF</a>,
+      a Python program which
+      applies the finite difference method to solve the time-dependent
+      advection equation ut = - c * ux in one spatial dimension, with
+      a constant velocity, using the Lax-Wendroff method to treat the time derivative.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_heat_explicit/fd1d_heat_explicit.html">
+      FD1D_HEAT_EXPLICIT</a>,
+      a Python program which
+      uses the finite difference method and explicit time stepping
+      to solve the time dependent heat equation in 1D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_heat_implicit/fd1d_heat_implicit.html">
+      FD1D_HEAT_IMPLICIT</a>,
+      a Python program which
+      uses the finite difference method and implicit time stepping
+      to solve the time dependent heat equation in 1D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_heat_steady/fd1d_heat_steady.html">
+      FD1D_HEAT_STEADY</a>,
+      a Python program which
+      uses the finite difference method to solve the steady (time independent)
+      heat equation in 1D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fem1d/fem1d.html">
+      FEM1D</a>,
+      a Python program which
+      applies the finite element method to a linear two point boundary value 
+      problem in a 1D region.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fem1d_bvp_linear/fem1d_bvp_linear.html">
+      FEM1D_BVP_LINEAR</a>,
+      a Python program which
+      applies the finite element method, with piecewise linear elements,
+      to a two point boundary value problem in one spatial dimension.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fem1d_bvp_quadratic/fem1d_bvp_quadratic.html">
+      FEM1D_BVP_QUADRATIC</a>,
+      a Python program which
+      applies the finite element method, with piecewise quadratic elements,
+      to a two point boundary value problem in one spatial dimension.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Beatrice Riviere,<br>
+          Discontinuous Galerkin Methods for Solving Elliptic and Parabolic Equations,<br>
+          SIAM, 2008,<br>
+          ISBN: 978-0-898716-56-6
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "dg1d_poisson.py">dg1d_poisson.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "dg1d_poisson.sh">dg1d_poisson.sh</a>,
+          runs the sample problem.
+        </li>
+        <li>
+          <a href = "dg1d_poisson.txt">dg1d_poisson.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "dg1d_poisson.png">dg1d_poisson.png</a>,
+          a plot comparing the computed and exact solutions.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 15 September 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+ 

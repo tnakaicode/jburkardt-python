@@ -1,0 +1,463 @@
+Sun Feb  2 08:30:47 2020
+
+RANDOM_DATA_TEST
+  Python version: 3.6.9
+  Test the RANDOM_DATA library.
+
+I4_FACTORIAL_TEST
+  Python version: 3.6.9
+  I4_FACTORIAL evaluates the factorial function.
+
+         N      Exact         I4_FACTORIAL(N)
+
+         0             1             1
+         1             1             1
+         2             2             2
+         3             6             6
+         4            24            24
+         5           120           120
+         6           720           720
+         7          5040          5040
+         8         40320         40320
+         9        362880        362880
+        10       3628800       3628800
+        11      39916800      39916800
+        12     479001600     479001600
+
+I4_FACTORIAL_TEST
+  Normal end of execution.
+
+I4_MODP_TEST
+  Python version: 3.6.9
+  I4_MODP factors a number
+  into a multiple M and a positive remainder R.
+
+    Number   Divisor  Multiple Remainder
+
+       107        50         2         7
+       107       -50        -2         7
+      -107        50        -3        43
+      -107       -50         3        43
+
+  Repeat using Python % Operator:
+
+       107        50         2         7
+       107       -50        -3       -43
+      -107        50        -3        43
+      -107       -50         2        -7
+
+I4_MODP_TEST
+  Normal end of execution.
+
+I4_TO_HALTON_TEST
+  Python version: 3.6.9
+  I4_TO_HALTON computes a Halton sequence.
+  The user specifies all data explicitly.
+
+  In this test, we call I4_TO_HALTON repeatedly.
+  We use distinct primes as bases.
+
+   I    R(0)      R(1)      R(2)
+
+   0    0.0000    0.0000    0.0000
+   1    0.6667    0.3750    0.2083
+   2    0.3333    0.7500    0.4167
+   3    1.0000    0.1250    0.6250
+   4    0.1667    0.5000    0.8333
+   5    0.8333    0.8750    0.0417
+   6    0.5000    0.2500    0.2500
+   7    1.1667    0.6250    0.4583
+   8    0.0833    1.0000    0.6667
+   9    0.7500    0.0417    0.8750
+  10    0.4167    0.4167    0.0833
+
+I4_TO_HALTON_TEST
+  Normal end of execution.
+
+I4_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+         1       -35
+         2       187
+         3       149
+         4        69
+         5        25
+         6       -81
+         7       -23
+         8       -67
+         9       -87
+        10        90
+        11       -82
+        12        35
+        13        20
+        14       127
+        15       139
+        16      -100
+        17       170
+        18         5
+        19       -72
+        20       -96
+
+I4_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+I4VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_TRANSPOSE_PRINT prints an I4VEC
+  with 5 entries to a row, and an optional title.
+
+  My array:   1 2 3 4 5 6 7 8 9 10 11 12
+
+I4VEC_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+PRIME_TEST
+  Python version: 3.6.9
+  PRIME returns primes from a table.
+
+  Number of primes stored is 1600
+
+     I    Prime(I)
+
+       1       2
+       2       3
+       3       5
+       4       7
+       5      11
+       6      13
+       7      17
+       8      19
+       9      23
+      10      29
+
+    1590   13411
+    1591   13417
+    1592   13421
+    1593   13441
+    1594   13451
+    1595   13457
+    1596   13463
+    1597   13469
+    1598   13477
+    1599   13487
+    1600   13499
+
+PRIME_TEST
+  Normal end of execution.
+
+R8_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8_NORMAL_01 generates normally distributed
+  random values.
+  Using initial random number seed = 123456789
+
+  1.679040
+  -0.566060
+  1.212934
+  1.269381
+  -1.666087
+  -2.242464
+  0.039675
+  0.673068
+  -0.275127
+  2.164005
+  0.297785
+  2.044536
+  1.398819
+  -1.242985
+  -0.067084
+  -0.794396
+  -0.523768
+  -0.350567
+  0.131700
+  0.537380
+
+R8_NORMAL_01_TEST
+  Normal end of execution.
+
+R8_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R8MAT_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8MAT_NORMAL_01 returns a matrix of Normal 01 values
+
+  SEED = 123456789
+
+  Matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     1.67904      -0.56606       1.21293       1.26938  
+      1 :    -1.66609      -2.24246     0.0396749      0.673068  
+      2 :   -0.275127         2.164      0.297785       2.04454  
+      3 :     1.39882      -1.24299    -0.0670837     -0.794396  
+      4 :   -0.523768     -0.350567        0.1317       0.53738  
+
+R8MAT_NORMAL_01_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_WRITE_TEST:
+  Python version: 3.6.9
+  Test R8MAT_TRANSPOSE_WRITE, which writes the transpose of an R8MAT to a file.
+
+  Created file "r8mat_transpose_write_test.txt".
+
+R8MAT_TRANSPOSE_WRITE_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_01 computes a random R8MAT.
+
+  0 <= X <= 1
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :    0.218418     0.0661187     0.0617272    0.00183837  
+      1 :    0.956318      0.257578      0.449539      0.897504  
+      2 :    0.829509      0.109957      0.401306      0.350752  
+      3 :    0.561695      0.043829      0.754673     0.0945448  
+      4 :    0.415307      0.633966      0.797287     0.0136169  
+
+R8MAT_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8MAT_WRITE_TEST:
+  Python version: 3.6.9
+  Test R8MAT_WRITE, which writes an R8MAT to a file.
+
+  Created file "r8mat_write_test.txt".
+
+R8MAT_WRITE_TEST:
+  Normal end of execution.
+
+R8VEC_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8VEC_NORMAL_01 returns a vector of Normal 01 values
+
+  SEED = 123456789
+
+  Vector:
+
+     0:       1.67904
+     1:      -0.56606
+     2:       1.21293
+     3:       1.26938
+     4:      -1.66609
+     5:      -2.24246
+     6:     0.0396749
+     7:      0.673068
+     8:     -0.275127
+     9:         2.164
+
+R8VEC_NORMAL_01_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+UNIFORM_IN_SPHERE01_MAP_TEST
+  Python version: 3.6.9
+  UNIFORM_IN_SPHERE01_MAP computes points uniformly distributed
+  inside the M-dimensional unit sphere.
+
+  Random points inside unit 3-sphere
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      0 :
+    0.497518  
+    -0.16773  
+    0.359406  
+
+      1 :
+    0.756069  
+    0.330465  
+   -0.384785  
+
+      2 :
+    0.280276  
+   -0.114567  
+    0.901126  
+
+      3 :
+    0.523193  
+   -0.251279  
+    0.401636  
+
+      4 :
+  -0.0681996  
+    -0.80761  
+   -0.532481  
+
+      5 :
+    0.152427  
+   -0.236512  
+    -0.65837  
+
+      6 :
+   -0.609231  
+   -0.374499  
+   -0.606816  
+
+      7 :
+     0.42781  
+    0.522948  
+  -0.0155662  
+
+      8 :
+   0.0146253  
+   -0.230002  
+   -0.122921  
+
+      9 :
+    0.231257  
+   -0.039156  
+     0.11065  
+
+
+UNIFORM_IN_SPHERE01_MAP_TEST
+  Normal end of execution.
+
+UNIFORM_IN_TRIANGLE_MAP1_TEST
+  Python version: 3.6.9
+  UNIFORM_IN_TRIANGLE_MAP1 maps uniform
+  points into a triangle.
+
+  Number of points N =          1000
+  Initial random number SEED =  123456789
+
+  V1 =     0.750000      0.900000
+  V2 =     0.000000      0.200000
+  V3 =     0.950000      0.650000
+  Final random number SEED =    1328042058
+
+  Data written to "uniform_in_triangle_map1.txt".
+
+UNIFORM_IN_TRIANGLE_MAP1_TEST:
+  Normal end of execution.
+
+RANDOM_DATA_TEST:
+  Normal end of execution.
+Sun Feb  2 08:30:48 2020

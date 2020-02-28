@@ -1,0 +1,771 @@
+<html>
+
+  <head>
+    <title>
+      COMBO - Kreher and Stinson Combinatorial Routines
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      COMBO <br> Kreher and Stinson Combinatorial Routines
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>COMBO</b>,
+      a Python library which
+      includes routines for ranking, unranking, enumerating and 
+      randomly selecting balanced sequences, cycles, graphs, Gray codes, 
+      subsets, partitions, permutations, restricted growth functions, 
+      Pruefer codes and trees.
+    </p>
+
+    <p>
+      Routines are available to count, list, rank and unrank such objects
+      <ul>
+        <li>
+          <b>BAL</b>, balanced sequences;
+        </li>
+        <li>
+          <b>CYCLE</b>, permutations of the first N integers in cycle form;
+        </li>
+        <li>
+          <b>GRAPH</b>, graphs stored as a list of edges.
+        </li>
+        <li>
+          <b>GRAY</b>, Gray codes;
+        </li>
+        <li>
+          <b>KNAPSACK</b>, optimally filling a knapsack of given size using
+          a set of smaller objects;
+        </li>
+        <li>
+          <b>KSUBSET</b>, subsets of size exactly K from a set of N objects;
+        </li>
+        <li>
+          <b>NPART</b>, partitions of an integer having exactly N parts;
+        </li>
+        <li>
+          <b>PART</b>, partitions of an integer;
+        </li>
+        <li>
+          <b>PERM</b>, permutations of the first N integers in standard form;
+        </li>
+        <li>
+          <b>PRUEFER</b>, Pruefer codes;
+        </li>
+        <li>
+          <b>RGF</b>, restricted growth functions;
+        </li>
+        <li>
+          <b>SETPART</b>, partitions of a set;
+        </li>
+        <li>
+          <b>SUBSET</b>, subsets of a set of N objects;
+        </li>
+        <li>
+          <b>TABLEAU</b>, tableaus;
+        </li>
+        <li>
+          <b>TREE</b>, trees;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Some of these sets of objects can be ordered in several different
+      ways, and in some cases, a separate set of ranking, unranking, and
+      successor routines are available for the various orderings
+      (lexical, colexical, revolving door, Trotter-Johnson).
+    </p>
+
+    <p>
+      Kreher and Stinson provide C source-code for the routines,
+      as well as other information, at
+      <a href = "http://www.math.mtu.edu/~kreher/cages.html">
+      their web site.</a>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>COMBO</b> is available in
+      <a href = "../../c_src/combo/combo.html">a C version</a> and
+      <a href = "../../cpp_src/combo/combo.html">a C++ version</a> and
+      <a href = "../../f_src/combo/combo.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/combo/combo.html">a MATLAB version</a> and
+      <a href = "../../py_src/combo/combo.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/monomial/monomial.html">
+      MONOMIAL</a>,
+      a Python library which
+      enumerates, lists, ranks, unranks and randomizes multivariate monomials 
+      in a space of M dimensions, with total degree less than N,
+      equal to N, or lying within a given range.
+    </p>
+
+    <p>
+      <a href = "../../py_src/partition_problem/partition_problem.html">
+      PARTITION_PROBLEM</a>,
+      a Python library which
+      seeks solutions of the partition problem, splitting a set of integers into
+      two subsets with equal sum.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polynomial/polynomial.html">
+      POLYNOMIAL</a>,
+      a Python library which
+      adds, multiplies, differentiates, evaluates and prints multivariate 
+      polynomials in a space of M dimensions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/subset/subset.html">
+      SUBSET</a>,
+      a Python library which
+      generates, ranks and unranks various combinatorial objects.
+    </p>
+
+    <p>
+      <a href = "../../py_src/subset_sum/subset_sum.html">
+      SUBSET_SUM</a>,
+      a Python library which
+      seeks solutions of the subset sum problem.
+    </p>
+
+    <p>
+      <a href = "../../py_src/unicycle/unicycle.html">
+      UNICYCLE</a>,
+      a Python library which
+      considers permutations containing a single cycle, sometimes called 
+      cyclic permutations.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "backtrack.py">backtrack.py</a>,
+          supervises a backtrack search.
+        </li>
+        <li>
+          <a href = "bal_seq_check.py">bal_seq_check.py</a>,
+          checks a balanced sequence.
+        </li>
+        <li>
+          <a href = "bal_seq_enum.py">bal_seq_enum.py</a>,
+          enumerates the balanced sequences.
+        </li>
+        <li>
+          <a href = "bal_seq_rank.py">bal_seq_rank.py</a>,
+          ranks a balanced sequence.
+        </li>
+        <li>
+          <a href = "bal_seq_successor.py">bal_seq_successor.py</a>,
+          returns the successor of a balanced sequence.
+        </li>
+        <li>
+          <a href = "bal_seq_to_tableau.py">bal_seq_to_tableau.py</a>,
+          converts a balanced sequence to a tableau.
+        </li>
+        <li>
+          <a href = "bal_seq_unrank.py">bal_seq_unrank.py</a>,
+          unranks a balanced sequence.
+        </li>
+        <li>
+          <a href = "bell_numbers.py">bell_numbers.py</a>,
+          computes the Bell numbers.
+        </li>
+        <li>
+          <a href = "bell_values.py">bell_values.py</a>,
+          returns some values of the Bell numbers.
+        </li>
+        <li>
+          <a href = "cycle_check.py">cycle_check.py</a>,
+          checks a permutation in cycle form.
+        </li>
+        <li>
+          <a href = "cycle_to_perm.py">cycle_to_perm.py</a>,
+          converts a permutation from cycle to array form.
+        </li>
+        <li>
+          <a href = "dist_enum.py">dist_enum.py</a>,
+          enumerates the number of distributions of indistinguishable objects.
+        </li>
+        <li>
+          <a href = "dist_next.py">dist_next.py</a>,
+          returns the next distribution of indistinguishable objects.
+        </li>
+        <li>
+          <a href = "edge_check.py">edge_check.py</a>,
+          checks a graph described by an edge list.
+        </li>
+        <li>
+          <a href = "edge_degree.py">edge_degree.py</a>,
+          returns the degree of each node in a graph described by an edge list.
+        </li>
+        <li>
+          <a href = "edge_enum.py">edge_enum.py</a>,
+          enumerates the maximum number of edges in a graph with a given
+          number of nodes.
+        </li>
+        <li>
+          <a href = "gamma_log_values.py">gamma_log_values.py</a>,
+          returns selected values of the log(gamma) function;
+        </li>
+        <li>
+          <a href = "gray_code_check.py">gray_code_check.py</a>,
+          checks a Gray code element.
+        </li>
+        <li>
+          <a href = "gray_code_enum.py">gray_code_enum.py</a>,
+          enumerates the Gray codes on N digits.
+        </li>
+        <li>
+          <a href = "gray_code_rank.py">gray_code_rank.py</a>,
+          computes the rank of a Gray code element.
+        </li>
+        <li>
+          <a href = "gray_code_successor.py">gray_code_successor.py</a>,
+          computes the binary reflected Gray code successor.
+        </li>
+        <li>
+          <a href = "gray_code_unrank.py">gray_code_unrank.py</a>,
+          computes the Gray code element of given rank.
+        </li>
+        <li>
+          <a href = "i4_choose.py">i4_choose.py</a>,
+          computes the binomial coefficient C(N,K).
+        </li>
+        <li>
+          <a href = "i4_factorial.py">i4_factorial.py</a>,
+          computes the factorial function.
+        </li>
+        <li>
+          <a href = "i4_factorial_values.py">i4_factorial_values.py</a>,
+          returns some values of the factorial function.
+        </li>
+        <li>
+          <a href = "i4_fall.py">i4_fall.py</a>,
+          evaluates the falling factorial function.
+        </li>
+        <li>
+          <a href = "i4_fall_values.py">i4_fall_values.py</a>,
+          returns some values of the falling factorial function.
+        </li>
+        <li>
+          <a href = "i4_huge.py">i4_huge.py</a>,
+          returns a huge I4;
+        </li>
+        <li>
+          <a href = "i4_uniform_ab.py">i4_uniform_ab.py</a>,
+          returns a pseudorandom I4 in a given range;
+        </li>
+        <li>
+          <a href = "i4mat_print.py">i4mat_print.py</a>,
+          prints an I4MAT.
+        </li>
+        <li>
+          <a href = "i4mat_print_some.py">i4mat_print_some.py</a>,
+          prints some of an I4MAT.
+        </li>
+        <li>
+          <a href = "i4vec_backtrack.py">i4vec_backtrack.py</a>,
+          supervises a backtrack search for an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_dot_product.py">i4vec_dot_product.py</a>,
+          computes the dot product of two I4VEC's.
+        </li>
+        <li>
+          <a href = "i4vec_indicator1.py">i4vec_indicator1.py</a>,
+          sets an I4VEC to the indicator vector.
+        </li>
+        <li>
+          <a href = "i4vec_part1.py">i4vec_part1.py</a>,
+          partitions an integer N into NPART parts.
+        </li>
+        <li>
+          <a href = "i4vec_part2.py">i4vec_part2.py</a>,
+          partitions an integer N into NPART nearly equal parts.
+        </li>
+        <li>
+          <a href = "i4vec_print.py">i4vec_print.py</a>,
+          prints an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_reverse.py">i4vec_reverse.py</a>,
+          reverses the order of the entries of an I4VEC;
+        </li>
+        <li>
+          <a href = "i4vec_search_binary_a.py">i4vec_search_binary_a.py</a>,
+          searches the ascending sorted I4VEC for a value.
+        </li>
+        <li>
+          <a href = "i4vec_search_binary_d.py">i4vec_search_binary_d.py</a>,
+          searches the descending sorted I4VEC for a value.
+        </li>
+        <li>
+          <a href = "i4vec_sort_insert_a.py">i4vec_sort_insert_a.py</a>,
+          uses an ascending insertion sort on an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_sort_insert_d.py">i4vec_sort_insert_d.py</a>,
+          uses a descending insertion sort on an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_transpose_print.py">i4vec_transpose_print.py</a>,
+          prints an I4VEC "transposed", that is, 5 entries to a line.
+        </li>
+        <li>
+          <a href = "i4vec_uniform_ab.py">i4vec_uniform_ab.py</a>,
+          returns a pseudorandom I4VEC in a given range;
+        </li>
+        <li>
+          <a href = "knapsack_01.py">knapsack_01.py</a>,
+          solves the 0,1 knapsack problem.
+        </li>
+        <li>
+          <a href = "knapsack_rational.py">knapsack_rational.py</a>,
+          solves the rational knapsack problem.
+        </li>
+        <li>
+          <a href = "knapsack_reorder.py">knapsack_reorder.py</a>,
+          reorders the knapsack data by "profit density".
+        </li>
+        <li>
+          <a href = "ksubset_colex_check.py">ksubset_colex_check.py</a>,
+          checks a K subset in colex form.
+        </li>
+        <li>
+          <a href = "ksubset_colex_rank.py">ksubset_colex_rank.py</a>,
+          computes the colex rank of a K subset.
+        </li>
+        <li>
+          <a href = "ksubset_colex_successor.py">ksubset_colex_successor.py</a>,
+          computes the K subset colex successor.
+        </li>
+        <li>
+          <a href = "ksubset_colex_unrank.py">ksubset_colex_unrank.py</a>,
+          computes the K subset of given colex rank.
+        </li>
+        <li>
+          <a href = "ksubset_enum.py">ksubset_enum.py</a>,
+          enumerates the K element subsets of an N set.
+        </li>
+        <li>
+          <a href = "ksubset_lex_check.py">ksubset_lex_check.py</a>,
+          checks a K subset in lex form.
+        </li>
+        <li>
+          <a href = "ksubset_lex_rank.py">ksubset_lex_rank.py</a>,
+          computes the lexicographic rank of a K subset.
+        </li>
+        <li>
+          <a href = "ksubset_lex_successor.py">ksubset_lex_successor.py</a>,
+          computes the K subset lexicographic successor.
+        </li>
+        <li>
+          <a href = "ksubset_lex_unrank.py">ksubset_lex_unrank.py</a>,
+          computes the K subset of given lexicographic rank.
+        </li>
+        <li>
+          <a href = "ksubset_revdoor_rank.py">ksubset_revdoor_rank.py</a>,
+          computes the revolving door rank of a K subset.
+        </li>
+        <li>
+          <a href = "ksubset_revdoor_successor.py">ksubset_revdoor_successor.py</a>,
+          computes the K subset revolving door successor.
+        </li>
+        <li>
+          <a href = "ksubset_revdoor_unrank.py">ksubset_revdoor_unrank.py</a>,
+          computes the K subset of given revolving door rank.
+        </li>
+        <li>
+          <a href = "marriage.py">marriage.py</a>,
+          finds a stable set of marriages for given preferences.
+        </li>
+        <li>
+          <a href = "mountain.py">mountain.py</a>,
+          enumerates the mountains.
+        </li>
+        <li>
+          <a href = "npart_enum.py">npart_enum.py</a>,
+          enumerates the number of partitions of N with NPART parts.
+        </li>
+        <li>
+          <a href = "npart_rsf_lex_random.py">npart_rsf_lex_random.py</a>,
+          returns a random RSF NPART partition.
+        </li>
+        <li>
+          <a href = "npart_rsf_lex_rank.py">npart_rsf_lex_rank.py</a>,
+          computes the lex rank of an RSF NPART partition.
+        </li>
+        <li>
+          <a href = "npart_rsf_lex_successor.py">npart_rsf_lex_successor.py</a>,
+          computes the RSF lex successor for NPART partitions.
+        </li>
+        <li>
+          <a href = "npart_rsf_lex_unrank.py">npart_rsf_lex_unrank.py</a>,
+          unranks an RSF NPART partition in the lex ordering.
+        </li>
+        <li>
+          <a href = "npart_sf_lex_successor.py">npart_sf_lex_successor.py</a>,
+          computes SF NPART partition.
+        </li>
+        <li>
+          <a href = "npart_table.py">npart_table.py</a>,
+          tabulates the number of partitions of N having NPART parts.
+        </li>
+        <li>
+          <a href = "part_enum.py">part_enum.py</a>,
+          enumerates the partitions of an integer.
+        </li>
+        <li>
+          <a href = "part_rsf_check.py">part_rsf_check.py</a>,
+          checks a reverse standard form partition of an integer.
+        </li>
+        <li>
+          <a href = "part_sf_check.py">part_sf_check.py</a>,
+          checks a standard form partition of an integer.
+        </li>
+        <li>
+          <a href = "part_sf_conjugate.py">part_sf_conjugate.py</a>,
+          computes the conjugate of a partition.
+        </li>
+        <li>
+          <a href = "part_sf_majorize.py">part_sf_majorize.py</a>,
+          determines if partition A majorizes partition B.
+        </li>
+        <li>
+          <a href = "part_successor.py">part_successor.py</a>,
+          computes the lexicographic partition successor.
+        </li>
+        <li>
+          <a href = "part_table.py">part_table.py</a>,
+          tabulates the number of partitions of N.
+        </li>
+        <li>
+          <a href = "partition_greedy.py">partition_greedy.py</a>,
+          attacks the partition problem with a greedy algorithm.
+        </li>
+        <li>
+          <a href = "partn_enum.py">partn_enum.py</a>,
+          enumerates the partitions of N with maximum element NMAX.
+        </li>
+        <li>
+          <a href = "partn_sf_check.py">partn_sf_check.py</a>,
+          checks an SF partition of an integer with largest entry NMAX.
+        </li>
+        <li>
+          <a href = "partn_successor.py">partn_successor.py</a>,
+          computes partitions whose largest part is NMAX.
+        </li>
+        <li>
+          <a href = "perm_check.py">perm_check.py</a>,
+          checks that a vector represents a permutation.
+        </li>
+        <li>
+          <a href = "perm_enum.py">perm_enum.py</a>,
+          enumerates the permutations on N digits.
+        </li>
+        <li>
+          <a href = "perm_inv.py">perm_inv.py</a>,
+          computes the inverse of a permutation.
+        </li>
+        <li>
+          <a href = "perm_lex_rank.py">perm_lex_rank.py</a>,
+          computes the lexicographic rank of a permutation.
+        </li>
+        <li>
+          <a href = "perm_lex_successor.py">perm_lex_successor.py</a>,
+          computes the lexicographic permutation successor.
+        </li>
+        <li>
+          <a href = "perm_lex_unrank.py">perm_lex_unrank.py</a>,
+          computes the permutation of given lexicographic rank.
+        </li>
+        <li>
+          <a href = "perm_mul.py">perm_mul.py</a>,
+          computes the product of two permutations.
+        </li>
+        <li>
+          <a href = "perm_parity.py">perm_parity.py</a>,
+          computes the parity of a permutation.
+        </li>
+        <li>
+          <a href = "perm_print.py">perm_print.py</a>,
+          prints a permutation.
+        </li>
+        <li>
+          <a href = "perm_random.py">perm_random.py</a>,
+          returns a random permutation.
+        </li>
+        <li>
+          <a href = "perm_tj_rank.py">perm_tj_rank.py</a>,
+          computes the Trotter-Johnson rank of a permutation.
+        </li>
+        <li>
+          <a href = "perm_tj_successor.py">perm_tj_successor.py</a>,
+          computes the Trotter-Johnson permutation successor.
+        </li>
+        <li>
+          <a href = "perm_tj_unrank.py">perm_tj_unrank.py</a>,
+          computes the permutation of given Trotter-Johnson rank.
+        </li>
+        <li>
+          <a href = "perm_to_cycle.py">perm_to_cycle.py</a>,
+          converts a permutation from array to cycle form.
+        </li>
+        <li>
+          <a href = "pruefer_check.py">pruefer_check.py</a>,
+          checks a Pruefer code.
+        </li>
+        <li>
+          <a href = "pruefer_enum.py">pruefer_enum.py</a>,
+          enumerates the Pruefer codes on N-2 digits.
+        </li>
+        <li>
+          <a href = "pruefer_rank.py">pruefer_rank.py</a>,
+          ranks a Pruefer code.
+        </li>
+        <li>
+          <a href = "pruefer_successor.py">pruefer_successor.py</a>,
+          computes the lexical Pruefer sequence successor.
+        </li>
+        <li>
+          <a href = "pruefer_to_tree.py">pruefer_to_tree.py</a>,
+          converts a Pruefer code to a tree.
+        </li>
+        <li>
+          <a href = "pruefer_unrank.py">pruefer_unrank.py</a>,
+          unranks a Pruefer code.
+        </li>
+        <li>
+          <a href = "queens.py">queens.py</a>,
+          finds possible positions for the K-th nonattacking queen.
+        </li>
+        <li>
+          <a href = "r8_choose.py">r8_choose.py</a>,
+          computes the binomial coefficient C(N,K).
+        </li>
+        <li>
+          <a href = "r8_gamma_log.py">r8_gamma_log.py</a>,
+          returns the logarithm of the gamma function.
+        </li>
+        <li>
+          <a href = "r8vec_backtrack.py">r8vec_backtrack.py</a>,
+          supervises a backtrack search for an R8VEC.
+        </li>
+        <li>
+          <a href = "rgf_check.py">rgf_check.py</a>,
+          checks a restricted growth function.
+        </li>
+        <li>
+          <a href = "rgf_enum.py">rgf_enum.py</a>,
+          enumerates the restricted growth functions on M.
+        </li>
+        <li>
+          <a href = "rgf_rank.py">rgf_rank.py</a>,
+          ranks a restricted growth function.
+        </li>
+        <li>
+          <a href = "rgf_successor.py">rgf_successor.py</a>,
+          generates the next restricted growth function.
+        </li>
+        <li>
+          <a href = "rgf_to_setpart.py">rgf_to_setpart.py</a>,
+          converts a restricted growth function to a set partition.
+        </li>
+        <li>
+          <a href = "rgf_unrank.py">rgf_unrank.py</a>,
+          returns the restricted growth function of a given rank.
+        </li>
+        <li>
+          <a href = "rgf_g_table.py">rgf_g_table.py</a>,
+          tabulates the generalized restricted growth functions.
+        </li>
+        <li>
+          <a href = "setpart_check.py">setpart_check.py</a>,
+          checks a set partition.
+        </li>
+        <li>
+          <a href = "setpart_enum.py">setpart_enum.py</a>,
+          enumerates the partitions of a set of M elements.
+        </li>
+        <li>
+          <a href = "setpart_to_rgf.py">setpart_to_rgf.py</a>,
+          converts a set partition to a restricted growth function.
+        </li>
+        <li>
+          <a href = "stirling_numbers1.py">stirling_numbers1.py</a>,
+          computes the Stirling numbers of the first kind.
+        </li>
+        <li>
+          <a href = "stirling_numbers2.py">stirling_numbers2.py</a>,
+          computes the Stirling numbers of the second kind.
+        </li>
+        <li>
+          <a href = "subset_check.py">subset_check.py</a>,
+          checks a subset.
+        </li>
+        <li>
+          <a href = "subset_colex_rank.py">subset_colex_rank.py</a>,
+          computes the colexicographic rank of a subset.
+        </li>
+        <li>
+          <a href = "subset_colex_successor.py">subset_colex_successor.py</a>,
+          computes the subset colexicographic successor.
+        </li>
+        <li>
+          <a href = "subset_colex_unrank.py">subset_colex_unrank.py</a>,
+          computes the subset of given colexicographic rank.
+        </li>
+        <li>
+          <a href = "subset_complement.py">subset_complement.py</a>,
+          computes the complement of a set.
+        </li>
+        <li>
+          <a href = "subset_distance.py">subset_distance.py</a>,
+          computes the Hamming distance between two sets.
+        </li>
+        <li>
+          <a href = "subset_enum.py">subset_enum.py</a>,
+          enumerates the subsets of a set with N elements.
+        </li>
+        <li>
+          <a href = "subset_intersect.py">subset_intersect.py</a>,
+          computes the intersection of two sets.
+        </li>
+        <li>
+          <a href = "subset_lex_rank.py">subset_lex_rank.py</a>,
+          computes the rank of a given lexicographic subset.
+        </li>
+        <li>
+          <a href = "subset_lex_successor.py">subset_lex_successor.py</a>,
+          computes the lexicographic successor of a subset.
+        </li>
+        <li>
+          <a href = "subset_lex_unrank.py">subset_lex_unrank.py</a>,
+          computes the subset of a given lexicographic rank.
+        </li>
+        <li>
+          <a href = "subset_random.py">subset_random.py</a>,
+          returns a random subset of an N set.
+        </li>
+        <li>
+          <a href = "subset_union.py">subset_union.py</a>,
+          computes the union of two sets.
+        </li>
+        <li>
+          <a href = "subset_weight.py">subset_weight.py</a>,
+          computes the Hamming weight of a set.
+        </li>
+        <li>
+          <a href = "subset_xor.py">subset_xor.py</a>,
+          computes the symmetric difference of two sets.
+        </li>
+        <li>
+          <a href = "subsetsum_swap.py">subsetsum_swap.py</a>,
+          seeks a solution of the subset sum problem by swapping.
+        </li>
+        <li>
+          <a href = "tableau_check.py">tableau_check.py</a>,
+          checks a 2 by N tableau.
+        </li>
+        <li>
+          <a href = "tableau_enum.py">tableau_enum.py</a>,
+          enumerates the 2 by N standard tableaus.
+        </li>
+        <li>
+          <a href = "tableau_to_bal_seq.py">tableau_to_bal_seq.py</a>,
+          converts a 2 by N tableau to a balanced sequence.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>,
+          prints the current YMDHMS date as a timestamp.
+        </li>
+        <li>
+          <a href = "tree_check.py">tree_check.py</a>,
+          checks a tree.
+        </li>
+        <li>
+          <a href = "tree_enum.py">tree_enum.py</a>,
+          enumerates the trees on N nodes.
+        </li>
+        <li>
+          <a href = "tree_rank.py">tree_rank.py</a>,
+          ranks a tree.
+        </li>
+        <li>
+          <a href = "tree_successor.py">tree_successor.py</a>,
+          returns the successor of a tree.
+        </li>
+        <li>
+          <a href = "tree_to_pruefer.py">tree_to_pruefer.py</a>,
+          converts a tree to a Pruefer code.
+        </li>
+        <li>
+          <a href = "tree_unrank.py">tree_unrank.py</a>,
+          unranks a tree.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "combo_test.py">combo_test.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "combo_test.sh">combo_test.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "combo_test.txt">combo_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 01 January 2016.
+    </i>
+
+    <%-- John Burkardt -->
+
+  </body>
+
+</html>

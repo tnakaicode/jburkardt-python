@@ -1,0 +1,34 @@
+Sun Feb  2 08:30:48 2020
+
+LAPLACE_MATRIX
+  Python version: 3.6.9
+  Examine eigenvalue distribution of 5000x5000 matrix
+  with entries from Laplace distribution.
+
+  Eigenvalue range: [-141.041, 140.716]
+  Graphics saved as " laplace_matrix.png ".
+
+NORMAL_MATRIX
+  Python version: 3.6.9
+  Examine eigenvalue distribution of 5000x5000 matrix
+  with entries from normal distribution.
+
+  Eigenvalue range: [-141.109, 141.326]
+  Graphics saved as " normal_matrix.png ".
+
+STUDENT_MATRIX
+  Python version: 3.6.9
+  Examine eigenvalue distribution of 5000x5000 matrix
+  with entries from the Student t distribution.
+
+  Eigenvalue range: [-10106.7, 10097.8]
+  Graphics saved as " student_matrix.png ".
+
+UNIFORM_MATRIX
+  Python version: 3.6.9
+  Examine eigenvalue distribution of 5000x5000 matrix
+  with entries from uniform distribution.
+
+  Eigenvalue range: [-40.7906, 2498.99]
+  Graphics saved as " uniform_matrix.png ".
+Sun Feb  2 08:32:23 2020

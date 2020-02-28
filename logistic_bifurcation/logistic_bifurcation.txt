@@ -1,0 +1,4 @@
+
+logistic_bifurcation_test:
+  Python version: 3.6.9
+  Draw the logistic map bifurcation diagram.

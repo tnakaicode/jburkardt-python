@@ -1,0 +1,72 @@
+Sun Jan 26 19:32:15 2020
+
+KNAPSACK_01_TEST:
+  Python version: 3.6.9
+  Test the KNAPSACK_01 library.
+
+SUBSET_GRAY_NEXT_TEST
+  Python version: 3.6.9
+  SUBSET_GRAY_NEXT generates all subsets of an N set.
+  using the Gray code ordering:
+  0 0 1 0 1 means the subset contains 3 and 5.
+
+  Gray code
+
+   1     0     0     0     0     0
+   2     1     0     0     0     0
+   3     1     1     0     0     0
+   4     0     1     0     0     0
+   5     0     1     1     0     0
+   6     1     1     1     0     0
+   7     1     0     1     0     0
+   8     0     0     1     0     0
+   9     0     0     1     1     0
+  10     1     0     1     1     0
+  11     1     1     1     1     0
+  12     0     1     1     1     0
+  13     0     1     0     1     0
+  14     1     1     0     1     0
+  15     1     0     0     1     0
+  16     0     0     0     1     0
+  17     0     0     0     1     1
+  18     1     0     0     1     1
+  19     1     1     0     1     1
+  20     0     1     0     1     1
+  21     0     1     1     1     1
+  22     1     1     1     1     1
+  23     1     0     1     1     1
+  24     0     0     1     1     1
+  25     0     0     1     0     1
+  26     1     0     1     0     1
+  27     1     1     1     0     1
+  28     0     1     1     0     1
+  29     0     1     0     0     1
+  30     1     1     0     0     1
+  31     1     0     0     0     1
+  32     0     0     0     0     1
+
+SUBSET_GRAY_NEXT_TEST
+  Normal end of execution.
+
+KNAPSACK_01_BRUTE_TEST:
+  Python version: 3.6.9
+  Knapsack maximum capacity is 100
+  Come as close as possible to filling the knapsack.
+
+   # 0/1  Weight
+
+   0  1    16
+   1  1    17
+   2  0    23
+   3  1    24
+   4  0    39
+   5  1    40
+
+  Total:   97
+
+KNAPSACK_01_BRUTE_TEST
+  Normal end of execution.
+
+KNAPSACK_01_TEST:
+  Normal end of execution.
+Sun Jan 26 19:32:15 2020

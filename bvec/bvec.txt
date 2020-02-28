@@ -1,0 +1,498 @@
+Sat Jan 18 12:02:02 2020
+
+BVEC_TEST
+  Python version: 3.6.9
+  Test the BVEC library.
+
+BVEC_ADD_TEST
+  Python version: 3.6.9
+  BVEC_ADD adds binary vectors representing integers;
+
+        I        J        K = I + J   Kb = Ib + Jb
+
+       -57        92        35        35
+        66        12        78        78
+       -17       -87      -104      -104
+       -49       -78      -127      -127
+       -92        27       -65       -65
+       -88       -10       -98       -98
+       -20        51        31        31
+        60      -100       -40       -40
+        80       -30        50        50
+       -81       -98      -179      -179
+
+BVEC_ADD_TEST:
+  Normal end of execution.
+
+BVEC_COMPLEMENT2_TEST
+  Python version: 3.6.9
+  BVEC_COMPLEMENT2 returns the twos complement
+  of a (signed) binary vector;
+
+  1111000111
+  0000111001
+
+  0001011100
+  1110100100
+
+  0001000010
+  1110111110
+
+  0000001100
+  1111110100
+
+  1111101111
+  0000010001
+
+BVEC_COMPLEMENT2_TEST
+  Normal end of execution.
+
+BVEC_MUL_TEST
+  Python version: 3.6.9
+  BVEC_MUL multiplies binary vectors representing integers;
+
+        I        J        I * J   BVEC_MUL
+
+       -57        92     -5244     -5244
+        66        12       792       792
+       -17       -87      1479      1479
+       -49       -78      3822      3822
+       -92        27     -2484     -2484
+       -88       -10       880       880
+       -20        51     -1020     -1020
+        60      -100     -6000     -6000
+        80       -30     -2400     -2400
+       -81       -98      7938      7938
+
+BVEC_MUL_TEST:
+  Normal end of execution.
+
+BVEC_NEXT_TEST
+  Python version: 3.6.9
+  BVEC_NEXT computes the "next" BVEC.
+
+  0000
+  1000
+  0100
+  1100
+  0010
+  1010
+  0110
+  1110
+  0001
+  1001
+  0101
+  1101
+  0011
+  1011
+  0111
+  1111
+  0000
+
+BVEC_NEXT_TEST:
+  Normal end of execution.
+
+BVEC_NEXT_GRLEX_TEST
+  Python version: 3.6.9
+  BVEC_NEXT_GRLEX computes binary vectors in GRLEX order.
+
+   0:  0000
+   1:  0001
+   2:  0010
+   3:  0100
+   4:  1000
+   5:  0011
+   6:  0101
+   7:  0110
+   8:  1001
+   9:  1010
+  10:  1100
+  11:  0111
+  12:  1011
+  13:  1101
+  14:  1110
+  15:  1111
+  16:  0000
+
+BVEC_NEXT_GRLEX_TEST:
+  Normal end of execution.
+
+BVEC_PRINT_TEST
+  Python version: 3.6.9
+  BVEC_PRINT prints a binary vector.
+
+  BVEC:
+  0011101001
+
+BVEC_PRINT_TEST
+  Normal end of execution.
+
+BVEC_SUB_TEST
+  Python version: 3.6.9
+  BVEC_SUB subtracts binary vectors representing integers;
+
+        I        J        K = I - J   Kb = Ib - Jb
+
+       -57        92      -149      -149
+        66        12        54        54
+       -17       -87        70        70
+       -49       -78        29        29
+       -92        27      -119      -119
+       -88       -10       -78       -78
+       -20        51       -71       -71
+        60      -100       160       160
+        80       -30       110       110
+       -81       -98        17        17
+
+BVEC_SUB_TEST:
+  Normal end of execution.
+
+BVEC_TO_I4_TEST
+  Python version: 3.6.9
+  BVEC_TO_I4 converts a signed binary vector
+  to an integer;
+
+  I --> BVEC  -->  I
+
+  -3  1111111101  -3
+  -2  1111111110  -2
+  -1  1111111111  -1
+   0  0000000000   0
+   1  0000000001   1
+   2  0000000010   2
+   3  0000000011   3
+   4  0000000100   4
+   5  0000000101   5
+   6  0000000110   6
+   7  0000000111   7
+   8  0000001000   8
+   9  0000001001   9
+  10  0000001010  10
+
+BVEC_TO_I4_TEST
+  Normal end of execution.
+
+BVEC_UNIFORM_TEST
+  Python version: 3.6.9
+  BVEC_UNIFORM computes a random BVEC.
+
+  Initial seed is 123456789
+
+  0111110001
+  1110100111
+  1011011100
+  1101001000
+  0011011010
+  1000100101
+  1101110100
+  1000111111
+  1110000100
+  1010001100
+
+BVEC_UNIFORM_TEST:
+  Normal end of execution.
+
+I4_BCLR_TEST
+  Python version: 3.6.9
+  I4_BCLR sets a given bit to 0.
+
+  Working on I4 = 101
+
+       Pos     I4_BCLR(I4,Pos)
+
+         0           100
+         1           101
+         2            97
+         3           101
+         4           101
+         5            69
+         6            37
+         7           101
+         8           101
+         9           101
+        10           101
+        11           101
+        12           101
+        13           101
+        14           101
+        15           101
+        16           101
+        17           101
+        18           101
+        19           101
+        20           101
+        21           101
+        22           101
+        23           101
+        24           101
+        25           101
+        26           101
+        27           101
+        28           101
+        29           101
+        30           101
+        31           101
+
+  Working on I4 = -31
+
+       Pos     I4_BCLR(I4,Pos)
+
+         0           -32
+         1           -31
+         2           -31
+         3           -31
+         4           -31
+         5           -63
+         6           -95
+         7          -159
+         8          -287
+         9          -543
+        10         -1055
+        11         -2079
+        12         -4127
+        13         -8223
+        14        -16415
+        15        -32799
+        16        -65567
+        17       -131103
+        18       -262175
+        19       -524319
+        20      -1048607
+        21      -2097183
+        22      -4194335
+        23      -8388639
+        24     -16777247
+        25     -33554463
+        26     -67108895
+        27    -134217759
+        28    -268435487
+        29    -536870943
+        30   -1073741855
+        31    2147483617
+
+I4_BCLR_TEST
+  Normal end of execution.
+
+I4_BSET_TEST
+  Python version: 3.6.9
+  I4_BSET sets a given bit to 1.
+
+  Working on I4 = 101
+
+       Pos     I4_BSET(I4,Pos)
+
+         0           101
+         1           103
+         2           101
+         3           109
+         4           117
+         5           101
+         6           101
+         7           229
+         8           357
+         9           613
+        10          1125
+        11          2149
+        12          4197
+        13          8293
+        14         16485
+        15         32869
+        16         65637
+        17        131173
+        18        262245
+        19        524389
+        20       1048677
+        21       2097253
+        22       4194405
+        23       8388709
+        24      16777317
+        25      33554533
+        26      67108965
+        27     134217829
+        28     268435557
+        29     536871013
+        30    1073741925
+        31   -2147483547
+
+  Working on I4 = -31
+
+       Pos     I4_BSET(I4,Pos)
+
+         0           -31
+         1           -29
+         2           -27
+         3           -23
+         4           -15
+         5           -31
+         6           -31
+         7           -31
+         8           -31
+         9           -31
+        10           -31
+        11           -31
+        12           -31
+        13           -31
+        14           -31
+        15           -31
+        16           -31
+        17           -31
+        18           -31
+        19           -31
+        20           -31
+        21           -31
+        22           -31
+        23           -31
+        24           -31
+        25           -31
+        26           -31
+        27           -31
+        28           -31
+        29           -31
+        30           -31
+        31           -31
+
+I4_BSET_TEST
+  Normal end of execution.
+
+I4_BTEST_TEST
+  Python version: 3.6.9
+  I4_BTEST reports whether a given bit is 0 or 1.
+
+  Analyze the integer I4 = 101
+
+       Pos     I4_BTEST(I4,POS)
+
+             0             True
+             1             False
+             2             True
+             3             False
+             4             False
+             5             True
+             6             True
+             7             False
+             8             False
+             9             False
+            10             False
+            11             False
+            12             False
+            13             False
+            14             False
+            15             False
+            16             False
+            17             False
+            18             False
+            19             False
+            20             False
+            21             False
+            22             False
+            23             False
+            24             False
+            25             False
+            26             False
+            27             False
+            28             False
+            29             False
+            30             False
+            31             False
+
+  Analyze the integer I4 = -31
+
+       Pos     I4_BTEST(I4,POS)
+
+             0             True
+             1             False
+             2             False
+             3             False
+             4             False
+             5             True
+             6             True
+             7             True
+             8             True
+             9             True
+            10             True
+            11             True
+            12             True
+            13             True
+            14             True
+            15             True
+            16             True
+            17             True
+            18             True
+            19             True
+            20             True
+            21             True
+            22             True
+            23             True
+            24             True
+            25             True
+            26             True
+            27             True
+            28             True
+            29             True
+            30             True
+            31             True
+
+I4_BTEST_TEST
+  Normal end of execution.
+
+I4_TO_BVEC_TEST
+  Python version: 3.6.9
+  I4_TO_BVEC converts an integer to a 
+  signed binary vector.
+
+  I --> BVEC  -->  I
+
+  -3  1111111101  -3
+  -2  1111111110  -2
+  -1  1111111111  -1
+   0  0000000000   0
+   1  0000000001   1
+   2  0000000010   2
+   3  0000000011   3
+   4  0000000100   4
+   5  0000000101   5
+   6  0000000110   6
+   7  0000000111   7
+   8  0000001000   8
+   9  0000001001   9
+  10  0000001010  10
+
+I4_TO_BVEC_TEST
+  Normal end of execution.
+
+I4_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+         1       -35
+         2       187
+         3       149
+         4        69
+         5        25
+         6       -81
+         7       -23
+         8       -67
+         9       -87
+        10        90
+        11       -82
+        12        35
+        13        20
+        14       127
+        15       139
+        16      -100
+        17       170
+        18         5
+        19       -72
+        20       -96
+
+I4_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+BVEC_TEST:
+  Normal end of execution.
+Sat Jan 18 12:02:02 2020

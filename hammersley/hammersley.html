@@ -1,0 +1,234 @@
+<html>
+
+  <head>
+    <title>
+      HAMMERSLEY - The Hammersley Quasi Monte Carlo (QMC) Sequence
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      HAMMERSLEY <br> The Hammersley Quasi Monte Carlo (QMC) Sequence
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>HAMMERSLEY</b>,
+      a Python library which
+      computes elements of a Hammersley Quasi Monte Carlo (QMC) sequence
+      using a simple interface.
+    </p>
+
+    <p>
+      The standard M-dimensional Hammersley sequence based on N is simply 
+      composed of a first component of successive fractions 0/N, 1/N, ..., N/N, 
+      paired with M-1 1-dimensional van der Corput sequences, using as bases 
+      the first M-1 primes.
+    </p>
+
+    <p>
+      The HAMMERSLEY function will return the M-dimensional element of this
+      sequence with index I.
+    </p>
+
+    <p>
+      The HAMMERSLEY_SEQUENCE function will return the M-dimensional elements 
+      of this sequence with indices I1 through I2.
+    </p>
+
+    <p>
+      The HAMMERSLEY_INVERSE function accepts an M-dimensional value, presumably
+      computed by HAMMERSLEY, and returns its original index I.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>HAMMERSLEY</b> is available in
+      <a href = "../../c_src/hammersley/hammersley.html">a C version</a> and
+      <a href = "../../cpp_src/hammersley/hammersley.html">a C++ version</a> and
+      <a href = "../../f_src/hammersley/hammersley.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/hammersley/hammersley.html">a MATLAB version</a> and
+      <a href = "../../py_src/hammersley/hammersley.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/halton/halton.html">
+      HALTON</a>,
+      a PythonB library which
+      computes elements of a Halton Quasi Monte Carlo (QMC) sequence.
+    </p>
+
+    <p>
+      <a href = "../../py_src/latin_random/latin_random.html">
+      LATIN_RANDOM</a>,
+      a Python library which
+      computes elements of a Latin Hypercube dataset, choosing
+      points at random.
+    </p>
+
+    <p>
+      <a href = "../../py_src/normal/normal.html">
+      NORMAL</a>,
+      a Python library which
+      computes elements of a
+      sequence of pseudorandom normally distributed values.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pdflib/pdflib.html">
+      PDFLIB</a>,
+      a Python library which
+      evaluates Probability Density Functions (PDF's)
+      and produces random samples from them,
+      including beta, binomial, chi, exponential, gamma, inverse chi,
+      inverse gamma, multinomial, normal, scaled inverse chi, and uniform.
+    </p>
+
+    <p>
+      <a href = "../../py_src/prob/prob.html">
+      PROB</a>,
+      a Python library which
+      evaluates, samples, inverts, and characterizes a number of 
+      Probability Density Functions (PDF's) 
+      and Cumulative Density Functions (CDF's), including anglit, arcsin,
+      benford, birthday, bernoulli, beta_binomial, beta, binomial, bradford,
+      burr, cardiod, cauchy, chi, chi squared, circular, cosine, deranged,
+      dipole, dirichlet mixture, discrete, empirical, english sentence and
+      word length, error, exponential, extreme values, f, fisk, folded normal,
+      frechet, gamma, generalized logistic, geometric, gompertz, gumbel,
+      half normal, hypergeometric, inverse gaussian, laplace, levy, logistic,
+      log normal, log series, log uniform, lorentz, maxwell, multinomial,
+      nakagami, negative binomial, normal, pareto, planck, poisson,
+      power, quasigeometric, rayleigh, reciprocal, runs, sech, semicircular,
+      student t, triangle, uniform, von mises, weibull, zipf.
+    </p>
+
+    <p>
+      <a href = "../../py_src/randlc/randlc.html">
+      RANDLC</a>,
+      a Python library which
+      generates a sequence of pseudorandom numbers,
+      used by the NAS Benchmark programs.
+    </p>
+
+    <p>
+      <a href = "../../py_src/random_data/random_data.html">
+      RANDOM_DATA</a>,
+      a Python library which
+      uses a random number generator (RNG) to sample points corresponding
+      to various probability density functions (PDF's), spatial dimensions, 
+      and geometries, including the M-dimensional cube, ellipsoid, simplex 
+      and sphere.
+    </p>
+
+    <p>
+      <a href = "../../py_src/random_sorted/random_sorted.html">
+      RANDOM_SORTED</a>,
+      a Python library which
+      generates vectors of random values which are already sorted.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rnglib/rnglib.html">
+      RNGLIB</a>,
+      a Python library which
+      implements a random number generator (RNG) with splitting facilities,
+      allowing multiple independent streams to be computed,
+      by L'Ecuyer and Cote.
+    </p>
+
+    <p>
+      <a href = "../../py_src/sobol/sobol.html">
+      SOBOL</a>,
+      a Python library which
+      computes elements of a Sobol quasirandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../py_src/uniform/uniform.html">
+      UNIFORM</a>,
+      a Python library which
+      computes elements of a uniform pseudorandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../py_src/van_der_corput/van_der_corput.html">
+      VAN_DER_CORPUT</a>,
+      a Python library which
+      computes elements of a 1D van der Corput Quasi Monte Carlo (QMC) sequence
+      using a simple interface.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          John Hammersley,
+          Monte Carlo methods for solving multivariable problems,
+          Proceedings of the New York Academy of Science,
+          Volume 86, 1960, pages 844-874.
+        </li>
+        <li>
+          Ladislav Kocis, William Whiten,<br>
+          Computational Investigations of Low-Discrepancy Sequences,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 23, Number 2, 1997, pages 266-294.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hammersley.py">hammersley.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "hammersley.sh">
+          hammersley.sh</a>, runs all the tests.
+        </li>
+        <li>
+          <a href = "hammersley.txt">
+          hammersley.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 October 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

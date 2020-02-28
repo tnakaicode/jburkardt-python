@@ -1,0 +1,234 @@
+Sat Feb  1 15:36:23 2020
+
+PENTOMINOES_TEST
+  Python version: 3.6.9
+  Test the PENTOMINOES library.
+
+CELL_IJ_FILL_TEST:
+  CELL_IJ_FILL fills in unit cells indexed by (I,J)
+  using matrix coordinate system.
+
+PENTOMINO_MATRIX_TEST
+  PENTOMINO_MATRIX returns a 0/1 matrix representing a pentomino.
+
+  F pentomino (3,3):
+
+    
+ 0
+ 1
+ 1
+
+    
+ 1
+ 1
+ 0
+
+    
+ 0
+ 1
+ 0
+
+
+  I pentomino (5,1):
+
+    
+ 1
+
+    
+ 1
+
+    
+ 1
+
+    
+ 1
+
+    
+ 1
+
+
+  L pentomino (4,2):
+
+    
+ 1
+ 0
+
+    
+ 1
+ 0
+
+    
+ 1
+ 0
+
+    
+ 1
+ 1
+
+
+  N pentomino (2,4):
+
+    
+ 1
+ 1
+ 0
+ 0
+
+    
+ 0
+ 1
+ 1
+ 1
+
+
+  P pentomino (3,2):
+
+    
+ 1
+ 1
+
+    
+ 1
+ 1
+
+    
+ 1
+ 0
+
+
+  T pentomino (3,3):
+
+    
+ 1
+ 1
+ 1
+
+    
+ 0
+ 1
+ 0
+
+    
+ 0
+ 1
+ 0
+
+
+  U pentomino (2,3):
+
+    
+ 1
+ 0
+ 1
+
+    
+ 1
+ 1
+ 1
+
+
+  V pentomino (3,3):
+
+    
+ 1
+ 0
+ 0
+
+    
+ 1
+ 0
+ 0
+
+    
+ 1
+ 1
+ 1
+
+
+  W pentomino (3,3):
+
+    
+ 1
+ 0
+ 0
+
+    
+ 1
+ 1
+ 0
+
+    
+ 0
+ 1
+ 1
+
+
+  X pentomino (3,3):
+
+    
+ 0
+ 1
+ 0
+
+    
+ 1
+ 1
+ 1
+
+    
+ 0
+ 1
+ 0
+
+
+  Y pentomino (2,4):
+
+    
+ 0
+ 0
+ 1
+ 0
+
+    
+ 1
+ 1
+ 1
+ 1
+
+
+  Z pentomino (3,3):
+
+    
+ 1
+ 1
+ 0
+
+    
+ 0
+ 1
+ 0
+
+    
+ 0
+ 1
+ 1
+
+
+PENTOMINO_DISPLAY_TEST
+  PENTOMINO_DISPLAY displays a picture of a pentomino.
+  PENTOMINO_DISPLAY created "F.png"
+  PENTOMINO_DISPLAY created "I.png"
+  PENTOMINO_DISPLAY created "L.png"
+  PENTOMINO_DISPLAY created "N.png"
+  PENTOMINO_DISPLAY created "P.png"
+  PENTOMINO_DISPLAY created "T.png"
+  PENTOMINO_DISPLAY created "U.png"
+  PENTOMINO_DISPLAY created "V.png"
+  PENTOMINO_DISPLAY created "W.png"
+  PENTOMINO_DISPLAY created "X.png"
+  PENTOMINO_DISPLAY created "Y.png"
+  PENTOMINO_DISPLAY created "Z.png"
+
+PENTOMINOES_TEST
+  Normal end of execution.
+Sat Feb  1 15:36:24 2020

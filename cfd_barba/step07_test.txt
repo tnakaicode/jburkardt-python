@@ -1,0 +1,4 @@
+
+STEP07:
+  Python version: 3.6.5
+  The 2D diffusion equation.

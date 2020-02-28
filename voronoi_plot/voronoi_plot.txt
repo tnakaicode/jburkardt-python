@@ -1,0 +1,15 @@
+Wed Feb  5 12:55:46 2020
+
+VORONOI_PLOT_TEST:
+  Python version: 3.6.9
+  VORONOI_PLOT makes a simple pixel plot of a Voronoi diagram.
+
+VORONOI_PLOT:
+  Python version: 3.6.9
+  Display a Voronoi diagram using a pixel computation.
+
+  Saved graphics in file "voronoi.png"
+
+VORONOI_PLOT_TEST:
+  Normal end of execution.
+Wed Feb  5 12:55:48 2020

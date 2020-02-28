@@ -1,0 +1,18 @@
+Mon Feb  3 07:59:36 2020
+
+sphere_distance_test:
+  Python version: 3.6.9
+  Test sphere_distance.
+
+  Using N = 10000 sample points,
+  Estimated mean distance = 1.32746
+  Exact mean distance     = 1.33333
+  Estimated variance      = 0.221446
+  Exact variance          = 0.222222
+  Graphics saved as "sphere_distance_histogram.png"
+  Graphics saved as "sphere_distance_pdf.png"
+  Graphics saved as "sphere_distance_compare.png"
+
+sphere_distance_test:
+  Normal end of execution.
+Mon Feb  3 07:59:37 2020

@@ -1,0 +1,431 @@
+Sat Feb  1 15:36:38 2020
+
+PRAXIS_TEST
+  Python version: 3.6.9
+  Test the PRAXIS library.
+
+BEALE_TEST
+  Python version: 3.6.9
+  The Beale function.
+
+  Initial point:
+
+     0:           0.1
+     1:           0.1
+  Function value = 12.991
+
+  Computed minimizer:
+
+     0:             3
+     1:           0.5
+  Function value = 3.70308e-26
+
+BEALE_TEST:
+  Normal end of execution.
+
+BOX_TEST
+  Python version: 3.6.9
+  The Box function.
+
+  Initial point:
+
+     0:             0
+     1:            10
+     2:            20
+  Function value = 1031.15
+
+  Computed minimizer:
+
+     0:             1
+     1:            10
+     2:             1
+  Function value = 5.60416e-26
+
+BOX_TEST:
+  Normal end of execution.
+
+CHEBYQUAD_TEST
+  Python version: 3.6.9
+  The Chebyquad function.
+
+  Initial point:
+
+     0:      0.111111
+     1:      0.222222
+     2:      0.333333
+     3:      0.444444
+     4:      0.555556
+     5:      0.666667
+     6:      0.777778
+     7:      0.888889
+  Function value = 0.0386177
+
+  Computed minimizer:
+
+     0:     0.0431527
+     1:      0.193091
+     2:      0.266329
+     3:           0.5
+     4:           0.5
+     5:      0.733671
+     6:      0.806909
+     7:      0.956847
+  Function value = 0.00351687
+
+CHEBYQUAD_TEST:
+  Normal end of execution.
+
+CUBE_TEST
+  Python version: 3.6.9
+  The Cube function.
+
+  Initial point:
+
+     0:          -1.2
+     1:            -1
+  Function value = 57.8384
+
+  Computed minimizer:
+
+     0:             1
+     1:             1
+  Function value = 2.18685e-24
+
+CUBE_TEST:
+  Normal end of execution.
+
+HELIX_TEST
+  Python version: 3.6.9
+  The Fletcher-Powell Helix function.
+
+  Initial point:
+
+     0:            -1
+     1:             0
+     2:             0
+  Function value = 10000
+
+  Computed minimizer:
+
+     0:             1
+     1:   -1.8195e-12
+     2:  -2.88763e-12
+  Function value = 5.19088e-23
+
+HELIX_TEST:
+  Normal end of execution.
+
+HILBERT_TEST
+  Python version: 3.6.9
+  The Hilbert function.
+
+  Initial point:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+     5:             1
+     6:             1
+     7:             1
+     8:             1
+     9:             1
+  Function value = 13.3754
+
+  Computed minimizer:
+
+     0:    4.4105e-06
+     1:  -0.000373037
+     2:    0.00789523
+     3:    -0.0717251
+     4:      0.342533
+     5:     -0.943299
+     6:       1.55049
+     7:       -1.5009
+     8:      0.789134
+     9:     -0.173768
+  Function value = 6.92518e-13
+
+HILBERT_TEST:
+  Normal end of execution.
+
+POWELL3D_TEST
+  Python version: 3.6.9
+  The Powell 3D function.
+
+  Initial point:
+
+     0:             0
+     1:             1
+     2:             2
+  Function value = 1.5
+
+  Computed minimizer:
+
+     0:             1
+     1:             1
+     2:             1
+  Function value = 0
+
+POWELL3D_TEST:
+  Normal end of execution.
+
+ROSENBROCK_TEST
+  Python version: 3.6.9
+  The Rosenbrock function.
+
+  Initial point:
+
+     0:          -1.2
+     1:             1
+  Function value = 24.2
+
+  Computed minimizer:
+
+     0:             1
+     1:             1
+  Function value = 4.46274e-24
+
+ROSENBROCK_TEST:
+  Normal end of execution.
+
+SINGULAR_TEST
+  Python version: 3.6.9
+  The Powell Singular function.
+
+  Initial point:
+
+     0:             3
+     1:            -1
+     2:             0
+     3:             1
+  Function value = 215
+
+  Computed minimizer:
+
+     0:   3.06997e-06
+     1:  -3.06997e-07
+     2:   8.28536e-06
+     3:   8.28528e-06
+  Function value = 1.20803e-19
+
+SINGULAR_TEST:
+  Normal end of execution.
+
+TRIDIAGONAL_TEST
+  Python version: 3.6.9
+  The Tridiagonal function.
+
+  Initial point:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+  Function value = 0
+
+  Computed minimizer:
+
+     0:             4
+     1:             3
+     2:             2
+     3:             1
+  Function value = -4
+
+TRIDIAGONAL_TEST:
+  Normal end of execution.
+
+WATSON_TEST
+  Python version: 3.6.9
+  The Watson function.
+
+  Initial point:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+     4:             0
+     5:             0
+  Function value = 30
+
+  Computed minimizer:
+
+     0:    -0.0157251
+     1:       1.01243
+     2:     -0.232992
+     3:       1.26043
+     4:      -1.51373
+     5:      0.992996
+  Function value = 0.00228767
+
+WATSON_TEST:
+  Normal end of execution.
+
+WOOD_TEST
+  Python version: 3.6.9
+  The Wood function.
+
+  Initial point:
+
+     0:            -3
+     1:            -1
+     2:            -3
+     3:            -1
+  Function value = 19192
+
+  Computed minimizer:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+  Function value = 6.08997e-20
+
+WOOD_TEST:
+  Normal end of execution.
+
+MINFIT_TEST
+  Python version: 3.6.9
+  MINFIT computes part of the SVD of a matrix A.
+    SVD: A = U * D * V'
+  MINFIT is given A, and returns the diagonal D
+  and the orthogonal matrix V.
+
+  The matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           2            -1             0             0             0  
+      1 :          -1             2            -1             0             0  
+      2 :           0            -1             2            -1             0  
+      3 :           0             0            -1             2            -1  
+      4 :           0             0             0            -1             2  
+
+  The vector V:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :   -0.288675           0.5      -0.57735           0.5     -0.288675  
+      1 :         0.5          -0.5   2.40746e-16           0.5          -0.5  
+      2 :    -0.57735    1.9082e-16       0.57735   -3.5911e-16      -0.57735  
+      3 :         0.5           0.5   6.07563e-17          -0.5          -0.5  
+      4 :   -0.288675          -0.5      -0.57735          -0.5     -0.288675  
+
+  The singular values D:
+
+     0:       3.73205
+     1:             3
+     2:             2
+     3:             1
+     4:      0.267949
+
+  Because A is positive definite symmetric,
+  we can reconstruct it as A = V * D * V'
+
+  The product A2 = V * D * V'
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           2            -1  -4.92661e-16   -9.4369e-16  -1.63064e-16  
+      1 :          -1             2            -1             0  -7.35523e-16  
+      2 :-3.88578e-16            -1             2            -1  -4.02456e-16  
+      3 : -9.4369e-16  -1.11022e-16            -1             2            -1  
+      4 :-1.66533e-16  -7.35523e-16  -2.91434e-16            -1             2  
+
+MINFIT_TEST:
+  Normal end of execution.
+
+SVSORT_TEST
+  Python version: 3.6.9
+  SVSORT sorts a vector D, and the corresponding columns
+  of a matrix V.
+
+  First row = entries of D.
+  Corresponding columns of V below.
+
+      0.132865
+      0.977115
+      0.859795
+      0.536321
+      0.629515
+
+
+            11
+            12
+            13
+            14
+            15
+
+            21
+            22
+            23
+            24
+            25
+
+            31
+            32
+            33
+            34
+            35
+
+            41
+            42
+            43
+            44
+            45
+
+            51
+            52
+            53
+            54
+            55
+
+
+  After sorting D and rearranging V:
+
+      0.977115
+      0.859795
+      0.629515
+      0.536321
+      0.132865
+
+
+            12
+            13
+            15
+            14
+            11
+
+            22
+            23
+            25
+            24
+            21
+
+            32
+            33
+            35
+            34
+            31
+
+            42
+            43
+            45
+            44
+            41
+
+            52
+            53
+            55
+            54
+            51
+
+
+SVSORT_TEST:
+  Normal end of execution.
+
+PRAXIS_TEST:
+  Normal end of execution.
+Sat Feb  1 15:36:38 2020

@@ -1,0 +1,155 @@
+Fri Jan 24 08:30:33 2020
+
+FEM1D_HEAT_EXPLICIT_TEST
+  Python version: 3.6.9
+  Test the FEM1D_HEAT_EXPLICIT library.
+
+FEM1D_HEAT_EXPLICIT_TEST01:
+  Python version: 3.6.9
+  The time dependent 1D heat equation is
+
+    Ut - k * Uxx = f(x,t)
+
+  for space interval A <= X <= B with boundary conditions
+
+    U(A,t) = UA(t)
+    U(B,t) = UB(t)
+
+  and time interval T0 <= T <= T1 with initial condition
+
+    U(X,T0) = U0(X).
+
+  To compute an approximate solution:
+    the interval [A,B] is replace by a discretized mesh Xi
+    a set of finite element functions PSI(X) are determined,
+    the solution U is written as a weighted sum of the basis functions,
+    the weak form of the differential equation is written,
+    a time grid Tj is imposed, and time derivatives replaced by
+    an explicit forward Euler first difference,
+
+    The continuous PDE has now been transformed into a set of algebraic
+    equations for the coefficients C(Xi,Tj).
+
+  Number of X nodes = 21
+  X interval = [ 0.000000, 1.000000 ]
+  X step size = 0.050000
+  Number of T steps = 401
+  T interval = [ 0.000000, 80.000000 ]
+  T step size = 0.200000
+  Number of elements = 20
+  Number of quadrature points = 3
+
+  H(X,T) written to "h_test01.txt"
+  T values written to "t_test01.txt"
+  X values written to "x_test01.txt"
+
+FEM1D_HEAT_EXPLICIT_TEST01:
+  Normal end of execution.
+
+FEM1D_HEAT_EXPLICIT_TEST02:
+  Python version: 3.6.9
+  Using the finite element method,
+  compute an approximate solution to the time-dependent
+  one dimensional heat equation for a problem where we
+  know the exact solution.
+
+    dH/dt - K * d2H/dx2 = f(x,t)
+
+  Number of X nodes = 21
+  X interval = [ 0.000000, 1.000000 ]
+  X step size = 0.050000
+  Number of T steps = 51
+  T interval = [ 0.000000, 10.000000 ]
+  T step size = 0.200000
+  Number of elements = 20
+  Number of quadrature points = 3
+
+  Step            Time       RMS Error
+
+     0               0               0
+     1             0.2      0.00441744
+     2             0.4      0.00781564
+     3             0.6        0.010529
+     4             0.8       0.0126807
+     5               1       0.0143869
+     6             1.2       0.0157332
+     7             1.4       0.0167904
+     8             1.6       0.0176143
+     9             1.8       0.0182502
+    10               2       0.0187345
+    11             2.2       0.0190967
+    12             2.4       0.0193606
+    13             2.6       0.0195455
+    14             2.8       0.0196669
+    15               3       0.0197376
+    16             3.2       0.0197676
+    17             3.4       0.0197654
+    18             3.6       0.0197374
+    19             3.8       0.0196892
+    20               4       0.0196251
+    21             4.2       0.0195486
+    22             4.4       0.0194625
+    23             4.6       0.0193691
+    24             4.8       0.0192703
+    25               5       0.0191674
+    26             5.2       0.0190617
+    27             5.4       0.0189542
+    28             5.6       0.0188454
+    29             5.8       0.0187361
+    30               6       0.0186266
+    31             6.2       0.0185174
+    32             6.4       0.0184087
+    33             6.6       0.0183008
+    34             6.8       0.0181937
+    35               7       0.0180876
+    36             7.2       0.0179826
+    37             7.4       0.0178788
+    38             7.6       0.0177762
+    39             7.8       0.0176748
+    40               8       0.0175746
+    41             8.2       0.0174756
+    42             8.4       0.0173779
+    43             8.6       0.0172813
+    44             8.8       0.0171859
+    45               9       0.0170917
+    46             9.2       0.0169986
+    47             9.4       0.0169067
+    48             9.6       0.0168158
+    49             9.8       0.0167259
+    50              10       0.0166371
+
+  G(X,T) written to "g_test02.txt"
+  H(X,T) written to "h_test02.txt"
+  T values written to "t_test02.txt"
+  X values written to "x_test02.txt"
+
+FEM1D_HEAT_EXPLICIT_TEST02:
+  Normal end of execution.
+
+FEM1D_HEAT_EXPLICIT_TEST03:
+  Python version: 3.6.9
+  Using the finite element method,
+  compute an approximate solution to the time-dependent
+  one dimensional heat equation:
+
+    dH/dt - K * d2H/dx2 = f(x,t)
+
+  Number of X nodes = 21
+  X interval = [ -5.000000, 5.000000 ]
+  X step size = 0.500000
+  Number of T steps = 321
+  T interval = [ 0.000000, 4.000000 ]
+  T step size = 0.012500
+  Number of elements = 20
+  Number of quadrature points = 3
+
+  H(X,T) written to "h_test03.txt"
+  T values written to "t_test03.txt"
+  X values written to "x_test3.txt"
+
+FEM1D_HEAT_EXPLICIT_TEST03:
+  Normal end of execution.
+
+FEM1D_HEAT_EXPLICIT_TEST
+  Normal end of execution.
+Fri Jan 24 08:30:38 2020

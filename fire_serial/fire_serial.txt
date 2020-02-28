@@ -1,0 +1,42 @@
+Fri Jan 24 08:30:40 2020
+
+FIRE_SERIAL
+  Python version: 2.7.17
+  A probabilistic simulation of a forest fire.
+  The forest is a square grid with 20 trees on a side.
+  The probability of tree-to-tree spread is 0.5
+  The random number generator is seeded by 123456789
+
+  Fire starts at tree[4,19]
+
+  Map of fire damage.
+  Fire started at "*".
+  Burned trees are indicated by "."
+  Unburned trees are indicated by "X".
+
+  XXXXXXX.........XXXX
+  XXXXXXX..........XXX
+  XXXXXXX..........XXX
+  XXXXXXXX...........X
+  XXXXXXXX..X........*
+  XXXXXXXX.....X.....X
+  XXXXXXXX............
+  XXXXXXX.............
+  XXXXXXXX........XXX.
+  XXXXXXXX......XXXXX.
+  XXXXXXXXXXX...XXXXXX
+  XXXXXXXXXXX...XXXXXX
+  XXXXXXXXXXX...XXXXXX
+  XXXXXXXXX....XXXXXXX
+  XXXXXXXXX...XXXXXXXX
+  XXXXXXXXX...XXXXXXXX
+  XXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXX
+
+  Percentage of forest burned = 0.3025
+
+FIRE_SERIAL:
+  Normal end of execution.
+Fri Jan 24 08:30:40 2020

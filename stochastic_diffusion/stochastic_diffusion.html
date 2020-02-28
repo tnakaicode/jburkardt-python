@@ -1,0 +1,232 @@
+<html>
+
+  <head>
+    <title>
+      stochastic_diffusion
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      stochastic_diffusion
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>STOCHASTIC_DIFFUSION</b>,
+      a Python library which 
+      implement several versions of a stochastic diffusivity coefficient.
+    </p>
+
+    <p>
+      In the 1D stochastic version of the problem, the diffusivity function DC()
+      includes the influence of stochastic parameters:
+      <pre>
+        - d/dx ( DC(X;OMEGA) d/dx U(X;OMEGA) ) = F(X).
+      </pre>
+    </p>
+
+    <p>
+      In the 2D stochastic version of the problem, the diffusivity function DC()
+      includes the influence of stochastic parameters:
+      <pre>
+        - Del ( DC(X,Y;OMEGA) Del U(X,Y;OMEGA) ) = F(X,Y).
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>STOCHASTIC_DIFFUSION</b> is available in
+      <a href = "../../c_src/stochastic_diffusion/stochastic_diffusion.html">a C version</a> and
+      <a href = "../../cpp_src/stochastic_diffusion/stochastic_diffusion.html">a C++ version</a> and
+      <a href = "../../f_src/stochastic_diffusion/stochastic_diffusion.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/stochastic_diffusion/stochastic_diffusion.html">a MATLAB version</a> and
+      <a href = "../../py_src/stochastic_diffusion/stochastic_diffusion.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/black_scholes/black_scholes.html">
+      BLACK_SCHOLES</a>, 
+      a Python library which
+      implements some simple approaches to 
+      the Black-Scholes option valuation theory;
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Ivo Babuska, Fabio Nobile, Raul Tempone,<br>
+          A Stochastic Collocation Method for Elliptic Partial Differential Equations 
+          with Random Input Data,<br>
+          SIAM Journal on Numerical Analysis,<br>
+          Volume 45, Number 3, 2007, pages 1005-1034.
+        </li>
+        <li>
+          Howard Elman, Darran Furnaval,<br>
+          Solving the stochastic steady-state diffusion problem using multigrid,<br>
+          IMA Journal on Numerical Analysis,<br>
+          Volume 27, Number 4, 2007, pages 675-688.
+        </li>
+        <li>
+          Roger Ghanem, Pol Spanos,<br>
+          Stochastic Finite Elements: A Spectral Approach,<br>
+          Revised Edition,<br>
+          Dover, 2003,<br>
+          ISBN: 0486428184,<br>
+          LC: TA347.F5.G56.
+        </li>
+        <li>
+          Xiang Ma, Nicholas Zabaras,<br>
+          An adaptive hierarchical sparse grid collocation algorithm for the solution
+          of stochastic differential equations,<br>
+          Journal of Computational Physics,<br>
+          Volume 228, pages 3084-3113, 2009.
+        </li>
+        <li>
+          Fabio Nobile, Raul Tempone, Clayton Webster,<br>
+          A Sparse Grid Stochastic Collocation Method for Partial Differential
+          Equations with Random Input Data,<br>
+          SIAM Journal on Numerical Analysis,<br>
+          Volume 46, Number 5, 2008, pages 2309-2345.
+        </li>
+        <li>
+          Dongbin Xiu, George Karniadakis,<br>
+          Modeling uncertainty in steady state diffusion problems via
+          generalized polynomial chaos,<br>
+          Computer Methods in Applied Mechanics and Engineering,<br>
+          Volume 191, 2002, pages 4927-4948.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "diffusivity_1d_pwc.py">diffusivity_1d_pwc.py</a>,
+          a 1D piecewise constant stochastic diffusivity function.
+        </li>
+        <li>
+          <a href = "diffusivity_1d_xk.py">diffusivity_1d_xk.py</a>,
+          a 1D stochastic diffusivity function from Xiu and Karniadakis.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_bnt.py">diffusivity_2d_bnt.py</a>,
+          a 2D stochastic diffusivity function from Babuska, Nobile, and Tempone.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_elman.py">diffusivity_2d_elman.py</a>,
+          a 2D stochastic diffusivity function from Elman.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_jvb.py">diffusivity_2d_jvb.py</a>,
+          a 2D stochastic diffusivity function that generalizes the 
+          Babuska, Nobile, and Tempone, by allowing an arbitrary number of
+          coefficients in the KL expansion.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_ntw.py">diffusivity_2d_ntw.py</a>,
+          a 2D stochastic diffusivity function from Nobile, Tempone, and Webster.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_pwc.py">diffusivity_2d_pwc.py</a>,
+          a 2D piecewise constant stochastic diffusivity function.
+        </li>
+        <li>
+          <a href = "timestamp.py">timestamp.py</a>,
+          prints the YMDHMS date as a timestamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "stochastic_diffusion_test.py">stochastic_diffusion_test.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "stochastic_diffusion_test.sh">stochastic_diffusion_test.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "stochastic_diffusion_test.txt">stochastic_diffusion_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "diffusivity_1d_pwc.png">diffusivity_1d_pwc.png</a>,
+          a 1D piecewise constant stochastic diffusivity function.
+        </li>
+        <li>
+          <a href = "diffusivity_1d_xk.png">diffusivity_1d_xk.png</a>,
+          a 1D stochastic diffusivity function from Xiu and Karniadakis.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_bnt.png">diffusivity_2d_bnt.png</a>,
+          a 2D stochastic diffusivity function from Babuska, Nobile, and Tempone.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_elman.png">diffusivity_2d_elman.png</a>,
+          a 2D stochastic diffusivity function from Elman.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_jvb.png">diffusivity_2d_jvb.png</a>,
+          a 2D stochastic diffusivity function that generalizes the 
+          Babuska, Nobile, and Tempone, by allowing an arbitrary number of
+          coefficients in the KL expansion.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_ntw.png">diffusivity_2d_ntw.png</a>,
+          a 2D stochastic diffusivity function from Nobile, Tempone, and Webster.
+        </li>
+        <li>
+          <a href = "diffusivity_2d_pwc.png">diffusivity_2d_pwc.png</a>,
+          a 2D piecewise constant stochastic diffusivity function.
+        </li>
+
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 24 March 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+ 

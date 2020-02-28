@@ -1,0 +1,71 @@
+Tue Jan 28 08:24:53 2020
+
+NEWTON1_TEST
+  Python version: 3.6.9
+  NEWTON1 is a simple implementation of Newton's method
+  for estimating a solution of F(X)=0.
+
+  F1 = sin ( x ) - 0.5 * x
+  X0 = 1.5, F(X0) = 0.247495
+  X* = 1.89549, F(X*) = -7.73058e-09
+  Number of steps was 4
+
+  F2 = 2.0 * X - EXP ( - X )
+  X0 = 0.1, F(X0) = -0.704837
+  X* = 0.351734, F(X*) = -4.09699e-11
+  Number of steps was 3
+
+  F3 = X * EXP ( - X )
+  X0 = 0.5, F(X0) = 0.303265
+  X* = -9.38962e-14, F(X*) = -9.38962e-14
+  Number of steps was 6
+
+  F4 = EXP ( X ) - 1 / ( 100 * X^2 )
+  X0 = 0.03, F(X0) = -10.0807
+  X* = 0.0953446, F(X*) = -1.60398e-10
+  Number of steps was 7
+
+NEWTON1_TEST:
+  Normal end of execution.
+
+NEWTON2_TEST
+  Python version: 3.6.9
+  NEWTON2 is a more robust implementation of Newton's method
+  for estimating a solution of F(X)=0.
+
+  F1 = sin ( x ) - 0.5 * x
+  X0 = 1.5, F(X0) = 0.247495
+  X* = 1.89549, F(X*) = -7.73058e-09
+  Number of steps was 4
+
+  F2 = 2.0 * X - EXP ( - X )
+  Root X = 0.351734
+    0: f(0.1) = -0.704837
+    1: f(0.342643) = -0.0246066
+    2: f(0.351723) = -2.91774e-05
+    3: f(0.351734) = -4.09699e-11
+
+  F3 = X * EXP ( - X )
+  Root X = -9.38962e-14
+    0: f(0.5) = 0.303265
+    1: f(-0.5) = -0.824361
+    2: f(-0.166667) = -0.196893
+    3: f(-0.0238095) = -0.0243832
+    4: f(-0.00055371) = -0.000554017
+    5: f(-3.06425e-07) = -3.06425e-07
+    6: f(-9.38962e-14) = -9.38962e-14
+
+  F4 = EXP ( X ) - 1 / ( 100 * X^2 )
+  Root X = 0.0953446
+    0: f(0.03) = -10.0807
+    1: f(0.04359) = -4.21836
+    2: f(0.060984) = -1.62598
+    3: f(0.0792032) = -0.511673
+    4: f(0.0915816) = -0.0963876
+    5: f(0.0951339) = -0.00510924
+    6: f(0.095344) = -1.60817e-05
+    7: f(0.0953446) = -1.60398e-10
+
+NEWTON2_TEST:
+  Normal end of execution.
+Tue Jan 28 08:24:53 2020

@@ -1,0 +1,168 @@
+<html>
+
+  <head>
+    <title>
+      SUBSET_SUM - The Subset Sum Problem
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      SUBSET_SUM <br> The Subset Sum Problem
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>SUBSET_SUM</b>,
+      a Python program which
+      seeks solutions of the subset sum problem.
+    </p>
+
+    <p>
+      SUBSET_SUM_NEXT works by backtracking, returning all possible solutions
+      one at a time, keeping track of the selected weights using 
+      a 0/1 mask vector of size N.
+    </p>
+
+    <p>
+      SUBSET_SUM_TABLE works by a kind of dynamic programming approach,
+      constructing a table of all possible sums from 1 to S.  The storage
+      required is N * S, so for large S this can be an issue.
+    </p>
+    
+    <p>
+      SUBSET_SUM_FIND works by brute force, trying every
+      possible subset to see if it sums to the desired value.
+      It uses the bits of a 32 bit integer to keep track of the 
+      possibilities, and hence cannot work with more N = 31 weights.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      I don't care what you do with this code.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>SUBSET_SUM</b> is available in
+      <a href = "../../c_src/subset_sum/subset_sum.html">a C version</a> and
+      <a href = "../../cpp_src/subset_sum/subset_sum.html">a C++ version</a> and
+      <a href = "../../f_src/subset_sum/subset_sum.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/subset_sum/subset_sum.html">a MATLAB version</a> and
+      <a href = "../../py_src/subset_sum/subset_sum.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/knapsack_01/knapsack_01.html">
+      KNAPSACK_01</a>,
+      a Python library which
+      uses brute force to solve small versions of the 0/1 knapsack problem;
+    </p>
+
+    <p>
+      <a href = "../../py_src/partition_problem/partition_problem.html">
+      PARTITION_PROBLEM</a>,
+      a Python library which
+      seeks solutions of the partition problem, splitting a set of integers into
+      two subsets with equal sum.
+    </p>
+
+    <p>
+      <a href = "../../py_src/satisfy/satisfy.html">
+      SATISFY</a>,
+      a Python program which
+      demonstrates, for a particular circuit, an exhaustive search
+      for solutions of the circuit satisfiability problem.
+    </p>
+
+    <p>
+      <a href = "../../py_src/subset/subset.html">
+      SUBSET</a>,
+      a Python library which
+      enumerates, generates, ranks and unranks combinatorial objects
+      including combinations, partitions, subsets, index sets, and trees.
+    </p>
+
+    <p>
+      <a href = "../../datasets/subset_sum/subset_sum.html">
+      SUBSET_SUM</a>,
+      a dataset directory which
+      contains examples of the subset sum problem, in which a set of numbers is given,
+      and is desired to find at least one subset that sums to a given target value.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Alexander Dewdney,<br>
+          The Turing Omnibus,<br>
+          Freeman, 1989,<br>
+          ISBN13: 9780716781547,<br>
+          LC: QA76.D45.
+        </li>
+        <li>
+          Donald Kreher, Douglas Simpson,<br>
+          Combinatorial Algorithms,<br>
+          CRC Press, 1998,<br>
+          ISBN: 0-8493-3988-X,<br>
+          LC: QA164.K73.
+        </li>
+        <li>
+          Silvano Martello, Paolo Toth,<br>
+          Knapsack Problems: Algorithms and Computer Implementations,<br>
+          Wiley, 1990,<br>
+          ISBN: 0-471-92420-2,<br>
+          LC: QA267.7.M37.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "subset_sum.py">subset_sum.py</a>
+          the source code.
+        </li>
+        <li>
+          <a href = "subset_sum.sh">subset_sum.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "subset_sum.txt">subset_sum.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 10 November 2015.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

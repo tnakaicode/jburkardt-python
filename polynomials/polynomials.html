@@ -1,0 +1,365 @@
+<html>
+
+  <head>
+    <title>
+      POLYNOMIALS - Polynomials for Global Optimization Tests
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      POLYNOMIALS <br> Polynomials for Global Optimization Tests
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>POLYNOMIALS</b>,
+      a Python library which
+      defines multivariate polynomials over rectangular domains, for
+      which certain information is to be determined, such as the maximum
+      and minimum values.
+    <p>
+
+    <p>
+      Polynomials include
+      <ul>
+        <li>
+          <b>butcher</b>;
+        </li>
+        <li>
+          <b>camel</b>;
+        </li>
+        <li>
+          <b>camera</b>;
+        </li>
+        <li>
+          <b>caprasse</b>;
+        </li>
+        <li>
+          <b>cyclic5</b>;
+        </li>
+        <li>
+          <b>cyclic7</b>;
+        </li>
+        <li>
+          <b>cyclic8</b>;
+        </li>
+        <li>
+          <b>goldstein_price</b>;
+        </li>
+        <li>
+          <b>hairer</b>;
+        </li>
+        <li>
+          <b>heart</b>, heart dipole;
+        </li>
+        <li>
+          <b>himmelblau</b>;
+        </li>
+        <li>
+          <b>hunecke</b>;
+        </li>
+        <li>
+          <b>kearfott</b>;
+        </li>
+        <li>
+          <b>lv3</b>, adaptive Lotka-Volterra 3 system;
+        </li>
+        <li>
+          <b>lv4</b>, adaptive Lotka-Volterra 4 system;
+        </li>
+        <li>
+          <b>magnetism6</b>;
+        </li>
+        <li>
+          <b>magnetism7</b>;
+        </li>
+        <li>
+          <b>quadratic</b>;
+        </li>
+        <li>
+          <b>rd</b>, 3 variable reaction diffusion;
+        </li>
+        <li>
+          <b>reimer5</b>;
+        </li>
+        <li>
+          <b>reimer6</b>;
+        </li>
+        <li>
+          <b>rosenbrock</b>;
+        </li>
+        <li>
+          <b>schwefel</b>;
+        </li>
+        <li>
+          <b>smith1</b>;
+        </li>
+        <li>
+          <b>smith2</b>;
+        </li>
+        <li>
+          <b>virasoro</b>;
+        </li>
+        <li>
+          <b>wright</b>;
+        </li>
+        <li>
+          <b>zakharov</b>;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>POLYNOMIALS</b> is available in
+      <a href = "../../f_src/polynomials/polynomials.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/polynomials/polynomials.html">a MATLAB version</a> and
+      <a href = "../../py_src/polynomials/polynomials.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/asa047/asa047.html">
+      ASA047</a>,
+      a Python library which
+      minimizes a scalar function of several variables using the Nelder-Mead algorithm.
+    </p>
+
+    <p>
+      <a href = "../../py_src/brent/brent.html">
+      BRENT</a>,
+      a Python library which
+      contains Richard Brent's routines for finding the zero, local minimizer,
+      or global minimizer of a scalar function of a scalar argument, without
+      the use of derivative information.
+    </p>
+
+    <p>
+      <a href = "../../py_src/compass_search/compass_search.html">
+      COMPASS_SEARCH</a>,
+      a Python library which 
+      seeks the minimizer of a scalar function of several variables
+      using compass search, a direct search algorithm that does not use derivatives.
+    </p>
+
+    <p>
+      <a href = "../../py_src/toms178/toms178.html">
+      TOMS178</a>,
+      a Python library which
+      optimizes a scalar functional of multiple variables
+      using the Hooke-Jeeves method, by Arthur Kaupe.
+      This is a version of ACM TOMS algorithm 178.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Cesar Munoz, Anthony Narkawicz,<br>
+          Formalization of Bernstein polynomials and applications to global 
+          optimization,<br>
+          Journal of Automated Reasoning,<br>
+          Volume 51, Number 2, 2013, pages 151-196.
+        </li>
+        <li>
+          Sashwati Ray, PSV Nataraj,<br>
+          An efficient algorithm for range computation of polynomials using the
+          Bernstein form,<br>
+          Journal of Global Optimization,<br>
+          Volume 45, 2009, pages 403-426.
+        </li>
+        <li>
+          Andrew Smith,<br>
+          Fast construction of constant bound functions for sparse polynomials,<br>
+          Journal of Global Optimization,<br>
+          Volume 43, 2009, pages 445-458.
+        </li>
+        <li>
+          Jan Verschelde,<br>
+          PHCPACK: A general-purpose solver for polynomial systems by 
+          homotopy continuation,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 25, Number 2, June 1999, pages 251-276.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "butcher.py">butcher.py</a>,
+          the butcher polynomial.
+        </li>
+        <li>
+          <a href = "camel.py">camel.py</a>,
+          the camel polynomial.
+        </li>
+        <li>
+          <a href = "camera.py">camera.py</a>,
+          the camera polynomial.
+        </li>
+        <li>
+          <a href = "caprasse.py">caprasse.py</a>,
+          the caprasse polynomial.
+        </li>
+        <li>
+          <a href = "cyclic5.py">cyclic5.py</a>,
+          the cyclic5 polynomial.
+        </li>
+        <li>
+          <a href = "cyclic7.py">cyclic7.py</a>,
+          the cyclic7 polynomial.
+        </li>
+        <li>
+          <a href = "cyclic8.py">cyclic8.py</a>,
+          the cyclic8 polynomial.
+        </li>
+        <li>
+          <a href = "goldstein_price.py">goldstein_price.py</a>,
+          the goldstein_price polynomial.
+        </li>
+        <li>
+          <a href = "hairer.py">hairer.py</a>,
+          the hairer polynomial.
+        </li>
+        <li>
+          <a href = "heart.py">heart.py</a>,
+          the heart dipole polynomial.
+        </li>
+        <li>
+          <a href = "himmelblau.py">himmelblau.py</a>,
+          the himmelblau polynomial.
+        </li>
+        <li>
+          <a href = "hunecke.py">hunecke.py</a>,
+          the hunecke polynomial.
+        </li>
+        <li>
+          <a href = "kearfott.py">kearfott.py</a>,
+          the kearfott polynomial.
+        </li>
+        <li>
+          <a href = "lv3.py">lv3.py</a>,
+          the adaptive Lotka-Volterra 3 polynomial.
+        </li>
+        <li>
+          <a href = "lv4.py">lv4.py</a>,
+          the adaptive Lotka-Volterra 4 polynomial.
+        </li>
+        <li>
+          <a href = "magnetism6.py">magnetism6.py</a>,
+          the magnetism6 polynomial.
+        </li>
+        <li>
+          <a href = "magnetism7.py">magnetism7.py</a>,
+          the magnetism7 polynomial.
+        </li>
+        <li>
+          <a href = "quadratic.py">quadratic.py</a>,
+          the quadratic polynomial.
+        </li>
+        <li>
+          <a href = "r8mat_uniform_abvec.m">r9mat_uniform_abvec.m</a>,
+          returns a matrix of N samples in an M dimensional space with
+          separate limits for each dimensions.
+        </li>
+        <li>
+          <a href = "rd.py">rd.py</a>,
+          the 3 variable reaction diffusion polynomial.
+        </li>
+        <li>
+          <a href = "reimer5.py">reimer5.py</a>,
+          the reimer5 polynomial.
+        </li>
+        <li>
+          <a href = "reimer6.py">reimer6.py</a>,
+          the reimer6 polynomial.
+        </li>
+        <li>
+          <a href = "rosenbrock.py">rosenbrock.py</a>,
+          the rosenbrock polynomial.
+        </li>
+        <li>
+          <a href = "schwefel.py">schwefel.py</a>,
+          the schwefel polynomial.
+        </li>
+        <li>
+          <a href = "smith1.py">smith1.py</a>,
+          the smith1 polynomial.
+        </li>
+        <li>
+          <a href = "smith2.py">smith2.py</a>,
+          the smith2 polynomial.
+        </li>
+        <li>
+          <a href = "timestamp.m">timestamp.m</a>,
+          prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <a href = "virasoro.py">virasoro.py</a>,
+          the virasoro polynomial.
+        </li>
+        <li>
+          <a href = "wright.py">wright.py</a>,
+          the wright polynomial.
+        </li>
+        <li>
+          <a href = "zakharov.py">zakharov.py</a>,
+          the zakharov polynomial.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "polynomials.py">polynomials.py</a>, calls all the tests;
+        </li>
+        <li>
+          <a href = "polynomials.sh">polynomials.sh</a>, runs all the tests;
+        </li>
+        <li>
+          <a href = "polynomials.txt">polynomials.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 06 December 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

@@ -1,0 +1,9 @@
+
+GAME_LENGTH_TEST
+  Python version: 3.6.9
+  GAME_LENGTH reports the length of a single random game of Snakes and Ladders.
+
+  This random game took 46 moves.
+
+GAME_LENGTH_TEST
+  Normal end of execution.

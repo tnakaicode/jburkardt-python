@@ -1,0 +1,5 @@
+Tue Jan 21 19:38:29 2020
+
+CHRPAK_TEST
+  Python version: 3.6.9
+  Test the CHRPAK library.

@@ -1,0 +1,17 @@
+Sat Jan 18 11:59:41 2020
+
+ball_distance_test:
+  Python version: 3.6.9
+  Test ball_distance.
+
+  Using N = 10000 sample points,
+  Estimated mean distance = 1.02829
+  Exact mean distance     = 1.02857
+  Estimated variance      = 0.14107
+  Graphics saved as "ball_distance_histogram.png"
+  Graphics saved as "ball_distance_pdf.png"
+  Graphics saved as "ball_distance_compare.png"
+
+ball_distance_test:
+  Normal end of execution.
+Sat Jan 18 11:59:46 2020

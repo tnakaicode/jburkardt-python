@@ -1,0 +1,211 @@
+<html>
+
+  <head>
+    <title>
+      GRID - Random Points on a Uniform Grid
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      GRID <br> Random Points on a Uniform Grid
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>GRID</b>,
+      a Python library which
+      randomly selects N distinct
+      points on a uniform grid in the unit hypercube in M-dimensional space.
+    </p>
+
+    <p>
+      Note that, unless N is an Mth power of an integer, the program
+      must generate a regular grid with too many points, and then omit some.
+      Choosing which points to omit is done with a random number generator,
+      whose actions are controlled by SEED.
+    </p>
+
+    <p>
+      The actual placement of the grid within the unit hypercube 
+      leaves some options for the use.  It is easiest to describe the
+      options in the 1 dimensional case, and in terms of where the
+      first and last grid point are.  Assuming we have N evenly spaced
+      points to place between 0 and 1, the centering options are
+      <ul>
+        <li>
+          CENTER = 1: first point is 0.0, last point is 1.0;
+        </li>
+        <li>
+          CENTER = 2: first point is 1/(N+1), last point is N/(N+1);
+        </li>
+        <li>
+          CENTER = 3: first point is 0, last point is (N-1)/N;
+        </li>
+        <li>
+          CENTER = 4: first point is 1/N, last point is 1;
+        </li>
+        <li>
+          CENTER = 5: first point is 1/(2*N), last point is (2*N-1)/(2*N);
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>GRID</b> is available in
+      <a href = "../../c_src/grid/grid.html">a C version</a> and
+      <a href = "../../cpp_src/grid/grid.html">a C++ version</a> and
+      <a href = "../../f_src/grid/grid.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/grid/grid.html">a MATLAB version</a> and
+      <a href = "../../py_src/grid/grid.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/ball_grid/ball_grid.html">
+      BALL_GRID</a>, 
+      a Python library which 
+      computes grid points that lie inside a ball.
+    </p>
+
+    <p>
+      <a href = "../../py_src/disk_grid/disk_grid.html">
+      DISK_GRID</a>,
+      a Python library which
+      computes grid points that lie 
+      inside a disk of user specified radius and center in 2D,
+      using GNUPLOT to create an image of the grid.
+    </p>
+
+    <p>
+      <a href = "../../py_src/ellipse_grid/ellipse_grid.html">
+      ELLIPSE_GRID</a>, 
+      a Python library which 
+      computes grid points that lie inside an ellipse.
+    </p>
+
+    <p>
+      <a href = "../../py_src/ellipsoid_grid/ellipsoid_grid.html">
+      ELLIPSOID_GRID</a>, 
+      a Python library which 
+      computes grid points that lie inside a 3D ellipsoid.
+    </p>
+
+    <p>
+      <a href = "../../py_src/halton/halton.html">
+      HALTON</a>, 
+      a Python library which
+      computes elements of a 
+      Halton quasirandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../py_src/hammersley/hammersley.html">
+      HAMMERSLEY</a>, 
+      a Python library which
+      computes elements of a 
+      Hammersley quasirandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../py_src/latin_random/latin_random.html">
+      LATIN_RANDOM</a>, 
+      a Python library which
+      computes elements of a 
+      Latin Hypercube dataset, choosing points at random.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pyramid_grid/pyramid_grid.html">
+      PYRAMID_GRID</a>,
+      a Python library which
+      computes a grid of points
+      over the interior of the unit pyramid in 3D;
+    </p>
+
+    <p>
+      <a href = "../../py_src/simplex_grid/simplex_grid.html">
+      SIMPLEX_GRID</a>,
+      a Python library which
+      generates a regular grid of points 
+      over the interior of an arbitrary simplex in M dimensions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/sobol/sobol.html">
+      SOBOL</a>,
+      a Python library which
+      computes elements of a Sobol quasirandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tetrahedron_grid/tetrahedron_grid.html">
+      TETRAHEDRON_GRID</a>, 
+      a Python library which 
+      computes a tetrahedral grid of points.
+    </p>
+
+    <p>
+      <a href = "../../py_src/uniform/uniform.html">
+      UNIFORM</a>, 
+      a Python library which
+      computes elements of a uniform pseudorandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../py_src/van_der_corput/van_der_corput.html">
+      VAN_DER_CORPUT</a>, 
+      a Python library which
+      computes elements of a van der Corput quasirandom sequence.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+
+    <p>
+      <ul>
+        <li>
+          <a href = "grid.py">grid.py</a>, the source code.
+        </li>
+        <li>
+          <a href = "grid.sh">grid.sh</a>, runs all the tests.
+        </li>
+        <li>
+          <a href = "grid.txt">grid.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 24 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

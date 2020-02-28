@@ -1,0 +1,109 @@
+<html>
+
+  <head>
+    <title>
+      counterfeit_detection
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      counterfeit_detection
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>counterfeit_detection</b>,
+      a Python library which 
+      considers problems in which one or more counterfeit coins 
+      are to be identified by the fact that they do not have the standard weight.
+    </p>
+
+    <p>
+      Methods include:
+      <ul>
+        <li>
+          <i>brute force:</i> weigh every coin and report those with bad weight;
+        </li>
+        <li>
+          <i>combinatorial:</i> assume there is only 1 bad coin, and that the number of coins is 2^n-1.
+          carry out n weighings to determine the bad coin.
+        </li>
+        <li>
+          <i>compressed sensing:</i> weigh a certain number of random subsets of the coins
+          and solve an underdetermined linear system minimizing the l1 norm.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>counterfeit_detection</b> is available in
+      <a href = "../../m_src/counterfeit_detection/counterfeit_detection.html">a MATLAB version</a> and
+      <a href = "../../py_src/counterfeit_detection/counterfeit_detection.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Kurt Bryan, Tanya Leise,<br>
+          Making do with less: an introduction to compressed sensing,<br>
+          SIAM Review,<br>
+          Volume 55, Number 3, September 2013, pages 547-566.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "counterfeit_detection.py">counterfeit_detection.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "counterfeit_detection.sh">counterfeit_detection.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "counterfeit_detection.txt">counterfeit_detection.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 19 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

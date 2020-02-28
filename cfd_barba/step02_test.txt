@@ -1,0 +1,8 @@
+
+STEP02:
+  Python version: 3.6.5
+  The 1D nonlinear convection equation.
+  Saved final solution in file "step02_final.png".
+
+STEP02:
+  Normal end of execution.

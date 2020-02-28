@@ -1,0 +1,18 @@
+Tue Jan 21 20:01:42 2020
+
+circle_distance_test:
+  Python version: 3.6.9
+  Test circle_distance.
+
+  Using N = 10000 sample points,
+  Estimated mean distance = 1.28401
+  Exact mean distance     = 1.27324
+  Estimated variance      = 0.374793
+
+  Graphics saved as "circle_distance_histogram.png"
+  Graphics saved as "circle_distance_pdf.png"
+  Graphics saved as "circle_distance_compare.png"
+
+circle_distance_test:
+  Normal end of execution.
+Tue Jan 21 20:01:43 2020

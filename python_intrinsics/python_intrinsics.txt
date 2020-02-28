@@ -1,0 +1,592 @@
+Sat Feb  1 15:37:41 2020
+
+python_intrinsics_test:
+  Python version: 3.6.9
+  Test python_intrinsics.
+
+abs_test
+  abs() returns the absolute value of a number.
+
+      x         abs(x)
+
+   92.856246   92.856246
+  129.534042  129.534042
+   90.443377   90.443377
+   31.527558   31.527558
+  -58.195047   58.195047
+  -196.122505  196.122505
+   -5.061762    5.061762
+  -67.308074   67.308074
+   29.344986   29.344986
+  -37.749398   37.749398
+
+    46320335    46320335
+   -25516016    25516016
+    23175399    23175399
+   -18101478    18101478
+     5584130     5584130
+   -86893793    86893793
+    -5941678     5941678
+    50779344    50779344
+   -69366176    69366176
+   -81035341    81035341
+
+all_test
+  all() returns True if all elements are True.
+
+  a = [ -2 , 4 , 12 ]
+
+  all(a<10) False
+  all(a!=0) True
+  (all(-5<a)) and all(a<20)) True
+
+any_test
+  any() returns True if any elements is True.
+
+  a = [ -2 , 4 , 12 ]
+
+  any(a<1) True
+  any(a==0) False
+  (any(-5<a)) and any(a<-4)) False
+  (any(-5<a)) or  any(a<-4)) True
+
+bin_test
+  bin() returns a string that is the binary representation of an integer.
+
+      i         bin(i)
+
+     0  0b0
+     1  0b1
+     2  0b10
+     3  0b11
+     4  0b100
+     5  0b101
+    10  0b1010
+    20  0b10100
+    30  0b11110
+  2019  0b11111100011
+   -11  -0b1011
+
+bool_test
+  bool() converts a value to a Boolean value.
+
+  value         bool(value)
+
+  (empty)   False
+  True   True
+  -1   True
+  0   False
+  1000   True
+  3.14159...   True
+  ''   False
+  'January'   True
+
+bytearray_test
+  bytearray() converts a string to an array of bytes.
+
+  bytearray(' Hello! ',' utf-8 ') = bytearray(b'Hello!')
+  bytearray(' Hello! ',' utf-16 ') = bytearray(b'\xff\xfeH\x00e\x00l\x00l\x00o\x00!\x00')
+
+chr_test
+  chr(i) returns the i-th character.
+
+    XXXXXXXXXXXXXXXX
+    XXXXXXXXXXXXXXXX
+    X!"#$%&'()*+,-./
+    0123456789:;<=>?
+    @ABCDEFGHIJKLMNO
+    PQRSTUVWXYZ[\]^_
+    `abcdefghijklmno
+    pqrstuvwxyz{|}~X
+
+dir_test
+  dir() lists objects.
+  dir(x) lists methods and properties of object x
+
+  The dir() command actually only prints information
+  during interactive use, so the following dir()
+  commands will not print out anything, since we
+  are running noninteractively.
+  After defining a, b, c, and d, issue "dir()"
+['a', 'b', 'c', 'd', 'pprint', 'string']
+
+  Issue "dir(b)"
+['__abs__',
+ '__add__',
+ '__bool__',
+ '__class__',
+ '__delattr__',
+ '__dir__',
+ '__divmod__',
+ '__doc__',
+ '__eq__',
+ '__float__',
+ '__floordiv__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getformat__',
+ '__getnewargs__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__int__',
+ '__le__',
+ '__lt__',
+ '__mod__',
+ '__mul__',
+ '__ne__',
+ '__neg__',
+ '__new__',
+ '__pos__',
+ '__pow__',
+ '__radd__',
+ '__rdivmod__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__rfloordiv__',
+ '__rmod__',
+ '__rmul__',
+ '__round__',
+ '__rpow__',
+ '__rsub__',
+ '__rtruediv__',
+ '__setattr__',
+ '__setformat__',
+ '__sizeof__',
+ '__str__',
+ '__sub__',
+ '__subclasshook__',
+ '__truediv__',
+ '__trunc__',
+ 'as_integer_ratio',
+ 'conjugate',
+ 'fromhex',
+ 'hex',
+ 'imag',
+ 'is_integer',
+ 'real']
+
+divmod_test
+  divmod(a,b) returns the rounded quotient and remainder of a/b.
+
+     a     b     q   r
+
+     256     -89      -3     -11
+     495     -59      -9     -36
+     354      25      14       4
+    -488     -34      14     -12
+     968     -56     -18     -40
+      13     -48      -1     -35
+     293     -15     -20      -7
+     872      52      16      40
+    -415     -86       4     -71
+    -416      39     -11      13
+
+  -18.013166    9.173000   -2.000000    0.332834
+  -141.207972    6.500672  -22.000000    1.806806
+  -115.873660   -3.774510   30.000000   -2.638369
+  -84.818229    6.283352  -14.000000    3.148700
+  -57.794509    3.426295  -17.000000    0.452509
+   71.454196   -3.482105  -21.000000   -1.670011
+  -99.776844    6.357319  -16.000000    1.940261
+   13.959206    2.182391    6.000000    0.864858
+  -41.503107   -5.721748    7.000000   -1.450868
+   91.262764   -0.515166  -178.000000   -0.436861
+
+eval_test
+  eval() takes a string, which might represent a formula,
+  and evaluates it.
+
+  x =  1  s = ' x + 9 ', eval(s) =  10
+  x =  101  s = ' x + 9 ', eval(s) =  110
+  a =  1.2  b =  8.0  s = ' a * b + 1 ', eval(s) =  10.6
+
+float_test
+  float returns the float version of a value.
+
+  a = 123456 , float(a)= 123456.0
+  a = 3.141592653589793 , float(a)= 3.141592653589793
+  a = ' 123.456 ', float(a)= 123.456
+
+globals_test
+  globals() lists the global variables.
+{'__annotations__': {},
+ '__builtins__': <module 'builtins' (built-in)>,
+ '__cached__': None,
+ '__doc__': None,
+ '__file__': 'python_intrinsics.py',
+ '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7fed36420d68>,
+ '__name__': '__main__',
+ '__package__': None,
+ '__spec__': None,
+ 'abs_test': <function abs_test at 0x7fed3465b8c8>,
+ 'all_test': <function all_test at 0x7fed3465b950>,
+ 'any_test': <function any_test at 0x7fed3465b9d8>,
+ 'bin_test': <function bin_test at 0x7fed3465ba60>,
+ 'bool_test': <function bool_test at 0x7fed3465bae8>,
+ 'bytearray_test': <function bytearray_test at 0x7fed3465bb70>,
+ 'chr_test': <function chr_test at 0x7fed3465bbf8>,
+ 'dir_test': <function dir_test at 0x7fed3465bc80>,
+ 'divmod_test': <function divmod_test at 0x7fed3465bd08>,
+ 'eval_test': <function eval_test at 0x7fed3465bd90>,
+ 'float_test': <function float_test at 0x7fed3465be18>,
+ 'globals_test': <function globals_test at 0x7fed3465bea0>,
+ 'hash_test': <function hash_test at 0x7fed3465bf28>,
+ 'hex_test': <function hex_test at 0x7fed34664048>,
+ 'id_test': <function id_test at 0x7fed346640d0>,
+ 'int_test': <function int_test at 0x7fed34664158>,
+ 'len_test': <function len_test at 0x7fed346641e0>,
+ 'locals_test': <function locals_test at 0x7fed34664268>,
+ 'max_test': <function max_test at 0x7fed346642f0>,
+ 'min_test': <function min_test at 0x7fed34664378>,
+ 'oct_test': <function oct_test at 0x7fed34664400>,
+ 'ord_test': <function ord_test at 0x7fed34664488>,
+ 'pow_test': <function pow_test at 0x7fed34664510>,
+ 'python_intrinsics_test': <function python_intrinsics_test at 0x7fed36445e18>,
+ 'range_test': <function range_test at 0x7fed34664598>,
+ 'reversed_test': <function reversed_test at 0x7fed34664620>,
+ 'round_test': <function round_test at 0x7fed346646a8>,
+ 'slice_test': <function slice_test at 0x7fed34664730>,
+ 'sorted_test': <function sorted_test at 0x7fed346647b8>,
+ 'sum_test': <function sum_test at 0x7fed34664840>,
+ 'timestamp': <function timestamp at 0x7fed346648c8>}
+
+hash_test
+  hash() returns a hash value.
+
+      x         hash(x)
+
+                  -1                  -2
+                  -2                  -2
+                  -3                  -3
+                   0                   0
+                   1                   1
+                   2                   2
+               12345               12345
+                2019                2019
+                 -11                 -11
+  691752902764109836  691752902764109836
+                   0                   0
+                   1                   1
+       3.14159265359  326490430436040707
+          12345.6789  1565436818957021241
+  '                 a'  -2458266074192395946
+  '             abcde'  -2741746751121203360
+  '             12345'  -2273358441116917967
+
+hex_test
+  hex() returns a string that is the hexadecimal representation
+  of an integer.
+
+      i         hex(i)
+
+     0  0x0
+     1  0x1
+     2  0x2
+     3  0x3
+     4  0x4
+     5  0x5
+    10  0xa
+    20  0x14
+    30  0x1e
+  2019  0x7e3
+   -11  -0xb
+
+id_test
+  id returns the unique identifing number of an object.
+
+  a =  3.141592653589793  id(a)= 140656794621440
+  b =  3  id(b)= 10914560
+  c =  Hallelujah!  id(c)= 140656761619376
+  d =  [1 2 3]  id(d)= 140656366612192
+  e = id_test, id(e) =  140656763093200
+
+int_test
+  int returns the integer version of a value.
+  You cannot convert a complex value.
+  You cannot convert a string which includes a decimal point.
+
+  a = 3.141592653589793 , int(a)= 3
+  a = 4.5 , int(a)= 4
+  a = 5.5 , int(a)= 5
+  a = ' 904 ', int(a)= 904
+  a = ' 101 ', int(a,2)= 5
+  a = ' 101 ', int(a,5)= 26
+  a = ' 101 ', int(a,10)= 101
+  a = ' 101 ', int(a,16)= 257
+
+len_test
+  len() returns the length of a string, tuple, or list.
+
+  x=range(5,10)
+  len(x) =  5
+
+  x='Matlab'
+  len(x) =  6
+
+  x = [ 10, 11, 12 ]
+  len(x) =  3
+
+  x = ( 10, 11, 12 )
+  len(x) =  3
+
+locals_test
+  locals() lists the local variables.
+{'a': 1,
+ 'b': 2.3,
+ 'c': 'Who is that?',
+ 'data': array([-1, -2, -3]),
+ 'e': (4, 5, 6),
+ 'np': <module 'numpy' from '/home/burkardt/.local/lib/python3.6/site-packages/numpy/__init__.py'>,
+ 'pprint': <function pprint at 0x7fed1cd231e0>}
+
+max_test
+  max returns the maximum of a pair of arguments, or an array.
+
+  max(a,b) returns the maximum of a and b.
+     a     b     max(a,b)
+
+     787     608     787
+    -467     821     821
+     -41     734     734
+     985    -101     985
+    -916     826     826
+     675       6     675
+     148     316     316
+    -471    -166    -166
+    -739    -741    -739
+     506     398     506
+
+  max(a) returns the maximum element of a.
+     a1    a2   a3     max(a)
+
+     305    -920    -575     305
+     341     270    -414     341
+    -773      66     745     745
+     867    -500     321     867
+      17     249     727     727
+    -316    -139     355     355
+     233     795     754     795
+    -873    -111     933     933
+    -821     203     259     259
+    -839     -15      78      78
+
+min_test
+  min returns the minimum of a pair of arguments, or an array.
+
+  min(a,b) returns the minimum of a and b.
+     a     b     min(a,b)
+
+        9.79       55.87        9.79
+      -64.42      -89.93      -89.93
+      -63.20     -135.80     -135.80
+      -79.56        2.07      -79.56
+      169.42      189.87      169.42
+      -60.14       33.15      -60.14
+      176.14       30.19       30.19
+        4.44      -57.29      -57.29
+       42.46      -89.03      -89.03
+      119.67      -55.75      -55.75
+
+  min(a) returns the minimum element of a.
+     a1    a2   a3     min(a)
+
+        7.08      155.07     -181.94     -181.94
+       17.12     -112.28     -117.10     -117.10
+       80.08      -35.26      111.42      -35.26
+      170.50       28.16        1.74        1.74
+      -71.11     -108.38      -42.79     -108.38
+       87.58      -53.19       23.21      -53.19
+     -127.34       51.78      128.93     -127.34
+     -107.06      -14.74       12.33     -107.06
+       29.61        6.15       62.34        6.15
+       90.77       -8.97      127.36       -8.97
+
+oct_test
+  oct() returns a string that is the octal representation of an integer.
+
+      i         oct(i)
+
+     0  0o0
+     1  0o1
+     2  0o2
+     3  0o3
+     4  0o4
+     5  0o5
+    10  0o12
+    20  0o24
+    30  0o36
+  2019  0o3743
+   -11  -0o13
+
+ord_test
+  ord(c) returns the index of character c.
+
+  String of characters: " Isn't this wonderful? ".
+
+  ' I ' has character index 73
+  ' s ' has character index 115
+  ' n ' has character index 110
+  ' ' ' has character index 39
+  ' t ' has character index 116
+  '   ' has character index 32
+  ' t ' has character index 116
+  ' h ' has character index 104
+  ' i ' has character index 105
+  ' s ' has character index 115
+  '   ' has character index 32
+  ' w ' has character index 119
+  ' o ' has character index 111
+  ' n ' has character index 110
+  ' d ' has character index 100
+  ' e ' has character index 101
+  ' r ' has character index 114
+  ' f ' has character index 102
+  ' u ' has character index 117
+  ' l ' has character index 108
+  ' ? ' has character index 63
+
+pow_test
+
+  pow(a,b) returns a to the power b.
+     a     b     pow(a,b)
+
+  2  3  8
+  2  -3  0.125
+  -2  3  -8
+  -2  -3  -0.125
+  3.14159  3  31.0063
+  3.14159  -3  0.0322515
+  2  3.14159  8.82498
+
+  pow(a,b,z) returns a to the power b, mod z.
+     a     b    c     pow(a,b,z)
+
+  10  3  3  1
+  10  3  5  0
+  10  3  7  6
+
+range_test
+
+  range(a,b) creates a range of integers from a to b-1.
+  range(a,b,c) creates a range of integers from a to b-1 by increments of c.
+
+  x=range(5,10) range(5, 10)
+  5,6,7,8,9,
+  x=range(1,11,2) range(1, 11, 2)
+  1,3,5,7,9,
+  x=range(11,1,-2) range(11, 1, -2)
+  11,9,7,5,3,  
+  x=range(10,20) = range(10, 20)
+  y = (8 in x) is False
+  len(x) = 10
+
+reversed_test
+  reversed(object) returns a "reversed" version of the object.
+
+  x=range(5,10)
+  5  6  7  8  9
+  xr = reversed(x)
+  9  8  7  6  5
+
+  s='Matlab'
+  M  a  t  l  a  b
+  sr = reversed(s)
+  b  a  l  t  a  M
+
+  x = [ 10, 11, 12 ]
+  10  11  12
+  xr = reversed(x)
+  12  11  10
+
+  x = ( 10, 11, 12 )
+  10  11  12
+  xr = reversed(x)
+  12  11  10
+
+round_test
+  round(x) rounds x to the nearest integral value.
+
+      x         round(x)
+
+   57.918451   58.000000
+  -39.815494  -40.000000
+   71.624129   72.000000
+   17.209388   17.000000
+  276.648052  277.000000
+   53.066213   53.000000
+   21.852920   22.000000
+  -112.396648  -112.000000
+   12.651926   13.000000
+  -144.856692  -145.000000
+
+  round(x,ndigits) rounds x to n digits.
+
+      x     ndigits         round(x,ndigits)
+
+  314.1592653590   0  314.0000000000
+  314.1592653590   1  314.2000000000
+  314.1592653590   2  314.1600000000
+  314.1592653590   3  314.1590000000
+  314.1592653590   4  314.1593000000
+  314.1592653590   5  314.1592700000
+  314.1592653590   6  314.1592650000
+  314.1592653590   7  314.1592654000
+  314.1592653590   8  314.1592653600
+  314.1592653590   9  314.1592653590
+  314.1592653590  10  314.1592653590
+
+slice_test
+  The slice() function creates an object represented
+  by range(start:stop:increment)
+
+  s: ' Abcdefghijklmnopqrstuvwxyz '
+
+  s[slice(0,10,2)]: Acegi
+
+  s[slice(26,0,-3)]: zwtqnkheb
+
+  s[slice(6)]: Abcdef
+
+sorted_test
+  Demonstrate the sorted function.
+
+  sorted(x) returns a sorted list
+
+  x = [3, 1, 4, 6, 2]
+  sorted(x) =( [1, 2, 3, 4, 6]
+  sorted(x,reverse=True) =( [6, 4, 3, 2, 1]
+
+  x = [1.23, 231.0, 31.2, 0.35]
+  sorted(x) =( [0.35, 1.23, 31.2, 231.0]
+  sorted(x,reverse=True) =( [231.0, 31.2, 1.23, 0.35]
+
+  x = ['a', 'c', 'z', 'b', 'D']
+  sorted(x) =( ['D', 'a', 'b', 'c', 'z']
+  sorted(x,reverse=True) =( ['z', 'c', 'b', 'a', 'D']
+
+  x = Anaconda
+  sorted(x) =( ['A', 'a', 'a', 'c', 'd', 'n', 'n', 'o']
+  sorted(x,reverse=True) =( ['o', 'n', 'n', 'd', 'c', 'a', 'a', 'A']
+
+sum_test
+  Demonstrate the sum function.
+
+  sum(x) computes the sum of entries
+
+  sum( [5.0, 10.1, 15.2, 20.3] ) =  50.599999999999994
+
+  sum(x) can count Boolean True values
+
+  sum( [False, True, True, False] ) =  2
+
+  sum(x,init) computes the sum of the entries plus init.
+
+  sum( [5.0, 10.1, 15.2, 20.3] ,100) =  150.6
+
+python_intrinsics_test:
+  Normal end of execution.
+Sat Feb  1 15:37:41 2020

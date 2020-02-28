@@ -1,0 +1,8 @@
+
+PGMA_WRITE_TEST:
+  PGMA_WRITE writes an ASCII PGM graphics file.
+
+  Graphics data stored in file "pgma_io.pgm".
+
+PGMA_WRITE_TEST:
+  Normal end of execution.

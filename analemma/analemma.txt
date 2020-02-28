@@ -1,0 +1,10 @@
+Fri Jan 17 19:57:19 2020
+
+ANALEMMA_TEST
+  Python version: 3.6.9
+  ANALEMMA computes the analemma curve for given values of
+  eccentricity, longitude, and obliquity.
+
+ANALEMMA_TEST
+  Normal end of execution.
+Fri Jan 17 19:57:31 2020

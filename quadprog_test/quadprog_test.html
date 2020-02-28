@@ -1,0 +1,103 @@
+<html>
+
+  <head>
+    <title>
+      quadprog_test
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      quadprog_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>quadprog_test</b>,
+      a Python program which
+      calls quadprog() to 
+      solve problems in quadratic programming.
+    </p>
+
+    <p>
+      quadprog() is a Python function for solving quadratic
+      programming problems of the form:
+      <pre>
+        minimize    1/2 x' H x - f' x
+        subject to: A' x >= b     (inequality constraints)
+      </pre>
+      where H is a positive definite symmetric matrix, and the constraints
+      are optional.  The most common problems involve the addition of some
+      inequality constraints, which makes this problem similar to typical
+      linear programming problems.  It is possible to add equality constraints
+      if you can find the documentation.
+    </p>
+
+    <p>
+      In what might seem an attempt to drive users mad, the sign conventions
+      for quadprog() are at odds with those of the corresponding MATLAB code.
+      In particular, we <b>subtract</b> f' x, we multiply by A', and the
+      inequality sign is <b>greater than</b> rather than less than.  Of course,
+      with only a minor loss of composure, it is possible to formulate the
+      same problem with either the MATLAB or Python programs.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      quadprog_test is available in
+      <a href = "../../m_src/quadprog_test/quadprog_test.html">a MATLAB version</a> and
+      <a href = "../../py_src/quadprog_test/quadprog_test.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "quadprog_test.py">quadprog_test.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "quadprog_test.sh">quadprog_test.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "quadprog_test.txt">quadprog_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 31 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

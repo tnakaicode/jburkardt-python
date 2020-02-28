@@ -1,0 +1,432 @@
+Wed Feb  5 08:01:36 2020
+
+TOEPLITZ_CHOLESKY_TEST:
+  Python version: 3.6.9
+  Test the TOEPLITZ_CHOLESKY library.
+
+T_CHOLESKY_LOWER_TEST
+  Python version: 3.6.9
+  T_CHOLESKY_LOWER computes the lower Cholesky
+  factor of a positive semi-definite Toeplitz matrix.
+  The Toeplitz matrix is defined by its first row.
+
+  First row of Toeplitz matrix T:
+
+     0:             1
+     1:           0.5
+     2:        -0.375
+
+  Computed lower Cholesky factor L:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+           0  
+           0  
+
+      1 :
+         0.5  
+    0.866025  
+           0  
+
+      2 :
+      -0.375  
+    0.793857  
+    0.478714  
+
+
+  Product L*L':
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+         0.5  
+           1  
+         0.5  
+
+      2 :
+      -0.375  
+         0.5  
+           1  
+
+
+TOEP_CHOLESKY_LOWER_TEST
+  Python version: 3.6.9
+  TOEP_CHOLESKY_LOWER computes the lower Cholesky
+  factor of a positive semi-definite Toeplitz matrix.
+  The Toeplitz matrix is supplied as a (2,N) array.
+
+  Compressed Toeplitz matrix G:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+           0  
+         0.5  
+      -0.375  
+
+
+  Computed lower Cholesky factor L:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+           0  
+           0  
+
+      1 :
+         0.5  
+    0.866025  
+           0  
+
+      2 :
+      -0.375  
+    0.793857  
+    0.478714  
+
+
+  Product L*L':
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+         0.5  
+           1  
+         0.5  
+
+      2 :
+      -0.375  
+         0.5  
+           1  
+
+
+TOEPLITZ_CHOLESKY_LOWER_TEST
+  Python version: 3.6.9
+  TOEPLITZ_CHOLESKY_LOWER computes the lower Cholesky
+  factorization of a positive semi-definite Toeplitz matrix.
+  The matrix is supplied as an NxN array.
+
+  Toeplitz matrix A:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+         0.5  
+           1  
+         0.5  
+
+      2 :
+      -0.375  
+         0.5  
+           1  
+
+
+  Computed lower Cholesky factor L:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+           0  
+           0  
+
+      1 :
+         0.5  
+    0.866025  
+           0  
+
+      2 :
+      -0.375  
+    0.793857  
+    0.478714  
+
+
+  Product LL':
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+         0.5  
+           1  
+         0.5  
+
+      2 :
+      -0.375  
+         0.5  
+           1  
+
+
+T_CHOLESKY_UPPER_TEST
+  Python version: 3.6.9
+  T_CHOLESKY_UPPER computes the upper Cholesky
+  factor of a positive semi-definite Toeplitz matrix.
+  The Toeplitz matrix is defined by its first row.
+
+  First row of Toeplitz matrix T:
+
+     0:             1
+     1:           0.5
+     2:        -0.375
+
+  Computed upper Cholesky factor R:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+           0  
+    0.866025  
+    0.793857  
+
+      2 :
+           0  
+           0  
+    0.478714  
+
+
+  Product R'R:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+         0.5  
+           1  
+         0.5  
+
+      2 :
+      -0.375  
+         0.5  
+           1  
+
+
+TOEP_CHOLESKY_UPPER_TEST
+  Python version: 3.6.9
+  TOEP_CHOLESKY_UPPER computes the upper Cholesky
+  factor of a positive semi-definite Toeplitz matrix.
+  The Toeplitz matrix is supplied as a (2,N) array.
+
+  Compressed Toeplitz matrix G:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+           0  
+         0.5  
+      -0.375  
+
+
+  Computed upper Cholesky factor R:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+           0  
+    0.866025  
+    0.793857  
+
+      2 :
+           0  
+           0  
+    0.478714  
+
+
+  Product R'R:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+         0.5  
+           1  
+         0.5  
+
+      2 :
+      -0.375  
+         0.5  
+           1  
+
+
+TOEPLITZ_CHOLESKY_UPPER_TEST
+  Python version: 3.6.9
+  TOEPLITZ_CHOLESKY_UPPER computes the upper Cholesky
+  factorization of a positive semi-definite Toeplitz matrix.
+  The matrix is supplied as an NxN array.
+
+  Toeplitz matrix A:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+         0.5  
+           1  
+         0.5  
+
+      2 :
+      -0.375  
+         0.5  
+           1  
+
+
+  Computed upper Cholesky factor R:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+           0  
+    0.866025  
+    0.793857  
+
+      2 :
+           0  
+           0  
+    0.478714  
+
+
+  Product R'R:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+           1  
+         0.5  
+      -0.375  
+
+      1 :
+         0.5  
+           1  
+         0.5  
+
+      2 :
+      -0.375  
+         0.5  
+           1  
+
+
+TOEPLITZ_CHOLESKY_TEST:
+  Normal end of execution.
+
+Wed Feb  5 08:01:37 2020

@@ -1,0 +1,291 @@
+Wed Feb  5 13:05:06 2020
+
+WEEKDAY_TEST:
+  Python version: 3.6.9
+  Test the WEEKDAY library.
+
+I4_MODP_TEST
+  Python version: 3.6.9
+  I4_MODP factors a number
+  into a multiple M and a positive remainder R.
+
+    Number   Divisor  Multiple Remainder
+
+       107        50         2         7
+       107       -50        -2         7
+      -107        50        -3        43
+      -107       -50         3        43
+
+  Repeat using Python % Operator:
+
+       107        50         2         7
+       107       -50        -3       -43
+      -107        50        -3        43
+      -107       -50         2        -7
+
+I4_MODP_TEST
+  Normal end of execution.
+
+I4_WRAP_TEST
+  Python version: 3.6.9
+  I4_WRAP forces an integer to lie within given limits.
+
+  ILO = 4
+  IHI = 8
+
+     I  I4_WRAP(I)
+
+     -10       5
+      -9       6
+      -8       7
+      -7       8
+      -6       4
+      -5       5
+      -4       6
+      -3       7
+      -2       8
+      -1       4
+       0       5
+       1       6
+       2       7
+       3       8
+       4       4
+       5       5
+       6       6
+       7       7
+       8       8
+       9       4
+      10       5
+      11       6
+      12       7
+      13       8
+      14       4
+      15       5
+      16       6
+      17       7
+      18       8
+      19       4
+      20       5
+
+I4_WRAP_TEST
+  Normal end of execution.
+
+JED_TO_WEEKDAY_TEST:
+  Python version: 3.6.9
+  JED_TO_WEEKDAY determines the weekday corresponding to a JED.
+
+             JED  W     W
+                  True  Computed
+
+  1507231.500000     1         1
+  1660037.500000     4         4
+  1746893.500000     4         4
+  1770641.500000     1         1
+  1892731.500000     4         4
+  1931579.500000     2         2
+  1974851.500000     7         7
+  2091164.500000     1         1
+  2121509.500000     1         1
+  2155779.500000     6         6
+  2174029.500000     7         7
+  2191584.500000     6         6
+  2195261.500000     1         1
+  2229274.500000     1         1
+  2245580.500000     4         4
+  2266100.500000     7         7
+  2288542.500000     7         7
+  2290901.500000     7         7
+  2323140.500000     4         4
+  2334848.500000     1         1
+  2348020.500000     6         6
+  2366978.500000     1         1
+  2385648.500000     2         2
+  2392825.500000     4         4
+  2416223.500000     1         1
+  2425848.500000     1         1
+  2430266.500000     2         2
+  2430833.500000     2         2
+  2431004.500000     5         5
+  2448698.500000     3         3
+  2450138.500000     1         1
+  2465737.500000     4         4
+  2486076.500000     1         1
+
+JED_TO_WEEKDAY_TEST:
+  Normal end of execution.
+
+JED_WEEKDAY_VALUES_TEST:
+  Python version: 3.6.9
+  JED_WEEKDAY_VALUES stores values of the Weekday for a given JED.
+
+    JED         WEEKDAY(JED)
+
+  1507231.500000  1
+  1660037.500000  4
+  1746893.500000  4
+  1770641.500000  1
+  1892731.500000  4
+  1931579.500000  2
+  1974851.500000  7
+  2091164.500000  1
+  2121509.500000  1
+  2155779.500000  6
+  2174029.500000  7
+  2191584.500000  6
+  2195261.500000  1
+  2229274.500000  1
+  2245580.500000  4
+  2266100.500000  7
+  2288542.500000  7
+  2290901.500000  7
+  2323140.500000  4
+  2334848.500000  1
+  2348020.500000  6
+  2366978.500000  1
+  2385648.500000  2
+  2392825.500000  4
+  2416223.500000  1
+  2425848.500000  1
+  2430266.500000  2
+  2430833.500000  2
+  2431004.500000  5
+  2448698.500000  3
+  2450138.500000  1
+  2465737.500000  4
+  2486076.500000  1
+
+JED_WEEKDAY_VALUES_TEST:
+  Normal end of execution.
+
+WEEKDAY_TO_NAME_COMMON_TEST:
+  Python version: 3.6.9
+  WEEKDAY_TO_NAME_COMMON is given a weekday index between 1 and 7
+  and returns the corresponding name of the weekday.
+
+  Index    Name
+
+      1  Sunday
+      2  Monday
+      3  Tuesday
+      4  Wednesday
+      5  Thursday
+      6  Friday
+      7  Saturday
+
+WEEKDAY_VALUES_TEST:
+  Python version: 3.6.9
+  WEEKDAY_VALUES stores values of
+  the weekday for a given Y/M/D date
+
+         Y       M       D           W
+
+    -587       7      30       1
+    -169      12       8       4
+      70       9      26       4
+     135      10       3       1
+     470       1       7       4
+     576       5      18       2
+     694      11       7       7
+    1013       4      19       1
+    1066      10      14       7
+    1096       5      18       1
+    1190       3      16       6
+    1240       3       3       7
+    1288       3      26       6
+    1298       4      20       1
+    1391       6       4       1
+    1436       1      25       4
+    1492       3      31       7
+    1553       9       9       7
+    1560       2      24       7
+    1648       6      10       4
+    1680       6      30       1
+    1716       7      24       6
+    1768       6      19       1
+    1819       8       2       2
+    1839       3      27       4
+    1903       4      19       1
+    1929       8      25       1
+    1941       9      29       2
+    1943       4      19       2
+    1943      10       7       5
+    1992       3      17       3
+    1996       2      25       1
+    2038      11      10       4
+    2094       7      18       1
+
+WEEKDAY_VALUES_TEST:
+  Normal end of execution.
+
+Y_COMMON_TO_ASTRONOMICAL_TEST:
+  Python version: 3.6.9
+  Y_COMMON_TO_ASTRONOMICAL converts a common year to an
+  "astronomical" year.
+
+  Y_COMMON  Y_ASTRONOMICAL
+       -10              -9
+        -9              -8
+        -8              -7
+        -7              -6
+        -6              -5
+        -5              -4
+        -4              -3
+        -3              -2
+        -2              -1
+        -1               0
+         1               1
+         2               2
+         3               3
+         4               4
+         5               5
+         6               6
+         7               7
+         8               8
+         9               9
+        10              10
+
+YMD_TO_WEEKDAY_COMMON_TEST
+  YMD_TO_WEEKDAY_COMMON returns the day of the week
+  for Y/M/D dates in the Common calendar.
+
+  YMD                   Weekday    Weekday
+                        Tabulated  Computed
+
+          BCE 587/7/30     Sunday     Sunday
+          BCE 169/12/8  Wednesday  Wednesday
+            CE 70/9/26  Wednesday  Wednesday
+           CE 135/10/3     Sunday     Sunday
+            CE 470/1/7  Wednesday  Wednesday
+           CE 576/5/18     Monday     Monday
+           CE 694/11/7   Saturday   Saturday
+          CE 1013/4/19     Sunday     Sunday
+         CE 1066/10/14   Saturday   Saturday
+          CE 1096/5/18     Sunday     Sunday
+          CE 1190/3/16     Friday     Friday
+           CE 1240/3/3   Saturday   Saturday
+          CE 1288/3/26     Friday     Friday
+          CE 1298/4/20     Sunday     Sunday
+           CE 1391/6/4     Sunday     Sunday
+          CE 1436/1/25  Wednesday  Wednesday
+          CE 1492/3/31   Saturday   Saturday
+           CE 1553/9/9   Saturday   Saturday
+          CE 1560/2/24   Saturday   Saturday
+          CE 1648/6/10  Wednesday  Wednesday
+          CE 1680/6/30     Sunday     Sunday
+          CE 1716/7/24     Friday     Friday
+          CE 1768/6/19     Sunday     Sunday
+           CE 1819/8/2     Monday     Monday
+          CE 1839/3/27  Wednesday  Wednesday
+          CE 1903/4/19     Sunday     Sunday
+          CE 1929/8/25     Sunday     Sunday
+          CE 1941/9/29     Monday     Monday
+          CE 1943/4/19     Monday     Monday
+          CE 1943/10/7   Thursday   Thursday
+          CE 1992/3/17    Tuesday    Tuesday
+          CE 1996/2/25     Sunday     Sunday
+         CE 2038/11/10  Wednesday  Wednesday
+          CE 2094/7/18     Sunday     Sunday
+
+WEEKDAY_TEST:
+  Normal end of execution.
+Wed Feb  5 13:05:06 2020

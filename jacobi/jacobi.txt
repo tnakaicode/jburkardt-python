@@ -1,0 +1,11 @@
+Sun Jan 26 19:24:48 2020
+
+JACOBI_TEST
+  Python version: 3.6.9
+  Test the JACOBI library.
+
+JACOBI_TEST01:
+
+JACOBI_TEST
+  Normal end of execution.
+Sun Jan 26 19:25:40 2020

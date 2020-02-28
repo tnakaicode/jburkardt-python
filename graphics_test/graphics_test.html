@@ -1,0 +1,1194 @@
+<html>
+
+  <head>
+    <title>
+      graphics_test
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      graphics_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>graphics_test</b>,
+      Python programs which
+      illustrate how various kinds of data can be displayed and analyzed
+      graphically.
+    </p>
+
+    <p>
+      Graphics are created with packages including graphviz, matplotlib, and
+      pydotplus.
+    </p>
+
+    <p>
+      Some common plot types include:
+      <ul>
+        <li>
+          <b>animation</b>, a sequential display of images which are meant
+          to suggest motion or evolution.
+        </li>
+        <li>
+          <b>bar</b>, a display of values y(1:n) in which every value
+          y(i) is represented by a bar of that height.
+        </li>
+        <li>
+          <b>bar3d</b>, a display of values z(1:m,1:n) over a 2D grid,
+          in which every value z(i,j) is represented by a bar of that height.
+        </li>
+        <li>
+          <b>barh</b>, a display of values x(1:n) in which every value
+          x(i) is represented by a horizontal bar of that length.
+          The horizontal format can be more suitable for labeling bars
+          when there are many of them.
+        </li>
+        <li>
+          <b>binary_tree</b>, a connected directed graph with no circuits, 
+          in which each node has no more than 2 descendants.
+        </li>
+        <li>
+          <b>contour fill</b>, a display of values z(x,y) in which the values of
+          z are suggested by regions filled with color.
+        </li>
+        <li>
+          <b>contour line</b>, a display of values z(x,y) in which the values of
+          z are suggested by colored contour lines.
+        </li>
+        <li>
+          <b>decision_tree</b>, a connected directed graph with no circuits, 
+          in which labeled nodes represent current states to be tested, and
+          edges represent the choice or decision to move from one state to
+          another.
+        </li>
+        <li>
+          <b>dendrogram</b>, a connected directed graph with no circuits, 
+          which generally has a single root node, and illustrates the
+          genealogy or relatedness of a set of objects.
+        </li>
+        <li>
+          <b>digraph</b>, a "directed graph", nodes (possibly with defined
+          locations, labels or colors), connected by directed edges 
+          (possibly with defined weights, labels, colors or linestyles).
+        </li>
+        <li>
+          <b>fill</b>, a shape composed of polygons, each of which is
+          filled with a particular color.
+        </li>
+        <li>
+          <b>graph</b>, nodes (possibly with defined locations, labels or colors), 
+          connected by undirected edges (possibly with defined weights, labels, 
+          colors or linestyles).
+        </li>
+        <li>
+          <b>histogram</b>, a display of values x in which the x range
+          is divided into intervals, and the value y(i) represents the
+          number of x values in the i-th interval, and a bar plot of
+          intervals versus count is displayed.
+        </li>
+        <li>
+          <b>plot</b>, a display of a single curve defined by a sequence of 
+          functional pairs (x,y(x)), or a function y=f(x) sampled over an
+          interval, or a sequence of related pairs (x,y).
+        </li>
+        <li>
+          <b>plot3d</b>, a 3D display of a single curve defined by a sequence of 
+          triples (x(i),y(i),z(i)), or a parametric function (x(t),y(t),z(t)) 
+          sampled over an interval.
+        </li>
+        <li>
+          <b>plots</b>, several curves on a single display.
+        </li>
+        <li>
+          <b>scatter</b>, a display of unconnected pairs (x,y), whose
+          positions are indicated by markers.
+        </li>
+        <li>
+          <b>scatter3d</b>, a 3D display of unconnected triples (x,y,z), whose
+          positions are indicated by markers.
+        </li>
+        <li>
+          <b>scatters</b>, a scatter plot involving several distinct sets of
+          (x,y) pairs are displayed, distinguished by markers of different
+          size, shape or color.
+        </li>
+        <li>
+          <b>subplots</b>, a display involving two or more separate plots,
+          shown as a single figure.
+        </li>
+        <li>
+          <b>surface</b>, a 3D display of values z(x,y), represented
+          as a surface.
+        </li>
+        <li>
+          <b>vector</b>, a 2D display of vectors (u,v)(x,y), representing
+          a gradient field, an ODE direction field, or a flow of some kind.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>graphics_test</b> is available in
+      <a href = "../../c_src/graphics_test/graphics_test.html">a C version</a> and
+      <a href = "../../cpp_src/graphics_test/graphics_test.html">a C++ version</a> and
+      <a href = "../../f_src/graphics_test/graphics_test.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/graphics_test/graphics_test.html">a MATLAB version</a> and
+      <a href = "../../py_src/graphics_test/graphics_test.html">a Python version</a>.   
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "graphics_test.py">graphics_test.py</a>, 
+          calls all the tests;
+        </li>
+        <li>
+          <a href = "graphics_test.sh">graphics_test.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "graphics_test.txt">graphics_test.txt</a>, 
+          the output file;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>album_bar</b> lists the year, and total number of music albums
+      (LP's, cassettes, CD's and downloads) sold each year from 2007 to 2017.
+      This data is plotted as a bar graph.
+      <ul>
+        <li>
+          <a href = "album_data.txt">album_data.txt</a>,
+          a data file
+        </li>
+        <li>
+          <a href = "album_bar.py">album_bar.py</a>,
+          reads and plots the data.
+        </li>
+        <li>
+          <a href = "album_bar.png">album_bar.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>alphabet_binary_tree</b> describes a binary tree that could be used
+      to alphabetize letters.  This plot is made using graphviz() and pydotplus().
+      <ul>
+        <li>
+          <a href = "alphabet_binary_tree.py">alphabet_binary_tree.py</a>,
+          sets up the graph and makes a plot.
+        </li>
+        <li>
+          <a href = "alphabet_binary_tree.dot">alphabet_binary_tree.dot</a>,
+          a dot version of the plot.
+        </li>
+        <li>
+          <a href = "alphabet_binary_tree.dot.png">alphabet_binary_tree.dot.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>automobile_scatter</b> contains prices and weights of cars available 
+      in 1985.  A scatter plot is to be made.
+      <ul>
+        <li>
+          <a href = "automobile_data.txt">automobile_data.txt</a>,
+          a data file.
+        </li>
+        <li>
+          <a href = "automobile_scatter.py">automobile_scatter.py</a>,
+          reads the data and creates a scatter plot of curb weight
+          versus price.
+        </li>
+        <li>
+          <a href = "automobile_scatter.png">automobile_scatter.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>basketball_barh</b> displays the sponsorship dollars for each of
+      30 basketball players, against their names.   A horizontal bar graph is 
+      used, which makes it easier to display the name next to the bar.
+      Numpy's genfromtxt() command is needed in order to handle the data file,
+      which contains a mixture of text and numeric data.
+      <ul>
+        <li>
+          <a href = "basketball_data.csv">basketball_data.csv</a>, 
+          a CSV file that contains information about 30 players.
+        </li>
+        <li>
+          <a href = "basketball_barh.py">basketball_barh.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "basketball_barh.png">basketball_barh.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>brownian_2d_plot</b> plots data representing 1000 steps of Brownian
+      motion in two dimensions.  Unlike a typical y=f(x) plot, this data
+      wanders around the page.
+      <ul>
+        <li>
+          <a href = "brownian_2d_data.txt">brownian_2d_data.txt</a>,
+          the data file.
+        </li>
+        <li>
+          <a href = "brownian_2d_plot.py">brownian_2d_plot.py</a>,
+          plots the data
+        </li>
+        <li>
+          <a href = "brownian_2d_plot.png">brownian_2d_plot.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>brownian_animation</b> animates Brownian motion by drawing one more
+      step every 1/4 second of viewing time.
+      <ul>
+        <li>
+          <a href = "brownian_animation.py">brownian_animation.py</a>,
+          simulates Brownian motion and displays the path in an animated way.
+        </li>
+        <li>
+          <a href = "brownian_animation.png">brownian_animation.png</a>,
+          the final plot, showing the history of the motion.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>bulgaria_plot</b> records the year and population of Bulgaria
+      for various census polls.
+      <ul>
+        <li>
+          <a href = "bulgaria_data.txt">bulgaria_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "bulgaria_plot.py">bulgaria_plot.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "bulgaria_plot.png">bulgaria_plot.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>caffeine_scatter</b> seeks a relationship between the percentage of
+      blindness due to cataracts, and the daily intake of caffeine, in a number
+      of countries.  A scatter plot is produced.
+      <ul>
+        <li>
+          <a href = "caffeine_data.txt">caffeine_data.txt</a>,
+          cataract percentage, and milligrams of caffeine.
+        </li>
+        <li>
+          <a href = "caffeine_scatter.py">caffeine_scatter.py</a>,
+          reads and plots the data.
+        </li>
+        <li>
+          <a href = "caffeine_scatter.png">caffeine_scatter.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>chain_letter_dendrogram</b> considers the relatedness of 11
+      chain letters by using a distance matrix to construct a 
+      dendrogram.
+      <ul>
+        <li>
+          <a href = "chain_letter_data.txt">chain_letter_data.txt</a>, 
+          a data file.
+        </li>
+        <li>
+          <a href = "chain_letter_dendrogram.py">chain_letter_dendrogram.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "chain_letter_dendrogram.png">chain_letter_dendrogram.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+
+    <p>
+      <b>circle_scatters</b> depicts 500 pairs of (X,Y) data points in the unit square,
+      395 of which lie inside the unit circle, and 105 outside.  If possible,
+      the "inside" points should be blue, the "outside" points red, and the
+      circle itself should also be drawn.
+      <ul>
+        <li>
+          <a href = "circle1_data.txt">circle1_data.txt</a>, 
+          the coordinates of points inside the circle.
+        </li>
+        <li>
+          <a href = "circle2_data.txt">circle2_data.txt</a>, 
+          the coordinates of points outside the circle.
+        </li>
+        <li>
+          <a href = "circle_scatters.py">circle_scatters.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "circle_scatters.png">circle_scatters.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>corkscrew_plot3d</b> generates (X,Y,Z) points on a curve, and makes
+      a 3D line plot.  When the plot is displayed, it can be rotated and 
+      zoomed in on.  The PNG file is just a static snapshot.
+      <ul>
+        <li>
+          <a href = "corkscrew_plot3d.py">corkscrew_plot3d.py</a>,
+          generates data, saves it to a file, and makes a 3D plot.
+        </li>
+        <li>
+          <a href = "corkscrew_data.txt">corkscrew_data.txt</a>,
+          a list of the (x,y,z) data values.
+        </li>
+        <li>
+          <a href = "corkscrew_plot3d.png">corkscrew_plot3d.png</a>,
+          a snapshop of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>corvette_scatter</b> considers the resale price for Corvettes by 
+      model year, displaying the results as a scatter plot.
+      <ul>
+        <li>
+          <a href = "corvette_data.txt">corvette_data.txt</a>,
+          a data file; each line is a model year and asking price.
+        </li>
+        <li>
+          <a href = "corvette_scatter.py">corvette_scatter.py</a>,
+          reads and plots the data.
+        </li>
+        <li>
+          <a href = "corvette_scatter.png">corvette_scatter.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>drug_dosage_plots</b> depicts measurements over 48 hours of the 
+      blood level concentration of a medicinal drug.  The drug needs
+      to reach a certain level to have an effect, but must not exceed
+      the toxic level.  A graphic is created which shows, on one plot,
+      the concentration over time, the minimal effective level, and the
+      maximum nonlethal leval.
+      <ul>
+        <li>
+          <a href = "drug_dosage_data.txt">drug_dosage_data.txt</a>, 
+          a record of times and concentrations;
+        </li>
+        <li>
+          <a href = "drug_dosage_plots.py">drug_dosage_plots.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "drug_dosage_plots.png">drug_dosage_plots.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>genealogy_tree</b> uses graphviz() and pydotplus() to create a
+      tree diagram of a genealogy.
+      <ul>
+        <li>
+          <a href = "genealogy_tree.py">genealogy_tree.py</a>,
+          sets up the data and makes a plot.
+        </li>
+        <li>
+          <a href = "genealogy_tree.dot">genealogy_tree.dot</a>,
+          a dot version of the plot.
+        </li>
+        <li>
+          <a href = "genealogy_tree.dot.png">genealogy_tree.dot.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>geyser_bar</b> works with measurements of the waiting time in 
+      minutes between successive eruptions of the Old Faithful geyser.  The
+      data has been grouped into bins.  The bin counts are displayed as a bar 
+      chart.
+      <ul>
+        <li>
+          <a href = "geyser_bar_data.txt">geyser_bar_data.txt</a>, 
+          bin centers, and occupancy counts, for waiting times.
+        </li>
+        <li>
+          <a href = "geyser_bar.py">geyser_bar.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "geyser_bar.png">geyser_bar.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>geyser_histogram</b> works with measurements of the waiting time in 
+      minutes between successive eruptions of the Old Faithful geyser.  
+      <ul>
+        <li>
+          <a href = "geyser_data.txt">geyser_data.txt</a>, 
+          pairs of eruption length and pause length;
+        </li>
+        <li>
+          <a href = "geyser_histogram.py">geyser_histogram.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "geyser_histogram.png">geyser_histogram.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>geyser_scatter</b> looks for relations between the duration
+      in minutes of the eruption and following waiting times for the
+      Old Faithful geyser.
+      <ul>
+        <li>
+          <a href = "geyser_data.txt">geyser_data.txt</a>,
+          waiting times and eruption durations.
+        </li>
+        <li>
+          <a href = "geyser_scatter.py">geyser_scatter.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "geyser_scatter.png">geyser_scatter.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>grid_fill_contour</b> records, on a 41x41 grid over [-2,2]x[-2,+2], the 
+      values z = exp(-(x^2+y^2)) * cos(0.25*x) * sin(y) * cos(2*(x^2+y^2)).
+      The data is to be plotted as a filled color contour plot.
+      <ul>
+        <li>
+          <a href = "grid_data.txt">grid_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "grid_fill_contour.py">grid_fill_contour.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "grid_fill_contour.png">grid_fill_contour.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>grid_surface</b> records, on a 41x41 grid over [-2,2]x[-2,+2], the 
+      values z = exp(-(x^2+y^2)) * cos(0.25*x) * sin(y) * cos(2*(x^2+y^2)).
+      The data is to be plotted as a surface.
+      <ul>
+        <li>
+          <a href = "grid_data.txt">grid_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "grid_surface.py">grid_surface.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "grid_surface.png">grid_surface.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>insect_scatter3d</b> involves 3 data sets, each containing 10 
+      measurements of 3 quantities for each of 3 species of insect.  The 
+      quantities are first tarsus width, second tarsus width, and maximum width 
+      of the aedeagus.  It is of interest to know whether these three 
+      measurements are enough to differentiate between members of the three 
+      species.  A 3D scatter plot is created.
+      <ul>
+        <li>
+          <a href = "insect_a_data.txt">insect_a_data.txt</a>;
+        </li>
+        <li>
+          <a href = "insect_b_data.txt">insect_b_data.txt</a>;
+        </li>
+        <li>
+          <a href = "insect_c_data.txt">insect_c_data.txt</a>;
+        </li>
+        <li>
+          <a href = "insect_scatter3d.py">insect_scatter3d.py</a>,
+          reads the 3 data sets, plots them as a 3D scatter plot, and
+          saves a snapshot of the plot.
+        </li>
+        <li>
+          <a href = "insect_scatter3d.png">insect_scatter3d.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>iris_decision_tree</b> displays a decision tree for the iris 
+      classification process.  This plot is made using graphviz() and 
+      pydotplus().
+      <ul>
+        <li>
+          <a href = "iris_decision_tree.py">iris_decision_tree.py</a>,
+          sets up the data and makes a plot.
+        </li>
+        <li>
+          <a href = "iris_decision_tree.dot">iris_decision_tree.dot</a>,
+          a dot version of the plot.
+        </li>
+        <li>
+          <a href = "iris_decision_tree.dot.png">iris_decision_tree.dot.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>iris_subplots</b> demonstrates the use of subplots.  In this case, 
+      there are three varieties of iris, and for each, several specimens have 
+      been collected and measurements recorded for sepal length, sepal width,
+      petal length and petal width.  It is desired to create a 4x4 array
+      of plots of each possible pair of variables.  Moreover, data is to
+      be color-coded by iris variety.
+      <ul>
+        <li>
+          <a href = "iris_setosa_data.txt">iris_setosa_data.txt</a>, data set #1;
+        </li>
+        <li>
+          <a href = "iris_versicolor_data.txt">iris_versicolor_data.txt</a>, data set #2;
+        </li>
+        <li>
+          <a href = "iris_virginica_data.txt">iris_virginica_data.txt</a>, data set #3;
+        </li>
+        <li>
+          <a href = "iris_subplots.py">iris_subplots.py</a>, 
+          reads the data, and makes the plot.
+        </li>
+        <li>
+          <a href = "iris_subplots.png">iris_subplots.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>least_squares_plots</b> compares 15 pairs of (x,y) data, the least
+      squares line that approximates their behavior, and a quadratic
+      curve that is much closer to the data.
+      <ul>
+        <li>
+          <a href = "least_squares1_data.txt">least_squares1_data.txt</a>, 
+          coordinates of the 15 sample points;
+        </li>
+        <li>
+          <a href = "least_squares2_data.txt">least_squares2_data.txt</a>, 
+          coordinates of two points on the least squares approximating line;
+        </li>
+        <li>
+          <a href = "least_squares3_data.txt">least_squares3_data.txt</a>, 
+          coordinates of points on the exact curve;
+        </li>
+        <li>
+          <a href = "least_squares_plots.py">least_squares_plots.py</a>, 
+          reads data, makes the plot.
+        </li>
+        <li>
+          <a href = "least_squares_plots.png">least_squares_plots.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>lissajous_plot</b> records 1000 points on a Lissajous curve defined by
+      x=sin(3*t+pi/2), y=sin(4t).  The curve is to be plotted and every 
+      tenth point marked.
+      <ul>
+        <li>
+          <a href = "lissajous_data.txt">lissajous_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "lissajous_plot.py">lissajous_plot.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "lissajous_plot.png">lissajous_plot.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>lynx_plot</b> records the yearly lynx harvest from 1821 to 1934.
+      The graph should plot the data points as circles, and connect consecutive
+      data points with straight line segments to suggest a curve.
+      <ul>
+        <li>
+          <a href = "lynx_data.txt">lynx_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "lynx_plot.py">lynx_plot.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "lynx_plot.png">lynx_plot.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>mario_fill</b> makes a simple image of Mario,
+      by constructing a grid of squares filled with color.
+      <ul>
+        <li>
+          <a href = "mario_fill.py">mario_fill.py</a>,
+          makes a plot.
+        </li>
+        <li>
+          <a href = "mario_fill.png">mario_fill.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>mexican_hat_surface</b> plots the function z=sin(r)/r as a 3d surface.
+      <ul>
+        <li>
+          <a href = "mexican_hat_surface.py">mexican_hat_surface.py</a>,
+          makes a plot.
+        </li>
+        <li>
+          <a href = "mexican_hat_surface.png">mexican_hat_surface.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>mod_bar3d</b> makes a 3D bar plot of the values of
+      Z(I,J) = mod ( I, J ).
+      <ul>
+        <li>
+          <a href = "mod_bar3d.py">mod_bar3d.py</a>,
+          makes a plot.
+        </li>
+        <li>
+          <a href = "mod_bar3d.png">mod_bar3d.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>network_graph</b> describes a graph as a set of edges, defined
+      by pairs of nodes.  This plot is made using graphviz() and pydotplus().
+      <ul>
+        <li>
+          <a href = "network_graph.py">network_graph.py</a>,
+          sets up the graph and makes a plot.
+        </li>
+        <li>
+          <a href = "network_graph.dot">network_graph.dot</a>,
+          a dot version of the plot.
+        </li>
+        <li>
+          <a href = "network_graph.dot.png">network_graph.dot.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>nile_histogram</b> makes a histogram of the yearly measurement of the
+      height of the Nile at maximum flood.  By lumping the data into bins,
+      it is easier to see the range of flood heights, and the probability
+      of various values in the range.
+      <ul>
+        <li>
+          <a href = "nile_data.txt">nile_data.txt</a>,
+          a list of index and flood height for each year.
+        </li>
+        <li>
+          <a href = "nile_histogram.py">nile_histogram.py</a>,
+          reads data and makes a histogram.
+        </li>
+        <li>
+          <a href = "nile_histogram.png">nile_histogram.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>nile_plot</b> makes a line plot of the yearly measurement of the
+      height of the Nile at maximum flood.
+      <ul>
+        <li>
+          <a href = "nile_data.txt">nile_data.txt</a>,
+          a list of index and flood height for each year.
+        </li>
+        <li>
+          <a href = "nile_plot.py">nile_plot.py</a>,
+          reads data and makes a line plot.
+        </li>
+        <li>
+          <a href = "nile_plot.png">nile_plot.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>ninety_histogram</b> considers 90 numeric values.
+      We create a histogram, to see how the data spreads out across
+      its range.  We spot outliers as histogram bins of low occupancy that are
+      far from the rest of the data.
+      <ul>
+        <li>
+          <a href = "ninety_data.txt">ninety_data.txt</a>,
+          a text file containing a list of 90 numbers.
+        </li>
+        <li>
+          <a href = "ninety_histogram.py">ninety_histogram.py</a>,
+          reads the data and creates a histogram.
+        </li>
+        <li>
+          <a href = "ninety_histogram.png">ninety_histogram.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>orbital_fill_contour</b> records, on a 101x101 grid over [0,4*pi]x[0,4*pi], 
+      the minimum distance between two planets given a pair of orbital angles.  
+      The data is presented as a filled color contour plot.
+      <ul>
+        <li>
+          <a href = "orbital_data.txt">orbital_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "orbital_fill_contour.py">orbital_fill_contour.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "orbital_fill_contour.png">orbital_fill_contour.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>predator_plot3d</b> generates values of time, prey, and predator populations,
+      writes them to a file, and displays them in a 3D plot.
+      A 3D plot of (time, rabbits, foxes) is created.
+      <ul>
+        <li>
+          <a href = "predator_plot3d.py">predator_plot3d.py</a>,
+          generates data, saves it to a file, and makes a 3D plot.
+        </li>
+        <li>
+          <a href = "predator_data.txt">predator_data.txt</a>,
+          a list of the data values.
+        </li>
+        <li>
+          <a href = "predator_plot3d.png">predator_plot3d.png</a>,
+          a snapshop of the plot.  
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>president_heights_bar</b> plots the heights of US presidents 
+      in inches, as a bar plot.
+      <ul>
+        <li>
+          <a href = "president_heights_data.txt">president_heights_data.txt</a>, 
+          a data file;
+        </li>
+        <li>
+          <a href = "president_heights_bar.py">president_heights_bar.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "president_heights_bar.png">president_heights_bar.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>president_heights_barh</b> plots the heights of US presidents 
+      in inches, as a horizontal bar plot, with names as the y-tick labels.
+      <ul>
+        <li>
+          <a href = "president_heights_data.csv">president_heights_data.csv</a>, 
+          a data file containing names and heights.
+        </li>
+        <li>
+          <a href = "president_heights_barh.py">president_heights_barh.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "president_heights_barh.png">president_heights_barh.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>president_heights_histogram</b> plots the heights of US presidents 
+      in inches, as a histogram.  By grouping the data by
+      height, we lose the ability to identify specific cases, but we are better
+      able to see the range of heights, and to judge the frequency of various
+      heights.
+      <ul>
+        <li>
+          <a href = "president_heights_data.csv">president_heights_data.csv</a>, 
+          a data file;
+        </li>
+        <li>
+          <a href = "president_heights_histogram.py">president_heights_histogram.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "president_heights_histogram.png">president_heights_histogram.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>price_plots</b> reads a table of average monthly prices for 11 consumer
+      products, between February 2008 and February 2018, as compiled by the
+      Bureau of Labor Statistics, and plots together the prices of three
+      of the items.
+      <ul>
+        <li>
+          <a href = "price_data.csv">price_data.csv</a>,
+          the month, the year, and average monthly prices for 11 consumer
+          products, between February 2008 and February 2018.
+        </li>
+        <li>
+          <a href = "price_plots.py">price_plots.py</a>.
+          commands to read the data and make plots of some of it.
+        </li>
+        <li>
+          <a href = "price_plots.png">price_plots.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>random_scatter</b> generates 500 pairs of (X,Y) data, which lie in 
+      the unit square, and tend to cluster around (0.5,0.5).
+      <ul>
+        <li>
+          <a href = "random_data.txt">random_data.txt</a>,
+          the data file
+        </li>
+        <li>
+          <a href = "random_scatter.py">random_scatter.py</a>,
+          creates the data and displays a scatter plot.
+        </li>
+        <li>
+          <a href = "random_scatter.png">random_scatter.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>schoolyear_barh</b> displays the variation in the length of the 
+      school year across various countries.   A horizontal bar graph is 
+      used, which makes it easier to display the country name next to the bar.
+      <ul>
+        <li>
+          <a href = "schoolyear_data.csv">schoolyear_data.csv</a>, 
+          a CSV file that defines the country names and school year lengths in days.
+        </li>
+        <li>
+          <a href = "schoolyear_barh.py">schoolyear_barh.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "schoolyear_barh.png">schoolyear_barh.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>snowfall_histogram</b> makes a histogram of the yearly snowfall
+      totals at Michigan Tech.
+      <ul>
+        <li>
+          <a href = "snowfall_data.txt">snowfall_data.txt</a>, 
+          snowfall measurements at Michigan Tech.
+        </li>
+        <li>
+          <a href = "snowfall_histogram.py">snowfall_histogram.py</a>,
+          reads the data and makes a histogram.
+        </li>
+        <li>
+          <a href = "snowfall_histogram.png">snowfall_histogram.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>snowfall_plot</b> makes a line plot of the snowfall at Michigan Tech.
+      <ul>
+        <li>
+          <a href = "snowfall_data.txt">snowfall_data.txt</a>, 
+          snowfall measurements at Michigan Tech.
+        </li>
+        <li>
+          <a href = "snowfall_plot.py">snowfall_plot.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "snowfall_plot.png">snowfall_plot.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>snowfall_smoothed_plot</b> computes a
+      10 year moving average of the snowfall at Michigan Tech,
+      and plots the smoothed data.
+      <ul>
+        <li>
+          <a href = "snowfall_data.txt">snowfall_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "snowfall_smoothed_plot.py">snowfall_smoothed_plot.py</a>,
+          reads the data, smooths it, and makes a plot.
+        </li>
+        <li>
+          <a href = "snowfall_smoothed_plot.png">snowfall_smoothed_plot.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>temperature_scatter</b> shows locations in the US where the January
+      temperature was recorded.
+      <ul>
+        <li>
+          <a href = "temperature_data.txt">temperature_data.txt</a>,
+          January temperature, -longitude, latitude.
+        </li>
+        <li>
+          <a href = "temperature_scatter.py">temperature_scatter.py</a>,
+          reads and plots the data.
+        </li>
+        <li>
+          <a href = "temperature_scatter.png">temperature_scatter.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>temperature_scatter3d</b> shows temperatures and locations in the US where 
+      the January temperature was recorded.
+      <ul>
+        <li>
+          <a href = "temperature_data.txt">temperature_data.txt</a>,
+          the data file, containing temperature, -longitude and latitude.
+        </li>
+        <li>
+          <a href = "temperature_scatter3d.py">temperature_scatter3d.py</a>,
+          creates the data and displays a 3d scatter plot.
+        </li>
+        <li>
+          <a href = "temperature_scatter3d.png">temperature_scatter3d.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>track_bar</b> considers an eye-tracking experiment in which the
+      eye was focused on different regions for different durations.
+      Each region has a text label.  A bar graph is desired, in which the
+      bar for each duration is given the appropriate label.
+      <ul>
+        <li>
+          <a href = "track_data.txt">track_data.txt</a>, a data file;
+        </li>
+        <li>
+          <a href = "track_bar.py">track_bar.py</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "track_bar.png">track_bar.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>volcano_fill_contour</b> creates a filled color contour plot from an 
+      87x61 array of Z values representing the elevation of a volcano over an 
+      equally spaced (X,Y) grid.
+      <ul>
+        <li>
+          <a href = "volcano_data.txt">volcano_data.txt</a>,
+          the data file.
+        </li>
+        <li>
+          <a href = "volcano_fill_contour.py">volcano_fill_contour.py</a>,
+          creates the plot.
+        </li>
+        <li>
+          <a href = "volcano_fill_contour.png">volcano_fill_contour.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>volcano_line_contour</b> creates a line color contour plot from an 
+      87x61 array of Z values representing the elevation of a volcano over an 
+      equally spaced (X,Y) grid.
+      <ul>
+        <li>
+          <a href = "volcano_data.txt">volcano_data.txt</a>,
+          the data file.
+        </li>
+        <li>
+          <a href = "volcano_line_contour.py">volcano_line_contour.py</a>,
+          creates the plot.
+        </li>
+        <li>
+          <a href = "volcano_line_contour.png">volcano_line_contour.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>volcano_surface</b> creates a surface plot from an 87x61 array of 
+      Z values representing the elevation of a volcano over an equally spaced
+      (X,Y) grid.
+      <ul>
+        <li>
+          <a href = "volcano_data.txt">volcano_data.txt</a>,
+          the data file.
+        </li>
+        <li>
+          <a href = "volcano_surface.py">volcano_surface.py</a>,
+          creates the plot.
+        </li>
+        <li>
+          <a href = "volcano_surface.png">volcano_surface.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>web_digraph</b> displays a set of directed connections as a digraph.
+      This plot is made using graphviz() and pydotplus().
+      <ul>
+        <li>
+          <a href = "web_digraph.py">web_digraph.py</a>,
+          sets up the graph and makes a plot.
+        </li>
+        <li>
+          <a href = "web_digraph.dot">web_digraph.dot</a>,
+          a dot version of the plot.
+        </li>
+        <li>
+          <a href = "web_digraph.dot.png">web_digraph.dot.png</a>,
+          the plot.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 03 May 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

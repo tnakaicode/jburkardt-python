@@ -1,0 +1,193 @@
+Sat Jan  4 11:06:45 2020
+
+csv_reader_test
+  Python version: 3.6.9
+  Test csv.reader()
+
+Column names are ID, Name, Position, Height, Weight, Sponsorship Earnings, Shoe Sponsor, Career Stage, Age
+
+Adam plays forward, height 192 cm, weight 218 pounds.
+Adam earns $561000.
+Adam has a shoe sponsorship.
+Adam's career status is veteran.
+Adam's age is 29.
+
+Bill plays center, height 218 cm, weight 251 pounds.
+Bill earns $60000.
+Bill does not have a shoe sponsorship.
+Bill's career status is mid-career.
+Bill's age is 35.
+
+Clay plays forward, height 197 cm, weight 221 pounds.
+Clay earns $1312000.
+Clay does not have a shoe sponsorship.
+Clay's career status is rookie.
+Clay's age is 22.
+
+Dale plays forward, height 192 cm, weight 219 pounds.
+Dale earns $1359000.
+Dale does not have a shoe sponsorship.
+Dale's career status is rookie.
+Dale's age is 22.
+
+Evan plays forward, height 198 cm, weight 223 pounds.
+Evan earns $362000.
+Evan has a shoe sponsorship.
+Evan's career status is veteran.
+Evan's age is 29.
+
+Fred plays guard, height 166 cm, weight 188 pounds.
+Fred earns $1536000.
+Fred has a shoe sponsorship.
+Fred's career status is rookie.
+Fred's age is 21.
+
+Gale plays forward, height 195 cm, weight 221 pounds.
+Gale earns $694000.
+Gale does not have a shoe sponsorship.
+Gale's career status is veteran.
+Gale's age is 25.
+
+Hank plays guard, height 182 cm, weight 199 pounds.
+Hank earns $1678000.
+Hank has a shoe sponsorship.
+Hank's career status is rookie.
+Hank's age is 21.
+
+Iain plays guard, height 189 cm, weight 199 pounds.
+Iain earns $385000.
+Iain has a shoe sponsorship.
+Iain's career status is mid-career.
+Iain's age is 27.
+
+Jake plays forward, height 205 cm, weight 232 pounds.
+Jake earns $1416000.
+Jake does not have a shoe sponsorship.
+Jake's career status is rookie.
+Jake's age is 24.
+
+Kyle plays center, height 206 cm, weight 246 pounds.
+Kyle earns $314000.
+Kyle does not have a shoe sponsorship.
+Kyle's career status is mid-career.
+Kyle's age is 29.
+
+Lyle plays guard, height 185 cm, weight 207 pounds.
+Lyle earns $1497000.
+Lyle has a shoe sponsorship.
+Lyle's career status is rookie.
+Lyle's age is 23.
+
+Mike plays guard, height 172 cm, weight 183 pounds.
+Mike earns $1383000.
+Mike has a shoe sponsorship.
+Mike's career status is rookie.
+Mike's age is 24.
+
+Nate plays guard, height 169 cm, weight 183 pounds.
+Nate earns $1034000.
+Nate has a shoe sponsorship.
+Nate's career status is rookie.
+Nate's age is 24.
+
+Odad plays guard, height 185 cm, weight 197 pounds.
+Odad earns $178000.
+Odad has a shoe sponsorship.
+Odad's career status is mid-career.
+Odad's age is 29.
+
+Pete plays forward, height 215 cm, weight 232 pounds.
+Pete earns $434000.
+Pete does not have a shoe sponsorship.
+Pete's career status is mid-career.
+Pete's age is 30.
+
+Quin plays guard, height 158 cm, weight 184 pounds.
+Quin earns $162000.
+Quin has a shoe sponsorship.
+Quin's career status is veteran.
+Quin's age is 29.
+
+Rafe plays guard, height 190 cm, weight 207 pounds.
+Rafe earns $648000.
+Rafe has a shoe sponsorship.
+Rafe's career status is mid-career.
+Rafe's age is 27.
+
+Stan plays center, height 195 cm, weight 235 pounds.
+Stan earns $481000.
+Stan does not have a shoe sponsorship.
+Stan's career status is mid-career.
+Stan's age is 28.
+
+Trig plays guard, height 192 cm, weight 200 pounds.
+Trig earns $427000.
+Trig has a shoe sponsorship.
+Trig's career status is mid-career.
+Trig's age is 32.
+
+Unit plays forward, height 202 cm, weight 220 pounds.
+Unit earns $542000.
+Unit does not have a shoe sponsorship.
+Unit's career status is mid-career.
+Unit's age is 31.
+
+Vole plays forward, height 184 cm, weight 213 pounds.
+Vole earns $12000.
+Vole does not have a shoe sponsorship.
+Vole's career status is mid-career.
+Vole's age is 32.
+
+Wade plays forward, height 190 cm, weight 215 pounds.
+Wade earns $1179000.
+Wade does not have a shoe sponsorship.
+Wade's career status is rookie.
+Wade's age is 22.
+
+Xand plays guard, height 178 cm, weight 193 pounds.
+Xand earns $1078000.
+Xand does not have a shoe sponsorship.
+Xand's career status is rookie.
+Xand's age is 21.
+
+Yang plays guard, height 185 cm, weight 200 pounds.
+Yang earns $213000.
+Yang has a shoe sponsorship.
+Yang's career status is mid-career.
+Yang's age is 31.
+
+Zeke plays forward, height 191 cm, weight 218 pounds.
+Zeke earns $1855000.
+Zeke does not have a shoe sponsorship.
+Zeke's career status is rookie.
+Zeke's age is 19.
+
+Aabe plays center, height 196 cm, weight 235 pounds.
+Aabe earns $47000.
+Aabe does not have a shoe sponsorship.
+Aabe's career status is veteran.
+Aabe's age is 32.
+
+Bbeb plays forward, height 198 cm, weight 221 pounds.
+Bbeb earns $1409000.
+Bbeb does not have a shoe sponsorship.
+Bbeb's career status is rookie.
+Bbeb's age is 22.
+
+CCeb plays center, height 207 cm, weight 247 pounds.
+CCeb earns $1065000.
+CCeb does not have a shoe sponsorship.
+CCeb's career status is veteran.
+CCeb's age is 27.
+
+DDeb plays center, height 201 cm, weight 244 pounds.
+DDeb earns $1111000.
+DDeb has a shoe sponsorship.
+DDeb's career status is mid-career.
+DDeb's age is 25.
+
+Processed 31 lines.
+
+csv_reader_test
+  Normal end of execution.
+Sat Jan  4 11:06:45 2020

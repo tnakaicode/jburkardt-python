@@ -1,0 +1,87 @@
+Tue Jan 28 08:24:39 2020
+
+LUHN_TEST
+  Python version: 3.6.9
+  Test the LUHN library.
+
+LUHN_CHECK_DIGIT_CALCULATE_TEST:
+  Python version: 3.6.9
+  LUHN_CHECK_DIGIT_CALCULATE computes the Luhn check digit for a string of digits.
+
+  Check digit for 7992739871 is 3, expecting 3
+  Check digit for 9876234510 is 0, expecting 0
+  Check digit for 246897531 is 9, expecting 9
+  Check digit for 135798642 is 9, expecting 9
+
+LUHN_CHECK_DIGIT_CALCULATE_TEST:
+  Normal end of execution.
+
+LUHN_CHECKSUM_TEST:
+  Python version: 3.6.9
+  LUHN_CHECKSUM computes the Luhn checksum for a string.
+
+  Luhn check digit for 7992739871 is 3.
+
+  luhn_checksum ( 79927398710 ) = 7
+  luhn_checksum ( 79927398711 ) = 8
+  luhn_checksum ( 79927398712 ) = 9
+  luhn_checksum ( 79927398713 ) = 0
+  luhn_checksum ( 79927398714 ) = 1
+  luhn_checksum ( 79927398715 ) = 2
+  luhn_checksum ( 79927398716 ) = 3
+  luhn_checksum ( 79927398717 ) = 4
+  luhn_checksum ( 79927398718 ) = 5
+  luhn_checksum ( 79927398719 ) = 6
+
+  Luhn check digit for 9876234510 is 0.
+
+  luhn_checksum ( 98762345100 ) = 0
+  luhn_checksum ( 98762345101 ) = 1
+  luhn_checksum ( 98762345102 ) = 2
+  luhn_checksum ( 98762345103 ) = 3
+  luhn_checksum ( 98762345104 ) = 4
+  luhn_checksum ( 98762345105 ) = 5
+  luhn_checksum ( 98762345106 ) = 6
+  luhn_checksum ( 98762345107 ) = 7
+  luhn_checksum ( 98762345108 ) = 8
+  luhn_checksum ( 98762345109 ) = 9
+
+LUHN_CHECKSUM_TEST:
+  Normal end of execution.
+
+LUHN_IS_VALID_TEST:
+  Python version: 3.6.9
+  LUHN_IS_VALID reports whether a string has a valid Luhn checkdigit.
+
+  Luhn check digit for 7992739871 is 3.
+
+  luhn_is_valid ( 79927398710 ) = False
+  luhn_is_valid ( 79927398711 ) = False
+  luhn_is_valid ( 79927398712 ) = False
+  luhn_is_valid ( 79927398713 ) = True
+  luhn_is_valid ( 79927398714 ) = False
+  luhn_is_valid ( 79927398715 ) = False
+  luhn_is_valid ( 79927398716 ) = False
+  luhn_is_valid ( 79927398717 ) = False
+  luhn_is_valid ( 79927398718 ) = False
+  luhn_is_valid ( 79927398719 ) = False
+
+  Luhn check digit for 9876234510 is 0.
+
+  luhn_is_valid ( 98762345100 ) = True
+  luhn_is_valid ( 98762345101 ) = False
+  luhn_is_valid ( 98762345102 ) = False
+  luhn_is_valid ( 98762345103 ) = False
+  luhn_is_valid ( 98762345104 ) = False
+  luhn_is_valid ( 98762345105 ) = False
+  luhn_is_valid ( 98762345106 ) = False
+  luhn_is_valid ( 98762345107 ) = False
+  luhn_is_valid ( 98762345108 ) = False
+  luhn_is_valid ( 98762345109 ) = False
+
+LUHN_IS_VALID_TEST:
+  Normal end of execution.
+
+LUHN_TEST:
+  Normal end of execution.
+Tue Jan 28 08:24:39 2020

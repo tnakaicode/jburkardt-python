@@ -1,0 +1,90 @@
+Sat Jan 18 21:01:20 2020
+
+CVT_1D_LLOYD
+  Python version: 3.6.9
+  Apply Lloyd's algorithm repeatedly to a set of N points
+  in a 1D interval, seeking the Centroidal Voronoi 
+  Tessellation (CVT) solution.
+
+  Number of generators is 10
+  Number of iterations is 20
+  Initialization option is 1
+  Optional prefix for graphics files is "random_"
+
+  Initial generators:
+
+     0      0.043829
+     1     0.0661187
+     2      0.109957
+     3      0.218418
+     4      0.257578
+     5      0.415307
+     6      0.561695
+     7      0.633966
+     8      0.829509
+     9      0.956318
+
+  Final generators:
+
+     0     0.0346941
+     1      0.105865
+     2      0.182111
+     3      0.265968
+     4      0.358875
+     5      0.461068
+     6      0.571707
+     7      0.689205
+     8      0.811603
+     9      0.936886
+
+  Created plot file "random_energy.png".
+  Created plot file "random_motion.png".
+  Created plot file "random_evolution.png".
+
+CVT_1D_LLOYD
+  Normal end of execution.
+
+CVT_1D_LLOYD
+  Python version: 3.6.9
+  Apply Lloyd's algorithm repeatedly to a set of N points
+  in a 1D interval, seeking the Centroidal Voronoi 
+  Tessellation (CVT) solution.
+
+  Number of generators is 10
+  Number of iterations is 20
+  Initialization option is 2
+  Optional prefix for graphics files is "squashed_"
+
+  Initial generators:
+
+     0          0.01
+     1     0.0111111
+     2     0.0122222
+     3     0.0133333
+     4     0.0144444
+     5     0.0155556
+     6     0.0166667
+     7     0.0177778
+     8     0.0188889
+     9          0.02
+
+  Final generators:
+
+     0     0.0032498
+     1     0.0112221
+     2     0.0243716
+     3     0.0484786
+     4     0.0920218
+     5      0.165491
+     6      0.278978
+     7      0.438382
+     8      0.641588
+     9      0.876636
+
+  Created plot file "squashed_energy.png".
+  Created plot file "squashed_motion.png".
+  Created plot file "squashed_evolution.png".
+
+CVT_1D_LLOYD
+  Normal end of execution.
+Sat Jan 18 21:01:20 2020

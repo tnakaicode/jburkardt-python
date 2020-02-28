@@ -1,0 +1,19 @@
+Sun Jan 26 09:13:14 2020
+
+hypersphere_distance_test:
+  Python version: 3.6.9
+  Test hypersphere_distance.
+
+  Using M = 20 spatial dimension
+  Using N = 10000 sample points,
+  Estimated mean distance = 1.40592
+  Exact mean distance     = 1.41421
+  Estimated variance      = 0.0258626
+  Exact variance          = 0.0261225
+  Graphics saved as "hypersphere_distance_histogram.png"
+  Graphics saved as "hypersphere_distance_pdf.png"
+  Graphics saved as "hypersphere_distance_compare.png"
+
+hypersphere_distance_test:
+  Normal end of execution.
+Sun Jan 26 09:13:15 2020
