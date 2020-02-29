@@ -1,251 +1,257 @@
 #! /usr/bin/env python3
 #
-def clock_test ( ) :
 
-#*****************************************************************************80
-#
-## CLOCK_TEST uses CLOCK to time the NUMPY.RANDOM.RANDOM_SAMPLE() function.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    13 May 2013
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-  from time import clock
 
-  n_log_min = 10
-  n_log_max = 22
-  n_min = 2 ** n_log_min
-  n_max = 2 ** n_log_max
-  n_rep = 5
-  n_test = 1
+def clock_test():
 
-  print ( '' )
-  print ( 'CLOCK_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Use CLOCK() to time the RANDOM_SAMPLE function:' )
-  print ( '' )
-  print ( '    x = numpy.random.random_sample ( ( n, 1 ) );' )
-  print ( '' )
-  print ( '  Data vectors will be of minimum size %d' % ( n_min ) )
-  print ( '  Data vectors will be of maximum size %d' % ( n_max ) )
-  print ( '  Number of repetitions of the operation: %d' % ( n_rep ) )
-  print ( '' )
-  print ( '  Timing results in seconds:' )
-  print ( '' )
-  print ( '      Size         Rep #1         Rep #2         Rep #3        ' ),
-  print ( 'Rep #4         Rep #5' )
-  print ( '' )
+    # *****************************************************************************80
+    #
+    # CLOCK_TEST uses CLOCK to time the NUMPY.RANDOM.RANDOM_SAMPLE() function.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 May 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+    from time import clock
 
-  for n_log in range ( n_log_min, n_log_max + 1 ):
+    n_log_min = 10
+    n_log_max = 22
+    n_min = 2 ** n_log_min
+    n_max = 2 ** n_log_max
+    n_rep = 5
+    n_test = 1
 
-    n = 2 ** ( n_log )
+    print('')
+    print('CLOCK_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Use CLOCK() to time the RANDOM_SAMPLE function:')
+    print('')
+    print('    x = numpy.random.random_sample ( ( n, 1 ) );')
+    print('')
+    print('  Data vectors will be of minimum size %d' % (n_min))
+    print('  Data vectors will be of maximum size %d' % (n_max))
+    print('  Number of repetitions of the operation: %d' % (n_rep))
+    print('')
+    print('  Timing results in seconds:')
+    print('')
+    print('      Size         Rep #1         Rep #2         Rep #3        '),
+    print('Rep #4         Rep #5')
+    print('')
 
-    print ( '  %8d' % ( n ) ),
+    for n_log in range(n_log_min, n_log_max + 1):
 
-    for i_rep in range ( 0, n_rep ):
+        n = 2 ** (n_log)
 
-      seconds = clock ( )
+        print('  %8d' % (n)),
 
-      x = np.random.random_sample ( ( n, 1 ) );
+        for i_rep in range(0, n_rep):
 
-      seconds = clock ( ) - seconds
+            seconds = clock()
 
-      print ( '  %12f' % ( seconds ) ),
+            x = np.random.random_sample((n, 1))
 
-    print ( '' )
+            seconds = clock() - seconds
+
+            print('  %12f' % (seconds)),
+
+        print('')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'CLOCK_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('CLOCK_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def time_test ( ) :
 
-#*****************************************************************************80
-#
-## TIME_TEST uses TIME to time the NUMPY.RANDOM.RANDOM_SAMPLE() function.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    13 May 2013
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-  from time import time
+def time_test():
 
-  n_log_min = 10
-  n_log_max = 22
-  n_min = 2 ** n_log_min
-  n_max = 2 ** n_log_max
-  n_rep = 5
-  n_test = 1
+    # *****************************************************************************80
+    #
+    # TIME_TEST uses TIME to time the NUMPY.RANDOM.RANDOM_SAMPLE() function.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 May 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+    from time import time
 
-  print ( '' )
-  print ( 'TIME_TEST' )
-  print ( '  Use TIME() to time the RANDOM_SAMPLE function:' )
-  print ( '' )
-  print ( '    x = numpy.random.random_sample ( ( n, 1 ) );' )
-  print ( '' )
-  print ( '  Data vectors will be of minimum size %d' % ( n_min ) )
-  print ( '  Data vectors will be of maximum size %d' % ( n_max ) )
-  print ( '  Number of repetitions of the operation: %d' % ( n_rep ) )
-  print ( '' )
-  print ( '  Timing results in seconds:' )
-  print ( '' )
-  print ( '      Size         Rep #1         Rep #2         Rep #3        ' ),
-  print ( 'Rep #4         Rep #5' )
-  print ( '' )
+    n_log_min = 10
+    n_log_max = 22
+    n_min = 2 ** n_log_min
+    n_max = 2 ** n_log_max
+    n_rep = 5
+    n_test = 1
 
-  for n_log in range ( n_log_min, n_log_max + 1 ):
+    print('')
+    print('TIME_TEST')
+    print('  Use TIME() to time the RANDOM_SAMPLE function:')
+    print('')
+    print('    x = numpy.random.random_sample ( ( n, 1 ) );')
+    print('')
+    print('  Data vectors will be of minimum size %d' % (n_min))
+    print('  Data vectors will be of maximum size %d' % (n_max))
+    print('  Number of repetitions of the operation: %d' % (n_rep))
+    print('')
+    print('  Timing results in seconds:')
+    print('')
+    print('      Size         Rep #1         Rep #2         Rep #3        '),
+    print('Rep #4         Rep #5')
+    print('')
 
-    n = 2 ** ( n_log )
+    for n_log in range(n_log_min, n_log_max + 1):
 
-    print ( '  %8d' % ( n ) ),
+        n = 2 ** (n_log)
 
-    for i_rep in range ( 0, n_rep ):
+        print('  %8d' % (n)),
 
-      seconds = time ( )
+        for i_rep in range(0, n_rep):
 
-      x = np.random.random_sample ( ( n, 1 ) );
+            seconds = time()
 
-      seconds = time ( ) - seconds
+            x = np.random.random_sample((n, 1))
 
-      print ( '  %12f' % ( seconds ) ),
+            seconds = time() - seconds
 
-    print ( '' )
+            print('  %12f' % (seconds)),
+
+        print('')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'TIME_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('TIME_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def timer_test ( ):
 
-#*****************************************************************************80
-#
-## TIMER_TEST tests the TIMER library.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    13 May 2013
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
- 
-  print ( '' )
-  print ( 'TIMER_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Test the TIMER library.' )
+def timer_test():
 
-  clock_test ( )
-  time_test ( )
+    # *****************************************************************************80
+    #
+    # TIMER_TEST tests the TIMER library.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 May 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
+
+    print('')
+    print('TIMER_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Test the TIMER library.')
+
+    clock_test()
+    time_test()
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'TIMER_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('TIMER_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def timestamp ( ):
 
-#*****************************************************************************80
-#
-## TIMESTAMP prints the date as a timestamp.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    06 April 2013
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    None
-#
-  import time
+def timestamp():
 
-  t = time.time ( )
-  print ( time.ctime ( t ) )
+    # *****************************************************************************80
+    #
+    # TIMESTAMP prints the date as a timestamp.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    06 April 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    None
+    #
+    import time
 
-  return None
+    t = time.time()
+    print(time.ctime(t))
 
-def timestamp_test ( ):
+    return None
 
-#*****************************************************************************80
-#
-## TIMESTAMP_TEST tests TIMESTAMP.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    03 December 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    None
-#
-  import platform
 
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  TIMESTAMP prints a timestamp of the current date and time.' )
-  print ( '' )
+def timestamp_test():
 
-  timestamp ( )
+    # *****************************************************************************80
+    #
+    # TIMESTAMP_TEST tests TIMESTAMP.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 December 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    None
+    #
+    import platform
+
+    print('')
+    print('TIMESTAMP_TEST:')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  TIMESTAMP prints a timestamp of the current date and time.')
+    print('')
+
+    timestamp()
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('TIMESTAMP_TEST:')
+    print('  Normal end of execution.')
+    return
 
-if ( __name__ == '__main__' ):
-  timestamp ( )
-  timer_test ( )
-  timestamp ( )
 
+if (__name__ == '__main__'):
+    timestamp()
+    timer_test()
+    timestamp()
