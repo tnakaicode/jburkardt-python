@@ -1,0 +1,44 @@
+Wed Feb  5 08:02:08 2020
+
+TSP_BRUTE_TEST
+  Python version: 3.6.9
+  TSP_BRUTE solves a small traveling salesman problem.
+
+  Call tsp_brute ( five.txt )
+Wed Feb  5 08:02:09 2020
+
+TSP_BRUTE:
+  Python version: 3.6.9
+  Solve small traveling salesman problems by brute force.
+
+  Distance matrix filename is "five.txt"
+
+  The city-to-city distance matrix:
+
+     0     3     4     2     9
+     3     0     4     6     3
+     4     4     0     5     8
+     2     6     5     0     6
+     9     3     8     6     0
+
+  A minimal length itinerary:
+
+  Step  From  To        Distance
+
+     1     0   3               2
+     2     3   4               6
+     3     4   1               3
+     4     1   2               4
+     0     2   0               4
+  ----    --  --  --------------
+  Total:                      19
+
+  Number of paths checked = 120
+
+  Minimum length = 19
+  Average length = 25
+  Maximum length = 31
+
+TSP_BRUTE_TEST:
+  Normal end of execution.
+Wed Feb  5 08:02:09 2020
