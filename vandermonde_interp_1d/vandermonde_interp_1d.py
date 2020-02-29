@@ -24,31 +24,31 @@ def p00_data_num ( prob ):
 #
 #    Output, integer DATA_NUM, the number of data points.
 #
-  from sys import exit
+	from sys import exit
 
-  if ( prob == 1 ):
-    data_num = p01_data_num ( )
-  elif ( prob == 2 ):
-    data_num = p02_data_num ( )
-  elif ( prob == 3 ):
-    data_num = p03_data_num ( )
-  elif ( prob == 4 ):
-    data_num = p04_data_num ( )
-  elif ( prob == 5 ):
-    data_num = p05_data_num ( )
-  elif ( prob == 6 ):
-    data_num = p06_data_num ( )
-  elif ( prob == 7 ):
-    data_num = p07_data_num ( )
-  elif ( prob == 8 ):
-    data_num = p08_data_num ( )
-  else:
-    print ( '' )
-    print ( 'P00_DATA_NUM - Fatal error!' )
-    print ( '  Unexpected input value of PROB.' )
-    exit ( 'P00_DATA_NUM - Fatal error!' )
+	if ( prob == 1 ):
+		data_num = p01_data_num ( )
+	elif ( prob == 2 ):
+		data_num = p02_data_num ( )
+	elif ( prob == 3 ):
+		data_num = p03_data_num ( )
+	elif ( prob == 4 ):
+		data_num = p04_data_num ( )
+	elif ( prob == 5 ):
+		data_num = p05_data_num ( )
+	elif ( prob == 6 ):
+		data_num = p06_data_num ( )
+	elif ( prob == 7 ):
+		data_num = p07_data_num ( )
+	elif ( prob == 8 ):
+		data_num = p08_data_num ( )
+	else:
+		print ( '' )
+		print ( 'P00_DATA_NUM - Fatal error!' )
+		print ( '  Unexpected input value of PROB.' )
+		exit ( 'P00_DATA_NUM - Fatal error!' )
 
-  return data_num
+	return data_num
 
 def p01_data_num ( ):
 
@@ -72,9 +72,9 @@ def p01_data_num ( ):
 #
 #    Output, integer DATA_NUM, the number of data points.
 #
-  data_num = 18
+	data_num = 18
 
-  return data_num
+	return data_num
 
 def p02_data_num ( ):
 
@@ -98,9 +98,9 @@ def p02_data_num ( ):
 #
 #    Output, integer DATA_NUM, the number of data points.
 #
-  data_num = 18
+	data_num = 18
 
-  return data_num
+	return data_num
 
 def p03_data_num ( ):
 
@@ -124,9 +124,9 @@ def p03_data_num ( ):
 #
 #    Output, integer DATA_NUM, the number of data points.
 #
-  data_num = 11
+	data_num = 11
 
-  return data_num
+	return data_num
 
 def p04_data_num ( ):
 
@@ -150,9 +150,9 @@ def p04_data_num ( ):
 #
 #    Output, integer DATA_NUM, the number of data points.
 #
-  data_num = 8
+	data_num = 8
 
-  return data_num
+	return data_num
 
 def p05_data_num ( ):
 
@@ -176,9 +176,9 @@ def p05_data_num ( ):
 #
 #    Output, integer DATA_NUM, the number of data points.
 #
-  data_num = 9
+	data_num = 9
 
-  return data_num
+	return data_num
 
 def p06_data_num ( ):
 
@@ -202,9 +202,9 @@ def p06_data_num ( ):
 #
 #    Output, integer DATA_NUM, the number of data points.
 #
-  data_num = 49
+	data_num = 49
 
-  return data_num
+	return data_num
 
 def p07_data_num ( ):
 
@@ -228,9 +228,9 @@ def p07_data_num ( ):
 #
 #    Output, integer DATA_NUM, the number of data points.
 #
-  data_num = 4
+	data_num = 4
 
-  return data_num
+	return data_num
 
 def p08_data_num ( ):
 
@@ -254,9 +254,9 @@ def p08_data_num ( ):
 #
 #    Output, integer DATA_NUM, the number of data points.
 #
-  data_num = 12
+	data_num = 12
 
-  return data_num
+	return data_num
 
 def p00_data_num_test ( ):
 
@@ -276,30 +276,30 @@ def p00_data_num_test ( ):
 #
 #    John Burkardt
 #
-  import platform
+	import platform
 
-  print ( '' )
-  print ( 'P00_DATA_NUM_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  P00_DATA_NUM returns the number of data points for any problem.' )
-  print ( '' )
-  print ( '  Problem   Data Num' )
-  print ( '' )
+	print ( '' )
+	print ( 'P00_DATA_NUM_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  P00_DATA_NUM returns the number of data points for any problem.' )
+	print ( '' )
+	print ( '  Problem   Data Num' )
+	print ( '' )
 
-  prob_num = p00_prob_num ( )
+	prob_num = p00_prob_num ( )
 
-  for prob in range ( 1, prob_num + 1 ):
+	for prob in range ( 1, prob_num + 1 ):
 
-    data_num = p00_data_num ( prob )
+		data_num = p00_data_num ( prob )
 
-    print ( '  %7d  %9d' % ( prob, data_num ) )
+		print ( '  %7d  %9d' % ( prob, data_num ) )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'P00_DATA_NUM_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'P00_DATA_NUM_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def p00_data ( prob, dim_num, data_num ):
 
@@ -330,31 +330,31 @@ def p00_data ( prob, dim_num, data_num ):
 #
 #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
 #
-  from sys import exit
+	from sys import exit
 
-  if ( prob == 1 ):
-    p_data = p01_data ( dim_num, data_num )
-  elif ( prob == 2 ):
-    p_data = p02_data ( dim_num, data_num )
-  elif ( prob == 3 ):
-    p_data = p03_data ( dim_num, data_num )
-  elif ( prob == 4 ):
-    p_data = p04_data ( dim_num, data_num )
-  elif ( prob == 5 ):
-    p_data = p05_data ( dim_num, data_num )
-  elif ( prob == 6 ):
-    p_data = p06_data ( dim_num, data_num )
-  elif ( prob == 7 ):
-    p_data = p07_data ( dim_num, data_num )
-  elif ( prob == 8 ):
-    p_data = p08_data ( dim_num, data_num )
-  else:
-    print ( '' )
-    print ( 'P00_DATA - Fatal error!' )
-    print ( '  Unexpected input value of PROB.' )
-    exit ( 'P00_DATA - Fatal error!' )
+	if ( prob == 1 ):
+		p_data = p01_data ( dim_num, data_num )
+	elif ( prob == 2 ):
+		p_data = p02_data ( dim_num, data_num )
+	elif ( prob == 3 ):
+		p_data = p03_data ( dim_num, data_num )
+	elif ( prob == 4 ):
+		p_data = p04_data ( dim_num, data_num )
+	elif ( prob == 5 ):
+		p_data = p05_data ( dim_num, data_num )
+	elif ( prob == 6 ):
+		p_data = p06_data ( dim_num, data_num )
+	elif ( prob == 7 ):
+		p_data = p07_data ( dim_num, data_num )
+	elif ( prob == 8 ):
+		p_data = p08_data ( dim_num, data_num )
+	else:
+		print ( '' )
+		print ( 'P00_DATA - Fatal error!' )
+		print ( '  Unexpected input value of PROB.' )
+		exit ( 'P00_DATA - Fatal error!' )
 
-  return p_data
+	return p_data
 
 def p01_data ( dim_num, data_num ):
 
@@ -383,31 +383,31 @@ def p01_data ( dim_num, data_num ):
 #
 #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
 #
-  import numpy as np
+	import numpy as np
 
-  p_data = np.array ( [ \
-    [  0.0, 4.0 ], \
-    [  1.0, 5.0 ], \
-    [  2.0, 6.0 ], \
-    [  4.0, 6.0 ], \
-    [  5.0, 5.0 ], \
-    [  6.0, 3.0 ], \
-    [  7.0, 1.0 ], \
-    [  8.0, 1.0 ], \
-    [  9.0, 1.0 ], \
-    [ 10.0, 3.0 ], \
-    [ 11.0, 4.0 ], \
-    [ 12.0, 4.0 ], \
-    [ 13.0, 3.0 ], \
-    [ 14.0, 3.0 ], \
-    [ 15.0, 4.0 ], \
-    [ 16.0, 4.0 ], \
-    [ 17.0, 3.0 ], \
-    [ 18.0, 0.0 ] ] )
+	p_data = np.array ( [ \
+		[  0.0, 4.0 ], \
+		[  1.0, 5.0 ], \
+		[  2.0, 6.0 ], \
+		[  4.0, 6.0 ], \
+		[  5.0, 5.0 ], \
+		[  6.0, 3.0 ], \
+		[  7.0, 1.0 ], \
+		[  8.0, 1.0 ], \
+		[  9.0, 1.0 ], \
+		[ 10.0, 3.0 ], \
+		[ 11.0, 4.0 ], \
+		[ 12.0, 4.0 ], \
+		[ 13.0, 3.0 ], \
+		[ 14.0, 3.0 ], \
+		[ 15.0, 4.0 ], \
+		[ 16.0, 4.0 ], \
+		[ 17.0, 3.0 ], \
+		[ 18.0, 0.0 ] ] )
 
-  p_data = np.transpose ( p_data )
+	p_data = np.transpose ( p_data )
 
-  return p_data
+	return p_data
 
 def p02_data ( dim_num, data_num ):
 
@@ -440,31 +440,31 @@ def p02_data ( dim_num, data_num ):
 #
 #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
 #
-  import numpy as np
+	import numpy as np
 
-  p_data = np.array ( [ \
-   [  0.00,   0.00 ], \
-   [  1.34,   5.00 ], \
-   [  5.00,   8.66 ], \
-   [ 10.00,  10.00 ], \
-   [ 10.60,  10.40 ], \
-   [ 10.70,  12.00 ], \
-   [ 10.705, 28.60 ], \
-   [ 10.80,  30.20 ], \
-   [ 11.40,  30.60 ], \
-   [ 19.60,  30.60 ], \
-   [ 20.20,  30.20 ], \
-   [ 20.295, 28.60 ], \
-   [ 20.30,  12.00 ], \
-   [ 20.40,  10.40 ], \
-   [ 21.00,  10.00 ], \
-   [ 26.00,   8.66 ], \
-   [ 29.66,   5.00 ], \
-   [ 31.00,   0.00 ] ] )
+	p_data = np.array ( [ \
+	 [  0.00,   0.00 ], \
+	 [  1.34,   5.00 ], \
+	 [  5.00,   8.66 ], \
+	 [ 10.00,  10.00 ], \
+	 [ 10.60,  10.40 ], \
+	 [ 10.70,  12.00 ], \
+	 [ 10.705, 28.60 ], \
+	 [ 10.80,  30.20 ], \
+	 [ 11.40,  30.60 ], \
+	 [ 19.60,  30.60 ], \
+	 [ 20.20,  30.20 ], \
+	 [ 20.295, 28.60 ], \
+	 [ 20.30,  12.00 ], \
+	 [ 20.40,  10.40 ], \
+	 [ 21.00,  10.00 ], \
+	 [ 26.00,   8.66 ], \
+	 [ 29.66,   5.00 ], \
+	 [ 31.00,   0.00 ] ] )
 
-  p_data = np.transpose ( p_data )
+	p_data = np.transpose ( p_data )
 
-  return p_data
+	return p_data
 
 def p03_data ( dim_num, data_num ):
 
@@ -493,24 +493,24 @@ def p03_data ( dim_num, data_num ):
 #
 #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
 #
-  import numpy as np
+	import numpy as np
 
-  p_data = np.array ( [ \
-    [  0.0,  0.0 ], \
-    [  2.0, 10.0 ], \
-    [  3.0, 10.0 ], \
-    [  5.0, 10.0 ], \
-    [  6.0, 10.0 ], \
-    [  8.0, 10.0 ], \
-    [  9.0, 10.5 ], \
-    [ 11.0, 15.0 ], \
-    [ 12.0, 50.0 ], \
-    [ 14.0, 60.0 ], \
-    [ 15.0, 85.0 ] ] )
+	p_data = np.array ( [ \
+		[  0.0,  0.0 ], \
+		[  2.0, 10.0 ], \
+		[  3.0, 10.0 ], \
+		[  5.0, 10.0 ], \
+		[  6.0, 10.0 ], \
+		[  8.0, 10.0 ], \
+		[  9.0, 10.5 ], \
+		[ 11.0, 15.0 ], \
+		[ 12.0, 50.0 ], \
+		[ 14.0, 60.0 ], \
+		[ 15.0, 85.0 ] ] )
 
-  p_data = np.transpose ( p_data )
+	p_data = np.transpose ( p_data )
 
-  return p_data
+	return p_data
 
 def p04_data ( dim_num, data_num ):
 
@@ -539,21 +539,21 @@ def p04_data ( dim_num, data_num ):
 #
 #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
 #
-  import numpy as np
+	import numpy as np
 
-  p_data = np.array ( [ \
-   [ 0.00,  0.00 ], \
-   [ 0.05,  0.70 ], \
-   [ 0.10,  1.00 ], \
-   [ 0.20,  1.00 ], \
-   [ 0.80,  0.30 ], \
-   [ 0.85,  0.05 ], \
-   [ 0.90,  0.10 ], \
-   [ 1.00,  1.00 ] ] )
+	p_data = np.array ( [ \
+	 [ 0.00,  0.00 ], \
+	 [ 0.05,  0.70 ], \
+	 [ 0.10,  1.00 ], \
+	 [ 0.20,  1.00 ], \
+	 [ 0.80,  0.30 ], \
+	 [ 0.85,  0.05 ], \
+	 [ 0.90,  0.10 ], \
+	 [ 1.00,  1.00 ] ] )
 
-  p_data = np.transpose ( p_data )
+	p_data = np.transpose ( p_data )
 
-  return p_data
+	return p_data
 
 def p05_data ( dim_num, data_num ):
 
@@ -582,22 +582,22 @@ def p05_data ( dim_num, data_num ):
 #
 #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
 #
-  import numpy as np
+	import numpy as np
 
-  p_data = np.array ( [ \
-    [ 0.00, 0.00 ], \
-    [ 0.10, 0.90 ], \
-    [ 0.20, 0.95 ], \
-    [ 0.30, 0.90 ], \
-    [ 0.40, 0.10 ], \
-    [ 0.50, 0.05 ], \
-    [ 0.60, 0.05 ], \
-    [ 0.80, 0.20 ], \
-    [ 1.00, 1.00 ] ] )
+	p_data = np.array ( [ \
+		[ 0.00, 0.00 ], \
+		[ 0.10, 0.90 ], \
+		[ 0.20, 0.95 ], \
+		[ 0.30, 0.90 ], \
+		[ 0.40, 0.10 ], \
+		[ 0.50, 0.05 ], \
+		[ 0.60, 0.05 ], \
+		[ 0.80, 0.20 ], \
+		[ 1.00, 1.00 ] ] )
 
-  p_data = np.transpose ( p_data )
+	p_data = np.transpose ( p_data )
 
-  return p_data
+	return p_data
 
 def p06_data ( dim_num, data_num ):
 
@@ -626,62 +626,62 @@ def p06_data ( dim_num, data_num ):
 #
 #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
 #
-  import numpy as np
+	import numpy as np
 
-  p_data = np.array ( [ \
-   [ 595.0, 0.644 ], \
-   [ 605.0, 0.622 ], \
-   [ 615.0, 0.638 ], \
-   [ 625.0, 0.649 ], \
-   [ 635.0, 0.652 ], \
-   [ 645.0, 0.639 ], \
-   [ 655.0, 0.646 ], \
-   [ 665.0, 0.657 ], \
-   [ 675.0, 0.652 ], \
-   [ 685.0, 0.655 ], \
-   [ 695.0, 0.644 ], \
-   [ 705.0, 0.663 ], \
-   [ 715.0, 0.663 ], \
-   [ 725.0, 0.668 ], \
-   [ 735.0, 0.676 ], \
-   [ 745.0, 0.676 ], \
-   [ 755.0, 0.686 ], \
-   [ 765.0, 0.679 ], \
-   [ 775.0, 0.678 ], \
-   [ 785.0, 0.683 ], \
-   [ 795.0, 0.694 ], \
-   [ 805.0, 0.699 ], \
-   [ 815.0, 0.710 ], \
-   [ 825.0, 0.730 ], \
-   [ 835.0, 0.763 ], \
-   [ 845.0, 0.812 ], \
-   [ 855.0, 0.907 ], \
-   [ 865.0, 1.044 ], \
-   [ 875.0, 1.336 ], \
-   [ 885.0, 1.881 ], \
-   [ 895.0, 2.169 ], \
-   [ 905.0, 2.075 ], \
-   [ 915.0, 1.598 ], \
-   [ 925.0, 1.211 ], \
-   [ 935.0, 0.916 ], \
-   [ 945.0, 0.746 ], \
-   [ 955.0, 0.672 ], \
-   [ 965.0, 0.627 ], \
-   [ 975.0, 0.615 ], \
-   [ 985.0, 0.607 ], \
-   [ 995.0, 0.606 ], \
-   [1005.0, 0.609 ], \
-   [1015.0, 0.603 ], \
-   [1025.0, 0.601 ], \
-   [1035.0, 0.603 ], \
-   [1045.0, 0.601 ], \
-   [1055.0, 0.611 ], \
-   [1065.0, 0.601 ], \
-   [1075.0, 0.608 ] ] )
+	p_data = np.array ( [ \
+	 [ 595.0, 0.644 ], \
+	 [ 605.0, 0.622 ], \
+	 [ 615.0, 0.638 ], \
+	 [ 625.0, 0.649 ], \
+	 [ 635.0, 0.652 ], \
+	 [ 645.0, 0.639 ], \
+	 [ 655.0, 0.646 ], \
+	 [ 665.0, 0.657 ], \
+	 [ 675.0, 0.652 ], \
+	 [ 685.0, 0.655 ], \
+	 [ 695.0, 0.644 ], \
+	 [ 705.0, 0.663 ], \
+	 [ 715.0, 0.663 ], \
+	 [ 725.0, 0.668 ], \
+	 [ 735.0, 0.676 ], \
+	 [ 745.0, 0.676 ], \
+	 [ 755.0, 0.686 ], \
+	 [ 765.0, 0.679 ], \
+	 [ 775.0, 0.678 ], \
+	 [ 785.0, 0.683 ], \
+	 [ 795.0, 0.694 ], \
+	 [ 805.0, 0.699 ], \
+	 [ 815.0, 0.710 ], \
+	 [ 825.0, 0.730 ], \
+	 [ 835.0, 0.763 ], \
+	 [ 845.0, 0.812 ], \
+	 [ 855.0, 0.907 ], \
+	 [ 865.0, 1.044 ], \
+	 [ 875.0, 1.336 ], \
+	 [ 885.0, 1.881 ], \
+	 [ 895.0, 2.169 ], \
+	 [ 905.0, 2.075 ], \
+	 [ 915.0, 1.598 ], \
+	 [ 925.0, 1.211 ], \
+	 [ 935.0, 0.916 ], \
+	 [ 945.0, 0.746 ], \
+	 [ 955.0, 0.672 ], \
+	 [ 965.0, 0.627 ], \
+	 [ 975.0, 0.615 ], \
+	 [ 985.0, 0.607 ], \
+	 [ 995.0, 0.606 ], \
+	 [1005.0, 0.609 ], \
+	 [1015.0, 0.603 ], \
+	 [1025.0, 0.601 ], \
+	 [1035.0, 0.603 ], \
+	 [1045.0, 0.601 ], \
+	 [1055.0, 0.611 ], \
+	 [1065.0, 0.601 ], \
+	 [1075.0, 0.608 ] ] )
 
-  p_data = np.transpose ( p_data )
+	p_data = np.transpose ( p_data )
 
-  return p_data
+	return p_data
 
 def p07_data ( dim_num, data_num ):
 
@@ -710,17 +710,17 @@ def p07_data ( dim_num, data_num ):
 #
 #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
 #
-  import numpy as np
+	import numpy as np
 
-  p_data = np.array ( [ \
-   [ 0.0, 1.0 ], \
-   [ 1.0, 2.0 ], \
-   [ 4.0, 2.0 ], \
-   [ 5.0, 1.0 ] ] )
+	p_data = np.array ( [ \
+	 [ 0.0, 1.0 ], \
+	 [ 1.0, 2.0 ], \
+	 [ 4.0, 2.0 ], \
+	 [ 5.0, 1.0 ] ] )
 
-  p_data = np.transpose ( p_data )
+	p_data = np.transpose ( p_data )
 
-  return p_data
+	return p_data
 
 def p08_data ( dim_num, data_num ):
 
@@ -749,25 +749,25 @@ def p08_data ( dim_num, data_num ):
 #
 #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
 #
-  import numpy as np
+	import numpy as np
 
-  p_data = np.array ( [ \
-   [ -1.0, 1.00 ], \
-   [ -0.8, 0.64 ], \
-   [ -0.6, 0.36 ], \
-   [ -0.4, 0.16 ], \
-   [ -0.2, 0.04 ], \
-   [  0.0, 0.00 ], \
-   [  0.2, 0.04 ], \
-   [  0.20001, 0.05 ], \
-   [  0.4, 0.16 ], \
-   [  0.6, 0.36 ], \
-   [  0.8, 0.64 ], \
-   [  1.0, 1.00 ] ] )
+	p_data = np.array ( [ \
+	 [ -1.0, 1.00 ], \
+	 [ -0.8, 0.64 ], \
+	 [ -0.6, 0.36 ], \
+	 [ -0.4, 0.16 ], \
+	 [ -0.2, 0.04 ], \
+	 [  0.0, 0.00 ], \
+	 [  0.2, 0.04 ], \
+	 [  0.20001, 0.05 ], \
+	 [  0.4, 0.16 ], \
+	 [  0.6, 0.36 ], \
+	 [  0.8, 0.64 ], \
+	 [  1.0, 1.00 ] ] )
 
-  p_data = np.transpose ( p_data )
+	p_data = np.transpose ( p_data )
 
-  return p_data
+	return p_data
 
 def p00_data_test ( ):
 
@@ -787,36 +787,36 @@ def p00_data_test ( ):
 #
 #    John Burkardt
 #
-  import platform
+	import platform
 
-  print ( '' )
-  print ( 'P00_DATA_TEST tests P00_DATA' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  P00_DATA returns the actual (MxN) data for any problem.' )
+	print ( '' )
+	print ( 'P00_DATA_TEST tests P00_DATA' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  P00_DATA returns the actual (MxN) data for any problem.' )
 
-  prob_num = p00_prob_num ( )
+	prob_num = p00_prob_num ( )
 
-  for prob in range ( 1, prob_num + 1 ):
+	for prob in range ( 1, prob_num + 1 ):
 
-    print ( '' )
-    print ( '  Problem %d' % ( prob ) )
+		print ( '' )
+		print ( '  Problem %d' % ( prob ) )
 
-    data_num = p00_data_num ( prob )
-    print ( '  DATA_NUM = %d' % ( data_num ) )
+		data_num = p00_data_num ( prob )
+		print ( '  DATA_NUM = %d' % ( data_num ) )
 
-    dim_num = p00_dim_num ( prob )
-    print ( '  DIM_NUM  = %d' % ( dim_num ) )
+		dim_num = p00_dim_num ( prob )
+		print ( '  DIM_NUM  = %d' % ( dim_num ) )
 
-    p = p00_data ( prob, dim_num, data_num )
+		p = p00_data ( prob, dim_num, data_num )
 
-    r8mat_transpose_print ( dim_num, data_num, p, '  Data array:' )
+		r8mat_transpose_print ( dim_num, data_num, p, '  Data array:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'P00_DATA_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'P00_DATA_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def p00_dim_num ( prob ):
 
@@ -843,29 +843,29 @@ def p00_dim_num ( prob ):
 #    Output, integer DIM_NUM, the spatial dimension of the
 #    dependent variables.
 #
-  if ( prob == 1 ):
-    dim_num = p01_dim_num ( )
-  elif ( prob == 2 ):
-    dim_num = p02_dim_num ( )
-  elif ( prob == 3 ):
-    dim_num = p03_dim_num ( )
-  elif ( prob == 4 ):
-    dim_num = p04_dim_num ( )
-  elif ( prob == 5 ):
-    dim_num = p05_dim_num ( )
-  elif ( prob == 6 ):
-    dim_num = p06_dim_num ( )
-  elif ( prob == 7 ):
-    dim_num = p07_dim_num ( )
-  elif ( prob == 8 ):
-    dim_num = p08_dim_num ( )
-  else:
-    print ( '' )
-    print ( 'P00_DIM_NUM - Fatal error!' )
-    print ( '  Unexpected input value of PROB.' )
-    exit ( 'P00_DIM_NUM - Fatal error!' )
+	if ( prob == 1 ):
+		dim_num = p01_dim_num ( )
+	elif ( prob == 2 ):
+		dim_num = p02_dim_num ( )
+	elif ( prob == 3 ):
+		dim_num = p03_dim_num ( )
+	elif ( prob == 4 ):
+		dim_num = p04_dim_num ( )
+	elif ( prob == 5 ):
+		dim_num = p05_dim_num ( )
+	elif ( prob == 6 ):
+		dim_num = p06_dim_num ( )
+	elif ( prob == 7 ):
+		dim_num = p07_dim_num ( )
+	elif ( prob == 8 ):
+		dim_num = p08_dim_num ( )
+	else:
+		print ( '' )
+		print ( 'P00_DIM_NUM - Fatal error!' )
+		print ( '  Unexpected input value of PROB.' )
+		exit ( 'P00_DIM_NUM - Fatal error!' )
 
-  return dim_num
+	return dim_num
 
 def p01_dim_num ( ):
 
@@ -890,9 +890,9 @@ def p01_dim_num ( ):
 #    Output, integer DIM_NUM, the spatial dimension of the
 #    dependent variables.
 #
-  dim_num = 2
+	dim_num = 2
 
-  return dim_num
+	return dim_num
 
 def p02_dim_num ( ):
 
@@ -917,9 +917,9 @@ def p02_dim_num ( ):
 #    Output, integer DIM_NUM, the spatial dimension of the
 #    dependent variables.
 #
-  dim_num = 2
+	dim_num = 2
 
-  return dim_num
+	return dim_num
 
 def p03_dim_num ( ):
 
@@ -944,9 +944,9 @@ def p03_dim_num ( ):
 #    Output, integer DIM_NUM, the spatial dimension of the
 #    dependent variables.
 #
-  dim_num = 2
+	dim_num = 2
 
-  return dim_num
+	return dim_num
 
 def p04_dim_num ( ):
 
@@ -971,9 +971,9 @@ def p04_dim_num ( ):
 #    Output, integer DIM_NUM, the spatial dimension of the
 #    dependent variables.
 #
-  dim_num = 2
+	dim_num = 2
 
-  return dim_num
+	return dim_num
 
 def p05_dim_num ( ):
 
@@ -998,9 +998,9 @@ def p05_dim_num ( ):
 #    Output, integer DIM_NUM, the spatial dimension of the
 #    dependent variables.
 #
-  dim_num = 2
+	dim_num = 2
 
-  return dim_num
+	return dim_num
 
 def p06_dim_num ( ):
 
@@ -1025,9 +1025,9 @@ def p06_dim_num ( ):
 #    Output, integer DIM_NUM, the spatial dimension of the
 #    dependent variables.
 #
-  dim_num = 2
+	dim_num = 2
 
-  return dim_num
+	return dim_num
 
 def p07_dim_num ( ):
 
@@ -1052,9 +1052,9 @@ def p07_dim_num ( ):
 #    Output, integer DIM_NUM, the spatial dimension of the
 #    dependent variables.
 #
-  dim_num = 2
+	dim_num = 2
 
-  return dim_num
+	return dim_num
 
 def p08_dim_num ( ):
 
@@ -1079,9 +1079,9 @@ def p08_dim_num ( ):
 #    Output, integer DIM_NUM, the spatial dimension of the
 #    dependent variables.
 #
-  dim_num = 2
+	dim_num = 2
 
-  return dim_num
+	return dim_num
 
 def p00_dim_num_test ( ):
 
@@ -1101,30 +1101,30 @@ def p00_dim_num_test ( ):
 #
 #    John Burkardt
 #
-  import platform
+	import platform
 
-  print ( '' )
-  print ( 'P00_DIM_NUM_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  P00_DIM_NUM returns the spatial dimension for any problem.' )
-  print ( '' )
-  print ( '  Problem  Dimension' )
-  print ( '' )
+	print ( '' )
+	print ( 'P00_DIM_NUM_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  P00_DIM_NUM returns the spatial dimension for any problem.' )
+	print ( '' )
+	print ( '  Problem  Dimension' )
+	print ( '' )
 
-  prob_num = p00_prob_num ( )
+	prob_num = p00_prob_num ( )
 
-  for prob in range ( 1, prob_num + 1 ):
+	for prob in range ( 1, prob_num + 1 ):
 
-    dim_num = p00_dim_num ( prob )
+		dim_num = p00_dim_num ( prob )
 
-    print ( '  %7d  %9d' % ( prob, dim_num ) )
+		print ( '  %7d  %9d' % ( prob, dim_num ) )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'P00_DIM_NUM_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'P00_DIM_NUM_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def p00_prob_num ( ):
 
@@ -1148,9 +1148,9 @@ def p00_prob_num ( ):
 #
 #    Output, integer VALUE, the number of problems.
 #
-  value = 8
+	value = 8
 
-  return value
+	return value
 
 def p00_prob_num_test ( ):
 
@@ -1170,24 +1170,24 @@ def p00_prob_num_test ( ):
 #
 #    John Burkardt
 #
-  import platform
+	import platform
 
-  print ( '' )
-  print ( 'P00_PROB_NUM_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  P00_PROB_NUM returns the number of test problems.' )
+	print ( '' )
+	print ( 'P00_PROB_NUM_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  P00_PROB_NUM returns the number of test problems.' )
 
-  num = p00_prob_num ( )
+	num = p00_prob_num ( )
 
-  print ( '' )
-  print ( '  TEST_INTERP includes %d test problems.' % ( num ) )
+	print ( '' )
+	print ( '  TEST_INTERP includes %d test problems.' % ( num ) )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'P00_PROB_NUM_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'P00_PROB_NUM_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8mat_print ( m, n, a, title ):
 
@@ -1217,9 +1217,9 @@ def r8mat_print ( m, n, a, title ):
 #
 #    Input, string TITLE, a title.
 #
-  r8mat_print_some ( m, n, a, 0, 0, m - 1, n - 1, title )
+	r8mat_print_some ( m, n, a, 0, 0, m - 1, n - 1, title )
 
-  return
+	return
 
 def r8mat_print_test ( ):
 
@@ -1239,29 +1239,29 @@ def r8mat_print_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'R8MAT_PRINT_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_PRINT prints an R8MAT.' )
+	print ( '' )
+	print ( 'R8MAT_PRINT_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8MAT_PRINT prints an R8MAT.' )
 
-  m = 4
-  n = 6
-  v = np.array ( [ \
-    [ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
-    [ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
-    [ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
-    [ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
-  r8mat_print ( m, n, v, '  Here is an R8MAT:' )
+	m = 4
+	n = 6
+	v = np.array ( [ \
+		[ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
+		[ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
+		[ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
+		[ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
+	r8mat_print ( m, n, v, '  Here is an R8MAT:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8MAT_PRINT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8MAT_PRINT_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8mat_print_some ( m, n, a, ilo, jlo, ihi, jhi, title ):
 
@@ -1293,44 +1293,44 @@ def r8mat_print_some ( m, n, a, ilo, jlo, ihi, jhi, title ):
 #
 #    Input, string TITLE, a title.
 #
-  incx = 5
+	incx = 5
 
-  print ( '' )
-  print ( title )
+	print ( '' )
+	print ( title )
 
-  if ( m <= 0 or n <= 0 ):
-    print ( '' )
-    print ( '  (None)' )
-    return
+	if ( m <= 0 or n <= 0 ):
+		print ( '' )
+		print ( '  (None)' )
+		return
 
-  for j2lo in range ( max ( jlo, 0 ), min ( jhi + 1, n ), incx ):
+	for j2lo in range ( max ( jlo, 0 ), min ( jhi + 1, n ), incx ):
 
-    j2hi = j2lo + incx - 1
-    j2hi = min ( j2hi, n )
-    j2hi = min ( j2hi, jhi )
-    
-    print ( '' )
-    print ( '  Col: ', end = '' )
+		j2hi = j2lo + incx - 1
+		j2hi = min ( j2hi, n )
+		j2hi = min ( j2hi, jhi )
+		
+		print ( '' )
+		print ( '  Col: ', end = '' )
 
-    for j in range ( j2lo, j2hi + 1 ):
-      print ( '%7d       ' % ( j ), end = '' )
+		for j in range ( j2lo, j2hi + 1 ):
+			print ( '%7d       ' % ( j ), end = '' )
 
-    print ( '' )
-    print ( '  Row' )
+		print ( '' )
+		print ( '  Row' )
 
-    i2lo = max ( ilo, 0 )
-    i2hi = min ( ihi, m )
+		i2lo = max ( ilo, 0 )
+		i2hi = min ( ihi, m )
 
-    for i in range ( i2lo, i2hi + 1 ):
+		for i in range ( i2lo, i2hi + 1 ):
 
-      print ( '%7d :' % ( i ), end = '' )
-      
-      for j in range ( j2lo, j2hi + 1 ):
-        print ( '%12g  ' % ( a[i,j] ), end = '' )
+			print ( '%7d :' % ( i ), end = '' )
+			
+			for j in range ( j2lo, j2hi + 1 ):
+				print ( '%12g  ' % ( a[i,j] ), end = '' )
 
-      print ( '' )
+			print ( '' )
 
-  return
+	return
 
 def r8mat_print_some_test ( ):
 
@@ -1350,29 +1350,29 @@ def r8mat_print_some_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'R8MAT_PRINT_SOME_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_PRINT_SOME prints some of an R8MAT.' )
+	print ( '' )
+	print ( 'R8MAT_PRINT_SOME_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8MAT_PRINT_SOME prints some of an R8MAT.' )
 
-  m = 4
-  n = 6
-  v = np.array ( [ \
-    [ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
-    [ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
-    [ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
-    [ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
-  r8mat_print_some ( m, n, v, 0, 3, 2, 5, '  Here is an R8MAT:' )
+	m = 4
+	n = 6
+	v = np.array ( [ \
+		[ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
+		[ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
+		[ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
+		[ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
+	r8mat_print_some ( m, n, v, 0, 3, 2, 5, '  Here is an R8MAT:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8MAT_PRINT_SOME_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8MAT_PRINT_SOME_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8mat_transpose_print ( m, n, a, title ):
 
@@ -1402,9 +1402,9 @@ def r8mat_transpose_print ( m, n, a, title ):
 #
 #    Input, string TITLE, a title.
 #
-  r8mat_transpose_print_some ( m, n, a, 0, 0, m - 1, n - 1, title )
+	r8mat_transpose_print_some ( m, n, a, 0, 0, m - 1, n - 1, title )
 
-  return
+	return
 
 def r8mat_transpose_print_test ( ):
 
@@ -1424,29 +1424,29 @@ def r8mat_transpose_print_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'R8MAT_TRANSPOSE_PRINT_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_TRANSPOSE_PRINT prints an R8MAT.' )
+	print ( '' )
+	print ( 'R8MAT_TRANSPOSE_PRINT_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8MAT_TRANSPOSE_PRINT prints an R8MAT.' )
 
-  m = 4
-  n = 3
-  v = np.array ( [ \
-    [ 11.0, 12.0, 13.0 ], 
-    [ 21.0, 22.0, 23.0 ], 
-    [ 31.0, 32.0, 33.0 ], 
-    [ 41.0, 42.0, 43.0 ] ], dtype = np.float64 )
-  r8mat_transpose_print ( m, n, v, '  Here is an R8MAT, transposed:' )
+	m = 4
+	n = 3
+	v = np.array ( [ \
+		[ 11.0, 12.0, 13.0 ], 
+		[ 21.0, 22.0, 23.0 ], 
+		[ 31.0, 32.0, 33.0 ], 
+		[ 41.0, 42.0, 43.0 ] ], dtype = np.float64 )
+	r8mat_transpose_print ( m, n, v, '  Here is an R8MAT, transposed:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8MAT_TRANSPOSE_PRINT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8MAT_TRANSPOSE_PRINT_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8mat_transpose_print_some ( m, n, a, ilo, jlo, ihi, jhi, title ):
 
@@ -1478,44 +1478,44 @@ def r8mat_transpose_print_some ( m, n, a, ilo, jlo, ihi, jhi, title ):
 #
 #    Input, string TITLE, a title.
 #
-  incx = 5
+	incx = 5
 
-  print ( '' )
-  print ( title )
+	print ( '' )
+	print ( title )
 
-  if ( m <= 0 or n <= 0 ):
-    print ( '' )
-    print ( '  (None)' )
-    return
+	if ( m <= 0 or n <= 0 ):
+		print ( '' )
+		print ( '  (None)' )
+		return
 
-  for i2lo in range ( max ( ilo, 0 ), min ( ihi, m - 1 ), incx ):
+	for i2lo in range ( max ( ilo, 0 ), min ( ihi, m - 1 ), incx ):
 
-    i2hi = i2lo + incx - 1
-    i2hi = min ( i2hi, m - 1 )
-    i2hi = min ( i2hi, ihi )
-    
-    print ( '' )
-    print ( '  Row: ', end = '' )
+		i2hi = i2lo + incx - 1
+		i2hi = min ( i2hi, m - 1 )
+		i2hi = min ( i2hi, ihi )
+		
+		print ( '' )
+		print ( '  Row: ', end = '' )
 
-    for i in range ( i2lo, i2hi + 1 ):
-      print ( '%7d       ' % ( i ), end = '' )
+		for i in range ( i2lo, i2hi + 1 ):
+			print ( '%7d       ' % ( i ), end = '' )
 
-    print ( '' )
-    print ( '  Col' )
+		print ( '' )
+		print ( '  Col' )
 
-    j2lo = max ( jlo, 0 )
-    j2hi = min ( jhi, n - 1 )
+		j2lo = max ( jlo, 0 )
+		j2hi = min ( jhi, n - 1 )
 
-    for j in range ( j2lo, j2hi + 1 ):
+		for j in range ( j2lo, j2hi + 1 ):
 
-      print ( '%7d :' % ( j ), end = '' )
-      
-      for i in range ( i2lo, i2hi + 1 ):
-        print ( '%12g  ' % ( a[i,j] ), end = '' )
+			print ( '%7d :' % ( j ), end = '' )
+			
+			for i in range ( i2lo, i2hi + 1 ):
+				print ( '%12g  ' % ( a[i,j] ), end = '' )
 
-      print ( '' )
+			print ( '' )
 
-  return
+	return
 
 def r8mat_transpose_print_some_test ( ):
 
@@ -1535,29 +1535,29 @@ def r8mat_transpose_print_some_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'R8MAT_TRANSPOSE_PRINT_SOME_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.' )
+	print ( '' )
+	print ( 'R8MAT_TRANSPOSE_PRINT_SOME_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.' )
 
-  m = 4
-  n = 6
-  v = np.array ( [ \
-    [ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
-    [ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
-    [ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
-    [ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
-  r8mat_transpose_print_some ( m, n, v, 0, 3, 2, 5, '  R8MAT, rows 0:2, cols 3:5:' )
+	m = 4
+	n = 6
+	v = np.array ( [ \
+		[ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
+		[ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
+		[ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
+		[ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
+	r8mat_transpose_print_some ( m, n, v, 0, 3, 2, 5, '  R8MAT, rows 0:2, cols 3:5:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8MAT_TRANSPOSE_PRINT_SOME_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8MAT_TRANSPOSE_PRINT_SOME_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8poly_print ( m, a, title ):
 
@@ -1593,42 +1593,42 @@ def r8poly_print ( m, a, title ):
 #
 #    Input, string TITLE, a title.
 #
-  if ( 0 < len ( title ) ):
-    print ( '' )
-    print ( title )
-  print ( '' )
+	if ( 0 < len ( title ) ):
+		print ( '' )
+		print ( title )
+	print ( '' )
 
-  if ( a[m] < 0.0 ):
-    plus_minus = '-'
-  else:
-    plus_minus = ' '
+	if ( a[m] < 0.0 ):
+		plus_minus = '-'
+	else:
+		plus_minus = ' '
 
-  mag = abs ( a[m] )
+	mag = abs ( a[m] )
 
-  if ( 2 <= m ):
-    print ( '  p(x) = %c %g * x^%d' % ( plus_minus, mag, m ) )
-  elif ( m == 1 ):
-    print ( '  p(x) = %c %g * x' % ( plus_minus, mag ) )
-  elif ( m == 0 ):
-    print ( '  p(x) = %c %g' % ( plus_minus, mag ) )
+	if ( 2 <= m ):
+		print ( '  p(x) = %c %g * x^%d' % ( plus_minus, mag, m ) )
+	elif ( m == 1 ):
+		print ( '  p(x) = %c %g * x' % ( plus_minus, mag ) )
+	elif ( m == 0 ):
+		print ( '  p(x) = %c %g' % ( plus_minus, mag ) )
 
-  for i in range ( m - 1, -1, -1 ):
+	for i in range ( m - 1, -1, -1 ):
 
-    if ( a[i] < 0.0 ):
-      plus_minus = '-'
-    else:
-      plus_minus = '+'
+		if ( a[i] < 0.0 ):
+			plus_minus = '-'
+		else:
+			plus_minus = '+'
 
-    mag = abs ( a[i] )
+		mag = abs ( a[i] )
 
-    if ( mag != 0.0 ):
+		if ( mag != 0.0 ):
 
-      if ( 2 <= i ):
-        print ( '         %c %g * x^%d' % ( plus_minus, mag, i ) )
-      elif ( i == 1 ):
-        print ( '         %c %g * x' % ( plus_minus, mag ) )
-      elif ( i == 0 ):
-        print ( '         %c %g' % ( plus_minus, mag ) )
+			if ( 2 <= i ):
+				print ( '         %c %g * x^%d' % ( plus_minus, mag, i ) )
+			elif ( i == 1 ):
+				print ( '         %c %g * x' % ( plus_minus, mag ) )
+			elif ( i == 0 ):
+				print ( '         %c %g' % ( plus_minus, mag ) )
 
 def r8poly_print_test ( ):
 
@@ -1648,26 +1648,26 @@ def r8poly_print_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'R8POLY_PRINT_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8POLY_PRINT prints an R8POLY.' )
+	print ( '' )
+	print ( 'R8POLY_PRINT_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8POLY_PRINT prints an R8POLY.' )
 
-  m = 5
-  c = np.array ( [ 12.0, -3.4, 56.0, 0.0, 0.78, 9.0 ] )
+	m = 5
+	c = np.array ( [ 12.0, -3.4, 56.0, 0.0, 0.78, 9.0 ] )
 
-  r8poly_print ( m, c, '  The R8POLY:' )
+	r8poly_print ( m, c, '  The R8POLY:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8POLY_PRINT_TEST:' )
-  print ( '  Normal end of execution.' )
+	print ( '' )
+	print ( 'R8POLY_PRINT_TEST:' )
+	print ( '  Normal end of execution.' )
 
-  return
+	return
 
 def r8vec2_print ( n, a1, a2, title ):
 
@@ -1700,13 +1700,13 @@ def r8vec2_print ( n, a1, a2, title ):
 #
 #    Input, string TITLE, a title.
 #
-  print ( '' )
-  print ( title )
-  print ( '' )
-  for i in range ( 0, n ):
-    print ( '  %6d:   %12g  %12g' % ( i, a1[i], a2[i] ) )
+	print ( '' )
+	print ( title )
+	print ( '' )
+	for i in range ( 0, n ):
+		print ( '  %6d:   %12g  %12g' % ( i, a1[i], a2[i] ) )
 
-  return
+	return
 
 def r8vec2_print_test ( ):
 
@@ -1726,25 +1726,25 @@ def r8vec2_print_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'R8VEC2_PRINT_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8VEC2_PRINT prints a pair of R8VEC\'s.' )
+	print ( '' )
+	print ( 'R8VEC2_PRINT_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8VEC2_PRINT prints a pair of R8VEC\'s.' )
 
-  n = 6
-  v = np.array ( [ 0.0, 0.20, 0.40, 0.60, 0.80, 1.0 ], dtype = np.float64 )
-  w = np.array ( [ 0.0, 0.04, 0.16, 0.36, 0.64, 1.0 ], dtype = np.float64 )
-  r8vec2_print ( n, v, w, '  Print a pair of R8VEC\'s:' )
+	n = 6
+	v = np.array ( [ 0.0, 0.20, 0.40, 0.60, 0.80, 1.0 ], dtype = np.float64 )
+	w = np.array ( [ 0.0, 0.04, 0.16, 0.36, 0.64, 1.0 ], dtype = np.float64 )
+	r8vec2_print ( n, v, w, '  Print a pair of R8VEC\'s:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8VEC2_PRINT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8VEC2_PRINT_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8vec_norm_affine ( n, v0, v1 ):
 
@@ -1783,14 +1783,14 @@ def r8vec_norm_affine ( n, v0, v1 ):
 #
 #    Output, real VALUE, the affine L2 norm.
 #
-  import numpy as np
+	import numpy as np
 
-  value = 0.0
-  for i in range ( 0, n ): 
-    value = value + ( v0[i] - v1[i] ) ** 2
-  value =  np.sqrt ( value )
+	value = 0.0
+	for i in range ( 0, n ): 
+		value = value + ( v0[i] - v1[i] ) ** 2
+	value =  np.sqrt ( value )
 
-  return value
+	return value
 
 def r8vec_norm_affine_test ( ):
 
@@ -1810,35 +1810,35 @@ def r8vec_norm_affine_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  n = 10
+	n = 10
 
-  print ( '' )
-  print ( 'R8VEC_NORM_AFFINE_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8VEC_NORM_AFFINE computes the L2 norm of' )
-  print ( '  the difference of two R8VECs.' )
+	print ( '' )
+	print ( 'R8VEC_NORM_AFFINE_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8VEC_NORM_AFFINE computes the L2 norm of' )
+	print ( '  the difference of two R8VECs.' )
 
-  seed = 123456789;
+	seed = 123456789;
 
-  x, seed = r8vec_uniform_01 ( n, seed )
-  y, seed = r8vec_uniform_01 ( n, seed )
-  z = np.zeros ( n )
-  for i in range ( 0, n ):
-    z[i] = x[i] - y[i]
+	x, seed = r8vec_uniform_01 ( n, seed )
+	y, seed = r8vec_uniform_01 ( n, seed )
+	z = np.zeros ( n )
+	for i in range ( 0, n ):
+		z[i] = x[i] - y[i]
 
-  print ( '' )
-  print ( '  R8VEC_NORM_AFFINE(X,Y) = %g' % ( r8vec_norm_affine ( n, x, y ) ) )
-  print ( '  R8VEC_NORM (X-Y):        %g' % ( r8vec_norm ( n, z ) ) )
+	print ( '' )
+	print ( '  R8VEC_NORM_AFFINE(X,Y) = %g' % ( r8vec_norm_affine ( n, x, y ) ) )
+	print ( '  R8VEC_NORM (X-Y):        %g' % ( r8vec_norm ( n, z ) ) )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8VEC_NORM_AFFINE_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8VEC_NORM_AFFINE_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8vec_norm ( n, a ):
 
@@ -1872,14 +1872,14 @@ def r8vec_norm ( n, a ):
 #
 #    Output, real VALUE, the L2 norm of A.
 #
-  import numpy as np
+	import numpy as np
 
-  value = 0.0
-  for i in range ( 0, n ):
-    value = value + a[i] * a[i]
-  value = np.sqrt ( value )
+	value = 0.0
+	for i in range ( 0, n ):
+		value = value + a[i] * a[i]
+	value = np.sqrt ( value )
 
-  return value
+	return value
 
 def r8vec_norm_test ( ):
 
@@ -1899,28 +1899,28 @@ def r8vec_norm_test ( ):
 #
 #    John Burkardt
 #
-  import platform
+	import platform
 
-  print ( '' )
-  print ( 'R8VEC_NORM_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8VEC_NORM computes the L2 norm of an R8VEC.' )
+	print ( '' )
+	print ( 'R8VEC_NORM_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8VEC_NORM computes the L2 norm of an R8VEC.' )
 
-  n = 10
-  seed = 123456789
-  a, seed = r8vec_uniform_01 ( n, seed )
-  r8vec_print ( n, a, '  Input vector:' )
-  a_norm = r8vec_norm ( n, a )
+	n = 10
+	seed = 123456789
+	a, seed = r8vec_uniform_01 ( n, seed )
+	r8vec_print ( n, a, '  Input vector:' )
+	a_norm = r8vec_norm ( n, a )
 
-  print ( '' )
-  print ( '  L2 norm = %g' % ( a_norm ) )
+	print ( '' )
+	print ( '  L2 norm = %g' % ( a_norm ) )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8VEC_NORM_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8VEC_NORM_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8vec_print ( n, a, title ):
 
@@ -1948,11 +1948,11 @@ def r8vec_print ( n, a, title ):
 #
 #    Input, string TITLE, a title.
 #
-  print ( '' )
-  print ( title )
-  print ( '' )
-  for i in range ( 0, n ):
-    print ( '%6d:  %12g' % ( i, a[i] ) )
+	print ( '' )
+	print ( title )
+	print ( '' )
+	for i in range ( 0, n ):
+		print ( '%6d:  %12g' % ( i, a[i] ) )
 
 def r8vec_print_test ( ):
 
@@ -1972,24 +1972,24 @@ def r8vec_print_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'R8VEC_PRINT_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8VEC_PRINT prints an R8VEC.' )
+	print ( '' )
+	print ( 'R8VEC_PRINT_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8VEC_PRINT prints an R8VEC.' )
 
-  n = 4
-  v = np.array ( [ 123.456, 0.000005, -1.0E+06, 3.14159265 ], dtype = np.float64 )
-  r8vec_print ( n, v, '  Here is an R8VEC:' )
+	n = 4
+	v = np.array ( [ 123.456, 0.000005, -1.0E+06, 3.14159265 ], dtype = np.float64 )
+	r8vec_print ( n, v, '  Here is an R8VEC:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8VEC_PRINT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8VEC_PRINT_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8vec_uniform_01 ( n, seed ):
 
@@ -2048,36 +2048,36 @@ def r8vec_uniform_01 ( n, seed ):
 #
 #    Output, integer SEED, an updated seed for the random number generator.
 #
-  import numpy as np
-  from sys import exit
+	import numpy as np
+	from sys import exit
 
-  i4_huge = 2147483647
+	i4_huge = 2147483647
 
-  seed = int ( seed )
+	seed = int ( seed )
 
-  if ( seed < 0 ):
-    seed = seed + i4_huge
+	if ( seed < 0 ):
+		seed = seed + i4_huge
 
-  if ( seed == 0 ):
-    print ( '' )
-    print ( 'R8VEC_UNIFORM_01 - Fatal error!' )
-    print ( '  Input SEED = 0!' )
-    exit ( 'R8VEC_UNIFORM_01 - Fatal error!' )
+	if ( seed == 0 ):
+		print ( '' )
+		print ( 'R8VEC_UNIFORM_01 - Fatal error!' )
+		print ( '  Input SEED = 0!' )
+		exit ( 'R8VEC_UNIFORM_01 - Fatal error!' )
 
-  x = np.zeros ( n );
+	x = np.zeros ( n );
 
-  for i in range ( 0, n ):
+	for i in range ( 0, n ):
 
-    k = ( seed // 127773 )
+		k = ( seed // 127773 )
 
-    seed = 16807 * ( seed - k * 127773 ) - k * 2836
+		seed = 16807 * ( seed - k * 127773 ) - k * 2836
 
-    if ( seed < 0 ):
-      seed = seed + i4_huge
+		if ( seed < 0 ):
+			seed = seed + i4_huge
 
-    x[i] = seed * 4.656612875E-10
+		x[i] = seed * 4.656612875E-10
 
-  return x, seed
+	return x, seed
 
 def r8vec_uniform_01_test ( ):
 
@@ -2097,29 +2097,29 @@ def r8vec_uniform_01_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  n = 10
-  seed = 123456789
+	n = 10
+	seed = 123456789
 
-  print ( '' )
-  print ( 'R8VEC_UNIFORM_01_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8VEC_UNIFORM_01 computes a random R8VEC.' )
-  print ( '' )
-  print ( '  Initial seed is %d' % ( seed ) )
+	print ( '' )
+	print ( 'R8VEC_UNIFORM_01_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8VEC_UNIFORM_01 computes a random R8VEC.' )
+	print ( '' )
+	print ( '  Initial seed is %d' % ( seed ) )
 
-  v, seed = r8vec_uniform_01 ( n, seed )
+	v, seed = r8vec_uniform_01 ( n, seed )
 
-  r8vec_print ( n, v, '  Random R8VEC:' )
+	r8vec_print ( n, v, '  Random R8VEC:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8VEC_UNIFORM_01_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8VEC_UNIFORM_01_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def r8vec_uniform_ab ( n, a, b, seed ):
 
@@ -2173,36 +2173,36 @@ def r8vec_uniform_ab ( n, a, b, seed ):
 #
 #    Output, integer SEED, an updated seed for the random number generator.
 #
-  import numpy
-  from sys import exit
+	import numpy
+	from sys import exit
 
-  i4_huge = 2147483647
+	i4_huge = 2147483647
 
-  seed = int ( seed )
+	seed = int ( seed )
 
-  if ( seed < 0 ):
-    seed = seed + i4_huge
+	if ( seed < 0 ):
+		seed = seed + i4_huge
 
-  if ( seed == 0 ):
-    print ( '' )
-    print ( 'R8VEC_UNIFORM_AB - Fatal error!' )
-    print ( '  Input SEED = 0!' )
-    exit ( 'R8VEC_UNIFORM_AB - Fatal error!' )
+	if ( seed == 0 ):
+		print ( '' )
+		print ( 'R8VEC_UNIFORM_AB - Fatal error!' )
+		print ( '  Input SEED = 0!' )
+		exit ( 'R8VEC_UNIFORM_AB - Fatal error!' )
 
-  x = numpy.zeros ( n )
+	x = numpy.zeros ( n )
 
-  for i in range ( 0, n ):
+	for i in range ( 0, n ):
 
-    k = ( seed // 127773 )
+		k = ( seed // 127773 )
 
-    seed = 16807 * ( seed - k * 127773 ) - k * 2836
+		seed = 16807 * ( seed - k * 127773 ) - k * 2836
 
-    if ( seed < 0 ):
-      seed = seed + i4_huge
+		if ( seed < 0 ):
+			seed = seed + i4_huge
 
-    x[i] = a + ( b - a ) * seed * 4.656612875E-10
+		x[i] = a + ( b - a ) * seed * 4.656612875E-10
 
-  return x, seed
+	return x, seed
 
 def r8vec_uniform_ab_test ( ):
 
@@ -2222,32 +2222,32 @@ def r8vec_uniform_ab_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  n = 10
-  a = -1.0
-  b = +5.0
-  seed = 123456789
+	n = 10
+	a = -1.0
+	b = +5.0
+	seed = 123456789
 
-  print ( '' )
-  print ( 'R8VEC_UNIFORM_AB_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8VEC_UNIFORM_AB computes a random R8VEC.' )
-  print ( '' )
-  print ( '  %g <= X <= %g' % ( a, b ) )
-  print ( '  Initial seed is %d' % ( seed ) )
+	print ( '' )
+	print ( 'R8VEC_UNIFORM_AB_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  R8VEC_UNIFORM_AB computes a random R8VEC.' )
+	print ( '' )
+	print ( '  %g <= X <= %g' % ( a, b ) )
+	print ( '  Initial seed is %d' % ( seed ) )
 
-  v, seed = r8vec_uniform_ab ( n, a, b, seed )
+	v, seed = r8vec_uniform_ab ( n, a, b, seed )
 
-  r8vec_print ( n, v, '  Random R8VEC:' )
+	r8vec_print ( n, v, '  Random R8VEC:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8VEC_UNIFORM_AB_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'R8VEC_UNIFORM_AB_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def timestamp ( ):
 
@@ -2271,12 +2271,12 @@ def timestamp ( ):
 #
 #    None
 #
-  import time
+	import time
 
-  t = time.time ( )
-  print ( time.ctime ( t ) )
+	t = time.time ( )
+	print ( time.ctime ( t ) )
 
-  return None
+	return None
 
 def timestamp_test ( ):
 
@@ -2300,22 +2300,22 @@ def timestamp_test ( ):
 #
 #    None
 #
-  import platform
+	import platform
 
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  TIMESTAMP prints a timestamp of the current date and time.' )
-  print ( '' )
+	print ( '' )
+	print ( 'TIMESTAMP_TEST:' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  TIMESTAMP prints a timestamp of the current date and time.' )
+	print ( '' )
 
-  timestamp ( )
+	timestamp ( )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'TIMESTAMP_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def vandermonde_coef_1d ( n, x, y ):
 
@@ -2376,13 +2376,13 @@ def vandermonde_coef_1d ( n, x, y ):
 #    Output, real C(N,1), the coefficients of the interpolating
 #    polynomial.  C(1) is the constant term, and C(N) multiplies X^(N-1).
 #
-  import numpy as np
+	import numpy as np
 
-  ad = vandermonde_matrix_1d ( n, x )
+	ad = vandermonde_matrix_1d ( n, x )
 
-  c = np.linalg.solve ( ad, y )
+	c = np.linalg.solve ( ad, y )
  
-  return c
+	return c
 
 def vandermonde_coef_1d_test ( ):
 
@@ -2402,32 +2402,32 @@ def vandermonde_coef_1d_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  nd = 5
-  xd = np.array ( [ 0.0, 1.0, 2.0, 3.0, 4.0 ] )
-  yd = np.array ( [ 24.0, 0.0, 0.0, 0.0, 0.0 ] )
+	nd = 5
+	xd = np.array ( [ 0.0, 1.0, 2.0, 3.0, 4.0 ] )
+	yd = np.array ( [ 24.0, 0.0, 0.0, 0.0, 0.0 ] )
 
-  print ( '' )
-  print ( 'VANDERMONDE_COEF_1D_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  VANDERMONDE_COEF_1D sets the Vandermonde coefficients for 1D interpolation.' )
+	print ( '' )
+	print ( 'VANDERMONDE_COEF_1D_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  VANDERMONDE_COEF_1D sets the Vandermonde coefficients for 1D interpolation.' )
 
-  r8vec2_print ( nd, xd, yd, '  Interpolation data:' )
+	r8vec2_print ( nd, xd, yd, '  Interpolation data:' )
 
-  cd = vandermonde_coef_1d ( nd, xd, yd )
+	cd = vandermonde_coef_1d ( nd, xd, yd )
 
-  r8vec_print ( nd, cd, '  Vandermonde interpolant coefficients:' )
+	r8vec_print ( nd, cd, '  Vandermonde interpolant coefficients:' )
 
-  r8poly_print ( nd - 1, cd, '  Vandermonde interpolant polynomial:' )
+	r8poly_print ( nd - 1, cd, '  Vandermonde interpolant polynomial:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'VANDERMONDE_COEF_1D_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'VANDERMONDE_COEF_1D_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def vandermonde_interp_1d_test ( ):
 
@@ -2447,46 +2447,46 @@ def vandermonde_interp_1d_test ( ):
 #
 #    John Burkardt
 #
-  import platform
+	import platform
 
-  print ( '' )
-  print ( 'VANDERMONDE_INTERP_1D_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Test the VANDERMONDE_INTERP_1D library.' )
+	print ( '' )
+	print ( 'VANDERMONDE_INTERP_1D_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  Test the VANDERMONDE_INTERP_1D library.' )
 #
 #  Utility functions.
 #
-  p00_data_test ( )
-  p00_data_num_test ( )
-  p00_dim_num_test ( )
-  p00_prob_num_test ( )
-  r8mat_print_test ( )
-  r8mat_print_some_test ( )
-  r8mat_transpose_print_test ( )
-  r8mat_transpose_print_some_test ( )
-  r8poly_print_test ( )
-  r8vec_norm_test ( )
-  r8vec_norm_affine_test ( )
-  r8vec_print_test ( )
-  r8vec_uniform_ab_test ( )
-  r8vec2_print_test ( )
+	p00_data_test ( )
+	p00_data_num_test ( )
+	p00_dim_num_test ( )
+	p00_prob_num_test ( )
+	r8mat_print_test ( )
+	r8mat_print_some_test ( )
+	r8mat_transpose_print_test ( )
+	r8mat_transpose_print_some_test ( )
+	r8poly_print_test ( )
+	r8vec_norm_test ( )
+	r8vec_norm_affine_test ( )
+	r8vec_print_test ( )
+	r8vec_uniform_ab_test ( )
+	r8vec2_print_test ( )
 #
 #  Library functions.
 #
-  vandermonde_coef_1d_test ( )
-  vandermonde_matrix_1d_test ( )
-  vandermonde_value_1d_test ( )
+	vandermonde_coef_1d_test ( )
+	vandermonde_matrix_1d_test ( )
+	vandermonde_value_1d_test ( )
 
-  prob_num = p00_prob_num ( );
-  for prob in range ( 1, prob_num + 1 ):
-    vandermonde_interp_1d_test01 ( prob )
+	prob_num = p00_prob_num ( );
+	for prob in range ( 1, prob_num + 1 ):
+		vandermonde_interp_1d_test01 ( prob )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'VANDERMONDE_INTERP_1D_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'VANDERMONDE_INTERP_1D_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def vandermonde_interp_1d_test01 ( prob ):
 
@@ -2512,122 +2512,122 @@ def vandermonde_interp_1d_test01 ( prob ):
 #
 #    Input, integer ND, the number of data points to use.
 #
-  import matplotlib.pyplot as plt
-  import numpy as np
-  import platform
+	import matplotlib.pyplot as plt
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'VANDERMONDE_INTERP_1D_TEST01:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Interpolate data from TEST_INTERP problem #%d.' % ( prob ) )
+	print ( '' )
+	print ( 'VANDERMONDE_INTERP_1D_TEST01:' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  Interpolate data from TEST_INTERP problem #%d.' % ( prob ) )
 
-  nd = p00_data_num ( prob )
-  print ( '  Number of data points = %d' % ( nd ) )
+	nd = p00_data_num ( prob )
+	print ( '  Number of data points = %d' % ( nd ) )
 
-  xy = p00_data ( prob, 2, nd )
-  
-  xd = np.zeros ( nd )
-  yd = np.zeros ( nd )
-  for i in range ( 0, nd ):
-    xd[i] = xy[0,i]
-    yd[i] = xy[1,i]
+	xy = p00_data ( prob, 2, nd )
+	
+	xd = np.zeros ( nd )
+	yd = np.zeros ( nd )
+	for i in range ( 0, nd ):
+		xd[i] = xy[0,i]
+		yd[i] = xy[1,i]
  
-  if ( nd < 10 ):
-    r8vec2_print ( nd, xd, yd, '  Data array:' )
+	if ( nd < 10 ):
+		r8vec2_print ( nd, xd, yd, '  Data array:' )
 #
 #  Get Vandermonde interpolant coefficients.
 #
-  cd = vandermonde_coef_1d ( nd, xd, yd )
+	cd = vandermonde_coef_1d ( nd, xd, yd )
 #
 #  #1:  Does interpolant match function at interpolation points?
 #
-  ni = nd
-  xi = xd
-  yi = vandermonde_value_1d ( nd, cd, ni, xi )
+	ni = nd
+	xi = xd
+	yi = vandermonde_value_1d ( nd, cd, ni, xi )
 
-  int_error = r8vec_norm_affine ( ni, yi, yd ) / float ( ni )
+	int_error = r8vec_norm_affine ( ni, yi, yd ) / float ( ni )
 
-  print ( '' )
-  print ( '  L2 interpolation error averaged per interpolant node = %g' % ( int_error ) )
+	print ( '' )
+	print ( '  L2 interpolation error averaged per interpolant node = %g' % ( int_error ) )
 #
 #  #2: Compare estimated curve length to piecewise linear (minimal) curve length.
 #  Assume data is sorted, and normalize X and Y dimensions by (XMAX-XMIN) and
 #  (YMAX-YMIN).
 #
-  xmin = np.min ( xd )
-  xmax = np.max ( xd )
-  ymin = np.min ( yd )
-  ymax = np.max ( yd )
+	xmin = np.min ( xd )
+	xmax = np.max ( xd )
+	ymin = np.min ( yd )
+	ymax = np.max ( yd )
 
-  ni = 501
-  xi = np.linspace ( xmin, xmax, ni )
-  yi = vandermonde_value_1d ( nd, cd, ni, xi )
+	ni = 501
+	xi = np.linspace ( xmin, xmax, ni )
+	yi = vandermonde_value_1d ( nd, cd, ni, xi )
 
-  ld = 0.0
-  for i in range ( 0, nd - 1 ):
-    ld = ld + np.sqrt \
-    ( \
-        ( ( xd[i+1] - xd[i] ) / ( xmax - xmin ) ) ** 2 \
-      + ( ( yd[i+1] - yd[i] ) / ( ymax - ymin ) ) ** 2 \
-    )
+	ld = 0.0
+	for i in range ( 0, nd - 1 ):
+		ld = ld + np.sqrt \
+		( \
+				( ( xd[i+1] - xd[i] ) / ( xmax - xmin ) ) ** 2 \
+			+ ( ( yd[i+1] - yd[i] ) / ( ymax - ymin ) ) ** 2 \
+		)
 
-  li = 0.0
-  for i in range ( 0, ni - 1 ):
-    li = li + np.sqrt \
-    ( \
-        ( ( xi[i+1] - xi[i] ) / ( xmax - xmin ) ) ** 2 \
-      + ( ( yi[i+1] - yi[i] ) / ( ymax - ymin ) ) ** 2 \
-    )
-  li = np.sqrt ( li )
+	li = 0.0
+	for i in range ( 0, ni - 1 ):
+		li = li + np.sqrt \
+		( \
+				( ( xi[i+1] - xi[i] ) / ( xmax - xmin ) ) ** 2 \
+			+ ( ( yi[i+1] - yi[i] ) / ( ymax - ymin ) ) ** 2 \
+		)
+	li = np.sqrt ( li )
 
-  print ( '' )
-  print ( '  Normalized length of piecewise linear interpolant = %g' % ( ld ) )
-  print ( '  Normalized length of Shepard interpolant          = %g' % ( li ) )
+	print ( '' )
+	print ( '  Normalized length of piecewise linear interpolant = %g' % ( ld ) )
+	print ( '  Normalized length of Shepard interpolant          = %g' % ( li ) )
 #
 #  #3: Plot the data.
 #
-  plt.plot ( xd, yd, 'b-', linewidth = 3.0 )
-  plt.plot ( xd, yd, 'k.', markersize = 10 )
-  t = 'p0' + str ( prob ) + ' Piecewise Linear Interpolant'
-  plt.title ( t )
-  plt.grid ( True )
-  plt.xlabel ( '<---X--->' )
-  plt.ylabel ( '<---Y--->' )
-  filename = 'p0' + str ( prob ) + '_data.png'
-  plt.savefig ( filename )
-  plt.clf ( )
+	plt.plot ( xd, yd, 'b-', linewidth = 3.0 )
+	plt.plot ( xd, yd, 'k.', markersize = 10 )
+	t = 'p0' + str ( prob ) + ' Piecewise Linear Interpolant'
+	plt.title ( t )
+	plt.grid ( True )
+	plt.xlabel ( '<---X--->' )
+	plt.ylabel ( '<---Y--->' )
+	filename = 'p0' + str ( prob ) + '_data.png'
+	plt.savefig ( filename )
+	plt.clf ( )
 
-  print ( '' )
-  print ( '  Created plot file "%s"' % ( filename ) )
+	print ( '' )
+	print ( '  Created plot file "%s"' % ( filename ) )
 #
 #  #4: Plot the piecewise linear and Vandermonde interpolants.
 #
-  ni = 501
-  xmin = np.min ( xd )
-  xmax = np.max ( xd )
-  xi = np.linspace ( xmin, xmax, ni )
-  yi = vandermonde_value_1d ( nd, cd, ni, xi )
+	ni = 501
+	xmin = np.min ( xd )
+	xmax = np.max ( xd )
+	xi = np.linspace ( xmin, xmax, ni )
+	yi = vandermonde_value_1d ( nd, cd, ni, xi )
 
-  plt.plot ( xd, yd, 'b-', linewidth = 3.0 )
-  plt.plot ( xi, yi, 'r-', linewidth = 4.0 )
-  plt.plot ( xd, yd, 'k.', markersize = 10 )
-  t = 'p0' + str ( prob ) + ' Vandermonde Interpolant for ' + str ( nd ) + ' nodes.'
-  plt.title ( t )
-  plt.grid ( True )
-  plt.xlabel ( '<---X--->' )
-  plt.ylabel ( '<---Y--->' )
-  filename = 'p0' + str ( prob ) + '_vandermonde.png'
-  plt.savefig ( filename )
-  plt.clf ( )
+	plt.plot ( xd, yd, 'b-', linewidth = 3.0 )
+	plt.plot ( xi, yi, 'r-', linewidth = 4.0 )
+	plt.plot ( xd, yd, 'k.', markersize = 10 )
+	t = 'p0' + str ( prob ) + ' Vandermonde Interpolant for ' + str ( nd ) + ' nodes.'
+	plt.title ( t )
+	plt.grid ( True )
+	plt.xlabel ( '<---X--->' )
+	plt.ylabel ( '<---Y--->' )
+	filename = 'p0' + str ( prob ) + '_vandermonde.png'
+	plt.savefig ( filename )
+	plt.clf ( )
 
-  print ( '  Created plot file "%s".' % ( filename ) )
+	print ( '  Created plot file "%s".' % ( filename ) )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'VANDERMONDE_INTERP_1D_TEST01:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'VANDERMONDE_INTERP_1D_TEST01:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def vandermonde_matrix_1d ( n, x ):
 
@@ -2676,18 +2676,18 @@ def vandermonde_matrix_1d ( n, x ):
 #
 #    Output, real A(N,N), the Vandermonde matrix for X.
 #
-  import numpy as np
+	import numpy as np
 
-  a = np.zeros ( [ n, n ] )
+	a = np.zeros ( [ n, n ] )
 
-  for i in range ( 0, n ):
-    a[i,0] = 1.0
+	for i in range ( 0, n ):
+		a[i,0] = 1.0
 
-  for j in range ( 1, n ):
-    for i in range ( 0, n ):
-      a[i,j] = a[i,j-1] * x[i]
+	for j in range ( 1, n ):
+		for i in range ( 0, n ):
+			a[i,j] = a[i,j-1] * x[i]
 
-  return a
+	return a
 
 def vandermonde_matrix_1d_test ( ):
 
@@ -2707,27 +2707,27 @@ def vandermonde_matrix_1d_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'VANDERMONDE_MATRIX_1D_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  VANDERMONDE_MATRIX_1D sets the Vandermonde matrix for 1D interpolation.' )
+	print ( '' )
+	print ( 'VANDERMONDE_MATRIX_1D_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  VANDERMONDE_MATRIX_1D sets the Vandermonde matrix for 1D interpolation.' )
 
-  nd = 4
-  xd = np.array ( [ -1.0, 2.0, 3.0, 5.0 ] )
+	nd = 4
+	xd = np.array ( [ -1.0, 2.0, 3.0, 5.0 ] )
 
-  ad = vandermonde_matrix_1d ( nd, xd )
+	ad = vandermonde_matrix_1d ( nd, xd )
 
-  r8mat_print ( nd, nd, ad, '  Vandermonde matrix:' )
+	r8mat_print ( nd, nd, ad, '  Vandermonde matrix:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'VANDERMONDE_MATRIX_1D_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'VANDERMONDE_MATRIX_1D_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 def vandermonde_value_1d ( nd, cd, ni, xi ):
 
@@ -2760,16 +2760,16 @@ def vandermonde_value_1d ( nd, cd, ni, xi ):
 #
 #    Output, real YI(NI,1), the interpolation values.
 #
-  import numpy as np
+	import numpy as np
 
-  yi = np.zeros ( ni )
+	yi = np.zeros ( ni )
 
-  for j in range ( 0, ni ):
-    yi[j] = cd[nd-1]
-    for i in range ( nd - 2, -1, -1 ):
-      yi[j] = yi[j] * xi[j] + cd[i]
+	for j in range ( 0, ni ):
+		yi[j] = cd[nd-1]
+		for i in range ( nd - 2, -1, -1 ):
+			yi[j] = yi[j] * xi[j] + cd[i]
 
-  return yi
+	return yi
 
 def vandermonde_value_1d_test ( ):
 
@@ -2789,36 +2789,36 @@ def vandermonde_value_1d_test ( ):
 #
 #    John Burkardt
 #
-  import numpy as np
-  import platform
+	import numpy as np
+	import platform
 
-  print ( '' )
-  print ( 'VANDERMONDE_VALUE_1D_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  VANDERMONDE_VALUE_1D evaluates a Vandermonde interpolant.' )
+	print ( '' )
+	print ( 'VANDERMONDE_VALUE_1D_TEST' )
+	print ( '  Python version: %s' % ( platform.python_version ( ) ) )
+	print ( '  VANDERMONDE_VALUE_1D evaluates a Vandermonde interpolant.' )
 
-  nd = 5
-  cd = np.array ( [ 24.0, -50.0, +35.0, -10.0, 1.0 ] )
-  r8poly_print ( nd - 1, cd, '  The Vandermonde interpolant:' )
+	nd = 5
+	cd = np.array ( [ 24.0, -50.0, +35.0, -10.0, 1.0 ] )
+	r8poly_print ( nd - 1, cd, '  The Vandermonde interpolant:' )
 
-  ni = 16
-  x_lo = 0.0
-  x_hi = 5.0
-  xi = np.linspace ( x_lo, x_hi, ni )
+	ni = 16
+	x_lo = 0.0
+	x_hi = 5.0
+	xi = np.linspace ( x_lo, x_hi, ni )
 
-  yi = vandermonde_value_1d ( nd, cd, ni, xi )
+	yi = vandermonde_value_1d ( nd, cd, ni, xi )
 
-  r8vec2_print ( ni, xi, yi, '  Vandermonde interpolant values:' )
+	r8vec2_print ( ni, xi, yi, '  Vandermonde interpolant values:' )
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'VANDERMONDE_VALUE_1D_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print ( '' )
+	print ( 'VANDERMONDE_VALUE_1D_TEST:' )
+	print ( '  Normal end of execution.' )
+	return
 
 if ( __name__ == '__main__' ):
-  timestamp ( )
-  vandermonde_interp_1d_test ( )
-  timestamp ( )
+	timestamp ( )
+	vandermonde_interp_1d_test ( )
+	timestamp ( )
 
