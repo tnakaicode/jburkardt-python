@@ -845,7 +845,8 @@ def r8mat_exp_expa(test, n):
 
         expa = 0.25 * np.array([
             [13.0 * exp16 - exp4, -9.0 * exp16 + exp4, 16.0 * exp16],
-            [13.0 * exp16 - 5.0 * exp4, -9.0 * exp16 + 5.0 * exp4, 16.0 * exp16],
+            [13.0 * exp16 - 5.0 * exp4, -9.0 *
+             exp16 + 5.0 * exp4, 16.0 * exp16],
             [2.0 * exp16 - 2.0 * exp4, -2.0 * exp16 + 2.0 * exp4, 4.0 * exp16]])
 
     elif (test == 9):
