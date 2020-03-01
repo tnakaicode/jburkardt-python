@@ -52,7 +52,6 @@ def mandelbrot_image(xmin, xmax, ymin, ymax, xnum, ynum, countmax):
     print('  Maximum number of iterations = %d' % (countmax))
 
     time1 = time.time()
-    clock1 = time.clock()
 
     dpi = 72
     width_inches = int(xnum / dpi)
@@ -60,13 +59,11 @@ def mandelbrot_image(xmin, xmax, ymin, ymax, xnum, ynum, countmax):
 
     x, y, count = mandelbrot_set(xmin, xmax, ymin, ymax, xnum, ynum, countmax)
 
-    clock2 = time.clock()
     time2 = time.time()
 
     print('')
     print('  Compute time:')
     print('  Wallclock: %.02f sec.' % (time2 - time1))
-    print('        CPU: %.02f sec.' % (clock2 - clock1))
 
     X, Y = np.meshgrid(x, y, indexing='ij')
     fig, ax = plt.subplots(figsize=(width_inches, height_inches), dpi=72)
@@ -180,11 +177,9 @@ def mandelbrot_count(c, countmax):
     for i in range(countmax):
         if (2.0 <= abs(z)):
             return i
-    z = z * z + c
-
+        z = z * z + c
     return countmax
 
 
 if (__name__ == '__main__'):
-
     mandelbrot_image(-2.0, 0.5, -1.25, 1.25, 720, 720, 200)
