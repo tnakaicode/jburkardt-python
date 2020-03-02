@@ -1,0 +1,16 @@
+&input_parameters
+             project_name     = "i50yen"
+               n_2dplanes     = 50
+           extension_method   = "rotate_around_z" !or "straight_in_y"
+           rotate_radius      = 2.0               !Baseline raidus of rotation
+           rotate_radius_rate = 0.95              !Increase radius up to 100*rotate_radius_max %.
+           rotate_end_angle   = 1260              !360n+180, n=3
+           rotate_z_shape     = "linear"          !Increase z as it rotates.
+           rotate_z_zmax      = 7.0               !Increase z up to zmax.
+                prism2tetra   = T
+      generate_ugrid_file     = T
+               ugrid_binary   = F
+      generate_su2_file       = T
+      generate_tec_file_b     = T
+      generate_vtk_file       = T
+/

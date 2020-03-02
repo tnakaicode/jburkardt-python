@@ -1,0 +1,19 @@
+&input_parameters
+             project_name   = "fp_grid"          !name of the 2D grid file (<- fp_grid.grid)
+               n_2dplanes   = 3                  !# of 2D grid planes to copy for 3D grid
+           extension_method = "straight_in_y"    !or "rotate_around_z"
+                       y0   = 0.0                !<- for extension_method = "straight_in_y"
+                       yn   = 2.0                !<- for extension_method = "straight_in_y"
+           rotate_radius    = 2.0                !<- for extension_method = "rotate_around_z"
+           rotate_end_angle = 180                !<- for extension_method = "rotate_around_z"
+           rotate_z_shape   = "flat" !or "sine"  !<- for extension_method = "rotate_around_z"
+           rotate_sine_freq = 11.0               !<- for extension_method = "rotate_around_z"
+             switch_y_and_z = F                  !=T to change y and z at the end.
+                prism2tetra = F                  !=T to generate a tet grid (for tria 2D grid)
+      generate_ugrid_file   = T
+               ugrid_binary = T
+      generate_su2_file     = T
+      generate_tec_file_b   = T
+      generate_tec_v        = F
+      generate_vtk_file     = T
+/

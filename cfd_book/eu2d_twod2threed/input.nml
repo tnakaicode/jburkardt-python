@@ -1,0 +1,23 @@
+&input_parameters
+                          Re_inf   = 1.0e+06 ! For BL thickness estimate and Blasius solution
+                      igrid_type   = 3       ! 1=Quad, 2=Tria, 3=Mixed
+                 random_diagonal   = F       ! T: random-diagonal trias
+                            xmin   = -2.0    ! Left end of the domain
+                            xmax   = 2.0     ! Right end of the domain
+                            ymin   = 0.0     ! Bottom of the domain
+                            ymax   = 4.0     ! Top of the domain
+              generate_sample_data = T       ! T: Write a Blasius-solution data file
+               x_sample_location   = 0.9     ! Location at which Blasius-sol data are taken.
+                             nxL   =  17     ! # of elements in x on the left  half of domain.
+                             nxR   =  17     ! # of elements in x on the right half of domain.
+                             ny    =  24     ! # of elements in y.
+           stretching_factor_xL    = 5.0     ! Stretching factor towards LE from the left.
+           stretching_factor_xR    = 5.3     ! Stretching factor towards LE from the right.
+           stretching_factor_y     = 9.5     ! Stretching factor towards the bottom.
+                  perturb_factor   = 0.0     ! Nodal perturbation coefficient (0.0 = Do not perturb).
+              generate_grid_file   = T       ! T: write a .grid file for edu2d solvers, F: Not write
+              generate_su2_file    = T       ! T: write a .su2 grid for SU2, F: Not write
+              generate_tec_file    = T       ! T: write a Tecplot file     , F: Not write
+              generate_vtk_file    = T       ! T: write a .vtk file        , F: Not write
+/
+

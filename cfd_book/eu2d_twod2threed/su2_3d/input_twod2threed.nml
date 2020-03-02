@@ -1,0 +1,11 @@
+&input_parameters
+             project_name   = "fp_grid"
+               n_2dplanes   = 3
+                       y0   = 0.0
+                       yn   = 2.0
+      generate_ugrid_file   = T
+               ugrid_binary = T
+      generate_su2_file     = T
+      generate_tec_file_b   = T
+      generate_vtk_file     = T
+/
