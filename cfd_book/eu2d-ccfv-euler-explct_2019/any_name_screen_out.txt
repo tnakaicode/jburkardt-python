@@ -1,0 +1,231 @@
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Setting up parameters...
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+  Project name = any_name                                                                        
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Reading the grid and boundary condition files... 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ Reading the grid file....any_name.grid                                                                   
+
+  Total numbers:
+       nodes =          441
+   triangles =            0
+       quads =          400
+
+  Boundary nodes:
+     segments =            4
+ boundary  1  bnodes =    21  bfaces =    20
+ boundary  2  bnodes =    21  bfaces =    20
+ boundary  3  bnodes =    21  bfaces =    20
+ boundary  4  bnodes =    21  bfaces =    20
+
+
+ Reading the boundary condition file....any_name.bcmap                                                                  
+
+  Boundary conditions:
+ boundary  1  bc_type =                           dirichlet
+ boundary  2  bc_type =                           dirichlet
+ boundary  3  bc_type =                           dirichlet
+ boundary  4  bc_type =                           dirichlet
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Constructing grid data... 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ Constructing grid data....
+  --- Node neighbor data:
+ --- 2 neighbors for the node =            1
+ --- 2 neighbors for the node =           21
+ --- 2 neighbors for the node =          421
+ --- 2 neighbors for the node =          441
+       ave_nghbr =            3
+       min_nghbr =            2  at node            1
+       max_nghbr =            4  at node           23
+
+ Generating CC scheme data......
+  --- Vertex-neighbor data:
+       ave_nghbr =            7
+       min_nghbr =            3  elm =            1
+       max_nghbr =            8  elm =           22
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Checking the grid data... 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ Checking grid data....
+ --- Max sum of directed area vector around a node:
+   max(sum_dav_i_x) =    5.5511151231257827E-017
+   max(sum_dav_i_y) =    5.5511151231257827E-017
+ --- Global sum of the directed area vector:
+    sum of dav_x =  0.000E+00
+    sum of dav_y =  0.000E+00
+ --- Global sum of the boundary face vector:
+    sum of bfn_x =  0.000E+00
+    sum of bfn_y =  0.000E+00
+
+     minimum element volume =     2.499999999999995E-03
+     maximum element volume =     2.500000000000009E-03
+     average element volume =     2.499999999999988E-03
+
+
+        minimum dual volume =     6.249999999999971E-04
+        maximum dual volume =     2.500000000000009E-03
+        average dual volume =     2.267573696145117E-03
+
+
+  ------ Skewness check (NC control volume) ----------
+    L1(e_dot_n) =    1.0000000000000000     
+   Min(e_dot_n) =    1.0000000000000000     
+   Max(e_dot_n) =    1.0000000000000000     
+  ----------------------------------------------------
+
+  ------ Aspect ratio check (NC control volume) ----------
+  Interior nodes only
+    L1(AR) =    1.0000000000000000     
+   Min(AR) =   0.99999999999999956     
+   Max(AR) =    1.0000000000000022     
+
+  Boundary nodes only
+    L1(AR) =    1.0000000000000004     
+   Min(AR) =   0.99999999999999933     
+   Max(AR) =    1.0000000000000022     
+  --------------------------------------------------------
+
+ Grid data look good!
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Template main program for node-centered (NC) schemes. 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Computing LSQ coefficients (at nodes)... 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ Constructing LSQ coefficients...
+ ---(1) Constructing Linear LSQ coefficients...
+ ---(2) Constructing Quadratic LSQ coefficients...
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Checking the LSQ coefficients... 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ ---------------------------------------------------------
+ ---------------------------------------------------------
+ - Checking Linear LSQ gradients...
+ - Storing a linear function values...
+ - Computing linear LSQ gradients..
+ - Computing the relative errors (L_infinity)..
+  Max relative error in ux =    6.6613381477509392E-015
+  Max relative error in uy =    2.3314683517128287E-015
+ ---------------------------------------------------------
+ ---------------------------------------------------------
+
+ ---------------------------------------------------------
+ ---------------------------------------------------------
+ - Checking Quadratic LSQ gradients...
+ - Storing a quadratic function values...
+ - Computing quadratic LSQ gradients..
+ - Computing the relative errors (L_infinity)..
+  Max relative error in ux =    2.3314683517128287E-014
+  Max relative error in uy =    1.6431300764452317E-014
+ ---------------------------------------------------------
+ ---------------------------------------------------------
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Setting initial and exact solutions... 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> NC Solver begins here.....
+
+
+
+ >>> NC Solver ends here.....
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Writing a tecplot file for viewing the grid and the solution...
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  file name = any_name_nc_tecplot.dat                                                         
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Writing a tecplot file for boundary data...
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  file name = any_name_nc_b_tecplot.dat                                                       
+
+ Computation successfully completed (main_nc). Stop.
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Template main program for cell-centered (CC) schemes. 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Computing LSQ coefficients (at cells)... 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ Constructing LSQ coefficients (CC)...
+ ---(1) Constructing Linear LSQ coefficients...
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Checking the LSQ coefficients... 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ ---------------------------------------------------------
+ ---------------------------------------------------------
+ - Checking Linear LSQ gradients...
+ - Storing a linear function values...
+ - Computing linear LSQ gradients..
+ - Computing the relative errors (L_infinity)..
+  Max relative error in ux =    5.5511151231257827E-015
+  Max relative error in uy =    3.4416913763379853E-015
+ ---------------------------------------------------------
+ ---------------------------------------------------------
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Setting initial and exact solutions... 
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> CC Solver begins here.....
+
+
+
+ >>> CC Solver ends here.....
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>> Writing a tecplot file for viewing the grid and the solution...
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  file name = any_name_cc_tecplot.dat                                                         
+
+ Computation successfully completed (main_cc). Stop.
+
+
+
+ Good. Successfully completed.
+
