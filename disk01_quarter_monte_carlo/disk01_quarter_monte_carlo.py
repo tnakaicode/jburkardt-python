@@ -345,8 +345,8 @@ def disk01_quarter_sample_test():
             ax2 = ax1.twinx()
             ax1.grid()
             ax1.plot(dat[:, 0], dat[:, 1], color="blue")
-            ax2.plot(dat[:, 0], dat[:, 2], color="red")
-            fig.savefig("./disk01_{:02d}_{:02d}.png".format(i,j))
+            ax2.plot(dat[:, 0], dat[:, -1], color="red")
+            fig.savefig("./disk01_{:02d}_{:02d}.png".format(i, j))
             plt.close()
 
             print('    Exact:  %14.6g  %10.2g' % (exact, 0.0))
