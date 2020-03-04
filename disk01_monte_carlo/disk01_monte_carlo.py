@@ -43,31 +43,11 @@ def disk_monte_carlo_test():
     print('DISK_MONTE_CARLO_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the DISK_MONTE_CARLO library.')
-#
-#  Utility functions.
-#
-    gamma_values_test()
-    i4vec_print_test()
-    i4vec_transpose_print_test()
-    i4vec_uniform_ab_test()
-    r8_gamma_test()
-    r8_normal_01_test()
-    r8_uniform_01_test()
-    r8mat_transpose_print_test()
-    r8mat_transpose_print_some_test()
-    r8mat_uniform_ab_test
-    r8vec_print_test()
-    r8vec_normal_01_test()
-#
-#  Library functions.
-#
-    disk01_area_test()
+
     disk01_monomial_integral_test()
     disk01_sample_test()
     monomial_value_test()
-#
-#  Terminate.
-#
+
     print('')
     print('DISK_MONTE_CARLO_TEST:')
     print('  Normal end of execution.')

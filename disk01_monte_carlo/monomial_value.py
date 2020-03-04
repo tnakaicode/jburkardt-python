@@ -84,28 +84,36 @@ def monomial_value_test():
 
     e_min = -3
     e_max = 6
-    n = 5
+    n = 7
     seed = 123456789
     x_min = -2.0
     x_max = +10.0
 
-    for m in range(1, 4):
+    for m in range(1, 6):
 
         print('')
         print('  Spatial dimension M =  %d' % (m))
 
         e, seed = i4vec_uniform_ab(m, e_min, e_max, seed)
-        i4vec_transpose_print(m, e, '  Exponents:')
         x, seed = r8mat_uniform_ab(m, n, x_min, x_max, seed)
         #
         #  To make checking easier, make the X values integers.
         #
-        for i in range(0, m):
-            for j in range(0, n):
-                x[i, j] = round(x[i, j])
+        #for i in range(0, m):
+        #    for j in range(0, n):
+        #        x[i, j] = round(x[i, j])
 
         v = monomial_value(m, n, e, x)
 
+        print('')
+        print('                ', end='')
+        for i in range(0, m):
+            print('      E(%d)' % (i), end='')
+        print('')
+        print('                ', end='')
+        for i in range(0, m):
+            print('%10.4f' % (e[i]), end='')
+        print('')
         print('')
         print('   V(X)         ', end='')
         for i in range(0, m):
@@ -117,9 +125,7 @@ def monomial_value_test():
             for i in range(0, m):
                 print('%10.4f' % (x[i, j]), end='')
             print('')
-#
-#  Terminate.
-#
+
     print('')
     print('MONOMIAL_VALUE_TEST')
     print('  Normal end of execution.')

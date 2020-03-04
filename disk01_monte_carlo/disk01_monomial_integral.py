@@ -90,7 +90,7 @@ def disk01_monomial_integral_test():
 
     m = 2
     n = 4192
-    test_num = 20
+    test_num = 10
 
     print('')
     print('DISK01_MONOMIAL_INTEGRAL_TEST')
@@ -98,17 +98,15 @@ def disk01_monomial_integral_test():
     print('  DISK01_MONOMIAL_INTEGRAL computes monomial integrals')
     print('  over the interior of the unit disk in 2D.')
     print('  Compare with a Monte Carlo value.')
-#
-#  Get sample points.
-#
-    seed = 123456789
-    x, seed = disk01_sample(n, seed)
+    #
+    #  Get sample points.
+    #
 
     print('')
     print('  Number of sample points used is %d' % (n))
-#
-#  Randomly choose X,Y exponents between 0 and 8.
-#
+    #
+    #  Randomly choose X,Y exponents between 0 and 8.
+    #
     print('')
     print('  If any exponent is odd, the integral is zero.')
     print('  We will restrict this test to randomly chosen even exponents.')
@@ -116,24 +114,38 @@ def disk01_monomial_integral_test():
     print('  Ex  Ey     MC-Estimate           Exact      Error')
     print('')
 
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    seed = 123456789
+    x, seed = disk01_sample(n, seed)
+
+    dat = []
     for test in range(0, test_num):
 
+        # scaled pseudorandom
+        # e(m)
         e, seed = i4vec_uniform_ab(m, 0, 4, seed)
+        e *= 2
 
-        e[0] = e[0] * 2
-        e[1] = e[1] * 2
-
+        # X(2,N) points on the unit disk
         value = monomial_value(m, n, e, x)
-
         result = disk01_area() * np.sum(value) / float(n)
         exact = disk01_monomial_integral(e)
         error = abs(result - exact)
 
         print('  %2d  %2d  %14.6g  %14.6g  %10.2g'
               % (e[0], e[1], result, exact, error))
-#
-#  Terminate.
-#
+        dat.append(np.array([e[0], e[1], result, exact, error]))
+    dat = np.array(dat)
+
+    plt.figure()
+    plt.tricontourf(dat[:, 0], dat[:, 1], dat[:, 2], cmap="jet")
+    plt.scatter(dat[:, 0], dat[:, 1], color="red")
+    plt.grid()
+    plt.savefig("./disk01_monomial_integral.png")
+    plt.close()
+
     print('')
     print('DISK01_MONOMIAL_INTEGRAL_TEST:')
     print('  Normal end of execution.')
