@@ -1271,55 +1271,6 @@ def i4vec_uniform_ab(n, a, b, seed):
     return c, seed
 
 
-def i4vec_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # I4VEC_UNIFORM_AB_TEST tests I4VEC_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-    from i4vec_print import i4vec_print
-
-    n = 20
-    a = -100
-    b = 200
-    seed = 123456789
-
-    print('')
-    print('I4VEC_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4VEC_UNIFORM_AB computes pseudorandom values')
-    print('  in an interval [A,B].')
-    print('')
-    print('  The lower endpoint A = %d' % (a))
-    print('  The upper endpoint B = %d' % (b))
-    print('  The initial seed is %d' % (seed))
-    print('')
-
-    v, seed = i4vec_uniform_ab(n, a, b, seed)
-
-    i4vec_print(n, v, '  The random vector:')
-#
-#  Terminate.
-#
-    print('')
-    print('I4VEC_UNIFORM_AB_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def monomial_value(m, n, e, x):
 
     # *****************************************************************************80
@@ -1483,56 +1434,6 @@ def r8_factorial(n):
         value = value * i
 
     return value
-
-
-def r8_factorial_test():
-
-    # *****************************************************************************80
-    #
-    # R8_FACTORIAL_TEST tests R8_FACTORIAL.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-    from r8_factorial_values import r8_factorial_values
-
-    print('')
-    print('R8_FACTORIAL_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8_FACTORIAL evaluates the factorial function.')
-    print('')
-    print('      N                     Exact'),
-    print('                  Computed')
-
-    n_data = 0
-
-    while (True):
-
-        n_data, n, f1 = r8_factorial_values(n_data)
-
-        if (n_data == 0):
-            break
-
-        f2 = r8_factorial(n)
-
-        print('  %4d  %24.16g  %24.16g' % (n, f1, f2))
-#
-#  Terminate.
-#
-    print('')
-    print('R8_FACTORIAL_TEST')
-    print('  Normal end of execution.')
-    return
 
 
 def r8mat_transpose_print(m, n, a, title):
@@ -1823,54 +1724,6 @@ def r8mat_uniform_ab(m, n, a, b, seed):
             r[i, j] = a + (b - a) * seed * 4.656612875E-10
 
     return r, seed
-
-
-def r8mat_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_UNIFORM_AB_TEST tests R8MAT_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-    from r8mat_print import r8mat_print
-
-    m = 5
-    n = 4
-    a = -1.0
-    b = +5.0
-    seed = 123456789
-
-    print('')
-    print('R8MAT_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_UNIFORM_AB computes a random R8MAT.')
-    print('')
-    print('  %g <= X <= %g' % (a, b))
-    print('  Initial seed is %d' % (seed))
-
-    v, seed = r8mat_uniform_ab(m, n, a, b, seed)
-
-    r8mat_print(m, n, v, '  Random R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_UNIFORM_AB_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def r8vec_print(n, a, title):
