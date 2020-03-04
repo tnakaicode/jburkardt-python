@@ -628,16 +628,6 @@ def ns3de_test():
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the NS3DE library.')
 #
-#  Utilities.
-#
-    r8_erf_test()
-    r8vec_amax_test()
-    r8vec_amin_test()
-    r8vec_max_test()
-    r8vec_min_test()
-    r8vec_print_test()
-    r8vec_uniform_ab_test()
-#
 #  Libraries.
 #
     uvwp_burgers_test()
@@ -1551,46 +1541,6 @@ def timestamp():
     print(time.ctime(t))
 
     return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

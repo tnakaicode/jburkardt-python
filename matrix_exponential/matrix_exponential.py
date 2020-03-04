@@ -1180,51 +1180,35 @@ def r8mat_expm1(n, a):
     import numpy as np
 
     q = 6
-
     a2 = a.copy()
-
+    a2 = a2 / (2.0 ** 2)
     a_norm = np.linalg.norm(a2, np.inf)
-
     ee = (int)(np.log2(a_norm)) + 1
 
     s = max(0, ee + 1)
-
-    a2 = a2 / (2.0 ** 2)
-
     x = a2.copy()
-
     c = 0.5
-
     e = np.eye(n) + c * a2
-
     d = np.eye(n) - c * a2
-
     p = True
-
     for k in range(2, q + 1):
-
         c = c * float(q - k + 1) / float(k * (2 * q - k + 1))
-
         x = np.dot(a2, x)
-
         e = e + c * x
-
         if (p):
             d = d + c * x
         else:
             d = d - c * x
-
         p = not p
-#
-#  E -> inverse(D) * E
-#
+    #
+    #  E -> inverse(D) * E
+    #
     e = np.linalg.solve(d, e)
-#
-#  E -> E^(2*S)
-#
+    #
+    #  E -> E^(2*S)
+    #
     for k in range(0, 2):
         e = np.dot(e, e)
-
     return e
 
 
@@ -1275,21 +1259,13 @@ def r8mat_expm2(n, a):
     import numpy as np
 
     e = np.zeros([n, n])
-
     f = np.eye(n)
-
     k = 1
-
     while (r8mat_is_significant(n, n, e, f)):
-
         e = e + f
-
         f = np.dot(a, f)
-
         f = f / float(k)
-
         k = k + 1
-
     return e
 
 
@@ -1354,11 +1330,12 @@ def r8mat_expm3(n, a):
 #
     b = np.dot(evecs, d2)
     bt = b.transpose()
+
     a = evecs
     at = a.transpose()
+
     et, residuals, rank, s = np.linalg.lstsq(at, bt, rcond=None)
     e = et.transpose()
-
     return e
 
 
@@ -1627,9 +1604,6 @@ def matrix_exponential_test():
     matrix_exponential_test01()
     matrix_exponential_test02()
 
-#
-#  Terminate.
-#
     print('')
     print('MATRIX_EXPONENTIAL_TEST:')
     print('  Normal end of execution.')
@@ -1668,13 +1642,11 @@ def matrix_exponential_test01():
         print('  Test #%d' % (test))
 
         r8mat_exp_story(test)
-
         n = r8mat_exp_n(test)
 
         print('  Matrix order N = %d' % (n))
 
         a = r8mat_exp_a(test, n)
-
         r8mat_print(n, n, a, '  Matrix:')
 
         a_exp = r8mat_expm1(n, a)
@@ -1718,6 +1690,7 @@ def matrix_exponential_test02():
     print('  C8MAT_EXPM3 relies on an eigenvalue calculation.')
 
     test_num = c8mat_exp_test_num()
+    # 3
 
     for test in range(1, test_num + 1):
 
@@ -1735,13 +1708,13 @@ def matrix_exponential_test02():
 
         a_exp = c8mat_expm1(n, a)
         c8mat_print(n, n, a_exp, '  C8MAT_EXPM1(A):')
-#
-#   a_exp = c8mat_expm2 ( n, a )
-#   c8mat_print ( n, n, a_exp, '  C8MAT_EXPM2(A):' )
-#
-#   a_exp = c8mat_expm3 ( n, a )
-#   c8mat_print ( n, n, a_exp, '  C8MAT_EXPM3(A):' )
-#
+
+        #a_exp = c8mat_expm2 ( n, a )
+        #c8mat_print ( n, n, a_exp, '  C8MAT_EXPM2(A):' )
+
+        #a_exp = c8mat_expm3 ( n, a )
+        #c8mat_print ( n, n, a_exp, '  C8MAT_EXPM3(A):' )
+
         a_exp = c8mat_exp_expa(test, n)
         c8mat_print(n, n, a_exp, '  Exact Exponential:')
 
@@ -1776,46 +1749,6 @@ def timestamp():
     print(time.ctime(t))
 
     return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
