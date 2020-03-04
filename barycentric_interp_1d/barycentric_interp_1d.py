@@ -151,7 +151,7 @@ def lagcheby1_interp_1d_test(prob, nd):
     filename = 'p%02d_lagcheby1_%02d.png' % (prob, nd)
     plt.savefig(filename)
     print('  Created plot file "%s".' % (filename))
-    plt.show()
+    # plt.show()
     plt.clf()
 
     return
@@ -306,7 +306,7 @@ def lagcheby2_interp_1d_test(prob, nd):
     filename = 'p%02d_lagcheby2_%02d.png' % (prob, nd)
     plt.savefig(filename)
     print('  Created plot file "%s".' % (filename))
-    plt.show()
+    # plt.show()
     plt.clf()
 
     return
@@ -463,7 +463,7 @@ def lageven_interp_1d_test(prob, nd):
     filename = 'p%02d_lageven_%02d.png' % (prob, nd)
     plt.savefig(filename)
     print('  Created plot file "%s".' % (filename))
-    plt.show()
+    # plt.show()
     plt.clf()
 
     return
@@ -1003,19 +1003,9 @@ def barycentric_interp_1d_test():
     for prob in range(1, prob_num + 1):
         for nd in [4, 8, 16, 32, 64, 1000]:
             lagcheby1_interp_1d_test(prob, nd)
-
-    prob_num = p00_prob_num()
-    for prob in range(1, prob_num + 1):
-        for nd in [4, 8, 16, 32, 64, 1000]:
             lagcheby2_interp_1d_test(prob, nd)
-
-    prob_num = p00_prob_num()
-    for prob in range(1, prob_num + 1):
-        for nd in [4, 8, 16, 32, 64, 1000]:
             lageven_interp_1d_test(prob, nd)
-#
-#  Terminate.
-#
+
     print('')
     print('BARYCENTRIC_INTERP_1D_TEST:')
     print('  Normal end of execution.')
@@ -1521,7 +1511,7 @@ def p00_plot(prob):
     filename = 'p0' + str(prob) + '_plot.png'
 
     plt.savefig(filename)
-    plt.show()
+    # plt.show()
     plt.clf()
 
     return filename
