@@ -554,7 +554,6 @@ def square_grid_display(xv, ng, xg, filename):
     plt.grid(True)
     plt.axis('equal')
     plt.savefig(filename)
-    plt.show(block=False)
     plt.clf()
 
     print('')
@@ -726,7 +725,7 @@ def square_grid_points_test(m, n):
         [0.0, 1.0],
         [3.0, 2.0],
         [4.0, 5.0],
-        [1.0, 3.0]])
+        [1.0, 4.0]])
 
     r8mat_print(4, 2, xv, '  Quadrilateral vertices:')
 
@@ -736,7 +735,7 @@ def square_grid_points_test(m, n):
 #
 #  Write the data to a file.
 #
-    filename = 'square_grid_points.xy'
+    filename = 'square_grid_points_{:03d}_{:03d}.xy'.format(m, n)
     r8mat_write(filename, ng, 2, xg)
 
     print('')
@@ -744,7 +743,7 @@ def square_grid_points_test(m, n):
 #
 #  Plot the data.
 #
-    filename = 'square_grid_points.png'
+    filename = 'square_grid_points_{:03d}_{:03d}.png'.format(m, n)
     square_grid_display(xv, ng, xg, filename)
 #
 #  Terminate.
@@ -785,6 +784,7 @@ def square_grid_test():
     square_grid_display_test()
     square_grid_count_test()
     square_grid_points_test(10, 8)
+    square_grid_points_test(10, 10)
 #
 #  Terminate.
 #
