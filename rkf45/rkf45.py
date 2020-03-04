@@ -3,7 +3,9 @@
 """Translation of fortran 77 rkf45 to python via matlab """
 from numpy import *
 from sys import exit
-def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
+
+
+def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
     """
     y, yp, t, flag  = r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag )
 #********************************************
@@ -181,83 +183,83 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
 #
 #  Check the input parameters.
 #
-    if ( neqn < 1 ):
+    if (neqn < 1):
         flag = 8
-        print ( 'neqn=' % ( neqn ) )
+        print('neqn=' % (neqn))
         return(y, yp, t, flag)
 
-    if ( relerr < 0.0 ):
+    if (relerr < 0.0):
         flag = 8
-        print ( 'relerr=' % ( relerr ) )
-        return ( y, yp, t, flag )
+        print('relerr=' % (relerr))
+        return (y, yp, t, flag)
 
-    if ( abserr < 0.0 ):
+    if (abserr < 0.0):
         flag = 8
-        print ( 'abserr=' % ( abserr ) )
+        print('abserr=' % (abserr))
         return(y, yp, t, flag)
 
-    if ( flag == 0) or (8 < flag) or ( flag < -2 ):
+    if (flag == 0) or (8 < flag) or (flag < -2):
         flag = 8
-        print ( 'flag=', flag )
+        print('flag=', flag)
         return(y, yp, t, flag)
-    
-    mflag = abs ( flag )
+
+    mflag = abs(flag)
 #
 #  Is this a continuation call?
 #
-    if ( mflag != 1 ):
-        if ( t == tout) and ( kflag != 3 ):
+    if (mflag != 1):
+        if (t == tout) and (kflag != 3):
             flag = 8
-            print ( 't=',t,'tout=',tout,'kflag=',kflag )
+            print('t=', t, 'tout=', tout, 'kflag=', kflag)
             return(y, yp, t, flag)
-        if ( mflag == 2 ):
-            if ( kflag == 3 ):
+        if (mflag == 2):
+            if (kflag == 3):
                 flag = flag_save
-                mflag = abs ( flag )
-            elif ( init == 0 ):
+                mflag = abs(flag)
+            elif (init == 0):
                 flag = flag_save
-            elif ( kflag == 4 ):
+            elif (kflag == 4):
                 nfe = 0
-            elif ( kflag == 5) and (abserr == 0.0 ):
-                print ( '' )
-                print ( 'R8_RKF45 - Fatal error!' )
-                print ( '  KFLAG = 5 and ABSERR = 0.' )
-                error ( 'R8_RKF45 - Fatal error!')
-            elif ( kflag == 6) and (relerr <= relerr_save) and (abserr <= abserr_save ):          
-                print ( '' )
-                print ( 'R8_RKF45 - Fatal error!' )
-                print ( '  KFLAG = 6 and' )
-                print ( '  RELERR <= RELERR_SAVE and' )
-                print ( '  ABSERR <= ABSERR_SAVE' )
-                error ( 'R8_RKF45 - Fatal error!')
+            elif (kflag == 5) and (abserr == 0.0):
+                print('')
+                print('R8_RKF45 - Fatal error!')
+                print('  KFLAG = 5 and ABSERR = 0.')
+                error('R8_RKF45 - Fatal error!')
+            elif (kflag == 6) and (relerr <= relerr_save) and (abserr <= abserr_save):
+                print('')
+                print('R8_RKF45 - Fatal error!')
+                print('  KFLAG = 6 and')
+                print('  RELERR <= RELERR_SAVE and')
+                print('  ABSERR <= ABSERR_SAVE')
+                error('R8_RKF45 - Fatal error!')
         #
         #  FLAG = 3, 4, 5, 6, 7 or 8.
         #
         else:
-            if ( flag == 3 ):
+            if (flag == 3):
                 flag = flag_save
-                if ( kflag == 3 ):
-                    mflag = abs ( flag )
-            elif ( flag == 4 ):
+                if (kflag == 3):
+                    mflag = abs(flag)
+            elif (flag == 4):
                 nfe = 0
                 flag = flag_save
-                if ( kflag == 3 ):
-                    mflag = abs ( flag )
-            elif ( flag == 5) and ( 0.0 < abserr ):
+                if (kflag == 3):
+                    mflag = abs(flag)
+            elif (flag == 5) and (0.0 < abserr):
                 flag = flag_save
-                if ( kflag == 3 ):
-                    mflag = abs ( flag )
+                if (kflag == 3):
+                    mflag = abs(flag)
             #
             #  Integration cannot be continued because the user did not respond to
             #  the instructions pertaining to FLAG = 5, 6, 7 or 8.
             #
             else:
-                print ( '' )
-                print ( 'R8_RKF45 - Fatal error!' )
-                print ( '  Integration cannot continue because the user' )
-                print ( '  did not respond to the instructions pertaining' )
-                print ( '  to the output flag warning FLAG = 5, 6, 7 or 8.' )
-                error ( 'R8_RKF45 - Fatal error!') 
+                print('')
+                print('R8_RKF45 - Fatal error!')
+                print('  Integration cannot continue because the user')
+                print('  did not respond to the instructions pertaining')
+                print('  to the output flag warning FLAG = 5, 6, 7 or 8.')
+                error('R8_RKF45 - Fatal error!')
 #
 #  Save the input value of FLAG.
 #  Set the continuation flag KFLAG for subsequent input checking.
@@ -281,7 +283,7 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
 #
 #  Is the relative error tolerance too small?
 #
-    if ( relerr < relerr_min ):
+    if (relerr < relerr_min):
         relerr = relerr_min
         flag = 3
         kflag = 3
@@ -296,62 +298,62 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
 #  set the counter for function evaluations, NFE;
 #  estimate the starting stepsize.
 #
-    if ( mflag == 1 ):
+    if (mflag == 1):
         init = 0
         kop = 0
-        yp = f ( t, y )
+        yp = f(t, y)
         nfe = 1
-        if ( t == tout ):
+        if (t == tout):
             flag = 2
             return(y, yp, t, flag)
-    if ( init == 0 ):
+    if (init == 0):
         init = 1
-        h = abs ( dt )
-        toln = 0.0;
-        for k in range(0,neqn):
-            tol = relerr * abs ( y[k] ) + abserr
-            if ( 0.0 < tol ):
+        h = abs(dt)
+        toln = 0.0
+        for k in range(0, neqn):
+            tol = relerr * abs(y[k]) + abserr
+            if (0.0 < tol):
                 toln = tol
-                ypk = abs ( yp[k] )
-                if ( tol < ypk * h**5 ):
-                    h = ( tol / ypk )**0.2
-        if ( toln <= 0.0 ):
+                ypk = abs(yp[k])
+                if (tol < ypk * h**5):
+                    h = (tol / ypk)**0.2
+        if (toln <= 0.0):
             h = 0.0
-        h = max ( h, 26.0 * finfo(double).eps * max ( abs ( t ), abs ( dt ) ) );
-        if ( flag < 0 ):
+        h = max(h, 26.0 * finfo(double).eps * max(abs(t), abs(dt)))
+        if (flag < 0):
             flag_save = - 2
         else:
             flag_save = + 2
 #
 #  Set the stepsize for integration in the direction from T to TOUT.
 #
-    if ( dt < 0.0 ):
-        h = - abs ( h )
+    if (dt < 0.0):
+        h = - abs(h)
     else:
-        h = + abs ( h )
+        h = + abs(h)
 #
 #  Test to see if too may output points are being requested.
 #
-    if ( 2.0 * abs ( dt ) <= abs ( h ) ):
+    if (2.0 * abs(dt) <= abs(h)):
         kop = kop + 1
     #
     #  Unnecessary frequency of output.
     #
-    if ( kop == 2000 ):
+    if (kop == 2000):
         kop = 0
-        print ( 'Unnecessary frequency of output.' )
+        print('Unnecessary frequency of output.')
         flag = 7
         return(y, yp, t, flag)
 #
 #  If we are too close to the output point, then simply extrapolate and return.
 #
-    if ( abs ( dt ) <= 26.0 * finfo(double).eps * abs ( t ) ):
+    if (abs(dt) <= 26.0 * finfo(double).eps * abs(t)):
         t = tout
         y = y + dt * yp
-        yp = f ( t, y )
+        yp = f(t, y)
         nfe = nfe + 1
         flag = 2
-        print ( 'too close' )
+        print('too close')
         return(y, yp, t, flag)
 #
 #  Initialize the output point indicator.
@@ -366,12 +368,12 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
 #
 #  Step by step integration.
 #
-    while ( 1 ):
+    while (1):
         hfaild = 0
     #
     #  Set the smallest allowable stepsize.
     #
-        hmin = 26.0 * finfo(double).eps * abs ( t )
+        hmin = 26.0 * finfo(double).eps * abs(t)
     #
     #  Adjust the stepsize if necessary to hit the output point.
     #
@@ -379,11 +381,11 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
     #  thus lessen the impact of output points on the code.
     #
         dt = tout - t
-        if ( 2.0 * abs ( h ) > abs ( dt ) ):
-        #
-        #  Will the next successful step complete the integration to the output point?
-        #
-            if ( abs ( dt ) <= abs ( h ) ):
+        if (2.0 * abs(h) > abs(dt)):
+            #
+            #  Will the next successful step complete the integration to the output point?
+            #
+            if (abs(dt) <= abs(h)):
                 output = 1
                 h = dt
             else:
@@ -416,18 +418,18 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
     #  Test the number of derivative function evaluations.
     #  If okay, try to advance the integration from T to T+H.
     #
-        while ( True ):
-        #
-        #  Have we done too much work?
-        #
-            if ( maxnfe < nfe ):
+        while (True):
+            #
+            #  Have we done too much work?
+            #
+            if (maxnfe < nfe):
                 flag = 4
                 kflag = 4
                 return(y, yp, t, flag)
         #
         #  Advance an approximate solution over one step of length H.
         #
-            f1, f2, f3, f4, f5, f6  = r8_fehl( f, neqn, y, t, h, yp )
+            f1, f2, f3, f4, f5, f6 = r8_fehl(f, neqn, y, t, h, yp)
             f1 = f6.copy()
             nfe = nfe + 5
         #
@@ -437,16 +439,16 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
         #  solution at the beginning and end of the step.
         #
             eeoet = 0.0
-            for k in range(0,neqn):
-                et = abs ( y[k] ) + abs ( f1[k] ) + ae
-                if ( et <= 0.0 ):
+            for k in range(0, neqn):
+                et = abs(y[k]) + abs(f1[k]) + ae
+                if (et <= 0.0):
                     flag = 5
                     return(y, yp, t, flag)
-                ee = abs( ( -2090.0 * yp[k] + ( 21970.0 * f3[k] - 15048.0 * f4[k] )) \
-                          + ( 22528.0 * f2[k] - 27360.0 * f5[k] ) )
-                eeoet = max ( eeoet, ee / et )
-            esttol = abs ( h ) * eeoet * scale / 752400.0
-            if ( esttol <= 1.0 ):
+                ee = abs((-2090.0 * yp[k] + (21970.0 * f3[k] - 15048.0 * f4[k]))
+                         + (22528.0 * f2[k] - 27360.0 * f5[k]))
+                eeoet = max(eeoet, ee / et)
+            esttol = abs(h) * eeoet * scale / 752400.0
+            if (esttol <= 1.0):
                 break
         #
         #  Unsuccessful step.  Reduce the stepsize, try again.
@@ -454,12 +456,12 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
         #
             hfaild = 1
             output = 0
-            if ( esttol < 59049.0 ):
+            if (esttol < 59049.0):
                 s = 0.9 / esttol**0.2
             else:
                 s = 0.1
             h = s * h
-            if ( abs ( h ) < hmin ):
+            if (abs(h) < hmin):
                 flag = 6
                 kflag = 6
                 return(y, yp, t, flag)
@@ -469,32 +471,32 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
     #
         t = t + h
         y = f1.copy()
-        yp = f ( t, y )
+        yp = f(t, y)
         nfe = nfe + 1
     #
     #  Choose the next stepsize.  The increase is limited to a factor of 5.
     #  If the step failed, the next stepsize is not allowed to increase.
     #
-        if ( 0.0001889568 < esttol ):
+        if (0.0001889568 < esttol):
             s = 0.9 / esttol**0.2
         else:
             s = 5.0
-        if ( hfaild ):
-            s = min ( s, 1.0 )
-        if ( h < 0.0 ):
-            h = - max ( s * abs ( h ), hmin )
+        if (hfaild):
+            s = min(s, 1.0)
+        if (h < 0.0):
+            h = - max(s * abs(h), hmin)
         else:
-            h = + max ( s * abs ( h ), hmin )
+            h = + max(s * abs(h), hmin)
     #
     #  End of core integrator
     #
     #  Should we take another step?
     #
-        if ( output ):
+        if (output):
             t = tout
             flag = 2
             return(y, yp, t, flag)
-        if ( flag <= 0 ):
+        if (flag <= 0):
             break
 #
 #  One step integration mode.
@@ -502,7 +504,8 @@ def r8_rkf45 ( f, neqn, y, yp, t, tout, relerr, abserr, flag ):
     flag = - 2
     return(y, yp, t, flag)
 
-def r8_fehl ( f, neqn, y, t, h, yp ):
+
+def r8_fehl(f, neqn, y, t, h, yp):
     """
 #*****************************************************************************80
 #
@@ -577,31 +580,32 @@ def r8_fehl ( f, neqn, y, t, h, yp ):
     """
     ch = h / 4.0
     f5 = y + ch * yp
-    f1 = f ( t + ch, f5 )
+    f1 = f(t + ch, f5)
     ch = 3.0 * h / 32.0
-    f5 = y + ch * ( yp + 3.0 * f1 )
-    f2 = f ( t + 3.0 * h / 8.0, f5 )
+    f5 = y + ch * (yp + 3.0 * f1)
+    f2 = f(t + 3.0 * h / 8.0, f5)
     ch = h / 2197.0
-    f5 = y + ch * ( 1932.0 * yp + ( 7296.0 * f2 - 7200.0 * f1 ) )
-    f3 = f ( t + 12.0 * h / 13.0, f5 )
+    f5 = y + ch * (1932.0 * yp + (7296.0 * f2 - 7200.0 * f1))
+    f3 = f(t + 12.0 * h / 13.0, f5)
     ch = h / 4104.0
-    f5 = y + ch * (( 8341.0 * yp - 845.0 * f3) + ( 29440.0 * f2 - 32832.0 * f1 ) )
-    f4 = f ( t + h, f5 )
+    f5 = y + ch * ((8341.0 * yp - 845.0 * f3) + (29440.0 * f2 - 32832.0 * f1))
+    f4 = f(t + h, f5)
     ch = h / 20520.0
-    f1 = y + ch * ( ( -6080.0 * yp + ( 9295.0 * f3 - 5643.0 * f4 ) ) + \
-                    ( 41040.0 * f1 - 28352.0 * f2 ) )
-    f5 = f ( t + h / 2.0, f1 )
+    f1 = y + ch * ((-6080.0 * yp + (9295.0 * f3 - 5643.0 * f4)) +
+                   (41040.0 * f1 - 28352.0 * f2))
+    f5 = f(t + h / 2.0, f1)
 #
 #  Ready to compute the approximate solution at T+H.
 #
     ch = h / 7618050.0
-    s = y + ch * ( ( 902880.0 * yp + ( 3855735.0 * f3 - 1371249.0 * f4 ) ) \
-        + ( 3953664.0 * f2 + 277020.0 * f5 ) )
+    s = y + ch * ((902880.0 * yp + (3855735.0 * f3 - 1371249.0 * f4))
+                  + (3953664.0 * f2 + 277020.0 * f5))
     return(f1, f2, f3, f4, f5, s)
+
 
 def error(string):
     """
     Simple error handling
     """
-    print ( string )
+    print(string)
     exit('Fatal error')
