@@ -140,7 +140,7 @@ def burr_cdf_test():
     print('')
 
     import numpy as np
-    import matplotlib.pyplot as plt
+    from plot import plot_pnt
 
     dat = []
     for i in range(0, 10):
@@ -153,14 +153,7 @@ def burr_cdf_test():
         print(' %14g  %14g  %14g  %14g' % (x, pdf, cdf, x2))
         dat.append(np.array([x, pdf, cdf, x2]))
     dat = np.array(dat)
-
-    plt.figure()
-    plt.grid()
-    plt.scatter(dat[:, 0], dat[:, 1], label="burr-pdf")
-    plt.scatter(dat[:, 0], dat[:, 2], label="burr-cdf")
-    plt.legend()
-    plt.savefig("./burr.png")
-    plt.close()
+    plot_pnt(dat, "burr")
 #
 #  Terminate.
 #

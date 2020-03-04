@@ -161,7 +161,7 @@ def cardioid_cdf_test():
     print('')
 
     import numpy as np
-    import matplotlib.pyplot as plt
+    from plot import plot_pnt
 
     dat = []
     for i in range(0, 10):
@@ -174,14 +174,7 @@ def cardioid_cdf_test():
         print('  %12g  %12g  %12g  %12g' % (x, pdf, cdf, x2))
         dat.append(np.array([x, pdf, cdf, x2]))
     dat = np.array(dat)
-
-    plt.figure()
-    plt.grid()
-    plt.scatter(dat[:, 0], dat[:, 1], label="pdf")
-    plt.scatter(dat[:, 0], dat[:, 2], label="cdf")
-    plt.legend()
-    plt.savefig("./cardioid.png")
-    plt.close()
+    plot_pnt(dat, "cardioid")
 #
 #  Terminate.
 #

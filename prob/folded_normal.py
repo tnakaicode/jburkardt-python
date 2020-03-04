@@ -187,7 +187,7 @@ def folded_normal_cdf_test():
     print('')
 
     import numpy as np
-    import matplotlib.pyplot as plt
+    from plot import plot_pnt
 
     dat = []
     for i in range(0, 10):
@@ -200,14 +200,7 @@ def folded_normal_cdf_test():
         print(' %14g  %14g  %14g  %14g' % (x, pdf, cdf, x2))
         dat.append(np.array([x, pdf, cdf, x2]))
     dat = np.array(dat)
-
-    plt.figure()
-    plt.grid()
-    plt.scatter(dat[:, 0], dat[:, 1], label="folded_normal-pdf")
-    plt.scatter(dat[:, 0], dat[:, 2], label="folded_normal-cdf")
-    plt.legend()
-    plt.savefig("./folded_normal.png")
-    plt.close()
+    plot_pnt(dat, "folded_normal")
 #
 #  Terminate.
 #
