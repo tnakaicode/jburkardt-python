@@ -40,7 +40,6 @@ def delaunay_test():
     plt.savefig(filename)
     print('')
     print('  Saved graphics in file "%s"' % (filename))
-    plt.show()
 
     print('')
     print('DELAUNAY_TEST:')
