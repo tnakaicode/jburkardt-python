@@ -63,3 +63,22 @@
 - triangle01_integrals
 - triangle_integrals
 - wedge_integrals
+
+## Probability Density Functions
+
+prob
+
+For a discrete variable X, PDF(X) is the probability that the value X will occur  
+for a continuous variable, PDF(X) is the probability density of X,  
+the probability of a value between $X$ and $X+dX$ is $PDF(X) * dX$
+
+CDF - Cumulative Density Functions  
+
+- cardioid
+  - cardioid_cdf_test
+  - cardioid_sample_test
+  - cardioid_cdf
+  - cardioid_cdf_inv
+  - cardioid_pdf
+
+$$ pdf(A, Bx) = \frac{1}{2 \pi} (1 + 2B \cos(X-A)) $$
