@@ -557,16 +557,9 @@ def polygon_grid_test():
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the POLYGON_GRID library.')
 #
-#  Utilities.
-#
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_write_test()
-#
 #  Library.
 #
     polygon_grid_count_test()
-
     polygon_grid_display_test()
 
     polygon_grid_points_test01()

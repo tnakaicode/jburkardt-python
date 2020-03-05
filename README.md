@@ -82,3 +82,25 @@ CDF - Cumulative Density Functions
   - cardioid_pdf
 
 $$ pdf(A, Bx) = \frac{1}{2 \pi} (1 + 2B \cos(X-A)) $$
+
+## Grid
+
+- ball_grid
+- circle_arc_grid
+- cube_grid
+- disk_grid
+- ellipse_grid
+- ellipsoid_grid
+- grid
+- hypercube_grid
+- line_grid
+- polygon_grid
+- pyramid_grid
+- simplex_grid
+- sphere_fibonacci_grid
+- sphere_llq_grid
+- sphere_llt_grid
+- square_grid
+- tetrahedron_grid
+- triangle_grid
+- wedge_grid
