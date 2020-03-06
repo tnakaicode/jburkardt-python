@@ -120,21 +120,13 @@ def time_test():
     print('')
 
     for n_log in range(n_log_min, n_log_max + 1):
-
         n = 2 ** (n_log)
-
         print('  %8d' % (n)),
-
         for i_rep in range(0, n_rep):
-
             seconds = time()
-
             x = np.random.random_sample((n, 1))
-
             seconds = time() - seconds
-
             print('  %12f' % (seconds)),
-
         print('')
 #
 #  Terminate.
@@ -209,46 +201,6 @@ def timestamp():
     print(time.ctime(t))
 
     return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
