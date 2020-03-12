@@ -1,5 +1,15 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import plot2d
+
+obj = plot2d()
 
 
 def annulus_area(center, r1, r2):
@@ -99,9 +109,9 @@ def annulus_area_test():
         area = annulus_area(center, r1, r2)
         print('  (%9.6f,%9.6f)  %9.6f  %9.6f  %9.6f'
               % (center[0], center[1], r1, r2, area))
-#
-#  Terminate.
-#
+    #
+    #  Terminate.
+    #
     print('')
     print('ANNULUS_AREA_TEST')
     print('  Normal end of execution.')
@@ -134,8 +144,6 @@ def annulus_monte_carlo_test():
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the ANNULUS_MONTE_CARLO library.')
 
-    annulus_area_test()
-
     center = np.array([0.0, 0.0])
     r1 = 0.0
     r2 = 1.0
@@ -150,9 +158,9 @@ def annulus_monte_carlo_test():
     r1 = 0.0
     r2 = 1.0
     annulus_sample_test(center, r1, r2)
-#
-#  Terminate.
-#
+    #
+    #  Terminate.
+    #
     print('')
     print('ANNULUS_MONTE_CARLO_TEST')
     print('  Normal end of execution.')
@@ -261,7 +269,6 @@ def annulus_sample_test(center, r1, r2):
     #
     #    John Burkardt
     #
-    import numpy as np
 
     e_test = np.array([
         [0, 0],
@@ -270,6 +277,7 @@ def annulus_sample_test(center, r1, r2):
         [4, 0],
         [2, 2],
         [0, 4],
+        [3, 2],
         [6, 0]])
 
     print('')
@@ -279,27 +287,48 @@ def annulus_sample_test(center, r1, r2):
     print('  centered at (%g,%g) with R1 = %g, R2 = %g'
           % (center[0], center[1], r1, r2))
 
+    obj.create_tempdir(-1)
     seed = 123456789
 
     print('')
-    print('         N        1              X^2             Y^2             X^4             X^2Y^2           Y^4             X^6')
+    txt = "\tN"
+    for e in e_test:
+        txt += "\t\tX^{:d} Y^{:d}".format(*e)
+    print(txt)
     print('')
 
     n = 1
-
+    data = []
     while (n <= 65536):
-
         x, seed = annulus_sample(center, r1, r2, n, seed)
-
-        print('  %8d' % (n), end='')
-        for i in range(0, 7):
-            e = e_test[i, :]
+        dat = [n]
+        print(' %8d' % (n), end='')
+        for e in e_test:
             value = monomial_value(2, n, e, x)
             result = annulus_area(center, r1, r2) * np.sum(value[:]) / n
-            print('  %14.6g' % (result), end='')
+            print('\t%14.6g' % (result), end='')
+            dat.append(result)
+        data.append(np.array(dat))
         print('')
 
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.axs.set_xlim(-r2 * 1.25 + center[0], r2 * 1.25 + center[0])
+        obj.axs.set_ylim(-r2 * 1.25 + center[1], r2 * 1.25 + center[1])
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig()
+
         n = 2 * n
+
+    data = np.array(data)
+    obj.new_fig(aspect="auto")
+    for i, e in enumerate(e_test):
+        obj.axs.plot(data[:, 0], data[:, i])
+        obj.axs.set_title(r"$x^{:d} y^{:d}$".format(*e))
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig(aspect="auto")
 
     if (
             center[0] == 0.0 and
@@ -375,87 +404,14 @@ def disk01_monomial_integral(e):
 
         arg = 0.5 * float(e[0] + e[1] + 2)
         integral = integral / gamma(arg)
-#
-#  The surface integral is now adjusted to give the volume integral.
-#
+    #
+    #  The surface integral is now adjusted to give the volume integral.
+    #
     s = e[0] + e[1] + 2
 
     integral = integral * r ** s / float(s)
 
     return integral
-
-
-def disk01_monomial_integral_test():
-
-    # *****************************************************************************80
-    #
-    # DISK_INTEGRALS_TEST uses DISK01_SAMPLE to estimate various integrals.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    22 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    m = 2
-    n = 4192
-    test_num = 20
-
-    print('')
-    print('DISK01_MONOMIAL_INTEGRAL_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  DISK01_MONOMIAL_INTEGRAL computes monomial integrals')
-    print('  over the interior of the unit disk in 2D.')
-    print('  Compare with a Monte Carlo value.')
-#
-#  Get sample points.
-#
-    seed = 123456789
-    x, seed = disk01_sample(n, seed)
-
-    print('')
-    print('  Number of sample points used is %d' % (n))
-#
-#  Randomly choose X,Y exponents between 0 and 8.
-#
-    print('')
-    print('  If any exponent is odd, the integral is zero.')
-    print('  We will restrict this test to randomly chosen even exponents.')
-    print('')
-    print('  Ex  Ey     MC-Estimate           Exact      Error')
-    print('')
-
-    for test in range(0, test_num):
-
-        e, seed = i4vec_uniform_ab(m, 0, 4, seed)
-
-        e[0] = e[0] * 2
-        e[1] = e[1] * 2
-
-        value = monomial_value(m, n, e, x)
-
-        result = disk01_area() * np.sum(value) / float(n)
-        exact = disk01_monomial_integral(e)
-        error = abs(result - exact)
-
-        print('  %2d  %2d  %14.6g  %14.6g  %10.2g'
-              % (e[0], e[1], result, exact, error))
-#
-#  Terminate.
-#
-    print('')
-    print('DISK01_MONOMIAL_INTEGRAL_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def monomial_value(m, n, e, x):
@@ -506,76 +462,6 @@ def monomial_value(m, n, e, x):
                 v[j] = v[j] * x[i, j] ** e[i]
 
     return v
-
-
-def monomial_value_test():
-
-    # *****************************************************************************80
-    #
-    # MONOMIAL_VALUE_TEST tests MONOMIAL_VALUE on sets of data in various dimensions.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    07 April 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('MONOMIAL_VALUE_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  Use monomial_value() to evaluate some monomials')
-    print('  in dimensions 1 through 3.')
-
-    e_min = -3
-    e_max = 6
-    n = 5
-    seed = 123456789
-    x_min = -2.0
-    x_max = +10.0
-
-    for m in range(1, 4):
-
-        print('')
-        print('  Spatial dimension M =  %d' % (m))
-
-        e, seed = i4vec_uniform_ab(m, e_min, e_max, seed)
-        i4vec_transpose_print(m, e, '  Exponents:')
-        x, seed = r8mat_uniform_ab(m, n, x_min, x_max, seed)
-#
-#  To make checking easier, make the X values integers.
-#
-        for i in range(0, m):
-            for j in range(0, n):
-                x[i, j] = round(x[i, j])
-
-        v = monomial_value(m, n, e, x)
-
-        print('')
-        print('   V(X)         ', end='')
-        for i in range(0, m):
-            print('      X(%d)' % (i), end='')
-        print('')
-        print('')
-        for j in range(0, n):
-            print('%14.6g  ' % (v[j]), end='')
-            for i in range(0, m):
-                print('%10.4f' % (x[i, j]), end='')
-            print('')
-#
-#  Terminate.
-#
-    print('')
-    print('MONOMIAL_VALUE_TEST')
-    print('  Normal end of execution.')
-    return
 
 
 def r8vec_uniform_01(n, seed):
@@ -667,49 +553,6 @@ def r8vec_uniform_01(n, seed):
     return x, seed
 
 
-def r8vec_uniform_01_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_01_TEST tests R8VEC_UNIFORM_01.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n = 10
-    seed = 123456789
-
-    print('')
-    print('R8VEC_UNIFORM_01_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_UNIFORM_01 computes a random R8VEC.')
-    print('')
-    print('  Initial seed is %d' % (seed))
-
-    v, seed = r8vec_uniform_01(n, seed)
-
-    r8vec_print(n, v, '  Random R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_UNIFORM_01_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def timestamp():
 
     # *****************************************************************************80
@@ -738,46 +581,6 @@ def timestamp():
     print(time.ctime(t))
 
     return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

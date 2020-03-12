@@ -50,6 +50,13 @@ def create_tempdir(flag=1):
     return tmpdir
 
 
+def create_tempnum(name, tmpdir="./", ext=".tar.gz"):
+    num = len(glob.glob(tmpdir + name + "*" + ext)) + 1
+    filename = '{}{}_{:03}{}'.format(tmpdir, name, num, ext)
+    #print(num, filename)
+    return filename
+
+
 class SetDir (object):
 
     def __init__(self):
@@ -129,6 +136,12 @@ class plot2d (SetDir):
     def SavePng(self, pngname=None):
         if pngname == None:
             pngname = self.tmpdir + self.rootname + ".png"
+        self.fig.savefig(pngname)
+
+    def SavePng_Serial(self, pngname=None):
+        if pngname == None:
+            pngname = self.tmpdir + self.rootname
+        pngname = create_tempnum(pngname, self.tmpdir, ".png")
         self.fig.savefig(pngname)
 
     def Show(self):

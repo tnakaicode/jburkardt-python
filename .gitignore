@@ -16,6 +16,8 @@ tex2pdf*/*
 
 #tmp
 tmp/*
+temp_*/*
+*/temp_*/*
 
 # index
 *index.html?*
