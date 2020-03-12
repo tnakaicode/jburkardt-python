@@ -1,6 +1,13 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
 
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d
 
 def gamma_values(n_data):
 
@@ -2413,40 +2420,30 @@ def sphere01_monte_carlo_test():
     print('  Use SPHERE01_SAMPLE to estimate integrals over ')
     print('  the surface of the unit sphere.')
 
+    obj = plot3d()
+    obj.create_tempdir(-1)
+
     seed = 123456789
-
-    print('')
-    print('         N        1              X^2             Y^2'),
-    print('             Z^2             X^4           X^2Y^2           Z^4')
-    print('')
-
     n = 1
-
-    e = np.zeros(3, dtype=np.int32)
-
     while (n <= 65536):
-
         x, seed = sphere01_sample(n, seed)
-
-        print('  %8d' % (n)),
-
-        for j in range(0, 7):
-
-            e[0:3] = e_test[j, 0:3]
-
+        print('  %8d' % (n), end='')
+        for e in e_test:
             value = monomial_value(3, n, e, x)
-
             result = sphere01_area() * np.sum(value[0:n]) / float(n)
-
-            print('  %14f' % (result)),
-
+            print('\t%14.6g' % (result), end='')
         print('')
+
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig()
 
         n = 2 * n
 
     print('')
     print('     Exact'),
-
     for j in range(0, 7):
 
         e[0:3] = e_test[j, 0:3]
@@ -2662,30 +2659,11 @@ def sphere_monte_carlo_tests():
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the SPHERE_MONTE_CARLO library.')
 
-    gamma_values_test()
-    i4vec_print_test()
-    i4vec_transpose_print_test()
-    i4vec_uniform_ab_test()
-    monomial_value_test()
-    r8_gamma_test()
-    r8_normal_01_test()
-    r8_uniform_01_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_transpose_print_test()
-    r8mat_transpose_print_some_test()
-    r8mat_uniform_ab_test()
-    r8vec_norm_test()
-    r8vec_normal_01_test()
-    r8vec_print_test()
-    r8vec_uniform_ab_test()
     sphere01_area_test()
     sphere01_monomial_integral_test()
     sphere01_monte_carlo_test()
     sphere01_sample_test()
-#
-#  Terminate.
-#
+
     print('')
     print('SPHERE_MONTE_CARLO_TESTS:')
     print('  Normal end of execution.')

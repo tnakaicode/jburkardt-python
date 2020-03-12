@@ -1,6 +1,13 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
 
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d
 
 def i4vec_print(n, a, title):
 
@@ -1251,8 +1258,6 @@ def simplex_general_sample_test():
         [0, 0, 1, 0, 0, 1, 0, 2, 1, 0],
         [0, 0, 0, 1, 0, 0, 1, 0, 1, 2]], dtype=np.int32)
 
-    e = np.zeros(m, dtype=np.int32)
-
     t = np.array([
         [1.0, 2.0, 1.0, 1.0],
         [0.0, 0.0, 2.0, 0.0],
@@ -1271,32 +1276,25 @@ def simplex_general_sample_test():
             print('%14.6g' % (t[i, j]), end='')
         print('')
 
+    obj = plot3d()
+    obj.create_tempdir(-1)
     seed = 123456789
-
-    print('')
-    print('         N        1               X               Y ', end='')
-    print('              Z               X^2              XY             XZ', end='')
-    print('              Y^2             YZ               Z^2')
-    print('')
-
+    
     n = 1
-
     while (n <= 65536):
-
         x, seed = simplex_general_sample(m, n, t, seed)
-
         print('  %8d' % (n), end='')
-
-        for j in range(0, 10):
-
-            e[0:m] = e_test[0:m, j]
-
+        for e in e_test:
             value = monomial_value(m, n, e, x)
-
             result = simplex_general_volume(m, t) * np.sum(value[0:n]) / n
             print('  %14.6g' % (result), end='')
-
         print('')
+
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig()
 
         n = 2 * n
 
@@ -1599,12 +1597,11 @@ def simplex_unit_sample_test01():
 
     m = 3
 
+    e_name = ["U", "V", "W", "X", "Y", "z"]
     e_test = np.array([
         [0, 1, 0, 0, 2, 1, 1, 0, 0, 0],
         [0, 0, 1, 0, 0, 1, 0, 2, 1, 0],
         [0, 0, 0, 1, 0, 0, 1, 0, 1, 2]], dtype=np.int32)
-
-    e = np.zeros(m, dtype=np.int32)
 
     print('')
     print('SIMPLEX_UNIT_SAMPLE_TEST01')
@@ -1613,39 +1610,21 @@ def simplex_unit_sample_test01():
 
     seed = 123456789
 
-    print('')
-    print('         N        1               X               Y ', end='')
-    print('              Z               X^2              XY             XZ', end='')
-    print('              Y^2             YZ               Z^2')
-    print('')
-
     n = 1
-
     while (n <= 65536):
-
         x, seed = simplex_unit_sample(m, n, seed)
-
         print('  %8d' % (n), end='')
-
-        for j in range(0, 10):
-
-            e[0:m] = e_test[0:m, j]
-
+        for e in e_test:
             value = monomial_value(m, n, e, x)
-
             result = simplex_unit_volume(m) * np.sum(value[0:n]) / n
             print('  %14.6g' % (result), end='')
-
         print('')
 
         n = 2 * n
 
     print('')
     print('     Exact')
-    for j in range(0, 10):
-
-        e[0:m] = e_test[0:m, j]
-
+    for e in e_test:
         result = simplex_unit_monomial_integral(m, e)
         print('  %14.6g' % (result), end='')
 
@@ -2132,17 +2111,6 @@ def simplex_monte_carlo_test():
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the SIMPLEX_MONTE_CARLO library.')
 
-    i4vec_print_test()
-    i4vec_transpose_print_test()
-    i4vec_uniform_ab_test()
-    monomial_value_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_transpose_print_test()
-    r8mat_transpose_print_some_test()
-    r8mat_uniform_ab_test()
-    r8vec_print_test()
-    r8vec_uniform_01_test()
     simplex_general_sample_test()
     simplex_unit_monomial_integral_test()
     simplex_unit_sample_test00()
