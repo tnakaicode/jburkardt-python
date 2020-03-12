@@ -88,13 +88,13 @@ for j in range(0, n):
 ```
 
 Ellipse Sampling
-|    n= | img                                        |
-| ----: | ------------------------------------------ |
-|    64 | ![pic](../img/ellipse_monte_carlo_007.png) |
-|   512 | ![pic](../img/ellipse_monte_carlo_010.png) |
-|  2048 | ![pic](../img/ellipse_monte_carlo_012.png) |
-| 16384 | ![pic](../img/ellipse_monte_carlo_015.png) |
-| 65536 | ![pic](../img/ellipse_monte_carlo_017.png) |
+|    n= | ellipse (2D)                               | sphere (3D)                               |
+| ----: | ------------------------------------------ | ----------------------------------------- |
+|    64 | ![pic](../img/ellipse_monte_carlo_007.png) | ![pic](../img/sphere_monte_carlo_007.png) |
+|   512 | ![pic](../img/ellipse_monte_carlo_010.png) | ![pic](../img/sphere_monte_carlo_010.png) |
+|  2048 | ![pic](../img/ellipse_monte_carlo_012.png) | ![pic](../img/sphere_monte_carlo_012.png) |
+| 16384 | ![pic](../img/ellipse_monte_carlo_015.png) | ![pic](../img/sphere_monte_carlo_015.png) |
+| 65536 | ![pic](../img/ellipse_monte_carlo_017.png) | ![pic](../img/sphere_monte_carlo_017.png) |
 
 ```Python
 import numpy as np
