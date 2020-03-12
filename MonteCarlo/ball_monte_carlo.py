@@ -1,5 +1,14 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d
+obj = plot3d()
 
 
 def ball01_monomial_integral(e):
@@ -204,25 +213,37 @@ def ball_monte_carlo_test():
     print('  Estimate integrals over the interior of the unit ball')
     print('  using the Monte Carlo method.')
 
+    obj.create_tempdir(-1)
     seed = 123456789
 
     print('')
-    print('         N        1              X^2             Y^2             Z^2             X^4           X^2Y^2           Z^4')
+    txt = " \tN"
+    for e in e_test:
+        txt += "\tX^{:d} Y^{:d} Z^{:d}".format(*e)
+    print(txt)
     print('')
 
     n = 1
-
+    data = []
     while (n <= 65536):
-
         x, seed = ball01_sample(n, seed)
-
+        dat = [n]
         print('  %8d' % (n), end='')
-        for j in range(0, 7):
-            e = e_test[j, :]
+        for e in e_test:
             value = monomial_value(3, n, e, x)
             result = ball01_volume() * np.sum(value) / float(n)
-            print('  %14.6g' % (result), end='')
+            print('\t%14.6g' % (result), end='')
+            dat.append(result)
+        data.append(np.array(dat))
         print('')
+
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        #obj.axs.set_xlim(-r2 * 1.25 + center[0], r2 * 1.25 + center[0])
+        #obj.axs.set_ylim(-r2 * 1.25 + center[1], r2 * 1.25 + center[1])
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig()
 
         n = 2 * n
 

@@ -155,6 +155,9 @@ class plot3d (SetDir):
 
     def __init__(self):
         SetDir.__init__(self)
+        self.new_fig()
+
+    def new_fig(self):
         self.fig = plt.figure()
         self.axs = self.fig.add_subplot(111, projection='3d')
         #self.axs = self.fig.gca(projection='3d')
@@ -211,6 +214,17 @@ class plot3d (SetDir):
         #self.axs.set_xlim3d(-10, 10)
         #self.axs.set_ylim3d(-10, 10)
         #self.axs.set_zlim3d(-10, 10)
+
+    def SavePng(self, pngname=None):
+        if pngname == None:
+            pngname = self.tmpdir + self.rootname + ".png"
+        self.fig.savefig(pngname)
+
+    def SavePng_Serial(self, pngname=None):
+        if pngname == None:
+            pngname = self.tmpdir + self.rootname
+        pngname = create_tempnum(pngname, self.tmpdir, ".png")
+        self.fig.savefig(pngname)
 
     def Show(self):
         try:

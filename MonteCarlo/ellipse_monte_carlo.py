@@ -1,5 +1,14 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d
+obj = plot2d()
 
 
 def ellipse_area1(a, r):
@@ -206,31 +215,33 @@ def ellipse_monte_carlo_test():
     print('  Use ELLIPSE01_SAMPLE to estimate integrals')
     print('  in the ellipse x'' * A * x <= r^2.')
 
+    obj.create_tempdir(-1)
     seed = 123456789
 
     print('')
-    print('         N        1              X               Y               X^2               XY             Y^2             X^3')
+    txt = " \tN"
+    for e in e_test:
+        txt += "\tX^{:d} Y^{:d}".format(*e)
+    print(txt)
     print('')
 
     n = 1
-    e = np.zeros(2)
-
     while (n <= 65536):
-
         x, seed = ellipse_sample(n, a, r, seed)
-
         print('  %8d' % (n), end='')
-
-        for j in range(0, 7):
-
-            e[0:2] = e_test[j, 0:2]
-
+        for e in e_test:
             value = monomial_value(2, n, e, x)
-
             result = ellipse_area1(a, r) * np.sum(value[0:n]) / float(n)
-            print('  %14.6g' % (result), end='')
-
+            print('\t%14.6g' % (result), end='')
         print('')
+
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.axs.set_xlim(-0.25, 0.25)
+        obj.axs.set_ylim(-0.75, 0.75)
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig()
 
         n = 2 * n
 #
@@ -2400,46 +2411,6 @@ def timestamp():
     return None
 
 
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def uniform_in_sphere01_map(m, n, seed):
 
     # *****************************************************************************80
@@ -2588,23 +2559,7 @@ def ellipse_monte_carlo_tests():
     ellipse_area2_test()
     ellipse_monte_carlo_test()
     ellipse_sample_test()
-    i4vec_transpose_print_test()
-    i4vec_print_test()
-    i4vec_uniform_ab_test()
-    monomial_value_test()
-    r8_normal_01_test()
-    r8_uniform_01_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8po_fa_test()
-    r8po_sl_test()
-    r8vec_normal_01_test()
-    r8vec_print_test()
-    r8vec_uniform_01_test()
-    uniform_in_sphere01_map_test()
-#
-#  Terminate.
-#
+
     print('')
     print('ELLIPSE_MONTE_CARLO_TESTS')
     print('  Normal end of execution.')

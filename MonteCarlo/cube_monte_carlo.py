@@ -1,5 +1,15 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d
+
+obj = plot3d()
 
 
 def cube01_monomial_integral(e):
@@ -151,71 +161,44 @@ def cube01_monte_carlo_test():
 
     e_test = np.array([
         [0, 0, 0],
-        [1, 0, 0],
-        [0, 1, 0],
         [0, 0, 1],
         [2, 0, 0],
         [1, 1, 0],
-        [1, 0, 1],
-        [0, 2, 0],
         [0, 1, 1],
-        [0, 0, 2]])
+        [0, 0, 2],
+        [2, 2, 0],
+        [0, 0, 4]])
 
     print('')
     print('CUBE01_MONTE_CARLO_TEST')
     print('  Use CUBE01_SAMPLE to estimate integrals')
     print('  along the interior of the unit cube in 3D.')
 
+    obj.create_tempdir(-1)
     seed = 123456789
 
     print('')
-    print('         N', end='')
-    print('        1', end='')
-    print('               X', end='')
-    print('               Y ', end='')
-    print('              Z', end='')
-    print('               X^2', end='')
-    print('              XY', end='')
-    print('             XZ', end='')
-    print('              Y^2', end='')
-    print('             YZ', end='')
-    print('               Z^2', end='')
+    txt = "\tN"
+    for e in e_test:
+        txt += "\t\tX^{:d} Y^{:d}".format(*e)
     print('')
 
     n = 1
-
-    e = np.zeros(m)
-
     while (n <= 65536):
-
         x, seed = cube01_sample(n, seed)
         print('  %8d' % (n), end='')
-
-        for j in range(0, 10):
-
-            e[0:m] = e_test[j, 0:m]
-
+        for e in e_test:
             value = monomial_value(m, n, e, x)
-
             result = cube01_volume() * np.sum(value[0:n]) / float(n)
-
             print('  %14.6g' % (result), end='')
-
         print('')
 
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+
         n = 2 * n
-
-    print('')
-    print('     Exact', end='')
-
-    for j in range(0, 10):
-
-        e[0:m] = e_test[j, 0:m]
-
-        result = cube01_monomial_integral(e)
-        print('  %14.6g' % (result), end='')
-
-    print('')
 
     return
 
@@ -1503,46 +1486,6 @@ def timestamp():
     return None
 
 
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def cube_monte_carlo_test():
 
     # *****************************************************************************80
@@ -1567,29 +1510,17 @@ def cube_monte_carlo_test():
     print('CUBE_MONTE_CARLO_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the CUBE_MONTE_CARLO library.')
-#
-#  Utility functions.
-#
-    i4vec_print_test()
-    i4vec_transpose_print_test()
-    i4vec_uniform_ab_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_transpose_print_test()
-    r8mat_transpose_print_some_test()
-    r8mat_uniform_01_test()
-    r8mat_uniform_ab_test()
-#
-#  Library functions.
-#
+    #
+    #  Library functions.
+    #
     cube01_monomial_integral_test()
     cube01_monte_carlo_test()
     cube01_sample_test()
     cube01_volume_test()
     monomial_value_test()
-#
-#  Terminate.
-#
+    #
+    #  Terminate.
+    #
     print('')
     print('CUBE_MONTE_CARLO_TEST:')
     print('  Normal end of execution.')
