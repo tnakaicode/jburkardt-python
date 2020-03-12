@@ -1,0 +1,538 @@
+Sun Jan 26 09:13:15 2020
+
+HYPERSPHERE_MONTE_CARLO_TEST
+  Python version: 3.6.9
+  Test the HYPERSPHERE_MONTE_CARLO library.
+
+GAMMA_VALUES_TEST:
+  Python version: 3.6.9
+  GAMMA_VALUES stores values of the Gamma function.
+
+      X            GAMMA(X)
+
+     -0.500000       -3.5449077018110322
+     -0.010000     -100.5871979644108052
+      0.010000       99.4325851191506018
+      0.100000        9.5135076986687324
+      0.200000        4.5908437119988026
+      0.400000        2.2181595437576882
+      0.500000        1.7724538509055161
+      0.600000        1.4891922488128171
+      0.800000        1.1642297137253030
+      1.000000        1.0000000000000000
+      1.100000        0.9513507698668732
+      1.200000        0.9181687423997607
+      1.300000        0.8974706963062772
+      1.400000        0.8872638175030753
+      1.500000        0.8862269254527581
+      1.600000        0.8935153492876903
+      1.700000        0.9086387328532904
+      1.800000        0.9313837709802427
+      1.900000        0.9617658319073874
+      2.000000        1.0000000000000000
+      3.000000        2.0000000000000000
+      4.000000        6.0000000000000000
+     10.000000   362880.0000000000000000
+     20.000000  121645100408832000.0000000000000000
+     30.000000  8841761993739701898620088352768.0000000000000000
+
+GAMMA_VALUES_TEST:
+  Normal end of execution.
+
+HYPERSPHERE01_AREA_TEST
+  Python version: 3.6.9
+  HYPERSPHERE01_AREA returns the volume of the unit hypersphere.
+
+   M  Area
+
+   1  2
+   2  6.28319
+   3  12.5664
+   4  19.7392
+   5  26.3189
+   6  31.0063
+   7  33.0734
+   8  32.4697
+   9  29.6866
+  10  25.5016
+
+HYPERSPHERE01_AREA_TEST
+  Normal end of execution.
+
+HYPERSPHERE01_MONOMIAL_INTEGRAL
+  Python version: 3.6.9
+  HYPERSPHERE01_MONOMIAL_INTEGRAL returns the integral of
+  a monomial over the surface of the unit hypersphere in 3D.
+  Compare with a Monte Carlo estimate.
+
+  Number of sample points used is 4192
+
+  If any exponent is odd, the integral is zero.
+  We will restrict this test to randomly chosen even exponents.
+
+  Ex  Ey  Ez     MC-Estimate           Exact      Error
+
+   8   6   8     6.67009e-06      6.5716e-06     9.8e-08
+   8   8   6     6.83447e-06      6.5716e-06     2.6e-07
+   2   0   8        0.125626        0.126933      0.0013
+   4   0   6       0.0554157       0.0543999       0.001
+   4   4   2        0.011049         0.01088     0.00017
+   4   0   8       0.0296859       0.0292922     0.00039
+   4   6   0       0.0548201       0.0543999     0.00042
+   6   4   8     8.98878e-05      9.0688e-05       8e-07
+   0   4   6       0.0529196       0.0543999      0.0015
+   2   8   6     0.000587353     0.000574358     1.3e-05
+   6   8   4     9.38745e-05      9.0688e-05     3.2e-06
+   2   8   2         0.01019      0.00976408     0.00043
+   0   8   8      0.00400189       0.0040205     1.9e-05
+   2   0   0         4.19658         4.18879      0.0078
+   0   2   4        0.351766        0.359039      0.0073
+   0   4   0         2.57177         2.51327       0.058
+   8   2   2      0.00964003      0.00976408     0.00012
+   8   8   0      0.00394661       0.0040205     7.4e-05
+   4   0   2        0.364292        0.359039      0.0053
+   0   4   0         2.57177         2.51327       0.058
+
+HYPERSPHERE_MONOMIAL_INTEGRAL_TEST
+  Normal end of execution.
+
+HYPERSPHERE01_MONTE_CARLO_TEST01
+  Python version: 3.6.9
+  Use HYPERSPHERE01_SAMPLE to estimate integrals over 
+  the surface of the unit hypersphere in M dimensions.
+
+  Spatial dimension M = 3
+
+         N        1              X^2             Y^2             Z^2             X^4           X^2Y^2           Z^4
+
+         1       12.566371        7.683426        0.873288        4.009657        4.697859        0.533952        1.279395
+         2       12.566371        1.093891        7.219980        4.252500        0.184061        0.332921        1.920138
+         4       12.566371        5.392351        3.380371        3.793649        3.022823        1.327469        1.936742
+         8       12.566371        2.763397        5.004408        4.798566        1.360959        0.585171        2.951402
+        16       12.566371        3.159880        4.521724        4.884767        1.692270        0.644033        2.658203
+        32       12.566371        4.413404        4.519154        3.633813        2.720537        1.023668        1.946590
+        64       12.566371        4.187301        4.643805        3.735264        2.612950        0.815816        1.998551
+       128       12.566371        3.783097        4.448339        4.334934        2.210398        0.704196        2.369574
+       256       12.566371        4.280927        3.934215        4.351228        2.579127        0.807050        2.661562
+       512       12.566371        4.410791        4.045803        4.109777        2.714881        0.831751        2.487662
+      1024       12.566371        4.247254        4.249617        4.069499        2.559459        0.837738        2.414638
+      2048       12.566371        4.132347        4.292143        4.141881        2.443579        0.849165        2.452351
+      4096       12.566371        4.158973        4.245523        4.161875        2.470537        0.848858        2.479313
+      8192       12.566371        4.226758        4.179028        4.160584        2.533919        0.840918        2.471344
+     16384       12.566371        4.183663        4.173227        4.209480        2.509280        0.833305        2.529232
+     32768       12.566371        4.193465        4.217400        4.155505        2.524882        0.836234        2.489000
+     65536       12.566371        4.184205        4.186260        4.195905        2.511133        0.840944        2.526551
+
+     Exact       12.566371        4.188790        4.188790        4.188790        2.513274        0.837758        2.513274
+
+HYPERSPHERE01_MONTE_CARLO_TEST01
+  Normal end of execution.
+
+HYPERSPHERE01_SAMPLE_TEST
+  Python version: 3.6.9
+  HYPERSPHERE01_SAMPLE samples the unit hypersphere
+  in M dimensions.
+
+  Sample points on the unit hypersphere.
+
+  Row:       0             1             2       
+  Col
+      0 :    0.781938     -0.263617       0.56487  
+      1 :    0.413678     -0.542961     -0.730797  
+      2 :   0.0544828      0.924277     -0.377813  
+      3 :    0.723278     0.0995291      0.683347  
+      4 :    0.747038     -0.663815     -0.035826  
+      5 :    -0.78339     -0.516512      -0.34571  
+      6 :    0.146773      0.598886      -0.78727  
+      7 :   -0.649577     -0.399299     -0.647001  
+      8 :    0.375237     -0.770087       0.51591  
+      9 :   -0.408985     0.0579096     -0.910702  
+
+HYPERSPHERE01_SAMPLE_TEST
+  Normal end of execution.
+
+I4VEC_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_PRINT prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+I4VEC_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_TRANSPOSE_PRINT prints an I4VEC
+  with 5 entries to a row, and an optional title.
+
+  My array:  
+       1       2       3       4       5       6       7       8       9      10
+      11      12
+
+I4VEC_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4VEC_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+
+  The random vector:
+
+     0     -35
+     1     187
+     2     149
+     3      69
+     4      25
+     5     -81
+     6     -23
+     7     -67
+     8     -87
+     9      90
+    10     -82
+    11      35
+    12      20
+    13     127
+    14     139
+    15    -100
+    16     170
+    17       5
+    18     -72
+    19     -96
+
+I4VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+MONOMIAL_VALUE_TEST
+  Python version: 3.6.9
+  Use monomial_value() to evaluate some monomials
+  in dimensions 1 through 3.
+
+  Spatial dimension M =  1
+
+  Exponents:
+      -1
+
+   V(X)               X(0)
+
+      0.111111      9.0000
+         0.125      8.0000
+           0.2      5.0000
+      0.333333      3.0000
+            -1     -1.0000
+
+  Spatial dimension M =  2
+
+  Exponents:
+      -1      -2
+
+   V(X)               X(0)      X(1)
+
+    -0.0277778     -1.0000    6.0000
+     -0.111111     -1.0000    3.0000
+    0.00680272      3.0000    7.0000
+       0.03125      8.0000   -2.0000
+     0.0277778      9.0000    2.0000
+
+  Spatial dimension M =  3
+
+  Exponents:
+      -3      -3       5
+
+   V(X)               X(0)      X(1)      X(2)
+
+        0.0625      8.0000   -1.0000   -2.0000
+   -0.00137174      1.0000    9.0000   -1.0000
+   0.000244141      2.0000    8.0000    1.0000
+       1.21363      6.0000    5.0000    8.0000
+      0.158766      3.0000    9.0000    5.0000
+
+MONOMIAL_VALUE_TEST
+  Normal end of execution.
+
+R8_GAMMA_TEST:
+  Python version: 3.6.9
+  R8_GAMMA evaluates the Gamma function.
+
+      X            GAMMA(X)      R8_GAMMA(X)
+
+          -0.5        -3.544907701811032        -3.544907701811032
+         -0.01        -100.5871979644108        -100.5871979644108
+          0.01          99.4325851191506          99.4325851191506
+           0.1         9.513507698668732         9.513507698668731
+           0.2         4.590843711998803         4.590843711998803
+           0.4         2.218159543757688         2.218159543757688
+           0.5         1.772453850905516         1.772453850905516
+           0.6         1.489192248812817         1.489192248812817
+           0.8         1.164229713725303         1.164229713725303
+             1                         1                         1
+           1.1        0.9513507698668732        0.9513507698668732
+           1.2        0.9181687423997607        0.9181687423997607
+           1.3        0.8974706963062772        0.8974706963062772
+           1.4        0.8872638175030753        0.8872638175030754
+           1.5        0.8862269254527581        0.8862269254527581
+           1.6        0.8935153492876903        0.8935153492876903
+           1.7        0.9086387328532904        0.9086387328532904
+           1.8        0.9313837709802427        0.9313837709802427
+           1.9        0.9617658319073874        0.9617658319073874
+             2                         1                         1
+             3                         2                         2
+             4                         6                         6
+            10                    362880                    362880
+            20      1.21645100408832e+17     1.216451004088321e+17
+            30     8.841761993739702e+30     8.841761993739751e+30
+
+R8_GAMMA_TEST
+  Normal end of execution.
+
+R8_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8_NORMAL_01 generates normally distributed
+  random values.
+  Using initial random number seed = 123456789
+
+  1.679040
+  -0.566060
+  1.212934
+  1.269381
+  -1.666087
+  -2.242464
+  0.039675
+  0.673068
+  -0.275127
+  2.164005
+  0.297785
+  2.044536
+  1.398819
+  -1.242985
+  -0.067084
+  -0.794396
+  -0.523768
+  -0.350567
+  0.131700
+  0.537380
+
+R8_NORMAL_01_TEST
+  Normal end of execution.
+
+R8_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT prints an R8MAT.
+
+  Here is an R8MAT, transposed:
+
+  Row:       0             1             2             3       
+  Col
+      0 :          11            21            31            41  
+      1 :          12            22            32            42  
+      2 :          13            23            33            43  
+
+R8MAT_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.
+
+  R8MAT, rows 0:2, cols 3:5:
+
+  Row:       0             1             2       
+  Col
+      3 :          14            24            34  
+      4 :          15            25            35  
+      5 :          16            26            36  
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_AB computes a random R8MAT.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     0.31051     -0.603288     -0.629637      -0.98897  
+      1 :     4.73791      0.545467       1.69723       4.38502  
+      2 :     3.97706     -0.340259       1.40784       1.10451  
+      3 :     2.37017     -0.737026       3.52804     -0.432731  
+      4 :     1.49184       2.80379       3.78372     -0.918299  
+
+R8MAT_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8VEC_NORM_TEST
+  Python version: 3.6.9
+  R8VEC_NORM computes the L2 norm of an R8VEC.
+
+  Input vector:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+  L2 norm = 1.62017
+
+R8VEC_NORM_TEST:
+  Normal end of execution.
+
+R8VEC_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8VEC_NORMAL_01 returns a vector of Normal 01 values
+
+  SEED = 123456789
+
+  Vector:
+
+     0:       1.67904
+     1:      -0.56606
+     2:       1.21293
+     3:       1.26938
+     4:      -1.66609
+     5:      -2.24246
+     6:     0.0396749
+     7:      0.673068
+     8:     -0.275127
+     9:         2.164
+
+R8VEC_NORMAL_01_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_AB computes a random R8VEC.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:       0.31051
+     1:       4.73791
+     2:       3.97706
+     3:       2.37017
+     4:       1.49184
+     5:     -0.603288
+     6:      0.545467
+     7:     -0.340259
+     8:     -0.737026
+     9:       2.80379
+
+R8VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+HYPERSPHERE_MONTE_CARLO_TEST:
+  Normal end of execution.
+Sun Jan 26 09:13:20 2020

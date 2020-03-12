@@ -1,0 +1,362 @@
+Sun Jan 26 09:13:11 2020
+
+HYPERCUBE_MONTE_CARLO_TEST
+  Python version: 3.6.9
+  Test the HYPERCUBE_MONTE_CARLO library.
+
+HYPERCUBE01_MONOMIAL_INTEGRAL_TEST
+  Python version: 3.6.9
+  HYPERCUBE01_MONOMIAL_INTEGRAL returns the integral of a monomial
+  over the interior of the unit hypercube in 3D.
+  Compare with a Monte Carlo estimate.
+
+  Using M = 3
+
+  Number of sample points used is 4192
+
+  Ex  Ey  Ez     MC-Estimate           Exact      Error
+
+   4   3   0       0.0479881            0.05       0.002
+   0   2   3       0.0817332       0.0833333      0.0016
+   4   4   2       0.0118586       0.0133333      0.0015
+   0   3   0        0.246879            0.25      0.0031
+   4   3   0       0.0479881            0.05       0.002
+   4   0   4       0.0375109            0.04      0.0025
+   3   4   0       0.0481349            0.05      0.0019
+   1   0   4       0.0964596             0.1      0.0035
+   1   3   0        0.121836           0.125      0.0032
+   0   4   2       0.0645985       0.0666667      0.0021
+   1   2   2       0.0532703       0.0555556      0.0023
+   3   0   4       0.0470921            0.05      0.0029
+   1   0   1        0.243841            0.25      0.0062
+   4   1   4       0.0183829            0.02      0.0016
+   3   3   0       0.0602641          0.0625      0.0022
+   4   4   2       0.0118586       0.0133333      0.0015
+   0   4   4         0.03867            0.04      0.0013
+   1   3   2       0.0395885       0.0416667      0.0021
+   0   4   0        0.197368             0.2      0.0026
+   0   4   3       0.0484177            0.05      0.0016
+
+HYPERCUBE01_MONOMIAL_INTEGRAL_TEST:
+  Normal end of execution.
+
+HYPERCUBE01_MONTE_CARLO_TEST01
+  Python version: 3.6.9
+  Use HYPERCUBE01_SAMPLE to estimate integrals 
+  along the interior of the unit hypercube in 3D.
+
+         N        1               X               Y               Z               X^2              XY             XZ              Y^2             YZ               Z^2
+
+         1               1        0.218418        0.956318        0.829509       0.0477066        0.208877         0.18118        0.914543        0.793274        0.688086
+         2               1        0.409637        0.262632       0.0549739        0.190924        0.130799        0.024214       0.0922852       0.0161394      0.00314633
+         4               1        0.282914         0.43188        0.614169        0.142975       0.0862314        0.171704         0.34476        0.238985        0.424707
+         8               1        0.448764        0.628688        0.353048        0.254287        0.238301        0.158954         0.46407        0.242944        0.190148
+        16               1        0.577699        0.448109        0.427455        0.424276          0.2827        0.262341        0.287263        0.173018        0.273017
+        32               1        0.515482        0.515035        0.544601        0.361026        0.247016        0.257241        0.325622        0.293727         0.36065
+        64               1        0.480189        0.485151        0.489409        0.333062        0.239247        0.225187        0.311633        0.222457         0.32229
+       128               1        0.522288        0.527152        0.500881        0.340195        0.277869        0.255059         0.35926        0.269568        0.332462
+       256               1        0.518508        0.474727        0.483861        0.354571        0.248632        0.243592        0.312454        0.216697        0.319905
+       512               1         0.50878        0.497615        0.486234         0.34348        0.252898        0.252131        0.334466        0.242949         0.31835
+      1024               1        0.490345        0.513345        0.517057        0.323702        0.250676        0.250157        0.344286        0.266699        0.355972
+      2048               1        0.491744        0.489847        0.488673        0.324386        0.241942        0.239161        0.322013        0.239861        0.322957
+      4096               1        0.504534        0.498569        0.500109        0.338882        0.251314        0.252754        0.328975        0.252365        0.333069
+      8192               1        0.501019        0.497158        0.500549        0.333224        0.248799        0.251007        0.330668        0.248406        0.332779
+     16384               1        0.497685        0.500676        0.499293        0.330493        0.250014        0.249553        0.333813        0.249133        0.332566
+     32768               1         0.49489        0.499854         0.49986        0.328029        0.247185        0.247649        0.332854        0.250109        0.332957
+     65536               1        0.499523        0.500937        0.498091        0.332645        0.250628        0.248412        0.334921        0.249898        0.331342
+
+     Exact               1             0.5             0.5             0.5        0.333333            0.25            0.25        0.333333            0.25        0.333333
+
+HYPERCUBE01_MONTE_CARLO_TEST01
+  Normal end of execution.
+
+HYPERCUBE01_MONTE_CARLO_TEST02
+  Python version: 3.6.9
+  Use HYPERCUBE01_SAMPLE to estimate integrals 
+  along the interior of the unit hypercube in 6D.
+
+         N        1              U               V^2            V^2W^2         X^4            Y^2Z^2         Z^6
+
+         1               1        0.218418        0.914543        0.629284       0.0995414     3.59721e-05     8.35501e-08
+         2               1        0.329442        0.290811        0.181028       0.0807668      0.00800541      0.00505748
+         4               1        0.308967        0.432037       0.0840648        0.139689       0.0368181       0.0121251
+         8               1          0.6605        0.355774       0.0421925        0.149312       0.0195489         0.11284
+        16               1        0.493475        0.405808        0.149726        0.293121       0.0563945        0.163816
+        32               1        0.473714        0.286581       0.0980965        0.201767       0.0254793        0.143554
+        64               1        0.511575        0.405931        0.154639        0.215411       0.0338462        0.149255
+       128               1        0.527234        0.299406       0.0852711        0.208662       0.0359612        0.138457
+       256               1         0.51127        0.320302        0.107357        0.207969       0.0394189        0.118593
+       512               1        0.468988        0.341574        0.122401        0.206524       0.0414207        0.155458
+      1024               1        0.495952        0.308343       0.0970281        0.188538       0.0410239        0.133455
+      2048               1        0.499629        0.324461        0.109222        0.211872       0.0390518        0.143671
+      4096               1         0.50066        0.332315        0.107506         0.19954       0.0373718        0.143336
+      8192               1        0.498742        0.331866        0.111009        0.197399       0.0370256        0.141139
+     16384               1        0.493463        0.332789        0.111119        0.195224       0.0364105        0.142021
+     32768               1        0.499804        0.332445        0.109761         0.19986       0.0378825        0.141774
+     65536               1        0.502609        0.331401        0.110264        0.198122       0.0370926        0.142865
+
+     Exact               1
+             0.5
+        0.333333
+        0.111111
+             0.2
+        0.037037
+        0.142857
+
+
+HYPERCUBE01_MONTE_CARLO_TEST02
+  Normal end of execution.
+
+HYPERCUBE01_SAMPLE_TEST
+  Python version: 3.6.9
+  HYPERUBE01_SAMPLE samples the unit hypercube
+  in M dimensions.
+
+  Sample points in the unit hypercube.
+
+  Row:       0             1             2       
+  Col
+      0 :    0.218418      0.956318      0.829509  
+      1 :    0.561695      0.415307     0.0661187  
+      2 :    0.257578      0.109957      0.043829  
+      3 :    0.633966     0.0617272      0.449539  
+      4 :    0.401306      0.754673      0.797287  
+      5 :  0.00183837      0.897504      0.350752  
+      6 :   0.0945448     0.0136169      0.859097  
+      7 :    0.840847      0.123104    0.00751236  
+      8 :    0.260303      0.912484      0.113664  
+      9 :    0.351629      0.822887      0.267132  
+
+HYPERCUBE01_SAMPLE_TEST
+  Normal end of execution.
+
+HYPERCUBE01_VOLUME_TEST
+  Python version: 3.6.9
+  HYPERCUBE01_VOLUME returns the volume of the unit hypercube
+  in M dimensions.
+
+  HYPERCUBE01_VOLUME(3) = 1
+
+HYPERCUBE01_VOLUME_TEST
+  Normal end of execution.
+
+I4VEC_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_PRINT prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+I4VEC_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_TRANSPOSE_PRINT prints an I4VEC
+  with 5 entries to a row, and an optional title.
+
+  My array:  
+       1       2       3       4       5       6       7       8       9      10
+      11      12
+
+I4VEC_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4VEC_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+
+  The random vector:
+
+     0     -35
+     1     187
+     2     149
+     3      69
+     4      25
+     5     -81
+     6     -23
+     7     -67
+     8     -87
+     9      90
+    10     -82
+    11      35
+    12      20
+    13     127
+    14     139
+    15    -100
+    16     170
+    17       5
+    18     -72
+    19     -96
+
+I4VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+MONOMIAL_VALUE_TEST
+  Python version: 3.6.9
+  Use monomial_value() to evaluate some monomials
+  in dimensions 1 through 3.
+
+  Spatial dimension M =  1
+
+  Exponents:
+      -1
+
+   V(X)               X(0)
+
+      0.111111      9.0000
+         0.125      8.0000
+           0.2      5.0000
+      0.333333      3.0000
+            -1     -1.0000
+
+  Spatial dimension M =  2
+
+  Exponents:
+      -1      -2
+
+   V(X)               X(0)      X(1)
+
+    -0.0277778     -1.0000    6.0000
+     -0.111111     -1.0000    3.0000
+    0.00680272      3.0000    7.0000
+       0.03125      8.0000   -2.0000
+     0.0277778      9.0000    2.0000
+
+  Spatial dimension M =  3
+
+  Exponents:
+      -3      -3       5
+
+   V(X)               X(0)      X(1)      X(2)
+
+        0.0625      8.0000   -1.0000   -2.0000
+   -0.00137174      1.0000    9.0000   -1.0000
+   0.000244141      2.0000    8.0000    1.0000
+       1.21363      6.0000    5.0000    8.0000
+      0.158766      3.0000    9.0000    5.0000
+
+MONOMIAL_VALUE_TEST
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT prints an R8MAT.
+
+  Here is an R8MAT, transposed:
+
+  Row:       0             1             2             3       
+  Col
+      0 :          11            21            31            41  
+      1 :          12            22            32            42  
+      2 :          13            23            33            43  
+
+R8MAT_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.
+
+  R8MAT, rows 0:2, cols 3:5:
+
+  Row:       0             1             2       
+  Col
+      3 :          14            24            34  
+      4 :          15            25            35  
+      5 :          16            26            36  
+
+R8MAT_TRANSPOSE_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_01 computes a random R8MAT.
+
+  0 <= X <= 1
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :    0.218418     0.0661187     0.0617272    0.00183837  
+      1 :    0.956318      0.257578      0.449539      0.897504  
+      2 :    0.829509      0.109957      0.401306      0.350752  
+      3 :    0.561695      0.043829      0.754673     0.0945448  
+      4 :    0.415307      0.633966      0.797287     0.0136169  
+
+R8MAT_UNIFORM_01_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_AB computes a random R8MAT.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     0.31051     -0.603288     -0.629637      -0.98897  
+      1 :     4.73791      0.545467       1.69723       4.38502  
+      2 :     3.97706     -0.340259       1.40784       1.10451  
+      3 :     2.37017     -0.737026       3.52804     -0.432731  
+      4 :     1.49184       2.80379       3.78372     -0.918299  
+
+R8MAT_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+HYPERCUBE_MONTE_CARLO_TEST:
+  Normal end of execution.
+Sun Jan 26 09:13:14 2020

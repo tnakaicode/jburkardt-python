@@ -1,0 +1,646 @@
+Thu Jan 23 08:41:24 2020
+
+ELLIPSOID_MONTE_CARLO_TESTS
+  Python version: 3.6.9
+  Test the ELLIPSOID_MONTE_CARLO library.
+
+ELLIPSOID_MONTE_CARLO_TEST01
+  Use ELLIPSOID_SAMPLE to estimate integrals
+  in a 2D ellipse x * A * x <= r^2.
+
+  Ellipsoid radius R = 2
+
+  Ellipsoid center V:
+
+     0:             0
+     1:             0
+
+  Ellipsoid matrix A:
+
+  Col:       0             1       
+  Row
+      0 :           9             1  
+      1 :           1             4  
+
+  Ellipsoid volume = 2.1241
+
+         N        1              X               Y               X^2               XY             Y^2             X^3
+
+         1          2.1241        0.321476       -0.299022       0.0486544      -0.0452561       0.0420951      0.00736369
+         2          2.1241        -0.27652        0.499696       0.0478767      -0.0370767        0.183433     -0.00932549
+         4          2.1241      -0.0612209        0.144295       0.0130204       0.0199415       0.0882489     -0.00185697
+         8          2.1241       0.0317852       0.0869245       0.0214724     -0.00735015        0.072673    -0.000699755
+        16          2.1241      0.00154063       0.0268314       0.0330817     -0.00946018        0.165506     0.000300543
+        32          2.1241      -0.0165851       -0.142963       0.0342288      -0.0367537        0.155094    -0.000345318
+        64          2.1241      -0.0387006       0.0566138       0.0242695      -0.0206398        0.136156    -0.000714845
+       128          2.1241       0.0379064      0.00648654        0.031136      -0.0242917        0.151621     0.000651244
+       256          2.1241     -0.00153402       0.0122716       0.0296746      -0.0252856        0.151463     0.000143204
+       512          2.1241      0.00152787      -0.0115445        0.030106      -0.0208186        0.138797     0.000188673
+      1024          2.1241      0.00311013      0.00155926       0.0290905      -0.0207969        0.138277     6.51272e-05
+      2048          2.1241     0.000532402      -0.0134502       0.0301181      -0.0230603        0.139695     0.000111932
+      4096          2.1241      0.00134544       -0.014149       0.0295652      -0.0227881        0.141501      0.00011408
+      8192          2.1241     -0.00300381     -0.00458822       0.0294594      -0.0228104        0.142268    -8.20529e-05
+     16384          2.1241      0.00173254      0.00273916       0.0290031      -0.0226607        0.143008     5.54886e-05
+     32768          2.1241     -0.00216533      0.00108515       0.0296114      -0.0224396        0.141952    -4.72238e-05
+     65536          2.1241     0.000332428     -0.00397407       0.0295669      -0.0224907        0.142094     2.96863e-05
+
+ELLIPSOID_MONTE_CARLO_TEST01
+  Normal end of execution.
+
+ELLIPSOID_MONTE_CARLO_TEST02
+  Use ELLIPSOID_SAMPLE to estimate integrals
+  in a 2D ellipse (x-v) * A * (x-v) <= r^2.
+
+  Ellipsoid radius R = 0.5
+
+  Ellipsoid center V:
+
+     0:             2
+     1:             3
+
+  Ellipsoid matrix A:
+
+  Col:       0             1       
+  Row
+      0 :           9             1  
+      1 :           1             4  
+
+  Ellipsoid volume = 0.132757
+
+         N        1              X               Y               X^2               XY             Y^2             X^3
+
+         1        0.132757        0.270536        0.393597        0.551308        0.802087         1.16694         1.12348
+         2        0.132757        0.261192        0.406077        0.513931        0.799048         1.24237         1.01132
+         4        0.132757        0.264556        0.400524        0.527251        0.798257         1.20868         1.05088
+         8        0.132757         0.26601        0.399628        0.533097        0.800717         1.20324         1.06851
+        16        0.132757        0.265537        0.398689        0.531252        0.797413         1.19797         1.06312
+        32        0.132757        0.265254        0.396036        0.530123        0.791151         1.18201         1.05974
+        64        0.132757        0.264908        0.399154        0.528702        0.796414         1.20065         1.05536
+       128        0.132757        0.266105        0.398371        0.533517        0.798424         1.19601         1.06989
+       256        0.132757        0.265489        0.398461        0.531046        0.796752         1.19655         1.06246
+       512        0.132757        0.265537        0.398089        0.531239        0.796169         1.19427         1.06304
+      1024        0.132757        0.265562        0.398294        0.531334        0.796652          1.1955         1.06332
+      2048        0.132757        0.265521        0.398059        0.531177        0.796054         1.19409         1.06286
+      4096        0.132757        0.265534        0.398048        0.531226        0.796071         1.19403           1.063
+      8192        0.132757        0.265466        0.398198        0.530953        0.796166         1.19493         1.06218
+     16384        0.132757         0.26554        0.398312        0.531248        0.796617         1.19562         1.06306
+     32768        0.132757        0.265479        0.398287        0.531006        0.796384         1.19546         1.06234
+     65536        0.132757        0.265518        0.398207        0.531162        0.796343         1.19499         1.06281
+
+ELLIPSOID_MONTE_CARLO_TEST02
+  Normal end of execution.
+
+ELLIPSOID_MONTE_CARLO_TEST03
+  Use ELLIPSOID_SAMPLE to estimate integrals
+  in a 3D ellipse (x-v) * A * (x-v) <= r^2.
+
+  Ellipsoid radius R = 0.5
+
+  Ellipsoid center V:
+
+     0:             1
+     1:             2
+     2:             3
+
+  Ellipsoid matrix A:
+
+  Col:       0             1             2       
+  Row
+      0 :           9             6             3  
+      1 :           6             5             4  
+      2 :           3             4             9  
+
+  Ellipsoid volume = 0.0872665
+
+         N        1              X               Y                Z                X^2            YZ              Z^3
+
+         1
+       0.0872665        0.117213        0.126728        0.274806        0.157435         1.82498         2.72512
+         2
+       0.0872665        0.102801        0.151943        0.267913        0.122241         2.49722         2.53422
+         4
+       0.0872665        0.104695        0.145739        0.267095        0.129378          2.3161         2.50943
+         8
+       0.0872665       0.0663363        0.210721        0.251955       0.0576277         4.27288         2.11125
+        16
+       0.0872665       0.0804799        0.186209        0.258233       0.0820292         3.54544         2.27084
+        32
+       0.0872665       0.0861435        0.175429        0.261995       0.0969454         3.28051         2.38262
+        64
+       0.0872665       0.0865357        0.175285        0.261551       0.0971515         3.26421          2.3663
+       128
+       0.0872665       0.0868618        0.175465         0.26168       0.0949801         3.24808         2.36578
+       256
+       0.0872665       0.0867801        0.175521        0.261463       0.0960104         3.25462         2.36324
+       512
+       0.0872665       0.0844921        0.178821        0.260793       0.0908591         3.34656         2.34398
+      1024
+       0.0872665       0.0891028         0.17146        0.262575        0.100054         3.13318         2.39189
+      2048
+       0.0872665       0.0860152        0.176521        0.261304       0.0938764         3.28072         2.35758
+      4096
+       0.0872665       0.0868008         0.17528         0.26166       0.0956624         3.24697         2.36747
+      8192
+       0.0872665       0.0870079        0.174965        0.261696       0.0958474         3.23437         2.36824
+     16384
+       0.0872665       0.0874084        0.174291        0.261855       0.0965594          3.2139         2.37227
+     32768
+       0.0872665        0.087374        0.174352        0.261853       0.0965529         3.21614         2.37241
+     65536
+       0.0872665       0.0874281        0.174271        0.261855       0.0966558         3.21347         2.37242
+
+ELLIPSOID_MONTE_CARLO_TEST03
+  Normal end of execution.
+
+ELLIPSOID_SAMPLE_TEST
+  Python version: 3.6.9
+  ELLIPSOID_SAMPLE samples the ellipsoid
+    (X-V)' * A * (X-V) <= R * R.
+
+  M = 3
+
+  A:
+
+  Col:       0             1             2       
+  Row
+      0 :           9             3             3  
+      1 :           3             5             3  
+      2 :           3             3             3  
+
+  V:
+
+     0:             2
+     1:             3
+     2:             1
+
+  Ellipsoid sample points:
+
+  Row:       0             1             2       
+  Col
+      0 :     2.02302       2.73643       1.36035  
+      1 :     2.19014       3.35763      0.323971  
+      2 :     1.89653       2.49215        1.9117  
+      3 :     2.02026       2.67354       1.44008  
+      4 :     2.07738       2.86244      0.882691  
+      5 :     2.13513       3.21093      0.434481  
+      6 :      1.9996       3.11616      0.681972  
+      7 :      2.0739       3.26926      0.651658  
+      8 :     2.02292       2.94646      0.989642  
+      9 :      2.0201        2.9251       1.09169  
+     10 :      2.0805       3.14827      0.834059  
+     11 :     2.03401       3.47311      0.242594  
+     12 :     2.08054       3.57974      0.254499  
+     13 :     1.92173       3.30598      0.769034  
+     14 :     1.94536       3.42553       0.50902  
+     15 :     1.83532       2.92959        1.2434  
+     16 :     1.81012       2.71389        1.7339  
+     17 :     2.01387       3.46813      0.501857  
+     18 :     2.09828       2.97856      0.718395  
+     19 :     1.82056       3.02479       1.30373  
+
+ELLIPSOID_SAMPLE_TEST
+  Normal end of execution.
+
+ELLIPSOID_VOLUME_TEST
+  Python version: 3.6.9
+  ELLIPSOID_VOLUME computes the volume of the ellipsoid
+    (X-V)' * A * (X-V) <= R * R.
+
+  M = 3
+
+  A:
+
+  Col:       0             1             2       
+  Row
+      0 :           9             3             3  
+      1 :           3             5             3  
+      2 :           3             3             3  
+
+  V:
+
+     0:             2
+     1:             3
+     2:             1
+
+  Volume =       0.698132
+
+ELLIPSOID_VOLUME_TEST
+  Normal end of execution.
+
+HYPERSPHERE_UNIT_VOLUME_TEST
+  Python version: 3.6.9
+  HYPERSPHERE_UNIT_VOLUME computes the volume of the unit
+  hypersphere in M dimensions.
+
+   M        Volume
+
+   1               2
+   2         3.14159
+   3         4.18879
+   4          4.9348
+   5         5.26379
+   6         5.16771
+   7         4.72477
+   8         4.05871
+   9         3.29851
+  10         2.55016
+
+HYPERSPHERE_UNIT_VOLUME_TEST
+  Normal end of execution.
+
+I4VEC_TRANSPOSE_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_TRANSPOSE_PRINT prints an I4VEC
+  with 5 entries to a row, and an optional title.
+
+  My array:  
+       1       2       3       4       5       6       7       8       9      10
+      11      12
+
+I4VEC_TRANSPOSE_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_PRINT_TEST
+  Python version: 3.6.9
+  I4VEC_PRINT prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+I4VEC_PRINT_TEST:
+  Normal end of execution.
+
+I4VEC_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  I4VEC_UNIFORM_AB computes pseudorandom values
+  in an interval [A,B].
+
+  The lower endpoint A = -100
+  The upper endpoint B = 200
+  The initial seed is 123456789
+
+
+  The random vector:
+
+     0     -35
+     1     187
+     2     149
+     3      69
+     4      25
+     5     -81
+     6     -23
+     7     -67
+     8     -87
+     9      90
+    10     -82
+    11      35
+    12      20
+    13     127
+    14     139
+    15    -100
+    16     170
+    17       5
+    18     -72
+    19     -96
+
+I4VEC_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+MONOMIAL_VALUE_TEST
+  Python version: 3.6.9
+  Use monomial_value() to evaluate some monomials
+  in dimensions 1 through 3.
+
+  Spatial dimension M =  1
+
+  Exponents:
+      -1
+
+   V(X)               X(0)
+
+      0.111111      9.0000
+         0.125      8.0000
+           0.2      5.0000
+      0.333333      3.0000
+            -1     -1.0000
+
+  Spatial dimension M =  2
+
+  Exponents:
+      -1      -2
+
+   V(X)               X(0)      X(1)
+
+    -0.0277778     -1.0000    6.0000
+     -0.111111     -1.0000    3.0000
+    0.00680272      3.0000    7.0000
+       0.03125      8.0000   -2.0000
+     0.0277778      9.0000    2.0000
+
+  Spatial dimension M =  3
+
+  Exponents:
+      -3      -3       5
+
+   V(X)               X(0)      X(1)      X(2)
+
+        0.0625      8.0000   -1.0000   -2.0000
+   -0.00137174      1.0000    9.0000   -1.0000
+   0.000244141      2.0000    8.0000    1.0000
+       1.21363      6.0000    5.0000    8.0000
+      0.158766      3.0000    9.0000    5.0000
+
+MONOMIAL_VALUE_TEST
+  Normal end of execution.
+
+R8_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8_NORMAL_01 generates normally distributed
+  random values.
+  Using initial random number seed = 123456789
+
+  1.679040
+  -0.566060
+  1.212934
+  1.269381
+  -1.666087
+  -2.242464
+  0.039675
+  0.673068
+  -0.275127
+  2.164005
+  0.297785
+  2.044536
+  1.398819
+  -1.242985
+  -0.067084
+  -0.794396
+  -0.523768
+  -0.350567
+  0.131700
+  0.537380
+
+R8_NORMAL_01_TEST
+  Normal end of execution.
+
+R8_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8_UNIFORM_01 produces a sequence of random values.
+
+  Using random seed 123456789
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+  Verify that the sequence can be restarted.
+  Set the seed back to its original value, and see that
+  we generate the same sequence.
+
+  SEED  R8_UNIFORM_01(SEED)
+
+     469049721        0.218418
+    2053676357        0.956318
+    1781357515        0.829509
+    1206231778        0.561695
+     891865166        0.415307
+     141988902        0.066119
+     553144097        0.257578
+     236130416        0.109957
+      94122056        0.043829
+    1361431000        0.633966
+
+R8_UNIFORM_01_TEST
+  Normal end of execution.
+
+R8MAT_PRINT_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT prints an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          21            22            23            24            25  
+      2 :          31            32            33            34            35  
+      3 :          41            42            43            44            45  
+
+  Col:       5       
+  Row
+      0 :          16  
+      1 :          26  
+      2 :          36  
+      3 :          46  
+
+R8MAT_PRINT_TEST:
+  Normal end of execution.
+
+R8MAT_PRINT_SOME_TEST
+  Python version: 3.6.9
+  R8MAT_PRINT_SOME prints some of an R8MAT.
+
+  Here is an R8MAT:
+
+  Col:       3             4             5       
+  Row
+      0 :          14            15            16  
+      1 :          24            25            26  
+      2 :          34            35            36  
+
+R8MAT_PRINT_SOME_TEST:
+  Normal end of execution.
+
+R8MAT_UNIFORM_AB_TEST
+  Python version: 3.6.9
+  R8MAT_UNIFORM_AB computes a random R8MAT.
+
+  -1 <= X <= 5
+  Initial seed is 123456789
+
+  Random R8MAT:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     0.31051     -0.603288     -0.629637      -0.98897  
+      1 :     4.73791      0.545467       1.69723       4.38502  
+      2 :     3.97706     -0.340259       1.40784       1.10451  
+      3 :     2.37017     -0.737026       3.52804     -0.432731  
+      4 :     1.49184       2.80379       3.78372     -0.918299  
+
+R8MAT_UNIFORM_AB_TEST:
+  Normal end of execution.
+
+R8PO_FA_TEST
+  Python version: 3.6.9
+  R8PO_FA factors a positive definite symmetric
+  linear system,
+
+  Matrix order N = 5
+
+  The matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             1             1             1             1  
+      1 :           1             2             2             2             2  
+      2 :           1             2             3             3             3  
+      3 :           1             2             3             4             4  
+      4 :           1             2             3             4             5  
+
+  The factor R (a R8UT matrix):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             1             1             1             1  
+      1 :           0             1             1             1             1  
+      2 :           0             0             1             1             1  
+      3 :           0             0             0             1             1  
+      4 :           0             0             0             0             1  
+
+  The product R' * R:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             1             1             1             1  
+      1 :           1             2             2             2             2  
+      2 :           1             2             3             3             3  
+      3 :           1             2             3             4             4  
+      4 :           1             2             3             4             5  
+
+R8PO_FA_TEST:
+  Normal end of execution.
+
+R8PO_SL_TEST
+  Python version: 3.6.9
+  R8PO_SL solves a linear system with an R8PO matrix
+  after it has been factored by R8PO_FA.
+
+  Matrix order N = 5
+
+  Matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           2            -1             0             0             0  
+      1 :           0             2            -1             0             0  
+      2 :           0             0             2            -1             0  
+      3 :           0             0             0             2            -1  
+      4 :           0             0             0             0             2  
+
+  Right hand side b:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+     4:             6
+
+  Solution x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+R8PO_SL_TEST
+  Normal end of execution.
+
+R8VEC_NORMAL_01_TEST
+  Python version: 3.6.9
+  R8VEC_NORMAL_01 returns a vector of Normal 01 values
+
+  SEED = 123456789
+
+  Vector:
+
+     0:       1.67904
+     1:      -0.56606
+     2:       1.21293
+     3:       1.26938
+     4:      -1.66609
+     5:      -2.24246
+     6:     0.0396749
+     7:      0.673068
+     8:     -0.275127
+     9:         2.164
+
+R8VEC_NORMAL_01_TEST:
+  Normal end of execution.
+
+R8VEC_PRINT_TEST
+  Python version: 3.6.9
+  R8VEC_PRINT prints an R8VEC.
+
+  Here is an R8VEC:
+
+     0:       123.456
+     1:         5e-06
+     2:        -1e+06
+     3:       3.14159
+
+R8VEC_PRINT_TEST:
+  Normal end of execution.
+
+R8VEC_UNIFORM_01_TEST
+  Python version: 3.6.9
+  R8VEC_UNIFORM_01 computes a random R8VEC.
+
+  Initial seed is 123456789
+
+  Random R8VEC:
+
+     0:      0.218418
+     1:      0.956318
+     2:      0.829509
+     3:      0.561695
+     4:      0.415307
+     5:     0.0661187
+     6:      0.257578
+     7:      0.109957
+     8:      0.043829
+     9:      0.633966
+
+R8VEC_UNIFORM_01_TEST:
+  Normal end of execution.
+
+UNIFORM_IN_SPHERE01_MAP_TEST
+  Python version: 3.6.9
+  UNIFORM_IN_SPHERE01_MAP computes points uniformly distributed
+  inside the M-dimensional unit sphere.
+
+  Random points inside unit 3-sphere
+
+  Row:       0             1             2       
+  Col
+      0 :    0.497518      -0.16773      0.359406  
+      1 :    0.756069      0.330465     -0.384785  
+      2 :    0.280276     -0.114567      0.901126  
+      3 :    0.523193     -0.251279      0.401636  
+      4 :  -0.0681996      -0.80761     -0.532481  
+      5 :    0.152427     -0.236512      -0.65837  
+      6 :   -0.609231     -0.374499     -0.606816  
+      7 :     0.42781      0.522948    -0.0155662  
+      8 :   0.0146253     -0.230002     -0.122921  
+      9 :    0.231257     -0.039156       0.11065  
+
+UNIFORM_IN_SPHERE01_MAP_TEST
+  Normal end of execution.
+
+ELLIPSOID_MONTE_CARLO_TESTS
+  Normal end of execution.
+Thu Jan 23 08:41:43 2020

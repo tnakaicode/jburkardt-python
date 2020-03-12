@@ -1177,15 +1177,192 @@ def r8vec_uniform_01_test():
     return
 
 
-def tetrahedron01_monomial_integral(e):
+def simplex_general_sample(m, n, t, seed):
 
     # *****************************************************************************80
     #
-    # TETRAHEDRON01_MONOMIAL_INTEGRAL: integrals in the unit tetrahedron in 3D.
+    # SIMPLEX_GENERAL_SAMPLE samples a general simplex in M dimensions.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    02 March 2017
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Reuven Rubinstein,
+    #    Monte Carlo Optimization, Simulation, and Sensitivity
+    #    of Queueing Networks,
+    #    Krieger, 1992,
+    #    ISBN: 0894647644,
+    #    LC: QA298.R79.
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input, real T(M,M+1), the simplex vertices.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real X(M,N), the points.
+    #
+    x1, seed = simplex_unit_sample(m, n, seed)
+
+    x = simplex_unit_to_general(m, n, t, x1)
+
+    return x, seed
+
+
+def simplex_general_sample_test():
+
+    # *****************************************************************************80
+    #
+    # SIMPLEX_GENERAL_SAMPLE_TEST estimates integrals in 3D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 March 2017
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+
+    m = 3
+
+    e_test = np.array([
+        [0, 1, 0, 0, 2, 1, 1, 0, 0, 0],
+        [0, 0, 1, 0, 0, 1, 0, 2, 1, 0],
+        [0, 0, 0, 1, 0, 0, 1, 0, 1, 2]], dtype=np.int32)
+
+    e = np.zeros(m, dtype=np.int32)
+
+    t = np.array([
+        [1.0, 2.0, 1.0, 1.0],
+        [0.0, 0.0, 2.0, 0.0],
+        [0.0, 0.0, 0.0, 3.0]])
+
+    print('')
+    print('SIMPLEX_GENERAL_SAMPLE_TEST')
+    print('  SIMPLEX_GENERAL_SAMPLE computes a Monte Carlo estimate of an')
+    print('  integral over the interior of a general simplex in 3D.')
+
+    print('')
+    print('  Simplex vertices:')
+    print('')
+    for j in range(0, 4):
+        for i in range(0, 3):
+            print('%14.6g' % (t[i, j]), end='')
+        print('')
+
+    seed = 123456789
+
+    print('')
+    print('         N        1               X               Y ', end='')
+    print('              Z               X^2              XY             XZ', end='')
+    print('              Y^2             YZ               Z^2')
+    print('')
+
+    n = 1
+
+    while (n <= 65536):
+
+        x, seed = simplex_general_sample(m, n, t, seed)
+
+        print('  %8d' % (n), end='')
+
+        for j in range(0, 10):
+
+            e[0:m] = e_test[0:m, j]
+
+            value = monomial_value(m, n, e, x)
+
+            result = simplex_general_volume(m, t) * np.sum(value[0:n]) / n
+            print('  %14.6g' % (result), end='')
+
+        print('')
+
+        n = 2 * n
+
+    return
+
+
+def simplex_general_volume(m, t):
+
+    # *****************************************************************************80
+    #
+    # SIMPLEX_GENERAL_VOLUME computes the volume of a simplex in N dimensions.
     #
     #  Discussion:
     #
-    #    The monomial is F(X,Y,Z) = X^E(1) * Y^E(2) * Z^E(3).
+    #    The formula is:
+    #
+    #      volume = 1/M! * det ( B )
+    #
+    #    where B is the M by M matrix obtained by subtracting one
+    #    vector from all the others.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 March 2017
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the dimension of the space.
+    #
+    #    Input, real T(M,M+1), the vertices.
+    #
+    #    Output, real VOLUME, the volume of the simplex.
+    #
+    import numpy as np
+
+    b = np.zeros([m, m])
+
+    b[0:m, 0:m] = t[0:m, 0:m]
+    for j in range(0, m):
+        b[0:m, j] = b[0:m, j] - t[0:m, m]
+
+    volume = abs(np.linalg.det(b))
+
+    for i in range(1, m + 1):
+        volume = volume / float(i)
+
+    return volume
+
+
+def simplex_unit_monomial_integral(m, e):
+
+    # *****************************************************************************80
+    #
+    # SIMPLEX_UNIT_MONOMIAL_INTEGRAL: integrals in the unit simplex in M dimensions.
+    #
+    #  Discussion:
+    #
+    #    The monomial is F(X) = product ( 1 <= I <= M ) X(I)^E(I).
     #
     #  Licensing:
     #
@@ -1201,21 +1378,21 @@ def tetrahedron01_monomial_integral(e):
     #
     #  Parameters:
     #
-    #    Input, integer E(3), the exponents.
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Input, integer E(M), the exponents.
     #    Each exponent must be nonnegative.
     #
     #    Output, real INTEGRAL, the integral.
     #
     from sys import exit
 
-    m = 3
-
     for i in range(0, m):
         if (e[i] < 0):
             print('')
-            print('TETRAHEDRON01_MONOMIAL_INTEGRAL - Fatal error!')
+            print('SIMPLEX_UNIT_MONOMIAL_INTEGRAL - Fatal error!')
             print('  All exponents must be nonnegative.')
-            #error('TETRAHEDRON01_MONOMIAL_INTEGRAL - Fatal error!\n')
+            exit('SIMPLEX_UNIT_MONOMIAL_INTEGRAL - Fatal error!')
 
     k = 0
     integral = 1.0
@@ -1233,11 +1410,11 @@ def tetrahedron01_monomial_integral(e):
     return integral
 
 
-def tetrahedron01_monte_carlo_test():
+def simplex_unit_monomial_integral_test():
 
     # *****************************************************************************80
     #
-    # TETRAHEDRON01_MONTE_CARLO_TEST: unit tetrahedron Monte Carlo estimates.
+    # SIMPLEX_UNIT_MONOMIAL_INTEGRAL_TEST compares exact and estimated integrals in 3D.
     #
     #  Licensing:
     #
@@ -1259,56 +1436,54 @@ def tetrahedron01_monte_carlo_test():
     test_num = 20
 
     print('')
-    print('TETRAHEDRON01_MONTE_CARLO_TEST')
+    print('SIMPLEX_UNIT_MONOMIAL_INTEGRAL_TEST')
     print('  Python version: %s' % (platform.python_version()))
-    print('  TETRAHEDRON01_SAMPLE can be used to estimate integrals')
-    print('  over the unit tetrahedron using the Monte Carlo method.')
-    print('  Compare with exact values returned by ')
-    print('  TETRAHEDRON_MONOMIAL_INTEGRAL.')
+    print('  Estimate monomial integrals using Monte Carlo')
+    print('  over the interior of the unit simplex in M dimensions.')
 #
 #  Get sample points.
 #
     seed = 123456789
-    x, seed = tetrahedron01_sample(n, seed)
+    x, seed = simplex_unit_sample(m, n, seed)
 
     print('')
     print('  Number of sample points used is %d' % (n))
 #
-#  Run through the exponents.
+#  Randomly choose exponents.
 #
+    print('')
+    print('  We randomly choose the exponents.')
     print('')
     print('  Ex  Ey  Ez     MC-Estimate      Exact           Error')
     print('')
 
-    e = np.zeros(m, dtype=np.int32)
+    for test in range(0, test_num):
 
-    for i in range(0, m + 1):
-        e[0] = i
-        for j in range(0, m + 1):
-            e[1] = j
-            for k in range(0, m + 1):
-                e[2] = k
+        e, seed = i4vec_uniform_ab(m, 0, 4, seed)
 
-                value = monomial_value(m, n, e, x)
-                result = tetrahedron01_volume() * np.sum(value) / float(n)
-                exact = tetrahedron01_monomial_integral(e)
-                error = abs(result - exact)
-                print('  %2d  %2d  %2d  %14.6g  %14.6g  %10.2g'
-                      % (e[0], e[1], e[2], result, exact, error))
+        value = monomial_value(m, n, e, x)
+
+        result = simplex_unit_volume(m) * np.sum(value) / float(n)
+        exact = simplex_unit_monomial_integral(m, e)
+        error = abs(result - exact)
+
+        for i in range(0, m):
+            print('  %2d' % (e[i])),
+        print('  %14.6g  %14.6g  %10.2g' % (result, exact, error))
 #
 #  Terminate.
 #
     print('')
-    print('TETRAHEDRON01_MONTE_CARLO_TEST:')
+    print('SIMPLEX_UNIT_MONOMIAL_INTEGRAL_TEST:')
     print('  Normal end of execution.')
     return
 
 
-def tetrahedron01_sample(n, seed):
+def simplex_unit_sample(m, n, seed):
 
     # *****************************************************************************80
     #
-    # TETRAHEDRON01_SAMPLE samples the unit tetrahedron in 3D.
+    # SIMPLEX_UNIT_SAMPLE samples the unit simplex in M dimensions.
     #
     #  Licensing:
     #
@@ -1316,7 +1491,7 @@ def tetrahedron01_sample(n, seed):
     #
     #  Modified:
     #
-    #    23 June 2015
+    #    22 June 2015
     #
     #  Author:
     #
@@ -1333,40 +1508,39 @@ def tetrahedron01_sample(n, seed):
     #
     #  Parameters:
     #
+    #    Input, integer M, the spatial dimension.
+    #
     #    Input, integer N, the number of points.
     #
     #    Input/output, integer SEED, a seed for the random
     #    number generator.
     #
-    #    Output, real X(3,N), the points.
+    #    Output, real X(M,N), the points.
     #
     import numpy as np
 
-    m = 3
-
     x = np.zeros([m, n])
-    el = np.zeros(m + 1)
 
     for j in range(0, n):
 
         e, seed = r8vec_uniform_01(m + 1, seed)
 
-        el_sum = 0.0
+        e_sum = 0.0
         for i in range(0, m + 1):
-            el[i] = - np.log(e[i])
-            el_sum = el_sum + el[i]
+            e[i] = - np.log(e[i])
+            e_sum = e_sum + e[i]
 
         for i in range(0, m):
-            x[i, j] = el[i] / el_sum
+            x[i, j] = e[i] / e_sum
 
     return x, seed
 
 
-def tetrahedron01_sample_test():
+def simplex_unit_sample_test00():
 
     # *****************************************************************************80
     #
-    # TETRAHEDRON01_SAMPLE_TEST tests TETRAHEDRON01_SAMPLE.
+    # SIMPLEX_UNIT_SAMPLE_TEST00 tests SIMPLEX_UNIT_SAMPLE.
     #
     #  Licensing:
     #
@@ -1383,31 +1557,31 @@ def tetrahedron01_sample_test():
     import platform
 
     print('')
-    print('TETRAHEDRON01_SAMPLE_TEST')
+    print('SIMPLEX_UNIT_SAMPLE_TEST00')
     print('  Python version: %s' % (platform.python_version()))
-    print('  TETRAHEDRON01_SAMPLE samples the unit tetrahedron.')
+    print('  SIMPLEX_UNIT_SAMPLE samples the unit simplex in M dimensions.')
 
     m = 3
     n = 10
     seed = 123456789
 
-    x, seed = tetrahedron01_sample(n, seed)
+    x, seed = simplex_unit_sample(m, n, seed)
 
-    r8mat_transpose_print(m, n, x, '  Sample points in the unit tetrahedron.')
+    r8mat_transpose_print(m, n, x, '  Sample points in the unit simplex.')
 #
 #  Terminate.
 #
     print('')
-    print('TETRAHEDRON01_SAMPLE_TEST')
+    print('SIMPLEX_UNIT_SAMPLE_TEST00')
     print('  Normal end of execution.')
     return
 
 
-def tetrahedron01_volume():
+def simplex_unit_sample_test01():
 
     # *****************************************************************************80
     #
-    # TETRAHEDRON01_VOLUME returns the volume of the unit tetrahedron.
+    # SIMPLEX_UNIT_SAMPLE_TEST01 estimates integrals in 3D.
     #
     #  Licensing:
     #
@@ -1415,7 +1589,188 @@ def tetrahedron01_volume():
     #
     #  Modified:
     #
-    #    23 June 2015
+    #    03 March 2017
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+
+    m = 3
+
+    e_test = np.array([
+        [0, 1, 0, 0, 2, 1, 1, 0, 0, 0],
+        [0, 0, 1, 0, 0, 1, 0, 2, 1, 0],
+        [0, 0, 0, 1, 0, 0, 1, 0, 1, 2]], dtype=np.int32)
+
+    e = np.zeros(m, dtype=np.int32)
+
+    print('')
+    print('SIMPLEX_UNIT_SAMPLE_TEST01')
+    print('  SIMPLEX_UNIT_SAMPLE computes a Monte Carlo estimate of an')
+    print('  integral over the interior of the unit simplex in 3D.')
+
+    seed = 123456789
+
+    print('')
+    print('         N        1               X               Y ', end='')
+    print('              Z               X^2              XY             XZ', end='')
+    print('              Y^2             YZ               Z^2')
+    print('')
+
+    n = 1
+
+    while (n <= 65536):
+
+        x, seed = simplex_unit_sample(m, n, seed)
+
+        print('  %8d' % (n), end='')
+
+        for j in range(0, 10):
+
+            e[0:m] = e_test[0:m, j]
+
+            value = monomial_value(m, n, e, x)
+
+            result = simplex_unit_volume(m) * np.sum(value[0:n]) / n
+            print('  %14.6g' % (result), end='')
+
+        print('')
+
+        n = 2 * n
+
+    print('')
+    print('     Exact')
+    for j in range(0, 10):
+
+        e[0:m] = e_test[0:m, j]
+
+        result = simplex_unit_monomial_integral(m, e)
+        print('  %14.6g' % (result), end='')
+
+    print('')
+
+    return
+
+
+def simplex_unit_sample_test02():
+
+    # *****************************************************************************80
+    #
+    # SIMPLEX_UNIT_SAMPLE_TEST02 estimates integrals in 6D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 March 2017
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+
+    m = 6
+
+    e_test = np.array([
+        [0, 1, 0, 0, 0, 2, 0],
+        [0, 0, 2, 2, 0, 0, 0],
+        [0, 0, 0, 2, 0, 0, 0],
+        [0, 0, 0, 0, 4, 0, 0],
+        [0, 0, 0, 0, 0, 2, 0],
+        [0, 0, 0, 0, 0, 2, 6]], dtype=np.int32)
+
+    e = np.zeros(m, dtype=np.int32)
+
+    print('')
+    print('SIMPLEX_UNIT_SAMPLE_TEST02')
+    print('  SIMPLEX_UNIT_SAMPLE computes a Monte Carlo estimate of an')
+    print('  integral over the interior of the unit simplex in 6D.')
+
+    seed = 123456789
+
+    print('')
+    print('         N', end='')
+    print('        1      ', end='')
+    print('        U      ', end='')
+    print('         V^2   ', end='')
+    print('         V^2W^2', end='')
+    print('         X^4   ', end='')
+    print('         Y^2Z^2', end='')
+    print('         Z^6')
+    print('')
+
+    n = 1
+
+    while (n <= 65536):
+
+        x, seed = simplex_unit_sample(m, n, seed)
+
+        print('  %8d' % (n), end='')
+
+        for j in range(0, 7):
+
+            e[0:m] = e_test[0:m, j]
+
+            value = monomial_value(m, n, e, x)
+
+            result = simplex_unit_volume(m) * np.sum(value[0:n]) / n
+            print('  %14.6g' % (result), end='')
+
+        print('')
+
+        n = 2 * n
+
+    print('')
+    print('     Exact')
+    for j in range(0, 7):
+
+        e[0:m] = e_test[0:m, j]
+
+        result = simplex_unit_monomial_integral(m, e)
+        print('  %14.6g' % (result), end='')
+
+    print('')
+
+    return
+
+
+def simplex_unit_to_general(m, n, t, ref):
+
+    # *****************************************************************************80
+    #
+    # SIMPLEX_UNIT_TO_GENERAL maps the unit simplex to a general simplex.
+    #
+    #  Discussion:
+    #
+    #    Given that the unit simplex has been mapped to a general simplex
+    #    with vertices T, compute the images in T, under the same linear
+    #    mapping, of points whose coordinates in the unit simplex are REF.
+    #
+    #    The vertices of the unit simplex are listed as suggested in the
+    #    following:
+    #
+    #      (0,0,0,...,0)
+    #      (1,0,0,...,0)
+    #      (0,1,0,...,0)
+    #      (0,0,1,...,0)
+    #      (...........)
+    #      (0,0,0,...,1)
+    #
+    #    Thanks to Andrei ("spiritualworlds") for pointing out a mistake in the
+    #    previous implementation of this routine, 02 March 2008.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    02 March 2017
     #
     #  Author:
     #
@@ -1423,18 +1778,229 @@ def tetrahedron01_volume():
     #
     #  Parameters:
     #
-    #    Output, real VOLUME, the volume.
+    #    Input, integer M, the spatial dimension.
     #
-    value = 1.0 / 6.0
+    #    Input, integer N, the number of points to transform.
+    #
+    #    Input, real T(M,M+1), the vertices of the
+    #    general simplex.
+    #
+    #    Input, real REF(M,N), points in the
+    #    reference triangle.
+    #
+    #    Output, real PHY(M,N), corresponding points
+    #    in the physical triangle.
+    #
+    import numpy as np
+#
+#  The image of each point is initially the image of the origin.
+#
+#  Insofar as the pre-image differs from the origin in a given vertex
+#  direction, add that proportion of the difference between the images
+#  of the origin and the vertex.
+#
+    phy = np.zeros([m, n])
+
+    for i in range(0, m):
+
+        for j in range(0, n):
+
+            phy[i, j] = t[i, 0]
+
+            for vertex in range(1, m + 1):
+
+                phy[i, j] = phy[i, j] + \
+                    (t[i, vertex] - t[i, 0]) * ref[vertex - 1, j]
+
+    return phy
+
+
+def simplex_unit_to_general_test01():
+
+    # *****************************************************************************80
+    #
+    # SIMPLEX_UNIT_TO_GENERAL_TEST01 tests SIMPLEX_UNIT_TO_GENERAL.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 March 2017
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+
+    m = 2
+    n = 10
+
+    t = np.array([
+        [1.0, 3.0, 2.0],
+        [1.0, 1.0, 5.0]])
+
+    t_unit = np.array([
+        [0.0, 1.0, 0.0],
+        [0.0, 0.0, 1.0]])
+
+    seed = 123456789
+
+    print('')
+    print('SIMPLEX_UNIT_TO_GENERAL_TEST01')
+    print('  SIMPLEX_UNIT_TO_GENERAL')
+    print('  maps points in the unit simplex to a general simplex.')
+    print('')
+    print('  Here we consider a simplex in 2D, a triangle.')
+    print('')
+    print('  The vertices of the general triangle are:')
+    print('')
+    for j in range(0, m + 1):
+        for i in range(0, m):
+            print('  %8.4f' % (t[i, j]), end="")
+        print('')
+
+    print('')
+    print('   (  XSI     ETA )   ( X       Y  )')
+    print('')
+
+    phy_unit = simplex_unit_to_general(m, m + 1, t, t_unit)
+
+    for j in range(0, m + 1):
+        for i in range(0, m):
+            print('  %8.4f' % (t_unit[i, j]), end="")
+        for i in range(0, m):
+            print('  %8.4f' % (phy_unit[i, j]), end="")
+        print('')
+
+    ref, seed = simplex_unit_sample(m, n, seed)
+
+    phy = simplex_unit_to_general(m, n, t, ref)
+
+    for j in range(0, n):
+        for i in range(0, m):
+            print('  %8.4f' % (ref[i, j]), end="")
+        for i in range(0, m):
+            print('  %8.4f' % (phy[i, j]), end="")
+        print('')
+
+    return
+
+
+def simplex_unit_to_general_test02():
+
+    # *****************************************************************************80
+    #
+    # SIMPLEX_UNIT_TO_GENERAL_TEST02 tests SIMPLEX_UNIT_TO_GENERAL.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 March 2008
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+
+    m = 3
+    n = 10
+
+    t = np.array([
+        [1.0, 3.0, 1.0, 1.0],
+        [1.0, 1.0, 4.0, 1.0],
+        [1.0, 1.0, 1.0, 5.0]])
+
+    t_unit = np.array([
+        [0.0, 1.0, 0.0, 0.0],
+        [0.0, 0.0, 1.0, 0.0],
+        [0.0, 0.0, 0.0, 1.0]])
+
+    seed = 123456789
+
+    print('')
+    print('SIMPLEX_UNIT_TO_GENERAL_TEST02')
+    print('  SIMPLEX_UNIT_TO_GENERAL')
+    print('  maps points in the unit simplex to a general simplex.')
+    print('')
+    print('  Here we consider a simplex in 3D, a tetrahedron.')
+    print('')
+    print('  The vertices of the general tetrahedron are:')
+    print('')
+    for j in range(0, m + 1):
+        for i in range(0, m):
+            print('  %8.4f' % (t[i, j]), end="")
+        print('')
+
+    print('')
+    print('   (  XSI     ETA )   ( X       Y  )')
+    print('')
+
+    phy_unit = simplex_unit_to_general(m, m + 1, t, t_unit)
+
+    for j in range(0, m + 1):
+        for i in range(0, m):
+            print('  %8.4f' % (t_unit[i, j]), end="")
+        for i in range(0, m):
+            print('  %8.4f' % (phy_unit[i, j]), end="")
+        print('')
+
+    ref, seed = simplex_unit_sample(m, n, seed)
+
+    phy = simplex_unit_to_general(m, n, t, ref)
+
+    for j in range(0, n):
+        for i in range(0, m):
+            print('  %8.4f' % (ref[i, j]), end="")
+        for i in range(0, m):
+            print('  %8.4f' % (phy[i, j]), end="")
+        print('')
+
+    return
+
+
+def simplex_unit_volume(m):
+
+    # *****************************************************************************80
+    #
+    # SIMPLEX_UNIT_VOLUME returns the volume of the unit simplex in M dimensions.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    15 January 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Output, real VALUE, the volume.
+    #
+    value = 1.0
+    for i in range(1, m + 1):
+        value = value / float(i)
 
     return value
 
 
-def tetrahedron01_volume_test():
+def simplex_unit_volume_test():
 
     # *****************************************************************************80
     #
-    # TETRAHEDRON01_VOLUME_TEST tests TETRAHEDRON01_VOLUME.
+    # SIMPLEX_UNIT_VOLUME_TEST tests SIMPLEX_UNIT_VOLUME.
     #
     #  Licensing:
     #
@@ -1451,19 +2017,22 @@ def tetrahedron01_volume_test():
     import platform
 
     print('')
-    print('TETRAHEDRON01_VOLUME_TEST')
+    print('SIMPLEX_UNIT_VOLUME_TEST')
     print('  Python version: %s' % (platform.python_version()))
-    print('  TETRAHEDRON01_VOLUME returns the volume of the unit tetrahedron.')
-
-    value = tetrahedron01_volume()
-
+    print('  SIMPLEX_UNIT_VOLUME returns the volume of the unit simplex')
+    print('  in M dimensions.')
     print('')
-    print('  TETRAHEDRON01_VOLUME() = %g' % (value))
+    print('   M   Volume')
+    print('')
+
+    for m in range(1, 10):
+        value = simplex_unit_volume(m)
+        print('  %2d  %g' % (m, value))
 #
 #  Terminate.
 #
     print('')
-    print('TETRAHEDRON01_VOLUME_TEST')
+    print('SIMPLEX_UNIT_VOLUME_TEST')
     print('  Normal end of execution.')
     return
 
@@ -1498,11 +2067,11 @@ def timestamp():
     return None
 
 
-def tetrahedron01_monte_carlo_tests():
+def timestamp_test():
 
     # *****************************************************************************80
     #
-    # TETRAHEDRON01_MONTE_CARLO_TESTS tests the TETRAHEDRON01_MONTE_CARLO library.
+    # TIMESTAMP_TEST tests TIMESTAMP.
     #
     #  Licensing:
     #
@@ -1510,7 +2079,47 @@ def tetrahedron01_monte_carlo_tests():
     #
     #  Modified:
     #
-    #    10 November 2016
+    #    03 December 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    None
+    #
+    import platform
+
+    print('')
+    print('TIMESTAMP_TEST:')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  TIMESTAMP prints a timestamp of the current date and time.')
+    print('')
+
+    timestamp()
+#
+#  Terminate.
+#
+    print('')
+    print('TIMESTAMP_TEST:')
+    print('  Normal end of execution.')
+    return
+
+
+def simplex_monte_carlo_test():
+
+    # *****************************************************************************80
+    #
+    # SIMPLEX_MONTE_CARLO_TEST tests the SIMPLEX_MONTE_CARLO library.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 November 2016
     #
     #  Author:
     #
@@ -1519,24 +2128,39 @@ def tetrahedron01_monte_carlo_tests():
     import platform
 
     print('')
-    print('TETRAHEDRON01_MONTE_CARLO_TESTS')
+    print('SIMPLEX_MONTE_CARLO_TEST')
     print('  Python version: %s' % (platform.python_version()))
-    print('  Test the TETRAHEDRON01_MONTE_CARLO library.')
+    print('  Test the SIMPLEX_MONTE_CARLO library.')
 
+    i4vec_print_test()
+    i4vec_transpose_print_test()
+    i4vec_uniform_ab_test()
     monomial_value_test()
-    tetrahedron01_monte_carlo_test()
-    tetrahedron01_sample_test()
-    tetrahedron01_volume_test()
+    r8mat_print_test()
+    r8mat_print_some_test()
+    r8mat_transpose_print_test()
+    r8mat_transpose_print_some_test()
+    r8mat_uniform_ab_test()
+    r8vec_print_test()
+    r8vec_uniform_01_test()
+    simplex_general_sample_test()
+    simplex_unit_monomial_integral_test()
+    simplex_unit_sample_test00()
+    simplex_unit_sample_test01()
+    simplex_unit_sample_test02()
+    simplex_unit_to_general_test01()
+    simplex_unit_to_general_test02()
+    simplex_unit_volume_test()
 #
 #  Terminate.
 #
     print('')
-    print('TETRAHEDRON01_MONTE_CARLO_TESTS:')
+    print('SIMPLEX_MONTE_CARLO_TEST:')
     print('  Normal end of execution.')
     return
 
 
 if (__name__ == '__main__'):
     timestamp()
-    tetrahedron01_monte_carlo_tests()
+    simplex_monte_carlo_test()
     timestamp()
