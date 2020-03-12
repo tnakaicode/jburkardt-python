@@ -1,1671 +1,1704 @@
 #! /usr/bin/env python3
 #
-def hypercube01_monomial_integral ( m, e ):
 
-#*****************************************************************************80
-#
-## HYPERCUBE01_MONOMIAL_INTEGRAL: integrals over the unit hypercube in M dimensions.
-#
-#  Discussion:
-#
-#    The integration region is 
-#
-#      0 <= X(1:M) <= 1,
-#
-#    The monomial is F(X) = product ( 1 <= I <= M ) X(I)^E(I).
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    22 June 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Reference:
-#
-#    Philip Davis, Philip Rabinowitz,
-#    Methods of Numerical Integration,
-#    Second Edition,
-#    Academic Press, 1984, page 263.
-#
-#  Parameters:
-#
-#    Input, integer M, the spatial dimension.
-#
-#    Input, integer E(M), the exponents.  Each exponent must be nonnegative.
-#
-#    Output, real INTEGRAL, the integral.
-#
-  from sys import exit
 
-  for i in range ( 0, m ):
-    if ( e[i] < 0 ):
-      print ( '' )
-      print ( 'HYPERCUBE01_MONOMIAL_INTEGRAL - Fatal error!' )
-      print ( '  All exponents must be nonnegative.' )
-      error ( 'HYPERCUBE01_MONOMIAL_INTEGRAL - Fatal error!' )
+def hypercube01_monomial_integral(m, e):
 
-  integral = 1.0
-  for i in range ( 0, m ):
-    integral = integral / float ( e[i] + 1 )
+    # *****************************************************************************80
+    #
+    # HYPERCUBE01_MONOMIAL_INTEGRAL: integrals over the unit hypercube in M dimensions.
+    #
+    #  Discussion:
+    #
+    #    The integration region is
+    #
+    #      0 <= X(1:M) <= 1,
+    #
+    #    The monomial is F(X) = product ( 1 <= I <= M ) X(I)^E(I).
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Philip Davis, Philip Rabinowitz,
+    #    Methods of Numerical Integration,
+    #    Second Edition,
+    #    Academic Press, 1984, page 263.
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Input, integer E(M), the exponents.  Each exponent must be nonnegative.
+    #
+    #    Output, real INTEGRAL, the integral.
+    #
+    from sys import exit
 
-  return integral
+    for i in range(0, m):
+        if (e[i] < 0):
+            print('')
+            print('HYPERCUBE01_MONOMIAL_INTEGRAL - Fatal error!')
+            print('  All exponents must be nonnegative.')
+            error('HYPERCUBE01_MONOMIAL_INTEGRAL - Fatal error!')
 
-def hypercube01_monomial_integral_test ( ):
+    integral = 1.0
+    for i in range(0, m):
+        integral = integral / float(e[i] + 1)
 
-#*****************************************************************************80
-#
-## HYPERCUBE01_MONOMIAL_INTEGRAL_TEST tests HYPERCUBE01_MONOMIAL_INTEGRAL.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    22 June 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
+    return integral
 
-  m = 3
-  n = 4192
-  test_num = 20
 
-  print ( '' )
-  print ( 'HYPERCUBE01_MONOMIAL_INTEGRAL_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  HYPERCUBE01_MONOMIAL_INTEGRAL returns the integral of a monomial' )
-  print ( '  over the interior of the unit hypercube in 3D.' )
-  print ( '  Compare with a Monte Carlo estimate.' )
-  print ( '' )
-  print ( '  Using M = %d' % ( m ) )
+def hypercube01_monomial_integral_test():
+
+    # *****************************************************************************80
+    #
+    # HYPERCUBE01_MONOMIAL_INTEGRAL_TEST tests HYPERCUBE01_MONOMIAL_INTEGRAL.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    m = 3
+    n = 4192
+    test_num = 20
+
+    print('')
+    print('HYPERCUBE01_MONOMIAL_INTEGRAL_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  HYPERCUBE01_MONOMIAL_INTEGRAL returns the integral of a monomial')
+    print('  over the interior of the unit hypercube in 3D.')
+    print('  Compare with a Monte Carlo estimate.')
+    print('')
+    print('  Using M = %d' % (m))
 #
 #  Get sample points.
 #
-  seed = 123456789
-  x, seed = hypercube01_sample ( m, n, seed )
+    seed = 123456789
+    x, seed = hypercube01_sample(m, n, seed)
 
-  print ( '' )
-  print ( '  Number of sample points used is %d' % ( n ) )
+    print('')
+    print('  Number of sample points used is %d' % (n))
 #
 #  Randomly choose exponents.
 #
-  print ( '' )
-  print ( '  Ex  Ey  Ez     MC-Estimate           Exact      Error' )
-  print ( '' )
+    print('')
+    print('  Ex  Ey  Ez     MC-Estimate           Exact      Error')
+    print('')
 
-  for test in range ( 0, test_num ):
+    for test in range(0, test_num):
 
-    e, seed = i4vec_uniform_ab ( m, 0, 4, seed )
+        e, seed = i4vec_uniform_ab(m, 0, 4, seed)
 
-    value = monomial_value ( m, n, e, x )
+        value = monomial_value(m, n, e, x)
 
-    result = hypercube01_volume ( m ) * np.sum ( value ) / float ( n )
-    exact = hypercube01_monomial_integral ( m, e )
-    error = abs ( result - exact )
+        result = hypercube01_volume(m) * np.sum(value) / float(n)
+        exact = hypercube01_monomial_integral(m, e)
+        error = abs(result - exact)
 
-    for i in range ( 0, m ):
-      print ( '  %2d' % ( e[i] ), end = '' )
-    print ( '  %14.6g  %14.6g  %10.2g' % ( result, exact, error ) )
+        for i in range(0, m):
+            print('  %2d' % (e[i]), end='')
+        print('  %14.6g  %14.6g  %10.2g' % (result, exact, error))
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'HYPERCUBE01_MONOMIAL_INTEGRAL_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('HYPERCUBE01_MONOMIAL_INTEGRAL_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def hypercube01_monte_carlo_test01 ( ):
 
-#*****************************************************************************80
-#
-## HYPERCUBE01_MONTE_CARLO_TEST01 estimates integrals over the unit hypercube in 3D.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    13 November 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
+def hypercube01_monte_carlo_test01():
 
-  m = 3
+    # *****************************************************************************80
+    #
+    # HYPERCUBE01_MONTE_CARLO_TEST01 estimates integrals over the unit hypercube in 3D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 November 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
 
-  e_test = np.array ( [ \
-    [ 0, 0, 0 ], \
-    [ 1, 0, 0 ], \
-    [ 0, 1, 0 ], \
-    [ 0, 0, 1 ], \
-    [ 2, 0, 0 ], \
-    [ 1, 1, 0 ], \
-    [ 1, 0, 1 ], \
-    [ 0, 2, 0 ], \
-    [ 0, 1, 1 ], \
-    [ 0, 0, 2 ] ] )
+    m = 3
 
-  print ( '' )
-  print ( 'HYPERCUBE01_MONTE_CARLO_TEST01' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Use HYPERCUBE01_SAMPLE to estimate integrals ' )
-  print ( '  along the interior of the unit hypercube in 3D.' )
+    e_test = np.array([
+        [0, 0, 0],
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+        [2, 0, 0],
+        [1, 1, 0],
+        [1, 0, 1],
+        [0, 2, 0],
+        [0, 1, 1],
+        [0, 0, 2]])
 
-  seed = 123456789
+    print('')
+    print('HYPERCUBE01_MONTE_CARLO_TEST01')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Use HYPERCUBE01_SAMPLE to estimate integrals ')
+    print('  along the interior of the unit hypercube in 3D.')
 
-  print ( '' )
-  print ( '         N', end = '' )
-  print ( '        1', end = '' )
-  print ( '               X', end = '' )
-  print ( '               Y ', end = '' )
-  print ( '              Z', end = '' )
-  print ( '               X^2', end = '' )
-  print ( '              XY', end = '' )
-  print ( '             XZ', end = '' )
-  print ( '              Y^2', end = '' )
-  print ( '             YZ', end = '' )
-  print ( '               Z^2' )
-  print ( '' )
+    seed = 123456789
 
-  n = 1
-  e = np.zeros ( m, dtype = np.int32 )
+    print('')
+    print('         N', end='')
+    print('        1', end='')
+    print('               X', end='')
+    print('               Y ', end='')
+    print('              Z', end='')
+    print('               X^2', end='')
+    print('              XY', end='')
+    print('             XZ', end='')
+    print('              Y^2', end='')
+    print('             YZ', end='')
+    print('               Z^2')
+    print('')
 
-  while ( n <= 65536 ):
+    n = 1
+    e = np.zeros(m, dtype=np.int32)
 
-    x, seed = hypercube01_sample ( m, n, seed )
-    print ( '  %8d' % ( n ), end = '' )
+    while (n <= 65536):
 
-    for j in range ( 0, 10 ):
+        x, seed = hypercube01_sample(m, n, seed)
+        print('  %8d' % (n), end='')
 
-      e[0:m] = e_test[j,0:m]
+        for j in range(0, 10):
 
-      value = monomial_value ( m, n, e, x )
+            e[0:m] = e_test[j, 0:m]
 
-      result = hypercube01_volume ( m ) * np.sum ( value[0:n] ) / float ( n )
+            value = monomial_value(m, n, e, x)
 
-      print ( '  %14.6g' % ( result ), end = '' )
+            result = hypercube01_volume(m) * np.sum(value[0:n]) / float(n)
 
-    print ( '' )
+            print('  %14.6g' % (result), end='')
 
-    n = 2 * n
+        print('')
 
-  print ( '' )
-  print ( '     Exact', end = '' )
+        n = 2 * n
 
-  for j in range ( 0, 10 ):
+    print('')
+    print('     Exact', end='')
 
-    e[0:m] = e_test[j,0:m]
+    for j in range(0, 10):
 
-    result = hypercube01_monomial_integral ( m, e )
-    print ( '  %14.6g' % ( result ), end = '' )
+        e[0:m] = e_test[j, 0:m]
 
-  print ( '' )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'HYPERCUBE01_MONTE_CARLO_TEST01' )
-  print ( '  Normal end of execution.' )
-  return
+        result = hypercube01_monomial_integral(m, e)
+        print('  %14.6g' % (result), end='')
 
-def hypercube01_monte_carlo_test02 ( ):
-
-#*****************************************************************************80
-#
-## HYPERCUBE01_MONTE_CARLO_TEST02 estimates integrals over the unit hypercube in 6D.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    13 November 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-
-  m = 6
-
-  e_test = np.array ( [ \
-    [ 0, 0, 0, 0, 0, 0 ], \
-    [ 1, 0, 0, 0, 0, 0 ], \
-    [ 0, 2, 0, 0, 0, 0 ], \
-    [ 0, 2, 2, 0, 0, 0 ], \
-    [ 0, 0, 0, 4, 0, 0 ], \
-    [ 2, 0, 0, 0, 2, 2 ], \
-    [ 0, 0, 0, 0, 0, 6 ] ] )
-
-  print ( '' )
-  print ( 'HYPERCUBE01_MONTE_CARLO_TEST02' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Use HYPERCUBE01_SAMPLE to estimate integrals ' )
-  print ( '  along the interior of the unit hypercube in 6D.' )
-
-  seed = 123456789
-
-  print ( '' )
-  print ( '         N', end = '' )
-  print ( '        1      ', end = '' )
-  print ( '        U      ', end = '' )
-  print ( '         V^2   ', end = '' )
-  print ( '         V^2W^2', end = '' )
-  print ( '         X^4   ', end = '' )
-  print ( '         Y^2Z^2', end = '' )
-  print ( '         Z^6' )
-  print ( '' )
-
-  n = 1
-  e = np.zeros ( m, dtype = np.int32 )
-
-  while ( n <= 65536 ):
-
-    x, seed = hypercube01_sample ( m, n, seed )
-    print ( '  %8d' % ( n ), end = '' )
-
-    for j in range ( 0, 7 ):
-
-      e[0:m] = e_test[j,0:m]
-
-      value = monomial_value ( m, n, e, x )
-
-      result = hypercube01_volume ( m ) * np.sum ( value[0:n] ) / float ( n )
-
-      print ( '  %14.6g' % ( result ), end = '' )
-
-    print ( '' )
-
-    n = 2 * n
-
-  print ( '' )
-  print ( '     Exact', end = '' )
-
-  for j in range ( 0, 7 ):
-
-    e[0:m] = e_test[j,0:m]
-
-    result = hypercube01_monomial_integral ( m, e )
-    print ( '  %14.6g' % ( result ) ),
-
-  print ( '' )
+    print('')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'HYPERCUBE01_MONTE_CARLO_TEST02' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('HYPERCUBE01_MONTE_CARLO_TEST01')
+    print('  Normal end of execution.')
+    return
 
-def hypercube01_sample ( m, n, seed ):
 
-#*****************************************************************************80
-#
-## HYPERCUBE01_SAMPLE samples points in the unit hypercube in M dimensions.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    22 June 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer M, the spatial dimension.
-#
-#    Input, integer N, the number of points.
-#
-#    Input/output, integer SEED, a seed for the random 
-#    number generator.
-#
-#    Output, real X(M,N), the points.
-#
-  x, seed = r8mat_uniform_01 ( m, n, seed )
+def hypercube01_monte_carlo_test02():
 
-  return x, seed
+    # *****************************************************************************80
+    #
+    # HYPERCUBE01_MONTE_CARLO_TEST02 estimates integrals over the unit hypercube in 6D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 November 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
 
-def hypercube01_sample_test ( ):
+    m = 6
 
-#*****************************************************************************80
-#
-## HYPERCUBE01_SAMPLE_TEST tests HYPERCUBE01_SAMPLE.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    22 June 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
+    e_test = np.array([
+        [0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 0],
+        [0, 2, 0, 0, 0, 0],
+        [0, 2, 2, 0, 0, 0],
+        [0, 0, 0, 4, 0, 0],
+        [2, 0, 0, 0, 2, 2],
+        [0, 0, 0, 0, 0, 6]])
 
-  print ( '' )
-  print ( 'HYPERCUBE01_SAMPLE_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  HYPERUBE01_SAMPLE samples the unit hypercube' )
-  print ( '  in M dimensions.' )
+    print('')
+    print('HYPERCUBE01_MONTE_CARLO_TEST02')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Use HYPERCUBE01_SAMPLE to estimate integrals ')
+    print('  along the interior of the unit hypercube in 6D.')
 
-  m = 3
-  n = 10
-  seed = 123456789
+    seed = 123456789
 
-  x, seed = hypercube01_sample ( m, n, seed )
+    print('')
+    print('         N', end='')
+    print('        1      ', end='')
+    print('        U      ', end='')
+    print('         V^2   ', end='')
+    print('         V^2W^2', end='')
+    print('         X^4   ', end='')
+    print('         Y^2Z^2', end='')
+    print('         Z^6')
+    print('')
 
-  r8mat_transpose_print ( m, n, x, '  Sample points in the unit hypercube.' )
+    n = 1
+    e = np.zeros(m, dtype=np.int32)
+
+    while (n <= 65536):
+
+        x, seed = hypercube01_sample(m, n, seed)
+        print('  %8d' % (n), end='')
+
+        for j in range(0, 7):
+
+            e[0:m] = e_test[j, 0:m]
+
+            value = monomial_value(m, n, e, x)
+
+            result = hypercube01_volume(m) * np.sum(value[0:n]) / float(n)
+
+            print('  %14.6g' % (result), end='')
+
+        print('')
+
+        n = 2 * n
+
+    print('')
+    print('     Exact', end='')
+
+    for j in range(0, 7):
+
+        e[0:m] = e_test[j, 0:m]
+
+        result = hypercube01_monomial_integral(m, e)
+        print('  %14.6g' % (result)),
+
+    print('')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'HYPERCUBE01_SAMPLE_TEST' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('HYPERCUBE01_MONTE_CARLO_TEST02')
+    print('  Normal end of execution.')
+    return
 
-def hypercube01_volume ( m ):
 
-#*****************************************************************************80
-#
-## HYPERCUBE01_VOLUME returns the volume of the unit hypercube in M dimensions.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    22 June 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer M, the spatial dimension.
-#
-#    Output, real VALUE, the volume.
-#
-  value = 1.0
+def hypercube01_sample(m, n, seed):
 
-  return value
+    # *****************************************************************************80
+    #
+    # HYPERCUBE01_SAMPLE samples points in the unit hypercube in M dimensions.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real X(M,N), the points.
+    #
+    x, seed = r8mat_uniform_01(m, n, seed)
 
-def hypercube01_volume_test ( ) :
+    return x, seed
 
-#*****************************************************************************80
-#
-## HYPERCUBE01_VOLUME tests HYPERCUBE01_VOLUME.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    22 June 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
 
-  print ( '' )
-  print ( 'HYPERCUBE01_VOLUME_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  HYPERCUBE01_VOLUME returns the volume of the unit hypercube' )
-  print ( '  in M dimensions.' )
+def hypercube01_sample_test():
 
-  m = 3
+    # *****************************************************************************80
+    #
+    # HYPERCUBE01_SAMPLE_TEST tests HYPERCUBE01_SAMPLE.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
 
-  value = hypercube01_volume ( m )
+    print('')
+    print('HYPERCUBE01_SAMPLE_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  HYPERUBE01_SAMPLE samples the unit hypercube')
+    print('  in M dimensions.')
 
-  print ( '' )
-  print ( '  HYPERCUBE01_VOLUME(%d) = %g' % ( m, value ) )
+    m = 3
+    n = 10
+    seed = 123456789
+
+    x, seed = hypercube01_sample(m, n, seed)
+
+    r8mat_transpose_print(m, n, x, '  Sample points in the unit hypercube.')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'HYPERCUBE01_VOLUME_TEST' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('HYPERCUBE01_SAMPLE_TEST')
+    print('  Normal end of execution.')
+    return
 
-def i4vec_print ( n, a, title ):
 
-#*****************************************************************************80
-#
-## I4VEC_PRINT prints an I4VEC.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    31 August 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer N, the dimension of the vector.
-#
-#    Input, integer A(N), the vector to be printed.
-#
-#    Input, string TITLE, a title.
-#
-  print ( '' )
-  print ( title )
-  print ( '' )
-  for i in range ( 0, n ):
-    print ( '%6d  %6d' % ( i, a[i] ) )
+def hypercube01_volume(m):
 
-  return
+    # *****************************************************************************80
+    #
+    # HYPERCUBE01_VOLUME returns the volume of the unit hypercube in M dimensions.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Output, real VALUE, the volume.
+    #
+    value = 1.0
 
-def i4vec_print_test ( ):
+    return value
 
-#*****************************************************************************80
-#
-## I4VEC_PRINT_TEST tests I4VEC_PRINT.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    25 September 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
 
-  print ( '' )
-  print ( 'I4VEC_PRINT_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  I4VEC_PRINT prints an I4VEC.' )
+def hypercube01_volume_test():
 
-  n = 4
-  v = np.array ( [ 91, 92, 93, 94 ], dtype = np.int32 )
-  i4vec_print ( n, v, '  Here is an I4VEC:' )
+    # *****************************************************************************80
+    #
+    # HYPERCUBE01_VOLUME tests HYPERCUBE01_VOLUME.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
+
+    print('')
+    print('HYPERCUBE01_VOLUME_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  HYPERCUBE01_VOLUME returns the volume of the unit hypercube')
+    print('  in M dimensions.')
+
+    m = 3
+
+    value = hypercube01_volume(m)
+
+    print('')
+    print('  HYPERCUBE01_VOLUME(%d) = %g' % (m, value))
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'I4VEC_PRINT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('HYPERCUBE01_VOLUME_TEST')
+    print('  Normal end of execution.')
+    return
 
-def i4vec_transpose_print ( n, a, title ):
 
-#*****************************************************************************80
-#
-## I4VEC_TRANSPOSE_PRINT prints an I4VEC "transposed".
-#
-#  Example:
-#
-#    A = (/ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 /)
-#    TITLE = 'My vector:  '
-#
-#    My vector:
-#
-#       1    2    3    4    5
-#       6    7    8    9   10
-#      11
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    02 June 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer N, the number of components of the vector.
-#
-#    Input, integer A(N), the vector to be printed.
-#
-#    Input, string TITLE, a title.
-#
-  if ( 0 < len ( title ) ):
-    print ( '' )
-    print ( title )
+def i4vec_print(n, a, title):
 
-  if ( 0 < n ):
-    for i in range ( 0, n ):
-      print ( '%8d' % ( a[i] ), end = '' )
-      if ( ( i + 1 ) % 10 == 0 or i == n - 1 ):
-        print ( '' )
-  else:
-    print ( '  (empty vector)' )
+    # *****************************************************************************80
+    #
+    # I4VEC_PRINT prints an I4VEC.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    31 August 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the dimension of the vector.
+    #
+    #    Input, integer A(N), the vector to be printed.
+    #
+    #    Input, string TITLE, a title.
+    #
+    print('')
+    print(title)
+    print('')
+    for i in range(0, n):
+        print('%6d  %6d' % (i, a[i]))
 
-  return
+    return
 
-def i4vec_transpose_print_test ( ):
 
-#*****************************************************************************80
-#
-## I4VEC_TRANSPOSE_PRINT_TEST tests I4VEC_TRANSPOSE_PRINT.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    07 April 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
+def i4vec_print_test():
 
-  print ( '' )
-  print ( 'I4VEC_TRANSPOSE_PRINT_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  I4VEC_TRANSPOSE_PRINT prints an I4VEC' )
-  print ( '  with 5 entries to a row, and an optional title.' )
+    # *****************************************************************************80
+    #
+    # I4VEC_PRINT_TEST tests I4VEC_PRINT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    25 September 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
 
-  n = 12
-  a = np.zeros ( n, dtype = np.int32 )
-  
-  for i in range ( 0, n ):
-    a[i] = i + 1
+    print('')
+    print('I4VEC_PRINT_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  I4VEC_PRINT prints an I4VEC.')
 
-  i4vec_transpose_print ( n, a, '  My array:  ' )
+    n = 4
+    v = np.array([91, 92, 93, 94], dtype=np.int32)
+    i4vec_print(n, v, '  Here is an I4VEC:')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'I4VEC_TRANSPOSE_PRINT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('I4VEC_PRINT_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def i4vec_uniform_ab ( n, a, b, seed ):
 
-#*****************************************************************************80
-#
-## I4VEC_UNIFORM_AB returns a scaled pseudorandom I4VEC.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    05 April 2013
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Reference:
-#
-#    Paul Bratley, Bennett Fox, Linus Schrage,
-#    A Guide to Simulation,
-#    Second Edition,
-#    Springer, 1987,
-#    ISBN: 0387964673,
-#    LC: QA76.9.C65.B73.
-#
-#    Bennett Fox,
-#    Algorithm 647:
-#    Implementation and Relative Efficiency of Quasirandom
-#    Sequence Generators,
-#    ACM Transactions on Mathematical Software,
-#    Volume 12, Number 4, December 1986, pages 362-376.
-#
-#    Pierre L'Ecuyer,
-#    Random Number Generation,
-#    in Handbook of Simulation,
-#    edited by Jerry Banks,
-#    Wiley, 1998,
-#    ISBN: 0471134031,
-#    LC: T57.62.H37.
-#
-#    Peter Lewis, Allen Goodman, James Miller,
-#    A Pseudo-Random Number Generator for the System/360,
-#    IBM Systems Journal,
-#    Volume 8, Number 2, 1969, pages 136-143.
-#
-#  Parameters:
-#
-#    Input, integer N, the number of entries in the vector.
-#
-#    Input, integer A, B, the minimum and maximum acceptable values.
-#
-#    Input, integer SEED, a seed for the random number generator.
-#
-#    Output, integer C(N), the randomly chosen integer vector.
-#
-#    Output, integer SEED, the updated seed.
-#
-  import numpy as np
-  from sys import exit
+def i4vec_transpose_print(n, a, title):
 
-  i4_huge = 2147483647
+    # *****************************************************************************80
+    #
+    # I4VEC_TRANSPOSE_PRINT prints an I4VEC "transposed".
+    #
+    #  Example:
+    #
+    #    A = (/ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 /)
+    #    TITLE = 'My vector:  '
+    #
+    #    My vector:
+    #
+    #       1    2    3    4    5
+    #       6    7    8    9   10
+    #      11
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    02 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of components of the vector.
+    #
+    #    Input, integer A(N), the vector to be printed.
+    #
+    #    Input, string TITLE, a title.
+    #
+    if (0 < len(title)):
+        print('')
+        print(title)
 
-  seed = int ( seed  )
+    if (0 < n):
+        for i in range(0, n):
+            print('%8d' % (a[i]), end='')
+            if ((i + 1) % 10 == 0 or i == n - 1):
+                print('')
+    else:
+        print('  (empty vector)')
 
-  if ( seed < 0 ):
-    seed = seed + i4_huge
+    return
 
-  if ( seed == 0 ):
-    print ( '' )
-    print ( 'I4VEC_UNIFORM_AB - Fatal error!' )
-    print ( '  Input SEED = 0!' )
-    exit ( 'I4VEC_UNIFORM_AB - Fatal error!' )
 
-  seed = int ( seed )
-  a = round ( a )
-  b = round ( b )
+def i4vec_transpose_print_test():
 
-  c = np.zeros ( n, dtype = np.int32 )
+    # *****************************************************************************80
+    #
+    # I4VEC_TRANSPOSE_PRINT_TEST tests I4VEC_TRANSPOSE_PRINT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    07 April 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
 
-  for i in range ( 0, n ):
+    print('')
+    print('I4VEC_TRANSPOSE_PRINT_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  I4VEC_TRANSPOSE_PRINT prints an I4VEC')
+    print('  with 5 entries to a row, and an optional title.')
 
-    k = ( seed // 127773 )
+    n = 12
+    a = np.zeros(n, dtype=np.int32)
 
-    seed = 16807 * ( seed - k * 127773 ) - k * 2836
+    for i in range(0, n):
+        a[i] = i + 1
 
-    seed = ( seed % i4_huge )
+    i4vec_transpose_print(n, a, '  My array:  ')
+#
+#  Terminate.
+#
+    print('')
+    print('I4VEC_TRANSPOSE_PRINT_TEST:')
+    print('  Normal end of execution.')
+    return
 
-    if ( seed < 0 ):
-      seed = seed + i4_huge
 
-    r = seed * 4.656612875E-10
+def i4vec_uniform_ab(n, a, b, seed):
+
+    # *****************************************************************************80
+    #
+    # I4VEC_UNIFORM_AB returns a scaled pseudorandom I4VEC.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    05 April 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Paul Bratley, Bennett Fox, Linus Schrage,
+    #    A Guide to Simulation,
+    #    Second Edition,
+    #    Springer, 1987,
+    #    ISBN: 0387964673,
+    #    LC: QA76.9.C65.B73.
+    #
+    #    Bennett Fox,
+    #    Algorithm 647:
+    #    Implementation and Relative Efficiency of Quasirandom
+    #    Sequence Generators,
+    #    ACM Transactions on Mathematical Software,
+    #    Volume 12, Number 4, December 1986, pages 362-376.
+    #
+    #    Pierre L'Ecuyer,
+    #    Random Number Generation,
+    #    in Handbook of Simulation,
+    #    edited by Jerry Banks,
+    #    Wiley, 1998,
+    #    ISBN: 0471134031,
+    #    LC: T57.62.H37.
+    #
+    #    Peter Lewis, Allen Goodman, James Miller,
+    #    A Pseudo-Random Number Generator for the System/360,
+    #    IBM Systems Journal,
+    #    Volume 8, Number 2, 1969, pages 136-143.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of entries in the vector.
+    #
+    #    Input, integer A, B, the minimum and maximum acceptable values.
+    #
+    #    Input, integer SEED, a seed for the random number generator.
+    #
+    #    Output, integer C(N), the randomly chosen integer vector.
+    #
+    #    Output, integer SEED, the updated seed.
+    #
+    import numpy as np
+    from sys import exit
+
+    i4_huge = 2147483647
+
+    seed = int(seed)
+
+    if (seed < 0):
+        seed = seed + i4_huge
+
+    if (seed == 0):
+        print('')
+        print('I4VEC_UNIFORM_AB - Fatal error!')
+        print('  Input SEED = 0!')
+        exit('I4VEC_UNIFORM_AB - Fatal error!')
+
+    seed = int(seed)
+    a = round(a)
+    b = round(b)
+
+    c = np.zeros(n, dtype=np.int32)
+
+    for i in range(0, n):
+
+        k = (seed // 127773)
+
+        seed = 16807 * (seed - k * 127773) - k * 2836
+
+        seed = (seed % i4_huge)
+
+        if (seed < 0):
+            seed = seed + i4_huge
+
+        r = seed * 4.656612875E-10
 #
 #  Scale R to lie between A-0.5 and B+0.5.
 #
-    r = ( 1.0 - r ) * ( min ( a, b ) - 0.5 ) \
-      +         r   * ( max ( a, b ) + 0.5 )
+        r = (1.0 - r) * (min(a, b) - 0.5) \
+            + r * (max(a, b) + 0.5)
 #
 #  Use rounding to convert R to an integer between A and B.
 #
-    value = round ( r )
+        value = round(r)
 
-    value = max ( value, min ( a, b ) )
-    value = min ( value, max ( a, b ) )
+        value = max(value, min(a, b))
+        value = min(value, max(a, b))
 
-    c[i] = value
+        c[i] = value
 
-  return c, seed
+    return c, seed
 
-def i4vec_uniform_ab_test ( ):
 
-#*****************************************************************************80
-#
-## I4VEC_UNIFORM_AB_TEST tests I4VEC_UNIFORM_AB.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    27 October 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
+def i4vec_uniform_ab_test():
 
-  n = 20
-  a = -100
-  b = 200
-  seed = 123456789
+    # *****************************************************************************80
+    #
+    # I4VEC_UNIFORM_AB_TEST tests I4VEC_UNIFORM_AB.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 October 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
 
-  print ( '' )
-  print ( 'I4VEC_UNIFORM_AB_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  I4VEC_UNIFORM_AB computes pseudorandom values' )
-  print ( '  in an interval [A,B].' )
-  print ( '' )
-  print ( '  The lower endpoint A = %d' % ( a ) )
-  print ( '  The upper endpoint B = %d' % ( b ) )
-  print ( '  The initial seed is %d' % ( seed ) )
-  print ( '' )
+    n = 20
+    a = -100
+    b = 200
+    seed = 123456789
 
-  v, seed = i4vec_uniform_ab ( n, a, b, seed )
+    print('')
+    print('I4VEC_UNIFORM_AB_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  I4VEC_UNIFORM_AB computes pseudorandom values')
+    print('  in an interval [A,B].')
+    print('')
+    print('  The lower endpoint A = %d' % (a))
+    print('  The upper endpoint B = %d' % (b))
+    print('  The initial seed is %d' % (seed))
+    print('')
 
-  i4vec_print ( n, v, '  The random vector:' )
+    v, seed = i4vec_uniform_ab(n, a, b, seed)
+
+    i4vec_print(n, v, '  The random vector:')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'I4VEC_UNIFORM_AB_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('I4VEC_UNIFORM_AB_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def monomial_value ( m, n, e, x ):
 
-#*****************************************************************************80
-#
-## MONOMIAL_VALUE evaluates a monomial.
-#
-#  Discussion:
-#
-#    This routine evaluates a monomial of the form
-#
-#      product ( 1 <= i <= m ) x(i)^e(i)
-#
-#    The combination 0.0^0, if encountered, is treated as 1.0.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    07 April 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer M, the spatial dimension.
-#
-#    Input, integer N, the number of evaluation points.
-#
-#    Input, integer E(M), the exponents.
-#
-#    Input, real X(M,N), the point coordinates.
-#
-#    Output, real V(N), the monomial values.
-#
-  import numpy as np
+def monomial_value(m, n, e, x):
 
-  v = np.ones ( n )
+    # *****************************************************************************80
+    #
+    # MONOMIAL_VALUE evaluates a monomial.
+    #
+    #  Discussion:
+    #
+    #    This routine evaluates a monomial of the form
+    #
+    #      product ( 1 <= i <= m ) x(i)^e(i)
+    #
+    #    The combination 0.0^0, if encountered, is treated as 1.0.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    07 April 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Input, integer N, the number of evaluation points.
+    #
+    #    Input, integer E(M), the exponents.
+    #
+    #    Input, real X(M,N), the point coordinates.
+    #
+    #    Output, real V(N), the monomial values.
+    #
+    import numpy as np
 
-  for i in range ( 0, m ):
-    if ( 0 != e[i] ):
-      for j in range ( 0, n ):
-        v[j] = v[j] * x[i,j] ** e[i]
+    v = np.ones(n)
 
-  return v
+    for i in range(0, m):
+        if (0 != e[i]):
+            for j in range(0, n):
+                v[j] = v[j] * x[i, j] ** e[i]
 
-def monomial_value_test ( ):
+    return v
 
-#*****************************************************************************80
-#
-## MONOMIAL_VALUE_TEST tests MONOMIAL_VALUE on sets of data in various dimensions.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    07 April 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
 
-  print ( '' )
-  print ( 'MONOMIAL_VALUE_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Use monomial_value() to evaluate some monomials' )
-  print ( '  in dimensions 1 through 3.' )
+def monomial_value_test():
 
-  e_min = -3
-  e_max = 6
-  n = 5
-  seed = 123456789
-  x_min = -2.0
-  x_max = +10.0
+    # *****************************************************************************80
+    #
+    # MONOMIAL_VALUE_TEST tests MONOMIAL_VALUE on sets of data in various dimensions.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    07 April 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
 
-  for m in range ( 1, 4 ):
+    print('')
+    print('MONOMIAL_VALUE_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Use monomial_value() to evaluate some monomials')
+    print('  in dimensions 1 through 3.')
 
-    print ( '' )
-    print ( '  Spatial dimension M =  %d' % ( m ) )
+    e_min = -3
+    e_max = 6
+    n = 5
+    seed = 123456789
+    x_min = -2.0
+    x_max = +10.0
 
-    e, seed = i4vec_uniform_ab ( m, e_min, e_max, seed )
-    i4vec_transpose_print ( m, e, '  Exponents:' )
-    x, seed = r8mat_uniform_ab ( m, n, x_min, x_max, seed )
+    for m in range(1, 4):
+
+        print('')
+        print('  Spatial dimension M =  %d' % (m))
+
+        e, seed = i4vec_uniform_ab(m, e_min, e_max, seed)
+        i4vec_transpose_print(m, e, '  Exponents:')
+        x, seed = r8mat_uniform_ab(m, n, x_min, x_max, seed)
 #
 #  To make checking easier, make the X values integers.
 #
-    for i in range ( 0, m ):
-      for j in range ( 0, n ):
-        x[i,j] = round ( x[i,j] )
+        for i in range(0, m):
+            for j in range(0, n):
+                x[i, j] = round(x[i, j])
 
-    v = monomial_value ( m, n, e, x )
+        v = monomial_value(m, n, e, x)
 
-    print ( '' )
-    print ( '   V(X)         ', end = '' )
-    for i in range ( 0, m ):
-      print ( '      X(%d)' % ( i ), end = '' )
-    print ( '' )
-    print ( '' )
-    for j in range ( 0, n ):
-      print ( '%14.6g  ' % ( v[j] ), end = '' )
-      for i in range ( 0, m ):
-        print ( '%10.4f' % ( x[i,j] ), end = '' )
-      print ( '' )
+        print('')
+        print('   V(X)         ', end='')
+        for i in range(0, m):
+            print('      X(%d)' % (i), end='')
+        print('')
+        print('')
+        for j in range(0, n):
+            print('%14.6g  ' % (v[j]), end='')
+            for i in range(0, m):
+                print('%10.4f' % (x[i, j]), end='')
+            print('')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'MONOMIAL_VALUE_TEST' )
-  print ( '  Normal end of execution.' )
-  return
-
-def r8mat_print ( m, n, a, title ):
-
-#*****************************************************************************80
-#
-## R8MAT_PRINT prints an R8MAT.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    31 August 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer M, the number of rows in A.
-#
-#    Input, integer N, the number of columns in A.
-#
-#    Input, real A(M,N), the matrix.
-#
-#    Input, string TITLE, a title.
-#
-  r8mat_print_some ( m, n, a, 0, 0, m - 1, n - 1, title )
-
-  return
-
-def r8mat_print_test ( ):
-
-#*****************************************************************************80
-#
-## R8MAT_PRINT_TEST tests R8MAT_PRINT.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    10 February 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-
-  print ( '' )
-  print ( 'R8MAT_PRINT_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_PRINT prints an R8MAT.' )
-
-  m = 4
-  n = 6
-  v = np.array ( [ \
-    [ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
-    [ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
-    [ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
-    [ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
-  r8mat_print ( m, n, v, '  Here is an R8MAT:' )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'R8MAT_PRINT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
-
-def r8mat_print_some ( m, n, a, ilo, jlo, ihi, jhi, title ):
-
-#*****************************************************************************80
-#
-## R8MAT_PRINT_SOME prints out a portion of an R8MAT.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    10 February 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer M, N, the number of rows and columns of the matrix.
-#
-#    Input, real A(M,N), an M by N matrix to be printed.
-#
-#    Input, integer ILO, JLO, the first row and column to print.
-#
-#    Input, integer IHI, JHI, the last row and column to print.
-#
-#    Input, string TITLE, a title.
-#
-  incx = 5
-
-  print ( '' )
-  print ( title )
-
-  if ( m <= 0 or n <= 0 ):
-    print ( '' )
-    print ( '  (None)' )
+    print('')
+    print('MONOMIAL_VALUE_TEST')
+    print('  Normal end of execution.')
     return
 
-  for j2lo in range ( max ( jlo, 0 ), min ( jhi + 1, n ), incx ):
 
-    j2hi = j2lo + incx - 1
-    j2hi = min ( j2hi, n )
-    j2hi = min ( j2hi, jhi )
-    
-    print ( '' )
-    print ( '  Col: ', end = '' )
+def r8mat_print(m, n, a, title):
 
-    for j in range ( j2lo, j2hi + 1 ):
-      print ( '%7d       ' % ( j ), end = '' )
+    # *****************************************************************************80
+    #
+    # R8MAT_PRINT prints an R8MAT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    31 August 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the number of rows in A.
+    #
+    #    Input, integer N, the number of columns in A.
+    #
+    #    Input, real A(M,N), the matrix.
+    #
+    #    Input, string TITLE, a title.
+    #
+    r8mat_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
 
-    print ( '' )
-    print ( '  Row' )
-
-    i2lo = max ( ilo, 0 )
-    i2hi = min ( ihi, m )
-
-    for i in range ( i2lo, i2hi + 1 ):
-
-      print ( '%7d :' % ( i ), end = '' )
-      
-      for j in range ( j2lo, j2hi + 1 ):
-        print ( '%12g  ' % ( a[i,j] ), end = '' )
-
-      print ( '' )
-
-  return
-
-def r8mat_print_some_test ( ):
-
-#*****************************************************************************80
-#
-## R8MAT_PRINT_SOME_TEST tests R8MAT_PRINT_SOME.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    31 October 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-
-  print ( '' )
-  print ( 'R8MAT_PRINT_SOME_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_PRINT_SOME prints some of an R8MAT.' )
-
-  m = 4
-  n = 6
-  v = np.array ( [ \
-    [ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
-    [ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
-    [ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
-    [ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
-  r8mat_print_some ( m, n, v, 0, 3, 2, 5, '  Here is an R8MAT:' )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'R8MAT_PRINT_SOME_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
-
-def r8mat_transpose_print ( m, n, a, title ):
-
-#*****************************************************************************80
-#
-## R8MAT_TRANSPOSE_PRINT prints an R8MAT, transposed.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    31 August 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer M, the number of rows in A.
-#
-#    Input, integer N, the number of columns in A.
-#
-#    Input, real A(M,N), the matrix.
-#
-#    Input, string TITLE, a title.
-#
-  r8mat_transpose_print_some ( m, n, a, 0, 0, m - 1, n - 1, title )
-
-  return
-
-def r8mat_transpose_print_test ( ):
-
-#*****************************************************************************80
-#
-## R8MAT_TRANSPOSE_PRINT_TEST tests R8MAT_TRANSPOSE_PRINT.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    31 October 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-
-  print ( '' )
-  print ( 'R8MAT_TRANSPOSE_PRINT_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_TRANSPOSE_PRINT prints an R8MAT.' )
-
-  m = 4
-  n = 3
-  v = np.array ( [ \
-    [ 11.0, 12.0, 13.0 ], 
-    [ 21.0, 22.0, 23.0 ], 
-    [ 31.0, 32.0, 33.0 ], 
-    [ 41.0, 42.0, 43.0 ] ], dtype = np.float64 )
-  r8mat_transpose_print ( m, n, v, '  Here is an R8MAT, transposed:' )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'R8MAT_TRANSPOSE_PRINT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
-
-def r8mat_transpose_print_some ( m, n, a, ilo, jlo, ihi, jhi, title ):
-
-#*****************************************************************************80
-#
-## R8MAT_TRANSPOSE_PRINT_SOME prints a portion of an R8MAT, transposed.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    13 November 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer M, N, the number of rows and columns of the matrix.
-#
-#    Input, real A(M,N), an M by N matrix to be printed.
-#
-#    Input, integer ILO, JLO, the first row and column to print.
-#
-#    Input, integer IHI, JHI, the last row and column to print.
-#
-#    Input, string TITLE, a title.
-#
-  incx = 5
-
-  print ( '' )
-  print ( title )
-
-  if ( m <= 0 or n <= 0 ):
-    print ( '' )
-    print ( '  (None)' )
     return
 
-  for i2lo in range ( max ( ilo, 0 ), min ( ihi, m - 1 ), incx ):
 
-    i2hi = i2lo + incx - 1
-    i2hi = min ( i2hi, m - 1 )
-    i2hi = min ( i2hi, ihi )
-    
-    print ( '' )
-    print ( '  Row: ', end = '' )
+def r8mat_print_test():
 
-    for i in range ( i2lo, i2hi + 1 ):
-      print ( '%7d       ' % ( i ), end = '' )
+    # *****************************************************************************80
+    #
+    # R8MAT_PRINT_TEST tests R8MAT_PRINT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    10 February 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
 
-    print ( '' )
-    print ( '  Col' )
+    print('')
+    print('R8MAT_PRINT_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  R8MAT_PRINT prints an R8MAT.')
 
-    j2lo = max ( jlo, 0 )
-    j2hi = min ( jhi, n - 1 )
-
-    for j in range ( j2lo, j2hi + 1 ):
-
-      print ( '%7d :' % ( j ), end = '' )
-      
-      for i in range ( i2lo, i2hi + 1 ):
-        print ( '%12g  ' % ( a[i,j] ), end = '' )
-
-      print ( '' )
-
-  return
-
-def r8mat_transpose_print_some_test ( ):
-
-#*****************************************************************************80
-#
-## R8MAT_TRANSPOSE_PRINT_SOME_TEST tests R8MAT_TRANSPOSE_PRINT_SOME.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    31 October 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-
-  print ( '' )
-  print ( 'R8MAT_TRANSPOSE_PRINT_SOME_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.' )
-
-  m = 4
-  n = 6
-  v = np.array ( [ \
-    [ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
-    [ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
-    [ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
-    [ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
-  r8mat_transpose_print_some ( m, n, v, 0, 3, 2, 5, '  R8MAT, rows 0:2, cols 3:5:' )
+    m = 4
+    n = 6
+    v = np.array([
+        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
+        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
+        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
+        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
+    r8mat_print(m, n, v, '  Here is an R8MAT:')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8MAT_TRANSPOSE_PRINT_SOME_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('R8MAT_PRINT_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def r8mat_uniform_01 ( m, n, seed ):
 
-#*****************************************************************************80
-#
-## R8MAT_UNIFORM_01 returns a unit pseudorandom R8MAT.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    08 April 2013
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Reference:
-#
-#    Paul Bratley, Bennett Fox, Linus Schrage,
-#    A Guide to Simulation,
-#    Second Edition,
-#    Springer, 1987,
-#    ISBN: 0387964673,
-#    LC: QA76.9.C65.B73.
-#
-#    Bennett Fox,
-#    Algorithm 647:
-#    Implementation and Relative Efficiency of Quasirandom
-#    Sequence Generators,
-#    ACM Transactions on Mathematical Software,
-#    Volume 12, Number 4, December 1986, pages 362-376.
-#
-#    Pierre L'Ecuyer,
-#    Random Number Generation,
-#    in Handbook of Simulation,
-#    edited by Jerry Banks,
-#    Wiley, 1998,
-#    ISBN: 0471134031,
-#    LC: T57.62.H37.
-#
-#    Peter Lewis, Allen Goodman, James Miller,
-#    A Pseudo-Random Number Generator for the System/360,
-#    IBM Systems Journal,
-#    Volume 8, Number 2, 1969, pages 136-143.
-#
-#  Parameters:
-#
-#    Input, integer M, N, the number of rows and columns in the array.
-#
-#    Input, integer SEED, the integer "seed" used to generate
-#    the output random number.
-#
-#    Output, real R(M,N), an array of random values between 0 and 1.
-#
-#    Output, integer SEED, the updated seed.  This would
-#    normally be used as the input seed on the next call.
-#
-  import numpy
-  from sys import exit
+def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
 
-  i4_huge = 2147483647
+    # *****************************************************************************80
+    #
+    # R8MAT_PRINT_SOME prints out a portion of an R8MAT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    10 February 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, N, the number of rows and columns of the matrix.
+    #
+    #    Input, real A(M,N), an M by N matrix to be printed.
+    #
+    #    Input, integer ILO, JLO, the first row and column to print.
+    #
+    #    Input, integer IHI, JHI, the last row and column to print.
+    #
+    #    Input, string TITLE, a title.
+    #
+    incx = 5
 
-  seed = int ( seed )
+    print('')
+    print(title)
 
-  if ( seed < 0 ):
-    seed = seed + i4_huge
+    if (m <= 0 or n <= 0):
+        print('')
+        print('  (None)')
+        return
 
-  if ( seed == 0 ):
-    print ( '' )
-    print ( 'R8MAT_UNIFORM_01 - Fatal error!' )
-    print ( '  Input SEED = 0!' )
-    exit ( 'R8MAT_UNIFORM_01 - Fatal error!' )
+    for j2lo in range(max(jlo, 0), min(jhi + 1, n), incx):
 
-  r = numpy.zeros ( ( m, n ) )
+        j2hi = j2lo + incx - 1
+        j2hi = min(j2hi, n)
+        j2hi = min(j2hi, jhi)
 
-  for j in range ( 0, n ):
-    for i in range ( 0, m ):
+        print('')
+        print('  Col: ', end='')
 
-      k = ( seed // 127773 )
+        for j in range(j2lo, j2hi + 1):
+            print('%7d       ' % (j), end='')
 
-      seed = 16807 * ( seed - k * 127773 ) - k * 2836
+        print('')
+        print('  Row')
 
-      seed = ( seed % i4_huge )
+        i2lo = max(ilo, 0)
+        i2hi = min(ihi, m)
 
-      if ( seed < 0 ):
+        for i in range(i2lo, i2hi + 1):
+
+            print('%7d :' % (i), end='')
+
+            for j in range(j2lo, j2hi + 1):
+                print('%12g  ' % (a[i, j]), end='')
+
+            print('')
+
+    return
+
+
+def r8mat_print_some_test():
+
+    # *****************************************************************************80
+    #
+    # R8MAT_PRINT_SOME_TEST tests R8MAT_PRINT_SOME.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    31 October 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    print('')
+    print('R8MAT_PRINT_SOME_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  R8MAT_PRINT_SOME prints some of an R8MAT.')
+
+    m = 4
+    n = 6
+    v = np.array([
+        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
+        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
+        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
+        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
+    r8mat_print_some(m, n, v, 0, 3, 2, 5, '  Here is an R8MAT:')
+#
+#  Terminate.
+#
+    print('')
+    print('R8MAT_PRINT_SOME_TEST:')
+    print('  Normal end of execution.')
+    return
+
+
+def r8mat_transpose_print(m, n, a, title):
+
+    # *****************************************************************************80
+    #
+    # R8MAT_TRANSPOSE_PRINT prints an R8MAT, transposed.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    31 August 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the number of rows in A.
+    #
+    #    Input, integer N, the number of columns in A.
+    #
+    #    Input, real A(M,N), the matrix.
+    #
+    #    Input, string TITLE, a title.
+    #
+    r8mat_transpose_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
+
+    return
+
+
+def r8mat_transpose_print_test():
+
+    # *****************************************************************************80
+    #
+    # R8MAT_TRANSPOSE_PRINT_TEST tests R8MAT_TRANSPOSE_PRINT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    31 October 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    print('')
+    print('R8MAT_TRANSPOSE_PRINT_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  R8MAT_TRANSPOSE_PRINT prints an R8MAT.')
+
+    m = 4
+    n = 3
+    v = np.array([
+        [11.0, 12.0, 13.0],
+        [21.0, 22.0, 23.0],
+        [31.0, 32.0, 33.0],
+        [41.0, 42.0, 43.0]], dtype=np.float64)
+    r8mat_transpose_print(m, n, v, '  Here is an R8MAT, transposed:')
+#
+#  Terminate.
+#
+    print('')
+    print('R8MAT_TRANSPOSE_PRINT_TEST:')
+    print('  Normal end of execution.')
+    return
+
+
+def r8mat_transpose_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
+
+    # *****************************************************************************80
+    #
+    # R8MAT_TRANSPOSE_PRINT_SOME prints a portion of an R8MAT, transposed.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 November 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, N, the number of rows and columns of the matrix.
+    #
+    #    Input, real A(M,N), an M by N matrix to be printed.
+    #
+    #    Input, integer ILO, JLO, the first row and column to print.
+    #
+    #    Input, integer IHI, JHI, the last row and column to print.
+    #
+    #    Input, string TITLE, a title.
+    #
+    incx = 5
+
+    print('')
+    print(title)
+
+    if (m <= 0 or n <= 0):
+        print('')
+        print('  (None)')
+        return
+
+    for i2lo in range(max(ilo, 0), min(ihi, m - 1), incx):
+
+        i2hi = i2lo + incx - 1
+        i2hi = min(i2hi, m - 1)
+        i2hi = min(i2hi, ihi)
+
+        print('')
+        print('  Row: ', end='')
+
+        for i in range(i2lo, i2hi + 1):
+            print('%7d       ' % (i), end='')
+
+        print('')
+        print('  Col')
+
+        j2lo = max(jlo, 0)
+        j2hi = min(jhi, n - 1)
+
+        for j in range(j2lo, j2hi + 1):
+
+            print('%7d :' % (j), end='')
+
+            for i in range(i2lo, i2hi + 1):
+                print('%12g  ' % (a[i, j]), end='')
+
+            print('')
+
+    return
+
+
+def r8mat_transpose_print_some_test():
+
+    # *****************************************************************************80
+    #
+    # R8MAT_TRANSPOSE_PRINT_SOME_TEST tests R8MAT_TRANSPOSE_PRINT_SOME.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    31 October 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    print('')
+    print('R8MAT_TRANSPOSE_PRINT_SOME_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.')
+
+    m = 4
+    n = 6
+    v = np.array([
+        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
+        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
+        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
+        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
+    r8mat_transpose_print_some(
+        m, n, v, 0, 3, 2, 5, '  R8MAT, rows 0:2, cols 3:5:')
+#
+#  Terminate.
+#
+    print('')
+    print('R8MAT_TRANSPOSE_PRINT_SOME_TEST:')
+    print('  Normal end of execution.')
+    return
+
+
+def r8mat_uniform_01(m, n, seed):
+
+    # *****************************************************************************80
+    #
+    # R8MAT_UNIFORM_01 returns a unit pseudorandom R8MAT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    08 April 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Paul Bratley, Bennett Fox, Linus Schrage,
+    #    A Guide to Simulation,
+    #    Second Edition,
+    #    Springer, 1987,
+    #    ISBN: 0387964673,
+    #    LC: QA76.9.C65.B73.
+    #
+    #    Bennett Fox,
+    #    Algorithm 647:
+    #    Implementation and Relative Efficiency of Quasirandom
+    #    Sequence Generators,
+    #    ACM Transactions on Mathematical Software,
+    #    Volume 12, Number 4, December 1986, pages 362-376.
+    #
+    #    Pierre L'Ecuyer,
+    #    Random Number Generation,
+    #    in Handbook of Simulation,
+    #    edited by Jerry Banks,
+    #    Wiley, 1998,
+    #    ISBN: 0471134031,
+    #    LC: T57.62.H37.
+    #
+    #    Peter Lewis, Allen Goodman, James Miller,
+    #    A Pseudo-Random Number Generator for the System/360,
+    #    IBM Systems Journal,
+    #    Volume 8, Number 2, 1969, pages 136-143.
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, N, the number of rows and columns in the array.
+    #
+    #    Input, integer SEED, the integer "seed" used to generate
+    #    the output random number.
+    #
+    #    Output, real R(M,N), an array of random values between 0 and 1.
+    #
+    #    Output, integer SEED, the updated seed.  This would
+    #    normally be used as the input seed on the next call.
+    #
+    import numpy
+    from sys import exit
+
+    i4_huge = 2147483647
+
+    seed = int(seed)
+
+    if (seed < 0):
         seed = seed + i4_huge
 
-      r[i,j] = seed * 4.656612875E-10
+    if (seed == 0):
+        print('')
+        print('R8MAT_UNIFORM_01 - Fatal error!')
+        print('  Input SEED = 0!')
+        exit('R8MAT_UNIFORM_01 - Fatal error!')
 
-  return r, seed
+    r = numpy.zeros((m, n))
 
-def r8mat_uniform_01_test ( ):
+    for j in range(0, n):
+        for i in range(0, m):
 
-#*****************************************************************************80
-#
-## R8MAT_UNIFORM_01_TEST tests R8MAT_UNIFORM_01.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    31 October 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
+            k = (seed // 127773)
 
-  m = 5
-  n = 4
-  seed = 123456789
+            seed = 16807 * (seed - k * 127773) - k * 2836
 
-  print ( '' )
-  print ( 'R8MAT_UNIFORM_01_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_UNIFORM_01 computes a random R8MAT.' )
-  print ( '' )
-  print ( '  0 <= X <= 1' )
-  print ( '  Initial seed is %d' % ( seed ) )
+            seed = (seed % i4_huge)
 
-  v, seed = r8mat_uniform_01 ( m, n, seed )
+            if (seed < 0):
+                seed = seed + i4_huge
 
-  r8mat_print ( m, n, v, '  Random R8MAT:' )
+            r[i, j] = seed * 4.656612875E-10
+
+    return r, seed
+
+
+def r8mat_uniform_01_test():
+
+    # *****************************************************************************80
+    #
+    # R8MAT_UNIFORM_01_TEST tests R8MAT_UNIFORM_01.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    31 October 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    m = 5
+    n = 4
+    seed = 123456789
+
+    print('')
+    print('R8MAT_UNIFORM_01_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  R8MAT_UNIFORM_01 computes a random R8MAT.')
+    print('')
+    print('  0 <= X <= 1')
+    print('  Initial seed is %d' % (seed))
+
+    v, seed = r8mat_uniform_01(m, n, seed)
+
+    r8mat_print(m, n, v, '  Random R8MAT:')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8MAT_UNIFORM_01_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('R8MAT_UNIFORM_01_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def r8mat_uniform_ab ( m, n, a, b, seed ):
 
-#*****************************************************************************80
-#
-## R8MAT_UNIFORM_AB returns a scaled pseudorandom R8MAT.
-#
-#  Discussion:
-#
-#    An R8MAT is an array of R8's.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    08 April 2013
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Reference:
-#
-#    Paul Bratley, Bennett Fox, Linus Schrage,
-#    A Guide to Simulation,
-#    Second Edition,
-#    Springer, 1987,
-#    ISBN: 0387964673,
-#    LC: QA76.9.C65.B73.
-#
-#    Bennett Fox,
-#    Algorithm 647:
-#    Implementation and Relative Efficiency of Quasirandom
-#    Sequence Generators,
-#    ACM Transactions on Mathematical Software,
-#    Volume 12, Number 4, December 1986, pages 362-376.
-#
-#    Pierre L'Ecuyer,
-#    Random Number Generation,
-#    in Handbook of Simulation,
-#    edited by Jerry Banks,
-#    Wiley, 1998,
-#    ISBN: 0471134031,
-#    LC: T57.62.H37.
-#
-#    Peter Lewis, Allen Goodman, James Miller,
-#    A Pseudo-Random Number Generator for the System/360,
-#    IBM Systems Journal,
-#    Volume 8, Number 2, 1969, pages 136-143.
-#
-#  Parameters:
-#
-#    Input, integer M, N, the number of rows and columns in the array.
-#
-#    Input, real A, B, the range of the pseudorandom values.
-#
-#    Input, integer SEED, the integer "seed" used to generate
-#    the output random number.
-#
-#    Output, real R(M,N), an array of random values between 0 and 1.
-#
-#    Output, integer SEED, the updated seed.  This would
-#    normally be used as the input seed on the next call.
-#
-  import numpy
-  from sys import exit
+def r8mat_uniform_ab(m, n, a, b, seed):
 
-  i4_huge = 2147483647
+    # *****************************************************************************80
+    #
+    # R8MAT_UNIFORM_AB returns a scaled pseudorandom R8MAT.
+    #
+    #  Discussion:
+    #
+    #    An R8MAT is an array of R8's.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    08 April 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Paul Bratley, Bennett Fox, Linus Schrage,
+    #    A Guide to Simulation,
+    #    Second Edition,
+    #    Springer, 1987,
+    #    ISBN: 0387964673,
+    #    LC: QA76.9.C65.B73.
+    #
+    #    Bennett Fox,
+    #    Algorithm 647:
+    #    Implementation and Relative Efficiency of Quasirandom
+    #    Sequence Generators,
+    #    ACM Transactions on Mathematical Software,
+    #    Volume 12, Number 4, December 1986, pages 362-376.
+    #
+    #    Pierre L'Ecuyer,
+    #    Random Number Generation,
+    #    in Handbook of Simulation,
+    #    edited by Jerry Banks,
+    #    Wiley, 1998,
+    #    ISBN: 0471134031,
+    #    LC: T57.62.H37.
+    #
+    #    Peter Lewis, Allen Goodman, James Miller,
+    #    A Pseudo-Random Number Generator for the System/360,
+    #    IBM Systems Journal,
+    #    Volume 8, Number 2, 1969, pages 136-143.
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, N, the number of rows and columns in the array.
+    #
+    #    Input, real A, B, the range of the pseudorandom values.
+    #
+    #    Input, integer SEED, the integer "seed" used to generate
+    #    the output random number.
+    #
+    #    Output, real R(M,N), an array of random values between 0 and 1.
+    #
+    #    Output, integer SEED, the updated seed.  This would
+    #    normally be used as the input seed on the next call.
+    #
+    import numpy
+    from sys import exit
 
-  seed = int ( seed )
+    i4_huge = 2147483647
 
-  if ( seed < 0 ):
-    seed = seed + i4_huge
+    seed = int(seed)
 
-  if ( seed == 0 ):
-    print ( '' )
-    print ( 'R8MAT_UNIFORM_AB - Fatal error!' )
-    print ( '  Input SEED = 0!' )
-    exit ( 'R8MAT_UNIFORM_AB - Fatal error!' )
-
-  r = numpy.zeros ( ( m, n ) )
-
-  for j in range ( 0, n ):
-    for i in range ( 0, m ):
-
-      k = ( seed // 127773 )
-
-      seed = 16807 * ( seed - k * 127773 ) - k * 2836
-
-      seed = ( seed % i4_huge )
-
-      if ( seed < 0 ):
+    if (seed < 0):
         seed = seed + i4_huge
 
-      r[i,j] = a + ( b - a ) * seed * 4.656612875E-10
+    if (seed == 0):
+        print('')
+        print('R8MAT_UNIFORM_AB - Fatal error!')
+        print('  Input SEED = 0!')
+        exit('R8MAT_UNIFORM_AB - Fatal error!')
 
-  return r, seed
+    r = numpy.zeros((m, n))
 
-def r8mat_uniform_ab_test ( ):
+    for j in range(0, n):
+        for i in range(0, m):
 
-#*****************************************************************************80
-#
-## R8MAT_UNIFORM_AB_TEST tests R8MAT_UNIFORM_AB.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    31 October 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
+            k = (seed // 127773)
 
-  m = 5
-  n = 4
-  a = -1.0
-  b = +5.0
-  seed = 123456789
+            seed = 16807 * (seed - k * 127773) - k * 2836
 
-  print ( '' )
-  print ( 'R8MAT_UNIFORM_AB_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  R8MAT_UNIFORM_AB computes a random R8MAT.' )
-  print ( '' )
-  print ( '  %g <= X <= %g' % ( a, b ) )
-  print ( '  Initial seed is %d' % ( seed ) )
+            seed = (seed % i4_huge)
 
-  v, seed = r8mat_uniform_ab ( m, n, a, b, seed )
+            if (seed < 0):
+                seed = seed + i4_huge
 
-  r8mat_print ( m, n, v, '  Random R8MAT:' )
+            r[i, j] = a + (b - a) * seed * 4.656612875E-10
+
+    return r, seed
+
+
+def r8mat_uniform_ab_test():
+
+    # *****************************************************************************80
+    #
+    # R8MAT_UNIFORM_AB_TEST tests R8MAT_UNIFORM_AB.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    31 October 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    m = 5
+    n = 4
+    a = -1.0
+    b = +5.0
+    seed = 123456789
+
+    print('')
+    print('R8MAT_UNIFORM_AB_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  R8MAT_UNIFORM_AB computes a random R8MAT.')
+    print('')
+    print('  %g <= X <= %g' % (a, b))
+    print('  Initial seed is %d' % (seed))
+
+    v, seed = r8mat_uniform_ab(m, n, a, b, seed)
+
+    r8mat_print(m, n, v, '  Random R8MAT:')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'R8MAT_UNIFORM_AB_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('R8MAT_UNIFORM_AB_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def timestamp ( ):
 
-#*****************************************************************************80
-#
-## TIMESTAMP prints the date as a timestamp.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    06 April 2013
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    None
-#
-  import time
+def timestamp():
 
-  t = time.time ( )
-  print ( time.ctime ( t ) )
+    # *****************************************************************************80
+    #
+    # TIMESTAMP prints the date as a timestamp.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    06 April 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    None
+    #
+    import time
 
-  return None
+    t = time.time()
+    print(time.ctime(t))
 
-def timestamp_test ( ):
+    return None
 
-#*****************************************************************************80
-#
-## TIMESTAMP_TEST tests TIMESTAMP.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    03 December 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    None
-#
-  import platform
 
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  TIMESTAMP prints a timestamp of the current date and time.' )
-  print ( '' )
+def timestamp_test():
 
-  timestamp ( )
+    # *****************************************************************************80
+    #
+    # TIMESTAMP_TEST tests TIMESTAMP.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 December 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    None
+    #
+    import platform
+
+    print('')
+    print('TIMESTAMP_TEST:')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  TIMESTAMP prints a timestamp of the current date and time.')
+    print('')
+
+    timestamp()
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('TIMESTAMP_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def hypercube_monte_carlo_test ( ):
 
-#*****************************************************************************80
-#
-## HYPERCUBE_MONTE_CARLO_TEST tests the HYPERCUBE_MONTE_CARLO library.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    13 November 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
+def hypercube_monte_carlo_test():
 
-  print ( '' )
-  print ( 'HYPERCUBE_MONTE_CARLO_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Test the HYPERCUBE_MONTE_CARLO library.' )
+    # *****************************************************************************80
+    #
+    # HYPERCUBE_MONTE_CARLO_TEST tests the HYPERCUBE_MONTE_CARLO library.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 November 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
 
-  hypercube01_monomial_integral_test ( )
-  hypercube01_monte_carlo_test01 ( );
-  hypercube01_monte_carlo_test02 ( );
-  hypercube01_sample_test ( )
-  hypercube01_volume_test ( )
-  i4vec_print_test ( )
-  i4vec_transpose_print_test ( )
-  i4vec_uniform_ab_test ( )
-  monomial_value_test ( )
-  r8mat_print_test ( )
-  r8mat_print_some_test ( )
-  r8mat_transpose_print_test ( )
-  r8mat_transpose_print_some_test ( )
-  r8mat_uniform_01_test ( )
-  r8mat_uniform_ab_test ( )
+    print('')
+    print('HYPERCUBE_MONTE_CARLO_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Test the HYPERCUBE_MONTE_CARLO library.')
+
+    hypercube01_monomial_integral_test()
+    hypercube01_monte_carlo_test01()
+    hypercube01_monte_carlo_test02()
+    hypercube01_sample_test()
+    hypercube01_volume_test()
+    i4vec_print_test()
+    i4vec_transpose_print_test()
+    i4vec_uniform_ab_test()
+    monomial_value_test()
+    r8mat_print_test()
+    r8mat_print_some_test()
+    r8mat_transpose_print_test()
+    r8mat_transpose_print_some_test()
+    r8mat_uniform_01_test()
+    r8mat_uniform_ab_test()
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'HYPERCUBE_MONTE_CARLO_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('HYPERCUBE_MONTE_CARLO_TEST:')
+    print('  Normal end of execution.')
+    return
 
-if ( __name__ == '__main__' ):
-  timestamp ( )
-  hypercube_monte_carlo_test ( )
-  timestamp ( )
 
+if (__name__ == '__main__'):
+    timestamp()
+    hypercube_monte_carlo_test()
+    timestamp()
