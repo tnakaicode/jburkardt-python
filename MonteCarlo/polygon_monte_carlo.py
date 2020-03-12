@@ -1,6 +1,13 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
 
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d
 
 def gamma_log_values(n_data):
 
@@ -889,11 +896,12 @@ def polygon_monte_carlo_test():
     nv = 4
 
     v = np.array([
-        [-1.0, -1.0],
+        [-0.5, -0.5],
         [1.0, -1.0],
         [1.0, 1.0],
         [-1.0, 1.0]])
-
+    
+    e_name = ["X", "Y"]
     e_test = np.array([
         [0, 0],
         [2, 0],
@@ -909,56 +917,43 @@ def polygon_monte_carlo_test():
     print('  Use POLYGON_SAMPLE to estimate integrals')
     print('  over the interior of a polygon in 2D.')
 
+    obj = plot2d()
+    obj.create_tempdir(-1)
     seed = 123456789
 
     print('')
-    print('         N'),
-    print('        1'),
-    print('              X^2 '),
-    print('             Y^2'),
-    print('             X^4'),
-    print('           X^2Y^2'),
-    print('             Y^4'),
-    print('           X^6')
+    txt = " \tN"
+    for e in e_test:
+        txt += "\t"
+        for idx, vname in enumerate(e_name):
+            txt += "{}^{:d}".format(vname, e[idx])
+    print(txt)
     print('')
 
     n = 1
-
-    e = np.zeros(2, dtype=np.int32)
-
     while (n <= 65536):
-
         x, seed = polygon_sample(nv, v, n, seed)
-
-        print('  %8d' % (n)),
-
-        for j in range(0, 7):
-
-            e[0:2] = e_test[j, 0:2]
-
+        print('  %8d' % (n), end='')
+        for e in e_test:
             value = monomial_value(n, 2, e, x)
-
             result = polygon_area(nv, v) * np.sum(value[0:n]) / float(n)
-
-            print('  %14.6g' % (result)),
-
+            print('\t%14.6g' % (result), end='')
         print('')
+
+        obj.axs.scatter(x[:, 0], x[:, 1], s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig()
 
         n = 2 * n
 
     print('     Exact'),
-
-    for j in range(0, 7):
-
-        e[0:2] = e_test[j, 0:2]
-
+    for e in e_test:
         result = polygon_monomial_integral(nv, v, e)
         print('  %14.6g' % (result)),
-
     print('')
-#
-#  Terminate.
-#
+
     print('')
     print('POLYGON_MONTE_CARLO_TEST')
     print('  Normal end of execution.')
@@ -2574,29 +2569,11 @@ def polygon_monte_carlo_tests():
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the POLYGON_MONTE_CARLO library.')
 
-    gamma_log_values_test()
-    i4vec_print_test()
-    i4vec_transpose_print_test()
-    i4vec_uniform_ab_test()
-    monomial_value_test()
     polygon_area_test()
     polygon_monomial_integral_test()
     polygon_monte_carlo_test()
     polygon_sample_test()
-    r8_choose_test()
-    r8_gamma_log_test()
-    r8_uniform_01_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_transpose_print_test()
-    r8mat_transpose_print_some_test()
-    r8mat_uniform_ab_test()
-    r8vec_print_test()
-    r8vec_uniform_01_test()
-    triangle_area_test()
-#
-#  Terminate.
-#
+
     print('')
     print('POLYGON_MONTE_CARLO_TESTS:')
     print('  Normal end of execution.')

@@ -1,5 +1,13 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d
 
 
 def gamma_values(n_data):
@@ -198,11 +206,9 @@ def hyperball_monte_carlo_test01():
     #
     #    John Burkardt
     #
-    import numpy as np
     import platform
 
     m = 3
-
     e_test = np.array([
         [0, 0, 0],
         [2, 0, 0],
@@ -220,27 +226,32 @@ def hyperball_monte_carlo_test01():
     print('')
     print('  Spatial dimension M = %d' % (m))
 
+    obj = plot3d()
+    obj.create_tempdir(-1)
     seed = 123456789
 
     print('')
-    print('         N        1              X^2             Y^2'),
-    print('             Z^2             X^4           X^2Y^2           Z^4')
+    txt = " \tN"
+    for e in e_test:
+        txt += "\tX^{:d}*Y^{:d}*Z^{:d}".format(*e)
+    print(txt)
     print('')
 
     n = 1
-
-    e = np.zeros(7)
-
     while (n <= 65536):
-
         x, seed = hyperball01_sample(m, n, seed)
-        print('  %8d' % (n)),
-        for j in range(0, 7):
-            e[0:m] = e_test[j, 0:m]
+        print('  %8d' % (n), end='')
+        for e in e_test:
             value = monomial_value(m, n, e, x)
             result = hyperball01_volume(m) * np.sum(value[0:n]) / float(n)
-            print('  %14.6g' % (result)),
+            print('\t%14.6g' % (result), end='')
         print('')
+
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig()
 
         n = 2 * n
 
@@ -279,7 +290,7 @@ def hyperball_monte_carlo_test02():
     import platform
 
     m = 6
-
+    e_name = ["U", "V", "W", "X", "Y", "z"]
     e_test = np.array([
         [0, 0, 0, 0, 0, 0],
         [1, 0, 0, 0, 0, 0],
@@ -296,31 +307,26 @@ def hyperball_monte_carlo_test02():
     print('  over the interior of the unit hyperball in M dimensions.')
     print('')
     print('  Spatial dimension M = %d' % (m))
-    print('')
-    print('         N'),
-    print('        1      '),
-    print('        U      '),
-    print('        V^2    '),
-    print('        V^2W^2 '),
-    print('        X^4    '),
-    print('        Y^2Z^2 '),
-    print('        Z^6 \n '),
-    print('')
 
     seed = 123456789
+
+    print('')
+    txt = " \tN"
+    for e in e_test:
+        txt += "\t"
+        for idx, v in enumerate(e_name):
+            txt += "{}^{:d}".format(v, e[idx])
+    print(txt)
+    print('')
+
     n = 1
-    e = np.zeros(m)
-
     while (n <= 65536):
-
         x, seed = hyperball01_sample(m, n, seed)
-
-        print('  %8d' % (n)),
-        for j in range(0, 7):
-            e[0:m] = e_test[j, 0:m]
+        print('  %8d' % (n), end='')
+        for e in e_test:
             value = monomial_value(m, n, e, x)
             result = hyperball01_volume(m) * np.sum(value[0:n]) / float(n)
-            print('  %14.6g' % (result)),
+            print('\t%14.6g' % (result), end='')
         print('')
 
         n = 2 * n
