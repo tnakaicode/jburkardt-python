@@ -154,6 +154,36 @@ def voronoi_plot(xy=[], m=200, n=200, p=2):
     return
 
 
+def timestamp():
+
+    # *****************************************************************************80
+    #
+    # TIMESTAMP prints the date as a timestamp.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    06 April 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    None
+    #
+    import time
+
+    t = time.time()
+    print(time.ctime(t))
+
+    return None
+
+
 def voronoi_plot_test():
 
     # *****************************************************************************80
@@ -183,43 +213,11 @@ def voronoi_plot_test():
     nc = 25
     xy = np.random.random([2, nc])
     voronoi_plot(xy, 200, 200, 2)
-#
-#  Terminate.
-#
+
     print('')
     print('VORONOI_PLOT_TEST:')
     print('  Normal end of execution.')
     return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):

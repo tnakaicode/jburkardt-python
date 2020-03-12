@@ -37,21 +37,20 @@ def tsp_brute(filename):
     print('TSP_BRUTE:')
     print('  Python version: %s' % (platform.python_version()))
     print('  Solve small traveling salesman problems by brute force.')
-#
-#  Get the distance table.
-#
+    #
+    #  Get the distance table.
+    #
     print('')
     print('  Distance matrix filename is "%s"' % (filename))
 
     distance = np.loadtxt(filename)
-#
-#  Approve the distance table.
-#
+    #
+    #  Approve the distance table.
+    #
     dims = distance.shape
 
     m = dims[0]
     n = dims[1]
-
     if (m != n):
         print('')
         print('TSP_BRUTE - Fatal error!')
@@ -61,7 +60,6 @@ def tsp_brute(filename):
 
     v = np.diagonal(distance)
     test = np.linalg.norm(v)
-
     if (0.0 < test):
         print('')
         print('TSP_BRUTE - Fatal error!')
@@ -70,16 +68,15 @@ def tsp_brute(filename):
         exit('TSP_BRUTE - Fatal error!')
 
     test = np.linalg.norm(distance - distance.transpose())
-
     if (0.0 < test):
         print('')
         print('TSP_BRUTE - Fatal error!')
         print('  The distance matrix must be symmetric.')
         print('  Your matrix has ||D-D''|| = %g' % (test))
         exit('TSP_BRUTE - Fatal error!')
-#
-#  Print the distance matrix.
-#
+    #
+    #  Print the distance matrix.
+    #
     print('')
     print('  The city-to-city distance matrix:')
     print('')
@@ -87,9 +84,9 @@ def tsp_brute(filename):
         for j in range(0, n):
             print('  %4g' % (distance[i, j]), end='')
         print('')
-#
-#  Examine every permutation.
-#
+    #
+    #  Examine every permutation.
+    #
     total_max = - np.inf
     total_min = np.inf
     total_ave = 0.0
@@ -99,33 +96,24 @@ def tsp_brute(filename):
     rank = 0
 
     p_min = np.zeros(n, dtype=np.int32)
-
     paths = 0
-
     while (True):
-
         p, more, rank = perm0_next3(n, p, more, rank)
-
         if (not more):
             break
 
         paths = paths + 1
-
         total = path_cost(n, distance, p)
-
         total_ave = total_ave + total
-
         if (total_max < total):
             total_max = total
-
         if (total < total_min):
             total_min = total
             p_min = p.copy()
-
     total_ave = total_ave / paths
-#
-#  Report.
-#
+    #
+    #  Report.
+    #
     print('')
     print('  A minimal length itinerary:')
     print('')
@@ -146,10 +134,6 @@ def tsp_brute(filename):
     print('  Average length = %g' % (total_ave))
     print('  Maximum length = %g' % (total_max))
 
-    return
-#
-#  Terminate.
-#
     print('')
     print('TSP_BRUTE')
     print('  Normal end of execution.')

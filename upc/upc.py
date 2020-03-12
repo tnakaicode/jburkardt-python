@@ -309,7 +309,7 @@ def s_to_digits(s, n):
             print('')
             print('S_TO_DIGITS - Fatal error!')
             print('  Could not read enough data from string.')
-            error('S_TO_DIGITS - Fatal error!')
+            #error('S_TO_DIGITS - Fatal error!')
 
         c = s[s_pos]
         s_pos = s_pos + 1
