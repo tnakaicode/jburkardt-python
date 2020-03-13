@@ -140,8 +140,13 @@ class plot2d (SetDir):
 
     def SavePng_Serial(self, pngname=None):
         if pngname == None:
-            pngname = self.tmpdir + self.rootname
-        pngname = create_tempnum(pngname, self.tmpdir, ".png")
+            pngname = self.rootname
+            dirname = self.tmpdir
+        else:
+            dirname = os.path.dirname(pngname) + "/"
+            basename = os.path.basename(pngname)
+            pngname, extname = os.path.splitext(basename)
+        pngname = create_tempnum(pngname, dirname, ".png")
         self.fig.savefig(pngname)
 
     def Show(self):

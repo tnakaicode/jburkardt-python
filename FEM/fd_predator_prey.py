@@ -11,67 +11,6 @@ from base import plot2d
 obj = plot2d()
 
 
-def fd_predator_prey_test():
-
-    # *****************************************************************************80
-    #
-    # FD_PREDATOR_PREY_TEST tests FD_PREDATOR_PREY.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    15 August 2017
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('FD_PREDATOR_PREY_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-#
-#  Set parameters.
-#
-    p0 = np.array([5000, 100])
-    tspan = np.array([0.0, 5.0])
-    step_num = 1000
-#
-#  Report parameters:
-#
-    print('')
-    print('  Initial number of prey is %d' % (p0[0]))
-    print('  Initial number of predators is %d' % (p0[1]))
-    print('  Time span is [%g,%g]' % (tspan[0], tspan[1]))
-    print('  Number of time steps will be %d' % (step_num))
-#
-#  Compute table of T, Prey(T), Pred(T).
-#
-    trf = fd_predator_prey(p0, tspan, step_num)
-#
-#  Make some plots.
-#
-    time_plot(step_num, trf)
-    phase_plot(step_num, trf)
-#
-#  Write data to files.
-#
-    filename = 'trf_%d.txt' % (step_num)
-    r8mat_write(filename, 3, step_num + 1, trf)
-    print('  T, R, F values written to "%s".' % (filename))
-#
-#  Terminate.
-#
-    print('')
-    print('FD_PREDATOR_PREY')
-    print('  Normal end of execution.')
-
-
 def fd_predator_prey(p0, tspan, step_num):
 
     # *****************************************************************************80
@@ -206,7 +145,7 @@ def fd_predator_prey(p0, tspan, step_num):
     return trf
 
 
-def time_plot(step_num, trf):
+def plot_time(step_num, trf):
 
     # *****************************************************************************80
     #
@@ -240,24 +179,17 @@ def time_plot(step_num, trf):
     #    Input, real TRF(3,STEP_NUM+1), the values of T, PREY and PREDATOR
     #    at time steps 0 through STEP_NUM.
     #
-    import matplotlib.pyplot as plt
-
-    plt.plot(trf[0, :], trf[1, :], 'g-', linewidth=3)
-    plt.plot(trf[0, :], trf[2, :], 'r-', linewidth=3)
-    plt.title('Predator Prey System Solved by Finite Differences')
-    plt.grid(True)
-    plt.xlabel('Time')
-    plt.ylabel('Populations')
-    filename = 'trf_%d_time.png' % (step_num)
-    plt.savefig(filename)
-    print('  Graphics saved as "%s"' % (filename))
-    plt.show(block=False)
-    plt.clf()
-
+    obj.new_fig(aspect="auto")
+    obj.axs.plot(trf[0, :], trf[1, :], 'g-', linewidth=3)
+    obj.axs.plot(trf[0, :], trf[2, :], 'r-', linewidth=3)
+    obj.axs.set_title('Predator Prey System Solved by Finite Differences')
+    obj.axs.set_xlabel('Time')
+    obj.axs.set_ylabel('Populations')
+    obj.SavePng_Serial(obj.tempname + "_time.png")
     return
 
 
-def phase_plot(step_num, trf):
+def plot_phas(step_num, trf):
 
     # *****************************************************************************80
     #
@@ -291,19 +223,12 @@ def phase_plot(step_num, trf):
     #    Input, real TRF(3,STEP_NUM+1), the values of T, PREY and PREDATOR
     #    at time steps 0 through STEP_NUM.
     #
-    import matplotlib.pyplot as plt
-
-    plt.plot(trf[1, :], trf[2, :], 'b-', linewidth=3)
-    plt.title('Predator Prey System Solved by Finite Differences')
-    plt.grid(True)
-    plt.xlabel('Rabbits')
-    plt.ylabel('Foxes')
-    filename = 'trf_%d_phase.png' % (step_num)
-    plt.savefig(filename)
-    print('  Graphics saved as "%s"' % (filename))
-    plt.show(block=False)
-    plt.clf()
-
+    obj.new_fig(aspect="auto")
+    obj.axs.plot(trf[1, :], trf[2, :], 'b-', linewidth=3)
+    obj.axs.set_title('Predator Prey System Solved by Finite Differences')
+    obj.axs.set_xlabel('Rabbits')
+    obj.axs.set_ylabel('Foxes')
+    obj.SavePng_Serial(obj.tempname + "_phas.png")
     return
 
 
@@ -348,54 +273,6 @@ def r8mat_write(filename, m, n, a):
     return
 
 
-def r8mat_write_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_WRITE_TEST tests R8MAT_WRITE.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    12 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_WRITE_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  Test R8MAT_WRITE, which writes an R8MAT to a file.')
-
-    filename = 'r8mat_write_test.txt'
-    m = 5
-    n = 3
-    a = np.array((
-        (1.1, 1.2, 1.3),
-        (2.1, 2.2, 2.3),
-        (3.1, 3.2, 3.3),
-        (4.1, 4.2, 4.3),
-        (5.1, 5.2, 5.3)))
-    r8mat_write(filename, m, n, a)
-
-    print('')
-    print('  Created file "%s".' % (filename))
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_WRITE_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def timestamp():
 
     # *****************************************************************************80
@@ -426,11 +303,11 @@ def timestamp():
     return None
 
 
-def timestamp_test():
+def fd_predator_prey_test():
 
     # *****************************************************************************80
     #
-    # TIMESTAMP_TEST tests TIMESTAMP.
+    # FD_PREDATOR_PREY_TEST tests FD_PREDATOR_PREY.
     #
     #  Licensing:
     #
@@ -438,32 +315,53 @@ def timestamp_test():
     #
     #  Modified:
     #
-    #    03 December 2014
+    #    15 August 2017
     #
     #  Author:
     #
     #    John Burkardt
     #
-    #  Parameters:
-    #
-    #    None
-    #
+    import numpy as np
     import platform
 
     print('')
-    print('TIMESTAMP_TEST:')
+    print('FD_PREDATOR_PREY_TEST:')
     print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
+    #
+    #  Set parameters.
+    #
+    p0 = np.array([5000, 100])
+    tspan = np.array([0.0, 5.0])
+    step_num = 1000
+    #
+    #  Report parameters:
+    #
     print('')
-
-    timestamp()
-#
-#  Terminate.
-#
+    print('  Initial number of prey is %d' % (p0[0]))
+    print('  Initial number of predators is %d' % (p0[1]))
+    print('  Time span is [%g,%g]' % (tspan[0], tspan[1]))
+    print('  Number of time steps will be %d' % (step_num))
+    #
+    #  Compute table of T, Prey(T), Pred(T).
+    #
+    trf = fd_predator_prey(p0, tspan, step_num)
+    #
+    #  Make some plots.
+    #
+    plot_time(step_num, trf)
+    plot_phas(step_num, trf)
+    #
+    #  Write data to files.
+    #
+    filename = obj.tempname + '_%d.txt' % (step_num)
+    r8mat_write(filename, 3, step_num + 1, trf)
+    print('  T, R, F values written to "%s".' % (filename))
+    #
+    #  Terminate.
+    #
     print('')
-    print('TIMESTAMP_TEST:')
+    print('FD_PREDATOR_PREY')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
