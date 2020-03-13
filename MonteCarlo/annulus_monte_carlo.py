@@ -12,6 +12,105 @@ from base import plot2d
 obj = plot2d()
 
 
+def annulus_sample_test(center, r1, r2):
+
+    # *****************************************************************************80
+    #
+    # ANNULUS_SAMPLE_TEST uses ANNULUS_SAMPLE to estimate integrals.
+    #
+    #  Discussion:
+    #
+    #    If CENTER=(0,0) and R1 = 0 and R2 = 1, then we can compare exact values.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    05 July 2018
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+
+    e_test = np.array([
+        [0, 0],
+        [2, 0],
+        [0, 2],
+        [4, 0],
+        [2, 2],
+        [0, 4],
+        [3, 2],
+        [6, 0]])
+
+    print('')
+    print('ANNULUS_SAMPLE_TEST')
+    print('  ANNULUS_SAMPLE can sample an annulus uniformly.')
+    print('  Use it to estimate integrals in the annulus')
+    print('  centered at (%g,%g) with R1 = %g, R2 = %g'
+          % (center[0], center[1], r1, r2))
+
+    obj.create_tempdir(-1)
+    seed = 123456789
+
+    print('')
+    txt = "\tN"
+    for e in e_test:
+        txt += "\t\tX^{:d} Y^{:d}".format(*e)
+    print(txt)
+    print('')
+
+    n = 1
+    data = []
+    while (n <= 65536):
+        x, seed = annulus_sample(center, r1, r2, n, seed)
+        dat = [n]
+        print(' %8d' % (n), end='')
+        for e in e_test:
+            value = monomial_value(2, n, e, x)
+            result = annulus_area(center, r1, r2) * np.sum(value[:]) / n
+            print('\t%14.6g' % (result), end='')
+            dat.append(result)
+        data.append(np.array(dat))
+        print('')
+
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.axs.set_xlim(-r2 * 1.25 + center[0], r2 * 1.25 + center[0])
+        obj.axs.set_ylim(-r2 * 1.25 + center[1], r2 * 1.25 + center[1])
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig()
+
+        n = 2 * n
+
+    data = np.array(data)
+    obj.new_fig(aspect="auto")
+    for i, e in enumerate(e_test):
+        obj.axs.plot(data[:, 0], data[:, i])
+        obj.axs.set_title(r"$x^{:d} y^{:d}$".format(*e))
+        obj.SavePng_Serial(obj.rootname)
+        plt.close()
+        obj.new_fig(aspect="auto")
+
+    if (
+            center[0] == 0.0 and
+            center[1] == 0.0 and
+            r1 == 0.0 and
+            r2 == 1.0):
+        print('')
+        print('     Exact', end='')
+        for i in range(0, 7):
+            e = e_test[i, :]
+            result = disk01_monomial_integral(e)
+            print('  %14.6g' % (result), end='')
+        print('')
+
+    return
+
+
 def annulus_area(center, r1, r2):
 
     # *****************************************************************************80
@@ -246,104 +345,6 @@ def annulus_sample(pc, r1, r2, n, seed):
 
     return p, seed
 
-
-def annulus_sample_test(center, r1, r2):
-
-    # *****************************************************************************80
-    #
-    # ANNULUS_SAMPLE_TEST uses ANNULUS_SAMPLE to estimate integrals.
-    #
-    #  Discussion:
-    #
-    #    If CENTER=(0,0) and R1 = 0 and R2 = 1, then we can compare exact values.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    05 July 2018
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-
-    e_test = np.array([
-        [0, 0],
-        [2, 0],
-        [0, 2],
-        [4, 0],
-        [2, 2],
-        [0, 4],
-        [3, 2],
-        [6, 0]])
-
-    print('')
-    print('ANNULUS_SAMPLE_TEST')
-    print('  ANNULUS_SAMPLE can sample an annulus uniformly.')
-    print('  Use it to estimate integrals in the annulus')
-    print('  centered at (%g,%g) with R1 = %g, R2 = %g'
-          % (center[0], center[1], r1, r2))
-
-    obj.create_tempdir(-1)
-    seed = 123456789
-
-    print('')
-    txt = "\tN"
-    for e in e_test:
-        txt += "\t\tX^{:d} Y^{:d}".format(*e)
-    print(txt)
-    print('')
-
-    n = 1
-    data = []
-    while (n <= 65536):
-        x, seed = annulus_sample(center, r1, r2, n, seed)
-        dat = [n]
-        print(' %8d' % (n), end='')
-        for e in e_test:
-            value = monomial_value(2, n, e, x)
-            result = annulus_area(center, r1, r2) * np.sum(value[:]) / n
-            print('\t%14.6g' % (result), end='')
-            dat.append(result)
-        data.append(np.array(dat))
-        print('')
-
-        obj.axs.scatter(*x, s=0.5)
-        obj.axs.set_title("n={:d}".format(n))
-        obj.axs.set_xlim(-r2 * 1.25 + center[0], r2 * 1.25 + center[0])
-        obj.axs.set_ylim(-r2 * 1.25 + center[1], r2 * 1.25 + center[1])
-        obj.SavePng_Serial(obj.rootname)
-        plt.close()
-        obj.new_fig()
-
-        n = 2 * n
-
-    data = np.array(data)
-    obj.new_fig(aspect="auto")
-    for i, e in enumerate(e_test):
-        obj.axs.plot(data[:, 0], data[:, i])
-        obj.axs.set_title(r"$x^{:d} y^{:d}$".format(*e))
-        obj.SavePng_Serial(obj.rootname)
-        plt.close()
-        obj.new_fig(aspect="auto")
-
-    if (
-            center[0] == 0.0 and
-            center[1] == 0.0 and
-            r1 == 0.0 and
-            r2 == 1.0):
-        print('')
-        print('     Exact', end='')
-        for i in range(0, 7):
-            e = e_test[i, :]
-            result = disk01_monomial_integral(e)
-            print('  %14.6g' % (result), end='')
-        print('')
-
-    return
 
 
 def disk01_monomial_integral(e):
