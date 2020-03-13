@@ -64,7 +64,58 @@ PREY(T+DT) = PREY(T) + DT * ( 2 * PREY(T) - 0.001 * PREY(T) * PRED(T) ).
 
 ## fem2d_bvp_linear.py
 
-## fem_basis.py
+FEM2D_BVP_LINEAR solves a 2D boundary value problem in the unit square.
+
+the PDE is defined for 0 < x < 1, 0 < y < 1:
+
+- uxx - uyy = f(x)
+
+```markdown
+with boundary conditions
+  u(0,y) = 0,
+  u(1,y) = 0,
+  u(x,0) = 0,
+  u(x,1) = 0.
+
+The exact solution is:
+  exact(x) = x * ( 1 - x ) * y * ( 1 - y ).
+
+The right hand side f(x) is:
+  f(x) = 2 * x * ( 1 - x ) + 2 * y * ( 1 - y )
+```
+
+The unit square is divided into N by N squares.  Bilinear finite
+element basis functions are defined, and the solution is sought as
+piecewise linear combination of these basis functions.
+
+## fem_basis
+
+- test01 - FEM_BASIS_1D
+  - fem_basis_1d
+- test02 - FEM_BASIS_2D
+  - fem_basis_2d
+- test03 - FEM_BASIS_3D
+  - fem_basis_3d
+- test04 - FEM_BASIS_MD
+  - fem_basis_md
+  - basis function over an M-dimensional simplex
+  - m = 1
+- test05 - FEM_BASIS_MD
+  - fem_basis_md
+  - basis function over an M-dimensional simplex
+  - m = 2
+- test06 - FEM_BASIS_MD
+  - fem_basis_md
+  - basis function over an M-dimensional simplex
+  - m = 3
+- test07 - FEM_BASIS_PRISM_TRIANGLE
+  - fem_basis_prism_triangle
+  - basis function over a right triangular prism
+  - up to degree 2 in X and Y, and up to degree 2 in Z
+- test08 - FEM_BASIS_PRISM_TRIANGLE
+  - fem_basis_prism_triangle
+  - basis function over a right triangular prism
+  - up to degree 3 in X and Y, and up to degree 1 in Z
 
 ## fem_basis_test01.py
 

@@ -1,5 +1,13 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d, create_tempdir
 
 
 def boundary(nx, ny, x, y, A, rhs):
@@ -485,5 +493,5 @@ if (__name__ == '__main__'):
     print('')
     print('FD2D_HEAT_STEADY_TEST:')
     print('  Normal end of execution.')
-	
+
     timestamp()

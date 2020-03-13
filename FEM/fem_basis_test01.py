@@ -1,5 +1,13 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d, create_tempdir
 
 
 def fem_basis_1d(i, j, x):

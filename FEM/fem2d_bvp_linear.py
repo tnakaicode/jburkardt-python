@@ -1,5 +1,13 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import plot2d
 
 
 def fem2d_bvp_linear():
@@ -296,7 +304,4 @@ def rhs_fn(x, y):
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
-    timestamp()
     fem2d_bvp_linear()
-    timestamp()
