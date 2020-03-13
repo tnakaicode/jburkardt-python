@@ -136,6 +136,24 @@ class plot2d (SetDir):
         im = self.axs.contourf(*mesh, func, cmap="jet")
         self.fig.colorbar(im, ax=self.axs, shrink=0.9)
         plt.tight_layout()
+    
+    def contourf_sub1(self, mesh, func, sxy=[0, 0]):
+        self.new_fig()
+        nx, ny = mesh[0].shape
+        sx, sy = sxy
+        xs, xe = mesh[0][0, 0], mesh[0][0, -1]
+        ys, ye = mesh[1][0, 0], mesh[1][-1, 0]
+        mx = np.searchsorted(mesh[0][:, 0], sx) - 1
+        my = np.searchsorted(mesh[1][0, :], sy) - 1
+
+        self.div_axs()
+        self.ax_x.plot(mesh[0][:, my], func[:, my])
+        self.ax_x.set_title("y = {:.2f}".format(sy))
+        self.ax_y.plot(func[mx, :], mesh[1][mx, :])
+        self.ax_y.set_title("x = {:.2f}".format(sx))
+        im = self.axs.contourf(*mesh, func, cmap="jet")
+        self.fig.colorbar(im, ax=self.axs, shrink=0.9)
+        plt.tight_layout()
 
     def contourf_tri(self, x, y, z):
         self.new_fig()

@@ -107,7 +107,11 @@ def fd1d_advection_lax_wendroff(nx, nt, c):
     obj_3d.fig.colorbar(surf, shrink=0.5, aspect=10)
     obj_3d.SavePng_Serial(obj_3d.tempname + "_3d.png")
 
-    obj_2d.contourf_sub([X, Y], Z)
+    np.savetxt(obj_2d.tempname + "_x.txt", X)
+    np.savetxt(obj_2d.tempname + "_y.txt", Y)
+    np.savetxt(obj_2d.tempname + "_z.txt", Z)
+
+    obj_2d.contourf_sub1([X, Y], Z, sxy=[0.5, 0.5])
     obj_2d.SavePng_Serial(obj_2d.tempname + "_2d.png")
     return
 
