@@ -7,7 +7,9 @@ import os
 import time
 
 sys.path.append(os.path.join('../'))
-from base import plot2d
+from base import plot2d, plot3d
+obj_3d = plot3d()
+obj_2d = plot2d()
 
 
 def fd1d_advection_lax_wendroff(nx, nt, c):
@@ -95,22 +97,18 @@ def fd1d_advection_lax_wendroff(nx, nt, c):
             X[i, j] = x[i]
             Y[i, j] = t
             Z[i, j] = u[i]
-#
-#  Make a plot.
-#  These commands will fail on an older version of Python.
-#
-    fig = plt.figure()
-    ax = fig.gca(projection='3d')
-    surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
-                           linewidth=0, antialiased=False)
-    ax.set_xlabel('<--X-->')
-    ax.set_ylabel('<--T-->')
-    ax.set_zlabel('<--U(X,T)-->')
-    fig.colorbar(surf, shrink=0.5, aspect=10)
-    filename = 'fd1d_advection_lax_wendroff.png'
-    plt.savefig(filename)
-    plt.show(block=False)
 
+    obj_3d.new_fig()
+    surf = obj_3d.axs.plot_surface(X, Y, Z, cmap=cm.coolwarm,
+                                   linewidth=0, antialiased=False)
+    obj_3d.axs.set_xlabel('<--X-->')
+    obj_3d.axs.set_ylabel('<--T-->')
+    obj_3d.axs.set_zlabel('<--U(X,T)-->')
+    obj_3d.fig.colorbar(surf, shrink=0.5, aspect=10)
+    obj_3d.SavePng_Serial(obj_3d.tempname + "_3d.png")
+
+    obj_2d.contourf_sub([X, Y], Z)
+    obj_2d.SavePng_Serial(obj_2d.tempname + "_2d.png")
     return
 
 
@@ -155,9 +153,9 @@ def fd1d_advection_lax_wendroff_test():
     c = 1.0
 
     fd1d_advection_lax_wendroff(nx, nt, c)
-#
-#  Terminate.
-#
+    #
+    #  Terminate.
+    #
     print('')
     print('FD1D_ADVECTION_LAX_WENDROFF_TEST')
     print('  Normal end of execution.')

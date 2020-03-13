@@ -4,6 +4,14 @@
 
 Finite Difference Method, 1D Advection Equation, Lax-Wendroff Method
 
+```markdown
+du/dt = - c du/dx
+0.0 <= x <= 1.0
+
+u(0,x) = (10x-4)^2 (6-10x)^2 for 0.4 <= x <= 0.6
+       = 0 elsewhere.
+```
+
 ## fd1d_bvp.py
 
 ## fd1d_heat_explicit.py
