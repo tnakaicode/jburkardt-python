@@ -5,13 +5,82 @@ import os
 import time
 
 sys.path.append(os.path.join('../'))
-from rnd_uniform.uniform import r8vec_uniform_01
+from rnd_uniform.uniform import r8vec_uniform_01, r8mat_uniform_01
 from base import plot2d
+
+def cube01_sample(n, seed):
+    
+    #
+    # CUBE01_SAMPLE samples points in the unit cube in 3D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real X(3,N), the points.
+    #
+    m = 3
+
+    x, seed = r8mat_uniform_01(m, n, seed)
+
+    return x, seed
+
+def ball01_sample(n, seed):
+
+    #
+    # BALL01_SAMPLE uniformly samples the unit ball.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Reference:
+    #
+    #    Russell Cheng,
+    #    Random Variate Generation,
+    #    in Handbook of Simulation,
+    #    edited by Jerry Banks,
+    #    Wiley, 1998, pages 168.
+    #
+    #    Reuven Rubinstein,
+    #    Monte Carlo Optimization, Simulation, and Sensitivity
+    #    of Queueing Networks,
+    #    Krieger, 1992,
+    #    ISBN: 0894647644,
+    #    LC: QA298.R79.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real X(3,N), the points.
+    #
+
+    x = np.random.normal(0.0, 1.0, [3, n])
+    for j in range(0, n):
+        norm = np.sqrt(x[0, j] ** 2 + x[1, j] ** 2 + x[2, j] ** 2)
+        for i in range(0, 3):
+            x[i, j] = x[i, j] / norm
+
+    for j in range(0, n):
+        r = np.random.random()
+        x[:, j] = x[:, j] * r ** (1.0 / 3.0)
+
+    return x, seed
 
 
 def annulus_sample(pc, r1, r2, n, seed):
 
-    # *****************************************************************************80
     #
     # ANNULUS_SAMPLE samples a circular annulus.
     #
@@ -25,14 +94,6 @@ def annulus_sample(pc, r1, r2, n, seed):
     #  Licensing:
     #
     #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    05 July 2018
-    #
-    #  Author:
-    #
-    #    John Burkardt
     #
     #  Reference:
     #
@@ -57,8 +118,6 @@ def annulus_sample(pc, r1, r2, n, seed):
     #
     #    Output, real P(2,N), sample points.
     #
-    import numpy as np
-    from sys import exit
 
     if (r1 < 0.0):
         print('')
@@ -73,20 +132,99 @@ def annulus_sample(pc, r1, r2, n, seed):
         exit('ANNULUS_SAMPLE - Fatal error!')
 
     u, seed = r8vec_uniform_01(n, seed)
-
-    theta = u[:] * 2.0 * np.pi
-
     v, seed = r8vec_uniform_01(n, seed)
 
-    r = np.sqrt((1.0 - v[:]) * r1 * r1
-                + v[:] * r2 * r2)
-
+    theta = u * 2.0 * np.pi
+    r = np.sqrt((1.0 - v) * r1**2 + v * r2**2)
     p = np.zeros([2, n])
 
-    p[0, :] = pc[0] + r[:] * np.cos(theta[:])
-    p[1, :] = pc[1] + r[:] * np.sin(theta[:])
+    p[0, :] = pc[0] + r * np.cos(theta)
+    p[1, :] = pc[1] + r * np.sin(theta)
 
     return p, seed
+
+
+def circle01_sample_ergodic(n, angle):
+
+    #
+    # CIRCLE01_SAMPLE_ERGODIC samples points on the circumference of the unit circle in 2D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input/output, real ANGLE, an angle between 0 and 2 PI.
+    #
+    #    Output, real X(2,N), the points.
+    #
+
+    r = 1.0
+    c = np.zeros(2)
+
+    golden_ratio = (1.0 + np.sqrt(5.0)) / 2.0
+
+    golden_angle = 2.0 * np.pi / golden_ratio ** 2
+
+    x = np.zeros([2, n])
+
+    for j in range(0, n):
+        x[0, j] = c[0] + r * np.cos(angle)
+        x[1, j] = c[1] + r * np.sin(angle)
+        angle = np.mod(angle + golden_angle, 2.0 * np.pi)
+
+    return x, angle
+
+
+def circle01_sample_random(n, seed):
+
+    #
+    # CIRCLE01_SAMPLE_RANDOM samples points on the circumference of the unit circle in 2D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Reference:
+    #
+    #    Russell Cheng,
+    #    Random Variate Generation,
+    #    in Handbook of Simulation,
+    #    edited by Jerry Banks,
+    #    Wiley, 1998, pages 168.
+    #
+    #    Reuven Rubinstein,
+    #    Monte Carlo Optimization, Simulation, and Sensitivity
+    #    of Queueing Networks,
+    #    Krieger, 1992,
+    #    ISBN: 0894647644,
+    #    LC: QA298.R79.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real X(2,N), the points.
+    #
+
+    r = 1.0
+    c = np.zeros(2)
+
+    theta, seed = r8vec_uniform_01(n, seed)
+
+    x = np.zeros([2, n])
+
+    for j in range(0, n):
+        x[0, j] = c[0] + r * np.cos(2.0 * np.pi * theta[j])
+        x[1, j] = c[1] + r * np.sin(2.0 * np.pi * theta[j])
+
+    return x, seed
 
 
 class MonteCarlo (plot2d):

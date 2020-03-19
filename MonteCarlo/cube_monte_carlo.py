@@ -195,7 +195,7 @@ def cube01_monte_carlo_test():
 
         obj.axs.scatter(*x, s=0.5)
         obj.axs.set_title("n={:d}".format(n))
-        obj.SavePng_Serial(obj.rootname)
+        obj.SavePng_Serial()
         plt.close()
 
         n = 2 * n
