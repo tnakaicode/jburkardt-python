@@ -80,7 +80,7 @@ def annulus_sample_test(center, r1, r2):
         obj.axs.set_title("n={:d}".format(n))
         obj.axs.set_xlim(-r2 * 1.25 + center[0], r2 * 1.25 + center[0])
         obj.axs.set_ylim(-r2 * 1.25 + center[1], r2 * 1.25 + center[1])
-        obj.SavePng_Serial(obj.rootname)
+        obj.SavePng_Serial()
         plt.close()
         obj.new_fig()
 
@@ -91,7 +91,7 @@ def annulus_sample_test(center, r1, r2):
     for i, e in enumerate(e_test):
         obj.axs.plot(data[:, 0], data[:, i])
         obj.axs.set_title(r"$x^{:d} y^{:d}$".format(*e))
-        obj.SavePng_Serial(obj.rootname)
+        obj.SavePng_Serial()
         plt.close()
         obj.new_fig(aspect="auto")
 
