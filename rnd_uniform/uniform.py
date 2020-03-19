@@ -65,7 +65,7 @@ def r8mat_uniform_01(m, n, seed):
         print('  Input SEED = 0!')
         exit('R8MAT_UNIFORM_01 - Fatal error!')
 
-    r = numpy.zeros((m, n))
+    r = np.zeros((m, n))
     for j in range(0, n):
         for i in range(0, m):
             k = (seed // 127773)

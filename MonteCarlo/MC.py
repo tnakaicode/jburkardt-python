@@ -8,14 +8,51 @@ sys.path.append(os.path.join('../'))
 from rnd_uniform.uniform import r8vec_uniform_01, r8mat_uniform_01
 from base import plot2d
 
+#  Licensing:
+#
+#    This code is distributed under the GNU LGPL license.
+#
+
+
+def triangle01_sample(n, seed):
+
+    #
+    # TRIANGLE01_SAMPLE samples the interior of the unit triangle in 2D.
+    #
+    #  Reference:
+    #
+    #    Reuven Rubinstein,
+    #    Monte Carlo Optimization, Simulation, and Sensitivity
+    #    of Queueing Networks,
+    #    Krieger, 1992,
+    #    ISBN: 0894647644,
+    #    LC: QA298.R79.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real XY(2,N), the points.
+    #
+    m = 2
+
+    xy = np.zeros([m, n])
+    for j in range(0, n):
+        e, seed = r8vec_uniform_01(m + 1, seed)
+        e = - np.log(e)
+        d = np.sum(e)
+        xy[0:2, j] = e[0:2] / d
+
+    return xy, seed
+
+
 def cube01_sample(n, seed):
-    
+
     #
     # CUBE01_SAMPLE samples points in the unit cube in 3D.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
     #
     #  Parameters:
     #
@@ -32,14 +69,11 @@ def cube01_sample(n, seed):
 
     return x, seed
 
+
 def ball01_sample(n, seed):
 
     #
     # BALL01_SAMPLE uniformly samples the unit ball.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
     #
     #  Reference:
     #
@@ -90,10 +124,6 @@ def annulus_sample(pc, r1, r2, n, seed):
     #    outer radius R2, is the set of points P so that
     #
     #      R1^2 <= (P(1)-PC(1))^2 + (P(2)-PC(2))^2 <= R2^2
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
     #
     #  Reference:
     #
@@ -149,10 +179,6 @@ def circle01_sample_ergodic(n, angle):
     #
     # CIRCLE01_SAMPLE_ERGODIC samples points on the circumference of the unit circle in 2D.
     #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
     #  Parameters:
     #
     #    Input, integer N, the number of points.
@@ -183,10 +209,6 @@ def circle01_sample_random(n, seed):
 
     #
     # CIRCLE01_SAMPLE_RANDOM samples points on the circumference of the unit circle in 2D.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
     #
     #  Reference:
     #
@@ -231,6 +253,25 @@ class MonteCarlo (plot2d):
 
     def __init__(self, aspect='equal'):
         plot2d.__init__(self, aspect=aspect)
+        self.create_tempdir(-1)
+
+        seed = 123456789
+        n = 1
+        while (n <= 65536):
+            self.PlotTest(*triangle01_sample(n, seed))
+            #self.PlotTest(*cube01_sample(n, seed))
+            #self.PlotTest(*ball01_sample(n, seed))
+            self.PlotTest(*annulus_sample([0,0], 1.0, 2.0, n, seed))
+            self.PlotTest(*circle01_sample_ergodic(n, seed))
+            self.PlotTest(*circle01_sample_random(n, seed))
+            n = 2 * n
+
+    def PlotTest(self, x, seed):
+        self.axs.scatter(*x, s=0.5)
+        # self.axs.set_title("n={:d}".format(n))
+        self.SavePng_Serial()
+        plt.close()
+        self.new_fig()
 
 
 if (__name__ == '__main__'):

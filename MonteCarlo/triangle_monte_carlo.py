@@ -1,6 +1,15 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
 
+sys.path.append(os.path.join('../'))
+from base import plot2d
+
+obj = plot2d()
 
 def monomial_value(m, n, e, x):
 
@@ -876,6 +885,12 @@ def triangle_monte_carlo(t, n, triangle_integrand, seed):
     fp = triangle_integrand(p2)
 
     result = area * np.sum(fp[:]) / float(n)
+    
+    obj.axs.scatter(*p, s=0.5)
+    obj.axs.set_title("n={:d}".format(n))
+    obj.SavePng_Serial()
+    plt.close()
+    obj.new_fig()
 
     return result, seed
 
