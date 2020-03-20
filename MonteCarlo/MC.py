@@ -12,247 +12,13 @@ import time
 
 sys.path.append(os.path.join('../'))
 from rnd_uniform.uniform import r8vec_uniform_01, r8mat_uniform_01, r8_uniform_01
+from rnd_uniform.sample import triangle01_sample, cube01_sample, ball01_sample, annulus_sample
+from rnd_uniform.sample import circle01_sample_ergodic, circle01_sample_random
 from base import PlotBase
-
-
-def triangle01_sample(n, seed):
-
-    #
-    # TRIANGLE01_SAMPLE samples the interior of the unit triangle in 2D.
-    #
-    #  Reference:
-    #
-    #    Reuven Rubinstein,
-    #    Monte Carlo Optimization, Simulation, and Sensitivity
-    #    of Queueing Networks,
-    #    Krieger, 1992,
-    #    ISBN: 0894647644,
-    #    LC: QA298.R79.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of points.
-    #
-    #    Input/output, integer SEED, a seed for the random
-    #    number generator.
-    #
-    #    Output, real XY(2,N), the points.
-    #
-    m = 2
-
-    xy = np.zeros([m, n])
-    for j in range(0, n):
-        e, seed = r8vec_uniform_01(m + 1, seed)
-        e = - np.log(e)
-        d = np.sum(e)
-        xy[0:2, j] = e[0:2] / d
-
-    return xy, seed
-
-
-def cube01_sample(n, seed):
-
-    #
-    # CUBE01_SAMPLE samples points in the unit cube in 3D.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of points.
-    #
-    #    Input/output, integer SEED, a seed for the random
-    #    number generator.
-    #
-    #    Output, real X(3,N), the points.
-    #
-    m = 3
-
-    x, seed = r8mat_uniform_01(m, n, seed)
-
-    return x, seed
-
-
-def ball01_sample(n, seed):
-
-    #
-    # BALL01_SAMPLE uniformly samples the unit ball.
-    #
-    #  Reference:
-    #
-    #    Russell Cheng,
-    #    Random Variate Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998, pages 168.
-    #
-    #    Reuven Rubinstein,
-    #    Monte Carlo Optimization, Simulation, and Sensitivity
-    #    of Queueing Networks,
-    #    Krieger, 1992,
-    #    ISBN: 0894647644,
-    #    LC: QA298.R79.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of points.
-    #
-    #    Input/output, integer SEED, a seed for the random
-    #    number generator.
-    #
-    #    Output, real X(3,N), the points.
-    #
-
-    x = np.random.normal(0.0, 1.0, [3, n])
-    for j in range(0, n):
-        norm = np.sqrt(x[0, j] ** 2 + x[1, j] ** 2 + x[2, j] ** 2)
-        for i in range(0, 3):
-            x[i, j] = x[i, j] / norm
-
-    for j in range(0, n):
-        r = np.random.random()
-        x[:, j] = x[:, j] * r ** (1.0 / 3.0)
-
-    return x, seed
-
-
-def annulus_sample(pc, r1, r2, n, seed):
-
-    #
-    # ANNULUS_SAMPLE samples a circular annulus.
-    #
-    #  Discussion:
-    #
-    #    A circular annulus with center PC, inner radius R1 and
-    #    outer radius R2, is the set of points P so that
-    #
-    #      R1^2 <= (P(1)-PC(1))^2 + (P(2)-PC(2))^2 <= R2^2
-    #
-    #  Reference:
-    #
-    #    Peter Shirley,
-    #    Nonuniform Random Point Sets Via Warping,
-    #    Graphics Gems, Volume III,
-    #    edited by David Kirk,
-    #    AP Professional, 1992,
-    #    ISBN: 0122861663,
-    #    LC: T385.G6973.
-    #
-    #  Parameters:
-    #
-    #    Input, real PC(2), the center.
-    #
-    #    Input, real R1, R2, the inner and outer radii.
-    #    0.0 <= R1 <= R2.
-    #
-    #    Input, integer N, the number of points to generate.
-    #
-    #    Input/output, integer SEED, a seed for the random number generator.
-    #
-    #    Output, real P(2,N), sample points.
-    #
-
-    if (r1 < 0.0):
-        print('')
-        print('ANNULUS_SAMPLE - Fatal error!')
-        print('  Inner radius R1 < 0.0.')
-        exit('ANNULUS_SAMPLE - Fatal error!')
-
-    if (r2 < r1):
-        print('')
-        print('ANNULUS_SAMPLE - Fatal error!')
-        print('  Outer radius R1 < R1 = inner radius.')
-        exit('ANNULUS_SAMPLE - Fatal error!')
-
-    u, seed = r8vec_uniform_01(n, seed)
-    v, seed = r8vec_uniform_01(n, seed)
-
-    theta = u * 2.0 * np.pi
-    r = np.sqrt((1.0 - v) * r1**2 + v * r2**2)
-    p = np.zeros([2, n])
-
-    p[0, :] = pc[0] + r * np.cos(theta)
-    p[1, :] = pc[1] + r * np.sin(theta)
-
-    return p, seed
-
-
-def circle01_sample_ergodic(n, angle):
-
-    #
-    # CIRCLE01_SAMPLE_ERGODIC samples points on the circumference of the unit circle in 2D.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of points.
-    #
-    #    Input/output, real ANGLE, an angle between 0 and 2 PI.
-    #
-    #    Output, real X(2,N), the points.
-    #
-
-    r = 1.0
-    c = np.zeros(2)
-
-    golden_ratio = (1.0 + np.sqrt(5.0)) / 2.0
-
-    golden_angle = 2.0 * np.pi / golden_ratio ** 2
-
-    x = np.zeros([2, n])
-
-    for j in range(0, n):
-        x[0, j] = c[0] + r * np.cos(angle)
-        x[1, j] = c[1] + r * np.sin(angle)
-        angle = np.mod(angle + golden_angle, 2.0 * np.pi)
-
-    return x, angle
-
-
-def circle01_sample_random(n, seed):
-
-    #
-    # CIRCLE01_SAMPLE_RANDOM samples points on the circumference of the unit circle in 2D.
-    #
-    #  Reference:
-    #
-    #    Russell Cheng,
-    #    Random Variate Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998, pages 168.
-    #
-    #    Reuven Rubinstein,
-    #    Monte Carlo Optimization, Simulation, and Sensitivity
-    #    of Queueing Networks,
-    #    Krieger, 1992,
-    #    ISBN: 0894647644,
-    #    LC: QA298.R79.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of points.
-    #
-    #    Input/output, integer SEED, a seed for the random
-    #    number generator.
-    #
-    #    Output, real X(2,N), the points.
-    #
-
-    r = 1.0
-    c = np.zeros(2)
-
-    theta, seed = r8vec_uniform_01(n, seed)
-
-    x = np.zeros([2, n])
-
-    for j in range(0, n):
-        x[0, j] = c[0] + r * np.cos(2.0 * np.pi * theta[j])
-        x[1, j] = c[1] + r * np.sin(2.0 * np.pi * theta[j])
-
-    return x, seed
 
 
 def angle_degree(x1, y1, x2, y2, x3, y3):
 
-    # *****************************************************************************80
     #
     # ANGLE_DEGREE returns the degree angle defined by three points.
     #
@@ -265,18 +31,6 @@ def angle_degree(x1, y1, x2, y2, x3, y3):
     #     /
     #    P2--------->P3
     #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 August 2016
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
     #  Parameters:
     #
     #    Input, real X1, Y1, X2, Y2, X3, Y3, the coordinates of the points
@@ -286,10 +40,7 @@ def angle_degree(x1, y1, x2, y2, x3, y3):
     #    in degrees.  0 <= VALUE < 360.  If either ray has zero length,
     #    then VALUE is set to 0.
     #
-    import numpy as np
-
     x = (x3 - x2) * (x1 - x2) + (y3 - y2) * (y1 - y2)
-
     y = (x3 - x2) * (y1 - y2) - (y3 - y2) * (x1 - x2)
 
     if (x == 0.0 and y == 0.0):
@@ -297,18 +48,14 @@ def angle_degree(x1, y1, x2, y2, x3, y3):
         return value
 
     value = np.arctan2(y, x)
-
     if (value < 0.0):
         value = value + 2.0 * np.pi
-
     value = 180.0 * value / np.pi
-
     return value
 
 
 def between(xa, ya, xb, yb, xc, yc):
 
-    # *****************************************************************************80
     #
     # BETWEEN is TRUE if vertex C is between vertices A and B.
     #
@@ -318,19 +65,6 @@ def between(xa, ya, xb, yb, xc, yc):
     #
     #    Given that condition, we take the greater of XA - XB and YA - YB
     #    as a "scale" and check where C's value lies.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 October 2015
-    #
-    #  Author:
-    #
-    #    Original C version by Joseph ORourke.
-    #    Python version by John Burkardt.
     #
     #  Reference:
     #
@@ -363,7 +97,6 @@ def between(xa, ya, xb, yb, xc, yc):
 
 def collinear(xa, ya, xb, yb, xc, yc):
 
-    # *****************************************************************************80
     #
     # COLLINEAR returns a measure of collinearity for three points.
     #
@@ -377,20 +110,7 @@ def collinear(xa, ya, xb, yb, xc, yc):
     #    If the points are collinear, their triangle has zero area.
     #    If the points are close to collinear, then the area of this triangle
     #    will be small relative to the square of the longest segment.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    10 September 2016
-    #
-    #  Author:
-    #
-    #    Original C version by Joseph ORourke.
-    #    Python version by John Burkardt.
-    #
+    #  
     #  Reference:
     #
     #    Joseph ORourke,
@@ -429,25 +149,12 @@ def collinear(xa, ya, xb, yb, xc, yc):
 
 def l4_xor(l1, l2):
 
-    # *****************************************************************************80
     #
     # L4_XOR returns the exclusive OR of two L4's.
     #
     #  Discussion:
     #
     #    An L4 is a logical value.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 October 2015
-    #
-    #  Author:
-    #
-    #   John Burkardt
     #
     #  Parameters:
     #
@@ -458,30 +165,14 @@ def l4_xor(l1, l2):
     #
     value1 = (l1 and (not l2))
     value2 = ((not l1) and l2)
-
     value = (value1 or value2)
-
     return value
 
 
 def intersect_prop(xa, ya, xb, yb, xc, yc, xd, yd):
 
-    # *****************************************************************************80
     #
     # INTERSECT_PROP is TRUE if lines VA:VB and VC:VD have a proper intersection.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 October 2015
-    #
-    #  Author:
-    #
-    #    Original C version by Joseph ORourke.
-    #    FORTRAN90 version by John Burkardt.
     #
     #  Reference:
     #
@@ -516,15 +207,12 @@ def intersect_prop(xa, ya, xb, yb, xc, yc, xd, yd):
         value2 = (0.0 < t2)
         value3 = (0.0 < t3)
         value4 = (0.0 < t4)
-
         value = (l4_xor(value1, value2)) and (l4_xor(value3, value4))
-
     return value
 
 
 def intersect(xa, ya, xb, yb, xc, yc, xd, yd):
 
-    # *****************************************************************************80
     #
     # INTERSECT is true if lines VA:VB and VC:VD intersect.
     #
@@ -532,19 +220,6 @@ def intersect(xa, ya, xb, yb, xc, yc, xd, yd):
     #
     #    Thanks to Gene Dial for correcting the call to intersect_prop(),
     #    08 September 2016.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    08 September 2016
-    #
-    #  Author:
-    #
-    #    Original C version by Joseph ORourke.
-    #    Python version by John Burkardt.
     #
     #  Reference:
     #
@@ -573,28 +248,13 @@ def intersect(xa, ya, xb, yb, xc, yc, xd, yd):
         value = True
     else:
         value = False
-
     return value
 
 
 def diagonalie(im1, ip1, n, next_node, x, y):
 
-    # *****************************************************************************80
     #
     # DIAGONALIE is true if VERTEX(IM1):VERTEX(IP1) is a proper diagonal.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 October 2015
-    #
-    #  Author:
-    #
-    #    Original C version by Joseph ORourke.
-    #    Python version by John Burkardt.
     #
     #  Reference:
     #
@@ -619,11 +279,10 @@ def diagonalie(im1, ip1, n, next_node, x, y):
     first = im1
     j = first
     jp1 = next_node[first]
-
     value = True
-#
-#  For each edge VERTEX(J):VERTEX(JP1) of the polygon:
-#
+    #
+    #  For each edge VERTEX(J):VERTEX(JP1) of the polygon:
+    #
     while (True):
         #
         #  Skip any edge that includes vertex IM1 or IP1.
@@ -631,41 +290,22 @@ def diagonalie(im1, ip1, n, next_node, x, y):
         if (j == im1 or j == ip1 or jp1 == im1 or jp1 == ip1):
             pass
         else:
-
             value2 = intersect(
                 x[im1], y[im1], x[ip1], y[ip1], x[j], y[j], x[jp1], y[jp1])
-
             if (value2):
                 value = False
                 break
-
         j = jp1
         jp1 = next_node[j]
-
         if (j == first):
             break
-
     return value
 
 
 def diagonal(im1, ip1, n, prev_node, next_node, x, y):
 
-    # *****************************************************************************80
     #
     # DIAGONAL: VERTEX(IM1) to VERTEX(IP1) is a proper internal diagonal.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 October 2015
-    #
-    #  Author:
-    #
-    #    Original C version by Joseph ORourke.
-    #    Python version by John Burkardt.
     #
     #  Reference:
     #
@@ -692,30 +332,14 @@ def diagonal(im1, ip1, n, prev_node, next_node, x, y):
     value1 = in_cone(im1, ip1, n, prev_node, next_node, x, y)
     value2 = in_cone(ip1, im1, n, prev_node, next_node, x, y)
     value3 = diagonalie(im1, ip1, n, next_node, x, y)
-
     value = (value1 and value2 and value3)
-
     return value
 
 
 def in_cone(im1, ip1, n, prev_node, next_node, x, y):
 
-    # *****************************************************************************80
     #
     # IN_CONE is TRUE if the diagonal VERTEX(IM1):VERTEX(IP1) is strictly internal.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 October 2015
-    #
-    #  Author:
-    #
-    #    Original C version by Joseph ORourke.
-    #    Python version by John Burkardt.
     #
     #  Reference:
     #
@@ -743,25 +367,19 @@ def in_cone(im1, ip1, n, prev_node, next_node, x, y):
     i = next_node[im1]
 
     t1 = triangle_area(x[im1], y[im1], x[i], y[i], x[im2], y[im2])
-
     if (0.0 <= t1):
-
         t2 = triangle_area(x[im1], y[im1], x[ip1], y[ip1], x[im2], y[im2])
         t3 = triangle_area(x[ip1], y[ip1], x[im1], y[im1], x[i], y[i])
         value = ((0.0 < t2) and (0.0 < t3))
-
     else:
-
         t4 = triangle_area(x[im1], y[im1], x[ip1], y[ip1], x[i], y[i])
         t5 = triangle_area(x[ip1], y[ip1], x[im1], y[im1], x[im2], y[im2])
         value = not ((0.0 <= t4) and (0.0 <= t5))
-
     return value
 
 
 def polygon_area(n, x, y):
 
-    # *****************************************************************************80
     #
     # POLYGON_AREA returns the area of a polygon.
     #
@@ -769,18 +387,6 @@ def polygon_area(n, x, y):
     #
     #    The vertices should be listed in counter-clockwise order so that
     #    the area will be positive.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    10 September 2016
-    #
-    #  Author:
-    #
-    #    John Burkardt.
     #
     #  Parameters:
     #
@@ -792,13 +398,10 @@ def polygon_area(n, x, y):
     #
     area = 0.0
     im1 = n - 1
-
     for i in range(0, n):
         area = area + x[im1] * y[i] - x[i] * y[im1]
         im1 = i
-
     area = 0.5 * area
-
     return area
 
 
@@ -967,21 +570,8 @@ def polygon_triangulate(n, x, y):
 
 def triangle_area(xa, ya, xb, yb, xc, yc):
 
-    # *****************************************************************************80
     #
     # TRIANGLE_AREA computes the signed area of a triangle.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 October 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
     #
     #  Parameters:
     #
@@ -991,27 +581,13 @@ def triangle_area(xa, ya, xb, yb, xc, yc):
     #    Output, real VALUE, the signed area of the triangle.
     #
     value = 0.5 * ((xb - xa) * (yc - ya) - (xc - xa) * (yb - ya))
-
     return value
 
 
 def polygon_sample(nv, v, n, seed):
 
-    # *****************************************************************************80
     #
     # POLYGON_SAMPLE uniformly samples a polygon.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    18 October 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
     #
     #  Parameters:
     #
@@ -1050,16 +626,16 @@ def polygon_sample(nv, v, n, seed):
             v[triangles[i, 1], 0], v[triangles[i, 1], 1],
             v[triangles[i, 2], 0], v[triangles[i, 2], 1])
         area_polygon = area_polygon + area_triangle[i]
-#
-#  Normalize the areas.
-#
+    #
+    #  Normalize the areas.
+    #
     area_relative = np.zeros(nv - 1)
 
     for i in range(0, nv - 2):
         area_relative[i] = area_triangle[i] / area_polygon
-#
-#  Replace each area by the sum of itself and all previous ones.
-#
+    #
+    #  Replace each area by the sum of itself and all previous ones.
+    #
     area_cumulative = np.zeros(nv - 2)
 
     area_cumulative[0] = area_relative[0]
@@ -1080,9 +656,9 @@ def polygon_sample(nv, v, n, seed):
 
             if (area_percent <= area_cumulative[k]):
                 break
-#
-#  Now choose a point at random in triangle I.
-#
+        #
+        #  Now choose a point at random in triangle I.
+        #
         r, seed = r8vec_uniform_01(2, seed)
 
         if (1.0 < r[0] + r[1]):
