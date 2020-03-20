@@ -1,5 +1,14 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import plot2d, plot3d
+obj = plot3d()
 
 
 def ellipsoid_monte_carlo_test01():
@@ -53,34 +62,29 @@ def ellipsoid_monte_carlo_test01():
     volume = ellipsoid_volume(m, a, v, r)
     print('')
     print('  Ellipsoid volume = %g' % (volume))
-
-    seed = 123456789
-
     print('')
     print('         N        1              X               Y               X^2               XY             Y^2             X^3')
     print('')
 
-    e = np.zeros(m)
+    obj.create_tempdir(-1)
 
-    n = 1
-
-    while (n <= 65536):
-
+    seed = 123456789
+    n = 2**5
+    while (n <= 2**14):
         x, seed = ellipsoid_sample(m, n, a, v, r, seed)
-
         print('  %8d' % (n), end='')
-
         for j in range(0, 7):
-
-            e[0:m] = e_test[j, 0:m]
-
+            e = e_test[j]
             value = monomial_value(m, n, e, x)
-
             result = volume * np.sum(value[0:n]) / float(n)
-
             print('  %14.6g' % (result), end='')
-
         print('')
+
+        obj.new_2Dfig()
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.SavePng_Serial()
+        plt.close()
 
         n = 2 * n
 #
@@ -152,26 +156,21 @@ def ellipsoid_monte_carlo_test02():
     print('')
 
     n = 1
-
-    e = np.zeros(2)
-
     while (n <= 65536):
-
         x, seed = ellipsoid_sample(m, n, a, v, r, seed)
-
         print('  %8d' % (n), end='')
-
         for j in range(0, 7):
-
-            e[0:m] = e_test[j, 0:m]
-
+            e = e_test[j]
             value = monomial_value(m, n, e, x)
-
             result = volume * np.sum(value[0:n]) / float(n)
-
             print('  %14.6g' % (result), end='')
-
         print('')
+
+        obj.new_2Dfig()
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.SavePng_Serial()
+        plt.close()
 
         n = 2 * n
 #
@@ -236,34 +235,29 @@ def ellipsoid_monte_carlo_test03():
     volume = ellipsoid_volume(m, a, v, r)
     print('')
     print('  Ellipsoid volume = %g' % (volume))
-
-    seed = 123456789
-
     print('')
     print('         N        1              X               Y                Z                X^2            YZ              Z^3')
     print('')
 
-    n = 1
-
-    e = np.zeros(3)
-
-    while (n <= 65536):
-
+    obj.create_tempdir(-1)
+    seed = 123456789
+    n = 2**5
+    while (n <= 2**15):
         x, seed = ellipsoid_sample(m, n, a, v, r, seed)
-
         print('  %8d' % (n))
-
         for j in range(0, 7):
-
-            e[0:m] = e_test[j, 0:m]
-
+            e = e_test[j]
             value = monomial_value(m, n, e, x)
-
             result = volume * np.sum(value[0:n]) / float(n)
-
             print('  %14.6g' % (result), end='')
-
         print('')
+
+        obj.new_3Dfig()
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.set_axes_equal()
+        obj.SavePng_Serial()
+        plt.close()
 
         n = 2 * n
 #

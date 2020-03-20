@@ -11,7 +11,7 @@ import os
 import time
 
 sys.path.append(os.path.join('../'))
-from rnd_uniform.uniform import r8vec_uniform_01, r8mat_uniform_01, r8_uniform_01
+from rnd_uniform.uniform import r8vec_uniform_01, r8mat_uniform_01, r8_uniform_01, r8_normal_01, r8po_fa, r8po_sl, uniform_in_sphere01_map
 from rnd_uniform.triangle import polygon_triangulate, triangle_area
 
 
@@ -370,3 +370,92 @@ def polygon_sample(v, n, seed):
             + r[1] * v[triangles[i, 2], 1]
 
     return s, seed
+
+
+def ellipsoid_sample(m, n, a, v, r, seed):
+
+    #
+    # ELLIPSOID_SAMPLE samples points uniformly from an ellipsoid.
+    #
+    #  Discussion:
+    #
+    #    The points X in the ellipsoid are described by a M by M
+    #    positive definite symmetric matrix A, a "center" V, and
+    #    a "radius" R, such that
+    #
+    #      (X-V)' * A * (X-V) <= R * R
+    #
+    #    The algorithm computes the Cholesky factorization of A:
+    #
+    #      A = U' * U.
+    #
+    #    A set of uniformly random points Y is generated, satisfying:
+    #
+    #      Y' * Y <= R * R.
+    #
+    #    The appropriate points in the ellipsoid are found by solving
+    #
+    #      U * X = Y
+    #      X = X + V
+    #
+    #    Thanks to Dr Karl-Heinz Keil for pointing out that the original
+    #    coding was actually correct only if A was replaced by its inverse.
+    #
+    #  Reference:
+    #
+    #    Reuven Rubinstein,
+    #    Monte Carlo Optimization, Simulation, and Sensitivity
+    #    of Queueing Networks,
+    #    Krieger, 1992,
+    #    ISBN: 0894647644,
+    #    LC: QA298.R79.
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the dimension of the space.
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input, real A(M,M), the matrix that describes
+    #    the ellipsoid.
+    #
+    #    Input, real V(M), the "center" of the ellipsoid.
+    #
+    #    Input, real R, the "radius" of the ellipsoid.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real X(M,N), the points.
+    #
+    import numpy as np
+    #
+    #  Get the Cholesky factor U.
+    #
+    u = r8po_fa(m, a)
+    #
+    #  Get the points Y that satisfy Y' * Y <= 1.
+    #
+    y, seed = uniform_in_sphere01_map(m, n, seed)
+    #
+    #  Get the points Y that satisfy Y' * Y <= R * R.
+    #
+    y = r * y
+    #
+    #  Solve U * X = Y.
+    #
+    x = np.zeros([m, n])
+    sol = np.zeros(m)
+    rhs = np.zeros(m)
+
+    for j in range(0, n):
+        rhs[0:m] = y[0:m, j]
+        sol = r8po_sl(m, u, rhs)
+        x[0:m, j] = sol[0:m]
+        #
+        #  X = X + V.
+        #
+    for i in range(0, m):
+        x[i, 0:n] = x[i, 0:n] + v[i]
+
+    return x, seed

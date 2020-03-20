@@ -8,7 +8,6 @@ import time
 
 sys.path.append(os.path.join('../'))
 from base import plot2d
-
 obj = plot2d()
 
 
@@ -62,9 +61,9 @@ def annulus_sample_test(center, r1, r2):
     print(txt)
     print('')
 
-    n = 1
+    n = 2**10
     data = []
-    while (n <= 65536):
+    while (n <= 2**16):
         x, seed = annulus_sample(center, r1, r2, n, seed)
         dat = [n]
         print(' %8d' % (n), end='')
@@ -73,16 +72,26 @@ def annulus_sample_test(center, r1, r2):
             result = annulus_area(center, r1, r2) * np.sum(value[:]) / n
             print('\t%14.6g' % (result), end='')
             dat.append(result)
+
+            obj.new_2Dfig()
+            obj.contourf_tri(*x, value)
+            obj.axs.scatter(*x, s=1.0, color="c")
+            obj.axs.set_title("n={:d}".format(n))
+            obj.axs.set_xlim(-r2 * 1.25 + center[0], r2 * 1.25 + center[0])
+            obj.axs.set_ylim(-r2 * 1.25 + center[1], r2 * 1.25 + center[1])
+            obj.SavePng_Serial()
+            plt.close()
+
         data.append(np.array(dat))
         print('')
 
+        obj.new_2Dfig()
         obj.axs.scatter(*x, s=0.5)
         obj.axs.set_title("n={:d}".format(n))
         obj.axs.set_xlim(-r2 * 1.25 + center[0], r2 * 1.25 + center[0])
         obj.axs.set_ylim(-r2 * 1.25 + center[1], r2 * 1.25 + center[1])
         obj.SavePng_Serial()
         plt.close()
-        obj.new_fig()
 
         n = 2 * n
 
@@ -249,8 +258,8 @@ def annulus_monte_carlo_test():
     annulus_sample_test(center, r1, r2)
 
     center = np.array([0.0, 0.0])
-    r1 = 0.5
-    r2 = 1.0
+    r1 = 1.5
+    r2 = 2.5
     annulus_sample_test(center, r1, r2)
 
     center = np.array([1.0, 0.0])

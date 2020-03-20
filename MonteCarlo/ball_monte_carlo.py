@@ -237,13 +237,14 @@ def ball_monte_carlo_test():
         data.append(np.array(dat))
         print('')
 
+        obj.new_3Dfig()
+        #obj.set_axes_equal()
         obj.axs.scatter(*x, s=0.5)
         obj.axs.set_title("n={:d}".format(n))
         #obj.axs.set_xlim(-r2 * 1.25 + center[0], r2 * 1.25 + center[0])
         #obj.axs.set_ylim(-r2 * 1.25 + center[1], r2 * 1.25 + center[1])
-        obj.SavePng_Serial(obj.rootname)
+        obj.SavePng_Serial()
         plt.close()
-        obj.new_fig()
 
         n = 2 * n
 
