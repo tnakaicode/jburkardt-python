@@ -60,14 +60,12 @@ def create_tempnum(name, tmpdir="./", ext=".tar.gz"):
 class SetDir (object):
 
     def __init__(self):
-        self.tempname = ""
-        self.rootname = ""
-        self.create_tempdir()
-
         pyfile = sys.argv[0]
         self.filename = os.path.basename(pyfile)
         self.rootname, ext_name = os.path.splitext(self.filename)
-        self.tempname = self.tmpdir + self.rootname
+        self.tempname = ""
+        self.create_tempdir()
+
         print(self.rootname)
 
     def create_tempdir(self, flag=1):
@@ -82,6 +80,7 @@ class SetDir (object):
         else:
             self.tmpdir = "./temp_{}{:03}/".format(
                 self.datenm, self.dirnum - 1)
+        self.tempname = self.tmpdir + self.rootname
         print(self.tmpdir)
 
 

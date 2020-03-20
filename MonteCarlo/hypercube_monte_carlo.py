@@ -1679,19 +1679,7 @@ def hypercube_monte_carlo_test():
     hypercube01_monte_carlo_test02()
     hypercube01_sample_test()
     hypercube01_volume_test()
-    i4vec_print_test()
-    i4vec_transpose_print_test()
-    i4vec_uniform_ab_test()
-    monomial_value_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_transpose_print_test()
-    r8mat_transpose_print_some_test()
-    r8mat_uniform_01_test()
-    r8mat_uniform_ab_test()
-#
-#  Terminate.
-#
+
     print('')
     print('HYPERCUBE_MONTE_CARLO_TEST:')
     print('  Normal end of execution.')

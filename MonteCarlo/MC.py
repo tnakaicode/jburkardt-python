@@ -14,6 +14,7 @@ sys.path.append(os.path.join('../'))
 from rnd_uniform.uniform import r8vec_uniform_01, r8mat_uniform_01, r8_uniform_01
 from rnd_uniform.sample import triangle01_sample, cube01_sample, ball01_sample, annulus_sample
 from rnd_uniform.sample import circle01_sample_ergodic, circle01_sample_random
+from rnd_uniform.sample import hypercube01_sample
 from base import PlotBase
 
 
@@ -694,21 +695,29 @@ class MonteCarlo (PlotBase):
         seed = 123456789
         n = 1
         while (n <= 65536):
-            self.PlotTest(*triangle01_sample(n, seed))
-            self.PlotTest(*cube01_sample(n, seed))
-            self.PlotTest(*ball01_sample(n, seed))
-            self.PlotTest(*annulus_sample([0, 0], 1.0, 2.0, n, seed))
-            self.PlotTest(*polygon_sample(nv, v, n, seed))
-            self.PlotTest(*circle01_sample_ergodic(n, seed))
-            self.PlotTest(*circle01_sample_random(n, seed))
+            self.PlotTest(*triangle01_sample(n, seed), title="triangle")
+            self.PlotTest(*cube01_sample(n, seed), title="cube01")
+            self.PlotTest(*ball01_sample(n, seed), title="ball")
+            self.PlotTest(
+                *annulus_sample([0, 0], 1.0, 2.0, n, seed), title="annulus01")
+            self.PlotTest(*annulus_sample([1, 1], 0.5, 3.0, n, seed))
+            self.PlotTest(*polygon_sample(nv, v, n, seed), title="polygon01")
+            self.PlotTest(*circle01_sample_ergodic(n, seed),
+                          title="circle_ergodic")
+            self.PlotTest(*circle01_sample_random(n, seed),
+                          title="circle_random")
+            self.PlotTest(*hypercube01_sample(3, n, seed), title="cube02")
             n = 2 * n
 
-    def PlotTest(self, x, seed):
-        dim, n = x.shape
+    def PlotTest(self, x, seed, title=None):
+        dim, num = x.shape
         self.new_fig(dim=dim)
         self.axs.scatter(*x, s=0.5)
-        # self.axs.set_title("n={:d}".format(n))
-        self.SavePng_Serial()
+        self.axs.set_title("{} n={:d}".format(title, num))
+        if title == None:
+            self.SavePng_Serial()
+        else:
+            self.SavePng_Serial(self.tempname + "_" + title + ".png")
         plt.close()
 
 

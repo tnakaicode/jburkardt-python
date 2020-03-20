@@ -247,3 +247,37 @@ def circle01_sample_random(n, seed):
         x[1, j] = c[1] + r * np.sin(2.0 * np.pi * theta[j])
 
     return x, seed
+
+
+def hypercube01_sample(m, n, seed):
+
+    # *****************************************************************************80
+    #
+    # HYPERCUBE01_SAMPLE samples points in the unit hypercube in M dimensions.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real X(M,N), the points.
+    #
+    x, seed = r8mat_uniform_01(m, n, seed)
+
+    return x, seed
