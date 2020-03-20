@@ -1,5 +1,15 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
+import time
+
+sys.path.append(os.path.join('../'))
+from base import PlotBase, plot2d
+obj = plot2d()
+obj.create_tempdir(-1)
 
 
 def i4vec_print(n, a, title):
@@ -1351,25 +1361,27 @@ def square01_monte_carlo_test():
     print('           X^6\n'),
     print('')
 
-    n = 1
-    e = np.zeros(2)
-
+    n = 4
     while (n <= 65536):
-
         x, seed = square01_sample(n, seed)
         print('  %8d' % (n)),
-
         for j in range(0, 7):
-
             e = e_test[j, 0:2]
-
             value = monomial_value(2, n, e, x)
-
             result = square01_area() * np.sum(value[0:n]) / float(n)
-
             print('  %14.6g' % (result)),
 
+            obj.new_2Dfig()
+            obj.contourf_tri(*x, value)
+            obj.SavePng_Serial()
+            plt.close()
         print('')
+
+        obj.new_2Dfig()
+        obj.axs.scatter(*x, s=0.5)
+        obj.axs.set_title("n={:d}".format(n))
+        obj.SavePng_Serial()
+        plt.close()
 
         n = 2 * n
 
@@ -1499,46 +1511,6 @@ def timestamp():
     return None
 
 
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def square_monte_carlo_test():
 
     # *****************************************************************************80
@@ -1563,29 +1535,16 @@ def square_monte_carlo_test():
     print('SQUARE_MONTE_CARLO_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the SQUARE_MONTE_CARLO library.')
-#
-#  Utility functions.
-#
-    i4vec_print_test()
-    i4vec_transpose_print_test()
-    i4vec_uniform_ab_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_transpose_print_test()
-    r8mat_transpose_print_some_test()
-    r8mat_uniform_01_test()
-    r8mat_uniform_ab_test()
-#
-#  Library functions.
-#
-    monomial_value_test()
+    #
+    #  Library functions.
+    #
     square01_area_test()
     square01_monomial_integral_test()
     square01_monte_carlo_test()
     square01_sample_test()
-#
-#  Terminate.
-#
+    #
+    #  Terminate.
+    #
     print('')
     print('SQUARE_MONTE_CARLO_TEST:')
     print('  Normal end of execution.')

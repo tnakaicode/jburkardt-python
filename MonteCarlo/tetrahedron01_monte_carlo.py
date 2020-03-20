@@ -1523,13 +1523,10 @@ def tetrahedron01_monte_carlo_tests():
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the TETRAHEDRON01_MONTE_CARLO library.')
 
-    monomial_value_test()
     tetrahedron01_monte_carlo_test()
     tetrahedron01_sample_test()
     tetrahedron01_volume_test()
-#
-#  Terminate.
-#
+
     print('')
     print('TETRAHEDRON01_MONTE_CARLO_TESTS:')
     print('  Normal end of execution.')

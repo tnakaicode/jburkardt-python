@@ -12,41 +12,41 @@ import time
 
 sys.path.append(os.path.join('../'))
 from rnd_uniform.uniform import r8vec_uniform_01, r8mat_uniform_01, r8_uniform_01
+from rnd_uniform.triangle import polygon_triangulate, triangle_area
 
 
-def triangle01_sample(n, seed):
+def hypercube01_sample(m, n, seed):
 
+    # *****************************************************************************80
     #
-    # TRIANGLE01_SAMPLE samples the interior of the unit triangle in 2D.
+    # HYPERCUBE01_SAMPLE samples points in the unit hypercube in M dimensions.
     #
-    #  Reference:
+    #  Licensing:
     #
-    #    Reuven Rubinstein,
-    #    Monte Carlo Optimization, Simulation, and Sensitivity
-    #    of Queueing Networks,
-    #    Krieger, 1992,
-    #    ISBN: 0894647644,
-    #    LC: QA298.R79.
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
     #
     #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
     #
     #    Input, integer N, the number of points.
     #
     #    Input/output, integer SEED, a seed for the random
     #    number generator.
     #
-    #    Output, real XY(2,N), the points.
+    #    Output, real X(M,N), the points.
     #
-    m = 2
+    x, seed = r8mat_uniform_01(m, n, seed)
 
-    xy = np.zeros([m, n])
-    for j in range(0, n):
-        e, seed = r8vec_uniform_01(m + 1, seed)
-        e = - np.log(e)
-        d = np.sum(e)
-        xy[0:2, j] = e[0:2] / d
-
-    return xy, seed
+    return x, seed
 
 
 def cube01_sample(n, seed):
@@ -249,35 +249,124 @@ def circle01_sample_random(n, seed):
     return x, seed
 
 
-def hypercube01_sample(m, n, seed):
+def triangle01_sample(n, seed):
 
-    # *****************************************************************************80
     #
-    # HYPERCUBE01_SAMPLE samples points in the unit hypercube in M dimensions.
+    # TRIANGLE01_SAMPLE samples the interior of the unit triangle in 2D.
     #
-    #  Licensing:
+    #  Reference:
     #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    22 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
+    #    Reuven Rubinstein,
+    #    Monte Carlo Optimization, Simulation, and Sensitivity
+    #    of Queueing Networks,
+    #    Krieger, 1992,
+    #    ISBN: 0894647644,
+    #    LC: QA298.R79.
     #
     #  Parameters:
-    #
-    #    Input, integer M, the spatial dimension.
     #
     #    Input, integer N, the number of points.
     #
     #    Input/output, integer SEED, a seed for the random
     #    number generator.
     #
-    #    Output, real X(M,N), the points.
+    #    Output, real XY(2,N), the points.
     #
-    x, seed = r8mat_uniform_01(m, n, seed)
+    m = 2
 
-    return x, seed
+    xy = np.zeros([m, n])
+    for j in range(0, n):
+        e, seed = r8vec_uniform_01(m + 1, seed)
+        e = - np.log(e)
+        d = np.sum(e)
+        xy[0:2, j] = e[0:2] / d
+
+    return xy, seed
+
+
+def polygon_sample(v, n, seed):
+
+    #
+    # POLYGON_SAMPLE uniformly samples a polygon.
+    #
+    #  Parameters:
+    #
+    #    Input, integer NV, the number of vertices.
+    #
+    #    Input, real V(NV,2), the vertices of the polygon, listed in
+    #    counterclockwise order.
+    #
+    #    Input, integer N, the number of points to create.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real S(2,N), the points.
+    #
+    #
+    #  Triangulate the polygon.
+    #
+
+    nv, m = v.shape
+    x = np.zeros(nv)
+    y = np.zeros(nv)
+    for j in range(0, nv):
+        x[j] = v[j, 0]
+        y[j] = v[j, 1]
+
+    #
+    #  Determine the areas of each triangle.
+    #
+    triangles = polygon_triangulate(nv, x, y)
+    area_triangle = np.zeros(nv - 2)
+    area_polygon = 0.0
+    for i in range(0, nv - 2):
+        area_triangle[i] = triangle_area(
+            v[triangles[i, 0], 0], v[triangles[i, 0], 1],
+            v[triangles[i, 1], 0], v[triangles[i, 1], 1],
+            v[triangles[i, 2], 0], v[triangles[i, 2], 1])
+        area_polygon = area_polygon + area_triangle[i]
+
+    #
+    #  Normalize the areas.
+    #
+    area_relative = np.zeros(nv - 1)
+    for i in range(0, nv - 2):
+        area_relative[i] = area_triangle[i] / area_polygon
+
+    #
+    #  Replace each area by the sum of itself and all previous ones.
+    #
+    area_cumulative = np.zeros(nv - 2)
+    area_cumulative[0] = area_relative[0]
+    for i in range(1, nv - 2):
+        area_cumulative[i] = area_relative[i] + area_cumulative[i - 1]
+
+    s = np.zeros([2, n])
+    for j in range(0, n):
+        #
+        #  Choose triangle I at random, based on areas.
+        #
+        area_percent, seed = r8_uniform_01(seed)
+        for k in range(0, nv - 2):
+            i = k
+            if (area_percent <= area_cumulative[k]):
+                break
+
+        #
+        #  Now choose a point at random in triangle I.
+        #
+        r, seed = r8vec_uniform_01(2, seed)
+        if (1.0 < r[0] + r[1]):
+            r[0] = 1.0 - r[0]
+            r[1] = 1.0 - r[1]
+
+        s[0, j] = (1.0 - r[0] - r[1]) * v[triangles[i, 0], 0] \
+            + r[0] * v[triangles[i, 1], 0] \
+            + r[1] * v[triangles[i, 2], 0]
+
+        s[1, j] = (1.0 - r[0] - r[1]) * v[triangles[i, 0], 1] \
+            + r[0] * v[triangles[i, 1], 1] \
+            + r[1] * v[triangles[i, 2], 1]
+
+    return s, seed
