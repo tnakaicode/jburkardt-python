@@ -110,7 +110,7 @@ def collinear(xa, ya, xb, yb, xc, yc):
     #    If the points are collinear, their triangle has zero area.
     #    If the points are close to collinear, then the area of this triangle
     #    will be small relative to the square of the longest segment.
-    #  
+    #
     #  Reference:
     #
     #    Joseph ORourke,
@@ -642,7 +642,7 @@ def polygon_sample(nv, v, n, seed):
     for i in range(1, nv - 2):
         area_cumulative[i] = area_relative[i] + area_cumulative[i - 1]
 
-    s = np.zeros([n, 2])
+    s = np.zeros([2, n])
 
     for j in range(0, n):
         #
@@ -665,11 +665,11 @@ def polygon_sample(nv, v, n, seed):
             r[0] = 1.0 - r[0]
             r[1] = 1.0 - r[1]
 
-        s[j, 0] = (1.0 - r[0] - r[1]) * v[triangles[i, 0], 0] \
+        s[0, j] = (1.0 - r[0] - r[1]) * v[triangles[i, 0], 0] \
             + r[0] * v[triangles[i, 1], 0] \
             + r[1] * v[triangles[i, 2], 0]
 
-        s[j, 1] = (1.0 - r[0] - r[1]) * v[triangles[i, 0], 1] \
+        s[1, j] = (1.0 - r[0] - r[1]) * v[triangles[i, 0], 1] \
             + r[0] * v[triangles[i, 1], 1] \
             + r[1] * v[triangles[i, 2], 1]
 
@@ -682,6 +682,15 @@ class MonteCarlo (PlotBase):
         PlotBase.__init__(self, aspect=aspect)
         self.create_tempdir(-1)
 
+        nv = 6
+        v = np.array([
+            [0.0, 0.0],
+            [2.0, 0.0],
+            [2.0, 1.0],
+            [1.0, 1.0],
+            [1.0, 2.0],
+            [0.0, 1.0]])
+
         seed = 123456789
         n = 1
         while (n <= 65536):
@@ -689,6 +698,7 @@ class MonteCarlo (PlotBase):
             self.PlotTest(*cube01_sample(n, seed))
             self.PlotTest(*ball01_sample(n, seed))
             self.PlotTest(*annulus_sample([0, 0], 1.0, 2.0, n, seed))
+            self.PlotTest(*polygon_sample(nv, v, n, seed))
             self.PlotTest(*circle01_sample_ergodic(n, seed))
             self.PlotTest(*circle01_sample_random(n, seed))
             n = 2 * n
