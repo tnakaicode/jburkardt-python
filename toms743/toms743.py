@@ -1078,9 +1078,7 @@ def toms743_test():
     xmax = 1.0E+20
     n = 20
     toms743_test03(nbits, xmin, xmax, n)
-#
-#  Terminate.
-#
+
     print('')
     print('toms743_test')
     print('  Normal end of execution.')

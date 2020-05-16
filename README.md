@@ -134,3 +134,14 @@ $$ pdf(A, Bx) = \frac{1}{2 \pi} (1 + 2B \cos(X-A)) $$
   - Weights for Interpolatory Quadrature
 - toms743
   - Evaluation of Lambert's W function.
+
+## toms743 Lambert's W function
+
+omega function or product logarithm
+the branches of the inverse relation of function $f(w)=w e^w$, where w is complex
+
+for each integer k there is one branch, $$W_0$$ is principle branch.
+
+$w e^w = z$
+
+$$ W_0 (x) = \Sigma_{n=1}^{\infin} \frac{(-1)^{n-1}}{n!} x^n $$
