@@ -112,3 +112,25 @@ $$ pdf(A, Bx) = \frac{1}{2 \pi} (1 + 2B \cos(X-A)) $$
 - tetrahedron_grid
 - triangle_grid
 - wedge_grid
+
+## toms
+
+- toms097
+  - All Pairs Shortest Distance, Floyd's Algorithm.
+- toms112
+  - determines whether a point is inside a polygon.
+- toms178
+  - Minimization by Hooke-Jeeves Direct Search
+- toms179
+  - Modified Beta Function
+- toms243
+  - evaluates the logarithm of a complex value, by David Collens.
+- toms515
+  - subsets of an N set
+- toms577
+  - Carlson's Elliptic Integrals
+  - functions RC, RD, RF and RJ.
+- toms655
+  - Weights for Interpolatory Quadrature
+- toms743
+  - Evaluation of Lambert's W function.
