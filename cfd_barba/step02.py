@@ -97,7 +97,7 @@ for n in range ( nt ):
 #  Plot the solution at the final time.
 #
 plt.plot ( x, u )
-plt.savefig ( 'step02_final' )
+plt.savefig ( 'img/step02_final' )
 print ( '  Saved final solution in file "step02_final.png".' )
 #
 #  What do you observe about the changes in the shape of the solution?

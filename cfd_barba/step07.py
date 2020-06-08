@@ -106,7 +106,7 @@ surf = ax.plot_surface(X, Y, u, rstride=1, cstride=1, cmap=cm.coolwarm,
 ax.set_xlim(0.0, 2.0)
 ax.set_ylim(0.0, 2.0)
 ax.set_zlim(1.0, 2.5)
-plt.savefig('step07_initial')
+plt.savefig('img/step07_initial')
 print('  Saved initial solution in file "step07_initial.png".')
 
 
@@ -139,7 +139,7 @@ def diffuse(nt):
     ax.set_zlim(1.0, 2.5)
 
     filename = 'step07_{}.png'.format(nt)
-    plt.savefig(filename)
+    plt.savefig("img/"+filename)
     print('  Saved initial solution in file "%s".' % (filename))
 
 

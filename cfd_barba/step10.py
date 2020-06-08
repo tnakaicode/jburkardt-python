@@ -193,7 +193,7 @@ def plot2d ( x, y, p ):
 #  Here's where we call it:
 #
 plot2d ( x, y, p )
-plt.savefig ( 'step10_final' )
+plt.savefig ( 'img/step10_final' )
 print ( '  Saved final solution in file "step10_final.png".' )
 #
 #  Ah!  The wonders of code reuse!  Now, you probably think: "Well, if I've 

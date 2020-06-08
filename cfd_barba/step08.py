@@ -146,7 +146,7 @@ fig = plt.figure ( figsize = ( 11, 7 ), dpi = 100 )
 ax = fig.gca ( projection = '3d' )
 wire1 = ax.plot_wireframe ( X, Y, u[:], cmap = cm.coolwarm )
 wire2 = ax.plot_wireframe ( X, Y, v[:], cmap = cm.coolwarm )
-plt.savefig ( 'step08_initial' )
+plt.savefig ( 'img/step08_initial' )
 print ( '  Saved initial solution in file "step08_initial.png".' )
 #
 #  Time steps.
@@ -183,7 +183,7 @@ fig = plt.figure ( figsize = ( 11, 7 ), dpi = 100 )
 ax = fig.gca ( projection = '3d' )
 wire1 = ax.plot_wireframe ( X, Y, u )
 wire2 = ax.plot_wireframe ( X, Y, v )
-plt.savefig ( 'step08_final' )
+plt.savefig ( 'img/step08_final' )
 print ( '  Saved final solution in file "step08_final.png".' )
 #
 #  Video lesson 6 walks you through the details for Steps 5 to 8 on YouTube.

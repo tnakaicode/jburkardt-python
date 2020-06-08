@@ -326,7 +326,7 @@ plt.ylabel('Y')
 #
 #  Save the plot in a file.
 #
-plt.savefig('step11_100')
+plt.savefig('img/step11_100')
 print('  Saved solution at 100 timesteps in file "step11_100.png".')
 #
 #  You can see that two distinct pressure zones are forming,
@@ -351,7 +351,7 @@ plt.quiver(X[::2, ::2], Y[::2, ::2], u[::2, ::2], v[::2, ::2])
 plt.xlabel('X')
 plt.ylabel('Y')
 
-plt.savefig('step11_700')
+plt.savefig('img/step11_700')
 print('  Saved solution at 700 timesteps in file "step11_700.png".')
 #
 #  The interactive module 12 steps to Navier-Stokes is one of several components

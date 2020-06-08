@@ -157,7 +157,7 @@ surf = ax.plot_surface ( X, Y, u[:] )
 #
 #  Save a copy of the plot.
 #
-plt.savefig ( 'step05_initial' )
+plt.savefig ( 'img/step05_initial' )
 print ( '  Saved initial solution in file "step05_initial.png".' )
 #
 #  3D Plotting Notes
@@ -213,7 +213,7 @@ surf1 = ax.plot_surface ( X, Y, u[:] )
 #
 #  Save a copy of the plot.
 #
-plt.savefig ( 'step05_final1' )
+plt.savefig ( 'img/step05_final1' )
 print ( '  Saved final1 solution in file "step05_final1.png".' )
 #
 #  Instead of the nested for loops above, we can use array operations.
@@ -238,7 +238,7 @@ surf2 = ax.plot_surface ( X, Y, u[:] )
 #
 #  Save a copy of the plot.
 #
-plt.savefig ( 'step05_final2' )
+plt.savefig ( 'img/step05_final2' )
 print ( '  Saved final2 solution in file "step05_final2.png".' )
 #
 #  The video lesson that walks you through the details for Step 5, and onwards 

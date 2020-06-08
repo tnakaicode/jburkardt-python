@@ -411,7 +411,7 @@ plt.quiver(X[::3, ::3], Y[::3, ::3], u[::3, ::3], v[::3, ::3])
 #
 #  Save the plot in a file.
 #
-plt.savefig('step12_trimmed')
+plt.savefig('img/step12_trimmed')
 print('  Saved solution in file "step12_trimmed.png".')
 #
 #  The structures in the quiver command that look like [::3, ::3] are useful
@@ -421,7 +421,7 @@ print('  Saved solution in file "step12_trimmed.png".')
 #
 fig = plt.figure(figsize=(11, 7), dpi=100)
 plt.quiver(X, Y, u, v)
-plt.savefig('step12_all')
+plt.savefig('img/step12_all')
 print('  Saved solution in file "step12_all.png".')
 #
 #  What is the meaning of the F term?

@@ -209,7 +209,7 @@ p[-1,:] = p[-2,:]
 #  Now let's try using our plot2D function to look at our initial conditions. 
 #
 plot2d ( x, y, p )
-plt.savefig ( 'step09_initial' )
+plt.savefig ( 'img/step09_initial' )
 print ( '  Saved initial solution in file "step09_initial.png".' )
 #
 #  It worked!  This is the initial state of our problem, where the value of p
@@ -221,7 +221,7 @@ p = laplace2d ( p, y, dx, dy, 1e-4 )
 #  Now try plotting this new value of p with our plot function.
 #
 plot2d ( x, y, p )
-plt.savefig ( 'step09_final' )
+plt.savefig ( 'img/step09_final' )
 print ( '  Saved final solution in file "step09_final.png".' )
 #
 #  The next step will be to solve Poisson's equation.  Watch Video Lesson 11 on 

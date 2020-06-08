@@ -138,7 +138,7 @@ plt.plot(x, u)
 #
 #  Save this plot in a file called 'step01_initial.png'
 #
-plt.savefig('step01_initial')
+plt.savefig('img/step01_initial')
 print('  Saved initial condition in file "step01_initial.png".')
 #
 #  Now it's time to implement the discretization of the convection equation
@@ -180,7 +180,7 @@ plt.plot(numpy.linspace(0, 2, nx), u)
 #
 #  Save this plot in a file called 'step01_final.png'
 #
-plt.savefig('step01_final')
+plt.savefig('img/step01_final')
 print('  Saved final solution in file "step01_final.png".')
 #
 #  OK! So our function has definitely moved to the right, but its shape

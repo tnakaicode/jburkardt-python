@@ -124,13 +124,13 @@ v[(ny-1)//4:(ny-1)//2+1,(nx-1)//4:(nx-1)//2+1] = 2.0
 fig = plt.figure ( figsize = ( 11, 7 ), dpi = 100 )
 ax = fig.gca ( projection = '3d' )
 ax.plot_surface ( X, Y, u, cmap = cm.coolwarm )
-plt.savefig ( 'step06_initial_u' )
+plt.savefig ( 'img/step06_initial_u' )
 print ( '  Saved initial solution in file "step06_initial_u.png".' )
 
 fig = plt.figure ( figsize = ( 11, 7 ), dpi = 100 )
 ax = fig.gca ( projection = '3d' )
 ax.plot_surface ( X, Y, v, cmap = cm.coolwarm );
-plt.savefig ( 'step06_initial_v' )
+plt.savefig ( 'img/step06_initial_v' )
 print ( '  Saved initial solution in file "step06_initial_v.png".' )
 #
 #  Carry out time steps.
@@ -160,13 +160,13 @@ for n in range ( nt + 1 ):
 fig = plt.figure ( figsize = ( 11, 7 ), dpi = 100 )
 ax = fig.gca ( projection = '3d' )
 ax.plot_surface ( X, Y, u, cmap = cm.coolwarm );
-plt.savefig ( 'step06_final_u' )
+plt.savefig ( 'img/step06_final_u' )
 print ( '  Saved final solution in file "step06_final_u.png".' )
 
 fig = plt.figure ( figsize = ( 11, 7 ), dpi = 100 )
 ax = fig.gca ( projection = '3d' )
 ax.plot_surface ( X, Y, v, cmap = cm.coolwarm );
-plt.savefig ( 'step06_final_v' )
+plt.savefig ( 'img/step06_final_v' )
 print ( '  Saved final solution in file "step06_final_v.png".' )
 #
 #  Video lesson 6 walks you through the details for Steps 5 to 8.

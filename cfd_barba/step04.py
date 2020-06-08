@@ -182,7 +182,7 @@ plt.ylim ( [ 0, 10 ] );
 #
 #  Save a copy of the plot in a file.
 #
-plt.savefig ( 'step04_initial' )
+plt.savefig ( 'img/step04_initial' )
 print ( '  Saved initial solution in file "step04_final.png".' )
 #
 #  This is definitely not the step function we've been dealing with until now. 
@@ -238,7 +238,7 @@ plt.legend ( );
 #
 #  Save a copy of the plot.
 #
-plt.savefig ( 'step04_final' )
+plt.savefig ( 'img/step04_final' )
 print ( '  Saved final solution in file "step04_final.png".' )
 #
 #  What next?
