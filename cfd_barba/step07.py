@@ -139,7 +139,7 @@ def diffuse(nt):
     ax.set_zlim(1.0, 2.5)
 
     filename = 'step07_{}.png'.format(nt)
-    plt.savefig("img/"+filename)
+    plt.savefig("img/" + filename)
     print('  Saved initial solution in file "%s".' % (filename))
 
 

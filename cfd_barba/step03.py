@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 #
-#*****************************************************************************80
+# *****************************************************************************80
 #
-##  STEP03 examines 1-D Diffusion.
+# STEP03 examines 1-D Diffusion.
 #
 #  Discussion:
 #
@@ -17,10 +17,10 @@
 #    to apply the finite difference method, we first need to learn how to
 #    treat this term in the equation.
 #
-#    The second derivative can be represented geometrically as the line tangent 
-#    to the curve represented by the first derivative.  We will discretize 
-#    the second-order derivative with a Central Difference scheme: a 
-#    combination of Forward Difference and Backward Difference of the 
+#    The second derivative can be represented geometrically as the line tangent
+#    to the curve represented by the first derivative.  We will discretize
+#    the second-order derivative with a Central Difference scheme: a
+#    combination of Forward Difference and Backward Difference of the
 #    first derivative.  Consider the Taylor expansion of u(i+1) and u(i-1)
 #    around u(i):
 #
@@ -31,7 +31,7 @@
 #    of u(x), evaluated at x(i), and O(dx^4) represents a remainder term which
 #    is small like dx^4.
 #
-#    If we add the Forward and Backward expansions, you see that the terms 
+#    If we add the Forward and Backward expansions, you see that the terms
 #    involving du/dx and d3udx3 exactly cancel out.  By subtracting 2 u(i)
 #    from both sides and dividing by dx^2, we get the following:
 #
@@ -57,18 +57,18 @@
 #
 #      [Discretized Diffusion Equation]
 #
-#    As before, we notice that once we have an initial condition, the only 
-#    unknown is u(i,n+1), so we re-arrange the equation to solving for this 
+#    As before, we notice that once we have an initial condition, the only
+#    unknown is u(i,n+1), so we re-arrange the equation to solving for this
 #    unknown:
 #
 #      u(i,n+1) =  u(i,n) + nu * dt/dx^2 ( u(i+1,n) - 2 u(i,n) + u(i-1,n) )
 #
 #      [Discretized Diffusion Equation (rearranged)]
 #
-#    This discrete equation allows us to write a program to advance a solution 
+#    This discrete equation allows us to write a program to advance a solution
 #    in time, starting from a given initial condition.
 #
-#    For our example, we'll continue to use a step function as the 
+#    For our example, we'll continue to use a step function as the
 #    initial condition.
 #
 #  Modified:
@@ -81,10 +81,10 @@
 #
 import platform
 
-print ( '' )
-print ( 'STEP03:' )
-print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-print ( '  The 1D diffusion equation.' )
+print('')
+print('STEP03:')
+print('  Python version: %s' % (platform.python_version()))
+print('  The 1D diffusion equation.')
 
 import numpy
 #
@@ -96,7 +96,7 @@ import matplotlib
 #  go to a png file, not to the screen.  To do this, we have to request
 #  the noninteractive graphics backend called 'Agg'.
 #
-matplotlib.use ( 'Agg' )
+matplotlib.use('Agg')
 #
 #  Now we import pyplot for graphics, and give it an abbreviated name.
 #
@@ -104,7 +104,7 @@ import matplotlib.pyplot as plt
 #
 #  Define variables:
 #  NU is the viscosity.
-#  SIGMA is a computational variable we'll have to explain later.  
+#  SIGMA is a computational variable we'll have to explain later.
 #  It controls the size of the timestep.
 #  NX is the number of equally spaced nodes or points in [0,2];
 #  DX is the spacing between nodes;
@@ -114,43 +114,43 @@ import matplotlib.pyplot as plt
 nu = 0.3
 sigma = 0.2
 nx = 41
-dx = 2.0 / ( nx - 1 )
+dx = 2.0 / (nx - 1)
 nt = 20
 dt = sigma * dx ** 2
 #
 #  Set the equally-spaced node locations.
 #
-x = numpy.linspace ( 0.0, 2.0, nx )
+x = numpy.linspace(0.0, 2.0, nx)
 #
 #  Set the initial condition as a step function.
 #
-u = numpy.ones ( nx )
+u = numpy.ones(nx)
 u[10:21] = 2.0
 #
 #  Carry out NT time steps.
 #
-for n in range ( nt ):
-  un = u.copy ( )
-  for i in range ( 1, nx - 1 ):
-    u[i] = un[i] + nu * dt / dx ** 2 * ( un[i+1] - 2.0 * un[i] + un[i-1] )
+for n in range(nt):
+    un = u.copy()
+    for i in range(1, nx - 1):
+        u[i] = un[i] + nu * dt / dx ** 2 * \
+            (un[i + 1] - 2.0 * un[i] + un[i - 1])
 #
 #  Plot the solution at the final time.
 #
-plt.plot ( x, u )
-plt.savefig ( 'img/step03_final' )
-print ( '  Saved final solution in file "step03_final.png".' )
+plt.plot(x, u)
+plt.savefig('img/step03_final')
+print('  Saved final solution in file "step03_final.png".')
 #
 #  1) What do you notice immediately that is different about the final
 #     solution of the diffusion equation, as compare to the final solution
 #     of the linear or nonlinear convection equations?
 #
-#  For a careful walk-through of the discretization of the diffusion equation 
+#  For a careful walk-through of the discretization of the diffusion equation
 #  with finite differences, watch Video Lesson 4 by Professor Barba on YouTube.
 #
 #  Terminate.
 #
-print ( '' )
-print ( 'STEP03:' )
-print ( '  Normal end of execution.' )
-
+print('')
+print('STEP03:')
+print('  Normal end of execution.')
 
