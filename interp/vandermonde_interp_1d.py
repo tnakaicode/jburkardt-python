@@ -1223,472 +1223,6 @@ def p00_prob_num_test():
     return
 
 
-def pwl_basis_1d(nd, xd, ni, xi):
-
-    # *****************************************************************************80
-    #
-    # PWL_BASIS_1D evaluates a 1D piecewise linear basis function.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    02 July 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer ND, the number of data points.
-    #
-    #    Input, real XD(ND), the data points.
-    #
-    #    Input, integer NI, the number of interpolation points.
-    #
-    #    Input, real XI(NI), the interpolation points.
-    #
-    #    Output, real BK(NI,ND), the basis functions at the interpolation points.
-    #
-    import numpy as np
-
-    if (nd == 1):
-        bk = np.ones([ni, nd])
-        return bk
-
-    bk = np.zeros([ni, nd])
-
-    for i in range(0, ni):
-
-        for j in range(0, nd):
-
-            if (j == 0 and xi[i] <= xd[j]):
-
-                t = (xi[i] - xd[j]) / (xd[j + 1] - xd[j])
-                bk[i, j] = 1.0 - t
-
-            elif (j == nd - 1 and xd[j] <= xi[i]):
-
-                t = (xi[i] - xd[j - 1]) / (xd[j] - xd[j - 1])
-                bk[i, j] = t
-
-            elif (xd[j - 1] < xi[i] and xi[i] <= xd[j]):
-
-                t = (xi[i] - xd[j - 1]) / (xd[j] - xd[j - 1])
-                bk[i, j] = t
-
-            elif (xd[j] <= xi[i] and xi[i] < xd[j + 1]):
-
-                t = (xi[i] - xd[j]) / (xd[j + 1] - xd[j])
-                bk[i, j] = 1.0 - t
-
-    return bk
-
-
-def pwl_basis_1d_test():
-
-    # *****************************************************************************80
-    #
-    # PWL_BASIS_1D_TEST tests PWL_BASIS_1D.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    02 July 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    nd = 4
-    ni = 21
-
-    xd = np.array([0.0, 2.0, 5.0, 10.0])
-
-    print('')
-    print('PWL_BASIS_1D_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  PWL_BASIS_1D evaluates the piecewise linear 1D basis')
-    print('  functions.')
-
-    x_min = 0.0
-    x_max = 10.0
-    xi = np.linspace(x_min, x_max, ni)
-
-    lb = pwl_basis_1d(nd, xd, ni, xi)
-
-    r8mat_print(ni, nd, lb, '  The PWL basis functions:')
-#
-#  Terminate.
-#
-    print('')
-    print('PWL_BASIS_1D_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def pwl_interp_1d_test():
-
-    # *****************************************************************************80
-    #
-    # PWL_INTERP_1D_TEST tests the PWL_INTERP_1D library.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    02 July 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('PWL_INTERP_1D_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  Test the PWL_INTERP_1D library.')
-#
-#  Utility functions.
-#
-    p00_data_test()
-    p00_data_num_test()
-    p00_dim_num_test()
-    p00_prob_num_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_transpose_print_test()
-    r8mat_transpose_print_some_test()
-    r8vec_norm_test()
-    r8vec_norm_affine_test()
-    r8vec_print_test()
-    r8vec_uniform_01_test()
-    r8vec_uniform_ab_test()
-    r8vec2_print_test()
-#
-#  Library functions.
-#
-    pwl_basis_1d_test()
-    pwl_value_1d_test()
-
-    prob_num = p00_prob_num()
-    for prob in range(1, prob_num + 1):
-        for nd in ([4, 8, 16, 32, 64]):
-            pwl_interp_1d_test01(prob, nd)
-
-    prob_num = p00_prob_num()
-    for prob in range(1, prob_num + 1):
-        for nd in ([4, 8, 16, 32, 64]):
-            pwl_interp_1d_test02(prob, nd)
-#
-#  Terminate.
-#
-    print('')
-    print('PWL_INTERP_1D_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def pwl_interp_1d_test01(prob, nd):
-
-    # *****************************************************************************80
-    #
-    # PWL_INTERP_1D_TEST01 tests PWL_VALUE_1D with evenly spaced data
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    01 July 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer PROB, the problem index.
-    #
-    #    Input, integer ND, the number of data points to use.
-    #
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import platform
-
-    print('')
-    print('PWL_INTERP_1D_TEST01:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  Interpolate data from TEST_INTERP problem #%d.' % (prob))
-    print('  Use even spacing for data points.')
-    print('  Number of data points = %d' % (nd))
-
-    nd = p00_data_num(prob)
-    print('  Number of data points = %d' % (nd))
-
-    xy = p00_data(prob, 2, nd)
-
-    xd = np.zeros(nd)
-    yd = np.zeros(nd)
-    for i in range(0, nd):
-        xd[i] = xy[0, i]
-        yd[i] = xy[1, i]
-
-    if (nd < 10):
-        r8vec2_print(nd, xd, yd, '  Data array:')
-#
-#  #1:  Does interpolant match function at interpolation points?
-#
-    ni = nd
-    xi = xd
-    yi = pwl_value_1d(nd, xd, yd, ni, xi)
-
-    int_error = r8vec_norm_affine(ni, yi, yd) / float(ni)
-
-    print('')
-    print('  L2 interpolation error averaged per interpolant node = %g' %
-          (int_error))
-#
-#  #2: Plot the piecewise linear interpolant.
-#
-    ni = 501
-    xmin = np.min(xd)
-    xmax = np.max(xd)
-    xi = np.linspace(xmin, xmax, ni)
-    yi = pwl_value_1d(nd, xd, yd, ni, xi)
-
-    plt.plot(xd, yd, 'b-', linewidth=3.0)
-    plt.plot(xi, yi, 'r-', linewidth=4.0)
-    plt.plot(xd, yd, 'k.', markersize=10)
-    t = 'p0' + \
-        str(prob) + ' Lagrange/Even Polynomial Interpolant for ' + \
-        str(nd) + ' nodes.'
-    plt.title(t)
-    plt.grid(True)
-    plt.xlabel('<---X--->')
-    plt.ylabel('<---Y--->')
-    filename = 'p0' + str(prob) + '_pwl_' + str(nd) + '.png'
-    plt.savefig(filename)
-    plt.clf()
-
-    print('  Created plot file "%s".' % (filename))
-#
-#  Terminate.
-#
-    print('')
-    print('PWL_INTERP_1D_TEST01:')
-    print('  Normal end of execution.')
-    return
-
-
-def pwl_interp_1d_test02(prob, nd):
-
-    # *****************************************************************************80
-    #
-    # PWL_INTERP_1D_TEST02 plots the basis functions.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    02 July 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer PROB, the problem index.
-    #
-    #    Input, integer ND, the number of data points to use.
-    #
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import platform
-
-    print('')
-    print('PWL_INTERP_1D_TEST02:')
-    print('  Plot the basis functions for TEST_INTERP problem #%d.' % (prob))
-
-    nd = p00_data_num(prob)
-
-    print('  Number of data points = %d' % (nd))
-
-    xy = p00_data(prob, 2, nd)
-
-    xd = np.zeros(nd)
-    for i in range(0, nd):
-        xd[i] = xy[0, i]
-
-    r8vec_print(nd, xd, '  X data locations:')
-#
-#  #4: Plot the piecewise linear and polynomial interpolants.
-#
-    ni = 501
-    xmin = np.min(xd)
-    xmax = np.max(xd)
-    xi = np.linspace(xmin, xmax, ni)
-    bk = pwl_basis_1d(nd, xd, ni, xi)
-
-    for k in range(0, nd):
-        plt.plot(xi, bk[:, k], 'r-', linewidth=4.0)
-
-    t = 'p0' + str(prob) + ' basis functions ' + str(nd) + ' nodes.'
-    plt.title(t)
-    plt.grid(True)
-    plt.xlabel('<---X--->')
-    plt.ylabel('<---Y--->')
-    filename = 'p0' + str(prob) + '_pwl_basis_' + str(nd) + '.png'
-    plt.savefig(filename)
-    plt.clf()
-
-    print('  Created plot file "%s".' % (filename))
-#
-#  Terminate.
-#
-    print('')
-    print('PWL_INTERP_1D_TEST02:')
-    print('  Normal end of execution.')
-    return
-
-
-def pwl_value_1d(nd, xd, yd, ni, xi):
-
-    # *****************************************************************************80
-    #
-    # PWL_VALUE_1D evaluates the piecewise linear interpolant.
-    #
-    #  Discussion:
-    #
-    #    The piecewise linear interpolant L(ND,XD,YD)(X) is the piecewise
-    #    linear function which interpolates the data (XD(I),YD(I)) for I = 1
-    #    to ND.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    02 July 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer ND, the number of data points.
-    #    ND must be at least 1.
-    #
-    #    Input, real XD(ND), the data points.
-    #
-    #    Input, real YD(ND), the data values.
-    #
-    #    Input, integer NI, the number of interpolation points.
-    #
-    #    Input, real XI(NI), the interpolation points.
-    #
-    #    Output, real YI(NI), the interpolated values.
-    #
-    import numpy as np
-
-    if (nd == 1):
-        yi = np.ones(ni) * yd[0]
-        return yi
-
-    yi = np.zeros(ni)
-
-    for i in range(0, ni):
-
-        if (xi[i] <= xd[0]):
-
-            t = (xi[i] - xd[0]) / (xd[1] - xd[0])
-            yi[i] = (1.0 - t) * yd[0] + t * yd[1]
-
-        elif (xd[nd - 2] <= xi[i]):
-
-            t = (xi[i] - xd[nd - 2]) / (xd[nd - 1] - xd[nd - 2])
-            yi[i] = (1.0 - t) * yd[nd - 2] + t * yd[nd - 1]
-
-        else:
-
-            for k in range(1, nd):
-
-                if (xd[k - 1] <= xi[i] and xi[i] <= xd[k]):
-
-                    t = (xi[i] - xd[k - 1]) / (xd[k] - xd[k - 1])
-                    yi[i] = (1.0 - t) * yd[k - 1] + t * yd[k]
-
-    return yi
-
-
-def pwl_value_1d_test():
-
-    # *****************************************************************************80
-    #
-    # PWL_VALUE_1D_TEST tests PWL_VALUE_1D.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    02 July 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    nd = 4
-    ni = 21
-#
-#  Values of f(x) = x^3 - 12 x^2 + 39 x -28 = ( x - 1 ) * ( x - 4 ) * ( x - 7 )
-#
-    xd = np.array([0.0, 2.0, 5.0, 10.0])
-    yd = np.array([-28.0, +10.0, -8.0, +162.0])
-
-    print('')
-    print('PWL_VALUE_1D_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  PWL_VALUE_1D evaluates a piecewise linear 1D interpolant.')
-
-    x_min = 0.0
-    x_max = 10.0
-    xi = np.linspace(x_min, x_max, ni)
-
-    yi = pwl_value_1d(nd, xd, yd, ni, xi)
-
-    r8vec2_print(ni, xi, yi, '  Table of interpolant values:')
-#
-#  Terminate.
-#
-    print('')
-    print('PWL_VALUE_1D_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def r8mat_print(m, n, a, title):
 
     # *****************************************************************************80
@@ -2001,10 +1535,10 @@ def r8mat_transpose_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
         i2hi = min(i2hi, ihi)
 
         print('')
-        print('  Row: '),
+        print('  Row: ', end='')
 
         for i in range(i2lo, i2hi + 1):
-            print('%7d       ' % (i)),
+            print('%7d       ' % (i), end='')
 
         print('')
         print('  Col')
@@ -2014,10 +1548,10 @@ def r8mat_transpose_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
 
         for j in range(j2lo, j2hi + 1):
 
-            print('%7d :' % (j)),
+            print('%7d :' % (j), end='')
 
             for i in range(i2lo, i2hi + 1):
-                print('%12g  ' % (a[i, j])),
+                print('%12g  ' % (a[i, j]), end='')
 
             print('')
 
@@ -2065,6 +1599,118 @@ def r8mat_transpose_print_some_test():
     print('')
     print('R8MAT_TRANSPOSE_PRINT_SOME_TEST:')
     print('  Normal end of execution.')
+    return
+
+
+def r8poly_print(m, a, title):
+
+    # *****************************************************************************80
+    #
+    # R8POLY_PRINT prints out a polynomial.
+    #
+    #  Discussion:
+    #
+    #    The power sum form is:
+    #
+    #      p(x) = a(0) + a(1) * x + ... + a(m-1) * x^(m-1) + a(m) * x^(m)
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    15 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the nominal degree of the polynomial.
+    #
+    #    Input, real A[0:M], the polynomial coefficients.
+    #    A[0] is the constant term and
+    #    A[M] is the coefficient of X^M.
+    #
+    #    Input, string TITLE, a title.
+    #
+    if (0 < len(title)):
+        print('')
+        print(title)
+    print('')
+
+    if (a[m] < 0.0):
+        plus_minus = '-'
+    else:
+        plus_minus = ' '
+
+    mag = abs(a[m])
+
+    if (2 <= m):
+        print('  p(x) = %c %g * x^%d' % (plus_minus, mag, m))
+    elif (m == 1):
+        print('  p(x) = %c %g * x' % (plus_minus, mag))
+    elif (m == 0):
+        print('  p(x) = %c %g' % (plus_minus, mag))
+
+    for i in range(m - 1, -1, -1):
+
+        if (a[i] < 0.0):
+            plus_minus = '-'
+        else:
+            plus_minus = '+'
+
+        mag = abs(a[i])
+
+        if (mag != 0.0):
+
+            if (2 <= i):
+                print('         %c %g * x^%d' % (plus_minus, mag, i))
+            elif (i == 1):
+                print('         %c %g * x' % (plus_minus, mag))
+            elif (i == 0):
+                print('         %c %g' % (plus_minus, mag))
+
+
+def r8poly_print_test():
+
+    # *****************************************************************************80
+    #
+    # R8POLY_PRINT_TEST tests R8POLY_PRINT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    05 January 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    print('')
+    print('R8POLY_PRINT_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  R8POLY_PRINT prints an R8POLY.')
+
+    m = 5
+    c = np.array([12.0, -3.4, 56.0, 0.0, 0.78, 9.0])
+
+    r8poly_print(m, c, '  The R8POLY:')
+#
+#  Terminate.
+#
+    print('')
+    print('R8POLY_PRINT_TEST:')
+    print('  Normal end of execution.')
+
     return
 
 
@@ -2730,7 +2376,515 @@ def timestamp_test():
     return
 
 
+def vandermonde_coef_1d(n, x, y):
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_COEF_1D computes coefficients of a 1D Vandermonde interpolant.
+    #
+    #  Discussion:
+    #
+    #    We assume the interpolant has the form
+    #
+    #      p(x) = c1 + c2 * x + c3 * x^2 + ... + cn * x^(n-1).
+    #
+    #    We have n data values (x(i),y(i)) which must be interpolated:
+    #
+    #      p(x(i)) = c1 + c2 * x(i) + c3 * x(i)^2 + ... + cn * x(i)^(n-1) = y(i)
+    #
+    #    This can be cast as an NxN linear system for the polynomial
+    #    coefficients:
+    #
+    #      [ 1 x1 x1^2 ... x1^(n-1) ] [  c1 ] = [  y1 ]
+    #      [ 1 x2 x2^2 ... x2^(n-1) ] [  c2 ] = [  y2 ]
+    #      [ ...................... ] [ ... ] = [ ... ]
+    #      [ 1 xn xn^2 ... xn^(n-1) ] [  cn ] = [  yn ]
+    #
+    #    and if the x values are distinct, the system is theoretically
+    #    invertible, so we can retrieve the coefficient vector c and
+    #    evaluate the interpolant.
+    #
+    #    The polynomial could be evaluated at the n-vector x by the command
+    #
+    #      pval = polyval ( c, x )
+    #
+    #    ...except that MATLAB assumes that c(1) multiplies x^(n-1).
+    #
+    #    so instead, you might use
+    #
+    #      pval = r8poly_value ( n - 1, c, n, x )
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    19 July 2012
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of data points.
+    #
+    #    Input, real X(N,1), Y(N,1), the data values.
+    #
+    #    Output, real C(N,1), the coefficients of the interpolating
+    #    polynomial.  C(1) is the constant term, and C(N) multiplies X^(N-1).
+    #
+    import numpy as np
+
+    ad = vandermonde_matrix_1d(n, x)
+
+    c = np.linalg.solve(ad, y)
+
+    return c
+
+
+def vandermonde_coef_1d_test():
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_COEF_1D_TEST tests VANDERMONDE_COEF_1D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    04 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    nd = 5
+    xd = np.array([0.0, 1.0, 2.0, 3.0, 4.0])
+    yd = np.array([24.0, 0.0, 0.0, 0.0, 0.0])
+
+    print('')
+    print('VANDERMONDE_COEF_1D_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  VANDERMONDE_COEF_1D sets the Vandermonde coefficients for 1D interpolation.')
+
+    r8vec2_print(nd, xd, yd, '  Interpolation data:')
+
+    cd = vandermonde_coef_1d(nd, xd, yd)
+
+    r8vec_print(nd, cd, '  Vandermonde interpolant coefficients:')
+
+    r8poly_print(nd - 1, cd, '  Vandermonde interpolant polynomial:')
+#
+#  Terminate.
+#
+    print('')
+    print('VANDERMONDE_COEF_1D_TEST:')
+    print('  Normal end of execution.')
+    return
+
+
+def vandermonde_interp_1d_test():
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_INTERP_1D_TEST tests the VANDERMONDE_INTERP_1D library.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    02 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
+
+    print('')
+    print('VANDERMONDE_INTERP_1D_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Test the VANDERMONDE_INTERP_1D library.')
+#
+#  Utility functions.
+#
+    p00_data_test()
+    p00_data_num_test()
+    p00_dim_num_test()
+    p00_prob_num_test()
+    r8mat_print_test()
+    r8mat_print_some_test()
+    r8mat_transpose_print_test()
+    r8mat_transpose_print_some_test()
+    r8poly_print_test()
+    r8vec_norm_test()
+    r8vec_norm_affine_test()
+    r8vec_print_test()
+    r8vec_uniform_ab_test()
+    r8vec2_print_test()
+#
+#  Library functions.
+#
+    vandermonde_coef_1d_test()
+    vandermonde_matrix_1d_test()
+    vandermonde_value_1d_test()
+
+    prob_num = p00_prob_num()
+    for prob in range(1, prob_num + 1):
+        vandermonde_interp_1d_test01(prob)
+#
+#  Terminate.
+#
+    print('')
+    print('VANDERMONDE_INTERP_1D_TEST:')
+    print('  Normal end of execution.')
+    return
+
+
+def vandermonde_interp_1d_test01(prob):
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_INTERP_1D_TEST01 tests VANDERMONDE_VALUE_1D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    01 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer PROB, the problem index.
+    #
+    #    Input, integer ND, the number of data points to use.
+    #
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import platform
+
+    print('')
+    print('VANDERMONDE_INTERP_1D_TEST01:')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Interpolate data from TEST_INTERP problem #%d.' % (prob))
+
+    nd = p00_data_num(prob)
+    print('  Number of data points = %d' % (nd))
+
+    xy = p00_data(prob, 2, nd)
+
+    xd = np.zeros(nd)
+    yd = np.zeros(nd)
+    for i in range(0, nd):
+        xd[i] = xy[0, i]
+        yd[i] = xy[1, i]
+
+    if (nd < 10):
+        r8vec2_print(nd, xd, yd, '  Data array:')
+#
+#  Get Vandermonde interpolant coefficients.
+#
+    cd = vandermonde_coef_1d(nd, xd, yd)
+#
+#  #1:  Does interpolant match function at interpolation points?
+#
+    ni = nd
+    xi = xd
+    yi = vandermonde_value_1d(nd, cd, ni, xi)
+
+    int_error = r8vec_norm_affine(ni, yi, yd) / float(ni)
+
+    print('')
+    print('  L2 interpolation error averaged per interpolant node = %g' %
+          (int_error))
+#
+#  #2: Compare estimated curve length to piecewise linear (minimal) curve length.
+#  Assume data is sorted, and normalize X and Y dimensions by (XMAX-XMIN) and
+#  (YMAX-YMIN).
+#
+    xmin = np.min(xd)
+    xmax = np.max(xd)
+    ymin = np.min(yd)
+    ymax = np.max(yd)
+
+    ni = 501
+    xi = np.linspace(xmin, xmax, ni)
+    yi = vandermonde_value_1d(nd, cd, ni, xi)
+
+    ld = 0.0
+    for i in range(0, nd - 1):
+        ld = ld + np.sqrt(
+            ((xd[i + 1] - xd[i]) / (xmax - xmin)) ** 2
+            + ((yd[i + 1] - yd[i]) / (ymax - ymin)) ** 2
+        )
+
+    li = 0.0
+    for i in range(0, ni - 1):
+        li = li + np.sqrt(
+            ((xi[i + 1] - xi[i]) / (xmax - xmin)) ** 2
+            + ((yi[i + 1] - yi[i]) / (ymax - ymin)) ** 2
+        )
+    li = np.sqrt(li)
+
+    print('')
+    print('  Normalized length of piecewise linear interpolant = %g' % (ld))
+    print('  Normalized length of Shepard interpolant          = %g' % (li))
+#
+#  #3: Plot the data.
+#
+    plt.plot(xd, yd, 'b-', linewidth=3.0)
+    plt.plot(xd, yd, 'k.', markersize=10)
+    t = 'p0' + str(prob) + ' Piecewise Linear Interpolant'
+    plt.title(t)
+    plt.grid(True)
+    plt.xlabel('<---X--->')
+    plt.ylabel('<---Y--->')
+    filename = 'p0' + str(prob) + '_data.png'
+    plt.savefig(filename)
+    plt.clf()
+
+    print('')
+    print('  Created plot file "%s"' % (filename))
+#
+#  #4: Plot the piecewise linear and Vandermonde interpolants.
+#
+    ni = 501
+    xmin = np.min(xd)
+    xmax = np.max(xd)
+    xi = np.linspace(xmin, xmax, ni)
+    yi = vandermonde_value_1d(nd, cd, ni, xi)
+
+    plt.plot(xd, yd, 'b-', linewidth=3.0)
+    plt.plot(xi, yi, 'r-', linewidth=4.0)
+    plt.plot(xd, yd, 'k.', markersize=10)
+    t = 'p0' + str(prob) + ' Vandermonde Interpolant for ' + \
+        str(nd) + ' nodes.'
+    plt.title(t)
+    plt.grid(True)
+    plt.xlabel('<---X--->')
+    plt.ylabel('<---Y--->')
+    filename = 'p0' + str(prob) + '_vandermonde.png'
+    plt.savefig(filename)
+    plt.clf()
+
+    print('  Created plot file "%s".' % (filename))
+#
+#  Terminate.
+#
+    print('')
+    print('VANDERMONDE_INTERP_1D_TEST01:')
+    print('  Normal end of execution.')
+    return
+
+
+def vandermonde_matrix_1d(n, x):
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_MATRIX_1D computes a Vandermonde 1D interpolation matrix.
+    #
+    #  Discussion:
+    #
+    #    We assume the interpolant has the form
+    #
+    #      p(x) = c1 + c2 * x + c3 * x^2 + ... + cn * x^(n-1).
+    #
+    #    We have n data values (x(i),y(i)) which must be interpolated:
+    #
+    #      p(x(i)) = c1 + c2 * x(i) + c3 * x(i)^2 + ... + cn * x(i)^(n-1) = y(i)
+    #
+    #    This can be cast as an NxN linear system for the polynomial
+    #    coefficients:
+    #
+    #      [ 1 x1 x1^2 ... x1^(n-1) ] [  c1 ] = [  y1 ]
+    #      [ 1 x2 x2^2 ... x2^(n-1) ] [  c2 ] = [  y2 ]
+    #      [ ...................... ] [ ... ] = [ ... ]
+    #      [ 1 xn xn^2 ... xn^(n-1) ] [  cn ] = [  yn ]
+    #
+    #    and if the x values are distinct, the matrix A is theoretically
+    #    invertible (though in fact, generally badly conditioned).
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of data points.
+    #
+    #    Input, real X(N,1), the data values.
+    #
+    #    Output, real A(N,N), the Vandermonde matrix for X.
+    #
+    import numpy as np
+
+    a = np.zeros([n, n])
+
+    for i in range(0, n):
+        a[i, 0] = 1.0
+
+    for j in range(1, n):
+        for i in range(0, n):
+            a[i, j] = a[i, j - 1] * x[i]
+
+    return a
+
+
+def vandermonde_matrix_1d_test():
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_MATRIX_1D_TEST tests VANDERMONDE_MATRIX_1D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    04 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    print('')
+    print('VANDERMONDE_MATRIX_1D_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  VANDERMONDE_MATRIX_1D sets the Vandermonde matrix for 1D interpolation.')
+
+    nd = 4
+    xd = np.array([-1.0, 2.0, 3.0, 5.0])
+
+    ad = vandermonde_matrix_1d(nd, xd)
+
+    r8mat_print(nd, nd, ad, '  Vandermonde matrix:')
+#
+#  Terminate.
+#
+    print('')
+    print('VANDERMONDE_MATRIX_1D_TEST:')
+    print('  Normal end of execution.')
+    return
+
+
+def vandermonde_value_1d(nd, cd, ni, xi):
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_VALUE_1D evaluates a Vandermonde interpolant.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer ND, the number of data values.
+    #
+    #    Input, real CD(ND,1), the polynomial coefficients.
+    #    CD(I) is the coefficient of X^(I-1).
+    #
+    #    Input, integer NI, the number of interpolation points.
+    #
+    #    Input, real XI(NI,1), the interpolation points.
+    #
+    #    Output, real YI(NI,1), the interpolation values.
+    #
+    import numpy as np
+
+    yi = np.zeros(ni)
+
+    for j in range(0, ni):
+        yi[j] = cd[nd - 1]
+        for i in range(nd - 2, -1, -1):
+            yi[j] = yi[j] * xi[j] + cd[i]
+
+    return yi
+
+
+def vandermonde_value_1d_test():
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_VALUE_1D_TEST tests VANDERMONDE_VALUE_1D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    print('')
+    print('VANDERMONDE_VALUE_1D_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  VANDERMONDE_VALUE_1D evaluates a Vandermonde interpolant.')
+
+    nd = 5
+    cd = np.array([24.0, -50.0, +35.0, -10.0, 1.0])
+    r8poly_print(nd - 1, cd, '  The Vandermonde interpolant:')
+
+    ni = 16
+    x_lo = 0.0
+    x_hi = 5.0
+    xi = np.linspace(x_lo, x_hi, ni)
+
+    yi = vandermonde_value_1d(nd, cd, ni, xi)
+
+    r8vec2_print(ni, xi, yi, '  Vandermonde interpolant values:')
+#
+#  Terminate.
+#
+    print('')
+    print('VANDERMONDE_VALUE_1D_TEST:')
+    print('  Normal end of execution.')
+    return
+
+
 if (__name__ == '__main__'):
     timestamp()
-    pwl_interp_1d_test()
+    vandermonde_interp_1d_test()
     timestamp()

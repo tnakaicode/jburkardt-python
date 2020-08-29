@@ -1,7 +1,8 @@
 ---
-title: pwl Piecewise Linear Interpolation
+title: Interpolation
 ---
 
+pwl Piecewise Linear Interpolation
 |                        |                              |
 | ---------------------- | ---------------------------- |
 | ![puc](p01_pwl_18.png) | ![pic](p01_pwl_basis_18.png) |
