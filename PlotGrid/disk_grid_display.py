@@ -2,6 +2,9 @@
 #
 
 
+from numpy.core.fromnumeric import size
+
+
 def disk_grid_display(n, r, c, ng, cg, filename):
 
     # *****************************************************************************80
