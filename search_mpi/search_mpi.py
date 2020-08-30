@@ -1,10 +1,10 @@
 #! /usr/bin/env python3
 #
-def search_mpi ( a, b, c ):
+def search_mpi(a, b, c):
 
-#*****************************************************************************80
+# *****************************************************************************80
 #
-## SEARCH_MPI searches for a solution to an integer equation.
+# SEARCH_MPI searches for a solution to an integer equation.
 #
 #  Licensing:
 #
@@ -30,53 +30,53 @@ def search_mpi ( a, b, c ):
 #    -1, if no solution could be found.
 #    otherwise, F(J) = C and A <= J <= B.
 #
-  import numpy
-  import sys
-  from mpi4py import MPI
+	import numpy
+	import sys
+	from mpi4py import MPI
 
-  comm = MPI.COMM_WORLD
+	comm = MPI.COMM_WORLD
 
-  id = comm.Get_rank()
+	id = comm.Get_rank()
 
-  p = comm.Get_size()
+	p = comm.Get_size()
 
-  if ( id == 0 ):
-    print ( '' )
-    print ( 'SEARCH_MPI:' )
-    print ( '  Python/MPI version' )
-    print ( '  Search the integers from A to B' )
-    print ( '  for a value J such that F(J) = C.' )
-    print ( '' )
-    print ( '  Use MPI to divide the computation among' )
-    print ( '  %d processes.' % ( p ) )
-    print ( '' )
-    print ( '  A        = %d' % ( a ) )
-    print ( '  B        = %d' % ( b ) )
-    print ( '  C        = %d' % ( c ) )
-    wtime = MPI.Wtime ( )
+	if (id == 0):
+		print('')
+		print('SEARCH_MPI:')
+		print('  Python/MPI version')
+		print('  Search the integers from A to B')
+		print('  for a value J such that F(J) = C.')
+		print('')
+		print('  Use MPI to divide the computation among')
+		print('  %d processes.' % (p))
+		print('')
+		print('  A        = %d' % (a))
+		print('  B        = %d' % (b))
+		print('  C        = %d' % (c))
+		wtime = MPI.Wtime()
 
-  j = search_partial ( a, b, c, id, p )
+	j = search_partial(a, b, c, id, p)
 
-  if ( j != -1 ):
-    print ( '  Process %d found J = %d' % ( id, j ) )
-    print ( '  Verify F(J) = %d' % ( f ( j ) )
+	if (j != -1):
+		print('  Process %d found J = %d' % (id, j))
+		print('  Verify F(J) = %d' % (f(j))
 
-  if ( id == 0 ):
-    wtime = MPI.Wtime ( ) - wtime
-    print ( '  Time     = %g' % ( wtime ) )
+	if (id == 0):
+		wtime=MPI.Wtime() - wtime
+		print('  Time     = %g' % (wtime))
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'SEARCH_MPI:' )
-  print ( '  Normal end of execution.' )
-  return j
+	print('')
+	print('SEARCH_MPI:')
+	print('  Normal end of execution.')
+	return j
 
-def search_partial ( a, b, c, id, p ):
+def search_partial(a, b, c, id, p):
 
-#*****************************************************************************80
+# *****************************************************************************80
 #
-## SEARCH_PARTIAL searches 'partially' through [A,B] for a J so that F(J) = C.
+# SEARCH_PARTIAL searches 'partially' through [A,B] for a J so that F(J) = C.
 #
 #  Licensing:
 #
@@ -104,18 +104,18 @@ def search_partial ( a, b, c, id, p ):
 #    Output, integer J, the computed solution, or -1
 #    if no solution was found.
 #
-  for i in range ( a + id, b + 1, p ):
+	for i in range(a + id, b + 1, p):
 
-    if ( f ( i ) == c ):
-      return i
+		if (f(i) == c):
+			return i
 
-  return ( - 1 )
+	return (- 1)
 
-def f ( i ):
+def f(i):
 
-#*****************************************************************************80
+# *****************************************************************************80
 #
-## F is the function we are analyzing.
+# F is the function we are analyzing.
 #
 #  Licensing:
 #
@@ -135,30 +135,30 @@ def f ( i ):
 #
 #    Input, integer VALUE, the value.
 #
-  i4_huge = 2147483647
+	i4_huge=2147483647
 
-  value = i
+	value=i
 
-  for j in range ( 0, 5 ):
+	for j in range(0, 5):
 
-    k = ( value // 127773 )
+		k=(value // 127773)
 
-    value = 16807 * ( value - k * 127773 ) - k * 2836
+		value=16807 * (value - k * 127773) - k * 2836
 
-    if ( value <= 0 ):
-      value = value + i4_huge
+		if (value <= 0):
+			value=value + i4_huge
 
-  return value
+	return value
 
-def timestamp ( ):
+def timestamp():
 
-#*****************************************************************************80
+# *****************************************************************************80
 #
-## TIMESTAMP prints the date as a timestamp.
+# TIMESTAMP prints the date as a timestamp.
 #
 #  Licensing:
 #
-#    This code is distributed under the GNU LGPL license. 
+#    This code is distributed under the GNU LGPL license.
 #
 #  Modified:
 #
@@ -172,22 +172,22 @@ def timestamp ( ):
 #
 #    None
 #
-  import time
+	import time
 
-  t = time.time ( )
-  print ( time.ctime ( t ) )
+	t=time.time()
+	print(time.ctime(t))
 
-  return None
+	return None
 
-def timestamp_test ( ):
+def timestamp_test():
 
-#*****************************************************************************80
+# *****************************************************************************80
 #
-## TIMESTAMP_TEST tests TIMESTAMP.
+# TIMESTAMP_TEST tests TIMESTAMP.
 #
 #  Licensing:
 #
-#    This code is distributed under the GNU LGPL license. 
+#    This code is distributed under the GNU LGPL license.
 #
 #  Modified:
 #
@@ -201,28 +201,27 @@ def timestamp_test ( ):
 #
 #    None
 #
-  import platform
+	import platform
 
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  TIMESTAMP prints a timestamp of the current date and time.' )
-  print ( '' )
+	print('')
+	print('TIMESTAMP_TEST:')
+	print('  Python version: %s' % (platform.python_version()))
+	print('  TIMESTAMP prints a timestamp of the current date and time.')
+	print('')
 
-  timestamp ( )
+	timestamp()
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+	print('')
+	print('TIMESTAMP_TEST:')
+	print('  Normal end of execution.')
+	return
 
-if ( __name__ == '__main__' ):
-  timestamp ( )
-  search_mpi ( 1,               10000, 45 )
-  search_mpi ( 1,              100000, 45 )
-  search_mpi ( 1,             1000000, 45 )
-  search_mpi ( 1674924000, 1674924999, 45 )
-  timestamp ( )
-
+if (__name__ == '__main__'):
+	timestamp()
+	search_mpi(1, 10000, 45)
+	search_mpi(1, 100000, 45)
+	search_mpi(1, 1000000, 45)
+	search_mpi(1674924000, 1674924999, 45)
+	timestamp()
