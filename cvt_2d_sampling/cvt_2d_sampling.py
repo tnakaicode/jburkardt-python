@@ -532,50 +532,6 @@ def r8vec_uniform_01(n, seed):
     return x, seed
 
 
-def r8vec_uniform_01_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_01_TEST tests R8VEC_UNIFORM_01.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    from r8vec_print import r8vec_print
-    import numpy as np
-    import platform
-
-    n = 10
-    seed = 123456789
-
-    print('')
-    print('R8VEC_UNIFORM_01_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_UNIFORM_01 computes a random R8VEC.')
-    print('')
-    print('  Initial seed is %d' % (seed))
-
-    v, seed = r8vec_uniform_01(n, seed)
-
-    r8vec_print(n, v, '  Random R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_UNIFORM_01_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def timestamp():
 
     # *****************************************************************************80
