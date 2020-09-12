@@ -1,16 +1,11 @@
 #! /usr/bin/env python3
 #
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def mcmc_test():
-
-    # *****************************************************************************80
-    #
-    import matplotlib.pyplot as plt
-    import numpy as np
-
     np.random.seed(123456789)
-
     data = np.random.randn(20)
 
     plt.hist(data, rwidth=0.95)
@@ -31,11 +26,13 @@ def mcmc_test():
     plt.ylabel('<-- Y -- >')
     plt.grid(True)
     plt.title('Analytical posterior')
-    plt.show(block=False)
 #
 #  Now let's do this by sampling.
 #
     mu_current = 1.0
+    mu_proposal = 1.0
+    mu_prior_mu = 1.0
+    mu_prior_sd = 1.0
     proposal_width = 1.0
 
     likelihood_current = normal_likelihood(data, mu_current, 1.0)
@@ -51,11 +48,6 @@ def mcmc_test():
 
     accept = np.random.rand() < p_accept
 
-    if (accept):
-        cur_pos = proposal
-
-    return
-
 
 def calc_posterior_analytical(data, mu_0, sigma_0):
     import numpy as np
@@ -69,12 +61,12 @@ def calc_posterior_analytical(data, mu_0, sigma_0):
 
 def log_normal_likelihood(x_vec, mu, sigma):
     value = 0.0
-    for x in xvec:
+    for x in x_vec:
         value = value + log_normal_pdf(x, mu, sigma)
 
 
 def log_normal_pdf(x, mu, sigma):
-    value = - 0.5 * (x - mu)**2 / sigma**2 - 0.5 * log(2 * pi * sigma**2)
+    value = - 0.5 * (x - mu)**2 / sigma**2 - 0.5 * np.log(2 * pi * sigma**2)
     return value
 
 
@@ -82,10 +74,12 @@ def normal_likelihood(x_vec, mu, sigma):
     value = 1.0
     for x in x_vec:
         value = value * normal_pdf(x, mu, sigma)
+    return value
 
 
 def normal_pdf(x, mu, sigma):
-    value = 1 / sqrt(2 * pi * sigma**2) * exp(- 0.5 * (x - mu)**2 / sigma**2)
+    value = 1 / np.sqrt(2 * np.pi * sigma**2) * \
+        np.exp(- 0.5 * (x - mu)**2 / sigma**2)
     return value
 
 
