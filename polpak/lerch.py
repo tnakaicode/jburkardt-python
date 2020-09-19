@@ -1,129 +1,145 @@
 #! /usr/bin/env python
 #
-def lerch ( z, s, a ):
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+from lerch_values import lerch_values
 
-#*****************************************************************************80
-#
-## LERCH estimates the Lerch transcendent function.
-#
-#  Discussion:
-#
-#    The Lerch transcendent function is defined as:
-#
-#      LERCH ( Z, S, A ) = Sum ( 0 <= K < Infinity ) Z^K / ( A + K )^S
-#
-#    excluding any term with ( A + K ) = 0.
-#
-#    In Mathematica, the function can be evaluated by:
-#
-#      LerchPhi[z,s,a]
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    23 February 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Reference:
-#
-#    Eric Weisstein, editor,
-#    CRC Concise Encylopedia of Mathematics,
-#    CRC Press, 1998.
-#
-#  Thanks:
-#
-#    Oscar van Vlijmen
-#
-#  Parameters:
-#
-#    Input, real Z, integer S, real A,
-#    the parameters of the function.
-#
-#    Output, real VALUE, an approximation to the Lerch
-#    transcendent function.
-#
-  value = 0.0
 
-  if ( z <= 0.0 ):
+def lerch(z, s, a):
+
+    # *****************************************************************************80
+    #
+    # LERCH estimates the Lerch transcendent function.
+    #
+    #  Discussion:
+    #
+    #    The Lerch transcendent function is defined as:
+    #
+    #      LERCH ( Z, S, A ) = Sum ( 0 <= K < Infinity ) Z^K / ( A + K )^S
+    #
+    #    excluding any term with ( A + K ) = 0.
+    #
+    #    In Mathematica, the function can be evaluated by:
+    #
+    #      LerchPhi[z,s,a]
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    23 February 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Eric Weisstein, editor,
+    #    CRC Concise Encylopedia of Mathematics,
+    #    CRC Press, 1998.
+    #
+    #  Thanks:
+    #
+    #    Oscar van Vlijmen
+    #
+    #  Parameters:
+    #
+    #    Input, real Z, integer S, real A,
+    #    the parameters of the function.
+    #
+    #    Output, real VALUE, an approximation to the Lerch
+    #    transcendent function.
+    #
+    value = 0.0
+
+    if (z <= 0.0):
+        return value
+
+    eps = 1.0E-10
+    k = 0
+    z_k = 1.0
+
+    while (True):
+
+        if (a + k != 0.0):
+
+            term = z_k / (a + k) ** s
+            value = value + term
+
+            if (abs(term) <= eps * (1.0 + abs(value))):
+                break
+
+        k = k + 1
+        z_k = z_k * z
+
     return value
 
-  eps = 1.0E-10
-  k = 0
-  z_k = 1.0
 
-  while ( True ):
+def lerch_test():
 
-    if ( a + k != 0.0 ):
+    # *****************************************************************************80
+    #
+    # LERCH_TEST tests LERCH.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    23 February 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
 
-      term = z_k / ( a + k ) ** s
-      value = value + term
+    print('')
+    print('LERCH_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  LERCH evaluates the Lerch function;')
+    print('')
+    print('       Z       S       A         Lerch           Lerch')
+    print('                             Tabulated        Computed')
+    print('')
 
-      if ( abs ( term ) <= eps * ( 1.0 + abs ( value ) ) ):
-        break
+    data = []
+    n_data = 0
 
-    k = k + 1
-    z_k = z_k * z
+    while (True):
+        dat = [n_data]
+        n_data, z, s, a, f = lerch_values(n_data)
 
-  return value
+        if (n_data == 0):
+            break
 
-def lerch_test ( ):
+        f2 = lerch(z, s, a)
+        dat += [z, s, a, f, f2]
+        data.append(dat)
 
-#*****************************************************************************80
-#
-## LERCH_TEST tests LERCH.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    23 February 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
-  from lerch_values import lerch_values
+        print('  %8g  %4d  %8g  %14g  %14g' % (z, s, a, f, f2))
+    data = np.array(data)
 
-  print ( '' )
-  print ( 'LERCH_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  LERCH evaluates the Lerch function;' )
-  print ( '' )
-  print ( '       Z       S       A         Lerch           Lerch' )
-  print ( '                             Tabulated        Computed' )
-  print ( '' )
+    plt.figure()
+    plt.plot(data[:, 1])
+    plt.plot(data[:, 2])
+    plt.plot(data[:, 3])
+    plt.plot(data[:, 4])
+    plt.plot(data[:, 5])
+    plt.savefig("./lerch.png")
 
-  n_data = 0
+    print('')
+    print('LERCH_TEST')
+    print('  Normal end of execution.')
+    return
 
-  while ( True ):
 
-    n_data, z, s, a, f = lerch_values ( n_data )
-
-    if ( n_data == 0 ):
-      break
-
-    f2 = lerch ( z, s, a )
-
-    print ( '  %8g  %4d  %8g  %14g  %14g' % ( z, s, a, f, f2 ) )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'LERCH_TEST' )
-  print ( '  Normal end of execution.' )
-  return
-
-if ( __name__ == '__main__' ):
-  from timestamp import timestamp
-  timestamp ( )
-  lerch_test ( )
-  timestamp ( )
+if (__name__ == '__main__'):
+    from timestamp import timestamp
+    timestamp()
+    lerch_test()
+    timestamp()

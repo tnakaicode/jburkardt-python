@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import platform
+import time
+from sys import exit
 
 
 def resid_burgers(nu, n, x, y, z, t):
@@ -45,10 +49,9 @@ def resid_burgers(nu, n, x, y, z, t):
     #
     #    Output, real UR(N), VR(N), WR(N), PR(N), the residuals.
     #
-    import numpy as np
-#
-#  Form the functions and derivatives.
-#
+    #
+    #  Form the functions and derivatives.
+    #
     u = 2.0 * x
     ux = 2.0 * np.ones(n)
     uxx = np.zeros(n)
@@ -82,9 +85,9 @@ def resid_burgers(nu, n, x, y, z, t):
     px = - 4.0 * x
     py = - 4.0 * y
     pz = np.zeros(n)
-#
-#  Evaluate the residuals.
-#
+    #
+    #  Evaluate the residuals.
+    #
     ur = ut + u * ux + v * uy + w * uz + px - nu * (uxx + uyy + uzz)
     vr = vt + u * vx + v * vy + w * vz + py - nu * (vxx + vyy + vzz)
     wr = wt + u * wx + v * wy + w * wz + pz - nu * (wxx + wyy + wzz)
@@ -111,8 +114,6 @@ def resid_burgers_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 0.25
 
@@ -142,9 +143,6 @@ def resid_burgers_test():
     print('  Vr:  %14.6g  %14.6g' % (np.min(np.abs(vr)), np.max(np.abs(vr))))
     print('  Wr:  %14.6g  %14.6g' % (np.min(np.abs(wr)), np.max(np.abs(wr))))
     print('  Pr:  %14.6g  %14.6g' % (np.min(np.abs(pr)), np.max(np.abs(pr))))
-#
-#  Terminate.
-#
     print('')
     print('RESID_BURGERS_TEST:')
     print('  Normal end of execution.')
@@ -195,7 +193,6 @@ def uvwp_burgers(nu, n, x, y, z, t):
     #    Output, real U(N), V(N), W(N), P(N), the velocity components and
     #    pressure at each of the points.
     #
-    import numpy as np
 
     u = 2.0 * x
     v = - 2.0 * y
@@ -225,8 +222,6 @@ def uvwp_burgers_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 0.25
 
@@ -257,9 +252,6 @@ def uvwp_burgers_test():
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  W:  %14.6g  %14.6g' % (np.min(w), np.max(w)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVWP_BURGERS_TEST:')
     print('  Normal end of execution.')
@@ -305,10 +297,9 @@ def resid_ethier(a, d, n, x, y, z, t):
     #
     #    Output, real UR(N), VR(N), WR(N), PR(N), the residuals.
     #
-    import numpy as np
-#
-#  Make some temporaries.
-#
+    #
+    #  Make some temporaries.
+    #
     ex = np.exp(a * x)
     ey = np.exp(a * y)
     ez = np.exp(a * z)
@@ -331,9 +322,8 @@ def resid_ethier(a, d, n, x, y, z, t):
     cxy = np.cos(a * x + d * y)
     cyz = np.cos(a * y + d * z)
     czx = np.cos(a * z + d * x)
-#
-#  Form the functions and derivatives.
-#
+
+    #  Form the functions and derivatives.
     u = -         a * (ex * syz + ez * cxy) * e2t
     ux = -         a * (a * ex * syz - a * ez * sxy) * e2t
     uxx = -         a * (a * a * ex * syz - a * a * ez * cxy) * e2t
@@ -380,9 +370,8 @@ def resid_ethier(a, d, n, x, y, z, t):
         - 2.0 * a * sxy * szx * eyz + 2.0 * a * sxy * czx * eyz
         + 2.0 * d * cyz * cxy * ezx + 2.0 * a * syz * cxy * ezx
         + 2.0 * a * e2z + 2.0 * a * czx * cyz * exy - 2.0 * d * szx * syz * exy)
-#
-#  Evaluate the residuals.
-#
+
+    #  Evaluate the residuals.
     ur = ut + u * ux + v * uy + w * uz + px - (uxx + uyy + uzz)
     vr = vt + u * vx + v * vy + w * vz + py - (vxx + vyy + vzz)
     wr = wt + u * wx + v * wy + w * wz + pz - (wxx + wyy + wzz)
@@ -409,8 +398,6 @@ def resid_ethier_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     a = np.pi / 4.0
     d = np.pi / 2.0
@@ -443,9 +430,6 @@ def resid_ethier_test():
     print('  Vr:  %14.6g  %14.6g' % (np.min(np.abs(vr)), np.max(np.abs(vr))))
     print('  Wr:  %14.6g  %14.6g' % (np.min(np.abs(wr)), np.max(np.abs(wr))))
     print('  Pr:  %14.6g  %14.6g' % (np.min(np.abs(pr)), np.max(np.abs(pr))))
-#
-#  Terminate.
-#
     print('')
     print('RESID_ETHIER_TEST:')
     print('  Normal end of execution.')
@@ -507,7 +491,6 @@ def uvwp_ethier(a, d, n, x, y, z, t):
     #    Output, real U(N), V(N), W(N), P(N), the velocity components and
     #    pressure at each of the points.
     #
-    import numpy as np
 
     ex = np.exp(a * x)
     ey = np.exp(a * y)
@@ -556,8 +539,6 @@ def uvwp_ethier_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     a = np.pi / 4.0
     d = np.pi / 2.0
@@ -590,9 +571,6 @@ def uvwp_ethier_test():
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  W:  %14.6g  %14.6g' % (np.min(w), np.max(w)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVWP_ETHIER_TEST:')
     print('  Normal end of execution.')
@@ -621,23 +599,19 @@ def ns3de_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS3DE_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the NS3DE library.')
-#
-#  Libraries.
-#
+
+    #  Libraries.
     uvwp_burgers_test()
     resid_burgers_test()
 
     uvwp_ethier_test()
     resid_ethier_test()
-#
-#  Terminate.
-#
+
     print('')
     print('NS3DE_TEST:')
     print('  Normal end of execution.')
@@ -678,7 +652,6 @@ def r8_erf(x):
     #
     #    Output, real VALUE, the value of the error function.
     #
-    import numpy as np
 
     a = np.array((
         3.16112374387056560E+00,
@@ -729,9 +702,8 @@ def r8_erf(x):
     xsmall = 1.11E-16
 
     xabs = abs(x)
-#
-#  Evaluate ERF(X) for |X| <= 0.46875.
-#
+
+    #  Evaluate ERF(X) for |X| <= 0.46875.
     if (xabs <= thresh):
 
         if (xsmall < xabs):
@@ -746,9 +718,7 @@ def r8_erf(x):
             xden = (xden + b[i]) * xsq
 
         value = x * (xnum + a[3]) / (xden + b[3])
-#
-#  Evaluate ERFC(X) for 0.46875 <= |X| <= 4.0.
-#
+        #  Evaluate ERFC(X) for 0.46875 <= |X| <= 4.0.
     elif (xabs <= 4.0):
 
         xnum = c[8] * xabs
@@ -766,9 +736,7 @@ def r8_erf(x):
 
         if (x < 0.0):
             value = -value
-#
-#  Evaluate ERFC(X) for 4.0 < |X|.
-#
+        #  Evaluate ERFC(X) for 4.0 < |X|.
     else:
 
         if (xbig <= xabs):
@@ -856,7 +824,6 @@ def erf_values(n_data):
     #
     #    Output, real FX, the value of the function.
     #
-    import numpy as np
 
     n_max = 21
 
@@ -939,7 +906,6 @@ def r8_erf_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R8_ERF_TEST:')
@@ -961,9 +927,7 @@ def r8_erf_test():
         fx2 = r8_erf(x)
 
         print('  %12g  %24.16g  %24.16g' % (x, fx1, fx2))
-#
-#  Terminate.
-#
+
     print('')
     print('R8_ERF_TEST')
     print('  Normal end of execution.')
@@ -1026,7 +990,6 @@ def r8vec_amax_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R8VEC_AMAX_TEST')
@@ -1045,9 +1008,6 @@ def r8vec_amax_test():
     value = r8vec_amax(n, a)
     print('')
     print('  Max Abs = %g' % (value))
-#
-#  Terminate.
-#
     print('')
     print('R8VEC_AMAX_TEST:')
     print('  Normal end of execution.')
@@ -1112,7 +1072,6 @@ def r8vec_amin_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R8VEC_AMIN_TEST')
@@ -1131,9 +1090,6 @@ def r8vec_amin_test():
     value = r8vec_amin(n, a)
     print('')
     print('  Min Abs = %g' % (value))
-#
-#  Terminate.
-#
     print('')
     print('R8VEC_AMIN_TEST:')
     print('  Normal end of execution.')
@@ -1198,7 +1154,6 @@ def r8vec_max_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R8VEC_MAX_TEST')
@@ -1217,9 +1172,6 @@ def r8vec_max_test():
     value = r8vec_max(n, a)
     print('')
     print('  Max = %g' % (value))
-#
-#  Terminate.
-#
     print('')
     print('R8VEC_MAX_TEST:')
     print('  Normal end of execution.')
@@ -1284,7 +1236,6 @@ def r8vec_min_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R8VEC_MIN_TEST')
@@ -1303,9 +1254,6 @@ def r8vec_min_test():
     value = r8vec_min(n, a)
     print('')
     print('  Min = %g' % (value))
-#
-#  Terminate.
-#
     print('')
     print('R8VEC_MIN_TEST:')
     print('  Normal end of execution.')
@@ -1363,8 +1311,6 @@ def r8vec_print_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('R8VEC_PRINT_TEST')
@@ -1374,9 +1320,7 @@ def r8vec_print_test():
     n = 4
     v = np.array([123.456, 0.000005, -1.0E+06, 3.14159265], dtype=np.float64)
     r8vec_print(n, v, '  Here is an R8VEC:')
-#
-#  Terminate.
-#
+
     print('')
     print('R8VEC_PRINT_TEST:')
     print('  Normal end of execution.')
@@ -1435,8 +1379,6 @@ def r8vec_uniform_ab(n, a, b, seed):
     #
     #    Output, integer SEED, an updated seed for the random number generator.
     #
-    import numpy
-    from sys import exit
 
     i4_huge = 2147483647
 
@@ -1451,7 +1393,7 @@ def r8vec_uniform_ab(n, a, b, seed):
         print('  Input SEED = 0!')
         exit('R8VEC_UNIFORM_AB - Fatal error!')
 
-    x = numpy.zeros(n)
+    x = np.zeros(n)
 
     for i in range(0, n):
 
@@ -1485,8 +1427,6 @@ def r8vec_uniform_ab_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 10
     a = -1.0
@@ -1504,9 +1444,7 @@ def r8vec_uniform_ab_test():
     v, seed = r8vec_uniform_ab(n, a, b, seed)
 
     r8vec_print(n, v, '  Random R8VEC:')
-#
-#  Terminate.
-#
+
     print('')
     print('R8VEC_UNIFORM_AB_TEST:')
     print('  Normal end of execution.')
@@ -1535,7 +1473,6 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))

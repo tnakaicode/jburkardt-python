@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import sys
+import platform
+from time import clock
 
 
 def cfft2d1(s, m, m1, n, x, w):
@@ -21,10 +25,9 @@ def cfft2d1(s, m, m1, n, x, w):
     #    Original FORTRAN77 version by David Bailey.
     #    Python version by John Burkardt.
     #
-    import numpy as np
-#
-#  If S = 0 then initialize only.
-#
+    #
+    #  If S = 0 then initialize only.
+    #
     m2 = (m // 2)
 
     if (s == 0):
@@ -32,9 +35,9 @@ def cfft2d1(s, m, m1, n, x, w):
             t = 2.0 * np.pi * float(i) / float(m)
             w[i] = np.cos(t) + 1j * np.sin(t)
         return x, w
-#
-#  Perform forward or backward FFT's according to IS = 1 or -1.
-#
+    #
+    #  Perform forward or backward FFT's according to IS = 1 or -1.
+    #
     ip = np.zeros([2, m], dtype=np.int32)
 
     for i in range(0, m):
@@ -99,10 +102,9 @@ def cfft2d2(s, m, m1, n, x, w):
     #    Original FORTRAN77 version by David Bailey.
     #    Python version by John Burkardt.
     #
-    import numpy as np
-#
-#  If S = 0, then initialize only.
-#
+    #
+    #  If S = 0, then initialize only.
+    #
     n2 = (n // 2)
 
     if (s == 0):
@@ -110,9 +112,9 @@ def cfft2d2(s, m, m1, n, x, w):
             t = 2.0 * np.pi * float(i) / float(n)
             w[i] = np.cos(t) + 1j * np.sin(t)
         return x, w
-#
-#  Perform forward or backward FFT's according to IS = 1 or -1.
-#
+    #
+    #  Perform forward or backward FFT's according to IS = 1 or -1.
+    #
     ip = np.zeros([2, n], dtype=np.int32)
 
     for i in range(1, n + 1):
@@ -177,9 +179,6 @@ def cfft2d_test():
     #    Original FORTRAN77 version by David Bailey.
     #    Python version by John Burkardt.
     #
-    import numpy as np
-    import sys
-    from time import clock
 
     m = 128
     m1 = 128
@@ -188,9 +187,9 @@ def cfft2d_test():
     it = 100
     ans = 0.894799941219277
     rmn = 1.0 / float(m * n)
-#
-#  Random initialization.
-#
+    #
+    #  Random initialization.
+    #
     f7 = 78125.0
     t30 = 1073741824.0
     t2 = f7 / t30
@@ -207,9 +206,9 @@ def cfft2d_test():
     x, w1 = cfft2d1(0, m, m1, n, x, w1)
     w2 = np.zeros(n, dtype=np.complex128)
     x, w2 = cfft2d2(0, m, m1, n, x, w2)
-#
-#  Timing.
-#
+    #
+    #  Timing.
+    #
 
     for k in range(0, 5):
         sys.stdout.write("\r {:d} / {:d}".format(k, it))
@@ -221,23 +220,17 @@ def cfft2d_test():
         x, w2 = cfft2d2(-1, m, m1, n, x, w2)
         x, w1 = cfft2d1(-1, m, m1, n, x, w1)
 
-#
-#  Results.
-#
+    #
+    #  Results.
+    #
     value = x[18, 18]
     er = abs((value.real - ans) / ans)
     fp = it * m * n * (2.0 + 10.0 * np.log(float(m * n)) / np.log(2.0))
     #rt = 1.0E-06 * fp / tm
-#
-#  Terminate.
-#
     return er, fp
 
 
 if (__name__ == '__main__'):
-    import platform
-    from timestamp import timestamp
-    timestamp()
     er, fp = cfft2d_test()
     print('')
     print('CFFT2D:')
@@ -249,4 +242,3 @@ if (__name__ == '__main__'):
     print('')
     print('CFFT2D:')
     print('  Normal end of execution.')
-    timestamp()

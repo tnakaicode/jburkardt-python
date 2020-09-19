@@ -1,5 +1,10 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+from sys import exit
 
 
 def grid_2d(x_num, x_lo, x_hi, y_num, y_lo, y_hi):
@@ -32,7 +37,6 @@ def grid_2d(x_num, x_lo, x_hi, y_num, y_lo, y_hi):
     #
     #    Output, real X(X_NUM*Y_NUM), Y(X_NUM*Y_NUM), the coordinates of the grid.
     #
-    import numpy as np
 
     x = np.zeros(x_num * y_num)
     y = np.zeros(x_num * y_num)
@@ -92,7 +96,6 @@ def grid_2d_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('GRID_2D_TEST:')
@@ -115,9 +118,7 @@ def grid_2d_test():
         for i in range(0, x_num):
             print('  %2d  %2d  %2d  %14.6f  %14.6f' % (k, i, j, x[k], y[k]))
             k = k + 1
-#
-#  Terminate.
-#
+
     print('')
     print('GRID_2D_TEST:')
     print('  Normal end of execution.')
@@ -183,9 +184,8 @@ def ns2de_gnuplot(header, n, x, y, u, v, p, s):
 
     print('')
     print('  Data written to "%s".' % (data_filename))
-#
-#  Write the command file.
-#
+
+    #  Write the command file.
     command_filename = header + '_commands.txt'
     plot_filename = header + '.png'
 
@@ -220,8 +220,6 @@ def ns2de_gnuplot(header, n, x, y, u, v, p, s):
 
     print('  Commands written to "%s".' % (command_filename))
 
-    return
-
 
 def ns2de_gnuplot_lukas_test():
 
@@ -241,7 +239,6 @@ def ns2de_gnuplot_lukas_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_GNUPLOT_LUKAS_TEST:')
@@ -269,9 +266,7 @@ def ns2de_gnuplot_lukas_test():
     header = 'lukas'
     s = 0.25
     ns2de_gnuplot(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_GNUPLOT_LUKAS_TEST:')
     print('  Normal end of execution.')
@@ -296,7 +291,6 @@ def ns2de_gnuplot_poiseuille_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_GNUPLOT_POISEUILLE_TEST:')
@@ -324,9 +318,7 @@ def ns2de_gnuplot_poiseuille_test():
     header = 'poiseuille'
     s = 0.5
     ns2de_gnuplot(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_GNUPLOT_POISEUILLE_TEST:')
     print('  Normal end of execution.')
@@ -351,7 +343,6 @@ def ns2de_gnuplot_spiral_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_GNUPLOT_SPIRAL_TEST:')
@@ -379,9 +370,7 @@ def ns2de_gnuplot_spiral_test():
     header = 'spiral'
     s = 5.0
     ns2de_gnuplot(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_GNUPLOT_SPIRAL_TEST:')
     print('  Normal end of execution.')
@@ -406,7 +395,6 @@ def ns2de_gnuplot_taylor_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_GNUPLOT_TAYLOR_TEST:')
@@ -434,9 +422,7 @@ def ns2de_gnuplot_taylor_test():
     header = 'taylor'
     s = 0.10
     ns2de_gnuplot(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_GNUPLOT_TAYLOR_TEST:')
     print('  Normal end of execution.')
@@ -461,7 +447,6 @@ def ns2de_gnuplot_vortex_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_GNUPLOT_VORTEX_TEST:')
@@ -489,9 +474,7 @@ def ns2de_gnuplot_vortex_test():
     header = 'vortex'
     s = 0.10
     ns2de_gnuplot(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_GNUPLOT_VORTEX_TEST:')
     print('  Normal end of execution.')
@@ -528,7 +511,6 @@ def ns2de_matplotlib(header, n, x, y, u, v, p, s):
     #
     #    Input, real S, a scale factor for the velocity vectors.
     #
-    import matplotlib.pyplot as plt
 
     myplot = plt.figure()
     ax = plt.gca()
@@ -542,8 +524,6 @@ def ns2de_matplotlib(header, n, x, y, u, v, p, s):
 
     plot_filename = header + '_matplotlib.png'
     myplot.savefig(plot_filename)
-
-    return
 
 
 def ns2de_matplotlib_lukas_test():
@@ -564,7 +544,6 @@ def ns2de_matplotlib_lukas_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_MATPLOTLIB_LUKAS_TEST:')
@@ -592,9 +571,7 @@ def ns2de_matplotlib_lukas_test():
     header = 'lukas'
     s = 0.25
     ns2de_matplotlib(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_MATPLOTLIB_LUKAS_TEST:')
     print('  Normal end of execution.')
@@ -619,7 +596,6 @@ def ns2de_matplotlib_poiseuille_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_MATPLOTLIB_POISEUILLE_TEST:')
@@ -647,13 +623,10 @@ def ns2de_matplotlib_poiseuille_test():
     header = 'poiseuille'
     s = 5.0
     ns2de_matplotlib(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_MATPLOTLIB_POISEUILLE_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def ns2de_matplotlib_spiral_test():
@@ -674,7 +647,6 @@ def ns2de_matplotlib_spiral_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_MATPLOTLIB_SPIRAL_TEST:')
@@ -702,9 +674,7 @@ def ns2de_matplotlib_spiral_test():
     header = 'spiral'
     s = 5.0
     ns2de_matplotlib(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_MATPLOTLIB_SPIRAL_TEST:')
     print('  Normal end of execution.')
@@ -729,7 +699,6 @@ def ns2de_matplotlib_taylor_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_MATPLOTLIB_TAYLOR_TEST:')
@@ -757,9 +726,7 @@ def ns2de_matplotlib_taylor_test():
     header = 'taylor'
     s = 0.10
     ns2de_matplotlib(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_MATPLOTLIB_TAYLOR_TEST:')
     print('  Normal end of execution.')
@@ -784,7 +751,6 @@ def ns2de_matplotlib_vortex_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_MATPLOTLIB_VORTEX_TEST:')
@@ -812,9 +778,7 @@ def ns2de_matplotlib_vortex_test():
     header = 'vortex'
     s = 0.25
     ns2de_matplotlib(header, n, x, y, u, v, p, s)
-#
-#  Terminate.
-#
+
     print('')
     print('NS2DE_MATPLOTLIB_VORTEX_TEST:')
     print('  Normal end of execution.')
@@ -843,8 +807,6 @@ def parameter_poiseuille_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('PARAMETER_POISEUILLE_TEST')
@@ -861,9 +823,9 @@ def parameter_poiseuille_test():
     seed = 123456789
     x, seed = r8vec_uniform_ab(n, x_lo, x_hi, seed)
     y, seed = r8vec_uniform_ab(n, y_lo, y_hi, seed)
-#
-#  Vary RHO.
-#
+    #
+    #  Vary RHO.
+    #
     print('')
     print('  RHO affects the pressure scaling.')
     print('')
@@ -890,9 +852,9 @@ def parameter_poiseuille_test():
 
         print('')
         rho = rho / 100.0
-#
-#  Vary NU.
-#
+    #
+    #  Vary NU.
+    #
     print('')
     print('  NU affects the time scaling.')
     print('')
@@ -920,9 +882,7 @@ def parameter_poiseuille_test():
         print('')
 
         nu = nu / 10.0
-#
-#  Terminate.
-#
+
     print('')
     print('PARAMETER_POISEUILLE_TEST:')
     print('  Normal end of execution.')
@@ -951,8 +911,6 @@ def parameter_spiral_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('PARAMETER_SPIRAL_TEST')
@@ -967,9 +925,9 @@ def parameter_spiral_test():
     seed = 123456789
     x, seed = r8vec_uniform_ab(n, xy_lo, xy_hi, seed)
     y, seed = r8vec_uniform_ab(n, xy_lo, xy_hi, seed)
-#
-#  Vary RHO.
-#
+    #
+    #  Vary RHO.
+    #
     print('')
     print('  RHO affects the pressure scaling.')
     print('')
@@ -996,9 +954,9 @@ def parameter_spiral_test():
 
         print('')
         rho = rho / 100.0
-#
-#  Vary NU.
-#
+    #
+    #  Vary NU.
+    #
     print('')
     print('  NU affects the time scaling.')
     print('')
@@ -1026,9 +984,7 @@ def parameter_spiral_test():
         print('')
 
         nu = nu / 10.0
-#
-#  Terminate.
-#
+
     print('')
     print('PARAMETER_SPIRAL_TEST:')
     print('  Normal end of execution.')
@@ -1057,8 +1013,6 @@ def parameter_taylor_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('PARAMETER_TAYLOR_TEST')
@@ -1073,9 +1027,9 @@ def parameter_taylor_test():
     seed = 123456789
     x, seed = r8vec_uniform_ab(n, xy_lo, xy_hi, seed)
     y, seed = r8vec_uniform_ab(n, xy_lo, xy_hi, seed)
-#
-#  Vary RHO.
-#
+    #
+    #  Vary RHO.
+    #
     print('')
     print('  RHO affects the pressure scaling.')
     print('')
@@ -1102,9 +1056,9 @@ def parameter_taylor_test():
 
         print('')
         rho = rho / 100.0
-#
-#  Vary NU.
-#
+    #
+    #  Vary NU.
+    #
     print('')
     print('  NU affects the time scaling.')
     print('')
@@ -1132,9 +1086,7 @@ def parameter_taylor_test():
         print('')
 
         nu = nu / 10.0
-#
-#  Terminate.
-#
+
     print('')
     print('PARAMETER_TAYLOR_TEST:')
     print('  Normal end of execution.')
@@ -1163,8 +1115,6 @@ def parameter_vortex_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('PARAMETER_VORTEX_TEST')
@@ -1179,9 +1129,9 @@ def parameter_vortex_test():
     seed = 123456789
     x, seed = r8vec_uniform_ab(n, xy_lo, xy_hi, seed)
     y, seed = r8vec_uniform_ab(n, xy_lo, xy_hi, seed)
-#
-#  Vary RHO.
-#
+    #
+    #  Vary RHO.
+    #
     print('')
     print('  RHO affects the pressure scaling.')
     print('')
@@ -1208,9 +1158,9 @@ def parameter_vortex_test():
 
         print('')
         rho = rho / 100.0
-#
-#  Vary NU.
-#
+    #
+    #  Vary NU.
+    #
     print('')
     print('  NU affects the time scaling.')
     print('')
@@ -1238,9 +1188,7 @@ def parameter_vortex_test():
         print('')
 
         nu = nu / 10.0
-#
-#  Terminate.
-#
+
     print('')
     print('PARAMETER_VORTEX_TEST:')
     print('  Normal end of execution.')
@@ -1437,7 +1385,6 @@ def r8vec_norm_l2(n, a):
     #
     #    Output, real VALUE, the L2 norm of A.
     #
-    import numpy as np
 
     value = 0.0
     for i in range(0, n):
@@ -1532,8 +1479,6 @@ def r8vec_uniform_ab(n, a, b, seed):
     #
     #    Output, integer SEED, an updated seed for the random number generator.
     #
-    import numpy
-    from sys import exit
 
     i4_huge = 2147483647
 
@@ -1548,7 +1493,7 @@ def r8vec_uniform_ab(n, a, b, seed):
         print('  Input SEED = 0!')
         exit('R8VEC_UNIFORM_AB - Fatal error!')
 
-    x = numpy.zeros(n)
+    x = np.zeros(n)
 
     for i in range(0, n):
 
@@ -1601,18 +1546,15 @@ def resid_lukas(nu, rho, n, x, y, t):
     #
     #    Output, real UR(N), VR(N), PR(N), the residuals in the U, V and P equations.
     #
-    import numpy as np
 
     ur = np.zeros(n)
     vr = np.zeros(n)
     pr = np.zeros(n)
-#
-#  Get the right hand side functions.
-#
+
+    #  Get the right hand side functions.
     f, g, h = rhs_lukas(nu, rho, n, x, y, t)
-#
-#  Form the functions and derivatives for the left hand side.
-#
+
+    #  Form the functions and derivatives for the left hand side.
     u = - np.cos(np.pi * x) / np.pi
     dudt = np.zeros(n)
     dudx = np.sin(np.pi * x)
@@ -1630,9 +1572,8 @@ def resid_lukas(nu, rho, n, x, y, t):
     p = np.zeros(n)
     dpdx = np.zeros(n)
     dpdy = np.zeros(n)
-#
-#  Evaluate the residuals.
-#
+
+    #  Evaluate the residuals.
     ur = dudt - nu * (dudxx + dudyy) + u * dudx + v * dudy + dpdx / rho - f
     vr = dvdt - nu * (dvdxx + dvdyy) + u * dvdx + v * dvdy + dpdy / rho - g
     pr = dudx + dvdy - h
@@ -1658,8 +1599,6 @@ def resid_lukas_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -1689,9 +1628,6 @@ def resid_lukas_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(np.abs(ur)), np.max(np.abs(ur))))
     print('  Vr:  %14.6g  %14.6g' % (np.min(np.abs(vr)), np.max(np.abs(vr))))
     print('  Pr:  %14.6g  %14.6g' % (np.min(np.abs(pr)), np.max(np.abs(pr))))
-#
-#  Terminate.
-#
     print('')
     print('RESID_LUKAS_TEST:')
     print('  Normal end of execution.')
@@ -1735,18 +1671,15 @@ def resid_poiseuille(nu, rho, n, x, y, t):
     #
     #    Output, real UR(N), VR(N), PR(N), the residuals in the U, V and P equations.
     #
-    import numpy as np
 
     ur = np.zeros(n)
     vr = np.zeros(n)
     pr = np.zeros(n)
-#
-#  Get the right hand side functions.
-#
+
+    #  Get the right hand side functions.
     f, g, h = rhs_poiseuille(nu, rho, n, x, y, t)
-#
-#  Form the functions and derivatives for the left hand side.
-#
+
+    #  Form the functions and derivatives for the left hand side.
     u = 1.0 - y ** 2
     dudt = 0.0
     dudx = 0.0
@@ -1764,9 +1697,8 @@ def resid_poiseuille(nu, rho, n, x, y, t):
     p = - 2.0 * nu * rho * x
     dpdx = - 2.0 * nu * rho
     dpdy = 0.0
-#
-#  Evaluate the residuals.
-#
+
+    #  Evaluate the residuals.
     ur = dudt - nu * (dudxx + dudyy) \
         + u * dudx + v * dudy + dpdx / rho - f
 
@@ -1796,8 +1728,6 @@ def resid_poiseuille_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -1829,9 +1759,6 @@ def resid_poiseuille_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(np.abs(ur)), np.max(np.abs(ur))))
     print('  Vr:  %14.6g  %14.6g' % (np.min(np.abs(vr)), np.max(np.abs(vr))))
     print('  Pr:  %14.6g  %14.6g' % (np.min(np.abs(pr)), np.max(np.abs(pr))))
-#
-#  Terminate.
-#
     print('')
     print('RESID_POISEUILLE_TEST:')
     print('  Normal end of execution.')
@@ -1887,18 +1814,15 @@ def resid_spiral(nu, rho, n, x, y, t):
     #
     #    Output, real UR(N), VR(N), PR(N), the residuals in the U, V and P equations.
     #
-    import numpy as np
 
     ur = np.zeros(n)
     vr = np.zeros(n)
     pr = np.zeros(n)
-#
-#  Get the right hand side functions.
-#
+
+    #  Get the right hand side functions.
     f, g, h = rhs_spiral(nu, rho, n, x, y, t)
-#
-#  Form the functions and derivatives for the left hand side.
-#
+
+    #  Form the functions and derivatives for the left hand side.
     u = (1.0 + nu * t) * 2.0 \
         * (x ** 4 - 2.0 * x ** 3 + x ** 2) \
         * (2.0 * y ** 3 - 3.0 * y ** 2 + y)
@@ -1950,9 +1874,8 @@ def resid_spiral(nu, rho, n, x, y, t):
     p = rho * y
     dpdx = 0.0
     dpdy = rho
-#
-#  Evaluate the residuals.
-#
+
+    #  Evaluate the residuals.
     ur = dudt - nu * (dudxx + dudyy) \
         + u * dudx + v * dudy + dpdx / rho - f
 
@@ -1982,8 +1905,6 @@ def resid_spiral_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -2013,9 +1934,6 @@ def resid_spiral_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(np.abs(ur)), np.max(np.abs(ur))))
     print('  Vr:  %14.6g  %14.6g' % (np.min(np.abs(vr)), np.max(np.abs(vr))))
     print('  Pr:  %14.6g  %14.6g' % (np.min(np.abs(pr)), np.max(np.abs(pr))))
-#
-#  Terminate.
-#
     print('')
     print('RESID_SPIRAL_TEST:')
     print('  Normal end of execution.')
@@ -2071,14 +1989,11 @@ def resid_taylor(nu, rho, n, x, y, t):
     #
     #    Output, real UR(N), VR(N), PR(N), the residuals in the U, V and P equations.
     #
-    import numpy as np
-#
-#  Get the right hand sides.
-#
+    #
+    #  Get the right hand sides.
     f, g, h = rhs_taylor(nu, rho, n, x, y, t)
-#
-#  Make space.
-#
+
+    #  Make space.
     c2x = np.array(n)
     c2y = np.array(n)
     cx = np.array(n)
@@ -2104,9 +2019,8 @@ def resid_taylor(nu, rho, n, x, y, t):
     vxx = np.array(n)
     vy = np.array(n)
     vyy = np.array(n)
-#
-#  Make some temporaries.
-#
+
+    #  Make some temporaries.
     cx = np.cos(np.pi * x)
     cy = np.cos(np.pi * y)
 
@@ -2122,9 +2036,8 @@ def resid_taylor(nu, rho, n, x, y, t):
     s2y = np.sin(2.0 * np.pi * y)
 
     e4t = np.exp(- 4.0 * np.pi * np.pi * nu * t)
-#
-#  Form the functions and derivatives.
-#
+
+    #  Form the functions and derivatives.
     u = -                            cx * sy * e2t
     dudx = np.pi * sx * sy * e2t
     dudxx = np.pi * np.pi * cx * sy * e2t
@@ -2142,9 +2055,8 @@ def resid_taylor(nu, rho, n, x, y, t):
     p = - 0.25 * rho * (c2x + c2y) * e4t
     dpdx = + 0.5 * rho * np.pi * s2x * e4t
     dpdy = + 0.5 * rho * np.pi * s2y * e4t
-#
-#  Evaluate the residuals.
-#
+
+    #  Evaluate the residuals.
     ur = dudt + u * dudx + v * dudy + (1.0 / rho) * dpdx \
         - nu * (dudxx + dudyy) - f
 
@@ -2174,8 +2086,6 @@ def resid_taylor_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -2205,9 +2115,6 @@ def resid_taylor_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(np.abs(ur)), np.max(np.abs(ur))))
     print('  Vr:  %14.6g  %14.6g' % (np.min(np.abs(vr)), np.max(np.abs(vr))))
     print('  Pr:  %14.6g  %14.6g' % (np.min(np.abs(pr)), np.max(np.abs(pr))))
-#
-#  Terminate.
-#
     print('')
     print('RESID_TAYLOR_TEST:')
     print('  Normal end of execution.')
@@ -2251,14 +2158,11 @@ def resid_vortex(nu, rho, n, x, y, t):
     #
     #    Output, real UR(N), VR(N), PR(N), the residuals in the U, V and P equations.
     #
-    import numpy as np
-#
-#  Get the right hand sides.
-#
+
+    #  Get the right hand sides.
     f, g, h = rhs_vortex(nu, rho, n, x, y, t)
-#
-#  Make space.
-#
+
+    #  Make space.
     c2x = np.array(n)
     c2y = np.array(n)
     cx = np.array(n)
@@ -2284,9 +2188,8 @@ def resid_vortex(nu, rho, n, x, y, t):
     vxx = np.array(n)
     vy = np.array(n)
     vyy = np.array(n)
-#
-#  Make some temporaries.
-#
+
+    #  Make some temporaries.
     cx = np.cos(np.pi * x)
     cy = np.cos(np.pi * y)
 
@@ -2298,9 +2201,8 @@ def resid_vortex(nu, rho, n, x, y, t):
 
     s2x = np.sin(2.0 * np.pi * x)
     s2y = np.sin(2.0 * np.pi * y)
-#
-#  Form the functions and derivatives.
-#
+
+    #  Form the functions and derivatives.
     u = -                            cx * sy
     dudx = np.pi * sx * sy
     dudxx = np.pi * np.pi * cx * sy
@@ -2318,9 +2220,8 @@ def resid_vortex(nu, rho, n, x, y, t):
     p = - 0.25 * rho * (c2x + c2y)
     dpdx = + 0.5 * rho * np.pi * s2x
     dpdy = + 0.5 * rho * np.pi * s2y
-#
-#  Evaluate the residuals.
-#
+
+    #  Evaluate the residuals.
     ur = dudt + u * dudx + v * dudy + (1.0 / rho) * dpdx \
         - nu * (dudxx + dudyy) - f
 
@@ -2350,8 +2251,6 @@ def resid_vortex_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -2381,9 +2280,6 @@ def resid_vortex_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(np.abs(ur)), np.max(np.abs(ur))))
     print('  Vr:  %14.6g  %14.6g' % (np.min(np.abs(vr)), np.max(np.abs(vr))))
     print('  Pr:  %14.6g  %14.6g' % (np.min(np.abs(pr)), np.max(np.abs(pr))))
-#
-#  Terminate.
-#
     print('')
     print('RESID_VORTEX_TEST:')
     print('  Normal end of execution.')
@@ -2427,7 +2323,6 @@ def rhs_lukas(nu, rho, n, x, y, t):
     #
     #    Output, real F(N), G(N), H(N), the right hand sides in the U, V and P equations.
     #
-    import numpy as np
 
     f = np.zeros(n)
     g = np.zeros(n)
@@ -2476,8 +2371,6 @@ def rhs_lukas_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -2507,9 +2400,6 @@ def rhs_lukas_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(f), np.max(f)))
     print('  Vr:  %14.6g  %14.6g' % (np.min(g), np.max(g)))
     print('  Pr:  %14.6g  %14.6g' % (np.min(h), np.max(h)))
-#
-#  Terminate.
-#
     print('')
     print('RHS_LUKAS_TEST:')
     print('  Normal end of execution.')
@@ -2554,7 +2444,6 @@ def rhs_poiseuille(nu, rho, n, x, y, t):
     #    Output, real F(N), G(N), H(N), the right hand sides in the
     #    U, V and P equations.
     #
-    import numpy as np
 
     f = np.zeros(n)
     g = np.zeros(n)
@@ -2581,8 +2470,6 @@ def rhs_poiseuille_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -2614,9 +2501,6 @@ def rhs_poiseuille_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(f), np.max(f)))
     print('  Vr:  %14.6g  %14.6g' % (np.min(g), np.max(g)))
     print('  Pr:  %14.6g  %14.6g' % (np.min(h), np.max(h)))
-#
-#  Terminate.
-#
     print('')
     print('RHS_POISEUILLE_TEST:')
     print('  Normal end of execution.')
@@ -2672,7 +2556,6 @@ def rhs_spiral(nu, rho, n, x, y, t):
     #
     #    Output, real F(N), G(N), H(N), the right hand sides in the U, V and P equations.
     #
-    import numpy as np
 
     f = np.zeros(n)
     g = np.zeros(n)
@@ -2759,8 +2642,6 @@ def rhs_spiral_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -2790,9 +2671,6 @@ def rhs_spiral_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(f), np.max(f)))
     print('  Vr:  %14.6g  %14.6g' % (np.min(g), np.max(g)))
     print('  Pr:  %14.6g  %14.6g' % (np.min(h), np.max(h)))
-#
-#  Terminate.
-#
     print('')
     print('RHS_SPIRAL_TEST:')
     print('  Normal end of execution.')
@@ -2848,7 +2726,6 @@ def rhs_taylor(nu, rho, n, x, y, t):
     #
     #    Output, real F(N), G(N), H(N), the residuals in the U, V and P equations.
     #
-    import numpy as np
 
     f = np.zeros(n)
     g = np.zeros(n)
@@ -2875,8 +2752,6 @@ def rhs_taylor_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -2907,9 +2782,6 @@ def rhs_taylor_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(f), np.max(f)))
     print('  Vr:  %14.6g  %14.6g' % (np.min(g), np.max(g)))
     print('  Pr:  %14.6g  %14.6g' % (np.min(h), np.max(h)))
-#
-#  Terminate.
-#
     print('')
     print('RHS_TAYLOR_TEST:')
     print('  Normal end of execution.')
@@ -2953,7 +2825,6 @@ def rhs_vortex(nu, rho, n, x, y, t):
     #
     #    Output, real F(N), G(N), H(N), the residuals in the U, V and P equations.
     #
-    import numpy as np
 
     f = - 2.0 * nu * (np.pi) ** 2 * (np.cos(np.pi * x) * np.sin(np.pi * y))
     g = 2.0 * nu * (np.pi) ** 2 * (np.sin(np.pi * x) * np.cos(np.pi * y))
@@ -2980,8 +2851,6 @@ def rhs_vortex_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -3011,9 +2880,6 @@ def rhs_vortex_test():
     print('  Ur:  %14.6g  %14.6g' % (np.min(f), np.max(f)))
     print('  Vr:  %14.6g  %14.6g' % (np.min(g), np.max(g)))
     print('  Pr:  %14.6g  %14.6g' % (np.min(h), np.max(h)))
-#
-#  Terminate.
-#
     print('')
     print('RHS_VORTEX_TEST:')
     print('  Normal end of execution.')
@@ -3042,7 +2908,6 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))
@@ -3072,7 +2937,6 @@ def timestamp_test():
     #
     #    None
     #
-    import platform
 
     print('')
     print('TIMESTAMP_TEST:')
@@ -3081,9 +2945,6 @@ def timestamp_test():
     print('')
 
     timestamp()
-#
-#  Terminate.
-#
     print('')
     print('TIMESTAMP_TEST:')
     print('  Normal end of execution.')
@@ -3136,7 +2997,6 @@ def uvp_lukas(nu, rho, n, x, y, t):
     #    Output, real U(N), V(N), P(N), the velocity components and
     #    pressure at each of the points.
     #
-    import numpy as np
 
     u = np.zeros(n)
     v = np.zeros(n)
@@ -3167,8 +3027,6 @@ def uvp_lukas_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -3198,9 +3056,6 @@ def uvp_lukas_test():
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVP_LUKAS_TEST:')
     print('  Normal end of execution.')
@@ -3225,8 +3080,6 @@ def uvp_lukas_test2():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     r8_lo = 0.0
     r8_hi = +1.0
@@ -3270,9 +3123,6 @@ def uvp_lukas_test2():
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVP_LUKAS_TEST2:')
     print('  Normal end of execution.')
@@ -3324,17 +3174,16 @@ def uvp_poiseuille(nu, rho, n, x, y, t):
     #    Output, real U(N), V(N), P(N), the velocity components and
     #    pressure at each of the points.
     #
-    import numpy as np
 
     u = np.zeros(n)
     v = np.zeros(n)
     p = np.zeros(n)
 
     u = 1.0 - y ** 2
-#
-#  Can't write it this way or V becomes a scalar!
-#
-# v = 0.0;
+    #
+    #  Can't write it this way or V becomes a scalar!
+    #
+    # v = 0.0;
 
     p = -2.0 * rho * nu * x
 
@@ -3359,8 +3208,6 @@ def uvp_poiseuille_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -3392,9 +3239,6 @@ def uvp_poiseuille_test():
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVP_POISEUILLE_TEST:')
     print('  Normal end of execution.')
@@ -3419,8 +3263,6 @@ def uvp_poiseuille_test2():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     x_lo = +0.0
     x_hi = +6.0
@@ -3466,9 +3308,6 @@ def uvp_poiseuille_test2():
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVP_POISEUILLE_TEST2:')
     print('  Normal end of execution.')
@@ -3528,7 +3367,6 @@ def uvp_spiral(nu, rho, n, x, y, t):
     #    Output, real U(N), V(N), P(N), the velocity components and
     #    pressure at each of the points.
     #
-    import numpy as np
 
     u = np.zeros(n)
     v = np.zeros(n)
@@ -3565,8 +3403,6 @@ def uvp_spiral_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -3596,9 +3432,6 @@ def uvp_spiral_test():
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVP_SPIRAL_TEST:')
     print('  Normal end of execution.')
@@ -3623,8 +3456,6 @@ def uvp_spiral_test2():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     r8_lo = 0.0
     r8_hi = +1.0
@@ -3668,9 +3499,6 @@ def uvp_spiral_test2():
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVP_SPIRAL_TEST2:')
     print('  Normal end of execution.')
@@ -3738,7 +3566,6 @@ def uvp_taylor(nu, rho, n, x, y, t):
     #    Output, real U(N), V(N), P(N), the velocity components and
     #    pressure at each of the points.
     #
-    import numpy as np
 
     cx = np.cos(np.pi * x)
     cy = np.cos(np.pi * y)
@@ -3778,8 +3605,6 @@ def uvp_taylor_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -3809,9 +3634,6 @@ def uvp_taylor_test():
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVP_TAYLOR_TEST:')
     print('  Normal end of execution.')
@@ -3836,8 +3658,6 @@ def uvp_taylor_test2():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     r8_lo = 0.5
     r8_hi = +2.5
@@ -3860,10 +3680,10 @@ def uvp_taylor_test2():
 
     x = np.zeros(n)
     y = np.zeros(n)
-#
-#  Python is consistent in its willful flouting of sensible conventions.
-#  X[0:100] means X from 0 to 99...!
-#
+    #
+    #  Python is consistent in its willful flouting of sensible conventions.
+    #  X[0:100] means X from 0 to 99...!
+    #
     x[0:100] = np.linspace(r8_lo, r8_hi, 100)
     y[0:100] = r8_lo
 
@@ -3884,9 +3704,6 @@ def uvp_taylor_test2():
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVP_TAYLOR_TEST2:')
     print('  Normal end of execution.')
@@ -3931,7 +3748,6 @@ def uvp_vortex(nu, rho, n, x, y, t):
     #    Output, real U(N), V(N), P(N), the velocity components and
     #    pressure at each of the points.
     #
-    import numpy as np
 
     cx = np.cos(np.pi * x)
     cy = np.cos(np.pi * y)
@@ -3969,8 +3785,6 @@ def uvp_vortex_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -4001,9 +3815,6 @@ def uvp_vortex_test():
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
     print('  P:  %14.6g  %14.6g' % (np.min(p), np.max(p)))
-#
-#  Terminate.
-#
     print('')
     print('UVP_VORTEX_TEST:')
     print('  Normal end of execution.')
@@ -4028,8 +3839,6 @@ def uvp_vortex_test2():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     r8_lo = 0.5
     r8_hi = +2.5
@@ -4053,10 +3862,10 @@ def uvp_vortex_test2():
 
     x = np.zeros(n)
     y = np.zeros(n)
-#
-#  Python is consistent in its willful flouting of sensible conventions.
-#  X[0:100] means X from 0 to 99...!
-#
+    #
+    #  Python is consistent in its willful flouting of sensible conventions.
+    #  X[0:100] means X from 0 to 99...!
+    #
     x[0:100] = np.linspace(r8_lo, r8_hi, 100)
     y[0:100] = r8_lo
 
@@ -4108,7 +3917,6 @@ def ns2de_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('NS2DE_TEST')
@@ -4116,18 +3924,16 @@ def ns2de_test():
     print('  Test the NS2DE library.')
 
     grid_2d_test()
-#
-#  Lukas Bystricky
-#
+
+    #  Lukas Bystricky
     uvp_lukas_test()
     uvp_lukas_test2()
     rhs_lukas_test()
     resid_lukas_test()
     ns2de_gnuplot_lukas_test()
     ns2de_matplotlib_lukas_test()
-#
-#  Poiseuille
-#
+
+    #  Poiseuille
     uvp_poiseuille_test()
     uvp_poiseuille_test2()
     rhs_poiseuille_test()
@@ -4135,9 +3941,8 @@ def ns2de_test():
     ns2de_gnuplot_poiseuille_test()
     ns2de_matplotlib_poiseuille_test()
     parameter_poiseuille_test()
-#
-#  Spiral
-#
+
+    #  Spiral
     uvp_spiral_test()
     uvp_spiral_test2()
     rhs_spiral_test()
@@ -4145,9 +3950,8 @@ def ns2de_test():
     ns2de_gnuplot_spiral_test()
     ns2de_matplotlib_spiral_test()
     parameter_spiral_test()
-#
-#  Taylor Vortex
-#
+
+    #  Taylor Vortex
     uvp_taylor_test()
     uvp_taylor_test2()
     rhs_taylor_test()
