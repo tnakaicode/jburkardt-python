@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
 
 
 def euler(dydt, tspan, y0, n):
@@ -34,7 +38,6 @@ def euler(dydt, tspan, y0, n):
     #
     #    real t(n+1), y(n+1): the sequence of solution estimates.
     #
-    import numpy as np
 
     t0 = tspan[0]
     t1 = tspan[1]
@@ -107,9 +110,6 @@ def humps_euler():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import platform
 
     print('')
     print('humps_euler')
@@ -204,7 +204,6 @@ def timestamp():
     #
     #    John Burkardt
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))

@@ -1,5 +1,10 @@
 #! /usr/bin/env python3
 #
+import matplotlib.pyplot as plt
+import platform
+import time
+from scipy import linspace
+from scipy.integrate import solve_ivp
 
 
 def lorenz_sensitivity_test():
@@ -34,10 +39,6 @@ def lorenz_sensitivity_test():
     #    https://www.johndcook.com/blog/
     #    26 January 2020.
     #
-    from scipy import linspace
-    from scipy.integrate import solve_ivp
-    import matplotlib.pyplot as plt
-    import platform
 
     print('')
     print('lorenz_sensitivity_test:')
@@ -62,9 +63,8 @@ def lorenz_sensitivity_test():
     print('  Graphics saved as "', filename, '".')
     plt.savefig(filename)
     plt.close()
-#
-#  Plot evolution (t,x1) and error evolution (t,x1-x2).
-#
+
+    #  Plot evolution (t,x1) and error evolution (t,x1-x2).
     plt.subplot(211)
     plt.plot(sol1.t, sol1.y[0])
     plt.grid(True)
@@ -81,9 +81,7 @@ def lorenz_sensitivity_test():
     filename = "lorenz_sensitivity_test_xdif.png"
     print('  Graphics saved as "', filename, '".')
     plt.savefig(filename)
-#
-#  Terminate.
-#
+
     print('')
     print('lorenz_sensitivity_test:')
     print('  Normal end of execution.')
@@ -132,7 +130,8 @@ def lorenz_ode(t, xyz):
     value = [
         sigma * (y - x),
         x * (rho - z) - y,
-        x * y - beta * z]
+        x * y - beta * z
+    ]
 
     return value
 
@@ -155,7 +154,6 @@ def timestamp():
     #
     #    John Burkardt
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))

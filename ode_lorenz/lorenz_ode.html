@@ -1,0 +1,174 @@
+<html>
+
+  <head>
+    <title>
+      LORENZ_ODE - The Lorenz System
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      LORENZ_ODE <br> The Lorenz System
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>LORENZ_ODE</b>,
+      a Python program which
+      approximates solutions to the Lorenz system
+      of ordinary differential equations (ODE's),
+      creating output files that can be displayed by Gnuplot.
+    </p>
+
+    <p>
+      The Lorenz system, originally intended as a simplified model of
+      atmospheric convection, has instead become a standard example of
+      sensitive dependence on initial conditions; that is, tiny differences
+      in the starting condition for the system rapidly become magnified.
+      The system also exhibits what is known as the "Lorenz attractor",
+      that is, the collection of trajectories for different starting points
+      tends to approach a peculiar butterfly-shaped region.
+    </p>
+
+    <p>
+      The Lorenz system includes three ordinary differential equations:
+      <pre>
+        dx/dt = sigma ( y - x )
+        dy/dt = x ( rho - z ) - y
+        dz/dt = xy - beta z
+      </pre>
+      where the parameters beta, rho and sigma are usually assumed to be
+      positive.  The classic case uses the parameter values
+      <pre>
+        beta = 8 / 3
+        rho = 28
+        sigma - 10
+      </pre>
+    </p>
+
+    <p>
+      The initial conditions for this system are not often specified; rather,
+      investigators simply note that the trajectories associated with two very
+      close starting points will eventually separate.  However, simply to
+      get started, we can suggest the following starting values at t=0:
+      <pre>
+        x = 8
+        y = 1
+        z = 1
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>LORENZ_ODE</b> is available in
+      <a href = "../../c_src/lorenz_ode/lorenz_ode.html">a C version</a> and
+      <a href = "../../cpp_src/lorenz_ode/lorenz_ode.html">a C++ version</a> and
+      <a href = "../../f_src/lorenz_ode/lorenz_ode.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/lorenz_ode/lorenz_ode.html">a MATLAB version</a> and
+      <a href = "../../py_src/lorenz_ode/lorenz_ode.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/graphics_examples/graphics_examples.html">
+      GRAPHICS_EXAMPLES</a>,
+      Python scripts which
+      illustrate how various kinds of data can be displayed and analyzed graphically
+      using the graphics facilities of Python.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk4/rk4.html">
+      RK4</a>,
+      a Python library which
+      applies the fourth order Runge-Kutta (RK) algorithm to estimate the
+      solution of an ordinary differential equation (ODE) at the next time step.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rkf45/rkf45.html">
+      RKF45</a>,
+      a Python library which
+      implements the Runge-Kutta-Fehlberg solver
+      for systems of ordinary differential equations (ODE's).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Edward Lorenz,<br>
+          Deterministic Nonperiodic Flow,<br>
+          Journal of the Atmospheric Sciences,<br>
+          Volume 20, Number 2, 1963, pages 130-141.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lorenz_ode.py">lorenz_ode.py</a>, the source code.
+        </li>
+        <li>
+          <a href = "lorenz_ode.sh">lorenz_ode.sh</a>,
+          runs all the tests
+        </li>
+        <li>
+          <a href = "lorenz_ode.txt">lorenz_ode.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lorenz_ode_components.png">lorenz_ode_components.png</a>,
+          a plot of (T,X(T)), (T,Y(T)), and (T,Z(T)).
+        </li>
+        <li>
+          <a href = "lorenz_ode_3d.png">lorenz_ode_3d.png</a>,
+          a plot of (X(T),Y(T),Z(T)).
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 24 May 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>
