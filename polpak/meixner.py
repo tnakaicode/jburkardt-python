@@ -1,136 +1,141 @@
 #! /usr/bin/env python
 #
-def meixner ( n, beta, c, x ):
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
 
-#*****************************************************************************80
-#
-## MEIXNER evaluates Meixner polynomials at a point.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    23 February 2010
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Reference:
-#
-#    Walter Gautschi,
-#    Orthogonal Polynomials: Computation and Approximation,
-#    Oxford, 2004,
-#    ISBN: 0-19-850672-4,
-#    LC: QA404.5 G3555.
-#
-#  Parameters:
-#
-#    Input, integer N, the maximum order of the polynomial.  
-#    N must be at least 0.
-#
-#    Input, real BETA, the Beta parameter.  0 < BETA.
-#
-#    Input, real C, the C parameter.  0 < C < 1.
-#
-#    Input, real X, the evaluation point.
-#
-#    Output, real VALUE(N+1), the value of the polynomials at X.
-#
-  import numpy as np
 
-  value = np.zeros ( n + 1 )
+def meixner(n, beta, c, x):
 
-  if ( beta <= 0.0 ):
-    print ( '' )
-    print ( 'MEIXNER - Fatal error!' )
-    print ( '  Parameter BETA must be positive.' )
+    # *****************************************************************************80
+    #
+    # MEIXNER evaluates Meixner polynomials at a point.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    23 February 2010
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Walter Gautschi,
+    #    Orthogonal Polynomials: Computation and Approximation,
+    #    Oxford, 2004,
+    #    ISBN: 0-19-850672-4,
+    #    LC: QA404.5 G3555.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the maximum order of the polynomial.
+    #    N must be at least 0.
+    #
+    #    Input, real BETA, the Beta parameter.  0 < BETA.
+    #
+    #    Input, real C, the C parameter.  0 < C < 1.
+    #
+    #    Input, real X, the evaluation point.
+    #
+    #    Output, real VALUE(N+1), the value of the polynomials at X.
+    #
 
-  if ( c <= 0.0 or 1.0 <= c ):
-    print ( '' )
-    print ( 'MEIXNER - Fatal error!' )
-    print ( '  Parameter C must be strictly between 0 and 1.' )
+    value = np.zeros(n + 1)
 
-  if ( n < 0 ):
-    print ( '' )
-    print ( 'MEIXNER - Fatal error!' )
-    print ( '  Parameter N must be nonnegative.' )
+    if (beta <= 0.0):
+        print('')
+        print('MEIXNER - Fatal error!')
+        print('  Parameter BETA must be positive.')
 
-  value[0] = 1.0
+    if (c <= 0.0 or 1.0 <= c):
+        print('')
+        print('MEIXNER - Fatal error!')
+        print('  Parameter C must be strictly between 0 and 1.')
 
-  if ( 0 < n ):
+    if (n < 0):
+        print('')
+        print('MEIXNER - Fatal error!')
+        print('  Parameter N must be nonnegative.')
 
-    value[1] = ( c - 1.0 ) * x / beta / c + 1.0
+    value[0] = 1.0
 
-    for i in range ( 1, n ):
-      value[i+1] = ( \
-        ( ( c - 1.0 ) * x + ( 1.0 + c ) * float ( i ) + beta * c ) * value[i] \
-        - float ( i ) * value[i-1] \
-        ) / ( float ( i ) + beta )
+    if (0 < n):
 
-  return value
+        value[1] = (c - 1.0) * x / beta / c + 1.0
 
-def meixner_test ( ):
+        for i in range(1, n):
+            value[i + 1] = (
+                ((c - 1.0) * x + (1.0 + c) * float(i) + beta * c) * value[i]
+                - float(i) * value[i - 1]
+            ) / (float(i) + beta)
 
-#*****************************************************************************80
-#
-## MEIXNER_TEST tests MEIXNER.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    24 February 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
+    return value
 
-  test_num = 3
-  beta_test = np.array ( [ 0.5, 1.0, 2.0 ] )
-  c_test = np.array ( [ 0.125, 0.25, 0.5 ] )
- 
-  print ( '' )
-  print ( 'MEIXNER_TEST:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  MEIXNER evaluates Meixner polynomials.' )
-  print ( '' )
-  print ( '       N      BETA         C         X        M(N,BETA,C,X)' )
 
-  for test in range ( 0, test_num ):
+def meixner_test():
 
-    n = 5
-    beta = beta_test[test]
-    c = c_test[test]
+    # *****************************************************************************80
+    #
+    # MEIXNER_TEST tests MEIXNER.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    24 February 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
 
-    for j in range ( 0, 6 ):
+    data = []
+    test_num = 4
+    beta_test = np.array([0.5, 1.0, 2.0, 3.0])
+    c_test = np.array([0.125, 0.25, 0.5, 0.75])
 
-      x = float ( j ) / 2.0
+    print('')
+    print('MEIXNER_TEST:')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  MEIXNER evaluates Meixner polynomials.')
+    print('')
+    print('       N      BETA         C         X        M(N,BETA,C,X)')
 
-      value = meixner ( n, beta, c, x )
+    for test in range(0, test_num):
+        n = 5
+        beta = beta_test[test]
+        c = c_test[test]
+        for j in range(0, 6):
+            x = float(j) / 2.0
+            value = meixner(n, beta, c, x)
+            print('')
+            for i in range(0, n + 1):
+                print('  %8d  %8g  %8g  %8g  %14g' % (i, beta, c, x, value[i]))
+                data.append([i, beta, c, x, value[i]])
+    data = np.array(data)
 
-      print ( '' )
+    plt.figure()
+    plt.plot(data[:, 1])
+    plt.plot(data[:, 2])
+    plt.plot(data[:, 3])
+    plt.plot(data[:, 4])
+    plt.savefig("./meixner.png")
 
-      for i in range ( 0, n + 1 ):
+    print('')
+    print('MEIXNER_TEST')
+    print('  Normal end of execution.')
+    return
 
-        print ( '  %8d  %8g  %8g  %8g  %14g' % ( i, beta, c, x, value[i] ) )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'MEIXNER_TEST' )
-  print ( '  Normal end of execution.' )
-  return
 
-if ( __name__ == '__main__' ):
-  from timestamp import timestamp
-  timestamp ( )
-  meixner_test ( )
-  timestamp ( )
+if (__name__ == '__main__'):
+    from timestamp import timestamp
+    timestamp()
+    meixner_test()
+    timestamp()
