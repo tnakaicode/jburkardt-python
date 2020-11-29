@@ -1,5 +1,11 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+from cvxopt import matrix
+from cvxopt import solvers
 
 
 def cvxopt_svm_test():
@@ -36,9 +42,6 @@ def cvxopt_svm_test():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import platform
 
     print('')
     print('cvxopt_svm')
@@ -170,9 +173,6 @@ def fit(rpm, vib, grade):
     #
     #    Output, real alpha(3), the values of w and b.
     #
-    from cvxopt import matrix
-    from cvxopt import solvers
-    import numpy as np
 
     n = len(rpm)
 #
@@ -233,7 +233,6 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))
