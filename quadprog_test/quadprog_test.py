@@ -1,5 +1,11 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import time
+import platform
+
+from quadprog import solve_qp
+
 def quadprog_test():
 
     # *****************************************************************************80
@@ -18,7 +24,6 @@ def quadprog_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('quadprog_test')
@@ -33,9 +38,7 @@ def quadprog_test():
 
     quadprog_test01()
     quadprog_test02()
-#
-#  Terminate.
-#
+
     print('')
     print('quadprog_test')
     print('  Normal end of execution.')
@@ -61,8 +64,6 @@ def quadprog_test01():
     #
     #    John Burkardt
     #
-    import numpy as np
-    from quadprog import solve_qp
 
     print('')
     print('quadprog_test01')
@@ -110,8 +111,6 @@ def quadprog_test02():
     #
     #    John Burkardt
     #
-    import numpy as np
-    from quadprog import solve_qp
 
     print('')
     print('quadprog_test02')
@@ -167,7 +166,6 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))

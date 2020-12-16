@@ -1,5 +1,12 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import sys
+import time
+from mpi4py import MPI
+from math import fabs
+
+
 def quad_mpi():
 
     # *****************************************************************************80
@@ -18,10 +25,6 @@ def quad_mpi():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import sys
-    from mpi4py import MPI
-    from math import fabs
 
     comm = MPI.COMM_WORLD
 
@@ -32,9 +35,7 @@ def quad_mpi():
     a = 0.0
     b = 10.0
     exact = 0.49936338107645674464
-#
-#  Assume process 0 decides on the value of N, and sends it to others.
-#
+    #  Assume process 0 decides on the value of N, and sends it to others.
     if id == 0:
         n = np.array(10000, dtype='i')
         wtime = MPI.Wtime()
@@ -54,19 +55,14 @@ def quad_mpi():
         n = np.array(0, dtype='i')
 
     comm.Bcast([n, MPI.INT], root=0)
-
     t = np.array(0.0, dtype='d')
-
     for i in range(id, n, p):
         x = (float(n - i - 1) * a + float(i) * b) / float(n - 1)
         t = t + f(x)
 
     print('  Sum for process %d is %g' % (id, t))
-
     total = np.array(0.0, 'd')
-
     comm.Reduce([t, MPI.DOUBLE], [total, MPI.DOUBLE], op=MPI.SUM, root=0)
-
     if id == 0:
         wtime = MPI.Wtime() - wtime
 
@@ -77,9 +73,7 @@ def quad_mpi():
         print('  Estimate = ', total)
         print('  Error    = ', error)
         print('  Time     = ', wtime)
-#
-#  Terminate.
-#
+
     print('')
     print('QUAD_MPI:')
     print('  Normal end of execution.')
@@ -104,7 +98,6 @@ def f(x):
     #
     #    John Burkardt
     #
-    import numpy as np
 
     value = 50.0 / (np.pi * (2500.0 * x * x + 1.0))
 
@@ -133,52 +126,11 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))
 
     return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

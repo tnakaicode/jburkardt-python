@@ -1,5 +1,8 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import platform
+import time
 
 
 def quad_serial():
@@ -20,8 +23,6 @@ def quad_serial():
     #
     #    John Burkardt
     #
-    import platform
-    import time
 
     a = 0.0
     b = 10.0
@@ -56,9 +57,6 @@ def quad_serial():
     print('  Estimate = %g' % (total))
     print('  Error    = %g' % (error))
     print('  Time     = %g' % (wtime))
-#
-#  Terminate.
-#
     print('')
     print('QUAD_SERIAL:')
     print('  Normal end of execution.')
@@ -83,7 +81,6 @@ def f(x):
     #
     #    John Burkardt
     #
-    import numpy as np
 
     value = 50.0 / (np.pi * (2500.0 * x * x + 1.0))
 
@@ -112,7 +109,6 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))
