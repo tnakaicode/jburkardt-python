@@ -1,6 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import platform
 import time
+
 
 def wtime_test01():
 
@@ -20,9 +23,6 @@ def wtime_test01():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
-    from time import time
 
     n_log_min = 10
     n_log_max = 22
@@ -48,25 +48,14 @@ def wtime_test01():
     print('')
 
     for n_log in range(n_log_min, n_log_max + 1):
-
         n = 2 ** (n_log)
-
         print('  %8d' % (n), end='')
-
         for i_rep in range(0, n_rep):
-
-            seconds = time()
-
+            seconds = time.time()
             x = np.random.random_sample((n, 1))
-
-            seconds = time() - seconds
-
+            seconds = time.time() - seconds
             print('  %12f' % (seconds), end='')
-
         print('')
-#
-#  Terminate.
-#
     print('')
     print('WTIME_TEST01')
     print('  Normal end of execution.')
@@ -91,8 +80,6 @@ def wtime_test02():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n_log_min = 10
     n_log_max = 22
@@ -118,25 +105,14 @@ def wtime_test02():
     print('')
 
     for n_log in range(n_log_min, n_log_max + 1):
-
         n = 2 ** (n_log)
-
         print('  %8d' % (n), end='')
-
         for i_rep in range(0, n_rep):
-
             seconds = time.time()
-
             x = np.random.random_sample((n, 1))
-
             seconds = time.time() - seconds
-
             print('  %12f' % (seconds), end='')
-
         print('')
-#
-#  Terminate.
-#
     print('')
     print('WTIME_TEST02')
     print('  Normal end of execution.')
@@ -161,7 +137,6 @@ def wtime_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('WTIME_TEST')
@@ -170,9 +145,7 @@ def wtime_test():
 
     wtime_test01()
     wtime_test02()
-#
-#  Terminate.
-#
+
     print('')
     print('WTIME_TEST:')
     print('  Normal end of execution.')
@@ -201,52 +174,11 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))
 
     return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

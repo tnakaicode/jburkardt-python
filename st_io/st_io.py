@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #
 def i4vec_print(n, a, title):
-    
+
     # *****************************************************************************80
     #
     # I4VEC_PRINT prints an I4VEC.

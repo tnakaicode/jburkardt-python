@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import platform
+import time
+
 c = 0.0
 d = 0.0
 e = 0.0
@@ -35,10 +39,7 @@ def f_01(x):
     #
     #    Output, real VALUE, the value of the function at X.
     #
-    import numpy as np
-
     value = np.sin(x) - 0.5 * x
-
     return value
 
 
@@ -66,10 +67,7 @@ def f_02(x):
     #
     #    Output, real VALUE, the value of the function at X.
     #
-    import numpy as np
-
     value = 2.0 * x - np.exp(- x)
-
     return value
 
 
@@ -97,10 +95,7 @@ def f_03(x):
     #
     #    Output, real VALUE, the value of the function at X.
     #
-    import numpy as np
-
     value = x * np.exp(- x)
-
     return value
 
 
@@ -128,10 +123,7 @@ def f_04(x):
     #
     #    Output, real VALUE, the value of the function at X.
     #
-    import numpy as np
-
     value = np.exp(x) - 1.0 / 100.0 / x / x
-
     return value
 
 
@@ -231,6 +223,7 @@ def zero_rc(a, b, t, value, status):
     #    STATUS as 0, to indicate that the iteration is complete and that
     #    ARG is the estimated zero
     #
+    
     global c
     global d
     global e
@@ -240,10 +233,11 @@ def zero_rc(a, b, t, value, status):
     global machep
     global sa
     global sb
-#
-#  Input STATUS = 0.
-#  Initialize, request F(A).
-#
+    
+    #
+    #  Input STATUS = 0.
+    #  Initialize, request F(A).
+    #
     if (status == 0):
 
         sa = a
@@ -254,10 +248,11 @@ def zero_rc(a, b, t, value, status):
         status = 1
         arg = a
         return arg, status
-#
-#  Input STATUS = 1.
-#  Receive F(A), request F(B).
-#
+
+    #
+    #  Input STATUS = 1.
+    #  Receive F(A), request F(B).
+    #
     elif (status == 1):
 
         fa = value
@@ -265,10 +260,11 @@ def zero_rc(a, b, t, value, status):
         status = 2
         arg = sb
         return arg, status
-#
-#  Input STATUS = 2
-#  Receive F(B).
-#
+
+    #
+    #  Input STATUS = 2
+    #  Receive F(B).
+    #
     elif (status == 2):
 
         fb = value
@@ -289,9 +285,8 @@ def zero_rc(a, b, t, value, status):
             fc = fa
             e = sb - sa
             d = e
-#
-#  Compute the next point at which a function value is requested.
-#
+
+    #  Compute the next point at which a function value is requested.
     if (abs(fc) < abs(fb)):
 
         sa = sb
@@ -378,8 +373,6 @@ def zero_rc_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('ZERO_RC_TEST')
@@ -412,9 +405,7 @@ def zero_rc_test():
     a = -5.0
     b = 2.0
     example_test(a, b, machep, t, f_05, 'f_05(x) = (x+3) * (x-1) * (x-1)')
-#
-#  Terminate.
-#
+
     print('')
     print('ZERO_RC_TEST')
     print('  Normal end of execution.')
@@ -454,7 +445,6 @@ def example_test(a, b, machep, t, f, title):
     #
     #    Input, string TITLE, a title for the problem.
     #
-    import numpy as np
 
     print('')
     print('  %s' % (title))
@@ -506,52 +496,11 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))
 
     return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

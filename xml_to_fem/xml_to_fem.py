@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import platform
+import time
+import xml.etree.ElementTree as ET
 
 
 def xml_read(filename):
@@ -24,34 +28,21 @@ def xml_read(filename):
     #
     #    Input, string FILENAME, the name of the XML file.
     #
-    import numpy as np
-    import xml.etree.ElementTree as ET
 
     tree = ET.parse(filename)
-
     root = tree.getroot()
-
     for alice in root:
-
         if alice.tag == 'mesh':
-
             celltype = alice.get('celltype')
             dim = int(alice.get('dim'))
-
             for bob in alice:
-
                 if (bob.tag == 'vertices'):
-
                     node_num = int(bob.get('size'))
-
                     node_x = np.zeros((node_num, dim))
-
                     for carol in bob:
-
                         for dave in carol.attrib:
                             if (dave == 'index'):
                                 index = int(carol.get('index'))
-
                         for dave in carol.attrib:
                             if (dave == 'x'):
                                 x = float(carol.get('x'))
@@ -64,9 +55,7 @@ def xml_read(filename):
                                 node_x[index, 2] = z
 
                 elif (bob.tag == 'cells'):
-
                     elem_num = int(bob.get('size'))
-
                     if (celltype == 'interval'):
                         elem_order = 2
                     elif (celltype == 'triangle'):
@@ -75,9 +64,7 @@ def xml_read(filename):
                         elem_order = 4
 
                     elem_node = np.zeros((elem_num, elem_order))
-
                     for carol in bob:
-
                         for dave in carol.attrib:
                             if (dave == 'index'):
                                 index = int(carol.get('index'))
@@ -183,7 +170,6 @@ def xml_to_fem_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('XML_TO_FEM_TEST.')
@@ -194,9 +180,7 @@ def xml_to_fem_test():
     xml_to_fem('cheby9')
     xml_to_fem('rectangle')
     xml_to_fem('tet_mesh')
-#
-#  Terminate.
-#
+
     print('')
     print('XML_TO_FEM_TEST.')
     print('  Normal end of execution')
@@ -238,7 +222,6 @@ def i4mat_write(filename, m, n, a):
             s = '  %d' % (a[i, j])
             output.write(s)
         output.write('\n')
-
     output.close()
 
     return
@@ -262,8 +245,6 @@ def i4mat_write_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('I4MAT_WRITE_TEST:')
@@ -283,9 +264,6 @@ def i4mat_write_test():
 
     print('')
     print('  Created file "%s".' % (filename))
-#
-#  Terminate.
-#
     print('')
     print('I4MAT_WRITE_TEST:')
     print('  Normal end of execution.')
@@ -327,7 +305,6 @@ def r8mat_write(filename, m, n, a):
             s = '  %g' % (a[i, j])
             output.write(s)
         output.write('\n')
-
     output.close()
 
     return
@@ -351,8 +328,6 @@ def r8mat_write_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('R8MAT_WRITE_TEST:')
@@ -372,9 +347,6 @@ def r8mat_write_test():
 
     print('')
     print('  Created file "%s".' % (filename))
-#
-#  Terminate.
-#
     print('')
     print('R8MAT_WRITE_TEST:')
     print('  Normal end of execution.')
@@ -403,52 +375,11 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))
 
     return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
