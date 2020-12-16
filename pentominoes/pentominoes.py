@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import time
+import platform
 
 
 def cell_ij_fill(m, i, j, color):
@@ -39,7 +43,6 @@ def cell_ij_fill(m, i, j, color):
     #    'r', 'g', 'b', 'c', 'm', 'y', 'w', 'k', or an RGB triple such as
     #    [1.0,0.4,0.0].  The square is filled with this color.
     #
-    import matplotlib.pyplot as plt
 
     a = j - 1
     b = j
@@ -47,8 +50,6 @@ def cell_ij_fill(m, i, j, color):
     d = m - i
 
     plt.fill([a, b, b, a], [c, c, d, d], color)
-
-    return
 
 
 def cell_ij_fill_test():
@@ -69,8 +70,6 @@ def cell_ij_fill_test():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     print('')
     print('CELL_IJ_FILL_TEST:')
@@ -98,26 +97,23 @@ def cell_ij_fill_test():
     dims = mario.shape
     m = dims[0]
     n = dims[1]
-#
-#  0: white
-#  1: black
-#  2: red
-#  3: blue
-#  4: yellow
-#  5: beige
-#  6: brown
-#
+
+    #  0: white
+    #  1: black
+    #  2: red
+    #  3: blue
+    #  4: yellow
+    #  5: beige
+    #  6: brown
     plt.axis('equal')
     plt.axis('off')
 
     for i in range(0, m):
         for j in range(0, n):
-
             k = mario[i, j]
-#
-#  Despite documentation assuring me it was possible, I could not seem to use
-#  numeric RGB triples for colors.
-#
+
+            #  Despite documentation assuring me it was possible, I could not seem to use
+            #  numeric RGB triples for colors.
             if (k == 0):
                 color = 'white'
             elif (k == 1):
@@ -138,8 +134,6 @@ def cell_ij_fill_test():
     plt.savefig('cell_ij_fill_test.png')
     plt.show(block=False)
     plt.clf()
-
-    return
 
 
 def pentomino_display(p, label):
@@ -167,49 +161,38 @@ def pentomino_display(p, label):
     #
     #    Input, string LABEL, a title for the plot.
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
-#
-#  The background grid.
-#
+
+    #  The background grid.
     grid_m = 5
     grid_n = 5
     grid = np.zeros([grid_m, grid_n])
-#
-#  Place the pentomino on the grid, so that it is "snug" in the upper left corner.
-#
+
+    #  Place the pentomino on the grid, so that it is "snug" in the upper left corner.
     dims = p.shape
     p_m = dims[0]
     p_n = dims[1]
 
     grid[0:p_m, 0:p_n] = p[0:p_m, 0:p_n]
-#
-#  Display each square of the grid.
-#
+
+    #  Display each square of the grid.
     plt.axis('equal')
     plt.axis('off')
 
     for i in range(0, grid_m):
         for j in range(0, grid_n):
-
             k = grid[i, j]
-
             if (k == 0):
                 color = 'white'
             elif (k == 1):
                 color = 'black'
-
             cell_ij_fill(grid_m, i, j, color)
 
     filename = label + '.png'
-
     plt.savefig(filename)
     plt.show(block=False)
     plt.clf()
 
     print('  PENTOMINO_DISPLAY created "%s"' % (filename))
-
-    return
 
 
 def pentomino_display_test():
@@ -230,7 +213,6 @@ def pentomino_display_test():
     #
     #    John Burkardt
     #
-    import numpy as np
 
     print('')
     print('PENTOMINO_DISPLAY_TEST')
@@ -243,8 +225,6 @@ def pentomino_display_test():
         name = pentominos[i]
         p = pentomino_matrix(name)
         pentomino_display(p, name)
-
-    return
 
 
 def pentominoes_test():
@@ -265,7 +245,6 @@ def pentominoes_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('PENTOMINOES_TEST')
@@ -275,9 +254,7 @@ def pentominoes_test():
     cell_ij_fill_test()
     pentomino_matrix_test()
     pentomino_display_test()
-#
-#  Terminate.
-#
+
     print('')
     print('PENTOMINOES_TEST')
     print('  Normal end of execution.')
@@ -309,18 +286,15 @@ def pentomino_matrix(name):
     #    Output, integer P(P_M,P_N), a matrix of 0's and 1's that indicates
     #    the shape of the pentomino.
     #
-    import numpy as np
     from sys import exit
 
     if (name.lower() == 'f'):
-
         p = np.array([
             [0, 1, 1],
             [1, 1, 0],
             [0, 1, 0]])
 
     elif (name.lower() == 'i'):
-
         p = np.array([
             [1],
             [1],
@@ -329,7 +303,6 @@ def pentomino_matrix(name):
             [1]])
 
     elif (name.lower() == 'l'):
-
         p = np.array([
             [1, 0],
             [1, 0],
@@ -337,67 +310,57 @@ def pentomino_matrix(name):
             [1, 1]])
 
     elif (name.lower() == 'n'):
-
         p = np.array([
             [1, 1, 0, 0],
             [0, 1, 1, 1]])
 
     elif (name.lower() == 'p'):
-
         p = np.array([
             [1, 1],
             [1, 1],
             [1, 0]])
 
     elif (name.lower() == 't'):
-
         p = np.array([
             [1, 1, 1],
             [0, 1, 0],
             [0, 1, 0]])
 
     elif (name.lower() == 'u'):
-
         p = np.array([
             [1, 0, 1],
             [1, 1, 1]])
 
     elif (name.lower() == 'v'):
-
         p = np.array([
             [1, 0, 0],
             [1, 0, 0],
             [1, 1, 1]])
 
     elif (name.lower() == 'w'):
-
         p = np.array([
             [1, 0, 0],
             [1, 1, 0],
             [0, 1, 1]])
 
     elif (name.lower() == 'x'):
-
         p = np.array([
             [0, 1, 0],
             [1, 1, 1],
             [0, 1, 0]])
 
     elif (name.lower() == 'y'):
-
         p = np.array([
             [0, 0, 1, 0],
             [1, 1, 1, 1]])
 
     elif (name.lower() == 'z'):
-
         p = np.array([
             [1, 1, 0],
             [0, 1, 0],
             [0, 1, 1]])
 
     else:
-
         print('')
         print('PENTOMINO_MATRIX - Fatal error!')
         print('  Illegal name = "%s"' % (name))
@@ -425,7 +388,6 @@ def pentomino_matrix_test():
     #
     #    John Burkardt
     #
-    import numpy as np
 
     print('')
     print('PENTOMINO_MATRIX_TEST')
@@ -448,8 +410,6 @@ def pentomino_matrix_test():
             for j in range(0, n):
                 print(' %d' % (p[i, j])),
             print('')
-
-    return
 
 
 def timestamp():
@@ -474,52 +434,8 @@ def timestamp():
     #
     #    None
     #
-    import time
-
     t = time.time()
     print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
 
 
 def perceptron():
@@ -20,9 +24,6 @@ def perceptron():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import platform
 
     print('')
     print('perceptron')
@@ -38,22 +39,14 @@ def perceptron():
     print('')
     print('  Generator Ratings')
     data = np.loadtxt('generators.txt')
-#
-#  Copy columns of data into variables.
-#
     rpm = data[:, 1]
     vib = data[:, 2]
     grade = data[:, 3]
-#
-#  Count the number of cases.
-#
     n = len(rpm)
 
+    #  Part 1.
     print('')
     print('  Number of generators = %d' % (n))
-#
-#  Part 1.
-#
     rpm_min = np.min(rpm)
     rpm_max = np.max(rpm)
     vib_min = np.min(vib)
@@ -84,20 +77,13 @@ def perceptron():
     plt.axis('equal')
     filename = 'perceptron_data.png'
     plt.savefig(filename)
-    plt.show(block=False)
     print('  Graphics saved as "%s"' % (filename))
-#
-#  Part 2.
-#
 
-#
-#  Work with normalized data.
-#
+    #  Part 2.
+    #  Work with normalized data.
     r = (rpm - np.min(rpm)) / (np.max(rpm) - np.min(rpm))
     v = (vib - np.min(vib)) / (np.max(vib) - np.min(vib))
-#
-#  Perceptron algorithm.
-#
+    #  Perceptron algorithm.
     alpha = 0.01
     m = 3
     w = np.ones(m) / m
@@ -110,29 +96,22 @@ def perceptron():
     step = 0
 
     while (e != 0 and step < 100):
-
         e = 0
         step = step + 1
-
         for i in range(0, n):
             f = (0 < np.dot(x[i, :], w[:]))
             e = e + (grade[i] != f)
             w = w + alpha * np.dot(x[i, :], (grade[i] - f))
-
         w = w / np.linalg.norm(w)
-
     if (e == 0):
         print('  All training data classified on step %d' % (step))
     else:
         print('  Iteration terminated without convergence on step %d' % (step))
-#
-#  Report.
-#
+
     print('')
     print('  Perceptron weights:')
     print('  f(x) = %g + %g * r + %g * v' % (w[0], w[1], w[2]))
     print('')
-
     print('')
     print('  Index    x*w  (0<x*w)  Rating')
     print('')
@@ -140,9 +119,7 @@ def perceptron():
     f = (0 < c)
     for j in range(0, n):
         print('     %2d  %6.2f      %g      %g' % (j, c[j], f[j], grade[j]))
-#
-#  Plot.
-#
+
     px = np.zeros(0)
     py = np.zeros(0)
 
@@ -181,14 +158,9 @@ def perceptron():
     plt.savefig(filename)
     plt.show(block=False)
     print('  Graphics saved as "%s"' % (filename))
-#
-#  Terminate.
-#
     print('')
     print('perceptron')
     print('  Normal end of execution.')
-
-    return
 
 
 def timestamp():
@@ -213,12 +185,9 @@ def timestamp():
     #
     #    None
     #
-    import time
 
     t = time.time()
     print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):
