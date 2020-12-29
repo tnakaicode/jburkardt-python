@@ -1,5 +1,5 @@
 ---
-title: ASA
+title: ASA Applied Statistics Algorithm
 ---
 
 ## ASA047 - Nelder-Mead Minimization Algorithm
