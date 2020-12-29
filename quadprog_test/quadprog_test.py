@@ -1,10 +1,19 @@
 #! /usr/bin/env python3
 #
+
 import numpy as np
+import matplotlib.pyplot as plt
+import sys
+import os
 import time
 import platform
+from optparse import OptionParser
 
-from quadprog import solve_qp
+sys.path.append(os.path.join("../"))
+from base import plot2d
+from timestamp.timestamp import timestamp
+from quadprog.quadprog import solve_qp
+
 
 def quadprog_test():
 
@@ -42,8 +51,6 @@ def quadprog_test():
     print('')
     print('quadprog_test')
     print('  Normal end of execution.')
-
-    return
 
 
 def quadprog_test01():
@@ -89,8 +96,6 @@ def quadprog_test01():
     print('')
     print('  Solution vector x = [ %g, %g ]:' % (sol[0][0], sol[0][1]))
     print('  Function value at x is %g' % (sol[1]))
-
-    return
 
 
 def quadprog_test02():
@@ -140,37 +145,6 @@ def quadprog_test02():
     print('  Solution vector x = [ %g, %g, %g ]:' %
           (sol[0][0], sol[0][1], sol[0][2]))
     print('  Function value at x is %g' % (sol[1]))
-
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):

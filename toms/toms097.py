@@ -1,14 +1,17 @@
 #! /usr/bin/env python3
 #
+
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
 import os
 import time
+import platform
 from optparse import OptionParser
 
 sys.path.append(os.path.join("../"))
 from base import plot2d
+from timestamp.timestamp import timestamp
 
 import logging
 logging.getLogger('matplotlib').setLevel(logging.ERROR)
@@ -63,8 +66,6 @@ def i4mat_print_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('I4MAT_PRINT_TEST:')
@@ -81,9 +82,7 @@ def i4mat_print_test():
         (51, 52, 53, 54, 55, 56)))
     title = '  A 5 x 6 integer matrix:'
     i4mat_print(m, n, a, title)
-#
-#  Terminate.
-#
+
     print('')
     print('I4MAT_PRINT_TEST:')
     print('  Normal end of execution.')
@@ -157,8 +156,6 @@ def i4mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
 
             print('')
 
-    return
-
 
 def i4mat_print_some_test():
 
@@ -178,8 +175,6 @@ def i4mat_print_some_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('I4MAT_PRINT_SOME_TEST')
@@ -195,9 +190,7 @@ def i4mat_print_some_test():
         [41, 42, 43, 44, 45, 46]], dtype=np.int32)
     i4mat_print_some(m, n, v, 0, 3, 2, 5,
                      '  Here is I4MAT, rows 0:2, cols 3:5:')
-#
-#  Terminate.
-#
+
     print('')
     print('I4MAT_PRINT_SOME_TEST:')
     print('  Normal end of execution.')
@@ -272,8 +265,6 @@ def i4mat_shortest_path_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     i4_huge = 2147483647
 
@@ -323,9 +314,7 @@ def i4mat_shortest_path_test():
     print('  node I to node J.')
 
     i4mat_print(n, n, a, '  Final distance matrix:')
-#
-#  Terminate.
-#
+
     print('')
     print('I4MAT_SHORTEST_PATH_TEST')
     print('  Normal end of execution.')
@@ -362,8 +351,6 @@ def r8mat_print(m, n, a, title):
     #
     r8mat_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
 
-    return
-
 
 def r8mat_print_test():
 
@@ -383,8 +370,6 @@ def r8mat_print_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('R8MAT_PRINT_TEST')
@@ -399,9 +384,7 @@ def r8mat_print_test():
         [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
         [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
     r8mat_print(m, n, v, '  Here is an R8MAT:')
-#
-#  Terminate.
-#
+
     print('')
     print('R8MAT_PRINT_TEST:')
     print('  Normal end of execution.')
@@ -446,7 +429,6 @@ def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
     if (m <= 0 or n <= 0):
         print('')
         print('  (None)')
-        return
 
     for j2lo in range(max(jlo, 0), min(jhi + 1, n), incx):
 
@@ -475,8 +457,6 @@ def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
 
             print('')
 
-    return
-
 
 def r8mat_print_some_test():
 
@@ -496,8 +476,6 @@ def r8mat_print_some_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('R8MAT_PRINT_SOME_TEST')
@@ -512,13 +490,10 @@ def r8mat_print_some_test():
         [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
         [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
     r8mat_print_some(m, n, v, 0, 3, 2, 5, '  Here is an R8MAT:')
-#
-#  Terminate.
-#
+
     print('')
     print('R8MAT_PRINT_SOME_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def r8mat_shortest_path(n, m):
@@ -589,8 +564,6 @@ def r8mat_shortest_path_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     r8_huge = 1.0E+30
 
@@ -640,81 +613,9 @@ def r8mat_shortest_path_test():
     print('  node I to node J.')
 
     r8mat_print(n, n, a, '  Final distance matrix:')
-#
-#  Terminate.
-#
+
     print('')
     print('R8MAT_SHORTEST_PATH_TEST')
-    print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
     print('  Normal end of execution.')
     return
 
@@ -737,7 +638,6 @@ def toms097_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('TOMS097_TEST')
@@ -746,9 +646,7 @@ def toms097_test():
 
     i4mat_shortest_path_test()
     r8mat_shortest_path_test()
-#
-#  Terminate.
-#
+
     print('')
     print('TOMS097_TEST:')
     print('  Normal end of execution.')
