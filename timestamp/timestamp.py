@@ -1,65 +1,31 @@
 #! /usr/bin/env python3
 #
-def timestamp ( ):
+import time
 
-#*****************************************************************************80
-#
-## timestamp prints the date as a timestamp.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    21 August 2019
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import time
 
-  t = time.time ( )
-  print ( time.ctime ( t ) )
+def timestamp():
 
-  return
+    # *****************************************************************************80
+    #
+    # timestamp prints the date as a timestamp.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    21 August 2019
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
 
-def timestamp_test ( ):
+    t = time.time()
+    print(time.ctime(t))
+    return t
 
-#*****************************************************************************80
-#
-## timestamp_test tests timestamp.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    03 December 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
 
-  print ( '' )
-  print ( 'timestamp_test:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Test timestamp.' )
-  print ( '' )
-
-  timestamp ( )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'timestamp_test:' )
-  print ( '  Normal end of execution.' )
-  return
-
-if ( __name__ == '__main__' ):
-  timestamp_test ( )
-
+if (__name__ == '__main__'):
+    timestamp()
