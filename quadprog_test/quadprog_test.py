@@ -94,7 +94,7 @@ def quadprog_test01():
     sol = solve_qp(H, f, A, b)
 
     print('')
-    print('  Solution vector x = [ %g, %g ]:' % (sol[0][0], sol[0][1]))
+    print('  Solution vector x = [ %g, %g ]:' % (sol[0], sol[1]))
     print('  Function value at x is %g' % (sol[1]))
 
 
@@ -143,7 +143,7 @@ def quadprog_test02():
 
     print('')
     print('  Solution vector x = [ %g, %g, %g ]:' %
-          (sol[0][0], sol[0][1], sol[0][2]))
+          (sol[0], sol[1], sol[2]))
     print('  Function value at x is %g' % (sol[1]))
 
 

@@ -54,7 +54,7 @@ from mpl_toolkits.mplot3d.axes3d import Axes3D
 
 
 def solve_qp(H, f, A, b):
-    
+
     # https://stackoverflow.com/questions/17009774/quadratic-program-qp-solver-that-only-depends-on-numpy-scipy
 
     def loss(x, sign=1.):
@@ -71,22 +71,21 @@ def solve_qp(H, f, A, b):
     siz = f.shape[0]
 
     x0 = np.random.randn(siz)
-    res_cons = optimize.minimize(
-        loss, x0, jac=jac, constraints=cons, method='SLSQP', options=opt)
-    res_uncons = optimize.minimize(
-        loss, x0, jac=jac, method='SLSQP', options=opt)
+    # res_cons = optimize.minimize(
+    #    loss, x0, jac=jac, constraints=cons, method='SLSQP', options=opt)
 
-    print('\nConstrained:')
-    print(res_cons)
+    # print('\nConstrained:')
+    # print(res_cons)
+
+    res = optimize.minimize(loss, x0, jac=jac, method='SLSQP', options=opt)
 
     print('\nUnconstrained:')
-    print(res_uncons)
+    print(res)
 
-    x1, x2 = res_cons['x']
-    f = res_cons['fun']
-
-    x1_unc, x2_unc = res_uncons['x']
-    f_unc = res_uncons['fun']
+    #x1, x2 = res['x']
+    #f = res['fun']
+    #x1_unc, x2_unc = res['x']
+    #f_unc = res['fun']
 
     # plotting
     #xgrid = np.mgrid[-2:4:0.1, 1.5:5.5:0.1]
@@ -104,4 +103,4 @@ def solve_qp(H, f, A, b):
     # ax.set_xlabel('x1')
     # ax.set_ylabel('x2')
     # ax.set_zlabel('F')
-    return res_cons
+    return res["x"]
