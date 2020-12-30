@@ -1,5 +1,19 @@
 #! /usr/bin/env python3
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def md(d_num=3, p_num=10, step_num=2, dt=0.1):
 
@@ -47,13 +61,11 @@ def md(d_num=3, p_num=10, step_num=2, dt=0.1):
     #    A value of 0.0001 is small, but the results will be more accurate.
     #    The default value is 0.1.
     #
-    import numpy as np
-    import platform
 
     mass = 1.0
-#
-#  Report to the user.
-#
+    #
+    #  Report to the user.
+    #
     print('')
     print('MD')
     print('  Python version: %s' % (platform.python_version()))
@@ -96,8 +108,6 @@ def md(d_num=3, p_num=10, step_num=2, dt=0.1):
             print('  %8d  %14f  %14f  %14g' % (step, potential, kinetic, rel))
             step_print_index = step_print_index + 1
             step_print = (step_print_index * step_num) // step_print_num
-
-    return
 
 
 def compute(p_num, d_num, pos, vel, mass):
@@ -148,7 +158,6 @@ def compute(p_num, d_num, pos, vel, mass):
     #
     #    Output, real KINETIC, the total kinetic energy.
     #
-    import numpy as np
 
     force = np.zeros([d_num, p_num])
     rij = np.zeros(d_num)
@@ -167,26 +176,26 @@ def compute(p_num, d_num, pos, vel, mass):
                 #
                 for k in range(0, d_num):
                     rij[k] = pos[k, i] - pos[k, j]
-#
-#  Compute D and D2, a distance and a truncated distance.
-#
+                #
+                #  Compute D and D2, a distance and a truncated distance.
+                #
                 d = 0.0
                 for k in range(0, d_num):
                     d = d + rij[k] ** 2
                 d = np.sqrt(d)
                 d2 = min(d, np.pi / 2.0)
-#
-#  Attribute half of the total potential energy to particle J.
-#
+                #
+                #  Attribute half of the total potential energy to particle J.
+                #
                 potential = potential + 0.5 * np.sin(d2) * np.sin(d2)
-#
-#  Add particle J's contribution to the force on particle I.
-#
+                #
+                #  Add particle J's contribution to the force on particle I.
+                #
                 for k in range(0, d_num):
                     force[k, i] = force[k, i] - rij[k] * np.sin(2.0 * d2) / d
-#
-#  Compute the kinetic energy.
-#
+    #
+    #  Compute the kinetic energy.
+    #
     kinetic = 0.0
     for k in range(0, d_num):
         for j in range(0, p_num):
@@ -227,19 +236,19 @@ def initialize(p_num, d_num):
     #
     #    Output, real ACC(D_NUM,P_NUM), the accelerations.
     #
-    import numpy as np
-#
-#  Positions.
-#
+
+    #
+    #  Positions.
+    #
     seed = 123456789
     pos, seed = r8mat_uniform_ab(d_num, p_num, 0.0, 10.0, seed)
-#
-#  Velocities.
-#
+    #
+    #  Velocities.
+    #
     vel = np.zeros([d_num, p_num])
-#
-#  Accelerations.
-#
+    #
+    #  Accelerations.
+    #
     acc = np.zeros([d_num, p_num])
 
     return pos, vel, acc
@@ -310,8 +319,6 @@ def r8mat_uniform_ab(m, n, a, b, seed):
     #    Output, integer SEED, the updated seed.  This would
     #    normally be used as the input seed on the next call.
     #
-    import numpy as np
-    from sys import exit
 
     i4_huge = 2147483647
 
@@ -342,75 +349,6 @@ def r8mat_uniform_ab(m, n, a, b, seed):
 
     return r, seed
 
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def update(p_num, d_num, pos, vel, f, acc, mass, dt):
@@ -466,21 +404,21 @@ def update(p_num, d_num, pos, vel, f, acc, mass, dt):
     #    Output, real ACC(D_NUM,P_NUM), the updated accelerations.
     #
     rmass = 1.0 / mass
-#
-#  Update positions.
-#
+    #
+    #  Update positions.
+    #
     for i in range(0, d_num):
         for j in range(0, p_num):
             pos[i, j] = pos[i, j] + vel[i, j] * dt + 0.5 * acc[i, j] * dt * dt
-#
-#  Update velocities.
-#
+    #
+    #  Update velocities.
+    #
     for i in range(0, d_num):
         for j in range(0, p_num):
             vel[i, j] = vel[i, j] + 0.5 * dt * (f[i, j] * rmass + acc[i, j])
-#
-#  Update accelerations.
-#
+    #
+    #  Update accelerations.
+    #
     for i in range(0, d_num):
         for j in range(0, p_num):
             acc[i, j] = f[i, j] * rmass
@@ -510,8 +448,6 @@ def md_test():
     #
     #    None
     #
-    import platform
-    from time import clock
 
     print('')
     print('MD_TEST')
@@ -520,14 +456,13 @@ def md_test():
 
     d_num = 3
     p_num = 100
-    step_num = 10
+    step_num = 50
     dt = 0.1
     md(d_num, p_num, step_num, dt)
 
     print('')
     print('MD_TEST')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

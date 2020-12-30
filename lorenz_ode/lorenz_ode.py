@@ -1,12 +1,19 @@
 #! /usr/bin/env python3
 #
+
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib as mpl
+import platform
 import time
 import sys
-import platform
+import os
+import math
 from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
 
 def lorenz_ode_test():
@@ -40,13 +47,10 @@ def lorenz_ode_test():
     t, x, y, z = lorenz_ode_compute(n)
     lorenz_ode_plot_components(n, t, x, y, z)
     lorenz_ode_plot_3d(n, t, x, y, z)
-#
-#  Terminate.
-#
+
     print('')
     print('LORENZ_ODE_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def lorenz_ode_compute(n):
@@ -282,35 +286,6 @@ def rk4vec(t0, m, u0, dt, f):
     u = u0 + dt * (f0 + 2.0 * f1 + 2.0 * f2 + f3) / 6.0
 
     return u
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):

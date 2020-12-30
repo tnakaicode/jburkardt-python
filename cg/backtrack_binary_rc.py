@@ -1,6 +1,20 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def backbin_rc(n, reject, n2, choice):
 
@@ -185,13 +199,10 @@ def backtrack_binary_rc_test01():
         for i in range(0, n):
             print('%2d' % (choice[i]), end='')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('BACKTRACK_BINARY_RC_TEST01')
     print('  Normal end of execution.')
-    return
 
 
 def backtrack_binary_rc_test02():
@@ -212,8 +223,6 @@ def backtrack_binary_rc_test02():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 8
     target = 53
@@ -241,20 +250,17 @@ def backtrack_binary_rc_test02():
 
         if (n2 == -1):
             break
-#
-#  Evaluate the partial sum.
-#
+
+        #  Evaluate the partial sum.
         result = 0
         for i in range(0, n2):
             result = result + choice[i] * w[i]
-#
-#  If the sum is too big, then we reject it, and
-#  all the related sums formed by making additional choices.
-#
+
+        #  If the sum is too big, then we reject it, and
+        #  all the related sums formed by making additional choices.
         reject = (target < result)
-#
-#  If we hit the target, print out the information.
-#
+
+        #  If we hit the target, print out the information.
         if (result == target and n2 == n):
             print('  ', end='')
             for i in range(0, n):
@@ -264,43 +270,9 @@ def backtrack_binary_rc_test02():
     print('')
     print('  Number of calls = %d' % (call_num))
     print('  Binary search space = %d' % (2 ** n))
-#
-#  Terminate.
-#
     print('')
     print('BACKTRACK_BINARY_RC_TEST02')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 def backtrack_binary_rc_test():
@@ -321,7 +293,6 @@ def backtrack_binary_rc_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('BACKTRACK_BINARY_RC_TEST:')

@@ -1,6 +1,20 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def logistic_attractors(x, r):
 
@@ -144,30 +158,26 @@ def logistic_bifurcation_test():
     #    11 January 2020,
     #    https://www.johndcook.com/blog/
     #
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import platform
-    import sys
 
     print('')
     print('logistic_bifurcation_test:')
     print('  Python version: %s' % (platform.python_version()))
     print('  Draw the logistic map bifurcation diagram.')
-#
-#  Sample values of r between 0 and 4.
-#
+    #
+    #  Sample values of r between 0 and 4.
+    #
     rs = np.linspace(0, 3.5, 1000)
     #rs = np.linspace(0, 4.0, 1000)
-#
-#  For each r, compute ts, the set of attractors for the iteration.
-#
+    #
+    #  For each r, compute ts, the set of attractors for the iteration.
+    #
     for i, r in enumerate(rs):
         ts = logistic_attractors(0.1, r)
         sys.stdout.write("\r {:.3f} - {} / 1000".format(r, i))
         sys.stdout.flush()
-#
-#  Plot r versus its attractors.
-#
+        #
+        #  Plot r versus its attractors.
+        #
         for t in ts:
             plt.plot(r, t, "ko", markersize=1)
 
@@ -175,14 +185,9 @@ def logistic_bifurcation_test():
     plt.savefig(filename)
     print('')
     print('  Graphics saved as "%s"' % (filename))
-
-    plt.show(block=False)
-
     print('')
     print('logistic_bifurcation_test:')
     print('  Normal end of execution.')
-
-    return
 
 
 if (__name__ == '__main__'):

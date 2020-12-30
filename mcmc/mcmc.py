@@ -1,34 +1,50 @@
 #! /usr/bin/env python3
 #
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
 
 def mcmc_test():
     np.random.seed(123456789)
     data = np.random.randn(20)
-
+    
+    plt.figure()
     plt.hist(data, rwidth=0.95)
     plt.xlabel('<-- X -- >')
     plt.ylabel('<-- # of observations -- >')
     plt.grid(True)
     plt.title('Histogram of random normal data')
-    plt.show()
-#
-#  For this case, we can actually determine the posterior distribution analytically.
-#
+    plt.savefig("./mcmc_hist.png")
+
+    #
+    #  For this case, we can actually determine the posterior distribution analytically.
+    #
     x = np.linspace(-1.0, +1.0, 500)
     mu_post, sigma_post = calc_posterior_analytical(data, 0.0, 1.0)
     y = 1.0 / np.sqrt(2.0 * np.pi * sigma_post**2) * \
         np.exp(- 0.5 * (x - mu_post)**2 / sigma_post**2)
+    
+    plt.figure()
     plt.plot(x, y)
     plt.xlabel('<-- X -- >')
     plt.ylabel('<-- Y -- >')
     plt.grid(True)
     plt.title('Analytical posterior')
-#
-#  Now let's do this by sampling.
-#
+    plt.savefig("./mcmc_analysis.png")
+    #
+    #  Now let's do this by sampling.
+    #
     mu_current = 1.0
     mu_proposal = 1.0
     mu_prior_mu = 1.0

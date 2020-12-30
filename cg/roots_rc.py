@@ -1,6 +1,20 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def roots_rc(n, x, fx, q):
 
@@ -49,13 +63,11 @@ def roots_rc(n, x, fx, q):
     #
     #    Workspace, real ( kind = 8 ) Q(2*N+2,N+2).
     #
-    import numpy as np
-    from sys import exit
 
     ferr = np.sum(abs(fx[0:n]))
-#
-#  Initialization if Q(2*N+1,1) = 0.0.
-#
+    #
+    #  Initialization if Q(2*N+1,1) = 0.0.
+    #
     if (q[2 * n, 0] == 0.0):
 
         for i in range(0, n):
@@ -116,11 +128,12 @@ def roots_rc(n, x, fx, q):
                 q[i, n] = t
 
     q[0:n, n + 1] = q[0:n, n]
-#
-#  Call the linear equation solver, which should not destroy the matrix
-#  in Q(1:N,1:N), and should overwrite the solution into Q(1:N,N+2).
-#
-# q[0:n,n+1] = np.linalg.solve ( q[0:n,0:n], q[0:n,n+1] )
+    #
+    #  Call the linear equation solver, which should not destroy the matrix
+    #  in Q(1:N,1:N), and should overwrite the solution into Q(1:N,N+2).
+    #
+    # q[0:n,n+1] = np.linalg.solve ( q[0:n,0:n], q[0:n,n+1] )
+    #
     q[0:n, n +
         1], res, rank, s = np.linalg.lstsq(q[0:n, 0:n], q[0:n, n + 1], rcond=None)
 
@@ -139,9 +152,9 @@ def roots_rc(n, x, fx, q):
         xnew[i] = q[i + n, n]
         for j in range(0, n):
             xnew[i] = xnew[i] - q[i + n, j] * q[j, n + 1]
-#
-#  If system not complete, damp the solution.
-#
+        #
+        #  If system not complete, damp the solution.
+        #
         xnew[i] = xnew[i] / (1.0 - sump) * (1.0 - damp) + q[i + n, n] * damp
 
     for j in range(0, n + 1):
@@ -168,8 +181,6 @@ def roots_rc_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 4
     it_max = 30
@@ -185,9 +196,9 @@ def roots_rc_test():
     print('')
     print('       FERR          X')
     print('')
-#
-#  Initialization.
-#
+    #
+    #  Initialization.
+    #
     q = np.zeros([2 * n + 2, n + 2])
 
     xnew[0] = 1.2
@@ -225,43 +236,10 @@ def roots_rc_test():
             break
 
         it = it + 1
-#
-#  Terminate.
-#
+
     print('')
     print('ROOTS_RC_TEST:')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):
