@@ -1,6 +1,22 @@
 #! /usr/bin/env python
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+from prob.r8 import r8_huge, r8_uniform_01, r8_zeta
+from prob.r8vec import r8vec_mean, r8vec_variance, r8vec_min, r8vec_max
+
 
 def fermi_dirac_sample(u, v, seed):
 
@@ -46,8 +62,6 @@ def fermi_dirac_sample(u, v, seed):
     #    Output values will be nonnegative, and roughly half of them should
     #    be less than or equal to U.
     #
-    import numpy as np
-    from r8_uniform_01 import r8_uniform_01
 
     iter_max = 1000
 
@@ -95,12 +109,6 @@ def fermi_dirac_sample_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
-    from r8vec_max import r8vec_max
-    from r8vec_mean import r8vec_mean
-    from r8vec_min import r8vec_min
-    from r8vec_variance import r8vec_variance
 
     sample_num = 10000
     test_num = 7
@@ -139,17 +147,13 @@ def fermi_dirac_sample_test():
         print('  Sample variance = %g' % (variance))
         print('  Maximum value =   %g' % (z_max))
         print('  Minimum value =   %g' % (z_min))
-#
-#  Terminate.
-#
+
     print('')
     print('FERMI_DIRAC_SAMPLE_TEST')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     fermi_dirac_sample_test()
     timestamp()

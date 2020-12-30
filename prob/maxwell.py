@@ -1,471 +1,467 @@
 #! /usr/bin/env python
 #
-def maxwell_cdf ( x, a ):
 
-#*****************************************************************************80
-#
-## MAXWELL_CDF evaluates the Maxwell CDF.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    27 March 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, real X, the argument of the PDF.
-#    0.0 <= X
-#
-#    Input, real A, the parameter of the PDF.
-#    0 < A.
-#
-#    Output, real CDF, the value of the CDF.
-#
-  from r8_gamma_inc import r8_gamma_inc
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-  if ( x <= 0.0 ):
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+from prob.r8 import r8_huge, r8_uniform_01
+from prob.r8vec import r8vec_mean, r8vec_variance, r8vec_min, r8vec_max
 
-    cdf = 0.0
 
-  else:
+def maxwell_cdf(x, a):
 
-    x2 = x / a
-    p2 = 1.5
+    # *****************************************************************************80
+    #
+    # MAXWELL_CDF evaluates the Maxwell CDF.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 March 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, real X, the argument of the PDF.
+    #    0.0 <= X
+    #
+    #    Input, real A, the parameter of the PDF.
+    #    0 < A.
+    #
+    #    Output, real CDF, the value of the CDF.
+    #
+    from r8_gamma_inc import r8_gamma_inc
 
-    cdf = r8_gamma_inc ( p2, x2 )
+    if (x <= 0.0):
 
-  return cdf
+        cdf = 0.0
 
-def maxwell_cdf_inv ( cdf, a ):
-
-#*****************************************************************************80
-#
-## MAXWELL_CDF_INV inverts the Maxwell CDF.
-#
-#  Discussion:
-#
-#    A simple bisection method is used.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    27 March 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, real CDF, the value of the CDF.
-#
-#    Input, real A, the parameter of the PDF.
-#    0 < A.
-#
-#    Output, real X, the corresponding argument of the CDF.
-#
-  from sys import exit
-
-  it_max = 100
-  tol = 0.0001
-  r8_huge = 1.0E+30
-
-  if ( cdf <= 0.0 ):
-    x = 0.0
-    return x
-  elif ( 1.0 <= cdf ):
-    x = r8_huge
-    return x
-
-  x1 = 0.0
-  cdf1 = 0.0
-
-  x2 = 1.0
-
-  while ( True ):
-
-    cdf2 = maxwell_cdf ( x2, a )
-
-    if ( cdf < cdf2 ):
-      break
-
-    x2 = 2.0 * x2
-
-    if ( 1000000.0 < x2 ):
-      print ( '' )
-      print ( 'MAXWELL_CDF_INV - Fatal error!' )
-      print ( '  Initial bracketing effort fails.' )
-      exit ( 'MAXWELL_CDF_INV - Fatal error!' )
-#
-#  Now use bisection.
-#
-  it = 0
-
-  while ( True ):
-
-    it = it + 1
-
-    x3 = 0.5 * ( x1 + x2 )
-    cdf3 = maxwell_cdf ( x3, a )
-
-    if ( abs ( cdf3 - cdf ) < tol ):
-      x = x3
-      break
-
-    if ( it_max < it ):
-      print ( '' )
-      print ( 'MAXWELL_CDF_INV - Fatal error!' )
-      print ( '  Iteration limit exceeded.' )
-      exit ( 'MAXWELL_CDF_INV - Fatal error!' )
-
-    if ( ( cdf3 <= cdf and cdf1 < cdf ) or ( cdf <= cdf3 and cdf <= cdf1 ) ):
-      x1 = x3
-      cdf1 = cdf3
     else:
-      x2 = x3
-      cdf2 = cdf3
 
-  return x
+        x2 = x / a
+        p2 = 1.5
 
-def maxwell_cdf_test ( ):
+        cdf = r8_gamma_inc(p2, x2)
 
-#*****************************************************************************80
-#
-## MAXWELL_CDF_TEST tests MAXWELL_CDF.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    27 March 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
+    return cdf
 
-  print ( '' )
-  print ( 'MAXWELL_CDF_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  MAXWELL_CDF evaluates the Maxwell CDF.' )
-  print ( '  MAXWELL_CDF_INV inverts the Maxwell CDF.' )
-  print ( '  MAXWELL_PDF evaluates the Maxwell PDF.' )
 
-  a = 2.0
+def maxwell_cdf_inv(cdf, a):
 
-  if ( not maxwell_check ( a ) ):
-    print ( '' )
-    print ( 'MAXWELL_CDF_TEST - Fatal error!' )
-    print ( '  The parameters are not legal.' )
-    return
+    # *****************************************************************************80
+    #
+    # MAXWELL_CDF_INV inverts the Maxwell CDF.
+    #
+    #  Discussion:
+    #
+    #    A simple bisection method is used.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 March 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, real CDF, the value of the CDF.
+    #
+    #    Input, real A, the parameter of the PDF.
+    #    0 < A.
+    #
+    #    Output, real X, the corresponding argument of the CDF.
+    #
 
-  print ( '' )
-  print ( '  PDF parameter A = %14g' % ( a ) )
+    it_max = 100
+    tol = 0.0001
+    r8_huge = 1.0E+30
 
-  seed = 123456789
+    if (cdf <= 0.0):
+        x = 0.0
+        return x
+    elif (1.0 <= cdf):
+        x = r8_huge
+        return x
 
-  print ( '' )
-  print ( '       X            PDF           CDF            CDF_INV' )
-  print ( '' )
+    x1 = 0.0
+    cdf1 = 0.0
 
-  for i in range ( 0, 10 ):
+    x2 = 1.0
+    while (True):
+        cdf2 = maxwell_cdf(x2, a)
 
-    x, seed = maxwell_sample ( a, seed )
+        if (cdf < cdf2):
+            break
 
-    pdf = maxwell_pdf ( x, a )
+        x2 = 2.0 * x2
+        if (1000000.0 < x2):
+            print('')
+            print('MAXWELL_CDF_INV - Fatal error!')
+            print('  Initial bracketing effort fails.')
+            exit('MAXWELL_CDF_INV - Fatal error!')
+    #
+    #  Now use bisection.
+    #
+    it = 0
+    while (True):
+        it = it + 1
+        x3 = 0.5 * (x1 + x2)
+        cdf3 = maxwell_cdf(x3, a)
 
-    cdf = maxwell_cdf ( x, a )
+        if (abs(cdf3 - cdf) < tol):
+            x = x3
+            break
 
-    x2 = maxwell_cdf_inv ( cdf, a )
+        if (it_max < it):
+            print('')
+            print('MAXWELL_CDF_INV - Fatal error!')
+            print('  Iteration limit exceeded.')
+            exit('MAXWELL_CDF_INV - Fatal error!')
 
-    print ( ' %14g  %14g  %14g  %14g' % ( x, pdf, cdf, x2 ) )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'MAXWELL_CDF_TEST' )
-  print ( '  Normal end of execution.' )
-  return
+        if ((cdf3 <= cdf and cdf1 < cdf) or (cdf <= cdf3 and cdf <= cdf1)):
+            x1 = x3
+            cdf1 = cdf3
+        else:
+            x2 = x3
+            cdf2 = cdf3
 
-def maxwell_check ( a ):
+    return x
 
-#*****************************************************************************80
-#
-## MAXWELL_CHECK checks the parameters of the Maxwell CDF.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    27 March 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, real A, the parameter of the PDF.
-#    0 < A.
-#
-#    Output, logical CHECK, is true if the parameters are legal.
-#
-  check = True
 
-  if ( a <= 0.0 ):
-    print ( '' )
-    print ( 'MAXWELL_CHECK - Fatal error!' )
-    print ( '  A <= 0.0.' )
-    check = False
+def maxwell_cdf_test():
 
-  return check
+    # *****************************************************************************80
+    #
+    # MAXWELL_CDF_TEST tests MAXWELL_CDF.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 March 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
 
-def maxwell_mean ( a ):
+    print('')
+    print('MAXWELL_CDF_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  MAXWELL_CDF evaluates the Maxwell CDF.')
+    print('  MAXWELL_CDF_INV inverts the Maxwell CDF.')
+    print('  MAXWELL_PDF evaluates the Maxwell PDF.')
 
-#*****************************************************************************80
-#
-## MAXWELL_MEAN returns the mean of the Maxwell PDF.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    27 March 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, real A, the parameter of the PDF.
-#    0 < A.
-#
-#    Output, real MEAN, the mean value.
-#
-  import numpy as np
-  from r8_gamma import r8_gamma
+    a = 2.0
 
-  mean = np.sqrt ( 2.0 ) * a * r8_gamma ( 2.0 ) / r8_gamma ( 1.5 )
+    if (not maxwell_check(a)):
+        print('')
+        print('MAXWELL_CDF_TEST - Fatal error!')
+        print('  The parameters are not legal.')
+        return
 
-  return mean
+    print('')
+    print('  PDF parameter A = %14g' % (a))
 
-def maxwell_pdf ( x, a ):
+    seed = 123456789
 
-#*****************************************************************************80
-#
-## MAXWELL_PDF evaluates the Maxwell PDF.
-#
-#  Discussion:
-#
-#    PDF(X)(A) = EXP ( - 0.5 * ( X / A )^2 ) * ( X / A )^2 /
-#      ( SQRT ( 2 ) * A * GAMMA ( 1.5 ) )
-#
-#    MAXWELL_PDF(X)(A) = CHI_PDF(0,A,3)
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    27 March 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, real X, the argument of the PDF.
-#    0 < X
-#
-#    Input, real A, the parameter of the PDF.
-#    0 < A.
-#
-#    Output, real PDF, the value of the PDF.
-#
-  import numpy as np
-  from r8_gamma import r8_gamma
+    print('')
+    print('       X            PDF           CDF            CDF_INV')
+    print('')
 
-  if ( x <= 0.0 ):
+    for i in range(0, 10):
 
-    pdf = 0.0
+        x, seed = maxwell_sample(a, seed)
 
-  else:
+        pdf = maxwell_pdf(x, a)
 
-    y = x / a
+        cdf = maxwell_cdf(x, a)
 
-    pdf = np.exp ( -0.5 * y * y ) * y * y \
-      / ( np.sqrt ( 2.0 ) * a * r8_gamma ( 1.5 ) )
+        x2 = maxwell_cdf_inv(cdf, a)
 
-  return pdf
+        print(' %14g  %14g  %14g  %14g' % (x, pdf, cdf, x2))
 
-def maxwell_sample ( a, seed ):
+    print('')
+    print('MAXWELL_CDF_TEST')
+    print('  Normal end of execution.')
 
-#*****************************************************************************80
-#
-## MAXWELL_SAMPLE samples the Maxwell PDF.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    27 March 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, real A, the parameter of the PDF.
-#    0 < A.
-#
-#    Input, integer SEED, a seed for the random number generator.
-#
-#    Output, real X, a sample of the PDF.
-#
-#    Output, integer SEED, an updated seed for the random number generator.
-#
-  import numpy as np
-  from chi_square import chi_square_sample
 
-  a2 = 3.0
-  x, seed = chi_square_sample ( a2, seed )
+def maxwell_check(a):
 
-  x = a * np.sqrt ( x )
+    # *****************************************************************************80
+    #
+    # MAXWELL_CHECK checks the parameters of the Maxwell CDF.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 March 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, real A, the parameter of the PDF.
+    #    0 < A.
+    #
+    #    Output, logical CHECK, is true if the parameters are legal.
+    #
+    check = True
 
-  return x, seed
+    if (a <= 0.0):
+        print('')
+        print('MAXWELL_CHECK - Fatal error!')
+        print('  A <= 0.0.')
+        check = False
 
-def maxwell_sample_test ( ):
+    return check
 
-#*****************************************************************************80
-#
-## MAXWELL_SAMPLE_TEST tests MAXWELL_SAMPLE.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    27 March 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-  from r8vec_max import r8vec_max
-  from r8vec_mean import r8vec_mean
-  from r8vec_min import r8vec_min
-  from r8vec_variance import r8vec_variance
 
-  nsample = 1000
-  seed = 123456789
+def maxwell_mean(a):
 
-  print ( '' )
-  print ( 'MAXWELL_SAMPLE_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  MAXWELL_MEAN computes the Maxwell mean' )
-  print ( '  MAXWELL_VARIANCE computes the Maxwell variance' )
-  print ( '  MAXWELL_SAMPLE samples the Maxwell distribution.' )
+    # *****************************************************************************80
+    #
+    # MAXWELL_MEAN returns the mean of the Maxwell PDF.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 March 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, real A, the parameter of the PDF.
+    #    0 < A.
+    #
+    #    Output, real MEAN, the mean value.
+    #
+    from r8_gamma import r8_gamma
 
-  a = 2.0
+    mean = np.sqrt(2.0) * a * r8_gamma(2.0) / r8_gamma(1.5)
 
-  if ( not maxwell_check ( a ) ):
-    print ( '' )
-    print ( 'MAXWELL_SAMPLE_TEST - Fatal error!' )
-    print ( '  The parameters are not legal.' )
-    return
+    return mean
 
-  mean = maxwell_mean ( a )
-  variance = maxwell_variance ( a )
 
-  print ( '' )
-  print ( '  PDF parameter A =             %14g' % ( a ) )
-  print ( '  PDF mean =                    %14g' % ( mean ) )
-  print ( '  PDF mean =                    %14g' % ( variance ) )
+def maxwell_pdf(x, a):
 
-  x = np.zeros ( nsample )
-  for i in range ( 0, nsample ):
-    x[i], seed = maxwell_sample ( a, seed )
+    # *****************************************************************************80
+    #
+    # MAXWELL_PDF evaluates the Maxwell PDF.
+    #
+    #  Discussion:
+    #
+    #    PDF(X)(A) = EXP ( - 0.5 * ( X / A )^2 ) * ( X / A )^2 /
+    #      ( SQRT ( 2 ) * A * GAMMA ( 1.5 ) )
+    #
+    #    MAXWELL_PDF(X)(A) = CHI_PDF(0,A,3)
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 March 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, real X, the argument of the PDF.
+    #    0 < X
+    #
+    #    Input, real A, the parameter of the PDF.
+    #    0 < A.
+    #
+    #    Output, real PDF, the value of the PDF.
+    #
+    from r8_gamma import r8_gamma
 
-  mean = r8vec_mean ( nsample, x )
-  variance = r8vec_variance ( nsample, x )
-  xmax = r8vec_max ( nsample, x )
-  xmin = r8vec_min ( nsample, x )
+    if (x <= 0.0):
+        pdf = 0.0
+    else:
+        y = x / a
+        pdf = np.exp(-0.5 * y * y) * y * y \
+            / (np.sqrt(2.0) * a * r8_gamma(1.5))
 
-  print ( '' )
-  print ( '  Sample size =     %6d' % ( nsample ) )
-  print ( '  Sample mean =     %14g' % ( mean ) )
-  print ( '  Sample variance = %14g' % ( variance ) )
-  print ( '  Sample maximum =  %14g' % ( xmax ) )
-  print ( '  Sample minimum =  %14g' % ( xmin ) )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'MAXWELL_SAMPLE_TEST' )
-  print ( '  Normal end of execution.' )
-  return
+    return pdf
 
-def maxwell_variance ( a ):
 
-#*****************************************************************************80
-#
-## MAXWELL_VARIANCE returns the variance of the Maxwell PDF.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    27 March 2016
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, real A, the parameter of the PDF.
-#    0 < A.
-#
-#    Output, real VARIANCE, the variance of the PDF.
-#
-  from r8_gamma import r8_gamma
+def maxwell_sample(a, seed):
 
-  variance = a * a * ( 3.0 - 2.0 * ( r8_gamma ( 2.0 ) / r8_gamma ( 1.5 ) ) ** 2 )
+    # *****************************************************************************80
+    #
+    # MAXWELL_SAMPLE samples the Maxwell PDF.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 March 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, real A, the parameter of the PDF.
+    #    0 < A.
+    #
+    #    Input, integer SEED, a seed for the random number generator.
+    #
+    #    Output, real X, a sample of the PDF.
+    #
+    #    Output, integer SEED, an updated seed for the random number generator.
+    #
+    from chi_square import chi_square_sample
 
-  return variance
+    a2 = 3.0
+    x, seed = chi_square_sample(a2, seed)
+    x = a * np.sqrt(x)
 
-if ( __name__ == '__main__' ):
-  from timestamp import timestamp
-  timestamp ( ) 
-  maxwell_cdf_test ( )
-  maxwell_sample_test ( )
-  timestamp ( )
- 
+    return x, seed
+
+
+def maxwell_sample_test():
+
+    # *****************************************************************************80
+    #
+    # MAXWELL_SAMPLE_TEST tests MAXWELL_SAMPLE.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 March 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+
+    nsample = 1000
+    seed = 123456789
+
+    print('')
+    print('MAXWELL_SAMPLE_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  MAXWELL_MEAN computes the Maxwell mean')
+    print('  MAXWELL_VARIANCE computes the Maxwell variance')
+    print('  MAXWELL_SAMPLE samples the Maxwell distribution.')
+
+    a = 2.0
+
+    if (not maxwell_check(a)):
+        print('')
+        print('MAXWELL_SAMPLE_TEST - Fatal error!')
+        print('  The parameters are not legal.')
+        return
+
+    mean = maxwell_mean(a)
+    variance = maxwell_variance(a)
+
+    print('')
+    print('  PDF parameter A =             %14g' % (a))
+    print('  PDF mean =                    %14g' % (mean))
+    print('  PDF mean =                    %14g' % (variance))
+
+    x = np.zeros(nsample)
+    for i in range(0, nsample):
+        x[i], seed = maxwell_sample(a, seed)
+
+    mean = r8vec_mean(nsample, x)
+    variance = r8vec_variance(nsample, x)
+    xmax = r8vec_max(nsample, x)
+    xmin = r8vec_min(nsample, x)
+
+    print('')
+    print('  Sample size =     %6d' % (nsample))
+    print('  Sample mean =     %14g' % (mean))
+    print('  Sample variance = %14g' % (variance))
+    print('  Sample maximum =  %14g' % (xmax))
+    print('  Sample minimum =  %14g' % (xmin))
+    print('')
+    print('MAXWELL_SAMPLE_TEST')
+    print('  Normal end of execution.')
+
+
+def maxwell_variance(a):
+
+    # *****************************************************************************80
+    #
+    # MAXWELL_VARIANCE returns the variance of the Maxwell PDF.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 March 2016
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, real A, the parameter of the PDF.
+    #    0 < A.
+    #
+    #    Output, real VARIANCE, the variance of the PDF.
+    #
+    from r8_gamma import r8_gamma
+
+    variance = a * a * (3.0 - 2.0 * (r8_gamma(2.0) / r8_gamma(1.5)) ** 2)
+
+    return variance
+
+
+if (__name__ == '__main__'):
+    timestamp()
+    maxwell_cdf_test()
+    maxwell_sample_test()
+    timestamp()
