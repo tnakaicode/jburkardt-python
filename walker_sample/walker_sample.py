@@ -1,6 +1,20 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def i4_choose(n, k):
 
@@ -65,48 +79,6 @@ def i4_choose(n, k):
     return value
 
 
-def i4_choose_test():
-
-    # *****************************************************************************80
-    #
-    # I4_CHOOSE_TEST tests I4_CHOOSE.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('I4_CHOOSE_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4_CHOOSE evaluates C(N,K).')
-    print('')
-    print('       N       K     CNK')
-
-    for n in range(0, 5):
-        print('')
-        for k in range(0, n + 1):
-            cnk = i4_choose(n, k)
-
-            print('  %6d  %6d  %6d' % (n, k, cnk))
-#
-#  Terminate.
-#
-    print('')
-    print('I4_CHOOSE_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def i4_uniform_ab(a, b, seed):
 
     # *****************************************************************************80
@@ -169,7 +141,6 @@ def i4_uniform_ab(a, b, seed):
     #
     #    Output, integer SEED, the updated seed.
     #
-    from sys import exit
 
     i4_huge = 2147483647
 
@@ -214,53 +185,6 @@ def i4_uniform_ab(a, b, seed):
     return value, seed
 
 
-def i4_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # I4_UNIFORM_AB_TEST tests I4_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    a = -100
-    b = 200
-    seed = 123456789
-
-    print('')
-    print('I4_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4_UNIFORM_AB computes pseudorandom values')
-    print('  in an interval [A,B].')
-    print('')
-    print('  The lower endpoint A = %d' % (a))
-    print('  The upper endpoint B = %d' % (b))
-    print('  The initial seed is %d' % (seed))
-    print('')
-
-    for i in range(1, 21):
-        j, seed = i4_uniform_ab(a, b, seed)
-        print('  %8d  %8d' % (i, j))
-#
-#  Terminate.
-#
-    print('')
-    print('I4_UNIFORM_AB_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def normalize(n, x):
 
     # ****************************************************************************80
@@ -301,61 +225,6 @@ def normalize(n, x):
     return x
 
 
-def normalize_test():
-
-    # *****************************************************************************80
-    #
-    # NORMALIZE_TEST tests NORMALIZE.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    19 February 2016
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('NORMALIZE_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  NORMALIZE normalizes entries 1 through N of a vector')
-    print('  of length N+2.')
-
-    n = 5
-    seed = 123456789
-    x, seed = r8vec_uniform_01(n + 2, seed)
-    r8vec_print(n + 2, x, '  Initial X:')
-
-    x_norm = 0.0
-    for i in range(1, n + 1):
-        x_norm = x_norm + abs(x[i])
-    print('')
-    print('  Initial L1 norm of X(1:%d) = %10.6g' % (n, x_norm))
-
-    x = normalize(n, x)
-
-    r8vec_print(n + 2, x, '  Normalized X:')
-
-    x_norm = 0.0
-    for i in range(1, n + 1):
-        x_norm = x_norm + abs(x[i])
-    print('')
-    print('  Final L1 norm of X(1:%d) = %10.6g' % (n, x_norm))
-#
-#  Terminate.
-#
-    print('')
-    print('NORMALIZE_TEST')
-    print('  Normal end of execution.')
-    return
-
-
 def r8vec_indicator0(n):
 
     # *****************************************************************************80
@@ -394,45 +263,6 @@ def r8vec_indicator0(n):
     return a
 
 
-def r8vec_indicator0_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_INDICATOR0_TEST tests R8VEC_INDICATOR0.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 September 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8VEC_INDICATOR0_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_INDICATOR0 returns an indicator matrix.')
-
-    n = 10
-    a = r8vec_indicator0(n)
-
-    r8vec_print(n, a, '  The indicator0 vector:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_INDICATOR0_TEST')
-    print('  Normal end of execution.')
-    return
-
-
 def r8vec_print(n, a, title):
 
     # *****************************************************************************80
@@ -464,44 +294,6 @@ def r8vec_print(n, a, title):
     print('')
     for i in range(0, n):
         print('%6d:  %12g' % (i, a[i]))
-
-
-def r8vec_print_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT_TEST tests R8VEC_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8VEC_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_PRINT prints an R8VEC.')
-
-    n = 4
-    v = np.array([123.456, 0.000005, -1.0E+06, 3.14159265], dtype=np.float64)
-    r8vec_print(n, v, '  Here is an R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def r8vec_uniform_01(n, seed):
@@ -593,49 +385,6 @@ def r8vec_uniform_01(n, seed):
     return x, seed
 
 
-def r8vec_uniform_01_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_01_TEST tests R8VEC_UNIFORM_01.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n = 10
-    seed = 123456789
-
-    print('')
-    print('R8VEC_UNIFORM_01_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_UNIFORM_01 computes a random R8VEC.')
-    print('')
-    print('  Initial seed is %d' % (seed))
-
-    v, seed = r8vec_uniform_01(n, seed)
-
-    r8vec_print(n, v, '  Random R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_UNIFORM_01_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def random_permutation(n, x, seed):
 
     # ****************************************************************************80
@@ -710,76 +459,6 @@ def random_permutation_test():
 #
     print('')
     print('RANDOM_PERMUTATION_TEST')
-    print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
     print('  Normal end of execution.')
     return
 
@@ -1163,31 +842,20 @@ def walker_sample_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('WALKER_SAMPLE_TEST:')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the WALKER_SAMPLE library.')
 
-    i4_choose_test()
-    i4_uniform_ab_test()
-    normalize_test()
-    r8vec_indicator0_test()
-    r8vec_print_test()
-    r8vec_uniform_01_test()
-    random_permutation_test()
     walker_build_test()
     walker_sampler_test()
     walker_verify_test()
     zipf_probability_test()
-#
-#  Terminate.
-#
+
     print('')
     print('WALKER_SAMPLE_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def walker_verify(n, x, y, a):
@@ -1222,7 +890,6 @@ def walker_verify(n, x, y, a):
     #
     #    Input, unsigned int A[N+2], the Walker index vector.
     #
-    import numpy as np
 
     z = np.zeros(n + 2, dtype=np.float64)
 #
@@ -1263,8 +930,6 @@ def walker_verify_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('WALKER_VERIFY_TEST')
@@ -1291,13 +956,9 @@ def walker_verify_test():
     print('')
     print('  The verification sum = %g' % (v))
     print('  It should be very close to zero.')
-#
-#  Terminate.
-#
     print('')
     print('WALKER_VERIFY_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def zipf_probability(n, p):
@@ -1333,7 +994,6 @@ def zipf_probability(n, p):
     #    Output, double X[N+2], contains in X[1] through X[N] the
     #    probabilities of outcomes 1 through N.
     #
-    import numpy as np
 
     x = np.zeros(n + 2)
 
@@ -1363,7 +1023,6 @@ def zipf_probability_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('ZIPF_PROBABILITY_TEST')
@@ -1386,13 +1045,10 @@ def zipf_probability_test():
     p = 2.0
     x = zipf_probability(n, p)
     r8vec_print(n + 2, x, '  X for N = 10, P = 2.0')
-#
-#  Terminate.
-#
+
     print('')
     print('ZIPF_PROBABILITY_TEST')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
