@@ -1,7 +1,23 @@
 #! /usr/bin/env python3
 #
+
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+
 def d1mach(i):
-    
+
     # *****************************************************************************80
     #
     # D1MACH returns double precision real machine constants.
@@ -71,6 +87,13 @@ def d1mach(i):
         print('  Legal values satisfy 1 <= I <= 5.')
         print('  I = %d' % (i))
         sys.exit('D1MACH - Fatal error!')
+    else:
+        print('')
+        print('D1MACH - Fatal error!')
+        print('  The input argument I is out of bounds.')
+        print('  Legal values satisfy 1 <= I <= 5.')
+        print('  I = %d' % (i))
+        sys.exit('D1MACH - Fatal error!')
 
     return value
 
@@ -93,7 +116,6 @@ def d1mach_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('D1MACH_TEST')
@@ -129,13 +151,10 @@ def d1mach_test():
     print('')
     print('  D1MACH(5) = log10(B).')
     print('  %26.16e' % (d1mach(5)))
-#
-#  Terminate.
-#
+
     print('')
     print('D1MACH_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def i1mach(i):
@@ -267,6 +286,13 @@ def i1mach(i):
         print('  Legal values satisfy 1 <= I <= 16.')
         print('  I =   %d' % (i))
         sys.exit('I1MACH - Fatal error!')
+    else:
+        print('')
+        print('I1MACH - Fatal error!')
+        print('  The input argument I is out of bounds.')
+        print('  Legal values satisfy 1 <= I <= 16.')
+        print('  I =   %d' % (i))
+        sys.exit('I1MACH - Fatal error!')
 
     return value
 
@@ -289,7 +315,6 @@ def i1mach_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('I1MACH_TEST')
@@ -395,13 +420,10 @@ def i1mach_test():
     print('')
     print('  I1MACH(16) = EMAX, the largest exponent E.')
     print('  %d' % (i1mach(16)))
-#
-#  Terminate.
-#
+
     print('')
     print('I1MACH_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def r1mach(i):
@@ -475,6 +497,13 @@ def r1mach(i):
         print('  Legal values satisfy 1 <= I <= 5.')
         print('  I = %d' % (i))
         sys.exit('R1MACH - Fatal error!')
+    else:
+        print('')
+        print('R1MACH - Fatal error!')
+        print('  The input argument I is out of bounds.')
+        print('  Legal values satisfy 1 <= I <= 5.')
+        print('  I = %d' % (i))
+        sys.exit('R1MACH - Fatal error!')
 
     return value
 
@@ -497,7 +526,6 @@ def r1mach_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R1MACH_TEST')
@@ -533,83 +561,10 @@ def r1mach_test():
     print('')
     print('  R1MACH(5) = log10(B).')
     print('  %26.16e' % (r1mach(5)))
-#
-#  Terminate.
-#
+
     print('')
     print('R1MACH_TEST')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def machine_test():
@@ -630,7 +585,6 @@ def machine_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('MACHINE_TEST:')
@@ -640,13 +594,10 @@ def machine_test():
     d1mach_test()
     i1mach_test()
     r1mach_test()
-#
-#  Terminate.
-#
+
     print('')
     print('MACHINE_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

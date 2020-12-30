@@ -1,4 +1,6 @@
-# matrix_exponential
+---
+title: matrix_exponential
+---
 
 compare
 
@@ -10,7 +12,7 @@ compare
   - V is the matrix of eigenvectors of A
   - D is the diagonal matrix
 
-## Taylor
+## 1. Taylor
 
 ```markdown
     e = np.zeros([n, n])
@@ -23,7 +25,7 @@ compare
         k = k + 1
 ```
 
-## Eigenvalue
+## 2. Eigenvalue
 
 ```makrdown
     cevals, cevecs = np.linalg.eig(a)

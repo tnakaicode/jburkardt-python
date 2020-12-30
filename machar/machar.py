@@ -1,7 +1,23 @@
 #! /usr/bin/env python3
 #
+
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+
 def machar_test():
-    
+
     # *****************************************************************************80
     #
     # MACHAR_TEST tests the MACHAR library.
@@ -18,7 +34,6 @@ def machar_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('MACHAR_TEST')
@@ -27,14 +42,10 @@ def machar_test():
 
     r4_machar_test()
     r8_machar_test()
-#
-#  Terminate.
-#
+
     print('')
     print('MACHAR_TEST')
     print('  Normal end of execution.')
-
-    return
 
 
 def r4_machar():
@@ -162,7 +173,6 @@ def r4_machar():
     #    or perhaps third, largest number, being too small by 1 or 2 units in
     #    the last digit of the significand.
     #
-    import numpy as np
 
     a = np.float32(0.0)
     b = np.float32(0.0)
@@ -186,9 +196,9 @@ def r4_machar():
     one = np.float32(1.0)
     two = np.float32(one + one)
     zero = np.float32(one - one)
-#
-#  Determine IBETA and BETA ala Malcolm.
-#
+    #
+    #  Determine IBETA and BETA ala Malcolm.
+    #
     a = np.float32(one)
 
     while (True):
@@ -213,9 +223,9 @@ def r4_machar():
 
     ibeta = itemp
     beta = np.float32(ibeta)
-#
-#  Determine IT and IRND.
-#
+    #
+    #  Determine IT and IRND.
+    #
     it = 0
     b = np.float32(one)
 
@@ -241,9 +251,9 @@ def r4_machar():
 
     if (irnd == 0 and np.float32(temp - tempa) != zero):
         irnd = 2
-#
-#  Determine NEGEP and EPSNEG.
-#
+    #
+    #  Determine NEGEP and EPSNEG.
+    #
     negep = it + 3
     betain = np.float32(one / beta)
     a = np.float32(one)
@@ -272,9 +282,9 @@ def r4_machar():
 
         if (np.float32(temp - one) != zero):
             epsneg = np.float32(a)
-#
-#  Determine MACHEP and EPS.
-#
+    #
+    #  Determine MACHEP and EPS.
+    #
     machep = - it - 3
     a = np.float32(b)
 
@@ -298,20 +308,20 @@ def r4_machar():
 
         if (np.float32(temp - one) != zero):
             eps = a
-#
-#  Determine NGRD.
-#
+    #
+    #  Determine NGRD.
+    #
     ngrd = 0
     temp = np.float32(one + eps)
 
     if (irnd == 0 and np.float32(temp * one - one) != zero):
         ngrd = 1
-#
-#  Determine IEXP, MINEXP and XMIN.
-#
-#  Loop to determine largest I and K = 2^I such that (1/BETA)^(2^(I))
-#  does not underflow.  Exit from loop is signaled by an underflow.
-#
+    #
+    #  Determine IEXP, MINEXP and XMIN.
+    #
+    #  Loop to determine largest I and K = 2^I such that (1/BETA)^(2^(I))
+    #  does not underflow.  Exit from loop is signaled by an underflow.
+    #
     i = 0
     k = 1
     z = np.float32(betain)
@@ -336,16 +346,16 @@ def r4_machar():
 
         i = i + 1
         k = k + k
-#
-#  This segment is for nondecimal machines.
-#
+    #
+    #  This segment is for nondecimal machines.
+    #
     if (ibeta != 10):
 
         iexp = i + 1
         mx = k + k
-#
-#  This segment is for decimal machines only.
-#
+    #
+    #  This segment is for decimal machines only.
+    #
     else:
 
         iexp = 2
@@ -360,10 +370,10 @@ def r4_machar():
             iexp = iexp + 1
 
         mx = iz + iz - 1
-#
-#  Loop to determine MINEXP, XMIN.
-#  Exit from loop is signaled by an underflow.
-#
+    #
+    #  Loop to determine MINEXP, XMIN.
+    #  Exit from loop is signaled by an underflow.
+    #
     while (True):
 
         xmin = np.float32(y)
@@ -384,32 +394,32 @@ def r4_machar():
             break
 
     minexp = -k
-#
-#  Determine MAXEXP and XMAX.
-#
+    #
+    #  Determine MAXEXP and XMAX.
+    #
     if (mx <= k + k - 3 and ibeta != 10):
         mx = mx + mx
         iexp = iexp + 1
 
     maxexp = mx + minexp
-#
-#  Adjust IRND to reflect partial underflow.
-#
+    #
+    #  Adjust IRND to reflect partial underflow.
+    #
     irnd = irnd + nxres
-#
-#  Adjust for IEEE-style machines.
-#
+    #
+    #  Adjust for IEEE-style machines.
+    #
     if (irnd == 2 or irnd == 5):
         maxexp = maxexp - 2
-#
-#  Adjust for non-IEEE machines with partial underflow.
-#
+    #
+    #  Adjust for non-IEEE machines with partial underflow.
+    #
     if (irnd == 3 or irnd == 4):
         maxexp = maxexp - it
-#
-#  Adjust for machines with implicit leading bit in binary significand,
-#  and machines with radix point at extreme right of significand.
-#
+    #
+    #  Adjust for machines with implicit leading bit in binary significand,
+    #  and machines with radix point at extreme right of significand.
+    #
     i = maxexp + minexp
 
     if (ibeta == 2 and i == 0):
@@ -522,8 +532,6 @@ def r4_machar_test():
     print('')
     print('  XMAX is the largest finite floating point number:')
     print('    XMAX   = %26.16e' % (xmax))
-
-    return
 
 
 def r8_machar():
@@ -651,14 +659,13 @@ def r8_machar():
     #    or perhaps third, largest number, being too small by 1 or 2 units in
     #    the last digit of the significand.
     #
-    import numpy as np
 
     one = np.float64(1.0)
     two = one + one
     zero = one - one
-#
-#  Determine IBETA and BETA ala Malcolm.
-#
+    #
+    #  Determine IBETA and BETA ala Malcolm.
+    #
     a = one
 
     while (True):
@@ -683,9 +690,9 @@ def r8_machar():
 
     ibeta = itemp
     beta = ibeta
-#
-#  Determine IT and IRND.
-#
+    #
+    #  Determine IT and IRND.
+    #
     it = 0
     b = one
 
@@ -711,9 +718,9 @@ def r8_machar():
 
     if (irnd == 0 and temp - tempa != zero):
         irnd = 2
-#
-#  Determine NEGEP and EPSNEG.
-#
+    #
+    #  Determine NEGEP and EPSNEG.
+    #
     negep = it + 3
     betain = one / beta
     a = one
@@ -742,9 +749,9 @@ def r8_machar():
 
         if (temp - one != zero):
             epsneg = a
-#
-#  Determine MACHEP and EPS.
-#
+    #
+    #  Determine MACHEP and EPS.
+    #
     machep = -it - 3
     a = b
 
@@ -768,20 +775,20 @@ def r8_machar():
 
         if (temp - one != zero):
             eps = a
-#
-#  Determine NGRD.
-#
+    #
+    #  Determine NGRD.
+    #
     ngrd = 0
     temp = one + eps
 
     if (irnd == 0 and temp * one - one != zero):
         ngrd = 1
-#
-#  Determine IEXP, MINEXP and XMIN.
-#
-#  Loop to determine largest I and K = 2^I such that (1/BETA)^(2^(I))
-#  does not underflow.  Exit from loop is signaled by an underflow.
-#
+    #
+    #  Determine IEXP, MINEXP and XMIN.
+    #
+    #  Loop to determine largest I and K = 2^I such that (1/BETA)^(2^(I))
+    #  does not underflow.  Exit from loop is signaled by an underflow.
+    #
     i = 0
     k = 1
     z = betain
@@ -806,16 +813,16 @@ def r8_machar():
 
         i = i + 1
         k = k + k
-#
-#  This segment is for nondecimal machines.
-#
+    #
+    #  This segment is for nondecimal machines.
+    #
     if (ibeta != 10):
 
         iexp = i + 1
         mx = k + k
-#
-#  This segment is for decimal machines only.
-#
+    #
+    #  This segment is for decimal machines only.
+    #
     else:
 
         iexp = 2
@@ -830,10 +837,10 @@ def r8_machar():
             iexp = iexp + 1
 
         mx = iz + iz - 1
-#
-#  Loop to determine MINEXP, XMIN.
-#  Exit from loop is signaled by an underflow.
-#
+    #
+    #  Loop to determine MINEXP, XMIN.
+    #  Exit from loop is signaled by an underflow.
+    #
     while (True):
 
         xmin = y
@@ -854,32 +861,32 @@ def r8_machar():
             break
 
     minexp = -k
-#
-#  Determine MAXEXP and XMAX.
-#
+    #
+    #  Determine MAXEXP and XMAX.
+    #
     if (mx <= k + k - 3 and ibeta != 10):
         mx = mx + mx
         iexp = iexp + 1
 
     maxexp = mx + minexp
-#
-#  Adjust IRND to reflect partial underflow.
-#
+    #
+    #  Adjust IRND to reflect partial underflow.
+    #
     irnd = irnd + nxres
-#
-#  Adjust for IEEE-style machines.
-#
+    #
+    #  Adjust for IEEE-style machines.
+    #
     if (irnd == 2 or irnd == 5):
         maxexp = maxexp - 2
-#
-#  Adjust for non-IEEE machines with partial underflow.
-#
+    #
+    #  Adjust for non-IEEE machines with partial underflow.
+    #
     if (irnd == 3 or irnd == 4):
         maxexp = maxexp - it
-#
-#  Adjust for machines with implicit leading bit in binary significand,
-#  and machines with radix point at extreme right of significand.
-#
+    #
+    #  Adjust for machines with implicit leading bit in binary significand,
+    #  and machines with radix point at extreme right of significand.
+    #
     i = maxexp + minexp
 
     if (ibeta == 2 and i == 0):
@@ -992,78 +999,6 @@ def r8_machar_test():
     print('')
     print('  XMAX is the largest finite floating point number:')
     print('    XMAX   = %26.16e' % (xmax))
-
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

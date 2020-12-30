@@ -1,5 +1,19 @@
-#! /usr/bin/env python3
-#
+# 1. ! /usr/bin/env python3
+# 2.
+
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
 
 def c8mat_exp_a(test, n):
@@ -34,8 +48,6 @@ def c8mat_exp_a(test, n):
     #
     #    Output, real A(N,N), the matrix.
     #
-    import numpy as np
-    from sys import exit
 
     if (test == 1):
 
@@ -100,8 +112,6 @@ def c8mat_exp_expa(test, n):
     #
     #    Output, complex EXPA(N,N), the exponential of the test matrix.
     #
-    import numpy as np
-    from sys import exit
 
     expa = []
 
@@ -160,7 +170,6 @@ def c8mat_exp_n(test):
     #
     #    Output, integer N, the order of the matrix.
     #
-    from sys import exit
 
     if (test == 1):
         n = 2
@@ -205,7 +214,6 @@ def c8mat_exp_story(test):
     #
     #    Input, integer TEST, the index of the test case.
     #
-    from sys import exit
 
     if (test == 1):
         print('')
@@ -327,13 +335,13 @@ def c8mat_expm1(n, a):
             d = d - c * x
 
         p = not p
-#
-#  E -> inverse(D) * E
-#
+# 3.
+# 4. E -> inverse(D) * E
+# 5.
     e = np.linalg.solve(d, e)
-#
-#  E -> E^(2*S)
-#
+# 6.
+# 7. E -> E^(2*S)
+# 8.
     for k in range(0, s):
         e = np.dot(e, e)
 
@@ -370,51 +378,6 @@ def c8mat_print(m, n, a, title):
     #
     c8mat_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
 
-    return
-
-
-def c8mat_print_test():
-
-    # *****************************************************************************80
-    #
-    # C8MAT_PRINT_TEST tests C8MAT_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    15 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('C8MAT_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  C8MAT_PRINT prints an C8MAT.')
-
-    m = 4
-    n = 3
-    v = np.array([
-        [complex(10.0, 1.0), complex(10.0, 2.0), complex(10.0, 3.0)],
-        [complex(20.0, 1.0), complex(20.0, 2.0), complex(20.0, 3.0)],
-        [complex(30.0, 1.0), complex(30.0, 2.0), complex(30.0, 3.0)],
-        [complex(40.0, 1.0), complex(40.0, 2.0), complex(40.0, 3.0)]],
-        dtype=np.complex128)
-
-    c8mat_print(m, n, v, '  Here is a C8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('C8MAT_PRINT_TEST:')
-    print('  Normal end of execution.')
     return
 
 
@@ -485,55 +448,6 @@ def c8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
 
             print('')
 
-    return
-
-
-def c8mat_print_some_test():
-
-    # *****************************************************************************80
-    #
-    # C8MAT_PRINT_SOME_TEST tests C8MAT_PRINT_SOME.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    15 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('C8MAT_PRINT_SOME_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  C8MAT_PRINT_SOME prints some of an C8MAT.')
-
-    m = 4
-    n = 6
-    v = np.array([
-        [complex(10.0, 1.0), complex(10.0, 2.0), complex(10.0, 3.0),
-         complex(10.0, 4.0), complex(10.0, 5.0), complex(10.0, 6.0)],
-        [complex(20.0, 1.0), complex(20.0, 2.0), complex(20.0, 3.0),
-         complex(20.0, 4.0), complex(20.0, 5.0), complex(20.0, 6.0)],
-        [complex(30.0, 1.0), complex(30.0, 2.0), complex(30.0, 3.0),
-         complex(30.0, 4.0), complex(30.0, 5.0), complex(30.0, 6.0)],
-        [complex(40.0, 1.0), complex(40.0, 2.0), complex(40.0, 3.0),
-         complex(40.0, 4.0), complex(40.0, 5.0), complex(40.0, 6.0)]],
-        dtype=np.complex128)
-
-    c8mat_print_some(m, n, v, 0, 3, 2, 5, '  Here is a C8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('C8MAT_PRINT_SOME_TEST:')
-    print('  Normal end of execution. ')
     return
 
 
@@ -1317,17 +1231,17 @@ def r8mat_expm3(n, a):
     import numpy as np
 
     cevals, cevecs = np.linalg.eig(a)
-#
-#  Need to take the real part of these quantities!
-#
+# 15.
+# 16. Need to take the real part of these quantities!
+# 17.
     evals = cevals.real
     evecs = cevecs.real
 
     exp_evals = np.exp(evals)
     d2 = np.diag(exp_evals)
-#
-#  Pardon this godawful circumlocution.
-#
+# 18.
+# 19. Pardon this godawful circumlocution.
+# 20.
     b = np.dot(evecs, d2)
     bt = b.transpose()
 
@@ -1418,49 +1332,6 @@ def r8mat_print(m, n, a, title):
     return
 
 
-def r8mat_print_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_TEST tests R8MAT_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    10 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_PRINT prints an R8MAT.')
-
-    m = 4
-    n = 6
-    v = np.array([
-        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
-        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
-        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
-        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
-    r8mat_print(m, n, v, '  Here is an R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
 
     # *****************************************************************************80
@@ -1527,51 +1398,6 @@ def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
                 print('%12g  ' % (a[i, j]), end='')
 
             print('')
-
-    return
-
-
-def r8mat_print_some_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_SOME_TEST tests R8MAT_PRINT_SOME.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_PRINT_SOME_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_PRINT_SOME prints some of an R8MAT.')
-
-    m = 4
-    n = 6
-    v = np.array([
-        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
-        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
-        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
-        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
-    r8mat_print_some(m, n, v, 0, 3, 2, 5, '  Here is an R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_PRINT_SOME_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def matrix_exponential_test():
@@ -1661,8 +1487,6 @@ def matrix_exponential_test01():
         a_exp = r8mat_exp_expa(test, n)
         r8mat_print(n, n, a_exp, "  Exact Exponential:")
 
-    return
-
 
 def matrix_exponential_test02():
 
@@ -1709,46 +1533,14 @@ def matrix_exponential_test02():
         a_exp = c8mat_expm1(n, a)
         c8mat_print(n, n, a_exp, '  C8MAT_EXPM1(A):')
 
-        #a_exp = c8mat_expm2 ( n, a )
-        #c8mat_print ( n, n, a_exp, '  C8MAT_EXPM2(A):' )
+        #a_exp = c8mat_expm2(n, a)
+        #c8mat_print(n, n, a_exp, '  C8MAT_EXPM2(A):')
 
-        #a_exp = c8mat_expm3 ( n, a )
-        #c8mat_print ( n, n, a_exp, '  C8MAT_EXPM3(A):' )
+        #a_exp = c8mat_expm3(n, a)
+        #c8mat_print(n, n, a_exp, '  C8MAT_EXPM3(A):')
 
         a_exp = c8mat_exp_expa(test, n)
         c8mat_print(n, n, a_exp, '  Exact Exponential:')
-
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):

@@ -1,6 +1,20 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def mandelbrot_image(xmin, xmax, ymin, ymax, xnum, ynum, countmax):
 
@@ -34,11 +48,6 @@ def mandelbrot_image(xmin, xmax, ymin, ymax, xnum, ynum, countmax):
     #
     #    Input, integer COUNTMAX, the maximum number of iterations.
     #
-    import matplotlib.cm as cm
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import platform
-    import time
 
     print('')
     print('MANDELBROT_IMAGE:')
@@ -67,22 +76,15 @@ def mandelbrot_image(xmin, xmax, ymin, ymax, xnum, ynum, countmax):
 
     X, Y = np.meshgrid(x, y, indexing='ij')
     fig, ax = plt.subplots(figsize=(width_inches, height_inches), dpi=72)
-    cs = ax.contourf(X, Y, count, cmap=cm.prism)
+    cs = ax.contourf(X, Y, count, cmap="jet")
 
     filename = 'mandelbrot.png'
     plt.savefig(filename)
     print('')
     print('  Plot saved in file "%s"' % (filename))
-
-    plt.show(block=False)
-#
-#  Terminate.
-#
     print('')
     print('MANDELBROT_IMAGE:')
     print('  Normal end of execution.')
-
-    return
 
 
 def mandelbrot_set(xmin, xmax, ymin, ymax, xnum, ynum, countmax):
@@ -120,8 +122,6 @@ def mandelbrot_set(xmin, xmax, ymin, ymax, xnum, ynum, countmax):
     #    Output, real X(XNUM), Y(YNUM), COUNT(XNUM,YNUM), the X and Y
     #    grid locations, and the count for each point in the grid.
     #
-    import numpy as np
-    import sys
 
     x = np.linspace(xmin, xmax, xnum)
     y = np.linspace(ymin, ymax, ynum)
