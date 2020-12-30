@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def cg_test():
 
@@ -20,44 +34,36 @@ def cg_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('CG_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the CG library.')
-#
-#  Utilities.
 
-#
-    orth_random_test()
-    pds_random_test()
-    r8_normal_01_test()
-    r8_uniform_01_test()
-    r8mat_house_axh_test()
-    r8mat_house_form_test()
-    r8mat_mm_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_uniform_ab_test()
-    r8vec_house_column_test()
-    r8vec_norm_test()
-    r8vec_norm_affine_test()
-    r8vec_print_test()
-    r8vec_uniform_01_test()
-    r8vec_uniform_ab_test()
-#
-#  Library.
-#
+    # orth_random_test()
+    # pds_random_test()
+    # r8_normal_01_test()
+    # r8_uniform_01_test()
+    # r8mat_house_axh_test()
+    # r8mat_house_form_test()
+    # r8mat_mm_test()
+    # r8mat_print_test()
+    # r8mat_print_some_test()
+    # r8mat_uniform_ab_test()
+    # r8vec_house_column_test()
+    # r8vec_norm_test()
+    # r8vec_norm_affine_test()
+    # r8vec_print_test()
+    # r8vec_uniform_01_test()
+    # r8vec_uniform_ab_test()
+
     r83_cg_test()
     r83s_cg_test()
     r83t_cg_test()
     r8ge_cg_test()
     r8pbu_cg_test()
     r8sd_cg_test()
-#
-#  Terminate.
-#
+
     print('')
     print('CG_TEST:')
     print('  Normal end of execution.')
@@ -145,48 +151,44 @@ def orth_random(n, key):
     #
     #    Output, real A(N,N), the matrix.
     #
-    import numpy as np
-#
-#  Start with A = the identity matrix.
-#
+
+    #  Start with A = the identity matrix.
     a = np.zeros((n, n))
 
     for i in range(0, n):
         a[i, i] = 1.0
-#
-#  Now behave as though we were computing the QR factorization of
-#  some other random matrix.  Generate the N elements of the first column,
-#  compute the Householder matrix H1 that annihilates the subdiagonal elements,
-#  and set A := A * H1' = A * H.
-#
-#  On the second step, generate the lower N-1 elements of the second column,
-#  compute the Householder matrix H2 that annihilates them,
-#  and set A := A * H2' = A * H2 = H1 * H2.
-#
-#  On the N-1 step, generate the lower 2 elements of column N-1,
-#  compute the Householder matrix HN-1 that annihilates them, and
-#  and set A := A * H(N-1)' = A * H(N-1) = H1 * H2 * ... * H(N-1).
-#  This is our random orthogonal matrix.
-#
+    #
+    #  Now behave as though we were computing the QR factorization of
+    #  some other random matrix.  Generate the N elements of the first column,
+    #  compute the Householder matrix H1 that annihilates the subdiagonal elements,
+    #  and set A := A * H1' = A * H.
+    #
+    #  On the second step, generate the lower N-1 elements of the second column,
+    #  compute the Householder matrix H2 that annihilates them,
+    #  and set A := A * H2' = A * H2 = H1 * H2.
+    #
+    #  On the N-1 step, generate the lower 2 elements of column N-1,
+    #  compute the Householder matrix HN-1 that annihilates them, and
+    #  and set A := A * H(N-1)' = A * H(N-1) = H1 * H2 * ... * H(N-1).
+    #  This is our random orthogonal matrix.
+    #
     x_col = np.zeros(n)
 
     seed = key
-
     for j in range(0, n - 1):
-
         for i in range(0, j):
             x_col[i] = 0.0
 
         for i in range(j, n):
             x_col[i], seed = r8_normal_01(seed)
-#
-#  Compute the vector V that defines a Householder transformation matrix
-#  H(V) that annihilates the subdiagonal elements of X.
-#
+        #
+        #  Compute the vector V that defines a Householder transformation matrix
+        #  H(V) that annihilates the subdiagonal elements of X.
+        #
         v = r8vec_house_column(n, x_col, j)
-#
-#  Postmultiply the matrix A by H'(V) = H(V).
-#
+        #
+        #  Postmultiply the matrix A by H'(V) = H(V).
+        #
         a = r8mat_house_axh(n, a, v)
 
     return a
@@ -221,48 +223,6 @@ def orth_random_determinant(n, key):
     value = 1.0
 
     return value
-
-
-def orth_random_test():
-
-    # *****************************************************************************80
-    #
-    # ORTH_RANDOM_TEST tests ORTH_RANDOM.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    17 March 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('ORTH_RANDOM_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  ORTH_RANDOM computes a random orthogal matrix.')
-
-    m = 5
-    n = m
-    key = 123456789
-
-    a = orth_random(n, key)
-
-    r8mat_print(m, n, a, '  ORTH_RANDOM matrix:')
-#
-#  Terminate.
-#
-    print('')
-    print('ORTH_RANDOM_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def pds_random(n, key):
@@ -303,21 +263,16 @@ def pds_random(n, key):
     #
     #    Output, real A(N,N), the matrix.
     #
-    import numpy as np
-#
-#  Get a random set of eigenvalues.
-#
+    
+    #  Get a random set of eigenvalues.
     seed = key
     lam, seed = r8vec_uniform_01(n, seed)
-#
-#  Get a random orthogonal matrix Q.
-#
-    q = orth_random(n, key)
-#
-#  Set A = Q * Lambda * Q'.
-#
-    a = np.zeros((n, n))
 
+    #  Get a random orthogonal matrix Q.
+    q = orth_random(n, key)
+
+    #  Set A = Q * Lambda * Q'.
+    a = np.zeros((n, n))
     for i in range(0, n):
         for j in range(0, n):
             for k in range(0, n):
@@ -357,7 +312,6 @@ def pds_random_determinant(n, key):
     #
     #    Output, real VALUE, the determinant.
     #
-    import numpy as np
 
     seed = key
     lam, seed = r8vec_uniform_01(n, seed)
@@ -399,9 +353,9 @@ def pds_random_eigen_right(n, key):
     #
     seed = key
     lam, seed = r8vec_uniform_01(n, seed)
-#
-#  Get a random orthogonal matrix Q.
-#
+    #
+    #  Get a random orthogonal matrix Q.
+    #
     q = orth_random(n, key)
 
     return q
@@ -482,66 +436,26 @@ def pds_random_inverse(n, key):
     #
     #    Output, real A(N,N), the matrix.
     #
-    import numpy as np
 
     a = np.zeros((n, n))
-#
-#  Get a random set of eigenvalues.
-#
+    #
+    #  Get a random set of eigenvalues.
+    #
     seed = key
     lam, seed = r8vec_uniform_01(n, seed)
-#
-#  Get a random orthogonal matrix Q.
-#
+    #
+    #  Get a random orthogonal matrix Q.
+    #
     q = orth_random(n, key)
-#
-#  Set A = Q * Lambda * Q'.
-#
+    #
+    #  Set A = Q * Lambda * Q'.
+    #
     for i in range(0, n):
         for j in range(0, n):
             for k in range(0, n):
                 a[i, j] = a[i, j] + q[i, k] * (1.0 / lam[k]) * q[j, k]
 
     return a
-
-
-def pds_random_test():
-
-    # *****************************************************************************80
-    #
-    # PDS_RANDOM_TEST tests PDS_RANDOM.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    20 March 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('PDS_RANDOM_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  PDS_RANDOM computes the PDS_RANDOM matrix.')
-
-    n = 5
-    key = 123456789
-    a = pds_random(n, key)
-
-    r8mat_print(n, n, a, '  PDS_RANDOM matrix:')
-#
-#  Terminate.
-#
-    print('')
-    print('PDS_RANDOM_TEST')
-    print('  Normal end of execution.')
-    return
 
 
 def r83s_cg(n, a, b, x_init):
@@ -610,7 +524,6 @@ def r83s_cg(n, a, b, x_init):
     #
     #    Output, real X(N), the approximate solution vector.
     #
-    import numpy as np
 
     x = np.zeros(n)
     for i in range(0, n):
@@ -2386,86 +2299,6 @@ def r8mat_house_axh(n, a, v):
     return ah
 
 
-def r8mat_house_axh_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_HOUSE_AXH_TEST tests R8MAT_HOUSE_AXH.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    19 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n = 5
-
-    print('')
-    print('R8MAT_HOUSE_AXH_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_HOUSE_AXH multiplies a matrix A times a')
-    print('  compact Householder matrix.')
-
-    r8_lo = -5.0
-    r8_hi = +5.0
-    seed = 123456789
-
-    a, seed = r8mat_uniform_ab(n, n, r8_lo, r8_hi, seed)
-
-    r8mat_print(n, n, a, '  Matrix A:')
-#
-#  Request V, the compact form of the Householder matrix H
-#  such that H*A packs column 3 of A.
-#
-    k = 3
-    km1 = k - 1
-    a_col = np.zeros(n)
-    for i in range(0, n):
-        a_col[i] = a[i, km1]
-
-    v = r8vec_house_column(n, a_col, km1)
-
-    r8vec_print(n, v, '  Compact vector V so column 3 of H*A is packed:')
-
-    h = r8mat_house_form(n, v)
-
-    r8mat_print(n, n, h, '  Householder matrix H:')
-#
-#  Compute A*H.
-#
-    ah = r8mat_house_axh(n, a, v)
-
-    r8mat_print(n, n, ah, '  Indirect product A*H:')
-#
-#  Compare with a direct calculation.
-#
-    ah = r8mat_mm(n, n, n, a, h)
-
-    r8mat_print(n, n, ah, '  Direct product A*H:')
-#
-#  Compute H*A to demonstrate packed column 3:
-#
-    ha = r8mat_mm(n, n, n, h, a)
-
-    r8mat_print(n, n, ha, '  H*A should pack column 3:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_HOUSE_AXH_TEST')
-    print('  Normal end of execution.')
-    return
-
-
 def r8mat_house_form(n, v):
 
     # *****************************************************************************80
@@ -2514,51 +2347,6 @@ def r8mat_house_form(n, v):
     return h
 
 
-def r8mat_house_form_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_HOUSE_FORM_TEST tests R8MAT_HOUSE_FORM.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    16 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n = 5
-
-    v = np.array((0.0, 0.0, 1.0, 2.0, 3.0))
-
-    print('')
-    print('R8MAT_HOUSE_FORM_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_HOUSE_FORM forms a Householder')
-    print('  matrix from its compact form.')
-
-    r8vec_print(n, v, '  Compact vector form V:')
-
-    h = r8mat_house_form(n, v)
-
-    r8mat_print(n, n, h, '  Householder matrix H:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_HOUSE_FORM_TEST')
-    print('  Normal end of execution.')
-    return
-
-
 def r8mat_mm(n1, n2, n3, a, b):
 
     # *****************************************************************************80
@@ -2595,64 +2383,6 @@ def r8mat_mm(n1, n2, n3, a, b):
                 c[i, j] = c[i, j] + a[i, k] * b[k, j]
 
     return c
-
-
-def r8mat_mm_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_MM_TEST tests R8MAT_MM.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n1 = 4
-    n2 = 3
-    n3 = n1
-
-    print('')
-    print('R8MAT_MM_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_MM computes a matrix-matrix product C = A * B;')
-
-    a = np.zeros((n1, n2))
-
-    for i in range(0, n1):
-        for j in range(0, n2):
-
-            if (j == 0):
-                a[i, j] = 1.0
-            elif (i == 0):
-                a[i, j] = 0.0
-            else:
-                a[i, j] = a[i - 1, j - 1] + a[i - 1, j]
-
-    b = np.transpose(a)
-
-    c = r8mat_mm(n1, n2, n3, a, b)
-
-    r8mat_print(n1, n2, a, '  A:')
-    r8mat_print(n2, n3, b, '  B:')
-    r8mat_print(n1, n3, c, '  C = A*B:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_MM_TEST')
-    print('  Normal end of execution.')
-    return
 
 
 def r8mat_print(m, n, a, title):
@@ -2801,49 +2531,6 @@ def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
     return
 
 
-def r8mat_print_some_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_SOME_TEST tests R8MAT_PRINT_SOME.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_PRINT_SOME_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_PRINT_SOME prints some of an R8MAT.')
-
-    m = 4
-    n = 6
-    v = np.array([
-        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
-        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
-        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
-        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
-    r8mat_print_some(m, n, v, 0, 3, 2, 5, '  Here is an R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_PRINT_SOME_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def r8mat_uniform_ab(m, n, a, b, seed):
 
     # *****************************************************************************80
@@ -2944,53 +2631,6 @@ def r8mat_uniform_ab(m, n, a, b, seed):
             r[i, j] = a + (b - a) * seed * 4.656612875E-10
 
     return r, seed
-
-
-def r8mat_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_UNIFORM_AB_TEST tests R8MAT_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    m = 5
-    n = 4
-    a = -1.0
-    b = +5.0
-    seed = 123456789
-
-    print('')
-    print('R8MAT_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_UNIFORM_AB computes a random R8MAT.')
-    print('')
-    print('  %g <= X <= %g' % (a, b))
-    print('  Initial seed is %d' % (seed))
-
-    v, seed = r8mat_uniform_ab(m, n, a, b, seed)
-
-    r8mat_print(m, n, v, '  Random R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_UNIFORM_AB_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def r8_normal_01(seed):
@@ -3700,8 +3340,6 @@ def r8sd_cg_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('R8SD_CG_TEST')
@@ -3890,7 +3528,6 @@ def r8sd_dif2(m, n, ndiag, offset):
     #
     #    Output, real A(N,NDIAG), the matrix.
     #
-    import numpy as np
 
     a = np.zeros([n, ndiag])
 
@@ -3966,7 +3603,6 @@ def r8sd_mv(m, n, ndiag, offset, a, x):
     #
     #    Output, real B(N), the product A * x.
     #
-    import numpy as np
 
     b = np.zeros(n)
 
@@ -4098,17 +3734,16 @@ def r8sp_cg(n, nz_num, row, col, a, b, x_init):
     #
     #    Output, real X(N), the approximate solution vector.
     #
-    import numpy as np
 
     x = np.zeros(n)
     for i in range(0, n):
         x[i] = x_init[i]
-#
-#  Initialize
-#    AP = A * x,
-#    R  = b - A * x,
-#    P  = b - A * x.
-#
+    #
+    #  Initialize
+    #    AP = A * x,
+    #    R  = b - A * x,
+    #    P  = b - A * x.
+    #
     ap = r8sp_mv(n, n, nz_num, row, col, a, x)
 
     r = np.zeros(n)
@@ -4118,21 +3753,21 @@ def r8sp_cg(n, nz_num, row, col, a, b, x_init):
     p = np.zeros(n)
     for i in range(0, n):
         p[i] = b[i] - ap[i]
-#
-#  Do the N steps of the conjugate gradient method.
-#
+    #
+    #  Do the N steps of the conjugate gradient method.
+    #
     for it in range(0, n):
         #
         #  Compute the matrix*vector product AP=A*P.
         #
         ap = r8sp_mv(n, n, nz_num, row, col, a, p)
-#
-#  Compute the dot products
-#    PAP = P*AP,
-#    PR  = P*R
-#  Set
-#    ALPHA = PR / PAP.
-#
+        #
+        #  Compute the dot products
+        #    PAP = P*AP,
+        #    PR  = P*R
+        #  Set
+        #    ALPHA = PR / PAP.
+        #
         pap = np.dot(p, ap)
         pr = np.dot(p, r)
 
@@ -4140,29 +3775,29 @@ def r8sp_cg(n, nz_num, row, col, a, b, x_init):
             return x
 
         alpha = pr / pap
-#
-#  Set
-#    X = X + ALPHA * P
-#    R = R - ALPHA * AP.
-#
+        #
+        #  Set
+        #    X = X + ALPHA * P
+        #    R = R - ALPHA * AP.
+        #
         for i in range(0, n):
             x[i] = x[i] + alpha * p[i]
 
         for i in range(0, n):
             r[i] = r[i] - alpha * ap[i]
-#
-#  Compute the vector dot product
-#    RAP = R*AP
-#  Set
-#    BETA = - RAP / PAP.
-#
+        #
+        #  Compute the vector dot product
+        #    RAP = R*AP
+        #  Set
+        #    BETA = - RAP / PAP.
+        #
         rap = np.dot(r, ap)
 
         beta = - rap / pap
-#
-#  Update the perturbation vector
-#    P = R + BETA * P.
-#
+        #
+        #  Update the perturbation vector
+        #    P = R + BETA * P.
+        #
         for i in range(0, n):
             p[i] = r[i] + beta * p[i]
 
@@ -4187,8 +3822,6 @@ def r8sp_cg_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('R8SP_CG_TEST')
@@ -4198,41 +3831,31 @@ def r8sp_cg_test():
     seed = 123456789
     n = 10
     nz_num = 3 * n - 2
-#
-#  Set A to the [-1 2 -1] matrix.
-#
+
+    #  Set A to the [-1 2 -1] matrix.
     row, col, a = r8sp_dif2(n, n, nz_num)
-#
-#  Choose a random solution.
-#
+
+    #  Choose a random solution.
     x1, seed = r8vec_uniform_01(n, seed)
-#
-#  Compute the corresponding right hand side.
-#
+
+    #  Compute the corresponding right hand side.
     b = r8sp_mv(n, n, nz_num, row, col, a, x1)
-#
-#  Call the CG routine.
-#
+
+    #  Call the CG routine.
     x2 = np.ones(n)
     x3 = r8sp_cg(n, nz_num, row, col, a, b, x2)
-#
-#  Compute the residual.
-#
+
+    #  Compute the residual.
     r = r8sp_res(n, n, nz_num, row, col, a, x3, b)
     r_norm = r8vec_norm(n, r)
-#
-#  Compute the error.
-#
+
+    #  Compute the error.
     e_norm = r8vec_norm_affine(n, x1, x3)
-#
-#  Report.
-#
+
     print('')
     print('  Number of variables N = %d' % (n))
     print('  Norm of residual ||Ax-b|| = %g' % (r_norm))
     print('  Norm of error ||x1-x2|| = %g' % (e_norm))
-
-    return
 
 
 def r8sp_dif2(m, n, nz_num):
@@ -4373,7 +3996,6 @@ def r8sp_dif2(m, n, nz_num):
     #
     #    Output, real A(NZ_NUM), the nonzero elements of the matrix.
     #
-    import numpy as np
 
     row = np.zeros(nz_num, dtype=np.int32)
     col = np.zeros(nz_num, dtype=np.int32)
@@ -4452,7 +4074,6 @@ def r8sp_mv(m, n, nz_num, row, col, a, x):
     #
     #    Output, real B(M), the product vector A*X.
     #
-    import numpy as np
 
     b = np.zeros(m, dtype=np.float64)
 
@@ -4589,12 +4210,10 @@ def r8_uniform_01(seed):
     #    Output, integer SEED, the updated seed.  This would
     #    normally be used as the input seed on the next call.
     #
-    from math import floor
-    from sys import exit
 
     i4_huge = 2147483647
 
-    seed = floor(seed)
+    seed = math.floor(seed)
 
     seed = (seed % i4_huge)
 
@@ -4607,7 +4226,7 @@ def r8_uniform_01(seed):
         print('  Input SEED = 0!')
         exit('R8_UNIFORM_01 - Fatal error!')
 
-    k = floor(seed / 127773)
+    k = math.floor(seed / 127773)
 
     seed = 16807 * (seed - k * 127773) - k * 2836
 
@@ -4617,67 +4236,6 @@ def r8_uniform_01(seed):
     r = seed * 4.656612875E-10
 
     return r, seed
-
-
-def r8_uniform_01_test():
-
-    # *****************************************************************************80
-    #
-    # R8_UNIFORM_01_TEST tests R8_UNIFORM_01.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    26 July 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('R8_UNIFORM_01_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8_UNIFORM_01 produces a sequence of random values.')
-
-    seed = 123456789
-
-    print('')
-    print('  Using random seed %d' % (seed))
-
-    print('')
-    print('  SEED  R8_UNIFORM_01(SEED)')
-    print('')
-    for i in range(0, 10):
-        seed_old = seed
-        x, seed = r8_uniform_01(seed)
-        print('  %12d  %14f' % (seed, x))
-
-    print('')
-    print('  Verify that the sequence can be restarted.')
-    print('  Set the seed back to its original value, and see that')
-    print('  we generate the same sequence.')
-
-    seed = 123456789
-    print('')
-    print('  SEED  R8_UNIFORM_01(SEED)')
-    print('')
-
-    for i in range(0, 10):
-        seed_old = seed
-        x, seed = r8_uniform_01(seed)
-        print('  %12d  %14f' % (seed, x))
-#
-#  Terminate.
-#
-    print('')
-    print('R8_UNIFORM_01_TEST')
-    print('  Normal end of execution.')
-    return
 
 
 def r8vec_house_column(n, a_vec, k):
@@ -4719,7 +4277,6 @@ def r8vec_house_column(n, a_vec, k):
     #    orthogonal Householder premultiplier matrix H with the property
     #    that the K-th column of H*A is zero below the diagonal.
     #
-    import numpy as np
 
     v = np.zeros(n)
 
@@ -4751,78 +4308,6 @@ def r8vec_house_column(n, a_vec, k):
         v[i] = v[i] / s
 
     return v
-
-
-def r8vec_house_column_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_HOUSE_COLUMN_TEST tests R8VEC_HOUSE_COLUMN.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8VEC_HOUSE_COLUMN_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_HOUSE_COLUMN returns the compact form of')
-    print('  a Householder matrix that "packs" a column')
-    print('  of a matrix.')
-#
-#  Get a random matrix.
-#
-    n = 4
-    r8_lo = 0.0
-    r8_hi = 5.0
-    seed = 123456789
-
-    a, seed = r8mat_uniform_ab(n, n, r8_lo, r8_hi, seed)
-
-    r8mat_print(n, n, a, '  Matrix A:')
-
-    a_col = np.zeros(n)
-
-    for k in range(0, n - 1):
-
-        print('')
-        print('  Working on column K = %d' % (k))
-
-        for i in range(0, n):
-            a_col[i] = a[i, k]
-
-        v = r8vec_house_column(n, a_col, k)
-
-        h = r8mat_house_form(n, v)
-
-        r8mat_print(n, n, h, '  Householder matrix H:')
-
-        ha = r8mat_mm(n, n, n, h, a)
-
-        r8mat_print(n, n, ha, '  Product H*A:')
-#
-#  If we set A := HA, then we can successively convert A to upper
-#  triangular form.
-#
-        a = ha
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_HOUSE_COLUMN_TEST')
-    print('  Normal end of execution.')
-    return
 
 
 def r8vec_norm_affine(n, v0, v1):
@@ -4872,55 +4357,6 @@ def r8vec_norm_affine(n, v0, v1):
     return value
 
 
-def r8vec_norm_affine_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_NORM_AFFINE_TEST tests R8VEC_NORM_AFFINE.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    30 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n = 10
-
-    print('')
-    print('R8VEC_NORM_AFFINE_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_NORM_AFFINE computes the L2 norm of')
-    print('  the difference of two R8VECs.')
-
-    seed = 123456789
-
-    x, seed = r8vec_uniform_01(n, seed)
-    y, seed = r8vec_uniform_01(n, seed)
-    z = np.zeros(n)
-    for i in range(0, n):
-        z[i] = x[i] - y[i]
-
-    print('')
-    print('  R8VEC_NORM_AFFINE(X,Y) = %g' % (r8vec_norm_affine(n, x, y)))
-    print('  R8VEC_NORM (X-Y):        %g' % (r8vec_norm(n, z)))
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_NORM_AFFINE_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def r8vec_norm(n, a):
 
     # *****************************************************************************80
@@ -4963,48 +4399,6 @@ def r8vec_norm(n, a):
     return value
 
 
-def r8vec_norm_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_NORM_TEST tests R8VEC_NORM.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    22 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('R8VEC_NORM_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_NORM computes the L2 norm of an R8VEC.')
-
-    n = 10
-    seed = 123456789
-    a, seed = r8vec_uniform_01(n, seed)
-    r8vec_print(n, a, '  Input vector:')
-    a_norm = r8vec_norm(n, a)
-
-    print('')
-    print('  L2 norm = %g' % (a_norm))
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_NORM_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def r8vec_print(n, a, title):
 
     # *****************************************************************************80
@@ -5036,44 +4430,6 @@ def r8vec_print(n, a, title):
     print('')
     for i in range(0, n):
         print('%6d:  %12g' % (i, a[i]))
-
-
-def r8vec_print_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT_TEST tests R8VEC_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8VEC_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_PRINT prints an R8VEC.')
-
-    n = 4
-    v = np.array([123.456, 0.000005, -1.0E+06, 3.14159265], dtype=np.float64)
-    r8vec_print(n, v, '  Here is an R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def r8vec_uniform_01(n, seed):
@@ -5166,49 +4522,6 @@ def r8vec_uniform_01(n, seed):
     return x, seed
 
 
-def r8vec_uniform_01_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_01_TEST tests R8VEC_UNIFORM_01.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n = 10
-    seed = 123456789
-
-    print('')
-    print('R8VEC_UNIFORM_01_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_UNIFORM_01 computes a random R8VEC.')
-    print('')
-    print('  Initial seed is %d' % (seed))
-
-    v, seed = r8vec_uniform_01(n, seed)
-
-    r8vec_print(n, v, '  Random R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_UNIFORM_01_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 def r8vec_uniform_ab(n, a, b, seed):
 
     # *****************************************************************************80
@@ -5261,13 +4574,10 @@ def r8vec_uniform_ab(n, a, b, seed):
     #
     #    Output, integer SEED, an updated seed for the random number generator.
     #
-    import numpy
-    from math import floor
-    from sys import exit
 
     i4_huge = 2147483647
 
-    seed = floor(seed)
+    seed = math.floor(seed)
 
     if (seed < 0):
         seed = seed + i4_huge
@@ -5278,7 +4588,7 @@ def r8vec_uniform_ab(n, a, b, seed):
         print('  Input SEED = 0!')
         exit('R8VEC_UNIFORM_AB - Fatal error!')
 
-    x = numpy.zeros(n)
+    x = np.zeros(n)
 
     for i in range(0, n):
 
@@ -5292,82 +4602,6 @@ def r8vec_uniform_ab(n, a, b, seed):
         x[i] = a + (b - a) * seed * 4.656612875E-10
 
     return x, seed
-
-
-def r8vec_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_AB_TEST tests R8VEC_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n = 10
-    a = -1.0
-    b = +5.0
-    seed = 123456789
-
-    print('')
-    print('R8VEC_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_UNIFORM_AB computes a random R8VEC.')
-    print('')
-    print('  %g <= X <= %g' % (a, b))
-    print('  Initial seed is %d' % (seed))
-
-    v, seed = r8vec_uniform_ab(n, a, b, seed)
-
-    r8vec_print(n, v, '  Random R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_UNIFORM_AB_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):
