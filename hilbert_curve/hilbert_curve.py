@@ -1,6 +1,22 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+from prob.r8vec import r8vec_print
+from prob.r8mat import r8mat_print, r8mat_print_some
+
 
 def d2xy(m, d):
 
@@ -42,11 +58,11 @@ def d2xy(m, d):
             ry = (t % 2)
         else:
             ry = ((t ^ rx) % 2)
+
         x, y = rot(s, x, y, rx, ry)
         x = x + s * rx
         y = y + s * ry
         t = (t // 4)
-
         s = s * 2
 
     return x, y
@@ -70,7 +86,6 @@ def d2xy_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('D2XY_TEST:')
@@ -87,10 +102,10 @@ def d2xy_test():
     for d in range(0, n * n):
         x, y = d2xy(m, d)
         print('  %3d  %3d  %3d' % (d, x, y))
+
     print('')
     print('D2XY_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def rot(n, x, y, rx, ry):
@@ -116,6 +131,7 @@ def rot(n, x, y, rx, ry):
     #
     #    Input, integer RX, RY, ???
     #
+
     if (ry == 0):
         #
         #  Reflect.
@@ -123,9 +139,9 @@ def rot(n, x, y, rx, ry):
         if (rx == 1):
             x = n - 1 - x
             y = n - 1 - y
-#
-#  Flip.
-#
+        #
+        #  Flip.
+        #
         t = x
         x = y
         y = t
@@ -151,7 +167,6 @@ def rot_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('ROT_TEST:')
@@ -176,43 +191,13 @@ def rot_test():
             y1 = y
             x1, y1 = rot(n, x1, y1, rx, ry)
             print('  %2d  %2d  %2d  %2d  %2d  %2d' % (x, y, x0, y0, x1, y1))
-#
-#  Terminate.
-#
+
+    #
+    #  Terminate.
+    #
     print('')
     print('ROT_TEST:')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 def xy2d(m, x, y):
@@ -254,9 +239,7 @@ def xy2d(m, x, y):
 
     d = 0
     n = 2 ** m
-
     s = (n // 2)
-
     while (0 < s):
 
         if (0 < (abs(xcopy) & s)):
@@ -270,9 +253,7 @@ def xy2d(m, x, y):
             ry = 0
 
         d = d + s * s * ((3 * rx) ^ ry)
-
         xcopy, ycopy = rot(s, xcopy, ycopy, rx, ry)
-
         s = (s // 2)
 
     return d
@@ -296,7 +277,6 @@ def xy2d_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('XY2D_TEST:')
@@ -319,13 +299,10 @@ def xy2d_test():
             d = xy2d(m, x, y)
             print('%3d' % (d), end='')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('XY2D_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def hilbert_curve_test():
@@ -346,7 +323,6 @@ def hilbert_curve_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('HILBERT_CURVE_TEST')
@@ -360,7 +336,6 @@ def hilbert_curve_test():
     print('')
     print('HILBERT_CURVE_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
