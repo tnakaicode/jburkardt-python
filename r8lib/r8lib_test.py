@@ -192,7 +192,7 @@ def r8lib_test():
     from r8lib.r8mat_vand2 import r8mat_vand2_test
 
     from r8lib.r8rows_to_r8mat import r8rows_to_r8mat_test
-    
+
     from r8lib.r8vec_amax import r8vec_amax_test
     from r8lib.r8vec_amax_index import r8vec_amax_index_test
     from r8lib.r8vec_amin import r8vec_amin_test
@@ -297,6 +297,12 @@ def r8lib_test():
     from r8lib.r8vec2_print_some import r8vec2_print_some_test
 
     from r8lib.r8vec3_print import r8vec3_print_test
+
+    from r8lib.r4lib import r4_exp_test, r4_uniform_01_test, r4_uniform_ab_test
+    from r8lib.r4lib import r4mat_print_test, r4mat_print_some_test
+    from r8lib.r4lib import r4mat_uniform_01_test, r4mat_uniform_ab_test
+    from r8lib.r4lib import r4vec_print_test, r4vec_covariance_test
+    from r8lib.r4lib import r4vec_uniform_01_test, r4vec_uniform_ab_test
 
     print('')
     print('r8lib_test')
@@ -563,6 +569,20 @@ def r8lib_test():
     r8vec2_print_some_test()
 
     r8vec3_print_test()
+
+    r4_exp_test()
+    r4_uniform_01_test()
+    r4_uniform_ab_test()
+
+    r4mat_print_test()
+    r4mat_print_some_test()
+    r4mat_uniform_01_test()
+    r4mat_uniform_ab_test()
+
+    r4vec_covariance_test()
+    r4vec_print_test()
+    r4vec_uniform_01_test()
+    r4vec_uniform_ab_test()
 
     print('')
     print('r8lib_test:')
