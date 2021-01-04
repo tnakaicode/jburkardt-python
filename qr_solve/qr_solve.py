@@ -1,6 +1,20 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def dqrank(a, lda, m, n, tol):
 
@@ -46,45 +60,46 @@ def dqrank(a, lda, m, n, tol):
     #
     #  Parameters:
     #
-    #    Input/output, real A(LDA,N).  On input, the matrix whose
-    #    decomposition is to be computed.  On output, the information from DQRDC.
-    #    The triangular matrix R of the QR factorization is contained in the
-    #    upper triangle and information needed to recover the orthogonal
-    #    matrix Q is stored below the diagonal in A and in the vector QRAUX.
+    #    Input/output, real A(LDA,N).
+    #       On input, the matrix whose decomposition is to be computed.
+    #       On output, the information from DQRDC.
+    #       The triangular matrix R of the QR factorization is contained
+    #       in the upper triangle
+    #       and information needed to recover
+    #       the orthogonal matrix Q is stored below the diagonal in A and in the vector QRAUX.
     #
-    #    Input, integer LDA, the leading dimension of A, which must
-    #    be at least M.
+    #    Input, integer LDA,
+    #       the leading dimension of A, which must be at least M.
     #
     #    Input, integer M, the number of rows of A.
     #
     #    Input, integer N, the number of columns of A.
     #
-    #    Input, real TOL, a relative tolerance used to determine the
-    #    numerical rank.  The problem should be scaled so that all the elements
-    #    of A have roughly the same absolute accuracy, EPS.  Then a reasonable
-    #    value for TOL is roughly EPS divided by the magnitude of the largest
-    #    element.
+    #    Input, real TOL,
+    #       a relative tolerance used to determine the numerical rank.
+    #       The problem should be scaled so that all the elements of
+    #       A have roughly the same absolute accuracy, EPS.
+    #       Then a reasonable value for TOL is roughly EPS
+    #       divided by the magnitude of the largest element.
     #
     #    Output, integer KR, the numerical rank.
     #
-    #    Output, integer JPVT(N), the pivot information from DQRDC.
-    #    Columns JPVT(1), ..., JPVT(KR) of the original matrix are linearly
-    #    independent to within the tolerance TOL and the remaining columns
-    #    are linearly dependent.
+    #    Output, integer JPVT(N),
+    #       the pivot information from DQRDC.
+    #       Columns JPVT(1), ..., JPVT(KR) of the original matrix
+    #       are linearly independent to within the tolerance TOL and
+    #       the remaining columns are linearly dependent.
     #
-    #    Output, real QRAUX(N), will contain extra information defining
-    #    the QR factorization.
+    #    Output, real QRAUX(N),
+    #       will contain extra information defining the QR factorization.
     #
-    import numpy as np
 
     jpvt = np.zeros(n, dtype=np.int32)
     job = 1
 
     a, qraux, jpvt = dqrdc(a, lda, m, n, jpvt, job)
-
     kr = 0
     k = min(m, n)
-
     for j in range(0, k):
         if (abs(a[j, j]) <= tol * abs(a[0, 0])):
             break
@@ -115,8 +130,6 @@ def dqrank_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     m = 4
     n = 4
@@ -148,15 +161,11 @@ def dqrank_test():
     print(' Matrix rank estimated to be %d' % (kr))
 
     r8mat_print(m, n, a, '  QR factorization information in A:')
-
     r8vec_print(m, qraux, '  QR factorization informaiton in QRAUX:')
-#
-#  Terminate.
-#
+
     print('')
     print('DQRANK_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def dqrdc(a, lda, n, p, jpvt, job):
@@ -238,19 +247,16 @@ def dqrdc(a, lda, n, p, jpvt, job):
     #    original matrix that has been interchanged into the K-th column, if
     #    pivoting was requested.
     #
-    import numpy as np
 
     pl = 1
     pu = 0
     qraux = np.zeros(p)
     work = np.zeros(p)
-#
-#  If pivoting is requested, rearrange the columns.
-#
+    #
+    #  If pivoting is requested, rearrange the columns.
+    #
     if (job != 0):
-
         for j in range(0, p):
-
             swapj = (0 < jpvt[j])
 
             if (jpvt[j] < 0):
@@ -259,7 +265,6 @@ def dqrdc(a, lda, n, p, jpvt, job):
                 jpvt[j] = (j + 1)
 
             if (swapj):
-
                 if (j + 1 != pl):
                     for i in range(0, n):
                         t = a[i, pl - 1]
@@ -271,15 +276,11 @@ def dqrdc(a, lda, n, p, jpvt, job):
                 pl = pl + 1
 
         pu = p
-
         for j in range(p - 1, -1, -1):
-
             if (jpvt[j] < 0):
-
                 jpvt[j] = - jpvt[j]
 
                 if (j + 1 != pu):
-
                     for i in range(0, n):
                         t = a[i, pu - 1]
                         a[i, pu - 1] = a[i, j]
@@ -290,20 +291,20 @@ def dqrdc(a, lda, n, p, jpvt, job):
                     jpvt[j] = jp
 
                 pu = pu - 1
-#
-#  Compute the norms of the free columns.
-#
+    #
+    #  Compute the norms of the free columns.
+    #
     for j in range(pl - 1, pu):
         t = 0.0
         for i in range(0, n):
             t = t + a[i, j] ** 2
         qraux[j] = np.sqrt(t)
         work[j] = qraux[j]
-#
-#  Perform the Householder reduction of A.
-#
-    lup = min(n, p)
 
+    #
+    #  Perform the Householder reduction of A.
+    #
+    lup = min(n, p)
     for l in range(0, lup):
         #
         #  Bring the column of largest norm into the pivot position.
@@ -332,9 +333,10 @@ def dqrdc(a, lda, n, p, jpvt, job):
                 jp = jpvt[maxj]
                 jpvt[maxj] = jpvt[l]
                 jpvt[l] = jp
-#
-#  Compute the Householder transformation for column L.
-#
+
+        #
+        #  Compute the Householder transformation for column L.
+        #
         qraux[l] = 0.0
 
         if (l + 1 != n):
@@ -355,9 +357,9 @@ def dqrdc(a, lda, n, p, jpvt, job):
                     a[i, l] = a[i, l] / nrmxl
 
                 a[l, l] = 1.0 + a[l, l]
-#
-#  Apply the transformation to the remaining columns, updating the norms.
-#
+                #
+                #  Apply the transformation to the remaining columns, updating the norms.
+                #
                 for j in range(l + 1, p):
 
                     t = 0.0
@@ -385,9 +387,9 @@ def dqrdc(a, lda, n, p, jpvt, job):
                                     t = t + a[i, j] ** 2
                                 qraux[j] = np.sqrt(t)
                                 work[j] = qraux[j]
-#
-#  Save the transformation.
-#
+                #
+                #  Save the transformation.
+                #
                 qraux[l] = a[l, l]
                 a[l, l] = - nrmxl
 
@@ -416,8 +418,6 @@ def dqrdc_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 3
     p = 3
@@ -430,9 +430,10 @@ def dqrdc_test():
     print('  matrix, but does not return Q and R explicitly.')
     print('')
     print('  Show how Q and R can be recovered using SQRSL.')
-#
-#  Set the matrix A.
-#
+
+    #
+    #  Set the matrix A.
+    #
     a = np.array([
         [1.0, 1.0, 0.0],
         [1.0, 0.0, 1.0],
@@ -447,9 +448,10 @@ def dqrdc_test():
         for j in range(0, p):
             print('  %14.6g' % (a[i, j])),
         print('')
-#
-#  Decompose the matrix.
-#
+
+    #
+    #  Decompose the matrix.
+    #
     print('')
     print('  Decompose the matrix.')
 
@@ -457,9 +459,9 @@ def dqrdc_test():
     ipvt = np.zeros(p, dtype=np.int32)
 
     a, qraux, ipvt = dqrdc(a, lda, n, p, ipvt, job)
-#
-#  Print out what DQRDC has stored in A...
-#
+    #
+    #  Print out what DQRDC has stored in A...
+    #
     print('')
     print('  The packed matrix A which describes Q and R:')
     print('')
@@ -468,22 +470,22 @@ def dqrdc_test():
         for j in range(0, p):
             print('  %14.6g' % (a[i, j])),
         print('')
-#
-#  ...and in QRAUX.
-#
+
+    #
+    #  ...and in QRAUX.
+    #
     print('')
     print('  The QRAUX vector, containing some additional')
     print('  information defining Q:')
     print('')
-
     for i in range(0, n):
         print('  %14.6g' % (qraux[i]))
     print('')
-#
-#  Print out the resulting R factor.
-#
-    r = np.zeros([n, p])
 
+    #
+    #  Print out the resulting R factor.
+    #
+    r = np.zeros([n, p])
     print('')
     print('  The R factor:')
     print('')
@@ -494,38 +496,37 @@ def dqrdc_test():
                 r[i, j] = a[i, j]
             print('  %14.6g' % (r[i, j])),
         print('')
-#
-#  Call DQRSL to extract the information about the Q matrix.
-#  We do this, essentially, by asking DQRSL to tell us the
-#  value of Q*Y, where Y is a column of the identity matrix.
-#
+
+    #
+    #  Call DQRSL to extract the information about the Q matrix.
+    #  We do this, essentially, by asking DQRSL to tell us the
+    #  value of Q*Y, where Y is a column of the identity matrix.
+    #
     q = np.zeros([n, n])
-
     job = 10000
-
     for j in range(0, n):
         #
         #  Set the vector Y.
         #
         y = np.zeros(n)
-
         y[j] = 1.0
-#
-#  Ask DQRSL to tell us what Q*Y is.
-#
+
+        #
+        #  Ask DQRSL to tell us what Q*Y is.
+        #
         qy, qty, b, rsd, xb, info = dqrsl(a, lda, n, p, qraux, y, job)
 
         if (info != 0):
             print('  Error!  DQRSL returns INFO = %d' % (info))
             return
-#
-#  Copy QY into the appropriate column of Q.
-#
+        #
+        #  Copy QY into the appropriate column of Q.
+        #
         for i in range(0, n):
             q[i, j] = qy[i]
-#
-#  Now print out the Q matrix we have extracted.
-#
+    #
+    #  Now print out the Q matrix we have extracted.
+    #
     print('')
     print('  The Q factor:')
     print('')
@@ -534,13 +535,11 @@ def dqrdc_test():
         for j in range(0, n):
             print('  %14.6g' % (q[i, j])),
         print('')
-#
-#  Compute Q*R to verify that it equals A.
-#
+    #
+    #  Compute Q*R to verify that it equals A.
+    #
     b = np.dot(q, r)
-#
-#  Print the result.
-#
+
     print('')
     print('  The product Q * R:')
     print('')
@@ -549,13 +548,9 @@ def dqrdc_test():
         for j in range(0, p):
             print('  %14.6g' % (b[i, j])),
         print('')
-#
-#  Terminate.
-#
     print('')
     print('DQRDC_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def dqrlss(a, lda, m, n, kr, b, jpvt, qraux):
@@ -625,16 +620,17 @@ def dqrlss(a, lda, m, n, kr, b, jpvt, qraux):
     #    Input, real QRAUX(N), auxiliary information from DQRANK
     #    defining the QR factorization.
     #
-    import numpy as np
-#
-#  Solve the reduced system of rank KR.
-#
+
+    #
+    #  Solve the reduced system of rank KR.
+    #
     if (0 < kr):
         job = 110
         qy, qty, x, r, ab, info = dqrsl(a, lda, m, kr, qraux, b, job)
-#
-#  Reverse the pivoting to recover the original variable ordering.
-#
+
+    #
+    #  Reverse the pivoting to recover the original variable ordering.
+    #
     jpvt[0:n] = - jpvt[0:n]
 
     for j in range(kr, n):
@@ -678,8 +674,6 @@ def dqrlss_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('DQRLSS_TEST')
@@ -687,9 +681,10 @@ def dqrlss_test():
     print('  DQRLSS solves a rectangular linear system A*x = b')
     print('  with possibly non-full rank, in the least squares sense.')
     print('  Compare a tabulated solution X1 to the computed result X2.')
-#
-#  Set the matrix A.
-#
+
+    #
+    #  Set the matrix A.
+    #
     m = 6
     n = 6
     a = np.zeros([m, n])
@@ -717,9 +712,10 @@ def dqrlss_test():
 
     lda = m
     tol = 0.000001
-#
-#  Factor the matrix.
-#
+
+    #
+    #  Factor the matrix.
+    #
     a_qr = a.copy()
     kr, jpvt, qraux, a_qr = dqrank(a_qr, lda, m, n, tol)
 
@@ -727,21 +723,18 @@ def dqrlss_test():
     print('  Matrix is of order m=%d by n=%d' % (m, n))
     print('  Condition number tolerance is %g' % (tol))
     print('  DQRANK estimates rank as %d' % (kr))
-#
-#  Solve the linear least squares problem.
-#
-    x2, r = dqrlss(a_qr, lda, m, n, kr, b, jpvt, qraux)
 
+    #
+    #  Solve the linear least squares problem.
+    #
+    x2, r = dqrlss(a_qr, lda, m, n, kr, b, jpvt, qraux)
     r8vec_print(n, x2, '  Computed solution x2:')
     r2 = b - np.dot(a, x2)
     r8vec_print(m, r2, '  Residual b-A*x2:')
-#
-#  Terminate.
-#
+
     print('')
     print('DQRLSS_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def dqrsl(a, lda, n, k, qraux, y, job):
@@ -878,20 +871,21 @@ def dqrsl(a, lda, n, k, qraux, y, job):
     #    been requested and R is exactly singular.  In this case, INFO is the
     #    index of the first zero diagonal element of R, and B is left unaltered.
     #
-    import numpy as np
 
     qy = np.zeros(n)
     qty = np.zeros(n)
     b = np.zeros(k)
     rsd = np.zeros(n)
     ab = np.zeros(n)
-#
-#  Set info flag.
-#
+
+    #
+    #  Set info flag.
+    #
     info = 0
-#
-#  Determine what is to be computed.
-#
+
+    #
+    #  Determine what is to be computed.
+    #
     cqy = int(job / 10000) != 0
     cqty = (job % 10000) != 0
     cb = int((job % 1000) / 100) != 0
@@ -899,9 +893,10 @@ def dqrsl(a, lda, n, k, qraux, y, job):
     cab = (job % 10) != 0
 
     ju = min(k, n - 1)
-#
-#  Special action when N = 1.
-#
+
+    #
+    #  Special action when N = 1.
+    #
     if (ju == 0):
 
         qy[0] = y[0]
@@ -916,15 +911,15 @@ def dqrsl(a, lda, n, k, qraux, y, job):
         rsd[0] = 0.0
 
         return qy, qty, b, rsd, ab, info
-#
-#  Set up to compute QY or QTY.
-#
+    #
+    #  Set up to compute QY or QTY.
+    #
     for i in range(0, n):
         qy[i] = y[i]
         qty[i] = y[i]
-#
-#  Compute QY.
-#
+    #
+    #  Compute QY.
+    #
     if (cqy):
 
         for j in range(ju - 1, -1, -1):
@@ -939,9 +934,9 @@ def dqrsl(a, lda, n, k, qraux, y, job):
                 for i in range(j, n):
                     qy[i] = qy[i] + t * a[i, j]
                 a[j, j] = ajj
-#
-#  Compute Q'*Y.
-#
+    #
+    #  Compute Q'*Y.
+    #
     if (cqty):
 
         for j in range(0, ju):

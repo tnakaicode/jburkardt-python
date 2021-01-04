@@ -1,6 +1,21 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import torch
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def pytorch_test():
 
@@ -20,7 +35,6 @@ def pytorch_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('pytorch_test:')
@@ -30,13 +44,10 @@ def pytorch_test():
 
     pytorch_test01()
     pytorch_test02()
-#
-#  Terminate.
-#
+
     print('')
     print('pytorch_test:')
     print('  Normal end of execution.')
-    return
 
 
 def pytorch_test01():
@@ -57,7 +68,6 @@ def pytorch_test01():
     #
     #    John Burkardt
     #
-    import numpy as np
 
     print('')
     print('pytorch_test01')
@@ -135,7 +145,6 @@ def pytorch_test02():
     #
     #    John Burkardt
     #
-    import torch
 
     print('')
     print('pytorch_test02')
@@ -182,33 +191,6 @@ def pytorch_test02():
     print('')
     print('pytorch_test02:')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return
 
 
 if (__name__ == '__main__'):
