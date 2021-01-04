@@ -1,6 +1,23 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+from rnglib.initialize import initialize
+from rnglib.rnglib_test03 import rnglib_test03
+from rnglib.rnglib_test04 import rnglib_test04
+
 
 def rnglib_test():
 
@@ -24,39 +41,26 @@ def rnglib_test():
     #
     #    John Burkardt
     #
-    import platform
-    from i4_uni import i4_uni_test
-    from initialize import initialize
-    from r8_uni_01 import r8_uni_01_test
-    from rnglib_test03 import rnglib_test03
-    from rnglib_test04 import rnglib_test04
 
     print('')
     print('RNGLIB_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the RNGLIB library.')
-#
-#  Initialize RNGLIB.
-#
+
+    #
+    #  Initialize RNGLIB.
+    #
     initialize()
-#
-#  Call tests.
-#
-    i4_uni_test()
-    r8_uni_01_test()
 
     rnglib_test03()
     rnglib_test04()
-#
-#  Terminate.
-#
+
     print('')
     print('RNGLIB_TEST:')
     print('  Normal end of execution.')
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     rnglib_test()
     timestamp()
