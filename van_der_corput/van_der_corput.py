@@ -1,6 +1,21 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+from prob.r8vec import r8vec_uniform_01
+
 
 def r8vec_transpose_print(n, a, title):
 
@@ -56,12 +71,9 @@ def r8vec_transpose_print(n, a, title):
         print('  ', end='')
 
         ihi = min(ilo + 5 - 1, n - 1)
-
         for i in range(ilo, ihi + 1):
             print('  %12g' % (a[i]), end='')
         print('')
-
-    return
 
 
 def r8vec_transpose_print_test():
@@ -82,8 +94,6 @@ def r8vec_transpose_print_test():
     #
     #    John Burkardt
     #
-    import platform
-    from r8vec_uniform_01 import r8vec_uniform_01
 
     n = 12
     seed = 123456789
@@ -95,85 +105,11 @@ def r8vec_transpose_print_test():
     print('  that is, placing multiple entries on a line.')
 
     x, seed = r8vec_uniform_01(n, seed)
-
     r8vec_transpose_print(n, x, '  The vector X:')
-#
-#  Terminate.
-#
+
     print('')
     print('R8VEC_TRANSPOSE_PRINT_TEST')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def vdc(i):
@@ -267,21 +203,21 @@ def vdc(i):
         s = +1
 
     t = abs(int(i))
-#
-#  Carry out the computation.
-#
+
+    #
+    #  Carry out the computation.
+    #
     base_inv = 0.5
-
     r = 0.0
-
     while (t != 0):
         d = (t % 2)
         r = r + d * base_inv
         base_inv = base_inv / 2.0
         t = (t // 2)
-#
-#  Recover the sign.
-#
+
+    #
+    #  Recover the sign.
+    #
     r = r * s
 
     return r
@@ -305,7 +241,6 @@ def vdc_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('VDC_TEST')
@@ -318,13 +253,10 @@ def vdc_test():
     for i in range(-10, 11):
         r = vdc(i)
         print('  %3d  %14.8f' % (i, r))
-#
-#  Terminate.
-#
+
     print('')
     print('VDC_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def vdc_base(i, b):
@@ -355,43 +287,45 @@ def vdc_base(i, b):
     #
     #    Output, real R, the I-th element of the van der Corput sequence.
     #
-    from sys import exit
-#
-#  2 <= B.
-#
+
+    #
+    #  2 <= B.
+    #
     if (b < 2):
         print('')
         print('VDC_BASE - Fatal error!')
         print('  2 <= B is required.')
         exit('VDC_BASE - Fatal error!')
-#
-#  B should be an integer.
-#
+
+    #
+    #  B should be an integer.
+    #
     b = int(b)
-#
-#  Isolate the sign, and only work with the integer part of I.
-#
+
+    #
+    #  Isolate the sign, and only work with the integer part of I.
+    #
     if (i < 0):
         s = -1
     else:
         s = +1
 
     t = abs(int(i))
-#
-#  Carry out the computation.
-#
+
+    #
+    #  Carry out the computation.
+    #
     base_inv = 1.0 / b
-
     r = 0.0
-
     while (t != 0):
         d = (t % b)
         r = r + d * base_inv
         base_inv = base_inv / b
         t = (t // b)
-#
-#  Recover the sign.
-#
+
+    #
+    #  Recover the sign.
+    #
     r = r * s
 
     return r
@@ -415,7 +349,6 @@ def vdc_base_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('VDC_BASE_TEST')
@@ -431,13 +364,10 @@ def vdc_base_test():
         r3 = vdc_base(i, 3)
         r5 = vdc_base(i, 5)
         print('  %3d         %14.8f  %14.8f  %14.8f' % (i, r2, r3, r5))
-#
-#  Terminate.
-#
+
     print('')
     print('VDC_BASE_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def vdc_inverse(r):
@@ -465,7 +395,6 @@ def vdc_inverse(r):
     #
     #    Output, integer I, the index of the element of the sequence.
     #
-    from sys import exit
 
     if (r < 0.0):
         s = -1
@@ -489,9 +418,10 @@ def vdc_inverse(r):
         i = i + d * p
         p = p * 2
         t = (t % 1.0)
-#
-#  Recover the sign.
-#
+
+    #
+    #  Recover the sign.
+    #
     i = i * s
 
     return i
@@ -515,7 +445,6 @@ def vdc_inverse_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('VDC_INVERSE_TEST')
@@ -529,13 +458,10 @@ def vdc_inverse_test():
         r = vdc(i)
         i2 = vdc_inverse(r)
         print('  %3d  %14.8f  %3d' % (i, r, i2))
-#
-#  Terminate.
-#
+
     print('')
     print('VDC_INVERSE_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def vdc_sequence(i1, i2):
@@ -568,7 +494,6 @@ def vdc_sequence(i1, i2):
     #    Output, real R(|I2+1-I1|), elements I1 through I2 of the van der
     #    Corput sequence.
     #
-    import numpy as np
 
     n = abs(i2 - i1) + 1
     r = np.zeros(n)
@@ -579,9 +504,9 @@ def vdc_sequence(i1, i2):
         i3 = -1
 
     j = 0
-#
-#  The syntax of the Python RANGE function strikes again!
-#
+    #
+    #  The syntax of the Python RANGE function strikes again!
+    #
     for i in range(i1, i2 + i3, i3):
         #
         #  Isolate the sign, and only work with the integer part of I.
@@ -592,21 +517,20 @@ def vdc_sequence(i1, i2):
             s = +1
 
         t = abs(int(i))
-#
-#  Carry out the computation.
-#
+
+        #
+        #  Carry out the computation.
+        #
         base_inv = 0.5
-
         r[j] = 0.0
-
         while (t != 0):
             d = (t % 2)
             r[j] = r[j] + d * base_inv
             base_inv = base_inv / 2.0
             t = (t // 2)
-#
-#  Recover the sign.
-#
+        #
+        #  Recover the sign.
+        #
         r[j] = r[j] * s
 
         j = j + 1
@@ -632,7 +556,6 @@ def vdc_sequence_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('VDC_SEQUENCE_TEST')
@@ -674,13 +597,10 @@ def vdc_sequence_test():
     r = vdc_sequence(i1, i2)
     print('')
     r8vec_transpose_print(n, r, '  R=VDC_SEQUENCE(100,105):')
-#
-#  Terminate.
-#
+
     print('')
     print('VDC_SEQUENCE_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def van_der_corput_test():
@@ -701,7 +621,6 @@ def van_der_corput_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('VAN_DER_CORPUT_TEST')
@@ -712,13 +631,10 @@ def van_der_corput_test():
     vdc_inverse_test()
     vdc_sequence_test()
     vdc_base_test()
-#
-#  Terminate.
-#
+
     print('')
     print('VAN_DER_CORPUT_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
