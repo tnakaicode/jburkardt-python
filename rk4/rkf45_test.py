@@ -2,8 +2,20 @@
 
 """rkf45 test"""
 import numpy as np
-from rkf45 import *
-from datetime import datetime
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+import datetime
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+from rk4.rkf45 import r8_rkf45, r8_fehl
 
 
 def rkf45_test():
@@ -44,28 +56,28 @@ def rkf45_test():
     timestamp()
 
 
-def timestamp():
-    """
-    #*****************************************************************************80
-    #
-    ## TIMESTAMP prints the current YMDHMS date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 February 2003
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    """
-    now = datetime.now()
-    print(now.strftime("Date: %Y-%m-%d, time: %H:%M"))
-    return
+# def timestamp():
+#    """
+#    #*****************************************************************************80
+#    #
+#    ## TIMESTAMP prints the current YMDHMS date as a timestamp.
+#    #
+#    #  Licensing:
+#    #
+#    #    This code is distributed under the GNU LGPL license.
+#    #
+#    #  Modified:
+#    #
+#    #    14 February 2003
+#    #
+#    #  Author:
+#    #
+#    #    John Burkardt
+#    #
+#    """
+#    now = datetime.now()
+#    print(now.strftime("Date: %Y-%m-%d, time: %H:%M"))
+#    return
 
 
 def rkf45_test04():
@@ -93,15 +105,15 @@ def rkf45_test04():
     print('')
     print('  Y'' = 0.25 * Y * ( 1 - Y / 20 )')
     neqn = 1
-    abserr = sqrt(finfo(double).eps)
-    relerr = sqrt(finfo(double).eps)
+    abserr = np.sqrt(np.finfo(np.double).eps)
+    relerr = np.sqrt(np.finfo(np.double).eps)
     flag = 1
     t_start = 0.0
     t_stop = 20.0
     n_step = 5
     t_out = 0.0
     t = t_out
-    y = array([1.0])
+    y = np.array([1.0])
     yp = r8_f1(t, y)
     print('')
     print('  FLAG     T             Y            Y''           Y_Exact         Error')
@@ -145,7 +157,7 @@ def r8_f1(t, y):
     #    dY(1:NEQN)/dT.
     #
     """
-    yp = zeros(size(y))
+    yp = np.zeros(np.size(y))
     yp[0] = 0.25 * y[0] * (1.0 - y[0] / 20.0)
     return(yp)
 
@@ -176,15 +188,15 @@ def rkf45_test05():
     print('  Y''(1) =  Y(2)')
     print('  Y''(2) = -Y(1)')
     neqn = 2
-    abserr = sqrt(finfo(double).eps)
-    relerr = sqrt(finfo(double).eps)
+    abserr = np.sqrt(np.finfo(np.double).eps)
+    relerr = np.sqrt(np.finfo(np.double).eps)
     flag = 1
     t_start = 0.0
     t_stop = 2.0 * 3.14159265
     n_step = 12
     t = 0.0
     t_out = 0.0
-    y = zeros(2)
+    y = np.zeros(2)
     y[0] = 1.0
     yp = r8_f2(t, y)
     print('')
@@ -231,7 +243,7 @@ def r8_f2(t, y):
     #    dY(1:NEQN)/dT.
     #
     """
-    yp = zeros(size(y))
+    yp = np.zeros(np.size(y))
     yp[0] = y[1]
     yp[1] = -y[0]
     return(yp)
@@ -262,7 +274,7 @@ def r8_y1x(t):
     #    Output, real Y1X, the exact solution.
     #
     """
-    y1x = 20.0 / (1.0 + 19.0 * exp(- 0.25 * t))
+    y1x = 20.0 / (1.0 + 19.0 * np.exp(- 0.25 * t))
     return(y1x)
 
 
@@ -294,15 +306,15 @@ def rkf45_test06():
     print('  Use the special SINGLE_STEP mode')
     print('  which returns after every step.')
     neqn = 1
-    abserr = sqrt(finfo(double).eps)
-    relerr = sqrt(finfo(double).eps)
+    abserr = np.sqrt(np.finfo(np.double).eps)
+    relerr = np.sqrt(np.finfo(np.double).eps)
     flag = -1
     t_start = 0.0
     t_stop = 20.0
     n_step = 5
     t = 0.0
     t_out = 0.0
-    y = zeros(1)
+    y = np.zeros(1)
     y[0] = 1.0
     yp = r8_f1(t, y)
     print('')
@@ -330,7 +342,6 @@ def rkf45_test06():
         # to continue to the next T_OUT in one step mode.
         #
         flag = -2
-    return
 
 
 if (__name__ == '__main__'):
