@@ -3,6 +3,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import random as rn
 import platform
 import time
 import sys
@@ -15,174 +16,14 @@ sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
 
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
 
-def i4_choose(n, k):
-
-    # *****************************************************************************80
-    #
-    # I4_CHOOSE computes the binomial coefficient C(N,K) as an I4.
-    #
-    #  Discussion:
-    #
-    #    The value is calculated in such a way as to avoid overflow and
-    #    roundoff.  The calculation is done in integer arithmetic.
-    #
-    #    The formula used is:
-    #
-    #      C(N,K) = N! / ( K! * (N-K)! )
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    30 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    ML Wolfson, HV Wright,
-    #    Algorithm 160:
-    #    Combinatorial of M Things Taken N at a Time,
-    #    Communications of the ACM,
-    #    Volume 6, Number 4, April 1963, page 161.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, K, are the values of N and K.
-    #
-    #    Output, integer VALUE, the number of combinations of N
-    #    things taken K at a time.
-    #
-    mn = min(k, n - k)
-    mx = max(k, n - k)
-
-    if (mn < 0):
-
-        value = 0
-
-    elif (mn == 0):
-
-        value = 1
-
-    else:
-
-        value = mx + 1
-
-        for i in range(2, mn + 1):
-            value = (value * (mx + i)) / i
-
-    return value
-
-
-def i4_uniform_ab(a, b, seed):
-
-    # *****************************************************************************80
-    #
-    # I4_UNIFORM_AB returns a scaled pseudorandom I4.
-    #
-    #  Discussion:
-    #
-    #    The pseudorandom number will be scaled to be uniformly distributed
-    #    between A and B.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    05 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Second Edition,
-    #    Springer, 1987,
-    #    ISBN: 0387964673,
-    #    LC: QA76.9.C65.B73.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, December 1986, pages 362-376.
-    #
-    #    Pierre L'Ecuyer,
-    #    Random Number Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998,
-    #    ISBN: 0471134031,
-    #    LC: T57.62.H37.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, Number 2, 1969, pages 136-143.
-    #
-    #  Parameters:
-    #
-    #    Input, integer A, B, the minimum and maximum acceptable values.
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, integer C, the randomly chosen integer.
-    #
-    #    Output, integer SEED, the updated seed.
-    #
-
-    i4_huge = 2147483647
-
-    seed = int(seed)
-
-    seed = (seed % i4_huge)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('I4_UNIFORM_AB - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('I4_UNIFORM_AB - Fatal error!')
-
-    k = (seed // 127773)
-
-    seed = 16807 * (seed - k * 127773) - k * 2836
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    r = seed * 4.656612875E-10
-#
-#  Scale R to lie between A-0.5 and B+0.5.
-#
-    a = round(a)
-    b = round(b)
-
-    r = (1.0 - r) * (min(a, b) - 0.5) \
-        + r * (max(a, b) + 0.5)
-#
-#  Use rounding to convert R to an integer between A and B.
-#
-    value = round(r)
-
-    value = max(value, min(a, b))
-    value = min(value, max(a, b))
-    value = int(value)
-
-    return value, seed
+from i4lib.i4_choose import i4_choose
+from i4lib.i4_uniform_ab import i4_uniform_ab
 
 
 def normalize(n, x):
@@ -213,14 +54,14 @@ def normalize(n, x):
     #
     #  Sum X.
     #
-    sum = 0.0
+    sum_val = 0.0
     for i in range(1, n + 1):
-        sum = sum + abs(x[i])
-#
-#  Normalize so that the new sum of X will be 1.
-#
+        sum_val = sum_val + abs(x[i])
+    #
+    #  Normalize so that the new sum of X will be 1.
+    #
     for i in range(1, n + 1):
-        x[i] = x[i] / sum
+        x[i] = x[i] / sum_val
 
     return x
 
@@ -253,136 +94,13 @@ def r8vec_indicator0(n):
     #
     #    Output, real A(N), the indicator array.
     #
-    import numpy
 
-    a = numpy.zeros(n)
+    a = np.zeros(n)
 
     for i in range(0, n):
         a[i] = i
 
     return a
-
-
-def r8vec_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT prints an R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the dimension of the vector.
-    #
-    #    Input, real A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('%6d:  %12g' % (i, a[i]))
-
-
-def r8vec_uniform_01(n, seed):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_01 returns a unit pseudorandom R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Second Edition,
-    #    Springer, 1987,
-    #    ISBN: 0387964673,
-    #    LC: QA76.9.C65.B73.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, December 1986, pages 362-376.
-    #
-    #    Pierre L'Ecuyer,
-    #    Random Number Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998,
-    #    ISBN: 0471134031,
-    #    LC: T57.62.H37.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, Number 2, 1969, pages 136-143.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, real X(N), the vector of pseudorandom values.
-    #
-    #    Output, integer SEED, an updated seed for the random number generator.
-    #
-    import numpy as np
-    from sys import exit
-
-    i4_huge = 2147483647
-
-    seed = int(seed)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('R8VEC_UNIFORM_01 - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('R8VEC_UNIFORM_01 - Fatal error!')
-
-    x = np.zeros(n)
-
-    for i in range(0, n):
-
-        k = (seed // 127773)
-
-        seed = 16807 * (seed - k * 127773) - k * 2836
-
-        if (seed < 0):
-            seed = seed + i4_huge
-
-        x[i] = seed * 4.656612875E-10
-
-    return x, seed
 
 
 def random_permutation(n, x, seed):
@@ -440,7 +158,6 @@ def random_permutation_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('RANDOM_PERMUTATION_TEST')
@@ -454,13 +171,10 @@ def random_permutation_test():
     r8vec_print(n + 2, x, '  Initial X:')
     x = random_permutation(n, x, seed)
     r8vec_print(n + 2, x, '  Permuted X:')
-#
-#  Terminate.
-#
+
     print('')
     print('RANDOM_PERMUTATION_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def walker_build(n, x):
@@ -502,24 +216,25 @@ def walker_build(n, x):
     #
     #    Output, unsigned int A[N+2], the Walker index vector.
     #
-    import numpy as np
-#
-#  Initialize A.
-#
+
+    #
+    #  Initialize A.
+    #
     a = np.zeros(n + 2, dtype=np.int32)
     for i in range(0, n + 2):
         a[i] = i
-#
-#  Initialize B to the "stay here" value, and set sentinel values at the ends.
-#
-    b = np.zeros(n + 2, dtype=np.int32)
 
+    #
+    #  Initialize B to the "stay here" value, and set sentinel values at the ends.
+    #
+    b = np.zeros(n + 2, dtype=np.int32)
     for i in range(0, n + 2):
         b[i] = a[i]
-#
-#  Copy X into Y.
-#  Scale the probability vector and set sentinel values at the ends.
-#
+
+    #
+    #  Copy X into Y.
+    #  Scale the probability vector and set sentinel values at the ends.
+    #
     y = np.zeros(n + 2, dtype=np.float64)
 
     y[0] = 0.0
@@ -538,9 +253,9 @@ def walker_build(n, x):
             i = i + 1
             if (1.0 <= y[b[i]]):
                 break
-#
-#  Find j so Y[B[j]] wants less.
-#
+        #
+        #  Find j so Y[B[j]] wants less.
+        #
         while (True):
             j = j - 1
             if (y[b[j]] < 1.0):
@@ -548,9 +263,10 @@ def walker_build(n, x):
 
         if (j <= i):
             break
-#
-#  Swap B[i] and B[j].
-#
+
+        #
+        #  Swap B[i] and B[j].
+        #
         k = b[i]
         b[i] = b[j]
         b[j] = k
@@ -564,19 +280,22 @@ def walker_build(n, x):
         #
         while (y[b[j]] <= 1.0):
             j = j + 1
-#
-#  Meanwhile, Y[B[i]] wants less.
-#
+
+        #
+        #  Meanwhile, Y[B[i]] wants less.
+        #
         if (n < j):
             break
-#
-#  B[i] will donate to B[j] to fix up.
-#
+
+        #
+        #  B[i] will donate to B[j] to fix up.
+        #
         y[b[j]] = y[b[j]] - (1.0 - y[b[i]])
         a[b[i]] = b[j]
-#
-#  Y[B[j]] now wants less so readjust ordering.
-#
+
+        #
+        #  Y[B[j]] now wants less so readjust ordering.
+        #
         if (y[b[j]] < 1.0):
             k = b[i]
             b[i] = b[j]
@@ -606,8 +325,6 @@ def walker_build_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('WALKER_BUILD_TEST')
@@ -627,13 +344,10 @@ def walker_build_test():
     print('')
     for i in range(0, n + 2):
         print('  %2d  %2d  %10.4g' % (i, a[i], y[i]))
-#
-#  Terminate.
-#
+
     print('')
     print('WALKER_BUILD_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def walker_sampler(n, y, a):
@@ -680,11 +394,10 @@ def walker_sampler(n, y, a):
     #    Output, unsigned int WALKER_SAMPLER, a sample value between 1 and N,
     #    selected according to the probability vector X.
     #
-    import numpy as np
-    import random as rn
-#
-#  Let i = random uniform integer from {1,2,...N}
-#
+
+    #
+    #  Let i = random uniform integer from {1,2,...N}
+    #
     i = 1 + int(np.fix(float(n) * rn.random()))
 
     r = rn.random()
@@ -725,9 +438,6 @@ def walker_sampler_test():
     #    Input, double P, the value of the Zipf parameter
     #    1 <= P.
     #
-    import numpy as np
-    import platform
-    import random as rn
 
     seed = 123456789
     n = 10
@@ -739,16 +449,17 @@ def walker_sampler_test():
     print('  WALKER_SAMPLER creates Walker sample vectors Y and A')
     print('  for efficient sampling of a discrete probability vector.')
     print('  Test the Walker sampler with a Zipf-type probability.')
-#
-#  Initialize the random number generator.
-#
+    #
+    #  Initialize the random number generator.
+    #
     print('  Use seed = %d as input to random.seed ( seed ):' % (seed))
 
     rn.seed(seed)
-#
-#  Generate a standard Zipf probability vector for cases 1 - N,
-#  with parameter P.
-#
+    
+    #
+    #  Generate a standard Zipf probability vector for cases 1 - N,
+    #  with parameter P.
+    #
     x = zipf_probability(n, p)
 
     print('')
@@ -760,9 +471,10 @@ def walker_sampler_test():
     print('')
     for i in range(1, n + 1):
         print('  %4d  %16g' % (i, x[i]))
-#
-#  For better testing, randomly scramble the probabilities.
-#
+    
+    #
+    #  For better testing, randomly scramble the probabilities.
+    #
     x = random_permutation(n, x, seed)
 
     print('')
@@ -772,9 +484,10 @@ def walker_sampler_test():
     print('')
     for i in range(1, n + 1):
         print('  %4d  %16g' % (i, x[i]))
-#
-#  Build the Walker sampler.
-#
+    
+    #
+    #  Build the Walker sampler.
+    #
     y, a = walker_build(n, x)
 
     print('')
@@ -784,19 +497,22 @@ def walker_sampler_test():
 
     for i in range(0, n + 2):
         print('  %3d  %16g  %4d' % (i, y[i], a[i]))
-#
-#  Prepare to count the frequency of each outcome.
-#
+    
+    #
+    #  Prepare to count the frequency of each outcome.
+    #
     count = np.zeros(n + 2, dtype=np.int32)
-#
-#  Call the sampler many times.
-#
+    
+    #
+    #  Call the sampler many times.
+    #
     for i in range(0, 100000):
         j = walker_sampler(n, y, a)
         count[j] = count[j] + 1
-#
-#  Compare normalized sample frequencies to the original probabilities in X.
-#
+    
+    #
+    #  Compare normalized sample frequencies to the original probabilities in X.
+    #
     v = 0.0
     print('')
     print('  100000 samples:')
@@ -813,13 +529,9 @@ def walker_sampler_test():
 
     print('')
     print('  sumvar = %g, (should be about 1)' % (v))
-#
-#  Terminate.
-#
     print('')
     print('WALKER_SAMPLER_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def walker_sample_test():
@@ -892,19 +604,22 @@ def walker_verify(n, x, y, a):
     #
 
     z = np.zeros(n + 2, dtype=np.float64)
-#
-#  Reverse the scaling.
-#
+    
+    #
+    #  Reverse the scaling.
+    #
     for i in range(0, n + 2):
         z[i] = y[i] / float(n)
-#
-#  Add back the adjustments.
-#
+    
+    #
+    #  Add back the adjustments.
+    #
     for i in range(1, n + 1):
         z[a[i]] = z[a[i]] + (1.0 - y[i]) / float(n)
-#
-#  Check for discrepancies between Z and X.
-#
+    
+    #
+    #  Check for discrepancies between Z and X.
+    #
     v = 0.0
     for i in range(1, n + 1):
         v = v + abs(z[i] - x[i])

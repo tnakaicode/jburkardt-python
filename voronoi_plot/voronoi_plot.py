@@ -1,6 +1,29 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import random as rn
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+
+obj = plot2d()
+
 
 def voronoi_plot(xy=[], m=200, n=200, p=2):
 
@@ -42,9 +65,6 @@ def voronoi_plot(xy=[], m=200, n=200, p=2):
     #    P = 1, the L1 norm.
     #    Otherwise Norm(X,Y) = ( |X|^P + |Y|^P ) ^ (1/P)
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import platform
 
     print('')
     print('VORONOI_PLOT:')
@@ -54,13 +74,15 @@ def voronoi_plot(xy=[], m=200, n=200, p=2):
     if (not len(xy)):
         nc = 15
         xy = np.random([2, nc])
-#
-#  How many points did we get?
-#
+
+    #
+    #  How many points did we get?
+    #
     nc = xy.shape[1]
-#
-#  Compute the range of the points.
-#
+
+    #
+    #  Compute the range of the points.
+    #
     xmin = min(xy[0, :])
     xmax = max(xy[0, :])
     if (xmin == xmax):
@@ -71,34 +93,39 @@ def voronoi_plot(xy=[], m=200, n=200, p=2):
     if (ymin == ymax):
         ymin = ymin - 0.5
         ymax = ymax + 0.5
-#
-#  Compute a margin, so the extreme points are not on the boundary.
-#
+
+    #
+    #  Compute a margin, so the extreme points are not on the boundary.
+    #
     margin = 0.05 * max(xmax - xmin, ymax - ymin)
-#
-#  Extend the region by the margin.
-#
+
+    #
+    #  Extend the region by the margin.
+    #
     xmin = xmin - margin
     xmax = xmax + margin
     ymin = ymin - margin
     ymax = ymax + margin
-#
-#  Randomly choose NC + 1 sets of RGB values.
-#  Our extra color is black, just in case something goes wrong.
-#
+
+    #
+    #  Randomly choose NC + 1 sets of RGB values.
+    #  Our extra color is black, just in case something goes wrong.
+    #
     rgb = np.zeros([nc + 1, 3], dtype=np.uint8)
     rgb = np.random.random_integers(0, 255, [nc + 1, 3])
     rgb[nc, :] = 0
-#
-#  Our picture A will be stored as an M x N array of RGB values
-#  which are a special MATLAB data type of unsignted 8 bit integers.
-#
+
+    #
+    #  Our picture A will be stored as an M x N array of RGB values
+    #  which are a special MATLAB data type of unsignted 8 bit integers.
+    #
     a = np.zeros([m, n, 3], dtype=np.uint8)
-#
-#  For each pixel in A, we calculate its corresponding XY position,
-#  find the nearest center, and color the pixel with the corresponding
-#  RGB color.  A vectorized calculation would be much faster.
-#
+
+    #
+    #  For each pixel in A, we calculate its corresponding XY position,
+    #  find the nearest center, and color the pixel with the corresponding
+    #  RGB color.  A vectorized calculation would be much faster.
+    #
     for i in range(0, m):
 
         y = (float(m - i - 1) * ymax
@@ -132,56 +159,23 @@ def voronoi_plot(xy=[], m=200, n=200, p=2):
                     nearest = k
 
             a[i, j, :] = rgb[nearest, :]
-#
-#  Mark the generators as black squares.
-#
+    #
+    #  Mark the generators as black squares.
+    #
     for k in range(0, nc):
         i = int((n * ymax - 1 * ymin - (n - 1) * xy[1, k]) / (ymax - ymin)) - 1
         j = int((n * xmax - 1 * xmin - (n - 1) * xy[0, k]) / (xmax - xmin)) - 1
         a[i - 1:i + 1, j - 1:j + 1, :] = 0
-#
-#  Display the image.
-#
-    plt.imshow(a)
 
+    #
+    #  Display the image.
+    #
     filename = 'voronoi.png'
-    plt.savefig(filename)
+    obj.new_2Dfig(aspect="auto")
+    obj.axs.imshow(a, cmap="jet")
+    obj.SavePng(filename)
     print('')
     print('  Saved graphics in file "%s"' % (filename))
-
-    plt.show(block=False)
-
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 def voronoi_plot_test():
@@ -202,8 +196,6 @@ def voronoi_plot_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     print('')
     print('VORONOI_PLOT_TEST:')
@@ -217,11 +209,9 @@ def voronoi_plot_test():
     print('')
     print('VORONOI_PLOT_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    import numpy as np
     timestamp()
     voronoi_plot_test()
     timestamp()
