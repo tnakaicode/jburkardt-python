@@ -187,7 +187,7 @@ from i4lib.triangle_lower_to_i4 import triangle_lower_to_i4_test
 from i4lib.triangle_upper_to_i4 import triangle_upper_to_i4_test
 
 from i4lib.ksub_next4 import ksub_next4_test
-from i4lib.l4_to_i4 import l4_to_i4_test
+from i4lib.l4lib import l4_to_i4_test
 from i4lib.pascal_to_i4 import pascal_to_i4_test
 from i4lib.perm0_check import perm0_check_test
 from i4lib.perm0_uniform import perm0_uniform_test
