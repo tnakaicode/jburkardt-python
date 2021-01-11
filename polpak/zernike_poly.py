@@ -1,5 +1,29 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
+
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from r8lib.r8mat_print import r8mat_print
+from r8lib.r8mat_print_some import r8mat_print_some
+from r8lib.r8mat_uniform_abvec import r8mat_uniform_abvec
+from r8lib.r8vec2_print import r8vec2_print
+from r8lib.r8poly_print import r8poly_print
+from r8lib.r8poly_value_horner import r8poly_value_horner
+from polpak.zernike_poly_coef import zernike_poly_coef
+
+
 def zernike_poly(m, n, rho):
 
     # *****************************************************************************80
@@ -143,9 +167,6 @@ def zernike_poly_test():
     #
     #    John Burkardt
     #
-    import platform
-    from r8poly_value_horner import r8poly_value_horner
-    from zernike_poly_coef import zernike_poly_coef
 
     print('')
     print('ZERNIKE_POLY_TEST')
@@ -179,28 +200,20 @@ def zernike_poly_test():
     print('')
 
     for n in range(0, 6):
-
         print('')
-
         for m in range(0, n + 1):
 
             c = zernike_poly_coef(m, n)
             z1 = r8poly_value_horner(n, c, rho)
-
             z2 = zernike_poly(m, n, rho)
-
             print('  %2d  %2d  %16f  %16f' % (n, m, z1, z2))
-#
-#  Terminate.
-#
+
     print('')
     print('ZERNIKE_POLY_TEST')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     zernike_poly_test()
     timestamp()

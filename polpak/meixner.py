@@ -1,8 +1,24 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
+
 import numpy as np
 import matplotlib.pyplot as plt
 import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from r8lib.r8mat_print import r8mat_print
+from r8lib.r8mat_print_some import r8mat_print_some
+from r8lib.r8mat_uniform_abvec import r8mat_uniform_abvec
+from r8lib.r8vec2_print import r8vec2_print
 
 
 def meixner(n, beta, c, x):
@@ -121,21 +137,19 @@ def meixner_test():
                 data.append([i, beta, c, x, value[i]])
     data = np.array(data)
 
-    plt.figure()
-    plt.plot(data[:, 1])
-    plt.plot(data[:, 2])
-    plt.plot(data[:, 3])
-    plt.plot(data[:, 4])
-    plt.savefig("./meixner.png")
+    obj = plot2d(aspect="auto")
+    obj.axs.plot(data[:, 1])
+    obj.axs.plot(data[:, 2])
+    obj.axs.plot(data[:, 3])
+    obj.axs.plot(data[:, 4])
+    obj.SavePng("./meixner.png")
 
     print('')
     print('MEIXNER_TEST')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     meixner_test()
     timestamp()

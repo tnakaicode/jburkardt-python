@@ -182,24 +182,35 @@ def kearfott_test():
 
     seed = 123456789
     n = 8
-
+    obj = plot2d(aspect="auto")
     for n_log_2 in range(4, 15):
 
         n = n * 2
         x, seed = r8mat_uniform_abvec(m, n, u, l, seed)
         f = kearfott_f(m, n, x)
         print('  %8d  %16.8g  %16.8g' % (n, min(f), max(f)))
-#
-#  Terminate.
-#
+        
+        obj.new_2Dfig(aspect="auto")
+        obj.axs.plot(x[0, :], f)
+        obj.axs.plot(x[1, :], f)
+        obj.axs.plot(x[2, :], f)
+        obj.axs.plot(f)
+        obj.SavePng(obj.tmpdir + "kearfott_{:03d}.png".format(n_log_2))
+
+        obj.new_3Dfig(aspect="auto")
+        obj.axs.plot(x[0, :], x[1, :], x[2, :])
+        obj.SavePng(obj.tmpdir + "kearfott_3d_{:03d}.png".format(n_log_2))
+        plt.close()
+
+    #obj.SavePng(obj.tmpdir + "lv3.png")
+    plt.close()
+
     print('')
     print('KEARFOTT_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     kearfott_test()
     timestamp()
