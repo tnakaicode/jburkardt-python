@@ -15,6 +15,10 @@ sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
 
+from i4lib.i4mat_flip_cols import i4mat_flip_cols
+from i4lib.i4mat_flip_rows import i4mat_flip_rows
+from i4lib.i4mat_transpose import i4mat_transpose
+
 
 def polyomino_transform(m, n, p, rotate, reflect):
 
@@ -86,154 +90,6 @@ def polyomino_transform(m, n, p, rotate, reflect):
     return mq, nq, q
 
 
-def i4mat_flip_cols(m, n, a):
-
-    # *****************************************************************************80
-    #
-    # I4MAT_FLIP_COLS swaps the columns of an I4MAT.
-    #
-    #  Discussion:
-    #
-    #    An I4MAT is an M by N array of I4's.
-    #
-    #    To "flip" the columns of an I4MAT is to start with something like
-    #
-    #      11 12 13 14 15
-    #      21 22 23 24 25
-    #      31 32 33 34 35
-    #      41 42 43 44 45
-    #      51 52 53 54 55
-    #
-    #    and return
-    #
-    #      15 14 13 12 11
-    #      25 24 23 22 21
-    #      35 34 33 32 31
-    #      45 44 43 42 41
-    #      55 54 53 52 51
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    16 April 2018
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns.
-    #
-    #    Input, integer A(M,N), the matrix to be flipped.
-    #
-    #    Output, integer B(M,N), the flipped matrix.
-    #
-
-    b = np.zeros([m, n], dtype=np.int32)
-
-    for i in range(0, m):
-        for j in range(0, n):
-            b[i, j] = a[i, n - 1 - j]
-
-    return b
-
-
-def i4mat_flip_rows(m, n, a):
-
-    # *****************************************************************************80
-    #
-    # I4MAT_FLIP_ROWS swaps the rows of an I4MAT.
-    #
-    #  Discussion:
-    #
-    #    An I4MAT is an M by N array of I4's.
-    #
-    #    To "flip" the rows of an I4MAT is to start with something like
-    #
-    #      11 12 13 14 15
-    #      21 22 23 24 25
-    #      31 32 33 34 35
-    #      41 42 43 44 45
-    #      51 52 53 54 55
-    #
-    #    and return
-    #
-    #      51 52 53 54 55
-    #      41 42 43 44 45
-    #      31 32 33 34 35
-    #      21 22 23 24 25
-    #      11 12 13 14 15
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    16 April 2018
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns.
-    #
-    #    Input, integer A(M,N), the matrix to be flipped.
-    #
-    #    Output, integer B(M,N), the flipped matrix.
-    #
-
-    b = np.zeros([m, n], dtype=np.int32)
-
-    for i in range(0, m):
-        for j in range(0, n):
-            b[i, j] = a[m - 1 - i, j]
-
-    return b
-
-
-def i4mat_transpose(m, n, a):
-
-    # *****************************************************************************80
-    #
-    # I4MAT_TRANSPOSE transposes an I4MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    17 April 2018
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns.
-    #
-    #    Input, integer A(M,N), the matrix to be flipped.
-    #
-    #    Output, integer B(N,M), the transposed matrix.
-    #
-
-    b = np.zeros([n, m], dtype=np.int32)
-
-    for i in range(0, m):
-        for j in range(0, n):
-            b[j, i] = a[i, j]
-
-    return b
-
-
 def polyomino_print(m, n, p, label):
 
     # *****************************************************************************80
@@ -273,8 +129,6 @@ def polyomino_print(m, n, p, label):
             for j in range(0, n):
                 print(' %d' % (p[i, j])),
             print('')
-
-    return
 
 
 def polyomino_transform_test():
@@ -331,7 +185,6 @@ def polyomino_transform_test():
     print('')
     print('POLYOMINO_TRANSFORM_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

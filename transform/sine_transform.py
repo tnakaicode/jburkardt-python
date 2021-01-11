@@ -15,209 +15,14 @@ sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
 
+from r8lib.r8vec3_print import r8vec3_print
+from r8lib.r8vec2_print import r8vec2_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8vec_linspace2 import r8vec_linspace2
+from r8lib.r8vec_linspace import r8vec_linspace
+from r8lib.r8vec_uniform_01 import r8vec_uniform_01
 
-def r8vec3_print(n, a1, a2, a3, title):
-
-    # *****************************************************************************80
-    #
-    # R8VEC3_PRINT prints an R8VEC3.
-    #
-    #  Discussion:
-    #
-    #    An R8VEC3 is a dataset consisting of 3 vectors of N real values.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    01 September 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of components of the vector.
-    #
-    #    Input, real A1(N), A2(N), A3(N), the vectors to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('  %6d:   %12g  %12g  %12g' % (i, a1[i], a2[i], a3[i]))
-
-
-def r8vec_linspace2(n, a, b):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_LINSPACE2 creates a vector of linearly spaced values.
-    #
-    #  Discussion:
-    #
-    #    An R8VEC is a vector of R8's.
-    #
-    #    5 points evenly spaced between 0 and 12 will yield 2, 4, 6, 8, 10.
-    #
-    #    In other words, the interval is divided into N+1 even subintervals,
-    #    and the endpoints of internal intervals are used as the points.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    23 August 2016
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, real A, B, the first and last entries.
-    #
-    #    Output, real X(N), a vector of linearly spaced data.
-    #
-
-    x = np.zeros(n)
-
-    for i in range(0, n):
-        x[i] = (float(n - i) * a
-                + float(i + 1) * b) \
-            / float(n + 1)
-
-    return x
-
-
-def r8vec_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT prints an R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the dimension of the vector.
-    #
-    #    Input, real A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('%6d:  %12g' % (i, a[i]))
-
-
-def r8vec_uniform_01(n, seed):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_01 returns a unit pseudorandom R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Second Edition,
-    #    Springer, 1987,
-    #    ISBN: 0387964673,
-    #    LC: QA76.9.C65.B73.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, December 1986, pages 362-376.
-    #
-    #    Pierre L'Ecuyer,
-    #    Random Number Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998,
-    #    ISBN: 0471134031,
-    #    LC: T57.62.H37.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, Number 2, 1969, pages 136-143.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, real X(N), the vector of pseudorandom values.
-    #
-    #    Output, integer SEED, an updated seed for the random number generator.
-    #
-
-    i4_huge = 2147483647
-
-    seed = int(seed)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('R8VEC_UNIFORM_01 - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('R8VEC_UNIFORM_01 - Fatal error!')
-
-    x = np.zeros(n)
-
-    for i in range(0, n):
-
-        k = (seed // 127773)
-
-        seed = 16807 * (seed - k * 127773) - k * 2836
-
-        if (seed < 0):
-            seed = seed + i4_huge
-
-        x[i] = seed * 4.656612875E-10
-
-    return x, seed
-
+obj = plot2d()
 
 def cosine_sum(x):
 
@@ -587,7 +392,7 @@ def sine_transform_interpolant(n, a, b, fa, fb, s, nx, x):
     return value
 
 
-def sine_transform_interpolant_test():
+def sine_transform_interpolant_test1():
 
     # *****************************************************************************80
     #
@@ -618,15 +423,18 @@ def sine_transform_interpolant_test():
     print('  It equals the function at points 1 through N.')
     print('  In between, it can approximate smooth functions,')
     print('  and the approximation improves with N.')
+    
     #
     #  N determines the number of data points, indexed by 1 to N.
     #  However, we essentially have N+2 data points, indexed 0 to N+1,
     #  with the data value being 0 at the first and last auxilliary points.
     #
+    
     n = 9
     a = 1.0
     b = 4.0
     x = r8vec_linspace2(n, a, b)
+    
     #
     #  Determine the interpolant coefficients.
     #
@@ -637,6 +445,7 @@ def sine_transform_interpolant_test():
         px[i] = poly5(x[i])
 
     r8vec3_print(n, x, px, s, '     I      X(I)      F(X(I))        S(I)')
+    
     #
     #  Evaluate the interpolant.
     #
@@ -658,21 +467,22 @@ def sine_transform_interpolant_test():
     px3 = np.zeros(n3)
     for i in range(0, n3):
         px3[i] = poly5(x3[i])
+    
     #
     #  Plot the sample points as blue dots,
     #  the interpolant as a red line,
     #  the exact function as a black line.
     #
-    plt.plot(x, px, 'b*', markersize=20)
-    plt.plot(x2, f2, 'r-', linewidth=8.0)
-    plt.plot(x3, px3, 'k-', linewidth=2.0)
-    plt.title('Data (stars), interpolant (red), exact (black)')
-    plt.grid(True)
-    plt.xlabel('<---X--->')
-    plt.ylabel('<---Y--->')
-    plt.savefig('sine_interpolant.png')
-    plt.close()
-
+    obj.new_2Dfig(aspect="auto")
+    obj.axs.plot(x, px, 'b*', markersize=20)
+    obj.axs.plot(x2, f2, 'r-', linewidth=8.0)
+    obj.axs.plot(x3, px3, 'k-', linewidth=2.0)
+    obj.axs.set_title('Data (stars), interpolant (red), exact (black)')
+    obj.axs.set_xlabel('<---X--->')
+    obj.axs.set_ylabel('<---Y--->')
+    obj.axs.legend()
+    obj.SavePng('sine_interpolant1.png')
+    
     print('')
     print('  Created plot file "sine_interpolant.png"')
     print('')
@@ -711,6 +521,7 @@ def sine_transform_interpolant_test2():
     print('  It equals the function at points 1 through N.')
     print('  In between, it can approximate smooth functions,')
     print('  and the approximation improves with N.')
+    
     #
     #  N determines the number of data points, indexed by 1 to N.
     #  However, we essentially have N+2 data points, indexed 0 to N+1,
@@ -723,10 +534,12 @@ def sine_transform_interpolant_test2():
     f = np.zeros(n)
     for i in range(0, n):
         f[i] = cosine_sum(x[i])
+    
     #
     #  Determine the interpolant coefficients.
     #
     s = sine_transform_function(n, a, b, cosine_sum)
+    
     #
     #  Evaluate the interpolant.
     #
@@ -735,6 +548,7 @@ def sine_transform_interpolant_test2():
     n2 = 1 + 5 * (n + 1)
     x2 = np.linspace(a, b, n2)
     f2 = sine_transform_interpolant(n, a, b, fa, fb, s, n2, x2)
+    
     #
     #  Plot the sample points as blue dots,
     #  the approximant as a red line,
@@ -745,16 +559,16 @@ def sine_transform_interpolant_test2():
     f3 = np.zeros(n3)
     for i in range(0, n3):
         f3[i] = cosine_sum(x3[i])
-
-    plt.plot(x, f, 'b*', markersize=20)
-    plt.plot(x2, f2, 'r-', linewidth=8)
-    plt.plot(x3, f3, 'k-', linewidth=2)
-    plt.title('Data (stars), interpolant (red), exact (black)')
-    plt.grid(True)
-    plt.xlabel('<---X--->')
-    plt.ylabel('<---Y--->')
-    plt.savefig('sine_interpolant2.png')
-    plt.close()
+        
+    obj.new_2Dfig(aspect="auto")
+    obj.axs.plot(x, f, 'b*', markersize=20)
+    obj.axs.plot(x2, f2, 'r-', linewidth=8)
+    obj.axs.plot(x3, f3, 'k-', linewidth=2)
+    obj.axs.set_title('Data (stars), interpolant (red), exact (black)')
+    obj.axs.set_xlabel('<---X--->')
+    obj.axs.set_ylabel('<---Y--->')
+    obj.axs.legend()
+    obj.SavePng('sine_interpolant2.png')
 
     print('')
     print('  Created plot file "sine_interpolant2.png"')
@@ -789,7 +603,7 @@ def sine_transform_test():
 
     sine_transform_data_test()
     sine_transform_function_test()
-    sine_transform_interpolant_test()
+    sine_transform_interpolant_test1()
     sine_transform_interpolant_test2()
 
     print('')
