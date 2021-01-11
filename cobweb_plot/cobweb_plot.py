@@ -1,133 +1,123 @@
-#! /usr/bin/env python3  
+#! /usr/bin/env python3
 #
-def cobweb_plot ( f, x0, N, a = 0, b = 1 ):
 
-#*****************************************************************************80
-#
-## cobweb_plot makes a cobweb plot of a function iteration.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    27 February 2020
-#
-#  Author:
-#
-#    John D Cook.
-#    Modifications by John Burkardt
-#
-#  Reference:
-#
-#    John D Cook,
-#    Cobweb plots,
-#    https://www.johndcook.com/blog/2020/01/19/cobweb-plots/
-#    Posted 19 January 2020.
-#
-  import matplotlib.pyplot as plt
-  import numpy as np
-#
-#  Plot the function.
-#
-  t = np.linspace ( a, b, N )
-  plt.plot ( t, f ( t ), 'k' )
-#
-#  Plot the dotted line y = x.
-#
-  plt.plot ( t, t, "k:" )
-#   
-#  Plot the iterates.
-#
-  x = x0
-  y = f ( x0 )
-  for _ in range ( N ):
-    fy = f ( y )
-    plt.plot ( [x, y], [y,  y], 'b', linewidth = 1 )
-    plt.plot ( [y, y], [y, fy], 'b', linewidth = 1 )
-    x = y
-    y = fy
-#
-#  Give x and y axis the same scale.
-#
-  plt.axis ( 'equal' )
-#
-#  Save a copy of the figure.
-#
-  filename = 'cobweb_plot.png'
-  plt.savefig ( filename )
-  print ( '  Graphics saved as "%s"' % ( filename ) )
-#
-#  Show the figure.
-#
-  plt.show()
-  plt.close()
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-  return
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
-def cobweb_plot_test ( ):
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
 
-#*****************************************************************************80
-#
-## cobweb_plot_test tests cobweb_plot
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    27 February 2020
-#
-#  Author:
-#
-#    John D Cook.
-#    Modifications by John Burkardt
-#
-  import numpy as np
-  import platform
 
-  print ( '' )
-  print ( 'cobweb_plot_test' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Test cobweb_plot.' )
+def cobweb_plot(f, x0, N, a=0, b=1):
 
-  cobweb_plot ( np.cos, 1.0, 20 )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'cobweb_plot_test:' )
-  print ( '  Normal end of execution.' )
-  return
+    # *****************************************************************************80
+    #
+    # cobweb_plot makes a cobweb plot of a function iteration.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 February 2020
+    #
+    #  Author:
+    #
+    #    John D Cook.
+    #    Modifications by John Burkardt
+    #
+    #  Reference:
+    #
+    #    John D Cook,
+    #    Cobweb plots,
+    #    https://www.johndcook.com/blog/2020/01/19/cobweb-plots/
+    #    Posted 19 January 2020.
+    #
 
-def timestamp ( ):
+    t = np.linspace(a, b, N)
 
-#*****************************************************************************80
-#
-## timestamp prints the date as a timestamp.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    21 August 2019
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import time
+    obj = plot2d()
+    obj.axs.set_title("x0={:.2f}".format(x0))
 
-  t = time.time ( )
-  print ( time.ctime ( t ) )
+    #
+    #  Plot the function.
+    #
+    obj.axs.plot(t, f(t), 'k')
 
-  return
+    #
+    #  Plot the dotted line y = x.
+    #
+    obj.axs.plot(t, t, "k:")
 
-if ( __name__ == '__main__' ):
-  timestamp ( )
-  cobweb_plot_test ( )
-  timestamp ( )
+    #
+    #  Plot the iterates.
+    #
+    x = x0
+    y = f(x0)
+    for _ in range(N):
+        fy = f(y)
+        obj.axs.plot([x, y], [y, y], 'b', linewidth=1)
+        obj.axs.plot([y, y], [y, fy], 'b', linewidth=1)
+        x = y
+        y = fy
+
+    filename = 'cobweb_plot.png'
+    obj.SavePng(filename)
+    obj.SavePng_Serial()
+    print('  Graphics saved as "%s"' % (filename))
+
+
+def cobweb_plot_test():
+
+    # *****************************************************************************80
+    #
+    # cobweb_plot_test tests cobweb_plot
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 February 2020
+    #
+    #  Author:
+    #
+    #    John D Cook.
+    #    Modifications by John Burkardt
+    #
+
+    print('')
+    print('cobweb_plot_test')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Test cobweb_plot.')
+
+    cobweb_plot(np.cos, 0.1, 30)
+    cobweb_plot(np.cos, 0.5, 30)
+    cobweb_plot(np.cos, 0.9, 30)
+    cobweb_plot(np.cos, 1.0, 30)
+
+    print('')
+    print('cobweb_plot_test:')
+    print('  Normal end of execution.')
+
+
+if (__name__ == '__main__'):
+    timestamp()
+    cobweb_plot_test()
+    timestamp()
