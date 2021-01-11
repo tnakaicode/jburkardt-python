@@ -1,244 +1,27 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-def i4_modp(i, j):
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
-    # *****************************************************************************80
-    #
-    # I4_MODP returns the nonnegative remainder of I4 division.
-    #
-    #  Discussion:
-    #
-    #    If
-    #      NREM = I4_MODP ( I, J )
-    #      NMULT = ( I - NREM ) / J
-    #    then
-    #      I = J * NMULT + NREM
-    #    where NREM is always nonnegative.
-    #
-    #    The MOD function computes a result with the same sign as the
-    #    quantity being divided.  Thus, suppose you had an angle A,
-    #    and you wanted to ensure that it was between 0 and 360.
-    #    Then mod(A,360) would do, if A was positive, but if A
-    #    was negative, your result would be between -360 and 0.
-    #
-    #    On the other hand, I4_MODP(A,360) is between 0 and 360, always.
-    #
-    #  Example:
-    #
-    #        I     J     MOD  I4_MODP    Factorization
-    #
-    #      107    50       7       7    107 =  2 *  50 + 7
-    #      107   -50       7       7    107 = -2 * -50 + 7
-    #     -107    50      -7      43   -107 = -3 *  50 + 43
-    #     -107   -50      -7      43   -107 =  3 * -50 + 43
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    08 May 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer I, the number to be divided.
-    #
-    #    Input, integer J, the number that divides I.
-    #
-    #    Output, integer VALUE, the nonnegative remainder when I is
-    #    divided by J.
-    #
-    from sys import exit
-
-    if (j == 0):
-        print('')
-        print('I4_MODP - Fatal error!')
-        print('  Illegal divisor J = %d' % (j))
-        exit('I4_MODP - Fatal error!')
-
-    value = i % j
-
-    if (value < 0):
-        value = value + abs(j)
-
-    return value
-
-
-def i4_modp_test():
-
-    # *****************************************************************************80
-    #
-    # I4_MODP_TEST tests I4_MODP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 September 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    test_num = 4
-
-    n_vec = np.array((107, 107, -107, -107))
-    d_vec = np.array((50, -50, 50, -50))
-
-    print('')
-    print('I4_MODP_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4_MODP factors a number')
-    print('  into a multiple M and a positive remainder R.')
-    print('')
-    print('    Number   Divisor  Multiple Remainder')
-    print('')
-
-    for test in range(0, test_num):
-        n = n_vec[test]
-        d = d_vec[test]
-        r = i4_modp(n, d)
-        m = (n - r) // d
-        print('  %8d  %8d  %8d  %8d' % (n, d, m, r))
-
-    print('')
-    print('  Repeat using Python % Operator:')
-    print('')
-
-    for test in range(0, test_num):
-        n = n_vec[test]
-        d = d_vec[test]
-        m = n // d
-        r = n % d
-        print('  %8d  %8d  %8d  %8d' % (n, d, m, r))
-#
-#  Terminate.
-#
-    print('')
-    print('I4_MODP_TEST')
-    print('  Normal end of execution.')
-    return
-
-
-def i4_wrap(ival, ilo, ihi):
-
-    # *****************************************************************************80
-    #
-    # I4_WRAP forces an integer to lie between given limits by wrapping.
-    #
-    #  Example:
-    #
-    #    ILO = 4, IHI = 8
-    #
-    #    I   Value
-    #
-    #    -2     8
-    #    -1     4
-    #     0     5
-    #     1     6
-    #     2     7
-    #     3     8
-    #     4     4
-    #     5     5
-    #     6     6
-    #     7     7
-    #     8     8
-    #     9     4
-    #    10     5
-    #    11     6
-    #    12     7
-    #    13     8
-    #    14     4
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    08 May 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer IVAL, an integer value.
-    #
-    #    Input, integer ILO, IHI, the desired bounds for the integer value.
-    #
-    #    Output, integer VALUE, a "wrapped" version of IVAL.
-    #
-    jlo = min(ilo, ihi)
-    jhi = max(ilo, ihi)
-
-    wide = jhi - jlo + 1
-
-    if (wide == 1):
-        value = jlo
-    else:
-        value = jlo + i4_modp(ival - jlo, wide)
-
-    return value
-
-
-def i4_wrap_test():
-
-    # *****************************************************************************80
-    #
-    # I4_WRAP_TEST tests I4_WRAP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    08 May 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    ilo = 4
-    ihi = 8
-
-    print('')
-    print('I4_WRAP_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4_WRAP forces an integer to lie within given limits.')
-    print('')
-    print('  ILO = %d' % (ilo))
-    print('  IHI = %d' % (ihi))
-    print('')
-    print('     I  I4_WRAP(I)')
-    print('')
-
-    for i in range(-10, 21):
-        j = i4_wrap(i, ilo, ihi)
-        print('  %6d  %6d' % (i, j))
-#
-#  Terminate.
-#
-    print('')
-    print('I4_WRAP_TEST')
-    print('  Normal end of execution.')
-    return
+from i4lib.i4_modp import i4_modp
+from i4lib.i4_wrap import i4_wrap
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
 
 
 def jed_to_weekday(jed):
@@ -502,72 +285,6 @@ def jed_weekday_values_test():
 #
     print('')
     print('JED_WEEKDAY_VALUES_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
     print('  Normal end of execution.')
     return
 
@@ -1269,9 +986,10 @@ def ymdf_to_jed_common(y, m, d, f):
     if (cmp == '<'):
         jed = ymdf_to_jed_julian(y, m, d, f)
         return jed
-#
-#  Use the Gregorian calendar for dates strictly after 1752/9/13.
-#
+    
+    #
+    #  Use the Gregorian calendar for dates strictly after 1752/9/13.
+    #
     y2 = 1582
     m2 = 10
     d2 = 15 - 1
@@ -1428,21 +1146,16 @@ def weekday_test():
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the WEEKDAY library.')
 
-    i4_modp_test()
-    i4_wrap_test()
     jed_to_weekday_test()
     jed_weekday_values_test()
     weekday_to_name_common_test()
     weekday_values_test()
     y_common_to_astronomical_test()
     ymd_to_weekday_common_test()
-#
-#  Terminate.
-#
+
     print('')
     print('WEEKDAY_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

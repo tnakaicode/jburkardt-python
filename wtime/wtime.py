@@ -1,8 +1,25 @@
 #! /usr/bin/env python3
 #
+
 import numpy as np
+import matplotlib.pyplot as plt
 import platform
 import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
 
 
 def wtime_test01():
@@ -59,7 +76,6 @@ def wtime_test01():
     print('')
     print('WTIME_TEST01')
     print('  Normal end of execution.')
-    return
 
 
 def wtime_test02():
@@ -116,7 +132,6 @@ def wtime_test02():
     print('')
     print('WTIME_TEST02')
     print('  Normal end of execution.')
-    return
 
 
 def wtime_test():
@@ -149,36 +164,6 @@ def wtime_test():
     print('')
     print('WTIME_TEST:')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):
