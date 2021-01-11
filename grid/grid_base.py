@@ -79,49 +79,51 @@ def grid_generate(m, n, center, seed):
     #
     #    Output, integer SEED, the updated random number seed.
     #
-    import numpy as np
-#
-#  Find the dimension of the smallest grid with N points.
-#
+
+    #
+    #  Find the dimension of the smallest grid with N points.
+    #
     n_side = grid_side(m, n)
-#
-#  We need to select N points out of N_SIDE^M set.
-#
+
+    #
+    #  We need to select N points out of N_SIDE^M set.
+    #
     n_grid = n_side ** m
-#
-#  Generate a random subset of N items from a set of size N_GRID.
-#
+
+    #
+    #  Generate a random subset of N items from a set of size N_GRID.
+    #
     rank_list, seed = ksub_random2(n_grid, n, seed)
-#
-#  Must make one dummy call to TUPLE_NEXT_FAST with RANK = 0.
-#
+
+    #
+    #  Must make one dummy call to TUPLE_NEXT_FAST with RANK = 0.
+    #
     base = np.zeros(m)
     rank = -1
+    tple, base = tuple_next_fast(n_side, m, rank, base)
 
-    tuple, base = tuple_next_fast(n_side, m, rank, base)
-#
-#  Now generate the appropriate indices, and "center" them.
-#
+    #
+    #  Now generate the appropriate indices, and "center" them.
+    #
     r = np.zeros([m, n])
 
     for j in range(0, n):
 
         rank = rank_list[j] - 1
-
-        tuple, base = tuple_next_fast(n_side, m, rank, base)
+        tple, base = tuple_next_fast(n_side, m, rank, base)
 
         for i in range(0, m):
 
             if (center == 1):
-                r[i, j] = float(tuple[i] - 1) / float(n_side - 1)
+                r[i, j] = float(tple[i] - 1) / float(n_side - 1)
             elif (center == 2):
-                r[i, j] = float(tuple[i]) / float(n_side + 1)
+                r[i, j] = float(tple[i]) / float(n_side + 1)
             elif (center == 3):
-                r[i, j] = float(tuple[i] - 1) / float(n_side)
+                r[i, j] = float(tple[i] - 1) / float(n_side)
             elif (center == 4):
-                r[i, j] = float(tuple[i]) / float(n_side)
+                r[i, j] = float(tple[i]) / float(n_side)
             elif (center == 5):
-                r[i, j] = float(2 * tuple[i] - 1) / float(2 * n_side)
+                r[i, j] = float(2 * tple[i] - 1) / float(2 * n_side)
 
     return r, seed
 
@@ -136,7 +138,6 @@ def grid_generate_test(center, seed):
     #
     #    This code is distributed under the GNU LGPL license.
     #
-    import platform
 
     m = 2
     n = 10
@@ -153,15 +154,11 @@ def grid_generate_test(center, seed):
     print('  Centering option =   %d' % (center))
 
     x, seed = grid_generate(m, n, center, seed)
-
     r8mat_transpose_print(m, n, x, '  Grid points:')
-#
-#  Terminate.
-#
+
     print('')
     print('GRID_GENERATE_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def grid_generate_tests():
@@ -209,13 +206,10 @@ def grid_generate_tests():
     for center in range(1, 6):
         seed = 123456789
         grid_generate_test(center, seed)
-#
-#  Terminate.
-#
+
     print('')
     print('GRID_GENERATE_TESTS:')
     print('  Normal end of execution.')
-    return
 
 
 def grid_side(m, n):
@@ -289,7 +283,6 @@ def grid_side_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('GRID_SIDE_TEST')
@@ -305,13 +298,10 @@ def grid_side_test():
         for n in [10, 100, 1000, 10000]:
             n_side = grid_side(m, n)
             print('  %1d  %5d  %5d  %5d' % (m, n, n_side, n_side ** m))
-#
-#  Terminate.
-#
+
     print('')
     print('GRID_SIDE_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def grid_test():
@@ -332,7 +322,6 @@ def grid_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('GRID_TEST')
@@ -342,13 +331,10 @@ def grid_test():
     grid_generate_tests()
     grid_side_test()
     tuple_next_fast_test()
-#
-#  Terminate.
-#
+
     print('')
     print('GRID_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def ksub_random2(n, k, seed):
@@ -394,8 +380,6 @@ def ksub_random2(n, k, seed):
     #
     #    Output, integer SEED, an updated seed for the random number generator.
     #
-    import numpy as np
-    from sys import exit
 
     if (k < 0):
         print('')
@@ -461,7 +445,6 @@ def ksub_random2_test():
     #
     #    John Burkardt
     #
-    import platform
 
     k = 3
     n = 5
@@ -483,13 +466,10 @@ def ksub_random2_test():
         for j in range(0, k):
             print('  %3d' % (a[j]), end='')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('KSUB_RANDOM2_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def tuple_next_fast(m, n, rank, base):
@@ -566,8 +546,6 @@ def tuple_next_fast(m, n, rank, base):
     #    Output, integer X(N), the next tuple of the given rank,
     #    or a dummy value if initialization is being done.
     #
-    import numpy as np
-    from sys import exit
 
     x = np.zeros(n, dtype=np.int32)
 
@@ -620,8 +598,6 @@ def tuple_next_fast_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 2
     m = 3
@@ -635,7 +611,7 @@ def tuple_next_fast_test():
     print('  M = %d' % (m))
     print('  N = %d' % (n))
     print('')
-    
+
     #
     #  Initialize.
     #

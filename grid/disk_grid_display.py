@@ -1,6 +1,30 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8mat_transpose_write import r8mat_transpose_write
+from r8lib.r82vec_print_part import r82vec_print_part
+
+obj = plot2d()
+
 
 def disk_grid_display(n, r, c, ng, cg, filename):
 
@@ -34,11 +58,10 @@ def disk_grid_display(n, r, c, ng, cg, filename):
     #
     #    Input, string FILENAME, the name of the plotfile to be created.
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
-#
-#  Make points on the circumference and plot them.
-#
+
+    #
+    #  Make points on the circumference and plot them.
+    #
     cx = np.zeros(51)
     cy = np.zeros(51)
     for i in range(0, 51):
@@ -46,31 +69,16 @@ def disk_grid_display(n, r, c, ng, cg, filename):
         cx[i] = c[0] + r * np.cos(t)
         cy[i] = c[1] + r * np.sin(t)
 
-    plt.plot(cx, cy, linewidth=2.0, color='r')
-#
-#  Plot the gridpoints.
-#
-    plt.plot(cg[0, 0:ng], cg[1, 0:ng], 'bs')
-#
-#  Cleanup and annotate.
-#
-    plt.xlabel('<---X--->')
-    plt.ylabel('<---Y--->')
-    plt.title('Grid points in circle')
-    plt.grid(True)
-    plt.axis('equal')
-# plt.show ( )
-#
-#  Save plot to file.
-#
-    plt.savefig(filename)
-
-    plt.clf()
+    obj.new_2Dfig()
+    obj.axs.plot(cx, cy, linewidth=2.0, color='r')
+    obj.axs.plot(cg[0, 0:ng], cg[1, 0:ng], 'bs')
+    obj.axs.set_xlabel('<---X--->')
+    obj.axs.set_ylabel('<---Y--->')
+    obj.axs.set_title('Grid points in circle')
+    obj.SavePng(filename)
 
     print('')
     print('  Graphics data saved in file "%s"' % (filename))
-
-    return
 
 
 def disk_grid_display_test():
