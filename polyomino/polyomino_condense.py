@@ -179,7 +179,7 @@ def polyomino_condense_test():
     print('  to represent a polyomino:')
     print('  * nonzero entries are set to 1:')
     print('  * initial and final zero rows and columns are deleted.')
-    
+
     #
     #  Nothing happens:
     #
@@ -193,7 +193,7 @@ def polyomino_condense_test():
     #
     mp2 = 3
     np2 = 3
-    p2 = np.array([[0, 1, 2],[1, 3, 0],[0, -9, 0]])
+    p2 = np.array([[0, 1, 2], [1, 3, 0], [0, -9, 0]])
     condense_demo(mp2, np2, p2)
 
     #
@@ -201,7 +201,7 @@ def polyomino_condense_test():
     #
     mp3 = 3
     np3 = 4
-    p3 = np.array([[0, 0, 0, 0],[1, 3, 0, 0],[0, 0, 0, 0]])
+    p3 = np.array([[0, 0, 0, 0], [1, 3, 0, 0], [0, 0, 0, 0]])
     condense_demo(mp3, np3, p3)
 
     #
@@ -209,7 +209,7 @@ def polyomino_condense_test():
     #
     mp3 = 2
     np3 = 4
-    p3 = np.array([[0, 0, 0, 0],[0, 0, 0, 0]])
+    p3 = np.array([[0, 0, 0, 0], [0, 0, 0, 0]])
     condense_demo(mp3, np3, p3)
 
     print('')
