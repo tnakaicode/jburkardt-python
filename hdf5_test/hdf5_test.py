@@ -1,6 +1,21 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+import h5py
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
 
 def hdf5_test01():
 
@@ -20,23 +35,22 @@ def hdf5_test01():
     #
     #    John Burkardt
     #
-    import h5py
 
     print('')
     print('HDF5_TEST01:')
     print('  Python version')
     print('  Create a writeable file "test01.h5".')
-#
-#  Get the file id.
-#
+
+    #
+    #  Get the file id.
+    #
     file_name = 'test01.h5'
     file_id = h5py.File(file_name, 'w')
-#
-#  Close the file.
-#
-    file_id.close()
 
-    return
+    #
+    #  Close the file.
+    #
+    file_id.close()
 
 
 def hdf5_test02():
@@ -57,26 +71,24 @@ def hdf5_test02():
     #
     #    John Burkardt
     #
-    import h5py
-    import numpy as np
 
     print('')
     print('HDF5_TEST02:')
     print('  Python version')
     print('  Create a file "test02.h5" containing a dataset.')
-#
-#  Get the file id.
-#
+
+    #
+    #  Get the file id.
+    #
     file_name = 'test02.h5'
     file_id = h5py.File(file_name, 'w')
-#
-#  Create the dataset
-#
+
+    #
+    #  Create the dataset
+    #
     dset_name = 'dset02'
     dset_dims = np.array([4, 6])
     dataset = file_id.create_dataset(dset_name, dset_dims, h5py.h5t.STD_I32BE)
-
-    return
 
 
 def hdf5_test03():
@@ -97,28 +109,29 @@ def hdf5_test03():
     #
     #    John Burkardt
     #
-    import h5py
-    import numpy as np
 
     print('')
     print('HDF5_TEST03:')
     print('  Python version')
     print('  Create a file "test03.h5" containing a dataset')
     print('  and store data in the dataset.')
-#
-#  Get the file id.
-#
+
+    #
+    #  Get the file id.
+    #
     file_name = 'test03.h5'
     file_id = h5py.File(file_name, 'w')
-#
-#  Get the data set id.
-#
+
+    #
+    #  Get the data set id.
+    #
     dset_name = 'dset03'
     dset_dims = np.array([4, 6])
     dset_id = file_id.create_dataset(dset_name, dset_dims, h5py.h5t.STD_I32BE)
-#
-#  Create the data.
-#
+
+    #
+    #  Create the data.
+    #
     dset_data = np.zeros([4, 6])
 
     print('')
@@ -128,12 +141,11 @@ def hdf5_test03():
         for j in range(0, 6):
             dset_data[i, j] = i * 6 + j + 1
             print('  dset_data[%d,%d] = %d' % (i, j, dset_data[i, j]))
-#
-#  Write data to the dataset.
-#
-    dset_id[...] = dset_data
 
-    return
+    #
+    #  Write data to the dataset.
+    #
+    dset_id[...] = dset_data
 
 
 def hdf5_test04():
@@ -154,8 +166,6 @@ def hdf5_test04():
     #
     #    John Burkardt
     #
-    import h5py
-    import numpy as np
 
     print('')
     print('HDF5_TEST04:')
@@ -163,97 +173,28 @@ def hdf5_test04():
     print('  Open the file "test03.h5";')
     print('  Open a dataset')
     print('  read data from the dataset.')
-#
-#  Get the file id.
-#
+
+    #
+    #  Get the file id.
+    #
     file_name = 'test03.h5'
     file_id = h5py.File(file_name, 'r')
-#
-#  Get the data set data.
-#
+
+    #
+    #  Get the data set data.
+    #
     dset_name = 'dset03'
     dset_data = file_id[dset_name]
-#
-#  Print the data.
-#
+
+    #
+    #  Print the data.
+    #
     print('')
     print('  Dataset read from file "test03.h5":')
     print('')
     for i in range(0, 4):
         for j in range(0, 6):
             print('  dset_data[%d,%d] = %d' % (i, j, dset_data[i, j]))
-
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def hdf5_test():
@@ -278,7 +219,6 @@ def hdf5_test():
     #
     #    None
     #
-    import platform
 
     print('')
     print('HDF5_TEST:')
@@ -288,14 +228,11 @@ def hdf5_test():
     hdf5_test01()
     hdf5_test02()
     hdf5_test03()
-    hdf5_test04()
-#
-#  Terminate.
-#
+    hdf5_test04() # read h5
+
     print('')
     print('HDF5_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

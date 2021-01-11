@@ -15,14 +15,12 @@ sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
 
-from r8lib.r8mat_print_some import r8mat_print_some
 
-
-def r8mat_print(m, n, a, title):
+def r8mat_write(filename, m, n, a):
 
     # *****************************************************************************80
     #
-    # R8MAT_PRINT prints an R8MAT.
+    # R8MAT_WRITE writes an R8MAT to a file.
     #
     #  Licensing:
     #
@@ -30,7 +28,7 @@ def r8mat_print(m, n, a, title):
     #
     #  Modified:
     #
-    #    31 August 2014
+    #    12 October 2014
     #
     #  Author:
     #
@@ -38,25 +36,30 @@ def r8mat_print(m, n, a, title):
     #
     #  Parameters:
     #
+    #    Input, string FILENAME, the name of the output file.
+    #
     #    Input, integer M, the number of rows in A.
     #
     #    Input, integer N, the number of columns in A.
     #
     #    Input, real A(M,N), the matrix.
     #
-    #    Input, string TITLE, a title.
-    #
+    output = open(filename, 'w')
 
-    r8mat_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
+    for i in range(0, m):
+        for j in range(0, n):
+            s = '  %g' % (a[i, j])
+            output.write(s)
+        output.write('\n')
 
-    return
+    output.close()
 
 
-def r8mat_print_test():
+def r8mat_write_test():
 
     # *****************************************************************************80
     #
-    # R8MAT_PRINT_TEST tests R8MAT_PRINT.
+    # R8MAT_WRITE_TEST tests R8MAT_WRITE.
     #
     #  Licensing:
     #
@@ -64,7 +67,7 @@ def r8mat_print_test():
     #
     #  Modified:
     #
-    #    10 February 2015
+    #    12 October 2014
     #
     #  Author:
     #
@@ -72,25 +75,29 @@ def r8mat_print_test():
     #
 
     print('')
-    print('R8MAT_PRINT_TEST')
+    print('R8MAT_WRITE_TEST:')
     print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_PRINT prints an R8MAT.')
+    print('  Test R8MAT_WRITE, which writes an R8MAT to a file.')
 
-    m = 4
-    n = 6
-    v = np.array([
-        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
-        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
-        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
-        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
-    r8mat_print(m, n, v, '  Here is an R8MAT:')
+    filename = 'r8mat_write_test.txt'
+    m = 5
+    n = 3
+    a = np.array((
+        (1.1, 1.2, 1.3),
+        (2.1, 2.2, 2.3),
+        (3.1, 3.2, 3.3),
+        (4.1, 4.2, 4.3),
+        (5.1, 5.2, 5.3)))
+    r8mat_write(filename, m, n, a)
 
     print('')
-    print('R8MAT_PRINT_TEST:')
+    print('  Created file "%s".' % (filename))
+    print('')
+    print('R8MAT_WRITE_TEST:')
     print('  Normal end of execution.')
 
 
 if (__name__ == '__main__'):
     timestamp()
-    r8mat_print_test()
+    r8mat_write_test()
     timestamp()
