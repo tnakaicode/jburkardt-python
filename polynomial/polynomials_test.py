@@ -15,18 +15,10 @@ sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
 
-from i4lib.i4_choose import i4_choose_test
-from i4lib.i4_fall import i4_fall_test
-from i4lib.i4_uniform_ab import i4_uniform_ab_test
-from i4lib.i4vec_concatenate import i4vec_concatenate_test
-from i4lib.i4vec_permute import i4vec_permute_test
-from i4lib.i4vec_print import i4vec_print_test
-from i4lib.i4vec_sort_heap_index_a import i4vec_sort_heap_index_a_test
-from i4lib.i4vec_sum import i4vec_sum_test
-from i4lib.i4vec_uniform_ab import i4vec_uniform_ab_test
-from r8lib.r8vec_concatenate import r8vec_concatenate_test
-from r8lib.r8vec_permute import r8vec_permute_test
-from r8lib.r8vec_print import r8vec_print_test
+from r8lib.r8mat_print import r8mat_print
+from r8lib.r8mat_print_some import r8mat_print_some
+from r8lib.r8mat_uniform_abvec import r8mat_uniform_abvec
+from r8lib.r8vec2_print import r8vec2_print
 from polynomial.butcher import butcher_test
 from polynomial.camel import camel_test
 from polynomial.camera import camera_test

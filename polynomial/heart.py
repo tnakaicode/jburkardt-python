@@ -1,6 +1,25 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from r8lib.r8mat_print import r8mat_print
+from r8lib.r8mat_print_some import r8mat_print_some
+from r8lib.r8mat_uniform_abvec import r8mat_uniform_abvec
+from r8lib.r8vec2_print import r8vec2_print
+
 
 def heart_b(m):
 
@@ -145,8 +164,6 @@ def heart_test():
     #
     #    John Burkardt
     #
-    import platform
-    from r8mat_uniform_abvec import r8mat_uniform_abvec
 
     print('')
     print('HEART_TEST:')
