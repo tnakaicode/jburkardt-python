@@ -1,158 +1,182 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
-def asm_triangle ( n ):
 
-#*****************************************************************************80
-#
-## ASM_TRIANGLE returns a row of the alternating sign matrix triangle.
-#
-#  Discussion:
-#
-#    The first seven rows of the triangle are as follows:
-#
-#          1      2      3      4      5      6     7
-#
-#    0     1
-#    1     1      1
-#    2     2      3      2
-#    3     7     14     14      7
-#    4    42    105    135    105     42
-#    5   429   1287   2002   2002   1287    429
-#    6  7436  26026  47320  56784  47320  26026  7436
-#
-#    For a given N, the value of A(J) represents entry A(I,J) of
-#    the triangular matrix, and gives the number of alternating sign matrices
-#    of order N in which the (unique) 1 in row 1 occurs in column J.
-#
-#    Thus, of alternating sign matrices of order 3, there are
-#    2 with a leading 1 in column 1:
-#
-#      1 0 0  1 0 0
-#      0 1 0  0 0 1
-#      0 0 1  0 1 0
-#
-#    3 with a leading 1 in column 2, and
-#
-#      0 1 0  0 1 0  0 1 0
-#      1 0 0  0 0 1  1-1 1
-#      0 0 1  1 0 0  0 1 0
-#
-#    2 with a leading 1 in column 3:
-#
-#      0 0 1  0 0 1
-#      1 0 0  0 1 0
-#      0 1 0  1 0 0
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    11 June 2004
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer N, the desired row.
-#
-#    Output, integer A(N+1), the entries of the row.
-#
-  import numpy as np
-  from i4vec_sum import i4vec_sum
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-  a = np.zeros ( n + 1 );
-  b = np.zeros ( n + 1 );
-  c = np.zeros ( n + 1 );
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+
+from i4lib.i4vec_sum import i4vec_sum
+
+
+def asm_triangle(n):
+
+    # *****************************************************************************80
+    #
+    # ASM_TRIANGLE returns a row of the alternating sign matrix triangle.
+    #
+    #  Discussion:
+    #
+    #    The first seven rows of the triangle are as follows:
+    #
+    #          1      2      3      4      5      6     7
+    #
+    #    0     1
+    #    1     1      1
+    #    2     2      3      2
+    #    3     7     14     14      7
+    #    4    42    105    135    105     42
+    #    5   429   1287   2002   2002   1287    429
+    #    6  7436  26026  47320  56784  47320  26026  7436
+    #
+    #    For a given N, the value of A(J) represents entry A(I,J) of
+    #    the triangular matrix, and gives the number of alternating sign matrices
+    #    of order N in which the (unique) 1 in row 1 occurs in column J.
+    #
+    #    Thus, of alternating sign matrices of order 3, there are
+    #    2 with a leading 1 in column 1:
+    #
+    #      1 0 0  1 0 0
+    #      0 1 0  0 0 1
+    #      0 0 1  0 1 0
+    #
+    #    3 with a leading 1 in column 2, and
+    #
+    #      0 1 0  0 1 0  0 1 0
+    #      1 0 0  0 0 1  1-1 1
+    #      0 0 1  1 0 0  0 1 0
+    #
+    #    2 with a leading 1 in column 3:
+    #
+    #      0 0 1  0 0 1
+    #      1 0 0  0 1 0
+    #      0 1 0  1 0 0
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    11 June 2004
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the desired row.
+    #
+    #    Output, integer A(N+1), the entries of the row.
+    #
+
+    a = np.zeros(n + 1)
+    b = np.zeros(n + 1)
+    c = np.zeros(n + 1)
 #
 #  Row 1
 #
-  a[0] = 1;
+    a[0] = 1
 
-  if ( n + 1 == 1 ):
-    return a
+    if (n + 1 == 1):
+        return a
 #
 #  Row 2
 #
-  nn = 2
-  b[0] = 2
-  c[0] = nn
+    nn = 2
+    b[0] = 2
+    c[0] = nn
 
-  a[0] = i4vec_sum ( nn - 1, a )
-  for i in range ( 1, nn ):
-    a[i] = a[i-1] * c[i-1] / b[i-1]
+    a[0] = i4vec_sum(nn - 1, a)
+    for i in range(1, nn):
+        a[i] = a[i - 1] * c[i - 1] / b[i - 1]
 
-  if ( n + 1 == 2 ):
-    return a
+    if (n + 1 == 2):
+        return a
 #
 #  Row 3 and on.
 #
-  for nn in range ( 3, n + 2 ):
+    for nn in range(3, n + 2):
 
-    b[nn-2] = nn
-    for i in range ( nn - 3, 0, -1 ):
-      b[i] = b[i] + b[i-1]
-    b[0] = 2
+        b[nn - 2] = nn
+        for i in range(nn - 3, 0, -1):
+            b[i] = b[i] + b[i - 1]
+        b[0] = 2
 
-    c[nn-2] = 2
-    for i in range ( nn - 3, 0, -1 ):
-      c[i] = c[i] + c[i-1]
-    c[0] = nn
+        c[nn - 2] = 2
+        for i in range(nn - 3, 0, -1):
+            c[i] = c[i] + c[i - 1]
+        c[0] = nn
 
-    a[0] = i4vec_sum ( nn - 1, a )
-    for i in range ( 1, nn ):
-      a[i] = a[i-1] * c[i-1] / b[i-1]
+        a[0] = i4vec_sum(nn - 1, a)
+        for i in range(1, nn):
+            a[i] = a[i - 1] * c[i - 1] / b[i - 1]
 
-  return a
+    return a
 
-def asm_triangle_test ( ):
 
-#*****************************************************************************80
-#
-## ASM_TRIANGLE_TEST tests ASM_TRIANGLE.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    10 April 2009
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
+def asm_triangle_test():
 
-  max_n = 7
+    # *****************************************************************************80
+    #
+    # ASM_TRIANGLE_TEST tests ASM_TRIANGLE.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    10 April 2009
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
 
-  print ( '' )
-  print ( 'ASM_TRIANGLE_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  ASM_TRIANGLE returns a row of the alternating sign' )
-  print ( '  matrix triangle.' )
-  print ( '' )
+    max_n = 7
 
-  for n  in range ( 0, max_n + 1 ):
-    a = asm_triangle ( n )
-    print ( '  %2d' % ( n ), end = '' )
-    for i in range ( 0, n + 1 ):
-      print ( '  %8d' % ( a[i] ), end = '' )
-    print ( '' )
+    print('')
+    print('ASM_TRIANGLE_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  ASM_TRIANGLE returns a row of the alternating sign')
+    print('  matrix triangle.')
+    print('')
+
+    for n in range(0, max_n + 1):
+        a = asm_triangle(n)
+        print('  %2d' % (n), end='')
+        for i in range(0, n + 1):
+            print('  %8d' % (a[i]), end='')
+        print('')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'ASM_TRIANGLE_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('ASM_TRIANGLE_TEST:')
+    print('  Normal end of execution.')
+    return
 
-if ( __name__ == '__main__' ):
-  from timestamp import timestamp
-  timestamp ( )
-  asm_triangle_test ( )
-  timestamp ( )
+
+if (__name__ == '__main__'):
+    from timestamp import timestamp
+    timestamp()
+    asm_triangle_test()
+    timestamp()

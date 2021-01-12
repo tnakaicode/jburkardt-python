@@ -1,152 +1,174 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
-def ksub_random2 ( n, k, seed ):
 
-#*****************************************************************************80
-#
-## KSUB_RANDOM2 selects a random subset of size K from a set of size N.
-#
-#  Discussion:
-#
-#    This algorithm is designated Algorithm RKS2 in the reference.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    22 December 2014
-#
-#  Author:
-#
-#    John Burkardt.
-#
-#  Reference:
-#
-#    Albert Nijenhuis, Herbert Wilf,
-#    Combinatorial Algorithms,
-#    Academic Press, 1978, second edition,
-#    ISBN 0-12-519260-6.
-#
-#    A Bebbington,
-#    A simple method of drawing a sample without replacement,
-#    Journal of Applied Statistics,
-#    Volume 24, 1975, page 136.
-#
-#  Parameters:
-#
-#    Input, integer N, the size of the set from which subsets are drawn.
-#
-#    Input, integer K, number of elements in desired subsets.  K must
-#    be between 0 and N.
-#
-#    Input, integer SEED, a seed for the random number generator.
-#
-#    Output, integer A(K).  A(I) is the I-th element of the
-#    output set.
-#
-#    Output, integer SEED, an updated seed for the random number generator.
-#
-  import numpy as np
-  from r8_uniform_01 import r8_uniform_01
-  from sys import exit
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-  if ( k < 0 ):
-    print ( '' )
-    print ( 'KSUB_RANDOM - Fatal error!' )
-    print ( '  K = %d' % ( k ) )
-    print ( '  but 0 < K is required!' )
-    exit ( 'KSUB_RANDOM - Fatal error!' )
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
-  if ( n < k ):
-    print ( '' )
-    print ( 'KSUB_RANDOM - Fatal error!' )
-    print ( '  N = %d' % ( n ) )
-    print ( '  K = %d' % ( k ) )
-    print ( '  K <= N is required!' )
-    exit ( 'KSUB_RANDOM - Fatal error!' )
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
 
-  a = np.zeros ( k, dtype = np.int32 )
+from r8lib.r8_uniform_01 import r8_uniform_01
 
-  if ( k == 0 ):
-    return a
 
-  need = k
-  have = 0
+def ksub_random2(n, k, seed):
 
-  available = n
-  candidate = 0
+    # *****************************************************************************80
+    #
+    # KSUB_RANDOM2 selects a random subset of size K from a set of size N.
+    #
+    #  Discussion:
+    #
+    #    This algorithm is designated Algorithm RKS2 in the reference.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 December 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt.
+    #
+    #  Reference:
+    #
+    #    Albert Nijenhuis, Herbert Wilf,
+    #    Combinatorial Algorithms,
+    #    Academic Press, 1978, second edition,
+    #    ISBN 0-12-519260-6.
+    #
+    #    A Bebbington,
+    #    A simple method of drawing a sample without replacement,
+    #    Journal of Applied Statistics,
+    #    Volume 24, 1975, page 136.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the size of the set from which subsets are drawn.
+    #
+    #    Input, integer K, number of elements in desired subsets.  K must
+    #    be between 0 and N.
+    #
+    #    Input, integer SEED, a seed for the random number generator.
+    #
+    #    Output, integer A(K).  A(I) is the I-th element of the
+    #    output set.
+    #
+    #    Output, integer SEED, an updated seed for the random number generator.
+    #
 
-  while ( True ):
+    if (k < 0):
+        print('')
+        print('KSUB_RANDOM - Fatal error!')
+        print('  K = %d' % (k))
+        print('  but 0 < K is required!')
+        exit('KSUB_RANDOM - Fatal error!')
 
-    candidate = candidate + 1
+    if (n < k):
+        print('')
+        print('KSUB_RANDOM - Fatal error!')
+        print('  N = %d' % (n))
+        print('  K = %d' % (k))
+        print('  K <= N is required!')
+        exit('KSUB_RANDOM - Fatal error!')
 
-    r, seed = r8_uniform_01 ( seed )
+    a = np.zeros(k, dtype=np.int32)
 
-    if ( available * r <= need ):
+    if (k == 0):
+        return a
 
-      need = need - 1;
-      a[have] = candidate
-      have = have + 1
+    need = k
+    have = 0
 
-      if ( need <= 0 ):
-        break
+    available = n
+    candidate = 0
 
-    available = available - 1
+    while (True):
 
-  return a, seed
+        candidate = candidate + 1
 
-def ksub_random2_test ( ):
+        r, seed = r8_uniform_01(seed)
 
-#*****************************************************************************80
-#
-## KSUB_RANDOM2_TEST tests KSUB_RANDOM2.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    22 December 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
+        if (available * r <= need):
 
-  k = 3
-  n = 5
+            need = need - 1
+            a[have] = candidate
+            have = have + 1
 
-  print ( '' )
-  print ( 'KSUB_RANDOM2_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  KSUB_RANDOM2 generates a random K subset of an N set.' )
-  print ( '  Set size is N =    %d' % ( n ) )
-  print ( '  Subset size is K = %d' % ( k ) )
-  print ( '' )
+            if (need <= 0):
+                break
 
-  seed = 123456789
+        available = available - 1
 
-  for i in range ( 0, 10 ):
+    return a, seed
 
-    a, seed = ksub_random2 ( n, k, seed )
 
-    for j in range ( 0, k ):
-      print ( '  %3d' % ( a[j] ), end = '' )
-    print ( '' )
+def ksub_random2_test():
+
+    # *****************************************************************************80
+    #
+    # KSUB_RANDOM2_TEST tests KSUB_RANDOM2.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    22 December 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+
+    k = 3
+    n = 5
+
+    print('')
+    print('KSUB_RANDOM2_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  KSUB_RANDOM2 generates a random K subset of an N set.')
+    print('  Set size is N =    %d' % (n))
+    print('  Subset size is K = %d' % (k))
+    print('')
+
+    seed = 123456789
+
+    for i in range(0, 10):
+
+        a, seed = ksub_random2(n, k, seed)
+
+        for j in range(0, k):
+            print('  %3d' % (a[j]), end='')
+        print('')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'KSUB_RANDOM2_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('KSUB_RANDOM2_TEST:')
+    print('  Normal end of execution.')
+    return
 
-if ( __name__ == '__main__' ):
-  from timestamp import timestamp
-  timestamp ( )
-  ksub_random2_test ( )
-  timestamp ( )
+
+if (__name__ == '__main__'):
+    from timestamp import timestamp
+    timestamp()
+    ksub_random2_test()
+    timestamp()

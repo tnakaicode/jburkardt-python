@@ -21,16 +21,25 @@ from r8lib.r8vec_print import r8vec_print
 from r8lib.r8mat_print import r8mat_print, r8mat_print_some
 from r8lib.r8mat_write import r8mat_write
 
-from i4lib.i4_modp import i4_modp
+from i4lib.i4vec_product import i4vec_product
+from i4lib.i4_to_chinese import i4_to_chinese
 from subset.chinese_check import chinese_check
-from subset.chinese_to_i4 import chinese_to_i4
+from subset.congruence import congruence
 
 
-def i4_to_chinese(j, n, m):
+def chinese_to_i4(n, m, r):
 
     # *****************************************************************************80
     #
-    # I4_TO_CHINESE converts an integer to its Chinese remainder form.
+    # CHINESE_TO_I4 converts a set of Chinese remainders to an equivalent integer.
+    #
+    #  Discussion:
+    #
+    #    Given a set of N pairwise prime, positive moduluses M(I), and
+    #    a corresponding set of remainders R(I), this routine finds an
+    #    integer J such that, for all I,
+    #
+    #      J = R(I) mod M(I)
     #
     #  Licensing:
     #
@@ -46,37 +55,51 @@ def i4_to_chinese(j, n, m):
     #
     #  Parameters:
     #
-    #    Input, integer J, the integer to be converted.
-    #
     #    Input, integer N, the number of moduluses.
     #
     #    Input, integer M(N), the moduluses.  These should be positive
     #    and pairwise prime.
     #
-    #    Output, integer R(N), the Chinese remainder representation of the integer.
+    #    Input, integer R(N), the Chinese remainder representation of the integer.
+    #
+    #    Output, integer J, the corresponding integer.
     #
 
     ierror = chinese_check(n, m)
 
     if (ierror != 0):
         print('')
-        print('I4_TO_CHINESE - Fatal error!')
+        print('CHINESE_TO_I4 - Fatal error!')
         print('  The moduluses are not legal.')
-        exit('I4_TO_CHINESE - Fatal error!')
-
-    r = np.zeros(n)
+        exit('CHINESE_TO_I4 - Fatal error!')
+#
+#  Set BIG_M.
+#
+    big_m = i4vec_product(n, m)
+#
+#  Solve BIG_M / M(I) * B(I) = 1, mod M(I)
+#
+    b = np.zeros(n)
 
     for i in range(0, n):
-        r[i] = i4_modp(j, m[i])
+        a = big_m // m[i]
+        c = 1
+        b[i], ierror = congruence(a, m[i], c)
+#
+#  Set J = sum ( 1 <= I <= N ) ( R(I) * B(I) * BIG_M / M(I) ) mod M
+#
+    j = 0
+    for i in range(0, n):
+        j = ((j + r[i] * b[i] * (big_m // m[i])) % big_m)
 
-    return r
+    return j
 
 
-def i4_to_chinese_test():
+def chinese_to_i4_test():
 
     # *****************************************************************************80
     #
-    # I4_TO_CHINESE_TEST tests I4_TO_CHINESE.
+    # CHINESE_TO_I4_TEST tests CHINESE_TO_I4.
     #
     #  Licensing:
     #
@@ -95,10 +118,10 @@ def i4_to_chinese_test():
     m = np.array([3, 4, 5, 7])
 
     print('')
-    print('I4_TO_CHINESE_TEST')
+    print('CHINESE_TO_I4_TEST')
     print('  Python version: %s' % (platform.python_version()))
-    print('  I4_TO_CHINESE computes the Chinese Remainder')
-    print('  representation of an integer.')
+    print('  CHINESE_TO_I4 computes an integer with the given')
+    print('  Chinese Remainder representation.')
 
     i4vec_print(n, m, '  The moduli:')
 
@@ -118,12 +141,12 @@ def i4_to_chinese_test():
 
     r = i4_to_chinese(j2, n, m)
 
-    i4vec_print(n, r, '  The remainders of the reconstructed number are:')
+    i4vec_print(n, r, '  The remainders of the reconstructed number:')
 #
 #  Terminate.
 #
     print('')
-    print('I4_TO_CHINESE_TEST:')
+    print('CHINESE_TO_I4_TEST')
     print('  Normal end of execution.')
     return
 
@@ -131,5 +154,5 @@ def i4_to_chinese_test():
 if (__name__ == '__main__'):
     from timestamp import timestamp
     timestamp()
-    i4_to_chinese_test()
+    chinese_to_i4_test()
     timestamp()
