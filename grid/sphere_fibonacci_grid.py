@@ -58,6 +58,12 @@ def sphere_fibonacci_grid_display(ng, xg, filename):
     #
     obj.new_3Dfig()
     obj.axs.scatter(xg[:, 0], xg[:, 1], xg[:, 2], 'b')
+    # for i in range(0, line_num):
+    #    i1 = line_data[i, 0]
+    #    i2 = line_data[i, 1]
+    #    obj.axs.plot([node_xyz[i1, 0], node_xyz[i2, 0]],
+    #                 [node_xyz[i1, 1], node_xyz[i2, 1]],
+    #                 [node_xyz[i1, 2], node_xyz[i2, 2]], 'r')
     obj.axs.set_xlabel('<---X--->')
     obj.axs.set_ylabel('<---Y--->')
     obj.axs.set_zlabel('<---Z--->')
