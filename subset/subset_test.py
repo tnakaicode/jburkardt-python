@@ -266,7 +266,6 @@ def subset_test():
     catalan_values_test()
 
     cfrac_to_rat_test()
-    cfrac_to_rfrac_test()
 
     ch_to_digit_test()
 
@@ -368,8 +367,6 @@ def subset_test():
     inverse_mod_n_test()
 
     involute_enum_test()
-
-    jfrac_to_rfrac_test()
 
     josephus_test()
 
@@ -475,7 +472,6 @@ def subset_test():
     sort_heap_external_test()
 
     subcomp_next_test()
-
     subcompnz_next_test()
     subcompnz2_next_test()
 
@@ -497,9 +493,6 @@ def subset_test():
     tuple_next_ge_test()
 
     triang_test()
-
-    tuple_next_test()
-    tuple_next2_test()
 
     ubvec_print_test()
     ubvec_add_test()
