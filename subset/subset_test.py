@@ -104,7 +104,6 @@ from subset.index_unrank0 import index_unrank0_test
 from subset.index_unrank1 import index_unrank1_test
 from subset.index_unrank2 import index_unrank2_test
 from subset.inverse_mod_n import inverse_mod_n_test
-from subset.inversion_to_perm0 import inversion_to_perm0_test
 from subset.involute_enum import involute_enum_test
 from subset.jfrac_to_rfrac import jfrac_to_rfrac_test
 from subset.josephus import josephus_test
@@ -367,7 +366,6 @@ def subset_test():
     index_unrank2_test()
 
     inverse_mod_n_test()
-    inversion_to_perm0_test()
 
     involute_enum_test()
 
