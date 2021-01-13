@@ -1,129 +1,149 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
-def perm_ascend ( n, p ):
 
-#*****************************************************************************80
-#
-## PERM_ASCEND computes the longest ascending subsequence of permutation.
-#
-#  Discussion:
-#
-#    Although this routine is intended to be applied to a permutation,
-#    it will work just as well for an arbitrary vector.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    16 June 2004
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer N, the order of the permutation.
-#
-#    Input, integer P(N), the permutation to be examined.
-#
-#    Output, integer LENGTH, the length of the longest increasing subsequence.
-#
-#    Output, integer SUB(LENGTH), a longest increasing subsequence of A.
-#
-  import numpy as np
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-  top = np.zeros ( n + 1, dtype = np.int32 )
-  top_prev = np.zeros ( n + 1, dtype = np.int32 )
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
-  length = 0
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
 
-  if ( n <= 0 ):
-    sub = np.zeros ( length )
-    return length, sub
+from subset.perm0_print import perm0_print
 
-  for i in range ( 0, n ):
 
-    k = 0
+def perm_ascend(n, p):
 
-    for j in range ( 1, length + 1 ):
-      if ( p[i] <= p[top[j]] ):
-        k = j
-        break
+    # *****************************************************************************80
+    #
+    # PERM_ASCEND computes the longest ascending subsequence of permutation.
+    #
+    #  Discussion:
+    #
+    #    Although this routine is intended to be applied to a permutation,
+    #    it will work just as well for an arbitrary vector.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    16 June 2004
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the order of the permutation.
+    #
+    #    Input, integer P(N), the permutation to be examined.
+    #
+    #    Output, integer LENGTH, the length of the longest increasing subsequence.
+    #
+    #    Output, integer SUB(LENGTH), a longest increasing subsequence of A.
+    #
 
-    if ( k == 0 ):
-      length = length + 1
-      k = length
+    top = np.zeros(n + 1, dtype=np.int32)
+    top_prev = np.zeros(n + 1, dtype=np.int32)
 
-    top[k] = i
-    top_prev[i] = top[k-1]
+    length = 0
+
+    if (n <= 0):
+        sub = np.zeros(length)
+        return length, sub
+
+    for i in range(0, n):
+
+        k = 0
+
+        for j in range(1, length + 1):
+            if (p[i] <= p[top[j]]):
+                k = j
+                break
+
+        if (k == 0):
+            length = length + 1
+            k = length
+
+        top[k] = i
+        top_prev[i] = top[k - 1]
 #
 #  Construct the subsequence.
 #
-  sub = np.zeros ( length, dtype = np.int32 )
+    sub = np.zeros(length, dtype=np.int32)
 
-  j = top[length]
-  sub[length-1] = p[j]
+    j = top[length]
+    sub[length - 1] = p[j]
 
-  for i in range ( length - 2, -1, -1 ):
-    j = top_prev[j]
-    sub[i] = p[j]
+    for i in range(length - 2, -1, -1):
+        j = top_prev[j]
+        sub[i] = p[j]
 
-  return length, sub
+    return length, sub
 
-def perm_ascend_test ( ):
 
-#*****************************************************************************80
-#
-## PERM_ASCEND_TEST tests PERM_ASCEND.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    16 June 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-  from i4vec_print import i4vec_print
-  from perm0_print import perm0_print
+def perm_ascend_test():
 
-  n = 9
-  p = np.array ( [ 1,2,8,5,6,7,4,3,0 ], dtype = np.int32 )
+    # *****************************************************************************80
+    #
+    # PERM_ASCEND_TEST tests PERM_ASCEND.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    16 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
 
-  print ( '' )
-  print ( 'PERM_ASCEND_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  PERM_ASCEND determines the length of the longest' )
-  print ( '  increasing subsequence in a permutation.' )
+    n = 9
+    p = np.array([1, 2, 8, 5, 6, 7, 4, 3, 0], dtype=np.int32)
 
-  perm0_print ( n, p, '  The permutation:' )
+    print('')
+    print('PERM_ASCEND_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  PERM_ASCEND determines the length of the longest')
+    print('  increasing subsequence in a permutation.')
 
-  length, subseq = perm_ascend ( n, p )
+    perm0_print(n, p, '  The permutation:')
 
-  print ( '' )
-  print ( '  The longest increasing subsequence has length %d' % ( length ) )
+    length, subseq = perm_ascend(n, p)
 
-  i4vec_print ( length, subseq, '  A longest increasing subsequence:' )
+    print('')
+    print('  The longest increasing subsequence has length %d' % (length))
+
+    i4vec_print(length, subseq, '  A longest increasing subsequence:')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'PERM_ASCEND_TEST' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('PERM_ASCEND_TEST')
+    print('  Normal end of execution.')
+    return
 
-if ( __name__ == '__main__' ):
-  from timestamp import timestamp
-  timestamp ( )
-  perm_ascend_test ( )
-  timestamp ( )
 
+if (__name__ == '__main__'):
+    from timestamp import timestamp
+    timestamp()
+    perm_ascend_test()
+    timestamp()

@@ -367,7 +367,6 @@ def subset_test():
     index_unrank2_test()
 
     inverse_mod_n_test()
-
     inversion_to_perm0_test()
 
     involute_enum_test()
@@ -389,8 +388,6 @@ def subset_test():
     ksub_to_comp_test()
     ksub_to_compnz_test()
     ksub_unrank_test()
-
-    l4vec_next_test()
 
     moebius_values_test()
 
@@ -451,7 +448,6 @@ def subset_test():
     pord_check_test()
 
     power_mod_test()
-
     power_series1_test()
     power_series2_test()
     power_series3_test()
@@ -516,13 +512,10 @@ def subset_test():
     vec_colex_next_test()
     vec_colex_next2_test()
     vec_colex_next3_test()
-
     vec_gray_next_test()
     vec_gray_rank_test()
     vec_gray_unrank_test()
-
     vec_lex_next_test()
-
     vec_random_test()
 
     vector_constrained_next_test()

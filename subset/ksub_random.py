@@ -1,183 +1,203 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
-def ksub_random ( n, k, seed ):
 
-#*****************************************************************************80
-#
-## KSUB_RANDOM selects a random subset of size K from a set of size N.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    19 December 2014
-#
-#  Author:
-#
-#    John Burkardt.
-#
-#  Reference:
-#
-#    Albert Nijenhuis, Herbert Wilf,
-#    Combinatorial Algorithms,
-#    Academic Press, 1978, second edition,
-#    ISBN 0-12-519260-6.
-#
-#  Parameters:
-#
-#    Input, integer N, the size of the set from which subsets are drawn.
-#
-#    Input, integer K, number of elements in desired subsets.  K must
-#    be between 0 and N.
-#
-#    Input, integer SEED, a seed for the random number generator.
-#
-#    Output, integer A(K).  A(I) is the I-th element of the
-#    output set.  The elements of A are in order.
-#
-#    Output, integer SEED, an updated seed for the random number generator.
-#
-  import numpy as np
-  from i4_uniform_ab import i4_uniform_ab
-  from math import floor
-  from sys import exit
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-  if ( k <= 0 ):
-    print ( '' )
-    print ( 'KSUB_RANDOM - Fatal error!' )
-    print ( '  K = %d' % ( k ) )
-    print ( '  but 0 < K is required!' )
-    exit ( 'KSUB_RANDOM - Fatal error!' )
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
-  if ( n < k ):
-    print ( '' )
-    print ( 'KSUB_RANDOM - Fatal error!' )
-    print ( '  N = %d' % ( n ) )
-    print ( '  K = %d' % ( k ) )
-    print ( '  K <= N is required!' )
-    exit ( 'KSUB_RANDOM - Fatal error!' )
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
 
-  a = np.zeros ( k, dtype = np.int32 )
+from i4lib.i4_uniform_ab import i4_uniform_ab
 
-  for i in range ( 1, k + 1 ):
-    a[i-1] = ( ( ( i - 1 ) * n ) // k )
 
-  for i in range ( 1, k + 1 ):
+def ksub_random(n, k, seed):
 
-    while ( True ):
+    # *****************************************************************************80
+    #
+    # KSUB_RANDOM selects a random subset of size K from a set of size N.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    19 December 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt.
+    #
+    #  Reference:
+    #
+    #    Albert Nijenhuis, Herbert Wilf,
+    #    Combinatorial Algorithms,
+    #    Academic Press, 1978, second edition,
+    #    ISBN 0-12-519260-6.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the size of the set from which subsets are drawn.
+    #
+    #    Input, integer K, number of elements in desired subsets.  K must
+    #    be between 0 and N.
+    #
+    #    Input, integer SEED, a seed for the random number generator.
+    #
+    #    Output, integer A(K).  A(I) is the I-th element of the
+    #    output set.  The elements of A are in order.
+    #
+    #    Output, integer SEED, an updated seed for the random number generator.
+    #
 
-      ix, seed = i4_uniform_ab ( 1, n, seed )
+    if (k <= 0):
+        print('')
+        print('KSUB_RANDOM - Fatal error!')
+        print('  K = %d' % (k))
+        print('  but 0 < K is required!')
+        exit('KSUB_RANDOM - Fatal error!')
 
-      l = ( ( ix * k - 1 ) // n )
+    if (n < k):
+        print('')
+        print('KSUB_RANDOM - Fatal error!')
+        print('  N = %d' % (n))
+        print('  K = %d' % (k))
+        print('  K <= N is required!')
+        exit('KSUB_RANDOM - Fatal error!')
 
-      if ( a[l-1] < ix ):
-        break
+    a = np.zeros(k, dtype=np.int32)
 
-    a[l-1] = a[l-1] + 1
+    for i in range(1, k + 1):
+        a[i - 1] = (((i - 1) * n) // k)
 
-  ip = 0
-  iq = k
+    for i in range(1, k + 1):
 
-  for i in range ( 1, k + 1 ):
+        while (True):
 
-    m = a[i-1]
-    a[i-1] = 0
+            ix, seed = i4_uniform_ab(1, n, seed)
 
-    if ( m != ( ( ( i - 1 ) * n ) // k ) ):
-      ip = ip + 1
-      a[ip-1] = m
+            l = ((ix * k - 1) // n)
 
-  ihi = ip
+            if (a[l - 1] < ix):
+                break
 
-  for i in range ( 1, ihi + 1 ):
+        a[l - 1] = a[l - 1] + 1
 
-    ip = ihi + 1 - i
-    l = 1 + ( ( a[ip-1] * k - 1 ) // n )
-    ids = a[ip-1] - ( ( ( l - 1 ) * n ) // k )
-    a[ip-1] = 0
-    a[iq-1] = l
-    iq = iq - ids
+    ip = 0
+    iq = k
 
-  for ll in range ( 1, k + 1 ):
+    for i in range(1, k + 1):
 
-    l = k + 1 - ll
+        m = a[i - 1]
+        a[i - 1] = 0
 
-    if ( a[l-1] != 0 ):
-      ir = l
-      m0 = 1 + ( ( ( a[l-1] - 1 ) * n ) // k )
-      m = ( ( a[l-1] * n ) // k ) - m0 + 1
+        if (m != (((i - 1) * n) // k)):
+            ip = ip + 1
+            a[ip - 1] = m
 
-    ix, seed = i4_uniform_ab ( m0, m0 + m - 1, seed )
+    ihi = ip
 
-    i = l + 1
+    for i in range(1, ihi + 1):
 
-    while ( i <= ir ):
+        ip = ihi + 1 - i
+        l = 1 + ((a[ip - 1] * k - 1) // n)
+        ids = a[ip - 1] - (((l - 1) * n) // k)
+        a[ip - 1] = 0
+        a[iq - 1] = l
+        iq = iq - ids
 
-      if ( ix < a[i-1] ):
-        break
+    for ll in range(1, k + 1):
 
-      ix = ix + 1
-      a[i-2] = a[i-1]
-      i = i + 1
+        l = k + 1 - ll
 
-    a[i-2] = ix
-    m = m - 1
+        if (a[l - 1] != 0):
+            ir = l
+            m0 = 1 + (((a[l - 1] - 1) * n) // k)
+            m = ((a[l - 1] * n) // k) - m0 + 1
 
-  return a, seed
+        ix, seed = i4_uniform_ab(m0, m0 + m - 1, seed)
 
-def ksub_random_test ( ):
+        i = l + 1
 
-#*****************************************************************************80
-#
-## KSUB_RANDOM_TEST tests KSUB_RANDOM.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    19 December 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
+        while (i <= ir):
 
-  k = 3
-  n = 5
+            if (ix < a[i - 1]):
+                break
 
-  print ( '' )
-  print ( 'KSUB_RANDOM_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  KSUB_RANDOM generates a random K subset of an N set.' )
-  print ( '  Set size is N =    %d' % ( n ) )
-  print ( '  Subset size is K = %d' % ( k ) )
-  print ( '' )
+            ix = ix + 1
+            a[i - 2] = a[i - 1]
+            i = i + 1
 
-  seed = 123456789
+        a[i - 2] = ix
+        m = m - 1
 
-  for i in range ( 0, 5 ):
+    return a, seed
 
-    a, seed = ksub_random ( n, k, seed )
 
-    for j in range ( 0, k ):
-      print ( '  %3d' % ( a[j] ), end = '' )
-    print ( '' )
+def ksub_random_test():
+
+    # *****************************************************************************80
+    #
+    # KSUB_RANDOM_TEST tests KSUB_RANDOM.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    19 December 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+
+    k = 3
+    n = 5
+
+    print('')
+    print('KSUB_RANDOM_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  KSUB_RANDOM generates a random K subset of an N set.')
+    print('  Set size is N =    %d' % (n))
+    print('  Subset size is K = %d' % (k))
+    print('')
+
+    seed = 123456789
+
+    for i in range(0, 5):
+
+        a, seed = ksub_random(n, k, seed)
+
+        for j in range(0, k):
+            print('  %3d' % (a[j]), end='')
+        print('')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'KSUB_RANDOM_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('KSUB_RANDOM_TEST:')
+    print('  Normal end of execution.')
+    return
 
-if ( __name__ == '__main__' ):
-  from timestamp import timestamp
-  timestamp ( )
-  ksub_random_test ( )
-  timestamp ( )
 
+if (__name__ == '__main__'):
+    from timestamp import timestamp
+    timestamp()
+    ksub_random_test()
+    timestamp()

@@ -1,211 +1,232 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
-def ksub_next3 ( n, k, a, more ):
 
-#*****************************************************************************80
-#
-## KSUB_NEXT3 generates the subsets of size K from a set of size N, one at a time.
-#
-#  Discussion:
-#
-#    The routine uses the revolving door method.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    06 June 2015
-#
-#  Author:
-#
-#    John Burkardt.
-#
-#  Reference:
-#
-#    Albert Nijenhuis, Herbert Wilf,
-#    Combinatorial Algorithms,
-#    Academic Press, 1978, second edition,
-#    ISBN 0-12-519260-6.
-#
-#  Parameters:
-#
-#    Input, integer N, the size of the set from which subsets are drawn.
-#    N must be positive.
-#
-#    Input, integer K, the size of the desired subsets.  K must be
-#    between 0 and N.
-#
-#    Input, integer A(K).  A(I) is the I-th element of the
-#    output subset.  The elements of A are sorted.
-#
-#    Input, logical MORE.  On first call, set MORE = FALSE
-#    to signal the beginning.  MORE will be set to TRUE, and on
-#    each call, the routine will return another K-subset.
-#    Finally, when the last subset has been returned,
-#    MORE will be set FALSE and you may stop calling.
-#
-#    Output, integer A(K).  A(I) is the I-th element of the
-#    output subset.  The elements of A are sorted.
-#
-#    Output, logical MORE.  On first call, set MORE = FALSE
-#    to signal the beginning.  MORE will be set to TRUE, and on
-#    each call, the routine will return another K-subset.
-#    Finally, when the last subset has been returned,
-#    MORE will be set FALSE and you may stop calling.
-#
-#    Output, integer INN, the element of the output subset which
-#    was not in the input set.  Each new subset differs from the
-#    last one by adding one element and deleting another.  IN is not
-#    defined the first time that the routine returns, and is
-#    set to -1.
-#
-#    Output, integer IOUT, the element of the input subset which is
-#    not in the output subset.  IOUT is not defined the first time
-#    the routine returns, and is set to -1.
-#
-  from sys import exit
-  from i4vec_indicator1 import i4vec_indicator1
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-  if ( n <= 0 ):
-    print ( '' )
-    print ( 'KSUB_NEXT3 - Fatal error!' )
-    print ( '  N = %d' % ( n ) )
-    print ( '  but 0 < N is required!' )
-    exit ( 'KSUB_NEXT3 - Fatal error!' )
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
-  if ( k < 0 ):
-    print ( '' )
-    print ( 'KSUB_NEXT3 - Fatal error!' )
-    print ( '  K = %d' % ( k ) )
-    print ( '  but 0 <= K is required!' )
-    exit ( 'KSUB_NEXT3 - Fatal error!' )
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
 
-  if ( n < k ):
-    print ( '' )
-    print ( 'KSUB_NEXT3 - Fatal error!' )
-    print ( '  N = %d' % ( n ) )
-    print ( '  K = %d' % ( k ) )
-    print ( '  but K <= N is required!' )
-    exit ( 'KSUB_NEXT3 - Fatal error!' )
+from i4lib.i4vec_indicator1 import i4vec_indicator1
 
-  if ( not more ):
-    inn = -1
-    iout = -1
-    a = i4vec_indicator1 ( k )
-    more = ( k != n )
-    return a, more, inn, iout
 
-  j = 0
+def ksub_next3(n, k, a, more):
 
-  while ( True ):
+    # *****************************************************************************80
+    #
+    # KSUB_NEXT3 generates the subsets of size K from a set of size N, one at a time.
+    #
+    #  Discussion:
+    #
+    #    The routine uses the revolving door method.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    06 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt.
+    #
+    #  Reference:
+    #
+    #    Albert Nijenhuis, Herbert Wilf,
+    #    Combinatorial Algorithms,
+    #    Academic Press, 1978, second edition,
+    #    ISBN 0-12-519260-6.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the size of the set from which subsets are drawn.
+    #    N must be positive.
+    #
+    #    Input, integer K, the size of the desired subsets.  K must be
+    #    between 0 and N.
+    #
+    #    Input, integer A(K).  A(I) is the I-th element of the
+    #    output subset.  The elements of A are sorted.
+    #
+    #    Input, logical MORE.  On first call, set MORE = FALSE
+    #    to signal the beginning.  MORE will be set to TRUE, and on
+    #    each call, the routine will return another K-subset.
+    #    Finally, when the last subset has been returned,
+    #    MORE will be set FALSE and you may stop calling.
+    #
+    #    Output, integer A(K).  A(I) is the I-th element of the
+    #    output subset.  The elements of A are sorted.
+    #
+    #    Output, logical MORE.  On first call, set MORE = FALSE
+    #    to signal the beginning.  MORE will be set to TRUE, and on
+    #    each call, the routine will return another K-subset.
+    #    Finally, when the last subset has been returned,
+    #    MORE will be set FALSE and you may stop calling.
+    #
+    #    Output, integer INN, the element of the output subset which
+    #    was not in the input set.  Each new subset differs from the
+    #    last one by adding one element and deleting another.  IN is not
+    #    defined the first time that the routine returns, and is
+    #    set to -1.
+    #
+    #    Output, integer IOUT, the element of the input subset which is
+    #    not in the output subset.  IOUT is not defined the first time
+    #    the routine returns, and is set to -1.
+    #
 
-    if ( 0 < j or ( k % 2 ) == 0 ):
+    if (n <= 0):
+        print('')
+        print('KSUB_NEXT3 - Fatal error!')
+        print('  N = %d' % (n))
+        print('  but 0 < N is required!')
+        exit('KSUB_NEXT3 - Fatal error!')
 
-      j = j + 1
+    if (k < 0):
+        print('')
+        print('KSUB_NEXT3 - Fatal error!')
+        print('  K = %d' % (k))
+        print('  but 0 <= K is required!')
+        exit('KSUB_NEXT3 - Fatal error!')
 
-      if ( a[j-1] != j ):
+    if (n < k):
+        print('')
+        print('KSUB_NEXT3 - Fatal error!')
+        print('  N = %d' % (n))
+        print('  K = %d' % (k))
+        print('  but K <= N is required!')
+        exit('KSUB_NEXT3 - Fatal error!')
 
-        iout = a[j-1]
-        inn = iout - 1
-        a[j-1] = inn
-
-        if ( j != 1 ):
-          inn = j - 1
-          a[j-2] = inn
-
-        if ( k != 1 ):
-          more = ( a[k-2] == k - 1 )
-
-        more = ( not more ) or ( a[k-1] != n )
-
+    if (not more):
+        inn = -1
+        iout = -1
+        a = i4vec_indicator1(k)
+        more = (k != n)
         return a, more, inn, iout
 
-    j = j + 1
-    m = n
+    j = 0
 
-    if ( j < k ):
-      m = a[j] - 1
+    while (True):
 
-    if ( m != a[j-1] ):
-      break
+        if (0 < j or (k % 2) == 0):
 
-  inn = a[j-1] + 1
-  a[j-1] = inn
-  iout = inn - 1
+            j = j + 1
 
-  if ( j != 1 ):
-    a[j-2] = iout
-    iout = j - 1
+            if (a[j - 1] != j):
 
-  if ( k != 1 ):
-    more = ( a[k-2] == k - 1 )
+                iout = a[j - 1]
+                inn = iout - 1
+                a[j - 1] = inn
 
-  more = ( ( not more ) or ( a[k-1] != n ) )
+                if (j != 1):
+                    inn = j - 1
+                    a[j - 2] = inn
 
-  return a, more, inn, iout
+                if (k != 1):
+                    more = (a[k - 2] == k - 1)
 
-def ksub_next3_test ( ):
+                more = (not more) or (a[k - 1] != n)
 
-#*****************************************************************************80
-#
-## KSUB_NEXT3_TEST tests KSUB_NEXT3.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    06 June 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
+                return a, more, inn, iout
 
-  k = 3
-  n = 5
+        j = j + 1
+        m = n
 
-  print ( '' )
-  print ( 'KSUB_NEXT3_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  KSUB_NEXT3 generates all K subsets of an N set' )
-  print ( '  using the revolving door method.' )
-  print ( '' )
-  print ( 'Rank    Subset  Added Removed' )
-  print ( '' )
+        if (j < k):
+            m = a[j] - 1
 
-  rank = 0
-  a = np.zeros ( k )
-  more = False
- 
-  while ( True ):
+        if (m != a[j - 1]):
+            break
 
-    a, more, inn, out = ksub_next3 ( n, k, a, more)
+    inn = a[j - 1] + 1
+    a[j - 1] = inn
+    iout = inn - 1
 
-    rank = rank + 1
-    print ( '  %2d' % ( rank ) ),
-    for i in range ( 0, k ):
-      print ( '  %2d' % ( a[i] ) ),
-    print ( '     %2d  %2d' % ( inn, out ) )
+    if (j != 1):
+        a[j - 2] = iout
+        iout = j - 1
 
-    if ( not more ):
-      break
+    if (k != 1):
+        more = (a[k - 2] == k - 1)
+
+    more = ((not more) or (a[k - 1] != n))
+
+    return a, more, inn, iout
+
+
+def ksub_next3_test():
+
+    # *****************************************************************************80
+    #
+    # KSUB_NEXT3_TEST tests KSUB_NEXT3.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    06 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+
+    k = 3
+    n = 5
+
+    print('')
+    print('KSUB_NEXT3_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  KSUB_NEXT3 generates all K subsets of an N set')
+    print('  using the revolving door method.')
+    print('')
+    print('Rank    Subset  Added Removed')
+    print('')
+
+    rank = 0
+    a = np.zeros(k)
+    more = False
+
+    while (True):
+
+        a, more, inn, out = ksub_next3(n, k, a, more)
+
+        rank = rank + 1
+        print('  %2d' % (rank)),
+        for i in range(0, k):
+            print('  %2d' % (a[i])),
+        print('     %2d  %2d' % (inn, out))
+
+        if (not more):
+            break
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'KSUB_NEXT3_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('KSUB_NEXT3_TEST:')
+    print('  Normal end of execution.')
+    return
 
-if ( __name__ == '__main__' ):
-  from timestamp import timestamp
-  timestamp ( )
-  ksub_next3_test ( )
-  timestamp ( )
 
+if (__name__ == '__main__'):
+    from timestamp import timestamp
+    timestamp()
+    ksub_next3_test()
+    timestamp()
