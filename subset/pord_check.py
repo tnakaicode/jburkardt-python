@@ -1,128 +1,148 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
-def pord_check ( n, a ):
 
-#*****************************************************************************80
-#
-## PORD_CHECK checks a matrix representing a partial ordering.
-#
-#  Discussion:
-#
-#    The array A is supposed to represent a partial ordering of
-#    the elements of a set of N objects.
-#
-#    For distinct indices I and J, the value of A(I,J) is:
-#
-#      1, if I << J
-#      0, otherwise ( I and J may be unrelated, or perhaps J << I).
-#
-#    Diagonal elements of A are ignored.
-#
-#    This routine checks that the values of A do represent
-#    a partial ordering.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    30 May 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, integer N, the number of elements in the set.
-#
-#    Input, integer A(N,N), the partial ordering.
-#    1 if I is less than J in the partial ordering, 
-#    0 otherwise.
-#
-#    Output, integer IERROR, error flag.
-#    0, no errors detected.  A is a partial ordering.
-#    1, N <= 0.
-#    2, 0 < A(I,J) and 0 < A(J,I) for some I and J.
-#
-  ierror = 0
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-  if ( n <= 0 ):
-    ierror = 1
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+
+
+def pord_check(n, a):
+
+    # *****************************************************************************80
+    #
+    # PORD_CHECK checks a matrix representing a partial ordering.
+    #
+    #  Discussion:
+    #
+    #    The array A is supposed to represent a partial ordering of
+    #    the elements of a set of N objects.
+    #
+    #    For distinct indices I and J, the value of A(I,J) is:
+    #
+    #      1, if I << J
+    #      0, otherwise ( I and J may be unrelated, or perhaps J << I).
+    #
+    #    Diagonal elements of A are ignored.
+    #
+    #    This routine checks that the values of A do represent
+    #    a partial ordering.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    30 May 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of elements in the set.
+    #
+    #    Input, integer A(N,N), the partial ordering.
+    #    1 if I is less than J in the partial ordering,
+    #    0 otherwise.
+    #
+    #    Output, integer IERROR, error flag.
+    #    0, no errors detected.  A is a partial ordering.
+    #    1, N <= 0.
+    #    2, 0 < A(I,J) and 0 < A(J,I) for some I and J.
+    #
+    ierror = 0
+
+    if (n <= 0):
+        ierror = 1
+        return ierror
+
+    for i in range(0, n):
+        for j in range(i + 1, n):
+
+            if (0 < a[i, j]):
+                if (0 < a[j, i]):
+                    ierror = 2
+                    return ierror
+
     return ierror
 
-  for i in range ( 0, n ): 
-    for j in range ( i + 1, n ):
 
-      if ( 0 < a[i,j] ):
-        if ( 0 < a[j,i] ):
-          ierror = 2
-          return ierror
+def pord_check_test():
 
-  return ierror
+    # *****************************************************************************80
+    #
+    # PORD_CHECK_TEST tests PORD_CHECK.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    30 May 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
 
-def pord_check_test ( ):
+    n = 10
 
-#*****************************************************************************80
-#
-## PORD_CHECK_TEST tests PORD_CHECK.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    30 May 2015
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import numpy as np
-  import platform
-  from i4mat_print import i4mat_print
+    a = np.array([
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 1, 0, 1, 0, 1, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+        [0, 0, 0, 1, 0, 1, 0, 1, 0, 0],
+        [1, 0, 1, 1, 0, 1, 1, 1, 0, 1],
+        [0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 1, 0, 1]])
 
-  n = 10
+    print('')
+    print('PORD_CHECK_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  PORD_CHECK checks a partial ordering.')
 
-  a = np.array ( [ \
-    [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], \
-    [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 0 ], \
-    [ 1, 0, 1, 1, 0, 0, 0, 0, 0, 0 ], \
-    [ 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 ], \
-    [ 1, 1, 1, 1, 1, 1, 1, 1, 0, 1 ], \
-    [ 0, 0, 0, 1, 0, 1, 0, 1, 0, 0 ], \
-    [ 1, 0, 1, 1, 0, 1, 1, 1, 0, 1 ], \
-    [ 0, 0, 0, 1, 0, 0, 0, 1, 0, 0 ], \
-    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], \
-    [ 1, 0, 1, 1, 0, 0, 0, 1, 0, 1 ] ] )
+    i4mat_print(n, n, a, '  The partial ordering matrix:')
 
-  print ( '' )
-  print ( 'PORD_CHECK_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  PORD_CHECK checks a partial ordering.' )
+    ierror = pord_check(n, a)
 
-  i4mat_print ( n, n, a, '  The partial ordering matrix:' )
- 
-  ierror = pord_check ( n, a )
- 
-  print ( '' )
-  print ( '  CHECK FLAG = %d' % ( ierror ) )
-  print ( '  0 means no error.' )
-  print ( '  1 means illegal value of N.' )
-  print ( '  2 means some A(I,J) and A(J,I) are both nonzero.' )
+    print('')
+    print('  CHECK FLAG = %d' % (ierror))
+    print('  0 means no error.')
+    print('  1 means illegal value of N.')
+    print('  2 means some A(I,J) and A(J,I) are both nonzero.')
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'PORD_CHECK_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('PORD_CHECK_TEST:')
+    print('  Normal end of execution.')
+    return
 
-if ( __name__ == '__main__' ):
-  from timestamp import timestamp
-  timestamp ( )
-  pord_check_test ( )
-  timestamp ( )
 
+if (__name__ == '__main__'):
+    from timestamp import timestamp
+    timestamp()
+    pord_check_test()
+    timestamp()

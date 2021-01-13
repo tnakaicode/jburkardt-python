@@ -451,8 +451,6 @@ def subset_test():
     power_series3_test()
     power_series4_test()
 
-    prime_test()
-
     pythag_triple_next_test()
 
     rat_add_test()
@@ -503,8 +501,8 @@ def subset_test():
     tuple_next_test()
     tuple_next2_test()
 
-    ubvec_add_test()
     ubvec_print_test()
+    ubvec_add_test()
     ubvec_xor_test()
 
     vec_colex_next_test()
