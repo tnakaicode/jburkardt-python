@@ -102,9 +102,6 @@ def vec_random_test():
         for j in range(0, n):
             print('  %2d' % (a[j]), end='')
         print('')
-#
-#  Terminate.
-#
     print('')
     print('VEC_RANDOM_TEST:')
     print('  Normal end of execution.')

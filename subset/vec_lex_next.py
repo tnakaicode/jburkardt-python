@@ -157,9 +157,7 @@ def vec_lex_next_test():
             break
 
         i4vec_transpose_print(dim_num, a, '')
-#
-#  Terminate.
-#
+
     print('')
     print('VEC_LEX_NEXT_TEST:')
     print('  Normal end of execution.')
