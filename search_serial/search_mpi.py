@@ -8,6 +8,7 @@ import time
 import sys
 import os
 import math
+from mpi4py import MPI
 from mpl_toolkits.mplot3d import Axes3D
 from sys import exit
 
@@ -22,11 +23,11 @@ from r8lib.r8mat_print import r8mat_print, r8mat_print_some
 from r8lib.r8mat_write import r8mat_write
 
 
-def search_serial(a, b, c):
+def search_mpi(a, b, c):
 
     # *****************************************************************************80
     #
-    # SEARCH_SERIAL searches for a solution to an integer equation.
+    # SEARCH_MPI searches for a solution to an integer equation.
     #
     #  Licensing:
     #
@@ -34,7 +35,7 @@ def search_serial(a, b, c):
     #
     #  Modified:
     #
-    #    22 October 2012
+    #    30 October 2012
     #
     #  Author:
     #
@@ -53,36 +54,48 @@ def search_serial(a, b, c):
     #    otherwise, F(J) = C and A <= J <= B.
     #
 
-    print('')
-    print('SEARCH_SERIAL:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  Search the integers from A to B')
-    print('  for a value J such that F(J) = C.')
-    print('')
-    print('  A        = %d' % (a))
-    print('  B        = %d' % (b))
-    print('  C        = %d' % (c))
+    comm = MPI.COMM_WORLD
 
-    j = search(a, b, c)
+    indx = comm.Get_rank()
 
-    print('')
-    if j == -1:
-        print('  No solution was found.')
-    else:
-        print('  Found J = %d' % (j))
+    p = comm.Get_size()
+
+    if (indx == 0):
+        print('')
+        print('SEARCH_MPI:')
+        print('  Python/MPI version')
+        print('  Search the integers from A to B')
+        print('  for a value J such that F(J) = C.')
+        print('')
+        print('  Use MPI to divide the computation among')
+        print('  %d processes.' % (p))
+        print('')
+        print('  A        = %d' % (a))
+        print('  B        = %d' % (b))
+        print('  C        = %d' % (c))
+        wtime = MPI.Wtime()
+
+    j = search_partial(a, b, c, indx, p)
+
+    if (j != -1):
+        print('  Process %d found J = %d' % (indx, j))
         print('  Verify F(J) = %d' % (f(j)))
 
+    if (indx == 0):
+        wtime = MPI.Wtime() - wtime
+        print('  Time     = %g' % (wtime))
+
     print('')
-    print('SEARCH_SERIAL:')
+    print('SEARCH_MPI:')
     print('  Normal end of execution.')
     return j
 
 
-def search(a, b, c):
+def search_partial(a, b, c, id, p):
 
     # *****************************************************************************80
     #
-    # SEARCH searches integers in [A,B] for a J so that F(J) = C.
+    # SEARCH_PARTIAL searches 'partially' through [A,B] for a J so that F(J) = C.
     #
     #  Licensing:
     #
@@ -90,7 +103,7 @@ def search(a, b, c):
     #
     #  Modified:
     #
-    #    29 October 2012
+    #    30 October 2012
     #
     #  Author:
     #
@@ -102,10 +115,15 @@ def search(a, b, c):
     #
     #    Input, integer C, the desired function value.
     #
+    #    Input, integer ID, the increment between successive values that
+    #    are to be checked.
+    #
+    #    Input, integer P, the number of processes.
+    #
     #    Output, integer J, the computed solution, or -1
     #    if no solution was found.
     #
-    for i in range(a, b + 1):
+    for i in range(a + id, b + 1, p):
 
         if (f(i) == c):
             return i
@@ -155,8 +173,8 @@ def f(i):
 
 if (__name__ == '__main__'):
     timestamp()
-    search_serial(1, 10000, 45)
-    search_serial(1, 100000, 45)
-    search_serial(1, 1000000, 45)
-    search_serial(1674924000, 1674924999, 45)
+    search_mpi(1, 10000, 45)
+    search_mpi(1, 100000, 45)
+    search_mpi(1, 1000000, 45)
+    search_mpi(1674924000, 1674924999, 45)
     timestamp()
