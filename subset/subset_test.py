@@ -253,6 +253,50 @@ def subset_test():
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the SUBSET library.')
 
+    # cfrac
+    cfrac_to_rat_test()
+    cfrac_to_rfrac_test()
+    jfrac_to_rfrac_test()
+    rat_to_cfrac_test()
+    rfrac_to_cfrac_test()
+    rfrac_to_jfrac_test()
+
+    # function
+    debruijn_test()
+    diophantine_test()
+    diophantine_solution_minimize_test()
+    frobenius_number_order2_values_test()
+    frobenius_number_order2_test()
+    josephus_test()
+    morse_thue_test()
+    moebius_values_test()
+    padovan_test()
+    schroeder_test()
+    perrin_test()
+
+    # subset
+    subset_by_size_next_test()
+    subset_gray_next_test()
+    subset_gray_rank_test()
+    subset_gray_unrank_test()
+    subset_lex_next_test()
+    subset_random_test()
+
+    # ksub
+    ksub_next_test()
+    ksub_next2_test()
+    ksub_next3_test()
+    ksub_next4_test()
+    ksub_random_test()
+    ksub_random2_test()
+    ksub_random3_test()
+    ksub_random4_test()
+    ksub_random5_test()
+    ksub_rank_test()
+    ksub_to_comp_test()
+    ksub_to_compnz_test()
+    ksub_unrank_test()
+
     agm_values_test()
     asm_enum_test()
     asm_triangle_test()
@@ -264,25 +308,6 @@ def subset_test():
     catalan_row_next_test()
     catalan_values_test()
 
-    # cfrac
-    cfrac_to_rat_test()
-    cfrac_to_rfrac_test()
-    jfrac_to_rfrac_test()
-    rat_to_cfrac_test()
-    rfrac_to_cfrac_test()
-    rfrac_to_jfrac_test()
-    
-    # function
-    debruijn_test()
-    diophantine_test()
-    diophantine_solution_minimize_test()
-    frobenius_number_order2_values_test()
-    frobenius_number_order2_test()
-    josephus_test()
-    morse_thue_test()
-    padovan_test()
-    schroeder_test()
-    
     ch_to_digit_test()
 
     change_greedy_test()
@@ -307,11 +332,13 @@ def subset_test():
     compnz_random_test()
     compnz_to_ksub_test()
 
+    subcomp_next_test()
+    subcompnz_next_test()
+    subcompnz2_next_test()
+
     congruence_test()
 
     count_pose_random_test()
-
-    debruijn_test()
 
     dec_add_test()
     dec_div_test()
@@ -335,9 +362,6 @@ def subset_test():
     digraph_arc_euler_test()
     digraph_arc_print_test()
 
-    diophantine_test()
-    diophantine_solution_minimize_test()
-
     dvec_add_test()
     dvec_complementx_test()
     dvec_mul_test()
@@ -354,9 +378,6 @@ def subset_test():
     equiv1_next2_test()
 
     euler_row_test()
-
-    frobenius_number_order2_test()
-    frobenius_number_order2_values_test()
 
     gamma_values_test()
     gamma_log_values_test()
@@ -382,22 +403,6 @@ def subset_test():
 
     inverse_mod_n_test()
     involute_enum_test()
-
-    ksub_next_test()
-    ksub_next2_test()
-    ksub_next3_test()
-    ksub_next4_test()
-    ksub_random_test()
-    ksub_random2_test()
-    ksub_random3_test()
-    ksub_random4_test()
-    ksub_random5_test()
-    ksub_rank_test()
-    ksub_to_comp_test()
-    ksub_to_compnz_test()
-    ksub_unrank_test()
-
-    moebius_values_test()
 
     monomial_count_test()
     monomial_counts_test()
@@ -447,8 +452,6 @@ def subset_test():
     perm1_index_to_cycle_test()
     perm1_print_test()
 
-    perrin_test()
-
     pord_check_test()
 
     power_mod_test()
@@ -465,7 +468,6 @@ def subset_test():
     rat_farey2_test()
     rat_mul_test()
     rat_normalize_test()
-    rat_to_cfrac_test()
     rat_to_dec_test()
     rat_to_r8_test()
     rat_to_s_test()
@@ -474,19 +476,6 @@ def subset_test():
     regro_next_test()
 
     sort_heap_external_test()
-
-    subcomp_next_test()
-    subcompnz_next_test()
-    subcompnz2_next_test()
-
-    subset_by_size_next_test()
-    subset_gray_next_test()
-    subset_gray_rank_test()
-    subset_gray_unrank_test()
-    subset_lex_next_test()
-    subset_random_test()
-
-    subtriangle_next_test()
 
     thue_binary_next_test()
     thue_ternary_next_test()
@@ -497,6 +486,7 @@ def subset_test():
     tuple_next_ge_test()
 
     triang_test()
+    subtriangle_next_test()
 
     ubvec_print_test()
     ubvec_add_test()
