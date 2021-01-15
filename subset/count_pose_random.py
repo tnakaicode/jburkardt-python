@@ -143,9 +143,6 @@ def count_pose_random_test():
         for j in range(0, 6):
             print('  %4d' % (blocks[j]), end='')
         print('')
-#
-#  Terminate.
-#
     print('')
     print('COUNT_POSE_RANDOM_TEST:')
     print('  Normal end of execution.')
@@ -153,7 +150,6 @@ def count_pose_random_test():
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     count_pose_random_test()
     timestamp()

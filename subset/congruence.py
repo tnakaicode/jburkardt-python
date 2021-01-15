@@ -76,15 +76,17 @@ def congruence(a, b, c):
     c = np.floor(c)
 
     nmax = 100
-#
-#  Defaults for output parameters.
-#
+    
+    #
+    #  Defaults for output parameters.
+    #
     ierror = 0
     x = 0
     y = 0
-#
-#  Special cases.
-#
+    
+    #
+    #  Special cases.
+    #
     if (a == 0 and b == 0 and c == 0):
         x = 0
         return x, ierror
@@ -113,11 +115,12 @@ def congruence(a, b, c):
         #   x = floor ( b / g )
         x = 0
         return x, ierror
-#
-#  Now handle the "general" case: A, B and C are nonzero.
-#
-#  Step 1: Compute the GCD of A and B, which must also divide C.
-#
+    
+    #
+    #  Now handle the "general" case: A, B and C are nonzero.
+    #
+    #  Step 1: Compute the GCD of A and B, which must also divide C.
+    #
     g = i4_gcd(a, b)
 
     if ((c % g) != 0):
@@ -127,25 +130,28 @@ def congruence(a, b, c):
     a_copy = (a // g)
     b_copy = (b // g)
     c_copy = (c // g)
-#
-#  Step 2: Split A and B into sign and magnitude.
-#
+    
+    #
+    #  Step 2: Split A and B into sign and magnitude.
+    #
     a_mag = abs(a_copy)
     a_sign = i4_sign(a_copy)
     b_mag = abs(b_copy)
     b_sign = i4_sign(b_copy)
-#
-#  Another special case, A_MAG = 1 or B_MAG = 1.
-#
+    
+    #
+    #  Another special case, A_MAG = 1 or B_MAG = 1.
+    #
     if (a_mag == 1):
         x = a_sign * c_copy
         return x, ierror
     elif (b_mag == 1):
         x = 0
         return x, ierror
-#
-#  Step 3: Produce the Euclidean remainder sequence.
-#
+    
+    #
+    #  Step 3: Produce the Euclidean remainder sequence.
+    #
     q = np.zeros(nmax)
 
     if (b_mag <= a_mag):
@@ -174,35 +180,41 @@ def congruence(a, b, c):
             print('CONGRUENCE - Fatal error!')
             print('  Exceeded number of iterations.')
             exit('CONGRUENCE - Fatal error!')
-#
-#  Step 4: Now go backwards to solve X * A_MAG + Y * B_MAG = 1.
-#
+    
+    #
+    #  Step 4: Now go backwards to solve X * A_MAG + Y * B_MAG = 1.
+    #
     y = 0
     for k in range(n, 0, -1):
         x = y
         y = (1 - x * q[k - 1]) / q[k]
-#
-#  Step 5: Undo the swapping.
-#
+    
+    #
+    #  Step 5: Undo the swapping.
+    #
     if (swap):
         z = x
         x = y
         y = z
-#
-#  Step 6: Now apply signs to X and Y so that X * A + Y * B = 1.
-#
+    
+    #
+    #  Step 6: Now apply signs to X and Y so that X * A + Y * B = 1.
+    #
     x = x * a_sign
-#
-#  Step 7: Multiply by C, so that X * A + Y * B = C.
-#
+    
+    #
+    #  Step 7: Multiply by C, so that X * A + Y * B = C.
+    #
     x = x * c_copy
-#
-#  Step 8: Now force 0 <= X < B.
-#
+    
+    #
+    #  Step 8: Now force 0 <= X < B.
+    #
     x = (x % b)
-#
-#  Step 9: Force positivity.
-#
+    
+    #
+    #  Step 9: Force positivity.
+    #
     if (x < 0):
         x = x + b
 
@@ -269,9 +281,6 @@ def congruence_test():
             result = 0
 
         print('  %2d  %8d  %8d  %8d  %8d  %8d' % (test_i, a, b, c, x, result))
-#
-#  Terminate.
-#
     print('')
     print('CONGRUENCE_TEST')
     print('  Normal end of execution.')
@@ -279,7 +288,6 @@ def congruence_test():
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     congruence_test()
     timestamp()

@@ -102,9 +102,9 @@ def digraph_arc_euler(nnode, nedge, inode, jnode):
     #    edge in the Euler circuit.
     #
 
-#
-#  Check if the digraph is eulerian.
-#
+    #
+    #  Check if the digraph is eulerian.
+    #
     trail = np.zeros(nedge, dtype=np.int32)
     endnod = np.zeros(nedge, dtype=np.int32)
 
@@ -118,15 +118,17 @@ def digraph_arc_euler(nnode, nedge, inode, jnode):
         if (trail[i - 1] != endnod[i - 1]):
             success = False
             return success, trail
-#
-#  The digraph is eulerian find an Euler circuit.
-#
+
+    #
+    #  The digraph is eulerian find an Euler circuit.
+    #
     success = 1
     lensol = 1
     lenstk = 0
-#
-#  Find the next edge.
-#
+
+    #
+    #  Find the next edge.
+    #
     stacks = np.zeros(2 * nedge, dtype=np.int32)
     candid = np.zeros(nedge, dtype=np.int32)
 
@@ -260,17 +262,94 @@ def digraph_arc_euler_test():
         print('')
         print('  The digraph is not eulerian.')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('DIGRAPH_ARC_EULER_TEST:')
     print('  Normal end of execution.')
     return
 
 
+def digraph_arc_print(nedge, inode, jnode, title):
+
+    # *****************************************************************************80
+    #
+    # DIGRAPH_ARC_PRINT prints out a digraph from an edge list.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    29 May 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer NEDGE, the number of edges.
+    #
+    #    Input, integer INODE(NEDGE), JNODE(NEDGE), the beginning and end
+    #    nodes of the edges.
+    #
+    #    Input, character ( len = * ) TITLE, a title.
+    #
+    if (0 < len(title)):
+        print('')
+        print(title)
+
+    print('')
+
+    for i in range(0, nedge):
+        print('  %4d    %4d  %4d' % (i, inode[i], jnode[i]))
+
+    return
+
+
+def digraph_arc_print_test():
+
+    # *****************************************************************************80
+    #
+    # DIGRAPH_ARC_PRINT_TEST calls DIGRAPH_ARC_PRINT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    29 May 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import numpy as np
+    import platform
+
+    nedge = 7
+    nnode = 5
+
+    inode = np.array([2, 1, 2, 1, 3, 5, 4])
+    jnode = np.array([5, 4, 3, 2, 1, 1, 2])
+
+    print('')
+    print('DIGRAPH_ARC_PRINT_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  DIGRAPH_ARC_PRINT prints a digraph.')
+
+    digraph_arc_print(nedge, inode, jnode, '  The arc list of the digraph:')
+
+    print('')
+    print('DIGRAPH_ARC_PRINT_TEST')
+    print('  Normal end of execution.')
+    return
+
+
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
+    digraph_arc_print_test()
     digraph_arc_euler_test()
     timestamp()

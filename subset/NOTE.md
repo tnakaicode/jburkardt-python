@@ -2,143 +2,179 @@
 title: subset
 ---
 
-## agm_values.py
+## 1. agm_values.py
 
-## asm_enum.py
+## 2. asm_enum.py
 
-## bell.py
+## 3. bell.py
 
-## catalan.py
+## 4. catalan.py
 
-## cfrac_to_rat.py
+## 5. frac
 
-## change_greedy.py
+- a monic continued fraction to an ordinary fraction.
+- a polynomial fraction from continued to rational form.
+- a J-fraction into a rational polynomial fraction.
+- a rational value to a continued fraction.
+- a rational polynomial fraction to a continued fraction.
+- a rational polynomial fraction to a J-fraction.
 
-## chinese_check.py
+```bash
+cfrac_to_rat.py
+cfrac_to_rfrac.py
+jfrac_to_rfrac.py
+rat_to_cfrac.py
+rfrac_to_cfrac.py
+rfrac_to_jfrac.py
+```
 
-## ch_to_digit.py
+## 6. change_greedy.py
 
-## comb_next.py
+## 7. chinese_check.py
 
-## compnz_enum.py
+## 8. ch_to_digit.py
 
-## comp_enum.py
+## 9. comb
 
-## congruence.py
+## 10. comp
 
-## count_pose_random.py
+### 10.1. comp_enum.py
 
-## debruijn.py
+### 10.2. compnz_enum.py
 
-## dec_add.py
+## 11. congruence.py
 
-## derange0_back_next.py
+## 12. count_pose_random.py
 
-## derange_enum.py
+## 13. debruijn.py
 
-## digit_to_ch.py
+## 14. dec_add.py
 
-## digraph_arc_euler.py
+## 15. derange0_back_next.py
 
-## diophantine.py
+## 16. derange_enum.py
 
-## dvec_add.py
+## 17. digit_to_ch.py
 
-## equiv0_next.py
+## 18. digraph_arc_euler.py
 
-## equiv1_next.py
+## 19. diophantine.py
 
-## equiv_print.py
+## 20. dvec
 
-## euler_row.py
+## 21. equiv
 
-## frobenius_number_order2.py
+### 21.1. equiv0_next.py
 
-## gamma_log_values.py
+### 21.2. equiv1_next.py
 
-## gray_next.py
+### 21.3. equiv_print.py
 
-## index_box_next_3d.py
+## 22. euler_row.py
 
-## index_next0.py
+## 23. frobenius_number_order2.py
 
-## index_rank0.py
+## 24. gamma_log_values.py
 
-## index_unrank0.py
+## 25. gray_next.py
 
-## inverse_mod_n.py
+## 26. index
 
-## involute_enum.py
+### 26.1. index_box_next_3d.py
 
-## jfrac_to_rfrac.py
+### 26.2. index_next0.py
 
-## josephus.py
+### 26.3. index_rank0.py
 
-## ksub_next.py
+### 26.4. index_unrank0.py
 
-## l4vec_next.py
+## 27. inverse_mod_n.py
 
-## moebius_values.py
+## 28. involute_enum.py
 
-## monomial_count.py
+## 30. josephus.py
 
-## morse_thue.py
+## 31. ksub_next.py
 
-## multinomial_coef1.py
+## 32. l4vec_next.py
 
-## multiperm_enum.py
+## 33. moebius_values.py
 
-## nim_sum.py
+## 34. monomial_count.py
 
-## padovan.py
+## 35. morse_thue.py
 
-## pell_basic.py
+## 36. multinomial
 
-## pent_enum.py
+## 37. nim_sum.py
 
-## perm0_break_count.py
+## 38. padovan.py
 
-## perm1_canon_to_cycle.py
+## 39. pell_basic.py
 
-## perm_ascend.py
+## 40. pent_enum.py
 
-## perrin.py
+## 41. perm
 
-## pord_check.py
+### 41.1. perm0_break_count.py
 
-## power_mod.py
+### 41.2. perm1_canon_to_cycle.py
 
-## prime.py
+### 41.3. perm_ascend.py
 
-## pythag_triple_next.py
+### 41.4. multiperm_enum.py
 
-## rat_add.py
+## 42. perrin.py
 
-## regro_next.py
+## 43. pord_check.py
 
-## rfrac_to_cfrac.py
+## 44. power_mod.py
 
-## schroeder.py
+## 45. prime.py
 
-## sort_heap_external
+## 46. pythag_triple_next.py
 
-## subcomp
+## 47. rat Rational
 
-## subset
+```bash
+-a----        2021/01/12     20:59           3903 cfrac_to_rat.py
+-a----        2021/01/13     21:48           6732 dec_to_rat.py
+-a----        2021/01/13     23:15           4696 rat_add.py
+-a----        2021/01/13     23:16           4541 rat_div.py
+-a----        2020/06/06     21:26           3255 rat_farey.py
+-a----        2020/06/06     21:26           2965 rat_farey2.py
+-a----        2021/01/13     23:18           3779 rat_mul.py
+-a----        2021/01/13     23:19           3389 rat_normalize.py
+-a----        2021/01/13     23:22           7138 rat_to_cfrac.py
+-a----        2021/01/13     21:46           4035 rat_to_dec.py
+-a----        2021/01/13     23:26           5227 rat_to_r8.py
+-a----        2020/06/06     21:26           2270 rat_to_s.py
+-a----        2020/06/06     21:26           2298 rat_width.py
+```
 
-## subtriangle_next.py
+## 48. regro_next.py
 
-## thue_binary_next.py
+## 50. schroeder.py
 
-## triang.py
+## 51. sort_heap_external
 
-## tuple_next.py
+## 52. subcomp
 
-## ubvec
+## 53. subset
 
-## vector
+## 54. subtriangle_next.py
 
-## vec
+## 55. thue_binary_next.py
+
+## 56. triang.py
+
+## 57. tuple_next.py
+
+## 58. ubvec
+
+## 59. vector
+
+## 60. vec
 
 vec_colex colexical order
 
@@ -172,4 +208,4 @@ vec_lex lexical order
  (BASE-1,BASE-1,...,BASE-1).
 ```
 
-## ytb Young tableaus
+## 61. ytb Young tableaus

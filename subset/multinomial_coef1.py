@@ -65,8 +65,6 @@ def multinomial_coef1(nfactor, factor):
     #    Output, integer NCOMB, the value of the multinomial coefficient.
     #
 
-    # from math import lgamma
-
     #
     #  Each factor must be nonnegative.
     #
@@ -78,23 +76,22 @@ def multinomial_coef1(nfactor, factor):
             print('  Factor %d = %d' % (i, factor[i]))
             print('  But this value must be nonnegative.')
             exit('MULTINOMIAL_COEF1 - Fatal error!')
-#
-#  The factors sum to N.
-#
+    
+    #
+    #  The factors sum to N.
+    #
     n = i4vec_sum(nfactor, factor)
-
     arg = float(n + 1)
-#
-#  Our obsolete version of Python doesn't have LGAMMA yet!
-#
+    
+    #
+    #  Our obsolete version of Python doesn't have LGAMMA yet!
+    #
     facn = np.log(r8_gamma(arg))
-# facn = lgamma ( arg )
 
     for i in range(0, nfactor):
 
         arg = float(factor[i] + 1)
         fack = np.log(r8_gamma(arg))
-#   fack = lgamma ( arg )
         facn = facn - fack
 
     ncomb = int(round(np.exp(facn)))
@@ -168,9 +165,7 @@ def multinomial_coef1_test():
 
             print('  %2d  %2d  %2d   %3d' %
                   (factor[0], factor[1], factor[2], ncomb))
-#
-#  Terminate.
-#
+
     print('')
     print('MULTINOMIAL_COEF1_TEST:')
     print('  Normal end of execution.')

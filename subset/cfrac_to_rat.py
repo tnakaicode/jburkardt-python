@@ -140,9 +140,6 @@ def cfrac_to_rat_test():
 
     for i in range(0, n):
         print('  %3d  %6d  %6d  %14f' % (i, p[i], q[i], p[i] / q[i]))
-#
-#  Terminate.
-#
     print('')
     print('CFRAC_TO_RAT_TEST')
     print('  Normal end of execution.')
@@ -150,7 +147,6 @@ def cfrac_to_rat_test():
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     cfrac_to_rat_test()
     timestamp()
