@@ -22,7 +22,6 @@ from r8lib.r8mat_print import r8mat_print, r8mat_print_some
 from r8lib.r8mat_write import r8mat_write
 
 from i4lib.i4vec_reverse import i4vec_reverse
-from subset.digraph_arc_print import digraph_arc_print
 
 
 def digraph_arc_euler(nnode, nedge, inode, jnode):

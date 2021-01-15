@@ -20,8 +20,8 @@ from i4lib.i4mat_print import i4mat_print, i4mat_print_some
 from r8lib.r8vec_print import r8vec_print
 from r8lib.r8mat_print import r8mat_print, r8mat_print_some
 from r8lib.r8mat_write import r8mat_write
-
 from i4lib.i4vec_uniform_ab import i4vec_uniform_ab
+
 
 def sort_heap_external(n, indx, isgn, i1, j1, k0, k1, n1):
 
@@ -103,9 +103,10 @@ def sort_heap_external(n, indx, isgn, i1, j1, k0, k1, n1):
         k0 = (n // 2)
         k1 = (n // 2)
         n1 = n
-#
-#  INDX < 0: The user is returning the results of a comparison.
-#
+
+    #
+    #  INDX < 0: The user is returning the results of a comparison.
+    #
     elif (indx < 0):
 
         if (indx == -2):
@@ -144,9 +145,10 @@ def sort_heap_external(n, indx, isgn, i1, j1, k0, k1, n1):
 
         k0 = k0 - 1
         k1 = k0
-#
-#  0 < INDX, the user was asked to make an interchange.
-#
+
+    #
+    #  0 < INDX, the user was asked to make an interchange.
+    #
     elif (indx == 1):
 
         k1 = k0
@@ -249,17 +251,13 @@ def sort_heap_external_test():
             break
 
     i4vec_print(n, a, '  Sorted array:')
-#
-#  Terminate.
-#
+
     print('')
     print('SORT_HEAP_EXTERNAL_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     sort_heap_external_test()
     timestamp()

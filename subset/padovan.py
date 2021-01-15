@@ -130,11 +130,8 @@ def padovan_test():
     print('  PADOVAN computes the Padovan numbers.')
 
     p = padovan(n)
-
     i4vec_print(n, p, '  Initial Padovan sequence:')
-#
-#  Terminate.
-#
+
     print('')
     print('PADOVAN_TEST:')
     print('  Normal end of execution.')
@@ -142,7 +139,6 @@ def padovan_test():
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     padovan_test()
     timestamp()

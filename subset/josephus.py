@@ -106,15 +106,14 @@ def josephus(n, m, k):
         print('JOSEPHUS - Fatal error!')
         print('  J <= 0 or N < K.')
         exit('JOSEPHUS - Fatal error!')
-#
-#  In case M is bigger than N, or negative, get the
-#  equivalent positive value between 1 and N.
-#  You can skip this operation if 1 <= M <= N.
-#
+    
+    #
+    #  In case M is bigger than N, or negative, get the
+    #  equivalent positive value between 1 and N.
+    #  You can skip this operation if 1 <= M <= N.
+    #
     m2 = i4_modp(m, n)
-
     x = k * m2
-
     while (n < x):
         x = ((m2 * (x - n) - 1) // (m2 - 1))
 
@@ -181,9 +180,6 @@ def josephus_test():
     x = josephus(n, m, k)
 
     print('  %4d  %4d  %4d  %4d' % (n, m, k, x))
-#
-#  Terminate.
-#
     print('')
     print('JOSEPHUS_TEST')
     print('  Normal end of execution.')
@@ -191,7 +187,6 @@ def josephus_test():
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     josephus_test()
     timestamp()

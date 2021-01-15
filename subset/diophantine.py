@@ -23,7 +23,6 @@ from r8lib.r8mat_write import r8mat_write
 
 from i4lib.i4_gcd import i4_gcd
 from i4lib.i4_sign import i4_sign
-from subset.diophantine_solution_minimize import diophantine_solution_minimize
 
 
 def diophantine(a, b, c):

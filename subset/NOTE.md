@@ -38,9 +38,11 @@ rfrac_to_jfrac.py
 
 ## 10. comp
 
-### 10.1. comp_enum.py
+### 10.1. subcomp
 
-### 10.2. compnz_enum.py
+### 10.2. comp_enum.py
+
+### 10.3. compnz_enum.py
 
 ## 11. congruence.py
 
@@ -92,49 +94,49 @@ rfrac_to_jfrac.py
 
 ## 28. involute_enum.py
 
-## 30. josephus.py
+## 29. josephus.py
 
-## 31. ksub_next.py
+## 30. ksub_next.py
 
-## 32. l4vec_next.py
+## 31. l4vec_next.py
 
-## 33. moebius_values.py
+## 32. moebius_values.py
 
-## 34. monomial_count.py
+## 33. monomial_count.py
 
-## 35. morse_thue.py
+## 34. morse_thue.py
 
-## 36. multinomial
+## 35. multinomial
 
-## 37. nim_sum.py
+## 36. nim_sum.py
 
-## 38. padovan.py
+## 37. padovan.py
 
-## 39. pell_basic.py
+## 38. pell_basic.py
 
-## 40. pent_enum.py
+## 39. pent_enum.py
 
-## 41. perm
+## 40. perm
 
-### 41.1. perm0_break_count.py
+### 40.1. perm0_break_count.py
 
-### 41.2. perm1_canon_to_cycle.py
+### 40.2. perm1_canon_to_cycle.py
 
-### 41.3. perm_ascend.py
+### 40.3. perm_ascend.py
 
-### 41.4. multiperm_enum.py
+### 40.4. multiperm_enum.py
 
-## 42. perrin.py
+## 41. perrin.py
 
-## 43. pord_check.py
+## 42. pord_check.py
 
-## 44. power_mod.py
+## 43. power_mod.py
 
-## 45. prime.py
+## 44. prime.py
 
-## 46. pythag_triple_next.py
+## 45. pythag_triple_next.py
 
-## 47. rat Rational
+## 46. rat Rational
 
 ```bash
 -a----        2021/01/12     20:59           3903 cfrac_to_rat.py
@@ -152,29 +154,27 @@ rfrac_to_jfrac.py
 -a----        2020/06/06     21:26           2298 rat_width.py
 ```
 
-## 48. regro_next.py
+## 47. regro_next.py
 
-## 50. schroeder.py
+## 48. schroeder.py
 
-## 51. sort_heap_external
+## 49. sort_heap_external
 
-## 52. subcomp
+## 50. subset
 
-## 53. subset
+## 51. thue_binary_next.py
 
-## 54. subtriangle_next.py
+## 52. triang.py
 
-## 55. thue_binary_next.py
+### 52.1. subtriangle_next.py
 
-## 56. triang.py
+## 53. tuple_next.py
 
-## 57. tuple_next.py
+## 54. ubvec
 
-## 58. ubvec
+## 55. vector
 
-## 59. vector
-
-## 60. vec
+## 56. vec
 
 vec_colex colexical order
 
@@ -208,4 +208,4 @@ vec_lex lexical order
  (BASE-1,BASE-1,...,BASE-1).
 ```
 
-## 61. ytb Young tableaus
+## 57. ytb Young tableaus
