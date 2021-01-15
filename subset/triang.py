@@ -196,23 +196,17 @@ def triang_test():
     i4mat_print(n, n, a, '  The input matrix:')
 
     p = triang(n, a)
-
     perm0_print(n, p, '  The new ordering:')
 
     a = i4mat_2perm0(n, n, a, p, p)
-
     i4mat_print(n, n, a, '  The reordered matrix:')
-#
-#  Terminate.
-#
+
     print('')
     print('TRIANG_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     triang_test()
     timestamp()

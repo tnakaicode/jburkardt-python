@@ -29,8 +29,7 @@ from subset.bell_values import bell_values_test
 from subset.catalan import catalan_test
 from subset.catalan_row_next import catalan_row_next_test
 from subset.catalan_values import catalan_values_test
-from subset.cfrac_to_rat import cfrac_to_rat_test
-from subset.cfrac_to_rfrac import cfrac_to_rfrac_test
+from subset.cfrac import cfrac_to_rat_test, cfrac_to_rfrac_test, jfrac_to_rfrac_test, rat_to_cfrac_test, rfrac_to_cfrac_test, rfrac_to_jfrac_test
 from subset.ch_to_digit import ch_to_digit_test
 from subset.change_greedy import change_greedy_test
 from subset.change_next import change_next_test
@@ -265,8 +264,25 @@ def subset_test():
     catalan_row_next_test()
     catalan_values_test()
 
+    # cfrac
     cfrac_to_rat_test()
-
+    cfrac_to_rfrac_test()
+    jfrac_to_rfrac_test()
+    rat_to_cfrac_test()
+    rfrac_to_cfrac_test()
+    rfrac_to_jfrac_test()
+    
+    # function
+    debruijn_test()
+    diophantine_test()
+    diophantine_solution_minimize_test()
+    frobenius_number_order2_values_test()
+    frobenius_number_order2_test()
+    josephus_test()
+    morse_thue_test()
+    padovan_test()
+    schroeder_test()
+    
     ch_to_digit_test()
 
     change_greedy_test()
@@ -365,10 +381,7 @@ def subset_test():
     index_unrank2_test()
 
     inverse_mod_n_test()
-
     involute_enum_test()
-
-    josephus_test()
 
     ksub_next_test()
     ksub_next2_test()
@@ -389,8 +402,6 @@ def subset_test():
     monomial_count_test()
     monomial_counts_test()
 
-    morse_thue_test()
-
     multinomial_coef1_test()
     multinomial_coef2_test()
 
@@ -398,8 +409,6 @@ def subset_test():
     multiperm_next_test()
 
     nim_sum_test()
-
-    padovan_test()
 
     pell_basic_test()
     pell_next_test()
@@ -463,11 +472,6 @@ def subset_test():
     rat_width_test()
 
     regro_next_test()
-
-    rfrac_to_cfrac_test()
-    rfrac_to_jfrac_test()
-
-    schroeder_test()
 
     sort_heap_external_test()
 

@@ -113,13 +113,9 @@ def ubvec_to_ui4_test():
         for j in range(0, n):
             print('%1d' % (ubvec[j])),
         print('  %2d' % (i2))
-#
-#  Terminate.
-#
     print('')
     print('UBVEC_TO_UI4_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ui4_to_ubvec(ui4, n):
@@ -168,7 +164,6 @@ def ui4_to_ubvec(ui4, n):
     #
     #    Output, integer BVEC(N), the unsigned binary representation.
     #
-    import numpy as np
 
     ubvec = np.zeros(n)
 
@@ -216,17 +211,13 @@ def ui4_to_ubvec_test():
         for i in range(0, n):
             print('%1d' % (bvec[i])),
         print('  %2d' % (i2))
-#
-#  Terminate.
-#
+
     print('')
     print('UI4_TO_UBVEC_TEST')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     ubvec_to_ui4_test()
     timestamp()
