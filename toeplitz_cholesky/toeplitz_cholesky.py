@@ -1,265 +1,25 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-def r8mat_print(m, n, a, title):
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT prints an R8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the number of rows in A.
-    #
-    #    Input, integer N, the number of columns in A.
-    #
-    #    Input, real A(M,N), the matrix.
-    #
-    #    Input, string TITLE, a title.
-    #
-    r8mat_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
-
-    return
-
-
-def r8mat_print_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_TEST tests R8MAT_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    10 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_PRINT prints an R8MAT.')
-
-    m = 4
-    n = 6
-    v = np.array([
-        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
-        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
-        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
-        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
-    r8mat_print(m, n, v, '  Here is an R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_SOME prints out a portion of an R8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    10 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns of the matrix.
-    #
-    #    Input, real A(M,N), an M by N matrix to be printed.
-    #
-    #    Input, integer ILO, JLO, the first row and column to print.
-    #
-    #    Input, integer IHI, JHI, the last row and column to print.
-    #
-    #    Input, string TITLE, a title.
-    #
-    incx = 5
-
-    print('')
-    print(title)
-
-    if (m <= 0 or n <= 0):
-        print('')
-        print('  (None)')
-        return
-
-    for j2lo in range(max(jlo, 0), min(jhi + 1, n), incx):
-
-        j2hi = j2lo + incx - 1
-        j2hi = min(j2hi, n)
-        j2hi = min(j2hi, jhi)
-
-        print('')
-        print('  Col: '),
-
-        for j in range(j2lo, j2hi + 1):
-            print('%7d       ' % (j)),
-
-        print('')
-        print('  Row')
-
-        i2lo = max(ilo, 0)
-        i2hi = min(ihi, m)
-
-        for i in range(i2lo, i2hi + 1):
-
-            print('%7d :' % (i)),
-
-            for j in range(j2lo, j2hi + 1):
-                print('%12g  ' % (a[i, j])),
-
-            print('')
-
-    return
-
-
-def r8mat_print_some_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_SOME_TEST tests R8MAT_PRINT_SOME.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_PRINT_SOME_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_PRINT_SOME prints some of an R8MAT.')
-
-    m = 4
-    n = 6
-    v = np.array([
-        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
-        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
-        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
-        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
-    r8mat_print_some(m, n, v, 0, 3, 2, 5, '  Here is an R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_PRINT_SOME_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def r8vec_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT prints an R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the dimension of the vector.
-    #
-    #    Input, real A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('%6d:  %12g' % (i, a[i]))
-
-
-def r8vec_print_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT_TEST tests R8VEC_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8VEC_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_PRINT prints an R8VEC.')
-
-    n = 4
-    v = np.array([123.456, 0.000005, -1.0E+06, 3.14159265], dtype=np.float64)
-    r8vec_print(n, v, '  Here is an R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
 
 
 def t_cholesky_lower(n, t):
@@ -495,76 +255,6 @@ def t_cholesky_upper_test():
     b = np.dot(r.transpose(), r)
     r8mat_print(n, n, b, '  Product R\'R:')
 
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
     return
 
 
@@ -1054,7 +744,6 @@ def toeplitz_cholesky_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('TOEPLITZ_CHOLESKY_TEST:')
@@ -1068,9 +757,7 @@ def toeplitz_cholesky_test():
     t_cholesky_upper_test()
     toep_cholesky_upper_test()
     toeplitz_cholesky_upper_test()
-#
-#  Terminate.
-#
+
     print('')
     print('TOEPLITZ_CHOLESKY_TEST:')
     print('  Normal end of execution.')
