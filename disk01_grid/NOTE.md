@@ -1,4 +1,18 @@
-# disk01_quarter_monte_carlo
+---
+title: disk01
+---
+
+## monte_carlo
+
+Monte Carlo method to estimate the integral of a function over the interior of a disk in 2D.
+
+monomial value
+$$ \prod_{1< i < m} x(i)^{e(i)} $$
+
+monomial integral
+$$ F(X,Y) = X^{E(1)} Y^{E(2)} $$
+
+## quarter_monte_carlo
 
 disk01_quater
 ![pic](disk01.png)
