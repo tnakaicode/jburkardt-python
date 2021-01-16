@@ -1,6 +1,28 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print, r8vec_print_some
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+
+obj = plot2d()
+
 
 def ball_distance_compare(n):
 
@@ -24,33 +46,28 @@ def ball_distance_compare(n):
     #
     #    Input, integer N, the number of samples to use.
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     t = np.zeros(n)
+    d = np.linspace(0.0, 2.0, 101)
 
     for i in range(0, n):
         p = ball_unit_sample()
         q = ball_unit_sample()
         t[i] = np.linalg.norm(p - q)
 
-    plt.hist(t, bins=20, rwidth=0.95, density=True)
-
-    d = np.linspace(0.0, 2.0, 101)
-    pdf = (3.0 / 16.0) * (d - 2.0)**2 * d**2 * (d + 4.0)
-    plt.plot(d, pdf, 'r-', linewidth=2)
-
-    plt.grid(True)
-    plt.xlabel('<-- Distance -->')
-    plt.ylabel('<-- Relative frequency -->')
-    plt.title('Compare observed and theoretical PDFs')
+    obj.new_2Dfig(aspect="auto")
     filename = 'ball_distance_compare.png'
-    plt.savefig(filename)
-    print('  Graphics saved as "%s"' % (filename))
-    plt.show()
-    plt.clf()
+    obj.axs.hist(t, bins=20, rwidth=0.95, density=True)
 
-    return
+    pdf = (3.0 / 16.0) * (d - 2.0)**2 * d**2 * (d + 4.0)
+    obj.axs.plot(d, pdf, 'r-', linewidth=2)
+
+    obj.axs.set_xlabel('<-- Distance -->')
+    obj.axs.set_ylabel('<-- Relative frequency -->')
+    obj.axs.set_title('Compare observed and theoretical PDFs')
+    obj.SavePng(filename)
+    plt.clf()
+    print('  Graphics saved as "%s"' % (filename))
 
 
 def ball_distance_histogram(n):
@@ -75,8 +92,6 @@ def ball_distance_histogram(n):
     #
     #    Input, integer N, the number of samples to use.
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     t = np.zeros(n)
 
@@ -85,18 +100,16 @@ def ball_distance_histogram(n):
         q = ball_unit_sample()
         t[i] = np.linalg.norm(p - q)
 
-    plt.hist(t, bins=20, rwidth=0.95, density=True)
-    plt.grid(True)
-    plt.xlabel('<-- Distance -->')
-    plt.ylabel('<-- Frequency -->')
-    plt.title('Distance between a pair of random points in a unit ball')
+    obj.new_2Dfig(aspect="auto")
     filename = 'ball_distance_histogram.png'
-    plt.savefig(filename)
-    print('  Graphics saved as "%s"' % (filename))
-    plt.show()
+    obj.axs.hist(t, bins=20, rwidth=0.95, density=True)
+    obj.axs.set_xlabel('<-- Distance -->')
+    obj.axs.set_ylabel('<-- Frequency -->')
+    obj.axs.set_title(
+        'Distance between a pair of random points in a unit ball')
+    obj.SavePng(filename)
     plt.clf()
-
-    return
+    print('  Graphics saved as "%s"' % (filename))
 
 
 def ball_distance_pdf():
@@ -117,25 +130,20 @@ def ball_distance_pdf():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     d = np.linspace(0.0, 2.0, 101)
-
     pdf = (3.0 / 16.0) * (d - 2.0)**2 * d**2 * (d + 4.0)
 
-    plt.plot(d, pdf, 'r-', linewidth=2)
-    plt.grid(True)
-    plt.xlabel('<-- Distance -->')
-    plt.ylabel('<-- Probability -->')
-    plt.title('PDF for distance between pairs of random points in unit ball')
+    obj.new_2Dfig(aspect="auto")
     filename = 'ball_distance_pdf.png'
-    plt.savefig(filename)
-    print('  Graphics saved as "%s"' % (filename))
-    plt.show()
+    obj.axs.plot(d, pdf, 'r-', linewidth=2)
+    obj.axs.set_xlabel('<-- Distance -->')
+    obj.axs.set_ylabel('<-- Probability -->')
+    obj.axs.set_title(
+        'PDF for distance between pairs of random points in unit ball')
+    obj.SavePng(filename)
     plt.clf()
-
-    return
+    print('  Graphics saved as "%s"' % (filename))
 
 
 def ball_distance_stats(n):
@@ -163,7 +171,6 @@ def ball_distance_stats(n):
     #    Output, real MU, VAR, the estimated mean and variance of the
     #    distance between two random points in the unit ball.
     #
-    import numpy as np
 
     t = np.zeros(n)
     for i in range(0, n):
@@ -205,7 +212,6 @@ def ball_distance_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('ball_distance_test:')
@@ -217,19 +223,14 @@ def ball_distance_test():
 
     n = 10000
     ball_distance_histogram(n)
-
     ball_distance_pdf()
 
     n = 10000
     ball_distance_compare(n)
-#
-#  Terminate.
-#
+
     print('')
     print('ball_distance_test:')
     print('  Normal end of execution.')
-
-    return
 
 
 def ball_unit_sample():
@@ -267,51 +268,21 @@ def ball_unit_sample():
     #
     #    Output, real X(3), the point.
     #
-    import numpy as np
 
     x = np.random.randn(3)
-#
-#  Normalize the vector.
-#
-    x = x / np.linalg.norm(x)
-#
-#  Now compute a value to map the point ON the sphere INTO the sphere.
-#
-    r = np.random.rand(1)
 
+    #
+    #  Normalize the vector.
+    #
+    x = x / np.linalg.norm(x)
+
+    #
+    #  Now compute a value to map the point ON the sphere INTO the sphere.
+    #
+    r = np.random.rand(1)
     x = r ** (1.0 / 3.0) * x
 
     return x
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # timestamp prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):

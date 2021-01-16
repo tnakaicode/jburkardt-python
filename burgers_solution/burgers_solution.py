@@ -15,6 +15,17 @@ sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
 
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print, r8vec_print_some
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8_epsilon import r8_epsilon
+from r8lib.r8_gamma import r8_gamma
+from r8lib.r8_sign import r8_sign
+
+obj = plot2d()
+
 
 def burgers_solution_test():
 
@@ -143,6 +154,11 @@ def burgers_viscous_time_exact1(nu, vxn, vx, vtn, vt):
 
                     vu[vxi, vti] = top / bot
 
+    obj.new_2Dfig()
+    obj.axs.imshow(vu, cmap="jet")
+    obj.SavePng_Serial(obj.tmpdir + "burgers_viscous_time_exact1.png")
+    plt.clf()
+
     return vu
 
 
@@ -165,8 +181,8 @@ def burgers_viscous_time_exact1_test01():
     #    John Burkardt
     #
 
-    vtn = 11
-    vxn = 11
+    vtn = 51
+    vxn = 51
     nu = 0.01 / np.pi
 
     print('')
@@ -221,8 +237,8 @@ def burgers_viscous_time_exact1_test02():
     #    John Burkardt
     #
 
-    vtn = 41
-    vxn = 41
+    vtn = 101
+    vxn = 101
     nu = 0.01 / np.pi
 
     print('')
@@ -338,6 +354,11 @@ def burgers_viscous_time_exact2(nu, xn, x, tn, t):
                    - 2.0 * b * np.exp(- b * b / c) / c
             u[i, j] = 4.0 - 2.0 * nu * dphi / phi
 
+    obj.new_2Dfig()
+    obj.axs.imshow(u, cmap="jet")
+    obj.SavePng_Serial(obj.tmpdir + "burgers_viscous_time_exact2.png")
+    plt.clf()
+
     return u
 
 
@@ -360,8 +381,8 @@ def burgers_viscous_time_exact2_test01():
     #    John Burkardt
     #
 
-    vtn = 11
-    vxn = 11
+    vtn = 51
+    vxn = 51
     nu = 0.5
 
     print('')
@@ -416,8 +437,8 @@ def burgers_viscous_time_exact2_test02():
     #    John Burkardt
     #
 
-    vtn = 41
-    vxn = 41
+    vtn = 101
+    vxn = 101
     nu = 0.5
 
     print('')
@@ -693,457 +714,6 @@ def imtqlx(n, d, e, z):
             qtz[k - 1] = p
 
     return lam, qtz
-
-
-def r8_epsilon():
-
-    # *****************************************************************************80
-    #
-    # R8_EPSILON returns the R8 roundoff unit.
-    #
-    #  Discussion:
-    #
-    #    The roundoff unit is a number R which is a power of 2 with the
-    #    property that, to the precision of the computer's arithmetic,
-    #      1 < 1 + R
-    #    but
-    #      1 = ( 1 + R / 2 )
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 June 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Output, real VALUE, the roundoff unit.
-    #
-    value = 2.220446049250313E-016
-
-    return value
-
-
-def r8_gamma(x):
-
-    # *****************************************************************************80
-    #
-    # R8_GAMMA evaluates Gamma(X) for a real argument.
-    #
-    #  Discussion:
-    #
-    #    This routine calculates the gamma function for a real argument X.
-    #
-    #    Computation is based on an algorithm outlined in reference 1.
-    #    The program uses rational functions that approximate the gamma
-    #    function to at least 20 significant decimal digits.  Coefficients
-    #    for the approximation over the interval (1,2) are unpublished.
-    #    Those for the approximation for 12 <= X are from reference 2.
-    #
-    #    PYTHON provides a GAMMA function, which is likely to be faster, and more
-    #    accurate.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    24 July 2014
-    #
-    #  Author:
-    #
-    #    Original FORTRAN77 version by William Cody, Laura Stoltz.
-    #    PYTHON version by John Burkardt.
-    #
-    #  Reference:
-    #
-    #    William Cody,
-    #    An Overview of Software Development for Special Functions,
-    #    in Numerical Analysis Dundee, 1975,
-    #    edited by GA Watson,
-    #    Lecture Notes in Mathematics 506,
-    #    Springer, 1976.
-    #
-    #    John Hart, Ward Cheney, Charles Lawson, Hans Maehly,
-    #    Charles Mesztenyi, John Rice, Henry Thatcher,
-    #    Christoph Witzgall,
-    #    Computer Approximations,
-    #    Wiley, 1968,
-    #    LC: QA297.C64.
-    #
-    #  Parameters:
-    #
-    #    Input, real X, the argument of the function.
-    #
-    #    Output, real VALUE, the value of the function.
-    #
-
-    #  Coefficients for minimax approximation over (12, INF).
-    c = np.array([
-        -1.910444077728E-03,
-        8.4171387781295E-04,
-        -5.952379913043012E-04,
-        7.93650793500350248E-04,
-        -2.777777777777681622553E-03,
-        8.333333333333333331554247E-02,
-        5.7083835261E-03])
-
-    #  Mathematical constants
-    r8_pi = 3.141592653589793
-    sqrtpi = 0.9189385332046727417803297
-
-    #  Machine dependent parameters
-    xbig = 171.624
-    xminin = 2.23E-308
-    eps = 2.22E-16
-    xinf = 1.79E+308
-
-    #  Numerator and denominator coefficients for rational minimax
-    #  approximation over (1,2).
-    p = np.array([
-        -1.71618513886549492533811E+00,
-        2.47656508055759199108314E+01,
-        -3.79804256470945635097577E+02,
-        6.29331155312818442661052E+02,
-        8.66966202790413211295064E+02,
-        -3.14512729688483675254357E+04,
-        -3.61444134186911729807069E+04,
-        6.64561438202405440627855E+04])
-
-    q = np.array([
-        -3.08402300119738975254353E+01,
-        3.15350626979604161529144E+02,
-        -1.01515636749021914166146E+03,
-        -3.10777167157231109440444E+03,
-        2.25381184209801510330112E+04,
-        4.75584627752788110767815E+03,
-        -1.34659959864969306392456E+05,
-        -1.15132259675553483497211E+05])
-
-    parity = 0
-    fact = 1.0
-    n = 0
-    y = x
-
-    #  Argument is negative.
-    if (y <= 0.0):
-
-        y = - x
-        y1 = floor(y)
-        res = y - y1
-
-        if (res != 0.0):
-
-            if (y1 != floor(y1 * 0.5) * 2.0):
-                parity = 1
-
-            fact = - r8_pi / sin(r8_pi * res)
-            y = y + 1.0
-
-        else:
-
-            res = xinf
-            value = res
-            return value
-
-    #  Argument is positive.
-    if (y < eps):
-        #
-        #  Argument < EPS.
-        #
-        if (xminin <= y):
-            res = 1.0 / y
-        else:
-            res = xinf
-
-        value = res
-        return value
-
-    elif (y < 12.0):
-
-        y1 = y
-
-    #  0.0 < argument < 1.0.
-        if (y < 1.0):
-
-            z = y
-            y = y + 1.0
-
-        #  1.0 < argument < 12.0.
-        #  Reduce argument if necessary.
-        else:
-
-            n = int(floor(y) - 1)
-            y = y - n
-            z = y - 1.0
-
-        #  Evaluate approximation for 1.0 < argument < 2.0.
-        xnum = 0.0
-        xden = 1.0
-        for i in range(0, 8):
-            xnum = (xnum + p[i]) * z
-            xden = xden * z + q[i]
-
-        res = xnum / xden + 1.0
-
-        #  Adjust result for case  0.0 < argument < 1.0.
-        if (y1 < y):
-
-            res = res / y1
-
-        #  Adjust result for case 2.0 < argument < 12.0.
-        elif (y < y1):
-
-            for i in range(0, n):
-                res = res * y
-                y = y + 1.0
-
-    else:
-        #
-        #  Evaluate for 12.0 <= argument.
-        #
-        if (y <= xbig):
-
-            ysq = y * y
-            sum = c[6]
-            for i in range(0, 6):
-                sum = sum / ysq + c[i]
-            sum = sum / y - y + sqrtpi
-            sum = sum + (y - 0.5) * log(y)
-            res = exp(sum)
-
-        else:
-
-            res = xinf
-            value = res
-            return value
-
-    #  Final adjustments and return.
-    if (parity):
-        res = - res
-
-    if (fact != 1.0):
-        res = fact / res
-
-    value = res
-
-    return value
-
-
-def r8mat_print(m, n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT prints an R8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the number of rows in A.
-    #
-    #    Input, integer N, the number of columns in A.
-    #
-    #    Input, real A(M,N), the matrix.
-    #
-    #    Input, string TITLE, a title.
-    #
-    r8mat_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
-
-    return
-
-
-def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_SOME prints out a portion of an R8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    10 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns of the matrix.
-    #
-    #    Input, real A(M,N), an M by N matrix to be printed.
-    #
-    #    Input, integer ILO, JLO, the first row and column to print.
-    #
-    #    Input, integer IHI, JHI, the last row and column to print.
-    #
-    #    Input, string TITLE, a title.
-    #
-    incx = 5
-
-    print('')
-    print(title)
-
-    if (m <= 0 or n <= 0):
-        print('')
-        print('  (None)')
-        return
-
-    for j2lo in range(max(jlo, 0), min(jhi + 1, n), incx):
-
-        j2hi = j2lo + incx - 1
-        j2hi = min(j2hi, n)
-        j2hi = min(j2hi, jhi)
-
-        print('')
-        print('  Col: ', end='')
-
-        for j in range(j2lo, j2hi + 1):
-            print('%7d       ' % (j), end='')
-
-        print('')
-        print('  Row')
-
-        i2lo = max(ilo, 0)
-        i2hi = min(ihi, m)
-
-        for i in range(i2lo, i2hi + 1):
-
-            print('%7d :' % (i), end='')
-
-            for j in range(j2lo, j2hi + 1):
-                print('%12g  ' % (a[i, j]), end='')
-
-            print('')
-
-
-def r8mat_write(filename, m, n, a):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_WRITE writes an R8MAT to a file.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    12 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, string FILENAME, the name of the output file.
-    #
-    #    Input, integer M, the number of rows in A.
-    #
-    #    Input, integer N, the number of columns in A.
-    #
-    #    Input, real A(M,N), the matrix.
-    #
-    output = open(filename, 'w')
-
-    for i in range(0, m):
-        for j in range(0, n):
-            s = '  %g' % (a[i, j])
-            output.write(s)
-        output.write('\n')
-
-    output.close()
-
-
-def r8_sign(x):
-
-    # *****************************************************************************80
-    #
-    # R8_SIGN returns the sign of an R8.
-    #
-    #  Discussion:
-    #
-    #    The value is +1 if the number is positive or zero, and it is -1 otherwise.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 June 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, real X, the number whose sign is desired.
-    #
-    #    Output, real VALUE, the sign of X.
-    #
-    if (x < 0.0):
-        value = -1.0
-    else:
-        value = +1.0
-
-    return value
-
-
-def r8vec_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT prints an R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the dimension of the vector.
-    #
-    #    Input, real A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('%6d:  %12g' % (i, a[i]))
 
 
 if (__name__ == '__main__'):

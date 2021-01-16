@@ -1,6 +1,37 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print, r8vec_print_some
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8mat_transpose_print import r8mat_transpose_print, r8mat_transpose_print_some
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4vec_transpose_print import i4vec_transpose_print
+from i4lib.i4vec_uniform_ab import i4vec_uniform_ab
+
+from r8lib.r8_gamma import r8_gamma
+from r8lib.r8_normal_01 import r8_normal_01
+from r8lib.r8_uniform_01 import r8_uniform_01
+from r8lib.r8mat_uniform_ab import r8mat_uniform_ab
+from r8lib.r8vec_normal_01 import r8vec_normal_01
+
 
 def ball01_monomial_integral(e):
 
@@ -42,16 +73,16 @@ def ball01_monomial_integral(e):
     #
     #    Output, real INTEGRAL, the integral.
     #
-    import numpy as np
 
     if (e[0] < 0 or e[1] < 0 or e[2] < 0):
         print('')
         print('BALL01_MONOMIAL_INTEGRAL - Fatal error!')
         print('  All exponents must be nonnegative.')
         exit('BALL01_MONOMIAL_INTEGRAL - Fatal error!')
-#
-#  Integrate over the surface.
-#
+    
+    #
+    #  Integrate over the surface.
+    #
     if (e[0] == 0 and e[1] == 0 and e[2] == 0):
 
         integral = 2.0 * np.sqrt(np.pi ** 3) / r8_gamma(1.5)
@@ -68,9 +99,10 @@ def ball01_monomial_integral(e):
             integral = integral * r8_gamma(0.5 * float(e[i] + 1))
 
         integral = integral / r8_gamma(0.5 * float(e[0] + e[1] + e[2] + 3))
-#
-#  The surface integral is now adjusted to give the volume integral.
-#
+    
+    #
+    #  The surface integral is now adjusted to give the volume integral.
+    #
     r = 1.0
     s = e[0] + e[1] + e[2] + 3
 
@@ -97,8 +129,6 @@ def ball01_monomial_integral_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     m = 3
     n = 4192
@@ -110,17 +140,19 @@ def ball01_monomial_integral_test():
     print('  BALL01_MONOMIAL_INTEGRAL returns the integral of a monomial')
     print('  over the interior of the unit ball in 3D.')
     print('  Compate against Monte Carlo estimates.')
-#
-#  Get sample points.
-#
+    
+    #
+    #  Get sample points.
+    #
     seed = 123456789
     x, seed = ball01_sample(n, seed)
 
     print('')
     print('  Number of sample points used is %d' % (n))
-#
-#  Randomly choose X,Y exponents between 0 and 8.
-#
+    
+    #
+    #  Randomly choose X,Y exponents between 0 and 8.
+    #
     print('')
     print('  If any exponent is odd, the integral is zero.')
     print('  We will restrict this test to randomly chosen even exponents.')
@@ -143,13 +175,10 @@ def ball01_monomial_integral_test():
 
         print('  %2d  %2d  %2d  %14.6g  %14.6g  %10.2e'
               % (e[0], e[1], e[1], result, exact, error))
-#
-#  Terminate.
-#
+
     print('')
     print('BALL01_MONOMIAL_INTEGRAL_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ball01_sample(n, seed):
@@ -194,7 +223,6 @@ def ball01_sample(n, seed):
     #
     #    Output, real X(3,N), the points.
     #
-    import numpy as np
 
     x = np.zeros([3, n])
 
@@ -203,18 +231,21 @@ def ball01_sample(n, seed):
         #  Fill a vector with normally distributed values.
         #
         v, seed = r8vec_normal_01(3, seed)
-#
-#  Compute the length of the vector.
-#
+        
+        #
+        #  Compute the length of the vector.
+        #
         norm = np.sqrt(v[0] ** 2 + v[1] ** 2 + v[2] ** 2)
-#
-#  Normalize the vector.
-#
+        
+        #
+        #  Normalize the vector.
+        #
         for i in range(0, 3):
             v[i] = v[i] / norm
-#
-#  Transfer the point from the surface to the interior.
-#
+        
+        #
+        #  Transfer the point from the surface to the interior.
+        #
         r, seed = r8_uniform_01(seed)
 
         r = r ** (1.0 / 3.0)
@@ -251,17 +282,12 @@ def ball01_sample_test():
 
     n = 10
     seed = 123456789
-
     x, seed = ball01_sample(n, seed)
-
     r8mat_transpose_print(3, n, x, '  Sample points in the unit ball.')
-#
-#  Terminate.
-#
+
     print('')
     print('BALL01_SAMPLE_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ball01_volume():
@@ -286,7 +312,6 @@ def ball01_volume():
     #
     #    Output, real VALUE, the volume of the unit ball.
     #
-    import numpy as np
 
     r = 1.0
     value = 4.0 * np.pi * r ** 3 / 3.0
@@ -312,7 +337,6 @@ def ball01_volume_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('BALL01_VOLUME_TEST')
@@ -323,13 +347,9 @@ def ball01_volume_test():
 
     print('')
     print('  BALL01_VOLUME() = %g' % (value))
-#
-#  Terminate.
-#
     print('')
     print('BALL01_VOLUME_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ball_integrals_test():
@@ -350,44 +370,23 @@ def ball_integrals_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('BALL_INTEGRALS_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the BALL_INTEGRALS library.')
-#
-#  Utility functions.
-#
+
     gamma_values_test()
-    i4vec_print_test()
-    i4vec_transpose_print_test()
-    i4vec_uniform_ab_test()
-    r8_gamma_test()
-    r8_normal_01_test()
-    r8_uniform_01_test()
-    r8mat_print_test()
-    r8mat_print_some_test()
-    r8mat_transpose_print_test()
-    r8mat_transpose_print_some_test()
-    r8mat_uniform_ab_test()
-    r8vec_normal_01_test()
-    r8vec_print_test()
-#
-#  Library functions.
-#
+
     ball01_monomial_integral_test()
     ball01_sample_test()
     ball01_volume_test()
     monomial_value_test()
-#
-#  Terminate.
-#
+
     print('')
     print('BALL_INTEGRALS_TEST:')
     print('  Normal end of execution.')
     print('')
-    return
 
 
 def gamma_values(n_data):
@@ -539,7 +538,6 @@ def gamma_values_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('GAMMA_VALUES_TEST:')
@@ -559,339 +557,9 @@ def gamma_values_test():
             break
 
         print('  %12f  %24.16f' % (x, fx))
-#
-#  Terminate.
-#
     print('')
     print('GAMMA_VALUES_TEST:')
     print('  Normal end of execution.')
-    return
-
-
-def i4vec_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # I4VEC_PRINT prints an I4VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the dimension of the vector.
-    #
-    #    Input, integer A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('%6d  %6d' % (i, a[i]))
-
-
-def i4vec_print_test():
-
-    # *****************************************************************************80
-    #
-    # I4VEC_PRINT_TEST tests I4VEC_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('I4VEC_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4VEC_PRINT prints an I4VEC.')
-
-    n = 4
-    v = np.array([91, 92, 93, 94], dtype=np.int32)
-    i4vec_print(n, v, '  Here is an I4VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('I4VEC_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def i4vec_transpose_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # I4VEC_TRANSPOSE_PRINT prints an I4VEC "transposed".
-    #
-    #  Example:
-    #
-    #    A = (/ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 /)
-    #    TITLE = 'My vector:  '
-    #
-    #    My vector:
-    #
-    #       1    2    3    4    5
-    #       6    7    8    9   10
-    #      11
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    08 September 2018
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of components of the vector.
-    #
-    #    Input, integer A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    if (0 < len(title)):
-        print(title, end='')
-
-    if (0 < n):
-        for i in range(0, n):
-            print(' %d' % (a[i]), end='')
-            if ((i + 1) % 20 == 0 or i == n - 1):
-                print('')
-    else:
-        print('(empty vector)')
-
-    return
-
-
-def i4vec_transpose_print_test():
-
-    # *****************************************************************************80
-    #
-    # I4VEC_TRANSPOSE_PRINT_TEST tests I4VEC_TRANSPOSE_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    09 September 2018
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('I4VEC_TRANSPOSE_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4VEC_TRANSPOSE_PRINT prints an I4VEC')
-    print('  with 5 entries to a row, and an optional title.')
-
-    n = 12
-    a = np.zeros(n, dtype=np.int32)
-
-    for i in range(0, n):
-        a[i] = i + 1
-
-    print('')
-    i4vec_transpose_print(n, a, '  My array:  ')
-#
-#  Terminate.
-#
-    print('')
-    print('I4VEC_TRANSPOSE_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def i4vec_uniform_ab(n, a, b, seed):
-
-    # *****************************************************************************80
-    #
-    # I4VEC_UNIFORM_AB returns a scaled pseudorandom I4VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    05 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Second Edition,
-    #    Springer, 1987,
-    #    ISBN: 0387964673,
-    #    LC: QA76.9.C65.B73.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, December 1986, pages 362-376.
-    #
-    #    Pierre L'Ecuyer,
-    #    Random Number Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998,
-    #    ISBN: 0471134031,
-    #    LC: T57.62.H37.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, Number 2, 1969, pages 136-143.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, integer A, B, the minimum and maximum acceptable values.
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, integer C(N), the randomly chosen integer vector.
-    #
-    #    Output, integer SEED, the updated seed.
-    #
-    import numpy
-    from math import floor
-    from sys import exit
-
-    i4_huge = 2147483647
-
-    seed = floor(seed)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('I4VEC_UNIFORM_AB - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('I4VEC_UNIFORM_AB - Fatal error!')
-
-    seed = floor(seed)
-    a = round(a)
-    b = round(b)
-
-    c = numpy.zeros(n)
-
-    for i in range(0, n):
-
-        k = floor(seed / 127773)
-
-        seed = 16807 * (seed - k * 127773) - k * 2836
-
-        seed = (seed % i4_huge)
-
-        if (seed < 0):
-            seed = seed + i4_huge
-
-        r = seed * 4.656612875E-10
-#
-#  Scale R to lie between A-0.5 and B+0.5.
-#
-        r = (1.0 - r) * (min(a, b) - 0.5) \
-            + r * (max(a, b) + 0.5)
-#
-#  Use rounding to convert R to an integer between A and B.
-#
-        value = round(r)
-
-        value = max(value, min(a, b))
-        value = min(value, max(a, b))
-
-        c[i] = value
-
-    return c, seed
-
-
-def i4vec_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # I4VEC_UNIFORM_AB_TEST tests I4VEC_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    n = 20
-    a = -100
-    b = 200
-    seed = 123456789
-
-    print('')
-    print('I4VEC_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4VEC_UNIFORM_AB computes pseudorandom values')
-    print('  in an interval [A,B].')
-    print('')
-    print('  The lower endpoint A = %d' % (a))
-    print('  The upper endpoint B = %d' % (b))
-    print('  The initial seed is %d' % (seed))
-    print('')
-
-    v, seed = i4vec_uniform_ab(n, a, b, seed)
-
-    i4vec_print(n, v, '  The random vector:')
-#
-#  Terminate.
-#
-    print('')
-    print('I4VEC_UNIFORM_AB_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def monomial_value(m, n, e, x):
@@ -932,7 +600,6 @@ def monomial_value(m, n, e, x):
     #
     #    Output, real V(N), the monomial values.
     #
-    import numpy as np
 
     v = np.ones(n)
 
@@ -962,7 +629,6 @@ def monomial_value_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('MONOMIAL_VALUE_TEST')
@@ -985,9 +651,9 @@ def monomial_value_test():
         e, seed = i4vec_uniform_ab(m, e_min, e_max, seed)
         i4vec_transpose_print(m, e, '  Exponents:')
         x, seed = r8mat_uniform_ab(m, n, x_min, x_max, seed)
-#
-#  To make checking easier, make the X values integers.
-#
+        #
+        #  To make checking easier, make the X values integers.
+        #
         for i in range(0, m):
             for j in range(0, n):
                 x[i, j] = round(x[i, j])
@@ -1005,1248 +671,10 @@ def monomial_value_test():
             for i in range(0, m):
                 print('%10.4f' % (x[i, j]), end='')
             print('')
-#
-#  Terminate.
-#
+
     print('')
     print('MONOMIAL_VALUE_TEST')
     print('  Normal end of execution.')
-    return
-
-
-def r8_gamma(x):
-
-    # *****************************************************************************80
-    #
-    # R8_GAMMA evaluates Gamma(X) for a real argument.
-    #
-    #  Discussion:
-    #
-    #    This routine calculates the gamma function for a real argument X.
-    #
-    #    Computation is based on an algorithm outlined in reference 1.
-    #    The program uses rational functions that approximate the gamma
-    #    function to at least 20 significant decimal digits.  Coefficients
-    #    for the approximation over the interval (1,2) are unpublished.
-    #    Those for the approximation for 12 <= X are from reference 2.
-    #
-    #    PYTHON provides a GAMMA function, which is likely to be faster, and more
-    #    accurate.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    24 July 2014
-    #
-    #  Author:
-    #
-    #    Original FORTRAN77 version by William Cody, Laura Stoltz.
-    #    PYTHON version by John Burkardt.
-    #
-    #  Reference:
-    #
-    #    William Cody,
-    #    An Overview of Software Development for Special Functions,
-    #    in Numerical Analysis Dundee, 1975,
-    #    edited by GA Watson,
-    #    Lecture Notes in Mathematics 506,
-    #    Springer, 1976.
-    #
-    #    John Hart, Ward Cheney, Charles Lawson, Hans Maehly,
-    #    Charles Mesztenyi, John Rice, Henry Thatcher,
-    #    Christoph Witzgall,
-    #    Computer Approximations,
-    #    Wiley, 1968,
-    #    LC: QA297.C64.
-    #
-    #  Parameters:
-    #
-    #    Input, real X, the argument of the function.
-    #
-    #    Output, real VALUE, the value of the function.
-    #
-    import numpy as np
-    from math import exp
-    from math import floor
-    from math import log
-    from math import sin
-#
-#  Coefficients for minimax approximation over (12, INF).
-#
-    c = np.array([
-        -1.910444077728E-03,
-        8.4171387781295E-04,
-        -5.952379913043012E-04,
-        7.93650793500350248E-04,
-        -2.777777777777681622553E-03,
-        8.333333333333333331554247E-02,
-        5.7083835261E-03])
-#
-#  Mathematical constants
-#
-    r8_pi = 3.141592653589793
-    sqrtpi = 0.9189385332046727417803297
-#
-#  Machine dependent parameters
-#
-    xbig = 171.624
-    xminin = 2.23E-308
-    eps = 2.22E-16
-    xinf = 1.79E+308
-#
-#  Numerator and denominator coefficients for rational minimax
-#  approximation over (1,2).
-#
-    p = np.array([
-        -1.71618513886549492533811E+00,
-        2.47656508055759199108314E+01,
-        -3.79804256470945635097577E+02,
-        6.29331155312818442661052E+02,
-        8.66966202790413211295064E+02,
-        -3.14512729688483675254357E+04,
-        -3.61444134186911729807069E+04,
-        6.64561438202405440627855E+04])
-
-    q = np.array([
-        -3.08402300119738975254353E+01,
-        3.15350626979604161529144E+02,
-        -1.01515636749021914166146E+03,
-        -3.10777167157231109440444E+03,
-        2.25381184209801510330112E+04,
-        4.75584627752788110767815E+03,
-        -1.34659959864969306392456E+05,
-        -1.15132259675553483497211E+05])
-
-    parity = 0
-    fact = 1.0
-    n = 0
-    y = x
-#
-#  Argument is negative.
-#
-    if (y <= 0.0):
-
-        y = - x
-        y1 = floor(y)
-        res = y - y1
-
-        if (res != 0.0):
-
-            if (y1 != floor(y1 * 0.5) * 2.0):
-                parity = 1
-
-            fact = - r8_pi / sin(r8_pi * res)
-            y = y + 1.0
-
-        else:
-
-            res = xinf
-            value = res
-            return value
-#
-#  Argument is positive.
-#
-    if (y < eps):
-        #
-        #  Argument < EPS.
-        #
-        if (xminin <= y):
-            res = 1.0 / y
-        else:
-            res = xinf
-
-        value = res
-        return value
-
-    elif (y < 12.0):
-
-        y1 = y
-#
-#  0.0 < argument < 1.0.
-#
-        if (y < 1.0):
-
-            z = y
-            y = y + 1.0
-#
-#  1.0 < argument < 12.0.
-#  Reduce argument if necessary.
-#
-        else:
-
-            n = int(floor(y) - 1)
-            y = y - n
-            z = y - 1.0
-#
-#  Evaluate approximation for 1.0 < argument < 2.0.
-#
-        xnum = 0.0
-        xden = 1.0
-        for i in range(0, 8):
-            xnum = (xnum + p[i]) * z
-            xden = xden * z + q[i]
-
-        res = xnum / xden + 1.0
-#
-#  Adjust result for case  0.0 < argument < 1.0.
-#
-        if (y1 < y):
-
-            res = res / y1
-#
-#  Adjust result for case 2.0 < argument < 12.0.
-#
-        elif (y < y1):
-
-            for i in range(0, n):
-                res = res * y
-                y = y + 1.0
-
-    else:
-        #
-        #  Evaluate for 12.0 <= argument.
-        #
-        if (y <= xbig):
-
-            ysq = y * y
-            sum = c[6]
-            for i in range(0, 6):
-                sum = sum / ysq + c[i]
-            sum = sum / y - y + sqrtpi
-            sum = sum + (y - 0.5) * log(y)
-            res = exp(sum)
-
-        else:
-
-            res = xinf
-            value = res
-            return value
-#
-#  Final adjustments and return.
-#
-    if (parity):
-        res = - res
-
-    if (fact != 1.0):
-        res = fact / res
-
-    value = res
-
-    return value
-
-
-def r8_gamma_test():
-
-    # *****************************************************************************80
-    #
-    # R8_GAMMA_TEST demonstrates the use of R8_GAMMA.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    25 July 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('R8_GAMMA_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8_GAMMA evaluates the Gamma function.')
-    print('')
-    print('      X            GAMMA(X)      R8_GAMMA(X)')
-    print('')
-
-    n_data = 0
-
-    while (True):
-
-        n_data, x, fx1 = gamma_values(n_data)
-
-        if (n_data == 0):
-            break
-
-        fx2 = r8_gamma(x)
-
-        print('  %12g  %24.16g  %24.16g' % (x, fx1, fx2))
-#
-#  Terminate.
-#
-    print('')
-    print('R8_GAMMA_TEST')
-    print('  Normal end of execution.')
-    return
-
-
-def r8mat_print(m, n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT prints an R8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the number of rows in A.
-    #
-    #    Input, integer N, the number of columns in A.
-    #
-    #    Input, real A(M,N), the matrix.
-    #
-    #    Input, string TITLE, a title.
-    #
-    r8mat_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
-
-    return
-
-
-def r8mat_print_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_TEST tests R8MAT_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    10 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_PRINT prints an R8MAT.')
-
-    m = 4
-    n = 6
-    v = np.array([
-        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
-        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
-        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
-        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
-    r8mat_print(m, n, v, '  Here is an R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_SOME prints out a portion of an R8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    10 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns of the matrix.
-    #
-    #    Input, real A(M,N), an M by N matrix to be printed.
-    #
-    #    Input, integer ILO, JLO, the first row and column to print.
-    #
-    #    Input, integer IHI, JHI, the last row and column to print.
-    #
-    #    Input, string TITLE, a title.
-    #
-    incx = 5
-
-    print('')
-    print(title)
-
-    if (m <= 0 or n <= 0):
-        print('')
-        print('  (None)')
-        return
-
-    for j2lo in range(max(jlo, 0), min(jhi + 1, n), incx):
-
-        j2hi = j2lo + incx - 1
-        j2hi = min(j2hi, n)
-        j2hi = min(j2hi, jhi)
-
-        print('')
-        print('  Col: ', end='')
-
-        for j in range(j2lo, j2hi + 1):
-            print('%7d       ' % (j), end='')
-
-        print('')
-        print('  Row')
-
-        i2lo = max(ilo, 0)
-        i2hi = min(ihi, m)
-
-        for i in range(i2lo, i2hi + 1):
-
-            print('%7d :' % (i), end='')
-
-            for j in range(j2lo, j2hi + 1):
-                print('%12g  ' % (a[i, j]), end='')
-
-            print('')
-
-    return
-
-
-def r8mat_print_some_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_SOME_TEST tests R8MAT_PRINT_SOME.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_PRINT_SOME_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_PRINT_SOME prints some of an R8MAT.')
-
-    m = 4
-    n = 6
-    v = np.array([
-        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
-        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
-        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
-        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
-    r8mat_print_some(m, n, v, 0, 3, 2, 5, '  Here is an R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_PRINT_SOME_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def r8mat_transpose_print(m, n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_TRANSPOSE_PRINT prints an R8MAT, transposed.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the number of rows in A.
-    #
-    #    Input, integer N, the number of columns in A.
-    #
-    #    Input, real A(M,N), the matrix.
-    #
-    #    Input, string TITLE, a title.
-    #
-    r8mat_transpose_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
-
-    return
-
-
-def r8mat_transpose_print_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_TRANSPOSE_PRINT_TEST tests R8MAT_TRANSPOSE_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_TRANSPOSE_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_TRANSPOSE_PRINT prints an R8MAT.')
-
-    m = 4
-    n = 3
-    v = np.array([
-        [11.0, 12.0, 13.0],
-        [21.0, 22.0, 23.0],
-        [31.0, 32.0, 33.0],
-        [41.0, 42.0, 43.0]], dtype=np.float64)
-    r8mat_transpose_print(m, n, v, '  Here is an R8MAT, transposed:')
-
-    print('')
-    print('R8MAT_TRANSPOSE_PRINT_TEST:')
-    print('  Normal end of execution.')
-
-    return
-
-
-def r8mat_transpose_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_TRANSPOSE_PRINT_SOME prints a portion of an R8MAT, transposed.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    13 November 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns of the matrix.
-    #
-    #    Input, real A(M,N), an M by N matrix to be printed.
-    #
-    #    Input, integer ILO, JLO, the first row and column to print.
-    #
-    #    Input, integer IHI, JHI, the last row and column to print.
-    #
-    #    Input, string TITLE, a title.
-    #
-    incx = 5
-
-    print('')
-    print(title)
-
-    if (m <= 0 or n <= 0):
-        print('')
-        print('  (None)')
-        return
-
-    for i2lo in range(max(ilo, 0), min(ihi, m - 1), incx):
-
-        i2hi = i2lo + incx - 1
-        i2hi = min(i2hi, m - 1)
-        i2hi = min(i2hi, ihi)
-
-        print('')
-        print('  Row: ', end='')
-
-        for i in range(i2lo, i2hi + 1):
-            print('%7d       ' % (i), end='')
-
-        print('')
-        print('  Col')
-
-        j2lo = max(jlo, 0)
-        j2hi = min(jhi, n - 1)
-
-        for j in range(j2lo, j2hi + 1):
-
-            print('%7d :' % (j), end='')
-
-            for i in range(i2lo, i2hi + 1):
-                print('%12g  ' % (a[i, j]), end='')
-
-            print('')
-
-    return
-
-
-def r8mat_transpose_print_some_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_TRANSPOSE_PRINT_SOME_TEST tests R8MAT_TRANSPOSE_PRINT_SOME.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8MAT_TRANSPOSE_PRINT_SOME_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_TRANSPOSE_PRINT_SOME prints some of an R8MAT, transposed.')
-
-    m = 4
-    n = 6
-    v = np.array([
-        [11.0, 12.0, 13.0, 14.0, 15.0, 16.0],
-        [21.0, 22.0, 23.0, 24.0, 25.0, 26.0],
-        [31.0, 32.0, 33.0, 34.0, 35.0, 36.0],
-        [41.0, 42.0, 43.0, 44.0, 45.0, 46.0]], dtype=np.float64)
-    r8mat_transpose_print_some(
-        m, n, v, 0, 3, 2, 5, '  R8MAT, rows 0:2, cols 3:5:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_TRANSPOSE_PRINT_SOME_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def r8mat_uniform_ab(m, n, a, b, seed):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_UNIFORM_AB returns a scaled pseudorandom R8MAT.
-    #
-    #  Discussion:
-    #
-    #    An R8MAT is an array of R8's.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    08 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Second Edition,
-    #    Springer, 1987,
-    #    ISBN: 0387964673,
-    #    LC: QA76.9.C65.B73.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, December 1986, pages 362-376.
-    #
-    #    Pierre L'Ecuyer,
-    #    Random Number Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998,
-    #    ISBN: 0471134031,
-    #    LC: T57.62.H37.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, Number 2, 1969, pages 136-143.
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns in the array.
-    #
-    #    Input, real A, B, the range of the pseudorandom values.
-    #
-    #    Input, integer SEED, the integer "seed" used to generate
-    #    the output random number.
-    #
-    #    Output, real R(M,N), an array of random values between 0 and 1.
-    #
-    #    Output, integer SEED, the updated seed.  This would
-    #    normally be used as the input seed on the next call.
-    #
-    import numpy
-    from math import floor
-    from sys import exit
-
-    i4_huge = 2147483647
-
-    seed = floor(seed)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('R8MAT_UNIFORM_AB - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('R8MAT_UNIFORM_AB - Fatal error!')
-
-    r = numpy.zeros((m, n))
-
-    for j in range(0, n):
-        for i in range(0, m):
-
-            k = floor(seed / 127773)
-
-            seed = 16807 * (seed - k * 127773) - k * 2836
-
-            seed = floor(seed)
-
-            seed = (seed % i4_huge)
-
-            if (seed < 0):
-                seed = seed + i4_huge
-
-            r[i][j] = a + (b - a) * seed * 4.656612875E-10
-
-    return r, seed
-
-
-def r8mat_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # R8MAT_UNIFORM_AB_TEST tests R8MAT_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    m = 5
-    n = 4
-    a = -1.0
-    b = +5.0
-    seed = 123456789
-
-    print('')
-    print('R8MAT_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8MAT_UNIFORM_AB computes a random R8MAT.')
-    print('')
-    print('  %g <= X <= %g' % (a, b))
-    print('  Initial seed is %d' % (seed))
-
-    v, seed = r8mat_uniform_ab(m, n, a, b, seed)
-
-    r8mat_print(m, n, v, '  Random R8MAT:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8MAT_UNIFORM_AB_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def r8_normal_01(seed):
-
-    # *****************************************************************************80
-    #
-    # R8_NORMAL_01 returns a unit pseudonormal R8.
-    #
-    #  Discussion:
-    #
-    #    The standard normal probability distribution function (PDF) has
-    #    mean 0 and standard deviation 1.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 March 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, real VALUE, a normally distributed
-    #    random value.
-    #
-    #    Output, integer SEED, an updated seed for the random
-    #    number generator.
-    #
-    import numpy as np
-
-    r1, seed = r8_uniform_01(seed)
-    r2, seed = r8_uniform_01(seed)
-    value = np.sqrt(- 2.0 * np.log(r1)) * np.cos(2.0 * np.pi * r2)
-
-    return value, seed
-
-
-def r8_normal_01_test():
-
-    # *****************************************************************************80
-    #
-    # R8_NORMAL_01_TEST tests R8_NORMAL_01.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 March 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('R8_NORMAL_01_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8_NORMAL_01 computes pseudonormal values with')
-    print('  mean 0.0 and standard deviation 1.0.')
-
-    seed = 123456789
-
-    print('')
-    print('  SEED = %d' % (seed))
-    print('')
-    for i in range(0, 10):
-        r, seed = r8_normal_01(seed)
-        print('  %2d  %14f' % (i, r))
-#
-#  Terminate.
-#
-    print('')
-    print('R8_NORMAL_01_TEST')
-    print('  Normal end of execution.')
-    return
-
-
-def r8_uniform_01(seed):
-
-    # *****************************************************************************80
-    #
-    # R8_UNIFORM_01 returns a unit pseudorandom R8.
-    #
-    #  Discussion:
-    #
-    #    This routine implements the recursion
-    #
-    #      seed = 16807 * seed mod ( 2^31 - 1 )
-    #      r8_uniform_01 = seed / ( 2^31 - 1 )
-    #
-    #    The integer arithmetic never requires more than 32 bits,
-    #    including a sign bit.
-    #
-    #    If the initial seed is 12345, then the first three computations are
-    #
-    #      Input     Output      R8_UNIFORM_01
-    #      SEED      SEED
-    #
-    #         12345   207482415  0.096616
-    #     207482415  1790989824  0.833995
-    #    1790989824  2035175616  0.947702
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    17 March 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Second Edition,
-    #    Springer, 1987,
-    #    ISBN: 0387964673,
-    #    LC: QA76.9.C65.B73.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, December 1986, pages 362-376.
-    #
-    #    Pierre L'Ecuyer,
-    #    Random Number Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998,
-    #    ISBN: 0471134031,
-    #    LC: T57.62.H37.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, Number 2, 1969, pages 136-143.
-    #
-    #  Parameters:
-    #
-    #    Input, integer SEED, the integer "seed" used to generate
-    #    the output random number.  SEED should not be 0.
-    #
-    #    Output, real R, a random value between 0 and 1.
-    #
-    #    Output, integer SEED, the updated seed.  This would
-    #    normally be used as the input seed on the next call.
-    #
-    from math import floor
-    from sys import exit
-
-    i4_huge = 2147483647
-
-    seed = floor(seed)
-
-    seed = (seed % i4_huge)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('R8_UNIFORM_01 - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('R8_UNIFORM_01 - Fatal error!')
-
-    k = floor(seed / 127773)
-
-    seed = 16807 * (seed - k * 127773) - k * 2836
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    r = seed * 4.656612875E-10
-
-    return r, seed
-
-
-def r8_uniform_01_test():
-
-    # *****************************************************************************80
-    #
-    # R8_UNIFORM_01_TEST tests R8_UNIFORM_01.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    26 July 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('R8_UNIFORM_01_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8_UNIFORM_01 produces a sequence of random values.')
-
-    seed = 123456789
-
-    print('')
-    print('  Using random seed %d' % (seed))
-
-    print('')
-    print('  SEED  R8_UNIFORM_01(SEED)')
-    print('')
-    for i in range(0, 10):
-        seed_old = seed
-        x, seed = r8_uniform_01(seed)
-        print('  %12d  %14f' % (seed, x))
-
-    print('')
-    print('  Verify that the sequence can be restarted.')
-    print('  Set the seed back to its original value, and see that')
-    print('  we generate the same sequence.')
-
-    seed = 123456789
-    print('')
-    print('  SEED  R8_UNIFORM_01(SEED)')
-    print('')
-
-    for i in range(0, 10):
-        seed_old = seed
-        x, seed = r8_uniform_01(seed)
-        print('  %12d  %14f' % (seed, x))
-#
-#  Terminate.
-#
-    print('')
-    print('R8_UNIFORM_01_TEST')
-    print('  Normal end of execution.')
-    return
-
-
-def r8vec_normal_01(n, seed):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_NORMAL_01 returns a unit pseudonormal R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    04 March 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, real X(N), the vector of pseudorandom values.
-    #
-    #    Output, integer SEED, an updated seed for the random number generator.
-    #
-    import numpy as np
-
-    x = np.zeros(n)
-
-    for i in range(0, n):
-        x[i], seed = r8_normal_01(seed)
-
-    return x, seed
-
-
-def r8vec_normal_01_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_NORMAL_01_TEST tests R8VEC_NORMAL_01.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    04 March 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n = 10
-    seed = 123456789
-
-    print('')
-    print('R8VEC_NORMAL_01_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_NORMAL_01 returns a vector of Normal 01 values')
-    print('')
-    print('  SEED = %d' % (seed))
-
-    r, seed = r8vec_normal_01(n, seed)
-
-    r8vec_print(n, r, '  Vector:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_NORMAL_01_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def r8vec_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT prints an R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the dimension of the vector.
-    #
-    #    Input, real A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('%6d  %12g' % (i, a[i]))
-
-
-def r8vec_print_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT_TEST tests R8VEC_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8VEC_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_PRINT prints an R8VEC.')
-
-    n = 4
-    v = np.array([123.456, 0.000005, -1.0E+06, 3.14159265], dtype=np.float64)
-    r8vec_print(n, v, '  Here is an R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):

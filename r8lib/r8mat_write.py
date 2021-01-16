@@ -48,7 +48,7 @@ def r8mat_write(filename, m, n, a):
 
     for i in range(0, m):
         for j in range(0, n):
-            s = '  %g' % (a[i, j])
+            s = '\t%g' % (a[i, j])
             output.write(s)
         output.write('\n')
 
