@@ -1,9 +1,21 @@
 #! /usr/bin/env python3
 #
+
 import numpy as np
 import matplotlib.pyplot as plt
 import platform
 import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+obj = plot2d()
 
 
 def perceptron():
@@ -33,9 +45,10 @@ def perceptron():
     print('  Rating is 0 for bad, 1 for good.')
     print('  Use the perceptron algorithm to determine a')
     print('  classifier f(rpm,vibration) -> {0, 1}')
-#
-#  Read the data file.
-#
+
+    #
+    #  Read the data file.
+    #
     print('')
     print('  Generator Ratings')
     data = np.loadtxt('generators.txt')
@@ -69,14 +82,13 @@ def perceptron():
           (bad_rpm_mean, bad_vib_mean))
     print('  %g <= VIB <= %g' % (vib_min, vib_max))
 
-    plt.plot(rpm[good], vib[good], 'b+', rpm[bad], vib[bad], 'ro')
-    plt.xlabel('<-- RPM -->')
-    plt.ylabel('<-- VIB -->')
-    plt.title('Generator Ratings')
-    plt.grid(True)
-    plt.axis('equal')
     filename = 'perceptron_data.png'
-    plt.savefig(filename)
+    obj.new_2Dfig()
+    obj.axs.plot(rpm[good], vib[good], 'b+', rpm[bad], vib[bad], 'ro')
+    obj.axs.set_xlabel('<-- RPM -->')
+    obj.axs.set_ylabel('<-- VIB -->')
+    obj.axs.set_title('Generator Ratings')
+    obj.SavePng(filename)
     print('  Graphics saved as "%s"' % (filename))
 
     #  Part 2.
@@ -103,6 +115,7 @@ def perceptron():
             e = e + (grade[i] != f)
             w = w + alpha * np.dot(x[i, :], (grade[i] - f))
         w = w / np.linalg.norm(w)
+
     if (e == 0):
         print('  All training data classified on step %d' % (step))
     else:
@@ -147,47 +160,18 @@ def perceptron():
         px = np.append(px, rv)
         py = np.append(py, vv)
 
-    plt.plot(r[good], v[good], 'b+', r[bad], v[bad], 'ro')
-    plt.plot(px, py, 'k-', linewidth=3)
-    plt.xlabel('<-- RPM -->')
-    plt.ylabel('<-- VIB -->')
-    plt.title('Generator Ratings Classifier')
-    plt.grid(True)
-    plt.axis('equal')
     filename = 'perceptron_classifier.png'
-    plt.savefig(filename)
-    plt.show(block=False)
+    obj.new_2Dfig()
+    obj.axs.plot(r[good], v[good], 'b+', r[bad], v[bad], 'ro')
+    obj.axs.plot(px, py, 'k-', linewidth=3)
+    obj.axs.set_xlabel('<-- RPM -->')
+    obj.axs.set_ylabel('<-- VIB -->')
+    obj.axs.set_title('Generator Ratings Classifier')
+    obj.SavePng(filename)
     print('  Graphics saved as "%s"' % (filename))
     print('')
     print('perceptron')
     print('  Normal end of execution.')
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # timestamp prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-
-    t = time.time()
-    print(time.ctime(t))
 
 
 if (__name__ == '__main__'):
