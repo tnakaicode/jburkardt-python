@@ -1,6 +1,6 @@
 #! /bin/bash
 #
-python3 voronoi_test.py > voronoi_test.txt
+python3 truncated_normal.py > truncated_normal.txt
 if [ $? -ne 0 ]; then
   echo "Run error."
   exit 1
