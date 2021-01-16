@@ -16,11 +16,11 @@ from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
 
 
-def ig_get(g):
+def lg_set(g, lg1, lg2):
 
     # *****************************************************************************80
     #
-    # IG_GET queries the IG values for a given generator.
+    # LG_SET sets the LG values for a given generator.
     #
     #  Licensing:
     #
@@ -39,53 +39,52 @@ def ig_get(g):
     #    Input, integer G, the index of the generator.
     #    1 <= G <= 32.
     #
-    #    Output, integer IG1, IG2, the IG values for generator G.
-    #
-
-    i = -1
-    ig1 = []
-    ig2 = []
-    ig1, ig2 = ig_memory(i, g, ig1, ig2)
-
-    return ig1, ig2
-
-
-def ig_set(g, ig1, ig2):
-
-    # *****************************************************************************80
-    #
-    # IG_SET sets the IG values for a given generator.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 May 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer G, the index of the generator.
-    #    1 <= G <= 32.
-    #
-    #    Input, integer IG1, IG2, the IG values for generator G.
+    #    Input, integer LG1, LG2, the LG values for generator G.
     #
 
     i = +1
-    ig1, ig2 = ig_memory(i, g, ig1, ig2)
+    lg_memory(i, g, lg1, lg2)
 
 
-
-def ig_memory(i, g, ig1, ig2):
+def lg_get(g):
 
     # *****************************************************************************80
     #
-    # IG_MEMORY stores the IG values for all generators.
+    # LG_GET queries the LG values for a given generator.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 May 2013
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer G, the index of the generator.
+    #    1 <= G <= 32.
+    #
+    #    Output, integer LG1, LG2, the LG values for generator G.
+    #
+
+    i = -1
+    lg1 = []
+    lg2 = []
+    lg1, lg2 = lg_memory(i, g, lg1, lg2)
+
+    return lg1, lg2
+
+
+def lg_memory(i, g, lg1, lg2):
+
+    # *****************************************************************************80
+    #
+    # LG_MEMORY stores the LG values for all generators.
     #
     #  Licensing:
     #
@@ -109,31 +108,37 @@ def ig_memory(i, g, ig1, ig2):
     #    Input, integer G, for I = -1 or +1, the index of
     #    the generator, with 1 <= G <= 32.
     #
-    #    Input/output, integer IG1, IG2.  For I = -1,
+    #    Input/output, integer LG1, LG2.  For I = -1,
     #    these are output, for I = +1, these are input, for I = 0,
     #    these arguments are ignored.  When used, the arguments are
-    #    old or new values of the IG parameter for generator G.
+    #    old or new values of the LG parameter for generator G.
     #
 
     g_max = 32
 
     if (g < 1 or g_max < g):
         print('')
-        print('IG_MEMORY - Fatal error!')
+        print('LG_MEMORY - Fatal error!')
         print('  Input generator index G is out of bounds.')
-        exit('IG_MEMORY - Fatal error!')
+        exit('LG_MEMORY - Fatal error!')
 
     if (i < 0):
-        ig1 = ig_memory.ig1_save[g - 1]
-        ig2 = ig_memory.ig2_save[g - 1]
+        lg1 = lg_memory.lg1_save[g - 1]
+        lg2 = lg_memory.lg2_save[g - 1]
     elif (i == 0):
         for j in range(1, g_max + 1):
-            ig_memory.ig1_save[j - 1] = 0
-            ig_memory.ig2_save[j - 1] = 0
-        ig1 = 0
-        ig2 = 0
+            lg_memory.lg1_save[j - 1] = 0
+            lg_memory.lg2_save[j - 1] = 0
+        lg1 = 0
+        lg2 = 0
     elif (0 < i):
-        ig_memory.ig1_save[g - 1] = ig1
-        ig_memory.ig2_save[g - 1] = ig2
+        lg_memory.lg1_save[g - 1] = lg1
+        lg_memory.lg2_save[g - 1] = lg2
 
-    return ig1, ig2
+    return lg1, lg2
+
+
+lg_memory.lg1_save = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+lg_memory.lg2_save = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
