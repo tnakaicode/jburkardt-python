@@ -1,0 +1,55 @@
+27 March 2020 11:08:20 AM
+
+MESH_BANDWIDTH
+  C++ version
+  Read a mesh file which defines
+  a "triangulation" of a region in the plane,
+  or a "tetrahedronization" of a region in space,
+  or any division of a regino in ND space into elements,
+  using a mesh of elements of uniform order.
+
+  Determine the geometric mesh bandwidth.
+
+    M = ML + 1 + MU.
+
+  which is the bandwidth of the vertex connectivity
+  matrix.
+
+  Note that a matrix associated with variables defined
+  at the  nodes could have a greater bandwidth than M,
+  since you might have multiple variables at a vertex,
+  or the variable might be a vector quantity,
+  or physical effects might link two variables that are
+  not associated with vertices that are connected.
+
+  Read the header of "sphere_q4_elements.txt".
+
+  Element order ELEMENT_ORDER =    4
+  Number of element ELEMENT_NUM  = 64
+
+  Read the data in "sphere_q4_elements.txt".
+
+  Portion of data read from file:
+
+  Row:      0       1       2       3  
+  Col
+
+    0:     1       1       3       2  
+    1:     1       1       4       3  
+    2:     1       1       5       4  
+    3:     1       1       6       5  
+    4:     1       1       7       6  
+    5:     1       1       8       7  
+    6:     1       1       9       8  
+    7:     1       1       2       9  
+    8:     2       3      11      10  
+    9:     3       4      12      11  
+
+  Lower bandwidth ML = 15
+  Upper bandwidth MU = 15
+  Total bandwidth M  = 31
+
+MESH_BANDWIDTH
+  Normal end of execution.
+
+27 March 2020 11:08:20 AM
