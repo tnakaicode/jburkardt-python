@@ -15,6 +15,8 @@ sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
 
+obj = plot2d()
+
 
 def mandelbrot_image(xmin, xmax, ymin, ymax, xnum, ynum, countmax):
 
@@ -75,11 +77,12 @@ def mandelbrot_image(xmin, xmax, ymin, ymax, xnum, ynum, countmax):
     print('  Wallclock: %.02f sec.' % (time2 - time1))
 
     X, Y = np.meshgrid(x, y, indexing='ij')
-    fig, ax = plt.subplots(figsize=(width_inches, height_inches), dpi=72)
-    cs = ax.contourf(X, Y, count, cmap="jet")
 
+    obj.new_2Dfig()
     filename = 'mandelbrot.png'
-    plt.savefig(filename)
+    #fig, ax = plt.subplots(figsize=(width_inches, height_inches), dpi=72)
+    obj.axs.contourf(X, Y, count, cmap="jet")
+    obj.SavePng(filename)
     print('')
     print('  Plot saved in file "%s"' % (filename))
     print('')

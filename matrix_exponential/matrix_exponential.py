@@ -1,6 +1,3 @@
-# 1. ! /usr/bin/env python3
-# 2.
-
 import numpy as np
 import matplotlib.pyplot as plt
 import platform
@@ -14,6 +11,9 @@ from sys import exit
 sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
+
+from r8lib.r8mat_print import r8mat_print
+from c8lib.c8mat_print import c8mat_print, c8mat_print_some
 
 
 def c8mat_exp_a(test, n):
@@ -297,7 +297,6 @@ def c8mat_expm1(n, a):
     #
     #    Output, double complex C8MAT_EXPM1[N*N], the estimate for exp(A).
     #
-    import numpy as np
 
     q = 6
 
@@ -335,120 +334,17 @@ def c8mat_expm1(n, a):
             d = d - c * x
 
         p = not p
-# 3.
-# 4. E -> inverse(D) * E
-# 5.
+    # 3.
+    # 4. E -> inverse(D) * E
+    # 5.
     e = np.linalg.solve(d, e)
-# 6.
-# 7. E -> E^(2*S)
-# 8.
+    # 6.
+    # 7. E -> E^(2*S)
+    # 8.
     for k in range(0, s):
         e = np.dot(e, e)
 
     return e
-
-
-def c8mat_print(m, n, a, title):
-
-    # *****************************************************************************80
-    #
-    # C8MAT_PRINT prints a C8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the number of rows in A.
-    #
-    #    Input, integer N, the number of columns in A.
-    #
-    #    Input, complex A(M,N), the matrix.
-    #
-    #    Input, string TITLE, a title.
-    #
-    c8mat_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
-
-    return
-
-
-def c8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
-
-    # *****************************************************************************80
-    #
-    # C8MAT_PRINT_SOME prints out a portion of an C8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    15 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns of the matrix.
-    #
-    #    Input, complex A(M,N), an M by N matrix to be printed.
-    #
-    #    Input, integer ILO, JLO, the first row and column to print.
-    #
-    #    Input, integer IHI, JHI, the last row and column to print.
-    #
-    #    Input, string TITLE, a title.
-    #
-    incx = 4
-
-    print('')
-    print(title)
-
-    if (m <= 0 or n <= 0):
-        print('')
-        print('  (None)')
-        return
-
-    for j2lo in range(max(jlo, 0), min(jhi, n - 1), incx):
-
-        j2hi = j2lo + incx - 1
-        j2hi = min(j2hi, n - 1)
-        j2hi = min(j2hi, jhi)
-
-        print('')
-        print('  Col: ', end='')
-
-        for j in range(j2lo, j2hi + 1):
-            print('       %7d              ' % (j), end='')
-
-        print('')
-        print('  Row')
-
-        i2lo = max(ilo, 0)
-        i2hi = min(ihi, m - 1)
-
-        for i in range(i2lo, i2hi + 1):
-
-            print('%7d :' % (i), end='')
-
-            for j in range(j2lo, j2hi + 1):
-                print('%12g  %12gi ' % (a.real[i, j], a.imag[i, j]), end='')
-
-            print('')
-
-    return
 
 
 def r8mat_exp_a(test, n):
@@ -1228,20 +1124,20 @@ def r8mat_expm3(n, a):
     #
     #    Output, double E[N,N], the estimate for exp(A).
     #
-    import numpy as np
 
     cevals, cevecs = np.linalg.eig(a)
-# 15.
-# 16. Need to take the real part of these quantities!
-# 17.
+    #
+    #  Need to take the real part of these quantities!
+    #
     evals = cevals.real
     evecs = cevecs.real
 
     exp_evals = np.exp(evals)
     d2 = np.diag(exp_evals)
-# 18.
-# 19. Pardon this godawful circumlocution.
-# 20.
+
+    #
+    #  Pardon this godawful circumlocution.
+    #
     b = np.dot(evecs, d2)
     bt = b.transpose()
 
@@ -1299,107 +1195,6 @@ def r8mat_is_significant(m, n, r, s):
     return value
 
 
-def r8mat_print(m, n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT prints an R8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the number of rows in A.
-    #
-    #    Input, integer N, the number of columns in A.
-    #
-    #    Input, real A(M,N), the matrix.
-    #
-    #    Input, string TITLE, a title.
-    #
-    r8mat_print_some(m, n, a, 0, 0, m - 1, n - 1, title)
-
-    return
-
-
-def r8mat_print_some(m, n, a, ilo, jlo, ihi, jhi, title):
-
-    # *****************************************************************************80
-    #
-    # R8MAT_PRINT_SOME prints out a portion of an R8MAT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    10 February 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, N, the number of rows and columns of the matrix.
-    #
-    #    Input, real A(M,N), an M by N matrix to be printed.
-    #
-    #    Input, integer ILO, JLO, the first row and column to print.
-    #
-    #    Input, integer IHI, JHI, the last row and column to print.
-    #
-    #    Input, string TITLE, a title.
-    #
-    incx = 5
-
-    print('')
-    print(title)
-
-    if (m <= 0 or n <= 0):
-        print('')
-        print('  (None)')
-        return
-
-    for j2lo in range(max(jlo, 0), min(jhi + 1, n), incx):
-
-        j2hi = j2lo + incx - 1
-        j2hi = min(j2hi, n)
-        j2hi = min(j2hi, jhi)
-
-        print('')
-        print('  Col: ', end='')
-
-        for j in range(j2lo, j2hi + 1):
-            print('%7d       ' % (j), end='')
-
-        print('')
-        print('  Row')
-
-        i2lo = max(ilo, 0)
-        i2hi = min(ihi, m)
-
-        for i in range(i2lo, i2hi + 1):
-
-            print('%7d :' % (i), end='')
-
-            for j in range(j2lo, j2hi + 1):
-                print('%12g  ' % (a[i, j]), end='')
-
-            print('')
-
-
 def matrix_exponential_test():
 
     # ******************************************************************************/
@@ -1418,8 +1213,6 @@ def matrix_exponential_test():
     #
     #    John Burkardt
     #
-    import platform
-    import sys
 
     print('')
     print('MATRIX_EXPONENTIAL_TEST')
@@ -1514,7 +1307,6 @@ def matrix_exponential_test02():
     print('  C8MAT_EXPM3 relies on an eigenvalue calculation.')
 
     test_num = c8mat_exp_test_num()
-    # 3
 
     for test in range(1, test_num + 1):
 

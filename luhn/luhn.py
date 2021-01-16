@@ -1,7 +1,19 @@
 #! /usr/bin/env python3
 #
+
+import numpy as np
+import matplotlib.pyplot as plt
 import platform
 import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
 
 def luhn_check_digit_calculate(partial_card_number):
@@ -84,13 +96,9 @@ def luhn_check_digit_calculate_test():
     d1 = luhn_check_digit_calculate(s)
     d2 = 9
     print('  Check digit for %s is %d, expecting %d' % (s, d1, d2))
-#
-#  Terminate.
-#
     print('')
     print('LUHN_CHECK_DIGIT_CALCULATE_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def luhn_checksum(card_number):
@@ -176,13 +184,9 @@ def luhn_checksum_test():
         s2 = s1 + str(d1)
         value = luhn_checksum(s2)
         print('  luhn_checksum ( %s ) = %d' % (s2, value))
-#
-#  Terminate.
-#
     print('')
     print('LUHN_CHECKSUM_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def luhn_is_valid(card_number):
@@ -258,81 +262,9 @@ def luhn_is_valid_test():
         s2 = s1 + str(d1)
         value = luhn_is_valid(s2)
         print('  luhn_is_valid ( %s ) = %s' % (s2, value))
-#
-#  Terminate.
-#
     print('')
     print('LUHN_IS_VALID_TEST:')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def luhn_test():
@@ -362,13 +294,10 @@ def luhn_test():
     luhn_check_digit_calculate_test()
     luhn_checksum_test()
     luhn_is_valid_test()
-#
-#  Terminate.
-#
+
     print('')
     print('LUHN_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):

@@ -1,5 +1,18 @@
-#! /usr/bin/env python3
-#
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+obj = plot2d()
 
 
 def mario():
@@ -20,24 +33,23 @@ def mario():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     print('')
     print('MARIO:')
     print('  Python version')
     print('  Draw a picture of Mario, using colored squares.')
-#
-#  Color indices:
-#
-#  0: white
-#  1: black
-#  2: red
-#  3: blue
-#  4: yellow
-#  5: beige
-#  6: brown
-#
+
+    #
+    #  Color indices:
+    #
+    #  0: white
+    #  1: black
+    #  2: red
+    #  3: blue
+    #  4: yellow
+    #  5: beige
+    #  6: brown
+    #
     color_index = np.array([
         [0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0],
         [0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0],
@@ -63,22 +75,21 @@ def mario():
     grid_m = color_index_m
     grid_n = color_index_n
     grid = np.zeros([grid_m, grid_n])
-#
-#  Fill the I,J box with color K.
-#  Actually, "I" becomes M-I+1, because matrix row 1 is at the top,
-#  but cell row 1 is at the bottom.
-#
-#  (m-i,j-1) <------ (m-i,j)
-#      |                 ^
-#      |                 |
-#      |    Color K      |
-#      V                 |
-#                        |
-#  (m-i+1,j-1) ----> (m-i+1,j)
-#
-    plt.axis('equal')
-    plt.axis('off')
+    #
+    #  Fill the I,J box with color K.
+    #  Actually, "I" becomes M-I+1, because matrix row 1 is at the top,
+    #  but cell row 1 is at the bottom.
+    #
+    #  (m-i,j-1) <------ (m-i,j)
+    #      |                 ^
+    #      |                 |
+    #      |    Color K      |
+    #      V                 |
+    #                        |
+    #  (m-i+1,j-1) ----> (m-i+1,j)
+    #
 
+    obj.new_2Dfig()
     for i in range(0, grid_m):
         for j in range(0, grid_n):
 
@@ -98,23 +109,17 @@ def mario():
                 color = 'bisque'
             elif (k == 6):
                 color = 'brown'
+            else:
+                color = 'white'
 
             cell_ij_fill(grid_m, i, j, color)
 
     filename = 'mario.png'
-    plt.savefig(filename)
+    obj.SavePng(filename)
     print('  Graphics saved as ', filename)
-
-# plt.show ( )
-    plt.clf()
-#
-#  Terminate.
-#
     print('')
     print('MARIO:')
     print('  Normal end of execution.')
-
-    return
 
 
 def cell_ij_fill(m, i, j, color):
@@ -154,7 +159,6 @@ def cell_ij_fill(m, i, j, color):
     #    'r', 'g', 'b', 'c', 'm', 'y', 'w', 'k', or an RGB triple such as
     #    [1.0,0.4,0.0].  The square is filled with this color.
     #
-    import matplotlib.pyplot as plt
 
     a = j - 1
     b = j
@@ -162,38 +166,6 @@ def cell_ij_fill(m, i, j, color):
     d = m - i
 
     plt.fill([a, b, b, a], [c, c, d, d], color)
-
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):
