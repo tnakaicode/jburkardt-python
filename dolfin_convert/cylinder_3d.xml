@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dolfin xmlns:dolfin="http://www.fenics.org/dolfin/">
+  <mesh celltype="None" dim="0">
+    <vertices size="0">
