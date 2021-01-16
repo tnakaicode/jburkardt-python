@@ -13,172 +13,185 @@
 
 import getopt
 import sys
-from commands import getoutput
 
-def main ( argv ):
 
-#*****************************************************************************80
-#
-## MAIN is the main function for DOLFIN-CONVERT.
-#
-#  Usage:
-#
-#    dolfin-convert input_filename output_filename
-#
-  "Main function"
-#
-#  Get the command-line arguments.
-#
-  try:
-    opts, args = getopt.getopt(argv, "hi:o:", ["help", "input=", "output="])
-  except getopt.GetoptError:
-    usage()
-    sys.exit(2)
-#       
-#  Get options
-#
-  input_format = ""
-  output_format = ""
+def main(argv):
 
-  for opt, arg in opts:
-    if opt in ("-h", "--help"):
-      usage()
-      sys.exit()
-    elif opt in ("-i", "--input"):
-      input_format = arg
-    elif opt in ("-o", "--output"):
-      output_format = arg
-#
-#  Check that we got two filenames.
-#
-  if not len(args) == 2:
-    usage()
-    sys.exit(2)
-#      
-#  Get filenames and suffixes
-#
-  ifilename = args[0]
-  ofilename = args[1]
-  isuffix = ifilename.split(".")[-1]
-  osuffix = ofilename.split(".")[-1]
-#
-# Choose format based on suffixes if not specified
-#
-  if input_format == "":
-    input_format = format_from_suffix ( isuffix )
-  if output_format == "":
-    output_format = format_from_suffix ( osuffix )
-#
-#  Choose conversion:
-#    MESH          => XML
-#    GMSH          => XML
-#    XML-OLD       => XML
-#    METIS Graph   => DOLFIN Graph XML
-#    SCOTCH Graph  => DOLFIN Graph XML
-#
-  if input_format == "mesh" and output_format == "xml":
-    mesh2xml ( ifilename, ofilename )
-  elif input_format == "gmsh" and output_format == "xml":
-    gmsh2xml ( ifilename, ofilename )
-  elif input_format == "xml-old" and output_format == "xml":
-    xml_old2xml ( ifilename, ofilename )
-  elif input_format == "metis" and output_format == "xml":
-    metis_graph2graph_xml ( ifilename, ofilename )
-  elif input_format == "scotch" and output_format == "xml":
-    scotch_graph2graph_xml ( ifilename, ofilename )
-  else:
-    error ( "Cannot convert between .%s and .%s formats." % ( isuffix, osuffix ) )
+    # *****************************************************************************80
+    #
+    # MAIN is the main function for DOLFIN-CONVERT.
+    #
+    #  Usage:
+    #
+    #    dolfin-convert input_filename output_filename
+    #
+    "Main function"
+
+    #
+    #  Get the command-line arguments.
+    #
+    try:
+        opts, args = getopt.getopt(
+            argv, "hi:o:", ["help", "input=", "output="])
+    except getopt.GetoptError:
+        usage()
+        sys.exit(2)
+
+    #
+    #  Get options
+    #
+    input_format = ""
+    output_format = ""
+
+    for opt, arg in opts:
+        if opt in ("-h", "--help"):
+            usage()
+            sys.exit()
+        elif opt in ("-i", "--input"):
+            input_format = arg
+        elif opt in ("-o", "--output"):
+            output_format = arg
+
+    #
+    #  Check that we got two filenames.
+    #
+    if not len(args) == 2:
+        usage()
+        sys.exit(2)
+
+    #
+    #  Get filenames and suffixes
+    #
+    ifilename = args[0]
+    ofilename = args[1]
+    isuffix = ifilename.split(".")[-1]
+    osuffix = ofilename.split(".")[-1]
+
+    #
+    # Choose format based on suffixes if not specified
+    #
+    if input_format == "":
+        input_format = format_from_suffix(isuffix)
+    if output_format == "":
+        output_format = format_from_suffix(osuffix)
+
+    #
+    #  Choose conversion:
+    #    MESH          => XML
+    #    GMSH          => XML
+    #    XML-OLD       => XML
+    #    METIS Graph   => DOLFIN Graph XML
+    #    SCOTCH Graph  => DOLFIN Graph XML
+    #
+    if input_format == "mesh" and output_format == "xml":
+        mesh2xml(ifilename, ofilename)
+    elif input_format == "gmsh" and output_format == "xml":
+        gmsh2xml(ifilename, ofilename)
+    elif input_format == "xml-old" and output_format == "xml":
+        xml_old2xml(ifilename, ofilename)
+    elif input_format == "metis" and output_format == "xml":
+        metis_graph2graph_xml(ifilename, ofilename)
+    elif input_format == "scotch" and output_format == "xml":
+        scotch_graph2graph_xml(ifilename, ofilename)
+    else:
+        error("Cannot convert between .%s and .%s formats." %
+              (isuffix, osuffix))
+
 
 def usage():
 
-#*****************************************************************************80
-#
-## USAGE prints the program usage statement.
-#
-    print ( "Display usage" )
-    print ( "" )
-    print ( "Usage: dolfin-convert [OPTIONS] ... input.x output.y" )
-    print ( "" )
-    print ( "Options:" )
-    print ( "" )
-    print ( "  -h         display this help text and exit" )
-    print ( "  -i format  specify input format" )
-    print ( "  -o format  specify output format" )
-    print ( "" )
-    print ( "Alternatively, the following long options may be used:" )
-    print ( "" )
-    print ( "  --help     same as -h" )
-    print ( "  --input    same as -i" )
-    print ( "  --output   same as -o" )
-    print ( "" )
-    print ( "Supported formats:" )
-    print ( "" )
-    print ( "  xml     - DOLFIN XML mesh format (current)" )
-    print ( "  xml-old - DOLFIN XML mesh format (DOLFIN 0.6.2 and earlier)" )
-    print ( "  mesh    - Medit, generated by tetgen with option -g" )
-    print ( "  gmsh    - Gmsh, version 2.0 file format" )
-    print ( "  metis   - Metis graph file format" )
-    print ( "  scotch  - Scotch graph file format" )
-    print ( "" )
-    print ( "If --input or --output are not specified, the format will" )
-    print ( "be deduced from the suffix:" )
-    print ( "" )
-    print ( "  .xml  - xml" )
-    print ( "  .mesh - mesh" )
-    print ( "  .gmsh - gmsh" )
-    print ( "  .msh  - gmsh" )
-    print ( "  .gra  - metis" )
-    print ( "  .grf  - scotch" )
+    # *****************************************************************************80
+    #
+    # USAGE prints the program usage statement.
+    #
+    print("Display usage")
+    print("")
+    print("Usage: dolfin-convert [OPTIONS] ... input.x output.y")
+    print("")
+    print("Options:")
+    print("")
+    print("  -h         display this help text and exit")
+    print("  -i format  specify input format")
+    print("  -o format  specify output format")
+    print("")
+    print("Alternatively, the following long options may be used:")
+    print("")
+    print("  --help     same as -h")
+    print("  --input    same as -i")
+    print("  --output   same as -o")
+    print("")
+    print("Supported formats:")
+    print("")
+    print("  xml     - DOLFIN XML mesh format (current)")
+    print("  xml-old - DOLFIN XML mesh format (DOLFIN 0.6.2 and earlier)")
+    print("  mesh    - Medit, generated by tetgen with option -g")
+    print("  gmsh    - Gmsh, version 2.0 file format")
+    print("  metis   - Metis graph file format")
+    print("  scotch  - Scotch graph file format")
+    print("")
+    print("If --input or --output are not specified, the format will")
+    print("be deduced from the suffix:")
+    print("")
+    print("  .xml  - xml")
+    print("  .mesh - mesh")
+    print("  .gmsh - gmsh")
+    print("  .msh  - gmsh")
+    print("  .gra  - metis")
+    print("  .grf  - scotch")
 
-def format_from_suffix ( suffix ):
 
-#*****************************************************************************80
-#
-## FORMAT_FROM_SUFFIX determines the format from the file suffix.
-#
-  "Return format for given suffix"
+def format_from_suffix(suffix):
 
-  if suffix == "xml":
-    return "xml"
-  elif suffix == "mesh":
-    return "mesh"
-  elif suffix == "gmsh":
-    return "gmsh"
-  elif suffix == "msh":
-    return "gmsh"
-  elif suffix == "gra":
-    return "metis"
-  elif suffix == "grf":
-    return "scotch"
-  else:
-    error("Sorry, unknown suffix %s." % suffix)
+    # *****************************************************************************80
+    #
+    # FORMAT_FROM_SUFFIX determines the format from the file suffix.
+    #
+    "Return format for given suffix"
 
-def error ( message ):
+    if suffix == "xml":
+        return "xml"
+    elif suffix == "mesh":
+        return "mesh"
+    elif suffix == "gmsh":
+        return "gmsh"
+    elif suffix == "msh":
+        return "gmsh"
+    elif suffix == "gra":
+        return "metis"
+    elif suffix == "grf":
+        return "scotch"
+    else:
+        error("Sorry, unknown suffix %s." % suffix)
 
-#*****************************************************************************80
-#
-## ERROR prints an error message and exits.
-#
-  "Write an error message"
 
-  for line in message.split ( "\n" ):
-    print "*** %s" % line
+def error(message):
 
-  sys.exit(2)
+    # *****************************************************************************80
+    #
+    # ERROR prints an error message and exits.
+    #
+    "Write an error message"
 
-def mesh2xml ( ifilename, ofilename ):
+    for line in message.split("\n"):
+        print("*** %s" % line)
 
-#*****************************************************************************80
-#
-## MESH2XML converts from MESH to XML format.
-#
-#  Modified:
-#
-#    18 October 2014
-#
-    """Convert between .mesh and .xml, parser implemented as a
+    sys.exit(2)
+
+
+def mesh2xml(ifilename, ofilename):
+
+    # *****************************************************************************80
+    #
+    # MESH2XML converts from MESH to XML format.
+    #
+    #  Modified:
+    #
+    #    18 October 2014
+    #
+    """
+    Convert between .mesh and .xml, parser implemented as a
     state machine:
-    
+
         0 = read 'Dimension'
         1 = read dimension
         2 = read 'Vertices'
@@ -188,34 +201,35 @@ def mesh2xml ( ifilename, ofilename ):
         6 = read number of cells
         7 = read next cell
         8 = done
-       
+
     """
-    
-    print "Converting from Medit format (.mesh) to DOLFIN XML format"
-#
-# Open files
-#
+
+    print("Converting from Medit format (.mesh) to DOLFIN XML format")
     ifile = open(ifilename, "r")
     ofile = open(ofilename, "w")
-#
-# Scan file for cell type
-#
+
+    #
+    # Scan file for cell type
+    #
     cell_type = None
     dim = 0
     while 1:
-#
-# Read next line
-#
+        #
+        # Read next line
+        #
         line = ifile.readline()
-        if not line: break
-#
-# Remove newline
-#
+        if not line:
+            break
+
+        #
+        # Remove newline
+        #
         if line[-1] == "\n":
             line = line[:-1]
-#
-# Read dimension
-#
+
+        #
+        # Read dimension
+        #
         if line == "Dimension":
             line = ifile.readline()
             num_dims = int(line)
@@ -229,26 +243,31 @@ def mesh2xml ( ifilename, ofilename ):
                 cell_type = "tetrahedron"
                 dim = 3
             break
-#
-# Check that we got the cell type
-#
+
+    #
+    # Check that we got the cell type
+    #
     if cell_type == None:
         error("Unable to find cell type.")
-#
-# Step to beginning of file
-#
+
+    #
+    # Step to beginning of file
+    #
     ifile.seek(0)
-#
-# Write header
-#
+
+    #
+    # Write header
+    #
     write_header_mesh(ofile, cell_type, dim)
-#
-# Current state
-#
+
+    #
+    # Current state
+    #
     state = 0
-#
-# Write data
-#
+
+    #
+    # Write data
+    #
     num_vertices_read = 0
     num_cells_read = 0
 
@@ -256,7 +275,8 @@ def mesh2xml ( ifilename, ofilename ):
 
         # Read next line
         line = ifile.readline()
-        if not line: break
+        if not line:
+            break
 
         # Skip comments
         if line[0] == '#':
@@ -271,17 +291,17 @@ def mesh2xml ( ifilename, ofilename ):
                 state += 1
         elif state == 1:
             num_dims = int(line)
-            state +=1
+            state += 1
         elif state == 2:
             if line == "Vertices":
                 state += 1
         elif state == 3:
             num_vertices = int(line)
             write_header_vertices(ofile, num_vertices)
-            state +=1
+            state += 1
         elif state == 4:
             if num_dims == 1:
-                (x, tmp1, tmp2 ) = line.split()
+                (x, tmp1, tmp2) = line.split()
                 x = float(x)
                 y = 0.0
                 z = 0.0
@@ -296,7 +316,7 @@ def mesh2xml ( ifilename, ofilename ):
                 y = float(y)
                 z = float(z)
             write_vertex(ofile, num_vertices_read, x, y, z)
-            num_vertices_read +=1
+            num_vertices_read += 1
             if num_vertices == num_vertices_read:
                 write_footer_vertices(ofile)
                 state += 1
@@ -310,7 +330,7 @@ def mesh2xml ( ifilename, ofilename ):
         elif state == 6:
             num_cells = int(line)
             write_header_cells(ofile, num_cells)
-            state +=1
+            state += 1
         elif state == 7:
             if num_dims == 1:
                 (n0, n1, tmp1, tmp2) = line.split()
@@ -330,46 +350,45 @@ def mesh2xml ( ifilename, ofilename ):
                 n2 = int(n2) - 1
                 n3 = int(n3) - 1
                 write_cell_tetrahedron(ofile, num_cells_read, n0, n1, n2, n3)
-            num_cells_read +=1
+            num_cells_read += 1
             if num_cells == num_cells_read:
                 write_footer_cells(ofile)
                 state += 1
         elif state == 8:
             break
-#
-# Check that we got all data
-#
+
+    #
+    # Check that we got all data
+    #
     if state == 8:
-        print "Conversion done"
+        print("Conversion done")
     else:
         error("Missing data, unable to convert")
-#
-# Write footer
-#
+
+    #
+    # Write footer
+    #
     write_footer_mesh(ofile)
-#
-# Close files
-#
     ifile.close()
     ofile.close()
 
-def gmsh2xml ( ifilename, ofilename ):
 
-#*****************************************************************************80
-#
-## GMSH2XML converts a Gmsh msh file to Dolfin XML format.
-#
-#  Discussion:
-#
-#    This function can only handle triangles and tetrahedrons.
-#
-#  Modified:
-#
-#    18 October 2014
-#
-    """Convert between .gmsh v2.0 format (http://www.geuz.org/gmsh/) and .xml, 
+def gmsh2xml(ifilename, ofilename):
+    #
+    # GMSH2XML converts a Gmsh msh file to Dolfin XML format.
+    #
+    #  Discussion:
+    #
+    #    This function can only handle triangles and tetrahedrons.
+    #
+    #  Modified:
+    #
+    #    18 October 2014
+    #
+    """
+    Convert between .gmsh v2.0 format (http://www.geuz.org/gmsh/) and .xml, 
     parser implemented as a state machine:
-    
+
         0 = read 'MeshFormat'
         1 = read  mesh format data
         2 = read 'EndMeshFormat'
@@ -381,19 +400,18 @@ def gmsh2xml ( ifilename, ofilename ):
         8 = read  number of cells
         9 = read  cells
         10 = done
-       
+
     """
 
-    print "Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format"
-    print "Hello"
-#
-#  Open files
-#
+    print("Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format")
+    print("Hello")
+
     ifile = open(ifilename, "r")
     ofile = open(ofilename, "w")
-#
-#  Scan file for cell type
-#
+
+    #
+    #  Scan file for cell type
+    #
     cell_type = None
     dim = 0
     line = ifile.readline()
@@ -405,22 +423,23 @@ def gmsh2xml ( ifilename, ofilename ):
 
         # Read dimension
         if line.find("$Elements") == 0:
-                        
+
             line = ifile.readline()
-            num_cells  = int(line)
+            num_cells = int(line)
             num_cells_counted = 0
             if num_cells == 0:
                 error("No cells found in gmsh file.")
             line = ifile.readline()
-#
-#  Now iterate through elements to find largest dimension.  
-#
-#  Gmsh format might include elements of lower dimensions in the element list.
-#
-#  We also need to count number of elements of correct dimensions.
-#
-#  Also determine which vertices are not used.
-#
+
+            #
+            #  Now iterate through elements to find largest dimension.
+            #
+            #  Gmsh format might include elements of lower dimensions in the element list.
+            #
+            #  We also need to count number of elements of correct dimensions.
+            #
+            #  Also determine which vertices are not used.
+            #
             dim_2_count = 0
             dim_3_count = 0
             vertices_2_used = []
@@ -433,7 +452,8 @@ def gmsh2xml ( ifilename, ofilename ):
                     if dim < 2:
                         cell_type = "triangle"
                         dim = 2
-                    node_num_list = [int(node) for node in element[3 + num_tags:]]
+                    node_num_list = [int(node)
+                                     for node in element[3 + num_tags:]]
                     vertices_2_used.extend(node_num_list)
                     dim_2_count += 1
                 elif elem_type == 4:
@@ -441,51 +461,57 @@ def gmsh2xml ( ifilename, ofilename ):
                         cell_type = "tetrahedron"
                         dim = 3
                         vertices_2_used = None
-                    node_num_list = [int(node) for node in element[3 + num_tags:]]
+                    node_num_list = [int(node)
+                                     for node in element[3 + num_tags:]]
                     vertices_3_used.extend(node_num_list)
                     dim_3_count += 1
                 line = ifile.readline()
         else:
             # Read next line
             line = ifile.readline()
-#
-#  Check that we got the cell type and set num_cells_counted
-#
-    if cell_type == None:
-        error("Unable to find cell type.")
+
+    #
+    #  Check that we got the cell type and set num_cells_counted
+    #
+    # if cell_type == None:
+    #     error("Unable to find cell type.")
 
     if dim == 3:
         num_cells_counted = dim_3_count
-        vertex_set = set ( vertices_3_used )
+        vertex_set = set(vertices_3_used)
         vertices_3_used = None
     elif dim == 2:
         num_cells_counted = dim_2_count
-        vertex_set = set ( vertices_2_used )
+        vertex_set = set(vertices_2_used)
+        vertices_2_used = None
+    else:
+        num_cells_counted = dim_2_count
+        vertex_set = set(vertices_2_used)
         vertices_2_used = None
 
     vertex_dict = {}
 
-    for n,v in enumerate(vertex_set):
+    for n, v in enumerate(vertex_set):
         vertex_dict[v] = n
-#
-# Step to beginning of file
-#
+    #
+    # Step to beginning of file
+    #
     ifile.seek(0)
-#
-# Write header
-#
+    #
+    # Write header
+    #
     write_header_mesh(ofile, cell_type, dim)
-#   
-# Initialize node list (gmsh does not export all vertexes in order)
-#
+    #
+    # Initialize node list (gmsh does not export all vertexes in order)
+    #
     nodelist = {}
-#   
-# Current state
-#
+    #
+    # Current state
+    #
     state = 0
-#   
-# Write data
-#
+    #
+    # Write data
+    #
     num_vertices_read = 0
     num_cells_read = 0
 
@@ -493,7 +519,8 @@ def gmsh2xml ( ifilename, ofilename ):
 
         # Read next line
         line = ifile.readline()
-        if not line: break
+        if not line:
+            break
 
         # Skip comments
         if line[0] == '#':
@@ -522,19 +549,20 @@ def gmsh2xml ( ifilename, ofilename ):
             state = 5
         elif state == 5:
             (node_no, x, y, z) = line.split()
-            if vertex_dict.has_key(int(node_no)):
-                node_no = vertex_dict[int(node_no)]
-            else:
-                continue
+            # if vertex_dict.keys(int(node_no)):
+            #    node_no = vertex_dict[int(node_no)]
+            # else:
+            #    continue
+            node_no = vertex_dict[int(node_no)]
             nodelist[int(node_no)] = num_vertices_read
             x = float(x)
             y = float(y)
             z = float(z)
             write_vertex(ofile, num_vertices_read, x, y, z)
-            num_vertices_read +=1
-            
+            num_vertices_read += 1
+
             if num_vertices == num_vertices_read:
-                write_footer_vertices(ofile)                
+                write_footer_vertices(ofile)
                 state = 6
         elif state == 6:
             if line == "$EndNodes":
@@ -543,14 +571,15 @@ def gmsh2xml ( ifilename, ofilename ):
             if line == "$Elements":
                 state = 8
         elif state == 8:
-            write_header_cells(ofile,  num_cells_counted)   
+            write_header_cells(ofile, num_cells_counted)
             state = 9
         elif state == 9:
             element = line.split()
             elem_type = int(element[1])
-            num_tags  = int(element[2])
+            num_tags = int(element[2])
             if elem_type == 2 and dim == 2:
-                node_num_list = [vertex_dict[int(node)] for node in element[3 + num_tags:]]
+                node_num_list = [vertex_dict[int(node)]
+                                 for node in element[3 + num_tags:]]
                 for node in node_num_list:
                     if not node in nodelist:
                         error("Vertex %d of triangle %d not previously defined." %
@@ -559,66 +588,62 @@ def gmsh2xml ( ifilename, ofilename ):
                 n1 = nodelist[node_num_list[1]]
                 n2 = nodelist[node_num_list[2]]
                 write_cell_triangle(ofile, num_cells_read, n0, n1, n2)
-                num_cells_read +=1 
+                num_cells_read += 1
             elif elem_type == 4 and dim == 3:
-                node_num_list = [vertex_dict[int(node)] for node in element[3 + num_tags:9]]
+                node_num_list = [vertex_dict[int(node)]
+                                 for node in element[3 + num_tags:9]]
                 for node in node_num_list:
                     if not node in nodelist:
-                        error("Vertex %d of tetrahedron %d not previously defined." % 
+                        error("Vertex %d of tetrahedron %d not previously defined." %
                               (node, num_cells_read))
                 n0 = nodelist[node_num_list[0]]
                 n1 = nodelist[node_num_list[1]]
                 n2 = nodelist[node_num_list[2]]
                 n3 = nodelist[node_num_list[3]]
                 write_cell_tetrahedron(ofile, num_cells_read, n0, n1, n2, n3)
-                num_cells_read +=1 
+                num_cells_read += 1
 
             if num_cells_counted == num_cells_read:
-              write_footer_cells(ofile)                
-              state = 10
+                write_footer_cells(ofile)
+                state = 10
         elif state == 10:
             break
-#
-# Check that we got all data
-#
+
+    #
+    # Check that we got all data
+    #
     if state == 10:
-        print "Conversion done"
+        print("Conversion done")
     else:
         error("Missing data, unable to convert \n\ Did you use version 2.0 of the gmsh file format?")
-#  
-# Write footer
-#
-    write_footer_mesh(ofile)  
-#
-# Close files
-#
+
+    write_footer_mesh(ofile)
     ifile.close()
     ofile.close()
 
+
 def xml_old2xml(ifilename, ofilename):
 
-#*****************************************************************************80
-#
-## XML_OLD2XML converts from the old to the new DOLFIN XML format.
-#
+    #
+    # XML_OLD2XML converts from the old to the new DOLFIN XML format.
+    #
     "Convert from old DOLFIN XML format to new."
 
-    print "Converting from old (pre DOLFIN 0.6.2) to new DOLFIN XML format..."
-#   
-# Open files
-#
+    print("Converting from old (pre DOLFIN 0.6.2) to new DOLFIN XML format...")
     ifile = open(ifilename, "r")
     ofile = open(ofilename, "w")
-#
-# Scan file for cell type (assuming there is just one)
-#
+
+    #
+    # Scan file for cell type (assuming there is just one)
+    #
     cell_type = None
     dim = 0
     while 1:
 
         # Read next line
         line = ifile.readline()
-        if not line: break
+        if not line:
+            break
 
         # Read dimension
         if "<triangle" in line:
@@ -638,8 +663,9 @@ def xml_old2xml(ifilename, ofilename):
 
         # Read next line
         line = ifile.readline()
-        if not line: break
-        
+        if not line:
+            break
+
         # Modify line
         if "xmlns" in line:
             line = "<dolfin xmlns:dolfin=\"http://www.fenics.org/dolfin/\">\n"
@@ -659,34 +685,33 @@ def xml_old2xml(ifilename, ofilename):
             line = line.replace("n2", "v2")
         if "n3" in line:
             line = line.replace("n3", "v3")
-#
-# Write line
-#
+
         ofile.write(line)
-#
-# Close files
-#
-    ifile.close();
-    ofile.close();
-    print "Conversion done"
+
+    ifile.close()
+    ofile.close()
+    print("Conversion done")
+
 
 def metis_graph2graph_xml(ifilename, ofilename):
 
-#*****************************************************************************80
-#
-## METIS_GRAPH2GRAPH_XML converts from METIS graph to DOLFIN XML graph format.
-#
+    # *****************************************************************************80
+    #
+    # METIS_GRAPH2GRAPH_XML converts from METIS graph to DOLFIN XML graph format.
+    #
     "Convert from Metis graph format to DOLFIN Graph XML."
 
-    print "Converting from Metis graph format to DOLFIN Graph XML."
-#   
-# Open files
-#
+    print("Converting from Metis graph format to DOLFIN Graph XML.")
+
+    #
+    # Open files
+    #
     ifile = open(ifilename, "r")
     ofile = open(ofilename, "w")
-#
-# Read number of vertices and edges
-#
+
+    #
+    # Read number of vertices and edges
+    #
     line = ifile.readline()
     if not line:
         error("Empty file")
@@ -703,9 +728,10 @@ def metis_graph2graph_xml(ifilename, ofilename):
 
     write_footer_vertices(ofile)
     write_header_edges(ofile, int(num_edges))
-#
-# Step to beginning of file and skip header info
-#
+
+    #
+    # Step to beginning of file and skip header info
+    #
     ifile.seek(0)
     ifile.readline()
     for i in range(int(num_vertices)):
@@ -717,49 +743,49 @@ def metis_graph2graph_xml(ifilename, ofilename):
 
     write_footer_edges(ofile)
     write_footer_graph(ofile)
-#
-# Close files
-#
-    ifile.close();
-    ofile.close();
+
+    ifile.close()
+    ofile.close()
+
 
 def scotch_graph2graph_xml(ifilename, ofilename):
 
-#*****************************************************************************80
-#
-## SCOTCH_GRAPH2GRAPH_XML converts from Scotch graph to DOLFIN XML graph.
-#
+    # *****************************************************************************80
+    #
+    # SCOTCH_GRAPH2GRAPH_XML converts from Scotch graph to DOLFIN XML graph.
+    #
     "Convert from Scotch graph format to DOLFIN Graph XML."
 
-    print "Converting from Scotch graph format to DOLFIN Graph XML."
-#   
-# Open files
-#
+    print("Converting from Scotch graph format to DOLFIN Graph XML.")
+
     ifile = open(ifilename, "r")
     ofile = open(ofilename, "w")
-#
-# Skip graph file version number
-#
+
+    #
+    # Skip graph file version number
+    #
     ifile.readline()
-#
-# Read number of vertices and edges
-#
+
+    #
+    # Read number of vertices and edges
+    #
     line = ifile.readline()
     if not line:
         error("Empty file")
 
     (num_vertices, num_edges) = line.split()
-#
-# Read start index and numeric flag
-# Start index is 0 or 1 (C/Fortran)
-# Numeric flag is 3 bits where bit 1 enables vertex labels
-# bit 2 enables edge weights and bit 3 enables vertex weights
-#
+    #
+    # Read start index and numeric flag
+    # Start index is 0 or 1 (C/Fortran)
+    # Numeric flag is 3 bits where bit 1 enables vertex labels
+    # bit 2 enables edge weights and bit 3 enables vertex weights
+    #
     line = ifile.readline()
     (start_index, numeric_flag) = line.split()
-#
-# Handling not implemented
-#
+
+    #
+    # Handling not implemented
+    #
     if not numeric_flag == "000":
         error("Handling of scotch vertex labels, edge- and vertex weights not implemented")
 
@@ -770,11 +796,10 @@ def scotch_graph2graph_xml(ifilename, ofilename):
     for i in range(int(num_vertices)):
         line = ifile.readline()
         edges = line.split()
-        write_graph_vertex(ofile, i, len(edges)-1)
+        write_graph_vertex(ofile, i, len(edges) - 1)
 
     write_footer_vertices(ofile)
-    write_header_edges(ofile, int(num_edges)/2)
-
+    write_header_edges(ofile, int(num_edges) / 2)
 
     # Step to beginning of file and skip header info
     ifile.seek(0)
@@ -791,17 +816,16 @@ def scotch_graph2graph_xml(ifilename, ofilename):
 
     write_footer_edges(ofile)
     write_footer_graph(ofile)
-#
-# Close files
-#
-    ifile.close();
-    ofile.close();
+
+    ifile.close()
+    ofile.close()
+
 
 def write_header_mesh(ofile, cell_type, dim):
 
-#*****************************************************************************80
-#
-## WRITE_HEADER_MESH writes the mesh header.
+    # *****************************************************************************80
+    #
+    # WRITE_HEADER_MESH writes the mesh header.
 
     ofile.write("""\
 <?xml version=\"1.0\" encoding=\"UTF-8\"?>
@@ -810,12 +834,13 @@ def write_header_mesh(ofile, cell_type, dim):
   <mesh celltype="%s" dim="%d">
 """ % (cell_type, dim))
 
+
 def write_header_graph(ofile, graph_type):
 
-#*****************************************************************************80
-#
-## WRITE_HEADER_GRAPH writes the graph header.
-#
+    # *****************************************************************************80
+    #
+    # WRITE_HEADER_GRAPH writes the graph header.
+    #
     ofile.write("""\
 <?xml version=\"1.0\" encoding=\"UTF-8\"?>
 
@@ -823,125 +848,147 @@ def write_header_graph(ofile, graph_type):
   <graph type="%s">
 """ % (graph_type))
 
+
 def write_footer_mesh(ofile):
 
-#*****************************************************************************80
-#
-## WRITE_FOOTER_MESH writes the mesh footer.
-#
+    # *****************************************************************************80
+    #
+    # WRITE_FOOTER_MESH writes the mesh footer.
+    #
     ofile.write("""\
   </mesh>
 </dolfin>
 """)
 
+
 def write_footer_graph(ofile):
 
-#*****************************************************************************80
-#
-## WRITE_FOOTER_GRAPH writes the graph footer.
-#
+    # *****************************************************************************80
+    #
+    # WRITE_FOOTER_GRAPH writes the graph footer.
+    #
     ofile.write("""\
   </graph>
 </dolfin>
 """)
 
+
 def write_header_vertices(ofile, num_vertices):
 
-#*****************************************************************************80
-#
-## WRITE_HEADER_VERTICES ???
-#
+    # *****************************************************************************80
+    #
+    # WRITE_HEADER_VERTICES ???
+    #
     "Write vertices header"
-    print "Expecting %d vertices" % num_vertices
+    print("Expecting %d vertices" % num_vertices)
     ofile.write("    <vertices size=\"%d\">\n" % num_vertices)
+
 
 def write_footer_vertices(ofile):
 
-#*****************************************************************************80
-#
-## WRITE_FOOTER_VERTICES ???
-#
+    # *****************************************************************************80
+    #
+    # WRITE_FOOTER_VERTICES ???
+    #
     "Write vertices footer"
     ofile.write("    </vertices>\n")
-    print "Found all vertices"
+    print("Found all vertices")
+
 
 def write_header_edges(ofile, num_edges):
 
-#*****************************************************************************80
-#
-## WRITE_HEADER_EDGES ???
-#
+    # *****************************************************************************80
+    #
+    # WRITE_HEADER_EDGES ???
+    #
     "Write edges header"
-    print "Expecting %d edges" % num_edges
+    print("Expecting %d edges" % num_edges)
     ofile.write("    <edges size=\"%d\">\n" % num_edges)
+
 
 def write_footer_edges(ofile):
 
-#*****************************************************************************80
-#
-## WRITE_FOOTER_EDGES ???
-#
+    # *****************************************************************************80
+    #
+    # WRITE_FOOTER_EDGES ???
+    #
     "Write edges footer"
     ofile.write("    </edges>\n")
-    print "Found all edges"
+    print("Found all edges")
+
 
 def write_vertex(ofile, vertex, x, y, z):
 
-#*****************************************************************************80
-#
-## WRITE_VERTEX ???
-#
+    # *****************************************************************************80
+    #
+    # WRITE_VERTEX ???
+    #
     "Write vertex"
-    ofile.write("      <vertex index=\"%d\" x=\"%g\" y=\"%g\" z=\"%g\"/>\n" % \
-        (vertex, x, y, z))
+    ofile.write("      <vertex index=\"%d\" x=\"%g\" y=\"%g\" z=\"%g\"/>\n" %
+                (vertex, x, y, z))
 
-def write_graph_vertex(ofile, vertex, num_edges, weight = 1):
 
-#*****************************************************************************80
+def write_graph_vertex(ofile, vertex, num_edges, weight=1):
+
+    # *****************************************************************************80
     "Write graph vertex"
-    ofile.write("      <vertex index=\"%d\" num_edges=\"%d\" weight=\"%d\"/>\n" % \
-        (vertex, num_edges, weight))
+    ofile.write("      <vertex index=\"%d\" num_edges=\"%d\" weight=\"%d\"/>\n" %
+                (vertex, num_edges, weight))
 
-def write_graph_edge(ofile, v1, v2, weight = 1):
 
-#*****************************************************************************80
-	 "Write graph edge"
-	 ofile.write("      <edge v1=\"%d\" v2=\"%d\" weight=\"%d\"/>\n" % \
-        (v1, v2, weight))
+def write_graph_edge(ofile, v1, v2, weight=1):
+
+    # *****************************************************************************80
+    "Write graph edge"
+    ofile.write("      <edge v1=\"%d\" v2=\"%d\" weight=\"%d\"/>\n" %
+                (v1, v2, weight))
+
 
 def write_header_cells(ofile, num_cells):
 
-#*****************************************************************************80
+    # *****************************************************************************80
     "Write cells header"
     ofile.write("    <cells size=\"%d\">\n" % num_cells)
-    print "Expecting %d cells" % num_cells
+    print("Expecting %d cells" % num_cells)
+
 
 def write_footer_cells(ofile):
 
-#*****************************************************************************80
+    # *****************************************************************************80
     "Write cells footer"
     ofile.write("    </cells>\n")
-    print "Found all cells"
+    print("Found all cells")
 
-def write_cell_interval ( ofile, cell, n0, n1 ):
-#*****************************************************************************80
+
+def write_cell_interval(ofile, cell, n0, n1):
+    # *****************************************************************************80
     "Write cell (interval)"
-    ofile.write("      <interval index=\"%d\" v0=\"%d\" v1=\"%d\"/>\n" % \
-        (cell, n0, n1))
+    ofile.write("      <interval index=\"%d\" v0=\"%d\" v1=\"%d\"/>\n" %
+                (cell, n0, n1))
+
 
 def write_cell_triangle(ofile, cell, n0, n1, n2):
-#*****************************************************************************80
+    # *****************************************************************************80
     "Write cell (triangle)"
-    ofile.write("      <triangle index=\"%d\" v0=\"%d\" v1=\"%d\" v2=\"%d\"/>\n" % \
-        (cell, n0, n1, n2))
+    ofile.write("      <triangle index=\"%d\" v0=\"%d\" v1=\"%d\" v2=\"%d\"/>\n" %
+                (cell, n0, n1, n2))
+
 
 def write_cell_tetrahedron(ofile, cell, n0, n1, n2, n3):
 
-#*****************************************************************************80
+    # *****************************************************************************80
     "Write cell (tetrahedron)"
-    ofile.write("      <tetrahedron index=\"%d\" v0=\"%d\" v1=\"%d\" v2=\"%d\" v3=\"%d\"/>\n" % \
-        (cell, n0, n1, n2, n3))
+    ofile.write("      <tetrahedron index=\"%d\" v0=\"%d\" v1=\"%d\" v2=\"%d\" v3=\"%d\"/>\n" %
+                (cell, n0, n1, n2, n3))
+
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
-
+    main(["cylinder_2d.msh", "cylinder_2d.xml"])
+    main(["cylinder_2d.msh", "cylinder_2d.xml"])
+    main(["cylinder_3d.msh", "cylinder_3d.xml"])
+    main(["ell_2d.msh", "ell_2d.xml"])
+    main(["pinch.msh", "pinch.xml"])
+    main(["step_2d.msh", "step_2d.xml"])
+    main(["step_3d.msh", "step_3d.xml"])
+    main(["test02.msh", "test02.xml"])
+    main(["test03.msh", "test03.xml"])
