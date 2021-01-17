@@ -90,17 +90,21 @@ def r8_sigmoid_test():
     print('      X         R8_SIGMOID(L,B,M,X)')
     print('')
 
-    x_test = np.array([-4.0, -2.0, -1.0, -0.5, -0.25,
-                       0.0, 0.25, 0.50, 1.0, 2.0, 4.0])
-
+    n = 21
+    x_test = np.linspace(-10, 10, n)
     l = 1.0
     b = 0.0
     m = 1.0
 
-    for i in range(0, 11):
+    for i in range(n):
         x = x_test[i]
         value = r8_sigmoid(l, b, m, x)
         print('  %10.6g  %10.6g' % (x, value))
+
+    print('')
+    obj = plot2d(aspect="auto")
+    obj.axs.plot(x_test, r8_sigmoid(l, b, m, x_test))
+    obj.SavePng()
 
     print('')
     print('r8_sigmoid_test')
