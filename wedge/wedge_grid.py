@@ -13,7 +13,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from sys import exit
 
 sys.path.append(os.path.join("../"))
-from base import plot2d, plotocc
+from base import plot2d, plot3d, plotocc
 from timestamp.timestamp import timestamp
 
 from i4lib.i4vec_print import i4vec_print
@@ -22,8 +22,6 @@ from r8lib.r8vec_print import r8vec_print
 from r8lib.r8mat_print import r8mat_print, r8mat_print_some
 from r8lib.r8mat_write import r8mat_write
 from r8lib.r83col_print_part import r83col_print_part
-
-obj = plot2d()
 
 
 def wedge_grid_count(n):
@@ -136,7 +134,7 @@ def wedge_grid_display(ng, xg, filename):
         [0.0, 1.0, +1.0]
     ])
 
-    obj.new_3Dfig()
+    obj = plot3d()
     #
     #  Draw the grid points.
     #
