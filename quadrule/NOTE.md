@@ -17,6 +17,7 @@ Y(X(1)) as Y(1)
 
 Y(M+1) = Y(M) + Integral ( X(M) < X < X(M+1) ) F(Y(X)) dX
        = Y(M) + H * Sum ( 1 <= I <= N ) W(I) * F(Y(M+1-I))
+
 approximately.
 
 ## chebyshev
@@ -32,3 +33,15 @@ Integral (X_MIN <= X <= X_MAX ) F(X) dX
 Sum ( 1 <= I <= N ) W(I)*F(X(I))
 
 ## Radau Rule
+
+## imtqlx
+
+IMTQLX diagonalizes a symmetric tridiagonal matrix.
+
+- This routine is a slightly modified version of the EISPACK routine
+  - to perform the implicit QL algorithm on a symmetric tridiagonal matrix.
+- The authors thank the authors of EISPACK for permission to use this routine.
+- It has been modified to produce the product Q' * Z,
+  - where Z is an input vector
+  - and Q is the orthogonal matrix diagonalizing the input matrix.
+- The changes consist (essentially) of applying the orthogonal transformations directly to Z as they are generated.

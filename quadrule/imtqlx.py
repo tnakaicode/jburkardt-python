@@ -72,19 +72,19 @@ def imtqlx(n, d, e, z):
     #
     #  Parameters:
     #
-    #    Input, integer N, the order of the matrix.
-    #
-    #    Input, real D(N), the diagonal entries of the matrix.
-    #
-    #    Input, real E(N), the subdiagonal entries of the
-    #    matrix, in entries E(1) through E(N-1).
-    #
-    #    Input, real Z(N), a vector to be operated on.
-    #
-    #    Output, real LAM(N), the diagonal entries of the diagonalized matrix.
-    #
-    #    Output, real QTZ(N), the value of Q' * Z, where Q is the matrix that
-    #    diagonalizes the input symmetric tridiagonal matrix.
+    #    Input, integer N, 
+    #       the order of the matrix.
+    #    Input, real D(N), 
+    #       the diagonal entries of the matrix.
+    #    Input, real E(N), 
+    #       the subdiagonal entries of the matrix, in entries E(1) through E(N-1).
+    #    Input, real Z(N), 
+    #       a vector to be operated on.
+    #    Output, real LAM(N), 
+    #       the diagonal entries of the diagonalized matrix.
+    #    Output, real QTZ(N), 
+    #       the value of Q' * Z, where Q is the matrix that
+    #       diagonalizes the input symmetric tridiagonal matrix.
     #
 
     lam = np.zeros(n)
@@ -248,20 +248,15 @@ def imtqlx_test():
         lam2[i] = 4.0 * (np.sin(angle)) ** 2
 
     r8vec_print(n, lam2, '  Exact eigenvalues:')
-
     r8vec_print(n, z, '  Vector Z:')
     r8vec_print(n, qtz, '  Vector Q''*Z:')
-#
-#  Terminate.
-#
+
     print('')
     print('IMTQLX_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     imtqlx_test()
     timestamp()
