@@ -11,17 +11,19 @@ import os
 import time
 
 sys.path.append(os.path.join('../'))
-from rnd_uniform.uniform import r8vec_uniform_01, r8mat_uniform_01, r8_uniform_01
-from rnd_uniform.sample import triangle01_sample, cube01_sample, ball01_sample, annulus_sample
-from rnd_uniform.sample import circle01_sample_ergodic, circle01_sample_random
-from rnd_uniform.sample import hypercube01_sample, polygon_sample, ellipsoid_sample
-from base import PlotBase
+from base import plot2d
+from timestamp.timestamp import timestamp
+
+from rnglib.sample import triangle01_sample, cube01_sample, ball01_sample
+from rnglib.sample import circle01_sample_ergodic, circle01_sample_random
+from rnglib.sample import hypercube01_sample, polygon_sample, ellipsoid_sample
+from rnglib.sample import annulus_sample
 
 
-class MonteCarlo (PlotBase):
+class MonteCarlo (plot2d):
 
     def __init__(self, aspect='equal'):
-        PlotBase.__init__(self, aspect=aspect)
+        plot2d.__init__(self, aspect=aspect)
         self.create_tempdir(-1)
 
         v0 = np.array([

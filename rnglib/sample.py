@@ -11,8 +11,20 @@ import os
 import time
 
 sys.path.append(os.path.join('../'))
-from rnd_uniform.uniform import r8vec_uniform_01, r8mat_uniform_01, r8_uniform_01, r8_normal_01, r8po_fa, r8po_sl, uniform_in_sphere01_map
-from rnd_uniform.triangle import polygon_triangulate, triangle_area
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+
+from r8lib.r8_uniform_01 import r8_uniform_01
+from r8lib.r8vec_uniform_01 import r8vec_uniform_01
+from r8lib.r8mat_uniform_01 import r8mat_uniform_01
+from r8lib.r8po import r8po_fa, r8po_sl
+
+from rnglib.uniform import uniform_in_sphere01_map
+from geometry.polygon_triangulate import polygon_triangulate, triangle_area
 
 
 def hypercube01_sample(m, n, seed):
@@ -348,6 +360,7 @@ def polygon_sample(v, n, seed):
         #  Choose triangle I at random, based on areas.
         #
         area_percent, seed = r8_uniform_01(seed)
+        i = 0
         for k in range(0, nv - 2):
             i = k
             if (area_percent <= area_cumulative[k]):
