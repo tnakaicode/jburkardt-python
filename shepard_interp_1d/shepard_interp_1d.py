@@ -1399,7 +1399,6 @@ def shepard_interp_1d_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('SHEPARD_INTERP_1D_TEST')
@@ -1448,9 +1447,6 @@ def shepard_interp_1d_test01(prob, p):
     #
     #    Input, real P, the exponent.
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import platform
 
     print('')
     print('SHEPARD_INTERP_1D_TEST01:')
@@ -1459,20 +1455,19 @@ def shepard_interp_1d_test01(prob, p):
     print('  Use Shepard interpolation with P = %g' % (p))
 
     dim_num = p00_dim_num(prob)
-
     nd = p00_data_num(prob)
     print('  Number of data points = %d' % (nd))
 
     xy = p00_data(prob, dim_num, nd)
-
     xd = np.zeros(nd)
     yd = np.zeros(nd)
     for i in range(0, nd):
         xd[i] = xy[0, i]
         yd[i] = xy[1, i]
-#
-#  #1:  Does interpolant match function at interpolation points?
-#
+
+    #
+    #  1:  Does interpolant match function at interpolation points?
+    #
     ni = nd
     xi = xd
     yi = shepard_value_1d(nd, xd, yd, p, ni, xi)
@@ -1482,11 +1477,12 @@ def shepard_interp_1d_test01(prob, p):
     print('')
     print('  L2 interpolation error averaged per interpolant node = %g' %
           (int_error))
-#
-#  #2: Compare estimated curve length to piecewise linear (minimal) curve length.
-#  Assume data is sorted, and normalize X and Y dimensions by (XMAX-XMIN) and
-#  (YMAX-YMIN).
-#
+
+    #
+    #  2: Compare estimated curve length to piecewise linear (minimal) curve length.
+    #  Assume data is sorted, and normalize X and Y dimensions by (XMAX-XMIN) and
+    #  (YMAX-YMIN).
+    #
     xmin = np.min(xd)
     xmax = np.max(xd)
     ymin = np.min(yd)
@@ -1516,11 +1512,13 @@ def shepard_interp_1d_test01(prob, p):
     print('  Normalized length of Shepard interpolant          = %g' % (li))
 
     #
-    #  #3: Plot the data.
+    #  3: Plot the data.
     #
+
+    name = "p{:03d}".format(prob)
     obj.new_2Dfig(aspect="auto")
-    t = 'p0' + str(prob) + ' Piecewise Linear Interpolant'
-    filename = 'p0' + str(prob) + '_data.png'
+    t = name + ' Piecewise Linear Interpolant'
+    filename = name + '_data.png'
     obj.axs.plot(xd, yd, 'b-', linewidth=3.0)
     obj.axs.plot(xd, yd, 'k.', markersize=10)
     obj.axs.set_title(t)
@@ -1533,7 +1531,7 @@ def shepard_interp_1d_test01(prob, p):
     print('  Created plot file "%s"' % (filename))
 
     #
-    #  #4: Plot the piecewise linear and Shepard interpolants.
+    #  4: Plot the piecewise linear and Shepard interpolants.
     #
     ni = 501
     xmin = min(xd)
@@ -1542,8 +1540,8 @@ def shepard_interp_1d_test01(prob, p):
     yi = shepard_value_1d(nd, xd, yd, p, ni, xi)
 
     obj.new_2Dfig(aspect="auto")
-    t = 'p0' + str(prob) + ' Shepard Interpolant'
-    filename = 'p0' + str(prob) + '_' + str(p) + '_shepard.png'
+    t = name + ' Shepard Interpolant'
+    filename = name + '_{:03d}_shepard.png'.format(int(p))
     obj.axs.plot(xd, yd, 'b-', linewidth=3.0)
     obj.axs.plot(xi, yi, 'r-', linewidth=4.0)
     obj.axs.plot(xd, yd, 'k.', markersize=10)
@@ -1600,10 +1598,8 @@ def shepard_value_1d(nd, xd, yd, p, ni, xi):
     #
     #    Output, real YI(NI), the interpolated values.
     #
-    import numpy as np
 
     yi = np.zeros(ni)
-
     w = np.zeros(nd)
 
     for i in range(0, ni):
@@ -1660,8 +1656,6 @@ def shepard_value_1d_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nd = 4
     ni = 21
@@ -1687,7 +1681,6 @@ def shepard_value_1d_test():
     print('')
     print('SHEPARD_VALUE_1D_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
