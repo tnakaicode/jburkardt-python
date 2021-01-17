@@ -102,9 +102,10 @@ def ffwt(n, x):
             hold = x[nw]
             x[nw] = x[k - 1]
             x[k - 1] = hold
-#
-#  Bump up series by 1.
-#
+        
+        #
+        #  Bump up series by 1.
+        #
         for i in range(1, m + 1):
 
             ii = i

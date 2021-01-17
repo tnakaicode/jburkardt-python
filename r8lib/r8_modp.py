@@ -103,8 +103,6 @@ def r8_modp_test():
     #    John Burkardt
     #
 
-    test_num = 10
-
     print('')
     print('R8_MODP_TEST')
     print('  Python version: %s' % (platform.python_version()))
@@ -114,12 +112,12 @@ def r8_modp_test():
     print('      X       Y      MOD(X,Y)  R8_MODP(X,Y)')
     print('')
 
+    test_num = 21
     x_lo = -10.0
     x_hi = +10.0
-
     seed = 123456789
-
-    for test in range(0, test_num):
+    data = []
+    for test in range(test_num):
 
         [x, seed] = r8_uniform_ab(x_lo, x_hi, seed)
         [y, seed] = r8_uniform_ab(x_lo, x_hi, seed)
@@ -127,7 +125,11 @@ def r8_modp_test():
         z1 = (x % y)
         z2 = r8_modp(x, y)
 
+        data.append(np.array([x, y, z1, z2]))
         print('  %12f  %12f  %12f  %12f' % (x, y, z1, z2))
+
+    data = np.array(data)
+    #obj = plot2d()
 
     print('')
     print('R8_MODP_TEST')
