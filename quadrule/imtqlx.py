@@ -99,19 +99,14 @@ def imtqlx(n, d, e, z):
         return lam, qtz
 
     itn = 30
-
     prec = r8_epsilon()
-
     e[n - 1] = 0.0
-
     for l in range(1, n + 1):
-
+        
         j = 0
-
         while (True):
 
             for m in range(l, n + 1):
-
                 if (m == n):
                     break
 
@@ -119,7 +114,6 @@ def imtqlx(n, d, e, z):
                     break
 
             p = lam[l - 1]
-
             if (m == l):
                 break
 
@@ -139,7 +133,6 @@ def imtqlx(n, d, e, z):
                 t = g + r
 
             g = lam[m - 1] - p + e[l - 1] / (g + t)
-
             s = 1.0
             c = 1.0
             p = 0.0
@@ -157,6 +150,7 @@ def imtqlx(n, d, e, z):
                     e[i] = f * r
                     s = 1.0 / r
                     c = c * s
+
                 else:
                     s = f / g
                     r = np.sqrt(s * s + 1.0)
@@ -184,7 +178,6 @@ def imtqlx(n, d, e, z):
         p = lam[i - 1]
 
         for j in range(ii, n + 1):
-
             if (lam[j - 1] < p):
                 k = j
                 p = lam[j - 1]
