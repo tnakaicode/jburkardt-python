@@ -1,577 +1,29 @@
 #! /usr/bin/env python3
 #
 
-
-def i4_choose(n, k):
-
-    # *****************************************************************************80
-    #
-    # I4_CHOOSE computes the binomial coefficient C(N,K) as an I4.
-    #
-    #  Discussion:
-    #
-    #    The value is calculated in such a way as to avoid overflow and
-    #    roundoff.  The calculation is done in integer arithmetic.
-    #
-    #    The formula used is:
-    #
-    #      C(N,K) = N! / ( K! * (N-K)! )
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    30 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    ML Wolfson, HV Wright,
-    #    Algorithm 160:
-    #    Combinatorial of M Things Taken N at a Time,
-    #    Communications of the ACM,
-    #    Volume 6, Number 4, April 1963, page 161.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, K, are the values of N and K.
-    #
-    #    Output, integer VALUE, the number of combinations of N
-    #    things taken K at a time.
-    #
-    mn = min(k, n - k)
-    mx = max(k, n - k)
-
-    if (mn < 0):
-
-        value = 0
-
-    elif (mn == 0):
-
-        value = 1
-
-    else:
-
-        value = mx + 1
-
-        for i in range(2, mn + 1):
-            value = (value * (mx + i)) / i
-
-    return value
-
-
-def i4_choose_test():
-
-    # *****************************************************************************80
-    #
-    # i4_choose_test tests i4_choose.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('i4_choose_test')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  i4_choose evaluates C(N,K).')
-    print('')
-    print('       N       K     CNK')
-
-    for n in range(0, 5):
-        print('')
-        for k in range(0, n + 1):
-            cnk = i4_choose(n, k)
-
-            print('  %6d  %6d  %6d' % (n, k, cnk))
-#
-#  Terminate.
-#
-    print('')
-    print('i4_choose_test:')
-    print('  Normal end of execution.')
-    return
-
-
-def i4_uniform_ab(a, b, seed):
-
-    # *****************************************************************************80
-    #
-    # I4_UNIFORM_AB returns a scaled pseudorandom I4.
-    #
-    #  Discussion:
-    #
-    #    The pseudorandom number will be scaled to be uniformly distributed
-    #    between A and B.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    05 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Second Edition,
-    #    Springer, 1987,
-    #    ISBN: 0387964673,
-    #    LC: QA76.9.C65.B73.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, December 1986, pages 362-376.
-    #
-    #    Pierre L'Ecuyer,
-    #    Random Number Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998,
-    #    ISBN: 0471134031,
-    #    LC: T57.62.H37.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, Number 2, 1969, pages 136-143.
-    #
-    #  Parameters:
-    #
-    #    Input, integer A, B, the minimum and maximum acceptable values.
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, integer C, the randomly chosen integer.
-    #
-    #    Output, integer SEED, the updated seed.
-    #
-    from sys import exit
-
-    i4_huge = 2147483647
-
-    seed = int(seed)
-
-    seed = (seed % i4_huge)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('I4_UNIFORM_AB - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('I4_UNIFORM_AB - Fatal error!')
-
-    k = (seed // 127773)
-
-    seed = 16807 * (seed - k * 127773) - k * 2836
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    r = seed * 4.656612875E-10
-#
-#  Scale R to lie between A-0.5 and B+0.5.
-#
-    a = round(a)
-    b = round(b)
-
-    r = (1.0 - r) * (min(a, b) - 0.5) \
-        + r * (max(a, b) + 0.5)
-#
-#  Use rounding to convert R to an integer between A and B.
-#
-    value = round(r)
-
-    value = max(value, min(a, b))
-    value = min(value, max(a, b))
-    value = int(value)
-
-    return value, seed
-
-
-def i4_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # I4_UNIFORM_AB_TEST tests I4_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    a = -100
-    b = 200
-    seed = 123456789
-
-    print('')
-    print('I4_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4_UNIFORM_AB computes pseudorandom values')
-    print('  in an interval [A,B].')
-    print('')
-    print('  The lower endpoint A = %d' % (a))
-    print('  The upper endpoint B = %d' % (b))
-    print('  The initial seed is %d' % (seed))
-    print('')
-
-    for i in range(1, 21):
-        j, seed = i4_uniform_ab(a, b, seed)
-        print('  %8d  %8d' % (i, j))
-#
-#  Terminate.
-#
-    print('')
-    print('I4_UNIFORM_AB_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def i4vec_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # I4VEC_PRINT prints an I4VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the dimension of the vector.
-    #
-    #    Input, integer A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('%6d  %6d' % (i, a[i]))
-
-    return
-
-
-def i4vec_print_test():
-
-    # *****************************************************************************80
-    #
-    # I4VEC_PRINT_TEST tests I4VEC_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    25 September 2016
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('I4VEC_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4VEC_PRINT prints an I4VEC.')
-
-    n = 4
-    v = np.array([91, 92, 93, 94], dtype=np.int32)
-    i4vec_print(n, v, '  Here is an I4VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('I4VEC_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def i4vec_sum(n, a):
-
-    # *****************************************************************************80
-    #
-    # I4VEC_SUM sums the entries of an I4VEC.
-    #
-    #  Discussion:
-    #
-    #    An I4VEC is a vector of I4's.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 September 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of elements.
-    #
-    #    Input, integer A(N), the vector.
-    #
-    #    Output, integer VALUE, the sum of the entries.
-    #
-    value = 0
-
-    for i in range(0, n):
-        value = value + a[i]
-
-    return value
-
-
-def i4vec_sum_test():
-
-    # *****************************************************************************80
-    #
-    # I4VEC_SUM_TEST tests I4VEC_SUM.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    print('')
-    print('I4VEC_SUM_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4VEC_SUM sums the entries of an I4VEC.')
-
-    n = 5
-    lo = 0
-    hi = 10
-    seed = 123456789
-    a, seed = i4vec_uniform_ab(n, lo, hi, seed)
-    i4vec_print(n, a, '  The vector:')
-
-    s = i4vec_sum(n, a)
-    print('')
-    print('  The vector entries sum to %d' % (s))
-#
-#  Terminate.
-#
-    print('')
-    print('I4VEC_SUM_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def i4vec_uniform_ab(n, a, b, seed):
-
-    # *****************************************************************************80
-    #
-    # I4VEC_UNIFORM_AB returns a scaled pseudorandom I4VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    05 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Second Edition,
-    #    Springer, 1987,
-    #    ISBN: 0387964673,
-    #    LC: QA76.9.C65.B73.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, December 1986, pages 362-376.
-    #
-    #    Pierre L'Ecuyer,
-    #    Random Number Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998,
-    #    ISBN: 0471134031,
-    #    LC: T57.62.H37.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, Number 2, 1969, pages 136-143.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, integer A, B, the minimum and maximum acceptable values.
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, integer C(N), the randomly chosen integer vector.
-    #
-    #    Output, integer SEED, the updated seed.
-    #
-    import numpy as np
-    from sys import exit
-
-    i4_huge = 2147483647
-
-    seed = int(seed)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('I4VEC_UNIFORM_AB - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('I4VEC_UNIFORM_AB - Fatal error!')
-
-    a = round(a)
-    b = round(b)
-
-    c = np.zeros(n, dtype=np.int32)
-
-    for i in range(0, n):
-
-        k = (seed // 127773)
-
-        seed = 16807 * (seed - k * 127773) - k * 2836
-
-        seed = (seed % i4_huge)
-
-        if (seed < 0):
-            seed = seed + i4_huge
-
-        r = seed * 4.656612875E-10
-#
-#  Scale R to lie between A-0.5 and B+0.5.
-#
-        r = (1.0 - r) * (min(a, b) - 0.5) \
-            + r * (max(a, b) + 0.5)
-#
-#  Use rounding to convert R to an integer between A and B.
-#
-        value = round(r)
-
-        value = max(value, min(a, b))
-        value = min(value, max(a, b))
-
-        c[i] = value
-
-    return c, seed
-
-
-def i4vec_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # I4VEC_UNIFORM_AB_TEST tests I4VEC_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import platform
-
-    n = 20
-    a = -100
-    b = 200
-    seed = 123456789
-
-    print('')
-    print('I4VEC_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  I4VEC_UNIFORM_AB computes pseudorandom values')
-    print('  in an interval [A,B].')
-    print('')
-    print('  The lower endpoint A = %d' % (a))
-    print('  The upper endpoint B = %d' % (b))
-    print('  The initial seed is %d' % (seed))
-    print('')
-
-    v, seed = i4vec_uniform_ab(n, a, b, seed)
-
-    i4vec_print(n, v, '  The random vector:')
-#
-#  Terminate.
-#
-    print('')
-    print('I4VEC_UNIFORM_AB_TEST:')
-    print('  Normal end of execution.')
-    return
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+
+from i4lib.i4_uniform_ab import i4_uniform_ab
+from i4lib.i4_choose import i4_choose
+from i4lib.i4vec_sum import i4vec_sum
 
 
 def ksubset_colex_unrank(rank, k, n):
@@ -614,11 +66,10 @@ def ksubset_colex_unrank(rank, k, n):
     #    rank.  T(I) is the I-th element.  The elements must be listed in
     #    DESCENDING order.
     #
-    import numpy as np
-    from sys import exit
-#
-#  Check.
-#
+
+    #
+    #  Check.
+    #
     if (n < 1):
         print('')
         print('KSUBSET_COLEX_UNRANK - Fatal error!')
@@ -644,7 +95,6 @@ def ksubset_colex_unrank(rank, k, n):
         exit('KSUBSET_COLEX_UNRANK - Fatal error!')
 
     t = np.zeros(k, dtype=np.int32)
-
     x = n
 
     for i in range(0, k):
@@ -676,7 +126,6 @@ def ksubset_colex_unrank_test():
     #
     #    John Burkardt
     #
-    import platform
 
     k = 3
     n = 5
@@ -695,14 +144,12 @@ def ksubset_colex_unrank_test():
     print('')
     print('  The element of rank %d:' % (rank))
     print('')
+
     i4vec_print(k, t, '  The element:')
-#
-#  Terminate.
-#
+
     print('')
     print('KSUBSET_COLEX_UNRANK_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def ksubset_enum(k, n):
@@ -756,7 +203,6 @@ def ksubset_enum_test():
     #
     #    John Burkardt
     #
-    import platform
 
     k = 3
     n = 5
@@ -765,9 +211,6 @@ def ksubset_enum_test():
     print('KSUBSET_ENUM_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  KSUBSET_ENUM enumerates K-subsets of an N set.')
-#
-#  Enumerate.
-#
     print('')
     print('      K:   0    1    2    3    4    5')
     print('   N')
@@ -778,13 +221,9 @@ def ksubset_enum_test():
             nksub = ksubset_enum(k, n)
             print('  %2d' % (nksub), end='')
         print('')
-#
-#  Terminate.
-#
     print('')
     print('KSUBSET_ENUM_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def morse_thue(i):
@@ -847,17 +286,20 @@ def morse_thue(i):
     nbits = 32
 
     i_copy = abs(i)
-#
-#  Expand I into binary form.
-#
+
+    #
+    #  Expand I into binary form.
+    #
     b = ui4_to_ubvec(i_copy, nbits)
-#
-#  Sum the 1's in the binary representation.
-#
+
+    #
+    #  Sum the 1's in the binary representation.
+    #
     s = i4vec_sum(nbits, b)
-#
-#  Take the value modulo 2.
-#
+
+    #
+    #  Take the value modulo 2.
+    #
     s = (s % 2)
 
     return s
@@ -881,7 +323,6 @@ def morse_thue_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 100
 
@@ -894,13 +335,10 @@ def morse_thue_test():
     for i in range(0, n + 1):
         s = morse_thue(i)
         print('  %4d  %d' % (i, s))
-#
-#  Terminate.
-#
+
     print('')
     print('MORSE_THUE_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def nim_sum(i, j):
@@ -972,7 +410,6 @@ def nim_sum_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 32
     ihi = 1000
@@ -1012,83 +449,10 @@ def nim_sum_test():
         ubvec_print(n, i1vec, '')
         ubvec_print(n, i2vec, '')
         ubvec_print(n, i3vec, '')
-#
-#  Terminate.
-#
+
     print('')
     print('NIM_SUM_TEST:')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
 
 
 def ubvec_add(n, ubvec1, ubvec2):
@@ -1133,19 +497,19 @@ def ubvec_add(n, ubvec1, ubvec2):
     #
     #    Output, integer UBVEC3(N), the sum of the two input vectors.
     #
-    import numpy as np
 
     overflow = False
-
     ubvec3 = np.zeros(n)
-#
-#  Add.
-#
+
+    #
+    #  Add.
+    #
     for i in range(0, n):
         ubvec3[i] = ubvec1[i] + ubvec2[i]
-#
-#  Carry.
-#
+
+    #
+    #  Carry.
+    #
     for i in range(n - 1, -1, -1):
         while (2 <= ubvec3[i]):
             ubvec3[i] = ubvec3[i] - 2
@@ -1175,7 +539,6 @@ def ubvec_add_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 10
     seed = 123456789
@@ -1209,13 +572,10 @@ def ubvec_add_test():
         k = ubvec_to_ui4(n, ubvec3)
 
         print('  UBVEC_ADD           %8d' % (k))
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_ADD_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_and(n, ubvec1, ubvec2):
@@ -1259,7 +619,6 @@ def ubvec_and(n, ubvec1, ubvec2):
     #
     #    Input, integer VALUE(N), the AND of the two vectors.
     #
-    import numpy as np
 
     value = np.zeros(n)
 
@@ -1287,7 +646,6 @@ def ubvec_and_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 10
     seed = 123456789
@@ -1313,15 +671,6 @@ def ubvec_and_test():
         k = ubvec_to_ui4(n, ubvec3)
 
         print('  %8d  %8d  %8d' % (i, j, k))
-
-    return
-#
-#  Terminate.
-#
-    print('')
-    print('UBVEC_AND_TEST')
-    print('  Normal end of execution.')
-    return
 
 
 def ubvec_check(n, ubvec):
@@ -1395,8 +744,6 @@ def ubvec_check_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 5
 
@@ -1428,13 +775,8 @@ def ubvec_check_test():
     for j in range(0, n):
         print('%d' % (ubvec[j]), end='')
     print('')
-#
-#  Terminate.
-#
-    print('')
     print('UBVEC_CHECK_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_complement1(n, ubvec1):
@@ -1478,7 +820,6 @@ def ubvec_complement1(n, ubvec1):
     #
     #    Output, integer UBVEC2(N), the complemented vector.
     #
-    import numpy as np
 
     ubvec2 = np.zeros(n)
 
@@ -1506,7 +847,6 @@ def ubvec_complement1_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 5
 
@@ -1531,13 +871,10 @@ def ubvec_complement1_test():
         for j in range(0, n):
             print('%d' % (ubvec1[j]), end='')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_COMPLEMENT_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_enum(n):
@@ -1602,7 +939,6 @@ def ubvec_enum_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('UBVEC_ENUM_TEST')
@@ -1616,15 +952,11 @@ def ubvec_enum_test():
     for n in range(0, 11):
 
         n2 = ubvec_enum(n)
-
         print('  %2d  %8d' % (n, n2))
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_ENUM_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_next_gray(n, t):
@@ -1665,7 +997,6 @@ def ubvec_next_gray(n, t):
     #    is an element of the Gray code, which differs from the input
     #    value in a single position.
     #
-    import numpy as np
 
     weight = np.sum(t)
 
@@ -1687,10 +1018,11 @@ def ubvec_next_gray(n, t):
                 else:
                     t[i - 1] = 0
                 return t
-#
-#  The final element was input.
-#  Return the first element.
-#
+
+        #
+        #  The final element was input.
+        #  Return the first element.
+        #
         for i in range(0, n):
             t[i] = 0
 
@@ -1715,8 +1047,6 @@ def ubvec_next_gray_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 4
 
@@ -1744,13 +1074,10 @@ def ubvec_next_gray_test():
 
         if (np.sum(g) == 0):
             break
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_NEXT_GRAY_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_next_grlex(n, ubvec):
@@ -1808,34 +1135,37 @@ def ubvec_next_grlex(n, ubvec):
     #
     #    Output, integer UBVEC(N), the successor to the input vector.
     #
-    import numpy as np
-#
-#  Initialize locations of 0 and 1.
-#
+
+    #
+    #  Initialize locations of 0 and 1.
+    #
     if (ubvec[0] == 0):
         z = 0
         o = -1
     else:
         z = -1
         o = 0
-#
-#  Moving from right to left, search for a "1", preceded by a "0".
-#
+
+    #
+    #  Moving from right to left, search for a "1", preceded by a "0".
+    #
     for i in range(n - 1, 0, -1):
         if (ubvec[i] == 1):
             o = i
             if (ubvec[i - 1] == 0):
                 z = i - 1
                 break
-#
-#  UBVEC = 0
-#
+
+    #
+    #  UBVEC = 0
+    #
     if (o == -1):
 
         ubvec[n - 1] = 1
-#
-#  01 never occurs.  So for sure, B(0) = 1.
-#
+
+    #
+    #  01 never occurs.  So for sure, B(0) = 1.
+    #
     elif (z == -1):
 
         s = np.sum(ubvec)
@@ -1848,11 +1178,12 @@ def ubvec_next_grlex(n, ubvec):
                 ubvec[i] = 0
             for i in range(n - s - 1, n):
                 ubvec[i] = 1
-#
-#  Found the rightmost "01" string.
-#  Replace it by "10".
-#  Shift following 1's to the right.
-#
+
+    #
+    #  Found the rightmost "01" string.
+    #  Replace it by "10".
+    #  Shift following 1's to the right.
+    #
     else:
 
         ubvec[z] = 1
@@ -1886,8 +1217,6 @@ def ubvec_next_grlex_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 4
 
@@ -1905,13 +1234,10 @@ def ubvec_next_grlex_test():
             print('%d' % (b[j]), end='')
         print('')
         b = ubvec_next_grlex(n, b)
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_NEXT_GRLEX_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_next(n, ubvec):
@@ -2008,8 +1334,6 @@ def ubvec_next_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 4
 
@@ -2024,13 +1348,10 @@ def ubvec_next_test():
     for i in range(0, 17):
         ubvec_print(n, b, '')
         b = ubvec_next(n, b)
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_NEXT_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_or(n, ubvec1, ubvec2):
@@ -2074,7 +1395,6 @@ def ubvec_or(n, ubvec1, ubvec2):
     #
     #    Input, integer VALUE(N), the OR of the two vectors.
     #
-    import numpy as np
 
     value = np.zeros(n)
 
@@ -2102,7 +1422,6 @@ def ubvec_or_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 10
     seed = 123456789
@@ -2128,13 +1447,10 @@ def ubvec_or_test():
         k = ubvec_to_ui4(n, ubvec3)
 
         print('  %8d  %8d  %8d' % (i, j, k))
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_OR_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_print(n, ubvec, title):
@@ -2202,8 +1518,6 @@ def ubvec_print_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 10
     ubvec = np.array([1, 0, 0, 1, 0, 1, 1, 1, 0, 0])
@@ -2214,13 +1528,10 @@ def ubvec_print_test():
     print('  UBVEC_PRINT prints an unsigned binary vector.')
 
     ubvec_print(n, ubvec, '  UBVEC:')
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_PRINT_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_random(n, seed):
@@ -2294,8 +1605,6 @@ def ubvec_random(n, seed):
     #
     #    Output, integer UBVEC(N), a pseudorandom binary vector.
     #
-    import numpy as np
-    from sys import exit
 
     i4_huge = 2147483647
     i4_huge_half = 1073741823
@@ -2343,7 +1652,6 @@ def ubvec_random_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 5
 
@@ -2358,13 +1666,10 @@ def ubvec_random_test():
     for i in range(0, 5):
         ubvec, seed = ubvec_random(n, seed)
         ubvec_print(n, ubvec, '')
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_RANDOM_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_rank_gray(n, ubvec):
@@ -2417,7 +1722,6 @@ def ubvec_rank_gray_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 5
 
@@ -2436,13 +1740,10 @@ def ubvec_rank_gray_test():
         for j in range(0, n):
             print('%2d' % (ubvec[j]), end='')
         print('  %2d' % (rank))
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_RANK_GRAY_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_reverse(n, ubvec1):
@@ -2486,7 +1787,6 @@ def ubvec_reverse(n, ubvec1):
     #
     #    Output, integer UBVEC2(N), the reversed vector.
     #
-    import numpy as np
 
     ubvec2 = np.zeros(n)
 
@@ -2514,7 +1814,6 @@ def ubvec_reverse_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 5
 
@@ -2538,13 +1837,10 @@ def ubvec_reverse_test():
         for j in range(0, n):
             print('%d' % (ubvec2[j]), end='')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_REVERSE_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_test():
@@ -2565,19 +1861,11 @@ def ubvec_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('UBVEC_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the UBVEC library.')
-
-    i4_choose_test()
-    i4_uniform_ab_test()
-
-    i4vec_print_test()
-    i4vec_sum_test()
-    i4vec_uniform_ab_test()
 
     ksubset_colex_unrank_test()
     ksubset_enum_test()
@@ -2606,13 +1894,10 @@ def ubvec_test():
     ui4_rank_gray_test()
     ui4_to_ubvec_test()
     ui4_unrank_gray_test()
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_to_ui4(n, ubvec):
@@ -2687,7 +1972,6 @@ def ubvec_to_ui4_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 10
 
@@ -2707,13 +1991,10 @@ def ubvec_to_ui4_test():
         for j in range(0, n):
             print('%1d' % (ubvec[j]), end='')
         print('  %2d' % (i2))
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_TO_UI4_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_unrank_gray(rank, n):
@@ -2767,7 +2048,6 @@ def ubvec_unrank_gray_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 5
 
@@ -2785,13 +2065,10 @@ def ubvec_unrank_gray_test():
         for j in range(0, n):
             print('%2d' % (ubvec[j]), end='')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_UNRANK_GRAY_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_unrank_grlex(rank, n):
@@ -2823,8 +2100,6 @@ def ubvec_unrank_grlex(rank, n):
     #
     #    Output, integer B(N), the UBVEC of the given rank.
     #
-    import numpy as np
-    from sys import exit
 
     mk = 0
 
@@ -2843,9 +2118,10 @@ def ubvec_unrank_grlex(rank, n):
 
             b = ubvec_reverse(n, c)
             return b
-#
-#  If we got here, the rank is too large.
-#
+
+    #
+    #  If we got here, the rank is too large.
+    #
     print('')
     print('UBVEC_UNRANK_GRLEX - Fatal error!')
     print('  Input value of rank is too high.')
@@ -2870,8 +2146,6 @@ def ubvec_unrank_grlex_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     n = 4
 
@@ -2892,13 +2166,10 @@ def ubvec_unrank_grlex_test():
         for j in range(0, n):
             print('%2d' % (b[j]), end='')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_UNRANK_GRLEX_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ubvec_xor(n, ubvec1, ubvec2):
@@ -2933,7 +2204,6 @@ def ubvec_xor(n, ubvec1, ubvec2):
     #
     #    Input, integer UBVEC3(N), the exclusive OR of the two vectors.
     #
-    import numpy as np
 
     ubvec3 = np.zeros(n)
 
@@ -2961,7 +2231,6 @@ def ubvec_xor_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 10
     seed = 123456789
@@ -2984,13 +2253,10 @@ def ubvec_xor_test():
         ubvec3 = ubvec_xor(n, ubvec1, ubvec2)
         k = ubvec_to_ui4(n, ubvec3)
         print('  %8d  %8d  %8d' % (i, j, k))
-#
-#  Terminate.
-#
+
     print('')
     print('UBVEC_XOR_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ui4_rank_gray(gray):
@@ -3065,7 +2331,6 @@ def ui4_rank_gray(gray):
     #    Output, integer RANK, the rank of GRAY, and the integer
     #    whose Gray code is GRAY.
     #
-    from sys import exit
 
     gray_copy = gray
 
@@ -3078,9 +2343,10 @@ def ui4_rank_gray(gray):
     if (gray_copy == 0):
         rank = 0
         return rank
-#
-#  Find TWO_K, the largest power of 2 less than or equal to GRAY.
-#
+
+    #
+    #  Find TWO_K, the largest power of 2 less than or equal to GRAY.
+    #
     k = 0
     two_k = 1
     while (2 * two_k <= gray_copy):
@@ -3128,7 +2394,6 @@ def ui4_rank_gray_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 5
 
@@ -3147,13 +2412,10 @@ def ui4_rank_gray_test():
         for j in range(0, n):
             print('%2d' % (ubvec[j]), end='')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('UI4_RANK_GRAY_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ui4_to_ubvec(ui4, n):
@@ -3202,7 +2464,6 @@ def ui4_to_ubvec(ui4, n):
     #
     #    Output, integer BVEC(N), the unsigned binary representation.
     #
-    import numpy as np
 
     ubvec = np.zeros(n)
 
@@ -3231,7 +2492,6 @@ def ui4_to_ubvec_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 10
 
@@ -3251,13 +2511,10 @@ def ui4_to_ubvec_test():
         for i in range(0, n):
             print('%1d' % (bvec[i]), end='')
         print('  %2d' % (i2))
-#
-#  Terminate.
-#
+
     print('')
     print('UI4_TO_UBVEC_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def ui4_unrank_gray(rank):
@@ -3368,7 +2625,6 @@ def ui4_unrank_gray_test():
     #
     #    John Burkardt
     #
-    import platform
 
     n = 5
 
@@ -3387,13 +2643,10 @@ def ui4_unrank_gray_test():
         for j in range(0, n):
             print('%2d' % (ubvec[j]), end='')
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('UI4_UNRANK_GRAY_TEST')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
