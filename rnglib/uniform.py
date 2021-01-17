@@ -114,8 +114,8 @@ def uniform_in_sphere01_map_test():
     print('  UNIFORM_IN_SPHERE01_MAP computes points uniformly distributed')
     print('  inside the M-dimensional unit sphere.')
 
-    m = 3
-    n = 10
+    m = 4
+    n = 15
     seed = 123456789
 
     x, seed = uniform_in_sphere01_map(m, n, seed)
