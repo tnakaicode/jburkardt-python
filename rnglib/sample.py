@@ -1,22 +1,28 @@
-#
-#    Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
+#! /usr/bin/env python3
 #
 
 import numpy as np
 import matplotlib.pyplot as plt
+import random as rn
+import platform
+import time
 import sys
 import os
-import time
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
 
-sys.path.append(os.path.join('../'))
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
 from i4lib.i4vec_print import i4vec_print
-from i4lib.i4mat_print import i4mat_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
 from r8lib.r8vec_print import r8vec_print
 from r8lib.r8mat_print import r8mat_print, r8mat_print_some
 from r8lib.r8mat_write import r8mat_write
+from i4lib.i4vec_transpose_print import i4vec_transpose_print
+from r8lib.r8mat_transpose_print import r8mat_transpose_print, r8mat_transpose_print_some
 
 from r8lib.r8_uniform_01 import r8_uniform_01
 from r8lib.r8vec_uniform_01 import r8vec_uniform_01
@@ -441,19 +447,22 @@ def ellipsoid_sample(m, n, a, v, r, seed):
     #
     #    Output, real X(M,N), the points.
     #
-    import numpy as np
+
     #
     #  Get the Cholesky factor U.
     #
     u = r8po_fa(m, a)
+
     #
     #  Get the points Y that satisfy Y' * Y <= 1.
     #
     y, seed = uniform_in_sphere01_map(m, n, seed)
+
     #
     #  Get the points Y that satisfy Y' * Y <= R * R.
     #
     y = r * y
+
     #
     #  Solve U * X = Y.
     #
@@ -472,3 +481,99 @@ def ellipsoid_sample(m, n, a, v, r, seed):
         x[i, 0:n] = x[i, 0:n] + v[i]
 
     return x, seed
+
+
+def wedge01_sample(n, seed):
+
+    # *****************************************************************************80
+    #
+    # WEDGE01_SAMPLE samples points uniformly from the unit wedge in 3D.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    23 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Reuven Rubinstein,
+    #    Monte Carlo Optimization, Simulation, and Sensitivity
+    #    of Queueing Networks,
+    #    Krieger, 1992,
+    #    ISBN: 0894647644,
+    #    LC: QA298.R79.
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of points.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, real X(3,N), the points.
+    #
+    import numpy as np
+
+    m = 3
+
+    x = np.zeros([m, n])
+
+    for j in range(0, n):
+
+        e, seed = r8vec_uniform_01(m + 1, seed)
+
+        el = np.zeros(m)
+
+        el_sum = 0.0
+        for i in range(0, m):
+            el[i] = - np.log(e[i])
+            el_sum = el_sum + el[i]
+
+        x[0, j] = el[0] / el_sum
+        x[1, j] = el[1] / el_sum
+        x[2, j] = 2.0 * e[3] - 1.0
+
+    return x, seed
+
+
+def wedge01_sample_test():
+
+    # *****************************************************************************80
+    #
+    # WEDGE01_SAMPLE_TEST tests WEDGE01_SAMPLE.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    23 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+
+    print('')
+    print('WEDGE01_SAMPLE_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  WEDGE01_SAMPLE samples the unit wedge.')
+
+    m = 3
+    n = 10
+    seed = 123456789
+
+    x, seed = wedge01_sample(n, seed)
+    r8mat_transpose_print(m, n, x, '  Sample points in the unit wedge.')
+
+    print('')
+    print('WEDGE01_SAMPLE_TEST')
+    print('  Normal end of execution.')
