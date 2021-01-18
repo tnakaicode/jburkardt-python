@@ -1,26 +1,14 @@
 #!/usr/bin/env python3
 
-# Translation of fortran 77 rkf45 to python via matlab
-import numpy as np
-import matplotlib.pyplot as plt
-import platform
-import time
-import sys
-import os
-import math
-import datetime
-from mpl_toolkits.mplot3d import Axes3D
+from numpy import *
 from sys import exit
-
-sys.path.append(os.path.join("../"))
-from base import plot2d, plotocc
-from timestamp.timestamp import timestamp
 
 
 def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
 
+    # ********************************************
     #
-    # R8_RKF45 carries out the Runge-Kutta-Fehlberg method (np.double precision).
+    # R8_RKF45 carries out the Runge-Kutta-Fehlberg method (double precision).
     #
     #  Discussion:
     #
@@ -43,9 +31,9 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
     #
     #    Before the first call, the user must
     #
-    #    supply the function  F(T,Y) to evaluate the right hand side YP;
+    #    * supply the function  F(T,Y) to evaluate the right hand side YP;
     #
-    #    initialize the parameters:
+    #    * initialize the parameters:
     #      NEQN, Y(1:NEQN), T, TOUT, RELERR, ABSERR, FLAG.
     #      In particular, T should initially be the starting point for integration,
     #      Y should be the value of the initial conditions, and FLAG should
@@ -76,22 +64,22 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
     #    the output value of FLAG is used to indicate that there is a problem
     #    that the user must address.  These values include:
     #
-    #     3, integration was not completed because the input value of RELERR, the
+    #    * 3, integration was not completed because the input value of RELERR, the
     #      relative error tolerance, was too small.  RELERR has been increased
     #      appropriately for continuing.  If the user accepts the output value of
     #      RELERR, then simply reset FLAG to 2 and continue.
     #
-    #     4, integration was not completed because more than MAXNFE derivative
+    #    * 4, integration was not completed because more than MAXNFE derivative
     #      evaluations were needed.  This is approximately (MAXNFE/6) steps.
     #      The user may continue by simply calling again.  The function counter
     #      will be reset to 0, and another MAXNFE function evaluations are allowed.
     #
-    #     5, integration was not completed because the solution vanished,
+    #    * 5, integration was not completed because the solution vanished,
     #      making a pure relative error test impossible.  The user must use
     #      a non-zero ABSERR to continue.  Using the one-step integration mode
     #      for one step is a good way to proceed.
     #
-    #     6, integration was not completed because the requested accuracy
+    #    * 6, integration was not completed because the requested accuracy
     #      could not be achieved, even using the smallest allowable stepsize.
     #      The user must increase the error tolerances ABSERR or RELERR before
     #      continuing.  It is also necessary to reset FLAG to 2 (or -2 when
@@ -100,18 +88,26 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
     #      rapidly, or a singularity may be present.  It often is inadvisable
     #      to continue.
     #
-    #     7, it is likely that this routine is inefficient for solving
+    #    * 7, it is likely that this routine is inefficient for solving
     #      this problem.  Too much output is restricting the natural stepsize
     #      choice.  The user should use the one-step integration mode with
     #      the stepsize determined by the code.  If the user insists upon
     #      continuing the integration, reset FLAG to 2 before calling
     #      again.  Otherwise, execution will be terminated.
     #
-    #     8, invalid input parameters, indicates one of the following:
+    #    * 8, invalid input parameters, indicates one of the following:
     #      NEQN <= 0;
     #      T = TOUT and |FLAG| /= 1;
     #      RELERR < 0 or ABSERR < 0;
     #      FLAG == 0  or FLAG < -2 or 8 < FLAG.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    05 April 2011
     #
     #  Author:
     #
@@ -166,6 +162,7 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
     #    step mode.  On return, a value of 2 or -2 indicates normal progress,
     #    while any other value indicates a problem that should be addressed.
     #
+    # Translation of fortran 77 rkf45 to python via matlab """
 
     global abserr_save, flag_save, h, init, kflag, kop, nfe, relerr_save
     try:
@@ -262,44 +259,44 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
                 print('  did not respond to the instructions pertaining')
                 print('  to the output flag warning FLAG = 5, 6, 7 or 8.')
                 error('R8_RKF45 - Fatal error!')
-    #
-    #  Save the input value of FLAG.
-    #  Set the continuation flag KFLAG for subsequent input checking.
-    #
+#
+#  Save the input value of FLAG.
+#  Set the continuation flag KFLAG for subsequent input checking.
+#
     flag_save = flag
     kflag = 0
-    #
-    #  Save RELERR and ABSERR for checking input on subsequent calls.
-    #
+#
+#  Save RELERR and ABSERR for checking input on subsequent calls.
+#
     relerr_save = relerr
     abserr_save = abserr
-    #
-    #  Restrict the relative error tolerance to be at least
-    #
-    #    2 * EPS + REMIN
-    #
-    #  to avoid limiting precision difficulties arising from impossible
-    #  accuracy requests.
-    #
-    relerr_min = 2.0 * np.finfo(np.double).eps + remin
-    #
-    #  Is the relative error tolerance too small?
-    #
+#
+#  Restrict the relative error tolerance to be at least
+#
+#    2 * EPS + REMIN
+#
+#  to avoid limiting precision difficulties arising from impossible
+#  accuracy requests.
+#
+    relerr_min = 2.0 * finfo(double).eps + remin
+#
+#  Is the relative error tolerance too small?
+#
     if (relerr < relerr_min):
         relerr = relerr_min
         flag = 3
         kflag = 3
         return(y, yp, t, flag)
     dt = tout - t
-    #
-    #  Initialization:
-    #
-    #  Set the initialization completion indicator, INIT;
-    #  set the indicator for too many output points, KOP;
-    #  evaluate the initial derivatives;
-    #  set the counter for function evaluations, NFE;
-    #  estimate the starting stepsize.
-    #
+#
+#  Initialization:
+#
+#  Set the initialization completion indicator, INIT;
+#  set the indicator for too many output points, KOP;
+#  evaluate the initial derivatives;
+#  set the counter for function evaluations, NFE;
+#  estimate the starting stepsize.
+#
     if (mflag == 1):
         init = 0
         kop = 0
@@ -321,21 +318,21 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
                     h = (tol / ypk)**0.2
         if (toln <= 0.0):
             h = 0.0
-        h = max(h, 26.0 * np.finfo(np.double).eps * max(abs(t), abs(dt)))
+        h = max(h, 26.0 * finfo(double).eps * max(abs(t), abs(dt)))
         if (flag < 0):
             flag_save = - 2
         else:
             flag_save = + 2
-    #
-    #  Set the stepsize for integration in the direction from T to TOUT.
-    #
+#
+#  Set the stepsize for integration in the direction from T to TOUT.
+#
     if (dt < 0.0):
         h = - abs(h)
     else:
         h = + abs(h)
-    #
-    #  Test to see if too may output points are being requested.
-    #
+#
+#  Test to see if too may output points are being requested.
+#
     if (2.0 * abs(dt) <= abs(h)):
         kop = kop + 1
     #
@@ -346,10 +343,10 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
         print('Unnecessary frequency of output.')
         flag = 7
         return(y, yp, t, flag)
-    #
-    #  If we are too close to the output point, then simply extrapolate and return.
-    #
-    if (abs(dt) <= 26.0 * np.finfo(np.double).eps * abs(t)):
+#
+#  If we are too close to the output point, then simply extrapolate and return.
+#
+    if (abs(dt) <= 26.0 * finfo(double).eps * abs(t)):
         t = tout
         y = y + dt * yp
         yp = f(t, y)
@@ -357,31 +354,31 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
         flag = 2
         print('too close')
         return(y, yp, t, flag)
-    #
-    #   Initialize the output point indicator.
-    #   
+#
+#  Initialize the output point indicator.
+#
     output = 0
-    #
-    #  To avoid premature underflow in the error tolerance function,
-    #  scale the error tolerances.
-    #
+#
+#  To avoid premature underflow in the error tolerance function,
+#  scale the error tolerances.
+#
     scale = 2.0 / relerr
     ae = scale * abserr
-    #
-    #  Step by step integration.
-    #
+#
+#  Step by step integration.
+#
     while (1):
         hfaild = 0
-        #
-        #  Set the smallest allowable stepsize.
-        #
-        hmin = 26.0 * np.finfo(np.double).eps * abs(t)
-        #
-        #  Adjust the stepsize if necessary to hit the output point.
-        #
-        #  Look ahead two steps to avoid drastic changes in the stepsize and
-        #  thus lessen the impact of output points on the code.
-        #
+    #
+    #  Set the smallest allowable stepsize.
+    #
+        hmin = 26.0 * finfo(double).eps * abs(t)
+    #
+    #  Adjust the stepsize if necessary to hit the output point.
+    #
+    #  Look ahead two steps to avoid drastic changes in the stepsize and
+    #  thus lessen the impact of output points on the code.
+    #
         dt = tout - t
         if (2.0 * abs(h) > abs(dt)):
             #
@@ -392,34 +389,34 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
                 h = dt
             else:
                 h = 0.5 * dt
-        #
-        #  Here begins the core integrator for taking a single step.
-        #
-        #  The tolerances have been scaled to avoid premature underflow in
-        #  computing the error tolerance function ET.
-        #  To avoid problems with zero crossings, relative error is measured
-        #  using the average of the magnitudes of the solution at the
-        #  beginning and end of a step.
-        #  The error estimate formula has been grouped to control loss of
-        #  significance.
-        #
-        #  To distinguish the various arguments, H is not permitted
-        #  to become smaller than 26 units of roundoff in T.
-        #  Practical limits on the change in the stepsize are enforced to
-        #  smooth the stepsize selection process and to avoid excessive
-        #  chattering on problems having discontinuities.
-        #  To prevent unnecessary failures, the code uses 9/10 the stepsize
-        #  it estimates will succeed.
-        #
-        #  After a step failure, the stepsize is not allowed to increase for
-        #  the next attempted step.  This makes the code more efficient on
-        #  problems having discontinuities and more effective in general
-        #  since local extrapolation is being used and extra caution seems
-        #  warranted.
-        #
-        #  Test the number of derivative function evaluations.
-        #  If okay, try to advance the integration from T to T+H.
-        #
+    #
+    #  Here begins the core integrator for taking a single step.
+    #
+    #  The tolerances have been scaled to avoid premature underflow in
+    #  computing the error tolerance function ET.
+    #  To avoid problems with zero crossings, relative error is measured
+    #  using the average of the magnitudes of the solution at the
+    #  beginning and end of a step.
+    #  The error estimate formula has been grouped to control loss of
+    #  significance.
+    #
+    #  To distinguish the various arguments, H is not permitted
+    #  to become smaller than 26 units of roundoff in T.
+    #  Practical limits on the change in the stepsize are enforced to
+    #  smooth the stepsize selection process and to avoid excessive
+    #  chattering on problems having discontinuities.
+    #  To prevent unnecessary failures, the code uses 9/10 the stepsize
+    #  it estimates will succeed.
+    #
+    #  After a step failure, the stepsize is not allowed to increase for
+    #  the next attempted step.  This makes the code more efficient on
+    #  problems having discontinuities and more effective in general
+    #  since local extrapolation is being used and extra caution seems
+    #  warranted.
+    #
+    #  Test the number of derivative function evaluations.
+    #  If okay, try to advance the integration from T to T+H.
+    #
         while (True):
             #
             #  Have we done too much work?
@@ -428,18 +425,18 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
                 flag = 4
                 kflag = 4
                 return(y, yp, t, flag)
-            #
-            #  Advance an approximate solution over one step of length H.
-            #
+        #
+        #  Advance an approximate solution over one step of length H.
+        #
             f1, f2, f3, f4, f5, f6 = r8_fehl(f, neqn, y, t, h, yp)
             f1 = f6.copy()
             nfe = nfe + 5
-            #
-            #  Compute and test allowable tolerances versus local error estimates
-            #  and remove scaling of tolerances.  The relative error is
-            #  measured with respect to the average of the magnitudes of the
-            #  solution at the beginning and end of the step.
-            #
+        #
+        #  Compute and test allowable tolerances versus local error estimates
+        #  and remove scaling of tolerances.  The relative error is
+        #  measured with respect to the average of the magnitudes of the
+        #  solution at the beginning and end of the step.
+        #
             eeoet = 0.0
             for k in range(0, neqn):
                 et = abs(y[k]) + abs(f1[k]) + ae
@@ -452,10 +449,10 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
             esttol = abs(h) * eeoet * scale / 752400.0
             if (esttol <= 1.0):
                 break
-            #
-            #  Unsuccessful step.  Reduce the stepsize, try again.
-            #  The decrease is limited to a factor of 1/10.
-            #
+        #
+        #  Unsuccessful step.  Reduce the stepsize, try again.
+        #  The decrease is limited to a factor of 1/10.
+        #
             hfaild = 1
             output = 0
             if (esttol < 59049.0):
@@ -467,18 +464,18 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
                 flag = 6
                 kflag = 6
                 return(y, yp, t, flag)
-        #
-        #  We exited the loop because we took a successful step.
-        #  Store the solution for T+H, and evaluate the derivative there.
-        #
+    #
+    #  We exited the loop because we took a successful step.
+    #  Store the solution for T+H, and evaluate the derivative there.
+    #
         t = t + h
         y = f1.copy()
         yp = f(t, y)
         nfe = nfe + 1
-        #
-        #  Choose the next stepsize.  The increase is limited to a factor of 5.
-        #  If the step failed, the next stepsize is not allowed to increase.
-        #
+    #
+    #  Choose the next stepsize.  The increase is limited to a factor of 5.
+    #  If the step failed, the next stepsize is not allowed to increase.
+    #
         if (0.0001889568 < esttol):
             s = 0.9 / esttol**0.2
         else:
@@ -489,25 +486,27 @@ def r8_rkf45(f, neqn, y, yp, t, tout, relerr, abserr, flag):
             h = - max(s * abs(h), hmin)
         else:
             h = + max(s * abs(h), hmin)
-        #
-        #  End of core integrator
-        #
-        #  Should we take another step?
-        #
+    #
+    #  End of core integrator
+    #
+    #  Should we take another step?
+    #
         if (output):
             t = tout
             flag = 2
             return(y, yp, t, flag)
         if (flag <= 0):
             break
-    #
-    #  One step integration mode.
-    #
+#
+#  One step integration mode.
+#
     flag = - 2
     return(y, yp, t, flag)
 
 
 def r8_fehl(f, neqn, y, t, h, yp):
+
+    # *****************************************************************************80
     #
     # R8_FEHL takes one Fehlberg fourth-fifth order step.
     #
@@ -594,9 +593,9 @@ def r8_fehl(f, neqn, y, t, h, yp):
     f1 = y + ch * ((-6080.0 * yp + (9295.0 * f3 - 5643.0 * f4)) +
                    (41040.0 * f1 - 28352.0 * f2))
     f5 = f(t + h / 2.0, f1)
-    #
-    #  Ready to compute the approximate solution at T+H.
-    #
+#
+#  Ready to compute the approximate solution at T+H.
+#
     ch = h / 7618050.0
     s = y + ch * ((902880.0 * yp + (3855735.0 * f3 - 1371249.0 * f4))
                   + (3953664.0 * f2 + 277020.0 * f5))
@@ -604,8 +603,7 @@ def r8_fehl(f, neqn, y, t, h, yp):
 
 
 def error(string):
-    """
-    Simple error handling
-    """
+    # Simple error handling
+
     print(string)
     exit('Fatal error')

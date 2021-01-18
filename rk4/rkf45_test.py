@@ -19,7 +19,7 @@ from rk4.rkf45 import r8_rkf45, r8_fehl
 
 
 def rkf45_test():
-    """
+
     #********************************************************************
     #
     ## RKF45_TEST tests the RKF45 ODE integrator.
@@ -36,7 +36,7 @@ def rkf45_test():
     #
     #    John Burkardt
     #
-    """
+
     timestamp()
     print('\n')
     print('RKF45_TEST')
