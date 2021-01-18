@@ -1,16 +1,36 @@
-#!/usr/bin/env python
+#! /usr/bin/env python3
+#
 
-"""rkf45 test"""
-from numpy import *
-from rkf45 import *
-from datetime import datetime
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print, r8vec_print_some
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8vec_transpose_print import r8vec_transpose_print
+from r8lib.r8mat_transpose_print import r8mat_transpose_print, r8mat_transpose_print_some
+
+from rkf45.rkf45lib import r8_fehl, r8_rkf45
 
 
 def rkf45_test():
-    """
-    #********************************************************************
+
+    # ********************************************************************
     #
-    ## RKF45_TEST tests the RKF45 ODE integrator.
+    # RKF45_TEST tests the RKF45 ODE integrator.
     #
     #  Licensing:
     #
@@ -24,8 +44,7 @@ def rkf45_test():
     #
     #    John Burkardt
     #
-    """
-    timestamp()
+
     print('\n')
     print('RKF45_TEST')
     print('  Python version')
@@ -34,45 +53,18 @@ def rkf45_test():
     rkf45_test04()
     rkf45_test05()
     rkf45_test06()
-    #
-    #  Terminate.
-    #
+
     print('')
     print('RKF45_TEST')
     print('  Normal end of execution.')
     print('\n')
-    timestamp()
-
-
-def timestamp():
-    """
-    #*****************************************************************************80
-    #
-    ## TIMESTAMP prints the current YMDHMS date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    14 February 2003
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    """
-    now = datetime.now()
-    print(now.strftime("Date: %Y-%m-%d, time: %H:%M"))
-    return
 
 
 def rkf45_test04():
-    """
-    #*****************************************************************************80
+
+    # *****************************************************************************80
     #
-    ## RKF45_TEST04 solves a scalar ODE.
+    # RKF45_TEST04 solves a scalar ODE.
     #
     #  Licensing:
     #
@@ -86,22 +78,22 @@ def rkf45_test04():
     #
     #    John Burkardt
     #
-    """
+
     print('')
     print('RKF45_TEST04')
     print('  Solve a scalar equation using R8_RKF45:')
     print('')
     print('  Y'' = 0.25 * Y * ( 1 - Y / 20 )')
     neqn = 1
-    abserr = sqrt(finfo(double).eps)
-    relerr = sqrt(finfo(double).eps)
+    abserr = np.sqrt(np.finfo(np.double).eps)
+    relerr = np.sqrt(np.finfo(np.double).eps)
     flag = 1
     t_start = 0.0
     t_stop = 20.0
     n_step = 5
     t_out = 0.0
     t = t_out
-    y = array([1.0])
+    y = np.array([1.0])
     yp = r8_f1(t, y)
     print('')
     print('  FLAG     T             Y            Y''           Y_Exact         Error')
@@ -118,10 +110,10 @@ def rkf45_test04():
 
 
 def r8_f1(t, y):
-    """
-    #*****************************************************************************80
+
+    # *****************************************************************************80
     #
-    #% R8_F1 evaluates the derivative for the ODE.
+    # % R8_F1 evaluates the derivative for the ODE.
     #
     #  Licensing:
     #
@@ -144,17 +136,17 @@ def r8_f1(t, y):
     #    Output, real YP, the value of the derivative
     #    dY(1:NEQN)/dT.
     #
-    """
-    yp = zeros(size(y))
+
+    yp = np.zeros(np.size(y))
     yp[0] = 0.25 * y[0] * (1.0 - y[0] / 20.0)
     return(yp)
 
 
 def rkf45_test05():
-    """
-    #*****************************************************************************80
+
+    # *****************************************************************************80
     #
-    #% RKF45_TEST05 solves a vector ODE.
+    # % RKF45_TEST05 solves a vector ODE.
     #
     #  Licensing:
     #
@@ -168,7 +160,7 @@ def rkf45_test05():
     #
     #    John Burkardt
     #
-    """
+
     print('')
     print('RKF45_TEST05')
     print('  Solve a vector equation using R8_RKF45')
@@ -176,15 +168,15 @@ def rkf45_test05():
     print('  Y''(1) =  Y(2)')
     print('  Y''(2) = -Y(1)')
     neqn = 2
-    abserr = sqrt(finfo(double).eps)
-    relerr = sqrt(finfo(double).eps)
+    abserr = np.sqrt(np.finfo(np.double).eps)
+    relerr = np.sqrt(np.finfo(np.double).eps)
     flag = 1
     t_start = 0.0
     t_stop = 2.0 * 3.14159265
     n_step = 12
     t = 0.0
     t_out = 0.0
-    y = zeros(2)
+    y = np.zeros(2)
     y[0] = 1.0
     yp = r8_f2(t, y)
     print('')
@@ -204,10 +196,10 @@ def rkf45_test05():
 
 
 def r8_f2(t, y):
-    """
-    #*****************************************************************************80
+
+    # *****************************************************************************80
     #
-    #% R8_F2 evaluates the derivative for the ODE.
+    # % R8_F2 evaluates the derivative for the ODE.
     #
     #  Licensing:
     #
@@ -230,18 +222,18 @@ def r8_f2(t, y):
     #    Output, real YP(NEQN), the value of the derivative
     #    dY(1:NEQN)/dT.
     #
-    """
-    yp = zeros(size(y))
+
+    yp = np.zeros(np.size(y))
     yp[0] = y[1]
     yp[1] = -y[0]
     return(yp)
 
 
 def r8_y1x(t):
-    """
-    #*****************************************************************************80
+
+    # *****************************************************************************80
     #
-    #% R8_Y1X evaluates the exact solution of the ODE.
+    # % R8_Y1X evaluates the exact solution of the ODE.
     #
     #  Licensing:
     #
@@ -261,16 +253,16 @@ def r8_y1x(t):
     #
     #    Output, real Y1X, the exact solution.
     #
-    """
-    y1x = 20.0 / (1.0 + 19.0 * exp(- 0.25 * t))
+
+    y1x = 20.0 / (1.0 + 19.0 * np.exp(- 0.25 * t))
     return(y1x)
 
 
 def rkf45_test06():
-    """
-    #*******************************
+
+    # *******************************
     #
-    #% RKF45_TEST06 solves a scalar ODE and uses one-step integration.
+    # % RKF45_TEST06 solves a scalar ODE and uses one-step integration.
     #
     #  Licensing:
     #
@@ -284,7 +276,7 @@ def rkf45_test06():
     #
     #    John Burkardt
     #
-    """
+
     print('')
     print('RKF45_TEST06')
     print('  Solve a scalar equation using R8_RKF45')
@@ -294,15 +286,15 @@ def rkf45_test06():
     print('  Use the special SINGLE_STEP mode')
     print('  which returns after every step.')
     neqn = 1
-    abserr = sqrt(finfo(double).eps)
-    relerr = sqrt(finfo(double).eps)
+    abserr = np.sqrt(np.finfo(np.double).eps)
+    relerr = np.sqrt(np.finfo(np.double).eps)
     flag = -1
     t_start = 0.0
     t_stop = 20.0
     n_step = 5
     t = 0.0
     t_out = 0.0
-    y = zeros(1)
+    y = np.zeros(1)
     y[0] = 1.0
     yp = r8_f1(t, y)
     print('')
