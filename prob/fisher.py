@@ -1,5 +1,33 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
+
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from scipy import special
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print, r8vec_print_some
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8vec_transpose_print import r8vec_transpose_print
+from r8lib.r8mat_transpose_print import r8mat_transpose_print, r8mat_transpose_print_some
+
+from r8lib.r8_uniform_ab import r8vec_uniform_01
+from r8lib.r8vec_norm import r8vec_norm
+from r8lib.r8vec_dot_product import r8vec_dot_product
+from prob.plot import plot_pnt
 
 
 def fisher_pdf(x, kappa, mu):
@@ -71,14 +99,10 @@ def fisher_pdf(x, kappa, mu):
     #
     #    Output, real PDF, the value of the PDF.
     #
-    import numpy as np
-    from r8vec_dot_product import r8vec_dot_product
-    from r8vec_norm import r8vec_norm
-    from scipy import special
-    from sys import exit
-#
-#  Force column-vector shape.
-#
+
+    #
+    #  Force column-vector shape.
+    #
     if (kappa < 0.0):
         print('')
         print('FISHER_PDF - Fatal error!')
@@ -91,11 +115,8 @@ def fisher_pdf(x, kappa, mu):
         return pdf
 
     alpha = 0.5
-
     b = special.iv(alpha, kappa)
-
     cf = np.sqrt(kappa) / (np.sqrt((2.0 * np.pi) ** 3) * b)
-
     mu_norm = r8vec_norm(3, mu)
 
     if (mu_norm == 0.0):
@@ -109,7 +130,6 @@ def fisher_pdf(x, kappa, mu):
         return pdf
 
     arg = kappa * (r8vec_dot_product(3, x, mu)) / (x_norm * mu_norm)
-
     pdf = cf * np.exp(arg)
 
     return pdf
@@ -133,9 +153,6 @@ def fisher_pdf_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
-    from r8vec_transpose_print import r8vec_transpose_print
 
     n = 10
     test_num = 3
@@ -145,10 +162,7 @@ def fisher_pdf_test():
     print('  Python version: %s' % (platform.python_version()))
     print('  FISHER_PDF evaluates the Fisher PDF.')
 
-    import numpy as np
-    import matplotlib.pyplot as plt
-
-    plt.figure()
+    obj = plot2d(aspect="auto")
     for test in range(0, test_num):
 
         if (test == 0):
@@ -160,6 +174,9 @@ def fisher_pdf_test():
         elif (test == 2):
             kappa = 1.0
             #kappa = 10.0
+            mu = np.array([1.0, 0.0, 0.0])
+        else:
+            kappa = 1.0
             mu = np.array([1.0, 0.0, 0.0])
 
         print('')
@@ -179,20 +196,15 @@ def fisher_pdf_test():
             dat.append(np.array([x[0, 0], x[1, 0], x[2, 0], pdf]))
 
         dat = np.array(dat)
-        plt.scatter(dat[:, 0], dat[:, 3],
-                    label="fisher-pdf kapp={:.2f}".format(kappa))
+        obj.axs.scatter(dat[:, 0], dat[:, 3],
+                        label="fisher-pdf kapp={:.2f}".format(kappa))
 
-    plt.grid()
-    plt.legend()
-    plt.savefig("./fisher.png")
-    plt.close()
-#
-#  Terminate.
-#
+    obj.axs.legend()
+    obj.SavePng("./fisher.png")
+
     print('')
     print('FISHER_PDF_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def fisher_sample(kappa, mu, n, seed):
@@ -242,11 +254,6 @@ def fisher_sample(kappa, mu, n, seed):
     #    Input, real ALPHA, BETA, the colatitude (theta) and
     #    longitude (phi) of the mean direction.
     #
-    import numpy as np
-    from r8_uniform_01 import r8_uniform_01
-    from r8vec_norm import r8vec_norm
-    from r8vec_uniform_01 import r8vec_uniform_01
-    from sys import exit
 
     mu_norm = r8vec_norm(3, mu)
 
@@ -285,9 +292,10 @@ def fisher_sample(kappa, mu, n, seed):
         xyz[0, i] = np.sin(theta[i]) * np.cos(phi[i])
         xyz[1, i] = np.sin(theta[i]) * np.sin(phi[i])
         xyz[2, i] = np.cos(theta[i])
-#
-#  Compute the rotation matrix.
-#
+
+    #
+    #  Compute the rotation matrix.
+    #
     a[0, 0] = np.cos(alpha) * np.cos(beta)
     a[1, 0] = - np.sin(beta)
     a[2, 0] = np.sin(alpha) * np.cos(beta)
@@ -299,16 +307,15 @@ def fisher_sample(kappa, mu, n, seed):
     a[0, 2] = - np.sin(alpha)
     a[1, 2] = 0.0
     a[2, 2] = np.cos(alpha)
-#
-#  Rotate the points.
-#
-    xyz = np.dot(a, xyz)
 
+    #
+    #  Rotate the points.
+    #
+    xyz = np.dot(a, xyz)
     return xyz, seed
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     fisher_pdf_test()
     timestamp()

@@ -1,5 +1,36 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
+
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print, r8vec_print_some
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8vec_transpose_print import r8vec_transpose_print
+from r8lib.r8mat_transpose_print import r8mat_transpose_print, r8mat_transpose_print_some
+
+from r8lib.r8_huge import r8_huge
+from r8lib.r8_gamma import r8_gamma
+from r8lib.r8_uniform_ab import r8_uniform_01
+from r8lib.r8vec_min import r8vec_min
+from r8lib.r8vec_max import r8vec_max
+from r8lib.r8vec_mean import r8vec_mean
+from r8lib.r8vec_variance import r8vec_variance
+from prob.plot import plot_pnt
 
 
 def cardioid_cdf(x, a, b):
@@ -74,21 +105,14 @@ def cardioid_cdf_inv(cdf, a, b):
     #    Output, real X, the argument with the given CDF.
     #    A - PI <= X <= A + PI.
     #
-    import numpy as np
-    from sys import exit
 
     tol = 0.000001
 
     if (cdf <= 0.0):
-
         x = a - np.pi
-
     elif (cdf < 1.0):
-
         x = a
-
         it = 0
-
         while (True):
 
             fx = cdf - (np.pi + x - a + 2.0 * b *
@@ -109,7 +133,6 @@ def cardioid_cdf_inv(cdf, a, b):
             it = it + 1
 
     else:
-
         x = a + np.pi
 
     return x
@@ -133,7 +156,6 @@ def cardioid_cdf_test():
     #
     #    John Burkardt
     #
-    import platform
 
     a = 0.0
     b = 0.25
@@ -160,9 +182,6 @@ def cardioid_cdf_test():
     print('       X            PDF           CDF            CDF_INV')
     print('')
 
-    import numpy as np
-    from plot import plot_pnt
-
     dat = []
     for i in range(0, 10):
 
@@ -175,13 +194,10 @@ def cardioid_cdf_test():
         dat.append(np.array([x, pdf, cdf, x2]))
     dat = np.array(dat)
     plot_pnt(dat, "cardioid")
-#
-#  Terminate.
-#
+
     print('')
     print('CARDIOID_CDF_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def cardioid_check(a, b):
@@ -291,7 +307,6 @@ def cardioid_pdf(x, a, b):
     #
     #    Output, real PDF, the value of the PDF.
     #
-    import numpy as np
 
     pdf = (1.0 + 2.0 * b * np.cos(x - a)) / (2.0 * np.pi)
 
@@ -326,10 +341,8 @@ def cardioid_sample(a, b, seed):
     #    Output, real X, a sample of the PDF.
     #    A - PI <= X <= A + PI.
     #
-    from r8_uniform_01 import r8_uniform_01
 
     cdf, seed = r8_uniform_01(seed)
-
     x = cardioid_cdf_inv(cdf, a, b)
 
     return x, seed
@@ -353,12 +366,6 @@ def cardioid_sample_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
-    from r8vec_max import r8vec_max
-    from r8vec_mean import r8vec_mean
-    from r8vec_min import r8vec_min
-    from r8vec_variance import r8vec_variance
 
     sample_num = 1000
 
@@ -405,13 +412,9 @@ def cardioid_sample_test():
     print('  Sample variance = %14g' % (variance))
     print('  Sample maximum =  %14g' % (xmax))
     print('  Sample minimum =  %14g' % (xmin))
-#
-#  Terminate.
-#
     print('')
     print('CARDIOID_SAMPLE_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def cardioid_variance(a, b):
@@ -445,7 +448,6 @@ def cardioid_variance(a, b):
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     cardioid_cdf_test()
     cardioid_sample_test()
