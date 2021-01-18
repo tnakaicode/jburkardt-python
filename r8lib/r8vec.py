@@ -14,7 +14,7 @@ from sys import exit
 sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
-from prob.r8 import r8_normal_01
+from r8lib.r8 import r8_normal_01
 
 
 def r8vec_normal_ab(n, mu, sigma, seed):

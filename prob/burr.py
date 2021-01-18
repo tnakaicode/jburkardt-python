@@ -72,7 +72,6 @@ def burr_cdf_inv(cdf, a, b, c, d):
     #
     #    Output, real X, the corresponding argument.
     #
-    from sys import exit
 
     if (cdf < 0.0 or 1.0 < cdf):
         print('')
@@ -81,7 +80,6 @@ def burr_cdf_inv(cdf, a, b, c, d):
         exit('BURR_CDF_INV - Fatal error!')
 
     y = ((1.0 / (1.0 - cdf)) ** (1.0 / d) - 1.0) ** (1.0 / c)
-
     x = a + b * y
 
     return x
@@ -105,7 +103,6 @@ def burr_cdf_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('BURR_CDF_TEST')
@@ -118,7 +115,6 @@ def burr_cdf_test():
     b = 2.0
     c = 3.0
     d = 2.0
-
     check = burr_check(a, b, c, d)
 
     if (not check):
@@ -139,9 +135,6 @@ def burr_cdf_test():
     print('       X            PDF           CDF            CDF_INV')
     print('')
 
-    import numpy as np
-    from plot import plot_pnt
-
     dat = []
     for i in range(0, 10):
 
@@ -154,13 +147,10 @@ def burr_cdf_test():
         dat.append(np.array([x, pdf, cdf, x2]))
     dat = np.array(dat)
     plot_pnt(dat, "burr")
-#
-#  Terminate.
-#
+
     print('')
     print('BURR_DF_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def burr_check(a, b, c, d):
@@ -232,7 +222,6 @@ def burr_mean(a, b, c, d):
     #
     #    Output, real MEAN, the mean of the PDF.
     #
-    from r8_gamma import r8_gamma
 
     ymean = d * r8_gamma(d - 1.0 / c) \
               * r8_gamma(1.0 + 1.0 / c) \
@@ -287,11 +276,9 @@ def burr_pdf(x, a, b, c, d):
     if (x <= a):
 
         pdf = 0.0
-
     else:
 
         y = (x - a) / b
-
         pdf = (c * d / b) * y ** (c - 1.0) / (1.0 + y ** c) ** (d + 1.0)
 
     return pdf
@@ -327,10 +314,8 @@ def burr_sample(a, b, c, d, seed):
     #
     #    Output, integer SEED, an updated seed for the random number generator.
     #
-    from r8_uniform_01 import r8_uniform_01
 
     cdf, seed = r8_uniform_01(seed)
-
     x = burr_cdf_inv(cdf, a, b, c, d)
 
     return x, seed
@@ -354,12 +339,6 @@ def burr_sample_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
-    from r8vec_max import r8vec_max
-    from r8vec_mean import r8vec_mean
-    from r8vec_min import r8vec_min
-    from r8vec_variance import r8vec_variance
 
     nsample = 1000
     seed = 123456789
@@ -411,13 +390,9 @@ def burr_sample_test():
     print('  Sample variance = %14f' % (variance))
     print('  Sample maximum =  %14f' % (xmax))
     print('  Sample minimum =  %14f' % (xmin))
-#
-#  Terminate.
-#
     print('')
     print('BURR_SAMPLE_TEST')
     print('  Normal end of execution.')
-    return
 
 
 def burr_variance(a, b, c, d):
@@ -446,8 +421,6 @@ def burr_variance(a, b, c, d):
     #
     #    Output, real VARIANCE, the variance of the PDF.
     #
-    from r8_gamma import r8_gamma
-    from r8_huge import r8_huge
 
     if (c <= 2.0):
 
@@ -455,7 +428,6 @@ def burr_variance(a, b, c, d):
         print('BURR_VARIANCE - Warning!')
         print('  Variance undefined for C <= 2.')
         variance = r8_huge()
-
     else:
 
         mu1 = b * d * r8_gamma((c * d - 1.0) / c) \
@@ -467,12 +439,10 @@ def burr_variance(a, b, c, d):
             / r8_gamma((c * d + c) / c)
 
         variance = - mu1 * mu1 + mu2
-
     return variance
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     burr_cdf_test()
     burr_sample_test()

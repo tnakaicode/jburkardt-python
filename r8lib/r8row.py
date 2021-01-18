@@ -14,8 +14,8 @@ from sys import exit
 sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
-from prob.r8mat import r8mat_print
-from prob.r8vec import r8vec_print
+from r8lib.r8mat import r8mat_print
+from r8lib.r8vec import r8vec_print
 
 
 def r8row_max(m, n, x):
