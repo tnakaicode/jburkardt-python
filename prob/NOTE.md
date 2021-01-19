@@ -8,242 +8,238 @@ title: Prob FUnction
 | ![pic](cauchy.png)   | ![pic](chi.png)           | ![pic](chi_square.png)  |
 | ![pic](fisher.png)   | ![pic](folded_normal.png) | ![pic](half_normal.png) |
 
-## angle.py
+## 1. angle.py
 
-## anglit.py
+## 2. anglit.py
 
-## arcsin.py
+## 3. arcsin.py
 
-## benford.py
+## 4. benford.py
 
-## bernoulli.py
+## 5. bernoulli.py
 
-## bessel_i0.py
+## 6. bessel_i0.py
 
-## bessel_i0_values.py
+### 6.1. bessel_i0_values.py
 
-## bessel_i1.py
+### 6.2. bessel_i1.py
 
-## bessel_i1_values.py
+### 6.3. bessel_i1_values.py
 
-## beta.py
+## 7. beta.py
 
-## beta_binomial.py
+### 7.1. beta_binomial.py
 
-## beta_cdf_values.py
+### 7.2. beta_cdf_values.py
 
-## beta_inc.py
+### 7.3. beta_inc.py
 
-## beta_inc_values.py
+### 7.4. beta_inc_values.py
 
-## beta_values.py
+### 7.5. beta_values.py
 
-## binomial.py
+## 8. binomial.py
 
-## birthday.py
+## 9. birthday.py
 
-## bradford.py
+## 10. bradford.py
 
-## buffon.py
+## 11. buffon.py
 
-## buffon_box.py
+### 11.1. buffon_box.py
 
-## burr.py
+## 12. burr.py
 
-## cardioid.py
+## 13. cardioid.py
 
-## cauchy.py
+## 14. cauchy.py
 
-## chebyshev1.py
+## 15. chebyshev1.py
 
-## chi.py
+## 16. chi.py
 
-## chi_square.py
+### 16.1. chi_square.py
 
-## chi_square_noncentral.py
+### 16.2. chi_square_noncentral.py
 
-## circular_normal.py
+## 17. circular_normal.py
 
-## circular_normal_01.py
+### 17.1. circular_normal_01.py
 
-## cosine.py
+## 18. coupon.py
 
-## coupon.py
+### 18.1. coupon_complete.py
 
-## coupon_complete.py
+## 19. deranged.py
 
-## deranged.py
+## 20. digamma.py
 
-## digamma.py
+## 21. dipole.py
 
-## dipole.py
+## 22. dirichlet.py
 
-## dirichlet.py
+### 22.1. dirichlet_mix.py
 
-## dirichlet_mix.py
+## 23. discrete.py
 
-## discrete.py
+### 23.1. empirical_discrete.py
 
-## disk.py
+## 24. disk.py
 
-## empirical_discrete.py
+## 25. english_letter.py
 
-## english_letter.py
+### 25.1. english_sentence_length.py
 
-## english_sentence_length.py
+### 25.2. english_word_length.py
 
-## english_word_length.py
+## 26. erf_values.py
 
-## erf_values.py
+## 27. erlang.py
 
-## erlang.py
+## 28. exponential.py
 
-## exponential.py
+### 28.1. exponential_01.py
 
-## exponential_01.py
+## 29. extreme_values.py
 
-## extreme_values.py
+### 29.1. extreme_values_cdf_values.py
 
-## extreme_values_cdf_values.py
+## 30. f.py
 
-## f.py
+## 31. fermi_dirac.py
 
-## fermi_dirac.py
+## 32. fisher.py
 
-## fisher.py
+## 33. fisk.py
 
-## fisk.py
+## 34. folded_normal.py
 
-## folded_normal.py
+## 35. frechet.py
 
-## frechet.py
+## 36. gamma.py
 
-## gamma.py
+### 36.1. gamma_inc_values.py
 
-## gamma_inc_values.py
+### 36.2. gamma_log_values.py
 
-## gamma_log_values.py
+### 36.3. gamma_values.py
 
-## gamma_values.py
+## 37. genlogistic.py
 
-## genlogistic.py
+## 38. geometric.py
 
-## geometric.py
+## 39. gompertz.py
 
-## gompertz.py
+## 40. gumbel.py
 
-## gumbel.py
+## 41. half_normal.py
 
-## half_normal.py
+## 42. hypergeometric.py
 
-## hypergeometric.py
+## 43. inverse_gaussian.py
 
-## inverse_gaussian.py
+## 44. laplace.py
 
-## laplace.py
+## 45. levy.py
 
-## levy.py
+## 46. logistic.py
 
-## logistic.py
+### 46.1. log_normal.py
 
-## log_normal.py
+### 46.2. log_series.py
 
-## log_series.py
+### 46.3. log_uniform.py
 
-## log_uniform.py
+## 47. lorentz.py
 
-## lorentz.py
+## 48. maxwell.py
 
-## maxwell.py
+## 49. multinomial.py
 
-## multinomial.py
+### 49.1. multinomial_coef.py
 
-## multinomial_coef.py
+### 49.2. multinoulli.py
 
-## multinoulli.py
+## 50. nakagami.py
 
-## nakagami.py
+## 51. negative_binomial.py
 
-## negative_binomial.py
+## 52. normal.py
 
-## normal.py
+### 52.1. normal_01.py
 
-## normal_01.py
+### 52.2. normal_01_cdf_values.py
 
-## normal_01_cdf_values.py
+### 52.3. normal_truncated_a.py
 
-## normal_truncated_a.py
+### 52.4. normal_truncated_ab.py
 
-## normal_truncated_ab.py
+### 52.5. normal_truncated_b.py
 
-## normal_truncated_b.py
+## 53. owen_values.py
 
-## owen_values.py
+## 54. pareto.py
 
-## pareto.py
+## 55. pearson_05.py
 
-## pearson_05.py
+## 56. planck.py
 
-## planck.py
+## 57. poisson.py
 
-## plot.py
+## 58. power.py
 
-## poisson.py
+## 59. psi_values.py
 
-## power.py
+## 60. quasigeometric.py
 
-## prob_test.py
+## 61. rayleigh.py
 
-## psi_values.py
+## 62. reciprocal.py
 
-## quasigeometric.py
+## 63. runs.py
 
-## r8_gamma_inc.py
+## 64. sech.py
 
-## rayleigh.py
+## 65. semicircular.py
 
-## reciprocal.py
+## 66. sine
 
-## runs.py
+### 66.1. sin_power_int.py
 
-## sech.py
+### 66.2. sin_power_int_values.py
 
-## semicircular.py
+### 66.3. cosine.py
 
-## sin_power_int.py
+## 67. stirling2.py
 
-## sin_power_int_values.py
+## 68. student.py
 
-## stirling2.py
+## 69. student_noncentral.py
 
-## student.py
+## 70. tfn.py
 
-## student_noncentral.py
+## 71. triangle.py
 
-## tfn.py
+## 72. triangular.py
 
-## triangle.py
+## 73. trigamma.py
 
-## triangular.py
+## 74. trigamma_values.py
 
-## trigamma.py
+## 75. uniform.py
 
-## trigamma_values.py
+## 76. uniform_01.py
 
-## uniform.py
+## 77. uniform_01_order.py
 
-## uniform_01.py
+## 78. uniform_discrete.py
 
-## uniform_01_order.py
+## 79. uniform_nsphere.py
 
-## uniform_discrete.py
+## 80. von_mises.py
 
-## uniform_nsphere.py
+## 81. weibull.py
 
-## von_mises.py
+## 82. weibull_discrete.py
 
-## weibull.py
-
-## weibull_discrete.py
-
-## zipf.py
+## 83. zipf.py
