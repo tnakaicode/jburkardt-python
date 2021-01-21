@@ -78,74 +78,6 @@ def monomial_value(m, n, e, x):
     return v
 
 
-def hypersphere_distance_stats(m, n):
-
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the spatial dimension.
-    #
-    #    Input, integer N, the number of sample points to use.
-    #
-    #    Output, real MU, VAR, the estimated mean and variance of the
-    #       distance between two random points on the unit sphere.
-    #
-
-    t = np.zeros(n)
-    for i in range(0, n):
-        p = hypersphere_unit_sample(m)
-        q = hypersphere_unit_sample(m)
-        t[i] = np.linalg.norm(p - q)
-
-    mu = np.sum(t) / n
-    if (1 < n):
-        var = np.sum((t - mu)**2) / (n - 1)
-    else:
-        var = 0.0
-
-    mu_exact = np.sqrt(2.0)
-    var_exact = 2.0 - 2.0**(2 * m - 2) * gamma(m / 2)**4 / np.pi \
-        / gamma(m - 0.5)**2
-    print('')
-    print('  Using M = %d spatial dimension' % (m))
-    print('  Using N = %d sample points,' % (n))
-    print('  Estimated mean distance = %g' % (mu))
-    print('  Exact mean distance     = %g' % (mu_exact))
-    print('  Estimated variance      = %g' % (var))
-    print('  Exact variance          = %g' % (var_exact))
-    return mu, var
-
-
-def hypersphere_unit_sample(m):
-
-    #
-    # hypersphere_unit_sample returns sample points on the unit hypersphere.
-    #
-    #  Reference:
-    #
-    #    Russell Cheng,
-    #    Random Variate Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998, pages 168.
-    #
-    #    Reuven Rubinstein,
-    #    Monte Carlo Optimization, Simulation, and Sensitivity
-    #    of Queueing Networks,
-    #    Wiley, 1986, page 232.
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the spatial dimension.
-    #
-    #    Output, real X(M,1), the point.
-    #
-
-    x = np.random.randn(m)
-    x = x / np.linalg.norm(x)
-    return x
-
-
 class HyperSphere(plot2d):
 
     def __init__(self):
@@ -163,8 +95,8 @@ class HyperSphere(plot2d):
         filename = 'hypersphere_distance_compare.png'
         t = np.zeros(n)
         for i in range(0, n):
-            p = hypersphere_unit_sample(m)
-            q = hypersphere_unit_sample(m)
+            p = self.unit_sample(m)
+            q = self.unit_sample(m)
             t[i] = np.linalg.norm(p - q)
 
         d = np.linspace(0.0, 2.0, 101)
@@ -193,8 +125,8 @@ class HyperSphere(plot2d):
         filename = 'hypersphere_distance_histogram.png'
         t = np.zeros(n)
         for i in range(0, n):
-            p = hypersphere_unit_sample(m)
-            q = hypersphere_unit_sample(m)
+            p = self.unit_sample(m)
+            q = self.unit_sample(m)
             t[i] = np.linalg.norm(p - q)
 
         self.new_2Dfig()
@@ -236,6 +168,72 @@ class HyperSphere(plot2d):
             'PDF for pairwise distance of random points on unit hypersphere')
         self.SavePng_Serial(self.tmpdir + filename)
         print('  Graphics saved as "%s"' % (filename))
+
+    def distance_stats(self, m, n):
+
+        #
+        #  Parameters:
+        #
+        #    Input, integer M, the spatial dimension.
+        #
+        #    Input, integer N, the number of sample points to use.
+        #
+        #    Output, real MU, VAR, the estimated mean and variance of the
+        #       distance between two random points on the unit sphere.
+        #
+
+        t = np.zeros(n)
+        for i in range(0, n):
+            p = self.unit_sample(m)
+            q = self.unit_sample(m)
+            t[i] = np.linalg.norm(p - q)
+
+        mu = np.sum(t) / n
+        if (1 < n):
+            var = np.sum((t - mu)**2) / (n - 1)
+        else:
+            var = 0.0
+
+        mu_exact = np.sqrt(2.0)
+        var_exact = 2.0 - 2.0**(2 * m - 2) * gamma(m / 2)**4 / np.pi \
+            / gamma(m - 0.5)**2
+        print('')
+        print('  Using M = %d spatial dimension' % (m))
+        print('  Using N = %d sample points,' % (n))
+        print('  Estimated mean distance = %g' % (mu))
+        print('  Exact mean distance     = %g' % (mu_exact))
+        print('  Estimated variance      = %g' % (var))
+        print('  Exact variance          = %g' % (var_exact))
+        return mu, var
+
+    def unit_sample(self, m):
+
+        #
+        # hypersphere_unit_sample returns sample points on the unit hypersphere.
+        #
+        #  Reference:
+        #
+        #    Russell Cheng,
+        #    Random Variate Generation,
+        #    in Handbook of Simulation,
+        #    edited by Jerry Banks,
+        #    Wiley, 1998, pages 168.
+        #
+        #    Reuven Rubinstein,
+        #    Monte Carlo Optimization, Simulation, and Sensitivity
+        #    of Queueing Networks,
+        #    Wiley, 1986, page 232.
+        #
+        #  Parameters:
+        #
+        #    Input, integer M, the spatial dimension.
+        #
+        #    Output, real X(M,1), the point.
+        #
+
+        x = np.random.randn(m)
+        x = x / np.linalg.norm(x)
+        return x
 
     def area(self, m):
 
@@ -379,15 +377,15 @@ if (__name__ == '__main__'):
     obj.distance_pdf(m=20)
     obj.distance_compare(m=20, n=1000)
     obj.distance_histogram(m=20, n=1000)
-    
-    print ( '   M  Area' )
+
+    print('   M  Area')
     for m in range(5, 11):
         val = obj.area(m)
         print("{:d}\t{:.3f}".format(m, val))
 
     m, n = 3, 4192
     x, seed = obj.sample(m, n, seed)
-    print ( '  Ex  Ey  Ez     MC-Estimate           Exact      Error' )
+    print('  Ex  Ey  Ez     MC-Estimate           Exact      Error')
     for test in range(20):
         e, seed = i4vec_uniform_ab(m, 0, 4, seed)
 

@@ -8,7 +8,7 @@ import time
 import sys
 import os
 import math
-from scipy.special import beta, gamma, betainc
+from scipy.special import beta, gamma
 from mpl_toolkits.mplot3d import Axes3D
 from sys import exit
 
@@ -78,119 +78,44 @@ def monomial_value(m, n, e, x):
     return v
 
 
-def hypersphere_distance_stats(m, n):
-
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the spatial dimension.
-    #
-    #    Input, integer N, the number of sample points to use.
-    #
-    #    Output, real MU, VAR, the estimated mean and variance of the
-    #       distance between two random points on the unit sphere.
-    #
-
-    t = np.zeros(n)
-    for i in range(0, n):
-        p = hypersphere_unit_sample(m)
-        q = hypersphere_unit_sample(m)
-        t[i] = np.linalg.norm(p - q)
-
-    mu = np.sum(t) / n
-    if (1 < n):
-        var = np.sum((t - mu)**2) / (n - 1)
-    else:
-        var = 0.0
-
-    mu_exact = np.sqrt(2.0)
-    var_exact = 2.0 - 2.0**(2 * m - 2) * gamma(m / 2)**4 / np.pi \
-        / gamma(m - 0.5)**2
-    print('')
-    print('  Using M = %d spatial dimension' % (m))
-    print('  Using N = %d sample points,' % (n))
-    print('  Estimated mean distance = %g' % (mu))
-    print('  Exact mean distance     = %g' % (mu_exact))
-    print('  Estimated variance      = %g' % (var))
-    print('  Exact variance          = %g' % (var_exact))
-    return mu, var
-
-
-def hypersphere_unit_sample(m):
-
-    #
-    # hypersphere_unit_sample returns sample points on the unit hypersphere.
-    #
-    #  Reference:
-    #
-    #    Russell Cheng,
-    #    Random Variate Generation,
-    #    in Handbook of Simulation,
-    #    edited by Jerry Banks,
-    #    Wiley, 1998, pages 168.
-    #
-    #    Reuven Rubinstein,
-    #    Monte Carlo Optimization, Simulation, and Sensitivity
-    #    of Queueing Networks,
-    #    Wiley, 1986, page 232.
-    #
-    #  Parameters:
-    #
-    #    Input, integer M, the spatial dimension.
-    #
-    #    Output, real X(M,1), the point.
-    #
-
-    x = np.random.randn(m)
-    x = x / np.linalg.norm(x)
-    return x
-
-
-class HyperBall(plot2d):
+class BaseLine(plot2d):
 
     def __init__(self):
         plot2d.__init__(self, aspect="equal")
 
     def distance_compare(self, m, n):
-
         #
-        # hyperball_distance_compare compares hyperball distance PDF's.
+        # line_distance_compare compares the observed and theoretical PDF's.
         #
         #  Parameters:
-        #
-        #    Input, integer M, the spatial dimension.
         #
         #    Input, integer N, the number of samples to use.
         #
 
         t = np.zeros(n)
         for i in range(0, n):
-            p = self.unit_sample(m)
-            q = self.unit_sample(m)
-            t[i] = np.linalg.norm(p - q)
+            p = line_unit_sample()
+            q = line_unit_sample()
+            t[i] = np.abs(p - q)
 
-        d = np.linspace(0.0, 2.0, 101)
-        dh = d / 2.0
-        x = 1.0 - dh**2
-        a = (m + 1) / 2.0
-        b = 0.5
-        pdf = 0.5 * 2**m * m * dh**(m - 1) * betainc(a, b, x)
+        bins = 20
+        plt.hist(t, bins=20, rwidth=0.95, density=True)
 
-        filename = 'hyperball_distance_compare.png'
-        self.new_2Dfig()
-        self.axs.hist(t, bins=20, rwidth=0.95, density=True)
-        self.axs.plot(d, pdf, 'r-', linewidth=2)
-        self.axs.set_xlabel('<-- Distance -->')
-        self.axs.set_ylabel('<-- Relative frequency -->')
-        self.axs.set_title('Compare observed and theoretical PDFs')
-        self.SavePng_Serial(self.tmpdir + filename)
+        d = np.linspace(0.0, 1.0, 101)
+        pdf = 2.0 * (1.0 - d)
+        plt.plot(d, pdf, 'r-', linewidth=2)
+
+        plt.grid(True)
+        plt.xlabel('<-- Distance -->')
+        plt.ylabel('<-- Relative frequency -->')
+        plt.title('Compare observed and theoretical PDF')
+        filename = 'line_distance_compare.png'
+        plt.savefig(filename)
         print('  Graphics saved as "%s"' % (filename))
 
     def distance_histogram(self, m, n):
 
         #
-        # hyperball_distance_histogram histograms hyperball distance statistics.
-        #
         #  Parameters:
         #
         #    Input, integer M, the spatial dimension.
@@ -198,65 +123,94 @@ class HyperBall(plot2d):
         #    Input, integer N, the number of samples to use.
         #
 
+        filename = 'hypersphere_distance_histogram.png'
         t = np.zeros(n)
         for i in range(0, n):
             p = self.unit_sample(m)
             q = self.unit_sample(m)
             t[i] = np.linalg.norm(p - q)
 
-        filename = 'hyperball_distance_histogram.png'
         self.new_2Dfig()
         self.axs.hist(t, bins=20, rwidth=0.95, density=True)
         self.axs.set_xlabel('<-- Distance -->')
         self.axs.set_ylabel('<-- Frequency -->')
         self.axs.set_title(
-            'Distance between a pair of random points in a unit hyperball')
+            'Distance between a pair of random points on a unit hypersphere')
         self.SavePng_Serial(self.tmpdir + filename)
         print('  Graphics saved as "%s"' % (filename))
 
     def distance_pdf(self, m):
 
         #
-        # hyperball_distance_pdf plots the PDF for the hyperball distance problem.
+        # hypersphere_distance_pdf plots the PDF for the hypersphere distance problem.
         #
-        #  Licensing:
+        #  Reference:
         #
-        #    This code is distributed under the GNU LGPL license.
-        #
-        #  Modified:
-        #
-        #    22 May 2019
-        #
-        #  Author:
-        #
-        #    John Burkardt
+        #    Panagiotis Siridopoulos,
+        #    The N-Sphere Chord Length Distribution,
+        #    ARXIV,
+        #    https://arxiv.org/pdf/1411.5639.pdf
         #
         #  Parameters:
         #
         #    Input, integer M, the spatial dimension.
         #
 
+        filename = 'hypersphere_distance_pdf.png'
         d = np.linspace(0.0, 2.0, 101)
-        dh = d / 2.0
-        x = 1.0 - dh**2
-        a = (m + 1) / 2.0
-        b = 0.5
-        pdf = 0.5 * 2**m * m * dh**(m - 1) * betainc(a, b, x)
+        pdf = d / beta((m - 1) / 2, 0.5) * \
+            (d**2 - 0.25 * d**4) ** ((m - 3) / 2)
 
-        filename = 'hyperball_distance_pdf.png'
         self.new_2Dfig()
         self.axs.plot(d, pdf, 'r-', linewidth=2)
         self.axs.set_xlabel('<-- Distance -->')
         self.axs.set_ylabel('<-- Probability -->')
         self.axs.set_title(
-            'PDF for pairwise distance of random unit hyperball points')
-        self.SavePng_Serial(filename)
+            'PDF for pairwise distance of random points on unit hypersphere')
+        self.SavePng_Serial(self.tmpdir + filename)
         print('  Graphics saved as "%s"' % (filename))
+
+    def distance_stats(self, m, n):
+
+        #
+        #  Parameters:
+        #
+        #    Input, integer M, the spatial dimension.
+        #
+        #    Input, integer N, the number of sample points to use.
+        #
+        #    Output, real MU, VAR, the estimated mean and variance of the
+        #       distance between two random points on the unit sphere.
+        #
+
+        t = np.zeros(n)
+        for i in range(0, n):
+            p = self.unit_sample(m)
+            q = self.unit_sample(m)
+            t[i] = np.linalg.norm(p - q)
+
+        mu = np.sum(t) / n
+        if (1 < n):
+            var = np.sum((t - mu)**2) / (n - 1)
+        else:
+            var = 0.0
+
+        mu_exact = np.sqrt(2.0)
+        var_exact = 2.0 - 2.0**(2 * m - 2) * gamma(m / 2)**4 / np.pi \
+            / gamma(m - 0.5)**2
+        print('')
+        print('  Using M = %d spatial dimension' % (m))
+        print('  Using N = %d sample points,' % (n))
+        print('  Estimated mean distance = %g' % (mu))
+        print('  Exact mean distance     = %g' % (mu_exact))
+        print('  Estimated variance      = %g' % (var))
+        print('  Exact variance          = %g' % (var_exact))
+        return mu, var
 
     def unit_sample(self, m):
 
         #
-        # hyperball_unit_sample returns sample points in the unit hyperball.
+        # hypersphere_unit_sample returns sample points on the unit hypersphere.
         #
         #  Reference:
         #
@@ -275,83 +229,71 @@ class HyperBall(plot2d):
         #
         #    Input, integer M, the spatial dimension.
         #
-        #    Output, real X(M), the point.
+        #    Output, real X(M,1), the point.
         #
 
         x = np.random.randn(m)
         x = x / np.linalg.norm(x)
-        #
-        #  Now compute a value to map the point ON the hypersphere INTO the hypersphere.
-        #
-        r = np.random.rand()
-        x = r ** (1.0 / m) * x
         return x
 
-    def volume(self, m):
+    def area(self, m):
 
         #
-        # HYPERBALL01_VOLUME returns the volume of the unit hyperball in M dimensions.
+        # HYPERSPHERE01_AREA returns the surface area of the unit hypersphere.
         #
         #  Discussion:
         #
-        #     M  Volume
+        #     M   Area
         #
-        #     1    2
-        #     2    1        * PI
-        #     3  ( 4 /   3) * PI
-        #     4  ( 1 /   2) * PI^2
-        #     5  ( 8 /  15) * PI^2
-        #     6  ( 1 /   6) * PI^3
-        #     7  (16 / 105) * PI^3
-        #     8  ( 1 /  24) * PI^4
-        #     9  (32 / 945) * PI^4
-        #    10  ( 1 / 120) * PI^5
+        #     2    2        * PI
+        #     3    4        * PI
+        #     4  ( 2 /   1) * PI^2
+        #     5  ( 8 /   3) * PI^2
+        #     6  ( 1 /   1) * PI^3
+        #     7  (16 /  15) * PI^3
+        #     8  ( 1 /   3) * PI^4
+        #     9  (32 / 105) * PI^4
+        #    10  ( 1 /  12) * PI^5
         #
         #  Parameters:
         #
         #    Input, integer M, the spatial dimension.
         #
-        #    Output, real VOLUME, the volume of the unit ball.
+        #    Output, real VALUE, the area of the unit hypersphere.
         #
 
         if ((m % 2) == 0):
             m_half = (m // 2)
-            volume = np.pi ** m_half
-            for i in range(1, m_half + 1):
-                volume = volume / float(i)
+            value = 2.0 * np.pi ** m_half
+            for i in range(1, m_half):
+                value = value / float(i)
         else:
             m_half = ((m - 1) // 2)
-            volume = np.pi ** m_half * 2.0 ** m
-            for i in range(m_half + 1, 2 * m_half + 2):
-                volume = volume / float(i)
+            value = np.pi ** m_half * 2.0 ** m
+            for i in range(m_half + 1, 2 * m_half + 1):
+                value = value / float(i)
 
-        return volume
+        return value
 
     def monomial_integral(self, m, e):
 
         #
-        # HYPERBALL01_MONOMIAL_INTEGRAL: integrals in unit hyperball in M dimensions.
+        # HYPERSPHERE01_MONOMIAL_INTEGRAL: monomial integrals on the unit hypersphere.
         #
         #  Discussion:
         #
         #    The integration region is
         #
-        #      sum ( 1 <= I <= M ) X(I)^2 <= 1.
+        #      sum ( 1 <= I <= M ) X(I)^2 = 1.
         #
         #    The monomial is F(X) = product ( 1 <= I <= M ) X(I)^E(I)
-        #
-        #  Reference:
-        #
-        #    Gerald Folland,
-        #    How to Integrate a Polynomial Over a Sphere,
-        #    American Mathematical Monthly,
-        #    Volume 108, Number 5, May 2001, pages 446-448.
         #
         #  Parameters:
         #
         #    Input, integer M, the spatial dimension.
         #
-        #    Input, integer E(M), the exponents.  Each exponent must be nonnegative.
+        #    Input, integer E(M), the exponents of X(1) through X(M).
+        #    Each exponent must be nonnegative.
         #
         #    Output, real INTEGRAL, the integral.
         #
@@ -359,12 +301,9 @@ class HyperBall(plot2d):
         for i in range(0, m):
             if (e[i] < 0):
                 print('')
-                print('HYPERBALL01_MONOMIAL_INTEGRAL - Fatal error!')
+                print('HYPERSPHERE01_MONOMIAL_INTEGRAL - Fatal error!')
                 print('  All exponents must be nonnegative.')
                 exit()
-        #
-        #  Integrate over the surface.
-        #
         for i in range(0, m):
             if ((e[i] % 2) == 1):
                 integral = 0.0
@@ -373,26 +312,34 @@ class HyperBall(plot2d):
         integral = 2.0
 
         for i in range(0, m):
-            integral = integral * gamma(0.5 * float(e[i] + 1))
+            arg = 0.5 * float(e[i] + 1)
+            integral = integral * gamma(arg)
 
         s = 0
         for i in range(0, m):
-            s = s + e[i] + 1
+            s = s + float(e[i] + 1)
 
-        integral = integral / gamma(0.5 * float(s))
-        #
-        #  The surface integral is now adjusted to give the volume integral.
-        #
-
-        r = 1.0
-        integral = integral * r ** s / float(s)
+        arg = 0.5 * float(s)
+        integral = integral / gamma(arg)
 
         return integral
 
     def sample(self, m, n, seed):
 
         #
-        # HYPERCUBE01_SAMPLE samples points in the unit hypercube in M dimensions.
+        # HYPERSPHERE01_SAMPLE uniformly samples the surface of the unit hypersphere.
+        #
+        #  Licensing:
+        #
+        #    This code is distributed under the GNU LGPL license.
+        #
+        #  Modified:
+        #
+        #    22 June 2015
+        #
+        #  Author:
+        #
+        #    John Burkardt
         #
         #  Parameters:
         #
@@ -405,7 +352,19 @@ class HyperBall(plot2d):
         #
         #    Output, real X(M,N), the points.
         #
-        x, seed = r8mat_uniform_01(m, n, seed)
+
+        x = np.zeros([m, n])
+
+        for j in range(0, n):
+            #  Fill a vector with normally distributed values.
+            v, seed = r8vec_normal_01(m, seed)
+
+            # Compute the length of the vector.
+            norm = r8vec_norm(m, v)
+
+            #  Normalize the vector.
+            for i in range(0, m):
+                x[i, j] = v[i] / norm
 
         return x, seed
 
@@ -415,10 +374,15 @@ if (__name__ == '__main__'):
 
     seed = 123456789
 
-    obj = HyperBall()
+    obj = BaseLine()
     obj.distance_pdf(m=20)
     obj.distance_compare(m=20, n=1000)
     obj.distance_histogram(m=20, n=1000)
+
+    print('   M  Area')
+    for m in range(5, 11):
+        val = obj.area(m)
+        print("{:d}\t{:.3f}".format(m, val))
 
     m, n = 3, 4192
     x, seed = obj.sample(m, n, seed)
@@ -430,7 +394,7 @@ if (__name__ == '__main__'):
             e[i] = e[i] * 2
 
         value = monomial_value(m, n, e, x)
-        result = obj.volume(m) * np.sum(value) / float(n)
+        result = obj.area(m) * np.sum(value) / float(n)
         exact = obj.monomial_integral(m, e)
         error = abs(result - exact)
 
