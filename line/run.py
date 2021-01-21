@@ -94,73 +94,68 @@ class BaseLine(plot2d):
 
         t = np.zeros(n)
         for i in range(0, n):
-            p = line_unit_sample()
-            q = line_unit_sample()
+            p = self.unit_sample()
+            q = self.unit_sample()
             t[i] = np.abs(p - q)
 
         bins = 20
-        plt.hist(t, bins=20, rwidth=0.95, density=True)
 
         d = np.linspace(0.0, 1.0, 101)
         pdf = 2.0 * (1.0 - d)
-        plt.plot(d, pdf, 'r-', linewidth=2)
 
-        plt.grid(True)
-        plt.xlabel('<-- Distance -->')
-        plt.ylabel('<-- Relative frequency -->')
-        plt.title('Compare observed and theoretical PDF')
         filename = 'line_distance_compare.png'
-        plt.savefig(filename)
+        self.new_2Dfig()
+        self.axs.hist(t, bins=20, rwidth=0.95, density=True)
+        self.axs.plot(d, pdf, 'r-', linewidth=2)
+        self.axs.set_xlabel('<-- Distance -->')
+        self.axs.set_ylabel('<-- Relative frequency -->')
+        self.axs.set_title('Compare observed and theoretical PDF')
+        self.SavePng_Serial(self.tmpdir + filename)
         print('  Graphics saved as "%s"' % (filename))
 
     def distance_histogram(self, m, n):
 
         #
-        #  Parameters:
+        # line_distance_histogram histograms the data.
         #
-        #    Input, integer M, the spatial dimension.
+        #  Parameters:
         #
         #    Input, integer N, the number of samples to use.
         #
 
-        filename = 'hypersphere_distance_histogram.png'
         t = np.zeros(n)
         for i in range(0, n):
-            p = self.unit_sample(m)
-            q = self.unit_sample(m)
-            t[i] = np.linalg.norm(p - q)
+            p = self.unit_sample()
+            q = self.unit_sample()
+            t[i] = np.abs(p - q)
 
+        filename = 'line_distance_histogram.png'
         self.new_2Dfig()
         self.axs.hist(t, bins=20, rwidth=0.95, density=True)
         self.axs.set_xlabel('<-- Distance -->')
-        self.axs.set_ylabel('<-- Frequency -->')
+        self.axs.set_ylabel('<-- Relative frequency -->')
         self.axs.set_title(
-            'Distance between a pair of random points on a unit hypersphere')
+            'Distance between random point pairs in a unit line segment')
         self.SavePng_Serial(self.tmpdir + filename)
         print('  Graphics saved as "%s"' % (filename))
 
     def distance_pdf(self, m):
 
         #
-        # hypersphere_distance_pdf plots the PDF for the hypersphere distance problem.
+        # line_distance_pdf plots the PDF for the line distance problem.
         #
         #  Reference:
         #
-        #    Panagiotis Siridopoulos,
-        #    The N-Sphere Chord Length Distribution,
-        #    ARXIV,
-        #    https://arxiv.org/pdf/1411.5639.pdf
-        #
-        #  Parameters:
-        #
-        #    Input, integer M, the spatial dimension.
+        #    Eric Weisstein,
+        #    "Line Line Picking."
+        #    From MathWorld--A Wolfram Web Resource.,
+        #    http://mathworld.wolfram.com/LineLinePicking.html
         #
 
-        filename = 'hypersphere_distance_pdf.png'
-        d = np.linspace(0.0, 2.0, 101)
-        pdf = d / beta((m - 1) / 2, 0.5) * \
-            (d**2 - 0.25 * d**4) ** ((m - 3) / 2)
+        d = np.linspace(0.0, 1.0, 101)
+        pdf = 2.0 * (1.0 - d)
 
+        filename = 'line_distance_pdf.png'
         self.new_2Dfig()
         self.axs.plot(d, pdf, 'r-', linewidth=2)
         self.axs.set_xlabel('<-- Distance -->')
@@ -173,21 +168,21 @@ class BaseLine(plot2d):
     def distance_stats(self, m, n):
 
         #
-        #  Parameters:
+        # line_distance_stats estimates line distance statistics.
         #
-        #    Input, integer M, the spatial dimension.
+        #  Parameters:
         #
         #    Input, integer N, the number of sample points to use.
         #
         #    Output, real MU, VAR, the estimated mean and variance of the
-        #       distance between two random points on the unit sphere.
+        #    distance between two random points in the unit line segment.
         #
 
         t = np.zeros(n)
         for i in range(0, n):
             p = self.unit_sample(m)
             q = self.unit_sample(m)
-            t[i] = np.linalg.norm(p - q)
+            t[i] = np.abs(p - q)
 
         mu = np.sum(t) / n
         if (1 < n):
@@ -195,177 +190,83 @@ class BaseLine(plot2d):
         else:
             var = 0.0
 
-        mu_exact = np.sqrt(2.0)
-        var_exact = 2.0 - 2.0**(2 * m - 2) * gamma(m / 2)**4 / np.pi \
-            / gamma(m - 0.5)**2
+        mu_exact = 1.0 / 3.0
+        var_exact = 1.0 / 18.0
         print('')
-        print('  Using M = %d spatial dimension' % (m))
-        print('  Using N = %d sample points,' % (n))
+        print('  Using N = %d sample points.' % (n))
         print('  Estimated mean distance = %g' % (mu))
         print('  Exact mean distance     = %g' % (mu_exact))
         print('  Estimated variance      = %g' % (var))
         print('  Exact variance          = %g' % (var_exact))
-        return mu, var
 
-    def unit_sample(self, m):
+    def unit_sample(self):
 
         #
-        # hypersphere_unit_sample returns sample points on the unit hypersphere.
-        #
-        #  Reference:
-        #
-        #    Russell Cheng,
-        #    Random Variate Generation,
-        #    in Handbook of Simulation,
-        #    edited by Jerry Banks,
-        #    Wiley, 1998, pages 168.
-        #
-        #    Reuven Rubinstein,
-        #    Monte Carlo Optimization, Simulation, and Sensitivity
-        #    of Queueing Networks,
-        #    Wiley, 1986, page 232.
+        # line_unit_sample returns a randomly selected point in the unit line segment.
         #
         #  Parameters:
         #
-        #    Input, integer M, the spatial dimension.
-        #
-        #    Output, real X(M,1), the point.
-        #
-
-        x = np.random.randn(m)
-        x = x / np.linalg.norm(x)
-        return x
-
-    def area(self, m):
-
-        #
-        # HYPERSPHERE01_AREA returns the surface area of the unit hypersphere.
-        #
-        #  Discussion:
-        #
-        #     M   Area
-        #
-        #     2    2        * PI
-        #     3    4        * PI
-        #     4  ( 2 /   1) * PI^2
-        #     5  ( 8 /   3) * PI^2
-        #     6  ( 1 /   1) * PI^3
-        #     7  (16 /  15) * PI^3
-        #     8  ( 1 /   3) * PI^4
-        #     9  (32 / 105) * PI^4
-        #    10  ( 1 /  12) * PI^5
-        #
-        #  Parameters:
-        #
-        #    Input, integer M, the spatial dimension.
-        #
-        #    Output, real VALUE, the area of the unit hypersphere.
+        #    Output, real P(1,1), a point selected uniformly at random from
+        #    the interior of the unit line segment.
         #
 
-        if ((m % 2) == 0):
-            m_half = (m // 2)
-            value = 2.0 * np.pi ** m_half
-            for i in range(1, m_half):
-                value = value / float(i)
-        else:
-            m_half = ((m - 1) // 2)
-            value = np.pi ** m_half * 2.0 ** m
-            for i in range(m_half + 1, 2 * m_half + 1):
-                value = value / float(i)
-
-        return value
+        p = np.random.rand()
+        return p
 
     def monomial_integral(self, m, e):
 
         #
-        # HYPERSPHERE01_MONOMIAL_INTEGRAL: monomial integrals on the unit hypersphere.
+        # LINE01_MONOMIAL_INTEGRAL: monomial integral over the unit line in 1D.
         #
         #  Discussion:
         #
         #    The integration region is
         #
-        #      sum ( 1 <= I <= M ) X(I)^2 = 1.
+        #      0 <= X <= 1.
         #
-        #    The monomial is F(X) = product ( 1 <= I <= M ) X(I)^E(I)
+        #    The monomial is F(X) = X^E.
+        #
+        #  Reference:
+        #
+        #    Philip Davis, Philip Rabinowitz,
+        #    Methods of Numerical Integration,
+        #    Second Edition,
+        #    Academic Press, 1984, page 263.
         #
         #  Parameters:
         #
-        #    Input, integer M, the spatial dimension.
-        #
-        #    Input, integer E(M), the exponents of X(1) through X(M).
-        #    Each exponent must be nonnegative.
+        #    Input, integer E, the exponent.
+        #    E must not equal -1.
         #
         #    Output, real INTEGRAL, the integral.
         #
 
-        for i in range(0, m):
-            if (e[i] < 0):
-                print('')
-                print('HYPERSPHERE01_MONOMIAL_INTEGRAL - Fatal error!')
-                print('  All exponents must be nonnegative.')
-                exit()
-        for i in range(0, m):
-            if ((e[i] % 2) == 1):
-                integral = 0.0
-                return integral
+        if (e == -1):
+            print('')
+            print('LINE01_MONOMIAL_INTEGRAL - Fatal error!')
+            print('  Exponent E = -1 is not allowed!')
+            exit('LINE01_MONOMIAL_INTEGRAL - Fatal error!')
 
-        integral = 2.0
-
-        for i in range(0, m):
-            arg = 0.5 * float(e[i] + 1)
-            integral = integral * gamma(arg)
-
-        s = 0
-        for i in range(0, m):
-            s = s + float(e[i] + 1)
-
-        arg = 0.5 * float(s)
-        integral = integral / gamma(arg)
-
+        integral = 1.0 / float(e + 1)
         return integral
 
     def sample(self, m, n, seed):
 
         #
-        # HYPERSPHERE01_SAMPLE uniformly samples the surface of the unit hypersphere.
-        #
-        #  Licensing:
-        #
-        #    This code is distributed under the GNU LGPL license.
-        #
-        #  Modified:
-        #
-        #    22 June 2015
-        #
-        #  Author:
-        #
-        #    John Burkardt
+        # LINE01_SAMPLE samples the unit line in 1D.
         #
         #  Parameters:
-        #
-        #    Input, integer M, the spatial dimension.
         #
         #    Input, integer N, the number of points.
         #
         #    Input/output, integer SEED, a seed for the random
         #    number generator.
         #
-        #    Output, real X(M,N), the points.
+        #    Output, real X(N), the points.
         #
 
-        x = np.zeros([m, n])
-
-        for j in range(0, n):
-            #  Fill a vector with normally distributed values.
-            v, seed = r8vec_normal_01(m, seed)
-
-            # Compute the length of the vector.
-            norm = r8vec_norm(m, v)
-
-            #  Normalize the vector.
-            for i in range(0, m):
-                x[i, j] = v[i] / norm
-
+        x = np.zeros([1, n])
+        x[0, :], seed = r8vec_uniform_01(n, seed)
         return x, seed
 
 
@@ -379,22 +280,15 @@ if (__name__ == '__main__'):
     obj.distance_compare(m=20, n=1000)
     obj.distance_histogram(m=20, n=1000)
 
-    print('   M  Area')
-    for m in range(5, 11):
-        val = obj.area(m)
-        print("{:d}\t{:.3f}".format(m, val))
-
-    m, n = 3, 4192
+    m, n = 1, 4192
     x, seed = obj.sample(m, n, seed)
     print('  Ex  Ey  Ez     MC-Estimate           Exact      Error')
     for test in range(20):
-        e, seed = i4vec_uniform_ab(m, 0, 4, seed)
+        e = np.zeros(m)
+        e[0] = test
 
-        for i in range(m):
-            e[i] = e[i] * 2
-
-        value = monomial_value(m, n, e, x)
-        result = obj.area(m) * np.sum(value) / float(n)
+        value = monomial_value(1, n, e, x)
+        result = 1.0 * np.sum(value) / float(n)
         exact = obj.monomial_integral(m, e)
         error = abs(result - exact)
 
