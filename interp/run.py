@@ -43,6 +43,155 @@ from r8lib.r8mat_uniform_abvec import r8mat_uniform_abvec
 from interp.prob_data import p00_data, p00_data_num, p00_dim_num
 
 
+def lagrange_basis_1d(nd, xd, ni, xi):
+
+    # *****************************************************************************80
+    #
+    # LAGRANGE_BASIS_1D evaluates a 1D Lagrange basis.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    30 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer ND, the number of data points.
+    #
+    #    Input, real XD(ND,1), the interpolation nodes.
+    #
+    #    Input, integer NI, the number of evaluation points.
+    #
+    #    Input, real XI(NI,1), the evaluation points.
+    #
+    #    Output, real LB(NI,ND), the value, at the I-th point XI, of the
+    #    Jth basis function.
+    #
+    lb = np.zeros([ni, nd])
+    for i in range(0, ni):
+        for j in range(0, nd):
+            lb[i, j] = 1.0
+            for k in range(0, nd):
+                if (k != j):
+                    lb[i, j] = lb[i, j] * (xi[i] - xd[k]) / (xd[j] - xd[k])
+
+    return lb
+
+
+def lagrange_value_1d(nd, xd, yd, ni, xi):
+
+    # *****************************************************************************80
+    #
+    # LAGRANGE_VALUE_1D evaluates the Lagrange interpolant.
+    #
+    #  Discussion:
+    #
+    #    The Lagrange interpolant L(ND,XD,YD)(X) is the unique polynomial of
+    #    degree ND-1 which interpolates the points (XD(I),YD(I)) for I = 1
+    #    to ND.
+    #
+    #    The Lagrange interpolant can be constructed from the Lagrange basis
+    #    polynomials.  Given ND distinct abscissas, XD(1:ND), the I-th Lagrange
+    #    basis polynomial LB(ND,XD,I)(X) is defined as the polynomial of degree
+    #    ND - 1 which is 1 at  XD(I) and 0 at the ND - 1 other abscissas.
+    #
+    #    Given data values YD at each of the abscissas, the value of the
+    #    Lagrange interpolant may be written as
+    #
+    #      L(ND,XD,YD)(X) = sum ( 1 <= I <= ND ) LB(ND,XD,I)(X) * YD(I)
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    30 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer ND, the number of data points.
+    #    ND must be at least 1.
+    #
+    #    Input, real XD(ND,1), the data points.
+    #
+    #    Input, real YD(ND,1), the data values.
+    #
+    #    Input, integer NI, the number of interpolation points.
+    #
+    #    Input, real XI(NI,1), the interpolation points.
+    #
+    #    Output, real YI(NI,1), the interpolated values.
+    #
+    lb = lagrange_basis_1d(nd, xd, ni, xi)
+    yi = np.dot(lb, yd)
+    return yi
+
+
+def nearest_interp_1d(nd, xd, yd, ni, xi):
+
+    # *****************************************************************************80
+    #
+    # NEAREST_INTERP_1D evaluates the nearest neighbor interpolant.
+    #
+    #  Discussion:
+    #
+    #    The nearest neighbor interpolant L(ND,XD,YD)(X) is the piecewise
+    #    constant function which interpolates the data (XD(I),YD(I)) for I = 1
+    #    to ND.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    29 June 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer ND, the number of data points.
+    #    ND must be at least 1.
+    #
+    #    Input, real XD(ND), the data points.
+    #
+    #    Input, real YD(ND), the data values.
+    #
+    #    Input, integer NI, the number of interpolation points.
+    #
+    #    Input, real XI(NI), the interpolation points.
+    #
+    #    Output, real YI(NI), the interpolated values.
+    #
+
+    yi = np.zeros(ni)
+    for i in range(0, ni):
+        d = float('Inf')
+        k = -1
+        for k2 in range(0, nd):
+            d2 = abs(xi[i] - xd[k2])
+            if (d2 < d):
+                k = k2
+                d = d2
+        yi[i] = yd[k]
+    return yi
+
+
 def shepard_value_1d(nd, xd, yd, p, ni, xi):
 
     # *****************************************************************************80
@@ -115,34 +264,53 @@ class BaseInterp(plot2d):
     def __init__(self):
         plot2d.__init__(self)
 
-    def shepard_interp_1d_test01(self):
-        self.interp_name = "shepard"
         self.p = 10.0
         self.prob = 6
         self.dim_num = p00_dim_num(self.prob)
-        #self.data_num = 18
-        nd = p00_data_num(self.prob)
-        xy = p00_data(self.prob, self.dim_num, nd)
-        print('  Number of data points = %d' % (nd))
+        self.nd = p00_data_num(self.prob)
+        self.xy = p00_data(self.prob, self.dim_num, self.nd)
+        print('  Number of data points = %d' % (self.nd))
 
-        xd = np.zeros(nd)
-        yd = np.zeros(nd)
-        for i in range(0, nd):
-            xd[i] = xy[0, i]
-            yd[i] = xy[1, i]
+    def shepard_interp_1d_test01(self):
+        self.interp_name = "shepard"
 
+        xd = self.xy[0, :]
+        yd = self.xy[1, :]
         xmin, xmax = np.min(xd), np.max(xd)
         ymin, ymax = np.min(yd), np.max(yd)
         xrng = (xmax - xmin) * 0.05
 
-        ni = nd
-        xi = xd
-        yi = shepard_value_1d(nd, xd, yd, self.p, ni, xi)
+        ni = 501
+        xi = np.linspace(xmin - xrng / 2, xmax + xrng / 2, ni)
+        yi = shepard_value_1d(self.nd, xd, yd, self.p, ni, xi)
+        self.plot_interp_1d(xd, yd, xi, yi)
+
+    def nearest_interp_1d_test01(self):
+        self.interp_name = "nearest"
+
+        xd = self.xy[0, :]
+        yd = self.xy[1, :]
+        xmin, xmax = np.min(xd), np.max(xd)
+        ymin, ymax = np.min(yd), np.max(yd)
+        xrng = (xmax - xmin) * 0.05
 
         ni = 501
         xi = np.linspace(xmin - xrng / 2, xmax + xrng / 2, ni)
-        yi = shepard_value_1d(nd, xd, yd, self.p, ni, xi)
+        yi = nearest_interp_1d(self.nd, xd, yd, ni, xi)
+        self.plot_interp_1d(xd, yd, xi, yi)
 
+    def lagrange_interp_1d_test01(self):
+        self.interp_name = "lagrange"
+
+        xd = self.xy[0, :]
+        yd = self.xy[1, :]
+        xmin, xmax = np.min(xd), np.max(xd)
+        ymin, ymax = np.min(yd), np.max(yd)
+        xrng = (xmax - xmin) * 0.05
+
+        ni = 501
+        xi = np.linspace(xmin + xrng / 2, xmax - xrng / 2, ni)
+        yi = lagrange_value_1d(self.nd, xd, yd, ni, xi)
         self.plot_interp_1d(xd, yd, xi, yi)
 
     def plot_interp_1d(self, xd, yd, xi, yi):
@@ -173,3 +341,5 @@ class BaseInterp(plot2d):
 if (__name__ == '__main__'):
     obj = BaseInterp()
     obj.shepard_interp_1d_test01()
+    obj.nearest_interp_1d_test01()
+    obj.lagrange_interp_1d_test01()
