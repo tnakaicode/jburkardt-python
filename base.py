@@ -69,7 +69,7 @@ class SetDir (object):
         print(self.rootname)
 
     def create_tempdir(self, flag=1):
-        print(datetime.date.today())
+        print(datetime.date.today(), time.ctime())
         self.datenm = "{0:%Y%m%d}".format(datetime.date.today())
         self.dirnum = len(glob.glob("./temp_" + self.datenm + "*/"))
         if flag == -1 or self.dirnum == 0:
@@ -81,11 +81,11 @@ class SetDir (object):
             self.tmpdir = "./temp_{}{:03}/".format(
                 self.datenm, self.dirnum - 1)
         self.tempname = self.tmpdir + self.rootname
-        print(self.tmpdir)
+        # print(self.tmpdir)
 
 
 class PlotBase(SetDir):
-    
+
     def __init__(self, aspect="equal"):
         SetDir.__init__(self)
         self.dim = 2
@@ -149,7 +149,7 @@ class plot2d (PlotBase):
     def __init__(self, aspect="equal"):
         PlotBase.__init__(self)
         self.dim = 2
-        #self.new_2Dfig(aspect=aspect)
+        # self.new_2Dfig(aspect=aspect)
         self.new_fig(aspect=aspect)
 
     def add_axs(self, row=1, col=1, num=1, aspect="auto"):
