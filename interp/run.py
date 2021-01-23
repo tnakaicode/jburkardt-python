@@ -40,7 +40,7 @@ from r8lib.r8vec_uniform_unit import r8vec_uniform_unit
 from r8lib.r8vec_uniform_abvec import r8vec_uniform_abvec
 from r8lib.r8mat_uniform_abvec import r8mat_uniform_abvec
 
-from interp.prob_data import p00_data, p00_data_num, p00_dim_num
+from interp.prob_data import p00_data, p00_data_num
 from interp.prob_data import phi1
 
 
@@ -260,7 +260,7 @@ def shepard_value_1d(nd, xd, yd, p, ni, xi):
     return yi
 
 
-def rbf_interp(nd, xd, r0, phi, w, ni, xi):
+def rbf_interp_1d(nd, xd, r0, phi, w, ni, xi):
 
     # *****************************************************************************80
     #
@@ -395,6 +395,156 @@ def rbf_weight(m, nd, xd, r0, phi, fd):
     return w
 
 
+def lagcheby1_interp_1d(nd, xd, yd, ni, xi):
+
+    # *****************************************************************************80
+    #
+    # LAGCHEBY1_INTERP_1D evaluates the Lagrange Chebyshev 1 interpolant.
+    #
+    #  Discussion:
+    #
+    #    The weight vector WD computed below is only valid if the data points
+    #    XD are, as expected, the Chebyshev Type 1 points for [-1,+1], or a linearly
+    #    mapped version for [A,B].  The XD values may be computed by:
+    #
+    #      xd = r8vec_cheby1space ( nd, a, b )
+    #
+    #    for instance.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    05 July 2017
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Jean-Paul Berrut, Lloyd Trefethen,
+    #    Barycentric Lagrange Interpolation,
+    #    SIAM Review,
+    #    Volume 46, Number 3, September 2004, pages 501-517.
+    #
+    #  Parameters:
+    #
+    #    Input, integer ND, the number of data points.
+    #    ND must be at least 1.
+    #
+    #    Input, real XD(ND), the data points.
+    #
+    #    Input, real YD(ND), the data values.
+    #
+    #    Input, integer NI, the number of interpolation points.
+    #
+    #    Input, real XI(NI), the interpolation points.
+    #
+    #    Output, real YI(NI), the interpolated values.
+    #
+
+    wd = np.zeros(nd)
+    s = + 1.0
+    for j in range(0, nd):
+        wd[j] = s * np.sin((2 * j + 1) * np.pi / float(2 * nd))
+        s = - s
+
+    numer = np.zeros(ni)
+    denom = np.zeros(ni)
+    exact = np.zeros(ni, dtype=np.int32)
+    for j in range(0, nd):
+        t = np.zeros(ni)
+        k1 = np.where(xi == xd[j])
+        k2 = np.where(xi != xd[j])
+        t[k2] = wd[j] / (xi[k2] - xd[j])
+        numer = numer + t * yd[j]
+        denom = denom + t
+        exact[k1] = j + 1
+
+    yi = np.divide(numer, denom)
+    j = np.nonzero(exact)
+    yi[j] = yd[exact[j] - 1]
+    return yi
+
+
+def lagcheby2_interp_1d(nd, xd, yd, ni, xi):
+
+    # *****************************************************************************80
+    #
+    # LAGCHEBY2_INTERP_1D evaluates the Lagrange Chebyshev 2 interpolant.
+    #
+    #  Discussion:
+    #
+    #    The weight vector WD computed below is only valid if the data points
+    #    XD are, as expected, the Chebyshev Type 2 points for [-1,+1], or a linearly
+    #    mapped version for [A,B].  The XD values may be computed by:
+    #
+    #      xd = r8vec_cheby2space ( nd, a, b )
+    #
+    #    for instance.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    06 July 2017
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    Jean-Paul Berrut, Lloyd Trefethen,
+    #    Barycentric Lagrange Interpolation,
+    #    SIAM Review,
+    #    Volume 46, Number 3, September 2004, pages 501-517.
+    #
+    #  Parameters:
+    #
+    #    Input, integer ND, the number of data points.
+    #    ND must be at least 1.
+    #
+    #    Input, real XD(ND,1), the data points.
+    #
+    #    Input, real YD(ND,1), the data values.
+    #
+    #    Input, integer NI, the number of interpolation points.
+    #
+    #    Input, real XI(NI,1), the interpolation points.
+    #
+    #    Output, real YI(NI,1), the interpolated values.
+    #
+
+    wd = np.ones(nd)
+    wd[0] = 0.5
+    wd[nd - 1] = 0.5
+    for j in range(1, nd, 2):
+        wd[j] = - wd[j]
+
+    numer = np.zeros(ni)
+    denom = np.zeros(ni)
+    exact = np.zeros(ni, dtype=np.int32)
+    for j in range(0, nd):
+        t = np.zeros(ni)
+        k1 = np.where(xi == xd[j])
+        k2 = np.where(xi != xd[j])
+        t[k2] = wd[j] / (xi[k2] - xd[j])
+        numer = numer + t * yd[j]
+        denom = denom + t
+        exact[k1] = j + 1
+
+    yi = np.divide(numer, denom)
+    j = np.nonzero(exact)
+    yi[j] = yd[exact[j] - 1]
+    return yi
+
+
 class BaseInterp(plot2d):
 
     def __init__(self):
@@ -402,11 +552,11 @@ class BaseInterp(plot2d):
         self.set_prob(3, 6)
 
     def set_prob(self, p=10, prob=6):
+        self.m = 2
         self.p = p
         self.prob = prob
-        self.dim_num = p00_dim_num(self.prob)
         self.nd = p00_data_num(self.prob)
-        self.xy = p00_data(self.prob, self.dim_num, self.nd)
+        self.xy = p00_data(self.prob, self.m, self.nd)
         print('  Number of data points = %d' % (self.nd))
 
     def shepard_interp_1d_test01(self):
@@ -472,7 +622,7 @@ class BaseInterp(plot2d):
         ni = 501
         xi = np.linspace(xmin + xrng / 2, xmax - xrng / 2, ni)
         xi = np.reshape(xi, [1, ni])
-        yi = rbf_interp(self.nd, xd, r0, ph, wg, ni, xi)
+        yi = rbf_interp_1d(self.nd, xd, r0, ph, wg, ni, xi)
         self.plot_interp_1d(xd[0, :], yd, xi[0, :], yi)
 
     def plot_interp_1d(self, xd, yd, xi, yi):

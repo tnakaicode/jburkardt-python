@@ -44,11 +44,7 @@ def p00_data_num(prob):
     elif (prob == 8):
         data_num = p08_data_num()
     else:
-        print('')
-        print('P00_DATA_NUM - Fatal error!')
-        print('  Unexpected input value of PROB.')
-        exit('P00_DATA_NUM - Fatal error!')
-
+        data_num = int(2**prob / prob)
     return data_num
 
 
@@ -316,11 +312,7 @@ def p00_data(prob, dim_num, data_num):
     elif (prob == 8):
         p_data = p08_data(dim_num, data_num)
     else:
-        print('')
-        print('P00_DATA - Fatal error!')
-        print('  Unexpected input value of PROB.')
-        exit('P00_DATA - Fatal error!')
-
+        p_data = np.random.rand(dim_num, data_num)
     return p_data
 
 
@@ -351,7 +343,6 @@ def p01_data(dim_num, data_num):
     #
     #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
     #
-    import numpy as np
 
     p_data = np.array([
         [0.0, 4.0],
@@ -372,9 +363,7 @@ def p01_data(dim_num, data_num):
         [16.0, 4.0],
         [17.0, 3.0],
         [18.0, 0.0]])
-
     p_data = np.transpose(p_data)
-
     return p_data
 
 
@@ -409,7 +398,6 @@ def p02_data(dim_num, data_num):
     #
     #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
     #
-    import numpy as np
 
     p_data = np.array([
         [0.00, 0.00],
@@ -430,9 +418,7 @@ def p02_data(dim_num, data_num):
         [26.00, 8.66],
         [29.66, 5.00],
         [31.00, 0.00]])
-
     p_data = np.transpose(p_data)
-
     return p_data
 
 
@@ -463,7 +449,6 @@ def p03_data(dim_num, data_num):
     #
     #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
     #
-    import numpy as np
 
     p_data = np.array([
         [0.0, 0.0],
@@ -477,9 +462,7 @@ def p03_data(dim_num, data_num):
         [12.0, 50.0],
         [14.0, 60.0],
         [15.0, 85.0]])
-
     p_data = np.transpose(p_data)
-
     return p_data
 
 
@@ -510,7 +493,6 @@ def p04_data(dim_num, data_num):
     #
     #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
     #
-    import numpy as np
 
     p_data = np.array([
         [0.00, 0.00],
@@ -521,9 +503,7 @@ def p04_data(dim_num, data_num):
         [0.85, 0.05],
         [0.90, 0.10],
         [1.00, 1.00]])
-
     p_data = np.transpose(p_data)
-
     return p_data
 
 
@@ -554,7 +534,6 @@ def p05_data(dim_num, data_num):
     #
     #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
     #
-    import numpy as np
 
     p_data = np.array([
         [0.00, 0.00],
@@ -566,9 +545,7 @@ def p05_data(dim_num, data_num):
         [0.60, 0.05],
         [0.80, 0.20],
         [1.00, 1.00]])
-
     p_data = np.transpose(p_data)
-
     return p_data
 
 
@@ -599,7 +576,6 @@ def p06_data(dim_num, data_num):
     #
     #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
     #
-    import numpy as np
 
     p_data = np.array([
         [595.0, 0.644],
@@ -651,9 +627,7 @@ def p06_data(dim_num, data_num):
         [1055.0, 0.611],
         [1065.0, 0.601],
         [1075.0, 0.608]])
-
     p_data = np.transpose(p_data)
-
     return p_data
 
 
@@ -684,16 +658,13 @@ def p07_data(dim_num, data_num):
     #
     #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
     #
-    import numpy as np
 
     p_data = np.array([
         [0.0, 1.0],
         [1.0, 2.0],
         [4.0, 2.0],
         [5.0, 1.0]])
-
     p_data = np.transpose(p_data)
-
     return p_data
 
 
@@ -724,7 +695,6 @@ def p08_data(dim_num, data_num):
     #
     #    Output, real P_DATA(DIM_NUM,DATA_NUM), the data.
     #
-    import numpy as np
 
     p_data = np.array([
         [-1.0, 1.00],
@@ -739,282 +709,8 @@ def p08_data(dim_num, data_num):
         [0.6, 0.36],
         [0.8, 0.64],
         [1.0, 1.00]])
-
     p_data = np.transpose(p_data)
-
     return p_data
-
-
-def p00_dim_num(prob):
-
-    # *****************************************************************************80
-    #
-    # P00_DIM_NUM returns the spatial dimension for any problem.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer PROB, the problem index.
-    #
-    #    Output, integer DIM_NUM, the spatial dimension of the
-    #    dependent variables.
-    #
-    if (prob == 1):
-        dim_num = p01_dim_num()
-    elif (prob == 2):
-        dim_num = p02_dim_num()
-    elif (prob == 3):
-        dim_num = p03_dim_num()
-    elif (prob == 4):
-        dim_num = p04_dim_num()
-    elif (prob == 5):
-        dim_num = p05_dim_num()
-    elif (prob == 6):
-        dim_num = p06_dim_num()
-    elif (prob == 7):
-        dim_num = p07_dim_num()
-    elif (prob == 8):
-        dim_num = p08_dim_num()
-    else:
-        print('')
-        print('P00_DIM_NUM - Fatal error!')
-        print('  Unexpected input value of PROB.')
-        exit('P00_DIM_NUM - Fatal error!')
-
-    return dim_num
-
-
-def p01_dim_num():
-
-    # *****************************************************************************80
-    #
-    # P01_DIM_NUM returns the spatial dimension for problem p01.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Output, integer DIM_NUM, the spatial dimension of the
-    #    dependent variables.
-    #
-    dim_num = 2
-
-    return dim_num
-
-
-def p02_dim_num():
-
-    # *****************************************************************************80
-    #
-    # P02_DIM_NUM returns the spatial dimension for problem p02.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Output, integer DIM_NUM, the spatial dimension of the
-    #    dependent variables.
-    #
-    dim_num = 2
-
-    return dim_num
-
-
-def p03_dim_num():
-
-    # *****************************************************************************80
-    #
-    # P03_DIM_NUM returns the spatial dimension for problem p03.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Output, integer DIM_NUM, the spatial dimension of the
-    #    dependent variables.
-    #
-    dim_num = 2
-
-    return dim_num
-
-
-def p04_dim_num():
-
-    # *****************************************************************************80
-    #
-    # P04_DIM_NUM returns the spatial dimension for problem p04.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Output, integer DIM_NUM, the spatial dimension of the
-    #    dependent variables.
-    #
-    dim_num = 2
-
-    return dim_num
-
-
-def p05_dim_num():
-
-    # *****************************************************************************80
-    #
-    # P05_DIM_NUM returns the spatial dimension for problem p05.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Output, integer DIM_NUM, the spatial dimension of the
-    #    dependent variables.
-    #
-    dim_num = 2
-
-    return dim_num
-
-
-def p06_dim_num():
-
-    # *****************************************************************************80
-    #
-    # P06_DIM_NUM returns the spatial dimension for problem p06.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Output, integer DIM_NUM, the spatial dimension of the
-    #    dependent variables.
-    #
-    dim_num = 2
-
-    return dim_num
-
-
-def p07_dim_num():
-
-    # *****************************************************************************80
-    #
-    # P07_DIM_NUM returns the spatial dimension for problem p07.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Output, integer DIM_NUM, the spatial dimension of the
-    #    dependent variables.
-    #
-    dim_num = 2
-    return dim_num
-
-
-def p08_dim_num():
-
-    # *****************************************************************************80
-    #
-    # P08_DIM_NUM returns the spatial dimension for problem p08.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    28 June 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Output, integer DIM_NUM, the spatial dimension of the
-    #    dependent variables.
-    #
-    dim_num = 2
-    return dim_num
 
 
 def p00_prob_num():
