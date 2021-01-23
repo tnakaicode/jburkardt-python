@@ -41,6 +41,7 @@ from r8lib.r8vec_uniform_abvec import r8vec_uniform_abvec
 from r8lib.r8mat_uniform_abvec import r8mat_uniform_abvec
 
 from interp.prob_data import p00_data, p00_data_num, p00_dim_num
+from interp.prob_data import phi1
 
 
 def lagrange_basis_1d(nd, xd, ni, xi):
@@ -259,13 +260,150 @@ def shepard_value_1d(nd, xd, yd, p, ni, xi):
     return yi
 
 
+def rbf_interp(nd, xd, r0, phi, w, ni, xi):
+
+    # *****************************************************************************80
+    #
+    # RBF_INTERP evaluates a radial basis function interpolant.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    30 June 2018
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    William Press, Brian Flannery, Saul Teukolsky, William Vetterling,
+    #    Numerical Recipes in FORTRAN: The Art of Scientific Computing,
+    #    Third Edition,
+    #    Cambridge University Press, 2007,
+    #    ISBN13: 978-0-521-88068-8,
+    #    LC: QA297.N866.
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Input, integer ND, the number of data points.
+    #
+    #    Input, real XD(M,ND), the data points.
+    #
+    #    Input, real R0, a scale factor.  R0 should be larger than the typical
+    #    separation between points, but smaller than the maximum separation.
+    #    The value of R0 has a significant effect on the resulting interpolant.
+    #
+    #    Input, function V = PHI ( R, R0 ), a function handle to evaluate the radial
+    #    basis functions.
+    #
+    #    Input, real W(ND), the weights, as computed by RBF_WEIGHTS.
+    #
+    #    Input, integer NI, the number of interpolation points.
+    #
+    #    Input, real XI(NI), the interpolation points.
+    #
+    #    Output, real FI(NI), the interpolated values.
+    #
+
+    fi = np.zeros(ni)
+    r = np.zeros(nd)
+    for i in range(0, ni):
+        for j in range(0, nd):
+            r[j] = np.sqrt(np.sum((xi[:, i] - xd[:, j]) ** 2))
+        v = phi(r, r0)
+        fi[i] = np.dot(v, w)
+    return fi
+
+
+def rbf_weight(m, nd, xd, r0, phi, fd):
+
+    # *****************************************************************************80
+    #
+    # RBF_WEIGHT computes weights for radial basis function interpolation.
+    #
+    #  Discussion:
+    #
+    #    We assume that there are N (nonsingular) equations in N unknowns.
+    #
+    #    However, it should be clear that, if we are willing to do some kind
+    #    of least squares calculation, we could allow for singularity,
+    #    inconsistency, or underdetermine systems.  This could be associated
+    #    with data points that are very close or repeated, a smaller number
+    #    of data points than function values, or some other ill-conditioning
+    #    of the system arising from a peculiarity in the point spacing.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    04 June 2018
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Reference:
+    #
+    #    William Press, Brian Flannery, Saul Teukolsky, William Vetterling,
+    #    Numerical Recipes in FORTRAN: The Art of Scientific Computing,
+    #    Third Edition,
+    #    Cambridge University Press, 2007,
+    #    ISBN13: 978-0-521-88068-8,
+    #    LC: QA297.N866.
+    #
+    #  Parameters:
+    #
+    #    Input, integer M, the spatial dimension.
+    #
+    #    Input, integer ND, the number of data points.
+    #
+    #    Input, real XD(M,ND), the data points.
+    #
+    #    Input, real R0, a scale factor.  R0 should be larger than the typical
+    #    separation between points, but smaller than the maximum separation.
+    #    The value of R0 has a significant effect on the resulting interpolant.
+    #
+    #    Input, function V = PHI ( R, R0 ), a function handle to evaluate the radial
+    #    basis functions.
+    #
+    #    Input, real FD(ND), the function values at the data points.
+    #
+    #    Output, real W(ND), the weights.
+    #
+
+    a = np.zeros([nd, nd])
+    r = np.zeros(nd)
+    for i in range(0, nd):
+        if (m == 1):
+            for j in range(0, nd):
+                r[j] = abs(xd[0, i] - xd[0, j])
+        else:
+            for j in range(0, nd):
+                d = xd[:, j] - xd[:, i]
+                r[j] = np.sqrt(np.sum(d ** 2))
+        v = phi(r, r0)
+        a[i, :] = v.copy()
+    w = np.linalg.solve(a, fd)
+    return w
+
+
 class BaseInterp(plot2d):
 
     def __init__(self):
         plot2d.__init__(self)
+        self.set_prob(3, 6)
 
-        self.p = 10.0
-        self.prob = 6
+    def set_prob(self, p=10, prob=6):
+        self.p = p
+        self.prob = prob
         self.dim_num = p00_dim_num(self.prob)
         self.nd = p00_data_num(self.prob)
         self.xy = p00_data(self.prob, self.dim_num, self.nd)
@@ -313,6 +451,30 @@ class BaseInterp(plot2d):
         yi = lagrange_value_1d(self.nd, xd, yd, ni, xi)
         self.plot_interp_1d(xd, yd, xi, yi)
 
+    def rbf_interp_1d_test01(self):
+        self.interp_name = "rbf"
+
+        m = 1
+        xy = p00_data(self.prob, 2, self.nd)
+        xd = np.zeros([1, self.nd])
+        yd = np.zeros([1, self.nd])
+        xd[0, :] = xy[0, 0:self.nd]
+        yd[:] = xy[1, 0:self.nd]
+        yd = np.reshape(yd, self.nd)
+        xmin, xmax = np.min(xd[0, :]), np.max(xd[0, :])
+        ymin, ymax = np.min(yd), np.max(yd)
+        xrng = (xmax - xmin) * 0.05
+
+        ph = phi1
+        r0 = (xmax - xmin) / float(self.nd - 1)
+        wg = rbf_weight(m, self.nd, xd, r0, ph, yd)
+
+        ni = 501
+        xi = np.linspace(xmin + xrng / 2, xmax - xrng / 2, ni)
+        xi = np.reshape(xi, [1, ni])
+        yi = rbf_interp(self.nd, xd, r0, ph, wg, ni, xi)
+        self.plot_interp_1d(xd[0, :], yd, xi[0, :], yi)
+
     def plot_interp_1d(self, xd, yd, xi, yi):
         t0 = "prob{:03d} Piecewise Linear Interpolant".format(self.prob)
         p0 = "prob{:03d}_data.png".format(self.prob)
@@ -343,3 +505,4 @@ if (__name__ == '__main__'):
     obj.shepard_interp_1d_test01()
     obj.nearest_interp_1d_test01()
     obj.lagrange_interp_1d_test01()
+    obj.rbf_interp_1d_test01()
