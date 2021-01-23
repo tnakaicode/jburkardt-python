@@ -545,6 +545,164 @@ def lagcheby2_interp_1d(nd, xd, yd, ni, xi):
     return yi
 
 
+def vandermonde_coef_1d(n, x, y):
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_COEF_1D computes coefficients of a 1D Vandermonde interpolant.
+    #
+    #  Discussion:
+    #
+    #    We assume the interpolant has the form
+    #
+    #      p(x) = c1 + c2 * x + c3 * x^2 + ... + cn * x^(n-1).
+    #
+    #    We have n data values (x(i),y(i)) which must be interpolated:
+    #
+    #      p(x(i)) = c1 + c2 * x(i) + c3 * x(i)^2 + ... + cn * x(i)^(n-1) = y(i)
+    #
+    #    This can be cast as an NxN linear system for the polynomial
+    #    coefficients:
+    #
+    #      [ 1 x1 x1^2 ... x1^(n-1) ] [  c1 ] = [  y1 ]
+    #      [ 1 x2 x2^2 ... x2^(n-1) ] [  c2 ] = [  y2 ]
+    #      [ ...................... ] [ ... ] = [ ... ]
+    #      [ 1 xn xn^2 ... xn^(n-1) ] [  cn ] = [  yn ]
+    #
+    #    and if the x values are distinct, the system is theoretically
+    #    invertible, so we can retrieve the coefficient vector c and
+    #    evaluate the interpolant.
+    #
+    #    The polynomial could be evaluated at the n-vector x by the command
+    #
+    #      pval = polyval ( c, x )
+    #
+    #    ...except that MATLAB assumes that c(1) multiplies x^(n-1).
+    #
+    #    so instead, you might use
+    #
+    #      pval = r8poly_value ( n - 1, c, n, x )
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    19 July 2012
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of data points.
+    #
+    #    Input, real X(N,1), Y(N,1), the data values.
+    #
+    #    Output, real C(N,1), the coefficients of the interpolating
+    #    polynomial.  C(1) is the constant term, and C(N) multiplies X^(N-1).
+    #
+
+    ad = vandermonde_matrix_1d(n, x)
+    c = np.linalg.solve(ad, y)
+    return c
+
+
+def vandermonde_matrix_1d(n, x):
+
+    # *****************************************************************************80
+    #
+    # VANDERMONDE_MATRIX_1D computes a Vandermonde 1D interpolation matrix.
+    #
+    #  Discussion:
+    #
+    #    We assume the interpolant has the form
+    #
+    #      p(x) = c1 + c2 * x + c3 * x^2 + ... + cn * x^(n-1).
+    #
+    #    We have n data values (x(i),y(i)) which must be interpolated:
+    #
+    #      p(x(i)) = c1 + c2 * x(i) + c3 * x(i)^2 + ... + cn * x(i)^(n-1) = y(i)
+    #
+    #    This can be cast as an NxN linear system for the polynomial
+    #    coefficients:
+    #
+    #      [ 1 x1 x1^2 ... x1^(n-1) ] [  c1 ] = [  y1 ]
+    #      [ 1 x2 x2^2 ... x2^(n-1) ] [  c2 ] = [  y2 ]
+    #      [ ...................... ] [ ... ] = [ ... ]
+    #      [ 1 xn xn^2 ... xn^(n-1) ] [  cn ] = [  yn ]
+    #
+    #    and if the x values are distinct, the matrix A is theoretically
+    #    invertible (though in fact, generally badly conditioned).
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of data points.
+    #    Input, real X(N,1), the data values.
+    #
+    #    Output, real A(N,N), the Vandermonde matrix for X.
+    #
+
+    a = np.zeros([n, n])
+    for i in range(0, n):
+        a[i, 0] = 1.0
+
+    for j in range(1, n):
+        for i in range(0, n):
+            a[i, j] = a[i, j - 1] * x[i]
+    return a
+
+
+def vandermonde_value_1d(nd, cd, ni, xi):
+
+    #
+    # VANDERMONDE_VALUE_1D evaluates a Vandermonde interpolant.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 July 2015
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer ND, the number of data values.
+    #    Input, real CD(ND,1), the polynomial coefficients.
+    #       CD(I) is the coefficient of X^(I-1).
+    #    Input, integer NI, the number of interpolation points.
+    #    Input, real XI(NI,1), the interpolation points.
+    #
+    #    Output, real YI(NI,1), the interpolation values.
+    #
+
+    yi = np.zeros(ni)
+    for j in range(0, ni):
+        yi[j] = cd[nd - 1]
+        for i in range(nd - 2, -1, -1):
+            yi[j] = yi[j] * xi[j] + cd[i]
+    return yi
+
+
 class BaseInterp(plot2d):
 
     def __init__(self):
