@@ -20,8 +20,8 @@ from i4lib.i4mat_print import i4mat_print, i4mat_print_some
 from r8lib.r8vec_print import r8vec_print, r8vec_print_some, r8vec_transpose_print
 from r8lib.r8mat_print import r8mat_print, r8mat_print_some
 from r8lib.r8mat_write import r8mat_write
-from r8lib.r8vec_transpose_print import r8vec_transpose_print
-from r8lib.r8mat_transpose_print import r8mat_transpose_print, r8mat_transpose_print_some
+from r8lib.r8vec_transpose import r8vec_transpose_print
+from r8lib.r8mat_transpose import r8mat_transpose_print, r8mat_transpose_print_some
 
 
 def knapsack_01_brute(n, w, c):
