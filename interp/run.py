@@ -40,7 +40,7 @@ from r8lib.r8vec_uniform_unit import r8vec_uniform_unit
 from r8lib.r8vec_uniform_abvec import r8vec_uniform_abvec
 from r8lib.r8mat_uniform_abvec import r8mat_uniform_abvec
 
-from interp.p_data import p00_data, p00_data_num, p00_dim_num
+from interp.prob_data import p00_data, p00_data_num, p00_dim_num
 
 
 def shepard_value_1d(nd, xd, yd, p, ni, xi):
@@ -71,15 +71,10 @@ def shepard_value_1d(nd, xd, yd, p, ni, xi):
     #  Parameters:
     #
     #    Input, integer ND, the number of data points.
-    #
     #    Input, real XD(ND), the data points.
-    #
     #    Input, real YD(ND), the data values.
-    #
     #    Input, real P, the power.
-    #
     #    Input, integer NI, the number of interpolation points.
-    #
     #    Input, real XI(NI), the interpolation points.
     #
     #    Output, real YI(NI), the interpolated values.
@@ -120,6 +115,8 @@ class BaseInterp(plot2d):
     def __init__(self):
         plot2d.__init__(self)
 
+    def shepard_interp_1d_test01(self):
+        self.interp_name = "shepard"
         self.p = 10.0
         self.prob = 6
         self.dim_num = p00_dim_num(self.prob)
@@ -146,13 +143,13 @@ class BaseInterp(plot2d):
         xi = np.linspace(xmin - xrng / 2, xmax + xrng / 2, ni)
         yi = shepard_value_1d(nd, xd, yd, self.p, ni, xi)
 
-        self.shepard_interp_1d_test01(xd, yd, xi, yi)
+        self.plot_interp_1d(xd, yd, xi, yi)
 
-    def shepard_interp_1d_test01(self, xd, yd, xi, yi):
-        t0 = 'p0' + str(self.prob) + ' Piecewise Linear Interpolant'
-        p0 = 'p0' + str(self.prob) + '_data.png'
-        t1 = 'p0' + str(self.prob) + ' Shepard Interpolant'
-        p1 = 'p0' + str(self.prob) + '_' + str(self.p) + '_shepard.png'
+    def plot_interp_1d(self, xd, yd, xi, yi):
+        t0 = "prob{:03d} Piecewise Linear Interpolant".format(self.prob)
+        p0 = "prob{:03d}_data.png".format(self.prob)
+        t1 = "prob{:03d} {} interpolate".format(self.prob, self.interp_name)
+        p1 = "prob{:03d}_{}.png".format(self.prob, self.interp_name)
 
         self.new_2Dfig(aspect="auto")
         self.axs.plot(xd, yd, 'b-', linewidth=3.0)
@@ -175,3 +172,4 @@ class BaseInterp(plot2d):
 
 if (__name__ == '__main__'):
     obj = BaseInterp()
+    obj.shepard_interp_1d_test01()
