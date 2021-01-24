@@ -1,6 +1,30 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print, r8vec_print_some
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8vec_transpose import r8vec_transpose_print
+from r8lib.r8mat_transpose import r8mat_transpose_print, r8mat_transpose_print_some
+
+obj = plot2d()
+
 
 def humps_antideriv(x):
 
@@ -34,7 +58,6 @@ def humps_antideriv(x):
     #
     #    real ya(): the value of the antiderivative at x.
     #
-    import numpy as np
 
     ya = (1.0 / 0.1) * np.arctan((x - 0.3) / 0.1) \
         + (1.0 / 0.2) * np.arctan((x - 0.9) / 0.2) \
@@ -61,8 +84,6 @@ def humps_antideriv_test():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     print('')
     print('humps_antideriv_test')
@@ -74,33 +95,28 @@ def humps_antideriv_test():
     x = np.linspace(0.0, 2.0, 101)
     y = humps_antideriv(x)
 
-    plt.clf()
+    filename = 'humps_antideriv.png'
 
-    plt.plot(x, y, 'g-', linewidth=2)
+    obj.new_2Dfig(aspect="auto")
+    obj.axs.plot(x, y, 'g-', linewidth=2)
 
     if (a <= 0.0 and 0.0 <= b):
-        plt.plot([a, b], [0, 0], 'k-', linewidth=2)
+        obj.axs.plot([a, b], [0, 0], 'k-', linewidth=2)
 
     ymin = min(y)
     ymax = max(y)
     if (ymin <= 0.0 and 0.0 <= ymax):
-        plt.plot([0, 0], [ymin, ymax], 'k-', linewidth=2)
+        obj.axs.plot([0, 0], [ymin, ymax], 'k-', linewidth=2)
 
-    plt.grid(True)
-    plt.xlabel('<--- X --->')
-    plt.ylabel('<--- Y --->')
-    plt.title('The y = antideriv humps(x)')
-    filename = 'humps_antideriv.png'
-    plt.savefig(filename)
+    obj.axs.set_xlabel('<--- X --->')
+    obj.axs.set_ylabel('<--- Y --->')
+    obj.axs.set_title('The y = antideriv humps(x)')
+    obj.SavePng(filename)
+    plt.clf()
     print('  Graphics saved as "%s"' % (filename))
-#
-#  Terminate.
-#
     print('')
     print('humps_antideriv_test:')
     print('  Normal end of execution.')
-
-    return
 
 
 def humps_deriv2(x):
@@ -185,33 +201,28 @@ def humps_deriv2_test():
     x = np.linspace(a, b, 101)
     y = humps_deriv2(x)
 
-    plt.clf()
+    filename = 'humps_deriv2.png'
 
-    plt.plot(x, y, 'r-', linewidth=2)
+    obj.new_2Dfig(aspect="auto")
+    obj.axs.plot(x, y, 'r-', linewidth=2)
 
     if (a <= 0.0 and 0.0 <= b):
-        plt.plot([a, b], [0, 0], 'k-', linewidth=2)
+        obj.axs.plot([a, b], [0, 0], 'k-', linewidth=2)
 
     ymin = min(y)
     ymax = max(y)
     if (ymin <= 0.0 and 0.0 <= ymax):
-        plt.plot([0, 0], [ymin, ymax], 'k-', linewidth=2)
+        obj.axs.plot([0, 0], [ymin, ymax], 'k-', linewidth=2)
 
-    plt.grid(True)
-    plt.xlabel('<--- X --->')
-    plt.ylabel('<--- Y --->')
-    plt.title('y = humps"(x)')
-    filename = 'humps_deriv2.png'
-    plt.savefig(filename)
+    obj.axs.set_xlabel('<--- X --->')
+    obj.axs.set_ylabel('<--- Y --->')
+    obj.axs.set_title('y = humps"(x)')
+    obj.SavePng(filename)
+    plt.clf()
     print('  Graphics saved as "%s"' % (filename))
-#
-#  Terminate.
-#
     print('')
     print('humps_deriv_test:')
     print('  Normal end of execution.')
-
-    return
 
 
 def humps_deriv(x):
@@ -270,8 +281,6 @@ def humps_deriv_test():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     print('')
     print('humps_deriv_test')
@@ -283,33 +292,28 @@ def humps_deriv_test():
     x = np.linspace(a, b, 101)
     y = humps_deriv(x)
 
-    plt.clf()
+    filename = 'humps_deriv.png'
 
-    plt.plot(x, y, 'r-', linewidth=2)
+    obj.new_2Dfig(aspect="auto")
+    obj.axs.plot(x, y, 'r-', linewidth=2)
 
     if (a <= 0.0 and 0.0 <= b):
-        plt.plot([a, b], [0, 0], 'k-', linewidth=2)
+        obj.axs.plot([a, b], [0, 0], 'k-', linewidth=2)
 
     ymin = min(y)
     ymax = max(y)
     if (ymin <= 0.0 and 0.0 <= ymax):
-        plt.plot([0, 0], [ymin, ymax], 'k-', linewidth=2)
+        obj.axs.plot([0, 0], [ymin, ymax], 'k-', linewidth=2)
 
-    plt.grid(True)
-    plt.xlabel('<--- X --->')
-    plt.ylabel('<--- Y --->')
-    plt.title('y = humps\'(x)')
-    filename = 'humps_deriv.png'
-    plt.savefig(filename)
+    obj.axs.set_xlabel('<--- X --->')
+    obj.axs.set_ylabel('<--- Y --->')
+    obj.axs.set_title('y = humps"(x)')
+    obj.SavePng(filename)
+    plt.clf()
     print('  Graphics saved as "%s"' % (filename))
-#
-#  Terminate.
-#
     print('')
     print('humps_deriv_test:')
     print('  Normal end of execution.')
-
-    return
 
 
 def humps_fun(x):
@@ -338,10 +342,10 @@ def humps_fun(x):
     #
     #    real y(): the def values.
     #
+
     y = 1.0 / ((x - 0.3)**2 + 0.01) \
         + 1.0 / ((x - 0.9)**2 + 0.04) \
         - 6.0
-
     return y
 
 
@@ -363,8 +367,6 @@ def humps_fun_test():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     print('')
     print('humps_fun_test')
@@ -376,33 +378,28 @@ def humps_fun_test():
     x = np.linspace(a, b, 101)
     y = humps_fun(x)
 
-    plt.clf()
+    filename = 'humps_fun.png'
 
-    plt.plot(x, y, 'b-', linewidth=2)
+    obj.new_2Dfig(aspect="auto")
+    obj.axs.plot(x, y, 'b-', linewidth=2)
 
     if (a <= 0.0 and 0.0 <= b):
-        plt.plot([a, b], [0, 0], 'k-', linewidth=2)
+        obj.axs.plot([a, b], [0, 0], 'k-', linewidth=2)
 
     ymin = min(y)
     ymax = max(y)
     if (ymin <= 0.0 and 0.0 <= ymax):
-        plt.plot([0, 0], [ymin, ymax], 'k-', linewidth=2)
+        obj.axs.plot([0, 0], [ymin, ymax], 'k-', linewidth=2)
 
-    plt.grid(True)
-    plt.xlabel('<--- X --->')
-    plt.ylabel('<--- Y --->')
-    plt.title('y = humps(x)')
-    filename = 'humps_fun.png'
-    plt.savefig(filename)
+    obj.axs.set_xlabel('<--- X --->')
+    obj.axs.set_ylabel('<--- Y --->')
+    obj.axs.set_title('y = humps"(x)')
+    obj.SavePng(filename)
+    plt.clf()
     print('  Graphics saved as "%s"' % (filename))
-#
-#  Terminate.
-#
     print('')
     print('humps_fun_test:')
     print('  Normal end of execution.')
-
-    return
 
 
 def humps_ode(x, y):
@@ -472,44 +469,10 @@ def humps_test():
     humps_fun_test()
     humps_deriv_test()
     humps_deriv2_test()
-#
-#  Terminate.
-#
+
     print('')
     print('humps_test:')
     print('  Normal end of execution.')
-
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # timestamp prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):
