@@ -21,3 +21,6 @@ temp_*/*
 
 # index
 *index.html?*
+
+# exe
+*.exe
