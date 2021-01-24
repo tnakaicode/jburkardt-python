@@ -86,13 +86,9 @@ def pyramid_num_test():
 
     for n in range(1, 11):
         print('  %2d  %6d' % (n, pyramid_num(n)))
-#
-#  Terminate.
-#
     print('')
     print('PYRAMID_NUM_TEST:')
     print('  Normal end of execution.')
-    return
 
 
 def pyramid_square_num(n):
