@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 #
 import platform
-from timestamp import timestamp
 
 
 def f_hofstadter(n):

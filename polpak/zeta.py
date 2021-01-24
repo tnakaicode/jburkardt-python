@@ -447,7 +447,6 @@ def zeta_values(n_data):
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     zeta_naive_test()
     zeta_m1_test()

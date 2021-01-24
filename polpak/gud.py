@@ -2,8 +2,6 @@
 #
 import numpy as np
 import platform
-from gud_values import gud_values
-from timestamp import timestamp
 
 
 def gud(x):
@@ -92,8 +90,9 @@ def gud_test():
     print('  Normal end of execution.')
     return
 
+
 def gud_values(n_data):
-    
+
     # *****************************************************************************80
     #
     # GUD_VALUES returns some values of the Gudermannian function.
@@ -240,6 +239,8 @@ def gud_values_test():
     print('')
     print('GUD_VALUES_TEST:')
     print('  Normal end of execution.')
+
+
 if (__name__ == '__main__'):
     timestamp()
     gud_test()

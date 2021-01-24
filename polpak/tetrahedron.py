@@ -93,7 +93,6 @@ def tetrahedron_num_test():
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     tetrahedron_num_test()
     timestamp()

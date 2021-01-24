@@ -107,7 +107,6 @@ def slices_test():
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     slices_test()
     timestamp()

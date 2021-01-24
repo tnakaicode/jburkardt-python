@@ -375,7 +375,6 @@ def triangle_lower_to_i4_test():
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     triangle_num_test()
     timestamp()
