@@ -1,285 +1,218 @@
 #! /usr/bin/env python3
 #
-def file_column_count ( filename ):
+def file_column_count(filename):
 
-#*****************************************************************************80
-#
-## FILE_COLUMN_COUNT counts the number of words in a typical column of a file.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    13 October 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, string FILENAME, the name of the file.
-#
-#    Output, integer COLUMN_COUNT, the number of words in a typical column.
-#
-  column_count = -1
+    # *****************************************************************************80
+    #
+    # FILE_COLUMN_COUNT counts the number of words in a typical column of a file.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 October 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, string FILENAME, the name of the file.
+    #
+    #    Output, integer COLUMN_COUNT, the number of words in a typical column.
+    #
+    column_count = -1
 
-  input = open ( filename, 'r' )
+    input = open(filename, 'r')
 
-  column_count = 0
+    column_count = 0
 
-  for line in input:
+    for line in input:
 
-    if ( line[0] == '#' ):
-      continue
-    else:
+        if (line[0] == '#'):
+            continue
+        else:
 
-      wc = 0
-      for word in line.strip().split():
-         wc = wc + 1
+            wc = 0
+            for word in line.strip().split():
+                wc = wc + 1
 
-      if ( wc == 0 ):
-        continue
-      elif ( column_count == 0 ):
-        column_count = wc
-        break
+            if (wc == 0):
+                continue
+            elif (column_count == 0):
+                column_count = wc
+                break
 
-  input.close ( )
+    input.close()
 
-  return column_count
+    return column_count
 
-def file_column_count_test ( ):
 
-#*****************************************************************************80
-#
-## FILE_COLUMN_COUNT_TEST tests FILE_COLUMN_COUNT.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    03 December 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
+def file_column_count_test():
 
-  print ( '' )
-  print ( 'FILE_COLUMN_COUNT_TEST:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Count the number of columns in a typical text file line.' )
+    # *****************************************************************************80
+    #
+    # FILE_COLUMN_COUNT_TEST tests FILE_COLUMN_COUNT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 December 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
 
-  filename = 'r8mat_write_test.txt'
-  column_count = file_column_count ( filename )
+    print('')
+    print('FILE_COLUMN_COUNT_TEST:')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Count the number of columns in a typical text file line.')
 
-  print ( '' )
-  print ( '  Number of columns in "%s" is %d' % ( filename, column_count ) )
+    filename = 'r8mat_write_test.txt'
+    column_count = file_column_count(filename)
+
+    print('')
+    print('  Number of columns in "%s" is %d' % (filename, column_count))
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'FILE_COLUMN_COUNT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('FILE_COLUMN_COUNT_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def file_row_count ( filename ):
 
-#*****************************************************************************80
-#
-## FILE_ROW_COUNT counts the number of rows (lines) in a file.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    13 October 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    Input, string FILENAME, the name of the file.
-#
-#    Output, integer ROW_COUNT, the number of rows in the file.
-#
-  row_count = -1
+def file_row_count(filename):
 
-  input = open ( filename, 'r' )
+    # *****************************************************************************80
+    #
+    # FILE_ROW_COUNT counts the number of rows (lines) in a file.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 October 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, string FILENAME, the name of the file.
+    #
+    #    Output, integer ROW_COUNT, the number of rows in the file.
+    #
+    row_count = -1
 
-  row_count = 0
+    input = open(filename, 'r')
 
-  for line in input:
+    row_count = 0
 
-    if ( line[0] == '#' ):
-      continue
-    else:
+    for line in input:
 
-      wc = 0
-      for word in line.strip().split():
-         wc = wc + 1
+        if (line[0] == '#'):
+            continue
+        else:
 
-      if ( wc == 0 ):
-        continue
-      else:
-        row_count = row_count + 1
+            wc = 0
+            for word in line.strip().split():
+                wc = wc + 1
 
-  input.close ( )
+            if (wc == 0):
+                continue
+            else:
+                row_count = row_count + 1
 
-  return row_count
+    input.close()
 
-def file_row_count_test ( ):
+    return row_count
 
-#*****************************************************************************80
-#
-## FILE_ROW_COUNT_TEST tests FILE_ROW_COUNT.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license.
-#
-#  Modified:
-#
-#    03 December 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
 
-  print ( '' )
-  print ( 'FILE_ROW_COUNT_TEST:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Count the number of rows in a text file.' )
+def file_row_count_test():
 
-  filename = 'i4mat_write_test.txt'
-  row_count = file_row_count ( filename )
+    # *****************************************************************************80
+    #
+    # FILE_ROW_COUNT_TEST tests FILE_ROW_COUNT.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    03 December 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
 
-  print ( '' )
-  print ( '  Number of rows in "%s" is %d' % ( filename, row_count ) )
+    print('')
+    print('FILE_ROW_COUNT_TEST:')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Count the number of rows in a text file.')
+
+    filename = 'i4mat_write_test.txt'
+    row_count = file_row_count(filename)
+
+    print('')
+    print('  Number of rows in "%s" is %d' % (filename, row_count))
 #
 #  Terminate.
 #
-  print ( '' )
-  print ( 'FILE_ROW_COUNT_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('FILE_ROW_COUNT_TEST:')
+    print('  Normal end of execution.')
+    return
 
-def filum_test ( ):
 
-#*****************************************************************************80
-#
-## FILUM_TEST tests the FILUM library.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    13 September 2018
-#
-#  Author:
-#
-#    John Burkardt
-#
-  import platform
+def filum_test():
 
-  print ( '' )
-  print ( 'FILUM_TEST' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  Test the FILUM library.' )
+    # *****************************************************************************80
+    #
+    # FILUM_TEST tests the FILUM library.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    13 September 2018
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    import platform
 
-  file_column_count_test ( )
-  file_row_count_test ( )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'FILUM_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
+    print('')
+    print('FILUM_TEST')
+    print('  Python version: %s' % (platform.python_version()))
+    print('  Test the FILUM library.')
 
-def timestamp ( ):
+    file_column_count_test()
+    file_row_count_test()
+    print('')
+    print('FILUM_TEST:')
+    print('  Normal end of execution.')
+    return
 
-#*****************************************************************************80
-#
-## TIMESTAMP prints the date as a timestamp.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    06 April 2013
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    None
-#
-  import time
 
-  t = time.time ( )
-  print ( time.ctime ( t ) )
-
-  return None
-
-def timestamp_test ( ):
-
-#*****************************************************************************80
-#
-## TIMESTAMP_TEST tests TIMESTAMP.
-#
-#  Licensing:
-#
-#    This code is distributed under the GNU LGPL license. 
-#
-#  Modified:
-#
-#    03 December 2014
-#
-#  Author:
-#
-#    John Burkardt
-#
-#  Parameters:
-#
-#    None
-#
-  import platform
-
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Python version: %s' % ( platform.python_version ( ) ) )
-  print ( '  TIMESTAMP prints a timestamp of the current date and time.' )
-  print ( '' )
-
-  timestamp ( )
-#
-#  Terminate.
-#
-  print ( '' )
-  print ( 'TIMESTAMP_TEST:' )
-  print ( '  Normal end of execution.' )
-  return
-
-if ( __name__ == '__main__' ):
-  timestamp ( )
-  filum_test ( )
-  timestamp ( )
-
+if (__name__ == '__main__'):
+    timestamp()
+    filum_test()
+    timestamp()

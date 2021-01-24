@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+from scipy.spatial import Delaunay
 
 
 def delaunay_test():
@@ -20,10 +24,6 @@ def delaunay_test():
     #
     #    John Burkardt
     #
-    import matplotlib.pyplot as plt
-    import platform
-    import numpy as np
-    from scipy.spatial import Delaunay
 
     print('')
     print('DELAUNAY_TEST:')
@@ -38,47 +38,15 @@ def delaunay_test():
     plt.triplot(xy[:, 0], xy[:, 1], triangulation.simplices.copy())
     filename = 'delaunay_test.png'
     plt.savefig(filename)
+
     print('')
     print('  Saved graphics in file "%s"' % (filename))
-
     print('')
     print('DELAUNAY_TEST:')
     print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if (__name__ == '__main__'):
-    import numpy as np
     timestamp()
     delaunay_test()
     timestamp()

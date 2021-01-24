@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import scipy.sparse.linalg as la_sparse
 
 
 def dg1d_poisson(nel, ss, penal, f):
@@ -65,20 +69,21 @@ def dg1d_poisson(nel, ss, penal, f):
     #    Output, real C(3*NEL), the DG coefficients.  The dimension of 3
     #    is due to the use of piecewise quadratics in the interpolation scheme.
     #
-    import numpy as np
-    import scipy.sparse.linalg as la_sparse
-#
-#  Dimension of local matrices.
-#  This number should correspond to the number of monomials used in each
-#  subinterval.  Because it is set to 3, we are using piecewise quadratics.
-#
+
+    #
+    #  Dimension of local matrices.
+    #  This number should correspond to the number of monomials used in each
+    #  subinterval.  Because it is set to 3, we are using piecewise quadratics.
+    #
+
+    #
+    #  Local matrices.
+    #  These matrices have order locdimxlocdim.
+    #  If we want to use higher order methods, then these local matrices would
+    #  need to be enlarged, and the appropriate additional values inserted.
+    #
+
     locdim = 3
-#
-#  Local matrices.
-#  These matrices have order locdimxlocdim.
-#  If we want to use higher order methods, then these local matrices would
-#  need to be enlarged, and the appropriate additional values inserted.
-#
     Amat = nel * np.array([
         [0.0, 0.0, 0.0],
         [0.0, 4.0, 0.0],
@@ -113,29 +118,32 @@ def dg1d_poisson(nel, ss, penal, f):
         [penal, - 2.0 + penal, - 4.0 + penal],
         [2.0 * ss + penal, - 2.0 + 2.0 * ss + penal, - 4.0 + 2.0 * ss + penal],
         [4.0 * ss + penal, - 2.0 + 4.0 * ss + penal, - 4.0 + 4.0 * ss + penal]])
-#
-#  Dimension of global matrix.
-#
+    #
+    #  Dimension of global matrix.
+    #
     glodim = nel * locdim
-#
-#  Initialize the global data.
-#
+
+    #
+    #  Initialize the global data.
+    #
     A = np.zeros((glodim, glodim))
     b = np.zeros(glodim)
-#
-#  Gauss quadrature weights and points of order 2, which should be sufficient
-#  for integrals of products of piecewise quadratic functions.
-#
+
+    #
+    #  Gauss quadrature weights and points of order 2, which should be sufficient
+    #  for integrals of products of piecewise quadratic functions.
+    #
     ng = 2
     wg = np.array([1.0, 1.0])
     sg = np.array([-0.577350269189, 0.577350269189])
-#
-#  Assemble global matrix and RHS.
-#
 
-#
-#  First subinterval.
-#
+    #
+    #  Assemble global matrix and RHS.
+    #
+
+    #
+    #  First subinterval.
+    #
     for ii in range(0, locdim):
         for jj in range(0, locdim):
             A[ii][jj] = A[ii][jj] + Amat[ii][jj] + F0mat[ii][jj] + Cmat[ii][jj]
@@ -151,9 +159,10 @@ def dg1d_poisson(nel, ss, penal, f):
         b[0] = b[0] + wg[ig] * f(xval) / (2.0 * nel) * 1.0
         b[1] = b[1] + wg[ig] * f(xval) / (2.0 * nel) * sg[ig]
         b[2] = b[2] + wg[ig] * f(xval) / (2.0 * nel) * sg[ig] * sg[ig]
-#
-#  Intermediate subintervals.
-#
+
+    #
+    #  Intermediate subintervals.
+    #
     for i in range(2, nel):
         for ii in range(0, locdim):
             ie = ii + (i - 1) * locdim
@@ -169,9 +178,10 @@ def dg1d_poisson(nel, ss, penal, f):
             for ig in range(0, ng):
                 xval = (sg[ig] + 2.0 * (i - 1) + 1.0) / (2.0 * nel)
                 b[ie] = b[ie] + wg[ig] * f(xval) / (2.0 * nel) * (sg[ig] ** ii)
-#
-#  Last subinterval.
-#
+
+    #
+    #  Last subinterval.
+    #
     for ii in range(0, locdim):
         ie = ii + (nel - 1) * locdim
         for jj in range(0, locdim):
@@ -183,11 +193,10 @@ def dg1d_poisson(nel, ss, penal, f):
         for ig in range(0, ng):
             xval = (sg[ig] + 2.0 * (nel - 1) + 1.0) / (2.0 * nel)
             b[ie] = b[ie] + wg[ig] * f(xval) / (2.0 * nel) * (sg[ig] ** ii)
-#
-#  Solve the linear system.
-#
+    #
+    #  Solve the linear system.
+    #
     c = np.linalg.solve(A, b)
-
     return c
 
 
@@ -223,7 +232,6 @@ def dg1d_poisson_interp(x, i, nel, order, c):
     value = 0.0
     for k in range(0, order):
         value = value + c[k + i * order] * dg1d_poisson_monomial(x, i, nel, k)
-
     return value
 
 
@@ -262,7 +270,6 @@ def dg1d_poisson_monomial(x, i, nel, order):
     xr = (i + 1) * h
     xm = 0.5 * (xl + xr)
     value = (2.0 * (x - xm) / h) ** order
-
     return value
 
 
@@ -285,9 +292,6 @@ def dg1d_poisson_test():
     #
     #    17 September 2018
     #
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import platform
 
     print('')
     print('DG1D_POISSON_TEST')
@@ -299,27 +303,27 @@ def dg1d_poisson_test():
     h = 1.0 / nel
     ss = 1
     penal = 1.0
-#
-#  LOCDIM is actually the number of monomials used in each subinterval.
-#
+    #
+    #  LOCDIM is actually the number of monomials used in each subinterval.
+    #
     locdim = 3
-#
-#  Report parameters.
-#
+    #
+    #  Report parameters.
+    #
     print('')
     print('  0.0 < x < 1.0')
     print('  Number of subintervals = %d' % (nel))
     print('  Number of monomials in expansion = %d' % (locdim))
     print('  Penalty parameter = %g' % (penal))
     print('  DG choice = %g' % (ss))
-#
-#  Compute C, which represents the solution as a set of coefficients
-#  of monomials, indexed by polynomial degree and by subinterval.
-#
+    #
+    #  Compute C, which represents the solution as a set of coefficients
+    #  of monomials, indexed by polynomial degree and by subinterval.
+    #
     c = dg1d_poisson(nel, ss, penal, dg1d_poisson_test_source)
-#
-#  Evaluate the computed solution at 5 points in each subinterval.
-#
+    #
+    #  Evaluate the computed solution at 5 points in each subinterval.
+    #
     m = 5
 
     xh = np.zeros(m * nel)
@@ -334,23 +338,26 @@ def dg1d_poisson_test():
             xh[k] = ((m - 1 - j) * xl + j * xr) / float(m - 1)
             uh[k] = dg1d_poisson_interp(xh[k], i, nel, order, c)
             k = k + 1
-#
-#  Tabulate the exact and computed solutions.
-#
+
+    #
+    #  Tabulate the exact and computed solutions.
+    #
     print('')
     print('  I     X(I)      U(X(I))     Uh(X(I))')
     print('')
     for k in range(0, m * nel):
         exact = dg1d_poisson_test_exact(xh[k])
         print('%2d  %8f  %8f  %8f' % (k, xh[k], exact, uh[k]))
-#
-#  Evaluate the true solution at lots of points.
-#
+
+    #
+    #  Evaluate the true solution at lots of points.
+    #
     x = np.linspace(0.0, 1.0, 101)
     u = dg1d_poisson_test_exact(x)
-#
-#  Make a plot comparing the exact and computed solutions.
-#
+
+    #
+    #  Make a plot comparing the exact and computed solutions.
+    #
     plt.plot(xh, uh, label='approximate')
     plt.plot(x, u, label='exact')
     plt.legend(loc=0)
@@ -358,22 +365,15 @@ def dg1d_poisson_test():
     plt.xlabel('<---X--->')
     plt.ylabel('<---U(X)--->')
     plt.title('Compare computed and exact solutions')
-#
-#  Save the graphics in a file.
-#
     filename = 'dg1d_poisson.png'
     plt.savefig(filename)
     print('')
     print('  Graphics saved as "%s"' % (filename))
     plt.clf()
-#
-#  Terminate.
-#
+
     print('')
     print('DG1D_POISSON_TEST')
     print('  Normal end of execution.')
-
-    return
 
 
 def dg1d_poisson_test_exact(x):
@@ -392,7 +392,6 @@ def dg1d_poisson_test_exact(x):
     #
     #    Output, real VALUE, the value of the exact solution at X.
     #
-    import numpy as np
 
     value = (1.0 - x) * np.exp(- x ** 2)
 
@@ -415,42 +414,11 @@ def dg1d_poisson_test_source(x):
     #
     #    Output, real VALUE, the value of the source term at X.
     #
-    import numpy as np
 
     value = - (2.0 * x - 2.0 * (1.0 - 2.0 * x)
                + 4.0 * x * (x - x ** 2)) * np.exp(- x * x)
 
     return value
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
 
 
 if __name__ == '__main__':
