@@ -57,17 +57,19 @@ def zeckendorf(n):
 
     m = 0
     i_list = []
-#
-#  Extract a sequence of Fibonacci numbers.
-#
+    
+    #
+    #  Extract a sequence of Fibonacci numbers.
+    #
     while (0 < n):
         [f, i] = fibonacci_floor(n)
         i_list.append(i)
         m = m + 1
         n = n - f
-#
-#  Replace any pair of consecutive indices ( I, I-1 ) by I+1.
-#
+    
+    #
+    #  Replace any pair of consecutive indices ( I, I-1 ) by I+1.
+    #
     for i in range(m - 1, 0, -1):
 
         if (i_list[i - 1] == i_list[i] + 1):
@@ -76,9 +78,10 @@ def zeckendorf(n):
                 i_list[j] = i_list[j + 1]
             m = m - 1
             i_list[m] = 0
-#
-#  Fill in the actual values of the Fibonacci numbers.
-#
+    
+    #
+    #  Fill in the actual values of the Fibonacci numbers.
+    #
     f_list = np.zeros(m)
     for i in range(0, m):
         f_list[i] = fibonacci_direct(i_list[i])
@@ -104,7 +107,6 @@ def zeckendorf_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('ZECKENDORF_TEST')
@@ -123,17 +125,12 @@ def zeckendorf_test():
         for j in range(0, m):
             print('  %d' % (f_list[j])),
         print('')
-#
-#  Terminate.
-#
     print('')
     print('ZECKENDORF_TEST')
     print('  Normal end of execution.')
-    return
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     zeckendorf_test()
     timestamp()
