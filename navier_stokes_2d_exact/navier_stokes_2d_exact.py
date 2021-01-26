@@ -1,10 +1,31 @@
 #! /usr/bin/env python3
 #
+
 import numpy as np
 import matplotlib.pyplot as plt
 import platform
 import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
 from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from r8lib.r8vec_print import r8vec_print, r8vec_print_some
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8vec_transpose import r8vec_transpose_print
+from r8lib.r8mat_transpose import r8mat_transpose_print, r8mat_transpose_print_some
+
+from r8lib.r8_erf import r8_erf
+from r8lib.r8vec_uniform_ab import r8vec_uniform_ab
+from r8lib.r8vec_norm_l2 import r8vec_norm_l2
 
 
 def grid_2d(x_num, x_lo, x_hi, y_num, y_lo, y_hi):
@@ -1193,320 +1214,6 @@ def parameter_vortex_test():
     print('PARAMETER_VORTEX_TEST:')
     print('  Normal end of execution.')
     return
-
-
-def r8vec_amax(n, a):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_AMAX returns the maximum absolute value in an R8VEC.
-    #
-    #  Discussion:
-    #
-    #    An R8VEC is a vector of R8's.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    15 January 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, real A(N), the vector.
-    #
-    #    Output, real VALUE, the maximum absolute value in the vector.
-    #
-    value = 0.0
-    for i in range(0, n):
-        if (value < abs(a[i])):
-            value = abs(a[i])
-
-    return value
-
-
-def r8vec_amin(n, a):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_AMIN returns the minimum absolute value in an R8VEC.
-    #
-    #  Discussion:
-    #
-    #    An R8VEC is a vector of R8's.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    15 January 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, real A(N), the vector.
-    #
-    #    Output, real VALUE, the minimum absolute value in the vector.
-    #
-    r8_huge = 1.79769313486231571E+308
-
-    value = r8_huge
-    for i in range(0, n):
-        if (abs(a[i]) < value):
-            value = abs(a[i])
-
-    return value
-
-
-def r8vec_max(n, a):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_MAX returns the maximum value in an R8VEC.
-    #
-    #  Discussion:
-    #
-    #    An R8VEC is a vector of R8's.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    09 March 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, real A(N), the vector.
-    #
-    #    Output, real VALUE, the maximum value in the vector.
-    #
-    r8_huge = 1.79769313486231571E+308
-
-    value = - r8_huge
-    for i in range(0, n):
-        if (value < a[i]):
-            value = a[i]
-
-    return value
-
-
-def r8vec_min(n, a):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_MIN returns the minimum value in an R8VEC.
-    #
-    #  Discussion:
-    #
-    #    An R8VEC is a vector of R8's.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    09 March 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, real A(N), the vector.
-    #
-    #    Output, real VALUE, the minimum value in the vector.
-    #
-    r8_huge = 1.79769313486231571E+308
-
-    value = r8_huge
-    for i in range(0, n):
-        if (a[i] < value):
-            value = a[i]
-
-    return value
-
-
-def r8vec_norm_l2(n, a):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_NORM_L2 returns the L2 norm of an R8VEC.
-    #
-    #  Discussion:
-    #
-    #    The vector L2 norm is defined as:
-    #
-    #      value = sqrt ( sum ( 1 <= I <= N ) A(I)^2 ).
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    02 January 2015
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in A.
-    #
-    #    Input, real A(N), the vector whose L2 norm is desired.
-    #
-    #    Output, real VALUE, the L2 norm of A.
-    #
-
-    value = 0.0
-    for i in range(0, n):
-        value = value + a[i] * a[i]
-    value = np.sqrt(value)
-
-    return value
-
-
-def r8vec_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT prints an R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the dimension of the vector.
-    #
-    #    Input, real A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('%6d:  %12g' % (i, a[i]))
-
-
-def r8vec_uniform_ab(n, a, b, seed):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_AB returns a scaled pseudorandom R8VEC.
-    #
-    #  Discussion:
-    #
-    #    Each dimension ranges from A to B.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Springer Verlag, pages 201-202, 1983.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, pages 362-376, 1986.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, pages 136-143, 1969.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, real A, B, the range of the pseudorandom values.
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, real X(N), the vector of pseudorandom values.
-    #
-    #    Output, integer SEED, an updated seed for the random number generator.
-    #
-
-    i4_huge = 2147483647
-
-    seed = int(seed)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('R8VEC_UNIFORM_AB - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('R8VEC_UNIFORM_AB - Fatal error!')
-
-    x = np.zeros(n)
-
-    for i in range(0, n):
-
-        k = (seed // 127773)
-
-        seed = 16807 * (seed - k * 127773) - k * 2836
-
-        if (seed < 0):
-            seed = seed + i4_huge
-
-        x[i] = a + (b - a) * seed * 4.656612875E-10
-
-    return x, seed
 
 
 def resid_lukas(nu, rho, n, x, y, t):
