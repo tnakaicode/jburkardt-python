@@ -1,3 +1,6 @@
 [submodule "python-mc"]
 	path = python-mc
 	url = https://github.com/tnakaicode/python-mc.git
+[submodule "OregoneState-CP"]
+	path = OregoneState-CP
+	url = https://github.com/tnakaicode/OregoneState-CP.git
