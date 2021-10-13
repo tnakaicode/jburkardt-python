@@ -234,6 +234,8 @@ def sort_heap_external_test():
     k1 = 0
     n1 = 0
 
+    t0 = time.time()
+
     while (True):
 
         indx, i, j, i1, j1, k0, k1, n1 = sort_heap_external(n, indx,
@@ -250,8 +252,12 @@ def sort_heap_external_test():
         else:
             break
 
+    t1 = time.time()
+
     i4vec_print(n, a, '  Sorted array:')
 
+    print('')
+    print('{:.5e} {:.5e}'.format(t1 - t0, (t1 - t0) / n))
     print('')
     print('SORT_HEAP_EXTERNAL_TEST:')
     print('  Normal end of execution.')
