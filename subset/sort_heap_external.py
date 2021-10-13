@@ -213,7 +213,7 @@ def sort_heap_external_test():
     #    John Burkardt
     #
 
-    n = 20
+    n = int(1E+6)
 
     print('')
     print('SORT_HEAP_EXTERNAL_TEST')
@@ -224,7 +224,7 @@ def sort_heap_external_test():
 
     a, seed = i4vec_uniform_ab(n, 1, n, seed)
 
-    i4vec_print(n, a, '  Unsorted array:')
+    #i4vec_print(n, a, '  Unsorted array:')
 
     indx = 0
     isgn = 0
@@ -254,7 +254,7 @@ def sort_heap_external_test():
 
     t1 = time.time()
 
-    i4vec_print(n, a, '  Sorted array:')
+    #i4vec_print(n, a, '  Sorted array:')
 
     print('')
     print('{:.5e} {:.5e}'.format(t1 - t0, (t1 - t0) / n))
