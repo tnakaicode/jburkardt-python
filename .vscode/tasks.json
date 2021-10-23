@@ -27,5 +27,34 @@
             },
             "problemMatcher": []
         },
+        {
+            "label": "python mpirun4",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "command": "mpiexec",
+            "args": [
+                "-np",
+                "4",
+                "python",
+                "${fileDirname}\\${fileBasenameNoExtension}.py",
+				">",
+                "${fileBasenameNoExtension}.txt",
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
 	]
 }
