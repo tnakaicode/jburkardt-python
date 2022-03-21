@@ -253,8 +253,8 @@ def normal01_multivariate_distance_test():
         x[m] = m
         y[m] = mu
 
-    plt.plot(x, y, 'bo', Linewidth=3)
-    plt.plot(x, np.sqrt(2.0 * x), 'r-', Linewidth=3)
+    plt.plot(x, y, 'bo', linewidth=3)
+    plt.plot(x, np.sqrt(2.0 * x), 'r-', linewidth=3)
     plt.xlabel('<-- Spatial dimension -->')
     plt.ylabel('<-- Average distance -->')
     plt.title('Average distance between multivariate normal01 samples')

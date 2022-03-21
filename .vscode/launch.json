@@ -10,7 +10,12 @@
             "request": "launch",
             "program": "${file}",
             "cwd": "${fileDirname}",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "args": [
+                "${fileBasenameNoExtension}.py",
+				">",
+                "${fileBasenameNoExtension}.txt",
+            ]
         }
     ]
 }
