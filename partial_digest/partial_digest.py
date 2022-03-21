@@ -656,6 +656,177 @@ def partial_digest_recur_test02():
     return
 
 
+def test_partial_digest(k, dmax, seed):
+
+    # *****************************************************************************80
+    #
+    # TEST_PARTIAL_DIGEST returns a partial digest test problem.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    04 January 2018
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer K, the number of objects.
+    #    K must be at least 2.
+    #
+    #    Input, integer DMAX, the maximum possible distance.
+    #    DMAX must be at least K-1.
+    #
+    #    Input/output, integer SEED, a seed for the random number
+    #    generator.
+    #
+    #    Output, integer LOCATE(K), the obect locations.
+    #
+    #    Output, integer D(K*(K-1)/2), the pairwise distances.
+    #
+    import numpy as np
+    from sys import exit
+#
+#  Check input.
+#
+    if (k < 2):
+        print('\n')
+        print('TEST_PARTIAL_DIGEST - Fatal error!\n')
+        print('  Input K < 2.\n')
+        exit('TEST_PARTIAL_DIGEST - Fatal error!')
+
+    if (dmax < k - 1):
+        print('\n')
+        print('TEST_PARTIAL_DIGEST - Fatal error!\n')
+        print('  DMAX < K - 1.\n')
+        exit('TEST_PARTIAL_DIGEST - Fatal error!')
+#
+#  Select LOCATE, which is a random subset of the integers 0 through DMAX.
+#
+    locate, seed = ksub_random(dmax - 1, k - 2, seed)
+    locate = np.insert(locate, 0, 0)
+    locate = np.append(locate, dmax)
+#
+#  Compute K*(K+1)/2 pairwise distances.
+#
+    d = i4vec_distances(k, locate)
+
+    return locate, d, seed
+
+
+def ksub_random(n, k, seed):
+
+    # *****************************************************************************80
+    #
+    # KSUB_RANDOM selects a random subset of size K from a set of size N.
+    #
+    #  Discussion:
+    #
+    #    Consider the set A(1:N) = 1, 2, 3, ... N.
+    #    Choose a random index I1 between 1 and N, and swap items A(1) and A(I1).
+    #    Choose a random index I2 between 2 and N, and swap items A(2) and A(I2).
+    #    repeat K times.
+    #    A(1:K) is your random K-subset.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    09 June 2011
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the size of the set from which subsets
+    #    are drawn.
+    #
+    #    Input, integer K, number of elements in desired subsets.
+    #    1 <= K <= N.
+    #
+    #    Input/output, integer SEED, a seed for the random
+    #    number generator.
+    #
+    #    Output, integer A(K), the indices of the randomly
+    #    chosen elements.
+    #
+    import numpy as np
+#
+#  Let B index the set.
+#
+    b = np.zeros(n, dtype=np.int32)
+    for i in range(0, n):
+        b[i] = i
+#
+#  Choose item 1 from N things,
+#  choose item 2 from N-1 things,
+#  choose item K from N-K+1 things.
+#
+    for i in range(0, k):
+
+        j, seed = i4_uniform_ab(i, n - 1, seed)
+
+        t = b[i]
+        b[i] = b[j]
+        b[j] = t
+#
+#  Copy the first K elements.
+#
+    a = np.zeros(k, dtype=np.int32)
+    for i in range(0, k):
+        a[i] = b[i]
+
+    return a, seed
+
+
+def i4vec_distances(k, locate):
+
+    # *****************************************************************************80
+    #
+    # I4VEC_DISTANCES computes a pairwise distance table.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    05 January 2018
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer K, the number of objects.
+    #
+    #    Input, integer LOCATE(K), the obect locations.
+    #
+    #    Output, integer D(K*(K-1)/2), the pairwise distances.
+    #
+    import numpy as np
+
+    d = np.zeros(k * (k - 1) // 2)
+
+    l = 0
+    for i in range(0, k):
+        for j in range(i + 1, k):
+            d[l] = abs(locate[i] - locate[j])
+            l = l + 1
+
+    return d
+
+
 def place(l_length, l, x_length, x):
 
     # *****************************************************************************80

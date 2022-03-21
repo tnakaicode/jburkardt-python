@@ -1,5 +1,10 @@
 #! /usr/bin/env python3
 #
+import os
+import sys
+
+sys.path.append(os.path.join("../"))
+from r8lib.r8vec import r8vec_print
 
 
 def padua_order(l):
@@ -1712,7 +1717,6 @@ def r8vec_reverse_test():
     #
     import numpy as np
     import platform
-    from r8vec_print import r8vec_print
 
     n = 5
 
