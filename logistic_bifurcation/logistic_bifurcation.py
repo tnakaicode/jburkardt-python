@@ -166,8 +166,8 @@ def logistic_bifurcation_test():
     #
     #  Sample values of r between 0 and 4.
     #
-    rs = np.linspace(0, 3.5, 1000)
-    #rs = np.linspace(0, 4.0, 1000)
+    #rs = np.linspace(0, 3.5, 1000)
+    rs = np.linspace(0, 4.5, 1000)
     #
     #  For each r, compute ts, the set of attractors for the iteration.
     #

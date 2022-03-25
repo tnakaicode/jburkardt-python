@@ -2450,9 +2450,6 @@ def wathen_test09():
     fig.savefig(filename)
     print('')
     print('  Graphics file saved as "%s"' % (filename))
-#
-#  Terminate.
-#
     print('')
     print('WATHEN_TEST09:')
     print('  Normal end of execution.')
@@ -2483,33 +2480,31 @@ def wathen_test():
     print('WATHEN_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the WATHEN library.')
-#
-#  Direct Solve
-#
+    #
+    #  Direct Solve
+    #
     wathen_test01()
     wathen_test02()
-#
-#  Timings.
-#
+    #
+    #  Timings.
+    #
     wathen_test03()
     wathen_test04()
     wathen_test05()
-#
-#  CG Solve
-#
+    #
+    #  CG Solve
+    #
     wathen_test06()
     wathen_test07()
     wathen_test08()
-#
-#  Use SPY to display the sparsity of the matrix.
-#
+    #
+    #  Use SPY to display the sparsity of the matrix.
+    #
     wathen_test09()
 
     wathen_order_test()
     wathen_st_size_test()
-#
-#  Terminate.
-#
+
     print('')
     print('WATHEN_TEST:')
     print('  Normal end of execution.')
