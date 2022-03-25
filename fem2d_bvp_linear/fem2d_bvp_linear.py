@@ -1,6 +1,30 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print, i4mat_print_some
+from i4lib.i4_uniform_ab import i4_uniform_ab
+from r8lib.r8vec_print import r8vec_print, r8vec_print_some, r8vec_transpose_print
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8vec_transpose import r8vec_transpose_print
+from r8lib.r8mat_transpose import r8mat_transpose_print, r8mat_transpose_print_some
+from r8lib.r8 import r8_uniform_01
+
 
 def fem2d_bvp_linear():
 
@@ -241,10 +265,14 @@ def fem2d_bvp_linear():
             print('%4d  %4d  %4d  %8f  %8f  %14g  %14g' %
                   (i, j, v, x, y, u[v], uex[v]))
             v = v + 1
-#
-#  Optionally, print the node coordinates.
-#
-    if (False):
+
+    #
+    #  Optionally, print the node coordinates.
+    #
+    if (True):
+        print('')
+        print('the node coordinates.')
+        print('')
         v = 0
         for j in range(0, node_linear_num):
             y = grid[j]
@@ -252,10 +280,14 @@ def fem2d_bvp_linear():
                 x = grid[i]
                 print('%8f  %8f' % (x, y))
                 v = v + 1
-#
-#  Optionally, print the elements, listing the nodes in counterclockwise order.
-#
-    if (False):
+
+    #
+    #  Optionally, print the elements, listing the nodes in counterclockwise order.
+    #
+    if (True):
+        print('')
+        print('listing the nodes in counterclockwise order.')
+        print('')
         e = 0
         for j in range(0, element_linear_num):
             y = grid[j]
@@ -266,9 +298,7 @@ def fem2d_bvp_linear():
                 ne = (j + 1) * node_linear_num + i + 1
                 print('%4d  %4d  %4d  %4d' % (sw, se, ne, nw))
                 e = e + 1
-#
-#  Terminate.
-#
+
     print('')
     print('FEM2D_BVP_LINEAR:')
     print('  Normal end of execution.')
@@ -296,7 +326,6 @@ def rhs_fn(x, y):
 
 
 if (__name__ == '__main__'):
-    from timestamp import timestamp
     timestamp()
     fem2d_bvp_linear()
     timestamp()
