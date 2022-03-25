@@ -18,7 +18,7 @@ from timestamp.timestamp import timestamp
 
 from i4lib.i4vec_print import i4vec_print
 from i4lib.i4mat_print import i4mat_print
-from r8lib.r8vec_print import r8vec_print
+from r8lib.r8vec_print import r8vec_print, r8vec_indicator0
 from r8lib.r8mat_print import r8mat_print, r8mat_print_some
 from r8lib.r8mat_write import r8mat_write
 
@@ -64,43 +64,6 @@ def normalize(n, x):
         x[i] = x[i] / sum_val
 
     return x
-
-
-def r8vec_indicator0(n):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_INDICATOR0 sets an R8VEC to the indicator vector (0,1,2,...).
-    #
-    #  Discussion:
-    #
-    #    An R8VEC is a vector of R8's.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    27 September 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of elements of the vector.
-    #
-    #    Output, real A(N), the indicator array.
-    #
-
-    a = np.zeros(n)
-
-    for i in range(0, n):
-        a[i] = i
-
-    return a
 
 
 def random_permutation(n, x, seed):
@@ -455,7 +418,7 @@ def walker_sampler_test():
     print('  Use seed = %d as input to random.seed ( seed ):' % (seed))
 
     rn.seed(seed)
-    
+
     #
     #  Generate a standard Zipf probability vector for cases 1 - N,
     #  with parameter P.
@@ -471,7 +434,7 @@ def walker_sampler_test():
     print('')
     for i in range(1, n + 1):
         print('  %4d  %16g' % (i, x[i]))
-    
+
     #
     #  For better testing, randomly scramble the probabilities.
     #
@@ -484,7 +447,7 @@ def walker_sampler_test():
     print('')
     for i in range(1, n + 1):
         print('  %4d  %16g' % (i, x[i]))
-    
+
     #
     #  Build the Walker sampler.
     #
@@ -497,19 +460,19 @@ def walker_sampler_test():
 
     for i in range(0, n + 2):
         print('  %3d  %16g  %4d' % (i, y[i], a[i]))
-    
+
     #
     #  Prepare to count the frequency of each outcome.
     #
     count = np.zeros(n + 2, dtype=np.int32)
-    
+
     #
     #  Call the sampler many times.
     #
     for i in range(0, 100000):
         j = walker_sampler(n, y, a)
         count[j] = count[j] + 1
-    
+
     #
     #  Compare normalized sample frequencies to the original probabilities in X.
     #
@@ -604,19 +567,19 @@ def walker_verify(n, x, y, a):
     #
 
     z = np.zeros(n + 2, dtype=np.float64)
-    
+
     #
     #  Reverse the scaling.
     #
     for i in range(0, n + 2):
         z[i] = y[i] / float(n)
-    
+
     #
     #  Add back the adjustments.
     #
     for i in range(1, n + 1):
         z[a[i]] = z[a[i]] + (1.0 - y[i]) / float(n)
-    
+
     #
     #  Check for discrepancies between Z and X.
     #

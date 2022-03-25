@@ -285,6 +285,43 @@ def r8vec_transpose_print_test():
     print('  Normal end of execution.')
 
 
+def r8vec_indicator0(n):
+
+    # *****************************************************************************80
+    #
+    # R8VEC_INDICATOR0 sets an R8VEC to the indicator vector (0,1,2,...).
+    #
+    #  Discussion:
+    #
+    #    An R8VEC is a vector of R8's.
+    #
+    #  Licensing:
+    #
+    #    This code is distributed under the GNU LGPL license.
+    #
+    #  Modified:
+    #
+    #    27 September 2014
+    #
+    #  Author:
+    #
+    #    John Burkardt
+    #
+    #  Parameters:
+    #
+    #    Input, integer N, the number of elements of the vector.
+    #
+    #    Output, real A(N), the indicator array.
+    #
+
+    a = np.zeros(n)
+
+    for i in range(0, n):
+        a[i] = i
+
+    return a
+
+
 if (__name__ == '__main__'):
     timestamp()
     r8vec_print_test()
