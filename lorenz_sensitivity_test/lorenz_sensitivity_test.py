@@ -52,9 +52,9 @@ def lorenz_sensitivity_test():
 
     sol1 = solve_ivp(lorenz_ode, [a, b], [1, 1, 1], t_eval=t)
     sol2 = solve_ivp(lorenz_ode, [a, b], [1, 1, 1.00001], t_eval=t)
-#
-#  Plot phase portrait (x1,z1).
-#
+    #
+    #  Plot phase portrait (x1,z1).
+    #
     plt.plot(sol1.y[0], sol1.y[2])
     plt.xlabel("$x$")
     plt.ylabel("$z$")
