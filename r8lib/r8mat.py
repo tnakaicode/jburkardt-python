@@ -194,3 +194,6 @@ def r8mat_print_test():
 
 if (__name__ == '__main__'):
     timestamp()
+    r8mat_print_test()
+    r8mat_print_some_test()
+    timestamp()
