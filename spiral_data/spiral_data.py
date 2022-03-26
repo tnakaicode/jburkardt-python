@@ -1,6 +1,27 @@
 #! /usr/bin/env python3
 #
 
+import numpy as np
+import matplotlib.pyplot as plt
+import platform
+import time
+import sys
+import os
+import math
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+from i4lib.i4vec_print import i4vec_print
+from i4lib.i4mat_print import i4mat_print
+from r8lib.r8vec_print import r8vec_print, r8vec_print_test
+from r8lib.r8mat_print import r8mat_print, r8mat_print_some
+from r8lib.r8mat_write import r8mat_write
+from r8lib.r8vec_uniform_01 import r8vec_uniform_ab, r8vec_uniform_ab_test
+
 
 def grid_2d(x_num, x_lo, x_hi, y_num, y_lo, y_hi):
 
@@ -32,7 +53,6 @@ def grid_2d(x_num, x_lo, x_hi, y_num, y_lo, y_hi):
     #
     #    Output, real X(X_NUM*Y_NUM), Y(X_NUM*Y_NUM), the coordinates of the grid.
     #
-    import numpy as np
 
     x = np.zeros(x_num * y_num)
     y = np.zeros(x_num * y_num)
@@ -92,7 +112,6 @@ def grid_2d_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('GRID_2D_TEST:')
@@ -115,9 +134,7 @@ def grid_2d_test():
         for i in range(0, x_num):
             print('  %2d  %2d  %2d  %14.6f  %14.6f' % (k, i, j, x[k], y[k]))
             k = k + 1
-#
-#  Terminate.
-#
+
     print('')
     print('GRID_2D_TEST:')
     print('  Normal end of execution.')
@@ -180,7 +197,6 @@ def r8vec_amax_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R8VEC_AMAX_TEST')
@@ -199,9 +215,6 @@ def r8vec_amax_test():
     value = r8vec_amax(n, a)
     print('')
     print('  Max Abs = %g' % (value))
-#
-#  Terminate.
-#
     print('')
     print('R8VEC_AMAX_TEST:')
     print('  Normal end of execution.')
@@ -266,7 +279,6 @@ def r8vec_amin_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R8VEC_AMIN_TEST')
@@ -285,9 +297,6 @@ def r8vec_amin_test():
     value = r8vec_amin(n, a)
     print('')
     print('  Min Abs = %g' % (value))
-#
-#  Terminate.
-#
     print('')
     print('R8VEC_AMIN_TEST:')
     print('  Normal end of execution.')
@@ -352,7 +361,6 @@ def r8vec_max_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R8VEC_MAX_TEST')
@@ -438,7 +446,6 @@ def r8vec_min_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('R8VEC_MIN_TEST')
@@ -457,212 +464,8 @@ def r8vec_min_test():
     value = r8vec_min(n, a)
     print('')
     print('  Min = %g' % (value))
-#
-#  Terminate.
-#
     print('')
     print('R8VEC_MIN_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def r8vec_print(n, a, title):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT prints an R8VEC.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    31 August 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the dimension of the vector.
-    #
-    #    Input, real A(N), the vector to be printed.
-    #
-    #    Input, string TITLE, a title.
-    #
-    print('')
-    print(title)
-    print('')
-    for i in range(0, n):
-        print('%6d:  %12g' % (i, a[i]))
-
-
-def r8vec_print_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_PRINT_TEST tests R8VEC_PRINT.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    print('')
-    print('R8VEC_PRINT_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_PRINT prints an R8VEC.')
-
-    n = 4
-    v = np.array([123.456, 0.000005, -1.0E+06, 3.14159265], dtype=np.float64)
-    r8vec_print(n, v, '  Here is an R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_PRINT_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def r8vec_uniform_ab(n, a, b, seed):
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_AB returns a scaled pseudorandom R8VEC.
-    #
-    #  Discussion:
-    #
-    #    Each dimension ranges from A to B.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Reference:
-    #
-    #    Paul Bratley, Bennett Fox, Linus Schrage,
-    #    A Guide to Simulation,
-    #    Springer Verlag, pages 201-202, 1983.
-    #
-    #    Bennett Fox,
-    #    Algorithm 647:
-    #    Implementation and Relative Efficiency of Quasirandom
-    #    Sequence Generators,
-    #    ACM Transactions on Mathematical Software,
-    #    Volume 12, Number 4, pages 362-376, 1986.
-    #
-    #    Peter Lewis, Allen Goodman, James Miller,
-    #    A Pseudo-Random Number Generator for the System/360,
-    #    IBM Systems Journal,
-    #    Volume 8, pages 136-143, 1969.
-    #
-    #  Parameters:
-    #
-    #    Input, integer N, the number of entries in the vector.
-    #
-    #    Input, real A, B, the range of the pseudorandom values.
-    #
-    #    Input, integer SEED, a seed for the random number generator.
-    #
-    #    Output, real X(N), the vector of pseudorandom values.
-    #
-    #    Output, integer SEED, an updated seed for the random number generator.
-    #
-    import numpy
-    from sys import exit
-
-    i4_huge = 2147483647
-
-    seed = int(seed)
-
-    if (seed < 0):
-        seed = seed + i4_huge
-
-    if (seed == 0):
-        print('')
-        print('R8VEC_UNIFORM_AB - Fatal error!')
-        print('  Input SEED = 0!')
-        exit('R8VEC_UNIFORM_AB - Fatal error!')
-
-    x = numpy.zeros(n)
-
-    for i in range(0, n):
-
-        k = (seed // 127773)
-
-        seed = 16807 * (seed - k * 127773) - k * 2836
-
-        if (seed < 0):
-            seed = seed + i4_huge
-
-        x[i] = a + (b - a) * seed * 4.656612875E-10
-
-    return x, seed
-
-
-def r8vec_uniform_ab_test():
-
-    # *****************************************************************************80
-    #
-    # R8VEC_UNIFORM_AB_TEST tests R8VEC_UNIFORM_AB.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    29 October 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    import numpy as np
-    import platform
-
-    n = 10
-    a = -1.0
-    b = +5.0
-    seed = 123456789
-
-    print('')
-    print('R8VEC_UNIFORM_AB_TEST')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  R8VEC_UNIFORM_AB computes a random R8VEC.')
-    print('')
-    print('  %g <= X <= %g' % (a, b))
-    print('  Initial seed is %d' % (seed))
-
-    v, seed = r8vec_uniform_ab(n, a, b, seed)
-
-    r8vec_print(n, v, '  Random R8VEC:')
-#
-#  Terminate.
-#
-    print('')
-    print('R8VEC_UNIFORM_AB_TEST:')
     print('  Normal end of execution.')
     return
 
@@ -716,7 +519,6 @@ def resid_spiral(n, x, y, c):
     #
     #    Output, real PR(N), the residual in the continuity equation.
     #
-    import numpy as np
 
     pr = np.zeros(n)
     u = np.zeros(n)
@@ -845,27 +647,18 @@ def spiral_data_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('SPIRAL_DATA_TEST')
     print('  Python version: %s' % (platform.python_version()))
     print('  Test the SPIRAL_DATA library.')
 
-    r8vec_amax_test()
-    r8vec_amin_test()
-    r8vec_max_test()
-    r8vec_min_test()
-    r8vec_print_test()
-    r8vec_uniform_ab_test()
     grid_2d_test()
     uv_spiral_test()
     resid_spiral_test()
     spiral_gnuplot_test()
     spiral_matplotlib_test()
-#
-#  Terminate.
-#
+
     print('')
     print('SPIRAL_DATA_TEST:')
     print('  Normal end of execution.')
@@ -983,7 +776,6 @@ def spiral_gnuplot_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('SPIRAL_GNUPLOT_TEST:')
@@ -1009,9 +801,7 @@ def spiral_gnuplot_test():
     header = 'spiral_data'
     s = 0.05
     spiral_gnuplot(header, n, x, y, u, v, s)
-#
-#  Terminate.
-#
+
     print('')
     print('SPIRAL_GNUPLOT_TEST: ')
     print('  Normal end of execution.')
@@ -1048,7 +838,6 @@ def spiral_matplotlib(header, n, x, y, u, v, s):
     #
     #    Input, real S, a scale factor for the velocity vectors.
     #
-    import matplotlib.pyplot as plt
 
     myplot = plt.figure()
     ax = plt.gca()
@@ -1084,7 +873,6 @@ def spiral_matplotlib_test():
     #
     #    John Burkardt
     #
-    import platform
 
     print('')
     print('SPIRAL_MATPLOTLIB_TEST:')
@@ -1110,81 +898,9 @@ def spiral_matplotlib_test():
     header = 'spiral'
     s = 0.05
     spiral_matplotlib(header, n, x, y, u, v, s)
-#
-#  Terminate.
-#
+
     print('')
     print('SPIRAL_MATPLOTLIB_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
     print('  Normal end of execution.')
     return
 
@@ -1238,7 +954,6 @@ def uv_spiral(n, x, y, c):
     #
     #    Output, real U(N), V(N), the velocity components.
     #
-    import numpy as np
 
     u = np.zeros(n)
     v = np.zeros(n)
@@ -1280,8 +995,6 @@ def uv_spiral_test():
     #
     #    John Burkardt
     #
-    import numpy as np
-    import platform
 
     nu = 1.0
     rho = 1.0
@@ -1307,9 +1020,6 @@ def uv_spiral_test():
     print('')
     print('  U:  %14.6g  %14.6g' % (np.min(u), np.max(u)))
     print('  V:  %14.6g  %14.6g' % (np.min(v), np.max(v)))
-#
-#  Terminate.
-#
     print('')
     print('UV_SPIRAL_TEST:')
     print('  Normal end of execution.')
