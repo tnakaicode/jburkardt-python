@@ -14,8 +14,8 @@ from sys import exit
 sys.path.append(os.path.join("../"))
 from base import plot2d, plotocc
 from timestamp.timestamp import timestamp
-from prob.r8 import r8_huge, r8_uniform_01, r8_zeta
-from prob.r8vec import r8vec_mean, r8vec_variance, r8vec_min, r8vec_max
+from r8lib.r8_uniform_01 import r8_uniform_01
+from r8lib.r8vec import r8vec_mean, r8vec_variance, r8vec_min, r8vec_max
 
 
 def fermi_dirac_sample(u, v, seed):
