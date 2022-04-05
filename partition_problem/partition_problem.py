@@ -1,7 +1,22 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+import platform
+import time
+import sys
+import os
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
+
+
 def partition_brute(n, w):
-    
+
     # *****************************************************************************80
     #
     # PARTITION_BRUTE approaches the partition problem using brute force.
@@ -242,7 +257,7 @@ def partition_count(n, w):
 
     w_sum = np.sum(w)
 
-    c = np.zeros(n, dtype=np.bool)
+    c = np.zeros(n, dtype=bool)
     rank = -1
     count = 0
 
@@ -396,9 +411,7 @@ def partition_problem_test():
     partition_brute_tests()
     partition_count_tests()
     subset_next_test()
-#
-#  Terminate.
-#
+
     print('')
     print('PARTITION_PROBLEM_TEST:')
     print('  Normal end of execution.')
@@ -520,7 +533,7 @@ def subset_next_test():
 
     print('')
     n = 5
-    t = np.zeros(n, dtype=np.bool)
+    t = np.zeros(n, dtype=bool)
     rank = -1
 
     while (True):
@@ -542,81 +555,9 @@ def subset_next_test():
             print('  (empty set)'),
 
         print('')
-#
-#  Terminate.
-#
+
     print('')
     print('SUBSET_NEXT_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
     print('  Normal end of execution.')
     return
 

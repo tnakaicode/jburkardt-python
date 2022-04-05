@@ -1,5 +1,18 @@
 #! /usr/bin/env python3
 #
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+import platform
+import time
+import sys
+import os
+from mpl_toolkits.mplot3d import Axes3D
+from sys import exit
+
+sys.path.append(os.path.join("../"))
+from base import plot2d, plotocc
+from timestamp.timestamp import timestamp
 
 
 def find_distances(l_length, l, x_length, x, y):
@@ -909,85 +922,14 @@ def place(l_length, l, x_length, x):
     return l_length, l, x_length, x
 
 
-def timestamp():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP prints the date as a timestamp.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    06 April 2013
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import time
-
-    t = time.time()
-    print(time.ctime(t))
-
-    return None
-
-
-def timestamp_test():
-
-    # *****************************************************************************80
-    #
-    # TIMESTAMP_TEST tests TIMESTAMP.
-    #
-    #  Licensing:
-    #
-    #    This code is distributed under the GNU LGPL license.
-    #
-    #  Modified:
-    #
-    #    03 December 2014
-    #
-    #  Author:
-    #
-    #    John Burkardt
-    #
-    #  Parameters:
-    #
-    #    None
-    #
-    import platform
-
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Python version: %s' % (platform.python_version()))
-    print('  TIMESTAMP prints a timestamp of the current date and time.')
-    print('')
-
-    timestamp()
-#
-#  Terminate.
-#
-    print('')
-    print('TIMESTAMP_TEST:')
-    print('  Normal end of execution.')
-    return
-
-
 if (__name__ == '__main__'):
     timestamp()
+
     find_distances_test()
-    i4_uniform_ab_test()
-    i4vec_max_last_test()
-    i4vec_print_test()
     partial_digest_recur_test01()
-#
-#  Test02 requires access to the TEST_PARTIAL_DIGEST library.
-#
-# partial_digest_recur_test02 ( )
+
+    #
+    #  Test02 requires access to the TEST_PARTIAL_DIGEST library.
+    #
+    #  partial_digest_recur_test02 ( )
     timestamp()
