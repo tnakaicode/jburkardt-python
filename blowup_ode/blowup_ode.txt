@@ -1,0 +1,22 @@
+Wed Oct  8 07:27:01 2025
+
+blowup_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test blowup_ode().
+
+  parameters:
+    t0    =  0.0
+    y0    =  1.0
+    tstop =  0.95
+
+blowup_euler():
+  Use euler() to solve blowup_ode().
+
+  Number of equal steps is %d
+ 40
+  Graphics saved as "blowup_euler.png"
+
+blowup_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:27:02 2025
