@@ -1,0 +1,79 @@
+Wed Oct  8 07:30:18 2025
+
+convergence_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test convergence().
+
+convergence_n_test01():
+  A computation has been carried out with n=2^k intervals,
+  where n = 8, 16, ..., 512, and for each n, the
+  approximation error e(n) was computed.
+  convergence_n() estimates the convergence order.
+
+  The number of computations was  7
+  The size n = 2^k was
+[  8  16  32  64 128 256 512]
+  The errors e(n):
+[1.17e-02 1.76e-04 9.94e-05 2.40e-06 2.02e-07 6.46e-09 3.07e-10]
+
+    n(k)  error(k)   eoc(k)
+
+    8  1.17e-02  nan
+   16  1.76e-04  6.05
+   32  9.94e-05  0.82
+   64  2.40e-06  5.37
+  128  2.02e-07  3.57
+  256  6.46e-09  4.97
+  512  3.07e-10  4.40
+
+  eoc mean       4.20
+
+convergence_n_test02():
+  A computation has been carried out with n=2^k intervals,
+  where n = 8, 16, ..., 512, and for each n, the
+  approximation error e(n) was computed.
+  convergence_n() estimates the convergence order.
+
+  The number of computations was  6
+  The size n = 2^k was
+[  4   8  16  32  64 128]
+  The errors e(n):
+[6.05759e-05 2.04755e-05 5.66053e-06 1.47327e-06 3.74947e-07 9.45143e-08]
+
+    n(k)  error(k)   eoc(k)
+
+    4  6.06e-05  nan
+    8  2.05e-05  1.56
+   16  5.66e-06  1.85
+   32  1.47e-06  1.94
+   64  3.75e-07  1.97
+  128  9.45e-08  1.99
+
+  eoc mean       1.86
+
+convergence_h_test01():
+  A computation has been carried out with intervals,
+  of size h(k), for k = 1 to 5.  For each h, the
+  approximation error e(k) was computed.
+  convergence_h() estimates the convergence order.
+
+  The number of computations was  5
+  The mesh sizes h(k):
+[0.25     0.125    0.0625   0.03125  0.015625]
+  The errors e(k):
+[0.069288   0.0185749  0.00479553 0.00121795 0.00030689]
+
+    h(k)  error(k)   eoc(k)
+
+  0.250000  6.93e-02  nan
+  0.125000  1.86e-02  1.90
+  0.062500  4.80e-03  1.95
+  0.031250  1.22e-03  1.98
+  0.015625  3.07e-04  1.99
+
+  eoc mean            1.95
+
+convergence_test():
+  Normal end of execution.
+Wed Oct  8 07:30:18 2025
