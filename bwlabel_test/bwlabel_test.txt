@@ -1,0 +1,110 @@
+Wed Oct  8 07:27:19 2025
+
+bwlabel_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  bwlabel() groups binary matrix data into clusters.
+
+bwlabel_2d_4_test():
+  Test bwlabel() on 2d data with 4-way connectivity.
+
+  Components using 4-way connectivity:
+
+[[1 1 0 0 0 2 0 0]
+ [1 1 1 0 2 2 0 0]
+ [1 1 1 0 2 2 0 0]
+ [0 1 1 0 0 0 3 0]
+ [0 0 1 0 0 0 3 0]
+ [1 0 1 0 0 0 3 0]
+ [1 1 1 1 0 3 3 3]
+ [1 1 0 0 0 0 0 0]]
+
+  Elements of components labeled #2:
+[[0 5]
+ [1 4]
+ [1 5]
+ [2 4]
+ [2 5]]
+
+bwlabel_2d_8_test():
+  Test bwlabel() on 2d data with 8-way connectivity.
+
+  Components using 8-way connectivity:
+
+[[1 1 0 0 0 2 0 0]
+ [1 1 1 0 2 2 0 0]
+ [1 1 1 0 2 2 0 0]
+ [0 1 1 0 0 0 2 0]
+ [0 0 1 0 0 0 2 0]
+ [1 0 1 0 0 0 2 0]
+ [1 1 1 1 0 2 2 2]
+ [1 1 0 0 0 0 0 0]]
+
+  Elements of components labeled #2:
+[[0 5]
+ [1 4]
+ [1 5]
+ [2 4]
+ [2 5]
+ [3 6]
+ [4 6]
+ [5 6]
+ [6 5]
+ [6 6]
+ [6 7]]
+
+bwlabel_3d_6_test():
+  Test bwlabel() on 3d data with 6-way connectivity.
+
+  Number of nonzero A values is  1099.0
+
+  Number of components =  6
+
+  Component  Size
+
+     0       163
+     1       210
+     2        90
+     3       222
+     4       312
+     5       102
+------  --------
+ Total      1099
+
+bwlabel_3d_18_test():
+  Test bwlabel() on 3d data with 18-way connectivity.
+
+  Number of nonzero A values is  1099.0
+
+  Number of components =  5
+
+  Component  Size
+
+     0       163
+     1       210
+     2        90
+     3       324
+     4       312
+------  --------
+ Total      1099
+
+bwlabel_3d_26_test():
+  Test bwlabel() on 3d data with 26-way connectivity.
+
+  Number of nonzero A values is  1099.0
+
+  Number of components =  5
+
+  Component  Size
+
+     0       163
+     1       210
+     2        90
+     3       324
+     4       312
+------  --------
+ Total      1099
+
+bwlabel_test():
+  Normal end of execution.
+Wed Oct  8 07:27:19 2025
