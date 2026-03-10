@@ -1,0 +1,62 @@
+Wed Oct  8 07:27:30 2025
+
+chebyshev2_exactness_test:
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test chebyshev2_exactness.
+
+chebyshev2_exactness():
+  Investigate the polynomial exactness of a Gauss-Chebyshev1
+  type 2 quadrature rule by integrating all monomials up to a given
+  degree over the [-1,+1] interval.
+
+chebyshev2_exactness: User input:
+  Quadrature rule X file = "cheby2_o4_x.txt".
+  Quadrature rule W file = "cheby2_o4_w.txt".
+  Quadrature rule R file = "cheby2_o4_r.txt".
+  Maximum degree to check = 10
+
+  Number of points  = 4
+
+  The quadrature rule to be tested is
+  a Gauss-Chebyshev type 2 rule
+  ORDER =  4
+
+  Standard rule:
+    Integral ( -1 <= x <= +1 ) f(x) * ( 1 - x^2 ) dx
+    is to be approximated by
+    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).
+
+  Weights W:
+
+[0.21707871 0.56831945 0.56831945 0.21707871]
+
+  Abscissas X:
+
+[-0.80901699 -0.30901699  0.30901699  0.80901699]
+
+  Region R:
+
+[-1.  1.]
+
+  A Gauss-Chebyshev type 2 rule would be able to exactly
+  integrate monomials up to and including 
+  degree =  7
+
+      Error    Degree
+
+        0.0000000000000001    0
+        0.0000000000000000    1
+        0.0000000000000000    2
+        0.0000000000000000    3
+        0.0000000000000003    4
+        0.0000000000000000    5
+        0.0000000000000001    6
+        0.0000000000000000    7
+        0.0714285714285713    8
+        0.0000000000000000    9
+        0.1904761904761904   10
+
+chebyshev2_exactness_test:
+  Normal end of execution.
+Wed Oct  8 07:27:30 2025

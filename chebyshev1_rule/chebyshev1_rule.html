@@ -1,0 +1,154 @@
+<html>
+
+  <head>
+    <title>
+      chebyshev1_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      chebyshev1_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>chebyshev1_rule</b>,
+      a Python code which
+      generates a specific Gauss-Chebyshev type 1 quadrature rule,
+      based on user input.
+    </p>
+
+   <p>
+      The rule is written to three files for easy use as input
+      to other programs.
+    </p>
+
+    <p>
+      The <i>Gauss Chevbyshev type 1 quadrature rule </i> is used as follows:
+      <pre>
+        Integral ( A &lt;= x &lt;= B ) f(x) / sqrt ( ( x - A ) * ( B - x ) ) dx
+      </pre>
+      is to be approximated by
+      <pre>
+        Sum ( 1 &lt;= i &lt;= order ) w(i) * f(x(i))
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>chebyshev1_rule</b> ( <i>order</i>, <i>a</i>, <i>b</i>, <i>'filename'</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>order</i> is the number of points in the quadrature rule.
+        </li>
+        <li>
+          <i>a</i> is the left endpoint;
+        </li>
+        <li>
+          <i>b</i> is the right endpoint.
+        </li>
+        <li>
+          <i>filename</i> specifies the output files:
+          <i>filename</i><b>_w.txt</b>,
+          <i>filename</i><b>_x.txt</b>, and <i>filename</i><b>_r.txt</b>,
+          containing the weights, abscissas, and interval limits.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>chebyshev1_rule</b> is available in
+      <a href = "../../cpp_src/chebyshev1_rule/chebyshev1_rule.html">a C++ version</a> and
+      <a href = "../../f_src/chebyshev1_rule/chebyshev1_rule.html">a Fortran90 version</a> and
+      <a href = "../../m_src/chebyshev1_rule/chebyshev1_rule.html">a MATLAB version</a> and
+      <a href = "../../octave_src/chebyshev1_rule/chebyshev1_rule.html">an Octave version</a> and
+      <a href = "../../py_src/chebyshev1_rule/chebyshev1_rule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_rule/python_rule.html">
+      python_rule</a>,
+      a Python code which
+      computes a quadrature rule which
+      estimates the integral of a function f(x), which might be defined over 
+      a one dimensional region (a line) or more complex shapes such as 
+      a circle, a triangle, a quadrilateral, a polygon, or a higher dimensional
+      region, and which might include an associated weight function w(x).
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "chebyshev1_rule.py">chebyshev1_rule.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "chebyshev1_rule.sh">chebyshev1_rule.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "chebyshev1_rule.txt">chebyshev1_rule.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cheby1_o5_r.txt">cheby1_o5_r.txt</a>,
+          the region file.
+        </li>
+        <li>
+          <a href = "cheby1_o5_w.txt">cheby1_o5_w.txt</a>,
+          the weight file.
+        </li>
+        <li>
+          <a href = "cheby1_o5_x.txt">cheby1_o5_x.txt</a>,
+          the abscissa file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 17 May 2023.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

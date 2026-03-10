@@ -1,0 +1,44 @@
+Wed Oct  8 07:27:33 2025
+
+chebyshev_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test chebyshev_matrix().
+
+chebyshev_grid_print():
+  Print the Chebyshev grid points.
+
+  The Chebyshev grid points, n =  5
+[ 1.          0.80901699  0.30901699 -0.30901699 -0.80901699 -1.        ]
+
+chebyshev_matrix_print():
+  Print a Chebyshev differentiation matrix.
+size of n =  5
+
+  Chebyshev differentiation matrix for n =  5
+[[  8.5        -10.47213595   2.89442719  -1.52786405   1.10557281
+   -0.5       ]
+ [  2.61803399  -1.17082039  -2.           0.89442719  -0.61803399
+    0.2763932 ]
+ [ -0.7236068    2.          -0.17082039  -1.61803399   0.89442719
+   -0.38196601]
+ [  0.38196601  -0.89442719   1.61803399   0.17082039  -2.
+    0.7236068 ]
+ [ -0.2763932    0.61803399  -0.89442719   2.           1.17082039
+   -2.61803399]
+ [  0.5         -1.10557281   1.52786405  -2.89442719  10.47213595
+   -8.5       ]]
+
+chebyshev_differentiation_test():
+  Use the  Chebyshev differentiation matrix to estimate
+  the derivative of a smooth function.
+size of n =  10
+chebyshev_differentiation_n10.png
+  Graphics saved as "chebyshev_differentiation_n10.png"
+size of n =  20
+chebyshev_differentiation_n20.png
+  Graphics saved as "chebyshev_differentiation_n20.png"
+
+chebyshev_matrix_test():
+  Normal end of execution.
+Wed Oct  8 07:27:34 2025

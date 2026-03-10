@@ -1,0 +1,245 @@
+<html>
+
+  <head>
+    <title>
+      chebyshev_polynomial
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      chebyshev_polynomial
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>chebyshev_polynomial</b>,
+      a Python code which
+      considers the Chebyshev polynomials T(i,x), U(i,x), V(i,x) and W(i,x).
+    </p>
+
+    <p>
+      Functions are provided to evaluate the polynomials, determine their zeros, 
+      produce their polynomial coefficients, produce related quadrature rules,
+      project other functions onto these polynomial bases, and integrate
+      double and triple products of the polynomials.
+    </p>
+
+    <p>
+      The Chebyshev polynomial T(n,x), or Chebyshev polynomial of the first kind,
+      may be defined, for 0 <= n, and -1 <= x <= +1 by:
+      <pre>
+        cos ( t ) = x
+        T(n,x) = cos ( n * t )
+      </pre>
+      For any value of x, T(n,x) may be evaluated by a three
+      term recurrence:
+      <pre>
+        T(0,x) = 1
+        T(1,x) = x
+        T(n+1,x) = 2x T(n,x) - T(n-1,x)
+      </pre>
+    </p>
+
+    <p>
+      The Chebyshev polynomial U(n,x), or Chebyshev polynomial of the second kind,
+      may be defined, for 0 <= n, and -1 <= x <= +1 by:
+      <pre>
+        cos ( t ) = x
+        U(n,x) = sin ( ( n + 1 ) t ) / sin ( t )
+      </pre>
+      For any value of x, U(n,x) may be evaluated by a three
+      term recurrence:
+      <pre>
+        U(0,x) = 1
+        U(1,x) = 2x
+        U(n+1,x) = 2x U(n,x) - U(n-1,x)
+      </pre>
+    </p>
+
+    <p>
+      The Chebyshev polynomial V(n,x), or Chebyshev polynomial of the third kind,
+      may be defined, for 0 <= n, and -1 <= x <= +1 by:
+      <pre>
+        cos ( t ) = x
+        V(n,x) = cos ( (2n+1)*t/2) / cos ( t/2)
+      </pre>
+      For any value of x, V(n,x) may be evaluated by a three
+      term recurrence:
+      <pre>
+        V(0,x) = 1
+        V(1,x) = 2x-1
+        V(n+1,x) = 2x V(n,x) - V(n-1,x)
+      </pre>
+    </p>
+
+    <p>
+      The Chebyshev polynomial W(n,x), or Chebyshev polynomial of the fourth kind,
+      may be defined, for 0 <= n, and -1 <= x <= +1 by:
+      <pre>
+        cos ( t ) = x
+        W(n,x) = sin((2*n+1)*t/2)/sin(t/2)
+      </pre>
+      For any value of x, W(n,x) may be evaluated by a three
+      term recurrence:
+      <pre>
+        W(0,x) = 1
+        W(1,x) = 2x+1
+        W(n+1,x) = 2x W(n,x) - W(n-1,x)
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>chebyshev_polynomial</b> is available in
+      <a href = "../../c_src/chebyshev_polynomial/chebyshev_polynomial.html">a C version</a> and
+      <a href = "../../cpp_src/chebyshev_polynomial/chebyshev_polynomial.html">a C++ version</a> and
+      <a href = "../../f_src/chebyshev_polynomial/chebyshev_polynomial.html">a Fortran90 version</a> and
+      <a href = "../../m_src/chebyshev_polynomial/chebyshev_polynomial.html">a MATLAB version</a> and
+      <a href = "../../octave_src/chebyshev_polynomial/chebyshev_polynomial.html">an Octave version</a> and
+      <a href = "../../py_src/chebyshev_polynomial/chebyshev_polynomial.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/chebyshev/chebyshev.html">
+      chebyshev</a>,
+      a Python code which
+      computes the Chebyshev interpolant or approximant to a given function
+      over an interval.
+    </p>
+
+    <p>
+      <a href = "../../py_src/clausen/clausen.html">
+      clausen</a>,
+      a Python code which
+      evaluates a Chebyshev interpolant to the Clausen function cl2(x).
+    </p>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      polpak</a>,
+      a Python code which
+      evaluates a variety of mathematical functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polynomial_conversion/polynomial_conversion.html">
+      polynomial_conversion</a>,
+      a Python code which
+      converts representations of a polynomial between monomial, Bernstein,
+      Chebyshev, Hermite, Lagrange, Laguerre and other forms.
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_polynomial/python_polynomial.html">
+      python_polynomial</a>,
+      a Python code which
+      analyzes a variety of polynomial families, returning the polynomial
+      values, coefficients, derivatives, integrals, roots, or other information.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_values/test_values.html">
+      test_values</a>,
+      a Python code which
+      supplies test values of various mathematical functions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Theodore Chihara,<br>
+          An Introduction to Orthogonal Polynomials,<br>
+          Gordon and Breach, 1978,<br>
+          ISBN: 0677041500,<br>
+          LC: QA404.5 C44.
+        </li>
+        <li>
+          Walter Gautschi,<br>
+          Orthogonal Polynomials: Computation and Approximation,<br>
+          Oxford, 2004,<br>
+          ISBN: 0-19-850672-4,<br>
+          LC: QA404.5 G3555.
+        </li>
+        <li>
+          John Mason, David Handscomb,<br>
+          Chebyshev Polynomials,<br>
+          CRC Press, 2002,<br>
+          ISBN: 0-8493-035509,<br>
+          LC: QA404.5.M37.
+        </li>
+        <li>
+          Frank Olver, Daniel Lozier, Ronald Boisvert, Charles Clark,<br>
+          NIST Handbook of Mathematical Functions,<br>
+          Cambridge University Press, 2010,<br>
+          ISBN: 978-0521192255,<br>
+          LC: QA331.N57.
+        </li>
+        <li>
+          Gabor Szego,<br>
+          Orthogonal Polynomials,<br>
+          American Mathematical Society, 1992,<br>
+          ISBN: 0821810235,<br>
+          LC: QA3.A5.v23.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "chebyshev_polynomial.py">
+          chebyshev_polynomial.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "chebyshev_polynomial.sh">
+          chebyshev_polynomial.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "chebyshev_polynomial.txt">
+          chebyshev_polynomial.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 21 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

@@ -1,0 +1,193 @@
+<html>
+
+  <head>
+    <title>
+      chebyshev
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      chebyshev
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>chebyshev</b>,
+      a Python code which
+      constructs the Chebyshev interpolant to a function.
+    </p>
+
+    <p>
+      Note that the user is not free to choose the interpolation points.
+      Instead, the function f(x) will be evaluated at points chosen by the
+      algorithm.
+      In the standard case, in which the interpolation interval is [-1,+1], 
+      these points will be the zeros of the Chebyshev polynomial of order N.
+      However, the algorithm can also be applied to an interval of the form [a,b],
+      in which case the evaluation points are linearly mapped from [-1,+1].
+    </p>
+
+    <p>
+      The resulting interpolant is defined by a set of N coefficients c(),
+      and has the form:
+      <pre>
+        C(f)(x) = sum ( 1 <= i <= n ) c(i) T(i-1,x) - 0.5 * c(1)
+      </pre>
+      where T(i-1,x) is the (i-1)-th Chebyshev polynomial.
+    </p>
+
+    <p>
+      Within the interval [-1,+1], or the generalized interval [a,b], the
+      interpolant actually remains bounded by the sum of the absolute values
+      of the coefficients c().  It is therefore common to use Chebyshev
+      interpolants as approximating functions over a given interval.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>chebyshev</b> is available in
+      <a href = "../../c_src/chebyshev/chebyshev.html">a C version</a> and
+      <a href = "../../cpp_src/chebyshev/chebyshev.html">a C++ version</a> and
+      <a href = "../../f_src/chebyshev/chebyshev.html">a Fortran90 version</a> and
+      <a href = "../../m_src/chebyshev/chebyshev.html">a MATLAB version</a> and
+      <a href = "../../octave_src/chebyshev/chebyshev.html">an Octave version</a> and
+      <a href = "../../py_src/chebyshev/chebyshev.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/bernstein_polynomial/bernstein_polynomial.html">
+      bernstein_polynomial</a>,
+      a Python code which
+      evaluates the Bernstein polynomials, 
+      useful for uniform approximation of functions;
+    </p>
+
+    <p>
+      <a href = "../../py_src/chebyshev_polynomial/chebyshev_polynomial.html">
+      chebyshev_polynomial</a>,
+      a Python code which
+      evaluates the Chebyshev polynomial and associated functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/clausen/clausen.html">
+      clausen</a>,
+      a Python code which
+      evaluates a Chebyshev approximant to the Clausen function Cl2(x).
+    </p>
+
+    <p>
+      <a href = "../../py_src/lagrange_interp_1d/lagrange_interp_1d.html">
+      lagrange_interp_1d</a>,
+      a Python code which
+      defines and evaluates the Lagrange polynomial p(x) 
+      which interpolates a set of data, so that p(x(i)) = y(i).
+    </p>
+
+    <p>
+      <a href = "../../py_src/rbf_interp_1d/rbf_interp_1d.html">
+      rbf_interp_1d</a>,
+      a Python code which
+      defines and evaluates radial basis function (RBF) interpolants to 1D data.
+    </p>
+
+    <p>
+      <a href = "../../py_src/shepard_interp_1d/shepard_interp_1d.html">
+      shepard_interp_1d</a>,
+      a Python code which
+      defines and evaluates Shepard interpolants to 1D data,
+      which are based on inverse distance weighting.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp_1d/test_interp_1d.html">
+      test_interp_1d</a>,
+      a Python code which
+      defines test problems for interpolation of data y(x),
+      depending on a 1D argument.
+    </p>
+
+    <p>
+      <a href = "../../py_src/vandermonde_interp_1d/vandermonde_interp_1d.html">
+      vandermonde_interp_1d</a>,
+      a Python code which
+      finds a polynomial interpolant to a function of 1D data
+      by setting up and solving a linear system for the polynomial coefficients,
+      involving the Vandermonde matrix.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Roger Broucke,<br>
+          Algorithm 446:
+          Ten Subroutines for the Manipulation of Chebyshev Series,<br>
+          Communications of the ACM,<br>
+          Volume 16, Number 4, April 1973, pages 254-256.
+        </li>
+        <li>
+          Philip Davis,<br>
+          Interpolation and Approximation,<br>
+          Dover, 1975,<br>
+          ISBN: 0-486-62495-1,<br>
+          LC: QA221.D33
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "chebyshev.py">chebyshev.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "chebyshev.sh">chebyshev.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "chebyshev.txt">chebyshev.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 10 June 2022
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>
