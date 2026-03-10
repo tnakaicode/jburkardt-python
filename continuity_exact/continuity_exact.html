@@ -1,0 +1,154 @@
+<html>
+
+  <head>
+    <title>
+      continuity_exact
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      continuity_exact
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>continuity_exact</b>,
+      a Python code which
+      returns a 2D velocity vector field (u,v)(x,y) which is an exact
+      solution of the partial differential equation (PDE) sometimes
+      called the continuity equation of fluid mechanics, which 
+      has the form ux + vy = 0.
+    </p>
+
+    <p>
+      The continuous velocity field <b>(U,V)(X,Y)</b> that is discretely
+      sampled here satisfies the homogeneous continuity equation, that is,
+      it has zero divergence.  In other words:
+      <pre><b>
+        dU/dX + dV/dY = 0.
+      </b></pre>
+      This is by construction, since we have
+      <pre><b>
+        U(X,Y) =  10 * d/dY ( PHI(X) * PHI(Y) )
+        V(X,Y) = -10 * d/dX ( PHI(X) * PHI(Y) )
+      </b></pre>
+      which guarantees zero divergence.
+     </p>
+
+    <p>
+      The underlying function PHI is defined by
+      <pre><b>
+        PHI(Z) = ( 1 - cos ( C * pi * Z ) ) * ( 1 - Z )^2
+      </b></pre>
+      where C is a parameter.
+    </p>
+
+    <p>
+      The velocity data satisifes the (continuous) continuity equation;
+      this in <b>no way</b> implies that it satisfies the momentum equations
+      associated with Stokes or Navier-Stokes flow!  Moreover, a flow solution
+      for those equations would normally also require specifying a value
+      for the scalar pressure field <b>P(X,Y)</b>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>continuity_exact</b> is available in
+      <a href = "../../c_src/continuity_exact/continuity_exact.html">a C version</a> and
+      <a href = "../../cpp_src/continuity_exact/continuity_exact.html">a C++ version</a> and
+      <a href = "../../f77_src/continuity_exact/continuity_exact.html">a Fortran77 version</a> and
+      <a href = "../../f_src/continuity_exact/continuity_exact.html">a Fortran90 version</a> and
+      <a href = "../../m_src/continuity_exact/continuity_exact.html">a MATLAB version</a> and
+      <a href = "../../octave_src/continuity_exact/continuity_exact.html">an Octave version</a> and
+      <a href = "../../py_src/continuity_exact/continuity_exact.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_exact/python_exact.html">
+      python_exact</a>,
+      a Python code which 
+      evaluates exact solutions to a few selected examples of
+      ordinary differential equations (ODE) and partial differential
+      equations (PDE).
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "continuity_exact.py">continuity_exact.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "continuity_exact.sh">continuity_exact.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "continuity_exact.txt">continuity_exact.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "continuity_exact_data.txt">continuity_exact_data.txt</a>,
+          data for GNUPLOT.
+        </li>
+        <li>
+          <a href = "continuity_exact_commands.txt">continuity_exact_commands.txt</a>,
+          commands for GNUPLOT.
+        </li>
+        <li>
+          <a href = "continuity_exact.png">
+          continuity_exact.png</a>,
+          the resulting plot from GNUPLOT.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "continuity_exact_matplotlib.png">
+          continuity_exact_matplotlib.png</a>,
+          the MATPLOTLIB plot.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 February 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

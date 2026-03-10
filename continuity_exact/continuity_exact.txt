@@ -1,0 +1,58 @@
+Wed Oct  8 07:30:17 2025
+
+continuity_exact_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test continuity_exact().
+
+grid_2d_test:
+  grid_2d() generates a regular grid.
+
+   0   0   0       10.000000        5.000000
+   1   1   0       12.500000        5.000000
+   2   2   0       15.000000        5.000000
+   3   3   0       17.500000        5.000000
+   4   4   0       20.000000        5.000000
+   5   0   1       10.000000        5.500000
+   6   1   1       12.500000        5.500000
+   7   2   1       15.000000        5.500000
+   8   3   1       17.500000        5.500000
+   9   4   1       20.000000        5.500000
+  10   0   2       10.000000        6.000000
+  11   1   2       12.500000        6.000000
+  12   2   2       15.000000        6.000000
+  13   3   2       17.500000        6.000000
+  14   4   2       20.000000        6.000000
+
+uv_spiral_test():
+  Sample a spiral velocity field and estimate
+  the range of the solution values.
+
+           Minimum       Maximum
+
+  U:        -1.85063          2.2331
+  V:        -2.22009          1.8436
+
+resid_spiral_test():
+  Sample a spiral velocity field and estimate the
+  range of residuals in the continuity equation.
+
+           Minimum       Maximum
+
+  Pr:               0               0
+
+spiral_gnuplot_test:
+  Generate a spiral velocity field on a regular grid.
+  Store in GNUPLOT data and command files.
+
+  Data written to "continuity_exact_data.txt".
+  Commands written to "continuity_exact_commands.txt".
+
+spiral_matplotlib_test:
+  Python version: 3.10.12
+  Generate a spiral velocity field on a regular grid.
+  Display it using matplotlib
+
+continuity_exact_test():
+  Normal end of execution.
+Wed Oct  8 07:30:18 2025
