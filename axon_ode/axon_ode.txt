@@ -1,0 +1,41 @@
+Wed Oct  8 07:26:14 2025
+
+axon_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve axon_ode().
+
+  parameters:
+    C =       1.0
+    E_K =     -74.7
+    E_Na =    54.2
+    E_rest =  -68.0
+    G_K =     12.0
+    G_Na =    30.0
+    t0 =      0.0
+    V(0) =    0.0
+    N(0) =    0.3176769140606974
+    M(0) =    0.05293248525724958
+    H(0) =    0.5961207535084603
+    tstop =   10.0
+
+axon_euler():
+  Solve axon_ode() using euler()
+
+  Number of fixed time steps =  1000
+  Graphics saved as "axon_euler_v.png"
+  Graphics saved as "axon_euler_n.png"
+  Graphics saved as "axon_euler_m.png"
+  Graphics saved as "axon_euler_h.png"
+
+axon_solve_ivp():
+  Solve axon_ode() using solve_ivp()
+
+  Graphics saved as "axon_solve_ivp_v.png"
+  Graphics saved as "axon_solve_ivp_n.png"
+  Graphics saved as "axon_solve_ivp_m.png"
+  Graphics saved as "axon_solve_ivp_h.png"
+
+axon_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:26:16 2025
