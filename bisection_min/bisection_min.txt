@@ -1,0 +1,30 @@
+Fri Feb 27 20:52:50 2026
+
+bisection_min_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  bisection_min() seeks a minimizer
+  of a function f(x) in the interval [a,b],
+  assuming f(x) is unimodal over [a,b],
+
+  f = humps_fun(x)
+  f( 0.3 ) = 96.5
+  f( 0.9 ) = 21.7027027027027
+  x_tol = 1e-06
+
+   20 iterations were taken
+  f( 0.637008762359619 ) = 11.252754125711185
+  f( 0.6370093345642089 ) = 11.252754125733368
+
+  f = test_fun(x)
+  f( -2.0 ) =  31.136049906158565
+  f( 1.0 ) =  9.414709848078965
+  x_tol = 1e-06
+
+   22 iterations were taken
+  f( -1.2741777896881104 ) =  -10.088219679433445
+  f( -1.274177074432373 ) =  -10.088219679425904
+
+bisection_min_test():
+  Normal end of execution.
+Fri Feb 27 20:52:50 2026

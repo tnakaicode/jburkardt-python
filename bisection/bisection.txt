@@ -1,0 +1,31 @@
+Wed Oct  8 07:26:55 2025
+
+bisection_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test bisection()
+ 
+  Function = "x.^2 - 2*x - 15"
+  a =  5.0 , f(a) =  0.0
+  b =  5.0 , f(b) =  0.0
+  Interval tolerance =  1.7763568394002505e-14
+  Number of bisections =  3
+  x =  5.0  , f(x) =  0.0
+ 
+  Function = "cos(x) - x"
+  a =  0.7390851332151591 , f(a) =  2.55351295663786e-15
+  b =  0.7390851332151609 , f(b) =  -4.440892098500626e-16
+  Interval tolerance =  2.220446049250313e-15
+  Number of bisections =  49
+  x =  0.73908513321516  , f(x) =  1.1102230246251565e-15
+ 
+  Function = "Kepler function"
+  a =  3.790834555474767 , f(a) =  3.3306690738754696e-14
+  b =  3.7908345554747847 , f(b) =  -1.2878587085651816e-14
+  Interval tolerance =  2.220446049250313e-14
+  Number of bisections =  49
+  x =  3.7908345554747758  , f(x) =  1.021405182655144e-14
+
+bisection_test():
+  Normal end of execution.
+Wed Oct  8 07:26:55 2025
