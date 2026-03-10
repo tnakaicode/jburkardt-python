@@ -1,0 +1,75 @@
+Wed Oct  8 07:26:44 2025
+
+bernstein_approximation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test bernstein_approximation().
+
+bernstein_poly_ab_approx_test():
+  bernstein_poly_ab_approx() evaluates the Bernstein polynomial
+  approximant to a function F(X).
+  As N, the polynomial degree increases, the norm of the error
+  should decrease.
+
+  Approximate y=sin(x) over the interval [1,3]
+
+   N         |F-B| / |F|
+
+   0        0.257153
+   1        0.357447
+   2        0.175581
+   3        0.117312
+   4       0.0882046
+   5       0.0707012
+   6        0.059005
+   7       0.0506338
+   8       0.0443449
+   9       0.0394468
+  10       0.0355237
+
+  Approximate y=heaviside(x) over the interval [-1,+1]
+
+   N         |F-B| / |F|
+
+   1        0.497006
+   3        0.372257
+   5        0.309883
+   7        0.270899
+   9         0.24361
+  11        0.223143
+  13        0.207062
+  15        0.193997
+  17        0.183109
+  19        0.173854
+
+bernstein_poly_ab_approx_display():
+  bernstein_poly_ab_approx() evaluates the Bernstein polynomial
+  approximant to a function F(X).
+
+  This program displays the sequence of approximants
+  to y=sin(x) over the interval [1,3]
+  Graphics saved as "bernstein_sine_00"
+  Graphics saved as "bernstein_sine_01"
+  Graphics saved as "bernstein_sine_02"
+  Graphics saved as "bernstein_sine_03"
+  Graphics saved as "bernstein_sine_04"
+  Graphics saved as "bernstein_sine_05"
+  Graphics saved as "bernstein_sine_06"
+  Graphics saved as "bernstein_sine_07"
+  Graphics saved as "bernstein_sine_08"
+  Graphics saved as "bernstein_sine_09"
+  Graphics saved as "bernstein_sine_10"
+  Graphics saved as "bernstein_heaviside_01"
+  Graphics saved as "bernstein_heaviside_03"
+  Graphics saved as "bernstein_heaviside_05"
+  Graphics saved as "bernstein_heaviside_07"
+  Graphics saved as "bernstein_heaviside_09"
+  Graphics saved as "bernstein_heaviside_11"
+  Graphics saved as "bernstein_heaviside_13"
+  Graphics saved as "bernstein_heaviside_15"
+  Graphics saved as "bernstein_heaviside_17"
+  Graphics saved as "bernstein_heaviside_19"
+
+bernstein_approximation_test():
+  Normal end of execution.
+Wed Oct  8 07:26:47 2025
