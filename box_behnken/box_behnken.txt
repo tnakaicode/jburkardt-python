@@ -1,0 +1,47 @@
+Mon Feb  2 20:49:18 2026
+
+box_behnken_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test box_behnken().
+
+box_behnken_test01():
+  box_behnken() computes a Box-Behnken dataset.
+
+  The ranges:
+array([[ 0., 10.,  5.],
+       [ 1., 11., 15.]])
+
+  For dimension DIM_NUM =  3
+ the Box-Behnken design is of size  13
+
+  The Box-Behnken design:
+array([[ 0.5, 10.5, 10. ],
+       [ 0.5, 10. ,  5. ],
+       [ 0.5, 10. , 15. ],
+       [ 0.5, 11. ,  5. ],
+       [ 0.5, 11. , 15. ],
+       [ 0. , 10.5,  5. ],
+       [ 0. , 10.5, 15. ],
+       [ 1. , 10.5,  5. ],
+       [ 1. , 10.5, 15. ],
+       [ 0. , 10. , 10. ],
+       [ 0. , 11. , 10. ],
+       [ 1. , 10. , 10. ],
+       [ 1. , 11. , 10. ]])
+
+box_behnken_test02()
+  Write a Box-Behnken dataset to a file.
+
+  The ranges:
+array([[0., 0., 0., 0.],
+       [1., 1., 1., 1.]])
+
+  For dimension DIM_NUM =  4
+  the Box-Behnken design is of size  33
+
+  The data was written to "box_behnken_04_33.txt".
+
+box_behnken_test():
+  Normal end of execution.
+Mon Feb  2 20:49:18 2026

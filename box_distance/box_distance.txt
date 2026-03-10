@@ -1,0 +1,35 @@
+Wed Oct  8 07:27:12 2025
+
+box_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test box_distance().
+
+  For a = b = c, box_distance_mean() should be 0.661707182...
+  Computed value was 0.6617071822671758
+
+  Using N =  10000  sample points,
+  Short side a =            1.0
+  Medium side b =            1.0
+  Long side c =              1.0
+  Estimated mean distance =  0.6594323702854704
+  Exact mean distance     =  0.6617071822671758
+  Estimated variance      =  0.06222309587543849
+  Estimated second moment =  0.4970741468557524
+  Exact second moment     =  0.5
+
+  Using N =  10000  sample points,
+  Short side a =            1.0
+  Medium side b =            3.0
+  Long side c =              5.0
+  Estimated mean distance =  2.1739406057185997
+  Exact mean distance     =  2.1717733597598645
+  Estimated variance      =  1.1095162887537036
+  Estimated second moment =  5.835534045945858
+  Exact second moment     =  5.833333333333333
+
+  Graphics saved as "box_distance_histogram.png"
+
+box_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:27:13 2025
