@@ -1,0 +1,5 @@
+
+integral_between():
+  Plot a curve, and fill some of the area between it
+  and the x-axis.
+  Graphics saved as "integral_between.png"

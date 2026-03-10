@@ -1,0 +1,10 @@
+Sat Aug  1 09:40:19 2020
+
+basketball_barh:
+  Python version: 3.6.9
+  Create a horizontal bar plot of basketball sponsorships.
+  Graphics saved as "basketball_barh.png"
+
+basketball_barh:
+  Normal end of execution.
+Sat Aug  1 09:40:19 2020

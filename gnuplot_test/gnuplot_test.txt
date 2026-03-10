@@ -1,0 +1,35 @@
+Thu Dec  4 20:31:29 2025
+
+gnuplot_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test gnuplot().
+
+damped_sine():
+  Demonstrating how a correlation function can be
+  evaluated and plotted using gnuplot().
+  Created data file "damped_sine_data.txt"
+  Created command file "damped_sine_commands.txt"
+
+mark_points():
+  Plot a damped sine function over a range.
+  Mark the first data point green, and the last one red..
+  Created data file "mark_points_data.txt"
+  Created data file "mark_points_start_data.txt"
+  Created data file "mark_points_end_data.txt"
+  Created command file "mark_points_commands.txt"
+
+orbital_fill_contour():
+  Color contour plot of orbital data using gnuplot().
+  Created command file "orbital_fill_contour_commands.txt"
+
+string_simulation():
+  Simulate the behavior of a vibrating string.
+  ALPHA = ( C * dT / dX )^2 =  1.0
+
+  Plot data written to the file "string_simulation_data.txt".
+  gnuplot commands written to the "string_simulation_commands.txt".
+
+gnuplot_test():
+  Normal end of execution.
+Thu Dec  4 20:31:30 2025

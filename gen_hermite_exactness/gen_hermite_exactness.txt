@@ -1,0 +1,136 @@
+Wed Oct  8 07:48:34 2025
+
+gen_hermite_exactness_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test gen_hermite_exactness().
+
+gen_hermite_exactness():
+  Investigate the polynomial exactness of a generalized Gauss-Hermite
+  quadrature rule by integrating exponentially weighted
+  monomials up to a given degree over the (-oo,+oo) interval.
+
+User input:
+  Quadrature rule X file = "gen_herm_o8_a1.0_x.txt".
+  Quadrature rule W file = "gen_herm_o8_a1.0_w.txt".
+  Quadrature rule R file = "gen_herm_o8_a1.0_r.txt".
+  Maximum degree to check =  18
+  Weighting function exponent ALPHA =  1.0
+  OPTION = 0, integrate |x|^alpha*exp(-x*x)*f(x).
+
+  The quadrature rule to be tested is
+  a generalized Gauss-Hermite rule
+  ORDER =  8
+  ALPHA =  1.0
+
+  OPTION = 0, standard rule:
+    Integral ( -oo < x < +oo ) |x|^alpha exp(-x*x) f(x) dx
+    is to be approximated by
+    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).
+
+  Weights W:
+
+[2.69647353e-04 1.94439543e-02 1.78709346e-01 3.01577052e-01
+ 3.01577052e-01 1.78709346e-01 1.94439543e-02 2.69647353e-04]
+
+  Abscissas X:
+
+[-3.06513799 -2.12993434 -1.32127253 -0.56793282  0.56793282  1.32127253
+  2.12993434  3.06513799]
+
+  Region R:
+
+[-1.e+30  1.e+30]
+
+  A generalized Gauss-Hermite rule would be able to exactly
+  integrate monomials up to and including 
+  degree =  15
+
+  Degree    Error
+
+   0        0.0000000000000007
+   1        0.0000000000000001
+   2        0.0000000000000009
+   3        0.0000000000000000
+   4        0.0000000000000007
+   5        0.0000000000000001
+   6        0.0000000000000003
+   7        0.0000000000000003
+   8        0.0000000000000003
+   9        0.0000000000000044
+  10        0.0000000000000009
+  11        0.0000000000000071
+  12        0.0000000000000014
+  13        0.0000000000000000
+  14        0.0000000000000018
+  15        0.0000000000000000
+  16        0.0142857142857165
+  17        0.0000000000000000
+  18        0.0650793650793677
+
+gen_hermite_exactness():
+  Investigate the polynomial exactness of a generalized Gauss-Hermite
+  quadrature rule by integrating exponentially weighted
+  monomials up to a given degree over the (-oo,+oo) interval.
+
+User input:
+  Quadrature rule X file = "gen_herm_o8_a1.0_modified_x.txt".
+  Quadrature rule W file = "gen_herm_o8_a1.0_modified_w.txt".
+  Quadrature rule R file = "gen_herm_o8_a1.0_modified_r.txt".
+  Maximum degree to check =  18
+  Weighting function exponent ALPHA =  1.0
+  OPTION = 1, integrate                     f(x).
+
+  The quadrature rule to be tested is
+  a generalized Gauss-Hermite rule
+  ORDER =  8
+  ALPHA =  1.0
+
+  OPTION = 1, modified rule:
+    Integral ( -oo < x < +oo ) f(x) dx
+    is to be approximated by
+    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).
+
+  Weights W:
+
+[1.0582142  0.85240804 0.7750492  0.73313171 0.73313171 0.7750492
+ 0.85240804 1.0582142 ]
+
+  Abscissas X:
+
+[-3.06513799 -2.12993434 -1.32127253 -0.56793282  0.56793282  1.32127253
+  2.12993434  3.06513799]
+
+  Region R:
+
+[-1.e+30  1.e+30]
+
+  A generalized Gauss-Hermite rule would be able to exactly
+  integrate monomials up to and including 
+  degree =  15
+
+  Degree    Error
+
+   0        0.0000000000000004
+   1        0.0000000000000000
+   2        0.0000000000000004
+   3        0.0000000000000000
+   4        0.0000000000000007
+   5        0.0000000000000001
+   6        0.0000000000000010
+   7        0.0000000000000003
+   8        0.0000000000000010
+   9        0.0000000000000018
+  10        0.0000000000000009
+  11        0.0000000000000071
+  12        0.0000000000000011
+  13        0.0000000000000000
+  14        0.0000000000000011
+  15        0.0000000000000000
+  16        0.0142857142857132
+  17        0.0000000000000000
+  18        0.0650793650793643
+
+gen_hermite_exactness_test():
+  Normal end of execution.
+Wed Oct  8 07:48:35 2025

@@ -1,0 +1,11 @@
+Sat Aug  1 20:45:31 2020
+
+nile_plot:
+  Python version: 3.6.9
+  Make a line plot of yearly Nile flood levels.
+
+  Graphics saved as "nile_plot.png"
+
+nile_plot
+  Normal end of execution.
+Sat Aug  1 20:45:32 2020

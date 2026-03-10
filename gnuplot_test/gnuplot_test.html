@@ -1,0 +1,172 @@
+<html>
+
+  <head>
+    <title>
+      gnuplot_test
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      gnuplot_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>gnuplot_test</b>,
+      a Python code which
+      call gnuplot(), which
+      reads, converts, and displays graphics information.
+    </p>
+
+    <p>
+      Ordinarily, the code is used interactively; that is, the user
+      invokes the program, and then describes the plot to be created.
+      The data for the plot is created either by a formula, or by
+      reference to some data file created earlier.  
+    </p>
+
+    <p>
+      It is often extremely important to be able to create graphical
+      images of the results of an executable program.  If the user is
+      familiar with GNUPLOT, then the program can be modified to create
+      a suitable data file, and, once the program has completed,
+      the user can run GNUPLOT and use that data file to create a graph.
+    </p>
+
+    <p>
+      However, if the program is going to create the data file, it can
+      just as easily create a file containing the appropriate commands
+      to GNUPLOT that will create the desired image.  In this way, 
+      the user can avoid having to recall the correct commands in the
+      correct order to create the plot.
+    </p>
+
+    <p>
+      Thus, the program might create two files, called, perhaps
+      <i>data.txt</i> and <i>commands.txt</i>.  The command file would
+      contain GNUPLOT commands, including one that refers to the data file
+      itself.  To create the graphics image, the user would simply type
+      <pre>
+        gnuplot &lt; commands.txt
+      </pre>
+    </p>
+
+    <p>
+      This directory includes some sample programs which carry out 
+      numerical calculations, creating data and command files that
+      are used in exactly this way.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>gnuplot_test</b> is available in
+      <a href = "../../examples/gnuplot/gnuplot.html">a non-language specific version</a> and
+      <a href = "../../c_src/gnuplot_test/gnuplot_test.html">a C version</a> and
+      <a href = "../../cpp_src/gnuplot_test/gnuplot_test.html">a C++ version</a> and
+      <a href = "../../f77_src/gnuplot_test/gnuplot_test.html">a Fortran77 version</a> and
+      <a href = "../../f_src/gnuplot_test/gnuplot_test.html">a Fortran90 version</a> and
+      <a href = "../../m_src/gnuplot_test/gnuplot_test.html">a MATLAB version</a> and
+      <a href = "../../octave_src/gnuplot_test/gnuplot_test.html">an Octave version</a> and
+      <a href = "../../py_src/gnuplot_test/gnuplot_test.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Philipp Janert,<br>
+          Gnuplot in Action: Understanding Data with Graphs,<br>
+          Manning, 2010,<br>
+          ISBN13: 978-1-933988-39-8,<br>
+          LC: QA276.4.J37.
+        </li>
+        <li>
+          Thomas Williams, Colin Kelley,<br>
+          gnuplot 4.4, An Interactive Plotting Program,<br>
+          The Free Software Foundation, 2010.
+        </li>
+        <li>
+          <a href = "https://www.gnuplot.info/">The GNUPLOT Website</a>.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gnuplot_test.py">gnuplot_test.py</a>, 
+          calls all the tests;
+        </li>
+        <li>
+          <a href = "gnuplot_test.sh">gnuplot_test.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "gnuplot_test.txt">gnuplot_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "damped_sine.png">damped_sine.png</a>,
+          an image of the damped sine data.
+        </li>
+        <li>
+          <a href = "mark_points.png">mark_points.png</a>,
+          an image of the damped sine data with the first data point 
+          marked by a green circle, the last one by a red circle.
+        </li>
+        <li>
+          <a href = "orbital_gnuplot_data.txt">orbital_gnuplot_data.txt</a>, 
+          a data table reformatted for use by gnuplot().
+        </li>
+        <li>
+          <a href = "orbital_fill_contour.png">orbital_fill_contour.png</a>,
+          an image of the orbital data.
+        </li>
+        <li>
+          <a href = "string_simulation.png">string_simulation.png</a>,
+          an image of the string simulation data.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 04 December 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

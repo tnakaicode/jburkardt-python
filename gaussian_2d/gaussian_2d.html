@@ -1,0 +1,107 @@
+<html>
+
+  <head>
+    <title>
+      gaussian_2d
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      gaussian_2d
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>gaussian_2d</b>,
+      a Python code which
+      evaluates a general Gaussian function of a 2D argument.
+    </p>
+
+    <p>
+      A formula for the Gaussian function at the point (x,y) is:
+      <pre>
+      g(c,x,y,xmu,ymu,xsigma,ysigma,A) = c * exp ( 1/2 xy' * A * xy )
+      </pre>
+      where xy is the vector
+      <pre>
+      [ ( x - xmu ) / xsigma,
+        ( y - ymu ) / ysigma ]
+      </pre>
+      and A is a symmetric positive definite (SPD) matrix.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>gaussian_2d</b> is available in
+      <a href = "../../m_src/gaussian_2d/gaussian_2d.html">a MATLAB version</a> and
+      <a href = "../../octave_src/gaussian_2d/gaussian_2d.html">an Octave version</a> and
+      <a href = "../../py_src/gaussian_2d/gaussian_2d.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/gaussian/gaussian.html">
+      gaussian</a>,
+      a Python code which
+      evaluates the Gaussian function and its derivatives.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gaussian_2d.py">gaussian_2d.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "gaussian_2d.sh">gaussian_2d.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "gaussian_2d.txt">gaussian_2d.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gaussian_2d.png">gaussian_2d.png</a>,
+          a plot of a Gaussian function of a 2D argument.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 22 August 2023.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

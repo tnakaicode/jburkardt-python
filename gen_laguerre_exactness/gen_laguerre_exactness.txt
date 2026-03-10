@@ -1,0 +1,154 @@
+Wed Oct  8 07:48:35 2025
+
+gen_laguerre_exactness_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test gen_laguerre_exactness().
+
+gen_laguerre_exactness():
+  Investigate the polynomial exactness of a generalized Gauss-Laguerre
+  quadrature rule by integrating exponentially weighted
+  monomials up to a given degree over the [0,+oo) interval.
+
+  The rule may be defined on another interval, [A,+oo)
+  in which case it is adjusted to the [0,+oo) interval.
+
+User input:
+  Quadrature rule X file = "gen_lag_o8_a0.5_x.txt'
+  Quadrature rule W file = "gen_lag_o8_a0.5_w.txt'
+  Quadrature rule R file = "gen_lag_o8_a0.5_r.txt'
+  Maximum degree to check =  18
+  Weighting function exponent ALPHA =  0.5
+  OPTION = 0, integrate x^alpha*exp(-x)*f(x).
+
+  Number of points =  8
+
+  The quadrature rule to be tested is
+  a generalized Gauss-Laguerre rule
+  ORDER =  8
+  A =      0.0
+  ALPHA =  0.5
+
+  OPTION = 0, standard rule:
+    Integral ( A <= x < oo ) x^alpha exp(-x) f(x) dx
+    is to be approximated by
+    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).
+
+  Weights W:
+
+[2.27139362e-01 3.93594543e-01 2.12908971e-01 4.78774832e-02
+ 4.54251747e-03 1.62404600e-04 1.64237741e-06 2.17394313e-09]
+
+  Abscissas X:
+
+[ 0.28263365  1.1398738   2.60152484  4.72411454  7.6052563  11.41718208
+ 16.4994108  23.730004  ]
+
+  Region R:
+
+[0.e+00 1.e+30]
+
+  A generalized Gauss-Laguerre rule would be able to exactly
+  integrate monomials up to and including 
+  degree =  15
+
+      Degree  Error
+
+   0        0.0000000000000000
+   1        0.0000000000000002
+   2        0.0000000000000001
+   3        0.0000000000000002
+   4        0.0000000000000001
+   5        0.0000000000000006
+   6        0.0000000000000002
+   7        0.0000000000000004
+   8        0.0000000000000006
+   9        0.0000000000000006
+  10        0.0000000000000006
+  11        0.0000000000000009
+  12        0.0000000000000008
+  13        0.0000000000000010
+  14        0.0000000000000013
+  15        0.0000000000000013
+  16        0.0000561671454562
+  17        0.0004926661044425
+  18        0.0022799523824549
+
+gen_laguerre_exactness():
+  Normal end of execution.
+
+gen_laguerre_exactness():
+  Investigate the polynomial exactness of a generalized Gauss-Laguerre
+  quadrature rule by integrating exponentially weighted
+  monomials up to a given degree over the [0,+oo) interval.
+
+  The rule may be defined on another interval, [A,+oo)
+  in which case it is adjusted to the [0,+oo) interval.
+
+User input:
+  Quadrature rule X file = "gen_lag_o8_a0.5_modified_x.txt'
+  Quadrature rule W file = "gen_lag_o8_a0.5_modified_w.txt'
+  Quadrature rule R file = "gen_lag_o8_a0.5_modified_r.txt'
+  Maximum degree to check =  18
+  Weighting function exponent ALPHA =  0.5
+  OPTION = 1, integrate                 f(x).
+
+  Number of points =  8
+
+  The quadrature rule to be tested is
+  a generalized Gauss-Laguerre rule
+  ORDER =  8
+  A =      0.0
+  ALPHA =  0.5
+
+  OPTION = 1, modified rule:
+    Integral ( A <= x < oo ) f(x) dx
+    is to be approximated by
+    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).
+
+  Weights W:
+
+[0.5667959  1.1525548  1.77995022 2.48100694 3.30872386 4.36755153
+ 5.92027404 9.02420731]
+
+  Abscissas X:
+
+[ 0.28263365  1.1398738   2.60152484  4.72411454  7.6052563  11.41718208
+ 16.4994108  23.730004  ]
+
+  Region R:
+
+[0.e+00 1.e+30]
+
+  A generalized Gauss-Laguerre rule would be able to exactly
+  integrate monomials up to and including 
+  degree =  15
+
+      Degree  Error
+
+   0        0.0000000000000001
+   1        0.0000000000000002
+   2        0.0000000000000001
+   3        0.0000000000000000
+   4        0.0000000000000000
+   5        0.0000000000000002
+   6        0.0000000000000000
+   7        0.0000000000000001
+   8        0.0000000000000001
+   9        0.0000000000000002
+  10        0.0000000000000006
+  11        0.0000000000000007
+  12        0.0000000000000008
+  13        0.0000000000000007
+  14        0.0000000000000005
+  15        0.0000000000000008
+  16        0.0000561671454584
+  17        0.0004926661044444
+  18        0.0022799523824566
+
+gen_laguerre_exactness():
+  Normal end of execution.
+
+gen_laguerre_exactness_test():
+  Normal end of execution.
+Wed Oct  8 07:48:35 2025

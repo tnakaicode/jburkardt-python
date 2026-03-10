@@ -1,0 +1,11 @@
+Sat Aug  1 18:48:40 2020
+
+mexican_hat_surface:
+  Python version: 3.6.9
+  Make a surface plot Z(X,Y) of volcano elevation data.
+
+  Graphics saved as "mexican_hat_surface.png"
+
+mexican_hat_surface:
+  Normal end of execution.
+Sat Aug  1 18:48:41 2020

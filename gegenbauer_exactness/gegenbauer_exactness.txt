@@ -1,0 +1,63 @@
+Wed Oct  8 07:48:34 2025
+
+gegenbauer_exactness_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test gegenbauer_exactness().
+
+gegenbauer_exactness():
+  Investigate the polynomial exactness of a Gauss-Gegenbauer
+  quadrature rule by integrating weighted
+  monomials up to a given degree over the [-1,+1] interval.
+
+gegenbauer_exactness(): User input:
+  Quadrature rule X file = "gegen_o8_a0.5_x.txt".
+  Quadrature rule W file = "gegen_o8_a0.5_w.txt". gegen_o8_a0.5_w.txt
+  Quadrature rule R file = "gegen_o8_a0.5_r.txt". gegen_o8_a0.5_r.txt
+  Maximum degree to check =  8
+  Exponent of (1-x^2), ALPHA =  0.5
+
+  Number of points  =  8
+
+  Testing a Gauss-Gegenbauer rule
+  ORDER =  8
+  ALPHA =  0.5
+
+  Standard rule:
+    Integral ( -1 <= x <= +1 ) (1-x^2)^alpha f(x) dx
+    is to be approximated by
+    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).
+
+  Weights W:
+
+[0.04083295 0.1442256  0.26179939 0.33854023 0.33854023 0.26179939
+ 0.1442256  0.04083295]
+
+  Abscissas X:
+
+[-0.93969262 -0.76604444 -0.5        -0.17364818  0.17364818  0.5
+  0.76604444  0.93969262]
+
+  Region R:
+
+[-1.  1.]
+
+  A Gauss-Gegenbauer rule would be able to exactly
+  integrate monomials up to and including 
+  degree =  15
+
+      Error    Degree
+
+        0.0000000000000000    0
+        0.0000000000000006    1
+        0.0000000000000007    2
+        0.0000000000000005    3
+        0.0000000000000007    4
+        0.0000000000000004    5
+        0.0000000000000016    6
+        0.0000000000000004    7
+        0.0000000000000021    8
+
+gegenbauer_exactness_test():
+  Normal end of execution.
+Wed Oct  8 07:48:34 2025

@@ -1,0 +1,12 @@
+Wed Jul 29 15:45:35 2020
+
+album_bar:
+  Python version: 3.6.9
+  Read a data file of yearly music album sales.
+  Plot the data as a bar chart.
+
+  Graphics saved as "album_bar.png"
+
+album_bar:
+  Normal end of execution.
+Wed Jul 29 15:45:35 2020

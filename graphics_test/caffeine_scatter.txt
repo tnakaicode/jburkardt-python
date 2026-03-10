@@ -1,0 +1,12 @@
+Sat Aug  1 11:22:43 2020
+
+caffeine_scatter:
+  Python version: 3.6.9
+  Read a data file of cataract incidence versus caffeine intake.
+  Display the data as a scatter plot.
+
+  Graphics saved as "caffeine_scatter.png"
+
+caffeine_scatter
+  Normal end of execution.
+Sat Aug  1 11:22:44 2020

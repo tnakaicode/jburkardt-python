@@ -1,0 +1,11 @@
+Sat Aug  1 19:01:07 2020
+
+mod_bar3d:
+  Python version: 3.6.9
+  Make a 3D bar plot of mod(1:10,1:10)
+
+  Graphics saved as "mod_bar3d.png"
+
+mod_bar3d:
+  Normal end of execution.
+Sat Aug  1 19:01:07 2020

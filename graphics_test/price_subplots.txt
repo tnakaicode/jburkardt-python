@@ -1,0 +1,10 @@
+Tue Mar 14 13:22:17 2023
+
+pricer_subplots():
+  Python version: 3.8.10
+  Make 6 subplots of price data over time.
+  Graphics saved as "price_subplots.png"
+
+iris_subplots():
+  Normal end of execution.
+Tue Mar 14 13:22:18 2023

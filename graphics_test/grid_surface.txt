@@ -1,0 +1,11 @@
+Sat Aug  1 17:16:42 2020
+
+grid_surface:
+  Python version: 3.6.9
+  Make a surface plot Z(X,Y) for a 41x41 table.
+
+  Graphics saved as "grid_surface.png"
+
+grid_surface:
+  Normal end of execution.
+Sat Aug  1 17:16:43 2020

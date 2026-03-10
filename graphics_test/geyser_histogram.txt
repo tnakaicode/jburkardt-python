@@ -1,0 +1,12 @@
+Sat Aug  1 15:07:48 2020
+
+geyser_histogram:
+  Python version: 3.6.9
+  Read a long list of values.
+  Create and plot a histogram.
+
+  Graphics saved as "geyser_histogram.png"
+
+geyser_histogram:
+  Normal end of execution.
+Sat Aug  1 15:07:48 2020

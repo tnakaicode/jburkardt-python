@@ -1,0 +1,13 @@
+Sat Aug  1 16:20:09 2020
+
+geyser_scatter:
+  Python version: 3.6.9
+  Read a data file of duration and pause lengths
+  for the Old Faithful geyser.
+  Display the data as a scatter plot.
+
+  Graphics saved as "geyser_scatter.png"
+
+geyser_scatter
+  Normal end of execution.
+Sat Aug  1 16:20:10 2020

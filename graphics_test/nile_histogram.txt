@@ -1,0 +1,13 @@
+Sat Aug  1 19:41:02 2020
+
+nile_histogram:
+  Python version: 3.6.9
+  Make a histogram of yearly Nile flood levels.
+
+  570 data records read from file.
+
+  Graphics saved as "nile_histogram.png"
+
+nile_histogram:
+  Normal end of execution.
+Sat Aug  1 19:41:02 2020

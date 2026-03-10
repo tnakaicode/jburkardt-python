@@ -1,0 +1,36 @@
+Sat Sep  3 15:29:00 2022
+
+knight_graph():
+  Python version: 3.6.9
+  Plot a graph associated with a puzzle from "The 11th Hour"
+  involving interchanging 2 black and 2 white knights.
+
+// knight_graph
+graph {
+	1 [label=A]
+	2 [label=B]
+	3 [label=C]
+	4 [label=D]
+	5 [label=E]
+	6 [label=F]
+	7 [label=G]
+	8 [label=H]
+	9 [label=I]
+	10 [label=J]
+	1 -- 5
+	2 -- 6
+	2 -- 7
+	2 -- 9
+	3 -- 8
+	3 -- 10
+	4 -- 10
+	5 -- 7
+	6 -- 8
+}
+
+
+  Graphics saved as "knight_graph.dot.png"
+
+knight_graph():
+  Normal end of execution.
+Sat Sep  3 15:29:00 2022

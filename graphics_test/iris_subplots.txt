@@ -1,0 +1,18 @@
+Sat Aug  1 17:48:21 2020
+
+iris_subplots:
+  Python version: 3.6.9
+  For each of 3 varieties of iris, a number of specimens
+  have been collected.  For each specimen, measurements
+  made of sepal length, sepal width, petal length and
+  petal width.
+
+  Create a 4x4 array of scatter plots that compare each
+  pair of values.  Moreoever, use colors to distinguish the
+  data belonging to each of the three varieties.
+
+  Graphics saved as "iris_subplots.png"
+
+iris_subplots
+  Normal end of execution.
+Sat Aug  1 17:48:22 2020

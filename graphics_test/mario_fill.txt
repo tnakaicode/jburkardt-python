@@ -1,0 +1,9 @@
+Sat Aug  1 18:47:01 2020
+
+mario_fill:
+  Python version: 3.6.9
+  Draw a picture of Mario, using colored squares.
+
+mario_fill:
+  Normal end of execution.
+Sat Aug  1 18:47:02 2020

@@ -1,0 +1,11 @@
+Sun Aug  2 07:12:32 2020
+
+random_scatter:
+  Python version: 3.6.9
+  Make a scatterplot of random XY data.
+
+  Graphics saved as "random_scatter.png"
+
+random_scatter
+  Normal end of execution.
+Sun Aug  2 07:12:32 2020

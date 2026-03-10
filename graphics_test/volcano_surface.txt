@@ -1,0 +1,12 @@
+Sun Aug  2 07:38:21 2020
+
+volcano_surface:
+  Python version: 3.6.9
+  Make a surface plot Z(X,Y) of volcano elevation data.
+  Z data has 87 rows and 61 columns
+
+  Graphics saved as "volcano_surface.png"
+
+volcano_surface:
+  Normal end of execution.
+Sun Aug  2 07:38:21 2020

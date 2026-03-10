@@ -1,0 +1,32 @@
+Mon Feb 23 11:18:56 2026
+
+golden_section_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  golden_section() seeks a minimizer
+  of a function f(x) in the interval [a,b],
+  assuming f(x) is unimodal over [a,b],
+
+  f = humps_fun(x)
+  f( 0.3 ) = 96.5
+  f( 0.9 ) = 21.7027027027027
+  iteration limit n = 25
+  x_tol = 1e-06
+
+   25 iterations were taken 25
+  f( 0.637007834774134 ) = 11.252754126098168
+  f( 0.6370114112907259 ) = 11.252754127486238
+
+  f = test_fun(x)
+  f( -2.0 ) =  31.136049906158565
+  f( 1.0 ) =  9.414709848078965
+  iteration limit n = 35
+  x_tol = 1e-06
+
+   31 iterations were taken
+  f( -1.274178049042595 ) =  -10.088219679422766
+  f( -1.2741770524804021 ) =  -10.088219679424814
+
+golden_section_test():
+  Normal end of execution.
+Mon Feb 23 11:18:56 2026

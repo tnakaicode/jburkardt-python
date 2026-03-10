@@ -1,0 +1,32 @@
+Sun Aug  2 07:39:38 2020
+
+web_digraph:
+  Python version: 3.6.9
+  Plot a web of connections as a directed graph.
+
+// A network
+digraph {
+	1 [label=Alpha]
+	2 [label=Beta]
+	3 [label=Gamma]
+	4 [label=Delta]
+	5 [label=Epsilon]
+	6 [label=Zeta]
+	1 -> 5 [label=0.1]
+	1 -> 6 [label=0.9]
+	2 -> 1 [label=0.3]
+	2 -> 3 [label=0.4]
+	2 -> 4 [label=0.3]
+	3 -> 4 [label=0.6]
+	3 -> 5 [label=0.4]
+	4 -> 5 [label=1.0]
+	5 -> 1 [label=0.2]
+	5 -> 6 [label=0.8]
+	6 -> 4 [label=1.0]
+}
+
+  Graphics saved as "web_digraph.dot.png"
+
+web_digraph:
+  Normal end of execution.
+Sun Aug  2 07:39:38 2020

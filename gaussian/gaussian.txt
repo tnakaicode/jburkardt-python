@@ -1,0 +1,35 @@
+Wed Oct  8 07:48:28 2025
+
+gaussian_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  gaussian() evaluates the Gaussian function and its derivatives.
+
+gaussian_antideriv_test():
+  Compute the antiderivative of a gaussian function.
+
+  Graphics saved as "gaussian_antideriv.png"
+
+gaussian_n_test():
+  Compute gaussian(n,mu,sigma;x) for various values of n.
+
+  Graphics saved as "gaussian_n0.png"
+  Graphics saved as "gaussian_n1.png"
+  Graphics saved as "gaussian_n2.png"
+  Graphics saved as "gaussian_n3.png"
+  Graphics saved as "gaussian_n4.png"
+  Graphics saved as "gaussian_n5.png"
+
+gaussian_mu_test():
+  Compute gaussian(n,mu,sigma;x) for various values of mu.
+
+  Graphics saved as "gaussian_mu.png"
+
+gaussian_sigma_test():
+  Compute gaussian(n,mu,sigma;x) for various values of sigma.
+
+  Graphics saved as "gaussian_sigma.png"
+
+gaussian_test()
+  Normal end of execution.
+Wed Oct  8 07:48:29 2025

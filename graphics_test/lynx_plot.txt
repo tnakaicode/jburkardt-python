@@ -1,0 +1,12 @@
+Sat Aug  1 18:45:07 2020
+
+lynx_plot:
+  Python version: 3.6.9
+  Make a curve by connecting a series of data points.
+  Mark the data points.
+
+  Graphics saved as "lynx_plot.png"
+
+lynx_plot
+  Normal end of execution.
+Sat Aug  1 18:45:07 2020

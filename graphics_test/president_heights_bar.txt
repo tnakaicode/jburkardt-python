@@ -1,0 +1,11 @@
+Sat Aug  1 20:52:28 2020
+
+president_heights_bar:
+  Python version: 3.6.9
+  Create a bar plot of the height in inches of US presidents.
+
+  Graphics saved as "president_heights_bar.png"
+
+president_heights_bar:
+  Normal end of execution.
+Sat Aug  1 20:52:28 2020

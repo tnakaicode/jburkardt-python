@@ -1,0 +1,64 @@
+Wed Oct  8 07:48:34 2025
+
+gegenbauer_cc_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test gegenbauer_cc().
+
+chebyshev_even1_test:
+  chebyshev_even1 computes the even Chebyshev coefficients
+  of a function F, using the extreme points of Tn(x).
+
+  Computed and Exact Coefficients:
+
+       0:       0.447782      0.447782
+       1:      -0.705669     -0.705669
+       2:      0.0680358     0.0680358
+       3:    -0.00480972   -0.00480972
+
+chebyshev_even2_test:
+  chebyshev_even2 computes the even Chebyshev coefficients
+  of a function F, using the zeros of Tn(x).
+
+  Computed Coefficients:
+
+     0:      0.447782
+     1:     -0.705668
+     2:     0.0679919
+     3:   -0.00244922
+
+gegenbauer_cc1_test:
+  gegenbauer_cc1 estimates the Gegenbauer integral of
+  a function f(x) using a Clenshaw-Curtis type approach
+  based on the extreme points of Tn(x).
+
+  Value = 0.915449
+  Exact = 0.915451
+
+gegenbauer_cc2_test:
+  gegenbauer_cc2 estimates the Gegenbauer integral of
+  a function f(x) using a Clenshaw-Curtis type approach
+  based on the zeros of Tn(x).
+
+  Value = 0.915452
+  Exact = 0.915451
+
+r8_mop_test
+  r8_mop evaluates (-1.0)^I4 as an R8.
+
+    I4  r8_mop(I4)
+
+    -5  -1.0
+   -41  -1.0
+   -69  -1.0
+    25  -1.0
+    27  -1.0
+    18   1.0
+    85  -1.0
+   -44   1.0
+    -1  -1.0
+   -37  -1.0
+
+gegenbauer_cc_test():
+  Normal end of execution.
+Wed Oct  8 07:48:34 2025

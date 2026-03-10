@@ -1,0 +1,18 @@
+Sat Aug  1 12:06:40 2020
+
+circle_scatters:
+  Python version: 3.6.9
+  Make a scatterplot of two sets of data representing
+  points in the unit square that are also in or not in
+  the unit circle.
+
+  Number of points inside the circle = 395
+  Number outside                     = 105
+  Total                              = 500
+  Estimate for PI                    = 3
+
+  Graphics saved as "circle_scatters.png"
+
+circle_scatters
+  Normal end of execution.
+Sat Aug  1 12:06:40 2020

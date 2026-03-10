@@ -1,0 +1,96 @@
+Wed Oct  8 07:48:45 2025
+
+glomin_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  glomin() seeks a global minimizer of a
+  a function F(X) in an interval [A,B],
+  given some upper bound M for F".
+
+  Tolerances:
+  e =  1.4901161193847656e-08
+  t =  1.4901161193847656e-08
+
+  h_01(x) = 2 - x
+  M =  0.0
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+        7.000000        9.000000        9.000000
+   -5.000000e+00   -7.000000e+00   -7.000000e+00
+  Number of calls to F =  2
+
+  h_01(x) = 2 - x
+  M =  100.0
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+        7.000000        9.000000        9.000000
+   -5.000000e+00   -7.000000e+00   -7.000000e+00
+  Number of calls to F =  15
+
+  h_02(x) = x * x
+  M =  2.0
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+       -1.000000        0.000000        2.000000
+    1.000000e+00    0.000000e+00    4.000000e+00
+  Number of calls to F =  4
+
+  h_02(x) = x * x
+  M =  2.1
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+       -1.000000        0.000000        2.000000
+    1.000000e+00    0.000000e+00    4.000000e+00
+  Number of calls to F =  8
+
+  h_03(x) = x^3 + x^2
+  M =  14.0
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+       -0.500000        0.000001        2.000000
+    1.250000e-01    3.261863e-13    1.200000e+01
+  Number of calls to F =  37
+
+  h_03(x) = x^3 + x^2
+  M =  28.0
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+       -0.500000        0.000010        2.000000
+    1.250000e-01    9.624353e-11    1.200000e+01
+  Number of calls to F =  47
+
+  h_04(x) = ( x + sin(x) ) * exp(-x*x)
+  M =  72.0
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+      -10.000000       -0.679579       10.000000
+   -3.517696e-43   -8.242394e-01    3.517696e-43
+  Number of calls to F =  221
+
+  h_05(x) = ( x - sin(x) ) * exp(-x*x)
+  M =  72.0
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+      -10.000000       -1.195137       10.000000
+   -3.922456e-43   -6.349053e-02    3.922456e-43
+  Number of calls to F =  458
+
+glomin_test():
+  Normal end of execution.
+Wed Oct  8 07:48:45 2025

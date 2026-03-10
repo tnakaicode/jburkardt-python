@@ -1,0 +1,11 @@
+Sat Aug  1 10:04:42 2020
+
+brownian_2d_plot:
+  Python version: 3.6.9
+  Plot Brownian motion in two dimensions.
+
+  Graphics saved as "brownian_2d_plot.png"
+
+brownian_2d_plot
+  Normal end of execution.
+Sat Aug  1 10:04:43 2020

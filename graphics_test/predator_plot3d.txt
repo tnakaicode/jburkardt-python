@@ -1,0 +1,13 @@
+Sat Aug  1 20:50:28 2020
+
+predator_plot3d:
+  Python version: 3.6.9
+  Model the interaction between rabbits and foxes.
+
+  Data saved as "predator_data.txt"
+
+  Graphics saved as "predator_plot3d.png"
+
+predator_plot3d
+  Normal end of execution.
+Sat Aug  1 20:50:28 2020

@@ -1,0 +1,13 @@
+Sat Aug  1 20:47:12 2020
+
+ninety_histogram:
+  Python version: 3.6.9
+  Read a text file of 90 values, and create a histogram
+  that will expose outliers as isolated values.
+  90 data records read from file
+
+  Graphics saved as "ninety_histogram.png"
+
+ninety_histogram:
+  Normal end of execution.
+Sat Aug  1 20:47:13 2020

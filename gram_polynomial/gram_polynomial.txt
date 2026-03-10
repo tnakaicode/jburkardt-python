@@ -1,0 +1,122 @@
+Wed Oct  8 07:48:56 2025
+
+gram_polynomial_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test gram_polynomial()
+
+gram_abscissas_test():
+  Test gram_abscissas()
+
+  x = gram_abscissas( 3 )
+[-6.66666667e-01 -5.55111512e-17  6.66666667e-01]
+
+  x = gram_abscissas( 4 )
+[-0.75 -0.25  0.25  0.75]
+
+  x = gram_abscissas( 5 )
+[-8.00000000e-01 -4.00000000e-01  5.55111512e-17  4.00000000e-01
+  8.00000000e-01]
+
+  x = gram_abscissas( 10 )
+[-0.9 -0.7 -0.5 -0.3 -0.1  0.1  0.3  0.5  0.7  0.9]
+
+gram_beta_test():
+  Test gram_beta()
+
+       M = 
+         0         1         2         3         4         5
+  N =  0:    --------   -0.0000   -0.0000   -0.0000   -0.0000   -0.0000
+  N =  1:    --------  --------    0.2500    0.2963    0.3125    0.3200
+  N =  2:    --------  --------  --------    0.1481    0.2000    0.2240
+  N =  3:    --------  --------  --------  --------    0.1125    0.1646
+  N =  4:    --------  --------  --------  --------  --------    0.0914
+  N =  5:    --------  --------  --------  --------  --------  --------
+
+gram_polynomial_coefficients_test():
+  Test polynomial_coefficients_beta()
+
+Gram polynomial g(0,10)
+
+  p(x) =     1
+
+Gram polynomial g(1,10)
+
+  p(x) =     1 * x
+
+Gram polynomial g(2,10)
+
+  p(x) =     1 * x^2
+           - 0.33
+
+Gram polynomial g(3,10)
+
+  p(x) =     1 * x^3
+           - 0.586 * x
+
+Gram polynomial g(4,10)
+
+  p(x) =     1 * x^4
+           - 0.82 * x^2
+           + 0.07722
+
+Gram polynomial g(5,10)
+
+  p(x) =     1 * x^5
+           - 1.03333 * x^3
+           + 0.202233 * x
+  Graphics saved as "gram_0_10.png"
+  Graphics saved as "gram_1_10.png"
+  Graphics saved as "gram_2_10.png"
+  Graphics saved as "gram_3_10.png"
+  Graphics saved as "gram_4_10.png"
+  Graphics saved as "gram_5_10.png"
+
+  Orthogonality matrix:
+[[ 1.00000000e+00  1.77635684e-17  2.66453526e-17  1.33226763e-17
+  -5.55111512e-18  2.77555756e-18]
+ [ 1.77635684e-17  3.32800000e-01  1.77635684e-17 -2.22044605e-18
+   6.66133815e-18 -2.22044605e-18]
+ [ 2.66453526e-17  1.77635684e-17  8.81786880e-02  5.55111512e-18
+  -1.11022302e-18  2.77555756e-19]
+ [ 1.33226763e-17 -2.22044605e-18  5.55111512e-18  2.23480067e-02
+  -5.55111512e-19 -1.11022302e-18]
+ [-5.55111512e-18  6.66133815e-18 -1.11022302e-18 -5.55111512e-19
+   5.53038672e-03 -1.38777878e-19]
+ [ 2.77555756e-18 -2.22044605e-18  2.77555756e-19 -1.11022302e-18
+  -1.38777878e-19  1.34069981e-03]]
+
+  Orthogonal projection of f=exp(x)
+[1.17512285e+00 1.10353613e+00 5.36655555e-01 1.76111843e-01
+ 4.35892821e-02 8.65733830e-03 1.43550936e-03 2.04267418e-04
+ 2.54539747e-05 2.82106992e-06 2.81515573e-07]
+
+r8poly_print_test():
+  r8poly_print() prints an R8POLY.
+
+  The R8POLY:
+
+  p(x) =     9 * x^5
+           + 0.78 * x^4
+           + 56 * x^2
+           - 3.4 * x
+           + 12
+
+  The R8POLY:
+
+  p(x) =     0.78 * x^4
+           + 56 * x^2
+           - 3.4 * x
+           + 12
+
+  The R8POLY:
+
+  p(x) =     12
+
+  The R8POLY:
+
+  p(x) = 0
+
+gram_polynomial_test():
+  Normal end of execution.
+Wed Oct  8 07:48:58 2025

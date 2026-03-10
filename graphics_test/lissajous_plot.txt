@@ -1,0 +1,11 @@
+Sat Aug  1 18:42:23 2020
+
+lissajous_plot:
+  Python version: 3.6.9
+  Make a plane curve by connecting a series of points.
+
+  Graphics saved as "lissajous_plot.png"
+
+lissajous_plot:
+  Normal end of execution.
+Sat Aug  1 18:42:23 2020

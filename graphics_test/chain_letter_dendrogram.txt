@@ -1,0 +1,14 @@
+Sat Aug  1 11:33:38 2020
+
+chain_letter_dendrogram:
+  Python version: 3.6.9
+  Construct a dendrogram to analyze the relationship
+  among a set of 11 versions of a chain letter.
+
+  Chain letter distance matrix read from "chain_letter_data.txt"
+
+  Graphics saved as "chain_letter_dendrogram.png"
+
+chain_letter_dendrogram:
+  Normal end of execution.
+Sat Aug  1 11:33:39 2020

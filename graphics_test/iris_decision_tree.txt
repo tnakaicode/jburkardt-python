@@ -1,0 +1,32 @@
+Sat Aug  1 17:47:37 2020
+
+iris_decision_tree:
+  Python version: 3.6.9
+  Plot a decision tree for the iris classification task.
+
+// A network
+digraph {
+	1 [label="Test petal length"]
+	2 [label="Test petal width"]
+	3 [label="Test petal length"]
+	4 [label="Test petal width"]
+	5 [label=setosa]
+	6 [label=versicolor]
+	7 [label=virginica]
+	8 [label=virginica]
+	9 [label=virginica]
+	1 -> 5 [label="petal length < 2.45"]
+	1 -> 2 [label="2.45 <= petal length"]
+	2 -> 3 [label="petal width < 1.75"]
+	2 -> 9 [label="1.75 <= petal width"]
+	3 -> 4 [label="petal length < 4.95"]
+	3 -> 8 [label="4.95 <= petal length"]
+	4 -> 6 [label="petal width < 1.65"]
+	4 -> 7 [label="1.65 <= petal width"]
+}
+
+  Graphics saved as "iris_decision_tree.png"
+
+iris_decision_tree:
+  Normal end of execution.
+Sat Aug  1 17:47:37 2020

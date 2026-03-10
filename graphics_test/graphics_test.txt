@@ -1,0 +1,896 @@
+Wed Oct  8 07:48:58 2025
+
+graphics_test():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Test the graphics examples.
+
+album_bar():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Read a data file of yearly music album sales.
+  Plot the data as a bar chart.
+
+  Graphics saved as "album_bar.png"
+
+album_bar():
+  Normal end of execution.
+
+alphabet_binary_tree():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Plot an alphabetizing binary tree.
+
+// A binary tree
+digraph {
+	node [shape=box]
+	1 [label="A-Z"]
+	2 [label="A-M"]
+	3 [label="N-Z"]
+	4 [label="A-F"]
+	5 [label="G-M"]
+	6 [label="N-S"]
+	7 [label="T-Z"]
+	8 [label="A-C"]
+	9 [label="D-F"]
+	10 [label="G-I"]
+	11 [label="J-M"]
+	12 [label="N-P"]
+	13 [label="Q-S"]
+	14 [label="T-V"]
+	15 [label="W-Z"]
+	16 [label=A]
+	17 [label="B-C"]
+	18 [label=D]
+	19 [label="E-F"]
+	20 [label=G]
+	21 [label="H-I"]
+	22 [label="J-K"]
+	23 [label="L-M"]
+	24 [label=N]
+	25 [label="O-P"]
+	26 [label=Q]
+	27 [label="R-S"]
+	28 [label=T]
+	29 [label="U-V"]
+	30 [label="W-X"]
+	31 [label="Y-Z"]
+	32 [label=B]
+	33 [label=C]
+	34 [label=E]
+	35 [label=F]
+	36 [label=H]
+	37 [label=I]
+	38 [label=J]
+	39 [label=K]
+	40 [label=L]
+	41 [label=M]
+	42 [label=O]
+	43 [label=P]
+	44 [label=R]
+	45 [label=S]
+	46 [label=U]
+	47 [label=V]
+	48 [label=W]
+	49 [label=X]
+	50 [label=Y]
+	51 [label=Z]
+	1 -> 2
+	1 -> 3
+	2 -> 4
+	2 -> 5
+	3 -> 6
+	3 -> 7
+	4 -> 8
+	4 -> 9
+	5 -> 10
+	5 -> 11
+	6 -> 12
+	6 -> 13
+	7 -> 14
+	7 -> 15
+	8 -> 16
+	8 -> 17
+	9 -> 18
+	9 -> 19
+	10 -> 20
+	10 -> 21
+	11 -> 22
+	11 -> 23
+	12 -> 24
+	12 -> 25
+	13 -> 26
+	13 -> 27
+	14 -> 28
+	14 -> 29
+	15 -> 30
+	15 -> 31
+	17 -> 32
+	17 -> 33
+	19 -> 34
+	19 -> 35
+	21 -> 36
+	21 -> 37
+	22 -> 38
+	22 -> 39
+	23 -> 40
+	23 -> 41
+	25 -> 42
+	25 -> 43
+	27 -> 44
+	27 -> 45
+	29 -> 46
+	29 -> 47
+	30 -> 48
+	30 -> 49
+	31 -> 50
+	31 -> 51
+}
+
+
+  Graphics saved as "alphabet_binary_tree.dot.png"
+
+alphabet_binary_tree():
+  Normal end of execution.
+
+automobile_scatter():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Read a data file of automobile prices and weights.
+  Display the data as a scatter plot.
+
+  Graphics saved as "automobile_scatter.png"
+
+automobile_scatter():
+  Normal end of execution.
+
+basketball_barh():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Create a horizontal bar plot of basketball sponsorships.
+  Graphics saved as "basketball_barh.png"
+
+basketball_barh():
+  Normal end of execution.
+
+brownian_2d_plot():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Plot Brownian motion in two dimensions.
+
+  Graphics saved as "brownian_2d_plot.png"
+
+brownian_2d_plot():
+  Normal end of execution.
+
+brownian_animation():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Simulate and plot Brownian motion in two dimensions.
+  Animate the process by drawing one step at a time.
+  Graphics saved as "brownian_animation.png"
+
+brownian_animation():
+  Normal end of execution.
+
+bulgaria_plot():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Plot the population of Bulgaria over time.
+  Graphics saved as "bulgaria_plot.png"
+
+bulgaria_plot():
+  Normal end of execution.
+
+caffeine_scatter():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Read a data file of cataract incidence versus caffeine intake.
+  Display the data as a scatter plot.
+
+  Graphics saved as "caffeine_scatter.png"
+
+caffeine_scatter():
+  Normal end of execution.
+
+chain_letter_dendrogram():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Construct a dendrogram to analyze the relationship
+  among a set of 11 versions of a chain letter.
+
+  Chain letter distance matrix read from "chain_letter_data.txt"
+
+  Graphics saved as "chain_letter_dendrogram.png"
+
+chain_letter_dendrogram():
+  Normal end of execution.
+
+circle_scatters():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a scatterplot of two sets of data representing
+  points in the unit square that are also in or not in
+  the unit circle.
+
+  Number of points inside the circle = 395
+  Number outside                     = 105
+  Total                              = 500
+  Estimate for PI                    = 3
+
+  Graphics saved as "circle_scatters.png"
+
+circle_scatters():
+  Normal end of execution.
+
+corkscrew_plot3d():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Display a curve defined by points on a 3D curve.
+
+  Data saved as "corkscrew_data.txt"
+
+  Graphics saved as "corkscrew_plot3d.png"
+
+corkscrew_plot3d():
+  Normal end of execution.
+
+correlation_heat_map():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a heat map from a correlation matrix C(1:n,1:n)
+
+  Graphics saved as "correlation_heat_map.png"
+
+correlation_heat_map():
+  Normal end of execution.
+
+corvette_scatter():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Read a data file of resale prices for Corvettes.
+  Display the data as a scatter plot.
+
+  Graphics saved as "corvette_scatter.png"
+
+corvette_scatter():
+  Normal end of execution.
+
+drug_dosage_plots():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Simulate the variation over time of the concentration
+  of a medicinal drug in the bloodstream.
+  Graphics saved as "drug_dosage.png"
+
+drug_dosage_plots():
+  Normal end of execution.
+
+flow_vector():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a vector plot of the gradient of a function z(x,y).
+  Graphics saved as "flow_vector.png"
+
+flow_vector():
+  Normal end of execution.
+
+genealogy_tree():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Plot a tree illustrating a genealogy
+
+// A binary tree
+digraph {
+	node [shape=egg]
+	1 [label=Alan]
+	2 [label=Bert]
+	3 [label=Chad]
+	4 [label=Dian]
+	5 [label=Enid]
+	6 [label=Fran]
+	7 [label=Gert]
+	8 [label=Hank]
+	9 [label=Iona]
+	10 [label=Jean]
+	11 [label=Kate]
+	12 [label=Lynn]
+	1 -> 2
+	1 -> 3
+	2 -> 4
+	2 -> 6
+	3 -> 5
+	3 -> 10
+	4 -> 7
+	4 -> 8
+	4 -> 9
+	5 -> 11
+	5 -> 12
+}
+
+
+  Graphics saved as "genealogy_tree.dot.png"
+
+genealogy_tree():
+  Normal end of execution.
+
+geyser_bar():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Read a list of binned data representing waiting times between
+  eruptions of the Old Faithful geyser.
+  Plot the data as a bar chart.
+
+  Graphics saved as "geyser_bar.png"
+
+geyser_bar():
+  Normal end of execution.
+
+geyser_histogram():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Read a long list of values.
+  Create and plot a histogram.
+
+  Graphics saved as "geyser_histogram.png"
+
+geyser_histogram():
+  Normal end of execution.
+
+geyser_scatter():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Read a data file of duration and pause lengths
+  for the Old Faithful geyser.
+  Display the data as a scatter plot.
+
+  Graphics saved as "geyser_scatter.png"
+
+geyser_scatter():
+  Normal end of execution.
+
+gradient_vector():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a vector plot of the gradient of a function z(x,y).
+  Graphics saved as "gradient_vector.png"
+
+gradient_vector():
+  Normal end of execution.
+
+grid_fill_contour():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a contour plot Z(X,Y) for a 41x41 table.
+
+  Graphics saved as "grid_fill_contour.png"
+
+grid_fill_contour():
+  Normal end of execution.
+
+grid_surface():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a surface plot Z(X,Y) for a 41x41 table.
+
+  Graphics saved as "grid_surface.png"
+
+grid_surface():
+  Normal end of execution.
+
+insect_scatter3d():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Create a 3D scatter plot of measurements of three
+  physical characteristics of 3 species of insects.
+  Graphics saved as "insect_scatter3d.png"
+
+insect_scatter3d():
+  Normal end of execution.
+
+integral_between():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Plot a curve, and fill some of the area between it
+  and the x-axis.
+  Graphics saved as "integral_between.png"
+
+iris_decision_tree():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Plot a decision tree for the iris classification task.
+
+// A network
+digraph {
+	1 [label="Test petal length"]
+	2 [label="Test petal width"]
+	3 [label="Test petal length"]
+	4 [label="Test petal width"]
+	5 [label=setosa]
+	6 [label=versicolor]
+	7 [label=virginica]
+	8 [label=virginica]
+	9 [label=virginica]
+	1 -> 5 [label="petal length < 2.45"]
+	1 -> 2 [label="2.45 <= petal length"]
+	2 -> 3 [label="petal width < 1.75"]
+	2 -> 9 [label="1.75 <= petal width"]
+	3 -> 4 [label="petal length < 4.95"]
+	3 -> 8 [label="4.95 <= petal length"]
+	4 -> 6 [label="petal width < 1.65"]
+	4 -> 7 [label="1.65 <= petal width"]
+}
+
+
+  Graphics saved as "iris_decision_tree.png"
+
+iris_decision_tree():
+  Normal end of execution.
+
+iris_subplots():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  For each of 3 varieties of iris, a number of specimens
+  have been collected.  For each specimen, measurements
+  made of sepal length, sepal width, petal length and
+  petal width.
+
+  Create a 4x4 array of scatter plots that compare each
+  pair of values.  Moreoever, use colors to distinguish the
+  data belonging to each of the three varieties.
+  Graphics saved as "iris_subplots.png"
+
+iris_subplots():
+  Normal end of execution.
+
+knight_graph():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Plot a graph associated with a puzzle from "The 11th Hour"
+  involving interchanging 2 black and 2 white knights.
+
+// knight_graph
+graph {
+	1 [label=A]
+	2 [label=B]
+	3 [label=C]
+	4 [label=D]
+	5 [label=E]
+	6 [label=F]
+	7 [label=G]
+	8 [label=H]
+	9 [label=I]
+	10 [label=J]
+	1 -- 5
+	2 -- 6
+	2 -- 7
+	2 -- 9
+	3 -- 8
+	3 -- 10
+	4 -- 10
+	5 -- 7
+	6 -- 8
+}
+
+
+  Graphics saved as "knight_graph.dot.png"
+
+knight_graph():
+  Normal end of execution.
+
+least_squares_plots():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Compare 15 data points with the least squares line
+    y = A * x + B
+  which minimizes the root-mean-square error.
+  The data is actually perturbed values of a quadratic
+  formula, which is shown for comparison:
+    y = 1/2 x^2 + 1
+
+  Graphics saved as "least_squares_plots.png"
+
+least_squares_plots():
+  Normal end of execution.
+
+lissajous_plot():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a plane curve by connecting a series of points.
+
+  Graphics saved as "lissajous_plot.png"
+
+lissajous_plot():
+  Normal end of execution.
+
+lynx_plot():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a curve by connecting a series of data points.
+  Mark the data points.
+
+  Graphics saved as "lynx_plot.png"
+
+lynx_plot():
+  Normal end of execution.
+
+mario_fill():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Draw a picture of Mario, using colored squares.
+  Graphics saved as "mario_fill.png"
+
+mario_fill():
+  Normal end of execution.
+
+mod_bar3d():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a 3D bar plot of mod(1:10,1:10)
+
+  Graphics saved as "mod_bar3d.png"
+
+mod_bar3d():
+  Normal end of execution.
+
+network_graph():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Plot a graph, of nodes connected by edges.
+
+// A network
+graph {
+	1 [label=A]
+	2 [label=B]
+	3 [label=C]
+	4 [label=D]
+	5 [label=E]
+	6 [label=F]
+	7 [label=G]
+	8 [label=H]
+	9 [label=I]
+	10 [label=J]
+	11 [label=K]
+	1 -- 1
+	1 -- 2
+	1 -- 3
+	2 -- 4
+	2 -- 5
+	3 -- 4
+	4 -- 5
+	4 -- 6
+	5 -- 6
+	5 -- 7
+	5 -- 8
+	6 -- 7
+	7 -- 8
+	8 -- 9
+	9 -- 10
+	9 -- 11
+	10 -- 11
+}
+
+
+  Graphics saved as "network_graph.dot.png"
+
+network_graph():
+  Normal end of execution.
+
+nile_histogram():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a histogram of yearly Nile flood levels.
+
+   570  data records read from file.
+
+  Graphics saved as "nile_histogram.png"
+
+nile_histogram():
+  Normal end of execution.
+
+nile_plot():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a line plot of yearly Nile flood levels.
+
+  Graphics saved as "nile_plot.png"
+
+nile_plot():
+  Normal end of execution.
+
+ninety_histogram():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Read a text file of 90 values, and create a histogram
+  that will expose outliers as isolated values.
+  90 data records read from file
+
+  Graphics saved as "ninety_histogram.png"
+
+ninety_histogram():
+  Normal end of execution.
+
+orbital_fill_contour():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a filled contour plot of a table of data Z(X,Y).
+
+  Graphics saved as "orbital_contour.png"
+
+orbital_fill_contour():
+  Normal end of execution.
+
+polygon_fill():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Create a plot using filled polygons.
+  Graphics saved as "polygon_fill.png"
+
+polygon_fill():
+  Normal end of execution.
+
+predator_plot3d():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Model the interaction between rabbits and foxes.
+
+  Data saved as "predator_data.txt"
+
+  Graphics saved as "predator_plot3d.png"
+
+predator_plot3d():
+  Normal end of execution.
+
+president_heights_bar():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Create a bar plot of the height in inches of US presidents.
+
+  Graphics saved as "president_heights_bar.png"
+
+president_heights_bar():
+  Normal end of execution.
+
+president_heights_barh():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Create a horizontal bar plot of the height in inches of US presidents.
+  Graphics saved as "president_heights_barh.png"
+
+president_heights_barh():
+  Normal end of execution.
+
+president_heights_histogram():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a histogram of president heights.
+
+  44 data records read from file.
+
+  Graphics saved as "president_heights_histogram.png"
+
+president_heights_histogram():
+  Normal end of execution.
+
+price_plots():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Use line plots to display variation in price of three
+  quantities over time.
+  Graphics saved as "price_plots.png"
+
+price_plots():
+  Normal end of execution.
+
+random_scatter():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a scatterplot of random XY data.
+  Graphics saved as "random_scatter.png"
+
+random_scatter():
+  Normal end of execution.
+
+schoolyear_barh():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Create a horizontal bar plot of the length of schoolyears.
+  Graphics saved as "schoolyear_barh.png"
+
+schoolyear_barh():
+  Normal end of execution.
+
+snowfall_histogram():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a histogram of yearly snowfall levels.
+
+   134  data records read from file.
+
+  Graphics saved as "snowfall_histogram.png"
+
+snowfall_histogram():
+  Normal end of execution.
+
+snowfall_plot():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a line plot of snowfall data.
+
+  Graphics saved as "snowfall_plot.png"
+
+snowfall_plot():
+  Normal end of execution.
+
+snowfall_smoothed_plot():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a line plot of smoothed snowfall data.
+
+  Graphics saved as "snowfall_smoothed_plot.png"
+
+snowfall_smoothed_plot():
+  Normal end of execution.
+
+sombrero_surface():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a surface plot Z(X,Y) of sombrero data.
+  Graphics saved as "sombrero_surface.png"
+
+sombrero_surface():
+  Normal end of execution.
+
+temperature_scatter():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a scatter plot of temperature reading locations.
+  Graphics saved as "temperature_scatter.png"
+
+temperature_scatter():
+  Normal end of execution.
+
+temperature_scatter3d():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a scatter plot of temperature reading locations.
+  Graphics saved as "temperature_scatter3d.png"
+
+temperature_scatter3d():
+  Normal end of execution.
+
+track_bar():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Read a text file containing durations
+  representing results of an eye-tracking experiment.
+  Make a bar plot of the results, with labeled bars.
+
+  Graphics saved as "track_bar.png"
+
+track_bar():
+  Normal end of execution.
+
+volcano_fill_contour():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a filled contour plot Z(X,Y) of volcano elevation data.
+  Z data has 87 rows and 61 columns
+
+  Graphics saved as "volcano_fill_contour.png"
+
+volcano_fill_contour():
+  Normal end of execution.
+
+volcano_line_contour():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a line contour plot Z(X,Y) of volcano elevation data.
+  Z data has 87 rows and 61 columns
+
+  Graphics saved as "volcano_line_contour.png"
+
+volcano_line_contour():
+  Normal end of execution.
+
+volcano_surface():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Make a surface plot Z(X,Y) of volcano elevation data.
+  Z data has 87 rows and 61 columns
+  Graphics saved as "volcano_surface.png"
+
+volcano_surface():
+  Normal end of execution.
+
+web_digraph():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Plot a web of connections as a directed graph.
+
+// A network
+digraph {
+	1 [label=Alpha]
+	2 [label=Beta]
+	3 [label=Gamma]
+	4 [label=Delta]
+	5 [label=Epsilon]
+	6 [label=Zeta]
+	1 -> 5 [label=0.1]
+	1 -> 6 [label=0.9]
+	2 -> 1 [label=0.3]
+	2 -> 3 [label=0.4]
+	2 -> 4 [label=0.3]
+	3 -> 4 [label=0.6]
+	3 -> 5 [label=0.4]
+	4 -> 5 [label=1.0]
+	5 -> 1 [label=0.2]
+	5 -> 6 [label=0.8]
+	6 -> 4 [label=1.0]
+}
+
+  Graphics saved as "web_digraph.dot.png"
+
+web_digraph():
+  Normal end of execution.
+
+graphics_test():
+  Normal end of execution.
+Wed Oct  8 07:49:30 2025

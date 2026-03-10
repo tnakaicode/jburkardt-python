@@ -1,0 +1,11 @@
+Sat Aug  1 17:11:23 2020
+
+grid_fill_contour:
+  Python version: 3.6.9
+  Make a contour plot Z(X,Y) for a 41x41 table.
+
+  Graphics saved as "grid_fill_contour.png"
+
+grid_fill_contour:
+  Normal end of execution.
+Sat Aug  1 17:11:23 2020

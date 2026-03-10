@@ -1,0 +1,33 @@
+Wed Oct  8 07:48:45 2025
+
+glycolysis_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve glycolysis_ode().
+
+  parameters:
+    alpha =  0.08
+    gamma =  0.6
+    t0    =  0.0
+    y0    =  [0.9 0.7]
+    tstop =  50.0
+
+glycolysis_equilibrium_test():
+  Verify that dy/dt=[0,0] for any parameter values.
+
+  (a,b) y_equi, t_equi, dydt
+
+  ( 0.6785198946723556 , 0.15861258705301984 ):  [0.15861259 0.22540512] , 0.6808679824917099 , [-8.67361738e-19  8.67361738e-19]
+  ( 0.2360401553712106 , 0.3120326268410366 ):  [0.31203263 0.93589802] , 0.796292975489531 , [-5.55111512e-17  5.55111512e-17]
+  ( 0.3092571609031045 , 0.09390039686731932 ):  [0.0939004  0.29521516] , 0.35652443694178704 , [ 1.08420217e-17 -1.08420217e-17]
+  ( 0.09128825103620442 , 0.2130770792583483 ):  [0.21307708 1.55883338] , 0.8417400036545916 , [-4.16333634e-17  4.16333634e-17]
+  ( 0.6365528522137968 , 0.09949579025388511 ):  [0.09949579 0.1539105 ] , 0.5670395207675373 , [-7.80625564e-18  7.80625564e-18]
+
+glycolysis_solve_ivp()
+  Use solve_ivp() to solve glycolysis_ode().
+  Graphics saved as "glycolysis_solve_ivp_plot.png"
+  Graphics saved as "glycolysis_solve_ivp_phase.png"
+
+glycolysis_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:48:47 2025

@@ -1,0 +1,13 @@
+Sat Aug  1 21:29:52 2020
+
+president_heights_histogram:
+  Python version: 3.6.9
+  Make a histogram of president heights.
+
+  45 data records read from file.
+
+  Graphics saved as "president_heights_histogram.png"
+
+president_heights_histogram:
+  Normal end of execution.
+Sat Aug  1 21:29:52 2020

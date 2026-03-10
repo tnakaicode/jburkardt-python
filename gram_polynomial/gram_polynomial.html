@@ -1,0 +1,162 @@
+<html>
+
+  <head>
+    <title>
+      gram_polynomial
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      gram_polynomial
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>gram_polynomial</b>,
+      a Python code which
+      evaluates the Gram polynomials, also known as the discrete Chebyshev
+      polyomials.
+    </p>
+
+    <p>
+      The Gram polynomial P(n,m,x) can be evaluated at a point x by:
+      <pre>
+        P(0,m,x) = 1
+        P(1,m,x) = x
+        P(n+1,m,x) = x * P(n,m,x) - beta(n,m) * P(n-1,m,x)
+      </pre>
+      where beta(n,m) = (m^2-n^2)*n^2/m^2/(4*n^2-1).
+    </p>
+
+    <p>
+      The polynomials are orthogonal with respect to a discrete inner product
+<pre>
+  (f,g) = sum ( 1 <= i <= m ) f(x(i)) * g(x(i))
+</pre>
+    where
+<pre>
+  x(i) = - 1 + ( 2*i-1)/m, 1 <= i <= m.
+</pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>gram_polynomial</b> is available in
+      <a href = "../../m_src/gram_polynomial/gram_polynomial.html">a MATLAB version</a> and
+      <a href = "../../py_src/gram_polynomial/gram_polynomial.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      polpak</a>,
+      a Python code which
+      evaluates a variety of mathematical functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_polynomial/python_polynomial.html">
+      python_polynomial</a>,
+      a Python code which
+      analyzes a variety of polynomial families, returning the polynomial
+      values, coefficients, derivatives, integrals, roots, or other information.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_values/test_values.html">
+      test_values</a>,
+      a Python code which
+      supplies test values of various mathematical functions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Germund Dahlquist, Ake Bjorck,<br>
+          Numerical Methods in Scientific Computing,
+          Volume 1,<br>
+          SIAM, 2008,<br>
+          ISBN: 978-0-898716-44-3,<br>
+          LC: QA297.D335 2008.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gram_polynomial.py">gram_polynomial.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "gram_polynomial.sh">gram_polynomial.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "gram_polynomial.txt">gram_polynomial.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gram_0_10.png">gram_0_10.png</a>
+        </li>
+        <li>
+          <a href = "gram_1_10.png">gram_1_10.png</a>
+        </li>
+        <li>
+          <a href = "gram_2_10.png">gram_2_10.png</a>
+        </li>
+        <li>
+          <a href = "gram_3_10.png">gram_3_10.png</a>
+        </li>
+        <li>
+          <a href = "gram_4_10.png">gram_4_10.png</a>
+        </li>
+        <li>
+          <a href = "gram_5_10.png">gram_5_10.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 11 October 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

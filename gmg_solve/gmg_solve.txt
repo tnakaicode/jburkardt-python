@@ -1,0 +1,33 @@
+Wed Oct  8 07:48:47 2025
+
+vcycle_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  vcycle() applies one V-cycle to a matrix.
+step 0, rel error=1.937586e-01
+step 1, rel error=3.762144e-02
+step 2, rel error=7.417582e-03
+step 3, rel error=1.552965e-03
+step 4, rel error=3.782356e-04
+step 5, rel error=1.126136e-04
+step 6, rel error=3.808544e-05
+step 7, rel error=1.346628e-05
+step 8, rel error=4.808143e-06
+step 9, rel error=1.717181e-06
+step 10, rel error=6.123138e-07
+step 11, rel error=2.180019e-07
+step 12, rel error=7.751894e-08
+step 13, rel error=2.753738e-08
+step 14, rel error=9.774387e-09
+step 15, rel error=3.466958e-09
+step 16, rel error=1.228879e-09
+step 17, rel error=4.350161e-10
+step 18, rel error=1.540864e-10
+step 19, rel error=5.455082e-11
+step 20, rel error=1.926068e-11
+step 21, rel error=6.638534e-12
+vcyle_test: Tolerance achieved.
+
+vcycle_test:
+  Normal end of execution.
+Wed Oct  8 07:48:55 2025

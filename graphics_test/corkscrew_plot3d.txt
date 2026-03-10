@@ -1,0 +1,13 @@
+Sat Aug  1 12:46:56 2020
+
+corkscrew_plot3d:
+  Python version: 3.6.9
+  Display a curve defined by points on a 3D curve.
+
+  Data saved as "corkscrew_data.txt"
+
+  Graphics saved as "corkscrew_plot3d.png"
+
+corkscrew_plot3d:
+  Normal end of execution.
+Sat Aug  1 12:46:56 2020

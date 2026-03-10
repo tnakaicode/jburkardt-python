@@ -1,0 +1,13 @@
+Sat Aug  1 14:21:08 2020
+
+geyser_bar:
+  Python version: 3.6.9
+  Read a list of binned data representing waiting times between
+  eruptions of the Old Faithful geyser.
+  Plot the data as a bar chart.
+
+  Graphics saved as "geyser_bar.png"
+
+geyser_bar:
+  Normal end of execution.
+Sat Aug  1 14:21:09 2020

@@ -1,0 +1,16 @@
+Sat Aug  1 18:34:29 2020
+
+least_squares_plots:
+  Python version: 3.6.9
+  Compare 15 data points with the least squares line
+    y = A * x + B
+  which minimizes the root-mean-square error.
+  The data is actually perturbed values of a quadratic
+  formula, which is shown for comparison:
+    y = 1/2 x^2 + 1
+
+  Graphics saved as "least_squares_plots.png"
+
+least_squares_plots
+  Normal end of execution.
+Sat Aug  1 18:34:29 2020

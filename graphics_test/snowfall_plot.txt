@@ -1,0 +1,11 @@
+Sun Aug  2 07:16:32 2020
+
+snowfall_plot:
+  Python version: 3.6.9
+  Make a line plot of snowfall data.
+
+  Graphics saved as "snowfall_plot.png"
+
+snowfall_plot
+  Normal end of execution.
+Sun Aug  2 07:16:32 2020

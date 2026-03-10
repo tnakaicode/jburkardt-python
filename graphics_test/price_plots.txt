@@ -1,0 +1,11 @@
+Tue Mar 14 13:42:01 2023
+
+price_plots():
+  Python version: 3.8.10
+  Use line plots to display variation in price of three
+  quantities over time.
+  Graphics saved as "price_plots.png"
+
+price_plots():
+  Normal end of execution.
+Tue Mar 14 13:42:02 2023

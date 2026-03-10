@@ -1,0 +1,22 @@
+// knight_graph
+graph {
+	1 [label=A]
+	2 [label=B]
+	3 [label=C]
+	4 [label=D]
+	5 [label=E]
+	6 [label=F]
+	7 [label=G]
+	8 [label=H]
+	9 [label=I]
+	10 [label=J]
+	1 -- 5
+	2 -- 6
+	2 -- 7
+	2 -- 9
+	3 -- 8
+	3 -- 10
+	4 -- 10
+	5 -- 7
+	6 -- 8
+}

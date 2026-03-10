@@ -1,0 +1,11 @@
+Sat Aug  1 17:42:07 2020
+
+insect_scatter3d:
+  Python version: 3.6.9
+  Create a 3D scatter plot of measurements of three
+  physical characteristics of 3 species of insects.
+  Graphics saved as "insect_scatter3d.png"
+
+insect_scatter3d
+  Normal end of execution.
+Sat Aug  1 17:42:07 2020

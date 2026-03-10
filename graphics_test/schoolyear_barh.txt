@@ -1,0 +1,10 @@
+Sun Aug  2 07:13:51 2020
+
+schoolyear_barh:
+  Python version: 3.6.9
+  Create a horizontal bar plot of the length of schoolyears.
+  Graphics saved as "schoolyear_barh.png"
+
+schoolyear_barh:
+  Normal end of execution.
+Sun Aug  2 07:13:52 2020

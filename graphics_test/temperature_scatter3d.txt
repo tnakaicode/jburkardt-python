@@ -1,0 +1,10 @@
+Sun Aug  2 07:29:44 2020
+
+temperature_scatter3d:
+  Python version: 3.6.9
+  Make a scatter plot of temperature reading locations.
+  Graphics saved as "temperature_scatter3d.png"
+
+temperature_scatter3d
+  Normal end of execution.
+Sun Aug  2 07:29:45 2020

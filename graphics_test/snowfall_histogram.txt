@@ -1,0 +1,13 @@
+Sun Aug  2 07:15:21 2020
+
+snowfall_histogram:
+  Python version: 3.6.9
+  Make a histogram of yearly snowfall flood levels.
+
+  130 data records read from file.
+
+  Graphics saved as "snowfall_histogram.png"
+
+snowfall_histogram:
+  Normal end of execution.
+Sun Aug  2 07:15:21 2020

@@ -1,0 +1,25 @@
+11-Jun-2022 09:45:44
+
+ge_to_crs_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2.
+  ge_to_crs() converts a matrix from GE to CRS format.
+
+ge_to_crs_risk():
+  ge_to_crs() converts a GE matrix to CRS format.
+  Read a file defining the RISK matrix in GE format.
+  Write files defining the RISK matrix in CRS format.
+
+
+prefix =
+
+    'risk'
+
+  Reading GE file "risk_ge.txt"
+  Saved data as "risk_row.txt"
+  Saved data as "risk_col.txt"
+  Saved data as "risk_val.txt"
+
+ge_to_crs_test():
+  Normal end of execution.
+
+11-Jun-2022 09:45:44

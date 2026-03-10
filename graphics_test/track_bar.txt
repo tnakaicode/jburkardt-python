@@ -1,0 +1,13 @@
+Sun Aug  2 07:30:51 2020
+
+track_bar:
+  Python version: 3.6.9
+  Read a text file containing durations
+  representing results of an eye-tracking experiment.
+  Make a bar plot of the results, with labeled bars.
+
+  Graphics saved as "track_bar.png"
+
+track_bar:
+  Normal end of execution.
+Sun Aug  2 07:30:51 2020

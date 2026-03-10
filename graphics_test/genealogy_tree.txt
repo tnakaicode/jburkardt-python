@@ -1,0 +1,39 @@
+Sat Aug  1 14:13:57 2020
+
+genealogy_tree:
+  Python version: 3.6.9
+  Plot a tree illustrating a genealogy
+
+// A binary tree
+digraph {
+	node [shape=egg]
+	1 [label=Alan]
+	2 [label=Bert]
+	3 [label=Chad]
+	4 [label=Dian]
+	5 [label=Enid]
+	6 [label=Fran]
+	7 [label=Gert]
+	8 [label=Hank]
+	9 [label=Iona]
+	10 [label=Jean]
+	11 [label=Kate]
+	12 [label=Lynn]
+	1 -> 2
+	1 -> 3
+	2 -> 4
+	2 -> 6
+	3 -> 5
+	3 -> 10
+	4 -> 7
+	4 -> 8
+	4 -> 9
+	5 -> 11
+	5 -> 12
+}
+
+  Graphics saved as "genealogy_tree.png"
+
+genealogy_tree:
+  Normal end of execution.
+Sat Aug  1 14:13:57 2020

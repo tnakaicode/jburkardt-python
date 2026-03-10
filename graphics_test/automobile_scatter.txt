@@ -1,0 +1,12 @@
+Sat Aug  1 09:31:02 2020
+
+automobile_scatter:
+  Python version: 3.6.9
+  Read a data file of automobile prices and weights.
+  Display the data as a scatter plot.
+
+  Graphics saved as "automobile_scatter.png"
+
+automobile_scatter
+  Normal end of execution.
+Sat Aug  1 09:31:03 2020

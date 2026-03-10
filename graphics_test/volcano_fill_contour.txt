@@ -1,0 +1,12 @@
+Sun Aug  2 07:32:11 2020
+
+volcano_fill_contour:
+  Python version: 3.6.9
+  Make a filled contour plot Z(X,Y) of volcano elevation data.
+  Z data has 87 rows and 61 columns
+
+  Graphics saved as "volcano_fill_contour.png"
+
+volcano_fill_contour:
+  Normal end of execution.
+Sun Aug  2 07:32:11 2020

@@ -1,0 +1,8 @@
+
+flow_vector():
+  Python version: 3.6.9
+  Make a vector plot of the gradient of a function z(x,y).
+  Graphics saved as "flow_vector.png"
+
+flow_vector():
+  Normal end of execution.

@@ -1,0 +1,12 @@
+Sat Aug  1 12:55:13 2020
+
+corvette_scatter:
+  Python version: 3.6.9
+  Read a data file of resale prices for Corvettes.
+  Display the data as a scatter plot.
+
+  Graphics saved as "corvette_scatter.png"
+
+corvette_scatter
+  Normal end of execution.
+Sat Aug  1 12:55:13 2020

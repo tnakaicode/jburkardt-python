@@ -1,0 +1,12 @@
+Wed Oct  8 07:48:29 2025
+
+gaussian_2d_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  gaussian_2d() evaluates a general gaussian
+  function of a 2D argument.
+  Graphics saved as "gaussian_2d.png"
+
+gaussian_2d_test():
+  Normal end of execution.
+Wed Oct  8 07:48:30 2025
