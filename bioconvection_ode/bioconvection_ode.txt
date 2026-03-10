@@ -1,0 +1,27 @@
+Wed Oct  8 07:26:52 2025
+
+bioconvection_ode_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve bioconvection_ode().
+
+  parameters:
+    a     =  49.6
+    b     =  3.3
+    sc    =  5.0
+    t0    =  0.0
+    xyz0  =  [  0. 100.   0.]
+    tstop =  25.0
+
+bioconvection_solve_ivp
+  Use solve_ivp() to solve bioconvection_ode().
+
+  Number of variable size steps =  377
+
+  Graphics data saved as "bioconvection_ode_components.png"
+
+  Graphics saved as "bioconvection_ode_3d.png"
+
+bioconvection_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:26:54 2025
