@@ -1,0 +1,104 @@
+<html>
+
+  <head>
+    <title>
+      arclength
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      arclength
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>arclength</b>,
+      a Python code which
+      estimates the arclength of curves of the form (x,f(x)) or 
+      (x(t),y(t)).
+    </p>
+
+    <p>
+      We suppose a curve has been drawn, and the length of a segment of that
+      curve is to be estimated.  Several cases arise:
+      <ol>
+        <li>
+          (x,y(x)): the curve is an explicit function of a scalar variable x.
+          The arclength is to be measured from (x1,y(x1)) to (x2,y(x2)).
+          X is taken to be the parameter.
+          The user supplies a function that evaluates dy/dx.
+        </li>
+        <li>
+          (x(t),y(t)): The curve is parameterized by t.
+          The arclength is to be measured from (x(t1),y(t1)) to (x(t2),y(t2)), 
+          and the user supplies functions that evaluate dx/dt and dy/dt.
+          Functions described by polar coordinates are an example.
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      The user supplies the limits of the parameter, the function that
+      evaluates the necessary derivatives, and a number n that indicates
+      how the parameter interval x1 &leq; x &leq; x2 or t1 &leq; t &leq; t2 is to be
+      subdivided.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>arclength</b> is available in
+      <a href = "../../m_src/arclength/arclength.html">a MATLAB version</a> and
+      <a href = "../../octave_src/arclength/arclength.html">an Octave version</a> and
+      <a href = "../../py_src/arclength/arclength.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "arclength.py">arclength.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "arclength.sh">arclength.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "arclength.txt">arclength.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 17 April 2023.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
