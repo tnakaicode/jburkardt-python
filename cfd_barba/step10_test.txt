@@ -1,0 +1,9 @@
+
+STEP10:
+  python version: 3.10.12
+  numpy version:  1.26.4
+  The 2D Poisson equation.
+  Saved final solution in file "step10_final.png".
+
+STEP10:
+  Normal end of execution.
