@@ -1,0 +1,56 @@
+Wed Oct  8 07:28:45 2025
+n
+coin_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  coin_simulation() simulates and visualizes the repeated
+  tossing of a coin.
+
+coin_biased_test()
+  coin_biased() simulates the tossing of a biased coin N times.
+  HEADS has a probability of 0.7
+
+  Coin toss results: -1=Tails, +1=Heads
+100
+
+coin_streak_test():
+  coin_streak() computes streaks of H's or T's
+  in N tosses of a coin.
+
+  Coin toss results: -1=Tails, +1=Heads
+[-1  1 -1  1  1  1 -1  1  1 -1  1  1 -1  1 -1 -1 -1 -1 -1 -1]
+
+  Streak list:
+[ 0. -1.  1. -1.  1.  2.  3. -1.  1.  2. -1.  1.  2. -1.  1. -1. -2. -3.
+ -4. -5. -6.]
+
+coin_uniform_test():
+  coin_uniform() simulates the tossing of a fair coin N times.
+
+  Coin toss results: -1=Tails, +1=Heads
+[-1  1  1 -1  1  1  1 -1 -1  1  1  1 -1 -1  1 -1  1  1  1  1 -1 -1  1  1
+  1 -1 -1  1  1  1 -1  1  1  1  1  1  1 -1  1  1 -1 -1  1  1  1 -1 -1  1
+  1 -1 -1  1  1  1  1  1 -1 -1 -1 -1 -1 -1 -1  1  1  1 -1  1  1  1  1 -1
+  1  1  1  1  1  1 -1 -1 -1 -1  1  1  1  1  1  1 -1 -1  1 -1 -1  1 -1  1
+ -1  1 -1  1]
+  Graphics saved as "coin_biased_barchart.png"
+  Graphics saved as "coin_biased_plot.png"
+  Graphics saved as "coin_biased_average.png"
+  Graphics saved as "coin_biased_sign.png"
+  Graphics saved as "coin_biased_streak.png"
+  Graphics saved as "coin_biased_sum.png"
+  Graphics saved as "coins_biased_sum_barchart.png"
+  Graphics saved as "coin_uniform_barchart.png"
+  Graphics saved as "coin_uniform_plot.png"
+  Graphics saved as "coin_uniform_average.png"
+  Graphics saved as "coin_uniform_sign.png"
+  Graphics saved as "coin_uniform_streak.png"
+  Graphics saved as "coin_uniform_sum.png"
+  Graphics saved as "coins_uniform_plot.png"
+  Graphics saved as "coins_uniform_average.png"
+  Graphics saved as "coins_uniform_sum.png"
+  Graphics saved as "coins_uniform_sum_barchart.png"
+
+coin_simulation_test():
+  Normal end of execution.
+Wed Oct  8 07:28:47 2025
