@@ -1,0 +1,47 @@
+Wed Oct  8 07:27:22 2025
+
+cauchy_method_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test cauchy_method().
+  We use a constant stepsize.
+
+  parameters:
+    lamda =  50.0
+    t0    =  0.0
+    y0    =  [0.]
+    tstop =  1.0
+
+stiff_cauchy_fixed_test()
+  Solve stiff ODE using the Cauchy method + fixed point.
+  Using theta = 0.25
+  Graphics saved as "stiff_cauchy_fixed_0.25.png"
+
+stiff_cauchy_fixed_test()
+  Solve stiff ODE using the Cauchy method + fixed point.
+  Using theta = 0.5
+  Graphics saved as "stiff_cauchy_fixed_0.5.png"
+
+stiff_cauchy_fixed_test()
+  Solve stiff ODE using the Cauchy method + fixed point.
+  Using theta = 0.75
+  Graphics saved as "stiff_cauchy_fixed_0.75.png"
+
+stiff_cauchy_fsolve_test():
+  Solve stiff ODE using the Cauchy method + fsolve().
+  Using theta =  0.25
+  Graphics saved as "stiff_cauchy_fsolve_0.25.png"
+
+stiff_cauchy_fsolve_test():
+  Solve stiff ODE using the Cauchy method + fsolve().
+  Using theta =  0.5
+  Graphics saved as "stiff_cauchy_fsolve_0.5.png"
+
+stiff_cauchy_fsolve_test():
+  Solve stiff ODE using the Cauchy method + fsolve().
+  Using theta =  0.75
+  Graphics saved as "stiff_cauchy_fsolve_0.75.png"
+
+cauchy_method_test():
+  Normal end of execution.
+Wed Oct  8 07:27:23 2025
