@@ -1,0 +1,18 @@
+Wed Oct  8 07:44:39 2025
+
+fd1d_wave_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test fd1d_wave().
+
+  Stability condition ALPHA = C * DT / DX =  1.0
+  Graphics saved as "test01_plot.png"
+  Solution data saved as "test01_plot.txt"
+
+  Stability condition ALPHA = C * DT / DX =  1.0
+  Graphics saved as "test02_plot.png"
+  Solution data saved as "test02_plot.txt"
+
+fd1d_wave_test():
+  Normal end of execution.
+Wed Oct  8 07:44:43 2025

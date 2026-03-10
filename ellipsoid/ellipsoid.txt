@@ -1,0 +1,48 @@
+Wed Oct  8 07:44:22 2025
+
+ellipsoid_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test ellipsoid().
+
+ellipsoid_abc_area_test():
+  ellipsoid_abc_area_test() computes the surface area of the ellipsoid
+    (x/a)^2+(y/b)^2+(z/c)^2=1
+
+           A           B           C        Area
+
+           1         0.8       0.625       8.152
+           1           1         0.5       8.672
+           1           1           1       12.57
+           2           1        0.25        13.7
+           2           3           4       111.5
+
+ellipsoid_abc_volume_test():
+  ellipsoid_abc_volume_test() computes the volume of the ellipsoid
+    (x/a)^2+(y/b)^2+(z/c)^2=1
+
+           A           B           C        Volume
+
+           1         0.8       0.625       2.094
+           1           1         0.5       2.094
+           1           1           1       4.189
+           2           1        0.25       2.094
+           2           3           4       100.5
+
+ellipsoid_conic_volume_test():
+  ellipsoid_conic_volume() computes the volume of the ellipsoid
+    (X-V)' * A * (X-V) <= R * R.
+
+  M = 3
+  Matrix A:
+[[9. 3. 3.]
+ [3. 5. 3.]
+ [3. 3. 3.]]
+  Vector V:
+[2. 3. 1.]
+
+  Volume =       0.698132
+
+ellipsoid_test():
+  Normal end of execution.
+Wed Oct  8 07:44:22 2025

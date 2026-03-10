@@ -1,0 +1,23 @@
+Wed Oct  8 07:44:43 2025
+
+fd2d_convergence_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  fd2d_poisson() solves a Poisson problem on a
+  sequence of meshes of mesh size h.  Compute RMS error E.
+  Plot log(h) versus log(E).
+
+  i           h(i)     e(i)                rate(i)
+
+ 0            0.25     6.05759e-05             nan
+ 1           0.125     2.04755e-05         1.56484
+ 2          0.0625     5.66053e-06         1.85489
+ 3         0.03125     1.47327e-06         1.94192
+ 4        0.015625     3.74945e-07         1.97427
+ 5       0.0078125     9.45273e-08         1.98788
+
+  Graphics saved as "fd2d_convergence_test.png"
+
+fd2d_convergence_test():
+  Normal end of execution.
+Wed Oct  8 07:45:18 2025

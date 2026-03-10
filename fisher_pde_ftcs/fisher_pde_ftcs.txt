@@ -1,0 +1,34 @@
+Wed Oct  8 07:45:34 2025
+
+fisher_pde_ftcs():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve the KPP Fisher PDE using ftcs()
+    du/dt = uxx + u * ( 1 - u )
+  over the spatial interval:
+     0.0  <= x <=  1.0
+  and time interval
+      0.0  <= t <=  0.05
+  with boundary conditions:
+    u( 0.0 ) = ( cos(100*t(j)) + 1.5 ) / 2.5 (Dirichlet)
+    u'( 1.0 ) = 0.0 (Neumann)
+  and initial condition
+    u(0,x) = ( cos ( 15.0 * x ) + 1.5 ) / 2.5.
+  Create a sequence of graphic figures.
+  Save each one to a png file.
+  Use "convert()" to create a gif animation.
+  Space steps =  51
+  Space interval is [ 0.0 , 1.0 ]
+  Space increment is  0.02
+
+  Time steps =  801
+  Time interval is [ 0.0 , 0.05 ]
+  Time increment is  6.25e-05
+  Graphics saved as "fisher_pde_ftcs_initial.png"
+  Graphics saved as "fisher_pde_ftcs_final.png"
+  Animation created as "fisher_pde_ftcs.gif"
+  Removed frame files.
+
+fisher_pde_ftcs():
+  Normal end of execution.
+Wed Oct  8 07:45:59 2025

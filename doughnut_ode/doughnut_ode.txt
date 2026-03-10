@@ -1,0 +1,24 @@
+Fri Oct 10 11:27:08 2025
+
+doughnut_ode_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  matplotlib version: 3.5.1
+  Solve doughnut_ode().
+
+  parameters:
+    beta  =  3.0
+    rho   =  5.0
+    t0    =  0.0
+    y0    =  [1. 1. 3.]
+    tstop =  10.0
+
+doughnut_solve_ivp
+  Use solve_ivp() to solve doughnut_ode().
+
+  Number of variable size steps =  123
+  Graphics saved as "doughnut_ode.png"
+
+doughnut_ode_test():
+  Normal end of execution.
+Fri Oct 10 11:27:09 2025

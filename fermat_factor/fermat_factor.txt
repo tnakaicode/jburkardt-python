@@ -1,0 +1,22 @@
+Wed Oct  8 07:45:31 2025
+
+fermat_factor_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  fermat_factor() factors an integer using the Fermat method.
+
+  Seeking factors of n =  39
+   13  *  3  =  39
+
+  Seeking factors of n =  25951
+   25951  *  1  =  25951
+
+  Seeking factors of n =  2025090001
+   45001  *  45001  =  2025090001
+
+  Seeking factors of n =  2027651281
+   46061  *  44021  =  2027651281
+
+fermat_factor_test():
+  Normal end of execution.
+Wed Oct  8 07:45:31 2025

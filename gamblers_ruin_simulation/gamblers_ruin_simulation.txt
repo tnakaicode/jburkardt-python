@@ -1,0 +1,89 @@
+Wed Oct  8 07:48:24 2025
+
+gamblers_ruin_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test gamblers_ruin_simulation().
+
+gamblers_ruin_simulation():
+  Simulate many instances of a two person gambling competition.
+
+  Number of games in simulation = 1
+  A starts game with 5.0
+  B starts game with 7.0
+
+  Average number of steps  = 11.0
+  Expected number of steps = 35.0
+  Maximum number of steps  = 11.0
+
+  Average chance of A winning =  1.0
+  Expected chance of A winning = 0.4166666666666667
+  Average chance of B winning =  0.0
+  Expected chance of B winning = 0.5833333333333334
+
+  Average number of flips =  0.0
+  Maximum number of flips =  0.0
+
+  Initial flip table:
+
+  Number Freq Prob
+
+     0       1  1.000000
+     1       0  0.000000
+     2       0  0.000000
+     3       0  0.000000
+     4       0  0.000000
+     5       0  0.000000
+     6       0  0.000000
+     7       0  0.000000
+     8       0  0.000000
+     9       0  0.000000
+    10       0  0.000000
+  Graphics saved as "gamblers_ruin_steps.png"
+  Graphics saved as "gamblers_ruin_flips.png"
+
+gamblers_ruin_simulation():
+  Simulate many instances of a two person gambling competition.
+
+  Number of games in simulation = 1000
+  A starts game with 70.0
+  B starts game with 70.0
+
+  Average number of steps  = 4828.37
+  Expected number of steps = 4900.0
+  Maximum number of steps  = 40190.0
+
+  Average chance of A winning =  0.499
+  Expected chance of A winning = 0.5
+  Average chance of B winning =  0.501
+  Expected chance of B winning = 0.5
+
+  Average number of flips =  33.251
+  Maximum number of flips =  273.0
+
+  Initial flip table:
+
+  Number Freq Prob
+
+     0      27  0.027000
+     1      21  0.021000
+     2      31  0.031000
+     3      31  0.031000
+     4      23  0.023000
+     5      20  0.020000
+     6      23  0.023000
+     7      28  0.028000
+     8      18  0.018000
+     9      28  0.028000
+    10      24  0.024000
+  Graphics saved as "gamblers_ruin_steps.png"
+  Graphics saved as "gamblers_ruin_flips.png"
+
+gamblers_ruin_plot():
+  Display the bankrolls of two gambling opponents.
+  Graphics saved as "gamblers_ruin_simulation.png"
+
+gamblers_ruin_simulation_test():
+  Normal end of execution.
+
+Wed Oct  8 07:48:28 2025

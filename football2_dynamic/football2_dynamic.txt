@@ -1,0 +1,78 @@
+Wed Oct  8 07:47:40 2025
+
+football2_dynamic_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  football2_dynamic() computes the number of ways
+  of achieving a particular score in football.
+
+  For this program, the order in which points are achieved
+  matters, so 6+3 and 3+6 are considered to be two distinct
+  ways of reaching a score of 9, even though both ways involve
+  the same facts, a field goal and a touchdown with no followup.
+
+  We assume scoring options are:
+
+  +2 for a safety
+  +3 for a field goal
+  +6 for a touchdown with no followup
+  +7 for a touchdown with a point bonus
+  +8 for a touchdown with two point conversion
+
+   Score                  Ways
+
+0 1
+1 0
+2 1
+3 1
+4 1
+5 2
+6 3
+7 4
+8 7
+9 9
+10 14
+11 20
+12 29
+13 43
+14 63
+15 92
+16 136
+17 198
+18 291
+19 426
+20 624
+21 915
+22 1341
+23 1965
+24 2881
+25 4221
+26 6187
+27 9067
+28 13288
+29 19475
+30 28542
+31 41830
+32 61306
+33 89847
+34 131678
+35 192983
+36 282830
+37 414508
+38 607491
+39 890321
+40 1304830
+41 1912320
+42 2802642
+43 4107471
+44 6019791
+45 8822433
+46 12929904
+47 18949695
+48 27772129
+49 40702032
+50 59651728
+
+football2_dynamic_test():
+  Normal end of execution.
+Wed Oct  8 07:47:40 2025

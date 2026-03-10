@@ -1,0 +1,30 @@
+Wed Oct  8 07:48:33 2025
+
+gauss_seidel_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  gauss_seidel() solves a linear system using
+  a version of the Gauss-Seidel iteration.
+
+gauss_seidel1_test():
+  gauss_seidel1() solves a linear system using
+  a for-loop version of the Gauss-Seidel iteration.
+
+  Iterations  ||Ax-b||
+
+    10        1.35391
+    20        0.770613
+    40        0.43863
+    80        0.181836
+   160        0.0302195
+   320        0.000830483
+   640        6.27204e-07
+  1280        3.57889e-13
+  2560        3.55271e-15
+
+gauss_seidel1_test():
+  Normal end of execution.
+
+gauss_seidel_test():
+  Normal end of execution.
+Wed Oct  8 07:48:33 2025

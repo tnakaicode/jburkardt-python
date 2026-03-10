@@ -1,0 +1,183 @@
+<html>
+
+  <head>
+    <title>
+      fisher_pde_ftcs
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      fisher_pde_ftcs
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>fisher_pde_ftcs</b>,
+      a Python code which 
+      estimates a solution of the Kolmogorov Petrovsky Piskonov Fisher 
+      partial differential equation (PDE) ut=uxx+u*(1-u), using the
+      forward time centered space (FTCS) method, with an oscillating
+      Dirichlet condition on the left, and a zero Neumann condition 
+      on the right.  An animation of the solution is created.
+    </p>
+
+    <p>
+      The use of the explicit FTCS method requires that the time steps be
+      small; otherwise the computed solution will become unstable.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>fisher_pde_ftcs</b> is available in
+      <a href = "../../m_src/fisher_pde_ftcs/fisher_pde_ftcs.html">a MATLAB version</a> and
+      <a href = "../../octave_src/fisher_pde_ftcs/fisher_pde_ftcs.html">an Octave version</a> and
+      <a href = "../../octave_src/fisher_pde_ftcs/fisher_pde_ftcs.html">an Octave version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/allen_cahn_pde/allen_cahn_pde.html">
+      allen_cahn_pde</a>,
+      a Python code which 
+      sets up and solves the Allen-Cahn reaction-diffusion 
+      system of partial differential equations (PDE)
+      du/dt = nu * uxx - u * (u^2-1) / (2*xi)
+      in 1 space dimension and time.
+    </p>
+
+    <p>
+      <a href = "../../py_src/diffusion_pde/diffusion_pde.html">
+      diffusion_pde</a>,
+      a Python code which
+      solves the diffusion partial differential equation (PDE) 
+      dudt - mu * d2udx2 = 0 in one spatial dimension and time, with
+      a constant diffusion coefficient mu, and periodic boundary conditions, 
+      using the forward time centered space (FTCS) difference method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_advection_lax_wendroff/fd1d_advection_lax_wendroff.html">
+      fd1d_advection_lax_wendroff</a>,
+      a Python code which
+      applies the finite difference method to solve the time-dependent
+      advection equation ut = - c * ux in one spatial dimension, with
+      a constant velocity, using the Lax-Wendroff method to treat 
+      the time derivative.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_heat_explicit/fd1d_heat_explicit.html">
+      fd1d_heat_explicit</a>,
+      a Python code which
+      uses the finite difference method and explicit time stepping 
+      to solve the time dependent heat equation in 1D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_heat_implicit/fd1d_heat_implicit.html">
+      fd1d_heat_implicit</a>,
+      a Python code which
+      uses the finite difference method and implicit time stepping 
+      to solve the time dependent heat equation in 1D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fisher_exact/fisher_exact.html">
+      fisher_exact</a>,
+      a Python code which 
+      returns an exact solution of the Kolmogorov Petrovsky Piskonov Fisher 
+      partial differential equation (PDE) ut=uxx+u*(1-u).
+    </p>
+
+    <h3 align = "center">
+      References:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Mark Ablowitz, Anthony Zeppetella,<br>
+          Explicit solutions of Fisher's equation for a special wave speed,<br>
+          Bulletin of Mathematical Biology,<br>
+          Volume 41, pages 835-840, 1979.
+        </li>
+        <li>
+          Daniel Arrigo,<br>
+          Analytical Techniques for Solving Nonlinear Partial Differential Equations,<br>
+          Morgan and Clayfoot, 2019,<br>
+          ISBN: 978 168 173 5351.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "fisher_pde_ftcs.py">fisher_pde_ftcs.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "fisher_pde_ftcs.sh">fisher_pde_ftcs.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "fisher_pde_ftcs.txt">fisher_pde_ftcs.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "fisher_pde_ftcs_initial.png">fisher_pde_ftcs_initial.png</a>, 
+          an image of the initial condition.
+        </li>
+        <li>
+          <a href = "fisher_pde_ftcs_final.png">fisher_pde_ftcs_final.png</a>, 
+          an image of the final condition.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "fisher_pde_ftcs.gif">fisher_pde_ftcs.gif</a>, 
+          an animation of the solution over time.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 September 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

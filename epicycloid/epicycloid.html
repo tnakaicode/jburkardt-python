@@ -1,0 +1,129 @@
+<html>
+
+  <head>
+    <title>
+      epicycloid
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      epicycloid
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>epicycloid</b>,
+      a Python code which
+      plots an epicycloid curve.
+    </p>
+
+    <p>
+      An epicycloid is the curve traced by a point on the perimeter of
+      a circle of radius r1 which is rolling around the perimeter of a
+      a circle of radius r2.  Normally, r1 is smaller than r2.
+    </p>
+
+    <p>
+      The equations for the (x,y) coordinates of the point are:
+      <pre>
+        x(t) = (r1+r2) * cos(t) - r1 * cos ( (r1+r2)*t/r1 )
+        y(t) = (r1+r2) * sin(t) - r1 * sin ( (r1+r2)*t/r2 )
+      </pre>
+      It is usual to write k = r2/r1.  If k is an integer, then the curve
+      is closed, and has k cusps.  If k is rational, and in lowest terms
+      is p/q, then it has p cusps.  Otherwise, if k is irrational, then
+      mathematically the curve is not closed, and fills the annulus
+      of radiuses r2 and r2+r1.
+    </p>
+
+    <p>
+      To use the programs, you specify:
+      <ul>
+        <li>
+          k, the ratio r2/r1, 
+        </li>
+        <li>
+          s, the number of times the small circle should roll around the big one
+        </li>
+        <li>
+          n, the number of points to compute.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>epicycloid</b> is available in
+      <a href = "../../py_src/epicycloid/epicycloid.html">a MATLAB version</a> and
+      <a href = "../../octave_src/epicycloid/epicycloid.html">an Octave version</a> and
+      <a href = "../../py_src/epicycloid/epicycloid.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_plots/python_plots.html">
+      python_plots</a>,
+      a Python code which 
+      uses plotting to illustrate a mathematical structure, such as
+      an iterative map, a fractal, a curve or surface.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "epicycloid.py">epicycloid.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "epicycloid.sh">epicycloid.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "epicycloid.txt">epicycloid.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "epicycloid.png">epicycloid.png</a>,
+          a plot of an epicycloid.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 20 December 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

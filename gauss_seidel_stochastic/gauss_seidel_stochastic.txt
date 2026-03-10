@@ -1,0 +1,23 @@
+Wed Oct  8 07:48:33 2025
+
+gauss_seidel_stochastic_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  gauss_seidel_stochastic() solves a linear system using
+  a stochastic version of the Gauss-Seidel iteration.
+
+  Iterations  ||Ax-b||
+
+    10        21
+    20        21
+    40        10.5
+    80        4.42056
+   160        3.2197
+   320        1.6772
+   640        1.10275
+  1280        0.643564
+  2560        0.340629
+
+gauss_seidel_stochastic_test():
+  Normal end of execution.
+Wed Oct  8 07:48:34 2025

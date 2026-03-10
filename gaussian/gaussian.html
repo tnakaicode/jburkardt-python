@@ -1,0 +1,214 @@
+<html>
+
+  <head>
+    <title>
+      gaussian
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      gaussian
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>gaussian</b>,
+      a Python code which
+      evaluates the Gaussian function for arbitrary mu and sigma,
+      its antiderivative, and derivatives of arbitrary order.
+    </p>
+
+    <p>
+      A formula for the Gaussian function at the point x is:
+      <pre>
+      g(x,mu,sigma) = 1/sigma/sqrt(2*pi) * exp ( -(x-mu)^2/2/sigma^2)
+      </pre>
+      where mu is the mean value, and sigma is the standard deviation.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>gaussian</b> is available in
+      <a href = "../../c_src/gaussian/gaussian.html">a C version</a> and
+      <a href = "../../cpp_src/gaussian/gaussian.html">a C++ version</a> and
+      <a href = "../../f_src/gaussian/gaussian.html">a Fortran90 version</a> and
+      <a href = "../../m_src/gaussian/gaussian.html">a MATLAB version</a> and
+      <a href = "../../octave_src/gaussian/gaussian.html">an Octave version</a> and
+      <a href = "../../py_src/gaussian/gaussian.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/dirichlet/dirichlet.html">
+      dirichlet</a>,
+      a Python code which
+      evaluates the Dirichlet kernel function, sometimes called the periodic
+      sinc function.  The function includes a parameter n, normally
+      taken to be an integer.
+      The function is defined by diric(x,n)=sin(0.5*n*x)/n/sin(0.5*x).
+      Sample plots of these functions are made.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fresnel/fresnel.html">
+      fresnel</a>,
+      a Python code which
+      evaluates the Fresnel cosine and sine integrals.
+    </p>
+
+    <p>
+      <a href = "../../py_src/hermite_polynomial/hermite_polynomial.html">
+      hermite_polynomial</a>,
+      a Python code which
+      evaluates the physicist's Hermite polynomial,
+      the probabilist's Hermite polynomial,
+      the Hermite function, and related functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/humps/humps.html">
+      humps</a>,
+      a Python code which
+      evaluates the humps() function, its first and second derivatives,
+      and its antiderivative.  The functions are plotted.
+    </p>
+
+    <p>
+      <a href = "../../py_src/lagrange/lagrange.html">
+      lagrange</a>,
+      a Python code which
+      evaluates any Lagrange basis polynomial L(i)(x), its antiderivative,
+      or its first or second derivatives.  Sample plots are made.
+    </p>
+
+    <p>
+      <a href = "../../py_src/runge/runge.html">
+      runge</a>,
+      a Python code which
+      evaluates the Runge() function, its first and second derivatives,
+      and its antiderivative.  This function causes a breakdown for
+      polynomial interpolation over equally spaced nodes in [-1,+1].
+      Plots of these functions are made.
+    </p>
+
+    <p>
+      <a href = "../../py_src/sigmoid/sigmoid.html">
+      sigmoid</a>,
+      a Python code which
+      evaluates the sigmoid function s(x)=1/(1+exp(-x)) or its
+      derivatives of any order.  The test code creates graphic images.
+    </p>
+
+    <p>
+      <a href = "../../py_src/sinc/sinc.html">
+      sinc</a>,
+      a Python code which
+      evaluates the sinc() function, its first and second derivative
+      and its antiderivative.
+      The normalized function is defined by sincn=sin(pi*x)/(pi*x),
+      the unnormalized function is sincu=sin(x)/x.
+      Plots of these functions are made.
+    </p>
+
+    <p>
+      <a href = "../../py_src/steinerberger/steinerberger.html">
+      steinerberger</a>,
+      a Python code which 
+      evaluates the Steinerberger function, a continuous function
+      with discontinuous derivative, which is very hard to accurately
+      plot, integrate, minimize, or interpolate.
+      Plots of these functions are made.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gaussian.py">gaussian.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "gaussian.sh">gaussian.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "gaussian.txt">gaussian.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gaussian_antideriv.png">gaussian_antideriv.png</a>,
+          a plot of the antiderivative of a Gaussian function.
+        </li>
+        <li>
+          <a href = "gaussian_mu.png">gaussian_mu.png</a>,
+          a plot of the Gaussian function for various values of mu.
+        </li>
+        <li>
+          <a href = "gaussian_n0.png">gaussian_n0.png</a>,
+          a plot of the Gaussian function g(n=0,x,mu=0,sigma=1).
+        </li>
+        <li>
+          <a href = "gaussian_n1.png">gaussian_n1.png</a>,
+          a plot of the Gaussian function g(n=1,x,mu=0,sigma=1).
+        </li>
+        <li>
+          <a href = "gaussian_n2.png">gaussian_n2.png</a>,
+          a plot of the Gaussian function g(n=2,x,mu=0,sigma=1).
+        </li>
+        <li>
+          <a href = "gaussian_n3.png">gaussian_n3.png</a>,
+          a plot of the Gaussian function g(n=3,x,mu=0,sigma=1).
+        </li>
+        <li>
+          <a href = "gaussian_n4.png">gaussian_n4.png</a>,
+          a plot of the Gaussian function g(n=4,x,mu=0,sigma=1).
+        </li>
+        <li>
+          <a href = "gaussian_n5.png">gaussian_n5.png</a>,
+          a plot of the Gaussian function g(n=5,x,mu=0,sigma=1).
+        </li>
+        <li>
+          <a href = "gaussian_sigma.png">gaussian_sigma.png</a>,
+          a plot of the Gaussian function for various values of sigma.
+        </li>
+      </ul>
+    </p>
+
+
+    <hr>
+
+    <i>
+      Last modified on 30 September 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

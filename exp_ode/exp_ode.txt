@@ -1,0 +1,34 @@
+Wed Oct  8 07:44:32 2025
+
+exp_ode_test
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve exp_ode().
+
+  parameters:
+    alpha =  1.0
+    t0    =  0.0
+    y0    =  1.0
+    tstop =  5.0
+
+exp_euler_test()
+  Solve exp_ode() using euler().
+  Number of equal steps n =  80
+  RMS error norm =  6.143410603570093
+  Graphics saved as "exp_euler.png"
+
+exp_backward_euler_test():
+  Solve exp_ode() using the backward Euler method.
+  Number of equal steps n =  80
+  RMS error norm =  7.720211820747913
+  Graphics saved as "exp_backward_euler.png"
+
+exp_midpoint_test():
+  Solve exp_ode() using midpoint().
+  Number of equal steps n =  20
+  RMS error norm =  1.2755863042348774
+  Graphics saved as "exp_midpoint.png"
+
+exp_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:44:33 2025

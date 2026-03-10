@@ -1,0 +1,36 @@
+Wed Oct  8 07:46:05 2025
+
+flies_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Two flies land at random on a plate of radius 1.
+  Their pairwise distance D is the quantity of interest.
+  Plot PDF, CDF, and statistics by simulation.
+
+flies_cdf_plot()
+  Two flies land at random on a plate of radius 1.
+  D is the distance between them.
+  Estimate the CDF for D with a plot.
+  Graphics saved as "flies_cdf.png"
+
+flies_pdf_plot():
+  Two flies land at random on a plate of radius 1.
+  D is the distance between them.
+  Estimate the PDF for D with a plot.
+  Graphics saved as "flies_pdf.png"
+
+flies_stats_test()
+  Two flies land at random on a plate of radius 1.
+  D is the distance between them.
+  Compute statistics for a sequence of experiments of size n.
+
+  n   dmin dmean dmax dstd
+
+     10  0.2044  0.9042  1.4605  0.4203
+    100  0.1350  0.8795  1.9048  0.4083
+   1000  0.0572  0.9306  1.9249  0.4162
+  10000  0.0071  0.9038  1.9691  0.4282
+
+flies_simulation_test()
+  Normal end of execution.
+Wed Oct  8 07:46:06 2025

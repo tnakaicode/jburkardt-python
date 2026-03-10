@@ -1,0 +1,12 @@
+Wed Oct  8 07:43:57 2025
+
+dragon_chaos_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  dragon_chaos() uses an iterated map to plot a dragon.
+  Apply the dragon iteration map 10000 times.
+  Graphics saved as "dragon_chaos.png"
+
+dragon_chaos_test():
+  Normal end of execution.
+Wed Oct  8 07:44:03 2025

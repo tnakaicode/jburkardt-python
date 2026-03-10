@@ -1,0 +1,98 @@
+Wed Oct  8 07:44:22 2025
+
+ellipsoid_grid_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test ellipsoid_grid().
+
+r83col_print_part_test
+  Python version: 3.10.12
+  r83col_print_part prints part of an R83COL.
+
+  Output with MAX_PRINT = 2
+
+     0              11              12              13
+     1              21              22              23  ...more entries...
+
+  Output with MAX_PRINT = 5
+
+     0              11              12              13
+     1              21              22              23
+     2              31              32              33
+  ....  ..............  ..............  ..............
+     9             101             102             103
+
+  Output with MAX_PRINT = 25
+
+     0              11              12              13
+     1              21              22              23
+     2              31              32              33
+     3              41              42              43
+     4              51              52              53
+     5              61              62              63
+     6              71              72              73
+     7              81              82              83
+     8              91              92              93
+     9             101             102             103
+
+r8mat_write_test:
+  Python version: 3.10.12
+  Test r8mat_write, which writes an R8MAT to a file.
+
+  Created file "r8mat_write_test.txt".
+
+ellipsoid_grid_count_test():
+  ellipsoid_grid_count() can count the points in a grid,
+  with N+1 points on the most minor half axis,
+  based on any ellipsoid.
+
+  We use N = 4
+  Radius R = (2,1,1.5)
+  Center C = (1,2,1.5)
+
+  Number of grid points will be 1163
+
+ellipsoid_grid_display_test():
+  ellipsoid_grid_display() displays a grid of points in a ellipsoid.
+  Graphics saved as "ellipsoid_grid_display.png"
+
+ellipsoid_grid_points_test():
+  ellipsoid_grid_points() defines a grid of points
+  with N+1 points on the minor half axis,
+  based on any ellipsoid.
+
+  We use N = 4
+  Radius R = (2,1,1.5)
+  Center C = (1,2,1.5)
+
+  Number of grid points will be 1163
+
+  Part of the grid point array:
+
+     0               1               2             1.5
+     1         1.22222               2             1.5
+     2        0.777778               2             1.5
+     3         1.44444               2             1.5
+     4        0.555556               2             1.5
+     5         1.66667               2             1.5
+     6        0.333333               2             1.5
+     7         1.88889               2             1.5
+     8        0.111111               2             1.5
+     9         2.11111               2             1.5
+    10       -0.111111               2             1.5
+    11         2.33333               2             1.5
+    12       -0.333333               2             1.5
+    13         2.55556               2             1.5
+    14       -0.555556               2             1.5
+    15         2.77778               2             1.5
+    16       -0.777778               2             1.5
+    17               3               2             1.5
+  ....  ..............  ..............  ..............
+  1162        0.777778         1.55556        0.166667
+
+  Data written to the file "ellipsoid_grid_points.xyz".
+  Graphics saved as "ellipsoid_grid_points.png"
+
+ellipsoid_grid_test():
+  Normal end of execution.
+Wed Oct  8 07:44:23 2025

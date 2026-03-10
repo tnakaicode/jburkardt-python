@@ -1,0 +1,74 @@
+Wed Oct  8 07:47:23 2025
+
+floyd_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test floyd().
+
+floyd_test01():
+  floyd() uses Floyds algorithm to find the
+  shortest distance between all pairs of nodes
+  in a directed graph, starting from the initial array
+  of direct node-to-node distances.
+
+  Node-to-node one-step distance array A:
+[[ 0.  2.  5. inf inf inf]
+ [inf  0.  7.  1. inf  8.]
+ [inf inf  0.  4. inf inf]
+ [inf inf inf  0.  3. inf]
+ [inf inf  2. inf  0.  3.]
+ [inf  5. inf  2.  4.  0.]]
+  Node-to-node shortest total distance array B:
+[[ 0.  2.  5.  3.  6.  9.]
+ [inf  0.  6.  1.  4.  7.]
+ [inf 15.  0.  4.  7. 10.]
+ [inf 11.  5.  0.  3.  6.]
+ [inf  8.  2.  5.  0.  3.]
+ [inf  5.  6.  2.  4.  0.]]
+
+floyd_test02():
+  Test floyd() on matrices of increasing order N.
+  The work is roughly N^3.
+
+         N   Time (seconds)  Time/N^3
+
+         1      0.000007      6.675720
+         2      0.000016      1.966953
+         4      0.000090      1.400709
+         8      0.000632      1.233537
+        16      0.004964      1.211942
+        32      0.039384      1.201901
+        64      0.144199      0.550076
+       128      1.126206      0.537017
+       256      9.044621      0.539101
+
+floyd_test03()
+  floyd() starts with the adjacency matrix A of a
+  triangulation, determines the pairwise distance matrix B.
+  One-step distance matrix:
+[[ 0.  1. inf ... inf inf inf]
+ [ 1.  0.  1. ... inf inf inf]
+ [inf  1.  0. ... inf inf inf]
+ ...
+ [inf inf inf ...  0.  1. inf]
+ [inf inf inf ...  1.  0.  1.]
+ [inf inf inf ... inf  1.  0.]]
+  Floyd distance matrix:
+[[ 0.          1.          2.         ... 13.41421356 13.
+  14.        ]
+ [ 1.          0.          1.         ... 12.41421356 12.
+  13.        ]
+ [ 2.          1.          0.         ... 11.41421356 11.
+  12.        ]
+ ...
+ [13.41421356 12.41421356 11.41421356 ...  0.          1.
+   2.        ]
+ [13.         12.         11.         ...  1.          0.
+   1.        ]
+ [14.         13.         12.         ...  2.          1.
+   0.        ]]
+  Graphics saved as "floyd_test03.png"
+
+floyd_test():
+  Normal end of execution.
+Wed Oct  8 07:47:34 2025

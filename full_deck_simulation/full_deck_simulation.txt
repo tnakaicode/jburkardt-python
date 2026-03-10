@@ -1,0 +1,73 @@
+Wed Oct  8 07:48:00 2025
+
+full_deck_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  full_deck_simulation() simulates a process in which
+  a card is drawn from a deck of 52 cards, then returned.
+  The process is continued until all cards have been seen
+  at least once.
+
+full_deck_try_test():
+  full_deck_try() repeatedly draws a random card
+  from a 52-card deck until all cards have been seen
+  at least once.
+
+  Try  Min    Mean Max  Total
+
+    0    1    3.08   9    160
+    1    1    3.35   7    174
+    2    1    4.75  10    247
+    3    1    3.65   9    190
+    4    1    5.29  14    275
+    5    1    4.83  10    251
+    6    1    3.87  11    201
+    7    1    8.37  16    435
+    8    1    6.00  11    312
+    9    1    4.04  12    210
+
+full_deck_stats_test():
+  full_deck_stats() reports statistics for N instances
+  of the 52-card full deck process.
+
+       N  Min    Mean  Max    Var
+
+      10  161  239.60  357  4202.24
+      20  155  250.90  395  3887.69
+      50  144  221.98  394  2629.86
+     100  127  237.41  479  4990.52
+    1000  119  239.60  615  4383.70
+   10000  104  235.74  647  4110.36
+
+full_deck_expected_test():
+  full_deck_expected() reports the expected value for
+  the number of cards drawn before seeing every card,
+  for the general full deck process, using M cards.
+
+    M     Expected
+
+   10       29.29
+   52      235.98
+  100      518.74
+  365     2364.65
+  500     3396.41
+
+full_deck_histogram():
+  Create a histogram of the full deck process.
+  Graphics saved as "full_deck_histogram.png"
+
+full_deck_variance_test():
+  full_deck_variance() reports the variance for
+  the number of cards drawn in the 52-card full deck process.
+
+    N     Variance
+
+   10      125.69
+   52     4160.42
+  100    15831.10
+  365   216417.19
+  500   407337.60
+
+full_deck_simulation_test():
+  Normal end of execution.
+Wed Oct  8 07:48:24 2025

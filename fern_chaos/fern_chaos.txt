@@ -1,0 +1,11 @@
+Wed Oct  8 07:45:31 2025
+
+fern_chaos_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  fern_chaos() makes an n-point image of the Barnsley fractal fern.
+  Graphics saved as "fern_chaos.png"
+
+fern_chaos_test():
+  Normal end of execution.
+Wed Oct  8 07:45:32 2025

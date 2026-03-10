@@ -1,0 +1,220 @@
+<html>
+
+  <head>
+    <title>
+      gamblers_ruin_simulation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      gamblers_ruin_simulation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>gamblers_ruin_simulation</b>,
+      a Python code which
+      simulates a game in which a gambler starts with a fixed bankroll,
+      and then repeatedly makes the same bet until going bankrupt.
+    </p>
+
+    <p>
+      In the game of gambler's ruin, two gamblers, A and B, start with
+      $A_STAKES and $B_STAKES, respectively, and play until one of them
+      is bankrupt.  They repeatedly flip a coin.  On heads, A wins one dollar 
+      from B, and on tails, B wins one dollar from A.
+    </p>
+
+    <p>
+      The game is easy to simulate, and can also be analyzed.  It is worth
+      study in part because the analysis or simulation of the game reveals
+      some surprising features about the chances of winning, the typical length
+      of a game, and the number of times each player will be in the lead.
+    </p>
+
+    <p>
+      In particular, most people will be surprised to find that if A starts with
+      $1 and B with $100, the "average" game will take 100 coin tosses.
+    </p>
+
+    <p>
+      It is known that, if A and B start the game with $A_STAKES and $B_STAKES,
+      <ul>
+        <li>
+          the expected number of coin tosses required to complete the game is
+          A_STAKES * B_STAKES.
+        </li>
+        <li>
+          the probability that A will win the game is A_STAKES / ( A_STAKES+B_STAKES).
+        </li>
+        <li>
+          the lead may change many times in one game, but, if a large number of
+          games are played, the most common case is that the lead never changes.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Note that the game of gambler's ruin can be regarded as a case of a 1D
+      random walk in a finite region, in which the "particle" starts A_STAKES
+      steps from one wall and B_STAKES steps from the other, and in which
+      the walk ends when the particle strikes a wall.
+    </p>
+
+    <p>
+      gamblers_ruin_plot() displays the "score" for player A
+      at each step of the game.  
+    </p>
+
+    <p>
+      gamblers_ruin_simulation() plays the game a number of times,
+      and computes statistics of the number of steps and the probability of winning,
+      as well as histograms of the number of steps and the number of times the
+      lead was reversed.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>gamblers_ruin_plot</b> ( <i>a_stakes</i>, <i>b_stakes</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>a_stakes</i> and <i>b_stakes</i> are the amounts of money with
+          which A and B start the game.
+        </li>
+      </ul>
+      plays one game and plots the trajectory.
+    </p>
+
+    <p>
+      <blockquote>
+        <b>gamblers_ruin_simulation</b> ( <i>a_stakes</i>, <i>b_stakes</i>, <i>game_num</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>a_stakes</i> and <i>b_stakes</i> are the amounts of money with
+          which A and B start the game.
+        </li>
+        <li>
+          <i>game_num</i> is the number of games to play.
+        </li>
+      </ul>
+      plays the game <i>game_num</i> times, computes statistics, and plots some
+      histograms.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>gamblers_ruin_simulation</b> is available in
+      <a href = "../../m_src/gamblers_ruin_simulation/gamblers_ruin_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/gamblers_ruin_simulation/gamblers_ruin_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/gamblers_ruin_simulation/gamblers_ruin_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Nick Berry,<br>
+          Gambler's Ruin,<br>
+          https://datagenetics.com/blog/january42020/index.html<br>
+          Posted 04 January 2020.
+        </li>
+        <li>
+          Martin Gardner,<br>
+          The Mathematical Circus,<br>
+          Mathematics Association of America, 1996,<br>
+          ISBN13: 978-0883855065,<br>
+          LC: QA95.G287.
+        </li>
+        <li>
+          Ian Stewart,<br>
+          "Repealing the Law of Averages",<br>
+          Scientific American,<br>
+          Volume 278, Number 4, April 1998, pages 102-104.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gamblers_ruin_simulation.py">gamblers_ruin_simulation.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "gamblers_ruin_simulation.sh">gamblers_ruin_simulation.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "gamblers_ruin_simulation.txt">gamblers_ruin_simulation.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gamblers_ruin_flips.png">gamblers_ruin_flips.png</a>
+        </li>
+        <li>
+          <a href = "gamblers_ruin_steps.png">gamblers_ruin_steps.png</a>
+        </li>
+        <li>
+          <a href = "gamblers_ruin_simulation.png">gamblers_ruin_simulation.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 12 November 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
