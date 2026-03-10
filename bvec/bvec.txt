@@ -1,0 +1,411 @@
+Wed Oct  8 07:27:18 2025
+
+bvec_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test bvec().
+
+bvec_add_test():
+  bvec_add() adds binary vectors representing integers;
+
+        I        J        K = I + J   Kb = Ib + Jb
+
+       -83       -96      -179      -179
+       -96        69       -27       -27
+        79         9        88        88
+       -15       -58       -73       -73
+        -9        41        32        32
+         5       -59       -54       -54
+        28        15        43        43
+       -23        -1       -24       -24
+        63        16        79        79
+       -75       -89      -164      -164
+
+bvec_complement2_test():
+  bvec_complement2() returns the twos complement
+  of a (signed) binary vector;
+
+  1111001101
+  0000110011
+
+  0001000110
+  1110111010
+
+  1110110100
+  0001001100
+
+  1111001000
+  0000111000
+
+  0001011110
+  1110100010
+
+bvec_mul_test():
+  bvec_mul() multiplies binary vectors representing integers;
+
+        I        J        I * J   bvec_mul
+
+        80       -92     -7360     -7360
+        52        66      3432      3432
+        20       -27      -540      -540
+        38         2        76        76
+       -99        25     -2475     -2475
+        34        84      2856      2856
+        27        48      1296      1296
+        72        45      3240      3240
+        87        96      8352      8352
+        76        60      4560      4560
+
+bvec_next_test():
+  bvec_next() computes the "next" BVEC.
+
+  0000
+  1000
+  0100
+  1100
+  0010
+  1010
+  0110
+  1110
+  0001
+  1001
+  0101
+  1101
+  0011
+  1011
+  0111
+  1111
+  0000
+
+bvec_next_grlex_test():
+  bvec_next_grlex() computes binary vectors in GRLEX order.
+
+   0:  0000
+   1:  0001
+   2:  0010
+   3:  0100
+   4:  1000
+   5:  0011
+   6:  0101
+   7:  0110
+   8:  1001
+   9:  1010
+  10:  1100
+  11:  0111
+  12:  1011
+  13:  1101
+  14:  1110
+  15:  1111
+  16:  0000
+
+bvec_print_test():
+  bvec_print() prints a binary vector.
+
+  BVEC:
+  0011101001
+
+bvec_sub_test():
+  bvec_sub() subtracts binary vectors representing integers;
+
+        I        J        K = I - J   Kb = Ib - Jb
+
+        11         7         4         4
+       -76         3       -79       -79
+       -52       100      -152      -152
+        56        76       -20       -20
+       -42        61      -103      -103
+       -69        17       -86       -86
+       -60       -43       -17       -17
+        22       -86       108       108
+       -54       -42       -12       -12
+       -74        65      -139      -139
+
+bvec_to_i4_test():
+  bvec_to_i4() converts a signed binary vector
+  to an integer;
+
+  I --> BVEC  -->  I
+
+  -3  1111111101  -3
+  -2  1111111110  -2
+  -1  1111111111  -1
+   0  0000000000   0
+   1  0000000001   1
+   2  0000000010   2
+   3  0000000011   3
+   4  0000000100   4
+   5  0000000101   5
+   6  0000000110   6
+   7  0000000111   7
+   8  0000001000   8
+   9  0000001001   9
+  10  0000001010  10
+
+bvec_uniform_test():
+  bvec_uniform() computes a random BVEC.
+
+  0000110101
+  1111101011
+  1101001101
+  1011101010
+  1001000100
+  1000001101
+  1111010011
+  0001001101
+  1010100111
+  0001011100
+
+i4_bclr_test():
+  i4_bclr() sets a given bit to 0.
+
+  Working on I4 = 101
+
+       Pos     i4_bclr(I4,Pos)
+
+         0           100
+         1           101
+         2            97
+         3           101
+         4           101
+         5            69
+         6            37
+         7           101
+         8           101
+         9           101
+        10           101
+        11           101
+        12           101
+        13           101
+        14           101
+        15           101
+        16           101
+        17           101
+        18           101
+        19           101
+        20           101
+        21           101
+        22           101
+        23           101
+        24           101
+        25           101
+        26           101
+        27           101
+        28           101
+        29           101
+        30           101
+        31           101
+
+  Working on I4 = -31
+
+       Pos     i4_bclr(I4,Pos)
+
+         0           -32
+         1           -31
+         2           -31
+         3           -31
+         4           -31
+         5           -63
+         6           -95
+         7          -159
+         8          -287
+         9          -543
+        10         -1055
+        11         -2079
+        12         -4127
+        13         -8223
+        14        -16415
+        15        -32799
+        16        -65567
+        17       -131103
+        18       -262175
+        19       -524319
+        20      -1048607
+        21      -2097183
+        22      -4194335
+        23      -8388639
+        24     -16777247
+        25     -33554463
+        26     -67108895
+        27    -134217759
+        28    -268435487
+        29    -536870943
+        30   -1073741855
+        31    2147483617
+
+i4_bset_test():
+  i4_bset() sets a given bit to 1.
+
+  Working on I4 = 101
+
+       Pos     i4_bset(I4,Pos)
+
+         0           101
+         1           103
+         2           101
+         3           109
+         4           117
+         5           101
+         6           101
+         7           229
+         8           357
+         9           613
+        10          1125
+        11          2149
+        12          4197
+        13          8293
+        14         16485
+        15         32869
+        16         65637
+        17        131173
+        18        262245
+        19        524389
+        20       1048677
+        21       2097253
+        22       4194405
+        23       8388709
+        24      16777317
+        25      33554533
+        26      67108965
+        27     134217829
+        28     268435557
+        29     536871013
+        30    1073741925
+        31   -2147483547
+
+  Working on I4 = -31
+
+       Pos     i4_bset(I4,Pos)
+
+         0           -31
+         1           -29
+         2           -27
+         3           -23
+         4           -15
+         5           -31
+         6           -31
+         7           -31
+         8           -31
+         9           -31
+        10           -31
+        11           -31
+        12           -31
+        13           -31
+        14           -31
+        15           -31
+        16           -31
+        17           -31
+        18           -31
+        19           -31
+        20           -31
+        21           -31
+        22           -31
+        23           -31
+        24           -31
+        25           -31
+        26           -31
+        27           -31
+        28           -31
+        29           -31
+        30           -31
+        31           -31
+
+i4_btest_test():
+  i4_btest() reports whether a given bit is 0 or 1.
+
+  Analyze the integer I4 = 101
+
+       Pos     i4_btest(I4,POS)
+
+             0             True
+             1             False
+             2             True
+             3             False
+             4             False
+             5             True
+             6             True
+             7             False
+             8             False
+             9             False
+            10             False
+            11             False
+            12             False
+            13             False
+            14             False
+            15             False
+            16             False
+            17             False
+            18             False
+            19             False
+            20             False
+            21             False
+            22             False
+            23             False
+            24             False
+            25             False
+            26             False
+            27             False
+            28             False
+            29             False
+            30             False
+            31             False
+
+  Analyze the integer I4 = -31
+
+       Pos     i4_btest(I4,POS)
+
+             0             True
+             1             False
+             2             False
+             3             False
+             4             False
+             5             True
+             6             True
+             7             True
+             8             True
+             9             True
+            10             True
+            11             True
+            12             True
+            13             True
+            14             True
+            15             True
+            16             True
+            17             True
+            18             True
+            19             True
+            20             True
+            21             True
+            22             True
+            23             True
+            24             True
+            25             True
+            26             True
+            27             True
+            28             True
+            29             True
+            30             True
+            31             True
+
+i4_to_bvec_test():
+  i4_to_bvec() converts an integer to a signed binary vector.
+
+  I --> BVEC  -->  I
+
+  -3  1111111101  -3
+  -2  1111111110  -2
+  -1  1111111111  -1
+   0  0000000000   0
+   1  0000000001   1
+   2  0000000010   2
+   3  0000000011   3
+   4  0000000100   4
+   5  0000000101   5
+   6  0000000110   6
+   7  0000000111   7
+   8  0000001000   8
+   9  0000001001   9
+  10  0000001010  10
+
+bvec_test():
+  Normal end of execution.
+Wed Oct  8 07:27:18 2025
