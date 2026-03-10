@@ -1,0 +1,43 @@
+Wed Oct  8 07:26:49 2025
+
+besselzero_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  scipy version:  1.15.3
+  Test besselzero()
+
+besselzero_j_print():
+  Print zeros of Bessel j function.
+
+    i    J0(root i)  J1(root i)
+
+   0         2.40483         3.83171
+   1         5.52008         7.01559
+   2         8.65373         10.1735
+   3         11.7915         13.3237
+   4         14.9309         16.4706
+   5         18.0711         19.6159
+   6         21.2116         22.7601
+   7         24.3525         25.9037
+   8         27.4935         29.0468
+   9         30.6346         32.1897
+
+besselzero_y_print():
+  Print zeros of Bessel y function.
+
+    i    Y0(root i)  Y1(root i)
+
+   0        0.893577         2.19714
+   1         3.95768         5.42968
+   2         7.08605         8.59601
+   3         10.2223         11.7492
+   4         13.3611         14.8974
+   5         16.5009         18.0434
+   6         19.6413         21.1881
+   7          22.782         24.3319
+   8          25.923         27.4753
+   9          29.064         30.6183
+
+besselzero_test():
+  Normal end of execution.
+Wed Oct  8 07:26:49 2025

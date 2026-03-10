@@ -1,0 +1,23 @@
+Wed Oct  8 07:26:48 2025
+
+besselj_zero_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test besselj_zero()
+
+    i    J0(root i)  J1(root i)
+
+   0         2.40483         3.83171
+   1         5.52008         7.01559
+   2         8.65373         10.1735
+   3         11.7915         13.3237
+   4         14.9309         16.4706
+   5         18.0711         19.6159
+   6         21.2116         22.7601
+   7         24.3525         25.9037
+   8         27.4935         29.0468
+   9         30.6346         32.1897
+
+besselj_zero_test():
+  Normal end of execution.
+Wed Oct  8 07:26:49 2025
