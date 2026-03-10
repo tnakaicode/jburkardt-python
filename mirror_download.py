@@ -25,7 +25,7 @@ def get_links(url, base_url):
     return links, html
 
 
-def mirror(url, base_url, output_dir, overwrite=False):
+def mirror(url, base_url, output_dir, overwrite=False, update_only=False):
     if url in visited:
         return
     visited.add(url)
@@ -37,20 +37,29 @@ def mirror(url, base_url, output_dir, overwrite=False):
     rel_path = url[len(base_url):]
     local_path = os.path.join(output_dir, rel_path.lstrip("/").replace("/", os.sep))
 
+    # Skip ._* files (macOS resource forks)
+    filename = os.path.basename(local_path)
+    if filename.startswith("._"):
+        print(f"  [skip]  {url}  (._* file)")
+        return
+
     # If it looks like a directory, fetch index
     if url.endswith("/"):
         links, _ = get_links(url, base_url)
         for link in links:
             abs_link = urljoin(url, link)
-            mirror(abs_link, base_url, output_dir, overwrite)
+            mirror(abs_link, base_url, output_dir, overwrite, update_only)
     else:
         # Download the file
         os.makedirs(os.path.dirname(local_path), exist_ok=True)
-        if os.path.exists(local_path) and not overwrite:
+        exists = os.path.exists(local_path)
+        if update_only and not exists:
+            print(f"  [skip]  {url}  (new file, update_only mode)")
+        elif exists and not overwrite and not update_only:
             print(f"  [skip]  {local_path}")
         else:
             try:
-                if os.path.exists(local_path):
+                if exists:
                     print(f"  [overwrite] {url}")
                 else:
                     print(f"  [download] {url}")
@@ -64,19 +73,25 @@ def mirror(url, base_url, output_dir, overwrite=False):
             links, _ = get_links(url, base_url)
             for link in links:
                 abs_link = urljoin(url, link)
-                mirror(abs_link, base_url, output_dir, overwrite)
+                mirror(abs_link, base_url, output_dir, overwrite, update_only)
 
 
 if __name__ == "__main__":
     
     # --- Settings ---
-    START_URL = "http://people.sc.fsu.edu/~jburkardt/py_src/"
-    OUT_DIR   = "./"
-    OVERWRITE = False  # True: overwrite existing files / False: skip existing files
+    START_URL   = "http://people.sc.fsu.edu/~jburkardt/py_src/"
+    OUT_DIR     = "./"
+    OVERWRITE   = False  # True:  overwrite existing + download new
+    UPDATE_ONLY = False  # True:  overwrite existing only, skip new files
     # ----------------
 
     start_url = START_URL.rstrip("/") + "/"
-    mode = "overwrite" if OVERWRITE else "skip"
+    if UPDATE_ONLY:
+        mode = "update (overwrite existing, skip new)"
+    elif OVERWRITE:
+        mode = "overwrite"
+    else:
+        mode = "skip"
     print(f"Mirroring {start_url} -> {OUT_DIR}  (existing files: {mode})")
-    mirror(start_url, start_url, OUT_DIR, OVERWRITE)
+    mirror(start_url, start_url, OUT_DIR, OVERWRITE, UPDATE_ONLY)
     print("Done.")

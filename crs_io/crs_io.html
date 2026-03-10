@@ -1,0 +1,148 @@
+<html>
+
+  <head>
+    <title>
+      crs_io
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      crs_io
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>crs_io</b>,
+      a Python code which
+      reads and writes Compressed Row Storage (CRS) sparse matrix files.
+    </p>
+
+    <p>
+      An MxN sparse matrix of NZ nonzero entries in compressed row format
+      is described by three items:
+      <ul>
+        <li>
+          <i>row()</i>, a list of N+1 compressed row indices.
+        </li>
+        <li>
+          <i>col()</i>, a list of NZ column indices.
+        </li>
+        <li>
+          <i>val()</i>, a list of NZ values.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The nonzero entries of row I are stored in locations ROW(I) through
+      ROW(I+1)-1 of COL and VAL.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>crs_io</b> is available in
+      <a href = "../../m_src/crs_io/crs_io.html">a MATLAB version</a> and
+      <a href = "../../octave_src/crs_io/crs_io.html">an Octave version</a> and
+      <a href = "../../py_src/crs_io/crs_io.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/ccs_io/ccs_io.html">
+      ccs_io</a>,
+      a Python code which
+      reads and writes sparse linear systems 
+      stored in the Compressed Column Storage (CCS) format.
+    </p>
+
+    <p>
+      <a href = "../../datasets/crs/crs.html">
+      crs</a>,
+      a dataset directory which
+      contains examples of the Compressed Row Storage (CRS)
+      sparse matrix file format;
+    </p>
+
+    <p>
+      <a href = "../../py_src/ge_to_crs/ge_to_crs.html">
+      ge_to_crs</a>,
+      a Python code which
+      converts a matrix from General (GE) to 
+      Compressed Row Storage (CRS) format.
+    </p>
+
+    <p>
+      <a href = "../../py_src/st_io/st_io.html">
+      st_io</a>,
+      a Python code which
+      reads and writes sparse linear systems 
+      stored in the Sparse Triplet (ST) format.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "crs_io.py">crs_io.py</a>
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "crs_io.sh">crs_io.sh</a>,
+          runs the tests.
+        </li>
+        <li>
+          <a href = "crs_io.txt">crs_io.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "simple_row.txt">simple_row.txt</a>, 
+          the compressed row indices.
+        </li>
+        <li>
+          <a href = "simple_col.txt">simple_col.txt</a>, the
+          column indices.
+        </li>
+        <li>
+          <a href = "simple_val.txt">simple_val.txt</a>, the values.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 June 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

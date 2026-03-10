@@ -1,0 +1,25 @@
+Wed Oct  8 07:30:29 2025
+
+cube_surface_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test cube_surface_distance()
+
+  The mean distance between two random points on the surface
+  of a cube can be computed as:
+    mu = ( 5 mu_diff + mu_same ) / 6
+  where:
+    mu_diff = mean distance, points are on different faces
+    mu_same = mean distance, points are on same face.
+
+  Using N = 10000 sample points,
+  Exact mean distance (diff) = 0.9263900551740467
+  Exact mean distance (same) = 0.5214054331647207
+  Exact mean distance        = 0.8588926181724923
+  Estimated mean distance    = 0.8601617531497469
+  Estimated variance         = 0.09390654322971771
+  Graphics saved as "cube_surface_distance_histogram.png"
+
+cube_surface_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:30:30 2025
