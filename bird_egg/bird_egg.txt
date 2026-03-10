@@ -1,0 +1,31 @@
+Wed Oct  8 07:26:54 2025
+
+bird_egg_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test bird_egg(), code to evaluate the shape of bird eggs.
+
+chicken_egg_test():
+  chicken_egg() evaluates a formula
+  for chicken egg shapes.
+  Graphics saved as "chicken.png"
+
+pyriform_egg_test():
+  pyriform_egg() evaluates a formula
+  for pyriform egg shapes.
+  Graphics saved as "pyriform.png"
+
+universal_egg_test():
+  universal_egg() evaluates a universal formula for egg shape.
+  Graphics saved as "ural_owl.png"
+  Graphics saved as "hen.png"
+  Graphics saved as "guillemot.png"
+  Graphics saved as "ostrich.png"
+  Graphics saved as "guillemot_3d.png"
+
+universal_egg_test():
+  Normal end of execution.
+
+bird_egg_test():
+  Normal end of execution.
+Wed Oct  8 07:26:55 2025
