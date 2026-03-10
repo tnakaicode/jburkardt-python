@@ -1,0 +1,38 @@
+Wed Oct  8 07:30:14 2025
+conservation_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  conservation_ode() reports on the accuracy of an ODE solver
+  by monitoring the value of a quantity that should be conserved.
+
+pendulum_solve_ivp():
+  Solve pendulum_ode() using solve_ivp().
+  Graphics saved as "pendulum_solve_ivp_theta.png"
+  Graphics saved as "pendulum_solve_ivp_thetadot.png"
+  Graphics saved as "pendulum_solve_ivp_energy.png"
+
+predator_prey_euler():
+
+  Solve predator_prey_ode() using euler().
+
+  Graphics saved as "predator_prey_euler_phase.png"
+  Graphics saved as "predator_prey_euler_conservation.png"
+
+predator_prey_solve_ivp():
+
+  Solve predator_prey_ode() using solve_ivp().
+
+  Graphics saved as "predator_prey_solve_ivp_phase.png"
+  Graphics saved as "predator_prey_solve_ivp_conservation.png"
+
+rigid_body_solve_ivp():
+  Solve rigid_body_ode() using solve_ivp().
+  rigid_body_ode() models motion on the surface of a sphere.
+  Graphics saved as "rigid_body_solve_ivp_plot.png"
+  Graphics saved as "rigid_body_solve_ivp_plot3d.png"
+  Graphics saved as "rigid_body_solve_ivp_h1_conservation.png"
+  Graphics saved as "rigid_body_solve_ivp_h2_conservation.png"
+
+conservation_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:30:16 2025
