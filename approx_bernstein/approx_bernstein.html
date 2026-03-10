@@ -1,0 +1,133 @@
+<html>
+
+  <head>
+    <title>
+      approx_bernstein
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      approx_bernstein
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>approx_bernstein</b>,
+      a MATLAB code which 
+      approximates a function f(x) in the interval [a,b]
+      by constructing a Bernstein polynomial using n basis functions.
+    </p>
+
+    <p>
+      The user enters a formula for f(x), and the values of a and b,
+      and the number of Bernstein interpolation points n.
+    </p>
+
+    <p>
+      The program computes the corresponding n-1 degree interpolating
+      polynomial, estimates the maximum approximation error over [a,b],
+      and returns the approximant value at 101 points in [a,b].
+    </p>
+
+    <p>
+      The function is specified as a string which is either:
+      <ul>
+        <li>
+          a lambda expression using the argument 'x';
+        </li>
+        <li>
+          the name of a user Python function including the argument '(x)'.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Examples of function specifications:
+      <pre>
+        lambda x: np.abs(x-0.5)  (a lambda function)
+        wiggle(x)                (a user-written Python function)
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>approx_bernstein</b> is available in
+      <a href = "../../m_src/approx_bernstein/approx_bernstein.html">a MATLAB version</a> and
+      <a href = "../../octave_src/approx_bernstein/approx_bernstein.html">an Octave version</a>  and
+      <a href = "../../py_src/approx_bernstein/approx_bernstein.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/bernstein_polynomial/bernstein_polynomial.html">
+      bernstein_polynomial</a>,
+      a Python code which
+      evaluates the Bernstein polynomials, 
+      useful for uniform approximation of functions;
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "approx_bernstein.py">approx_bernstein.py</a> 
+          the source code.
+        </li>
+        <li>
+          <a href = "approx_bernstein.sh">approx_bernstein.sh</a> 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "approx_bernstein.txt">approx_bernstein.txt</a> 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "abs_bernstein.png">abs_bernstein.png</a> 
+          a plot comparing the function np.abs(x-0.5) and 
+          its Bernstein approximant.
+        </li>
+        <li>
+          <a href = "humps_bernstein.png">humps_bernstein.png</a> 
+          a plot comparing the humps function and its Bernstein approximant.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 February 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

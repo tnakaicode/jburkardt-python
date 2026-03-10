@@ -1,0 +1,42 @@
+Wed Oct  8 07:25:49 2025
+
+approx_bernstein_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test approx_bernstein().
+
+  Approximate |x-0.5| using 5, 11, and 31 basis functions:
+  Graphics saved as "abs_bernstein.png"
+
+  Approximate humps(x) using 1 through 20 basis functions
+  and compute the maximum approximation error.
+
+  N  Maxerr
+
+   1         96.5014
+   2         92.8322
+   3         88.7892
+   4         89.6346
+   5         85.2716
+   6         73.1049
+   7         57.2162
+   8          53.441
+   9         59.7472
+  10         64.0667
+  11          64.075
+  12         60.6943
+  13         56.3355
+  14         53.5792
+  15         53.0176
+  16         53.3584
+  17         53.2817
+  18         52.3861
+  19         51.0129
+  20         49.7142
+
+  Approximate humps(x) with 1, 3, 5, 9, 17, 33, 65, 129 functions.
+  Graphics saved as "humps_bernstein.png"
+
+approx_bernstein_test():
+  Normal end of execution.
+Wed Oct  8 07:25:51 2025
