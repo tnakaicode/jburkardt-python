@@ -1,0 +1,60 @@
+Sat Feb 28 12:47:18 2026
+
+cg_ne_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test cg_ne().
+
+cg_ne_helmert_test()
+  Test cg_ne() on the Helmert matrix.
+  Number of variables N = 10
+  Estimated condition number =  1.000000000000001
+
+  Norm of residual |Ax-b| =  1.2412670766236366e-16
+  Norm of error |x1-x2| =  3.0182194481103634e-16
+
+cg_ne_lesp_test():
+  Test cg_ne() on the Lesp matrix.
+  Number of variables N =  100
+  Estimated condition number =  67.48520290201894
+
+  Full iteration number =  1
+  Norm of residual |Ax-b| =  1.0817815794917733
+  Norm of error |x1-x2| =  0.12608890331050823
+
+  Full iteration number =  2
+  Norm of residual |Ax-b| =  0.026380669088661508
+  Norm of error |x1-x2| =  0.003287408337852958
+
+  Full iteration number =  3
+  Norm of residual |Ax-b| =  0.0008804020479183088
+  Norm of error |x1-x2| =  0.00012926466464049455
+
+  Full iteration number =  4
+  Norm of residual |Ax-b| =  3.245555884893626e-05
+  Norm of error |x1-x2| =  4.1244264901322845e-06
+
+cg_ne_involutory_test():
+  Test cg_ne() on the involutory matrix.
+  Number of variables N = 20
+  Estimated condition number = 4.826096513091352e+20
+
+  Full iteration number =  1
+  Norm of residual |Ax-b| =  226010.1266270877
+  Norm of error |x1-x2| =  5.244090786319123
+
+  Full iteration number =  2
+  Norm of residual |Ax-b| =  226010.1266270877
+  Norm of error |x1-x2| =  5.244090786319123
+
+  Full iteration number =  3
+  Norm of residual |Ax-b| =  226010.1266270877
+  Norm of error |x1-x2| =  5.244090786319123
+
+  Full iteration number =  4
+  Norm of residual |Ax-b| =  226010.1266270877
+  Norm of error |x1-x2| =  5.244090786319123
+
+cg_ne_test():
+  Normal end of execution.
+Sat Feb 28 12:47:18 2026
