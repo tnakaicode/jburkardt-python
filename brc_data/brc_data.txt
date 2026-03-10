@@ -1,0 +1,17 @@
+Wed Oct  8 07:27:13 2025
+
+brc_data_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Generate data for the billion record challenge.
+  Reading data from "brc_data.csv"
+
+  Last line of file is empty!
+  Number of weather stations is  413
+  Run time was 0.06139969825744629 seconds.
+  Observations written to "brc_obs.csv"
+  Number of observations is  100000
+
+brc_data_test():
+  Normal end of execution.
+Wed Oct  8 07:27:13 2025
