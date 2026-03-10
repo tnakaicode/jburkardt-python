@@ -1,0 +1,28 @@
+Tue Nov 18 20:04:48 2025
+
+big3_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test b1g3().
+
+predator_prey_b1g3():
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using b1g3(),
+  solving the implicit function using fsolve().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+  Graphics saved as "b1g3_predator_prey.png"
+
+stiff_b1g3()
+  Use b1g3() to solve the stiff ODE.
+  Graphics saved as "b1g3_stiff.png"
+
+humps_b1g3():
+  Solve the humps ODE using b1g3().
+  Graphics saved as "b1g3_humps.png"
+
+b1g3_test():
+  Normal end of execution.
+Tue Nov 18 20:04:50 2025
