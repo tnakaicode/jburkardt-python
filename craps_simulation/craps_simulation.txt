@@ -1,0 +1,87 @@
+Wed Oct  8 07:30:20 2025
+
+craps_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  craps_simulation() simulates a game of craps.
+
+craps_game_test():
+  craps_game() simulates a game of craps.
+
+  Player starts with bankroll of 1000.0
+
+  The player bet $ 500.0
+  The first roll had the value  10
+  There were a total of  11  rolls 11
+  The players result was -500.0
+  The players bankroll is now 500.0
+
+  The player bet $ 250.0
+  The first roll had the value  4
+  There were a total of  7  rolls 7
+  The players result was -250.0
+  The players bankroll is now 250.0
+
+  The player bet $ 125.0
+  The first roll had the value  10
+  There were a total of  3  rolls 3
+  The players result was -125.0
+  The players bankroll is now 125.0
+
+  The player bet $ 62.5
+  The first roll had the value  12
+  There were a total of  1  rolls 1
+  The players result was -62.5
+  The players bankroll is now 62.5
+
+  The player bet $ 31.25
+  The first roll had the value  5
+  There were a total of  7  rolls 7
+  The players result was -31.25
+  The players bankroll is now 31.25
+
+  The player bet $ 15.625
+  The first roll had the value  8
+  There were a total of  3  rolls 3
+  The players result was -15.625
+  The players bankroll is now 15.625
+
+  The player bet $ 7.8125
+  The first roll had the value  6
+  There were a total of  19  rolls 19
+  The players result was 7.8125
+  The players bankroll is now 23.4375
+
+  The player bet $ 11.71875
+  The first roll had the value  6
+  There were a total of  5  rolls 5
+  The players result was -11.71875
+  The players bankroll is now 11.71875
+
+  The player bet $ 5.859375
+  The first roll had the value  9
+  There were a total of  7  rolls 7
+  The players result was -5.859375
+  The players bankroll is now 5.859375
+
+  The player bet $ 2.9296875
+  The first roll had the value  6
+  There were a total of  23  rolls 23
+  The players result was -2.9296875
+  The players bankroll is now 2.9296875
+
+craps_stats_test():
+  craps_stats() reports statistics for N instances
+  of a craps game.
+
+       N    Win/N   Rolls/N
+
+        1    1.0000   17.0000
+       10    0.9000    5.0000
+      100    0.5800    6.6000
+     1000    0.4560    5.6680
+    10000    0.4892    5.7720
+
+craps_simulation_test()
+  Normal end of execution.
+Wed Oct  8 07:30:20 2025
