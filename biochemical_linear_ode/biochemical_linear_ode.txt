@@ -1,0 +1,19 @@
+Wed Oct  8 07:26:50 2025
+
+biochemical_linear_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test biochemical_linear_ode().
+
+  parameters:
+    a =     1.0
+    b =     1.0
+    t0 =    0.0
+    y0 =    [29.98  9.98]
+    tstop =  13.0
+  Graphics saved as "biochemical_linear_ode_y1.png"
+  Graphics saved as "biochemical_linear_ode_y2.png"
+
+biochemical_linear_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:26:51 2025
