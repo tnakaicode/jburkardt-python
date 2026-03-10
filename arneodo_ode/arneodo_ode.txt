@@ -1,0 +1,22 @@
+Wed Oct  8 07:25:54 2025
+
+arneodo_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve arneodo_ode().
+  Plot solution components (T,X(T)), (T,Y(T)), and (T,Z(T)).
+  Plot (X(T),Y(T),Z(T)).
+
+  parameters:
+    alpha =  -5.5
+    beta =   3.5
+    delta =  -1.0
+    t0 =     0.0
+    xyz0 =   [ 0.2   0.2  -0.75]
+    tstop =  100.0
+  Graphics saved as "arneodo_ode_components.png"
+  Graphics saved as "arneodo_ode_3d.png"
+
+arneodo_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:25:55 2025

@@ -1,0 +1,19 @@
+Wed Oct  8 07:25:52 2025
+
+arenstorf_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test arenstorf_ode().
+
+  parameters:
+    mu1 =    0.012277471
+    mu2 =    0.987722529
+    t0 =     0.0
+    xy0 =    [ 0.994       0.          0.         -2.00158511]
+    tstop =  17.065216560157964
+  Graphics saved as "arenstorf_euler_phase.png"
+  Graphics saved as "arenstorf_solve_ivp_phase.png"
+
+arenstorf_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:25:53 2025

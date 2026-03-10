@@ -1,0 +1,21 @@
+Wed Oct  8 07:26:13 2025
+
+autocatalytic_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve autocatalytic_ode().
+  Plot solution components (T,W(T)), (T,X(T)), (T,Y(T)), and (T,Z(T)).
+  Plot (X(T),Y(T),Z(T)).
+
+  parameters:
+    alpha =  0.002
+    beta =   0.08
+    t0 =     0.0
+    wxyz0 =  [500.   0.   0.   0.]
+    tstop =  1000.0
+  Graphics saved as "autocatalytic_ode_components.png"
+  Graphics saved as "autocatalytic_ode_3d.png"
+
+autocatalytic_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:26:14 2025
