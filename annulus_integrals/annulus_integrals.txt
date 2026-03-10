@@ -1,0 +1,127 @@
+Wed Oct  8 07:25:45 2025
+
+annulus_integrals_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test annulus_integrals().
+
+annulus_integrals_test01():
+  Estimate monomial integrals using Monte Carlo method
+  over the interior of an annulus centered at the origin.
+
+  Inner radius is 0.0
+  Outer radius is 1.0
+  Number of sample points is 4192
+
+  If any exponent is odd, the integral is zero.
+  We will restrict this test to randomly chosen even exponents.
+
+  Ex  Ey     MC-Estimate           Exact      Error
+
+   0   0         3.14159         3.14159    4.44e-16
+   0   2        0.819903        0.785398    3.45e-02
+   0   4        0.416545        0.392699    2.38e-02
+   0   6        0.262556        0.245437    1.71e-02
+   0   8        0.184829        0.171806    1.30e-02
+   2   0        0.754568        0.785398    3.08e-02
+   2   2        0.133042          0.1309    2.14e-03
+   2   4       0.0511549       0.0490874    2.07e-03
+   2   6       0.0258443       0.0245437    1.30e-03
+   2   8       0.0151521       0.0143172    8.35e-04
+   4   0        0.371934        0.392699    2.08e-02
+   4   2       0.0493832       0.0490874    2.96e-04
+   4   4        0.015327       0.0147262    6.01e-04
+   4   6      0.00648256      0.00613592    3.47e-04
+   4   8      0.00325504      0.00306796    1.87e-04
+   6   0        0.230313        0.245437    1.51e-02
+   6   2       0.0244716       0.0245437    7.21e-05
+   6   4      0.00638596      0.00613592    2.50e-04
+   6   6      0.00233881       0.0021914    1.47e-04
+   6   8      0.00103511     0.000958738    7.64e-05
+   8   0         0.15999        0.171806    1.18e-02
+   8   2       0.0141315       0.0143172    1.86e-04
+   8   4      0.00317263      0.00306796    1.05e-04
+   8   6      0.00102522     0.000958738    6.65e-05
+   8   8     0.000406645     0.000372843    3.38e-05
+
+annulus_integrals_test01():
+  Estimate monomial integrals using Monte Carlo method
+  over the interior of an annulus centered at the origin.
+
+  Inner radius is 1.0
+  Outer radius is 2.0
+  Number of sample points is 4192
+
+  If any exponent is odd, the integral is zero.
+  We will restrict this test to randomly chosen even exponents.
+
+  Ex  Ey     MC-Estimate           Exact      Error
+
+   0   0         9.42478         9.42478    1.78e-15
+   0   2         11.6764          11.781    1.05e-01
+   0   4         24.3265           24.74    4.13e-01
+   0   6         61.1127         62.5864    1.47e+00
+   0   8         170.572         175.757    5.19e+00
+   2   0         11.8053          11.781    2.44e-02
+   2   2         8.08123         8.24668    1.65e-01
+   2   4         12.1064         12.5173    4.11e-01
+   2   6         24.1153         25.1082    9.93e-01
+   2   8         56.0614         58.6287    2.57e+00
+   4   0         25.0614           24.74    3.21e-01
+   4   2         12.3325         12.5173    1.85e-01
+   4   4         14.5719         15.0649    4.93e-01
+   4   6         24.1298         25.1266    9.97e-01
+   4   8         48.2094         50.2624    2.05e+00
+   6   0         64.1404         62.5864    1.55e+00
+   6   2         25.0077         25.1082    1.01e-01
+   6   4          24.401         25.1266    7.26e-01
+   6   6         34.4767         35.9017    1.43e+00
+   6   8         60.2152         62.8309    2.62e+00
+   8   0         181.999         175.757    6.24e+00
+   8   2         59.1901         58.6287    5.61e-01
+   8   4         49.1448         50.2624    1.12e+00
+   8   6         60.3821         62.8309    2.45e+00
+   8   8         93.4428         97.7381    4.30e+00
+
+annulus_integrals_test01():
+  Estimate monomial integrals using Monte Carlo method
+  over the interior of an annulus centered at the origin.
+
+  Inner radius is 1.0
+  Outer radius is 2.0
+  Number of sample points is 67072
+
+  If any exponent is odd, the integral is zero.
+  We will restrict this test to randomly chosen even exponents.
+
+  Ex  Ey     MC-Estimate           Exact      Error
+
+   0   0         9.42478         9.42478    1.78e-15
+   0   2         11.7904          11.781    9.39e-03
+   0   4         24.7631           24.74    2.30e-02
+   0   6         62.5596         62.5864    2.68e-02
+   0   8          175.29         175.757    4.68e-01
+   2   0         11.7276          11.781    5.34e-02
+   2   2         8.22849         8.24668    1.82e-02
+   2   4         12.5091         12.5173    8.19e-03
+   2   6         25.0826         25.1082    2.56e-02
+   2   8         58.4619         58.6287    1.67e-01
+   4   0          24.529           24.74    2.11e-01
+   4   2         12.4533         12.5173    6.39e-02
+   4   4         15.0464         15.0649    1.85e-02
+   4   6         25.1363         25.1266    9.67e-03
+   4   8         50.2314         50.2624    3.10e-02
+   6   0         61.9066         62.5864    6.80e-01
+   6   2         24.8959         25.1082    2.12e-01
+   6   4         25.0646         25.1266    6.20e-02
+   6   6         35.9979         35.9017    9.62e-02
+   6   8         63.1183         62.8309    2.87e-01
+   8   0         173.718         175.757    2.04e+00
+   8   2         57.9337         58.6287    6.95e-01
+   8   4          49.976         50.2624    2.86e-01
+   8   6         62.9879         62.8309    1.57e-01
+   8   8         98.5351         97.7381    7.97e-01
+
+annulus_integrals_test():
+  Normal end of execution.
+Wed Oct  8 07:25:46 2025

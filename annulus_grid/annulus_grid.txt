@@ -1,0 +1,80 @@
+Wed Oct  8 07:25:44 2025
+
+annulus_grid_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test annulus_grid().
+
+annulus_grid_test01():
+  annulus_grid() defines a grid of points
+  with N+1 points on a horizontal or vertical radius,
+  based on any annulus.
+
+  We use N = 20
+  Inner radius R1 = 1.0
+  Outer radius R2 = 2.0
+  Center C = ( 1.0 ,  5.0
+
+  Number of grid points will be 980
+
+  First 20 points:
+[[ 2.07317073  5.        ]
+ [-0.07317073  5.        ]
+ [ 2.17073171  5.        ]
+ [-0.17073171  5.        ]
+ [ 2.26829268  5.        ]
+ [-0.26829268  5.        ]
+ [ 2.36585366  5.        ]
+ [-0.36585366  5.        ]
+ [ 2.46341463  5.        ]
+ [-0.46341463  5.        ]
+ [ 2.56097561  5.        ]
+ [-0.56097561  5.        ]
+ [ 2.65853659  5.        ]
+ [-0.65853659  5.        ]
+ [ 2.75609756  5.        ]
+ [-0.75609756  5.        ]
+ [ 2.85365854  5.        ]
+ [-0.85365854  5.        ]
+ [ 2.95121951  5.        ]
+ [-0.95121951  5.        ]]
+
+  Data written to the file "annulus_grid_test01.xy".
+  Graphics saved as "annulus_grid_test01.png"
+
+annulus_grid_test02():
+  annulus_grid_fibonacci() defines a grid of N points
+  
+
+  We use N = 1000
+  Inner radius R1 = 1.0
+  Outer radius R2 = 2.0
+  Center C = ( 1.0  , 5.0 )
+
+  First 20 points in grid:
+[[ 1.51173797  4.1393319 ]
+ [ 0.03985399  5.28938787]
+ [ 1.90480726  5.43583242]
+ [ 0.62666982  4.0660562 ]
+ [ 0.64388516  5.9422362 ]
+ [ 1.90038774  4.54510537]
+ [ 0.02737451  4.72682013]
+ [ 1.53343577  5.85969427]
+ [ 1.18765061  4.00430146]
+ [ 0.18786342  5.60832794]
+ [ 2.01123403  5.10017392]
+ [ 0.32102976  4.24195721]
+ [ 0.98858448  6.01906796]
+ [ 1.69779368  4.25520863]
+ [-0.01909525  5.07794514]
+ [ 1.80525424  5.63182003]
+ [ 0.83277994  3.98872913]
+ [ 0.43940044  5.85986036]
+ [ 1.99561055  4.74428197]
+ [ 0.09184608  4.51534662]]
+  Gridpoint coordinates saved as "annulus_grid_test02.xy".
+  Graphics saved as "annulus_grid_test02.png"
+
+annulus_grid_test():
+  Normal end of execution.
+Wed Oct  8 07:25:45 2025

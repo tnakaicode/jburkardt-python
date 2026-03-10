@@ -1,0 +1,77 @@
+Wed Oct  8 07:25:42 2025
+
+annulus_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test annulus_distance()
+
+  Using N =  10000  sample points,
+  R1 =  0.0  R2 =  1.0
+  Estimated mean distance =  0.9055359396511554
+  Estimated variance      =  0.1819712890597387
+
+  Using N =  10000  sample points,
+  R1 =  0.1  R2 =  1.0
+  Estimated mean distance =  0.909391144607484
+  Estimated variance      =  0.181459627540551
+
+  Using N =  10000  sample points,
+  R1 =  0.2  R2 =  1.0
+  Estimated mean distance =  0.9279037804226813
+  Estimated variance      =  0.18550651242021118
+
+  Using N =  10000  sample points,
+  R1 =  0.3  R2 =  1.0
+  Estimated mean distance =  0.9458202178854311
+  Estimated variance      =  0.19540994631866546
+
+  Using N =  10000  sample points,
+  R1 =  0.4  R2 =  1.0
+  Estimated mean distance =  0.9732623401757914
+  Estimated variance      =  0.20689517016028167
+
+  Using N =  10000  sample points,
+  R1 =  0.5  R2 =  1.0
+  Estimated mean distance =  1.0133833161812011
+  Estimated variance      =  0.2248868167689717
+
+  Using N =  10000  sample points,
+  R1 =  0.6  R2 =  1.0
+  Estimated mean distance =  1.04946743658675
+  Estimated variance      =  0.24328372516307772
+
+  Using N =  10000  sample points,
+  R1 =  0.7  R2 =  1.0
+  Estimated mean distance =  1.108133662646444
+  Estimated variance      =  0.26982468973798734
+
+  Using N =  10000  sample points,
+  R1 =  0.8  R2 =  1.0
+  Estimated mean distance =  1.1583844995633201
+  Estimated variance      =  0.30419224414976426
+
+  Using N =  10000  sample points,
+  R1 =  0.9  R2 =  1.0
+  Estimated mean distance =  1.2100922192574834
+  Estimated variance      =  0.34037868860965653
+
+  Using N =  10000  sample points,
+  R1 =  0.99  R2 =  1.0
+  Estimated mean distance =  1.2744544406991862
+  Estimated variance      =  0.3759074169110556
+
+  Graphics saved as "annulus_distance_histogram_0.0_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.1_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.2_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.3_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.4_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.5_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.6_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.7_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.8_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.9_1.0.png"
+  Graphics saved as "annulus_distance_histogram_0.99_1.0.png"
+
+annulus_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:25:44 2025
