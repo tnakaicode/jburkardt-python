@@ -1,0 +1,11 @@
+Wed Oct  8 07:27:23 2025
+
+caustic_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test caustic().
+  Graphics saved as "caustic_102_500.png"
+
+caustic_test():
+  Normal end of execution.
+Wed Oct  8 07:27:24 2025
