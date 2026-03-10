@@ -1,0 +1,31 @@
+Wed Oct  8 07:24:39 2025
+
+allen_cahn_pde_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve the Allen-Cahn PDE using the method of lines
+  and various ODE solvers.
+
+
+allen_cahn_pde_euler_display():
+  Use the Euler method to solve the
+  Allen-Cahn 1D reaction-diffusion PDE.
+  Interface thickness xi = 0.015
+  Diffusion coefficient nu = 1
+  Solutions are displayed on the screen immediately.
+  Use 101 nodes, with dx=0.02 in space interval [0,2]
+  Use 1501 nodes, with dt=0.0001 in time interval [0,0.15]
+
+allen_cahn_pde_euler_movie()
+  Use the Euler method to solve the
+  Allen-Cahn 1D reaction-diffusion PDE.
+  Interface thickness xi = 0.015
+  Diffusion coefficient nu = 1
+  The solutions are written to a movie file.
+  Use 101 nodes, with dx=0.02 in space interval [0,2]
+  Use 1501 nodes, with dt=0.0001 in time interval [0,0.15]
+  Graphics saved as "allen_cahn_pde_euler_movie.mp4"
+
+allen_cahn_pde_test():
+  Normal end of execution.
+Wed Oct  8 07:25:39 2025

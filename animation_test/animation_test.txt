@@ -1,0 +1,7 @@
+Wed Oct  8 07:25:40 2025
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/animation_test/animation_test.py", line 72, in <module>
+    animation_test ( )
+  File "/home/john/public_html/py_src/animation_test/animation_test.py", line 22, in animation_test
+    from gif_animation import gif_animation
+ModuleNotFoundError: No module named 'gif_animation'

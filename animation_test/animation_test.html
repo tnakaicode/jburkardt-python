@@ -1,0 +1,238 @@
+<html>
+
+  <head>
+    <title>
+      animation_test
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      animation_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>animation_test</b>,
+      a Python code which
+      demonstrates techniques for displaying an animation, that is,
+      a sequence of still images which are automatically displayed
+      at regular intervals, without requiring the user to hit RETURN
+      for the next image.
+    </p>
+
+    <p>
+      Personally, I find the recommended methods of animation to be
+      awkward and obscurely documented.  You must either simply copy
+      a working example, or learn to be comfortable with explanations
+      that employ words like 'iterable' and 'artist'.
+    </p>
+
+    <p>
+      One alternative is simply to create a series of static images,
+      save each one to a file using the matplotlib() savefig() function,
+      carefully giving each file a consecutive name,
+      and then call on ImageMagick convert() to turn them into a movie.
+      It is reasonable to assume that you know enough matplotlib() to
+      make still images, so the only additional cost is looking up how 
+      the convert() function works.
+    </p>
+
+    <p>
+      matplotlib provides a procedure <b>FuncAnimation()</b> for creating
+      animations.  However, this procedure has limited documentation, and
+      a peculiarly constrained user interface.  The user provides a ``frame(i)''
+      function whose only input is the frame counter i, which must return,
+      in a somewhat obscure fashion, the raw plot elements involved in the frame.
+    </p>
+
+    <p>
+      While it's not too hard to use this facility to create an animation of
+      a sine curve, it's more difficult to see how to, for instance, compute
+      a sequence of solutions to a partial differential equation, and display
+      the sequence of time solutions in a movie file.  One difficulty is that
+      this calculation requires the frame function to have access to the
+      data at the previous time step, which can't be done through the parameter
+      list, and which isn't easily done simply by declaring the data in the
+      user's main program.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>animation_test</b> is available in
+      <a href = "../../m_src/animation_test/animation_test.html">a MATLAB version</a> and
+      <a href = "../../octave_src/animation_test/animation_test.html">an Octave version</a> and
+      <a href = "../../py_src/animation_test/animation_test.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/allen_cahn_pde/allen_cahn_pde.html">
+      allen_cahn_pde</a>,
+      a Python code which 
+      sets up and solves the 1D Allen-Cahn reaction-diffusion 
+      partial differential equation (PDE).
+    </p>
+
+    <p>
+      <a href = "../../py_src/graphics_test/graphics_test.html">
+      graphics_test</a>,
+      a Python code which
+      illustrates how various kinds of data can be displayed and 
+      analyzed graphically.
+    </p>
+
+    <p>
+      <a href = "../../py_src/gray_scott_movie/gray_scott_movie.html">
+      gray_scott_movie</a>,
+      a Python code which
+      solves versions of the partial differential equation (PDE) known
+      as the Gray-Scott reaction diffusion equation, converting the
+      solutions to a sequence of graphics frames, which are then 
+      assembled into a movie.
+    </p>
+
+    <p>
+      <a href = "../../py_src/imageio_test/imageio_test.html">
+      imageio_test</a>,
+      a Python code which
+      demonstrates techniques for creating an animation, such as a GIF
+      or MP4 file, using some version (there are at least 3!) of the
+      imageio library.
+    </p>
+
+    <p>
+      <a href = "../../py_src/movie_test/movie_test.html">
+      movie_test</a>,
+      a Python code which
+      creates a movie file from a sequence of solutions to a
+      partial differential equation, using matplotlib().
+    </p>
+
+    <p>
+      <a href = "../../py_src/peak_movie/peak_movie.html">
+      peak_movie</a>,
+      a Python code which
+      creates a sequence of frames, and then an animation or movie
+      from the data displayed by the peaks() function.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "animation_test.py">animation_test.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "animation_test.sh">animation_test.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "animation_test.txt">animation_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "allen_cahn_animation.py">allen_cahn_animation.py</a>,
+          animates a sequence of solutions to the Allen-Cahn equation
+          using the FuncAnimation() method, and save()
+          is used to create an animation from the images.
+        </li>
+        <li>
+          <a href = "allen_cahn_animation.mp4">allen_cahn_animation.mp4</a>,
+          an animation.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "arenstorf_animation.py">arenstorf_animation.py</a>,
+          generates a sequence of frames, using savefig() to save each 
+          frame as a PNG file.
+          The ImageMagick program convert() converts them into a single
+          GIF animation file, using the command
+<pre>
+          convert -delay 10 -loop 1 arenstorf*.png arenstorf_animation.gif
+</pre>
+          which is actually invoked inside the Python script.
+        </li>
+        <li>
+          <a href = "arenstorf_animation.gif">arenstorf_animation.gif</a>,
+          the GIF animation file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cos_animation.py">cos_animation.py</a>,
+          generates a sequence of frames, using savefig() to save each 
+          frame as a PNG file.
+          The ImageMagick program convert() converts them into a single
+          GIF animation file, using the command
+<pre>
+          convert -delay 10 -loop 1 *.png cos_animation.gif
+</pre>
+          which is actually invoked inside the Python script.
+        </li>
+        <li>
+          <a href = "cos_animation.gif">cos_animation.gif</a>,
+          the GIF animation file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "curve_animation.py">curve_animation.py</a>,
+          plots the trajectories of two balls, thrown with different
+          velocities, as a smooth curve and a dotted curve.
+          FuncAnimation() is used to create the images, and save()
+          is used to create an animation from the images.
+        </li>
+        <li>
+          <a href = "curve_animation.mp4">curve_animation.mp4</a>,
+          the animation file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 07 November 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

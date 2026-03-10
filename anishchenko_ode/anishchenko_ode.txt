@@ -1,0 +1,21 @@
+Wed Oct  8 07:25:41 2025
+
+anishchenko_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve anishchenko_ode().
+  Plot solution components (T,X(T)), (T,Y(T)), and (T,Z(T)).
+  Plot (X(T),Y(T),Z(T)).
+
+  parameters:
+    mu =     1.2
+    eta =    0.5
+    t0 =     0.0
+    xyz0 =   [-0.1  0.5 -0.6]
+    tstop =  100.0
+  Graphics saved as "anishchenko_ode_components.png"
+  Graphics saved as "anishchenko_ode_3d.png"
+
+anishchenko_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:25:42 2025
