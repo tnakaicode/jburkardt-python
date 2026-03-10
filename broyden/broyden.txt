@@ -1,0 +1,63 @@
+Wed Oct  8 07:27:16 2025
+
+broyden_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test broyden()
+
+broyden_test01():
+  broyden() solves a system of nonlinear equations
+  using Broyden's method.
+  Test it on a single nonlinear equation.
+  Initial residual norm:  5.0
+
+  Final residual norm: 1.1850431413940044e-08
+
+broyden_test02():
+  broyden() solves a system of nonlinear equations
+  using Broyden's method.
+  Test it on 2 nonlinear equations.
+  Initial residual norm: 20.0
+
+broyden(): iteration terminated.
+  Rejected step 0
+  Residual ratio increase =  152.41955255150174
+
+  Final residual norm: 3048.3910510300348
+
+broyden_test03():
+  broyden() solves a system of nonlinear equations
+  using Broyden's method.
+  Test it on 4 nonlinear equations.
+  Initial residual norm: 18.81488772222678
+
+broyden(): iteration terminated.
+  Rejected step 0
+  Residual ratio increase =  22.677298935403435
+
+  Final residual norm: 426.67083331298846
+
+broyden_test04():
+  broyden() solves a system of nonlinear equations
+  using Broyden's method.
+  Test it on 8 nonlinear equations.
+  Initial residual norm: 2.8284271247461903
+
+broyden(): iteration terminated.
+  Rejected step 0
+  Residual ratio increase =  1.5411035007422442
+
+  Final residual norm: 4.358898943540674
+
+broyden_test05():
+  broyden() solves a system of nonlinear equations
+  using Broyden's method.
+  Test it on the Chandrasekhar function.
+
+  Error flag IERR =  0
+
+  Residual norm: 1.8130389336293806e-05
+
+broyden_test():
+  Normal end of execution.
+Wed Oct  8 07:27:16 2025
