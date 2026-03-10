@@ -1,0 +1,16 @@
+Wed Oct  8 07:29:15 2025
+
+columns_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  columns() copies specific text columns from one file to another.
+
+  Read text from "knuth_words.txt"
+  Copy columns  0 : 5
+  Write copied text to "knuth_5.txt"
+  Number of lines of text is  5679
+  Wrote column data to "knuth_5.txt"
+
+columns_test():
+  Normal end of execution.
+Wed Oct  8 07:29:15 2025
