@@ -1,0 +1,22 @@
+Wed Oct  8 07:27:36 2025
+
+chen_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve chen_ode().
+  Plot solution components (T,X(T)), (T,Y(T)), and (T,Z(T)).
+  Plot (X(T),Y(T),Z(T)).
+
+  parameters:
+    a =      40.0
+    b =      3.0
+    c =      28.0
+    t0 =     0.0
+    xyz0 =   [-0.1  0.5 -0.6]
+    tstop =  15.0
+  Graphics saved as "chen_ode_components.png"
+  Graphics saved as "chen_ode_3d.png"
+
+chen_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:27:37 2025
