@@ -1,0 +1,13 @@
+Tue Jan  6 18:46:07 2026
+
+bowie_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test bowie(), a NASA ODE solver for certain second order
+  autonomous systems.
+  Graphics saved as "pendulum_bowie_time.png"
+  Graphics saved as "pendulum_bowie_phase.png"
+
+bowie_test():
+  Normal end of execution.
+Tue Jan  6 18:46:08 2026
