@@ -1,0 +1,203 @@
+<html>
+
+  <head>
+    <title>
+      ccn_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      ccn_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>ccn_rule</b>,
+      a Python code which
+      generates a Clenshaw Curtis Nested (CCN) quadrature rule,
+      based on a nested set of points
+      inspired by the Clenshaw Curtis quadrature rule.
+    </p>
+
+    <p>
+      The data defining the rule is written to three files for easy use as input
+      to other programs.
+    </p>
+
+    <p>
+      The Clenshaw Curtis Nested quadrature rule is used as follows:
+      <pre>
+        Integral ( A &lt;= x &lt;= B ) f(x) dx
+      </pre>
+      is to be approximated by
+      <pre>
+        Sum ( 1 &lt;= i &lt;= order ) w(i) * f(x(i))
+      </pre>
+    </p>
+
+    <p>
+      If the order of the CCN rule is 1, 3, 5, 9, 17, 33, or in general
+      2^L+1, then the rule is identical to the Clenshaw Curtis rule.
+    </p>
+
+    <p>
+      Otherwise, the rule is based on a subset of the points in the
+      Clenshaw Curtis rule of next highest order in the sequence 2^L+1.
+    </p>
+
+    <p>
+      The CCN rule has no special accuracy properties, except that the
+      rules of odd order are symmetric, and hence get one extra degree of
+      precision.  Moreover, the rules of even order have a single unpaired
+      point which is assigned weight zero, so that it is equivalent
+      to the immediately preceding rule of odd order.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>ccn_rule</b> ( <i>n</i>, <i>a</i>, <i>b</i>, <i>'filename'</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>n</i> is the order, or number of points in the quadrature rule;
+        </li>
+        <li>
+          <i>a</i> is the left endpoint;
+        </li>
+        <li>
+          <i>b</i> is the right endpoint;
+        </li>
+        <li>
+          <i>filename</i> specifies the output filenames:
+          name<i>file</i><b>_w.txt</b>,
+          <i>filename</i><b>_x.txt</b>, and <i>filename</i><b>_r.txt</b>,
+          containing the weights, abscissas, and interval limits.
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>ccn_rule</b> is available in
+      <a href = "../../c_src/ccn_rule/ccn_rule.html">a C version</a> and
+      <a href = "../../cpp_src/ccn_rule/ccn_rule.html">a C++ version</a> and
+      <a href = "../../f_src/ccn_rule/ccn_rule.html">a Fortran90 version</a> and
+      <a href = "../../m_src/ccn_rule/ccn_rule.html">a MATLAB version</a> and
+      <a href = "../../octave_src/ccn_rule/ccn_rule.html">an Octave version</a> and
+      <a href = "../../py_src/ccn_rule/ccn_rule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_rule/python_rule.html">
+      python_rule</a>,
+      a Python code which
+      computes a quadrature rule which
+      estimates the integral of a function f(x), which might be defined over 
+      a one dimensional region (a line) or more complex shapes such as 
+      a circle, a triangle, a quadrilateral, a polygon, or a higher dimensional
+      region, and which might include an associated weight function w(x).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Milton Abramowitz, Irene Stegun,<br>
+          Handbook of Mathematical Functions,<br>
+          National Bureau of Standards, 1964,<br>
+          ISBN: 0-486-61272-4,<br>
+          LC: QA47.A34.
+        </li>
+        <li>
+          Philip Davis, Philip Rabinowitz,<br>
+          Methods of Numerical Integration,<br>
+          Second Edition,<br>
+          Dover, 2007,<br>
+          ISBN: 0486453391,<br>
+          LC: QA299.3.D28.
+        </li>
+        <li>
+          Arthur Stroud, Don Secrest,<br>
+          Gaussian Quadrature Formulas,<br>
+          Prentice Hall, 1966,<br>
+          LC: QA299.4G3S7.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ccn_rule.py">ccn_rule.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "ccn_rule.sh">ccn_rule.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "ccn_rule.txt">ccn_rule.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ccn_o9_r.txt">ccn_o9_r.txt</a>,
+          the region file.
+        </li>
+        <li>
+          <a href = "ccn_o9_w.txt">ccn_o9_w.txt</a>,
+          the weight file.
+        </li>
+        <li>
+          <a href = "ccn_o9_x.txt">ccn_o9_x.txt</a>,
+          the abscissa file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 May 2023.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>
