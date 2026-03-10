@@ -1,0 +1,34 @@
+Wed Oct  8 07:27:49 2025
+
+clenshaw_curtis_rule_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test clenshaw_curtis_rule().
+
+clenshaw_curtis_rule():
+  Compute a Clenshaw Curtis rule for approximating
+    Integral ( A <= x <= B ) f(x) dx
+  of order N.
+
+  The user specifies N, A, B, and FILENAME.
+
+  N is the number of points:
+  A is the left endpoint
+  B is the right endpoint
+  FILENAME is used to generate 3 files:
+
+    filename_w.txt - the weight file
+    filename_x.txt - the abscissa file.
+    filename_r.txt - the region file.
+
+  N =  5
+  A =  -1.0
+  B =  1.0
+  FILENAME = "cc_o5".
+  abscissas saved to "cc_o5_x.txt"
+  weights saved to "cc_o5_w.txt"
+  region saved to "cc_o5_r.txt"
+
+clenshaw_curtis_rule_test()
+  Normal end of execution.
+Wed Oct  8 07:27:49 2025
