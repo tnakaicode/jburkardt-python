@@ -1,0 +1,25 @@
+Wed Oct  8 07:26:43 2025
+
+bdf3_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  scipy version:  1.15.3
+  Test bdf3().
+
+predator_prey_bdf3():
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using the bdf3,
+  solving the implicit function using fsolve().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+  Graphics saved as "predator_prey_bdf3.png"
+
+stiff_bdf3()
+  Use bdf3() to solve the stiff ODE.
+  Graphics saved as "stiff_bdf3.png"
+
+bdf3_test():
+  Normal end of execution.
+
+Wed Oct  8 07:26:44 2025
