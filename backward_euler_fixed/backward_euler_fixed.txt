@@ -1,0 +1,18 @@
+Wed Oct  8 07:26:17 2025
+
+backward_euler_fixed_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test backward_euler_fixed().
+
+humps_backward_euler_fixed():
+  Solve the humps ODE using backward_euler_fixed().
+  Graphics saved as "humps_backward_euler_fixed.png"
+
+predator_prey_backward_euler_fixed():
+  Solve the predator prey ODE system using backward_euler_fixed().
+  Graphics saved as "predator_prey_backward_euler_fixed.png"
+
+backward_euler_fixed_test():
+  Normal end of execution.
+Wed Oct  8 07:26:18 2025
