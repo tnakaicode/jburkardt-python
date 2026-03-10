@@ -1,0 +1,166 @@
+<html>
+
+  <head>
+    <title>
+      cellular_automaton
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      cellular_automaton
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>cellular_automaton</b>,
+      a Python code which
+      prints or plots the evolution of Cellular Automaton rule #30.
+    </p>
+
+    <p>
+      Given an initial linear array of 0's and 1's, rule 30 produces a new
+      array using transformations based on each value and the value of its
+      left and right neighbors, as follows:
+      <pre>
+      111  110  101  100  011  010  001  000
+       V    V    V    V    V    V    V    V
+       0    0    0    1    1    1    1    0     
+      </pre>
+      Note that there are 256 = 2^8 possible ways to fill in this output
+      chart, and that rule 30 gets its index by the fact that
+      (0,0,0,1,1,1,1,0) can be interpreted as the binary representation of 30.
+    </p>
+
+    <p>
+      For instance, if the current values of X(4), X(5) and X(6) are
+      0, 1 and 1, respectively, then the new value of X(5) will be 1.
+    </p>
+
+    <p>
+      The first and last entries of the array must be treated specially, since
+      they don't have a left or right neighbor.  One simple treatment is 
+      to assume that there are phantom neighbors whose values are both 0.
+      Another is to enforce periodic boundary conditions.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>cellular_automaton</b> is available in
+      <a href = "../../c_src/cellular_automaton/cellular_automaton.html">a C version</a> and
+      <a href = "../../cpp_src/cellular_automaton/cellular_automaton.html">a C++ version</a> and
+      <a href = "../../f_src/cellular_automaton/cellular_automaton.html">a Fortran90 version</a> and
+      <a href = "../../m_src/cellular_automaton/cellular_automaton.html">a MATLAB version</a> and
+      <a href = "../../octave_src/cellular_automaton/cellular_automaton.html">an Octave version</a> and
+      <a href = "../../py_src/cellular_automaton/cellular_automaton.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/brownian_motion_simulation/brownian_motion_simulation.html">
+      brownian_motion_simulation</a>,
+      a Python code which
+      simulates Brownian motion in an M-dimensional region.
+    </p>
+
+    <p>
+      <a href = "../../py_src/random_walk_2d_simulation/random_walk_2d_simulation.html">
+      random_walk_2d_simulation</a>,
+      a Python code which
+      simulates a random walk in a 2-dimensional region.
+    </p>
+
+    <p>
+      <a href = "../../py_src/sir_simulation/sir_simulation.html">
+      sir_simulation</a>,
+      a Python code which
+      simulates the spread of a disease through a hospital room of M by N beds,
+      using the Susceptible/Infected/Recovered (SIR) model.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Christian Hill,<br>
+          Problem P4.3.3,<br>
+          Learning Scientific Programming with Python,<br>
+          Cambridge University Press, 2020,<br>
+          Second Edition.
+        </li>
+        <li>
+          Stephen Wolfram,<br>
+          A New Kind of Science,<br>
+          Wolfram Media, 2002,<br>
+          ISBN13: 978-1579550080,<br>
+          LC: QA267.5.C45.W67.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cellular_automaton.py">
+          cellular_automaton.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "cellular_automaton.sh">
+          cellular_automaton.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "cellular_automaton.txt">
+          cellular_automaton.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cellular_automaton.png">
+          cellular_automaton.png</a>,
+          an example plot.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 06 December 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

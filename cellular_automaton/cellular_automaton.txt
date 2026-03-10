@@ -1,0 +1,60 @@
+Wed Oct  8 07:27:25 2025
+
+cellular_automaton_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test cellular_automaton().
+
+  Print and plot the evolution of the rule #30 cellular automaton
+  starting with an array of  75  horizontal cells,
+  with a single nonzero cell in the middle.
+  Apply rule #30 for  36  steps forward in time.
+
+
+cellular_automaton_print():
+
+                                     *                                     
+                                    ***                                    
+                                   **  *                                   
+                                  ** ****                                  
+                                 **  *   *                                 
+                                ** **** ***                                
+                               **  *    *  *                               
+                              ** ****  ******                              
+                             **  *   ***     *                             
+                            ** **** **  *   ***                            
+                           **  *    * **** **  *                           
+                          ** ****  ** *    * ****                          
+                         **  *   ***  **  ** *   *                         
+                        ** **** **  *** ***  ** ***                        
+                       **  *    * ***   *  ***  *  *                       
+                      ** ****  ** *  * *****  *******                      
+                     **  *   ***  **** *    ***      *                     
+                    ** **** **  ***    **  **  *    ***                    
+                   **  *    * ***  *  ** *** ****  **  *                   
+                  ** ****  ** *  ******  *   *   *** ****                  
+                 **  *   ***  ****     **** *** **   *   *                 
+                ** **** **  ***   *   **    *   * * *** ***                
+               **  *    * ***  * *** ** *  *** ** * *   *  *               
+              ** ****  ** *  *** *   *  ****   *  * ** ******              
+             **  *   ***  ****   ** *****   * ***** *  *     *             
+            ** **** **  ***   * **  *    * ** *     *****   ***            
+           **  *    * ***  * ** * ****  ** *  **   **    * **  *           
+          ** ****  ** *  *** *  * *   ***  **** * ** *  ** * ****          
+         **  *   ***  ****   **** ** **  ***    * *  ****  * *   *         
+        ** **** **  ***   * **    *  * ***  *  ** ****   *** ** ***        
+       **  *    * ***  * ** * *  ***** *  ******  *   * **   *  *  *       
+      ** ****  ** *  *** *  * ****     ****     **** ** * * *********      
+     **  *   ***  ****   **** *   *   **   *   **    *  * * *        *     
+    ** **** **  ***   * **    ** *** ** * *** ** *  ***** * **      ***    
+   **  *    * ***  * ** * *  **  *   *  * *   *  ****     * * *    **  *   
+  ** ****  ** *  *** *  * **** **** ***** ** *****   *   ** * **  ** ****  
+ **  *   ***  ****   **** *    *    *     *  *    * *** **  * * ***  *   * 
+
+cellular_automaton_plot():
+  Plot the evolution of the rule #30 cellular automaton.
+  Graphics saved as "cellular_automaton.png"
+
+cellular_automaton_test():
+  Normal end of execution.
+Wed Oct  8 07:27:26 2025
