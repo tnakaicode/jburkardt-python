@@ -1,0 +1,53 @@
+Wed Oct  8 07:43:38 2025
+
+digraph_dict_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Some simple functions for a directed graph ("digraph")
+  defined using a Python dictionary:
+  digraph = { from0: [ to0, to1, ... tok], from1:[], ...}
+
+  The digraph:
+{'a': ['c', 'e'], 'b': ['d'], 'c': ['b', 'e'], 'd': ['a'], 'e': ['d'], 'f': []}
+
+  The nodes:
+['a', 'b', 'c', 'd', 'e', 'f']
+
+  The edges:
+[['a', 'c'], ['a', 'e'], ['b', 'd'], ['c', 'b'], ['c', 'e'], ['d', 'a'], ['e', 'd']]
+  Graphics saved as "digraph.dot.png"
+
+  The isolated nodes:
+['f']
+
+  Add node "c":
+Node c is already in the digraph.
+  Add node "h":
+  Updated node list:
+['a', 'b', 'c', 'd', 'e', 'f', 'h']
+
+  Add edge "a->f":
+  Updated edge list.
+[['a', 'c'], ['a', 'e'], ['a', 'f'], ['b', 'd'], ['c', 'b'], ['c', 'e'], ['d', 'a'], ['e', 'd']]
+
+  List all edges from node "c":
+[['c', 'b'], ['c', 'e']]
+
+  What nodes can we reach from "e"?
+['e', 'd', 'a', 'c', 'f', 'b']
+
+  What nodes can we reach from "f"?
+['f']
+
+  List all edges to node "c":
+[['a', 'c']]
+
+  Seek path from "a" to "d"
+['a', 'c', 'b', 'd']
+
+  Seek shortest path from "a" to "d"
+['a', 'e', 'd']
+
+digraph_dict_test():
+  Normal end of execution.
+Wed Oct  8 07:43:38 2025

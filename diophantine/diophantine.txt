@@ -1,0 +1,79 @@
+Wed Oct  8 07:43:39 2025
+
+diophantine_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test diophantine().
+
+diophantine_test01():
+  Solve one Diophantine equation in two variables.
+     91 * x 1 + 21 * x 2 = 7
+
+  Any right hand side must be a multiple of d = 7.0
+
+  A particular solution v:
+[ 1. -4.]
+
+  General solution x = v + W*c, where W is:
+[[-3.]
+ [13.]]
+
+  The residual for the particular solution with c=0 is 0.0
+
+diophantine_test02():
+  Solve one Diophantine equation in three variables.
+     6 * x 1 + -14 * x 2 + 21 * x 3 = 11
+
+  Any right hand side must be a multiple of d = 1.0
+
+  A particular solution v:
+[-11.  11.  11.]
+
+  General solution x = v + W*c, where W is:
+[[ 0.  7.]
+ [ 3.  0.]
+ [ 2. -2.]]
+
+  The residual for the particular solution with c=0 is 0.0
+
+diophantine_test03()
+  Solve one Diophantine equation in three variables.
+     12 * x 1 + 9 * x 2 + 7 * x 3 = 60
+
+  Any right hand side must be a multiple of d = 1.0
+
+  A particular solution v:
+[ 180.    0. -300.]
+
+  General solution x = v + W*c, where W is:
+[[ 1. -7.]
+ [ 1.  0.]
+ [-3. 12.]]
+
+  The residual for the particular solution with c=0 is 0.0
+
+diophantine_test04():
+  Solve one Diophantine equation in three variables.
+     6 * x 1 + 15 * x 2 + 10 * x 3 = 60
+
+  Any right hand side must be a multiple of d = 1.0
+
+  A particular solution v:
+[  60.   60. -120.]
+
+  General solution x = v + W*c, where W is:
+[[ 0. -5.]
+ [-2.  0.]
+ [ 3.  3.]]
+
+  The residual for the particular solution with c=0 is  0.0
+(28,12): 6 0 + 15 0 + 10 -180 = 60
+(29,11): 6 5 + 15 5 + 10 -175 = 60
+(29,12): 6 0 + 15 0 + 10 -180 = 60
+(30,10): 6 10 + 15 10 + 10 -170 = 60
+(30,11): 6 5 + 15 5 + 10 -175 = 60
+(30,12): 6 0 + 15 0 + 10 -180 = 60
+
+diophantine_test():
+  Normal end of execution.
+Wed Oct  8 07:43:39 2025
