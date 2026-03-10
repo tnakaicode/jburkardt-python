@@ -1,0 +1,122 @@
+Sat Jan 31 19:30:34 2026
+
+correlation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test correlation().
+
+correlation_test01()
+  Plot correlation functions.
+  Graphics saved as "besselj_plot.png"
+  Graphics saved as "besselk_plot.png"
+  Graphics saved as "correlation_circular_plot.png"
+  Graphics saved as "constant_plot.png"
+  Graphics saved as "cubic_plot.png"
+  Graphics saved as "damped_cosine_plot.png"
+  Graphics saved as "damped_sine_plot.png"
+  Graphics saved as "exponential_plot.png"
+  Graphics saved as "gaussian_plot.png"
+  Graphics saved as "hole_plot.png"
+  Graphics saved as "linear_plot.png"
+  Graphics saved as "matern_plot.png"
+  Graphics saved as "pentaspherical_plot.png"
+  Graphics saved as "power_plot.png"
+  Graphics saved as "rational_quadratic_plot.png"
+  Graphics saved as "spherical_plot.png"
+  Graphics saved as "white_noise_plot.png"
+
+correlation_test02()
+  sample_paths_cholesky() generates sample paths from the
+  correlation matrix, factored using the Cholesky factor.
+  It requires that the correlation matrix is nonnegative definite.
+
+  sample_paths_eigen() generates sample paths from the
+  correlation matrix, factored using the eigen factorization.
+  If the correlation matrix is not nonnegative definite,
+  we simply suppress negative eigenvalues.
+
+  SAMPLE_PATHS_FFT generates sample paths from the
+  correlation matrix, factored using the FFT factorization
+  of the correlation matrix after embedding in a circulant.
+
+  Graphics saved as "besselk_paths.png"
+  Graphics saved as "circular_paths.png"
+  Graphics saved as "damped_cosine_paths.png"
+  Graphics saved as "hole_paths.png"
+  Graphics saved as "linear_paths.png"
+  Graphics saved as "matern_paths.png"
+  Graphics saved as "white_noise_paths.png"
+
+correlation_test03():
+  Make plots of correlation functions.
+
+  Graphics saved as "besselj_plots.png"
+  Graphics saved as "besselk_plots.png"
+  Graphics saved as "circular_plots.png"
+  Graphics saved as "constant_plots.png"
+  Graphics saved as "cubic_plots.png"
+  Graphics saved as "damped_cosine_plots.png"
+  Graphics saved as "damped_sine_plots.png"
+  Graphics saved as "exponential_plots.png"
+  Graphics saved as "gaussian_plots.png"
+  Graphics saved as "hole_plots.png"
+  Graphics saved as "linear_plots.png"
+  Graphics saved as "matern_plots.png"
+  Graphics saved as "pentaspherical_plots.png"
+  Graphics saved as "power_plots.png"
+  Graphics saved as "rational_quadratic_plots.png"
+  Graphics saved as "spherical_plots.png"
+  Graphics saved as "white_noise_plots.png"
+
+correlation_test04():
+  Convert between a correlation and a covariance matrix.
+
+  Covariance matrix K:
+array([[1., 1., 1., 1., 1.],
+       [1., 2., 2., 2., 2.],
+       [1., 2., 3., 3., 3.],
+       [1., 2., 3., 4., 4.],
+       [1., 2., 3., 4., 5.]])
+
+  Correlation matrix C:
+array([[1.        , 0.70710678, 0.57735027, 0.5       , 0.4472136 ],
+       [0.70710678, 1.        , 0.81649658, 0.70710678, 0.63245553],
+       [0.57735027, 0.81649658, 1.        , 0.8660254 , 0.77459667],
+       [0.5       , 0.70710678, 0.8660254 , 1.        , 0.89442719],
+       [0.4472136 , 0.63245553, 0.77459667, 0.89442719, 1.        ]])
+
+  Variances sigma:
+array([1.        , 1.41421356, 1.73205081, 2.        , 2.23606798])
+
+  Recovered covariance matrix K2:
+array([[1., 1., 1., 1., 1.],
+       [1., 2., 2., 2., 2.],
+       [1., 2., 3., 3., 3.],
+       [1., 2., 3., 4., 4.],
+       [1., 2., 3., 4., 5.]])
+
+correlation_test05():
+  correlation_brownian_display() displays the Brownian correlation
+  Graphics saved as "correlation_brownian_plots.png"
+
+correlation_test06():
+  For non-stationary correlation functions:
+
+  sample_paths2_cholesky() generates sample paths from the
+  correlation matrix, factored using the Cholesky factor.
+  It requires that the correlation matrix is nonnegative definite.
+
+  sample_paths2_eigen() generates sample paths from the
+  correlation matrix, factored using the eigen factorization.
+  If the correlation matrix is not nonnegative definite,
+  we simply suppress negative eigenvalues.
+
+  sample_paths2_fft() generates sample paths from the
+  correlation matrix, factored using the FFT factorization
+  of the correlation matrix after embedding in a circulant.
+
+  Graphics saved as "correlation_brownian_paths.png"
+
+correlation_test():
+  Normal end of execution.
+Sat Jan 31 19:30:40 2026
