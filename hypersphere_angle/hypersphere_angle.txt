@@ -1,0 +1,83 @@
+Wed Oct  8 07:53:48 2025
+
+hypersphere_angle_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hypersphere_angle().
+
+  Spatial dimension M =  2
+  Number of samples N =  10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean =  0.6347020528406229
+    Estimated std  =  0.30976669445989696
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  0.788635405794194  (radians) = 45.185480326594345  (degrees)
+    Estimated std  =  0.45355985104965774  (radians) = 25.98706522172765  (degrees)
+
+  Spatial dimension M =  3
+  Number of samples N =  10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean =  0.5015369702044532
+    Estimated std  =  0.2876843620379843
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  0.9986069809083625  (radians) = 57.21596539835034  (degrees)
+    Estimated std  =  0.374611987946983  (radians) = 21.463685864367793  (degrees)
+
+  Spatial dimension M =  5
+  Number of samples N =  10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean =  0.37664896777724255
+    Estimated std  =  0.2445973731151849
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.1646433972142347  (radians) = 66.72915129815395  (degrees)
+    Estimated std  =  0.28739585184327565  (radians) = 16.466569360186796  (degrees)
+
+  Spatial dimension M =  10
+  Number of samples N =  10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean =  0.2572639342159744
+    Estimated std  =  0.18162624196095528
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.3043129780715257  (radians) = 74.73162880763792  (degrees)
+    Estimated std  =  0.1966841702517567  (radians) = 11.269172852458196  (degrees)
+
+  Spatial dimension M =  20
+  Number of samples N =  10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean =  0.18216141591153928
+    Estimated std  =  0.13464322431173642
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.3853488912535161  (radians) = 79.37464462195452  (degrees)
+    Estimated std  =  0.14029201310673795  (radians) = 8.038140250410112  (degrees)
+
+  Spatial dimension M =  40
+  Number of samples N =  10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean =  0.12692731928235715
+    Estimated std  =  0.09283476993502567
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.4428185440833905  (radians) = 82.66741317918839  (degrees)
+    Estimated std  =  0.09464501786673997  (radians) = 5.4227600757044705  (degrees)
+
+  Spatial dimension M =  80
+  Number of samples N =  10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean =  0.08909352498368396
+    Estimated std  =  0.06579404321435385
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.481339858480398  (radians) = 84.87452191543346  (degrees)
+    Estimated std  =  0.0664330279453606  (radians) = 3.806332121543817  (degrees)
+
+  Spatial dimension M =  160
+  Number of samples N =  10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean =  0.06397581302361915
+    Estimated std  =  0.04715519696366496
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.5066876441275472  (radians) = 86.32684305301738  (degrees)
+    Estimated std  =  0.04738884994285783  (radians) = 2.715181097704526  (degrees)
+  Graphics saved as "hypersphere_angle.png"
+
+hypersphere_angle_test():
+  Normal end of execution.
+Wed Oct  8 07:55:14 2025

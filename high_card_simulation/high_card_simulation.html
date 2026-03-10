@@ -1,0 +1,194 @@
+<html>
+
+  <head>
+    <title>
+      high_card_simulation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      high_card_simulation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>high_card_simulation</b>,
+      a Python code which
+      simulates a game in which you have one chance to select the highest card
+      from a deck.
+    </p>
+
+    <p>
+      You are given a deck of DECK_SIZE cards.
+    </p>
+
+    <p>
+      Your goal is to select the high card.  For convenience, we can assume 
+      the cards are a permutation of the integers from 1 to DECK_SIZE, but in
+      fact the user mustn't see such values or else it's obvious which is the
+      largest card.  (For a truly difficult problem, we'd have to work harder
+      to disguise the range of values and the likely distribution!)
+    </p>
+
+    <p>
+      Your choice is made under the following rules:  You may turn over
+      one card at a time.  When a card is turned over, you may declare that to be
+      your choice, or else turn over another card.  If you have not chosen a card
+      by the end, then your choice is the final card.
+    </p>
+
+    <p>
+      If you have no idea what to do, and simply decide in advance to pick
+      a card "at random", that is, for example, you decide to pick the 15th card
+      before having seen any cards, then your probability of winning is 1/DECK_SIZE.
+    </p>
+
+    <p>
+      The question is, can you do better than that?
+    </p>
+
+    <p>
+      A good strategy is as follows: always look at the first SKIP_NUM cards without
+      choosing them.  Then choose the very next card you encounter that is larger
+      than the cards you skipped.
+    </p>
+
+    <p>
+      Using this code, you can easily see that skipping 5 cards is much better
+      than picking one at random, skipping 10 is even better, and so on...up to some
+      point, when the benefit begins to disappear.  Of course,
+      you can't skip too many cards, and in fact, the results seem to be best for
+      somewhere around 30 to 35 cards skipped.  For problems like this, the
+      optimal value is somewhere around 1 / e, where E is the base of the natural
+      logarithm system.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>high_card_simulation</b> ( <i>deck_size</i>, <i>skip_num</i>, <i>trial_num</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>n</i> is the number of times the dice are thrown.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>high_card_simulation</b> is available in
+      <a href = "../../c_src/high_card_simulation/high_card_simulation.html">a C version</a> and
+      <a href = "../../cpp_src/high_card_simulation/high_card_simulation.html">a C++ version</a> and
+      <a href = "../../f_src/high_card_simulation/high_card_simulation.html">a Fortran90 version</a> and
+      <a href = "../../m_src/high_card_simulation/high_card_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/high_card_simulation/high_card_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/high_card_simulation/high_card_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Nick Berry,<br>
+          The Secretary Puzzle,<br>
+          https://datagenetics.com/blog/december32012/index.html<br>
+          Posted 03 December 2012.
+        </li>
+        <li>
+          Paul Nahin,<br>
+          Digital Dice: Computational Solutions to Practical Probability
+          Problems,<br>
+          Princeton University Press, 2008,<br>
+          ISBN13: 978-0-691-12698-2,<br>
+          LC: QA273.25.N34.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "high_card_simulation.py">
+          high_card_simulation.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "high_card_simulation.sh">
+          high_card_simulation.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "high_card_simulation.txt">
+          high_card_simulation.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "high_card_simulation_test02.png">
+          high_card_simulation_test02.png</a>, 
+          a plot illustrating the estimated probability of picking the high card
+          after first skipping 0, 1, 2, ..., 99 cards.
+        </li>
+        <li>
+          <a href = "high_card_simulation_test03.png">
+          high_card_simulation_test03.png</a>, 
+          plots the exact chances of winning with various skips, 
+          and a deck of 100 cards.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 06 July 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

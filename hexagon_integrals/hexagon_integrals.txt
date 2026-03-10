@@ -1,0 +1,35 @@
+Wed Oct  8 07:53:20 2025
+
+hexagon_integrals_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  hexagon01_integral() computes
+  monomial integrals x^p y^q over the unit hexagon.
+
+   P   Q             Nu(P,Q)
+
+   0   0         2.59808
+   2   0        0.541266
+   0   2        0.541266
+   4   0        0.227332
+   2   2       0.0757772
+   0   4        0.227332
+   6   0        0.123235
+   4   2       0.0211674
+   2   4       0.0269666
+   0   6        0.117435
+   8   0       0.0769049
+   6   2      0.00779681
+   4   4      0.00616656
+   2   6       0.0127584
+   0   8       0.0669817
+  10   0       0.0524736
+   8   2      0.00343161
+   6   4      0.00181337
+   4   6      0.00261297
+   2   8      0.00689653
+   0  10       0.0404796
+
+hexagon_integrals_test():
+  Normal end of execution.
+Wed Oct  8 07:53:20 2025

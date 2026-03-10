@@ -1,0 +1,16 @@
+Wed Oct  8 07:56:49 2025
+
+hypersphere_positive_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hypersphere_positive_distance().
+
+  Using M = 20 spatial dimension
+  Using N = 10000 sample points,
+  Estimated mean distance = 0.823542
+  Estimated variance      = 0.0134617
+  Graphics saved as "hypersphere_positive_distance_histogram.png"
+
+hypersphere_positive_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:56:52 2025

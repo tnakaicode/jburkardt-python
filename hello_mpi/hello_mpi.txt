@@ -1,0 +1,35 @@
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/hello_mpi/hello_mpi.py", line 40, in <module>
+    hello_mpi ( )
+  File "/home/john/public_html/py_src/hello_mpi/hello_mpi.py", line 22, in hello_mpi
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/hello_mpi/hello_mpi.py", line 40, in <module>
+    hello_mpi ( )
+  File "/home/john/public_html/py_src/hello_mpi/hello_mpi.py", line 22, in hello_mpi
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/hello_mpi/hello_mpi.py", line 40, in <module>
+    hello_mpi ( )
+  File "/home/john/public_html/py_src/hello_mpi/hello_mpi.py", line 22, in hello_mpi
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/hello_mpi/hello_mpi.py", line 40, in <module>
+    hello_mpi ( )
+  File "/home/john/public_html/py_src/hello_mpi/hello_mpi.py", line 22, in hello_mpi
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[16304,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------

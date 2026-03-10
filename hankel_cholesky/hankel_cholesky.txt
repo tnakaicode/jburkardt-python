@@ -1,0 +1,166 @@
+Wed Oct  8 07:49:39 2025
+
+hankel_cholesky_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hankel_cholesky().
+
+hankel_cholesky_upper_test():
+  hankel_cholesky_upper() is given a Hankel matrix H and 
+  computes an upper triangular matrix R such that 
+  H = R' * R
+
+  The Hankel matrix H:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :   0.0990257     0.0558276      0.962937      0.930582       10.3178  
+      1 :   0.0558276      0.962937      0.930582       10.3178       13.2878  
+      2 :    0.962937      0.930582       10.3178       13.2878       112.461  
+      3 :    0.930582       10.3178       13.2878       112.461       178.061  
+      4 :     10.3178       13.2878       112.461       178.061       1238.29  
+
+  R computed by NUMPY.LINALG.CHOLESKY:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.314683      0.177409       3.06002        2.9572       32.7878  
+      1 :           0      0.965124      0.401718        10.147       7.74095  
+      2 :           0             0      0.890322      0.182499       10.1311  
+      3 :           0             0             0      0.848742      0.829538  
+      4 :           0             0             0             0     0.0663776  
+
+  R computed by r8mat_cholesky_factor_upper():
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.314683      0.177409       3.06002        2.9572       32.7878  
+      1 :           0      0.965124      0.401718        10.147       7.74095  
+      2 :           0             0      0.890322      0.182499       10.1311  
+      3 :           0             0             0      0.848742      0.829538  
+      4 :           0             0             0             0     0.0663776  
+
+  R computed by hankel_cholesky_upper():
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.314683      0.177409       3.06002        2.9572       32.7878  
+      1 :           0      0.965124      0.401718        10.147       7.74095  
+      2 :           0             0      0.890322      0.182499       10.1311  
+      3 :           0             0             0      0.848742      0.829538  
+      4 :           0             0             0             0     0.0663776  
+
+hankel_spd_cholesky_lower_test01():
+  hankel_spd_cholesky_lower() computes a lower Cholesky
+  matrix L such that the matrix H = L * L' is a
+  symmetric positive definite Hankel matrix.
+
+  The Cholesky factor L:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             0             0  
+      1 :           1             1             0             0             0  
+      2 :           2             1             1             0             0  
+      3 :           3             3             1             1             0  
+      4 :           6             4             4             1             1  
+
+  The Hankel matrix H = L * L':
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             1             2             3             6  
+      1 :           1             2             3             6            10  
+      2 :           2             3             6            10            20  
+      3 :           3             6            10            20            35  
+      4 :           6            10            20            35            70  
+
+  The Cholesky factor L:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             0             0  
+      1 :           4             2             0             0             0  
+      2 :          20             3             3             0             0  
+      3 :          86            37             2             4             0  
+      4 :         418          82.5       59.1667             1             5  
+
+  The Hankel matrix H = L * L':
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             4            20            86           418  
+      1 :           4            20            86           418          1837  
+      2 :          20            86           418          1837          8785  
+      3 :          86           418          1837          8785       39122.8  
+      4 :         418          1837          8785       39122.8        185057  
+
+  The Cholesky factor L:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.509998             0             0             0             0  
+      1 :    0.615324      0.221235             0             0             0  
+      2 :    0.838371      0.777081      0.676234             0             0  
+      3 :     1.34861        4.2226      0.613824     0.0421891             0  
+      4 :     3.45886       12.1984       11.3107      0.187099      0.762149  
+
+  The Hankel matrix H = L * L':
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.260098      0.313814      0.427568      0.687787       1.76401  
+      1 :    0.313814      0.427568      0.687787       1.76401       4.82702  
+      2 :    0.427568      0.687787       1.76401       4.82702       20.0276  
+      3 :    0.687787       1.76401       4.82702       20.0276       63.1241  
+      4 :     1.76401       4.82702       20.0276       63.1241       289.312  
+
+hankel_spd_cholesky_lower_test02():
+  hankel_spd_cholesky_lower() computes a lower Cholesky
+  matrix L such that the matrix H = L * L' is a
+  symmetric positive definite Hankel matrix.
+
+  The Cholesky factor L:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             0             0  
+      1 :           1             1             0             0             0  
+      2 :           2             1             1             0             0  
+      3 :           3             3             1             1             0  
+      4 :           6             4             4             1             1  
+
+  The Hankel matrix H = L * L':
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             1             2             3             6  
+      1 :           1             2             3             6            10  
+      2 :           2             3             6            10            20  
+      3 :           3             6            10            20            35  
+      4 :           6            10            20            35            70  
+
+  The Cholesky factor L2 of H:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             0             0  
+      1 :           1             1             0             0             0  
+      2 :           2             1             1             0             0  
+      3 :           3             3             1             1             0  
+      4 :           6             4             4             1             1  
+
+  The Hankel matrix H2 = L2 * L2':
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             1             2             3             6  
+      1 :           1             2             3             6            10  
+      2 :           2             3             6            10            20  
+      3 :           3             6            10            20            35  
+      4 :           6            10            20            35            70  
+
+hankel_cholesky_test():
+  Normal end of execution.
+
+Wed Oct  8 07:49:39 2025

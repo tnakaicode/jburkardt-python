@@ -1,0 +1,34 @@
+Mon May 12 22:31:13 2025
+
+gray_scott_pde_test():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Solve the 2D Gray-Scott reaction-diffusion PDE
+
+  Parameters:
+    U diffusion d1  = 8e-05
+    V diffusion d2  = 4e-05
+    Flow rate gamma = 0.024
+    Kill rate kappa = 0.06
+    t0              = 0.0
+    tstop           = 1500.0
+    xmin            = 0.0
+    xmax            = 2.5
+    ymin            = 0.0
+    ymax            = 2.5
+
+gray_scott_pde():
+  Solve the Gray-Scott diffusion-reaction PDE
+
+  Number of X nodes =  251
+  dx =  0.01
+
+  Number of Y nodes =  251
+  dy =  0.01
+
+  Number of T values =  150001
+  dt =  0.01
+  Graphics saved as "gray_scott_u0000.png"
+  Graphics saved as "gray_scott_u0100.png"
+  Graphics saved as "gray_scott_u0200.png"

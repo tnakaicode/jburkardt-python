@@ -1,0 +1,13 @@
+Wed Oct  8 07:56:54 2025
+
+image_edge_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  image_edge() detects edges in an image.
+
+  Analyzed file "coins.png"
+  Highlighted edges in "coins.edge.png"
+
+image_edge_test():
+  Normal end of execution.
+Wed Oct  8 07:56:54 2025

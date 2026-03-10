@@ -1,0 +1,46 @@
+Wed Oct  8 07:49:33 2025
+
+gurobi_solution_read_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  gurobi_solution_read() extracts a solution vector X
+  returned by gurobi() for a polyomino tiling problem.
+
+gurobi_solution_read_demo():
+  gurobi_solution_read() reads a gurobi() solution file.
+  This demo will read reid_gurobi.sol"
+
+gurobi_solution_read():
+  Reading gurobi() solution file "reid_gurobi.sol"
+  reid_gurobi.solcontains 20 lines.
+[0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 0. 0.]
+
+  Saved data as "reid_gurobi.txt"
+
+gurobi_solution_read_demo():
+  gurobi_solution_read() reads a gurobi() solution file.
+  This demo will read pent5x6_gurobi.sol"
+
+gurobi_solution_read():
+  Reading gurobi() solution file "pent5x6_gurobi.sol"
+  pent5x6_gurobi.solcontains 176 lines.
+
+  Data is rather large, so will not be printed out.
+
+  Saved data as "pent5x6_gurobi.txt"
+
+gurobi_solution_read_demo():
+  gurobi_solution_read() reads a gurobi() solution file.
+  This demo will read pent18x30_gurobi.sol"
+
+gurobi_solution_read():
+  Reading gurobi() solution file "pent18x30_gurobi.sol"
+  pent18x30_gurobi.solcontains 28456 lines.
+
+  Data is rather large, so will not be printed out.
+
+  Saved data as "pent18x30_gurobi.txt"
+
+gurobi_solution_read_test():
+  Normal end of execution.
+Wed Oct  8 07:49:33 2025

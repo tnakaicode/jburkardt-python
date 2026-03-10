@@ -1,0 +1,32 @@
+Wed Oct  8 07:53:42 2025
+
+hypercube_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hypercube_distance()
+
+   M      N      Mu        Var
+
+   2  10000    0.5218    0.0617
+   3  10000    0.6597    0.0614
+   4  10000    0.7765    0.0627
+   5  10000    0.8811    0.0611
+   6  10000    0.9668    0.0600
+   7  10000    1.0545    0.0607
+   8  10000    1.1277    0.0614
+   9  10000    1.2017    0.0600
+  10  10000    1.2683    0.0607
+
+  Graphics saved as "hypercube_distance_histogram_2.png"
+  Graphics saved as "hypercube_distance_histogram_3.png"
+  Graphics saved as "hypercube_distance_histogram_4.png"
+  Graphics saved as "hypercube_distance_histogram_5.png"
+  Graphics saved as "hypercube_distance_histogram_6.png"
+  Graphics saved as "hypercube_distance_histogram_7.png"
+  Graphics saved as "hypercube_distance_histogram_8.png"
+  Graphics saved as "hypercube_distance_histogram_9.png"
+  Graphics saved as "hypercube_distance_histogram_10.png"
+
+hypercube_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:53:44 2025

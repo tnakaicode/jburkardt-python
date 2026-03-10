@@ -1,0 +1,27 @@
+Wed Oct  8 07:49:31 2025
+
+grazing_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve grazing_ode().
+
+  parameters:
+    a     =  1.1
+    c1    =  1.2
+    c2    =  1.5
+    d1    =  0.001
+    d2    =  0.001
+    k     =  3000
+    r1    =  0.8
+    t0    =  0.0
+    y0    =  [3000.    5.]
+    tstop =  100.0
+
+grazing_solve_ivp():
+  Solve grazing_ode() using solve_ivp().
+  Graphics saved as "grazing_solve_ivp_plot.png"
+  Graphics saved as "grazing_solve_ivp_phase.png"
+
+grazing_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:49:32 2025

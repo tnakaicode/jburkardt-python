@@ -1,0 +1,20 @@
+Wed Oct  8 07:53:46 2025
+
+hypercube_surface_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hypercube_surface_distance()
+
+    D       Mu      Var
+
+   2    0.7389    0.1261
+   3    0.8553    0.0959
+   4    0.9619    0.0849
+   5    1.0422    0.0783
+   6    1.1223    0.0727
+
+  Graphics saved as "hypercube_surface_distance_d5_histogram.png"
+
+hypercube_surface_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:53:48 2025

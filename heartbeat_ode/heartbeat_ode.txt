@@ -1,0 +1,24 @@
+Wed Oct  8 07:49:39 2025
+
+heartbeat_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve heartbeat_ode().
+
+  parameters:
+    a       =  0.81
+    epsilon =  0.001
+    gamma   =  0.45
+    t0      =  0.0
+    y0      =  [1. 1.]
+    tstop   =  10.0
+
+heartbeat_solve_ivp():
+  Use solve_ivp() to solve heartbeat_ode().
+  Graphics saved as "heartbeat_solve_ivp_y1.png"
+  Graphics saved as "heartbeat_solve_ivp_y2.png"
+  Graphics saved as "heartbeat_solve_ivp_phase.png"
+
+heartbeat_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:49:41 2025

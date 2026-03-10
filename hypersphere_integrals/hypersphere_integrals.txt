@@ -1,0 +1,78 @@
+Wed Oct  8 07:56:47 2025
+
+hypersphere_integrals_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hypersphere_integrals().
+
+hypersphere01_area_test
+  hypersphere01_area returns the volume of the unit hypersphere.
+
+   M  Area
+
+   1  2
+   2  6.28319
+   3  12.5664
+   4  19.7392
+   5  26.3189
+   6  31.0063
+   7  33.0734
+   8  32.4697
+   9  29.6866
+  10  25.5016
+
+hypersphere01_monomial_integral():
+  hypersphere01_monomial_integral() returns the integral of
+  a monomial over the surface of the unit hypersphere in 3D.
+  Compare with a Monte Carlo estimate.
+
+  Number of sample points used is 4192
+
+  If any exponent is odd, the integral is zero.
+  We will restrict this test to randomly chosen even exponents.
+
+  Ex  Ey  Ez     MC-Estimate           Exact      Error
+
+   4   2   6      0.00428176      0.00418461     9.7e-05
+   4   2   4       0.0111117         0.01088     0.00023
+   6   4   0       0.0538433       0.0543999     0.00056
+   2   2   4       0.0406496       0.0398932     0.00076
+   0   8   6      0.00949989      0.00976408     0.00026
+   6   8   2     0.000555332     0.000574358     1.9e-05
+   6   4   2      0.00413703      0.00418461     4.8e-05
+   0   0   0         12.5664         12.5664     1.8e-15
+   0   0   6          1.7324          1.7952       0.063
+   4   4   6     0.000859472     0.000836921     2.3e-05
+   6   0   6       0.0207437        0.020923     0.00018
+   8   0   6      0.00982071      0.00976408     5.7e-05
+   4   2   2       0.0404587       0.0398932     0.00057
+   4   4   6     0.000859472     0.000836921     2.3e-05
+   0   2   8        0.126964        0.126933       3e-05
+   6   8   2     0.000555332     0.000574358     1.9e-05
+   4   4   4       0.0025339      0.00251076     2.3e-05
+   0   6   2        0.200211        0.199466     0.00075
+   8   6   2     0.000555213     0.000574358     1.9e-05
+   0   6   8      0.00962407      0.00976408     0.00014
+
+hypersphere01_sample_test():
+  hypersphere01_sample() samples the unit hypersphere
+  in M dimensions.
+
+  Sample points on the unit hypersphere.
+
+  Row:       0             1             2       
+  Col
+      0 :     0.38027      -0.86688      0.322358  
+      1 :   -0.469691      0.204705      -0.85877  
+      2 :   -0.560574      0.767036     -0.312111  
+      3 :   -0.338737     -0.277422      0.899052  
+      4 :    0.844008      0.530348     0.0798871  
+      5 :   -0.150344       0.81413      0.560882  
+      6 :   -0.902578     -0.163216      0.398389  
+      7 :   -0.399588     -0.908472       0.12251  
+      8 :    0.853495    -0.0132156      0.520933  
+      9 :   -0.666945     -0.649752      0.364702  
+
+hypersphere_integrals_test():
+  Normal end of execution.
+Wed Oct  8 07:56:47 2025

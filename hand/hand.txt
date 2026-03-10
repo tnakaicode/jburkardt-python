@@ -1,0 +1,50 @@
+Wed Oct  8 07:49:35 2025
+
+hand_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hand().
+
+hand_dilation():
+  Dilate the hand data.
+  Graphics saved as "hand_dilation.png"
+
+hand_hull():
+  Compute and plot the convex hull of the hand data.
+  Graphics saved as "hand_hull.png"
+
+hand_linear()
+  Apply a linear transformation to the hand data.
+  Graphics saved as "hand_linear.png"
+
+hand_negation():
+  Negate and plot the hand data.
+  Graphics saved as "hand_negation.png"
+
+hand_plot():
+  Read the hand data and plot it.
+  Graphics saved as "hand_plot.png"
+
+hand_reflection():
+  Reflect the hand data.
+  Graphics saved as "hand_reflection.png"
+
+hand_rotation():
+  Rotate the hand data.
+  Graphics saved as "hand_rotation.png"
+
+hand_spline()
+  Interpolate hand data with a spline.
+  Graphics saved as "hand_spline.png"
+
+hand_star()
+  Show hand data is star-shaped.
+  Graphics saved as "hand_star.png"
+
+hand_translation():
+  Translate the hand data.
+  Graphics saved as "hand_translation.png"
+
+hand_test():
+  Normal end of execution.
+Wed Oct  8 07:49:37 2025

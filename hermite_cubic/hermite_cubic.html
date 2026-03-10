@@ -1,0 +1,175 @@
+<html>
+
+  <head>
+    <title>
+      hermite_cubic
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      hermite_cubic
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>hermite_cubic</b>,
+      a Python code which
+      demonstrates the use of cubic polynomials in the Hermite form.
+    </p>
+
+    <h3 align = "center">
+      The Hermite Cubic
+    </h3>
+
+    <p>
+      The Hermite form of a cubic polynomial defines the polynomial <b>p(x)</b>
+      by specifying two distinct points <b>x1</b> and <b>x2</b>, and
+      providing values for the following four items:
+      <pre>
+        f1 = p(x1)
+        d1 = p'(x1)
+        f2 = p(x2)
+        d2 = p'(x2)
+      </pre>
+      The locations of the abscissas and the four data values are enough
+      to uniquely define a cubic polynomial, known as the Hermite cubic.
+    </p>
+
+    <p>
+      From the Hermite cubic representation, it is possible to determine
+      the standard power series form:
+      <pre>
+        p(x) = c<sub>0</sub> + c<sub>1</sub> * x + c<sub>2</sub> * x<sup>2</sup> + c<sub>3</sub> * x<sup>3</sup>
+      </pre>
+    </p>
+
+    <p>
+      It is possible, given any value of the argument <b>x</b> and the
+      data values that define the Hermite cubic polynomial, to determine the
+      value of <b>p(x)</b>, as well as the values of the first, second and third
+      derivatives.
+    </p>
+
+    <p>
+      It is possible, given two values of the argument <b>x3</b> and
+      <b>x4</b>, and the data values that define the Hermite cubic polynomial,
+      to determine the value of the integral of <b>p(x)</b> over the interval
+      [x3,x4].
+    </p>
+
+    <h3 align = "center">
+      Hermite Cubic Splines:
+    </h3>
+
+    <p>
+      A sequence of Hermite cubic polynomials can be used to produce a
+      piecewise cubic Hermite interpolant, if we are given a strictly
+      increasing sequence of <b>n</b> nodes <b>x(1:n)</b>, and corresponding
+      data vectors <b>f(1:n)</b> and <b>d(1:n)</b>.  This is done by
+      defining <b>n-1</b> cubic Hermite polynomials, with the <b>i</b>-th
+      polynomial defined using the data at nodes <b>x(i)</b> and <b>x(i+1)</b>.
+      The resulting function interpolates the value and derivative data,
+      and is continuous and continuously differentiable everywhere,
+      and in particular, at the nodes.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>hermite_cubic</b> is available in
+      <a href = "../../c_src/hermite_cubic/hermite_cubic.html">a C version</a> and
+      <a href = "../../cpp_src/hermite_cubic/hermite_cubic.html">a C++ version</a> and
+      <a href = "../../f77_src/hermite_cubic/hermite_cubic.html">a Fortran77 version</a> and
+      <a href = "../../f_src/hermite_cubic/hermite_cubic.html">a Fortran90 version</a> and
+      <a href = "../../m_src/hermite_cubic/hermite_cubic.html">a MATLAB version</a> and
+      <a href = "../../octave_src/hermite_cubic/hermite_cubic.html">an Octave version</a> and
+      <a href = "../../py_src/hermite_cubic/hermite_cubic.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/bernstein_polynomial/bernstein_polynomial.html">
+      bernstein_polynomial</a>,
+      a Python code which
+      evaluates the Bernstein polynomials, 
+      useful for uniform approximation of functions;
+    </p>
+
+    <p>
+      <a href = "../../py_src/divdif/divdif.html">
+      divdif</a>,
+      a Python code which
+      computes divided difference polynomials from data;
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp_1d/test_interp_1d.html">
+      test_interp_1d</a>,
+      a Python code which
+      defines test problems for interpolation of data y(x),
+      depending on a 1D argument.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Fred Fritsch, Ralph Carlson,<br>
+          Monotone Piecewise Cubic Interpolation,<br>
+          SIAM Journal on Numerical Analysis,<br>
+          Volume 17, Number 2, April 1980, pages 238-246.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hermite_cubic.py">hermite_cubic.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "hermite_cubic.sh">hermite_cubic.sh</a>, runs all the tests;
+        </li>
+        <li>
+          <a href = "hermite_cubic.txt">hermite_cubic.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 25 February 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

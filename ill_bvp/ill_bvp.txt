@@ -1,0 +1,17 @@
+Wed Oct  8 07:56:52 2025
+
+ill_bvp_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Use solve_bvp() to solve the ill conditioned BVP:
+  epsilon y" - xy + y = 0
+  -1 <= x <= 1
+  y(-1) = 2, y(1) = 1
+  Graphics saved as "ill_bvp_1.0.png"
+  Graphics saved as "ill_bvp_0.1.png"
+  Graphics saved as "ill_bvp_0.02.png"
+  Graphics saved as "ill_bvp_0.01.png"
+
+ill_bvp_test():
+  Normal end of execution.
+Wed Oct  8 07:56:53 2025

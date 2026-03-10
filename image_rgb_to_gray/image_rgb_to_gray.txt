@@ -1,0 +1,13 @@
+Wed Oct  8 07:56:59 2025
+
+image_rgb_to_gray_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  image_rgb_to_gray() converts an RGB image to grayscale.
+
+  Converted conjunction.png to conjunction_gray.png
+  Converted star_field.png to star_field_gray.png
+
+image_rgb_to_gray_test():
+  Normal end of execution.
+Wed Oct  8 07:57:01 2025

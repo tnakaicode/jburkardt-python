@@ -1,0 +1,24 @@
+Tue Mar 10 10:53:26 2026
+
+compressed_solve_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  scipy version:  1.15.3
+  Test compressed_solve(), which seeks a solution of an
+  underdetermined linear system A*x=b, with the maximum
+  number of zero entries in x.
+
+  matrix A:
+array([[ 87, 190, 118, 140, 101],
+       [ 72, 170,  90, 135, 104],
+       [ 12,  31,  14,  25,  20]])
+
+  right hand side b:
+array([ 5, 10,  8])
+
+  compressed solve x1:
+array([ 0.        ,  5.56756757, -3.31081081, -4.72972973,  0.        ])
+
+  np.linalg.lstsq() x2:
+array([-1.94539562,  5.56756757, -2.826363  , -2.66107062, -1.75769998])
+Tue Mar 10 10:53:26 2026

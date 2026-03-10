@@ -1,0 +1,41 @@
+Wed Oct  8 07:49:41 2025
+
+heated_plate_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve for the steady state temperature distribution
+  over a rectangular plate.
+
+   200  by  200  spatial grid
+
+  The iteration will repeat until the change is <=  0.001
+
+ Iteration  Change
+
+         1       25.000000
+         2        9.375000
+         4        4.296875
+         8        2.243042
+        16        1.122853
+        32        0.559512
+        64        0.280415
+       128        0.140485
+       256        0.070297
+       512        0.035158
+      1024        0.017585
+      2048        0.008792
+      4096        0.004399
+      8192        0.002171
+  Graphics saved as "heated_plate.png"
+
+     13346        0.001000
+
+  Error tolerance achieved.
+  Wallclock time =  2.3201186656951904
+
+heated_plate():
+  Normal end of execution.
+
+heated_plate_test():
+  Normal end of execution.
+Wed Oct  8 07:49:44 2025

@@ -1,0 +1,15 @@
+Wed Oct  8 07:49:50 2025
+
+henon_orbit_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  henon_orbit() plots examples of the 
+  Henon dynamical system.
+
+  Graphics saved as "fig4.png"
+  Graphics saved as "fig5.png"
+  Graphics saved as "fig7.png"
+
+henon_orbit_test():
+  Normal end of execution.
+Wed Oct  8 07:53:13 2025

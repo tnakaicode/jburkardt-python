@@ -1,0 +1,215 @@
+<html>
+
+  <head>
+    <title>
+      hermite_polynomial
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      hermite_polynomial
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>hermite_polynomial</b>,
+      a Python code which
+      evaluates the physicist's Hermite polynomial, the probabilist's 
+      Hermite polynomial, the Hermite function, and related functions.
+    </p>
+
+    <p>
+      The physicist's Hermite polynomial H(i,x) can be defined by:
+      <pre>
+        H(i,x) = (-1)^i exp(x^2/2) * d^i/dx^i ( exp(-x^2/2) )
+      </pre>
+    </p>
+
+    <p>
+      The normalized physicist's Hermite polynomial Hn(i,x) is scaled so that
+      <pre>
+        Integral ( -oo < x < +oo ) exp ( - x^2 ) * Hn(i,x) Hn(j,x) dx = delta ( i, j )
+      </pre>
+    </p>
+
+    <p>
+      The probabilist's Hermite polynomial He(i,x) is related to H(i,x) by:
+      <pre>
+        He(i,x) = H(i,x/sqrt(2)) / sqrt ( 2^in )
+      </pre>
+    </p>
+
+    <p>
+      The normalized probabilist's Hermite polynomial Hen(i,x) is scaled so that
+      <pre>
+        Integral ( -oo < x < +oo ) exp ( - 0.5*x^2 ) * Hen(i,x) Hen(j,x) dx = delta ( i, j )
+      </pre>
+    </p>
+
+    <p>
+      The Hermite function Hf(i,x) is related to H(i,x) by:
+      <pre>
+        Hf(i,x) = H(i,x) * exp(-x^2/2) / sqrt ( 2^i * i! * sqrt ( pi ) )
+      </pre>
+    </p>
+
+    <p>
+      The Hermite function Hf(i,x) is scaled so that:
+      <pre>
+        Integral ( -oo < x < +oo ) Hf(i,x) Hf(j,x) dx = delta ( i, j )
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>hermite_polynomial</b> is available in
+      <a href = "../../c_src/hermite_polynomial/hermite_polynomial.html">a C version</a> and
+      <a href = "../../cpp_src/hermite_polynomial/hermite_polynomial.html">a C++ version</a> and
+      <a href = "../../f_src/hermite_polynomial/hermite_polynomial.html">a Fortran90 version</a> and
+      <a href = "../../f77_src/hermite_polynomial/hermite_polynomial.html">a Fortran77 version</a> and
+      <a href = "../../m_src/hermite_polynomial/hermite_polynomial.html">a MATLAB version</a> and
+      <a href = "../../octave_src/hermite_polynomial/hermite_polynomial.html">an Octave version</a> and
+      <a href = "../../py_src/hermite_polynomial/hermite_polynomial.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/hermite_rule/hermite_rule.html">
+      hermite_rule</a>,
+      a Python code which
+      computes and prints a Gauss-Hermite quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_polynomial/python_polynomial.html">
+      python_polynomial</a>,
+      a Python code which
+      analyzes a variety of polynomial families, returning the polynomial
+      values, coefficients, derivatives, integrals, roots, or other information.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      polpak</a>,
+      a Python code which
+      evaluates a variety of mathematical functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polynomial_conversion/polynomial_conversion.html">
+      polynomial_conversion</a>,
+      a Python code which
+      converts representations of a polynomial between monomial, Bernstein,
+      Chebyshev, Hermite, Lagrange, Laguerre and other forms.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_values/test_values.html">
+      test_values</a>,
+      a Python code which
+      supplies test values of various mathematical functions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Theodore Chihara,<br>
+          An Introduction to Orthogonal Polynomials,<br>
+          Gordon and Breach, 1978,<br>
+          ISBN: 0677041500,<br>
+          LC: QA404.5 C44.
+        </li>
+        <li>
+          Walter Gautschi,<br>
+          Orthogonal Polynomials: Computation and Approximation,<br>
+          Oxford, 2004,<br>
+          ISBN: 0-19-850672-4,<br>
+          LC: QA404.5 G3555.
+        </li>
+        <li>
+          Frank Olver, Daniel Lozier, Ronald Boisvert, Charles Clark,<br>
+          NIST Handbook of Mathematical Functions,<br>
+          Cambridge University Press, 2010,<br>
+          ISBN: 978-0521192255,<br>
+          LC: QA331.N57.
+        </li>
+        <li>
+          Gabor Szego,<br>
+          Orthogonal Polynomials,<br>
+          American Mathematical Society, 1992,<br>
+          ISBN: 0821810235,<br>
+          LC: QA3.A5.v23.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hermite_polynomial.py">hermite_polynomial.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "hermite_polynomial.sh">hermite_polynomial.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "hermite_polynomial.txt">hermite_polynomial.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "he_plot.png">he_plot.png</a>,
+          a plot of Hermite polynomials 0 through 4 over [-2,+2];
+        </li>
+        <li>
+          <a href = "hermite_functions.png">hermite_functions.png</a>
+        </li>
+        <li>
+          <a href = "hf_plot.png">hf_plot.png</a>,
+          a plot of Hermite functions 0 through 5 over [-5,+5];
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 25 February 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

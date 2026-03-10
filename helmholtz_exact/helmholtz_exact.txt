@@ -1,0 +1,13 @@
+Wed Oct  8 07:49:47 2025
+
+helmholtz_exact_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test helmholtz_exact().
+  Graphics saved as "helmholtz_exact_m0_n1.png"
+  Graphics saved as "helmholtz_exact_m1_n2.png"
+  Graphics saved as "helmholtz_exact_m2_n3.png"
+
+helmholtz_exact_test():
+  Normal end of execution.
+Wed Oct  8 07:49:49 2025

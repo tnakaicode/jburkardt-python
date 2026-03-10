@@ -1,0 +1,30 @@
+Wed Oct  8 07:53:30 2025
+
+humps_bvp_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve humps_ode().
+
+  parameters:
+    t0 =  0.0
+    y0 =  5.1764705882352935
+    t1 =  2.0
+    y1 =  -4.855172413793103
+  Graphics saved as "humps_bvp_21.png"
+
+humps_bvp_test():
+  Normal end of execution.
+
+  parameters:
+    t0 =  0.0
+    y0 =  5.1764705882352935
+    t1 =  2.0
+    y1 =  -4.855172413793103
+  Graphics saved as "humps_bvp_41.png"
+
+humps_bvp_test():
+  Normal end of execution.
+
+humps_bvp_test():
+  Normal end of execution.
+Wed Oct  8 07:53:31 2025

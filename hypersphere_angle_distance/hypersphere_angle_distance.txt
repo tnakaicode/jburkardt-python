@@ -1,0 +1,83 @@
+Wed Oct  8 07:55:14 2025
+
+hypersphere_angle_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hypersphere_angle_distance().
+
+  Using M = 2 spatial dimension
+  Using N = 10000 sample points, 10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean = 0.6402935284936426
+    Estimated std  =  0.304534430145943
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  0.781540072755841  (radians), or  44.77894768925699  (degrees)
+    Estimated std  =  0.4496045848563695  (radians), or  25.760445162001457  (degrees)
+
+  Using M = 3 spatial dimension
+  Using N = 10000 sample points, 10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean = 0.5005607558367087
+    Estimated std  =  0.2896494298005232
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  0.9987565940409869  (radians), or  57.22453759940945  (degrees)
+    Estimated std  =  0.3781783172727058  (radians), or  21.668021483085443  (degrees)
+
+  Using M = 5 spatial dimension
+  Using N = 10000 sample points, 10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean = 0.37679526714373907
+    Estimated std  =  0.24352685604433869
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.1646544082647419  (radians), or  66.72978218487602  (degrees)
+    Estimated std  =  0.2861169400724631  (radians), or  16.393293113349632  (degrees)
+
+  Using M = 10 spatial dimension
+  Using N = 10000 sample points, 10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean = 0.2566341326580207
+    Estimated std  =  0.18211807765327848
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.3048808829605505  (radians), or  74.76416736094389  (degrees)
+    Estimated std  =  0.19749146295502087  (radians), or  11.315427317186941  (degrees)
+
+  Using M = 20 spatial dimension
+  Using N = 10000 sample points, 10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean = 0.18065840005941508
+    Estimated std  =  0.13205241842037943
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.3870046817989137  (radians), or  79.46951443196346  (degrees)
+    Estimated std  =  0.13736919913234738  (radians), or  7.870675345375675  (degrees)
+
+  Using M = 40 spatial dimension
+  Using N = 10000 sample points, 10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean = 0.12675210063142955
+    Estimated std  =  0.093576328668199
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.4429817543322707  (radians), or  82.67676443762251  (degrees)
+    Estimated std  =  0.09542000694476814  (radians), or  5.467163679044219  (degrees)
+
+  Using M = 80 spatial dimension
+  Using N = 10000 sample points, 10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean = 0.08938691024481193
+    Estimated std  =  0.06748864647401184
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.4810268996568305  (radians), or  84.85659069568166  (degrees)
+    Estimated std  =  0.06818567976566092  (radians), or  3.9067516738029466  (degrees)
+
+  Using M = 160 spatial dimension
+  Using N = 10000 sample points, 10000
+  COST = absolute value of cosine between two random points:
+    Estimated mean = 0.06313177328619113
+    Estimated std  =  0.04793698741231465
+  THETA = arc cosine of absolute value of cosine between two random points:
+    Estimated mean =  1.5075300761105344  (radians), or  86.37511085016939  (degrees)
+    Estimated std  =  0.048181021575195236  (radians), or  2.7605691888874486  (degrees)
+  Graphics saved as "hypersphere_angle_distance.png"
+
+hypersphere_angle_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:56:43 2025

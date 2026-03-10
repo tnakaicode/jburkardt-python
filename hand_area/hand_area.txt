@@ -1,0 +1,24 @@
+Wed Oct  8 07:49:37 2025
+
+hand_area_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hand_area().
+
+hand_area():
+  Estimate the area inside a curve that approximates the
+  shape of a hand, using sampling.
+
+  Number of sample points =  1000
+  Total area =  0.29235311
+  Estimated hand area =  0.13243595883
+  Exact hand area =  0.12700427499999992
+  Error =  0.005431683830000089
+  Graphics saved as "hand_area.png"
+
+hand_area():
+  Normal end of execution.
+
+hand_area_test():
+  Normal end of execution.
+Wed Oct  8 07:49:39 2025

@@ -1,0 +1,141 @@
+<html>
+
+  <head>
+    <title>
+      haar_transform
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      haar_transform
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>haar_transform</b>,
+      a Python code which
+      computes the Haar transform of data.
+    </p>
+
+    <p>
+      In the simplest case, the length of the data vector X is a power of 2.
+      We now consider consecutive pairs of entries of X, and for I from 
+      0 to (N/2)-1, we define:
+      <pre>
+        S[I] = ( X[2*I] + X[2*I+1] ) / sqrt ( 2 )
+        D[I] = ( X[2*I] - X[2*I+1] ) / sqrt ( 2 )
+      </pre>
+      We now replace X by the vector S concatenated with D.  Assuming that (N/2)
+      is greater than 1, we repeat the operation on the (N/2) entries of S, and
+      so on, until we have reached a stage where our resultant S and D each contain
+      one entry. 
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>haar_transform</b> is available in
+      <a href = "../../c_src/haar_transform/haar_transform.html">a C version</a> and
+      <a href = "../../cpp_src/haar_transform/haar_transform.html">a C++ version</a> and
+      <a href = "../../f_src/haar_transform/haar_transform.html">a Fortran90 version</a> and
+      <a href = "../../m_src/haar_transform/haar_transform.html">a MATLAB version</a> and
+      <a href = "../../octave_src/haar_transform/haar_transform.html">an Octave version</a> and
+      <a href = "../../py_src/haar_transform/haar_transform.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/cosine_transform/cosine_transform.html">
+      cosine_transform</a>,
+      a Python code which
+      demonstrates some simple properties of the 
+      discrete cosine transform (DCT).
+    </p>
+
+    <p>
+      <a href = "../../py_src/sftpack/sftpack.html">
+      sftpack</a>,
+      a Python code which
+      implements the "slow" Fourier transform, intended as a teaching
+      tool and comparison with the fast Fourier transform.
+    </p>
+
+    <p>
+      <a href = "../../py_src/sine_transform/sine_transform.html">
+      sine_transform</a>,
+      a Python code which
+      demonstrates some simple properties of the discrete sine transform.
+    </p>
+
+    <p>
+      <a href = "../../py_src/walsh_transform/walsh_transform.html">
+      walsh_transform</a>,
+      a Python code which
+      implements versions of the Walsh and Haar transforms.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Ken Beauchamp,<br>
+          Walsh functions and their applications,<br>
+          Academic Press, 1975,<br>
+          ISBN: 0-12-084050-2,<br>
+          LC: QA404.5.B33.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "haar_transform.py">haar_transform.py</a>, the source code.
+        </li>
+        <li>
+          <a href = "haar_transform.sh">haar_transform.sh</a>
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "haar_transform.txt">haar_transform.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 08 August 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

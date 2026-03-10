@@ -1,0 +1,126 @@
+<html>
+
+  <head>
+    <title>
+      hankel_spd
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      hankel_spd
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>hankel_spd</b>,
+      a Python code which
+      computes a lower triangular matrix L which is the Cholesky factor
+      of a symmetric positive definite (SPD) Hankel matrix H, that is,
+      H = L * L'.
+    </p>
+
+    <p>
+      A Hankel matrix is a matrix which is constant along all antidiagonals.  
+      A schematic of a 5x5 Hankel matrix would be:
+      <pre>
+        a  b  c  d  e
+        b  c  d  e  f
+        c  d  e  f  g
+        d  e  f  g  h
+        e  f  g  h  i
+      </pre>
+    </p>
+
+    <p>
+      Let J represent the exchange matrix, formed by reverse the order
+      of the columns of the identity matrix.
+      If H is a Hankel matrix, then J*H and J*H are Toeplitz matrices,
+      and similarly in the other direction.  Hence many algorithms
+      that apply to one class can be easily adapted to the other.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>hankel_spd</b> is available in
+      <a href = "../../c_src/hankel_spd/hankel_spd.html">a C version</a> and
+      <a href = "../../cpp_src/hankel_spd/hankel_spd.html">a C++ version</a> and
+      <a href = "../../f_src/hankel_spd/hankel_spd.html">a Fortran90 version</a> and
+      <a href = "../../m_src/hankel_spd/hankel_spd.html">a MATLAB version</a> and
+      <a href = "../../octave_src/hankel_spd/hankel_spd.html">an Octave version</a> and
+      <a href = "../../py_src/hankel_spd/hankel_spd.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/hankel_cholesky/hankel_cholesky.html">
+      hankel_cholesky</a>,
+      a Python code which
+      computes the upper Cholesky factor R of a symmetric positive definite (SPD)
+      Hankel matrix H so that H = R' * R..
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          S Al-Homidan, M Alshahrani,<br>
+          Positive Definite Hankel Matrices Using Cholesky Factorization,<br>
+          Computational Methods in Applied Mathematics,<br>
+          Volume 9, Number 3, 2009, pages 221-225.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hankel_spd.py">hankel_spd.py</a>.
+          the source code.
+        </li>
+        <li>
+          <a href = "hankel_spd.sh">hankel_spd.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "hankel_spd.txt">hankel_spd.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 10 March 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

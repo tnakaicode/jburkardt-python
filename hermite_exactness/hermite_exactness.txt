@@ -1,0 +1,68 @@
+Wed Oct  8 07:53:18 2025
+
+hermite_exactness_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hermite_exactness().
+
+hermite_exactness():
+  Investigate the polynomial exactness of a Gauss-Hermite
+  quadrature rule by integrating exponentially weighted
+  monomials up to a given degree over the (-oo,+oo) interval.
+
+User input:
+  Quadrature rule X file = "hermite_probabilist_010_x.txt".
+  Quadrature rule W file = "hermite_probabilist_010_w.txt".
+  Quadrature rule R file = "hermite_probabilist_010_r.txt".
+  Maximum degree to check =  18
+
+  Test a Gauss-Hermite quadrature rule of
+  ORDER =  10
+
+  OPTION = 4, the probabilist normalized weighted rule for:
+  Integral ( -oo < x < +oo ) f(x) * exp(-x*x/2) / sqrt(2 pi) dx
+
+  Weights W:
+
+[4.31065263e-06 7.58070934e-04 1.91115805e-02 1.35483703e-01
+ 3.44642335e-01 3.44642335e-01 1.35483703e-01 1.91115805e-02
+ 7.58070934e-04 4.31065263e-06]
+
+  Abscissas X:
+
+[-4.85946283 -3.58182348 -2.48432584 -1.46598909 -0.48493571  0.48493571
+  1.46598909  2.48432584  3.58182348  4.85946283]
+
+  Region R:
+
+[-1.e+30  1.e+30]
+
+  A Gauss-Hermite rule would be able to exactly
+  integrate monomials up to and including 
+  degree =  19
+
+  Degree      Error
+
+   0        1.0000000000000002
+   1        0.0000000000000000
+   2        0.0000000000000000
+   3        0.0000000000000001
+   4        0.0000000000000003
+   5        0.0000000000000000
+   6        0.0000000000000000
+   7        0.0000000000000004
+   8        0.0000000000000003
+   9        0.0000000000000080
+  10        0.0000000000000001
+  11        0.0000000000003126
+  12        0.0000000000000000
+  13        0.0000000000004547
+  14        0.0000000000000004
+  15        0.0000000000145519
+  16        0.0000000000000006
+  17        0.0000000002328306
+  18        0.0000000000000009
+
+hermite_exactness_test():
+  Normal end of execution.
+Wed Oct  8 07:53:18 2025

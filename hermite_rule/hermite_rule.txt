@@ -1,0 +1,39 @@
+Wed Oct  8 07:53:19 2025
+
+hermite_rule_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test hermite_rule().
+
+hermite_rule():
+  Compute a Gauss-Hermite rule for approximating
+    integral ( -oo < x < +oo ) f(x) rho(x) dx
+  where the weight rho(x) is:
+    exp ( - b * ( x - a )^2 ) * sqrt ( b / pi ) dx
+  using N points.
+
+  The user specifies N, A, B, SCALE, FILENAME.
+
+  N is the number of points
+  A is the center point (typically 0).
+  B is the exponential scale factor (typically 1).
+  SCALE is 1 if the weights are to be normalized.
+  FILENAME is used to generate 3 files:
+    filename_w.txt - the weight file
+    filename_x.txt - the abscissa file.
+    filename_r.txt - the region file.
+
+  Input summary:
+
+  N =  4
+  A =  0.0
+  B =  1.0
+  SCALE =  0
+  FILENAME = "herm_o4".
+  abscissas saved as "herm_o4_x.txt"
+  weights saved as "herm_o4_w.txt"
+  region saved as "herm_o4_r.txt"
+
+hermite_rule_test():
+  Normal end of execution.
+Wed Oct  8 07:53:20 2025
