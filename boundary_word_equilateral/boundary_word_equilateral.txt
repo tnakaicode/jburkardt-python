@@ -1,0 +1,445 @@
+Wed Oct  8 07:27:05 2025
+
+boundary_word_equilateral_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test boundary_word_equilateral().
+
+boolean_to_string_test():
+  boolean_to_string() creates the string "True" or "False"
+  based on a boolean value.
+  This can be useful when printing boolean results.
+
+   I   isPrime?
+
+   1    False
+   2    True
+   3    True
+   4    False
+   5    True
+   6    False
+   7    True
+   8    False
+   9    False
+   10    False
+
+boundary_hexiamond_test():
+  boundary_hexiamond() returns the boundary word of a hexiamond.
+
+  bat
+  boundary word:  "11004343"
+  base point   :  [ 0 , 0 ]
+
+  crown
+  boundary word:  "11045342"
+  base point   :  [ 1 , 0 ]
+
+  pistol
+  boundary word:  "01045332"
+  base point   :  [ 1 , 0 ]
+
+  snake
+  boundary word:  "01053432"
+  base point   :  [ 1 , 0 ]
+
+boundary_is_legal_test():
+  boundary_is_legal() checks whether a polyiamond
+  boundary word is legal.
+
+  Index     Name     Boundary   Legal
+
+   1         bat  "11004343"    True
+   2   butterfly  "11504423"    True
+   3        club  "11044532"    True
+   4       crown  "11045342"    True
+   5     hexagon    "105432"    True
+   6     lobster  "02055332"    True
+   7      pistol  "01045332"    True
+   8    rhomboid  "11104443"    True
+   9        shoe  "10205433"    True
+  10       snake  "01053432"    True
+  11      sphinx  "11154533"    True
+  12       yacht  "11053533"    True
+
+boundary_plot_test():
+  boundary_plot() plots a polyiamond from its boundary word.
+  Graphics saved as "boundary_plot_test.png"
+
+boundary_print_test():
+  boundary_print() prints a polyiamond
+  from its boundary word.
+
+  bat
+  boundary word:  "11004343"
+  base point   :  [ 0 , 0 ]
+
+  crown
+  boundary word:  "11045342"
+  base point   :  [ 1 , 0 ]
+
+  pistol
+  boundary word:  "01045332"
+  base point   :  [ 1 , 0 ]
+
+  snake
+  boundary word:  "01053432"
+  base point   :  [ 1 , 0 ]
+
+boundary_range_test():
+  boundary_range() finds the minimum and maximum I and J
+  coordinates of a polyiamond drawn from its boundary word
+  and starting at P.
+
+        Name  Imin  Imax  Jmin  Jmax  Pi  Pj  Word
+
+        tiny     1     3    -1     1   1   0  "21553"
+         bat     0     2     0     2   0   0  "11004343"
+   butterfly     0     3     0     2   1   0  "11504423"
+        club     0     3     0     2   1   0  "11044532"
+       crown     0     3     0     2   1   0  "11045342"
+     hexagon     0     2     0     2   1   0  "105432"
+     lobster     0     2     0     3   1   0  "02055332"
+      pistol     0     2     0     3   1   0  "01045332"
+    rhomboid     0     3     0     1   0   0  "11104443"
+        shoe     0     2     0     2   0   0  "10205433"
+       snake     0     2     0     3   1   0  "01053432"
+      sphinx     0     3     0     2   0   0  "11154533"
+       yacht     0     2     0     2   0   0  "11053533"
+        gort     0     5     0     5   0   0  "111110500043355343123443"
+
+boundary_reflect_test():
+  boundary_reflect() is given a polyiamond boundary word
+  to reflect about the x, y, or xy axis.
+
+snake
+  boundary word:  "01053432"
+  base point   :  [ 1 , 0 ]
+
+Reflect r = 1
+  boundary word:  "54502123"
+  base point   :  [ -1 , 0 ]
+
+Reflect r = 2
+  boundary word:  "21235450"
+  base point   :  [ 1 , 0 ]
+
+Reflect r = 3
+  boundary word:  "34320105"
+  base point   :  [ -1 , 0 ]
+  Graphics saved as "boundary_reflect_test.png"
+
+boundary_representative_test():
+  boundary_representative() is given a boundary word, and
+  returns the representative of its equivalence class.
+
+  bat:
+  boundary word:  "11004343"
+  base point   :  [ 0 , 0 ]
+
+  bat representative:
+  boundary word:  "00434311"
+  base point   :  [ 0 , 0 ]
+
+  butterfly:
+  boundary word:  "11504423"
+  base point   :  [ 1 , 0 ]
+
+  butterfly representative:
+  boundary word:  "04423115"
+  base point   :  [ 1 , 0 ]
+
+  club:
+  boundary word:  "11044532"
+  base point   :  [ 1 , 0 ]
+
+  club representative:
+  boundary word:  "04453211"
+  base point   :  [ 1 , 0 ]
+
+  crown:
+  boundary word:  "11045342"
+  base point   :  [ 1 , 0 ]
+
+  crown representative:
+  boundary word:  "04534211"
+  base point   :  [ 1 , 0 ]
+
+  hexagon:
+  boundary word:  "105432"
+  base point   :  [ 1 , 0 ]
+
+  hexagon representative:
+  boundary word:  "054321"
+  base point   :  [ 1 , 0 ]
+
+  lobster:
+  boundary word:  "02055332"
+  base point   :  [ 1 , 0 ]
+
+  lobster representative:
+  boundary word:  "02055332"
+  base point   :  [ 1 , 0 ]
+
+  pistol:
+  boundary word:  "01045332"
+  base point   :  [ 1 , 0 ]
+
+  pistol representative:
+  boundary word:  "01045332"
+  base point   :  [ 1 , 0 ]
+
+  rhomboid:
+  boundary word:  "11104443"
+  base point   :  [ 0 , 0 ]
+
+  rhomboid representative:
+  boundary word:  "04443111"
+  base point   :  [ 0 , 0 ]
+
+  shoe:
+  boundary word:  "10205433"
+  base point   :  [ 0 , 0 ]
+
+  shoe representative:
+  boundary word:  "02054331"
+  base point   :  [ 0 , 0 ]
+
+  snake:
+  boundary word:  "01053432"
+  base point   :  [ 1 , 0 ]
+
+  snake representative:
+  boundary word:  "01053432"
+  base point   :  [ 1 , 0 ]
+
+  sphinx:
+  boundary word:  "11154533"
+  base point   :  [ 0 , 0 ]
+
+  sphinx representative:
+  boundary word:  "11154533"
+  base point   :  [ 0 , 0 ]
+
+  yacht:
+  boundary word:  "11053533"
+  base point   :  [ 0 , 0 ]
+
+  yacht representative:
+  boundary word:  "05353311"
+  base point   :  [ 0 , 0 ]
+
+boundary_rotate_test():
+  boundary_rotate() rotates a polyiamond
+  described by its boundary word.
+
+boundary_rotate_snake_0
+  boundary word:  "01053432"
+  base point   :  [ 1 , 0 ]
+  Graphics saved as "boundary_rotate_snake_0.png"
+
+boundary_rotate_snake_60
+  boundary word:  "12104543"
+  base point   :  [ 1 , -1 ]
+  Graphics saved as "boundary_rotate_snake_60.png"
+
+boundary_rotate_snake_120
+  boundary word:  "23215054"
+  base point   :  [ 0 , -1 ]
+  Graphics saved as "boundary_rotate_snake_120.png"
+
+boundary_rotate_snake_180
+  boundary word:  "34320105"
+  base point   :  [ -1 , 0 ]
+  Graphics saved as "boundary_rotate_snake_180.png"
+
+boundary_rotate_snake_240
+  boundary word:  "45431210"
+  base point   :  [ -1 , 1 ]
+  Graphics saved as "boundary_rotate_snake_240.png"
+
+boundary_rotate_snake_300
+  boundary word:  "50542321"
+  base point   :  [ 0 , 1 ]
+  Graphics saved as "boundary_rotate_snake_300.png"
+
+boundary_rotate_snake_360
+  boundary word:  "01053432"
+  base point   :  [ 1 , 0 ]
+  Graphics saved as "boundary_rotate_snake_360.png"
+
+boundary_snap_test():
+  boundary_snap() snaps a polyiamond so that it has
+  minimum I and J node coordinates of 0.
+
+tiny
+  boundary word:  "21553"
+  base point   :  [ 1 , 0 ]
+
+tiny + [4,3]
+  boundary word:  "21553"
+  base point   :  [ 5 , 3 ]
+
+snap ( tiny + [4,3] )
+  boundary word:  "21553"
+  base point   :  [ 0 , 1 ]
+  Graphics saved as "boundary_snap_test.png"
+
+boundary_sort_test():
+  boundary_sort() is given a polyiamond boundary word
+  and sorts it to have lexically smallest base point.
+
+  hexagon boundary word (rotated)
+  boundary word:  "432105"
+  base point   :  [ 5 , 10 ]
+
+  sorted hexagon boundary word
+  boundary word:  "321054"
+  base point   :  [ 4 , 9 ]
+
+  snake boundary word
+  boundary word:  "01053432"
+  base point   :  [ 1 , 0 ]
+
+  sorted snake boundary word
+  boundary word:  "32010534"
+  base point   :  [ 0 , 1 ]
+
+boundary_to_edge_test():
+  boundary_to_edge() converts a boundary word to an edge list.
+
+  Gort: boundary word
+  boundary word:  "111110500043355343123443"
+  base point   :  [ 0 , 0 ]
+
+  Gort: edge list
+
+   0:   0   0
+   1:   1   0
+   2:   2   0
+   3:   3   0
+   4:   4   0
+   5:   5   0
+   6:   5   1
+   7:   4   2
+   8:   4   3
+   9:   4   4
+  10:   4   5
+  11:   3   5
+  12:   3   4
+  13:   3   3
+  14:   2   4
+  15:   1   5
+  16:   1   4
+  17:   0   4
+  18:   0   3
+  19:   1   3
+  20:   2   2
+  21:   2   1
+  22:   1   1
+  23:   0   1
+  24:   0   0
+
+boundary_to_triangle_test():
+  boundary_to_triangle() converts a boundary word
+  to a triangle list.
+
+  Gort boundary word
+  boundary word:  "111110500043355343123443"
+  base point   :  [ 0 , 0 ]
+
+  Gort triangle list
+
+  0:   1   1   0
+  1:   1   1   1
+  2:   2   1   0
+  3:   2   1   1
+  4:   3   1   0
+  5:   3   1   1
+  6:   4   1   0
+  7:   4   1   1
+  8:   5   1   0
+  9:   5   1   1
+ 10:   3   2   0
+ 11:   3   2   1
+ 12:   4   2   0
+ 13:   4   2   1
+ 14:   5   2   0
+ 15:   2   3   1
+ 16:   3   3   0
+ 17:   3   3   1
+ 18:   4   3   0
+ 19:   4   3   1
+ 20:   1   4   0
+ 21:   1   4   1
+ 22:   2   4   0
+ 23:   2   4   1
+ 24:   3   4   0
+ 25:   4   4   0
+ 26:   4   4   1
+ 27:   2   5   0
+ 28:   4   5   0
+ 29:   4   5   1
+
+boundary_to_vertex_test():
+  boundary_to_vertex() converts a boundary word to a vertex list.
+
+  Gort boundary word
+  boundary word:  "111110500043355343123443"
+  base point   :  [ 0 , 0 ]
+
+  Gort vertex list
+
+   0:   0   0
+   1:   5   0
+   2:   5   1
+   3:   4   2
+   4:   4   5
+   5:   3   5
+   6:   3   3
+   7:   1   5
+   8:   1   4
+   9:   0   4
+  10:   0   3
+  11:   1   3
+  12:   2   2
+  13:   2   1
+  14:   0   1
+
+boundary_translate_test():
+  boundary_translate() translates a polyiamond
+  described by its boundary word.
+  Graphics saved as "boundary_translate_test.png"
+
+grid_plot_test():
+  grid_plot() plots a polyiamond grid from its boundary word.
+  Graphics saved as "grid_plot_test.png"
+
+vertex_plot_test():
+  vertex_plot() plots an object from its vertex list.
+
+  Gort boundary word
+  boundary word:  "111110500043355343123443"
+  base point   :  [ 0 , 0 ]
+
+  Gort vertex list
+
+   0:   0   0
+   1:   5   0
+   2:   5   1
+   3:   4   2
+   4:   4   5
+   5:   3   5
+   6:   3   3
+   7:   1   5
+   8:   1   4
+   9:   0   4
+  10:   0   3
+  11:   1   3
+  12:   2   2
+  13:   2   1
+  14:   0   1
+  Graphics saved as "vertex_plot_test.png"
+
+boundary_word_equilateral_test():
+  Normal end of execution.
+Wed Oct  8 07:27:07 2025

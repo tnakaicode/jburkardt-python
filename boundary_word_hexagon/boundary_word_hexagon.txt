@@ -1,0 +1,362 @@
+Wed Oct  8 07:27:07 2025
+
+boundary_word_hexagon_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  boundary_word_hexagon() is a library of boundary word functions
+  for polyhexes, shapes defined on a grid of hexagons.
+
+boolean_to_string_test():
+  boolean_to_string() creates the string "True" or "False"
+  based on a boolean value.
+  This can be useful when printing boolean results.
+
+   I   isPrime?
+
+   1    False
+   2    True
+   3    True
+   4    False
+   5    True
+   6    False
+   7    True
+   8    False
+   9    False
+   10    False
+
+boundary_is_legal_test():
+  boundary_is_legal() checks whether a polyhex
+  boundary word is legal.
+
+                  Name     Boundary word       Legal?
+
+                  arch    121232343456165456  True
+                   bar    123232323456565656  True
+                   bee        12123434545616  True
+                pistol      1232123434565656  True
+             propeller    121612343234565456  True
+                  wave    121232123454565456  True
+                  worm    123232123454565656  True
+     Illegal character    123230323456560656  False
+  3 and 6 do not match    123232323456565356  False
+          Nonunit step    123234356565656232  False
+
+boundary_plot_test():
+  boundary_plot() plots a polyhex from its boundary word.
+  Graphics saved as "arch_boundary.png"
+  Graphics saved as "bar_boundary.png"
+  Graphics saved as "bee_boundary.png"
+  Graphics saved as "pistol_boundary.png"
+  Graphics saved as "propeller_boundary.png"
+  Graphics saved as "wave_boundary.png"
+  Graphics saved as "worm_boundary.png"
+
+boundary_print_test():
+  boundary_print() prints the boundary word of a polyhex.
+
+  arch
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  bar
+  hex boundary word:  "123232323456565656"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  bee
+  hex boundary word:  "12123434545616"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  pistol
+  hex boundary word:  "1232123434565656"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  propeller
+  hex boundary word:  "121612343234565456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  wave
+  hex boundary word:  "121232123454565456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  worm
+  hex boundary word:  "123232123454565656"
+  base point (i,j)   :  [ 0 , 0 ]
+
+boundary_range_test():
+  boundary_range() finds the minimum and maximum I and J
+  coordinates of a polyhex described by its boundary word W
+  and starting at P(i,j).
+
+        Name  Imin  Imax  Jmin  Jmax  Pi  Pj  W
+
+        arch    -3     2     0     6   0   0  "121232343456165456"
+         bar    -4     1     0     8   0   0  "123232323456565656"
+         bee    -3     2     0     4   0   0  "12123434545616"
+      pistol    -3     1     0     6   0   0  "1232123434565656"
+   propeller    -1     4     0     5   0   0  "121612343234565456"
+        wave    -1     2     0     6   0   0  "121232123454565456"
+        worm    -3     1     0     7   0   0  "123232123454565656"
+
+boundary_reflect_test():
+  boundary_reflect() is given a boundary word W and base
+  point P, and reflects about the 0, 60, or 120 degree axis.
+
+  pistol
+  hex boundary word:  "1232123434565656"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  pistol, 0 degree reflection
+  hex boundary word:  "1656165454323232"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  pistol, 60 degree reflection
+  hex boundary word:  "3212321616545454"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  pistol, 120 degree reflection
+  hex boundary word:  "5434543232161616"
+  base point (i,j)   :  [ 0 , 0 ]
+  Graphics saved as "#s" boundary_reflect_test.png
+
+boundary_representative_test():
+  boundary_representative() is given a boundary word, and
+  returns the representative of its equivalence class.
+
+  "rotated" arch:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch:
+  hex boundary word:  "212323434561654561"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch:
+  hex boundary word:  "123234345616545612"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch:
+  hex boundary word:  "232343456165456121"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch:
+  hex boundary word:  "323434561654561212"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch:
+  hex boundary word:  "234345616545612123"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch:
+  hex boundary word:  "343456165456121232"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch:
+  hex boundary word:  "434561654561212323"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch:
+  hex boundary word:  "345616545612123234"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch:
+  hex boundary word:  "456165456121232343"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  "rotated" arch representative:
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+boundary_rotate_test():
+  boundary_rotate() rotates a polyhex
+  described by its boundary word.
+  Graphics saved as "boundary_rotate_worm_0.png"
+  Graphics saved as "boundary_rotate_worm_60.png"
+  Graphics saved as "boundary_rotate_worm_120.png"
+  Graphics saved as "boundary_rotate_worm_180.png"
+  Graphics saved as "boundary_rotate_worm_240.png"
+  Graphics saved as "boundary_rotate_worm_300.png"
+
+boundary_snap_test():
+  boundary_snap() translates a polyhex so that it has
+  minimum I and J node coordinates of 0.
+  Graphics saved as "boundary_snap_test.png"
+
+boundary_sort_test():
+  boundary_sort() is given a boundary word and base point
+  and "rotates" it to have lexically smallest base point.
+
+  arch
+  hex boundary word:  "121232343456165456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  arch after sorting:
+  hex boundary word:  "561654561212323434"
+  base point (i,j)   :  [ -3 , 5 ]
+
+  bar
+  hex boundary word:  "123232323456565656"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  bar after sorting:
+  hex boundary word:  "565656561232323234"
+  base point (i,j)   :  [ -4 , 7 ]
+
+  bee
+  hex boundary word:  "12123434545616"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  bee after sorting:
+  hex boundary word:  "56161212343454"
+  base point (i,j)   :  [ -3 , 2 ]
+
+  pistol
+  hex boundary word:  "1232123434565656"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  pistol after sorting:
+  hex boundary word:  "5656561232123434"
+  base point (i,j)   :  [ -3 , 5 ]
+
+  propeller
+  hex boundary word:  "121612343234565456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  propeller after sorting:
+  hex boundary word:  "561216123432345654"
+  base point (i,j)   :  [ -1 , 1 ]
+
+  wave
+  hex boundary word:  "121232123454565456"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  wave after sorting:
+  hex boundary word:  "561212321234545654"
+  base point (i,j)   :  [ -1 , 1 ]
+
+  worm
+  hex boundary word:  "123232123454565656"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  worm after sorting:
+  hex boundary word:  "565656123232123454"
+  base point (i,j)   :  [ -3 , 5 ]
+
+boundary_to_edge_test():
+  boundary_to_edge() uses a boundary word to determine
+  the (i,j) coordinates of the edge nodes.
+
+  boundary word
+  hex boundary word:  "1232123434565656"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  edge node coordinates:
+
+   0:   0   0
+   1:   1   0
+   2:   1   1
+   3:   0   2
+   4:   0   3
+   5:   1   3
+   6:   1   4
+   7:   0   5
+   8:  -1   5
+   9:  -2   6
+  10:  -3   6
+  11:  -3   5
+  12:  -2   4
+  13:  -2   3
+  14:  -1   2
+  15:  -1   1
+  16:   0   0
+
+boundary_to_vertex_test():
+  boundary_to_vertex() converts a boundary word to a vertex list.
+
+  boundary word
+  hex boundary word:  "1232123434565656"
+  base point (i,j)   :  [ 0 , 0 ]
+
+  vertex list
+
+   0:   0   0
+   1:   1   0
+   2:   1   1
+   3:   0   2
+   4:   0   3
+   5:   1   3
+   6:   1   4
+   7:   0   5
+   8:  -1   5
+   9:  -2   6
+  10:  -3   6
+  11:  -3   5
+  12:  -2   4
+  13:  -2   3
+  14:  -1   2
+  15:  -1   1
+
+boundary_translate_test():
+  boundary_translate() translates a shape
+  described by its boundary word.
+  Graphics saved as "boundary_translate_test.png"
+
+ch_to_digit_test():
+  ch_to_digit(): character -> decimal digit
+
+         0  "0"         0
+         1  "1"         1
+         2  "2"         2
+         3  "3"         3
+         4  "4"         4
+         5  "5"         5
+         6  "6"         6
+         7  "7"         7
+         8  "8"         8
+         9  "9"         9
+        10  "X"        -1
+        11  "?"        -1
+        12  " "        -1
+
+grid_plot_test():
+  grid_plot() plots a polyiamond grid from its boundary word.
+  Graphics saved as "grid_plot_test.png"
+
+boundary_word_hexagon_test():
+  Normal end of execution.
+Wed Oct  8 07:27:10 2025

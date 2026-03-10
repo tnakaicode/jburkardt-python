@@ -1,0 +1,26 @@
+Wed Oct  8 07:27:03 2025
+
+boundary_locus2_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  boundary_locus2() plots the absolute stability boundary
+  for an ODE solution method.
+  Graphics saved as "ab2.png"
+  Graphics saved as "ab3.png"
+  Graphics saved as "ab4.png"
+  Graphics saved as "euler_backward.png"
+  Graphics saved as "euler_backward_filtered.png"
+  Graphics saved as "euler_forward.png"
+  Graphics saved as "gear.png"
+  Graphics saved as "leapfrog.png"
+
+  For the trapezoidal rule, the function f(z) has a 
+  singularity at z=-1.  Correspondingly, the stability
+  region is infinite, and the boundary has to go to infinity.
+  To avoid this problem, we restrict the angle t to avoid
+  z = -1.
+  Graphics saved as "trapezoidal.png"
+
+boundary_locus2_test():
+  Normal end of execution.
+Wed Oct  8 07:27:05 2025

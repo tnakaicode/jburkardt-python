@@ -1,0 +1,20 @@
+Wed Oct  8 07:27:02 2025
+
+boundary_locus_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  boundary_locus() plots the region of absolute stability for
+  an ODE solution method, using the boundary locus method.
+
+  Graphics saved as "euler_backward.png"
+  Graphics saved as "euler_forward.png"
+  Graphics saved as "gear.png"
+  Graphics saved as "leapfrog.png"
+  Graphics saved as "rk2.png"
+  Graphics saved as "rk4.png"
+  Graphics saved as "trapezoidal.png"
+  Graphics saved as "trbdf2.png"
+
+boundary_locus_test():
+  Normal end of execution.
+Wed Oct  8 07:27:03 2025
