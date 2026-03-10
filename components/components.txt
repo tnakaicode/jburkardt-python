@@ -1,0 +1,92 @@
+Wed Oct  8 07:29:16 2025
+
+components_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test components().
+
+components_1d_test():
+  components_1d() finds and labels connected
+  components in a 1D integer vector.
+
+  A:
+
+[0 0 1 2 4 0 0 4 0 0 0 8 9 9 1 2 3 0 0 5 0 1 6 0 0 0 4 0]
+
+  Number of components = 6
+
+  C:
+
+[0 0 1 1 1 0 0 2 0 0 0 3 3 3 3 3 3 0 0 4 0 5 5 0 0 0 6 0]
+
+components_2d_test():
+  components_2d() finds and labels connected
+  components in a 2D integer array.
+
+  A:
+
+[[0 0 0 0 0 0 0 0 0]
+ [0 0 1 0 0 1 0 0 0]
+ [0 1 1 0 1 1 1 0 0]
+ [0 1 1 1 1 1 1 0 0]
+ [0 0 1 1 1 0 0 0 0]
+ [0 0 1 1 1 0 0 0 0]
+ [0 1 1 1 0 1 0 1 0]
+ [0 1 1 0 0 1 0 1 0]
+ [0 0 1 0 0 0 0 1 0]
+ [0 0 0 0 1 0 1 1 0]
+ [0 1 0 1 1 0 1 0 0]
+ [0 1 1 1 1 1 0 0 0]
+ [0 0 1 1 0 1 0 1 0]
+ [0 0 1 1 0 1 0 1 0]
+ [0 1 1 0 1 0 1 1 0]
+ [0 1 0 0 1 0 1 1 0]
+ [0 0 0 0 0 0 0 0 0]]
+
+  Number of components =  6
+
+  C:
+
+[[0 0 0 0 0 0 0 0 0]
+ [0 0 1 0 0 1 0 0 0]
+ [0 1 1 0 1 1 1 0 0]
+ [0 1 1 1 1 1 1 0 0]
+ [0 0 1 1 1 0 0 0 0]
+ [0 0 1 1 1 0 0 0 0]
+ [0 1 1 1 0 2 0 3 0]
+ [0 1 1 0 0 2 0 3 0]
+ [0 0 1 0 0 0 0 3 0]
+ [0 0 0 0 4 0 3 3 0]
+ [0 4 0 4 4 0 3 0 0]
+ [0 4 4 4 4 4 0 0 0]
+ [0 0 4 4 0 4 0 5 0]
+ [0 0 4 4 0 4 0 5 0]
+ [0 4 4 0 6 0 5 5 0]
+ [0 4 0 0 6 0 5 5 0]
+ [0 0 0 0 0 0 0 0 0]]
+  Graphics saved as "components_2d.png"
+
+components_3d_test():
+  components_3d() finds and labels connected
+  components in a 3D integer block.
+
+  A is a 3D block of order 64 x 64 x 26
+
+  Number of nonzero A values is  1099.0
+
+  Number of components =  6
+
+  Component  Size
+
+     0       163
+     1       210
+     2        90
+     3       222
+     4       312
+     5       102
+------  --------
+ Total      1099
+
+components_test():
+  Normal end of execution.
+Wed Oct  8 07:29:17 2025
