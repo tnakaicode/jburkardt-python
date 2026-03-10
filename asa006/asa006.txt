@@ -1,0 +1,92 @@
+Wed Oct  8 07:25:55 2025
+
+asa006_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test asa006()
+
+asa006_test01():
+  cholesky() computes the Cholesky factorization
+  of a symmetric positive definite matrix.
+  A compressed storage format is used.
+
+  Here we look at the matrix A which is
+  N+1 on the diagonal and
+  N   on the off diagonals.
+
+   N   Null  RMS error
+
+   1   0    0.0000
+   2   0    0.0000
+   3   0    0.0000
+   4   0    0.0000
+   5   0    0.0000
+   6   0    0.0000
+   7   0    0.0000
+   8   0    0.0000
+   9   0    0.0000
+  10   0    0.0000
+  11   0    0.0000
+  12   0    0.0000
+  13   0    0.0000
+  14   0    0.0000
+
+asa006_test02():
+  cholesky() computes the Cholesky factorization
+  of a symmetric positive definite matrix.
+  A compressed storage format is used.
+
+  Here we look at the Hilbert matrix
+  A(I,J) = 1 / ( I + J - 1 )
+
+  We expect errors to grow quickly with N.
+
+   N   Null  RMS error
+
+   1   0    0.0000
+   2   0    0.0000
+   3   0    0.0000
+   4   0    0.0000
+   5   0    0.0000
+   6   0    0.0000
+   7   0    0.0000
+   8   0    0.0000
+   9   0    0.0000
+  10   1    0.0000
+  11   1    0.0000
+  12   1    0.2106
+  13   1    0.2917
+  14   1    0.3504
+
+asa006_test03():
+  subchl() computes the Cholesky factor of a submatrix
+  of a symmetric positive definite matrix.
+  A compressed storage format is used.
+
+  Here we look at the Hilbert matrix
+  A(I,J) = 1/(I+J-1).
+
+  For this particular matrix, we expect the
+  errors to grow rapidly.
+
+  N  NSUB  NULLTY  DET  RMS
+
+  15   1   0  1.0000e+00  0.0000e+00
+  15   2   0  8.3333e-02  0.0000e+00
+  15   3   0  4.6296e-04  0.0000e+00
+  15   4   0  1.6534e-07  0.0000e+00
+  15   5   0  3.7493e-12  1.3878e-17
+  15   6   0  5.3673e-18  1.3878e-17
+  15   7   0  4.8358e-25  2.4037e-17
+  15   8   0  2.7371e-33  3.1032e-17
+  15   9   0  9.7203e-43  3.8006e-17
+  15  10   1  0.0000e+00  2.2267e-11
+  15  11  Numerical singularity!
+  15  12  Numerical singularity!
+  15  13  Numerical singularity!
+  15  14  Numerical singularity!
+  15  15  Numerical singularity!
+
+asa006_test():
+  Normal end of execution.
+Wed Oct  8 07:25:55 2025

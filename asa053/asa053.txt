@@ -1,0 +1,61 @@
+Wed Oct  8 07:25:56 2025
+
+asa053_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test asa053().
+
+asa053_test01():
+  Generate a single Wishart deviate.
+
+  The number of variables is 3
+  The number of degrees of freedom is 1
+
+  The upper Cholesky factor:
+
+  Col:       1             2             3       
+  Row
+      1 :           3             2             1  
+      2 :                         4             2  
+      3 :                                       5  
+
+  The sample matrix:
+
+  Col:       0             1             2       
+  Row
+      0 :     51.6513       47.1961        23.685  
+      1 :     47.1961         85.02       44.4397  
+      2 :      23.685       44.4397       24.2468  
+
+asa053_test02():
+  Average many Wishart deviates.
+  Compare to D * D * npp / n.
+
+  The number of variables is 3
+  The number of degrees of freedom is 2
+
+  The upper Cholesky factor:
+
+  Col:       1             2             3       
+  Row
+      1 :           3             2             1  
+      2 :                         4             2  
+      3 :                                       5  
+
+  The averaged matrix:
+
+  Col:       0             1             2       
+  Row
+      0 :     13.5045       8.99254       4.50785  
+      1 :     8.99254       29.8404       14.8836  
+      2 :     4.50785       14.8836        44.713  
+
+  Expected results:
+[[13.5  9.   4.5]
+ [ 9.  30.  15. ]
+ [ 4.5 15.  45. ]]
+
+asa053_test():
+  Normal end of execution.
+
+Wed Oct  8 07:26:09 2025

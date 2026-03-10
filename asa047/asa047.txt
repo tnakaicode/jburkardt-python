@@ -1,0 +1,120 @@
+Wed Oct  8 07:25:56 2025
+
+asa047_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test asa047().
+
+nelmin_helical_test():
+  Test nelmin() on the HELICAL function.
+
+  Starting point x:
+
+     0            -1
+     1             0
+     2             0
+
+  F(X) = 10001
+
+  Return code IFAULT = 0
+
+  Estimated minimizer x*:
+
+     0    0.00751841
+     1  -1.12238e-05
+     2   -0.00203779
+
+  F(X*) = 7.21133e-05
+
+  Number of iterations = 280
+  Number of restarts =   2
+
+nelmin_powell_test():
+  Test nelmin() on the POWELL quartic function.
+
+  Starting point x:
+
+     0             3
+     1            -1
+     2             0
+     3             1
+
+  F(X) = 215
+
+  Return code IFAULT = 0
+
+  Estimated minimizer x*:
+
+     0     0.0212558
+     1   -0.00220881
+     2   -0.00634404
+     3   -0.00624836
+
+  F(X*) = 6.47322e-06
+
+  Number of iterations = 281
+  Number of restarts =   4
+
+nelmin_quartic_test():
+  Test nelmin() on the QUARTIC function.
+
+  Starting point x:
+
+     0             1
+     1             1
+     2             1
+     3             1
+     4             1
+     5             1
+     6             1
+     7             1
+     8             1
+     9             1
+
+  F(X) = 10
+
+  Return code IFAULT = 0
+
+  Estimated minimizer x*:
+
+     0    0.00011294
+     1  -0.000204873
+     2  -0.000178905
+     3   0.000119573
+     4   0.000187106
+     5  -0.000392199
+     6  -4.80376e-05
+     7   0.000184479
+     8   0.000124263
+     9   5.47458e-05
+
+  F(X*) = 2.94504e-14
+
+  Number of iterations = 1590
+  Number of restarts =   52
+
+nelmin_rosenbrock_test():
+  Test nelmin() on the ROSENBROCK function.
+
+  Starting point x:
+
+     0          -1.2
+     1             1
+
+  F(X) = 24.2
+
+  Return code IFAULT = 0
+
+  Estimated minimizer x*:
+
+     0       1.00099
+     1       1.00192
+
+  F(X*) = 1.23903e-06
+
+  Number of iterations = 157
+  Number of restarts =   0
+
+asa047_test():
+  Normal end of execution.
+Wed Oct  8 07:25:56 2025

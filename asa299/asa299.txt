@@ -1,0 +1,56 @@
+Wed Oct  8 07:26:13 2025
+
+asa299_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test asa299().
+
+asa299_test01():
+  simplex_lattice_point_next() generates lattice points
+  in the simplex
+    0 <= X
+    sum ( X[:] ) <= T
+  Here N =  4
+  and T =   4
+
+     Index        X(0)      X(1)      X(2)      X(3)
+
+         0           4         0         0         0
+         1           3         1         0         0
+         2           3         0         1         0
+         3           3         0         0         1
+         4           2         2         0         0
+         5           2         1         1         0
+         6           2         1         0         1
+         7           2         0         2         0
+         8           2         0         1         1
+         9           2         0         0         2
+        10           1         3         0         0
+        11           1         2         1         0
+        12           1         2         0         1
+        13           1         1         2         0
+        14           1         1         1         1
+        15           1         1         0         2
+        16           1         0         3         0
+        17           1         0         2         1
+        18           1         0         1         2
+        19           1         0         0         3
+        20           0         4         0         0
+        21           0         3         1         0
+        22           0         3         0         1
+        23           0         2         2         0
+        24           0         2         1         1
+        25           0         2         0         2
+        26           0         1         3         0
+        27           0         1         2         1
+        28           0         1         1         2
+        29           0         1         0         3
+        30           0         0         4         0
+        31           0         0         3         1
+        32           0         0         2         2
+        33           0         0         1         3
+        34           0         0         0         4
+
+asa299_test():
+  Normal end of execution.
+Wed Oct  8 07:26:13 2025

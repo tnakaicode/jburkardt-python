@@ -1,0 +1,65 @@
+Wed Oct  8 07:25:55 2025
+
+asa007_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test asa007().
+
+asa007_test01():
+  syminv() computes the inverse of a symmetric positive definite matrix.
+  A compressed storage format is used.
+
+  Here we look at the matrix A which is
+  N+1 on the diagonal and
+  N   on the off diagonals.
+
+    N   Nullty  RMS
+
+   1   0  1.11022e-16
+   2   0  4.57757e-16
+   3   0  4.47545e-16
+   4   0  1.39553e-15
+   5   0  1.20281e-15
+   6   0  2.19005e-15
+   7   0  4.82819e-15
+   8   0  5.03182e-15
+   9   0  5.02401e-15
+  10   0  6.47855e-15
+  11   0  2.01818e-14
+  12   0  1.12271e-14
+  13   0  2.17163e-14
+  14   0  3.42144e-14
+  15   0  2.68289e-14
+
+asa007_test02():
+  syminv() computes the inverse of a symmetric positive
+  definite matrix.
+  A compressed storage format is used.
+
+  Here we look at the Hilbert matrix
+  A(I,J) = 1 / ( I + J - 1 )
+
+  We expect errors to grow quickly with N.
+
+    N   Nullty  RMS
+
+   0   0  0
+   1   0  0
+   2   0  4.93741e-16
+   3   0  3.34852e-15
+   4   0  3.48776e-13
+   5   0  6.88338e-12
+   6   0  8.38267e-11
+   7   0  4.72471e-09
+   8   0  1.61047e-07
+   9   0  4.33337e-06
+  10   1  14.0808
+  11   1  3.78269
+  12   1  3.92589
+  13   1  4.06242
+  14   1  4.19321
+  15   1  4.319
+
+asa007_test():
+  Normal end of execution.
+Wed Oct  8 07:25:55 2025
