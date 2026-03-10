@@ -1,0 +1,29 @@
+          ITEM1        ITEM2       ITEM3       ITEM4
+0          MILK        BREAD     COOKIES         NaN
+1         BREAD         MILK     COOKIES  CORNFLAKES
+2         BREAD          TEA       COCOA         NaN
+3         JELLY  CHICKENSOUP       BREAD        MILK
+4   CHICKENSOUP          TEA     COOKIES         NaN
+5         BREAD          TEA       COCOA         NaN
+6   CHICKENSOUP          TEA  CORNFLAKES         NaN
+7   CHICKENSOUP        BREAD         TEA     COOKIES
+8         JELLY  CHICKENSOUP       BREAD         TEA
+9         BREAD         MILK         NaN         NaN
+10       COFFEE      BANANAS     COOKIES  CORNFLAKES
+11       COFFEE      BANANAS     COOKIES  CORNFLAKES
+12       COFFEE        SUGAR       COCOA         NaN
+13        BREAD       COFFEE     BANANAS         NaN
+14        BREAD        SUGAR     COOKIES         NaN
+15       COFFEE        SUGAR  CORNFLAKES         NaN
+16        BREAD        SUGAR       COCOA         NaN
+17        BREAD       COFFEE       SUGAR         NaN
+18        BREAD       COFFEE       SUGAR         NaN
+19          TEA         MILK      COFFEE  CORNFLAKES
+items
+['BANANAS', 'BANANAS', 'BANANAS', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'BREAD', 'CHICKENSOUP', 'CHICKENSOUP', 'CHICKENSOUP', 'CHICKENSOUP', 'CHICKENSOUP', 'COCOA', 'COCOA', 'COCOA', 'COCOA', 'COFFEE', 'COFFEE', 'COFFEE', 'COFFEE', 'COFFEE', 'COFFEE', 'COFFEE', 'COFFEE', 'COOKIES', 'COOKIES', 'COOKIES', 'COOKIES', 'COOKIES', 'COOKIES', 'COOKIES', 'CORNFLAKES', 'CORNFLAKES', 'CORNFLAKES', 'CORNFLAKES', 'CORNFLAKES', 'CORNFLAKES', 'JELLY', 'JELLY', 'MILK', 'MILK', 'MILK', 'MILK', 'MILK', 'SUGAR', 'SUGAR', 'SUGAR', 'SUGAR', 'SUGAR', 'SUGAR', 'TEA', 'TEA', 'TEA', 'TEA', 'TEA', 'TEA', 'TEA']
+item:counts
+{'BANANAS': 3, 'BREAD': 13, 'CHICKENSOUP': 5, 'COCOA': 4, 'COFFEE': 8, 'COOKIES': 7, 'CORNFLAKES': 6, 'JELLY': 2, 'MILK': 5, 'SUGAR': 6, 'TEA': 7}
+frequent items:counts
+{'BREAD': 13, 'CHICKENSOUP': 5, 'COCOA': 4, 'COFFEE': 8, 'COOKIES': 7, 'CORNFLAKES': 6, 'MILK': 5, 'SUGAR': 6, 'TEA': 7}
+frequent items:counts
+({('BREAD', 'CHICKENSOUP'): 3, ('BREAD', 'COCOA'): 3, ('BREAD', 'COFFEE'): 3, ('BREAD', 'COOKIES'): 4, ('BREAD', 'CORNFLAKES'): 1, ('BREAD', 'MILK'): 4, ('BREAD', 'SUGAR'): 4, ('BREAD', 'TEA'): 4, ('CHICKENSOUP', 'COCOA'): 0, ('CHICKENSOUP', 'COFFEE'): 0, ('CHICKENSOUP', 'COOKIES'): 2, ('CHICKENSOUP', 'CORNFLAKES'): 1, ('CHICKENSOUP', 'MILK'): 1, ('CHICKENSOUP', 'SUGAR'): 0, ('CHICKENSOUP', 'TEA'): 4, ('COCOA', 'COFFEE'): 1, ('COCOA', 'COOKIES'): 0, ('COCOA', 'CORNFLAKES'): 0, ('COCOA', 'MILK'): 0, ('COCOA', 'SUGAR'): 2, ('COCOA', 'TEA'): 2, ('COFFEE', 'COOKIES'): 2, ('COFFEE', 'CORNFLAKES'): 4, ('COFFEE', 'MILK'): 1, ('COFFEE', 'SUGAR'): 4, ('COFFEE', 'TEA'): 1, ('COOKIES', 'CORNFLAKES'): 3, ('COOKIES', 'MILK'): 2, ('COOKIES', 'SUGAR'): 1, ('COOKIES', 'TEA'): 2, ('CORNFLAKES', 'MILK'): 2, ('CORNFLAKES', 'SUGAR'): 1, ('CORNFLAKES', 'TEA'): 2, ('MILK', 'SUGAR'): 0, ('MILK', 'TEA'): 1, ('SUGAR', 'TEA'): 0}, {('BREAD', 'COOKIES'): 4, ('BREAD', 'MILK'): 4, ('BREAD', 'SUGAR'): 4, ('BREAD', 'TEA'): 4, ('CHICKENSOUP', 'TEA'): 4, ('COFFEE', 'CORNFLAKES'): 4, ('COFFEE', 'SUGAR'): 4})
