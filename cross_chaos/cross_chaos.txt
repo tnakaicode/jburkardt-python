@@ -1,0 +1,12 @@
+Wed Oct  8 07:30:20 2025
+
+cross_chaos_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  cross_chaos() uses an iterated map to plot a cross.
+  Apply the cross iteration map 5000 times.
+  Graphics saved as "cross_chaos.png"
+
+cross_chaos_test():
+  Normal end of execution.
+Wed Oct  8 07:30:24 2025
