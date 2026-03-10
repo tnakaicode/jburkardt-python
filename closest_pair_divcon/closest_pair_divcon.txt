@@ -1,0 +1,53 @@
+Wed Oct  8 07:28:10 2025
+
+closest_pair_divcon_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test closest_pair_divcon().
+
+  Points n =  500
+  brute() time =  0.3420450687408447  seconds
+  divcon time  =  0.01707744598388672  seconds
+  z( 258 ) =  [0.05671529 0.00471726]
+  z( 497 ) =  [0.05546825 0.00649519]
+  ||z( 258 )-z( 497 )|| =  0.0021716655188825894
+
+  Points n =  1000
+  brute() time =  1.381734848022461  seconds
+  divcon time  =  0.03650832176208496  seconds
+  z( 466 ) =  [0.62818013 0.36534559]
+  z( 772 ) =  [0.62833538 0.36461292]
+  ||z( 466 )-z( 772 )|| =  0.0007489340692597614
+
+  Points n =  1500
+  brute() time =  3.0830531120300293  seconds
+  divcon time  =  0.052063941955566406  seconds
+  z( 233 ) =  [0.02395841 0.90806114]
+  z( 388 ) =  [0.02446147 0.90794987]
+  ||z( 233 )-z( 388 )|| =  0.0005152127483146419
+
+  Points n =  2000
+  brute() time =  5.484958171844482  seconds
+  divcon time  =  0.07768416404724121  seconds
+  z( 240 ) =  [0.12061484 0.77501408]
+  z( 594 ) =  [0.12096886 0.77506846]
+  ||z( 240 )-z( 594 )|| =  0.0003581685981509797
+
+  Points n =  2500
+  brute() time =  8.55393671989441  seconds
+  divcon time  =  0.09623551368713379  seconds
+  z( 2191 ) =  [0.90875108 0.69263014]
+  z( 2200 ) =  [0.90884312 0.69253688]
+  ||z( 2191 )-z( 2200 )|| =  0.00013102921593306888
+
+  Points n =  3000
+  brute() time =  12.408443927764893  seconds
+  divcon time  =  0.10910940170288086  seconds
+  z( 334 ) =  [0.72839474 0.32358673]
+  z( 2794 ) =  [0.72829159 0.32364344]
+  ||z( 334 )-z( 2794 )|| =  0.00011771454259237062
+  Graphics saved as "closest_pair_divcon.png"
+
+closest_pair_divcon_test():
+  Normal end of execution.
+Wed Oct  8 07:28:42 2025

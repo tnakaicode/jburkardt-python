@@ -1,0 +1,65 @@
+Wed Oct  8 07:27:50 2025
+
+closest_pair_brute_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test closest_pair_brute().
+
+closest_pair_brute_test01():
+  closest_pair_brute() on a set of N points in 2D.
+
+  n =  100
+  time =  0.013877630233764648  seconds
+  xy( 50 ) =  [0.47474357 0.91624567]
+  xy( 75 ) =  [0.48025785 0.91399594]
+  ||xy( 50 )-xy( 75 )|| = 0.0059555567066099215
+
+closest_pair_brute_test01():
+  closest_pair_brute() on a set of N points in 2D.
+
+  n =  200
+  time =  0.05442357063293457  seconds
+  xy( 87 ) =  [0.9431519  0.06296483]
+  xy( 132 ) =  [0.94229282 0.06043553]
+  ||xy( 87 )-xy( 132 )|| = 0.0026712110407950997
+
+closest_pair_brute_test01():
+  closest_pair_brute() on a set of N points in 2D.
+
+  n =  400
+  time =  0.22179579734802246  seconds
+  xy( 95 ) =  [0.641783   0.31913997]
+  xy( 208 ) =  [0.64014619 0.31996414]
+  ||xy( 95 )-xy( 208 )|| = 0.0018326027753980518
+
+closest_pair_brute_test01():
+  closest_pair_brute() on a set of N points in 2D.
+
+  n =  800
+  time =  0.8827548027038574  seconds
+  xy( 285 ) =  [0.93289371 0.73425468]
+  xy( 527 ) =  [0.93288003 0.73490336]
+  ||xy( 285 )-xy( 527 )|| = 0.0006488231754728125
+
+closest_pair_brute_test01():
+  closest_pair_brute() on a set of N points in 2D.
+
+  n =  1600
+  time =  3.546189308166504  seconds
+  xy( 1176 ) =  [0.10809902 0.92113433]
+  xy( 1304 ) =  [0.10767464 0.92145087]
+  ||xy( 1176 )-xy( 1304 )|| = 0.0005294288242787068
+
+closest_pair_brute_test01():
+  closest_pair_brute() on a set of N points in 2D.
+
+  n =  3200
+  time =  14.207252502441406  seconds
+  xy( 778 ) =  [0.77159925 0.23247666]
+  xy( 2508 ) =  [0.77170449 0.23275287]
+  ||xy( 778 )-xy( 2508 )|| = 0.0002955814047165657
+  Graphics saved as "closest_pair_brute.png"
+
+closest_pair_brute_test():
+  Normal end of execution.
+Wed Oct  8 07:28:10 2025
