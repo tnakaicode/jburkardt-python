@@ -1,0 +1,58 @@
+Wed Oct  8 07:30:41 2025
+
+dice_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test dice_simulation().
+
+dice_simulation():
+  Simulate throwing and totaling 1 dice 100 times.
+  Graphics saved as "dice_freq_100_1.png"
+  Graphics saved as "dice_prob_100_1.png"
+
+  Number of dice         =  1
+  Number of throws       =  100
+  Maximum possible score =  6
+  Average score          =  3.76
+  Minimum possible score =  1
+  Variance of score      =  2.8824
+
+dice_simulation():
+  Simulate throwing and totaling 2 dice 1000 times.
+  Graphics saved as "dice_freq_1000_2.png"
+  Graphics saved as "dice_prob_1000_2.png"
+
+  Number of dice         =  2
+  Number of throws       =  1000
+  Maximum possible score =  12
+  Average score          =  7.057
+  Minimum possible score =  2
+  Variance of score      =  5.671751
+
+dice_simulation():
+  Simulate throwing and totaling 3 dice 10000 times.
+  Graphics saved as "dice_freq_10000_3.png"
+  Graphics saved as "dice_prob_10000_3.png"
+
+  Number of dice         =  3
+  Number of throws       =  10000
+  Maximum possible score =  18
+  Average score          =  10.4956
+  Minimum possible score =  3
+  Variance of score      =  8.738580640000002
+
+dice_simulation():
+  Simulate throwing and totaling 4 dice 100000 times.
+  Graphics saved as "dice_freq_100000_4.png"
+  Graphics saved as "dice_prob_100000_4.png"
+
+  Number of dice         =  4
+  Number of throws       =  100000
+  Maximum possible score =  24
+  Average score          =  14.00407
+  Minimum possible score =  4
+  Variance of score      =  11.6449934351
+
+dice_simulation_test():
+  Normal end of execution.
+Wed Oct  8 07:30:43 2025

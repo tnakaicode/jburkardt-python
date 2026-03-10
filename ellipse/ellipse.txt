@@ -1,0 +1,164 @@
+Wed Oct  8 07:44:16 2025
+
+ellipse_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test ellipse().
+
+ellipse_area1_test():
+  ellipse_area1() computes the area of an ellipse.
+
+  R = 10
+  Matrix A in ellipse definition x*A*x=r^2
+[[5. 1.]
+ [1. 2.]]
+  Area = 104.72
+
+ellipse_area2_test():
+  ellipse_area2() computes the area of an ellipse.
+
+  Ellipse: 5 * x^2 + 2 * xy + 2 * y^2 = 10
+  Area = 104.72
+
+ellipse_area3_test():
+  ellipse_area3() computes the area of an ellipse.
+
+  Ellipse: (x/10)^2 + (y/3.33333)^2 = 1
+  Area = 104.72
+
+ellipse_aspect_ratio_test():
+  ellipse_aspect_ratio() computes the aspect ratio of an ellipse.
+
+      A      B      Ratio
+
+    1.0    0.0    0.000000
+    1.0    0.1    0.100000
+    1.0    0.2    0.200000
+    1.0    0.3    0.300000
+    1.0    0.4    0.400000
+    1.0    0.5    0.500000
+    1.0    0.6    0.600000
+    1.0    0.7    0.700000
+    1.0    0.8    0.800000
+    1.0    0.9    0.900000
+    1.0    1.0    1.000000
+
+ellipse_eccentricity_test():
+  ellipse_eccentricity() computes the eccentricity of an ellipse.
+
+      A      B      Ecc
+
+    1.0    0.0    1.000000
+    1.0    0.1    0.994987
+    1.0    0.2    0.979796
+    1.0    0.3    0.953939
+    1.0    0.4    0.916515
+    1.0    0.5    0.866025
+    1.0    0.6    0.800000
+    1.0    0.7    0.714143
+    1.0    0.8    0.600000
+    1.0    0.9    0.435890
+    1.0    1.0    0.000000
+
+ellipse_flattening_test():
+  ellipse_flattening() computes the flattening of an ellipse.
+
+      A      B      Flat
+
+    1.0    0.0    1.000000
+    1.0    0.1    0.900000
+    1.0    0.2    0.800000
+    1.0    0.3    0.700000
+    1.0    0.4    0.600000
+    1.0    0.5    0.500000
+    1.0    0.6    0.400000
+    1.0    0.7    0.300000
+    1.0    0.8    0.200000
+    1.0    0.9    0.100000
+    1.0    1.0    0.000000
+
+ellipse_grid_test()
+  ellipse_grid() computes equally spaced points on the
+  perimeter of an ellipse.
+  Graphics saved as "ellipse_grid.png"
+
+ellipse_perimeter_test():
+  ellipse_perimeter() computes the perimeter of an ellipse.
+
+      A      B      P
+
+    1.0    0.0    4.000000
+    1.0    0.1    4.063974
+    1.0    0.2    4.202009
+    1.0    0.3    4.385910
+    1.0    0.4    4.602623
+    1.0    0.5    4.844224
+    1.0    0.6    5.105400
+    1.0    0.7    5.382369
+    1.0    0.8    5.672334
+    1.0    0.9    5.973160
+    1.0    1.0    6.283185
+
+ellipse_point_near_test():
+  ellipse_point_near() is given a point P, and
+  finds the nearest point PN on an ellipse in 2D.
+
+  The ellipse is (X/A)^2 + (Y/B)^2 = 1
+
+  A = 3.000000
+  B = 2.000000
+
+           P                PN
+
+   -1.200000    3.900000     -0.823689    1.923138
+   -0.800000    3.600000     -0.583461    1.961810
+   -0.400000    3.300000     -0.309401    1.989335
+    0.000000    3.000000      0.000000    2.000000
+    0.400000    2.700000      0.344958    1.986734
+    0.800000    2.400000      0.723898    1.940902
+    1.200000    2.100000      1.132592    1.851994
+    1.600000    1.800000      1.562334    1.707384
+    2.000000    1.500000      1.995923    1.493138
+    2.400000    1.200000      2.400000    1.200000
+    2.800000    0.900000      2.719790    0.843996
+    3.200000    0.600000      2.908697    0.489662
+    3.600000    0.300000      2.984218    0.204879
+    4.000000    0.000000      3.000000    0.000000
+    4.400000   -0.300000      2.992027   -0.145716
+    4.800000   -0.600000      2.976051   -0.252210
+    5.200000   -0.900000      2.958199   -0.332704
+
+ellipse_sample_test()
+  ellipse_sample() samples random points on the
+  perimeter of an ellipse.
+  Graphics saved as "ellipse_sample.png"
+
+ellipsoid_area_test():
+  ellipsoid_area_test() computes the surface area of the ellipsoid
+    (x/a)^2+(y/b)^2+(z/c)^2=1
+
+           A           B           C        Area
+
+           1         0.8       0.625       8.152
+           1           1         0.5       8.672
+           1           1           1       12.57
+           2           1        0.25        13.7
+           2           3           4       111.5
+
+ellipsoid_volume_test():
+  ellipsoid_volume() computes the volume of the ellipsoid
+    (X-V)' * A * (X-V) <= R * R.
+
+  M = 3
+  Matrix A:
+[[9. 3. 3.]
+ [3. 5. 3.]
+ [3. 3. 3.]]
+  Vector V:
+[2. 3. 1.]
+
+  Volume =       0.698132
+
+ellipse_test():
+  Normal end of execution.
+Wed Oct  8 07:44:17 2025

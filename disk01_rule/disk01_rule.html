@@ -1,0 +1,159 @@
+<html>
+
+  <head>
+    <title>
+      disk01_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      disk01_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>disk01_rule</b>,
+      a Python code which
+      computes a quadrature rule 
+      over the interior of the unit disk in 2D.
+    </p>
+
+    <p>
+      The user specifies values NT and NR, where NT is the number of equally
+      spaced angles, and NR controls the number of radial points.  The program
+      returns vectors T(1:NT), R(1:NR) and W(1:NR), which define the rule Q(f).
+    </p>
+
+    <p>
+      To use a rule that is equally powerful in R and T, typically, set
+      NT = 2 * NR.
+    </p>
+
+    <p>
+      Given NT and NR, and the vectors T, R and W, the integral I(f) of 
+      a function f(x,y) is estimated by Q(f) as follows:
+      <pre>
+        s = 0.0
+        for j in range ( 0, nr ):
+          for i in range ( 0, nt ):
+            x = r[j] * np.cos ( t[i] )
+            y = r[j] * np.sin ( t[i] )
+            s = s + w[j] * f ( x, y )
+        area = pi
+        q = area * s
+      </pre>
+    </p>
+
+    <p>
+      To approximate an integral over a circle with center (XC,YC) and
+      radius RC:
+      <pre>
+        s = 0.0
+        for j in range ( 0, nr ):
+          for i in range ( 0, nt ):
+            x = xc + rc * r[j] * np.cos ( t[i] )
+            y = yc + rc * r[j] * np.sin ( t[i] )
+            s = s + w[j] * f ( x, y )
+        area = rc * rc * pi
+        q = area * s
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>disk01_rule</b> is available in
+      <a href = "../../c_src/disk01_rule/disk01_rule.html">a C version</a> and
+      <a href = "../../cpp_src/disk01_rule/disk01_rule.html">a C++ version</a> and
+      <a href = "../../f_src/disk01_rule/disk01_rule.html">a Fortran90 version</a> and
+      <a href = "../../m_src/disk01_rule/disk01_rule.html">a MATLAB version</a> and
+      <a href = "../../octave_src/disk01_rule/disk01_rule.html">an Octave version</a> and
+      <a href = "../../py_src/disk01_rule/disk01_rule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_rule/python_rule.html">
+      python_rule</a>,
+      a Python code which
+      computes a quadrature rule which
+      estimates the integral of a function f(x), which might be defined over 
+      a one dimensional region (a line) or more complex shapes such as 
+      a circle, a triangle, a quadrilateral, a polygon, or a higher dimensional
+      region, and which might include an associated weight function w(x).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Philip Davis, Philip Rabinowitz,<br>
+          Methods of Numerical Integration,<br>
+          Second Edition,<br>
+          Dover, 2007,<br>
+          ISBN: 0486453391,<br>
+          LC: QA299.3.D28.
+        </li>
+        <li>
+          Sylvan Elhay, Jaroslav Kautsky,<br>
+          Algorithm 655: IQPACK, Fortran Subroutines for the Weights of 
+          Interpolatory Quadrature,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 13, Number 4, December 1987, pages 399-415.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "disk01_rule.py">disk01_rule.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "disk01_rule.sh">disk01_rule.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "disk01_rule.txt">disk01_rule.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 22 January 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

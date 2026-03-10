@@ -1,0 +1,43 @@
+Mon Feb  9 09:49:18 2026
+
+disk01_positive_rule_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test disk01_positive_rule().
+
+disk01_positive_rule():
+  Determine a quadrature rule for the unit positive disk.
+
+  Number of points in rule is  3
+  The degree of precision will be  2
+  The number of degrees of freedom is  9
+  The number of monomial integrals to match is  6
+
+  Initial guess for W, X, Y values:
+
+        0.261799        0.482963         0.12941
+        0.261799        0.353553        0.353553
+        0.261799         0.12941        0.482963
+
+  FSOLVE solves for W, X, Y values:
+
+        0.274408        0.576705       0.0667903
+        0.236583        0.662573        0.662573
+        0.274408       0.0667903        0.576705
+
+  Residuals for WXY:
+array([-1.90139978e-08,  4.53648930e-08,  4.53648917e-08, -2.27504199e-08,
+       -5.11307485e-08, -2.27504186e-08])
+
+  Monomial       Estimate           Exact       Error
+
+  x^0*y^0        0.785398        0.785398      1.9014e-08
+  x^1*y^0        0.333333        0.333333     4.53649e-08
+  x^0*y^1        0.333333        0.333333     4.53649e-08
+  x^2*y^0         0.19635         0.19635     2.27504e-08
+  x^1*y^1           0.125           0.125     5.11307e-08
+  x^0*y^2         0.19635         0.19635     2.27504e-08
+
+disk01_positive_rule_test():
+  Normal end of execution.
+Mon Feb  9 09:49:18 2026

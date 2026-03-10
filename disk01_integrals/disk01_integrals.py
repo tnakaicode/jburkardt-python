@@ -1,0 +1,608 @@
+#! /usr/bin/env python3
+#
+def disk01_area ( ):
+
+#*****************************************************************************80
+#
+## disk01_area() returns the area of the unit disk.
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license. 
+#
+#  Modified:
+#
+#    22 June 2015
+#
+#  Author:
+#
+#    John Burkardt
+#
+#  Output:
+#
+#    real AREA, the area of the unit disk.
+#
+  import numpy as np
+
+  r = 1.0
+  value = np.pi * r * r
+
+  return value
+
+def disk01_area_test ( ) :
+
+#*****************************************************************************80
+#
+## disk01_area() tests disk01_area().
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license.
+#
+#  Modified:
+#
+#    22 June 2015
+#
+#  Author:
+#
+#    John Burkardt
+#
+  print ( '' )
+  print ( 'disk01_area_test():' )
+  print ( '  disk01_area() returns the area of the unit disk.' )
+
+  value = disk01_area ( )
+
+  print ( '' )
+  print ( '  disk01_area() = %g' % ( value ) )
+
+  return
+
+def disk01_integrals_test ( ):
+
+#*****************************************************************************80
+#
+## disk01_integrals_test() tests disk01_integrals().
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license. 
+#
+#  Modified:
+#
+#    03 March 2021
+#
+#  Author:
+#
+#    John Burkardt
+#
+  import numpy as np
+  import platform
+
+  print ( '' )
+  print ( 'disk01_integrals_test():' )
+  print ( '  python version: ' + platform.python_version ( ) )
+  print ( '  numpy version:  ' + np.version.version )
+  print ( '  Test disk01_integrals()' )
+
+  disk01_area_test ( )
+  disk01_monomial_integral_test ( )
+  disk01_sample_test ( )
+#
+#  Terminate.
+#
+  print ( '' )
+  print ( 'disk01_integrals_test():' )
+  print ( '  Normal end of execution.' )
+  return
+
+def disk01_monomial_integral ( e ):
+
+#*****************************************************************************80
+#
+## disk01_monomial_integral() returns monomial integrals in the unit disk.
+#
+#  Discussion:
+#
+#    The integration region is 
+#
+#      X^2 + Y^2 <= 1.
+#
+#    The monomial is F(X,Y) = X^E(1) * Y^E(2).
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license. 
+#
+#  Modified:
+#
+#    05 July 2018
+#
+#  Author:
+#
+#    John Burkardt
+#
+#  Input:
+#
+#    integer E(2), the exponents of X and Y in the 
+#    monomial.  Each exponent must be nonnegative.
+#
+#  Output:
+#
+#    real INTEGRAL, the integral.
+#
+  from scipy.special import gamma
+
+  r = 1.0
+
+  if ( e[0] < 0 or e[1] < 0 ):
+    print ( '' )
+    print ( 'disk01_monomial_integral() - Fatal error!' )
+    print ( '  All exponents must be nonnegative.' )
+    raise Exception ( 'disk01_monomial_integral() - Fatal error!' )
+
+  if ( ( ( e[0] % 2 ) == 1 ) or ( ( e[1] % 2 ) == 1 ) ):
+
+    integral = 0.0
+
+  else:
+
+    integral = 2.0
+
+    for i in range ( 0, 2 ):
+      arg = 0.5 * float ( e[i] + 1 )
+      integral = integral * gamma ( arg )
+
+    arg = 0.5 * float ( e[0] + e[1] + 2 )
+    integral = integral / gamma ( arg )
+#
+#  The surface integral is now adjusted to give the volume integral.
+#
+  s = e[0] + e[1] + 2
+
+  integral = integral * r ** s / float ( s )
+
+  return integral
+
+def disk01_monomial_integral_test ( ):
+
+#*****************************************************************************80
+#
+## disk_integrals_test() uses disk01_sample() to estimate various integrals.
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license.
+#
+#  Modified:
+#
+#    22 June 2015
+#
+#  Author:
+#
+#    John Burkardt
+#
+  from numpy.random import default_rng
+  import numpy as np
+
+  rng = default_rng ( )
+
+  m = 2
+  n = 4192
+  test_num = 20
+
+  print ( '' )
+  print ( 'disk01_monomial_integral_test():' )
+  print ( '  disk01_monomial_integral() computes monomial integrals' )
+  print ( '  over the interior of the unit disk in 2D.' )
+  print ( '  Compare with a Monte Carlo value.' )
+#
+#  Get sample points.
+#
+  x = disk01_sample ( n, rng )
+
+  print ( '' )
+  print ( '  Number of sample points used is %d' % ( n ) )
+#
+#  Randomly choose X,Y exponents between 0 and 8.
+#
+  print ( '' )
+  print ( '  If any exponent is odd, the integral is zero.' )
+  print ( '  We will restrict this test to randomly chosen even exponents.' )
+  print ( '' )
+  print ( '  Ex  Ey     MC-Estimate           Exact      Error' )
+  print ( '' )
+
+  for test in range ( 0, test_num ):
+
+    e = rng.integers ( low = 0, high = 4, size = m, endpoint = True )
+
+    e[0] = e[0] * 2
+    e[1] = e[1] * 2
+
+    value = monomial_value ( m, n, e, x )
+
+    result = disk01_area ( ) * np.sum ( value ) / float ( n )
+    exact = disk01_monomial_integral ( e )
+    error = abs ( result - exact )
+
+    print ( '  %2d  %2d  %14.6g  %14.6g  %10.2g' \
+      % ( e[0], e[1], result, exact, error ) )
+
+  return
+
+def disk01_sample ( n, rng ):
+
+#*****************************************************************************80
+#
+## disk01_sample() uniformly samples the unit disk.
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license. 
+#
+#  Modified:
+#
+#    03 January 2024
+#
+#  Author:
+#
+#    John Burkardt
+#
+#  Input:
+#
+#    integer N, the number of points.
+#
+#    rng(): the current random number generator.
+#
+#  Output:
+#
+#    real X(2,N), the points.
+#
+  import numpy as np
+
+  x = np.zeros ( [ 2, n ] )
+
+  for j in range ( 0, n ):
+#
+#  Fill a vector with normally distributed values.
+#
+    v = rng.standard_normal ( size = 2 )
+#
+#  Compute the length of the vector.
+#
+    norm = np.sqrt ( v[0] ** 2 + v[1] ** 2 )
+#
+#  Normalize the vector.
+#
+    v[0] = v[0] / norm
+    v[1] = v[1] / norm
+#
+#  Now compute a value to map the point ON the disk INTO the disk.
+#
+    r = rng.random ( )
+
+    x[0,j] = np.sqrt ( r ) * v[0]
+    x[1,j] = np.sqrt ( r ) * v[1]
+
+  return x
+
+def disk01_sample_test ( ):
+
+#*****************************************************************************80
+#
+## disk01_sample_test() tests disk01_sample().
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license.
+#
+#  Modified:
+#
+#    03 January 2024
+#
+#  Author:
+#
+#    John Burkardt
+#
+  from numpy.random import default_rng
+  import platform
+
+  print ( '' )
+  print ( 'disk01_sample_test():' )
+  print ( '  disk01_sample samples the unit disk.' )
+
+  rng = default_rng ( )
+  n = 10
+  x = disk01_sample ( n, rng )
+
+  r8mat_transpose_print ( 2, n, x, '  Sample points in the unit disk.' )
+
+  return
+
+def monomial_value ( m, n, e, x ):
+
+#*****************************************************************************80
+#
+## monomial_value() evaluates a monomial.
+#
+#  Discussion:
+#
+#    This routine evaluates a monomial of the form
+#
+#      product ( 1 <= i <= m ) x(i)^e(i)
+#
+#    The combination 0.0^0, if encountered, is treated as 1.0.
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license. 
+#
+#  Modified:
+#
+#    07 April 2015
+#
+#  Author:
+#
+#    John Burkardt
+#
+#  Input:
+#
+#    integer M, the spatial dimension.
+#
+#    integer N, the number of evaluation points.
+#
+#    integer E(M), the exponents.
+#
+#    real X(M,N), the point coordinates.
+#
+#  Output:
+#
+#    real V(N), the monomial values.
+#
+  import numpy as np
+
+  v = np.ones ( n )
+
+  for i in range ( 0, m ):
+    if ( 0 != e[i] ):
+      for j in range ( 0, n ):
+        v[j] = v[j] * x[i,j] ** e[i]
+
+  return v
+
+def r8mat_transpose_print ( m, n, a, title ):
+
+#*****************************************************************************80
+#
+## r8mat_transpose_print() prints an R8MAT, transposed.
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license.
+#
+#  Modified:
+#
+#    31 August 2014
+#
+#  Author:
+#
+#    John Burkardt
+#
+#  Input:
+#
+#    integer M, the number of rows in A.
+#
+#    integer N, the number of columns in A.
+#
+#    real A(M,N), the matrix.
+#
+#    string TITLE, a title.
+#
+  r8mat_transpose_print_some ( m, n, a, 0, 0, m - 1, n - 1, title )
+
+  return
+
+def r8mat_transpose_print_test ( ):
+
+#*****************************************************************************80
+#
+## r8mat_transpose_print_test() tests r8mat_transpose_print().
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license.
+#
+#  Modified:
+#
+#    31 October 2014
+#
+#  Author:
+#
+#    John Burkardt
+#
+  import numpy as np
+  import platform
+
+  print ( '' )
+  print ( 'r8mat_transpose_print_test' )
+  print ( '  r8mat_transpose_print prints an R8MAT.' )
+
+  m = 4
+  n = 3
+  v = np.array ( [ \
+    [ 11.0, 12.0, 13.0 ], 
+    [ 21.0, 22.0, 23.0 ], 
+    [ 31.0, 32.0, 33.0 ], 
+    [ 41.0, 42.0, 43.0 ] ], dtype = np.float64 )
+  r8mat_transpose_print ( m, n, v, '  Here is an R8MAT, transposed:' )
+
+  return
+
+def r8mat_transpose_print_some ( m, n, a, ilo, jlo, ihi, jhi, title ):
+
+#*****************************************************************************80
+#
+## r8mat_transpose_print_some() prints a portion of an R8MAT, transposed.
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license.
+#
+#  Modified:
+#
+#    13 November 2014
+#
+#  Author:
+#
+#    John Burkardt
+#
+#  Input:
+#
+#    integer M, N, the number of rows and columns of the matrix.
+#
+#    real A(M,N), an M by N matrix to be printed.
+#
+#    integer ILO, JLO, the first row and column to print.
+#
+#    integer IHI, JHI, the last row and column to print.
+#
+#    string TITLE, a title.
+#
+  incx = 5
+
+  print ( '' )
+  print ( title )
+
+  if ( m <= 0 or n <= 0 ):
+    print ( '' )
+    print ( '  (None)' )
+    return
+
+  for i2lo in range ( max ( ilo, 0 ), min ( ihi, m - 1 ), incx ):
+
+    i2hi = i2lo + incx - 1
+    i2hi = min ( i2hi, m - 1 )
+    i2hi = min ( i2hi, ihi )
+    
+    print ( '' )
+    print ( '  Row: ', end = '' )
+
+    for i in range ( i2lo, i2hi + 1 ):
+      print ( '%7d       ' % ( i ), end = '' )
+
+    print ( '' )
+    print ( '  Col' )
+
+    j2lo = max ( jlo, 0 )
+    j2hi = min ( jhi, n - 1 )
+
+    for j in range ( j2lo, j2hi + 1 ):
+
+      print ( '%7d :' % ( j ), end = '' )
+      
+      for i in range ( i2lo, i2hi + 1 ):
+        print ( '%12g  ' % ( a[i,j] ), end = '' )
+
+      print ( '' )
+
+  return
+
+def r8mat_transpose_print_some_test ( ):
+
+#*****************************************************************************80
+#
+## r8mat_transpose_print_some_test() tests r8mat_transpose_print_some().
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license.
+#
+#  Modified:
+#
+#    31 October 2014
+#
+#  Author:
+#
+#    John Burkardt
+#
+  import numpy as np
+  import platform
+
+  print ( '' )
+  print ( 'r8mat_transpose_print_some_test' )
+  print ( '  r8mat_transpose_print_some prints some of an R8MAT, transposed.' )
+
+  m = 4
+  n = 6
+  v = np.array ( [ \
+    [ 11.0, 12.0, 13.0, 14.0, 15.0, 16.0 ], 
+    [ 21.0, 22.0, 23.0, 24.0, 25.0, 26.0 ], 
+    [ 31.0, 32.0, 33.0, 34.0, 35.0, 36.0 ], 
+    [ 41.0, 42.0, 43.0, 44.0, 45.0, 46.0 ] ], dtype = np.float64 )
+  r8mat_transpose_print_some ( m, n, v, 0, 3, 2, 5, '  R8MAT, rows 0:2, cols 3:5:' )
+
+  return
+
+def r8vec_print ( n, a, title ):
+
+#*****************************************************************************80
+#
+## r8vec_print() prints an R8VEC.
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license.
+#
+#  Modified:
+#
+#    31 August 2014
+#
+#  Author:
+#
+#    John Burkardt
+#
+#  Input:
+#
+#    integer N, the dimension of the vector.
+#
+#    real A(N), the vector to be printed.
+#
+#    string TITLE, a title.
+#
+  print ( '' )
+  print ( title )
+  print ( '' )
+  for i in range ( 0, n ):
+    print ( '%6d:  %12g' % ( i, a[i] ) )
+
+def timestamp ( ):
+
+#*****************************************************************************80
+#
+## timestamp() prints the date as a timestamp.
+#
+#  Licensing:
+#
+#    This code is distributed under the MIT license. 
+#
+#  Modified:
+#
+#    06 April 2013
+#
+#  Author:
+#
+#    John Burkardt
+#
+  import time
+
+  t = time.time ( )
+  print ( time.ctime ( t ) )
+
+  return None
+
+if ( __name__ == '__main__' ):
+  timestamp ( )
+  disk01_integrals_test ( )
+  timestamp ( )
+

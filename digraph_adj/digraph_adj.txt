@@ -1,0 +1,98 @@
+Wed Oct  8 07:43:38 2025
+
+digraph_adj_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test digraph_adj().
+
+abc_adjacency_test():
+  Test abc_adjacency ()
+
+  "abc" adjacency matrix A:
+[[0 1 0]
+ [0 0 1]
+ [1 0 0]]
+
+abcd_adjacency_test():
+  Test abcd_adjacency()
+
+  "abcd" adjacency matrix A:
+[[0 1 0 0]
+ [0 0 1 0]
+ [1 0 0 1]
+ [1 0 0 0]]
+
+five_adjacency_test():
+  Test five_adjacency ()
+
+  "five" adjacency matrix A:
+[[0 1 0 0 0]
+ [0 0 0 0 1]
+ [1 0 0 0 0]
+ [1 0 0 0 0]
+ [1 0 0 0 0]]
+
+adjacency_to_google_test():
+  Test adjacency_to_google()
+
+  adjacency matrix A:
+[[0 1 0 0]
+ [0 0 1 0]
+ [1 0 0 1]
+ [1 0 0 0]]
+
+  Google transition matrix G:
+[[0.0375 0.0375 0.4625 0.8875]
+ [0.8875 0.0375 0.0375 0.0375]
+ [0.0375 0.8875 0.0375 0.0375]
+ [0.0375 0.0375 0.4625 0.0375]]
+
+adjacency_to_transition_test():
+  Test adjacency_to_transition()
+
+  adjacency matrix A:
+[[0 1 0 0]
+ [0 0 1 0]
+ [1 0 0 1]
+ [1 0 0 0]]
+
+  Transition matrix T:
+[[0.  0.  0.5 1. ]
+ [1.  0.  0.  0. ]
+ [0.  1.  0.  0. ]
+ [0.  0.  0.5 0. ]]
+
+moler_adjacency_test():
+  Test moler_adjacency ()
+
+  Moler adjacency matrix A:
+[[0 1 0 0 0 1]
+ [0 0 1 1 0 0]
+ [0 0 0 1 1 1]
+ [1 0 0 0 0 0]
+ [0 0 0 0 1 0]
+ [1 0 0 0 0 0]]
+
+sauer_adjacency_test():
+  Test sauer_adjacency ()
+
+  Sauer adjacency matrix A:
+[[0 1 0 0 0 0 0 0 1 0 0 0 0 0 0]
+ [0 0 1 0 1 0 1 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 1 0 1 0 0 0 0 0 0 0]
+ [0 0 1 0 0 0 0 0 0 0 0 1 0 0 0]
+ [1 0 0 0 0 0 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 1 1 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 1 1 0 0 0 0]
+ [0 0 0 1 0 0 0 0 0 0 1 0 0 0 0]
+ [0 0 0 0 1 1 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]
+ [0 0 0 0 0 0 1 1 0 0 1 0 0 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 1 1 0 1 0 1]
+ [0 0 0 0 0 0 0 0 0 0 0 1 0 1 0]]
+
+digraph_adj_test():
+  Normal end of execution.
+Wed Oct  8 07:43:38 2025

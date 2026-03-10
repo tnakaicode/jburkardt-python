@@ -1,0 +1,2222 @@
+Wed Oct  8 07:30:59 2025
+
+digital_dice_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test digital_dice().
+
+aandb():
+  In game A, you flip a biased coin, which shows heads with probabiity]
+  1/2 - epsilon you win a dollar on heads.
+  In game B, you have two biased coins.  If, at the time just before you
+  decide to flip, your capital M is a multiple of 3 dollars, you chose
+  coin 1, which shows heads with probability 1/10 - epsilon, otherwise
+  you choose coin 2, which shows heads with probability 3/4 - epsilon.
+  Both games A and B are losing games for you.
+  But, paradoxically, if you randomly switch back and forth between
+  one game and the other, you end up winning over the long term.
+
+  Use graphics to display the winnings.
+  Graphics saved as "aandb.png"
+
+average():
+  Use a Monte Carlo sample to estimate pi.
+
+  Estimate for pi =  3.195849075875348
+  Error =            -0.05425642228555505
+  Antithetic estimate for pi =  3.144126106600128
+  Error =                       -0.0025334530103346964
+
+average():
+  Use a Monte Carlo sample to estimate pi.
+
+  Estimate for pi =  3.1408148240867044
+  Error =            0.0007778295030886895
+  Antithetic estimate for pi =  3.1448128806032134
+  Error =                       -0.003220227013420285
+
+average():
+  Use a Monte Carlo sample to estimate pi.
+
+  Estimate for pi =  3.1423095640674967
+  Error =            -0.0007169104777036139
+  Antithetic estimate for pi =  3.1418528245834825
+  Error =                       -0.00026017099368935703
+
+baby_boom():
+  There are given probabilities of a man having 0, 1, 2, 3, 4, 5, 6 or 7 sons.
+  What are the chances of having:
+    2 sons in the second generation?
+    4 sons in the second generation?
+    6 sons in the third generation?
+
+  Estimated probabilities:
+  2 males in generation 2 = 0.0669
+  4 males in generation 2 = 0.0438
+  6 males in generation 3 = 0.0205
+
+baby_boom():
+  There are given probabilities of a man having 0, 1, 2, 3, 4, 5, 6 or 7 sons.
+  What are the chances of having:
+    2 sons in the second generation?
+    4 sons in the second generation?
+    6 sons in the third generation?
+
+  Estimated probabilities:
+  2 males in generation 2 = 0.06686
+  4 males in generation 2 = 0.03954
+  6 males in generation 3 = 0.02068
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.5
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  1.33318
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.5
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  2.00114
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.5
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  4.54733
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.5
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  5.13679
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.5
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  18.73938
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.4
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  1.38743
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.4
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  2.08651
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.4
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  4.78132
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.4
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  5.35007
+
+broke():
+  Three players begin with L, M and N dollars.
+  On each turn, each player flips a coin.
+  All coins have the same bias P = 0.4
+  If one player is "odd man out", he pays a dollar to each other player.
+  When a player is bankrupt, the game is over.
+  What is the average number of turns required?
+
+  Average number of turns =  19.32332
+
+bus():
+  A bus stop is serviced by 1 bus linesp.
+  In any hour, each bus line will come to the stop at a random time.
+  A passenger arrives at the bus stop at a random time.
+  What is the average wait for a bus?
+
+  Estimated waiting time =  0.5005906978064699
+  Theoretical time =  0.5
+
+bus():
+  A bus stop is serviced by 2 bus linesp.
+  In any hour, each bus line will come to the stop at a random time.
+  A passenger arrives at the bus stop at a random time.
+  What is the average wait for a bus?
+
+  Estimated waiting time =  0.33339627213891626
+  Theoretical time =  0.3333333333333333
+
+bus():
+  A bus stop is serviced by 3 bus linesp.
+  In any hour, each bus line will come to the stop at a random time.
+  A passenger arrives at the bus stop at a random time.
+  What is the average wait for a bus?
+
+  Estimated waiting time =  0.2501815000132996
+  Theoretical time =  0.25
+
+bus():
+  A bus stop is serviced by 4 bus linesp.
+  In any hour, each bus line will come to the stop at a random time.
+  A passenger arrives at the bus stop at a random time.
+  What is the average wait for a bus?
+
+  Estimated waiting time =  0.20009119658268051
+  Theoretical time =  0.2
+
+bus():
+  A bus stop is serviced by 5 bus linesp.
+  In any hour, each bus line will come to the stop at a random time.
+  A passenger arrives at the bus stop at a random time.
+  What is the average wait for a bus?
+
+  Estimated waiting time =  0.16671040021919092
+  Theoretical time =  0.16666666666666666
+
+car():
+  Park 3 cars in a line, and compute each car's nearest neighbor
+  Estimate the probability that a given car is the nearest neighbor
+  of its nearest neighbor.
+
+  Estimated probability   =  0.6666666666666666
+  Theoretical probability =  0.6666666666666666
+
+car():
+  Park 10 cars in a line, and compute each car's nearest neighbor
+  Estimate the probability that a given car is the nearest neighbor
+  of its nearest neighbor.
+
+  Estimated probability   =  0.6666094
+  Theoretical probability =  0.6666666666666666
+
+car():
+  Park 20 cars in a line, and compute each car's nearest neighbor
+  Estimate the probability that a given car is the nearest neighbor
+  of its nearest neighbor.
+
+  Estimated probability   =  0.6667132
+  Theoretical probability =  0.6666666666666666
+
+car():
+  Park 30 cars in a line, and compute each car's nearest neighbor
+  Estimate the probability that a given car is the nearest neighbor
+  of its nearest neighbor.
+
+  Estimated probability   =  0.6666272
+  Theoretical probability =  0.6666666666666666
+
+chess():
+  A has to play three games of chess against B and C.
+  A beats B with probability P, C with probability Q
+  A has a choice of schedules: BCB or CBC.
+  To win the tournament, A must win two successive games.
+  Which schedule is better?
+
+  Estimated win probability for BCB is =  0.792439
+  Estimated win probability for CBC is =  0.86416
+
+chess():
+  A has to play three games of chess against B and C.
+  A beats B with probability P, C with probability Q
+  A has a choice of schedules: BCB or CBC.
+  To win the tournament, A must win two successive games.
+  Which schedule is better?
+
+  Estimated win probability for BCB is =  0.395992
+  Estimated win probability for CBC is =  0.576307
+
+chess():
+  A has to play three games of chess against B and C.
+  A beats B with probability P, C with probability Q
+  A has a choice of schedules: BCB or CBC.
+  To win the tournament, A must win two successive games.
+  Which schedule is better?
+
+  Estimated win probability for BCB is =  0.191826
+  Estimated win probability for CBC is =  0.20346
+
+chess():
+  A has to play three games of chess against B and C.
+  A beats B with probability P, C with probability Q
+  A has a choice of schedules: BCB or CBC.
+  To win the tournament, A must win two successive games.
+  Which schedule is better?
+
+  Estimated win probability for BCB is =  0.064012
+  Estimated win probability for CBC is =  0.076203
+
+committee():
+  From a faculty of 6 professors, 6 associate professors, 10
+  assistant professors, and 12 instructors, a committee of size 6
+  is formed randomly.  What is the probablity that there is at least
+  one person of each rank in the committee?
+
+  Estimated probability  =  0.37839
+  Theoretical probablity =  0.3790307709695264
+
+deli():
+  A deli is open for 36,000 seconds.
+  There are 1 or 2 clerks.
+  Customers arrive at random.
+  The amount of time it takes to service a customer is random.
+  Customers are served in order.
+  A clerk serves one customer at a time.
+  Newly arrived customers wait in a queue if no clerk is available.
+  What is the average and maximal times spent per customer?
+  What is the average and maximal queue length?
+  What percentage of time are the clerks idle?
+clock =  1052 queue_length = 1
+clock =  1080 queue_length = 2
+clock =  1217 queue_length = 2
+clock =  1243 queue_length = 3
+clock =  1528 queue_length = 3
+clock =  1530 queue_length = 4
+clock =  1544 queue_length = 5
+clock =  1574 queue_length = 6
+clock =  1609 queue_length = 7
+clock =  1614 queue_length = 8
+clock =  1812 queue_length = 8
+clock =  1846 queue_length = 9
+clock =  1926 queue_length = 9
+clock =  2006 queue_length = 9
+clock =  2009 queue_length = 10
+clock =  2027 queue_length = 11
+clock =  2048 queue_length = 12
+clock =  2113 queue_length = 12
+clock =  2296 queue_length = 11
+clock =  2515 queue_length = 11
+clock =  2569 queue_length = 12
+clock =  2638 queue_length = 11
+clock =  2716 queue_length = 12
+clock =  2810 queue_length = 13
+clock =  2833 queue_length = 14
+clock =  3039 queue_length = 12
+clock =  3206 queue_length = 11
+clock =  3312 queue_length = 11
+clock =  3500 queue_length = 10
+clock =  3621 queue_length = 8
+clock =  3941 queue_length = 7
+clock =  3948 queue_length = 8
+clock =  4159 queue_length = 5
+clock =  4264 queue_length = 6
+clock =  4490 queue_length = 3
+clock =  4493 queue_length = 4
+clock =  4907 queue_length = 1
+clock =  5510 queue_length = 1
+clock =  5885 queue_length = 1
+clock =  6022 queue_length = 1
+clock =  6072 queue_length = 2
+clock =  7006 queue_length = 1
+clock =  7725 queue_length = 1
+clock =  7864 queue_length = 2
+clock =  7910 queue_length = 3
+clock =  7911 queue_length = 4
+clock =  7961 queue_length = 5
+clock =  8134 queue_length = 4
+clock =  8241 queue_length = 2
+clock =  8392 queue_length = 1
+clock =  8594 queue_length = 1
+clock =  8922 queue_length = 1
+clock =  8972 queue_length = 1
+clock =  9778 queue_length = 1
+clock =  9781 queue_length = 2
+clock =  10057 queue_length = 1
+clock =  10088 queue_length = 2
+clock =  10254 queue_length = 1
+clock =  10371 queue_length = 2
+clock =  10385 queue_length = 3
+clock =  11021 queue_length = 1
+clock =  11065 queue_length = 1
+clock =  11153 queue_length = 1
+clock =  11636 queue_length = 1
+clock =  11695 queue_length = 2
+clock =  12624 queue_length = 1
+clock =  12912 queue_length = 1
+clock =  13832 queue_length = 1
+clock =  13854 queue_length = 2
+clock =  13860 queue_length = 3
+clock =  13861 queue_length = 4
+clock =  13874 queue_length = 5
+clock =  14019 queue_length = 5
+clock =  14154 queue_length = 5
+clock =  14168 queue_length = 6
+clock =  14291 queue_length = 6
+clock =  14397 queue_length = 4
+clock =  14427 queue_length = 5
+clock =  14553 queue_length = 2
+clock =  14751 queue_length = 1
+clock =  14766 queue_length = 2
+clock =  14898 queue_length = 2
+clock =  15007 queue_length = 1
+clock =  15732 queue_length = 1
+clock =  15750 queue_length = 2
+clock =  15983 queue_length = 1
+clock =  16058 queue_length = 2
+clock =  16068 queue_length = 3
+clock =  16151 queue_length = 3
+clock =  16176 queue_length = 4
+clock =  16193 queue_length = 5
+clock =  16210 queue_length = 6
+clock =  16213 queue_length = 7
+clock =  16237 queue_length = 8
+clock =  16332 queue_length = 9
+clock =  16428 queue_length = 9
+clock =  16621 queue_length = 6
+clock =  16623 queue_length = 7
+clock =  16660 queue_length = 8
+clock =  16678 queue_length = 9
+clock =  16709 queue_length = 10
+clock =  16714 queue_length = 11
+clock =  16737 queue_length = 12
+clock =  16762 queue_length = 13
+clock =  16972 queue_length = 10
+clock =  17116 queue_length = 10
+clock =  17142 queue_length = 10
+clock =  17207 queue_length = 11
+clock =  17235 queue_length = 12
+clock =  17665 queue_length = 10
+clock =  17837 queue_length = 10
+clock =  17968 queue_length = 10
+clock =  18064 queue_length = 10
+clock =  18218 queue_length = 9
+clock =  18475 queue_length = 6
+clock =  18534 queue_length = 6
+clock =  18697 queue_length = 6
+clock =  18748 queue_length = 7
+clock =  18863 queue_length = 6
+clock =  18977 queue_length = 6
+clock =  19126 queue_length = 6
+clock =  19226 queue_length = 5
+clock =  19290 queue_length = 6
+clock =  19330 queue_length = 5
+clock =  19377 queue_length = 5
+clock =  19481 queue_length = 6
+clock =  19540 queue_length = 6
+clock =  19549 queue_length = 7
+clock =  19973 queue_length = 6
+clock =  20016 queue_length = 7
+clock =  20056 queue_length = 8
+clock =  20072 queue_length = 9
+clock =  20102 queue_length = 10
+clock =  20114 queue_length = 11
+clock =  20265 queue_length = 11
+clock =  20339 queue_length = 12
+clock =  20368 queue_length = 13
+clock =  20572 queue_length = 11
+clock =  20630 queue_length = 11
+clock =  20707 queue_length = 12
+clock =  20811 queue_length = 12
+clock =  20819 queue_length = 12
+clock =  21021 queue_length = 13
+clock =  21121 queue_length = 13
+clock =  21570 queue_length = 11
+clock =  21680 queue_length = 12
+clock =  21714 queue_length = 12
+clock =  21894 queue_length = 9
+clock =  21933 queue_length = 10
+clock =  22026 queue_length = 11
+clock =  22148 queue_length = 10
+clock =  22235 queue_length = 10
+clock =  22355 queue_length = 7
+clock =  22412 queue_length = 8
+clock =  22464 queue_length = 9
+clock =  22600 queue_length = 9
+clock =  22709 queue_length = 10
+clock =  22742 queue_length = 10
+clock =  22936 queue_length = 8
+clock =  23253 queue_length = 7
+clock =  23291 queue_length = 7
+clock =  23675 queue_length = 3
+clock =  23729 queue_length = 4
+clock =  23788 queue_length = 4
+clock =  23860 queue_length = 3
+clock =  23909 queue_length = 4
+clock =  24072 queue_length = 4
+clock =  24151 queue_length = 4
+clock =  24270 queue_length = 2
+clock =  24561 queue_length = 1
+clock =  25132 queue_length = 1
+clock =  25149 queue_length = 1
+clock =  25339 queue_length = 1
+clock =  25351 queue_length = 2
+clock =  25457 queue_length = 2
+clock =  26013 queue_length = 1
+clock =  26020 queue_length = 2
+clock =  26112 queue_length = 3
+clock =  26534 queue_length = 1
+clock =  26556 queue_length = 2
+clock =  26571 queue_length = 3
+clock =  26829 queue_length = 3
+clock =  27144 queue_length = 3
+clock =  27564 queue_length = 1
+clock =  27622 queue_length = 2
+clock =  27800 queue_length = 1
+clock =  28226 queue_length = 1
+clock =  28229 queue_length = 2
+clock =  28410 queue_length = 3
+clock =  28500 queue_length = 3
+clock =  28549 queue_length = 4
+clock =  28574 queue_length = 4
+clock =  28645 queue_length = 4
+clock =  28786 queue_length = 4
+clock =  29455 queue_length = 1
+clock =  29833 queue_length = 1
+clock =  29872 queue_length = 2
+clock =  30194 queue_length = 1
+clock =  30205 queue_length = 1
+clock =  32609 queue_length = 1
+clock =  32821 queue_length = 1
+clock =  33263 queue_length = 1
+clock =  34535 queue_length = 1
+clock =  34651 queue_length = 1
+clock =  35733 queue_length = 1
+
+  Average total time at deli 439.5738255033557
+  Maximum time at deli       1588.0
+  Average queue length       2.956916666666667
+  Maximum queue length       14
+  Percent idle time clerk1   31.56111111111111
+  Percent idle time clerk2   0.0
+
+deli():
+  A deli is open for 36,000 seconds.
+  There are 1 or 2 clerks.
+  Customers arrive at random.
+  The amount of time it takes to service a customer is random.
+  Customers are served in order.
+  A clerk serves one customer at a time.
+  Newly arrived customers wait in a queue if no clerk is available.
+  What is the average and maximal times spent per customer?
+  What is the average and maximal queue length?
+  What percentage of time are the clerks idle?
+clock =  360 queue_length = 1
+clock =  364 queue_length = 2
+clock =  377 queue_length = 3
+clock =  442 queue_length = 4
+clock =  534 queue_length = 4
+clock =  546 queue_length = 4
+clock =  596 queue_length = 3
+clock =  611 queue_length = 4
+clock =  719 queue_length = 4
+clock =  830 queue_length = 5
+clock =  862 queue_length = 6
+clock =  910 queue_length = 6
+clock =  998 queue_length = 7
+clock =  1099 queue_length = 6
+clock =  1105 queue_length = 7
+clock =  1389 queue_length = 2
+clock =  1427 queue_length = 2
+clock =  1941 queue_length = 1
+clock =  1977 queue_length = 2
+clock =  2045 queue_length = 3
+clock =  7571 queue_length = 1
+clock =  7579 queue_length = 2
+clock =  7616 queue_length = 1
+clock =  7720 queue_length = 2
+clock =  8251 queue_length = 1
+clock =  8281 queue_length = 2
+clock =  8458 queue_length = 2
+clock =  8466 queue_length = 3
+clock =  8474 queue_length = 3
+clock =  8558 queue_length = 3
+clock =  12679 queue_length = 1
+clock =  14001 queue_length = 1
+clock =  14800 queue_length = 1
+clock =  14833 queue_length = 1
+clock =  15449 queue_length = 1
+clock =  20677 queue_length = 1
+clock =  20692 queue_length = 2
+clock =  21162 queue_length = 1
+clock =  21310 queue_length = 1
+clock =  21358 queue_length = 2
+clock =  21421 queue_length = 1
+clock =  23804 queue_length = 1
+clock =  23957 queue_length = 1
+clock =  24497 queue_length = 1
+clock =  27095 queue_length = 1
+clock =  27255 queue_length = 1
+clock =  27525 queue_length = 1
+clock =  29233 queue_length = 1
+clock =  30640 queue_length = 1
+clock =  33185 queue_length = 1
+clock =  35782 queue_length = 1
+clock =  35853 queue_length = 1
+
+  Average total time at deli 114.89690721649484
+  Maximum time at deli       722.0
+  Average queue length       0.18958333333333333
+  Maximum queue length       7
+  Percent idle time clerk1   52.422222222222224
+  Percent idle time clerk2   72.99444444444444
+
+deli():
+  A deli is open for 36,000 seconds.
+  There are 1 or 2 clerks.
+  Customers arrive at random.
+  The amount of time it takes to service a customer is random.
+  Customers are served in order.
+  A clerk serves one customer at a time.
+  Newly arrived customers wait in a queue if no clerk is available.
+  What is the average and maximal times spent per customer?
+  What is the average and maximal queue length?
+  What percentage of time are the clerks idle?
+clock =  263 queue_length = 1
+clock =  321 queue_length = 1
+clock =  433 queue_length = 2
+clock =  608 queue_length = 2
+clock =  752 queue_length = 1
+clock =  987 queue_length = 1
+clock =  1078 queue_length = 1
+clock =  1082 queue_length = 2
+clock =  1095 queue_length = 3
+clock =  1176 queue_length = 4
+clock =  1218 queue_length = 5
+clock =  1334 queue_length = 3
+clock =  1344 queue_length = 4
+clock =  1371 queue_length = 5
+clock =  1454 queue_length = 6
+clock =  1647 queue_length = 7
+clock =  1836 queue_length = 5
+clock =  2064 queue_length = 5
+clock =  2166 queue_length = 6
+clock =  2223 queue_length = 5
+clock =  2278 queue_length = 6
+clock =  2339 queue_length = 7
+clock =  2423 queue_length = 7
+clock =  2602 queue_length = 6
+clock =  2943 queue_length = 6
+clock =  3023 queue_length = 7
+clock =  3093 queue_length = 7
+clock =  3201 queue_length = 8
+clock =  3221 queue_length = 9
+clock =  3504 queue_length = 9
+clock =  3655 queue_length = 8
+clock =  3766 queue_length = 8
+clock =  3811 queue_length = 9
+clock =  3902 queue_length = 9
+clock =  4004 queue_length = 10
+clock =  4138 queue_length = 10
+clock =  4245 queue_length = 11
+clock =  4250 queue_length = 12
+clock =  4251 queue_length = 13
+clock =  4389 queue_length = 14
+clock =  4391 queue_length = 15
+clock =  4576 queue_length = 15
+clock =  4611 queue_length = 15
+clock =  4645 queue_length = 16
+clock =  4709 queue_length = 17
+clock =  4788 queue_length = 16
+clock =  4793 queue_length = 17
+clock =  4798 queue_length = 18
+clock =  4845 queue_length = 19
+clock =  4858 queue_length = 20
+clock =  5019 queue_length = 19
+clock =  5103 queue_length = 20
+clock =  5204 queue_length = 21
+clock =  5214 queue_length = 22
+clock =  5257 queue_length = 22
+clock =  5286 queue_length = 23
+clock =  5324 queue_length = 24
+clock =  5367 queue_length = 25
+clock =  5628 queue_length = 25
+clock =  5847 queue_length = 24
+clock =  5855 queue_length = 25
+clock =  6012 queue_length = 26
+clock =  6231 queue_length = 25
+clock =  6242 queue_length = 26
+clock =  6273 queue_length = 27
+clock =  6325 queue_length = 28
+clock =  6411 queue_length = 29
+clock =  6444 queue_length = 30
+clock =  6499 queue_length = 31
+clock =  6638 queue_length = 32
+clock =  6793 queue_length = 33
+clock =  6843 queue_length = 33
+clock =  6871 queue_length = 34
+clock =  6952 queue_length = 34
+clock =  7126 queue_length = 35
+clock =  7342 queue_length = 34
+clock =  7382 queue_length = 35
+clock =  7386 queue_length = 36
+clock =  7416 queue_length = 37
+clock =  7448 queue_length = 37
+clock =  7513 queue_length = 37
+clock =  7599 queue_length = 37
+clock =  7809 queue_length = 37
+clock =  7831 queue_length = 38
+clock =  7907 queue_length = 39
+clock =  7949 queue_length = 40
+clock =  8001 queue_length = 41
+clock =  8123 queue_length = 41
+clock =  8138 queue_length = 42
+clock =  8169 queue_length = 43
+clock =  8242 queue_length = 44
+clock =  8323 queue_length = 44
+clock =  8457 queue_length = 44
+clock =  8595 queue_length = 45
+clock =  8653 queue_length = 45
+clock =  8903 queue_length = 46
+clock =  8996 queue_length = 47
+clock =  9218 queue_length = 45
+clock =  9237 queue_length = 46
+clock =  9262 queue_length = 47
+clock =  9400 queue_length = 48
+clock =  9460 queue_length = 48
+clock =  9627 queue_length = 48
+clock =  9646 queue_length = 49
+clock =  9738 queue_length = 48
+clock =  9748 queue_length = 49
+clock =  9749 queue_length = 50
+clock =  9774 queue_length = 51
+clock =  10112 queue_length = 49
+clock =  10152 queue_length = 50
+clock =  10163 queue_length = 51
+clock =  10238 queue_length = 52
+clock =  10380 queue_length = 51
+clock =  10405 queue_length = 52
+clock =  10659 queue_length = 50
+clock =  10677 queue_length = 51
+clock =  10793 queue_length = 52
+clock =  10821 queue_length = 53
+clock =  10936 queue_length = 54
+clock =  11177 queue_length = 55
+clock =  11269 queue_length = 56
+clock =  11310 queue_length = 56
+clock =  11465 queue_length = 54
+clock =  11483 queue_length = 55
+clock =  11603 queue_length = 56
+clock =  11608 queue_length = 57
+clock =  11700 queue_length = 54
+clock =  11712 queue_length = 55
+clock =  11772 queue_length = 56
+clock =  11773 queue_length = 57
+clock =  11839 queue_length = 58
+clock =  11841 queue_length = 59
+clock =  11950 queue_length = 57
+clock =  12045 queue_length = 58
+clock =  12081 queue_length = 59
+clock =  12089 queue_length = 60
+clock =  12409 queue_length = 61
+clock =  12528 queue_length = 62
+clock =  12607 queue_length = 63
+clock =  12608 queue_length = 64
+clock =  12719 queue_length = 64
+clock =  12747 queue_length = 65
+clock =  12778 queue_length = 66
+clock =  12846 queue_length = 66
+clock =  12915 queue_length = 67
+clock =  12947 queue_length = 68
+clock =  13009 queue_length = 69
+clock =  13035 queue_length = 69
+clock =  13144 queue_length = 70
+clock =  13153 queue_length = 71
+clock =  13242 queue_length = 71
+clock =  13364 queue_length = 72
+clock =  13380 queue_length = 73
+clock =  13493 queue_length = 73
+clock =  13547 queue_length = 74
+clock =  13628 queue_length = 74
+clock =  13651 queue_length = 75
+clock =  13814 queue_length = 75
+clock =  14074 queue_length = 73
+clock =  14219 queue_length = 71
+clock =  14243 queue_length = 72
+clock =  14244 queue_length = 73
+clock =  14272 queue_length = 74
+clock =  14305 queue_length = 75
+clock =  14323 queue_length = 76
+clock =  14480 queue_length = 76
+clock =  14664 queue_length = 77
+clock =  14678 queue_length = 78
+clock =  14781 queue_length = 78
+clock =  14813 queue_length = 79
+clock =  14863 queue_length = 80
+clock =  14869 queue_length = 81
+clock =  15009 queue_length = 82
+clock =  15031 queue_length = 82
+clock =  15166 queue_length = 83
+clock =  15203 queue_length = 84
+clock =  15272 queue_length = 85
+clock =  15428 queue_length = 86
+clock =  15510 queue_length = 87
+clock =  15646 queue_length = 86
+clock =  15656 queue_length = 87
+clock =  15662 queue_length = 88
+clock =  15740 queue_length = 87
+clock =  15781 queue_length = 88
+clock =  15875 queue_length = 89
+clock =  15917 queue_length = 90
+clock =  16023 queue_length = 90
+clock =  16073 queue_length = 90
+clock =  16149 queue_length = 90
+clock =  16318 queue_length = 90
+clock =  16382 queue_length = 91
+clock =  16445 queue_length = 91
+clock =  16558 queue_length = 91
+clock =  16659 queue_length = 90
+clock =  16810 queue_length = 91
+clock =  17030 queue_length = 88
+clock =  17031 queue_length = 89
+clock =  17137 queue_length = 89
+clock =  17186 queue_length = 90
+clock =  17244 queue_length = 91
+clock =  17247 queue_length = 92
+clock =  17290 queue_length = 93
+clock =  17369 queue_length = 93
+clock =  17388 queue_length = 93
+clock =  17425 queue_length = 94
+clock =  17553 queue_length = 90
+clock =  17730 queue_length = 87
+clock =  17759 queue_length = 88
+clock =  17868 queue_length = 88
+clock =  17878 queue_length = 89
+clock =  17923 queue_length = 90
+clock =  17927 queue_length = 91
+clock =  17992 queue_length = 92
+clock =  18057 queue_length = 92
+clock =  18117 queue_length = 92
+clock =  18152 queue_length = 92
+clock =  18173 queue_length = 93
+clock =  18179 queue_length = 94
+clock =  18205 queue_length = 95
+clock =  18257 queue_length = 95
+clock =  18411 queue_length = 96
+clock =  18426 queue_length = 97
+clock =  18455 queue_length = 98
+clock =  18559 queue_length = 98
+clock =  18650 queue_length = 98
+clock =  18695 queue_length = 98
+clock =  18696 queue_length = 99
+clock =  18808 queue_length = 98
+clock =  18813 queue_length = 99
+clock =  18935 queue_length = 100
+clock =  19053 queue_length = 100
+clock =  19060 queue_length = 101
+clock =  19093 queue_length = 102
+clock =  19216 queue_length = 102
+clock =  19305 queue_length = 103
+clock =  19317 queue_length = 104
+clock =  19432 queue_length = 105
+clock =  19442 queue_length = 106
+clock =  19515 queue_length = 106
+clock =  19517 queue_length = 107
+clock =  20070 queue_length = 104
+clock =  20279 queue_length = 102
+clock =  20459 queue_length = 102
+clock =  20575 queue_length = 102
+clock =  20580 queue_length = 103
+clock =  20625 queue_length = 104
+clock =  20715 queue_length = 104
+clock =  20771 queue_length = 105
+clock =  20799 queue_length = 106
+clock =  20816 queue_length = 107
+clock =  20830 queue_length = 108
+clock =  20837 queue_length = 109
+clock =  20884 queue_length = 110
+clock =  20994 queue_length = 110
+clock =  21065 queue_length = 111
+clock =  21236 queue_length = 112
+clock =  21239 queue_length = 113
+clock =  21242 queue_length = 114
+clock =  21246 queue_length = 115
+clock =  21409 queue_length = 116
+clock =  21420 queue_length = 117
+clock =  21504 queue_length = 116
+clock =  21563 queue_length = 116
+clock =  21608 queue_length = 117
+clock =  21638 queue_length = 118
+clock =  21674 queue_length = 119
+clock =  21695 queue_length = 120
+clock =  21763 queue_length = 120
+clock =  21804 queue_length = 121
+clock =  21846 queue_length = 121
+clock =  21941 queue_length = 122
+clock =  21956 queue_length = 123
+clock =  22001 queue_length = 124
+clock =  22104 queue_length = 123
+clock =  22154 queue_length = 124
+clock =  22168 queue_length = 125
+clock =  22248 queue_length = 126
+clock =  22353 queue_length = 126
+clock =  22394 queue_length = 127
+clock =  22399 queue_length = 128
+clock =  22416 queue_length = 129
+clock =  22451 queue_length = 130
+clock =  22466 queue_length = 131
+clock =  22475 queue_length = 132
+clock =  22516 queue_length = 133
+clock =  22716 queue_length = 133
+clock =  22754 queue_length = 134
+clock =  22858 queue_length = 135
+clock =  22874 queue_length = 136
+clock =  22898 queue_length = 137
+clock =  22936 queue_length = 138
+clock =  23251 queue_length = 139
+clock =  23328 queue_length = 138
+clock =  23465 queue_length = 138
+clock =  23538 queue_length = 138
+clock =  23630 queue_length = 139
+clock =  23682 queue_length = 140
+clock =  23699 queue_length = 141
+clock =  23718 queue_length = 141
+clock =  23743 queue_length = 142
+clock =  23979 queue_length = 143
+clock =  24013 queue_length = 144
+clock =  24036 queue_length = 145
+clock =  24046 queue_length = 146
+clock =  24118 queue_length = 146
+clock =  24241 queue_length = 146
+clock =  24328 queue_length = 147
+clock =  24429 queue_length = 147
+clock =  24475 queue_length = 147
+clock =  24490 queue_length = 148
+clock =  24569 queue_length = 149
+clock =  24742 queue_length = 148
+clock =  24750 queue_length = 149
+clock =  24764 queue_length = 150
+clock =  24803 queue_length = 150
+clock =  24804 queue_length = 151
+clock =  24805 queue_length = 152
+clock =  24837 queue_length = 153
+clock =  24849 queue_length = 154
+clock =  24951 queue_length = 153
+clock =  24978 queue_length = 154
+clock =  25043 queue_length = 154
+clock =  25249 queue_length = 153
+clock =  25426 queue_length = 154
+clock =  25905 queue_length = 155
+clock =  26100 queue_length = 153
+clock =  26266 queue_length = 154
+clock =  26271 queue_length = 155
+clock =  26346 queue_length = 155
+clock =  26354 queue_length = 156
+clock =  26450 queue_length = 156
+clock =  26481 queue_length = 157
+clock =  26506 queue_length = 157
+clock =  26525 queue_length = 158
+clock =  26639 queue_length = 159
+clock =  26721 queue_length = 160
+clock =  26767 queue_length = 161
+clock =  26836 queue_length = 161
+clock =  26914 queue_length = 160
+clock =  26983 queue_length = 157
+clock =  27134 queue_length = 157
+clock =  27167 queue_length = 157
+clock =  27274 queue_length = 156
+clock =  27313 queue_length = 157
+clock =  27419 queue_length = 157
+clock =  27437 queue_length = 158
+clock =  27479 queue_length = 159
+clock =  27485 queue_length = 160
+clock =  27532 queue_length = 161
+clock =  27545 queue_length = 162
+clock =  27632 queue_length = 163
+clock =  27731 queue_length = 163
+clock =  27767 queue_length = 164
+clock =  27866 queue_length = 165
+clock =  27883 queue_length = 166
+clock =  28039 queue_length = 167
+clock =  28052 queue_length = 168
+clock =  28078 queue_length = 169
+clock =  28154 queue_length = 168
+clock =  28183 queue_length = 169
+clock =  28302 queue_length = 168
+clock =  28447 queue_length = 168
+clock =  28475 queue_length = 169
+clock =  28543 queue_length = 170
+clock =  28553 queue_length = 171
+clock =  28669 queue_length = 171
+clock =  29056 queue_length = 168
+clock =  29183 queue_length = 169
+clock =  29294 queue_length = 169
+clock =  29366 queue_length = 169
+clock =  29401 queue_length = 170
+clock =  29441 queue_length = 171
+clock =  29536 queue_length = 169
+clock =  29573 queue_length = 170
+clock =  29597 queue_length = 171
+clock =  29601 queue_length = 172
+clock =  29623 queue_length = 173
+clock =  29665 queue_length = 174
+clock =  29682 queue_length = 174
+clock =  29695 queue_length = 174
+clock =  29779 queue_length = 174
+clock =  29818 queue_length = 175
+clock =  29831 queue_length = 174
+clock =  30050 queue_length = 174
+clock =  30066 queue_length = 175
+clock =  30138 queue_length = 173
+clock =  30182 queue_length = 173
+clock =  30359 queue_length = 173
+clock =  30438 queue_length = 174
+clock =  30485 queue_length = 175
+clock =  30494 queue_length = 176
+clock =  30522 queue_length = 177
+clock =  30573 queue_length = 178
+clock =  30589 queue_length = 179
+clock =  30613 queue_length = 180
+clock =  30697 queue_length = 181
+clock =  30806 queue_length = 182
+clock =  30846 queue_length = 183
+clock =  30851 queue_length = 184
+clock =  30861 queue_length = 185
+clock =  30905 queue_length = 186
+clock =  30972 queue_length = 186
+clock =  30981 queue_length = 187
+clock =  31063 queue_length = 188
+clock =  31121 queue_length = 188
+clock =  31131 queue_length = 189
+clock =  31147 queue_length = 190
+clock =  31229 queue_length = 190
+clock =  31319 queue_length = 190
+clock =  31333 queue_length = 191
+clock =  31444 queue_length = 191
+clock =  31467 queue_length = 192
+clock =  31483 queue_length = 193
+clock =  31524 queue_length = 194
+clock =  31626 queue_length = 195
+clock =  31653 queue_length = 196
+clock =  31701 queue_length = 197
+clock =  31751 queue_length = 198
+clock =  31767 queue_length = 197
+clock =  31832 queue_length = 198
+clock =  31839 queue_length = 199
+clock =  31867 queue_length = 200
+clock =  32034 queue_length = 199
+clock =  32080 queue_length = 200
+clock =  32090 queue_length = 201
+clock =  32128 queue_length = 202
+clock =  32131 queue_length = 203
+clock =  32191 queue_length = 204
+clock =  32376 queue_length = 205
+clock =  32397 queue_length = 206
+clock =  32404 queue_length = 207
+clock =  32524 queue_length = 207
+clock =  32623 queue_length = 208
+clock =  32679 queue_length = 209
+clock =  32706 queue_length = 210
+clock =  32764 queue_length = 211
+clock =  32770 queue_length = 212
+clock =  32771 queue_length = 213
+clock =  33019 queue_length = 212
+clock =  33206 queue_length = 213
+clock =  33267 queue_length = 214
+clock =  33450 queue_length = 213
+clock =  33492 queue_length = 213
+clock =  33521 queue_length = 214
+clock =  33558 queue_length = 215
+clock =  33584 queue_length = 216
+clock =  33715 queue_length = 216
+clock =  33813 queue_length = 217
+clock =  33854 queue_length = 218
+clock =  33886 queue_length = 217
+clock =  33945 queue_length = 218
+clock =  34031 queue_length = 218
+clock =  34094 queue_length = 217
+clock =  34143 queue_length = 218
+clock =  34210 queue_length = 219
+clock =  34440 queue_length = 219
+clock =  34538 queue_length = 219
+clock =  34557 queue_length = 219
+clock =  34596 queue_length = 220
+clock =  34658 queue_length = 220
+clock =  34702 queue_length = 221
+clock =  34829 queue_length = 222
+clock =  34840 queue_length = 223
+clock =  34915 queue_length = 224
+clock =  35047 queue_length = 225
+clock =  35071 queue_length = 226
+clock =  35152 queue_length = 227
+clock =  35207 queue_length = 227
+clock =  35312 queue_length = 227
+clock =  35415 queue_length = 228
+clock =  35557 queue_length = 229
+clock =  35633 queue_length = 228
+clock =  35686 queue_length = 229
+clock =  35704 queue_length = 230
+clock =  35707 queue_length = 231
+clock =  35819 queue_length = 231
+clock =  35899 queue_length = 232
+
+  Average total time at deli 7756.032
+  Maximum time at deli       15685.0
+  Average queue length       102.20391666666667
+  Maximum queue length       232
+  Percent idle time clerk1   0.6055555555555555
+  Percent idle time clerk2   0.0
+
+deli():
+  A deli is open for 36,000 seconds.
+  There are 1 or 2 clerks.
+  Customers arrive at random.
+  The amount of time it takes to service a customer is random.
+  Customers are served in order.
+  A clerk serves one customer at a time.
+  Newly arrived customers wait in a queue if no clerk is available.
+  What is the average and maximal times spent per customer?
+  What is the average and maximal queue length?
+  What percentage of time are the clerks idle?
+clock =  189 queue_length = 1
+clock =  232 queue_length = 2
+clock =  260 queue_length = 3
+clock =  345 queue_length = 1
+clock =  414 queue_length = 2
+clock =  432 queue_length = 3
+clock =  444 queue_length = 2
+clock =  451 queue_length = 2
+clock =  536 queue_length = 3
+clock =  558 queue_length = 4
+clock =  642 queue_length = 4
+clock =  862 queue_length = 2
+clock =  877 queue_length = 3
+clock =  892 queue_length = 4
+clock =  954 queue_length = 5
+clock =  1073 queue_length = 4
+clock =  1130 queue_length = 5
+clock =  1172 queue_length = 6
+clock =  1201 queue_length = 7
+clock =  1222 queue_length = 8
+clock =  1289 queue_length = 7
+clock =  1392 queue_length = 7
+clock =  1420 queue_length = 8
+clock =  1479 queue_length = 8
+clock =  1492 queue_length = 9
+clock =  1734 queue_length = 5
+clock =  2494 queue_length = 1
+clock =  2563 queue_length = 2
+clock =  2579 queue_length = 2
+clock =  2586 queue_length = 3
+clock =  2749 queue_length = 4
+clock =  2840 queue_length = 5
+clock =  3010 queue_length = 4
+clock =  3051 queue_length = 5
+clock =  3087 queue_length = 5
+clock =  3088 queue_length = 6
+clock =  3237 queue_length = 3
+clock =  3277 queue_length = 3
+clock =  3358 queue_length = 4
+clock =  3479 queue_length = 1
+clock =  3499 queue_length = 2
+clock =  3681 queue_length = 1
+clock =  3745 queue_length = 2
+clock =  3814 queue_length = 3
+clock =  3825 queue_length = 4
+clock =  3934 queue_length = 2
+clock =  4010 queue_length = 3
+clock =  4163 queue_length = 2
+clock =  4212 queue_length = 3
+clock =  4252 queue_length = 4
+clock =  4262 queue_length = 5
+clock =  4363 queue_length = 4
+clock =  4463 queue_length = 4
+clock =  4578 queue_length = 5
+clock =  4667 queue_length = 5
+clock =  4690 queue_length = 6
+clock =  4702 queue_length = 7
+clock =  4808 queue_length = 7
+clock =  4815 queue_length = 8
+clock =  4852 queue_length = 8
+clock =  5005 queue_length = 7
+clock =  5043 queue_length = 8
+clock =  5120 queue_length = 8
+clock =  5198 queue_length = 8
+clock =  5264 queue_length = 8
+clock =  5268 queue_length = 9
+clock =  5272 queue_length = 10
+clock =  5413 queue_length = 7
+clock =  5463 queue_length = 7
+clock =  5510 queue_length = 8
+clock =  5520 queue_length = 9
+clock =  5638 queue_length = 9
+clock =  5690 queue_length = 8
+clock =  5714 queue_length = 9
+clock =  5819 queue_length = 10
+clock =  5821 queue_length = 11
+clock =  5887 queue_length = 11
+clock =  5920 queue_length = 12
+clock =  5952 queue_length = 13
+clock =  5957 queue_length = 14
+clock =  5982 queue_length = 15
+clock =  5984 queue_length = 16
+clock =  5987 queue_length = 17
+clock =  6073 queue_length = 18
+clock =  6165 queue_length = 16
+clock =  6214 queue_length = 17
+clock =  6311 queue_length = 16
+clock =  6345 queue_length = 17
+clock =  6365 queue_length = 18
+clock =  6385 queue_length = 16
+clock =  6512 queue_length = 14
+clock =  6528 queue_length = 14
+clock =  6682 queue_length = 14
+clock =  6762 queue_length = 14
+clock =  6866 queue_length = 11
+clock =  6887 queue_length = 11
+clock =  6888 queue_length = 12
+clock =  6899 queue_length = 13
+clock =  6992 queue_length = 11
+clock =  7055 queue_length = 12
+clock =  7088 queue_length = 13
+clock =  7286 queue_length = 11
+clock =  7428 queue_length = 10
+clock =  7561 queue_length = 10
+clock =  7615 queue_length = 11
+clock =  7666 queue_length = 12
+clock =  7695 queue_length = 13
+clock =  7844 queue_length = 12
+clock =  7850 queue_length = 13
+clock =  7945 queue_length = 12
+clock =  7989 queue_length = 13
+clock =  8009 queue_length = 14
+clock =  8061 queue_length = 11
+clock =  8304 queue_length = 8
+clock =  8352 queue_length = 9
+clock =  8369 queue_length = 10
+clock =  8370 queue_length = 11
+clock =  8394 queue_length = 11
+clock =  8492 queue_length = 10
+clock =  8512 queue_length = 11
+clock =  8623 queue_length = 11
+clock =  8653 queue_length = 12
+clock =  8760 queue_length = 10
+clock =  8777 queue_length = 10
+clock =  8855 queue_length = 10
+clock =  8899 queue_length = 9
+clock =  8930 queue_length = 10
+clock =  9108 queue_length = 9
+clock =  9184 queue_length = 10
+clock =  9408 queue_length = 9
+clock =  9472 queue_length = 9
+clock =  9479 queue_length = 10
+clock =  9589 queue_length = 11
+clock =  9706 queue_length = 11
+clock =  9779 queue_length = 12
+clock =  9789 queue_length = 13
+clock =  9804 queue_length = 13
+clock =  9847 queue_length = 12
+clock =  9899 queue_length = 13
+clock =  10010 queue_length = 10
+clock =  10067 queue_length = 11
+clock =  10097 queue_length = 11
+clock =  10106 queue_length = 12
+clock =  10109 queue_length = 13
+clock =  10121 queue_length = 13
+clock =  10169 queue_length = 14
+clock =  10202 queue_length = 14
+clock =  10215 queue_length = 13
+clock =  10337 queue_length = 13
+clock =  10345 queue_length = 14
+clock =  10405 queue_length = 14
+clock =  10413 queue_length = 15
+clock =  10429 queue_length = 16
+clock =  10449 queue_length = 17
+clock =  10506 queue_length = 18
+clock =  10665 queue_length = 17
+clock =  10712 queue_length = 16
+clock =  10752 queue_length = 17
+clock =  10887 queue_length = 17
+clock =  10901 queue_length = 18
+clock =  10965 queue_length = 18
+clock =  11328 queue_length = 14
+clock =  11476 queue_length = 13
+clock =  11517 queue_length = 13
+clock =  11529 queue_length = 14
+clock =  11562 queue_length = 14
+clock =  11567 queue_length = 15
+clock =  11733 queue_length = 14
+clock =  11743 queue_length = 15
+clock =  11826 queue_length = 15
+clock =  11828 queue_length = 16
+clock =  11834 queue_length = 17
+clock =  12028 queue_length = 16
+clock =  12139 queue_length = 16
+clock =  12144 queue_length = 17
+clock =  12293 queue_length = 15
+clock =  12304 queue_length = 16
+clock =  12308 queue_length = 17
+clock =  12360 queue_length = 18
+clock =  12414 queue_length = 19
+clock =  12445 queue_length = 20
+clock =  12502 queue_length = 19
+clock =  12596 queue_length = 16
+clock =  12679 queue_length = 17
+clock =  12745 queue_length = 17
+clock =  12860 queue_length = 16
+clock =  12933 queue_length = 16
+clock =  12977 queue_length = 17
+clock =  12996 queue_length = 17
+clock =  13099 queue_length = 18
+clock =  13106 queue_length = 19
+clock =  13272 queue_length = 19
+clock =  13283 queue_length = 20
+clock =  13325 queue_length = 19
+clock =  13353 queue_length = 20
+clock =  13370 queue_length = 21
+clock =  13399 queue_length = 22
+clock =  13488 queue_length = 22
+clock =  13513 queue_length = 23
+clock =  13582 queue_length = 23
+clock =  13632 queue_length = 24
+clock =  13760 queue_length = 22
+clock =  13776 queue_length = 23
+clock =  13800 queue_length = 24
+clock =  13812 queue_length = 25
+clock =  13857 queue_length = 26
+clock =  13965 queue_length = 26
+clock =  14040 queue_length = 27
+clock =  14098 queue_length = 28
+clock =  14173 queue_length = 29
+clock =  14497 queue_length = 25
+clock =  14500 queue_length = 26
+clock =  14545 queue_length = 27
+clock =  14588 queue_length = 27
+clock =  14620 queue_length = 28
+clock =  14635 queue_length = 29
+clock =  14684 queue_length = 30
+clock =  14695 queue_length = 31
+clock =  14764 queue_length = 32
+clock =  14963 queue_length = 30
+clock =  15096 queue_length = 28
+clock =  15109 queue_length = 29
+clock =  15123 queue_length = 30
+clock =  15127 queue_length = 31
+clock =  15164 queue_length = 30
+clock =  15231 queue_length = 31
+clock =  15384 queue_length = 30
+clock =  15428 queue_length = 31
+clock =  15522 queue_length = 32
+clock =  15589 queue_length = 32
+clock =  15627 queue_length = 33
+clock =  15693 queue_length = 32
+clock =  15750 queue_length = 32
+clock =  15797 queue_length = 31
+clock =  15945 queue_length = 31
+clock =  16063 queue_length = 30
+clock =  16130 queue_length = 30
+clock =  16131 queue_length = 31
+clock =  16181 queue_length = 31
+clock =  16213 queue_length = 31
+clock =  16246 queue_length = 32
+clock =  16274 queue_length = 33
+clock =  16406 queue_length = 33
+clock =  16509 queue_length = 34
+clock =  16560 queue_length = 35
+clock =  16728 queue_length = 34
+clock =  16889 queue_length = 31
+clock =  17075 queue_length = 29
+clock =  17108 queue_length = 30
+clock =  17243 queue_length = 30
+clock =  17305 queue_length = 30
+clock =  17406 queue_length = 30
+clock =  17430 queue_length = 30
+clock =  17461 queue_length = 31
+clock =  17557 queue_length = 30
+clock =  17571 queue_length = 31
+clock =  17774 queue_length = 30
+clock =  17834 queue_length = 30
+clock =  18139 queue_length = 24
+clock =  18184 queue_length = 25
+clock =  18207 queue_length = 26
+clock =  18279 queue_length = 26
+clock =  18307 queue_length = 27
+clock =  18372 queue_length = 26
+clock =  18481 queue_length = 25
+clock =  18487 queue_length = 26
+clock =  18544 queue_length = 26
+clock =  18620 queue_length = 26
+clock =  18748 queue_length = 25
+clock =  18916 queue_length = 25
+clock =  18932 queue_length = 26
+clock =  19190 queue_length = 21
+clock =  19191 queue_length = 22
+clock =  19242 queue_length = 23
+clock =  19347 queue_length = 24
+clock =  19472 queue_length = 22
+clock =  19477 queue_length = 23
+clock =  19481 queue_length = 24
+clock =  19498 queue_length = 23
+clock =  19504 queue_length = 24
+clock =  19753 queue_length = 23
+clock =  19787 queue_length = 24
+clock =  20058 queue_length = 20
+clock =  20118 queue_length = 21
+clock =  20124 queue_length = 22
+clock =  20127 queue_length = 23
+clock =  20194 queue_length = 22
+clock =  20274 queue_length = 18
+clock =  20312 queue_length = 19
+clock =  20522 queue_length = 18
+clock =  20775 queue_length = 15
+clock =  20817 queue_length = 16
+clock =  20975 queue_length = 15
+clock =  21001 queue_length = 16
+clock =  21136 queue_length = 15
+clock =  21280 queue_length = 16
+clock =  21296 queue_length = 17
+clock =  21305 queue_length = 18
+clock =  21310 queue_length = 19
+clock =  22094 queue_length = 4
+clock =  22142 queue_length = 5
+clock =  22150 queue_length = 6
+clock =  22157 queue_length = 7
+clock =  22438 queue_length = 4
+clock =  22446 queue_length = 5
+clock =  22452 queue_length = 6
+clock =  22463 queue_length = 7
+clock =  22515 queue_length = 8
+clock =  22517 queue_length = 9
+clock =  22533 queue_length = 10
+clock =  22729 queue_length = 9
+clock =  22774 queue_length = 9
+clock =  22812 queue_length = 9
+clock =  22835 queue_length = 10
+clock =  22889 queue_length = 9
+clock =  23002 queue_length = 9
+clock =  23005 queue_length = 10
+clock =  23057 queue_length = 11
+clock =  23065 queue_length = 12
+clock =  23104 queue_length = 12
+clock =  23367 queue_length = 10
+clock =  23412 queue_length = 9
+clock =  23442 queue_length = 10
+clock =  23748 queue_length = 2
+clock =  23889 queue_length = 1
+clock =  23948 queue_length = 1
+clock =  23961 queue_length = 2
+clock =  23978 queue_length = 2
+clock =  24184 queue_length = 3
+clock =  24748 queue_length = 1
+clock =  24776 queue_length = 2
+clock =  24834 queue_length = 1
+clock =  26334 queue_length = 1
+clock =  26346 queue_length = 1
+clock =  26356 queue_length = 2
+clock =  26363 queue_length = 3
+clock =  26370 queue_length = 4
+clock =  26405 queue_length = 5
+clock =  26409 queue_length = 6
+clock =  26419 queue_length = 7
+clock =  26568 queue_length = 5
+clock =  26648 queue_length = 5
+clock =  26720 queue_length = 5
+clock =  26738 queue_length = 6
+clock =  26946 queue_length = 3
+clock =  27015 queue_length = 3
+clock =  27038 queue_length = 3
+clock =  27079 queue_length = 4
+clock =  27141 queue_length = 4
+clock =  27370 queue_length = 2
+clock =  27443 queue_length = 2
+clock =  27532 queue_length = 3
+clock =  27709 queue_length = 3
+clock =  27955 queue_length = 2
+clock =  27958 queue_length = 2
+clock =  28227 queue_length = 1
+clock =  28274 queue_length = 1
+clock =  28329 queue_length = 1
+clock =  28441 queue_length = 1
+clock =  28447 queue_length = 2
+clock =  28452 queue_length = 3
+clock =  28469 queue_length = 4
+clock =  28472 queue_length = 5
+clock =  28550 queue_length = 4
+clock =  28552 queue_length = 5
+clock =  28680 queue_length = 4
+clock =  28706 queue_length = 5
+clock =  28908 queue_length = 3
+clock =  29434 queue_length = 1
+clock =  29444 queue_length = 2
+clock =  29467 queue_length = 3
+clock =  29482 queue_length = 4
+clock =  29677 queue_length = 1
+clock =  29718 queue_length = 1
+clock =  29798 queue_length = 2
+clock =  29819 queue_length = 3
+clock =  29905 queue_length = 3
+clock =  29932 queue_length = 3
+clock =  29962 queue_length = 4
+clock =  30099 queue_length = 4
+clock =  30108 queue_length = 4
+clock =  30111 queue_length = 5
+clock =  30355 queue_length = 2
+clock =  30408 queue_length = 2
+clock =  30486 queue_length = 2
+clock =  31016 queue_length = 1
+clock =  31102 queue_length = 1
+clock =  31138 queue_length = 2
+clock =  31331 queue_length = 1
+clock =  31375 queue_length = 2
+clock =  31421 queue_length = 3
+clock =  31506 queue_length = 4
+clock =  31532 queue_length = 5
+clock =  31757 queue_length = 2
+clock =  32089 queue_length = 1
+clock =  32158 queue_length = 1
+clock =  32205 queue_length = 2
+clock =  32242 queue_length = 2
+clock =  32259 queue_length = 2
+clock =  32279 queue_length = 3
+clock =  32334 queue_length = 3
+clock =  32399 queue_length = 4
+clock =  32607 queue_length = 4
+clock =  32625 queue_length = 5
+clock =  32632 queue_length = 6
+clock =  32659 queue_length = 7
+clock =  32778 queue_length = 7
+clock =  32928 queue_length = 5
+clock =  32937 queue_length = 6
+clock =  32939 queue_length = 7
+clock =  32944 queue_length = 8
+clock =  32984 queue_length = 9
+clock =  33031 queue_length = 9
+clock =  33048 queue_length = 10
+clock =  33061 queue_length = 10
+clock =  33063 queue_length = 11
+clock =  33064 queue_length = 12
+clock =  33203 queue_length = 12
+clock =  33247 queue_length = 12
+clock =  33293 queue_length = 13
+clock =  33339 queue_length = 14
+clock =  33366 queue_length = 15
+clock =  33382 queue_length = 16
+clock =  33450 queue_length = 14
+clock =  33541 queue_length = 15
+clock =  33602 queue_length = 13
+clock =  33633 queue_length = 14
+clock =  33696 queue_length = 15
+clock =  33710 queue_length = 16
+clock =  33722 queue_length = 17
+clock =  33760 queue_length = 18
+clock =  33768 queue_length = 19
+clock =  33843 queue_length = 19
+clock =  33850 queue_length = 20
+clock =  33855 queue_length = 21
+clock =  33900 queue_length = 22
+clock =  33909 queue_length = 22
+clock =  33968 queue_length = 23
+clock =  34057 queue_length = 23
+clock =  34149 queue_length = 23
+clock =  34184 queue_length = 23
+clock =  34268 queue_length = 22
+clock =  34476 queue_length = 20
+clock =  34530 queue_length = 20
+clock =  34583 queue_length = 20
+clock =  34585 queue_length = 21
+clock =  34662 queue_length = 21
+clock =  34665 queue_length = 22
+clock =  34717 queue_length = 23
+clock =  34834 queue_length = 22
+clock =  34915 queue_length = 23
+clock =  34987 queue_length = 24
+clock =  35023 queue_length = 25
+clock =  35143 queue_length = 25
+clock =  35244 queue_length = 24
+clock =  35265 queue_length = 23
+clock =  35335 queue_length = 23
+clock =  35434 queue_length = 23
+clock =  35681 queue_length = 20
+clock =  35702 queue_length = 21
+clock =  35740 queue_length = 21
+clock =  35780 queue_length = 22
+clock =  35833 queue_length = 22
+
+  Average total time at deli 990.8559498956158
+  Maximum time at deli       2692.0
+  Average queue length       11.761666666666667
+  Maximum queue length       35
+  Percent idle time clerk1   3.3583333333333334
+  Percent idle time clerk2   6.388888888888889
+
+dinner():
+  N guests sit down at a dinner table, without noticing the name tags.
+  What are the chances that no one sits at their assigned seat?
+
+  N  P(derangement)
+
+   1                     0
+   2                   0.5
+   3    0.3333333333333333
+   4                 0.375
+   5    0.3666666666666667
+   6    0.3680555555555556
+   7    0.3678571428571428
+   8    0.3678819444444444
+   9     0.367879188712522
+  10    0.3678794642857143
+  11    0.3678794392336059
+  12    0.3678794413212816
+  13    0.3678794411606912
+  14    0.3678794411721619
+  15    0.3678794411713971
+  16     0.367879441171445
+  17    0.3678794411714422
+  18    0.3678794411714424
+  19    0.3678794411714424
+  20    0.3678794411714423
+
+dish():
+  Five dishwashers work together.  Five dishes are broken.
+  What are the chances that at least four of the dishes
+  are broken by the same particular dishwasher?
+
+  Probability dishwasher #1 breaks at least 4 out of 5 dishes =  0.006655
+  Theoretical probability is  0.00672
+
+easywalk():
+  A pedestrian begins 1000 blocks east and 1000 blocks north of a destination.
+  At each intersection, there is a stop light which is set randomly,
+  and switches after 1 minute.
+  Until reaching avenue 1 or street 1, the pedestrian always crosses
+  the intersection in accordance with the stop light.
+  Thereafter, the pedestrian must wait at each stop light encountered.
+  What is the exact expected wait for stop lights?
+  Use graphics to display the expected results.
+  Graphics saved as "easywalk.png"
+
+election():
+   2  voters participate in an election.
+  n of the voters are candidates.
+  Voting rules may allow a voter to vote for themselves, or not.
+   2  votes are required in order for a leader to be chosen.
+  What is the probability that, on a single vote, a leader will be chosen?
+
+  Probability a leader was selected = 1.0
+
+election():
+   3  voters participate in an election.
+  n of the voters are candidates.
+  Voting rules may allow a voter to vote for themselves, or not.
+   2  votes are required in order for a leader to be chosen.
+  What is the probability that, on a single vote, a leader will be chosen?
+
+  Probability a leader was selected = 0.77943
+
+election():
+   7  voters participate in an election.
+  n of the voters are candidates.
+  Voting rules may allow a voter to vote for themselves, or not.
+   4  votes are required in order for a leader to be chosen.
+  What is the probability that, on a single vote, a leader will be chosen?
+
+  Probability a leader was selected = 0.06004
+
+election():
+   2  voters participate in an election.
+  n of the voters are candidates.
+  Voting rules may allow a voter to vote for themselves, or not.
+   17  votes are required in order for a leader to be chosen.
+  What is the probability that, on a single vote, a leader will be chosen?
+
+  Probability a leader was selected = 0.10747
+
+estimate():
+  N runners participate in a marathon.
+  Each runner wears a tag with their index, from 1 to N.
+  We observe the values of K of these tags.
+  We want to estimate N.
+
+  Produce illustrative plots for several cases.
+  Graphics saved as "estimate.png"
+
+floss():
+  A person buys two rolls of dental floss.
+  Each roll has 40 feet of floss.
+  The person randomly selects a roll and takes 1 foot of floss.
+  When one roll runs out, how many feet remain in the other roll?
+
+  Average remaining floss = 7.114230301912578
+
+floss():
+  A person buys two rolls of dental floss.
+  Each roll has 150 feet of floss.
+  The person randomly selects a roll and takes 1 foot of floss.
+  When one roll runs out, how many feet remain in the other roll?
+
+  Average remaining floss = 13.808254325711056
+
+forgetful_burglar():
+  In a town of 201 homes, a burglar starts at home 101.
+  He randomly moves one or two homes left or right.
+  What is the typical number of moves he will make before revisiting a home?
+
+   K    Prob(K)
+
+   1  0
+   2  0.250231
+   3  0.28117
+   4  0.195299
+   5  0.117202
+   6  0.0681434
+   7  0.0390154
+   8  0.0217694
+   9  0.0121689
+  10  0.0067322
+  Graphics saved as "fb.png"
+
+gameb():
+  In game B, you have two biased coins.  If, at the time just before you
+  decide to flip, your capital M is a multiple of 3 dollars, you chose
+  coin 1, which shows heads with probability 1/10 - epsilon, otherwise
+  you choose coin 2, which shows heads with probability 3/4 - epsilon.
+  Game B is a losing game for you, and this code simply demonstrates
+  that using many simulations.
+
+  Produce a plot showing how the player loses.
+  Graphics saved as "gameb.png"
+
+gs():
+  A building has 7 floors, and there are n elevators, each of which
+  is at a randomly chosen floor.
+  A person on floor 2 requests an elevator, wishing to go up.
+  What is the probability that the first elevator to arrive is going down?
+
+  Estimated probability of down elevator =  0.833182
+  Theoretical probability is  0.8333333333333333
+
+gs():
+  A building has 7 floors, and there are n elevators, each of which
+  is at a randomly chosen floor.
+  A person on floor 2 requests an elevator, wishing to go up.
+  What is the probability that the first elevator to arrive is going down?
+
+  Estimated probability of down elevator =  0.721648
+  Theoretical probability is  0.7222222222222222
+
+gs():
+  A building has 7 floors, and there are n elevators, each of which
+  is at a randomly chosen floor.
+  A person on floor 2 requests an elevator, wishing to go up.
+  What is the probability that the first elevator to arrive is going down?
+
+  Estimated probability of down elevator =  0.648011
+  Theoretical probability is  0.6481481481481481
+
+guess_rank():
+  Given  M =  24 items of ranks 1 through M,
+  randomly guess the rank of each item. 
+  On average, how many ranks will we guess correctly?
+
+  Average number of correct pairings = 0.998898
+  Expected value is 1.
+
+jury():
+  There are 5 judges on an appeals court.
+  Each judge has a probability of making a correct ruling.
+  What is the probability that a majority of the judges will rule incorrectly?
+
+  Probability of a mistaken judgement =  0.0070545
+
+kelvin():
+  A biased coin comes up heads with probability  0.4
+  To get a unbiased random value, toss the coin twice.
+  If you get TH, call it heads if you get HT, call it tails.
+  If you get TT or HH, do another double toss.
+  On average, how many double tosses are necessary?
+
+  Average number of double tosses =  2.0727
+  Theoretical value               =  2.0833333333333335
+
+malt():
+  Lil and Bill agree to meet in the malt shop between 3:30 and 4:00.
+  Each arrives at a random time.
+  Lil will wait 5 minutes, then leave.
+  Bill will wait 7 minutes, then leave.
+  What is the probability of a meeting?
+
+  Estimated meeting probability =  0.359352
+  Theoretical probability is  0.3588888888888889
+
+missing():
+  There are 100 senators.
+  A bill needs a majority of present senators to pass.
+  A =  49 senators are against the bill.
+  M =  3 senators are missing the vote.
+  What is the probability that the bill will be defeated?
+
+  Probability of defeat =  0.128219
+
+missing():
+  There are 100 senators.
+  A bill needs a majority of present senators to pass.
+  A =  49 senators are against the bill.
+  M =  4 senators are missing the vote.
+  What is the probability that the bill will be defeated?
+
+  Probability of defeat =  0.063617
+
+missing():
+  There are 100 senators.
+  A bill needs a majority of present senators to pass.
+  A =  49 senators are against the bill.
+  M =  5 senators are missing the vote.
+  What is the probability that the bill will be defeated?
+
+  Probability of defeat =  0.193932
+
+monotone():
+  Expected value of the number of random numbers that
+  can be generated, which are monotone increasing.
+
+  Extimated expected length =  2.718231
+  Theoretical value is         2.718281828459045
+
+obtuse():
+  Define a "random" triangle as half of a rectangle
+  with height 1 and width <= L.
+  What are the chances the triangle is obtuse?
+
+  Using value L =  1.0
+
+  Estimated likelihoood of obtuse triangle =  0.725272
+  Expected value = 0.7252064830064114
+
+  Using value L =  2.0
+
+  Estimated likelihoood of obtuse triangle =  0.798228
+  Expected value = 0.7983742851269212
+
+obtuse1():
+  Define a "random" triangle by splitting the unit
+  interval into three random pieces.
+  What are the chances the triangle is obtuse?
+
+  Estimated likelihoood of obtuse triangle =  0.079122
+  Theoretical value is  0.17055845832016425
+
+optimal():
+  A dating club offers  11  potential partners.
+  It turns out that any of #d of these partners would be acceptable. 2
+  The dater gets 1 date with each partner, but immediately after the
+  date, must either marry that partner, or move to the next date.
+  The dater plans to date a sample of the partners without a marriage
+  offer, and then marry the next partner who is better than all
+  the sample dates. 
+  As the sample size is varied, what are the chances of happiness?
+
+  Use graphics to display result.
+  Graphics saved as "optimal.png"
+
+optimal():
+  A dating club offers  50  potential partners.
+  It turns out that any of #d of these partners would be acceptable. 5
+  The dater gets 1 date with each partner, but immediately after the
+  date, must either marry that partner, or move to the next date.
+  The dater plans to date a sample of the partners without a marriage
+  offer, and then marry the next partner who is better than all
+  the sample dates. 
+  As the sample size is varied, what are the chances of happiness?
+
+  Use graphics to display result.
+  Graphics saved as "optimal.png"
+
+patrol():
+  Consider a divided highway, and suppose it could be divided by
+  a grassy median or a concrete barrier.
+  Suppose  1  police cars patrol the highway.
+  Suppose an accident occurs at a randomly chosen location and lane.
+  Suppose all patrol cars immediately head towards the accident.
+  If a grassy median, then patrol cars in the wrong lane can 
+  immediately reverse direction.
+  For the concrete barrier, patrol cars in the wrong lane must
+  continue to the end of the highway and then turn around.
+  Estimate the average time required by a patrol car to reach the accident.
+
+  Average grass distance    =  0.33317944722111364
+  Average concrete distance =  1.000486970257069
+
+patrol():
+  Consider a divided highway, and suppose it could be divided by
+  a grassy median or a concrete barrier.
+  Suppose  2  police cars patrol the highway.
+  Suppose an accident occurs at a randomly chosen location and lane.
+  Suppose all patrol cars immediately head towards the accident.
+  If a grassy median, then patrol cars in the wrong lane can 
+  immediately reverse direction.
+  For the concrete barrier, patrol cars in the wrong lane must
+  continue to the end of the highway and then turn around.
+  Estimate the average time required by a patrol car to reach the accident.
+
+  Average grass distance    =  0.20832105836031084
+  Average concrete distance =  0.6660669799020886
+
+patrol():
+  Consider a divided highway, and suppose it could be divided by
+  a grassy median or a concrete barrier.
+  Suppose  3  police cars patrol the highway.
+  Suppose an accident occurs at a randomly chosen location and lane.
+  Suppose all patrol cars immediately head towards the accident.
+  If a grassy median, then patrol cars in the wrong lane can 
+  immediately reverse direction.
+  For the concrete barrier, patrol cars in the wrong lane must
+  continue to the end of the highway and then turn around.
+  Estimate the average time required by a patrol car to reach the accident.
+
+  Average grass distance    =  0.1499456229013507
+  Average concrete distance =  0.4994001064755738
+
+patrol():
+  Consider a divided highway, and suppose it could be divided by
+  a grassy median or a concrete barrier.
+  Suppose  4  police cars patrol the highway.
+  Suppose an accident occurs at a randomly chosen location and lane.
+  Suppose all patrol cars immediately head towards the accident.
+  If a grassy median, then patrol cars in the wrong lane can 
+  immediately reverse direction.
+  For the concrete barrier, patrol cars in the wrong lane must
+  continue to the end of the highway and then turn around.
+  Estimate the average time required by a patrol car to reach the accident.
+
+  Average grass distance    =  0.11660074901870421
+  Average concrete distance =  0.39965181567437774
+
+patrol():
+  Consider a divided highway, and suppose it could be divided by
+  a grassy median or a concrete barrier.
+  Suppose  5  police cars patrol the highway.
+  Suppose an accident occurs at a randomly chosen location and lane.
+  Suppose all patrol cars immediately head towards the accident.
+  If a grassy median, then patrol cars in the wrong lane can 
+  immediately reverse direction.
+  For the concrete barrier, patrol cars in the wrong lane must
+  continue to the end of the highway and then turn around.
+  Estimate the average time required by a patrol car to reach the accident.
+
+  Average grass distance    =  0.09531202143193558
+  Average concrete distance =  0.3333078934654012
+
+pierror():
+  Estimate pi by counting random points in the unit
+  square which are also in the quarter circle.
+
+  Points used =       100
+  Estimate for pi is  0.76
+  Absolute error is   2.3815926535897933
+
+pierror():
+  Estimate pi by counting random points in the unit
+  square which are also in the quarter circle.
+
+  Points used =       10000
+  Estimate for pi is  0.781
+  Absolute error is   2.360592653589793
+
+ranking():
+  A list of M = 24  items is given.
+  The test taker is required to give a rank for each.
+  For each item, the test taker randomly chooses a value between 1 and M.
+  What is the average number of correct rankings?
+
+  Average number of correct matches =  0.999858
+
+rhs():
+  Random Harmonic Series:
+  Compute and histogram many values of the partial sums of 
+    sum ( 1 <= k < infinity ) t(i) / k
+  where t(i) is randomly +1 or -1.
+  Graphics saved as "rhs.png"
+
+rolls():
+  Two rolls of toilet paper are installed in a toilet, with 200 sheets.
+  There are two kinds of people, with probabilities p and 1-p.
+  * big choosers take one sheet from the larger roll
+  * little choosers take one sheet from the smaller roll (unless empty).
+  When one roll becomes empty, how many sheets are on the other roll?
+  Use graphics to display results.
+  Graphics saved as "rolls.png"
+
+smoker():
+  A smoker buys two packs of 40 matches.
+  He then repeatedly selects a match from a randomly chosen pack.
+  When one pack runs out, how many matches have been used in total?
+
+  Average total number of matches used =  72.889064
+  Graphics saved as "smoker.png"
+
+smokerb():
+  A smoker buys two packs of 40 matches.
+  He then repeatedly selects a match from a randomly chosen pack.
+  At some point, the pack he chooses will be empty.
+  How many matches have been used by then?
+
+  Average total number of matches used =  73.797669
+  Graphics saved as "smokerb.png"
+
+spin():
+  A game involves two spinnable disks, each divided into three sectors.
+  A player spins disk 1 or 2 according to the following rules:
+  * if the player spins disk i, and it stops in region Pij, he
+    moves from disk i to disk j
+  * if the spinner stops in region Pi3, the game ends.
+  * if the game ends in P13, the player wins.
+  What is the probablity that the player, starting with disk 1, wins?
+
+  Probabiity of winning =  0.6525
+  Theoretical value     =  0.65
+
+steve():
+  Steve gets on an elevator going up.  There are 11 higher floors.
+  Steve wishes to go up 9 floors.
+  There are 0 additional riders in the elevator, each of whom has
+  randomly chosen one of the 11 higher floors as destination.
+  On average, how many times will the elevator stop until Steve
+  reaches his floor?
+
+  Estimated number of stops =  1.0
+  Theoretical number =         1.0
+
+steve():
+  Steve gets on an elevator going up.  There are 11 higher floors.
+  Steve wishes to go up 9 floors.
+  There are 1 additional riders in the elevator, each of whom has
+  randomly chosen one of the 11 higher floors as destination.
+  On average, how many times will the elevator stop until Steve
+  reaches his floor?
+
+  Estimated number of stops =  1.727484
+  Theoretical number =         1.7272727272727275
+
+steve():
+  Steve gets on an elevator going up.  There are 11 higher floors.
+  Steve wishes to go up 9 floors.
+  There are 2 additional riders in the elevator, each of whom has
+  randomly chosen one of the 11 higher floors as destination.
+  On average, how many times will the elevator stop until Steve
+  reaches his floor?
+
+  Estimated number of stops =  3.535946
+  Theoretical number =         2.3884297520661164
+
+steve():
+  Steve gets on an elevator going up.  There are 11 higher floors.
+  Steve wishes to go up 9 floors.
+  There are 3 additional riders in the elevator, each of whom has
+  randomly chosen one of the 11 higher floors as destination.
+  On average, how many times will the elevator stop until Steve
+  reaches his floor?
+
+  Estimated number of stops =  5.607575
+  Theoretical number =         2.989481592787379
+
+steve():
+  Steve gets on an elevator going up.  There are 11 higher floors.
+  Steve wishes to go up 9 floors.
+  There are 9 additional riders in the elevator, each of whom has
+  randomly chosen one of the 11 higher floors as destination.
+  On average, how many times will the elevator stop until Steve
+  reaches his floor?
+
+  Estimated number of stops =  8.99641
+  Theoretical number =         5.607219053020122
+
+stopping():
+  From a population of 5 indexed values, the highest is sought.
+  Values are to be discovered in order of index.
+  When value I is discovered:
+  * it may be rejected, and the next value discovered, or
+  * it may be accepted, and the process is terminated.
+  A strategy is to view S items in a row, and then accept 
+  the very next item that is larger than max(S).
+  Given N, what is S, and what are the chances that this process will
+  produce the maximum?
+
+  Population size N      =  5
+  Optimal sample size S  =  2
+  Ratio N / S            =  2.5
+  Probability of success =  0.4333333333333333
+
+stopping():
+  From a population of 10 indexed values, the highest is sought.
+  Values are to be discovered in order of index.
+  When value I is discovered:
+  * it may be rejected, and the next value discovered, or
+  * it may be accepted, and the process is terminated.
+  A strategy is to view S items in a row, and then accept 
+  the very next item that is larger than max(S).
+  Given N, what is S, and what are the chances that this process will
+  produce the maximum?
+
+  Population size N      =  10
+  Optimal sample size S  =  3
+  Ratio N / S            =  3.3333333333333335
+  Probability of success =  0.39869047619047615
+
+stopping():
+  From a population of 20 indexed values, the highest is sought.
+  Values are to be discovered in order of index.
+  When value I is discovered:
+  * it may be rejected, and the next value discovered, or
+  * it may be accepted, and the process is terminated.
+  A strategy is to view S items in a row, and then accept 
+  the very next item that is larger than max(S).
+  Given N, what is S, and what are the chances that this process will
+  produce the maximum?
+
+  Population size N      =  20
+  Optimal sample size S  =  7
+  Ratio N / S            =  2.857142857142857
+  Probability of success =  0.38420888000028863
+
+stopping():
+  From a population of 50 indexed values, the highest is sought.
+  Values are to be discovered in order of index.
+  When value I is discovered:
+  * it may be rejected, and the next value discovered, or
+  * it may be accepted, and the process is terminated.
+  A strategy is to view S items in a row, and then accept 
+  the very next item that is larger than max(S).
+  Given N, what is S, and what are the chances that this process will
+  produce the maximum?
+
+  Population size N      =  50
+  Optimal sample size S  =  18
+  Ratio N / S            =  2.7777777777777777
+  Probability of success =  0.3742750136479202
+
+stopping():
+  From a population of 100 indexed values, the highest is sought.
+  Values are to be discovered in order of index.
+  When value I is discovered:
+  * it may be rejected, and the next value discovered, or
+  * it may be accepted, and the process is terminated.
+  A strategy is to view S items in a row, and then accept 
+  the very next item that is larger than max(S).
+  Given N, what is S, and what are the chances that this process will
+  produce the maximum?
+
+  Population size N      =  100
+  Optimal sample size S  =  37
+  Ratio N / S            =  2.7027027027027026
+  Probability of success =  0.3710427787126428
+
+sylvester_quadrilateral():
+  Estimate the probability that four points, chosen
+  uniformly at random in the unit circle, form a 
+  concave (=nonconvex) quadrilateral.
+
+  Estimated   concave probability =  0.704338
+  Theoretical concave probability =  0.2955201189568185
+
+umbrella():
+  A person has XI umbrellas at home, and YI at the office.
+  With probability P, it will be raining at any given time.
+  If it is raining, the person takes an umbrella from one place to the other.
+  How many walks will the person take before running out of umbrellas?
+  Use graphics to display results.
+  Graphics saved as "umbrella.png"
+
+umbrella():
+  A person has XI umbrellas at home, and YI at the office.
+  With probability P, it will be raining at any given time.
+  If it is raining, the person takes an umbrella from one place to the other.
+  How many walks will the person take before running out of umbrellas?
+  Use graphics to display results.
+  Graphics saved as "umbrella.png"
+
+walk():
+  A pedestrian begins M blocks east and M blocks north of a destination.
+  At each intersection, there is a stop light which is set randomly,
+  and switches after 1 minute.
+  Until reaching avenue 1 or street 1, the pedestrian always crosses
+  the intersection in accordance with the stop light.
+  Thereafter, the pedestrian must wait at each stop light encountered.
+  What is the average wait for stop lights?
+
+  Estimated waiting time =  0.75093
+
+walk():
+  A pedestrian begins M blocks east and M blocks north of a destination.
+  At each intersection, there is a stop light which is set randomly,
+  and switches after 1 minute.
+  Until reaching avenue 1 or street 1, the pedestrian always crosses
+  the intersection in accordance with the stop light.
+  Thereafter, the pedestrian must wait at each stop light encountered.
+  What is the average wait for stop lights?
+
+  Estimated waiting time =  1.23477
+
+walk():
+  A pedestrian begins M blocks east and M blocks north of a destination.
+  At each intersection, there is a stop light which is set randomly,
+  and switches after 1 minute.
+  Until reaching avenue 1 or street 1, the pedestrian always crosses
+  the intersection in accordance with the stop light.
+  Thereafter, the pedestrian must wait at each stop light encountered.
+  What is the average wait for stop lights?
+
+  Estimated waiting time =  1.75582
+
+walk():
+  A pedestrian begins M blocks east and M blocks north of a destination.
+  At each intersection, there is a stop light which is set randomly,
+  and switches after 1 minute.
+  Until reaching avenue 1 or street 1, the pedestrian always crosses
+  the intersection in accordance with the stop light.
+  Thereafter, the pedestrian must wait at each stop light encountered.
+  What is the average wait for stop lights?
+
+  Estimated waiting time =  2.50582
+
+walk():
+  A pedestrian begins M blocks east and M blocks north of a destination.
+  At each intersection, there is a stop light which is set randomly,
+  and switches after 1 minute.
+  Until reaching avenue 1 or street 1, the pedestrian always crosses
+  the intersection in accordance with the stop light.
+  Thereafter, the pedestrian must wait at each stop light encountered.
+  What is the average wait for stop lights?
+
+  Estimated waiting time =  3.97431
+
+walk():
+  A pedestrian begins M blocks east and M blocks north of a destination.
+  At each intersection, there is a stop light which is set randomly,
+  and switches after 1 minute.
+  Until reaching avenue 1 or street 1, the pedestrian always crosses
+  the intersection in accordance with the stop light.
+  Thereafter, the pedestrian must wait at each stop light encountered.
+  What is the average wait for stop lights?
+
+  Estimated waiting time =  5.62982
+
+digital_dice_test():
+  Normal end of execution.
+Wed Oct  8 07:43:38 2025

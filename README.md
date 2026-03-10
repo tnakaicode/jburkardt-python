@@ -8,6 +8,11 @@ wget -r -np -l 0 http://people.sc.fsu.edu/~jburkardt/fenics_src/
 wget -r -np -l 0 http://people.sc.fsu.edu/~jburkardt/data/
 
 http://ossanworld.com/cfdbooks/cfdcodes.html
+
+python mirror_download.py http://people.sc.fsu.edu/~jburkardt/py_src/
+python mirror_download.py https://people.sc.fsu.edu/~jburkardt/sklearn_src/
+python mirror_download.py http://people.sc.fsu.edu/~jburkardt/fenics_src/
+python mirror_download.py http://people.sc.fsu.edu/~jburkardt/data/
 ```
 
 ## Interpolate

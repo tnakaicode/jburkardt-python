@@ -1,0 +1,189 @@
+<html>
+
+  <head>
+    <title>
+      diffusion_pde
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      diffusion_pde
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>diffusion_pde</b>,
+      a Python code which
+      solves the diffusion partial differential equation (PDE) 
+      dudt = mu * d2udx2
+      in one spatial dimension and time, with
+      a constant diffusion coefficient mu, and periodic boundary conditions, 
+      using the forward time centered space (FTCS) difference method.
+    </p>
+
+    <p>
+      We solve for u(x,t), the solution of the constant-velocity diffusion 
+      equation in 1D,
+      <pre>
+        du/dt - mu d2u/dx2 = 0
+      </pre>
+      over the interval:
+      <pre>
+        0.0 <= x <= 1.0
+      </pre>
+      with constant diffusion coefficient:
+      <pre>
+        mu = 0.5
+      </pre>
+      with periodic boundary conditions:
+      <pre>
+        u(0,t) = u(1,t) for all t
+      </pre>
+      and initial condition
+      <pre>
+        u(x,0) = (10x-6)^2 (8-10x)^2 for 0.6 <= x <= 0.8
+               = 0                   elsewhere.
+      </pre>
+    </p>
+
+    <p>
+      We use a method known as FTCS (forward time, centered space):
+      <ul>
+        <li>
+          FT: du/dt approximated at (x,t) by (u(x,t+dt)-u(x,t))/dt
+        </li>
+        <li>
+          CS: d2u/dx2 approximated at (x,t) by (u(x+dx,t)-2u(x,t)+u(x-dx,t))/2/dx^2
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>diffusion_pde</b> is available in
+      <a href = "../../m_src/diffusion_pde/diffusion_pde.html">a MATLAB version</a> and
+      <a href = "../../octave_src/diffusion_pde/diffusion_pde.html">an Octave version</a> and
+      <a href = "../../py_src/diffusion_pde/diffusion_pde.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/allen_cahn_pde/allen_cahn_pde.html">
+      allen_cahn_pde</a>,
+      a Python code which 
+      sets up and solves the Allen-Cahn reaction-diffusion 
+      system of partial differential equations (PDE)
+      in 1 space dimension and time.
+    </p>
+
+    <p>
+      <a href = "../../py_src/gray_scott_pde/gray_scott_pde.html">
+      gray_scott_pde</a>,
+      a Python code which
+      solves the partial differential equation (PDE) known
+      as the Gray-Scott reaction diffusion equation, in two spatal dimension
+      and time, displaying a sequence of solutions as time progresses.
+    </p>
+
+    <p>
+      <a href = "../../py_src/spiral_pde/spiral_pde.html">
+      spiral_pde</a>,
+      a Python code which
+      solves a pair of reaction-diffusion partial differential equations
+      (PDE) over a rectangular domain with periodic boundary condition,
+      whose solution is known to evolve into a pair of spirals.
+    </p>
+
+    <p>
+      <a href = "../../py_src/wave_pde/wave_pde.html">
+      wave_pde</a>,
+      a Python code which
+      uses the finite difference method (FDM) in space, and the method of 
+      lines in time, to set up and solve the partial differential equations (PDE) 
+      known as the wave equations, utt = c uxx, 
+      in one spatial dimension and time.
+    </p>
+
+    <h3 align = "center">
+      References:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Willem Hundsdorfer, Jan Verwer,<br>
+          Numerical solution of time-dependent advection-diffusion-reaction
+          equations,<br>
+          Springer, 2003<br>
+          ISBN: 978-3-662-09017-6
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "diffusion_pde.py">diffusion_pde.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "diffusion_pde.sh">diffusion_pde.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "diffusion_pde.txt">diffusion_pde.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "diffusion_pde_ftcs_initial.png">diffusion_pde_ftcs_initial.png</a>, 
+          the initial condition.
+        </li>
+        <li>
+          <a href = "diffusion_pde_ftcs_final.png">diffusion_pde_ftcs_final.png</a>, 
+          the approximated solution at the final time.
+        </li>
+        <li>
+          <a href = "diffusion_pde_ftcs_conservation.png">
+          diffusion_pde_ftcs_conservation.png</a>, 
+          the conserved quantity over time.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 05 September 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

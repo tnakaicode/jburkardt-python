@@ -1,0 +1,15 @@
+Wed Oct  8 07:44:17 2025
+
+ellipse_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test ellipse_distance()
+
+  Using N = 10000 sample points
+  Estimated mean distance =  1.7176102976704453
+  Estimated variance      =  0.7516017418877468
+  Graphics saved as "ellipse_distance_histogram.png"
+
+ellipse_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:44:18 2025

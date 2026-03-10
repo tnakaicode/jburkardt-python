@@ -1,0 +1,169 @@
+<html>
+
+  <head>
+    <title>
+      dictionary_code
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      dictionary_code
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>dictionary_code</b>,
+      a Python code which
+      applies a dictionary code to a text file.
+    </p>
+
+    <p>
+      A common feature of lossless compression schemes is the construction
+      of a "dictionary" of the symbols or words occuring in the file,
+      and the replacement of symbols by dictionary indices.
+    </p>
+
+    <p>
+      These functions illustrate that idea, by starting with a version
+      of the Gettysburg Address.  In order to simplify our work, we remove
+      punctuation and capitalization.
+      We create an array where each entry is a word in the file.
+      Identifying the unique words in the array, we construct a "dictionary"
+      that lists in alphabetic order every word occurring in the file.
+      We then replace every word in the text file by its dictionary index.  
+      This is the operation of the "dictionary_encode()" function.
+    </p>
+
+    <p>
+      In order to decode or uncompress the file, we need both the encoded
+      file and the dictionary.  For our example, the dictionary is stored
+      as a separate file, although compression schemes pack both the
+      encoded text and the dictionary together.  The function 
+      "dictionary_decode()" can then recover the original message.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>dictionary_code</b> is available in
+      <a href = "../../m_src/dictionary_code/dictionary_code.html">a MATLAB version</a> and
+      <a href = "../../octave_src/dictionary_code/dictionary_code.html">an Octave version</a> and
+      <a href = "../../py_src/dictionary_code/dictionary_code.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/atbash/atbash.html">
+      atbash</a>,
+      a Python code which
+      applies the Atbash substitution cipher to a string of text.
+    </p>
+
+    <p>
+      <a href = "../../py_src/caesar/caesar.html">
+      caesar</a>,
+      a Python code which
+      applies a Caesar Shift Cipher to a string of text.
+    </p>
+
+    <p>
+      <a href = "../../py_src/chrpak/chrpak.html">
+      chrpak</a>,
+      a Python code which
+      works with characters and strings.
+    </p>
+
+    <p>
+      <a href = "../../py_src/filum/filum.html">
+      filum</a>,
+      a Python code which
+      works with information in text files.
+    </p>
+
+    <p>
+      <a href = "../../py_src/monoalphabetic/monoalphabetic.html">
+      monoalphabetic</a>,
+      a Python code which
+      applies a monoalphabetic substitution cipher to a string of text.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rot13/rot13.html">
+      rot13</a>,
+      a Python code which
+      enciphers a string using the ROT13 cipher for letters, and the 
+      ROT5 cipher for digits.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "dictionary_code.py">dictionary_code.py</a>
+          the source code.
+        </li>
+        <li>
+          <a href = "dictionary_code.sh">dictionary_code.sh</a>
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "dictionary_code.txt">dictionary_code.txt</a>
+          the test output.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "gettysburg_address.txt">gettysburg_address.txt</a>
+          a plain text version of the Gettysburg address.
+        </li>
+        <li>
+          <a href = "gettysburg_address2.txt">gettysburg_address2.txt</a>
+          a version of the Gettysburg address with spaces and punctuation
+          and capitalization removed.
+        </li>
+        <li>
+          <a href = "gettysburg_address_encoded.txt">
+          gettysburg_address_encoded.txt</a>
+          an encoded version of the Gettysburg address.
+        </li>
+        <li>
+          <a href = "gettysburg_address_dictionary.txt">
+          gettysburg_address_dictionary.txt</a>
+          the dictionary used to encode the Gettysburg address.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 15 March 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
