@@ -1,0 +1,28 @@
+Wed Oct  8 07:27:49 2025
+
+clock_solitaire_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  clock_solitaire_simulation() simulates the game of
+  clock solitaire.
+
+piles_deal() randomly initializes the card piles.
+piles_print() prints the current piles.
+
+  A    2    3    4    5    6    7    8    9   10    J    Q    K
+
+[ QH][ QD][ AS][ 9C][ 9D][ 3C][ AH][ 5S][ 6H][ 4S][ AC][ 6D][10D]
+[ 9S][ JH][ KC][10S][ 3H][ JD][ 2H][ 8C][ KS][10H][ 8H][ JC][ 4C]
+[ 3D][ 7D][ QC][ 2S][ 5D][ 5H][ 8D][ KD][ 4H][ QS][ 6S][ 6C][10C]
+[ 4D][ KH][ 8S][ JS][ 7S][ 2D][ 9H][ AD][ 7H][ 7C][ 3S][ 2C][ 5C]
+
+play() played one game and lost.
+
+play_many() will play 1000 clock solitaire games.
+  Won 95 out of 1000
+  Win ratio is        0.095
+  Expected win ratio  0.07692307692307693
+
+clock_solitaire_simulation_test():
+  Normal end of execution.
+Wed Oct  8 07:27:50 2025
