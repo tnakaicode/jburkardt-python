@@ -1,0 +1,173 @@
+
+<html>
+
+  <head>
+    <title>
+      change_dynamic
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      change_dynamic
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>change_dynamic</b>,
+      a Python code which
+      uses dynamic programming to solve the change making problem,
+      in which a given sum is to be formed using coins of various denominations.
+    </p>
+
+    <p>
+      The change making problem is given a target value C and a set of N coin
+      denominations with value W.  The task is to determine the minimum number
+      of coins needed to form the given value.
+    </p>
+
+    <p>
+      In the unbounded change making problem, there are a limitless supply of
+      coins of each denomination.  In the bounded change making problem, each
+      denomination is available only up to some given limit.
+    </p>
+
+    <p>
+      For some sets of denominations, there will be target values that cannot 
+      be formed.  (This relates to Frobenius's problem.)  
+    </p>
+
+    <p>
+      A greedy algorithm for solving the change making problem repeatedly selects
+      the largest coin denomination available that does not exceed the remainder.
+      A greedy algorithm is simple, but it is not guaranteed to find a solution
+      when one exists, and it is not guaranteed to find a minimal solution.
+    </p>
+
+    <p>
+      For certain sets of coin denominations, such as the US system of 1, 5, 10,
+      25, 50, 100, there is always a solution, and the greedy algorithm will always
+      find the minimal solution.
+    </p>
+
+    <p>
+      For a set of coins such as the old British system, using 1, 2, 6, 12, 24, 48
+      and 60, there is always a solution, but the greedy algorithm will not always
+      find the minimal solution.
+    </p>
+
+    <p>
+      For artificial systems such as 20, 25, 40, it is easy to see that there are many
+      cases where there is no solution (you can't make ANY value that isn't a multiple
+      of 5) but that the greedy will fail to find a solution for 50, even though that
+      is easily formed as 25 + 25.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>change_dynamic</b> is available in
+      <a href = "../../c_src/change_dynamic/change_dynamic.html">a C version</a> and
+      <a href = "../../cpp_src/change_dynamic/change_dynamic.html">a C++ version</a> and
+      <a href = "../../f_src/change_dynamic/change_dynamic.html">a Fortran90 version</a> and
+      <a href = "../../m_src/change_dynamic/change_dynamic.html">a MATLAB version</a> and
+      <a href = "../../octave_src/change_dynamic/change_dynamic.html">an Octave version</a> and
+      <a href = "../../py_src/change_dynamic/change_dynamic.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/basketball_dynamic/basketball_dynamic.html">
+      basketball_dynamic</a>,
+      a Python code which
+      uses dynamic programming to count the ways of achieving 
+      a given score in basketball, respecting the order of events.
+    </p>
+
+    <p>
+      <a href = "../../py_src/football_dynamic/football_dynamic.html">
+      football_dynamic</a>,
+      a Python code which
+      uses dynamic programming to count the ways of achieving 
+      a given score in football, respecting the order of events.
+    </p>
+
+    <p>
+      <a href = "../../py_src/football2_dynamic/football2_dynamic.html">
+      football2_dynamic</a>,
+      a Python code which
+      uses dynamic programming to count the ways of achieving 
+      a given score in football, respecting the order of events.
+    </p>
+
+    <p>
+      <a href = "../../m_src/knapsack_dynamic/knapsack_dynamic.html">
+      knapsack_dynamic</a>,
+      a MATLAB code which
+      uses dynamic programming to solve a knapsack problem.
+    </p>
+
+    <p>
+      <a href = "../../py_src/matrix_chain_dynamic/matrix_chain_dynamic.html">
+      matrix_chain_dynamic</a>,
+      a Python code which 
+      finds the cost of the most efficient ordering to use when
+      multiplying a sequence of matrices, using dynamic programming.
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_combinatorics/python_combinatorics.html">
+      python_combinatorics</a>,
+      a Python code which
+      considers a variety of problems in combinatorics involving
+      counting, combinations, permutations, and so on.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "change_dynamic.py">change_dynamic.py</a>
+          the source code.
+        </li>
+        <li>
+          <a href = "change_dynamic.sh">change_dynamic.sh</a>
+          runs the tests.
+        </li>
+        <li>
+          <a href = "change_dynamic.txt">change_dynamic.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 20 January 2020.
+
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

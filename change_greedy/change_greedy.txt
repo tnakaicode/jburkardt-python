@@ -1,0 +1,82 @@
+Wed Oct  8 07:27:29 2025
+
+change_greedy_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test change_greedy().
+
+change_greedy_test01():
+  change_greedy() uses the greedy algorithm to try to
+  find a collection of coins that equal a given sum T.
+
+  Test 0
+
+   0   1   5
+   1   0   9
+   2   1  13
+  Target =  19
+  Result =  18.0
+
+  Test 1
+
+   0   2   1
+   1   0   4
+   2   1   5
+   3   0   8
+   4   2  11
+  Target =  29
+  Result =  29.0
+
+  Test 2
+
+   0   1   1
+   1   0   5
+   2   2  10
+   3   1  25
+   4   1  50
+   5   0  100
+  Target =  96
+  Result =  96.0
+
+  Test 3
+
+   0   0   1
+   1   0   2
+   2   0   6
+   3   1  12
+   4   1  24
+   5   0  48
+   6   1  60
+  Target =  96
+  Result =  96.0
+
+  Test 4
+
+   0   2   1
+   1   0   3
+   2   1   4
+  Target =  6
+  Result =  6.0
+
+  Test 5
+
+   0   0  16
+   1   1  17
+   2   0  23
+   3   0  24
+   4   0  39
+   5   2  40
+  Target =  100
+  Result =  97.0
+
+  Test 6
+
+   0   0   6
+   1   0   9
+   2   2  20
+  Target =  43
+  Result =  40.0
+
+change_greedy_test():
+  Normal end of execution.
+Wed Oct  8 07:27:29 2025
