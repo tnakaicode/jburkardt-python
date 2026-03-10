@@ -1,0 +1,81 @@
+Wed Oct  8 07:27:39 2025
+
+circle_arc_grid_test():
+  Python version: 3.10.12
+  Test circle_arc_grid().
+
+r82col_print_part_test()
+  Python version: 3.10.12
+  r82col_print_part() prints an R82COL.
+
+  Output with MAX_PRINT = 2
+
+     0              11              12
+     1              21              22  ...more entries...
+
+  Output with MAX_PRINT = 5
+
+     0              11              12
+     1              21              22
+     2              31              32
+  ....  ..............  ..............
+     9             101             102
+
+  Output with MAX_PRINT = 25
+
+     0              11              12
+     1              21              22
+     2              31              32
+     3              41              42
+     4              51              52
+     5              61              62
+     6              71              72
+     7              81              82
+     8              91              92
+     9             101             102
+
+R8MAT_WRITE_TEST:
+  Python version: 3.10.12
+  Test R8MAT_WRITE, which writes an R8MAT to a file.
+
+  Created file "r8mat_write_test.txt".
+
+circle_arc_grid_display_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  circle_arc_grid_display() displays a grid of points along a circular arc.
+  Graphics saved as "circle_arc_grid_display.png"
+
+circle_arc_grid_points_test():
+  Python version: 3.10.12
+  circle_arc_grid_points() returns points along a circular arc.
+  In this example, we compute points on a 90 degree arc.
+
+  Radius =           2
+  Center =           5  5
+
+  Angle 1 =          0
+  Angle 2 =          90
+  Number of points = 20
+
+  Some points on the arc:
+
+     0               7               5
+     1         6.99317         5.16516
+     2         6.97272         5.32919
+     3          6.9388         5.49097
+     4         6.89163          5.6494
+     5         6.83155         5.80339
+     6         6.75895         5.95189
+     7         6.67433          6.0939
+  ....  ..............  ..............
+    19               5               7
+ 
+  Data written to "circle_arc_grid_points.xy"
+  Graphics saved as "circle_arc_grid_points.png"
+
+  Plot saved in file "circle_arc_grid_points.png"
+
+circle_arc_grid_test():
+  Normal end of execution.
+Wed Oct  8 07:27:40 2025

@@ -1,0 +1,16 @@
+Wed Oct  8 07:27:47 2025
+
+circle_positive_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test circle_positive_distance().
+
+  Using N = 10000 sample points,
+  Estimated mean distance = 0.509284
+  Exact mean distance     = 1.27324
+  Estimated variance      = 0.120788
+  Graphics saved as "circle_positive_distance_histogram.png"
+
+circle_positive_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:27:48 2025

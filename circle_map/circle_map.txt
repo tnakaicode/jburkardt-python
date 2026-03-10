@@ -1,0 +1,15 @@
+Wed Oct  8 07:27:44 2025
+
+circle_map_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  matplotlib version: 3.5.1
+  Test circle_map().
+  Graphics saved as "circle_map_rotation.png"
+  Graphics saved as "circle_map_diagonal.png"
+  Graphics saved as "circle_map_singular.png"
+  Graphics saved as "circle_map_california.png"
+
+circle_map_test():
+  Normal end of execution.
+Wed Oct  8 07:27:45 2025
