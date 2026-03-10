@@ -1,0 +1,62 @@
+Wed Oct  8 07:30:19 2025
+
+cpr_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test cpr(), which uses the Chebyshev Proxy Rootfinder
+  to determine all real zeros of a smooth function
+  over an interval [a,b].
+
+bessel_test():
+  Seek real roots of the J0 Bessel function.
+
+  Interstitial interpolation error norm =  6.5503158452884236e-15
+  Number of roots =  12
+  Roots computed by CPR:
+[ 2.40482556  5.52007811  8.65372791 11.79153444 14.93091771 18.07106397
+ 21.21163663 24.35247153 27.49347913 30.63460647 33.77582021 36.91709835]
+  Maximum residual at roots =  9.349203920171092e-15
+  Exact roots:
+[ 2.40482556  5.52007811  8.65372791 11.79153444 14.93091771 18.07106397
+ 21.21163663 24.35247153 27.49347913 30.63460647 33.77582021 36.91709835]
+  Exact f(roots):
+[-9.58688255e-17 -1.64951298e-17 -8.70443181e-17 -2.64819844e-16
+ -7.02790803e-16 -6.47283946e-16  2.34410915e-16 -8.61488164e-16
+  9.17693595e-16  4.66258274e-16 -1.70343369e-16 -4.57368418e-16]
+  f ( froots ):
+[ 3.54714655e-15  9.34920392e-15 -6.83744882e-15  7.99336731e-15
+ -4.37112954e-15 -5.98232977e-15 -3.45936416e-15  7.18121836e-15
+  6.86481796e-15 -9.26502330e-15  7.63407412e-15  5.14142241e-15]
+
+newton_test():
+  Seek real roots of the Newton example x^3-2x-5=0.
+
+  Interstitial interpolation error norm =  5.684341886080802e-14
+  Number of roots =  1
+  Maximum residual at roots =  5.329070518200751e-15
+  Exact real root   :  2.094551481542328
+  Computed real root:  2.094551481542326
+  Exact f(roots)    :  1.4210854715202004e-14
+  Computed f(roots) :  -5.329070518200751e-15
+  Error             :  1.7763568394002505e-15
+
+jenkins_test():
+  Seek real roots of the Jenkins function.
+  p(x) = x^4 + 5.6562x^3 + 5.8854x^2
+             + 7.3646x   + 6.1354
+
+  Interstitial interpolation error norm =  4.547473508864641e-13
+  Maximum residual at roots =  1.4477308241112041e-13
+  Number of roots =  2
+  Computed roots:
+[-4.67405402 -1.        ]
+  Exact roots:
+[-4.67405402 -1.        ]
+  f ( Computed roots ):
+[1.44773082e-13 9.85878046e-14]
+  f ( Exact roots):
+[-1.86517468e-14 -8.88178420e-16]
+
+cpr_test():
+  Normal end of execution.
+Wed Oct  8 07:30:20 2025
