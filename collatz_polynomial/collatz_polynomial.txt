@@ -1,0 +1,73 @@
+Wed Oct  8 07:28:49 2025
+
+collatz_polynomial_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test collatz_polynomial()
+
+collatz_polynomial_next_test():
+  collatz_polynomial_next() returns the next polynomial
+  in a Collatz sequence.
+
+  p0(x) = x^2+1
+  p1(x) = x^3+x^2+x
+
+  p0(x) = x^5+x^4+x^2
+  p1(x) = x^4+x^3+x
+
+  p0(x) = 1
+  p1(x) = 1
+
+collatz_polynomial_sequence_test():
+  collatz_polynomial_sequence() returns the sequence of
+  Collatz polynomials generated from a given starting polynomial.
+
+0: x^2+1
+1: x^3+x^2+x
+2: x^2+x+1
+3: x^3
+4: x^2
+5: x
+6: 1
+
+0: x^5+x^4+x^2
+1: x^4+x^3+x
+2: x^3+x^2+1
+3: x^4+x^2+x
+4: x^3+x+1
+5: x^4+x^3+x^2
+6: x^3+x^2+x
+7: x^2+x+1
+8: x^3
+9: x^2
+10: x
+11: 1
+
+0: 1
+
+i4vec_is_binary_test():
+  i4vec_is_binary() is TRUE if an I4VEC only contains
+  0 or 1 entries.
+
+[0 0 0]
+  X is binary
+
+[1 0 1]
+  X is binary
+
+[0 2 1]
+  X is NOT binary.
+
+polynomial_degree_test():
+  polynomial_degree() returns the degree of an polynomial.
+
+  polynomial coefficient vector c:
+[0 1 0 3 4 0 6 7 0 0 0]
+
+  p(x) = 7*x^7+6*x^6+4*x^4+3*x^3+x
+
+  The polynomial degree = 7
+
+collatz_polynomial_test():
+  Normal end of execution.
+Wed Oct  8 07:28:49 2025

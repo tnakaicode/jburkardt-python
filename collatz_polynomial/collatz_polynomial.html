@@ -1,0 +1,133 @@
+<html>
+
+  <head>
+    <title>
+      collatz_polynomial
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      collatz_polynomial
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>collatz_polynomial</b>,
+      a Python code which
+      implements the Collatz polynomial iteration, a polynomial analog of
+      the numerical iteration that is also known as the 3n+1 conjecture or
+      the hailstone sequence.
+    </p>
+
+    <p>
+      Let p0(x) be a polynomial with integer coefficients mod 2.  Then define
+      the next Collatz polynomial p1(x) as follows:
+      <ol>
+        <li>
+          if p0(x) is divisible by x, p1(x) = p0(x) / x.
+        </li>
+        <li>
+          Otherwise, p1(x) = p0(x) * ( x + 1 ) + 1 mod 2.
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      This transformation can be repeated, generating a Collatz polynomial
+      sequence.  For all starting polynomials checked so far, the sequence 
+      reaches the polynomial p(x) = 1, at which point the convention is to
+      halt.  (There is also the exceptional polynomial p(x)=0.)  It is 
+      interesting to investigate the number of steps required to drive a
+      particular polynomial to 1, and to find patterns in this behavior.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>collatz_polynomial</b> is available in
+      <a href = "../../m_src/collatz_polynomial/collatz_polynomial.html">a MATLAB version</a> and
+      <a href = "../../octave_src/collatz_polynomial/collatz_polynomial.html">an Octave version</a> and
+      <a href = "../../py_src/collatz_polynomial/collatz_polynomial.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/collatz/collatz.html">
+      collatz</a>,
+      a Python code which
+      computes and analyzes the Collatz
+      or hailstone or 3n+1 sequence;
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_polynomial/python_polynomial.html">
+      python_polynomial</a>,
+      a Python code which
+      analyzes a variety of polynomial families, returning the polynomial
+      values, coefficients, derivatives, integrals, roots, or other information.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          John D Cook,<br>
+          Polynomial analog of the Collatz conjecture,<br>
+          27 July 2021,<br>
+          https://www.johndcook.com/blog/2021/07/27/polynomial-collatz/
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "collatz_polynomial.py">collatz_polynomial.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "collatz_polynomial.sh">collatz_polynomial.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "collatz_polynomial.txt">collatz_polynomial.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 18 December 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

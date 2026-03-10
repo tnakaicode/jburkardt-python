@@ -1,0 +1,197 @@
+<html>
+
+  <head>
+    <title>
+      collatz
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      collatz
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>collatz</b>,
+      a Python code which
+      computes the Collatz sequence.
+    </p>
+
+    <p>
+      The rules for generation of the Collatz sequence are recursive.
+      If <b>T</b> is the current entry of the sequence, (<b>T</b> is
+      assumed to be a positive integer), then the next
+      entry, <b>U</b> is determined as follows:
+      <ol>
+        <li>
+          if <b>T</b> is 1, terminate the sequence;
+        </li>
+        <li>
+          else if <b>T</b> is even, <b>U</b> = <b>T</b>/2.
+        </li>
+        <li>
+          else (if <b>T</b> is odd and not 1), <b>U</b> = 3*<b>T</b>+1;
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      Although the Collatz sequence seems to be finite for every
+      starting point, this has not been proved.  Over the range of
+      starting values that have been examined, a great irregularity
+      has been observed in the number of entries in the corresponding
+      sequence.
+    </p>
+
+    <p>
+      The Collatz sequence is also known as the "hailstone" sequence or
+      the "3n+1" sequence.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>collatz</b> is available in
+      <a href = "../../m_src/collatz/collatz.html">a MATLAB version</a> and
+      <a href = "../../octave_src/collatz/collatz.html">an Octave version</a> and
+      <a href = "../../py_src/collatz/collatz.html">a Python version</a>..
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/collatz_dict/collatz_dict.html">
+      collatz_dict</a>,
+      a Python code which
+      demonstrates how the Python dict variable type can be used to efficiently
+      record data about the Collatz iteration.
+    </p>
+
+    <p>
+      <a href = "../../py_src/collatz_recursive/collatz_recursive.html">
+      collatz_recursive</a>,
+      a Python code which
+      demonstrates recursive programming by considering the simple Collatz 3n+1 problem.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      polpak</a>,
+      a Python code which
+      evaluates a variety of mathematical functions, polynomials, and
+      sequences, including Bell, Benford, Bernoulli, Bernstein, Cardan, 
+      Catalan, Charlier, Chebyshev, Collatz, Delannoy, Euler, Fibonacci,
+      Gegenbauer, Gudermannian, Hermite, Hofstadter, Jacobi, Krawtchouk,
+      Laguerre, Lambert, Legendre, Lerch, Meixner, Mertens, Moebius, Motzkin,
+      Phi, Sigma, Stirling, Tau, Tribonacci, Zernike.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Martin Gardner,<br>
+          "Slither, 3X+1 and Other Curious Questions",<br>
+          Wheels, Life, and Other Mathematical Amusements,<br>
+          WH Freeman, 1983.
+        </li>
+        <li>
+          Brian Hayes,<br>
+          "On the ups and downs of hailstone numbers",<br>
+          Scientific American,<br>
+          January 1984,<br>
+          Volume 250, Number 1, pages 10-16.
+        </li>
+        <li>
+          Patrick Honner,<br>
+          "The Simple Math Problem We Still Can't Solve",<br>
+          Quanta,<br>
+          22 September 2022.
+        </li>
+        <li>
+          Eric Weisstein,<br>
+          "The Collatz Problem",<br>
+          CRC Concise Encyclopedia of Mathematics,<br>
+          CRC Press, 2002,<br>
+          Second edition,<br>
+          ISBN: 1584883472,<br>
+          LC: QA5.W45.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "collatz.py">collatz.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "collatz.sh">collatz.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "collatz.txt">collatz.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "collatz_27.txt">collatz_27.txt</a>,
+          the points in the Collatz sequence for seed 27.
+        </li>
+        <li>
+          <a href = "collatz_count.txt">collatz_count.txt</a>,
+          the Collatz count for seeds 1 to 100.
+        </li>
+        <li>
+          <a href = "collatz_sequence_27.png">collatz_sequence_27.png</a>,
+          a plot of the Collatz sequence for seed 27.
+        </li>
+        <li>
+          <a href = "collatz_max.png">collatz_max.png</a>,
+          a plot of the Collatz max values for seeds 1 to 1000.
+        </li>
+        <li>
+          <a href = "collatz_count.png">collatz_count.png</a>,
+          a plot of the Collatz coount values for seeds 1 to 50.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 13 June 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

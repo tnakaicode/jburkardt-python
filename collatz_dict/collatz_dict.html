@@ -1,0 +1,201 @@
+<html>
+
+  <head>
+    <title>
+      collatz_dict
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      collatz_dict
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>collatz_dict</b>,
+      a Python code which
+      demonstrates how the Python dict variable type can be used to efficiently
+      record data about the Collatz iteration.
+    </p>
+
+
+    <p>
+      The rules for generation of the Collatz sequence are recursive.
+      If <b>T</b> is the current entry of the sequence, (<b>T</b> is
+      assumed to be a positive integer), then the next
+      entry, <b>U</b> is determined as follows:
+      <ol>
+        <li>
+          if <b>T</b> is 1, terminate the sequence;
+        </li>
+        <li>
+          else if <b>T</b> is even, <b>U</b> = <b>T</b>/2.
+        </li>
+        <li>
+          else (if <b>T</b> is odd and not 1), <b>U</b> = 3*<b>T</b>+1;
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      Each integer N has a Collatz successor C(N).  If we start with an
+      arbitrary starting value N, we may wish to record the sequence of
+      pairs (N,C(N)) that we generate.  Now if we choose a new starting
+      value, it may happen that at some point, we reach a value already
+      contained in our records.  Then we can stop the iteration immediately,
+      since we already have computed the remaining information.
+    </p>
+
+    <p>
+      One way to do this might be to imagine a vector CVAL of length N_MAX,
+      initially zero.  If we start with some value N, and compute C(N),
+      then we set CVAL(N) = C(N).  Our next step is to compute C(C(N)),
+      and we can set CVAL(C(N)) to C(C(N)) and so on, until we reach a value
+      of 1, or until we encounter a case in which the corresponding entry
+      of CVAL has already been calculated.
+    </p>
+
+    <p>
+      A vector approach like this has some disadvantages.  If we impose a
+      maximum value for our vector, then we must typically allocate a lot
+      of space, since the Collatz sequence occasionally gets quite large.
+      And really, we waste most of this space, since the Collatz sequence
+      jumps around, leaving great gaps.  Even if we run 100 tests, we are
+      unlikely to fill much of our vector.
+    </p>
+
+    <p>
+      If, on the other hand, we are allowed to create a vector that can
+      grow, but still must allocate one entry for every index up to the
+      current maximum, then we encounter the overhead of recopying the
+      vector into a larger version whenever our sequence exceeds the 
+      current size.
+    </p>
+
+    <p>
+      From a user's point of view, the Python dict variable can be a very
+      efficient way of exploring the Collatz sequence.  We start with an
+      empty dict.  Each Collatz experiment begins with a value N and 
+      its successor C(N).  We add N as a key, and C(N) as its value.
+      We continue iterating in this way.  The dict will let us know if
+      the latest value of C(N) should not be used to generate a new key,
+      because that key is already in the dict.  We leave it to Python
+      to efficiently manage the storage and update of the dict.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>collatz_dict</b> is available in
+      <a href = "../../py_src/collatz_dict/collatz_dict.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/collatz/collatz.html">
+      collatz</a>,
+      a Python code which
+      computes and analyzes the Collatz
+      or hailstone or 3n+1 sequence);
+    </p>
+
+    <p>
+      <a href = "../../py_src/collatz_recursive/collatz_recursive.html">
+      collatz_recursive</a>,
+      a Python code which
+      demonstrates recursive programming for
+      the simple Collatz 3n+1 problem.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      polpak</a>,
+      a Python code which
+      evaluates a variety of mathematical functions, polynomials, and
+      sequences, including Bell, Benford, Bernoulli, Bernstein, Cardan, 
+      Catalan, Charlier, Chebyshev, Collatz, Delannoy, Euler, Fibonacci,
+      Gegenbauer, Gudermannian, Hermite, Hofstadter, Jacobi, Krawtchouk,'
+      Laguerre, Legendre, Lerch, Meixner, Mertens, Moebius, Motzkin,
+      Phi, Sigma, Stirling, Tau, Tribonacci, Zernike.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Martin Gardner,<br>
+          "Slither, 3X+1 and Other Curious Questions",<br>
+          Wheels, Life, and Other Mathematical Amusements,<br>
+          WH Freeman, 1983.
+        </li>
+        <li>
+          Patrick Honner,<br>
+          "The Simple Math Problem We Still Can't Solve",<br>
+          Quanta,<br>
+          22 September 2022.
+        </li>
+        <li>
+          Eric Weisstein,<br>
+          "The Collatz Problem",<br>
+          CRC Concise Encyclopedia of Mathematics,<br>
+          CRC Press, 2002,<br>
+          Second edition,<br>
+          ISBN: 1584883472,<br>
+          LC: QA5.W45.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "collatz_dict.py">collatz_dict.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "collatz_dict.sh">collatz_dict.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "collatz_dict.txt">collatz_dict.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 11 June 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>
