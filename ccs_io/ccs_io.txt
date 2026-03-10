@@ -1,0 +1,88 @@
+Wed Oct  8 07:27:25 2025
+
+ccs_io_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test ccs_io().
+
+ccs_write_test():
+  Write a sparse matrix in CCS format to 3 files.
+
+  Full rows    M =  5
+  Full columns N =  5
+  Full storage   =  25
+
+CCS matrix with 0-based indexing
+     #     I     J       A
+  ----  ----  ----  --------------
+
+     0     0     0                 2
+     1     1     0                 3
+     2     0     1                 3
+     3     2     1                -1
+     4     4     1                 4
+     5     1     2                 4
+     6     2     2                -3
+     7     3     2                 1
+     8     4     2                 2
+     9     2     3                 2
+    10     1     4                 6
+    11     4     4                 1
+
+CCS matrix with 1-based indexing
+     #     I     J       A
+  ----  ----  ----  --------------
+
+     1     1     1                 2
+     2     2     1                 3
+     3     1     2                 3
+     4     3     2                -1
+     5     5     2                 4
+     6     2     3                 4
+     7     3     3                -3
+     8     4     3                 1
+     9     5     3                 2
+    10     3     4                 2
+    11     2     5                 6
+    12     5     5                 1
+
+ccs_read_test():
+  Read a sparse matrix in CCS format from 3 files.
+
+CCS matrix with base-0 indexing
+     #     I     J       A
+  ----  ----  ----  --------------
+
+     0     0     0                 2
+     1     1     0                 3
+     2     0     1                 3
+     3     2     1                -1
+     4     4     1                 4
+     5     1     2                 4
+     6     2     2                -3
+     7     3     2                 1
+     8     4     2                 2
+     9     2     3                 2
+    10     1     4                 6
+    11     4     4                 1
+
+CCS matrix with base-1 indexing
+     #     I     J       A
+  ----  ----  ----  --------------
+
+     1     1     1                 2
+     2     2     1                 3
+     3     1     2                 3
+     4     3     2                -1
+     5     5     2                 4
+     6     2     3                 4
+     7     3     3                -3
+     8     4     3                 1
+     9     5     3                 2
+    10     3     4                 2
+    11     2     5                 6
+    12     5     5                 1
+
+ccs_io_test():
+  Normal end of execution.
+Wed Oct  8 07:27:25 2025
