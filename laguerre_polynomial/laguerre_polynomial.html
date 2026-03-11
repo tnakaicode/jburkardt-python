@@ -1,0 +1,199 @@
+<html>
+
+  <head>
+    <title>
+      laguerre_polynomial
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      laguerre_polynomial
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>laguerre_polynomial</b>,
+      a Python code which
+      evaluates the Laguerre polynomial, the generalized Laguerre polynomials,
+      and the Laguerre function.
+    </p>
+
+    <p>
+      The Laguerre polynomial L(n,x) can be defined by:
+      <pre>
+        L(n,x) = exp(x)/n! * d^n/dx^n ( exp(-x) * x^n )
+      </pre>
+      where n is a nonnegative integer.
+    </p>
+
+    <p>
+      The generalized Laguerre polynomial Lm(n,m,x) can be defined by:
+      <pre>
+        Lm(n,m,x) = exp(x)/(x^m*n!) * d^n/dx^n ( exp(-x) * x^(m+n) )
+      </pre>
+      where n and m are nonnegative integers.
+    </p>
+
+    <p>
+      The Laguerre function can be defined by:
+      <pre>
+        Lf(n,alpha,x) = exp(x)/(x^alpha*n!) * d^n/dx^n ( exp(-x) * x^(alpha+n) )
+      </pre>
+      where n is a nonnegative integer and -1.0 < alpha is a real number.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>laguerre_polynomial</b> is available in
+      <a href = "../../c_src/laguerre_polynomial/laguerre_polynomial.html">a C version</a> and
+      <a href = "../../cpp_src/laguerre_polynomial/laguerre_polynomial.html">a C++ version</a> and
+      <a href = "../../f77_src/laguerre_polynomial/laguerre_polynomial.html">a Fortran77 version</a> and
+      <a href = "../../f_src/laguerre_polynomial/laguerre_polynomial.html">a Fortran90 version</a> and
+      <a href = "../../m_src/laguerre_polynomial/laguerre_polynomial.html">a MATLAB version</a> and
+      <a href = "../../octave_src/laguerre_polynomial/laguerre_polynomial.html">an Octave version</a> and
+      <a href = "../../py_src/laguerre_polynomial/laguerre_polynomial.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/laguerre_rule/laguerre_rule.html">
+      laguerre_rule</a>,
+      a Python code which
+      computes and prints a Gauss-Laguerre quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      polpak</a>,
+      a Python code which
+      evaluates a variety of mathematical functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polynomial_conversion/polynomial_conversion.html">
+      polynomial_conversion</a>,
+      a Python code which
+      converts representations of a polynomial between monomial, Bernstein,
+      Chebyshev, Hermite, Laguerre, Legendre, and other forms.
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_polynomial/python_polynomial.html">
+      python_polynomial</a>,
+      a Python code which
+      analyzes a variety of polynomial families, returning the polynomial
+      values, coefficients, derivatives, integrals, roots, or other information.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_values/test_values.html">
+      test_values</a>,
+      a Python code which
+      supplies test values of various mathematical functions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Theodore Chihara,<br>
+          An Introduction to Orthogonal Polynomials,<br>
+          Gordon and Breach, 1978,<br>
+          ISBN: 0677041500,<br>
+          LC: QA404.5 C44.
+        </li>
+        <li>
+          Walter Gautschi,<br>
+          Orthogonal Polynomials: Computation and Approximation,<br>
+          Oxford, 2004,<br>
+          ISBN: 0-19-850672-4,<br>
+          LC: QA404.5 G3555.
+        </li>
+        <li>
+          Frank Olver, Daniel Lozier, Ronald Boisvert, Charles Clark,<br>
+          NIST Handbook of Mathematical Functions,<br>
+          Cambridge University Press, 2010,<br>
+          ISBN: 978-0521192255,<br>
+          LC: QA331.N57.
+        </li>
+        <li>
+          Gabor Szego,<br>
+          Orthogonal Polynomials,<br>
+          American Mathematical Society, 1992,<br>
+          ISBN: 0821810235,<br>
+          LC: QA3.A5.v23.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "laguerre_polynomial_test.m">laguerre_polynomial_test.m</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "laguerre_polynomial_test.sh">laguerre_polynomial_test.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "laguerre_polynomial_test.txt">laguerre_polynomial_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "l_polynomial.png">l_polynomial.png</a>
+        </li>
+        <li>
+          <a href = "lf05_function.png">lf05_function.png</a>
+        </li>
+        <li>
+          <a href = "lm1_polynomial.png">lm1_polynomial.png</a>
+        </li>
+        <li>
+          <a href = "lm2_polynomial.png">lm2_polynomial.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 24 February 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

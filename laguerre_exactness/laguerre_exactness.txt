@@ -1,0 +1,57 @@
+Wed Oct  8 08:02:48 2025
+
+laguerre_exactness_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test laguerre_exactness().
+
+laguerre_exactness():
+  Investigate the exactness of a Gauss-Laguerre
+  quadrature rule for integrating monomials
+  with density exp(-x) or density 1
+  over the [A,+oo) interval.
+
+User input:
+  Quadrature rule X file = "lag_o04_x.txt".
+  Quadrature rule W file = "lag_o04_w.txt".
+  Quadrature rule R file = "lag_o04_r.txt".
+  Maximum degree to check =  8
+  OPTION = 0, integrate exp(-x)*f(x).
+
+  The quadrature rule to be tested is
+  a Gauss-Laguerre quadrature rule of ORDER =  4
+  for integrals of the type:
+    Integral (  0.0  <= x < +oo ) f(x) exp(-x) dx
+
+  Weights W:
+
+[6.03154104e-01 3.57418692e-01 3.88879085e-02 5.39294706e-04]
+
+  Abscissas X:
+
+[0.32254769 1.7457611  4.5366203  9.39507091]
+
+  Region R:
+
+[0.e+00 1.e+30]
+
+  A Gauss-Laguerre rule would be able to exactly
+  integrate monomials up to and including 
+  degree =  7
+
+  Degree      Error
+
+   0        0.0000000000000002
+   1        0.0000000000000002
+   2        0.0000000000000001
+   3        0.0000000000000001
+   4        0.0000000000000000
+   5        0.0000000000000005
+   6        0.0000000000000013
+   7        0.0000000000000020
+   8        0.0142857142857114
+   9        0.0650793650793619
+
+laguerre_exactness_test():
+  Normal end of execution.
+Wed Oct  8 08:02:48 2025

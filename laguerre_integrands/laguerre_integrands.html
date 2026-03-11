@@ -1,0 +1,282 @@
+<html>
+
+  <head>
+    <title>
+      laguerre_integrands
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      laguerre_integrands
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>laguerre_integrands</b>,
+      a Python code which 
+      defines Laguerre integration problems over 
+      semi-infinite intervals of the form [ALPHA,+oo).
+    </p>
+
+    <p>
+      The test integrands would normally be used to testing one 
+      dimensional quadrature software.  It is possible to invoke a 
+      particular function by index, or to try out all available functions, 
+      as demonstrated in the sample calling program.
+    </p>
+
+    <p>
+      The test integrands include:
+      <ol>
+        <li>
+          1 / ( x * log(x)^2 );
+        </li>
+        <li>
+          1 / ( x * log(x)^(3/2) );
+        </li>
+        <li>
+          1 / ( x^1.01 );
+        </li>
+        <li>
+          Sine integral;
+        </li>
+        <li>
+          Fresnel integral;
+        </li>
+        <li>
+          Complementary error function;
+        </li>
+        <li>
+          Bessel function;
+        </li>
+        <li>
+          Debye function;
+        </li>
+        <li>
+          Gamma(Z=4) function;
+        </li>
+        <li>
+          1/(1+x*x); (Stroud)
+        </li>
+        <li>
+          1 / ( (1+x) * sqrt(x) ); (Stroud)
+        </li>
+        <li>
+          exp ( - x ) * cos ( x ); (Stroud)
+        </li>
+        <li>
+          sin(x) / x; (Stroud)
+        </li>
+        <li>
+          sin ( exp(-x) + exp(-4x) ); (Stroud)
+        </li>
+        <li>
+          log(x) / ( 1+100*x*x); (QUADPACK)
+        </li>
+        <li>
+          cos(0.5*pi*x) / sqrt(x); (QUADPACK)
+        </li>
+        <li>
+          exp ( - x / 2^beta ) * cos ( x ) / sqrt ( x )
+        </li>
+        <li>
+          x^2 * exp ( - x / 2^beta )
+        </li>
+        <li>
+          x^(beta-1) / ( 1 + 10 x )^2
+        </li>
+        <li>
+          1 / ( 2^beta * ( ( x - 1 )^2 + (1/4)^beta ) * ( x - 2 ) )
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      The library includes not just the integrand, but also the value of
+      ALPHA which defines the interval of integration, and the exact value 
+      of the integral (or, typically, an estimate of this value).  
+      Thus, for each integrand function, three subroutines are supplied.  For
+      instance, for function #1, we have the routines:
+      <ul>
+        <li>
+          <b>P01_FUN</b> evaluates the integrand for problem 1.
+        </li>
+        <li>
+          <b>P01_ALPHA</b> returns the value of ALPHA for problem 1.
+        </li>
+        <li>
+          <b>P01_EXACT</b> returns the estimated integral for problem 1.
+        </li>
+        <li>
+          <b>P01_TITLE</b> returns a title for problem 1.
+        </li>
+      </ul>
+      So once you have the calling sequences for these routines, you
+      can easily evaluate the function, or integrate it on the 
+      appropriate interval, or compare your estimate of the integral
+      to the exact value.
+    </p>
+
+    <p>
+      Moreover, since the same interface is used for each function,
+      if you wish to work with problem 5 instead, you simply change
+      the "01" to "05" in your routine calls.
+    </p>
+
+    <p>
+      If you wish to call <i>all</i> of the functions, then you
+      simply use the generic interface, which again has three
+      subroutines, but which requires you to specify the problem
+      number as an extra input argument:
+      <ul>
+        <li>
+          <b>P00_FUN</b> evaluates the integrand for any problem.
+        </li>
+        <li>
+          <b>P00_ALPHA</b> returns the value of ALPHA for any problem.
+        </li>
+        <li>
+          <b>P00_EXACT</b> returns the exact integral for any problem.
+        </li>
+        <li>
+          <b>P00_TITLE</b> returns a title for any problem.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Finally, some demonstration routines are built in for
+      simple quadrature methods.  These routines include
+      <ul>
+        <li>
+          <b>P00_EXP_TRANSFORM</b> applies an exponential change of
+          variables, and then uses a Gauss-Legendre quadrature formula
+          to estimate the integral for any problem.
+        </li>
+        <li>
+          <b>P00_GAUSS_LAGUERRE</b> uses a Gauss-Laguerre quadrature formula
+          to estimate the integral for any problem.
+        </li>
+        <li>
+          <b>P00_RAT_TRANSFORM</b> applies a rational change of
+          variables, and then uses a Gauss-Legendre quadrature formula
+          to estimate the integral for any problem.
+        </li>
+      </ul>
+      and can be used with any of the sample integrands.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>laguerre_integrands</b> is available in
+      <a href = "../../c_src/laguerre_integrands/laguerre_integrands.html">a C version</a> and
+      <a href = "../../cpp_src/laguerre_integrands/laguerre_integrands.html">a C++ version</a> and
+      <a href = "../../f77_src/laguerre_integrands/laguerre_integrands.html">a Fortran77version</a> and
+      <a href = "../../f_src/laguerre_integrands/laguerre_integrands.html">a Fortran90 version</a> and
+      <a href = "../../m_src/laguerre_integrands/laguerre_integrands.html">a MATLAB version</a> and
+      <a href = "../../octave_src/laguerre_integrands/laguerre_integrands.html">an Octave version</a> and
+      <a href = "../../py_src/laguerre_integrands/laguerre_integrands.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/quad_rule/quad_rule.html">
+      quad_rule</a>,
+      a Python code which 
+      defines various quadrature rules.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_int/test_int.html">
+      test_int</a>,
+      a Python code which
+      defines some test integration problems over finite intervals.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_int_2d/test_int_2d.html">
+      test_int_2d</a>,
+      a Python code which
+      defines test integrands for 2D quadrature rules.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Philip Davis, Philip Rabinowitz,<br>
+          Methods of Numerical Integration,<br>
+          Second Edition,<br>
+          Dover, 2007,<br>
+          ISBN: 0486453391,<br>
+          LC: QA299.3.D28.
+        </li>
+        <li>
+          Robert Piessens, Elise deDoncker-Kapenga, 
+          Christian Ueberhuber, David Kahaner,<br>
+          QUADPACK: A Subroutine Package for Automatic Integration,<br>
+          Springer, 1983,<br>
+          ISBN: 3540125531,<br>
+          LC: QA299.3.Q36.
+        </li>
+        <li>
+          Arthur Stroud, Don Secrest,<br>
+          Gaussian Quadrature Formulas,<br>
+          Prentice Hall, 1966,<br>
+          LC: QA299.4G3S7.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "laguerre_integrands.py">laguerre_integrands.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "laguerre_integrands.sh">laguerre_integrands.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "laguerre_integrands.txt">laguerre_integrands.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 21 December 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,33 @@
+Wed Oct  8 08:02:49 2025
+
+laguerre_rule_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test laguerre_rule().
+
+laguerre_rule():
+  Compute a Gauss-Laguerre rule for approximating
+    Integral ( a <= x < +oo ) exp(-b*(x-a)) f(x) dx
+  of order ORDER.
+
+  The user specifies ORDER, A, B, and FILENAME.
+
+  ORDER is the number of points.
+  A is the left endpoint (typically 0).
+  B is the exponential scale factor (typically 1).
+  FILENAME is used to generate 3 files:
+  * filename_w.txt - the weight file
+  * filename_x.txt - the abscissa file.
+  * filename_r.txt - the region file.
+
+  ORDER =  4
+  A =  0.0
+  B =  1.0
+  FILENAME = "lag_o4".
+  abscissas saved as "lag_o4_x.txt"
+  weights saved as "lag_o4_w.txt"
+  region saved as "lag_o4_r.txt"
+
+laguerre_rule_test():
+  Normal end of execution.
+Wed Oct  8 08:02:49 2025

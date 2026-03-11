@@ -1,0 +1,57 @@
+Wed Oct  8 08:00:43 2025
+
+lagrange_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test lagrange().
+
+lagrange_basis_antideriv_test():
+  lagrange_basis_antideriv() evaluates the antiderivative
+  of a Lagrange basis polynomial.
+  Graphics saved as "lagrange_basis_antideriv.png"
+
+lagrange_basis_coef_test():
+  lagrange_basis_coef() returns the coefficients
+  for a Lagrange basis polynomial.
+
+  Abscissas:
+
+     0:            -3
+     1:            -2
+     2:            -1
+     3:             0
+     4:             1
+     5:             2
+     6:             3
+  L(1)(x):
+  p(x) =   0.00138889 * x^6 - 0.00416667 * x^5 - 0.00694444 * x^4 + 0.0208333 * x^3 + 0.00555556 * x^2 - 0.0166667 * x
+  L(2)(x):
+  p(x) = - 0.00833333 * x^6 + 0.0166667 * x^5 + 0.0833333 * x^4 - 0.166667 * x^3 - 0.075 * x^2 + 0.15 * x
+  L(3)(x):
+  p(x) =   0.0208333 * x^6 - 0.0208333 * x^5 - 0.270833 * x^4 + 0.270833 * x^3 + 0.75 * x^2 - 0.75 * x
+  L(4)(x):
+  p(x) = - 0.0277778 * x^6 + 0.388889 * x^4 + 1.11022e-16 * x^3 - 1.36111 * x^2 - 5.55112e-17 * x + 1
+  L(5)(x):
+  p(x) =   0.0208333 * x^6 + 0.0208333 * x^5 - 0.270833 * x^4 - 0.270833 * x^3 + 0.75 * x^2 + 0.75 * x
+  L(6)(x):
+  p(x) = - 0.00833333 * x^6 - 0.0166667 * x^5 + 0.0833333 * x^4 + 0.166667 * x^3 - 0.075 * x^2 - 0.15 * x
+  L(7)(x):
+  p(x) =   0.00138889 * x^6 + 0.00416667 * x^5 - 0.00694444 * x^4 - 0.0208333 * x^3 + 0.00555556 * x^2 + 0.0166667 * x
+
+lagrange_basis_deriv_test():
+  lagrange_basis_deriv() evaluates the derivative of a
+  Lagrange basis polynomial.
+  Graphics saved as "lagrange_basis_deriv.png"
+
+lagrange_basis_deriv_test():
+  lagrange_basis_deriv() evaluates the derivative of a
+  Lagrange basis polynomial.
+  Graphics saved as "lagrange_basis_deriv2.png"
+
+lagrange_basis_value_test():
+  lagrange_basis_value() evaluates Lagrange basis polynomials.
+  Graphics saved as "lagrange_basis_value.png"
+
+lagrange_test():
+  Normal end of execution.
+Wed Oct  8 08:00:44 2025

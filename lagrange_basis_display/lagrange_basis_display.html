@@ -1,0 +1,178 @@
+<html>
+
+  <head>
+    <title>
+      lagrange_basis_display
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      lagrange_basis_display
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>lagrange_basis_display</b>,
+      a Python code which
+      displays the basis functions associated with any set of interpolation
+      points to be used for Lagrange interpolation.
+    </p>
+
+    <p>
+      The Lagrange interpolating polynomial to a set of m+1 data pairs (xi,yi)
+      can be represented as
+      <pre>
+        p(x) = sum ( 1 <= i <= m + 1 ) yi * l(i,x)
+      </pre>
+      Each function l(i,x) is a Lagrange basis function associated with the
+      set of x data values.  Each l(i,x) is a polynomial of degree m, which
+      is 1 at node xi and zero at the other nodes.  Moreover, there is an
+      explicit formula:
+      <pre>
+        l(i,x) = product ( 1 <= j <= m + 1, j /= i ) ( x  - xj ) 
+               / product ( 1 <= j <= m + 1, j /= i ) ( xi - xj )
+      </pre>
+      Thus the interpolating polynomial can be represented as a linear combination
+      of the Lagrange basis functions, and the coefficients are simply the
+      data values yi.
+    </p>
+
+    <p>
+      For a given set of m+1 data pairs (xi,yi), you may also define the same
+      interpolating polynomial using a Vandermonde matrix; this approach
+      essentially uses the monomials 1, x, x^2, ..., x^m as the basis functions.
+      The unknown polynomial coefficients c must be determined by forming
+      and solving the Vandermonde system; not only is this method more costly,
+      but this linear system is numerically ill-conditioned, so that the resulting
+      answers can be unreliable.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>lagrange_basis_display</b> is available in
+      <a href = "../../m_src/lagrange_basis_display/lagrange_basis_display.html">a MATLAB version</a> and
+      <a href = "../../octave_src/lagrange_basis_display/lagrange_basis_display.html">an Octave version</a> and
+      <a href = "../../py_src/lagrange_basis_display/lagrange_basis_display.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/lagrange_interp_1d/lagrange_interp_1d.html">
+      lagrange_interp_1d</a>,
+      a Python code which
+      defines and evaluates the Lagrange polynomial p(x) 
+      which interpolates a set of data, so that p(x(i)) = y(i).
+    </p>
+
+    <p>
+      <a href = "../../py_src/vandermonde_interp_1d/vandermonde_interp_1d.html">
+      vandermonde_interp_1d</a>,
+      a Python code which
+      finds a polynomial interpolant to data y(x) of a 1D argument,
+      by setting up and solving a linear system for the polynomial coefficients,
+      involving the Vandermonde matrix.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Kendall Atkinson,<br>
+          An Introduction to Numerical Analysis,<br>
+          Prentice Hall, 1989,<br>
+          ISBN: 0471624896,<br>
+          LC: QA297.A94.1989.
+        </li>
+        <li>
+          Philip Davis,<br>
+          Interpolation and Approximation,<br>
+          Dover, 1975,<br>
+          ISBN: 0-486-62495-1,<br>
+          LC: QA221.D33
+        </li>
+        <li>
+          David Kahaner, Cleve Moler, Steven Nash,<br>
+          Numerical Methods and Software,<br>
+          Prentice Hall, 1989,<br>
+          ISBN: 0-13-627258-4,<br>
+          LC: TA345.K34.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lagrange_basis_display.py">lagrange_basis_display.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "lagrange_basis_display.sh">lagrange_basis_display.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "lagrange_basis_display.txt">
+          lagrange_basis_display.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Plots made by the test include:
+      <ul>
+        <li>
+          <a href = "lagrange_cheby.png">lagrange_cheby.png</a>,
+          the Lagrange basis functions of degree 10, for the Chebyshev points
+          on [-1,+1].
+        </li>
+        <li>
+          <a href = "lagrange_even.png">lagrange_evem.png</a>,
+          the Lagrange basis functions of degree 10, for evenly-spaced points
+          on [0,+1].
+        </li>
+        <li>
+          <a href = "standard_even.png">standard_even.png</a>,
+          the standard monomial basis functions up to degree 10, for evenly-spaced points
+          on [0,+1].
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 August 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

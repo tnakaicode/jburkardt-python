@@ -1,0 +1,128 @@
+<html>
+
+  <head>
+    <title>
+      kronrod_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      kronrod_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>kronrod_rule</b>,
+      a Python code which
+      computes both a Gauss quadrature rule of order N, and the
+      Gauss-Kronrod rule of order 2*N+1.
+    </p>
+
+    <p>
+      A pair of Gauss and Gauss-Kronrod quadrature rules are typically
+      used to provide an error estimate for an integral.  The integral
+      is estimated using the Gauss rule, and then the Gauss-Kronrod
+      rule provides a higher precision estimate.  The difference between
+      the two estimates is taken as an approximation to the level
+      of error.
+    </p>
+
+    <p>
+      The advantage of using a Gauss and Gauss-Kronrod pair is that
+      the second rule, which uses 2*N+1 points, actually includes the
+      N points in the previous Gauss rule.  This means that the function
+      values from that computation can be reused.  This efficiency comes
+      at the cost of a mild reduction in the degree of polynomial precision
+      of the Gauss-Kronrod rule.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>kronrod_rule</b> is available in
+      <a href = "../../c_src/kronrod_rule/kronrod_rule.html">a C version</a> and
+      <a href = "../../cpp_src/kronrod_rule/kronrod_rule.html">a C++ version</a> and
+      <a href = "../../f_src/kronrod_rule/kronrod_rule.html">a Fortran90 version</a> and
+      <a href = "../../m_src/kronrod_rule/kronrod_rule.html">a MATLAB version</a> and
+      <a href = "../../octave_src/kronrod_rule/kronrod_rule.html">an Octave version</a> and
+      <a href = "../../py_src/kronrod_rule/kronrod_rule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_rule/python_rule.html">
+      python_rule</a>,
+      a Python code which
+      computes a quadrature rule which
+      estimates the integral of a function f(x), which might be defined over 
+      a one dimensional region (a line) or more complex shapes such as 
+      a circle, a triangle, a quadrilateral, a polygon, or a higher dimensional
+      region, and which might include an associated weight function w(x).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Robert Piessens, Maria Branders,<br>
+          A Note on the Optimal Addition of Abscissas to Quadrature Formulas
+          of Gauss and Lobatto,<br>
+          Mathematics of Computation,<br>
+          Volume 28, Number 125, January 1974, pages 135-139.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "kronrod_rule.py">kronrod_rule.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "kronrod_rule.sh">kronrod_rule.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "kronrod_rule.txt">kronrod_rule.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 05 October 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

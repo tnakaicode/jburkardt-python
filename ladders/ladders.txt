@@ -1,0 +1,36 @@
+Wed Oct  8 07:59:42 2025
+
+ladders_test():
+  python version: 3.10.12
+  ladders() moves from a starting word to a goal word
+  by changing one letter at a time.
+
+  Initial word list is "sowpods.txt"
+  Word 5 is ABATOR
+  Number of words is  267751
+
+  Starting word is "COLD"
+  Goal word is     "WARM"
+  Word length is  4
+  Word 95 is ALEC
+  Number of words is  5454
+
+  Ladders returns the path:
+['COLD', 'WOLD', 'WALD', 'WARD', 'WARM']
+
+  Initial word list is "sowpods.txt"
+  Word 5 is ABATOR
+  Number of words is  267751
+
+  Starting word is "BLACK"
+  Goal word is     "WHITE"
+  Word length is  5
+  Word 95 is ADAWS
+  Number of words is  12478
+
+  Ladders returns the path:
+['BLACK', 'CLACK', 'CHACK', 'CHICK', 'CHINK', 'CHINE', 'WHINE', 'WHITE']
+
+ladders_test():
+  Normal end of execution.
+Wed Oct  8 08:00:43 2025

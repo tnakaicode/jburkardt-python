@@ -1,0 +1,16 @@
+Wed Oct  8 08:01:29 2025
+
+lagrange_basis_display_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test lagrange_basis_display().
+
+  Graphics saved as "standard_even.png"
+
+  Graphics saved as "lagrange_even.png".
+
+  Graphics saved as "lagrange_cheby.png".
+
+lagrange_basis_display_test():
+  Normal end of execution.
+Wed Oct  8 08:01:30 2025

@@ -1,0 +1,2699 @@
+Wed Oct  8 08:00:44 2025
+
+lagrange_approx_1d_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test lagrange_approx_1d().
+  These tests need test_interp_1d.
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  0
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.32923917977664807
+  Graphics saved as "p1_lageven_0_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  0
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.1664516333360366
+  Graphics saved as "p1_lageven_0_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  0
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.04196660577173235
+  Graphics saved as "p1_lageven_0_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  1
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.24156258323185537
+  Graphics saved as "p1_lageven_1_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  1
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.12359561299928887
+  Graphics saved as "p1_lageven_1_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  1
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.03144897380154006
+  Graphics saved as "p1_lageven_1_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  2
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.18761521903397196
+  Graphics saved as "p1_lageven_2_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  2
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.08874178643435669
+  Graphics saved as "p1_lageven_2_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  2
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.022018901113384937
+  Graphics saved as "p1_lageven_2_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  3
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.16527967173321312
+  Graphics saved as "p1_lageven_3_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  3
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.07977866023237261
+  Graphics saved as "p1_lageven_3_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  3
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.020121042179595188
+  Graphics saved as "p1_lageven_3_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  4
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.12440226069753946
+  Graphics saved as "p1_lageven_4_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  4
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.06154094945120156
+  Graphics saved as "p1_lageven_4_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  4
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.015522649673891328
+  Graphics saved as "p1_lageven_4_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  8
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.09853040554856726
+  Graphics saved as "p1_lageven_8_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  8
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.05398029116179238
+  Graphics saved as "p1_lageven_8_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  8
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.013647198436919004
+  Graphics saved as "p1_lageven_8_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  16
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  3.6640510383884514e-07
+  Graphics saved as "p1_lageven_16_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  16
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.035518966568174694
+  Graphics saved as "p1_lageven_16_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  1
+  Use polynomial approximant of degree  16
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.009220477018894752
+  Graphics saved as "p1_lageven_16_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  0
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.31085504560003524
+  Graphics saved as "p2_lageven_0_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  0
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.1503217606712541
+  Graphics saved as "p2_lageven_0_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  0
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.03766302569503019
+  Graphics saved as "p2_lageven_0_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  1
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.1489276929270988
+  Graphics saved as "p2_lageven_1_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  1
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.06953702947283405
+  Graphics saved as "p2_lageven_1_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  1
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.017236961888652397
+  Graphics saved as "p2_lageven_1_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  2
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.05967554408612283
+  Graphics saved as "p2_lageven_2_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  2
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.02814954310633935
+  Graphics saved as "p2_lageven_2_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  2
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.007032601416093264
+  Graphics saved as "p2_lageven_2_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  3
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.0303801207013926
+  Graphics saved as "p2_lageven_3_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  3
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.013477512867410262
+  Graphics saved as "p2_lageven_3_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  3
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.0033181286009788423
+  Graphics saved as "p2_lageven_3_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  4
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.029009375011584654
+  Graphics saved as "p2_lageven_4_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  4
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.013019999247695261
+  Graphics saved as "p2_lageven_4_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  4
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.0032233415056487696
+  Graphics saved as "p2_lageven_4_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  8
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.010293811112043553
+  Graphics saved as "p2_lageven_8_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  8
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.0042148991556629324
+  Graphics saved as "p2_lageven_8_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  8
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.0010274867321119882
+  Graphics saved as "p2_lageven_8_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  16
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  2.1613815554190604e-08
+  Graphics saved as "p2_lageven_16_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  16
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.0017863447046587702
+  Graphics saved as "p2_lageven_16_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  2
+  Use polynomial approximant of degree  16
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.0004204271709506721
+  Graphics saved as "p2_lageven_16_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  0
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.17724784708602068
+  Graphics saved as "p3_lageven_0_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  0
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.09229739816643866
+  Graphics saved as "p3_lageven_0_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  0
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.02350563917060927
+  Graphics saved as "p3_lageven_0_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  1
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.17699993760168525
+  Graphics saved as "p3_lageven_1_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  1
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.09225929479358987
+  Graphics saved as "p3_lageven_1_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  1
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.02349662513036264
+  Graphics saved as "p3_lageven_1_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  2
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.14940763425782808
+  Graphics saved as "p3_lageven_2_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  2
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.07419440324554841
+  Graphics saved as "p3_lageven_2_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  2
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.01870199544352562
+  Graphics saved as "p3_lageven_2_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  3
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.13017536529513118
+  Graphics saved as "p3_lageven_3_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  3
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.05850457821297021
+  Graphics saved as "p3_lageven_3_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  3
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.014141950120779293
+  Graphics saved as "p3_lageven_3_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  4
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.1301354036729927
+  Graphics saved as "p3_lageven_4_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  4
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.057251226454156964
+  Graphics saved as "p3_lageven_4_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  4
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.013473823870068567
+  Graphics saved as "p3_lageven_4_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  8
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  2.451987788173262e-13
+  Graphics saved as "p3_lageven_8_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  8
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  1.5539951501752995e-13
+  Graphics saved as "p3_lageven_8_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  8
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  3.5560476659095506e-14
+  Graphics saved as "p3_lageven_8_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  16
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  6.800619395585793e-14
+  Graphics saved as "p3_lageven_16_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  16
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  1.7033308905441417e-13
+  Graphics saved as "p3_lageven_16_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  3
+  Use polynomial approximant of degree  16
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  3.041417650781161e-14
+  Graphics saved as "p3_lageven_16_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  0
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.3402744896557264
+  Graphics saved as "p4_lageven_0_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  0
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.16846935293369952
+  Graphics saved as "p4_lageven_0_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  0
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.04251156799348509
+  Graphics saved as "p4_lageven_0_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  1
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.155148988501225
+  Graphics saved as "p4_lageven_1_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  1
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.07639019583850763
+  Graphics saved as "p4_lageven_1_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  1
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.01930003629304654
+  Graphics saved as "p4_lageven_1_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  2
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.12805839617958276
+  Graphics saved as "p4_lageven_2_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  2
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.06197883952264023
+  Graphics saved as "p4_lageven_2_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  2
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.015561524212693969
+  Graphics saved as "p4_lageven_2_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  3
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.10365544184111357
+  Graphics saved as "p4_lageven_3_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  3
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.05037472125026538
+  Graphics saved as "p4_lageven_3_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  3
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.012708149405967125
+  Graphics saved as "p4_lageven_3_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  4
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.07596647397602681
+  Graphics saved as "p4_lageven_4_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  4
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.03626396848453699
+  Graphics saved as "p4_lageven_4_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  4
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.009092713641357004
+  Graphics saved as "p4_lageven_4_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  8
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.0440258105484956
+  Graphics saved as "p4_lageven_8_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  8
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.02078576105141718
+  Graphics saved as "p4_lageven_8_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  8
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.00523983422260153
+  Graphics saved as "p4_lageven_8_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  16
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  1.3837793608630493e-07
+  Graphics saved as "p4_lageven_16_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  16
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.008226449010006236
+  Graphics saved as "p4_lageven_16_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  4
+  Use polynomial approximant of degree  16
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.0020862489333644506
+  Graphics saved as "p4_lageven_16_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  0
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  2.43701725185001
+  Graphics saved as "p5_lageven_0_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  0
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.9124610885899869
+  Graphics saved as "p5_lageven_0_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  0
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.2251837157230221
+  Graphics saved as "p5_lageven_0_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  1
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  2.4256725456919135
+  Graphics saved as "p5_lageven_1_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  1
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.9056582013045945
+  Graphics saved as "p5_lageven_1_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  1
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.22344981534869435
+  Graphics saved as "p5_lageven_1_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  2
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  2.3648124497852923
+  Graphics saved as "p5_lageven_2_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  2
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.9013975612147126
+  Graphics saved as "p5_lageven_2_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  2
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.2233299114134663
+  Graphics saved as "p5_lageven_2_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  3
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  2.3427518414037007
+  Graphics saved as "p5_lageven_3_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  3
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.881054612748959
+  Graphics saved as "p5_lageven_3_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  3
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.21736521073156403
+  Graphics saved as "p5_lageven_3_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  4
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  2.088485631284728
+  Graphics saved as "p5_lageven_4_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  4
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.8075211018099383
+  Graphics saved as "p5_lageven_4_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  4
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.20369404401826366
+  Graphics saved as "p5_lageven_4_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  8
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  1.7448274113237248
+  Graphics saved as "p5_lageven_8_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  8
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.6835619263295385
+  Graphics saved as "p5_lageven_8_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  8
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.17325658048275985
+  Graphics saved as "p5_lageven_8_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  16
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  6.290552597315095e-07
+  Graphics saved as "p5_lageven_16_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  16
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.5451758202685553
+  Graphics saved as "p5_lageven_16_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  5
+  Use polynomial approximant of degree  16
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.139143795936499
+  Graphics saved as "p5_lageven_16_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  0
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.09216990145983411
+  Graphics saved as "p6_lageven_0_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  0
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.04654501463340103
+  Graphics saved as "p6_lageven_0_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  0
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.011809755535534993
+  Graphics saved as "p6_lageven_0_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  1
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.05569983815626218
+  Graphics saved as "p6_lageven_1_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  1
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.02599409147281932
+  Graphics saved as "p6_lageven_1_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  1
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.006420638380010299
+  Graphics saved as "p6_lageven_1_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  2
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.052126669651198415
+  Graphics saved as "p6_lageven_2_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  2
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.02474488622163757
+  Graphics saved as "p6_lageven_2_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  2
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.006143954407698087
+  Graphics saved as "p6_lageven_2_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  3
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.01990698002704966
+  Graphics saved as "p6_lageven_3_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  3
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.009519320741875703
+  Graphics saved as "p6_lageven_3_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  3
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.00236086158144033
+  Graphics saved as "p6_lageven_3_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  4
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.01384229065907379
+  Graphics saved as "p6_lageven_4_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  4
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.00624732757073584
+  Graphics saved as "p6_lageven_4_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  4
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.001502032243844998
+  Graphics saved as "p6_lageven_4_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  8
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.0004099001768526804
+  Graphics saved as "p6_lageven_8_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  8
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.0002293330920410575
+  Graphics saved as "p6_lageven_8_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  8
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  5.483790670649415e-05
+  Graphics saved as "p6_lageven_8_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  16
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  5.032505696181529e-13
+  Graphics saved as "p6_lageven_16_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  16
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  1.2577922908584254e-07
+  Graphics saved as "p6_lageven_16_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  6
+  Use polynomial approximant of degree  16
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  3.10301448503771e-08
+  Graphics saved as "p6_lageven_16_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  0
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.4948035606679524
+  Graphics saved as "p7_lageven_0_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  0
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.2531881019517684
+  Graphics saved as "p7_lageven_0_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  0
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.06438793965484185
+  Graphics saved as "p7_lageven_0_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  1
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.441868919257494
+  Graphics saved as "p7_lageven_1_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  1
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.22463619309678592
+  Graphics saved as "p7_lageven_1_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  1
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.056962952690255544
+  Graphics saved as "p7_lageven_1_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  2
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.3958486930028647
+  Graphics saved as "p7_lageven_2_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  2
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.20204543532293492
+  Graphics saved as "p7_lageven_2_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  2
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.051280844611973166
+  Graphics saved as "p7_lageven_2_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  3
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.3329834012737942
+  Graphics saved as "p7_lageven_3_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  3
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.17090857015582675
+  Graphics saved as "p7_lageven_3_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  3
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.043324776700326445
+  Graphics saved as "p7_lageven_3_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  4
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.32065256713745016
+  Graphics saved as "p7_lageven_4_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  4
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.16504446881882687
+  Graphics saved as "p7_lageven_4_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  4
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.041867028925428366
+  Graphics saved as "p7_lageven_4_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  8
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.22812571389815672
+  Graphics saved as "p7_lageven_8_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  8
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.12414866631112247
+  Graphics saved as "p7_lageven_8_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  8
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.03156785624310269
+  Graphics saved as "p7_lageven_8_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  16
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  1.6107836578997353e-06
+  Graphics saved as "p7_lageven_16_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  16
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.08885517452645851
+  Graphics saved as "p7_lageven_16_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  7
+  Use polynomial approximant of degree  16
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.022876270360422696
+  Graphics saved as "p7_lageven_16_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  0
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.07033108543690507
+  Graphics saved as "p8_lageven_0_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  0
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.03551302947625699
+  Graphics saved as "p8_lageven_0_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  0
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.009005348004539476
+  Graphics saved as "p8_lageven_0_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  1
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.07033108543690507
+  Graphics saved as "p8_lageven_1_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  1
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.03551302947625699
+  Graphics saved as "p8_lageven_1_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  1
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.009005348004539476
+  Graphics saved as "p8_lageven_1_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  2
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.04842930483880248
+  Graphics saved as "p8_lageven_2_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  2
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.024157272196574393
+  Graphics saved as "p8_lageven_2_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  2
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.006093182558339208
+  Graphics saved as "p8_lageven_2_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  3
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.04842930483880247
+  Graphics saved as "p8_lageven_3_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  3
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.024157272196574393
+  Graphics saved as "p8_lageven_3_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  3
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.006093182558339208
+  Graphics saved as "p8_lageven_3_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  4
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.03279275417456053
+  Graphics saved as "p8_lageven_4_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  4
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.016353638517279778
+  Graphics saved as "p8_lageven_4_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  4
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.004105583317780355
+  Graphics saved as "p8_lageven_4_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  8
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  0.013769208548614565
+  Graphics saved as "p8_lageven_8_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  8
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.007447948127804347
+  Graphics saved as "p8_lageven_8_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  8
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.001859058853876259
+  Graphics saved as "p8_lageven_8_1000.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  16
+  Number of data points =  16
+
+  L2 approximation error averaged per data node =  3.971251457129523e-09
+  Graphics saved as "p8_lageven_16_16.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  16
+  Number of data points =  64
+
+  L2 approximation error averaged per data node =  0.0015012908680018724
+  Graphics saved as "p8_lageven_16_64.png"
+
+lagrange_approx_1d_test02():
+  Approximate evenly spaced data from problem  8
+  Use polynomial approximant of degree  16
+  Number of data points =  1000
+
+  L2 approximation error averaged per data node =  0.0003802592655447671
+  Graphics saved as "p8_lageven_16_1000.png"
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 0
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.318305449804115
+  Graphics saved as "p1_lagcheby_0_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 0
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.1608217878924914
+  Graphics saved as "p1_lagcheby_0_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 0
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.040732775500817546
+  Graphics saved as "p1_lagcheby_0_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 1
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.23050623287047112
+  Graphics saved as "p1_lagcheby_1_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 1
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.11355196684206319
+  Graphics saved as "p1_lagcheby_1_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 1
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.028715083840172816
+  Graphics saved as "p1_lagcheby_1_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 2
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.14804970477040585
+  Graphics saved as "p1_lagcheby_2_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 2
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.07962434604524248
+  Graphics saved as "p1_lagcheby_2_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 2
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.020363879092388102
+  Graphics saved as "p1_lagcheby_2_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 3
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.14019147699669063
+  Graphics saved as "p1_lagcheby_3_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 3
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.07152605015364591
+  Graphics saved as "p1_lagcheby_3_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 3
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.018193022282313134
+  Graphics saved as "p1_lagcheby_3_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 4
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.09550662310962989
+  Graphics saved as "p1_lagcheby_4_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 4
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.05222663014485804
+  Graphics saved as "p1_lagcheby_4_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 4
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.013373477086413685
+  Graphics saved as "p1_lagcheby_4_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 8
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.07675697662531687
+  Graphics saved as "p1_lagcheby_8_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 8
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.045638271045365386
+  Graphics saved as "p1_lagcheby_8_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 8
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.011687122876951454
+  Graphics saved as "p1_lagcheby_8_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 16
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  1.1634279889896004e-08
+  Graphics saved as "p1_lagcheby_16_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 16
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.029604999236848097
+  Graphics saved as "p1_lagcheby_16_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 1
+  Use polynomial approximant of degree. 16
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.007760597839800164
+  Graphics saved as "p1_lagcheby_16_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 0
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.3405697632544012
+  Graphics saved as "p2_lagcheby_0_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 0
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.1679195552084036
+  Graphics saved as "p2_lagcheby_0_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 0
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.042312406149469746
+  Graphics saved as "p2_lagcheby_0_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 1
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.1544711516485841
+  Graphics saved as "p2_lagcheby_1_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 1
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.07597578376759206
+  Graphics saved as "p2_lagcheby_1_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 1
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.01914855135675429
+  Graphics saved as "p2_lagcheby_1_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 2
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.05439967444258589
+  Graphics saved as "p2_lagcheby_2_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 2
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.02681060186327618
+  Graphics saved as "p2_lagcheby_2_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 2
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.006798813789715873
+  Graphics saved as "p2_lagcheby_2_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 3
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.027061033462504887
+  Graphics saved as "p2_lagcheby_3_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 3
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.012858740695852798
+  Graphics saved as "p2_lagcheby_3_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 3
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.0032635266404573756
+  Graphics saved as "p2_lagcheby_3_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 4
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.025075972582660196
+  Graphics saved as "p2_lagcheby_4_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 4
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.011940166366588319
+  Graphics saved as "p2_lagcheby_4_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 4
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.0030372607731307534
+  Graphics saved as "p2_lagcheby_4_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 8
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.008412916879258978
+  Graphics saved as "p2_lagcheby_8_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 8
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.0035532973555974052
+  Graphics saved as "p2_lagcheby_8_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 8
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.0009161164053963262
+  Graphics saved as "p2_lagcheby_8_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 16
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  7.670413057874822e-10
+  Graphics saved as "p2_lagcheby_16_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 16
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.0013630201807121028
+  Graphics saved as "p2_lagcheby_16_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 2
+  Use polynomial approximant of degree. 16
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.0003642905138462314
+  Graphics saved as "p2_lagcheby_16_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 0
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.1772229140076178
+  Graphics saved as "p3_lagcheby_0_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 0
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.09072632956690489
+  Graphics saved as "p3_lagcheby_0_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 0
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.02311618164480132
+  Graphics saved as "p3_lagcheby_0_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 1
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.176218509236063
+  Graphics saved as "p3_lagcheby_1_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 1
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.09016043753279301
+  Graphics saved as "p3_lagcheby_1_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 1
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.022967628756233774
+  Graphics saved as "p3_lagcheby_1_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 2
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.1378463279845968
+  Graphics saved as "p3_lagcheby_2_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 2
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.06932479872625644
+  Graphics saved as "p3_lagcheby_2_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 2
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.017550490924426707
+  Graphics saved as "p3_lagcheby_2_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 3
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.1251201115309209
+  Graphics saved as "p3_lagcheby_3_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 3
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.06163081396516173
+  Graphics saved as "p3_lagcheby_3_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 3
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.015474400266730009
+  Graphics saved as "p3_lagcheby_3_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 4
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.12411118085959824
+  Graphics saved as "p3_lagcheby_4_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 4
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.06144707397488162
+  Graphics saved as "p3_lagcheby_4_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 4
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.015448458159806494
+  Graphics saved as "p3_lagcheby_4_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 8
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  2.466481554015716e-13
+  Graphics saved as "p3_lagcheby_8_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 8
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  4.993276899831595e-14
+  Graphics saved as "p3_lagcheby_8_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 8
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  2.3059337478670108e-14
+  Graphics saved as "p3_lagcheby_8_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 16
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  7.968335188034306e-14
+  Graphics saved as "p3_lagcheby_16_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 16
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  1.1873657767794528e-13
+  Graphics saved as "p3_lagcheby_16_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 3
+  Use polynomial approximant of degree. 16
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  3.13333912638747e-14
+  Graphics saved as "p3_lagcheby_16_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 0
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.3566735373294666
+  Graphics saved as "p4_lagcheby_0_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 0
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.17693364719338103
+  Graphics saved as "p4_lagcheby_0_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 0
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.044701184621373964
+  Graphics saved as "p4_lagcheby_0_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 1
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.1367983053545252
+  Graphics saved as "p4_lagcheby_1_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 1
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.06893676304253647
+  Graphics saved as "p4_lagcheby_1_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 1
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.017500848070865823
+  Graphics saved as "p4_lagcheby_1_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 2
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.11667120887222489
+  Graphics saved as "p4_lagcheby_2_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 2
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.057315713869161025
+  Graphics saved as "p4_lagcheby_2_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 2
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.014534951023240823
+  Graphics saved as "p4_lagcheby_2_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 3
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.08792003142012383
+  Graphics saved as "p4_lagcheby_3_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 3
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.044016761899792124
+  Graphics saved as "p4_lagcheby_3_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 3
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.011185245320050687
+  Graphics saved as "p4_lagcheby_3_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 4
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.0665821046861639
+  Graphics saved as "p4_lagcheby_4_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 4
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.03196440511368057
+  Graphics saved as "p4_lagcheby_4_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 4
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.008116817124209188
+  Graphics saved as "p4_lagcheby_4_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 8
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.035549811079364974
+  Graphics saved as "p4_lagcheby_8_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 8
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.017510969972699613
+  Graphics saved as "p4_lagcheby_8_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 8
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.004450763920957972
+  Graphics saved as "p4_lagcheby_8_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 16
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  2.9447858855286287e-09
+  Graphics saved as "p4_lagcheby_16_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 16
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.0070649801726029035
+  Graphics saved as "p4_lagcheby_16_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 4
+  Use polynomial approximant of degree. 16
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.0017866410496570825
+  Graphics saved as "p4_lagcheby_16_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 0
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  2.2518378223542896
+  Graphics saved as "p5_lagcheby_0_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 0
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  1.0373417840902701
+  Graphics saved as "p5_lagcheby_0_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 0
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.25946831114413765
+  Graphics saved as "p5_lagcheby_0_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 1
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  2.2263289664378174
+  Graphics saved as "p5_lagcheby_1_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 1
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  1.024206761100044
+  Graphics saved as "p5_lagcheby_1_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 1
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.2560979076460364
+  Graphics saved as "p5_lagcheby_1_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 2
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  1.3912429204618864
+  Graphics saved as "p5_lagcheby_2_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 2
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.9394758790268146
+  Graphics saved as "p5_lagcheby_2_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 2
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.23707990957978442
+  Graphics saved as "p5_lagcheby_2_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 3
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  1.3814586103737438
+  Graphics saved as "p5_lagcheby_3_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 3
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.9343291976892338
+  Graphics saved as "p5_lagcheby_3_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 3
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.23567844136288732
+  Graphics saved as "p5_lagcheby_3_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 4
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  1.0554354249566622
+  Graphics saved as "p5_lagcheby_4_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 4
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.7637553495740494
+  Graphics saved as "p5_lagcheby_4_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 4
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.19424164919769593
+  Graphics saved as "p5_lagcheby_4_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 8
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.5604169792951463
+  Graphics saved as "p5_lagcheby_8_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 8
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.6017168457236636
+  Graphics saved as "p5_lagcheby_8_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 8
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.15300426849573656
+  Graphics saved as "p5_lagcheby_8_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 16
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  4.211041460277768e-08
+  Graphics saved as "p5_lagcheby_16_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 16
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.4770635479567202
+  Graphics saved as "p5_lagcheby_16_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 5
+  Use polynomial approximant of degree. 16
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.12142138753912023
+  Graphics saved as "p5_lagcheby_16_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 0
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.08752749971649561
+  Graphics saved as "p6_lagcheby_0_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 0
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.044299226106163374
+  Graphics saved as "p6_lagcheby_0_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 0
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.011247617063978218
+  Graphics saved as "p6_lagcheby_0_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 1
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.05613891199627783
+  Graphics saved as "p6_lagcheby_1_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 1
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.02785382323429775
+  Graphics saved as "p6_lagcheby_1_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 1
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.007022254469824955
+  Graphics saved as "p6_lagcheby_1_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 2
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.0501105907525946
+  Graphics saved as "p6_lagcheby_2_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 2
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.025077351927545642
+  Graphics saved as "p6_lagcheby_2_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 2
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.006339813736666403
+  Graphics saved as "p6_lagcheby_2_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 3
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.018068519029791646
+  Graphics saved as "p6_lagcheby_3_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 3
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.009106908386978281
+  Graphics saved as "p6_lagcheby_3_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 3
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.00230688697459025
+  Graphics saved as "p6_lagcheby_3_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 4
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.012929645004847603
+  Graphics saved as "p6_lagcheby_4_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 4
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.006446927637149697
+  Graphics saved as "p6_lagcheby_4_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 4
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.001625775879532988
+  Graphics saved as "p6_lagcheby_4_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 8
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.0004379629381338967
+  Graphics saved as "p6_lagcheby_8_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 8
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.00022065887639199924
+  Graphics saved as "p6_lagcheby_8_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 8
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  5.580022431255764e-05
+  Graphics saved as "p6_lagcheby_8_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 16
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  6.539333572794456e-13
+  Graphics saved as "p6_lagcheby_16_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 16
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  1.3270374462913988e-07
+  Graphics saved as "p6_lagcheby_16_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 6
+  Use polynomial approximant of degree. 16
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  3.3488697534286005e-08
+  Graphics saved as "p6_lagcheby_16_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 0
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.42037971640718164
+  Graphics saved as "p7_lagcheby_0_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 0
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.21743562728127527
+  Graphics saved as "p7_lagcheby_0_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 0
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.055357599427946505
+  Graphics saved as "p7_lagcheby_0_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 1
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.37560299978705997
+  Graphics saved as "p7_lagcheby_1_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 1
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.19494712389115326
+  Graphics saved as "p7_lagcheby_1_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 1
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.04961046647620676
+  Graphics saved as "p7_lagcheby_1_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 2
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.3262026004680452
+  Graphics saved as "p7_lagcheby_2_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 2
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.17025422588662423
+  Graphics saved as "p7_lagcheby_2_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 2
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.043377128960126
+  Graphics saved as "p7_lagcheby_2_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 3
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.2676613413279531
+  Graphics saved as "p7_lagcheby_3_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 3
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.14273866931315052
+  Graphics saved as "p7_lagcheby_3_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 3
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.03641441467508463
+  Graphics saved as "p7_lagcheby_3_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 4
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.25609317346184435
+  Graphics saved as "p7_lagcheby_4_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 4
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.13678225424369797
+  Graphics saved as "p7_lagcheby_4_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 4
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.034906825943220914
+  Graphics saved as "p7_lagcheby_4_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 8
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.16973770655787068
+  Graphics saved as "p7_lagcheby_8_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 8
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.1008252591490635
+  Graphics saved as "p7_lagcheby_8_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 8
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.025873575124420796
+  Graphics saved as "p7_lagcheby_8_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 16
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  1.1956457128994634e-08
+  Graphics saved as "p7_lagcheby_16_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 16
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.07064093355802181
+  Graphics saved as "p7_lagcheby_16_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 7
+  Use polynomial approximant of degree. 16
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.018515338950051512
+  Graphics saved as "p7_lagcheby_16_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 0
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.06018188103306205
+  Graphics saved as "p8_lagcheby_0_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 0
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.0313149722358775
+  Graphics saved as "p8_lagcheby_0_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 0
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.007957980608701112
+  Graphics saved as "p8_lagcheby_0_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 1
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.06018188103306205
+  Graphics saved as "p8_lagcheby_1_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 1
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.0313149722358775
+  Graphics saved as "p8_lagcheby_1_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 1
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.007957980608701112
+  Graphics saved as "p8_lagcheby_1_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 2
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.03956504213702002
+  Graphics saved as "p8_lagcheby_2_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 2
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.021044175156614976
+  Graphics saved as "p8_lagcheby_2_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 2
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.005348385091590057
+  Graphics saved as "p8_lagcheby_2_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 3
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.03956504213702002
+  Graphics saved as "p8_lagcheby_3_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 3
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.021044175156614976
+  Graphics saved as "p8_lagcheby_3_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 3
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.0053483850915900565
+  Graphics saved as "p8_lagcheby_3_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 4
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.02553430867541187
+  Graphics saved as "p8_lagcheby_4_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 4
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.01414210755123917
+  Graphics saved as "p8_lagcheby_4_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 4
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.0035945329021349584
+  Graphics saved as "p8_lagcheby_4_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 8
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  0.009228411807027086
+  Graphics saved as "p8_lagcheby_8_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 8
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.0063868227120074585
+  Graphics saved as "p8_lagcheby_8_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 8
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.0016236112526435476
+  Graphics saved as "p8_lagcheby_8_1000.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 16
+  Number of data points = 16
+
+  L2 approximation error averaged per data node =  1.2899151562703776e-10
+  Graphics saved as "p8_lagcheby_16_16.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 16
+  Number of data points = 64
+
+  L2 approximation error averaged per data node =  0.0013027091431724713
+  Graphics saved as "p8_lagcheby_16_64.png".
+
+lagrange_approx_1d_test03():
+  Approximate Chebyshev-spaced data from test_interp_1d() problem . 8
+  Use polynomial approximant of degree. 16
+  Number of data points = 1000
+
+  L2 approximation error averaged per data node =  0.00033125399392044133
+  Graphics saved as "p8_lagcheby_16_1000.png".
+
+lagrange_approx_1d_test():
+  Normal end of execution.
+Wed Oct  8 08:01:29 2025
