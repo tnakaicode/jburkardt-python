@@ -1,0 +1,166 @@
+<html>
+
+  <head>
+    <title>
+      markov_text
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      markov_text
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>markov_text</b>,
+      a Python code which
+      uses a Markov Chain Monte Carlo (MCMC) process to sample an existing 
+      text file and create a new text that is randomized, but retains some 
+      of the structure of the original one.
+    </p>
+
+    <p>
+      The program is given a text file, a suffix length N, and a total
+      text length M.  Starting
+      at random point in the text, it selects N consecutive words, which
+      are called the prefix.  It then finds every word that immediately
+      follows any occurrence of the prefix in the text, and chooses one 
+      randomly as the suffix.  The prefix is now modified by removing 
+      the first word and appending the suffix.  The program stops after
+      M consecutive words have been generated in this way. 
+    </p>
+
+    <p>
+      The text file used as input should contain words and punctuation,
+      but no blank lines or carriage returns.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>markov_text</b> is available in
+      <a href = "../../py_src/markov_text/markov_text.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/ngrams/ngrams.html">
+      ngrams</a>,
+      a Python code which
+      analyzes a string or text against the observed frequency of ngrams
+      (particular sequences of n letters) in English text.
+    </p>
+
+    <p>
+      <a href = "../../py_src/text_strip/text_strip.html">
+      text_strip</a>,
+      a Python code which
+      uses the "re" regular expression library to strip unwanted characters
+      from a text file.
+    </p>
+
+    <p>
+      <a href = "../../py_src/text_to_wordlist/text_to_wordlist.html">
+      text_to_wordlist</a>,
+      a Python code which
+      shows how to start with a text file, read its information into a
+      single long string, and divide that string into individual words.
+      This allows an investigator to analyze the text for patterns.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Original Python version downloaded from "Rosetta Code".
+      This version by John Burkardt.
+    </p>
+
+    <h3 align = "center">
+      References:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          <a href = "https://rosettacode.org/wiki/Markov_chain_text_generator">
+                     https://rosettacode.org/wiki/Markov_chain_text_generator </a>
+        </li>
+        <li>
+          Claude Shannon,<br>
+          A Mathematical Theory of Communication,<br>
+          The Bell System Technical Journal,<br>
+          July 1948, pages 379-423,
+          October 1948, pages 623-656.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "markov_text.py">markov_text.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "markov_text.sh">markov_text.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "markov_text.txt">markov_text.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "alice.txt">alice.txt</a>,
+          the text of "Alice in Wonderland".
+        </li>
+        <li>
+          <a href = "alice_stripped.txt">alice_stripped.txt</a>,
+          the text of "Alice in Wonderland" after removing 
+          various odd characters and multiple blanks.
+        </li>
+        <li>
+          <a href = "alice_markov.txt">alice_markov.txt</a>,
+          after Markov processing of alice_stripped.txt, using
+          a context of 3 words.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 21 February 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

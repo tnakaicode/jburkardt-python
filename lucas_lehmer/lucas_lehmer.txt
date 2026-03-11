@@ -1,0 +1,26 @@
+Wed Oct  8 08:25:24 2025
+
+lucas_lehmer_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test lucas_lehmer().
+  2^2-1 is prime
+  2^3-1 is prime
+  2^5-1 is prime
+  2^7-1 is prime
+  2^11-1 is NOT prime
+  2^13-1 is prime
+  2^17-1 is prime
+  2^19-1 is prime
+  2^31-1 is prime
+  2^61-1 is prime
+  2^67-1 is NOT prime
+  2^89-1 is prime
+  2^107-1 is prime
+  2^127-1 is prime
+  2^257-1 is NOT prime
+  2^2047-1 is NOT prime
+
+lucas_lehmer_test():
+  Normal end of execution.
+Wed Oct  8 08:25:24 2025

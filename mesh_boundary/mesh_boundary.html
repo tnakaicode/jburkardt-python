@@ -1,0 +1,158 @@
+<html>
+
+  <head>
+    <title>
+      mesh_boundary
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      mesh_boundary
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>mesh_boundary</b>,
+      a Python code which
+      is given a mesh of a 2D region, formed by polygonal elements,
+      and determines a sequence of pairs of polygonal vertices that
+      define the boundary of the region. 
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>mesh_boundary</b> is available in
+      <a href = "../../m_src/mesh_boundary/mesh_boundary.html">a MATLAB version</a> and
+      <a href = "../../octave_src/mesh_boundary/mesh_boundary.html">an Octave version</a> and
+      <a href = "../../py_src/mesh_boundary/mesh_boundary.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../freefem_src/boundary_node_list/boundary_node_list.html">
+      boundary_node_list</a>,
+      a FreeFem++ code which
+      defines a 2D mesh, and then shows how to determine the number of
+      boundary elements, that is, sides of triangles, and how to list the
+      indices of the pairs of nodes that form the boundary.
+    </p>
+
+    <p>
+      <a href = "../../freefem_src/cloud/cloud.html">
+      cloud</a>,
+      a FreeFem++ code which
+      starts with a black and white drawing of a cloud, uses MATLAB to extract
+      the boundary, reads the boundary into FreeFem++ and solves a Poisson
+      problem over the region.
+    </p>
+
+    <p>
+      <a href = "../../py_src/human_data/human_data.html">
+      human_data</a>,
+      a Python code which
+      starts with an image of simple outline of a human body,
+      tabulates a sequence of points on the outline, 
+      creating numerical data defining the boundary.  It is then able
+      to fill the region with mesh points and triangulate the region.
+      This allows the region to be analyzed by the finite element method (FEM).
+    </p>
+
+    <p>
+      <a href = "../../py_src/image_boundary/image_boundary.html">
+      image_boundary</a>,
+      a Python code which
+      reports the pixels which form the boundary between the black and
+      white regions of a simple image.
+    </p>
+
+    <p>
+      <a href = "../../py_src/maple_boundary/maple_boundary.html">
+      maple_boundary</a>,
+      a Python code which
+      reads an image of a maple leaf and extracts the list of pixels
+      that form the boundary.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tet_mesh_boundary/tet_mesh_boundary.html">
+      tet_mesh_boundary</a>,
+      a Python code which
+      returns the nodes and faces of the boundary of a mesh of tetrahedrons,
+      which themselves form a 3D triangular mesh or tri_surface.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangulation_boundary/triangulation_boundary.html">
+      triangulation_boundary</a>,
+      a Python code which
+      starts with a triangulation of a simple shape, and
+      determines the triangle edges that form the boundary,
+      and a sequence of nodes that trace the boundary.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangulation_boundary_edges/triangulation_boundary_edges.html">
+      triangulation_boundary_edges</a>,
+      a Python code which
+      reads data defining a triangulation, determines which edges
+      lie on the boundary, organizes them into connected components,
+      and writes this information to a file.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangulation_boundary_nodes/triangulation_boundary_nodes.html">
+      triangulation_boundary_nodes</a>,
+      a Python code which
+      reads data defining a triangulation, determines which nodes
+      lie on the boundary, and writes their coordinates to a file.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "mesh_boundary.py">mesh_boundary.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "mesh_boundary.sh">mesh_boundary.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "mesh_boundary.txt">mesh_boundary.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 18 December 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

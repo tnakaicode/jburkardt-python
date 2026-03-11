@@ -1,0 +1,23 @@
+Wed Oct  8 08:25:18 2025
+
+logistic_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve logistic_ode().
+
+  Parameter values:
+    r =      1.0
+    k =      1.0
+    t0 =     0.0
+    y0 =     0.5
+    tstop =  8.0
+
+logistic_euler():
+  Graphics saved as "logistic_euler.png"
+
+logistic_rk4():
+  Graphics saved as "logistic_rk4.png"
+
+logistic_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:25:19 2025

@@ -1,0 +1,60 @@
+Wed Oct  8 08:25:35 2025
+
+matrix_chain_dynamic_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test matrix_chain_dynamic().
+
+  Number of matrices in product =  5
+  Matrix dimensions:   40   20   30   10   30
+  Possible orderings =  5
+  Minimal cost =  26000
+
+  Number of matrices in product =  5
+  Matrix dimensions:   1   2   3   4   3
+  Possible orderings =  5
+  Minimal cost =  30
+
+  Number of matrices in product =  3
+  Matrix dimensions:   10   20   30
+  Possible orderings =  1
+  Minimal cost =  6000
+
+  Number of matrices in product =  4
+  Matrix dimensions:   10   30   5   60
+  Possible orderings =  2
+  Minimal cost =  4500
+
+  Number of matrices in product =  2
+  Matrix dimensions:   10   20
+  Possible orderings =  1
+  Minimal cost =  0
+
+  Number of matrices in product =  5
+  Matrix dimensions:   40   20   0   10   30
+  Possible orderings =  5
+  Minimal cost =  0
+
+  Number of matrices in product =  5
+  Matrix dimensions:   1   100   1   100   1
+  Possible orderings =  5
+  Minimal cost =  300
+
+  Number of matrices in product =  5
+  Matrix dimensions:   100   50   1   50   100
+  Possible orderings =  5
+  Minimal cost =  510000
+
+  Number of matrices in product =  5
+  Matrix dimensions:   1   50   100   50   1
+  Possible orderings =  5
+  Minimal cost =  10050
+
+  Number of matrices in product =  6
+  Matrix dimensions:   4   10   3   12   20   7
+  Possible orderings =  14
+  Minimal cost =  1640
+
+matrix_chain_dynamic_test():
+  Normal end of execution.
+Wed Oct  8 08:25:35 2025

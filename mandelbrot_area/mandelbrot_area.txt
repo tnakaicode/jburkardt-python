@@ -1,0 +1,129 @@
+Fri Dec 12 09:48:54 2025
+
+mandelbrot_area_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  matplotlib version: 3.5.1
+  Test mandelbrot_area().
+
+mandelbrot_area():
+  Estimate the area of the Mandelbrot set.
+
+  For  200 ^2 random values C = X + i*Y
+  in the complex circle of radius 2,
+  carry out up to  100  iterations of the map
+  Z(n+1) = Z(n)^2 + C.
+  If the iterates stay in the circle of radius 2,
+  then C is a member of the Mandelbrot set.
+
+
+  Iteration  0   Points escaping = 0
+  Iteration  1   Points escaping = 2892
+  Iteration  2   Points escaping = 9568
+  Iteration  3   Points escaping = 9304
+  Iteration  4   Points escaping = 3796
+  Iteration  5   Points escaping = 2138
+  Iteration  6   Points escaping = 1206
+  Iteration  7   Points escaping = 860
+  Iteration  8   Points escaping = 568
+  Iteration  9   Points escaping = 460
+  Iteration  10   Points escaping = 320
+  Iteration  11   Points escaping = 250
+  Iteration  12   Points escaping = 210
+  Iteration  13   Points escaping = 166
+  Iteration  14   Points escaping = 116
+  Iteration  15   Points escaping = 120
+  Iteration  16   Points escaping = 108
+  Iteration  17   Points escaping = 82
+  Iteration  18   Points escaping = 92
+  Iteration  19   Points escaping = 74
+  Iteration  20   Points escaping = 54
+  Iteration  21   Points escaping = 44
+  Iteration  22   Points escaping = 36
+  Iteration  23   Points escaping = 62
+  Iteration  24   Points escaping = 44
+  Iteration  25   Points escaping = 32
+  Iteration  26   Points escaping = 28
+  Iteration  27   Points escaping = 28
+  Iteration  28   Points escaping = 32
+  Iteration  29   Points escaping = 42
+  Iteration  30   Points escaping = 16
+  Iteration  31   Points escaping = 12
+  Iteration  32   Points escaping = 32
+  Iteration  33   Points escaping = 10
+  Iteration  34   Points escaping = 20
+  Iteration  35   Points escaping = 12
+  Iteration  36   Points escaping = 20
+  Iteration  37   Points escaping = 24
+  Iteration  38   Points escaping = 12
+  Iteration  39   Points escaping = 12
+  Iteration  40   Points escaping = 18
+  Iteration  41   Points escaping = 18
+  Iteration  42   Points escaping = 10
+  Iteration  43   Points escaping = 6
+  Iteration  44   Points escaping = 4
+  Iteration  45   Points escaping = 10
+  Iteration  46   Points escaping = 16
+  Iteration  47   Points escaping = 10
+  Iteration  48   Points escaping = 6
+  Iteration  49   Points escaping = 8
+  Iteration  50   Points escaping = 8
+  Iteration  51   Points escaping = 12
+  Iteration  52   Points escaping = 2
+  Iteration  53   Points escaping = 8
+  Iteration  54   Points escaping = 12
+  Iteration  55   Points escaping = 4
+  Iteration  56   Points escaping = 6
+  Iteration  57   Points escaping = 2
+  Iteration  58   Points escaping = 2
+  Iteration  59   Points escaping = 6
+  Iteration  60   Points escaping = 6
+  Iteration  61   Points escaping = 2
+  Iteration  62   Points escaping = 6
+  Iteration  63   Points escaping = 10
+  Iteration  64   Points escaping = 6
+  Iteration  65   Points escaping = 4
+  Iteration  66   Points escaping = 4
+  Iteration  67   Points escaping = 8
+  Iteration  68   Points escaping = 4
+  Iteration  69   Points escaping = 0
+  Iteration  70   Points escaping = 2
+  Iteration  71   Points escaping = 8
+  Iteration  72   Points escaping = 0
+  Iteration  73   Points escaping = 8
+  Iteration  74   Points escaping = 2
+  Iteration  75   Points escaping = 0
+  Iteration  76   Points escaping = 2
+  Iteration  77   Points escaping = 2
+  Iteration  78   Points escaping = 8
+  Iteration  79   Points escaping = 2
+  Iteration  80   Points escaping = 2
+  Iteration  81   Points escaping = 0
+  Iteration  82   Points escaping = 2
+  Iteration  83   Points escaping = 10
+  Iteration  84   Points escaping = 2
+  Iteration  85   Points escaping = 4
+  Iteration  86   Points escaping = 4
+  Iteration  87   Points escaping = 2
+  Iteration  88   Points escaping = 8
+  Iteration  89   Points escaping = 2
+  Iteration  90   Points escaping = 4
+  Iteration  91   Points escaping = 4
+  Iteration  92   Points escaping = 4
+  Iteration  93   Points escaping = 0
+  Iteration  94   Points escaping = 0
+  Iteration  95   Points escaping = 0
+  Iteration  96   Points escaping = 4
+  Iteration  97   Points escaping = 0
+  Iteration  98   Points escaping = 2
+  Iteration  99   Points escaping = 4
+  Iteration  100   Points escaping = 2
+  Points still inside =  6786  out of  40000
+
+  Estimated area =  1.52685
+  Cook estimate was 1.5129
+  Graphics saved as "mandelbrot_area.png"
+
+mandelbrot_area_test()
+  Normal end of execution.
+Fri Dec 12 09:48:59 2025

@@ -1,0 +1,23 @@
+Wed Oct  8 08:25:19 2025
+
+lorenz96_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve lorenz96_ode().
+
+  parameter values:
+    n =        4
+    force =    8.0
+    perturb =  0.001
+    t0 =       0.0
+    xyz0 =     [7.99891669 8.00058726 8.00069229 8.00037968]
+    tstop =    30.0
+  Graphics saved as "lorenz96_ode_y0.png"
+  Graphics saved as "lorenz96_ode_y1.png"
+  Graphics saved as "lorenz96_ode_y2.png"
+  Graphics saved as "lorenz96_ode_y3.png"
+  Graphics saved as "lorenz96_ode_3d.png"
+
+lorenz96_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:25:21 2025

@@ -1,0 +1,133 @@
+<html>
+
+  <head>
+    <title>
+      lorenz96_ode
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      lorenz96_ode
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>lorenz96_ode</b>,
+      a Python code which
+      sets up and solves a system of ordinary differential equations
+      (ODE) devised by Edward Lorenz, as a test of predictability for
+      data assimilation applications.
+    </p>
+
+    <p>
+      The Lorenz system involves N => 4 differential equations 
+      of the identical form:
+      <pre>
+        dy(i)/dt = ( y(i+1) - y(i-2) ) * y(i-1) - y(i) + force
+      </pre>
+      where force is a constant independent of i and the indices wrap around.
+    </p>
+
+    <p>
+      A typical value for force is 8.  In a typical initial condition,
+      all entries of y are set to force plus a random value with mean
+      0 and variance 0.001.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>lorenz96_ode</b> is available in
+      <a href = "../../c_src/lorenz96_ode/lorenz96_ode.html">a C version</a> and
+      <a href = "../../cpp_src/lorenz96_ode/lorenz96_ode.html">a C++ version</a> and
+      <a href = "../../f_src/lorenz96_ode/lorenz96_ode.html">a Fortran90 version</a> and
+      <a href = "../../m_src/lorenz96_ode/lorenz96_ode.html">a MATLAB version</a> and
+      <a href = "../../octave_src/lorenz96_ode/lorenz96_ode.html">an Octave version</a> and
+      <a href = "../../py_src/lorenz96_ode/lorenz96_ode.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_ode/python_ode.html">
+      python_ode</a>,
+      Python codes which 
+      sets up various systems of ordinary differential equations (ODE).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Edward Lorenz,<br>
+          Predictability - A problem partly solved,<br>
+          Seminar on Predictability, Volume I,<br>
+          European Center for Medium-Range Weather Forecasts, 1996.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lorenz96_ode.py">lorenz96_ode.py</a>, the source code.
+        </li>
+        <li>
+          <a href = "lorenz96_ode.sh">lorenz96_ode.sh</a>,
+          runs all the tests
+        </li>
+        <li>
+          <a href = "lorenz96_ode.txt">lorenz96_ode.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lorenz96_ode_components.png">lorenz96_ode_components.png</a>,
+          a plot of (T,Y0(T)), (T,Y1(T)), and (T,Y2(T)).
+        </li>
+        <li>
+          <a href = "lorenz96_ode_3d.png">lorenz96_ode_3d.png</a>,
+          a 3D plot of (Y0(T),Y1(T),Y2(T)).
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 September 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

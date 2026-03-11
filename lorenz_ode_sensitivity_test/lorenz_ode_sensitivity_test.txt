@@ -1,0 +1,13 @@
+Wed Oct  8 08:25:22 2025
+
+lorenz_ode_sensitivity_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Demonstrate sensitive dependence on initial data for the Lorenz system.
+  This program is based on the work of John D Cook.
+  Graphics saved as " lorenz_ode_sensitivity_test_x1z1.png ".
+  Graphics saved as " lorenz_ode_sensitivity_test_xdif.png ".
+
+lorenz_ode_sensitivity_test:
+  Normal end of execution.
+Wed Oct  8 08:25:24 2025

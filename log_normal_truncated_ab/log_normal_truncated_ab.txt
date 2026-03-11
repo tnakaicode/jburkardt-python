@@ -1,0 +1,223 @@
+Wed Oct  8 08:25:19 2025
+
+log_normal_truncated_ab_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test log_normal_truncated_ab().
+
+log_normal_cdf_test():
+  log_normal_cdf() evaluates the Log Normal CDF
+  log_normal_cdf_inv() inverts the Log Normal CDF.
+  log_normal_pdf() evaluates the Log Normal PDF
+
+  PDF parameter MU =                          1
+  PDF parameter SIGMA =                     0.5
+
+       X            PDF           CDF            CDF_inv
+
+          3.411        0.211008         0.67509           3.411
+        3.91561        0.156114        0.767287         3.91561
+        4.99795       0.0760286        0.888398         4.99795
+        3.98204        0.149701        0.777443         3.98204
+        3.21748         0.23428        0.632015         3.21748
+        1.66195        0.295842        0.162553         1.66195
+        1.38102        0.230904       0.0878117         1.38102
+        1.57931        0.280129        0.138733         1.57931
+        1.79772        0.315296        0.204129         1.79772
+        3.03486        0.256602        0.587193         3.03486
+
+log_normal_sample_test():
+  log_normal_mean() computes the Log Normal mean
+  log_normal_sample() samples the Log Normal distribution
+  log_normal_variance() computes the Log Normal variance.
+
+  PDF parameter MU =                         1
+  PDF parameter SIGMA =                    0.5
+  PDF mean =                           3.08022
+  PDF variance =                       2.69476
+
+  Sample size =       1000
+  Sample mean =            3.13589
+  Sample variance =        2.58996
+  Sample maximum =         11.3206
+  Sample minimum =        0.580967
+
+log_normal_truncated_ab_cdf_test():
+  log_normal_truncated_ab_cdf() evaluates the Log Normal Truncated AB CDF
+  log_normal_truncated_ab_cdf_inv() inverts the Log Normal Truncated AB CDF.
+  log_normal_truncated_ab_pdf() evaluates the Log Normal Truncated AB PDF
+
+  PDF parameter MU =                       0.5
+  PDF parameter SIGMA =                      3
+  PDF parameter A =                    1.64872
+  PDF parameter B =                    665.142
+
+              X             PDF             CDF         CDF_inv
+
+        34.5502      0.00482238         0.72235         34.5502
+        127.389     0.000765489        0.893332         127.389
+        14.9362       0.0142437        0.563033         14.9362
+        8.29111       0.0290728        0.429225         8.29111
+         30.948      0.00558408        0.703664          30.948
+        144.649     0.000633443        0.905347         144.649
+        1.87674        0.148332       0.0360825         1.87674
+        42.6318      0.00363124        0.756128         42.6318
+         5.5729        0.046044        0.330264          5.5729
+        1.91814        0.145081       0.0421564         1.91814
+
+log_normal_truncated_ab_sample_test():
+  log_normal_truncated_ab_mean() computes the Log Normal Truncated AB mean
+  log_normal_truncated_ab_sample() samples the Log Normal Truncated AB distribution
+  log_normal_truncated_ab_variance() computes the Log Normal Truncated AB variance.
+
+  PDF parameter MU =                        0.5
+  PDF parameter SIGMA =                       3
+  PDF parameter A =                     1.64872
+  PDF parameter B =                     665.142
+
+  PDF mean =                           48.9182
+  PDF variance =                       9451.08
+
+  Sample size =       1000
+  Sample mean =            47.1719
+  Sample variance =        9103.28
+  Sample maximum =         652.038
+  Sample minimum =         1.65151
+
+normal_01_cdf_test():
+  normal_01_cdf evaluates the Normal 01 CDF
+  normal_01_cdf_inv inverts the Normal 01 CDF.
+  normal_01_pdf evaluates the Normal 01 PDF
+
+       X            PDF           CDF            CDF_inv
+
+       0.663823        0.320053        0.746598        0.663823
+         -1.491        0.131273        0.067981          -1.491
+        1.67918       0.0974161        0.953442         1.67918
+       0.161475        0.393775         0.56414        0.161475
+      -0.463582        0.358297        0.321473       -0.463582
+        1.74554        0.086952        0.959555         1.74554
+      -0.261898        0.385492          0.3967       -0.261898
+     -0.0527302        0.398388        0.478973      -0.0527302
+      -0.606725        0.331875        0.272017       -0.606725
+     -0.0224092        0.398842        0.491061      -0.0224092
+
+normal_01_cdf_values_test():
+  normal_01_cdf_values() stores values of the unit normal CDF.
+
+      X         normal_01_cdf(X)
+
+      0.000000        0.5000000000000000
+      0.100000        0.5398278372770290
+      0.200000        0.5792597094391030
+      0.300000        0.6179114221889526
+      0.400000        0.6554217416103242
+      0.500000        0.6914624612740131
+      0.600000        0.7257468822499270
+      0.700000        0.7580363477769270
+      0.800000        0.7881446014166033
+      0.900000        0.8159398746532405
+      1.000000        0.8413447460685429
+      1.500000        0.9331927987311419
+      2.000000        0.9772498680518208
+      2.500000        0.9937903346742240
+      3.000000        0.9986501019683699
+      3.500000        0.9997673709209645
+      4.000000        0.9999683287581669
+
+normal_01_sample_test():
+  normal_01_mean() computes the Normal 01 mean
+  normal_01_sample() samples the Normal 01 distribution
+  normal_01_variance() returns the Normal 01 variance.
+
+  PDF mean =       0.0
+  PDF variance =   1.0
+
+  Sample size =       1000
+  Sample mean =          0.0180139
+  Sample variance =        1.03658
+  Sample maximum =         3.20504
+  Sample minimum =          -2.872
+
+normal_cdf_test():
+  normal_cdf() evaluates the Normal CDF
+  normal_cdf_inv() inverts the Normal CDF.
+  normal_pdf() evaluates the Normal PDF
+
+  PDF parameter A =                        100
+  PDF parameter B =                         15
+
+       X            PDF           CDF            CDF_inv
+
+        78.5825      0.00959662       0.0766698         78.5825
+        117.713       0.0132443        0.881168         117.713
+        127.148      0.00517071         0.96484         127.148
+         112.35         0.01895        0.794848          112.35
+         79.733       0.0106758        0.088326          79.733
+        107.494       0.0234753        0.691333         107.494
+         133.76      0.00211291        0.987796          133.76
+        91.6321       0.0227636        0.288471         91.6321
+        77.1383      0.00832538       0.0637404         77.1383
+        82.0535       0.0130012        0.115764         82.0535
+
+normal_sample_test():
+  normal_mean() computes the Normal mean
+  normal_sample() samples the Normal distribution
+  normal_variance() returns the Normal variance.
+
+  PDF parameter A =                100
+  PDF parameter B =                 15
+  PDF mean =                       100
+  PDF variance =                   225
+
+  Sample size =       1000
+  Sample mean =            100.306
+  Sample variance =        236.375
+  Sample maximum =         148.178
+  Sample minimum =         55.9343
+
+r8poly_print_test():
+  r8poly_print() prints an R8POLY.
+
+  The R8POLY:
+
+  p(x) =   9 * x^5
+         + 0.78 * x^4
+         + 56 * x^2
+         - 3.4 * x
+         + 12
+
+r8poly_value_horner_test():
+  r8poly_value_horner() evaluates a polynomial at a point
+  using Horners method.
+
+  The polynomial coefficients:
+
+  p(x) =   1 * x^4
+         - 10 * x^3
+         + 35 * x^2
+         - 50 * x
+         + 24
+
+   I    X    P(X)
+
+   0    0.0000              24
+   1    0.3333         10.8642
+   2    0.6667         3.45679
+   3    1.0000               0
+   4    1.3333       -0.987654
+   5    1.6667       -0.691358
+   6    2.0000               0
+   7    2.3333        0.493827
+   8    2.6667        0.493827
+   9    3.0000               0
+  10    3.3333       -0.691358
+  11    3.6667       -0.987654
+  12    4.0000               0
+  13    4.3333         3.45679
+  14    4.6667         10.8642
+  15    5.0000              24
+
+log_normal_truncated_ab_test():
+  Normal end of execution.
+Wed Oct  8 08:25:19 2025

@@ -1,0 +1,70 @@
+Wed Oct  8 08:25:24 2025
+
+magic_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test magic_matrix()
+
+magic_list_test():
+  magic_list() creates a magic matrix as a list of lists.
+
+  Magic matrix for n = 3
+[[8, 1, 6], [3, 5, 7], [4, 9, 2]]
+  Row sums:
+  15  15  15
+  Column sums:
+  15  15  15
+  Diagonal sum:
+  15
+  Antidiagonal sum:
+  15
+
+  Magic matrix for n = 5
+[ [17, 24, 1, 8, 15],
+  [23, 5, 7, 14, 16],
+  [4, 6, 13, 20, 22],
+  [10, 12, 19, 21, 3],
+  [11, 18, 25, 2, 9]]
+  Row sums:
+  65  65  65  65  65
+  Column sums:
+  65  65  65  65  65
+  Diagonal sum:
+  65
+  Antidiagonal sum:
+  65
+
+magic_nparray_test():
+  magic_nparray() creates a magic matrix as a numpy array.
+
+  Magic matrix for n = 3
+[[8 1 6]
+ [3 5 7]
+ [4 9 2]]
+  Row sums:
+[15 15 15]
+  Column sums:
+[15 15 15]
+  Diagonal sum:
+15
+  Antidiagonal sum:
+15
+
+  Magic matrix for n = 5
+[[17 24  1  8 15]
+ [23  5  7 14 16]
+ [ 4  6 13 20 22]
+ [10 12 19 21  3]
+ [11 18 25  2  9]]
+  Row sums:
+[65 65 65 65 65]
+  Column sums:
+[65 65 65 65 65]
+  Diagonal sum:
+65
+  Antidiagonal sum:
+65
+
+magic_matrix_test():
+  Normal end of execution.
+Wed Oct  8 08:25:25 2025

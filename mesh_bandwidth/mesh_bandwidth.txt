@@ -1,0 +1,35 @@
+Wed Oct  8 08:25:38 2025
+
+mesh_bandwidth_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test mesh_bandwidth().
+
+mesh_bandwidth():
+  Read a file which defines a mesh in 2D, 3D, or ND,
+  made up of elements of uniform order.
+  Determine the geometric mesh bandwidth.
+
+    M = ML + 1 + MU.
+
+  which is the bandwidth of the vertex connectivity
+  matrix.
+
+  Note that a matrix associated with variables defined
+  at the nodes could have a greater bandwidth than M,
+  since you might have multiple variables at a vertex,
+  or the variable might be a vector quantity,
+  or physical effects might link two variables that are
+  not associated with vertices that are connected.
+
+  Read element node data from "sphere_q4_elements.txt"
+  Element number ELEMENT_NUM  = 64
+  Element order ELEMENT_ORDER = 4
+
+  Lower bandwidth ML = 15
+  Upper bandwidth MU = 15
+  Total bandwidth M  = 31
+
+mesh_bandwidth_test():
+  Normal end of execution.
+Wed Oct  8 08:25:38 2025
