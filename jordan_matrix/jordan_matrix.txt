@@ -1,0 +1,91 @@
+Wed Oct  8 07:58:20 2025
+
+jordan_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  jordan_matrix() returns a random Jordan matrix.
+
+  Random Jordan matrix 0 will have order n = 6
+
+[[-12.   0.   0.   0.   0.   0.]
+ [  0.  -8.   0.   0.   0.   0.]
+ [  0.   0.  -4.   0.   0.   0.]
+ [  0.   0.   0.   0.   0.   0.]
+ [  0.   0.   0.   0.   8.   0.]
+ [  0.   0.   0.   0.   0.  12.]]
+
+  Random Jordan matrix 1 will have order n = 4
+
+[[-8.  0.  0.  0.]
+ [ 0. -4.  0.  0.]
+ [ 0.  0.  4.  0.]
+ [ 0.  0.  0.  8.]]
+
+  Random Jordan matrix 2 will have order n = 3
+
+[[-6.  0.  0.]
+ [ 0. -2.  0.]
+ [ 0.  0.  6.]]
+
+  Random Jordan matrix 3 will have order n = 3
+
+[[2. 1. 0.]
+ [0. 2. 0.]
+ [0. 0. 6.]]
+
+  Random Jordan matrix 4 will have order n = 8
+
+[[-16.   0.   0.   0.   0.   0.   0.   0.]
+ [  0.  -8.   0.   0.   0.   0.   0.   0.]
+ [  0.   0.  -4.   0.   0.   0.   0.   0.]
+ [  0.   0.   0.   0.   0.   0.   0.   0.]
+ [  0.   0.   0.   0.   4.   0.   0.   0.]
+ [  0.   0.   0.   0.   0.   8.   0.   0.]
+ [  0.   0.   0.   0.   0.   0.  12.   0.]
+ [  0.   0.   0.   0.   0.   0.   0.  16.]]
+
+  Random Jordan matrix 5 will have order n = 6
+
+[[-8.  0.  0.  0.  0.  0.]
+ [ 0. -4.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  4.  0.  0.]
+ [ 0.  0.  0.  0.  8.  0.]
+ [ 0.  0.  0.  0.  0. 12.]]
+
+  Random Jordan matrix 6 will have order n = 6
+
+[[-12.   0.   0.   0.   0.   0.]
+ [  0.  -8.   0.   0.   0.   0.]
+ [  0.   0.  -4.   0.   0.   0.]
+ [  0.   0.   0.   4.   0.   0.]
+ [  0.   0.   0.   0.   8.   0.]
+ [  0.   0.   0.   0.   0.  12.]]
+
+  Random Jordan matrix 7 will have order n = 7
+
+[[-10.   0.   0.   0.   0.   0.   0.]
+ [  0.  -2.   1.   0.   0.   0.   0.]
+ [  0.   0.  -2.   0.   0.   0.   0.]
+ [  0.   0.   0.   6.   0.   0.   0.]
+ [  0.   0.   0.   0.  10.   0.   0.]
+ [  0.   0.   0.   0.   0.  10.   1.]
+ [  0.   0.   0.   0.   0.   0.  10.]]
+
+  Random Jordan matrix 8 will have order n = 3
+
+[[-2.  0.  0.]
+ [ 0.  2.  0.]
+ [ 0.  0.  6.]]
+
+  Random Jordan matrix 9 will have order n = 5
+
+[[-6.  1.  0.  0.  0.]
+ [ 0. -6.  0.  0.  0.]
+ [ 0.  0. -6.  0.  0.]
+ [ 0.  0.  0. -2.  0.]
+ [ 0.  0.  0.  0.  2.]]
+
+jordan_matrix_test():
+  Normal end of execution.
+Wed Oct  8 07:58:21 2025

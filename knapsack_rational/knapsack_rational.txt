@@ -1,0 +1,44 @@
+Wed Oct  8 07:59:41 2025
+
+knapsack_rational_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test knapsack_rational().
+
+knapsack_rational_tester():
+  knapsack_rational() solves the rational knapsack problem.
+
+  Object  Value  Weight  Density
+
+       0       24       12    2.000
+       1       13        7    1.857
+       2       23       11    2.091
+       3       15        8    1.875
+       4       16        9    1.778
+  Sort by density in descending order
+
+  After reordering by Density:
+
+  Object  Value  Weight  Density
+
+       0       23       11    2.091
+       1       24       12    2.000
+       2       15        8    1.875
+       3       13        7    1.857
+       4       16        9    1.778
+
+  Weight limit is  26
+
+  Object  Choice  Value  Weight  Density
+
+     0    1.000       23       11    2.091
+     1    1.000       24       12    2.000
+     2    0.375        5        3    1.875
+     3    0.000        0        0    1.857
+     4    0.000        0        0    1.778
+
+  Total:  2.375       52       26    2.024
+
+knapsack_rational_test():
+  Normal end of execution.
+Wed Oct  8 07:59:42 2025

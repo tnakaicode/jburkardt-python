@@ -1,0 +1,80 @@
+Wed Oct  8 07:59:41 2025
+
+knapsack_random_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test knapsack_random()
+
+subset_random_test():
+  Test subset_random()
+
+  Subsets will be of size n =  5
+
+31 : [1 1 1 1 1]
+0 : [0 0 0 0 0]
+29 : [1 1 1 0 1]
+26 : [1 1 0 1 0]
+24 : [1 1 0 0 0]
+8 : [0 1 0 0 0]
+2 : [0 0 0 1 0]
+27 : [1 1 0 1 1]
+21 : [1 0 1 0 1]
+26 : [1 1 0 1 0]
+
+knapsack_random_test01():
+  knapsack_random() randomly selects a subset of n items
+  and considers it as a solution to a knapsack problem.
+  Maximize profit without exceeding weight limit.
+
+  Number of items is  5
+  Value array  [24 13 23 15 16]
+  Weight array  [12  7 11  8  9]
+  Weight limit is  26
+
+  Selected items: [0 0 1 1 0]
+  Weight  19
+  Value  38
+  Ratio  2.0
+
+  Selected items: [1 1 1 0 1]
+  Weight  39  exceeds weight limit  26
+
+  Selected items: [0 1 0 1 1]
+  Weight  24
+  Value  44
+  Ratio  1.8333333333333333
+
+  Selected items: [1 0 0 0 1]
+  Weight  21
+  Value  40
+  Ratio  1.9047619047619047
+
+  Selected items: [0 1 1 0 1]
+  Weight  27  exceeds weight limit  26
+
+  Selected items: [1 0 1 0 0]
+  Weight  23
+  Value  47
+  Ratio  2.0434782608695654
+
+  Selected items: [1 0 1 0 0]
+  Weight  23
+  Value  47
+  Ratio  2.0434782608695654
+
+  Selected items: [0 0 0 1 0]
+  Weight  8
+  Value  15
+  Ratio  1.875
+
+  Selected items: [1 1 1 0 0]
+  Weight  30  exceeds weight limit  26
+
+  Selected items: [0 1 0 1 0]
+  Weight  15
+  Value  28
+  Ratio  1.8666666666666667
+
+knapsack_random_test():
+  Normal end of execution.
+Wed Oct  8 07:59:41 2025

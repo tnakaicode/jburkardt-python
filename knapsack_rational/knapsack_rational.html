@@ -1,0 +1,132 @@
+<html>
+
+  <head>
+    <title>
+      knapsack_rational
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      knapsack_rational
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>knapsack_rational</b>,
+      a Python code which
+      solves the rational knapsack problem, in which a knapsack of limited
+      weight capacity is filled with profitable items.  This variation of
+      the knapsack problem allows a fractional part of an item to
+      be included in the knapsack.  The result is an upper bound on the
+      maximum possible profit for the knapsack problem.
+    </p>
+
+    <p>
+      The rational knapsack problem is a generalization of the knapsack
+      problem.  It is mainly used to derive a bounding function for the
+      knapsack problem.
+
+    <p>
+      The knapsack problem is as follows:
+      <pre>
+      Given:
+        a set of N objects,
+        a profit P(I) and weight W(I) associated with each object,
+        and a weight limit MASS_LIMIT,
+      Determine:
+        a set of choices X(I) which are 0 or 1, that maximizes the profit
+          P = Sum ( 1 <= I <= N ) P(I) * X(I)
+        subject to the constraint
+          Sum ( 1 <= I <= N ) W(I) * X(I) <= MASS_LIMIT.
+      </pre>
+    </p>
+
+    <p>
+      By contrast, the rational knapsack problem allows the values X(I)
+      to be any value between 0 and 1.  A solution for the rational knapsack
+      problem is known.  Arrange the objects in order of their "profit density"
+      ratios P(I)/W(I), and then take in order as many of these as you can.
+      If you still have "room" in the weight constraint, then you should
+      take the maximal fraction of the very next object, which will complete
+      your weight limit, and maximize your profit.
+    </p>
+
+    <p>
+      If should be obvious that, given the same data, a solution for
+      the rational knapsack problem will always have a profit that is
+      at least as high as for the standard problem.  Since the rational knapsack
+      maximum profit is easily computed, this makes it a useful bounding
+      function.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>knapsack_rational</b> is available in
+      <a href = "../../c_src/knapsack_rational/knapsack_rational.html">a C version</a> and
+      <a href = "../../cpp_src/knapsack_rational/knapsack_rational.html">a C++ version</a> and
+      <a href = "../../f_src/knapsack_rational/knapsack_rational.html">a Fortran90 version</a> and
+      <a href = "../../m_src/knapsack_rational/knapsack_rational.html">a MATLAB version</a> and
+      <a href = "../../octave_src/knapsack_rational/knapsack_rational.html">an Octave version</a> and
+      <a href = "../../py_src/knapsack_rational/knapsack_rational.html">a Python version.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_combinatorics/python_combinatorics.html">
+      python_combinatorics</a>,
+      a Python code which
+      considers a variety of problems in combinatorics involving
+      counting, combinations, permutations, and so on.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "knapsack_rational.py">knapsack_rational.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "knapsack_rational.sh">knapsack_rational.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "knapsack_rational.txt">knapsack_rational.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 November 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

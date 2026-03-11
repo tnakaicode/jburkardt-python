@@ -1,0 +1,147 @@
+<html>
+
+  <head>
+    <title>
+      julia_set
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      julia_set
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>julia_set</b>,
+      a Python code which
+      computes and plots a Julia set, 
+      the set of points in the complex plane that remain bounded
+      under a mapping of the form f(z) = z^2+c.
+    </p>
+
+    <p>
+      We consider points (X,Y) in a rectangular domain R = [XL,XR]x[YB,YT].
+      Here XL=-1.5, XR=+1.5, YB=-1.5, YT=+1.5.
+    <p>
+
+    <p>
+      For every (X,Y) in R, let Z be the complex number X+Yi, and let 
+      C be some complex constant.  Here, C=-0.8+0.156i.
+    </p>
+
+    <p>
+      For each Z, consider the sequence of points:
+      <pre>
+        Z(0) = Z,
+        Z(k+1) = Z(k)^2 + C
+      </pre>
+    </p>
+
+    <p>
+      The Julia set is the set of points Z in R with the property that
+      the sequence of points Z(k) remain within R.
+    </p>
+
+    <p>
+      To compute a picture of the Julia set, we choose a discrete array
+      of WxH points in R.  We carry out up to 200 steps of the iteration for
+      each point Z.  If 1000 < |Z| at any time, we assume Z is not in the
+      Julia set.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>julia_set</b> is available in
+      <a href = "../../c_src/julia_set/julia_set.html">a C version</a> and
+      <a href = "../../m_src/julia_set/julia_set.html">a MATLAB version</a> and
+      <a href = "../../octave_src/julia_set/julia_set.html">an Octave version</a> and
+      <a href = "../../py_src/julia_set/julia_set.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_plots/python_plots.html">
+      python_plots</a>,
+      a Python code which 
+      uses plotting to illustrate a mathematical structure, such as
+      an iterative map, a fractal, a curve or surface.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Heinz-Otto Peitgen, Hartmut Juergens, Dietmar Saupe,<br>
+          Chaos and Fractals - New Frontiers in Science,<br>
+          Springer, 1992,<br>
+          ISBN: 0-387-20229-3,<br>
+          LC: Q172.5.C45.P45.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "julia_set.py">julia_set.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "julia_set.sh">julia_set.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "julia_set.txt">julia_set.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "julia_set_plot.png">julia_set_plot.png</a>
+        </li>
+        <li>
+          <a href = "julia_set_spy.png">julia_set_spy.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 December 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

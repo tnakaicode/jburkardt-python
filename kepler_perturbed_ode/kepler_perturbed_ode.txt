@@ -1,0 +1,19 @@
+Wed Oct  8 07:58:31 2025
+
+kepler_perturbed_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve kepler_perturbed_ode().
+
+  parameters:
+    delta =  0.015
+    e =      0.6
+    t0 =     0.0
+    y0 =     [0.4 0.  0.  2. ]
+    tstop =  110.0
+  Graphics saved as "kepler_perturbed_plot.png"
+  Graphics saved as "kepler_perturbed_phase.png"
+
+kepler_perturbed_ode_test():
+  Normal end of execution.
+Wed Oct  8 07:58:32 2025

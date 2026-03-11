@@ -1,0 +1,22 @@
+Wed Oct  8 07:58:21 2025
+
+joukowsky_transform_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test joukowsky_transform().
+
+joukowsky_transform_test01():
+  Graphics saved as "airfoil1.png"
+
+joukowsky_transform_test02():
+  Graphics saved as "airfoil2.png"
+
+joukowsky_transform_test03():
+  Graphics saved as "airfoil3.png"
+
+joukowsky_transform_test04():
+  Graphics saved as "airfoil4.png"
+
+joukowsky_transform_test():
+  Normal end of execution.
+Wed Oct  8 07:58:22 2025

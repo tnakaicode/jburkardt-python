@@ -1,0 +1,914 @@
+Wed Oct  8 07:59:41 2025
+
+knapsack_greedy_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test knapsack_greedy().
+
+knapsack_greedy_density_test():
+  knapsack_greedy() uses a greedy algorithm to estimate a
+  solution of the knapsack problem.
+
+  Problem # 1
+  Number of items is  5
+  Knapsack weight limit is  26
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0       24       12  2
+        1       23       11  2.09091
+        2       16        9  1.77778
+        3       15        8  1.875
+        4       13        7  1.85714
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       24       12  2
+        1       23       11  2.09091
+
+  Objects chosen = 2
+  Total value    = 47
+  Total weight   = 23
+  Density        = 2.0434782608695654
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0       13        7  1.85714
+        1       15        8  1.875
+        2       16        9  1.77778
+        3       23       11  2.09091
+        4       24       12  2
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       13        7  1.85714
+        1       15        8  1.875
+        2       16        9  1.77778
+
+  Objects chosen = 3
+  Total value    = 44
+  Total weight   = 24
+  Density        = 1.8333333333333333
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0       23       11  2.09091
+        1       24       12  2
+        2       15        8  1.875
+        3       13        7  1.85714
+        4       16        9  1.77778
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       23       11  2.09091
+        1       24       12  2
+
+  Objects chosen = 2
+  Total value    = 47
+  Total weight   = 23
+  Density        = 2.0434782608695654
+
+  Problem # 2
+  Number of items is  6
+  Knapsack weight limit is  190
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0       64       80  0.8
+        1       50       75  0.666667
+        2       50       59  0.847458
+        3       50       56  0.892857
+        4       46       64  0.71875
+        5        5       17  0.294118
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       64       80  0.8
+        1       50       75  0.666667
+        5        5       17  0.294118
+
+  Objects chosen = 3
+  Total value    = 119
+  Total weight   = 172
+  Density        = 0.6918604651162791
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0        5       17  0.294118
+        1       50       56  0.892857
+        2       50       59  0.847458
+        3       46       64  0.71875
+        4       50       75  0.666667
+        5       64       80  0.8
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0        5       17  0.294118
+        1       50       56  0.892857
+        2       50       59  0.847458
+
+  Objects chosen = 3
+  Total value    = 105
+  Total weight   = 132
+  Density        = 0.7954545454545454
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0       50       56  0.892857
+        1       50       59  0.847458
+        2       64       80  0.8
+        3       46       64  0.71875
+        4       50       75  0.666667
+        5        5       17  0.294118
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       50       56  0.892857
+        1       50       59  0.847458
+        3       46       64  0.71875
+
+  Objects chosen = 3
+  Total value    = 146
+  Total weight   = 179
+  Density        = 0.8156424581005587
+
+  Problem # 3
+  Number of items is  6
+  Knapsack weight limit is  20
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0      200       20  10
+        1      175       10  17.5
+        2       90        9  10
+        3       50        2  25
+        4       20        4  5
+        5       10        1  10
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      200       20  10
+
+  Objects chosen = 1
+  Total value    = 200
+  Total weight   = 20
+  Density        = 10.0
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0       10        1  10
+        1       50        2  25
+        2       20        4  5
+        3       90        9  10
+        4      175       10  17.5
+        5      200       20  10
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       10        1  10
+        1       50        2  25
+        2       20        4  5
+        3       90        9  10
+
+  Objects chosen = 4
+  Total value    = 170
+  Total weight   = 16
+  Density        = 10.625
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0       50        2  25
+        1      175       10  17.5
+        2      200       20  10
+        3       90        9  10
+        4       10        1  10
+        5       20        4  5
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       50        2  25
+        1      175       10  17.5
+        4       10        1  10
+        5       20        4  5
+
+  Objects chosen = 4
+  Total value    = 255
+  Total weight   = 17
+  Density        = 15.0
+
+  Problem # 4
+  Number of items is  7
+  Knapsack weight limit is  50
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0       70       31  2.25806
+        1       39       20  1.95
+        2       37       19  1.94737
+        3       20       10  2
+        4       10        6  1.66667
+        5        7        4  1.75
+        6        5        3  1.66667
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       70       31  2.25806
+        2       37       19  1.94737
+
+  Objects chosen = 2
+  Total value    = 107
+  Total weight   = 50
+  Density        = 2.14
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0        5        3  1.66667
+        1        7        4  1.75
+        2       10        6  1.66667
+        3       20       10  2
+        4       37       19  1.94737
+        5       39       20  1.95
+        6       70       31  2.25806
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0        5        3  1.66667
+        1        7        4  1.75
+        2       10        6  1.66667
+        3       20       10  2
+        4       37       19  1.94737
+
+  Objects chosen = 5
+  Total value    = 79
+  Total weight   = 42
+  Density        = 1.880952380952381
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0       70       31  2.25806
+        1       20       10  2
+        2       39       20  1.95
+        3       37       19  1.94737
+        4        7        4  1.75
+        5       10        6  1.66667
+        6        5        3  1.66667
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       70       31  2.25806
+        1       20       10  2
+        4        7        4  1.75
+        6        5        3  1.66667
+
+  Objects chosen = 4
+  Total value    = 102
+  Total weight   = 48
+  Density        = 2.125
+
+  Problem # 5
+  Number of items is  7
+  Knapsack weight limit is  170
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0      617       60  10.2833
+        1      593       59  10.0508
+        2      564       57  9.89474
+        3      546       55  9.92727
+        4      525       50  10.5
+        5      511       49  10.4286
+        6      442       41  10.7805
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      617       60  10.2833
+        1      593       59  10.0508
+        4      525       50  10.5
+
+  Objects chosen = 3
+  Total value    = 1735
+  Total weight   = 169
+  Density        = 10.266272189349113
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0      442       41  10.7805
+        1      511       49  10.4286
+        2      525       50  10.5
+        3      546       55  9.92727
+        4      564       57  9.89474
+        5      593       59  10.0508
+        6      617       60  10.2833
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      442       41  10.7805
+        1      511       49  10.4286
+        2      525       50  10.5
+
+  Objects chosen = 3
+  Total value    = 1478
+  Total weight   = 140
+  Density        = 10.557142857142857
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0      442       41  10.7805
+        1      525       50  10.5
+        2      511       49  10.4286
+        3      617       60  10.2833
+        4      593       59  10.0508
+        5      546       55  9.92727
+        6      564       57  9.89474
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      442       41  10.7805
+        1      525       50  10.5
+        2      511       49  10.4286
+
+  Objects chosen = 3
+  Total value    = 1478
+  Total weight   = 140
+  Density        = 10.557142857142857
+
+  Problem # 6
+  Number of items is  8
+  Knapsack weight limit is  104
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0      450       45  10
+        1      400       35  11.4286
+        2      350       25  14
+        3       70       25  2.8
+        4       20        5  4
+        5        8        3  2.66667
+        6        5        2  2.5
+        7        5        2  2.5
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      450       45  10
+        1      400       35  11.4286
+        4       20        5  4
+        5        8        3  2.66667
+        6        5        2  2.5
+        7        5        2  2.5
+
+  Objects chosen = 6
+  Total value    = 888
+  Total weight   = 92
+  Density        = 9.652173913043478
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0        5        2  2.5
+        1        5        2  2.5
+        2        8        3  2.66667
+        3       20        5  4
+        4      350       25  14
+        5       70       25  2.8
+        6      400       35  11.4286
+        7      450       45  10
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0        5        2  2.5
+        1        5        2  2.5
+        2        8        3  2.66667
+        3       20        5  4
+        4      350       25  14
+        5       70       25  2.8
+        6      400       35  11.4286
+
+  Objects chosen = 7
+  Total value    = 858
+  Total weight   = 97
+  Density        = 8.845360824742269
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0      350       25  14
+        1      400       35  11.4286
+        2      450       45  10
+        3       20        5  4
+        4       70       25  2.8
+        5        8        3  2.66667
+        6        5        2  2.5
+        7        5        2  2.5
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      350       25  14
+        1      400       35  11.4286
+        3       20        5  4
+        4       70       25  2.8
+        5        8        3  2.66667
+        6        5        2  2.5
+        7        5        2  2.5
+
+  Objects chosen = 7
+  Total value    = 858
+  Total weight   = 97
+  Density        = 8.845360824742269
+
+  Problem # 7
+  Number of items is  10
+  Knapsack weight limit is  67
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0      545       26  20.9615
+        1      543       27  20.1111
+        2      505       23  21.9565
+        3      498       29  17.1724
+        4      473       30  15.7667
+        5      458       20  22.9
+        6      414       27  15.3333
+        7      354       32  11.0625
+        8      352       26  13.5385
+        9      220       18  12.2222
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      545       26  20.9615
+        1      543       27  20.1111
+
+  Objects chosen = 2
+  Total value    = 1088
+  Total weight   = 53
+  Density        = 20.528301886792452
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0      220       18  12.2222
+        1      458       20  22.9
+        2      505       23  21.9565
+        3      545       26  20.9615
+        4      352       26  13.5385
+        5      543       27  20.1111
+        6      414       27  15.3333
+        7      498       29  17.1724
+        8      473       30  15.7667
+        9      354       32  11.0625
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      220       18  12.2222
+        1      458       20  22.9
+        2      505       23  21.9565
+
+  Objects chosen = 3
+  Total value    = 1183
+  Total weight   = 61
+  Density        = 19.39344262295082
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0      458       20  22.9
+        1      505       23  21.9565
+        2      545       26  20.9615
+        3      543       27  20.1111
+        4      498       29  17.1724
+        5      473       30  15.7667
+        6      414       27  15.3333
+        7      352       26  13.5385
+        8      220       18  12.2222
+        9      354       32  11.0625
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      458       20  22.9
+        1      505       23  21.9565
+        8      220       18  12.2222
+
+  Objects chosen = 3
+  Total value    = 1183
+  Total weight   = 61
+  Density        = 19.39344262295082
+
+  Problem # 8
+  Number of items is  10
+  Knapsack weight limit is  165
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0       92       23  4
+        1       87       89  0.977528
+        2       84       85  0.988235
+        3       72       82  0.878049
+        4       68       44  1.54545
+        5       67       63  1.06349
+        6       60       53  1.13208
+        7       57       31  1.83871
+        8       49       29  1.68966
+        9       43       38  1.13158
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       92       23  4
+        1       87       89  0.977528
+        4       68       44  1.54545
+
+  Objects chosen = 3
+  Total value    = 247
+  Total weight   = 156
+  Density        = 1.5833333333333333
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0       92       23  4
+        1       49       29  1.68966
+        2       57       31  1.83871
+        3       43       38  1.13158
+        4       68       44  1.54545
+        5       60       53  1.13208
+        6       67       63  1.06349
+        7       72       82  0.878049
+        8       84       85  0.988235
+        9       87       89  0.977528
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       92       23  4
+        1       49       29  1.68966
+        2       57       31  1.83871
+        3       43       38  1.13158
+        4       68       44  1.54545
+
+  Objects chosen = 5
+  Total value    = 309
+  Total weight   = 165
+  Density        = 1.8727272727272728
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0       92       23  4
+        1       57       31  1.83871
+        2       49       29  1.68966
+        3       68       44  1.54545
+        4       60       53  1.13208
+        5       43       38  1.13158
+        6       67       63  1.06349
+        7       84       85  0.988235
+        8       87       89  0.977528
+        9       72       82  0.878049
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0       92       23  4
+        1       57       31  1.83871
+        2       49       29  1.68966
+        3       68       44  1.54545
+        5       43       38  1.13158
+
+  Objects chosen = 5
+  Total value    = 309
+  Total weight   = 165
+  Density        = 1.8727272727272728
+
+  Problem # 9
+  Number of items is  15
+  Knapsack weight limit is  750
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0      240      120  2
+        1      229      118  1.94068
+        2      221      115  1.92174
+        3      214      113  1.89381
+        4      210      110  1.90909
+        5      201      106  1.89623
+        6      192       98  1.95918
+        7      184       94  1.95745
+        8      173       90  1.92222
+        9      163       87  1.87356
+       10      156       82  1.90244
+       11      150       80  1.875
+       12      149       77  1.93506
+       13      139       73  1.90411
+       14      135       70  1.92857
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      240      120  2
+        1      229      118  1.94068
+        2      221      115  1.92174
+        3      214      113  1.89381
+        4      210      110  1.90909
+        5      201      106  1.89623
+
+  Objects chosen = 6
+  Total value    = 1315
+  Total weight   = 682
+  Density        = 1.9281524926686218
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0      135       70  1.92857
+        1      139       73  1.90411
+        2      149       77  1.93506
+        3      150       80  1.875
+        4      156       82  1.90244
+        5      163       87  1.87356
+        6      173       90  1.92222
+        7      184       94  1.95745
+        8      192       98  1.95918
+        9      201      106  1.89623
+       10      210      110  1.90909
+       11      214      113  1.89381
+       12      221      115  1.92174
+       13      229      118  1.94068
+       14      240      120  2
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      135       70  1.92857
+        1      139       73  1.90411
+        2      149       77  1.93506
+        3      150       80  1.875
+        4      156       82  1.90244
+        5      163       87  1.87356
+        6      173       90  1.92222
+        7      184       94  1.95745
+
+  Objects chosen = 8
+  Total value    = 1249
+  Total weight   = 653
+  Density        = 1.9127105666156201
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0      240      120  2
+        1      192       98  1.95918
+        2      184       94  1.95745
+        3      229      118  1.94068
+        4      149       77  1.93506
+        5      135       70  1.92857
+        6      173       90  1.92222
+        7      221      115  1.92174
+        8      210      110  1.90909
+        9      139       73  1.90411
+       10      156       82  1.90244
+       11      201      106  1.89623
+       12      214      113  1.89381
+       13      150       80  1.875
+       14      163       87  1.87356
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0      240      120  2
+        1      192       98  1.95918
+        2      184       94  1.95745
+        3      229      118  1.94068
+        4      149       77  1.93506
+        5      135       70  1.92857
+        6      173       90  1.92222
+        9      139       73  1.90411
+
+  Objects chosen = 8
+  Total value    = 1441
+  Total weight   = 740
+  Density        = 1.9472972972972973
+
+  Problem # 10
+  Number of items is  24
+  Knapsack weight limit is  6404180
+
+  Sort by value in descending order
+
+  Object  Value    Weight  Density
+
+        0  2067538   951111  2.17381
+        1  1902996   903959  2.10518
+        2  1844992   853665  2.16126
+        3  1826027   931161  1.96102
+        4  1679693   823460  2.0398
+        5  1677009   799601  2.09731
+        6  1676628   909247  1.84397
+        7  1523970   729069  2.0903
+        8  1319836   670702  1.96784
+        9  1296457   698150  1.85699
+       10  1252836   610856  2.05095
+       11  1049289   551830  1.90147
+       12   953277   488960  1.9496
+       13   943972   467902  2.01746
+       14   901489   496951  1.81404
+       15   853655   446298  1.91275
+       16   825594   382745  2.15703
+       17   675367   323046  2.09062
+       18   577243   264724  2.18055
+       19   466257   224916  2.07303
+       20   369261   169684  2.17617
+       21    97426    44328  2.19784
+       22    69666    34610  2.01289
+       23    65731    31385  2.09434
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0  2067538   951111  2.17381
+        1  1902996   903959  2.10518
+        2  1844992   853665  2.16126
+        3  1826027   931161  1.96102
+        4  1679693   823460  2.0398
+        5  1677009   799601  2.09731
+        6  1676628   909247  1.84397
+       19   466257   224916  2.07303
+
+  Objects chosen = 8
+  Total value    = 13141140
+  Total weight   = 6397120
+  Density        = 2.0542275273873245
+
+  Sort by weight in ascending order
+
+  Object  Value    Weight  Density
+
+        0    65731    31385  2.09434
+        1    69666    34610  2.01289
+        2    97426    44328  2.19784
+        3   369261   169684  2.17617
+        4   466257   224916  2.07303
+        5   577243   264724  2.18055
+        6   675367   323046  2.09062
+        7   825594   382745  2.15703
+        8   853655   446298  1.91275
+        9   943972   467902  2.01746
+       10   953277   488960  1.9496
+       11   901489   496951  1.81404
+       12  1049289   551830  1.90147
+       13  1252836   610856  2.05095
+       14  1319836   670702  1.96784
+       15  1296457   698150  1.85699
+       16  1523970   729069  2.0903
+       17  1677009   799601  2.09731
+       18  1679693   823460  2.0398
+       19  1844992   853665  2.16126
+       20  1902996   903959  2.10518
+       21  1676628   909247  1.84397
+       22  1826027   931161  1.96102
+       23  2067538   951111  2.17381
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0    65731    31385  2.09434
+        1    69666    34610  2.01289
+        2    97426    44328  2.19784
+        3   369261   169684  2.17617
+        4   466257   224916  2.07303
+        5   577243   264724  2.18055
+        6   675367   323046  2.09062
+        7   825594   382745  2.15703
+        8   853655   446298  1.91275
+        9   943972   467902  2.01746
+       10   953277   488960  1.9496
+       11   901489   496951  1.81404
+       12  1049289   551830  1.90147
+       13  1252836   610856  2.05095
+       14  1319836   670702  1.96784
+       15  1296457   698150  1.85699
+
+  Objects chosen = 16
+  Total value    = 11717356
+  Total weight   = 5907087
+  Density        = 1.983609857108927
+
+  Sort by density in descending order
+
+  Object  Value    Weight  Density
+
+        0    97426    44328  2.19784
+        1   577243   264724  2.18055
+        2   369261   169684  2.17617
+        3  2067538   951111  2.17381
+        4  1844992   853665  2.16126
+        5   825594   382745  2.15703
+        6  1902996   903959  2.10518
+        7  1677009   799601  2.09731
+        8    65731    31385  2.09434
+        9   675367   323046  2.09062
+       10  1523970   729069  2.0903
+       11   466257   224916  2.07303
+       12  1252836   610856  2.05095
+       13  1679693   823460  2.0398
+       14   943972   467902  2.01746
+       15    69666    34610  2.01289
+       16  1319836   670702  1.96784
+       17  1826027   931161  1.96102
+       18   953277   488960  1.9496
+       19   853655   446298  1.91275
+       20  1049289   551830  1.90147
+       21  1296457   698150  1.85699
+       22  1676628   909247  1.84397
+       23   901489   496951  1.81404
+
+  Contents of Knapsack
+  Object  Value    Weight    Density
+
+        0    97426    44328  2.19784
+        1   577243   264724  2.18055
+        2   369261   169684  2.17617
+        3  2067538   951111  2.17381
+        4  1844992   853665  2.16126
+        5   825594   382745  2.15703
+        6  1902996   903959  2.10518
+        7  1677009   799601  2.09731
+        8    65731    31385  2.09434
+        9   675367   323046  2.09062
+       10  1523970   729069  2.0903
+       11   466257   224916  2.07303
+       12  1252836   610856  2.05095
+       15    69666    34610  2.01289
+
+  Objects chosen = 14
+  Total value    = 13415886
+  Total weight   = 6323699
+  Density        = 2.121525075750759
+
+knapsack_greedy_test():
+  Normal end of execution.
+Wed Oct  8 07:59:41 2025

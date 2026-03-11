@@ -1,0 +1,154 @@
+Wed Oct  8 07:59:41 2025
+
+knapsack_dynamic_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test knapsack_dynamic().
+
+  Number of items is 5
+  Knapsack capacity is 26
+  Item values: 
+[24 13 23 15 16]
+  Item weights:
+[12  7 11  8  9]
+
+   #  Index  Value  Weight  Density
+
+   0      3      15      8      1.88
+   1      2      23     11      2.09
+   2      1      13      7      1.86
+         --   -----  -----
+  Total:  3      51     26      1.96
+
+  Number of items is 6
+  Knapsack capacity is 190
+  Item values: 
+[50 50 64 46 50  5]
+  Item weights:
+[56 59 80 64 75 17]
+
+   #  Index  Value  Weight  Density
+
+   0      4      50     75      0.67
+   1      1      50     59      0.85
+   2      0      50     56      0.89
+         --   -----  -----
+  Total:  3     150    190      0.79
+
+  Number of items is 6
+  Knapsack capacity is 20
+  Item values: 
+[175  90  20  50  10 200]
+  Item weights:
+[10  9  4  2  1 20]
+
+   #  Index  Value  Weight  Density
+
+   0      4      10      1     10.00
+   1      1      90      9     10.00
+   2      0     175     10     17.50
+         --   -----  -----
+  Total:  3     275     20     13.75
+
+  Number of items is 7
+  Knapsack capacity is 50
+  Item values: 
+[70 20 39 37  7  5 10]
+  Item weights:
+[31 10 20 19  4  3  6]
+
+   #  Index  Value  Weight  Density
+
+   0      3      37     19      1.95
+   1      0      70     31      2.26
+         --   -----  -----
+  Total:  2     107     50      2.14
+
+  Number of items is 7
+  Knapsack capacity is 170
+  Item values: 
+[442 525 511 593 546 564 617]
+  Item weights:
+[41 50 49 59 55 57 60]
+
+   #  Index  Value  Weight  Density
+
+   0      6     617     60     10.28
+   1      3     593     59     10.05
+   2      1     525     50     10.50
+         --   -----  -----
+  Total:  3    1735    169     10.27
+
+  Number of items is 8
+  Knapsack capacity is 104
+  Item values: 
+[350 400 450  20  70   8   5   5]
+  Item weights:
+[25 35 45  5 25  3  2  2]
+
+   #  Index  Value  Weight  Density
+
+   0      7       5      2      2.50
+   1      6       5      2      2.50
+   2      4      70     25      2.80
+   3      3      20      5      4.00
+   4      2     450     45     10.00
+   5      0     350     25     14.00
+         --   -----  -----
+  Total:  6     900    104      8.65
+
+  Number of items is 10
+  Knapsack capacity is 67
+  Item values: 
+[505 352 458 220 354 414 498 545 473 543]
+  Item weights:
+[23 26 20 18 32 27 29 26 30 27]
+
+   #  Index  Value  Weight  Density
+
+   0      7     545     26     20.96
+   1      3     220     18     12.22
+   2      0     505     23     21.96
+         --   -----  -----
+  Total:  3    1270     67     18.96
+
+  Number of items is 10
+  Knapsack capacity is 165
+  Item values: 
+[92 57 49 68 60 43 67 84 87 72]
+  Item weights:
+[23 31 29 44 53 38 63 85 89 82]
+
+   #  Index  Value  Weight  Density
+
+   0      5      43     38      1.13
+   1      3      68     44      1.55
+   2      2      49     29      1.69
+   3      1      57     31      1.84
+   4      0      92     23      4.00
+         --   -----  -----
+  Total:  5     309    165      1.87
+
+  Number of items is 15
+  Knapsack capacity is 750
+  Item values: 
+[135 139 149 150 156 163 173 184 192 201 210 214 221 229 240]
+  Item weights:
+[ 70  73  77  80  82  87  90  94  98 106 110 113 115 118 120]
+
+   #  Index  Value  Weight  Density
+
+   0     14     240    120      2.00
+   1     13     229    118      1.94
+   2      8     192     98      1.96
+   3      7     184     94      1.96
+   4      6     173     90      1.92
+   5      4     156     82      1.90
+   6      2     149     77      1.94
+   7      0     135     70      1.93
+         --   -----  -----
+  Total:  8    1458    749      1.95
+
+knapsack_dynamic_test():
+  Normal end of execution.
+Wed Oct  8 07:59:41 2025
