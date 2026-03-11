@@ -1,0 +1,58 @@
+Wed Oct  8 09:07:58 2025
+
+truel_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test truel_simulation().
+
+truel_simulation():
+
+  Truel statistics estimated from 1000 simulations
+  Strategy =  1
+  Average number of shots fired = 3.868
+
+  Player  Accuracy  Survival
+
+  0      0.33      0.32
+  1      0.67      0.56
+  2      0.83      0.12
+
+truel_simulation():
+
+  Truel statistics estimated from 1000 simulations
+  Strategy =  2
+  Average number of shots fired = 3.632
+
+  Player  Accuracy  Survival
+
+  0      0.33      0.21
+  1      0.67      0.38
+  2      0.83      0.41
+
+truel_simulation():
+
+  Truel statistics estimated from 1000 simulations
+  Strategy =  3
+  Average number of shots fired = 3.56
+
+  Player  Accuracy  Survival
+
+  0      0.33      0.13
+  1      0.67      0.34
+  2      0.83      0.53
+
+truel_simulation():
+
+  Truel statistics estimated from 1000 simulations
+  Strategy =  4
+  Average number of shots fired = 4.541
+
+  Player  Accuracy  Survival
+
+  0      0.33      0.44
+  1      0.67      0.37
+  2      0.83      0.19
+
+truel_simulation_test():
+  Normal end of execution.
+Wed Oct  8 09:07:58 2025

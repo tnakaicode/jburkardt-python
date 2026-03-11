@@ -1,0 +1,31 @@
+Wed Oct  8 09:19:39 2025
+
+zero_laguerre_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test zero_laguerre().
+
+test01():
+  p(x)=(x+3)*(x+3)*(x-2)
+
+  Iteration steps taken:  1
+  Estimated root X =  2.0
+  F(X) =  0.0
+
+test02():
+  p(x) = x^3 - 2x - 5
+
+  Iteration steps taken:  2
+  Estimated root X =  2.0945507218539934
+  F(X) =  -8.479210396927783e-06
+
+test03():
+  p(x) = x^5 + 2x^4 + 3x^3 + 4x^2 + 5x + 6
+
+  Iteration steps taken:  4
+  Estimated root X =  -1.4917979881398973
+  F(X) =  3.9968028886505635e-14
+
+zero_laguerre_test():
+  Normal end of execution.
+Wed Oct  8 09:19:40 2025

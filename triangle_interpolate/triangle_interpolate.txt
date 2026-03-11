@@ -1,0 +1,89 @@
+Wed Oct  8 09:07:47 2025
+
+triangle_interpolate_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test triangle_interpolate()
+
+r8mat_transpose_write_test:
+  Test r8mat_transpose_write, which writes the transpose of an R8MAT to a file.
+
+  Created file "r8mat_transpose_write_test.txt".
+
+triangle_interpolate_linear_test
+  triangle_interpolate_linear uses linear interpolation
+  on vertex data to estimate values in the interior.
+
+       X               Y               V(1)            V(2)            V(3)
+
+               0               1               1               0               0
+               5               0               0               1               0
+               4               4               0               0               1
+
+         1.47776          1.6624
+        0.654029
+        0.093879
+        0.252092
+
+         3.77408         1.71755
+         0.16769
+        0.444845
+        0.387465
+
+         3.78792         1.83797
+         0.15844
+        0.421678
+        0.419883
+
+         4.18449         2.25619
+       0.0529387
+        0.396249
+        0.550813
+
+         2.83602         2.09529
+        0.345297
+        0.217206
+        0.437497
+
+         4.45052        0.821382
+       0.0724499
+        0.740317
+        0.187233
+
+          2.6632         1.85154
+        0.394509
+        0.241233
+        0.364259
+
+         2.76964         1.62039
+        0.384266
+        0.306703
+        0.309031
+
+         2.49211         1.73556
+        0.436631
+        0.238637
+        0.324733
+
+         1.55348        0.918524
+        0.677239
+         0.26244
+       0.0603212
+
+
+uniform_in_triangle_map1_test():
+  Python version: 3.10.12
+  uniform_in_triangle_map1() maps uniform
+  points into a triangle.
+
+  Number of points N =          1000
+
+  V1 =     0.750000      0.900000
+  V2 =     0.000000      0.200000
+  V3 =     0.950000      0.650000
+
+  Data written to "uniform_in_triangle_map1.txt".
+
+triangle_interpolate_test():
+  Normal end of execution.
+Wed Oct  8 09:07:47 2025

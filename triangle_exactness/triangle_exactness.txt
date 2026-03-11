@@ -1,0 +1,55 @@
+Wed Oct  8 09:07:46 2025
+
+triangle_exactness_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test triangle_exactness().
+
+triangle_exactness():
+  Investigate the polynomial exactness of a quadrature
+  rule for the triangle by integrating all monomials
+  up to a given degree.
+  The rule will be adjusted to the unit triangle.
+
+User input:
+  Quadrature rule X file = "strang5_x.txt".
+  Quadrature rule W file = "strang5_w.txt".
+  Quadrature rule R file = "strang5_r.txt".
+  Maximum total degree to check =  5
+
+  Degree  Exponents  Error
+
+   0  ( 0, 0)        0.0000000000000010
+
+   1  ( 1, 0)        0.0000000000000007
+   1  ( 0, 1)        0.0000000000000007
+
+   2  ( 2, 0)        0.0000000000000002
+   2  ( 1, 1)        0.0000000000000009
+   2  ( 0, 2)        0.0000000000000002
+
+   3  ( 3, 0)        0.0000000000000011
+   3  ( 2, 1)        0.0000000000000002
+   3  ( 1, 2)        0.0000000000000002
+   3  ( 0, 3)        0.0000000000000011
+
+   4  ( 4, 0)        0.0000000000000020
+   4  ( 3, 1)        0.0000000000000009
+   4  ( 2, 2)        0.0000000000000004
+   4  ( 1, 3)        0.0000000000000009
+   4  ( 0, 4)        0.0000000000000020
+
+   5  ( 5, 0)        0.0052739348671109
+   5  ( 4, 1)        0.0131848371677672
+   5  ( 3, 2)        0.0052739348671078
+   5  ( 2, 3)        0.0052739348671078
+   5  ( 1, 4)        0.0131848371677672
+   5  ( 0, 5)        0.0052739348671109
+
+
+triangle_exactness():
+  Normal end of execution.
+
+triangle_exactness_test():
+  Normal end of execution.
+Wed Oct  8 09:07:46 2025

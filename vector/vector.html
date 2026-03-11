@@ -1,0 +1,156 @@
+<html>
+
+  <head>
+    <title>
+      vector
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      vector
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>vector</b>,
+      a Python code which
+      considers a problem involving vectors, which can be 
+      considered to belong to equivalence classes,
+      for which an arbitrary collection of coefficients must be
+      gathered, averaged, and then scattered again.
+    </p>
+
+    <p>
+      Consider vectors X of dimension D, whose entries are integers
+      between 1 and B.
+    </p>
+
+    <p>
+      For instance, if D = 3 and B = 3, our set of vectors includes
+      the 27 triples:
+<pre>
+      111, 112, 113, 121, 122, 123, 131, 132, 133,
+      211, 212, 213, 221, 222, 223, 231, 232, 233,
+      311, 312, 313, 321, 322, 323, 331, 332, 333
+</pre>
+    </p>
+
+    <p>
+      We will say two vectors are <i>equivalent</i> if one is simply
+      a permutation of the other.  Thus, for instance, in the above
+      example, the six vectors 123, 132, 213, 231, 312 and 321 are
+      equivalent.
+    </p>
+
+    <p>
+      Now we suppose that every vector X has an associated weight or
+      coefficient C.  We wish to modify the set of coefficients so that
+      each vector in an equivalence class is assigned a coefficient
+      computed as the average of the coefficients of all the members
+      of that class.
+    </p>
+
+    <p>
+      To do this efficiently, we need to be able to generate each vector
+      and its original coefficient, identify the corresponding equivalence
+      class and ``gather'' the coefficient to an ongoing sum, then normalize
+      that sum by the size of the equivalence class, and ``scatter'' the
+      new coefficients back to the vectors.
+    </p>
+
+    <p>
+      The software supplied here is constructed in such a way as to 
+      enable the smooth carrying out of this process.  In particular,
+      the equivalence classes are identified by ``monotone vectors'', that
+      is, the unique entry of each equivalence class whose elements are
+      in ascending order.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>vector</b> is available in
+      <a href = "../../m_src/vector/vector.html">a MATLAB version</a> and
+      <a href = "../../octave_src/vector/vector.html">an Octave version</a> and
+      <a href = "../../py_src/vector/vector.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/combo/combo.html">
+      combo</a>,
+      a Python code which
+      contains many combinatorial routines.
+    </p>
+
+    <p>
+      <a href = "../../py_src/monomial/monomial.html">
+      monomial</a>,
+      a Python code which
+      enumerates, lists, ranks, unranks and randomizes multivariate monomials 
+      in a space of m dimensions, with total degree less than n,
+      equal to n, or lying within a given range.
+    </p>
+
+    <p>
+      <a href = "../../py_src/monomial_symmetrize/monomial_symmetrize.html">
+      monomial_symmetrize</a>,
+      a Python code which
+      symmetrizes the coefficients of equivalent monomials in a polynomial.
+    </p>
+
+    <p>
+      <a href = "../../py_src/subset/subset.html">
+      subset</a>,
+      a Python code which
+      generates, ranks and unranks various combinatorial objects.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "vector.py">vector.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "vector.sh">vector.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "vector.txt">vector.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 01 December 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

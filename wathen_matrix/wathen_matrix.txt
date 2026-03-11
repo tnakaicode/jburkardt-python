@@ -1,0 +1,163 @@
+Wed Oct  8 09:15:49 2025
+
+wathen_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test wathen_matrix().
+
+wathen_test01():
+  Assemble, factor and solve a Wathen system
+  defined by wathen_ge().
+
+  Elements in X direction NX = 4
+  Elements in Y direction NY = 4
+  Number of elements = 16
+  Number of nodes N = 65
+  Norm of solution error is 2.70094e-15
+
+wathen_test02():
+  Assemble, factor and solve a Wathen system
+  defined by wathen_csc().
+
+  Elements in X direction NX = 4
+  Elements in Y direction NY = 4
+  Number of elements = 16
+  Number of nodes N = 65
+  Norm of solution error is  7.155411012286914e-14
+
+wathen_test03():
+  For various problem sizes,
+  time the assembly and factorization of a Wathen system
+  using wathen_ge().
+
+    NX  Elements   Nodes   Storage    Assembly      Factor      Error
+
+     1         1       8        64    1.30e-04    1.17e-04    6.38e-16
+     2         4      21       441    4.53e-04    1.15e-04    1.32e-15
+     4        16      65      4225    1.74e-03    1.95e-04    3.29e-15
+     8        64     225     50625    7.27e-03    1.69e-03    4.76e-15
+    16       256     833    693889    3.33e-02    1.54e-01    9.77e-15
+    32      1024    3201  10246401    1.29e-01    4.68e-01    1.91e-14
+
+wathen_test04():
+  For various problem sizes,
+  time the assembly and factorization of a Wathen system
+  using the wathen_csc() function.
+
+    NX  Elements   Nodes    Assembly      Factor      Error
+
+     1         1       8    4.11e-04    9.30e-05    7.60e-16
+     2         4      21    5.51e-04    9.64e-05    3.81e-15
+     4        16      65    1.50e-03    2.01e-04    9.02e-15
+     8        64     225    5.25e-03    7.60e-04    1.14e-14
+    16       256     833    2.02e-02    3.48e-03    2.42e-14
+    32      1024    3201    5.06e-02    1.90e-02    3.58e-14
+    64      4096   12545    1.76e-01    9.15e-02    1.36e-13
+
+wathen_test05():
+  For various problem sizes, 
+  time the assembly and factorization of a Wathen system
+  wathen_ge() and wathen_csc().
+
+                   NX  Elements   Nodes    Assembly      Factor      Error
+
+  wathen_ge()       1         1       8    1.56e-04    1.74e-04    9.24e-16
+  wathen_csc()      1         1       8    4.00e-04    9.04e-05    2.79e+00
+
+  wathen_ge()       2         4      21    5.06e-04    1.19e-04    1.24e-15
+  wathen_csc()      2         4      21    6.01e-04    1.04e-04    8.98e-01
+
+  wathen_ge()       4        16      65    1.94e-03    2.18e-04    2.73e-15
+  wathen_csc()      4        16      65    1.66e-03    2.27e-04    9.20e+00
+
+  wathen_ge()       8        64     225    7.64e-03    1.22e-03    4.89e-15
+  wathen_csc()      8        64     225    5.87e-03    8.06e-04    1.46e+03
+
+  wathen_ge()      16       256     833    3.15e-02    1.58e-01    9.61e-15
+  wathen_csc()     16       256     833    2.05e-02    3.35e-03    4.86e+01
+
+  wathen_ge()      32      1024    3201    1.25e-01    4.76e-01    1.93e-14
+  wathen_csc()     32      1024    3201    7.10e-02    1.72e-02    1.05e+02
+
+wathen_test06():
+  Assemble, factor and solve a Wathen system
+  defined by wathen_ge() and cg_ge().
+
+  Elements in X direction NX = 2
+  Elements in Y direction NY = 2
+  Number of elements = 4
+  Number of nodes N = 21
+  Maximum solution error is 6.01506e-05
+
+wathen_test07():
+  Assemble, factor and solve a Wathen system
+  defined by wathen_csc() and cg_csc().
+
+  Elements in X direction NX = 2
+  Elements in Y direction NY = 2
+  Number of elements = 4
+  Number of nodes N = 21
+  Maximum solution error is 1.32268e-05
+  Normal end of execution.
+
+wathen_test08():
+  Assemble, factor and solve a Wathen system
+  defined by wathen_st() and cg_st().
+
+  Elements in X direction NX = 1
+  Elements in Y direction NY = 1
+  Number of elements = 1
+  Number of nodes N = 8
+  Number of nonzeros = 64
+
+  Maximum solution error is 1.35848e-15
+
+wathen_test09():
+  Display the sparsity of the Wathen matrix.
+
+  Graphics saved as "wathen_spy.png"
+
+wathen_order_test():
+  wathen_order() returns N, the order of a Wathen finite element
+  matrix given NX and NY, the number of rows and columns of
+  nodes in the underlying grid.
+
+       NX / NY: 1       2       3       4       5       6
+
+        1      8     13     18     23     28     33
+        2     13     21     29     37     45     53
+        3     18     29     40     51     62     73
+        4     23     37     51     65     79     93
+        5     28     45     62     79     96    113
+        6     33     53     73     93    113    133
+        7     38     61     84    107    130    153
+        8     43     69     95    121    147    173
+        9     48     77    106    135    164    193
+       10     53     85    117    149    181    213
+
+wathen_st_size_test():
+  wathen_st_size() returns NZ_NUM, the number of nonzeros
+  in a sparse triplet format for a Wathen finite element
+  matrix, given NX and NY, the number of rows and columns of
+  nodes in the underlying grid.
+
+       NX / NY: 1       2       3       4       5       6
+
+        1     64    128    192    256    320    384
+        2    128    256    384    512    640    768
+        3    192    384    576    768    960   1152
+        4    256    512    768   1024   1280   1536
+        5    320    640    960   1280   1600   1920
+        6    384    768   1152   1536   1920   2304
+        7    448    896   1344   1792   2240   2688
+        8    512   1024   1536   2048   2560   3072
+        9    576   1152   1728   2304   2880   3456
+       10    640   1280   1920   2560   3200   3840
+
+wathen_xy_test():
+  wathen_xy() returns the (X,Y) coordinates of nodes.
+  Graphics saved as " wathen_xy.png "
+
+wathen_matrix_test():
+  Normal end of execution.
+Wed Oct  8 09:15:52 2025

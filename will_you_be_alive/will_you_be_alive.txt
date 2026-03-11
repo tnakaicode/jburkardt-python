@@ -1,0 +1,498 @@
+Wed Oct  8 09:17:20 2025
+
+will_you_be_alive_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test will_you_be_alive().
+
+airplane_seat_test():
+  Airline passengers 1 to N are assigned seats 1 to N.
+  The first passenger to board, #1, is clueless, 
+  and chooses a seat randomly.
+  The remaining passengers board in order, choosing their
+  assigned seat if possible, otherwise taking an empty
+  seat at random.
+
+  What is the probability that the last passenger, N, 
+  will be able to sit in the correct assigned seat N?
+
+  Number of seats available = 100
+  Number of simulations = 100000
+  Estimated probability   =  0.4992
+  Theoretical probability = 0.5
+
+before_test():
+  before() estimates the probability that a person,
+  flipping a biased coin repeatedly, will reach 4 heads
+  before reaching 7 tails.
+
+  bias     p(4H before 7T)
+
+  0  0
+  0.05  0.00103
+  0.1  0.01327
+  0.15  0.05048
+  0.2  0.12128
+  0.25  0.22265
+  0.3  0.34689
+  0.35  0.4827
+  0.4  0.61623
+  0.45  0.7318
+  0.5  0.82712
+  0.55  0.89931
+  0.6  0.94598
+  0.65  0.97438
+  0.7  0.98963
+  0.75  0.9965
+  0.8  0.99921
+  0.85  0.99988
+  0.9  1
+  0.95  1
+  1  1
+
+bernoulli_dice_test():
+  bernoulli_dice() considers the Bernoulli dice game.
+  Players A and B toss a fair die, until a 1 is rolled.
+  On round 1, A gets 1 toss, then B gets 1 toss.
+  On round k, A gets k tosses, then B gets k tosses.
+  What is the probability that A wins?
+
+  Estimate =  0.59939
+  Exact =     0.596794
+
+bingo_test():
+  bingo(A,B) simulates a simplified game of bingo.
+  The bingo card is just a 2x2 array.
+  Player X gets card A, and player Y gets card B.
+  Many random games are played, and the results are reported.
+  There are four possible bingo cards, C1, C2, C3, C4.
+  It turns out to be a nontransitive system, in which every
+  card will beat one of the others, and lose to another.
+
+  The four bingo cards:
+[[[1 2]
+  [3 4]]
+
+ [[2 4]
+  [5 6]]
+
+ [[1 3]
+  [4 5]]
+
+ [[1 5]
+  [2 6]]]
+  A  A  0, 0, 720
+  A  B  336, 312, 72
+  A  C  288, 288, 144
+  A  D  312, 336, 72
+  B  A  312, 336, 72
+  B  B  0, 0, 720
+  B  C  336, 312, 72
+  B  D  288, 288, 144
+  C  A  288, 288, 144
+  C  B  312, 336, 72
+  C  C  0, 0, 720
+  C  D  336, 312, 72
+  D  A  336, 312, 72
+  D  B  288, 288, 144
+  D  C  312, 336, 72
+  D  D  0, 0, 720
+
+black_test():
+  A bag of B black and W white marbles is to be emptied in a 
+  series of rounds.
+
+  A round begins when a single ball is drawn from the bag, 
+  its color is noted, and the ball is discarded.  Then,
+  one at a time, more balls are drawn from the bag.  If 
+  they match the first ball, they are also discarded.  
+  Otherwise, they are replaced in the bag, and the 
+  round stops.
+
+  Rounds are taken until the bag is empty.
+
+  This function simulates the process of a single round.
+
+  Estimate the probability P that the last marble in 
+  the bag is black.  It turns out P=1/2.
+
+   B   W   P
+
+   1   1  0.5034
+   1  10  0.4963
+   2   3  0.4959
+   3   3  0.4984
+   5   4  0.5053
+   7   9  0.5034
+  18  13  0.4952
+  15  39  0.5004
+
+chain_test():
+  chain() estimates the extinction probability of a chain letter.
+  A chain letter asks the recipient to make C copies
+  and send them on.  Suppose that, with probability P,
+  any recipient ignores the request, and with probability
+  any recipient complies with it.
+  Estimate the probability E that the chain
+  letter will terminate.
+
+  Need to solve E = p + ( 1 - p ) * E^c )
+
+  C    P    E
+
+  1  0.1  1
+  1  0.3  1
+  1  0.5  1
+  1  0.7  1
+  1  0.9  1
+
+  2  0.1  0.111111
+  2  0.3  0.428571
+  2  0.5  1
+  2  0.7  1
+  2  0.9  1
+
+  3  0.1  0.100925
+  3  0.3  0.323754
+  3  0.5  0.618034
+  3  0.7  1
+  3  0.9  1
+
+  4  0.1  0.10009
+  4  0.3  0.306149
+  4  0.5  0.543689
+  4  0.7  0.8795
+  4  0.9  1
+
+  5  0.1  0.100009
+  5  0.3  0.301751
+  5  0.5  0.51879
+  5  0.7  0.795676
+  5  0.9  1
+
+double_dart_test():
+  double_dart() considers the double dart problem.
+  If two darts land randomly in the unit circle,
+  what is the probability that they are at least 1 unit apart?
+
+  Estimate =  0.41159
+  Exact =     0.41349667156634407
+
+double_six_test():
+  double_six() considers Newton's double six dice problem.
+  What is the expected number of times you must roll a fair die
+  in order to observe two consecutive values of six?
+
+  Estimate =  42.14894
+  Exact =     42.0
+
+final_test():
+  final() estimates the probability, for random A and B
+  that:
+    A^2/3 + B^2/3 < 1
+
+  Estimated probability =  0.29395
+  Exact probability     =  0.2945243112740431
+
+flips_test():
+  flips() estimates EVEN, the probability of an even number of heads
+  after N tosses of a biased coin, whose probability of heads
+  on a single toss is P.
+
+    N     P     EVEN
+
+  9  0.1  0.566
+  9  0.99  0.08396
+
+galileo_test():
+  galileo() reports the number of ways to make each sum
+  from 0 to 18, when three dice are rolled.
+
+  Total  Number of ways   Probability
+
+      0      0  0
+      1      0  0
+      2      0  0
+      3      1  0.00462963
+      4      3  0.0138889
+      5      6  0.0277778
+      6     10  0.0462963
+      7     15  0.0694444
+      8     21  0.0972222
+      9     25  0.115741
+     10     27  0.125
+     11     27  0.125
+     12     25  0.115741
+     13     21  0.0972222
+     14     15  0.0694444
+     15     10  0.0462963
+     16      6  0.0277778
+     17      3  0.0138889
+     18      1  0.00462963
+
+gamblers_ruin_test():
+  gamblers_ruin() considers the gamblers ruin problem.
+  Players A and B repeatedly play a game against each other.
+  On each game, player A has a probability P of winning.
+  After each game, the winner gets 1 dollar from the loser.
+  The players begin with A and B dollars, respectively.
+  They play until one is bankrupt.
+  How long will it take for one player to go bankrupt?
+  What is the probability that A is ruined?
+
+  A  B  P  Prob(ruin)  AverageGames
+
+   9   1  0.5  0.10012  9.07992
+  90  10  0.5  0.10039  903.627
+   9   1  0.45  0.21058  10.9839
+  99   1  0.4  0.33239  161.48
+
+golf_test():
+  golf() estimates the probability that a golf ball,
+  randomly landing in the unit square, will be
+  closer to the center than to any edge.
+
+  Estimate =  0.21936
+  Exact    =  0.2189514164974602
+
+inside_test():
+  inside() estimates the probability that, choosing three
+  points at random on the unit circle, the origin will be
+  inside the resulting triangle?
+
+  Estimate =  0.2496
+  Exact    =  0.25
+
+liar_test():
+  liar() estimates the probability PROB that a true statement,
+  passed sequentially along a chain of N people,
+  will reach the end of the chain as a true statement,
+  given that, with probability P, each person repeats
+  the statement they just hear, or with probability 1-P,
+  repeats the opposite of the statement.
+
+  N  P  PROB
+
+  1  0.99  0.9908
+  2  0.99  0.98075
+  3  0.99  0.97167
+  41  0.99  0.71844
+  42  0.99  0.71344
+  1  0.01  0.01002
+  2  0.01  0.97973
+  3  0.01  0.02933
+  41  0.01  0.28182
+  42  0.01  0.71435
+
+long_test():
+  long() estimates the probability that a triangle will be
+  after a stick of unit length is randomly broken in two,
+  and then the longer piece is randomly broken again.
+
+  Estimate =  0.38462
+  Exact    =  0.3862943611198906
+
+marks_test():
+  marks() considers a problem in which N sticks are
+  each broken into a long and short piece.
+  Pairs of the 2*N pieces are then randomly combined
+  to form N new sticks.  What is PROB, the probability
+  that every new stick will be formed from a long and
+  a short piece?
+
+    N    Prob  Exact
+
+   1  1  1
+   2  0.66932  0.666667
+   3  0.50161  0.5
+   4  0.40227  0.4
+   5  0.33401  0.333333
+   6  0.28767  0.285714
+   7  0.24841  0.25
+   8  0.22013  0.222222
+   9  0.2006  0.2
+  10  0.1827  0.181818
+
+newton_test():
+  newton() estimates the probability that
+    A: a fair die rolled  6 times will show 6 at least 1 time
+    B: a fair die rolled 12 times will show 6 at least 2 times
+    C: a fair die rolled 18 times will show 6 at least 3 times.
+  Samuel Pepys believed C was more likely than A or B.
+  Newton showed that A was more likely.
+
+  Case  Estimate  Exact
+     A: 0.6633  0.6651
+     B: 0.6177  0.6187
+     C: 0.5954  0.5973
+
+obtuse1_test():
+  obtuse1() estimates the probability that an obtuse triangle
+  will be formed, assuming that one side has length 1, and
+  the other two side lengths are chosen uniformly at random
+  between 0 and 1.
+
+  Estimate =  0.56984
+  Exact    =  0.5707963267948966
+
+obtuse2_test():
+  obtuse2() estimates the probability that, after a stick
+  of unit length is randomly broken into three pieces,
+  an obtuse triangle can be formed from the pieces.
+
+  Estimate =  0.68165
+  Exact    =  0.682233833280657
+
+ping_pong_test():
+  ping_pong() estimates PROB, the probability that a player
+  will win a game of ping pong, assuming the player has
+  a probability P of winning a single point.
+
+  P  PROB  Exact
+
+  0.3  0.0263899  0.0264
+  0.4  0.174378  0.1744
+  0.5  0.5  0.5
+  0.6  0.825622  0.8256
+
+plums_test():
+  plums() estimates the expected distance D from the surface
+  to the nearest of N plums randomly placed inside a unit
+  spherical pudding.
+
+  N  D(Estimate)  D(Exact)
+
+   5  0.0626152  0.0625
+   6  0.0525351  0.0526316
+   7  0.0452764  0.0454545
+   8  0.0401011  0.04
+   9  0.0358009  0.0357143
+  10  0.0323217  0.0322581
+
+ratio1_test():
+  ratio1() estimates the probability PROB that the ratio of
+  two random numbers is greater than K.
+
+  K  Estimated  Approximated
+
+   2  0.50029  0.5
+   3  0.33313  0.333333
+   4  0.25264  0.25
+   5  0.19888  0.2
+   6  0.16502  0.166667
+   7  0.14355  0.142857
+   8  0.12512  0.125
+   9  0.11166  0.111111
+  10  0.10008  0.1
+
+ratio2_test():
+  ratio2() estimates the probability PROB that, given three
+  random numbers, the ratio of the largest to the smallest
+  is greater than or equal to K.
+
+  K  PROB
+
+   2  0.75092
+   3  0.55623
+   4  0.43805
+   5  0.36112
+   6  0.30655
+   7  0.26632
+   8  0.23386
+   9  0.21094
+  10  0.19069
+
+spaghetti_test():
+  spaghetti() estimates E, the expected number of loops created
+  if N strands of spaghetti are randomly joined at the ends.
+
+  N   E
+
+  10  2.13326
+  100  3.28434
+  1000  4.43563
+  10000  5.58693
+
+square_adjacent_test():
+  square_adjacent() estimates S, the expected distance
+  between random points on adjacent sides of a unit square.
+
+  Estimate =  0.7662786779373713
+  Exact    =  0.7652
+
+square_inside_test():
+  square_inside() estimates the expected distance between
+  random points inside a unit square.
+  Estimate =  0.5218323020536856
+  Exact    =  0.5214
+
+square_opposite_test():
+  square_opposite() estimates the expected distance 
+  between random points on opposite sides of the perimeter
+  of a unit square.
+
+  Estimate =  1.0768071405738704
+  Exact    =  1.0766
+
+squash_test():
+  squash() estimates the probability of winning the game of squash
+  played between two equally good players:
+  P: if you serve first,
+  Q: if you serve second.
+
+  P Estimate = 0.534863, exact is 0.534863
+  Q Estimate = 0.465137, exact is 0.465137
+
+steve2_test():
+  steve2() analyzes Steves elevator problem.
+  Steve gets on an elevator going up.  There are N higher floors.
+  Steve wishes to go up 9 floors.
+  There are K additional riders in the elevator, each of whom has
+  randomly chosen one of the higher floors as destination.
+  On average, how many times S will the elevator stop until Steve
+  reaches his floor?
+  The theoretical value is T.
+
+   N   K   S   T
+
+  11  3  2.98925  2.98948
+  20  3  2.1415  3.42463
+  11  10  5.91393  5.91565
+  20  10  4.21143  7.82147
+
+ten_years_test():
+  ten_years() estimates the probability that a certain
+  person will still be alive in 1, 2, ..., 10 years.
+
+  Years  Probability
+
+   0  1
+   1  0.989985
+   2  0.969564
+   3  0.953996
+   4  0.932902
+   5  0.916801
+   6  0.900314
+   7  0.877931
+   8  0.855259
+   9  0.832281
+  10  0.808982
+
+top_test():
+  top() estimates winning ratios for dreidel
+
+   2:    1.14258  0.857421
+   3:    1.36206  0.964899  0.673038
+   4:    1.62359  1.0915  0.765483  0.519432
+   5:    1.90563  1.25732  0.859433  0.583872  0.393743
+
+twins_test():
+  twins() estimates the probability that 2 twins in 20 students
+  will be randomly assigned the same lab group of 4 students.
+
+  Estimate =  0.15682
+  Exact    =  0.15789473684210525
+
+will_you_be_alive_test():
+  Normal end of execution.
+Wed Oct  8 09:19:37 2025

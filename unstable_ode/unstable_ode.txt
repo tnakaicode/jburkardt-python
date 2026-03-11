@@ -1,0 +1,24 @@
+Wed Oct  8 09:08:10 2025
+
+unstable_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test unstable_ode().
+
+  parameters:
+    mu    =  0.1
+    t0    =  0.0
+    y0    =  [1. 0.]
+    tstop =  30.0
+
+unstable_backward_euler():
+  Solve the unstable ODE using backward_euler().
+  Graphics saved as "unstable_backward_euler_plot.png"
+
+unstable_midpoint():
+  Solve the unstable ODE using midpoint().
+  Graphics saved as "unstable_midpoint_plot.png"
+
+unstable_ode_test():
+  Normal end of execution.
+Wed Oct  8 09:08:11 2025

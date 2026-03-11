@@ -1,0 +1,83 @@
+Wed Oct  8 09:08:00 2025
+
+tsp_moler_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+
+  First 5 latitudes and longitudes:
+  AL       32.3615      -86.2791
+  AZ       33.4485     -112.0738
+  AR       34.7360      -92.3311
+  CA       38.5556     -121.4689
+  CO       39.7392     -104.9842
+
+  5x5 initial block of distance matrix
+[[   0.         1494.47162335  385.10799483 2013.40044817 1159.5395197 ]
+ [1494.47162335    0.         1131.39956402  632.18878855  585.79393823]
+ [ 385.10799483 1131.39956402    0.         1629.80591972  776.17041797]
+ [2013.40044817  632.18878855 1629.80591972    0.          885.88270866]
+ [1159.5395197   585.79393823  776.17041797  885.88270866    0.        ]]
+
+  Length of path =  10699.94072961151
+
+  Itinerary:
+  IN->KY->TN->AR->MS->LA->AL->FL->GA->SC->NC->VA->MD->DE->NJ->
+  CT->RI->MA->NH->ME->VT->NY->PA->WV->OH->MI->WI->MN->ND->SD->
+  WY->CO->UT->MT->ID->WA->OR->CA->NV->AZ->NM->TX->OK->KS->NE->
+  IA->MO->IL->IN
+
+  Mileage per leg:
+
+  IN -> KY  129.939
+  KY -> TN  175.78
+  TN -> AR  327.419
+  AR -> MS  206.962
+  MS -> LA  139.933
+  LA -> AL  315.355
+  AL -> FL  177.229
+  FL -> GA  228.692
+  GA -> SC  193.165
+  SC -> NC  182.836
+  NC -> VA  138.579
+  VA -> MD  111.847
+  MD -> DE  53.8803
+  DE -> NJ  83.9134
+  NJ -> CT  152.169
+  CT -> RI  64.7612
+  RI -> MA  34.9187
+  MA -> NH  73.0224
+  NH -> ME  117.193
+  ME -> VT  138.859
+  VT -> NY  126.495
+  NY -> PA  230.061
+  PA -> WV  286.831
+  WV -> OH  133.359
+  OH -> MI  207.592
+  MI -> WI  245.953
+  WI -> MN  225.29
+  MN -> ND  391.09
+  ND -> SD  169.781
+  SD -> WY  317.567
+  WY -> CO  97.6483
+  CO -> UT  370.942
+  UT -> MT  403.662
+  MT -> ID  290.826
+  ID -> WA  400.59
+  WA -> OR  146.033
+  OR -> CA  447.79
+  CA -> NV  101.315
+  NV -> AZ  581.551
+  AZ -> NM  379.859
+  NM -> TX  604.597
+  TX -> OK  360.604
+  OK -> KS  265.926
+  KS -> NE  132.971
+  NE -> IA  167.711
+  IA -> MO  221.836
+  MO -> IL  159.639
+  IL -> IN  185.969
+  Graphics saved as "tsp_moler_test.png"
+
+tsp_moler_test():
+  Normal end of execution.
+Wed Oct  8 09:08:01 2025

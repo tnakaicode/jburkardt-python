@@ -1,0 +1,22 @@
+Wed Oct  8 09:08:11 2025
+
+urn_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test urn_simulation().
+
+urn_50_50_test():
+  urn_sample() simulates drawing balls from an urn.
+  Here, we start with 50 white and 50 black balls:
+
+   100 marbles in urn
+   10 are drawn without replacement
+   10000 repetitions of the draw
+   2 colors, distributed as follows:
+[50 50]
+
+Graphics saved as "urn_50_50_test.png"
+
+urn_simulation_test():
+  Normal end of execution.
+Wed Oct  8 09:08:13 2025

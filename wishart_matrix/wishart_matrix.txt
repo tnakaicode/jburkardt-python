@@ -1,0 +1,340 @@
+Wed Oct  8 09:19:37 2025
+
+wishart_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test wishart_matrix().
+
+wishart_unit_sample_test():
+  wishart_unit_sample() samples unit Wishart matrices by:
+  W = wishart_unit_sample ( n, df )
+
+  wishart_unit_sample ( 5, 8 ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     17.8356      -1.50156       1.32862      -2.44031       1.17906  
+      1 :    -1.50156       9.97915       4.68122       3.52759    -0.0766238  
+      2 :     1.32862       4.68122       8.63393       1.01752       1.91467  
+      3 :    -2.44031       3.52759       1.01752        5.8985      -2.04757  
+      4 :     1.17906    -0.0766238       1.91467      -2.04757       5.00394  
+
+  wishart_unit_sample ( 5, 8 ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     4.64014       2.91571       0.98531      -0.21175     0.0254666  
+      1 :     2.91571       6.92296       3.18985      0.194962     -0.154098  
+      2 :     0.98531       3.18985       3.90526      0.568386       1.27355  
+      3 :    -0.21175      0.194962      0.568386       4.13695      -1.05101  
+      4 :   0.0254666     -0.154098       1.27355      -1.05101       3.31381  
+
+  wishart_unit_sample ( 5, 5 ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     2.84455      0.681236       2.68119       3.17455       2.34772  
+      1 :    0.681236        2.7862       1.29302       -0.2583       2.11653  
+      2 :     2.68119       1.29302       2.74528       2.39266        2.7927  
+      3 :     3.17455       -0.2583       2.39266       7.25632       1.78827  
+      4 :     2.34772       2.11653        2.7927       1.78827       7.18792  
+
+  wishart_unit_sample ( 3, 5 ):
+
+  Col:       0             1             2       
+  Row
+      0 :     10.1092      -1.48737      -3.31877  
+      1 :    -1.48737       1.80048        1.2972  
+      2 :    -3.31877        1.2972       2.59251  
+
+  Eigenvectors of previous matrix:
+
+  Col:       0             1             2       
+  Row
+      0 :    0.914891     -0.373636      0.152877  
+      1 :   -0.184306     -0.723496     -0.665271  
+      2 :   -0.359175     -0.580474      0.730783  
+
+  Eigenvalues of previous matrix:
+
+     0:       11.7117
+     1:       2.07311
+     2:      0.717331
+
+bartlett_unit_sample_test():
+  bartlett_unit_sample() samples unit Bartlett matrices by:
+  T = bartlett_unit_sample ( n, df )
+
+  bartlett_unit_sample ( 5, 8 ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     4.22322     -0.355547      0.314598      -0.57783      0.279186  
+      1 :           0       3.13891       1.52699       1.05838     0.0072127  
+      2 :           0             0       2.49064     -0.167357      0.729061  
+      3 :           0             0             0       2.10153     -0.843131  
+      4 :           0             0             0             0       1.91926  
+
+  bartlett_unit_sample ( 5, 8 ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :      2.1541       1.35357      0.457412    -0.0983011     0.0118224  
+      1 :           0       2.25628       1.13936       0.14538    -0.0753898  
+      2 :           0             0       1.54851      0.289122      0.874412  
+      3 :           0             0             0       2.00563     -0.644035  
+      4 :           0             0             0             0       1.45897  
+
+  bartlett_unit_sample ( 5, 5 ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     1.68658      0.403915       1.58972       1.88224         1.392  
+      1 :           0       1.61958      0.401899     -0.628906      0.959677  
+      2 :           0             0      0.237781      -1.45859      0.816351  
+      3 :           0             0             0        1.0911      0.882096  
+      4 :           0             0             0             0       1.69845  
+
+  bartlett_unit_sample ( 3, 5 ):
+
+  Col:       0             1             2       
+  Row
+      0 :      3.1795     -0.467801       -1.0438  
+      1 :           0       1.25763      0.643195  
+      2 :           0             0       1.04369  
+
+  Eigenvectors of W = T' * T:
+
+  Col:       0             1             2       
+  Row
+      0 :    0.914891     -0.373636      0.152877  
+      1 :   -0.184306     -0.723496     -0.665271  
+      2 :   -0.359175     -0.580474      0.730783  
+
+  Eigenvalues of W = T' * T:
+
+     0:       11.7117
+     1:       2.07311
+     2:      0.717331
+
+wishart_test03():
+  Verify that, if using the same set of random numbers,
+    W = T' * T,
+  where
+    W = wishart_unit_sample ( n, df )
+    T = bartlett_unit_sample ( n, df )
+
+  W:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     17.8356      -1.50156       1.32862      -2.44031       1.17906  
+      1 :    -1.50156       9.97915       4.68122       3.52759    -0.0766238  
+      2 :     1.32862       4.68122       8.63393       1.01752       1.91467  
+      3 :    -2.44031       3.52759       1.01752        5.8985      -2.04757  
+      4 :     1.17906    -0.0766238       1.91467      -2.04757       5.00394  
+
+  T:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     4.22322     -0.355547      0.314598      -0.57783      0.279186  
+      1 :           0       3.13891       1.52699       1.05838     0.0072127  
+      2 :           0             0       2.49064     -0.167357      0.729061  
+      3 :           0             0             0       2.10153     -0.843131  
+      4 :           0             0             0             0       1.91926  
+
+  Frobenius norm of W-T'T: 0.0
+
+wishart_test04():
+  We can compute sample Wishart matrices by:
+    W = wishart_sample ( n, df, sigma )
+
+  wishart_sample ( 5, 8, Identity ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     17.8356      -1.50156       1.32862      -2.44031       1.17906  
+      1 :    -1.50156       9.97915       4.68122       3.52759    -0.0766238  
+      2 :     1.32862       4.68122       8.63393       1.01752       1.91467  
+      3 :    -2.44031       3.52759       1.01752        5.8985      -2.04757  
+      4 :     1.17906    -0.0766238       1.91467      -2.04757       5.00394  
+
+  wishart_sample ( 5, 8, Identity ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     4.64014       2.91571       0.98531      -0.21175     0.0254666  
+      1 :     2.91571       6.92296       3.18985      0.194962     -0.154098  
+      2 :     0.98531       3.18985       3.90526      0.568386       1.27355  
+      3 :    -0.21175      0.194962      0.568386       4.13695      -1.05101  
+      4 :   0.0254666     -0.154098       1.27355      -1.05101       3.31381  
+
+  wishart_sample ( 5, 8, diag(1,2,3,4,5) ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     5.43977       1.33228       6.42203       8.78002       7.25964  
+      1 :     1.33228       11.2496       3.87353      -2.00677       8.87031  
+      2 :     6.42203       3.87353       11.4347       4.13585       13.4146  
+      3 :     8.78002      -2.00677       4.13585        41.754       11.9422  
+      4 :     7.25964       8.87031       13.4146       11.9422       32.0516  
+
+  Set covariance SIGMA:
+
+  Col:       0             1             2       
+  Row
+      0 :          25             5            15  
+      1 :           5            17            11  
+      2 :          15            11            49  
+
+  wishart_sample ( 3, 3, sigma ):
+
+  Col:       0             1             2       
+  Row
+      0 :     241.027       6.54059      -130.288  
+      1 :     6.54059       22.8472       37.0984  
+      2 :    -130.288       37.0984        145.06  
+
+  Eigenvectors of previous matrix:
+
+  Col:       0             1             2       
+  Row
+      0 :   -0.815489     -0.510183     -0.273296  
+      1 :   0.0518024     -0.534644      0.843488  
+      2 :     0.57645     -0.673698     -0.462425  
+
+  Eigenvalues of previous matrix:
+
+     0:       332.709
+     1:       75.8359
+     2:       0.38957
+
+wishart_test05():
+  We can compute sample Bartlett matrices by:
+    T = bartlett_sample ( n, df, sigma )
+
+  bartlett_sample ( 5, 8, Identity ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     4.22322     -0.355547      0.314598      -0.57783      0.279186  
+      1 :           0       3.13891       1.52699       1.05838     0.0072127  
+      2 :           0             0       2.49064     -0.167357      0.729061  
+      3 :           0             0             0       2.10153     -0.843131  
+      4 :           0             0             0             0       1.91926  
+
+  bartlett_sample ( 5, 8, Identity ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :      2.1541       1.35357      0.457412    -0.0983011     0.0118224  
+      1 :           0       2.25628       1.13936       0.14538    -0.0753898  
+      2 :           0             0       1.54851      0.289122      0.874412  
+      3 :           0             0             0       2.00563     -0.644035  
+      4 :           0             0             0             0       1.45897  
+
+  bartlett_sample ( 5, 8, diag(1,2,3,4,5) ):
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     2.33233      0.571223       2.75348       3.76448       3.11261  
+      1 :           0       3.30505       0.69611      -1.25781        2.1459  
+      2 :           0             0       1.83534      -2.91717       1.82542  
+      3 :           0             0             0       4.18219       1.97243  
+      4 :           0             0             0             0       3.24588  
+
+  Set covariance SIGMA:
+
+  Col:       0             1             2       
+  Row
+      0 :          25             5            15  
+      1 :           5            17            11  
+      2 :          15            11            49  
+
+  bartlett_sample ( 3, 3, sigma ):
+
+  Col:       0             1             2       
+  Row
+      0 :     15.5251      0.421292      -8.39212  
+      1 :           0       4.76127       8.53427  
+      2 :           0             0       1.34124  
+
+  Eigenvectors of W = T * T:
+
+  Col:       0             1             2       
+  Row
+      0 :   -0.815489     -0.510183     -0.273296  
+      1 :   0.0518024     -0.534644      0.843488  
+      2 :     0.57645     -0.673698     -0.462425  
+
+  Eigenvalues of W = T * T:
+
+     0:       332.709
+     1:       75.8359
+     2:       0.38957
+
+wishart_test06():
+  Verify that, if using the same set of random numbers,
+    W = T' * T,
+  where
+    W = wishart_sample ( n, df, sigma )
+    T = bartlett_sample ( n, df, sigma )
+
+  Covariance SIGMA:
+
+  Col:       0             1             2       
+  Row
+      0 :          25             5            15  
+      1 :           5            17            11  
+      2 :          15            11            49  
+
+  Frobenius norm of W-T'*T is  1.0400413805416838e-13
+
+wishart_test07():
+  For given values of N, DF, SIGMA, the random
+  matrices from the Wishart distribution:
+    W = wishart_sample ( n, df, sigma )
+  should have mean DF * SIGMA.
+  Fix N = 3
+  Fix DF = 5
+
+  Covariance matrix SIGMA:
+
+  Col:       0             1             2       
+  Row
+      0 :          25             5            15  
+      1 :           5            17            11  
+      2 :          15            11            49  
+
+  W_Average / DF: 
+
+  Col:       0             1             2       
+  Row
+      0 :     24.8598       5.33501       15.0618  
+      1 :     5.33501       17.2976       11.7822  
+      2 :     15.0618       11.7822       48.3906  
+
+  Frobenius norm of SIGMA-W_average/DF = 1.39117302882882
+
+wishart_test08():
+  Verify that, if using the same set of random numbers,
+    inverse(W) = M,
+  where
+    W = wishart_unit_sample ( n, df )
+    M = wishart_unit_sample_inverse ( n, df )
+
+  Frobenius norm of error M*W-I is 5.587045113404584e-16
+
+wishart_test09():
+  Verify that, if using the same set of random numbers,
+    inverse(W) = M,
+  where
+    W = wishart_sample ( n, df, sigma )
+    M = wishart_sample_inverse ( n, df, sigma )
+
+  Frobenius norm of error M*W-I is  1.7014548360805566e-15
+
+wishart_matrix_test():
+  Normal end of execution.
+Wed Oct  8 09:19:37 2025

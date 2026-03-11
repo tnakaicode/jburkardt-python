@@ -1,0 +1,266 @@
+<html>
+
+  <head>
+    <title>
+      wathen_matrix
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      wathen_matrix
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>wathen_matrix</b>,
+      a Python code which
+      compares storage schemes (full, banded, sparse triplet, sparse) and 
+      solution strategies (A\x, Linpack, conjugate gradient (CG)) 
+      for linear systems involving the Wathen matrix, 
+      which can arise when solving a problem using the 
+      finite element method (FEM).
+    </p>
+
+    <p>
+      The Wathen matrix is a typical example of a matrix that arises during
+      finite element computations.  The parameters NX and NY specify how many
+      elements are to be set up in the X and Y directions.  The number of
+      variables N is then
+      <pre>
+        N = 3 NX NY + 2 NX + 2 NY + 1
+      </pre>
+      and the full linear system will require N * N storage for the matrix.
+    </p>
+
+    <p>
+      However, the matrix is sparse, and a banded or sparse storage scheme
+      can be used to save storage.  However, even if storage is saved, a
+      revised program may eat up too much time because MATLAB's sparse storage
+      scheme is not efficiently used by inserting nonzero elements one at a time.
+      Moreover, if banded storage is employed, the user must provide a
+      suitable fast solver.  Simply "translating" a banded solver from another
+      language will probably not provide an efficient routine.
+    </p>
+
+    <p>
+      This code looks at how the complexity of the problem grows with
+      increasing NX and NY; how the computing time increases; how the
+      various full, banded and sparse approaches perform.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>wathen_matrix</b> is available in
+      <a href = "../../c_src/wathen_matrix/wathen_matrix.html">a C version</a> and
+      <a href = "../../cpp_src/wathen_matrix/wathen_matrix.html">a C++ version</a> and
+      <a href = "../../f_src/wathen_matrix/wathen_matrix.html">a Fortran90 version</a> and
+      <a href = "../../m_src/wathen_matrix/wathen_matrix.html">a MATLAB version</a> and
+      <a href = "../../octave_src/wathen_matrix/wathen_matrix.html">an Octave version</a> and
+      <a href = "../../py_src/wathen_matrix/wathen_matrix.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/chebyshev_matrix/chebyshev_matrix.html">
+      chebyshev_matrix</a>,
+      a Python code which
+      defines the Chebyshev differentiation matrix.
+    </p>
+
+    <p>
+      <a href = "../../fpy_src/jacobi/jacobi.html">
+      jacobi</a>,
+      a Python code which
+      implements the Jacobi iteration for solving symmetric positive definite 
+      (SPD) systems of linear equations.
+    </p>
+
+    <p>
+      <a href = "../../py_src/jordan_matrix/jordan_matrix.html">
+      jordan_matrix</a>,
+      a Python code which
+      returns a random matrix in Jordan canonical form.
+    </p>
+
+    <p>
+      <a href = "../../py_src/levenshtein_matrix/levenshtein_matrix.html">
+      levenshtein_matrix</a>,
+      a Python code which
+      computes the Levenshtein matrix associated with the distance between
+      two strings.
+    </p>
+
+    <p>
+      <a href = "../../py_src/magic_matrix/magic_matrix.html">
+      magic_matrix</a>,
+      a Python code which
+      computes a magic matrix, for any odd order n, such that all rows and
+      columns have the same sum.
+    </p>
+
+    <p>
+      <a href = "../../py_src/monopoly_matrix/monopoly_matrix.html">
+      monopoly_matrix</a>,
+      a Python code which
+      computes the adjacency and transition matrices for the game of Monopoly.
+    </p>
+
+    <p>
+      <a href = "../../py_src/plasma_matrix/plasma_matrix.html">
+      plasma_matrix</a>,
+      a Python code which
+      sets up a matrix associated with a problem in plasma physics.
+    </p>
+
+    <p>
+      <a href = "../../py_src/r8lib/r8lib.html">
+      r8lib</a>,
+      a Python code which
+      contains many utility routines 
+      using double precision real (R8) arithmetic.
+    </p>
+
+    <p>
+      <a href = "../../py_src/risk_matrix/risk_matrix.html">
+      risk_matrix</a>,
+      a Python code which
+      computes the transition and adjacency matrix for the game of RISK.
+    </p>
+
+    <p>
+      <a href = "../../py_src/snakes_matrix/snakes_matrix.html">
+      snakes_matrix</a>,
+      a Python code which
+      computes the transition matrix for Snakes and Ladders.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tennis_matrix/tennis_matrix.html">
+      tennis_matrix</a>,
+      a Python code which
+      computes the transition matrix for a game of tennis, which
+      has 17 distinct states.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_matrix/test_matrix.html">
+      test_matrix</a>,
+      a Python code which
+      defines test matrices for which the condition number, determinant,
+      eigenvalues, eigenvectors, inverse, null vectors, P*L*U factorization
+      or linear system solution are known.  Examples include the 
+      Fibonacci, Hilbert, Redheffer, Vandermonde, Wathen and Wilkinson 
+      matrices.
+    </p>
+
+    <p>
+      <a href = "../../py_src/usa_matrix/usa_matrix.html">
+      usa_matrix</a>,
+      a Python code which
+      defines the adjacency matrix for US states, 
+      using a variety of matrix formats.
+    </p>
+
+    <p>
+      <a href = "../../py_src/web_matrix/web_matrix.html">
+      web_matrix</a>,
+      a Python code which
+      stores sample matrices describing a web page network.  These matrices
+      are typically very sparse, and the examples here are stored using the
+      sparse triplet (ST) format.  They can be used to demonstrate
+      pagerank and other graph algorithms.
+    </p>
+
+    <p>
+      <a href = "../../py_src/wishart_matrix/wishart_matrix.html">
+      wishart_matrix</a>,
+      a Python code which
+      produces sample matrices from the Wishart or Bartlett distributions,
+      useful for sampling random covariance matrices.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Nicholas Higham,<br>
+          Algorithm 694: 
+          A Collection of Test Matrices in MATLAB,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 17, Number 3, September 1991, pages 289-305.
+        </li>
+        <li>
+          Andrew Wathen,<br>
+          Realistic eigenvalue bounds for the Galerkin mass matrix,<br>
+          IMA Journal of Numerical Analysis,<br>
+          Volume 7, Number 4, October 1987, pages 449-457.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "wathen_matrix.py">wathen_matrix.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "wathen_matrix.sh">wathen_matrix.sh</a>,
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "wathen_matrix.txt">wathen_matrix.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "wathen_spy.png">wathen_spy.png</a>,
+          spy plots for wathen(1,1) through wathen(6,6).
+        </li>
+        <li>
+          <a href = "wathen_xy.png">wathen_xy.png</a>,
+          plots the node locations for a grid of 3x3 elements.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 22 March 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

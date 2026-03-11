@@ -1,0 +1,12 @@
+Wed Oct  8 09:15:47 2025
+
+voronoi_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  scipy.spatial.Voronoi computes the Voronoi diagram of a set of points.
+  scipy.spatial.voronoi_plot_2d will plot it.
+  Graphics saved as "voronoi_test.png"
+
+voronoi_test():
+  Normal end of execution.
+Wed Oct  8 09:15:48 2025

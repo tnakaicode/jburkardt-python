@@ -1,0 +1,24 @@
+Wed Oct  8 09:19:40 2025
+
+zombie_ode_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve zombie_ode().
+
+  parameters:
+    alpha =  0.008
+    beta  =  0.0095
+    gamma =  0.02
+    delta =  0.0001
+    t0    =  0.0
+    y0    =  [500.   0.   0.]
+    tstop =  20.0
+
+zombie_euler():
+  Use the euler method on the zombie ODE.
+  Graphics saved as "zombie_euler_plot.png"
+  Graphics saved as "zombie_euler_conservation.png"
+
+zombie_ode_test():
+  Normal end of execution.
+Wed Oct  8 09:19:41 2025

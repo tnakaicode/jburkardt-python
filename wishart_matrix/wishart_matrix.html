@@ -1,0 +1,244 @@
+<html>
+
+  <head>
+    <title>
+      wishart_matrix
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      wishart_matrix
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>wishart_matrix</b>,
+      a Python code which 
+      produces sample matrices from the Wishart or Bartlett distributions,
+      useful for sampling random covariance matrices.
+    </p>
+
+    <p>
+      The Wishart distribution is a probability distribution for random
+      nonnegative-definite NxN matrices that can be used to select random
+      covariance matrices.
+    </p>
+
+    <p>
+      The objects of the distribution are NxN matrices which are the sum of
+      DF rank-one matrices X*X' constructed from N-vectors X, where the vectors
+      X have zero mean and covariance SIGMA.  This implies that the expected
+      value of a Wishart matrix is DF * SIGMA.
+    </p>
+
+    <p>
+      A simplified version of the Wishart distribution assumes that SIGMA is
+      the identity matrix.  We will call this the "unit Wishart distribution".
+    </p>
+
+    <p>
+      Because any Wishart matrix W is symmetric nonnegative definite,
+      there is an upper triangular factor T so that W = T' * T.
+      There is a corresponding Bartlett distribution of the matrices T,
+      so that one can alternatively sample the Bartlett distribution by
+      sampling the Bartlett distribution for T, and then forming W.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>wishart_matrix</b> is available in
+      <a href = "../../c_src/wishart_matrix/wishart_matrix.html">a C version</a> and
+      <a href = "../../cpp_src/wishart_matrix/wishart_matrix.html">a C++ version</a> and
+      <a href = "../../f77_src/wishart_matrix/wishart_matrix.html">a Fortran77 version</a> and
+      <a href = "../../f_src/wishart_matrix/wishart_matrix.html">a Fortran90 version</a> and
+      <a href = "../../m_src/wishart_matrix/wishart_matrix.html">a MATLAB version</a> and
+      <a href = "../../octave_src/wishart_matrix/wishart_matrix.html">an Octave version</a> and
+      <a href = "../../py_src/wishart_matrix/wishart_matrix.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/asa053/asa053.html">
+      asa053</a>,
+      a Python code which
+      produces sample matrices from the Wishart distribution,
+      by William Smith and Ronald Hocking.
+      This is a version of Applied Statistics Algorithm 53.
+    </p>
+
+    <p>
+      <a href = "../../py_src/chebyshev_matrix/chebyshev_matrix.html">
+      chebyshev_matrix</a>,
+      a Python code which
+      defines the Chebyshev differentiation matrix.
+    </p>
+
+    <p>
+      <a href = "../../py_src/jordan_matrix/jordan_matrix.html">
+      jordan_matrix</a>,
+      a Python code which
+      returns a random matrix in Jordan canonical form.
+    </p>
+
+    <p>
+      <a href = "../../py_src/levenshtein_matrix/levenshtein_matrix.html">
+      levenshtein_matrix</a>,
+      a Python code which
+      returns the Levenshtein distance matrix defined by two strings.
+    </p>
+
+    <p>
+      <a href = "../../py_src/magic_matrix/magic_matrix.html">
+      magic_matrix</a>,
+      a Python code which
+      computes a magic matrix, for any odd order n, such that all rows and
+      columns have the same sum.
+    </p>
+
+    <p>
+      <a href = "../../py_src/monopoly_matrix/monopoly_matrix.html">
+      monopoly_matrix</a>,
+      a Python code which
+      computes the adjacency and transition matrices for the game of Monopoly.
+    </p>
+
+    <p>
+      <a href = "../../py_src/plasma_matrix/plasma_matrix.html">
+      plasma_matrix</a>,
+      a Python code which
+      sets up a matrix associated with a problem in plasma physics.
+    </p>
+
+    <p>
+      <a href = "../../py_src/risk_matrix/risk_matrix.html">
+      risk_matrix</a>,
+      a Python code which
+      computes the transition and adjacency matrix for the game of RISK.
+    </p>
+
+    <p>
+      <a href = "../../py_src/snakes_matrix/snakes_matrix.html">
+      snakes_matrix</a>,
+      a Python code which
+      computes the transition matrix for Snakes and Ladders.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tennis_matrix/tennis_matrix.html">
+      tennis_matrix</a>,
+      a Python code which
+      computes the transition matrix for a game of tennis, which
+      has 17 distinct states.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_matrix/test_matrix.html">
+      test_matrix</a>,
+      a Python code which
+      defines test matrices for which the condition number, determinant,
+      eigenvalues, eigenvectors, inverse, null vectors, P*L*U factorization
+      or linear system solution are known.  Examples include the 
+      Fibonacci, Hilbert, Redheffer, Vandermonde, Wathen and Wilkinson 
+      matrices.
+    </p>
+
+    <p>
+      <a href = "../../py_src/usa_matrix/usa_matrix.html">
+      usa_matrix</a>,
+      a Python code which
+      defines the adjacency matrix for US states, using a variety of matrix formats.
+    </p>
+
+    <p>
+      <a href = "../../py_src/wathen_matrix/wathen_matrix.html">
+      wathen_matrix</a>,
+      a Python code which
+      compares storage schemes (full, banded, sparse triplet, sparse) and 
+      solution strategies (A\x, linpack, conjugate gradient (CG)) 
+      for linear systems involving the Wathen matrix, 
+      which can arise when solving a problem using the 
+      finite element method (FEM).
+    </p>
+
+    <p>
+      <a href = "../../py_src/web_matrix/web_matrix.html">
+      web_matrix</a>,
+      a Python code which
+      stores sample matrices describing a web page network.  These matrices
+      are typically very sparse, and the examples here are stored using the
+      sparse triplet (ST) format.  They can be used to demonstrate
+      pagerank and other graph algorithms.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Patrick Odell, Alan Feiveson,<br>
+          A numerical procedure to generate a sample covariance matrix,<br>
+          Journal of the American Statistical Association,<br>
+          Volume 61, Number 313, March 1966, pages 199-203.
+        </li>
+        <li>
+          Stanley Sawyer,<br>
+          Wishart Distributions and Inverse-Wishart Sampling,<br>
+          Washington University,<br>
+          30 April 2007, 12 pages.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "wishart_matrix.py">wishart_matrix.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "wishart_matrix.sh">wishart_matrix.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "wishart_matrix.txt">wishart_matrix.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 31 December 2023.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

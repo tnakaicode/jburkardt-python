@@ -1,0 +1,1187 @@
+Wed Oct  8 09:07:25 2025
+
+traffic_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test traffic_simulation().
+  Cycle 0
+R  
+
+  Cycle 1
+R  
+IIII
+  Cycle 2
+R  
+IIIIIIIII
+  Cycle 3
+R  
+XII
+  Cycle 4
+G  
+XIIIII
+  Cycle 5
+G  
+XII
+  Cycle 6
+R  
+IIII
+  Cycle 7
+R  
+IIIIIIII
+  Cycle 8
+R  
+XIII
+  Cycle 9
+R  
+XIIIIIII
+  Cycle 10
+G  
+XIIIIIIIII
+  Cycle 11
+G  
+XIIIII
+  Cycle 12
+R  
+XI
+  Cycle 13
+R  
+XIIIIII
+  Cycle 14
+R  
+XIIIIIIIII
+  Cycle 15
+R  
+XXI
+  Cycle 16
+G  
+XXII
+  Cycle 17
+G  
+XIIIIII
+  Cycle 18
+R  
+IIIIIIIII
+  Cycle 19
+R  
+XIII
+  Cycle 20
+R  
+XIIIIIIII
+  Cycle 21
+R  
+XXIII
+  Cycle 22
+G  
+XXIIIIII
+  Cycle 23
+G  
+XX
+  Cycle 24
+R  
+XIIIIIII
+  Cycle 25
+R  
+XXII
+  Graphics saved as "sim_25.png"
+
+  Number of cycles =           25
+  Simulated time in seconds =  250
+  Number of cars in =          86
+  Number of cars waiting =     22
+  Number of cars out =         64
+  Percentage Out/In =          74.4186046511628
+  Average wait in seconds =    44.30232558139535
+  Average wait in cycles       0.7383720930232558
+  Cycle 0
+R  
+
+  Cycle 1
+R  
+II
+  Cycle 2
+R  
+IIII
+  Cycle 3
+R  
+IIIIIIIII
+  Cycle 4
+G  
+XII
+  Cycle 5
+G  
+IIIIIII
+  Cycle 6
+R  
+II
+  Cycle 7
+R  
+IIIIIII
+  Cycle 8
+R  
+XII
+  Cycle 9
+R  
+XIII
+  Cycle 10
+G  
+XIIII
+  Cycle 11
+G  
+IIIIIIIII
+  Cycle 12
+R  
+IIII
+  Cycle 13
+R  
+IIIIIIII
+  Cycle 14
+R  
+XIII
+  Cycle 15
+R  
+XIIII
+  Cycle 16
+G  
+XIIIII
+  Cycle 17
+G  
+XII
+  Cycle 18
+R  
+IIIIIIII
+  Cycle 19
+R  
+XI
+  Cycle 20
+R  
+XIIIIII
+  Cycle 21
+R  
+XXIII
+  Cycle 22
+G  
+XXIIIII
+  Cycle 23
+G  
+XX
+  Cycle 24
+R  
+XIII
+  Cycle 25
+R  
+XIIII
+  Cycle 26
+R  
+XIIIII
+  Cycle 27
+R  
+XIIIIIIII
+  Cycle 28
+G  
+XIIIIIIIII
+  Cycle 29
+G  
+XIIIII
+  Cycle 30
+R  
+XIIIII
+  Cycle 31
+R  
+XIIIIIIIII
+  Cycle 32
+R  
+XXII
+  Cycle 33
+R  
+XXIIIII
+  Cycle 34
+G  
+XXX
+  Cycle 35
+G  
+XXIIII
+  Cycle 36
+R  
+XX
+  Cycle 37
+R  
+XXII
+  Cycle 38
+R  
+XXIIII
+  Cycle 39
+R  
+XXX
+  Cycle 40
+G  
+XXXII
+  Cycle 41
+G  
+XXIIIIIIII
+  Cycle 42
+R  
+XXII
+  Cycle 43
+R  
+XXIIII
+  Cycle 44
+R  
+XXIIIIIII
+  Cycle 45
+R  
+XXX
+  Cycle 46
+G  
+XXXII
+  Cycle 47
+G  
+XXIIIII
+  Cycle 48
+R  
+XXIII
+  Cycle 49
+R  
+XXIIIIII
+  Cycle 50
+R  
+XXXI
+  Graphics saved as "sim_50.png"
+
+  Number of cycles =           50
+  Simulated time in seconds =  500
+  Number of cars in =          159
+  Number of cars waiting =     31
+  Number of cars out =         128
+  Percentage Out/In =          80.50314465408805
+  Average wait in seconds =    55.660377358490564
+  Average wait in cycles       0.9276729559748428
+  Cycle 0
+R  
+
+  Cycle 1
+R  
+III
+  Cycle 2
+R  
+IIIII
+  Cycle 3
+R  
+IIIIIIIII
+  Cycle 4
+G  
+XII
+  Cycle 5
+G  
+IIIIIII
+  Cycle 6
+R  
+I
+  Cycle 7
+R  
+IIII
+  Cycle 8
+R  
+IIIIIII
+  Cycle 9
+R  
+X
+  Cycle 10
+G  
+XII
+  Cycle 11
+G  
+IIIII
+  Cycle 12
+R  
+
+  Cycle 13
+R  
+III
+  Cycle 14
+R  
+IIII
+  Cycle 15
+R  
+IIIIIII
+  Cycle 16
+G  
+XIIII
+  Cycle 17
+G  
+IIIIIIIII
+  Cycle 18
+R  
+II
+  Cycle 19
+R  
+IIII
+  Cycle 20
+R  
+IIIII
+  Cycle 21
+R  
+IIIIII
+  Cycle 22
+G  
+IIIIIIII
+  Cycle 23
+G  
+I
+  Cycle 24
+R  
+
+  Cycle 25
+R  
+
+  Cycle 26
+R  
+IIII
+  Cycle 27
+R  
+IIIIIIIII
+  Cycle 28
+G  
+IIIIIIIII
+  Cycle 29
+G  
+I
+  Cycle 30
+R  
+
+  Cycle 31
+R  
+III
+  Cycle 32
+R  
+IIIIIII
+  Cycle 33
+R  
+XII
+  Cycle 34
+G  
+XIIII
+  Cycle 35
+G  
+IIIIIIII
+  Cycle 36
+R  
+III
+  Cycle 37
+R  
+IIIIII
+  Cycle 38
+R  
+IIIIIII
+  Cycle 39
+R  
+XII
+  Cycle 40
+G  
+XIIIIIII
+  Cycle 41
+G  
+X
+  Cycle 42
+R  
+IIIIIII
+  Cycle 43
+R  
+IIIIIIII
+  Cycle 44
+R  
+IIIIIIIII
+  Cycle 45
+R  
+XI
+  Cycle 46
+G  
+XII
+  Cycle 47
+G  
+IIIIIIIII
+  Cycle 48
+R  
+IIII
+  Cycle 49
+R  
+IIIIII
+  Cycle 50
+R  
+X
+  Cycle 51
+R  
+XI
+  Cycle 52
+G  
+XIIIIII
+  Cycle 53
+G  
+IIIIIIII
+  Cycle 54
+R  
+III
+  Cycle 55
+R  
+IIIII
+  Cycle 56
+R  
+IIIIIIII
+  Cycle 57
+R  
+XIII
+  Cycle 58
+G  
+XIIIIII
+  Cycle 59
+G  
+XI
+  Cycle 60
+R  
+IIIIIIIII
+  Cycle 61
+R  
+XII
+  Cycle 62
+R  
+XIIIIII
+  Cycle 63
+R  
+XIIIIIIIII
+  Cycle 64
+G  
+XXI
+  Cycle 65
+G  
+XIIII
+  Cycle 66
+R  
+X
+  Cycle 67
+R  
+XIIII
+  Cycle 68
+R  
+XIIIIIIIII
+  Cycle 69
+R  
+XXI
+  Cycle 70
+G  
+XXIIIII
+  Cycle 71
+G  
+XXI
+  Cycle 72
+R  
+XIIIIII
+  Cycle 73
+R  
+XX
+  Cycle 74
+R  
+XXII
+  Cycle 75
+R  
+XXIIIII
+  Cycle 76
+G  
+XXIIIIIIII
+  Cycle 77
+G  
+XXIII
+  Cycle 78
+R  
+XIIIII
+  Cycle 79
+R  
+XXI
+  Cycle 80
+R  
+XXIIIII
+  Cycle 81
+R  
+XXIIIIIIIII
+  Cycle 82
+G  
+XXX
+  Cycle 83
+G  
+XXIIIIII
+  Cycle 84
+R  
+XX
+  Cycle 85
+R  
+XXI
+  Cycle 86
+R  
+XXIIIII
+  Cycle 87
+R  
+XXIIIIII
+  Cycle 88
+G  
+XXIIIIIIII
+  Cycle 89
+G  
+XXIII
+  Cycle 90
+R  
+XIIIIIIIII
+  Cycle 91
+R  
+XXI
+  Cycle 92
+R  
+XXIIIII
+  Cycle 93
+R  
+XXIIIIIIII
+  Cycle 94
+G  
+XXXI
+  Cycle 95
+G  
+XXIIIII
+  Cycle 96
+R  
+XIIIIIIIII
+  Cycle 97
+R  
+XXII
+  Cycle 98
+R  
+XXIIIII
+  Cycle 99
+R  
+XXIIIIIIII
+  Cycle 100
+G  
+XXXI
+  Graphics saved as "sim_100.png"
+
+  Number of cycles =           100
+  Simulated time in seconds =  1000
+  Number of cars in =          275
+  Number of cars waiting =     31
+  Number of cars out =         244
+  Percentage Out/In =          88.72727272727273
+  Average wait in seconds =    48.18181818181818
+  Average wait in cycles       0.8030303030303031
+  Cycle 0
+R  
+
+  Cycle 1
+R  
+IIIII
+  Cycle 2
+R  
+IIIIIII
+  Cycle 3
+R  
+IIIIIIIII
+  Cycle 4
+G  
+XI
+  Cycle 5
+G  
+IIIII
+  Cycle 6
+R  
+I
+  Cycle 7
+R  
+IIII
+  Cycle 8
+R  
+IIIIIIIII
+  Cycle 9
+R  
+XI
+  Cycle 10
+G  
+XIIIIIII
+  Cycle 11
+G  
+XI
+  Cycle 12
+R  
+IIIIII
+  Cycle 13
+R  
+XI
+  Cycle 14
+R  
+XIII
+  Cycle 15
+R  
+XIIIIIII
+  Cycle 16
+G  
+XXI
+  Cycle 17
+G  
+XIIIII
+  Cycle 18
+R  
+XII
+  Cycle 19
+R  
+XIIIIIII
+  Cycle 20
+R  
+XX
+  Cycle 21
+R  
+XXIII
+  Cycle 22
+G  
+XXIIIIIIIII
+  Cycle 23
+G  
+XXIII
+  Cycle 24
+R  
+XX
+  Cycle 25
+R  
+XXII
+  Cycle 26
+R  
+XXIIIIII
+  Cycle 27
+R  
+XXX
+  Cycle 28
+G  
+XXXI
+  Cycle 29
+G  
+XXIIII
+  Cycle 30
+R  
+XIIIIIIII
+  Cycle 31
+R  
+XXI
+  Cycle 32
+R  
+XXIIIII
+  Cycle 33
+R  
+XXX
+  Cycle 34
+G  
+XXXIIII
+  Cycle 35
+G  
+XXIIIIIIII
+  Cycle 36
+R  
+XXIIIII
+  Cycle 37
+R  
+XXIIIIIIII
+  Cycle 38
+R  
+XXX
+  Cycle 39
+R  
+XXXIII
+  Cycle 40
+G  
+XXXIIIIII
+  Cycle 41
+G  
+XXXII
+  Cycle 42
+R  
+XXIIII
+  Cycle 43
+R  
+XXIIIIIIII
+  Cycle 44
+R  
+XXXI
+  Cycle 45
+R  
+XXXIIIII
+  Cycle 46
+G  
+XXXIIIIIII
+  Cycle 47
+G  
+XXXIII
+  Cycle 48
+R  
+XXIIIIIIIII
+  Cycle 49
+R  
+XXXIIII
+  Cycle 50
+R  
+XXXIIIIIIII
+  Cycle 51
+R  
+XXXXI
+  Cycle 52
+G  
+XXXXIII
+  Cycle 53
+G  
+XXXIIIIIII
+  Cycle 54
+R  
+XXXI
+  Cycle 55
+R  
+XXXIII
+  Cycle 56
+R  
+XXXIIIII
+  Cycle 57
+R  
+XXXIIIIIIII
+  Cycle 58
+G  
+XXXXI
+  Cycle 59
+G  
+XXXIIIII
+  Cycle 60
+R  
+XXIIIIIIIII
+  Cycle 61
+R  
+XXXIIII
+  Cycle 62
+R  
+XXXIIIIIII
+  Cycle 63
+R  
+XXXIIIIIIIII
+  Cycle 64
+G  
+XXXX
+  Cycle 65
+G  
+XXXIIIII
+  Cycle 66
+R  
+XXIIIIIIIII
+  Cycle 67
+R  
+XXXIII
+  Cycle 68
+R  
+XXXIIIII
+  Cycle 69
+R  
+XXXIIIIIII
+  Cycle 70
+G  
+XXXXI
+  Cycle 71
+G  
+XXXIIIIII
+  Cycle 72
+R  
+XXXI
+  Cycle 73
+R  
+XXXIIII
+  Cycle 74
+R  
+XXXIIIIII
+  Cycle 75
+R  
+XXXIIIIIII
+  Cycle 76
+G  
+XXXXII
+  Cycle 77
+G  
+XXXIIIIIIII
+  Cycle 78
+R  
+XXXIII
+  Cycle 79
+R  
+XXXIIIIIII
+  Cycle 80
+R  
+XXXXI
+  Cycle 81
+R  
+XXXXIIII
+  Cycle 82
+G  
+XXXXIIIIIIIII
+  Cycle 83
+G  
+XXXXIIIIII
+  Cycle 84
+R  
+XXXXII
+  Cycle 85
+R  
+XXXXIIIIIII
+  Cycle 86
+R  
+XXXXXIIIII
+  Cycle 87
+R  
+XXXXXIIIIIIIII
+  Cycle 88
+G  
+XXXXXXIII
+  Cycle 89
+G  
+XXXXXIIIIIIIII
+  Cycle 90
+R  
+XXXXXIIIII
+  Cycle 91
+R  
+XXXXXX
+  Cycle 92
+R  
+XXXXXXIIIII
+  Cycle 93
+R  
+XXXXXXIIIIII
+  Cycle 94
+G  
+XXXXXXXII
+  Cycle 95
+G  
+XXXXXXIIIIII
+  Cycle 96
+R  
+XXXXXXI
+  Cycle 97
+R  
+XXXXXXIIIIII
+  Cycle 98
+R  
+XXXXXXIIIIIIIII
+  Cycle 99
+R  
+XXXXXXXII
+  Cycle 100
+G  
+XXXXXXXIIIII
+  Cycle 101
+G  
+XXXXXXIIIIIIII
+  Cycle 102
+R  
+XXXXXXI
+  Cycle 103
+R  
+XXXXXXIIII
+  Cycle 104
+R  
+XXXXXXIIIIIIIII
+  Cycle 105
+R  
+XXXXXXXIII
+  Cycle 106
+G  
+XXXXXXXX
+  Cycle 107
+G  
+XXXXXXXIIII
+  Cycle 108
+R  
+XXXXXXIIIIIIIII
+  Cycle 109
+R  
+XXXXXXXIII
+  Cycle 110
+R  
+XXXXXXXIIII
+  Cycle 111
+R  
+XXXXXXXIIIIIIII
+  Cycle 112
+G  
+XXXXXXXXII
+  Cycle 113
+G  
+XXXXXXXIIIIIII
+  Cycle 114
+R  
+XXXXXXXIII
+  Cycle 115
+R  
+XXXXXXXIIII
+  Cycle 116
+R  
+XXXXXXXIIIIIIIII
+  Cycle 117
+R  
+XXXXXXXXI
+  Cycle 118
+G  
+XXXXXXXXIIII
+  Cycle 119
+G  
+XXXXXXXIIIIIIIII
+  Cycle 120
+R  
+XXXXXXXIIII
+  Cycle 121
+R  
+XXXXXXXIIII
+  Cycle 122
+R  
+XXXXXXXIIIIII
+  Cycle 123
+R  
+XXXXXXXXI
+  Cycle 124
+G  
+XXXXXXXXIII
+  Cycle 125
+G  
+XXXXXXXIIIIIIIII
+  Cycle 126
+R  
+XXXXXXXIIIII
+  Cycle 127
+R  
+XXXXXXXIIIIIIII
+  Cycle 128
+R  
+XXXXXXXXIIII
+  Cycle 129
+R  
+XXXXXXXXIIIIIIII
+  Cycle 130
+G  
+XXXXXXXXXI
+  Cycle 131
+G  
+XXXXXXXXIIIIIIII
+  Cycle 132
+R  
+XXXXXXXXII
+  Cycle 133
+R  
+XXXXXXXXIIII
+  Cycle 134
+R  
+XXXXXXXXIIIIIIIII
+  Cycle 135
+R  
+XXXXXXXXXIIII
+  Cycle 136
+G  
+XXXXXXXXXIIIIIIIII
+  Cycle 137
+G  
+XXXXXXXXXIIII
+  Cycle 138
+R  
+XXXXXXXXIIIIIIIII
+  Cycle 139
+R  
+XXXXXXXXXIII
+  Cycle 140
+R  
+XXXXXXXXXIII
+  Cycle 141
+R  
+XXXXXXXXXIIIIII
+  Cycle 142
+G  
+XXXXXXXXXIIIIIIII
+  Cycle 143
+G  
+XXXXXXXXXI
+  Cycle 144
+R  
+XXXXXXXXIIIIIIIII
+  Cycle 145
+R  
+XXXXXXXXX
+  Cycle 146
+R  
+XXXXXXXXXIII
+  Cycle 147
+R  
+XXXXXXXXXIIIIIII
+  Cycle 148
+G  
+XXXXXXXXXIIIIIIII
+  Cycle 149
+G  
+XXXXXXXXXIIII
+  Cycle 150
+R  
+XXXXXXXXIIIIIIIII
+  Cycle 151
+R  
+XXXXXXXXXII
+  Cycle 152
+R  
+XXXXXXXXXIIII
+  Cycle 153
+R  
+XXXXXXXXXIIIIIIIII
+  Cycle 154
+G  
+CI
+  Cycle 155
+G  
+XXXXXXXXXIIIII
+  Cycle 156
+R  
+XXXXXXXXXI
+  Cycle 157
+R  
+XXXXXXXXXIII
+  Cycle 158
+R  
+XXXXXXXXXIIIIII
+  Cycle 159
+R  
+XXXXXXXXXIIIIIIIII
+  Cycle 160
+G  
+CIII
+  Cycle 161
+G  
+XXXXXXXXXIIIIIII
+  Cycle 162
+R  
+XXXXXXXXXIIII
+  Cycle 163
+R  
+XXXXXXXXXIIIIIII
+  Cycle 164
+R  
+CI
+  Cycle 165
+R  
+CIIII
+  Cycle 166
+G  
+CIIIIIIIII
+  Cycle 167
+G  
+CIIIIII
+  Cycle 168
+R  
+C
+  Cycle 169
+R  
+CIIII
+  Cycle 170
+R  
+CIIIIII
+  Cycle 171
+R  
+CIIIIIIII
+  Cycle 172
+G  
+CIIIIIIII
+  Cycle 173
+G  
+CIII
+  Cycle 174
+R  
+XXXXXXXXXIIIIII
+  Cycle 175
+R  
+XXXXXXXXXIIIIIIII
+  Cycle 176
+R  
+C
+  Cycle 177
+R  
+CII
+  Cycle 178
+G  
+CIIII
+  Cycle 179
+G  
+XXXXXXXXXIIIIIIII
+  Cycle 180
+R  
+XXXXXXXXXIII
+  Cycle 181
+R  
+XXXXXXXXXIIIII
+  Cycle 182
+R  
+XXXXXXXXXIIIIIIII
+  Cycle 183
+R  
+CI
+  Cycle 184
+G  
+CIII
+  Cycle 185
+G  
+C
+  Cycle 186
+R  
+XXXXXXXXXIIIIII
+  Cycle 187
+R  
+XXXXXXXXXIIIIIII
+  Cycle 188
+R  
+C
+  Cycle 189
+R  
+CIIIIII
+  Cycle 190
+G  
+CX
+  Cycle 191
+G  
+CIIIII
+  Cycle 192
+R  
+C
+  Cycle 193
+R  
+CIII
+  Cycle 194
+R  
+CIIIIII
+  Cycle 195
+R  
+CX
+  Cycle 196
+G  
+CXIII
+  Cycle 197
+G  
+CIIIIIIIII
+  Cycle 198
+R  
+CIII
+  Cycle 199
+R  
+CIIIII
+  Cycle 200
+R  
+CIIIIIIIII
+  Graphics saved as "sim_200.png"
+
+  Number of cycles =           200
+  Simulated time in seconds =  2000
+  Number of cars in =          637
+  Number of cars waiting =     109
+  Number of cars out =         528
+  Percentage Out/In =          82.88854003139717
+  Average wait in seconds =    197.06436420722136
+  Average wait in cycles       3.284406070120356
+
+traffic_simulation_test():
+  Normal end of execution.
+Wed Oct  8 09:07:26 2025

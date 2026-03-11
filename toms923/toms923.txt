@@ -1,0 +1,36 @@
+Wed Oct  8 09:07:23 2025
+
+toms923_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test toms923().
+
+test_pfaffian():
+  Compare the output of Pfaffian routines and determinant.
+
+  Real matrix:
+    pfaffian(A) =            -1.0317897241452218e+19
+    pfaffian(A,method=H) =   -1.031789724145231e+19
+    pfaffian_schur(A) =      -1.0317897241452933e+19
+
+    pfaffian(A)^2 =          1.064590034851673e+38
+    pfaffian(A,method=H)^2 = 1.064590034851692e+38
+    pfaffian_schur(A)^2 =    1.0645900348518205e+38
+    numpy.linalg.det(A) =    1.0645900348516745e+38
+DEBUG: rel err =  -8.932052514512997e-15
+
+  Complex matrix:
+    pfaffian(A) =             (-1.881525251295576e+26-4.827823862943593e+24j)
+    pfaffian(A,method=H) =    (-1.8815252512956097e+26-4.8278238629397274e+24j)
+
+    pfaffian(A)^2 =           (3.5378064829377197e+52+1.8167345013871445e+51j)
+    pfaffian(A,method=H)^2 =  (3.5378064829378505e+52+1.8167345013857222e+51j)
+    numpy.linalg.det(A) =     (3.5378064829376687e+52+1.8167345013852178e+51j)
+DEBUG: rel err2 =  (1.7179051317918975e-14+5.357857231031879e-14j)
+
+test_decompositions():
+  Test the LTL^T and Householder decompositions.
+
+toms923_test():
+  Normal end of execution.
+Wed Oct  8 09:07:24 2025

@@ -1,0 +1,86 @@
+Wed Oct  8 09:19:39 2025
+
+zero_itp_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  zero_itp() seeks a root of a function f(x)
+  in an interval [a,b].
+
+  f_01(x) = sin ( x ) - x / 2
+
+      A                 Z             B
+    F(A)              F(Z)          F(B)
+
+        1.000000        1.895494        2.000000
+    3.414710e-01   -2.220446e-14   -9.070257e-02
+  Number of calls to F =  8
+  Tolerance epsi =  1.4901161193847656e-08
+  Parameter k1 =  0.2 , k2 =  2.0 , n0 =  1
+
+  f_02(x) = 2 * x - exp ( - x )
+
+      A                 Z             B
+    F(A)              F(Z)          F(B)
+
+        0.000000        0.351734        1.000000
+   -1.000000e+00    6.363410e-11    1.632121e+00
+  Number of calls to F =  8
+  Tolerance epsi =  1.4901161193847656e-08
+  Parameter k1 =  0.2 , k2 =  2.0 , n0 =  1
+
+  f_03(x) = x * exp ( - x )
+
+      A                 Z             B
+    F(A)              F(Z)          F(B)
+
+       -1.000000        0.000000        0.500000
+   -2.718282e+00    2.513422e-12    3.032653e-01
+  Number of calls to F =  8
+  Tolerance epsi =  1.4901161193847656e-08
+  Parameter k1 =  0.13333333333333333 , k2 =  2.0 , n0 =  1
+
+  f_04(x) = exp ( x ) - 1 / ( 100 * x * x )
+
+      A                 Z             B
+    F(A)              F(Z)          F(B)
+
+        0.000100        0.095345       20.000000
+   -9.999990e+05    3.377484e-07    4.851652e+08
+  Number of calls to F =  31
+  Tolerance epsi =  1.4901161193847656e-08
+  Parameter k1 =  0.010000050000250001 , k2 =  2.0 , n0 =  1
+
+  f_05(x) = (x+3) * (x-1) * (x-1)
+
+      A                 Z             B
+    F(A)              F(Z)          F(B)
+
+       -5.000000       -3.000000        2.000000
+   -7.200000e+01    0.000000e+00    5.000000e+00
+  Number of calls to F =  2
+  Tolerance epsi =  1.4901161193847656e-08
+  Parameter k1 =  0.02857142857142857 , k2 =  2.0 , n0 =  1
+
+  User has requested additional verbose output.
+  step   [a,    b]    x    f(x)
+
+0  [1,2]  f(1.43333)=-0.48863
+1  [1.43333,2]  f(1.52713)=0.0343383
+2  [1.43333,1.52713]  f(1.52009)=-0.00764148
+3  [1.52009,1.52713]  f(1.52138)=-4.25363e-06
+4  [1.52138,1.52713]  f(1.52138)=1.96498e-05
+
+  f_06(x) = x^3 - x - 2
+
+      A                 Z             B
+    F(A)              F(Z)          F(B)
+
+        1.000000        1.521381        2.000000
+   -2.000000e+00    7.698058e-06    4.000000e+00
+  Number of calls to F =  5
+  Tolerance epsi =  0.0005
+  Parameter k1 =  0.1 , k2 =  2.0 , n0 =  1
+
+zero_itp_test():
+  Normal end of execution.
+Wed Oct  8 09:19:39 2025

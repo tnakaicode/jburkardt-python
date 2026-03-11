@@ -1,0 +1,56 @@
+Wed Oct  8 09:19:39 2025
+
+zero_brent_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  zero_brent() seeks a root X of a function F()
+  in an interval [A,B].
+
+  f_01(x) = sin ( x ) - x / 2
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+        1.000000        1.895494        2.000000
+    3.414710e-01    4.761858e-12   -9.070257e-02
+  Number of calls to F =  8
+
+  f_02(x) = 2 * x - exp ( - x )
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+        0.000000        0.351734        1.000000
+   -1.000000e+00    1.026179e-12    1.632121e+00
+  Number of calls to F =  7
+
+  f_03(x) = x * exp ( - x )
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+       -1.000000       -0.000000        0.500000
+   -2.718282e+00   -4.035216e-10    3.032653e-01
+  Number of calls to F =  10
+
+  f_04(x) = exp ( x ) - 1 / ( 100 * x * x )
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+        0.000100        0.095345       20.000000
+   -9.999990e+05    7.391270e-08    4.851652e+08
+  Number of calls to F =  14
+
+  f_05(x) = (x+3) * (x-1) * (x-1)
+
+      A                 X             B
+    F(A)              F(X)          F(B)
+
+       -5.000000       -3.000000        2.000000
+   -7.200000e+01   -8.597567e-13    5.000000e+00
+  Number of calls to F =  14
+
+zero_brent_test():
+  Normal end of execution.
+Wed Oct  8 09:19:39 2025

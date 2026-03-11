@@ -1,0 +1,20 @@
+Wed Oct  8 09:19:38 2025
+
+xyz_display_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test xyz_display()
+
+  Number of points POINT_NUM  =  201
+
+  First 5 nodes:
+[[ 0.3517846 -0.7869986 -2.873479 ]
+ [ 0.5057634 -0.7079139 -2.871073 ]
+ [ 0.6422613 -0.5988617 -2.8686   ]
+ [ 0.7554799 -0.46365   -2.866056 ]
+ [ 0.8404377 -0.3072074 -2.86344  ]]
+  Graphics saved as "xyz_display.png"
+
+xyz_display_test():
+  Normal end of execution.
+Wed Oct  8 09:19:39 2025

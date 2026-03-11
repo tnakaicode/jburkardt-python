@@ -1,0 +1,377 @@
+Wed Oct  8 09:07:59 2025
+
+tsp_descent_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test tsp_descent().
+
+tsp_descent():
+  Solve a small traveling salesperson problem (TSP) using
+  a descent method, generating reversals and
+  transpositions of a random starting tour.
+
+  The city-to-city distance matrix D:
+
+[[0. 3. 4. 2. 9.]
+ [3. 0. 4. 6. 3.]
+ [4. 4. 0. 5. 8.]
+ [2. 6. 5. 0. 6.]
+ [9. 3. 8. 6. 0.]]
+
+  Number of variations tried was 2000
+
+  The best itinerary found:
+
+  Step  From  To        Distance
+
+     1     4   1               3
+     2     1   2               4
+     3     2   0               4
+     4     0   3               2
+     0     3   4               6
+  ----    --  --  --------------
+  cost:                       19
+
+tsp_descent():
+  Solve a small traveling salesperson problem (TSP) using
+  a descent method, generating reversals and
+  transpositions of a random starting tour.
+
+  The city-to-city distance matrix D:
+
+[[ 0. 29. 82. 46. 68. 52. 72. 42. 51. 55. 29. 74. 23. 72. 46.]
+ [29.  0. 55. 46. 42. 43. 43. 23. 23. 31. 41. 51. 11. 52. 21.]
+ [82. 55.  0. 68. 46. 55. 23. 43. 41. 29. 79. 21. 64. 31. 51.]
+ [46. 46. 68.  0. 82. 15. 72. 31. 62. 42. 21. 51. 51. 43. 64.]
+ [68. 42. 46. 82.  0. 74. 23. 52. 21. 46. 82. 58. 46. 65. 23.]
+ [52. 43. 55. 15. 74.  0. 61. 23. 55. 31. 33. 37. 51. 29. 59.]
+ [72. 43. 23. 72. 23. 61.  0. 42. 23. 31. 77. 37. 51. 46. 33.]
+ [42. 23. 43. 31. 52. 23. 42.  0. 33. 15. 37. 33. 33. 31. 37.]
+ [51. 23. 41. 62. 21. 55. 23. 33.  0. 29. 62. 46. 29. 51. 11.]
+ [55. 31. 29. 42. 46. 31. 31. 15. 29.  0. 51. 21. 41. 23. 37.]
+ [29. 41. 79. 21. 82. 33. 77. 37. 62. 51.  0. 65. 42. 59. 61.]
+ [74. 51. 21. 51. 58. 37. 37. 33. 46. 21. 65.  0. 61. 11. 55.]
+ [23. 11. 64. 51. 46. 51. 51. 33. 29. 41. 42. 61.  0. 62. 23.]
+ [72. 52. 31. 43. 65. 29. 46. 31. 51. 23. 59. 11. 62.  0. 59.]
+ [46. 21. 51. 64. 23. 59. 33. 37. 11. 37. 61. 55. 23. 59.  0.]]
+  Transpose 1: cost = 530
+  Transpose 7: cost = 527
+  Transpose 9: cost = 524
+  Transpose 13: cost = 514
+  Transpose 18: cost = 489
+  Transpose 19: cost = 485
+  Transpose 20: cost = 465
+  Reversal 22: cost = 463
+  Reversal 25: cost = 459
+  Transpose 26: cost = 445
+  Transpose 28: cost = 439
+  Transpose 29: cost = 427
+  Reversal 51: cost = 407
+  Reversal 56: cost = 402
+  Transpose 70: cost = 397
+  Transpose 71: cost = 395
+  Transpose 74: cost = 391
+  Reversal 81: cost = 371
+  Reversal 89: cost = 363
+  Transpose 103: cost = 361
+  Transpose 107: cost = 325
+  Reversal 156: cost = 311
+  Reversal 166: cost = 295
+  Reversal 205: cost = 291
+
+  Number of variations tried was 2000
+
+  The best itinerary found:
+
+  Step  From  To        Distance
+
+     1    13   9              23
+     2     9   7              15
+     3     7   5              23
+     4     5   3              15
+     5     3  10              21
+     6    10   0              29
+     7     0  12              23
+     8    12   1              11
+     9     1  14              21
+    10    14   8              11
+    11     8   4              21
+    12     4   6              23
+    13     6   2              23
+    14     2  11              21
+     0    11  13              11
+  ----    --  --  --------------
+  cost:                      291
+
+tsp_descent():
+  Solve a small traveling salesperson problem (TSP) using
+  a descent method, generating reversals and
+  transpositions of a random starting tour.
+
+  The city-to-city distance matrix D:
+
+[[  0. 633. 257.  91. 412. 150.  80. 134. 259. 505. 353. 324.  70. 211.
+  268. 246. 121.]
+ [633.   0. 390. 661. 227. 488. 572. 530. 555. 289. 282. 638. 567. 466.
+  420. 745. 518.]
+ [257. 390.   0. 228. 169. 112. 196. 154. 372. 262. 110. 437. 191.  74.
+   53. 472. 142.]
+ [ 91. 661. 228.   0. 383. 120.  77. 105. 175. 476. 324. 240.  27. 182.
+  239. 237.  84.]
+ [412. 227. 169. 383.   0. 267. 351. 309. 338. 196.  61. 421. 346. 243.
+  199. 528. 297.]
+ [150. 488. 112. 120. 267.   0.  63.  34. 264. 360. 208. 329.  83. 105.
+  123. 364.  35.]
+ [ 80. 572. 196.  77. 351.  63.   0.  29. 232. 444. 292. 297.  47. 150.
+  207. 332.  29.]
+ [134. 530. 154. 105. 309.  34.  29.   0. 249. 402. 250. 314.  68. 108.
+  165. 349.  36.]
+ [259. 555. 372. 175. 338. 264. 232. 249.   0. 495. 352.  95. 189. 326.
+  383. 202. 236.]
+ [505. 289. 262. 476. 196. 360. 444. 402. 495.   0. 154. 578. 439. 336.
+  240. 685. 390.]
+ [353. 282. 110. 324.  61. 208. 292. 250. 352. 154.   0. 435. 287. 184.
+  140. 542. 238.]
+ [324. 638. 437. 240. 421. 329. 297. 314.  95. 578. 435.   0. 254. 391.
+  448. 157. 301.]
+ [ 70. 567. 191.  27. 346.  83.  47.  68. 189. 439. 287. 254.   0. 145.
+  202. 289.  55.]
+ [211. 466.  74. 182. 243. 105. 150. 108. 326. 336. 184. 391. 145.   0.
+   57. 426.  96.]
+ [268. 420.  53. 239. 199. 123. 207. 165. 383. 240. 140. 448. 202.  57.
+    0. 483. 153.]
+ [246. 745. 472. 237. 528. 364. 332. 349. 202. 685. 542. 157. 289. 426.
+  483.   0. 336.]
+ [121. 518. 142.  84. 297.  35.  29.  36. 236. 390. 238. 301.  55.  96.
+  153. 336.   0.]]
+  Reversal 3: cost = 4706
+  Transpose 4: cost = 4492
+  Reversal 5: cost = 4488
+  Transpose 8: cost = 4395
+  Reversal 8: cost = 4314
+  Reversal 9: cost = 4208
+  Transpose 10: cost = 4197
+  Transpose 11: cost = 3957
+  Reversal 11: cost = 3940
+  Transpose 12: cost = 3812
+  Reversal 13: cost = 3505
+  Transpose 15: cost = 2977
+  Reversal 20: cost = 2772
+  Transpose 26: cost = 2685
+  Reversal 31: cost = 2656
+  Reversal 33: cost = 2592
+  Transpose 37: cost = 2577
+  Reversal 40: cost = 2561
+  Reversal 52: cost = 2514
+  Reversal 73: cost = 2513
+  Transpose 74: cost = 2501
+  Reversal 87: cost = 2243
+  Transpose 206: cost = 2209
+  Reversal 291: cost = 2181
+  Reversal 438: cost = 2129
+  Reversal 479: cost = 2090
+
+  Number of variations tried was 2000
+
+  The best itinerary found:
+
+  Step  From  To        Distance
+
+     1     7   5              34
+     2     5   2             112
+     3     2  10             110
+     4    10   4              61
+     5     4   1             227
+     6     1   9             289
+     7     9  14             240
+     8    14  13              57
+     9    13  16              96
+    10    16  12              55
+    11    12   3              27
+    12     3   8             175
+    13     8  11              95
+    14    11  15             157
+    15    15   0             246
+    16     0   6              80
+     0     6   7              29
+  ----    --  --  --------------
+  cost:                     2090
+
+tsp_descent():
+  Solve a small traveling salesperson problem (TSP) using
+  a descent method, generating reversals and
+  transpositions of a random starting tour.
+
+  The city-to-city distance matrix D:
+
+[[   0. 4727. 1205. ... 1542. 2379. 3744.]
+ [4727.    0. 3588. ... 5461. 4390. 2088.]
+ [1205. 3588.    0. ... 2023. 1867. 2560.]
+ ...
+ [1542. 5461. 2023. ...    0. 1644. 3928.]
+ [2379. 4390. 1867. ... 1644.    0. 2532.]
+ [3744. 2088. 2560. ... 3928. 2532.    0.]]
+  Transpose 1: cost = 148281
+  Reversal 1: cost = 147095
+  Transpose 3: cost = 141149
+  Reversal 4: cost = 136183
+  Reversal 5: cost = 135618
+  Transpose 6: cost = 133376
+  Transpose 7: cost = 131324
+  Reversal 7: cost = 131069
+  Reversal 10: cost = 129006
+  Reversal 11: cost = 128163
+  Transpose 15: cost = 127438
+  Reversal 16: cost = 127313
+  Transpose 17: cost = 125510
+  Transpose 22: cost = 124590
+  Reversal 23: cost = 124445
+  Reversal 24: cost = 122226
+  Reversal 26: cost = 115334
+  Reversal 27: cost = 113905
+  Transpose 28: cost = 113430
+  Transpose 30: cost = 113417
+  Transpose 32: cost = 113173
+  Reversal 34: cost = 107925
+  Reversal 39: cost = 107267
+  Reversal 40: cost = 106949
+  Transpose 41: cost = 106556
+  Reversal 44: cost = 105347
+  Transpose 45: cost = 100933
+  Reversal 45: cost = 98415
+  Reversal 46: cost = 96765
+  Reversal 53: cost = 96760
+  Transpose 56: cost = 93898
+  Reversal 62: cost = 92137
+  Reversal 69: cost = 90354
+  Reversal 73: cost = 89180
+  Reversal 75: cost = 89162
+  Transpose 78: cost = 87510
+  Transpose 87: cost = 85773
+  Reversal 87: cost = 85037
+  Reversal 93: cost = 83255
+  Transpose 101: cost = 81748
+  Reversal 111: cost = 81703
+  Reversal 119: cost = 81190
+  Transpose 121: cost = 81178
+  Reversal 129: cost = 80730
+  Reversal 132: cost = 80412
+  Transpose 138: cost = 77265
+  Transpose 144: cost = 76496
+  Reversal 144: cost = 76471
+  Transpose 156: cost = 75804
+  Reversal 171: cost = 75589
+  Reversal 177: cost = 74236
+  Reversal 180: cost = 73530
+  Reversal 185: cost = 73125
+  Transpose 189: cost = 72130
+  Reversal 191: cost = 71888
+  Reversal 206: cost = 70953
+  Reversal 208: cost = 70346
+  Reversal 216: cost = 70279
+  Reversal 222: cost = 69782
+  Transpose 238: cost = 69686
+  Reversal 238: cost = 68409
+  Transpose 249: cost = 67509
+  Reversal 253: cost = 66166
+  Transpose 257: cost = 64602
+  Reversal 259: cost = 63983
+  Transpose 264: cost = 63783
+  Reversal 264: cost = 63013
+  Reversal 266: cost = 61492
+  Reversal 270: cost = 61283
+  Reversal 273: cost = 60099
+  Reversal 293: cost = 58702
+  Transpose 298: cost = 57989
+  Transpose 301: cost = 56627
+  Transpose 309: cost = 55824
+  Transpose 313: cost = 55320
+  Transpose 321: cost = 55115
+  Reversal 328: cost = 55094
+  Reversal 333: cost = 54945
+  Reversal 346: cost = 54522
+  Reversal 349: cost = 53253
+  Reversal 353: cost = 52297
+  Reversal 356: cost = 50999
+  Transpose 370: cost = 50195
+  Reversal 407: cost = 49713
+  Reversal 447: cost = 48743
+  Reversal 449: cost = 48506
+  Transpose 460: cost = 48503
+  Reversal 460: cost = 47431
+  Reversal 472: cost = 47186
+  Transpose 601: cost = 46504
+  Reversal 614: cost = 46448
+  Transpose 630: cost = 46415
+  Transpose 660: cost = 46061
+  Transpose 674: cost = 46033
+  Transpose 706: cost = 44724
+  Transpose 746: cost = 43717
+  Reversal 776: cost = 43515
+  Transpose 792: cost = 43348
+  Reversal 822: cost = 43276
+  Transpose 851: cost = 42553
+  Reversal 863: cost = 42047
+  Transpose 945: cost = 40718
+  Transpose 949: cost = 40434
+
+  Number of variations tried was 2000
+
+  The best itinerary found:
+
+  Step  From  To        Distance
+
+     1    10  12             766
+     2    12  24             533
+     3    24  13             419
+     4    13  22             606
+     5    22  46            1077
+     6    46  20             711
+     7    20  47            2042
+     8    47  38            1000
+     9    38  31             533
+    10    31  23            1687
+    11    23   9             922
+    12     9  44            1268
+    13    44  34             461
+    14    34   3            1427
+    15     3  25             320
+    16    25  41            1363
+    17    41   4            1169
+    18     4  28             894
+    19    28   1            1204
+    20     1  40            2756
+    21    40  33            1124
+    22    33   2             950
+    23     2   0            1205
+    24     0   8             463
+    25     8  37             611
+    26    37   7             985
+    27     7  15            1304
+    28    15  21             442
+    29    21  39            1040
+    30    39  14             554
+    31    14  11             406
+    32    11  45             827
+    33    45  30             763
+    34    30  43             440
+    35    43  17             355
+    36    17  35             286
+    37    35   6             332
+    38     6   5             743
+    39     5  18             293
+    40    18  36             132
+    41    36  27             653
+    42    27  29             558
+    43    29  26             374
+    44    26  16             370
+    45    16  42             437
+    46    42  32            1926
+    47    32  19             654
+     0    19  10            1049
+  ----    --  --  --------------
+  cost:                    40434
+
+tsp_descent_test():
+  Normal end of execution.
+Wed Oct  8 09:07:59 2025

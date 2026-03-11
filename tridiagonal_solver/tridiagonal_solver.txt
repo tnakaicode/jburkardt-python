@@ -1,0 +1,48 @@
+Wed Oct  8 09:07:58 2025
+
+tridiagonal_solver_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  tridiagonal_solver() solves a tridiagonal linear system.
+
+tridiagonal_solver_test1():
+  tridiagonal_solver() solves A*x = b where
+  A is a tridiagonal matrix.
+
+  Matrix order M = 5
+
+  Exact and computed solutions:
+
+  0  2  2
+  1  4  4
+  2  1  1
+  3  3  3
+  4  0  2.62309e-16
+
+tridiagonal_solver_test2()
+  tridiagonal_solver() solves A*x = b where
+  A is a tridiagonal matrix.
+  Solve two linear systems at once.
+
+  Matrix order M =  5
+  Number of right hand sides N =  2
+
+  Solution of linear system  0
+
+  0  2  2
+  1  1  1
+  2  3  3
+  3  4  4
+  4  5  5
+
+  Solution of linear system  1
+
+  0  1  1
+  1  5  5
+  2  2  2
+  3  4  4
+  4  3  3
+
+tridiagonal_solver_test():
+  Normal end of execution.
+Wed Oct  8 09:07:58 2025

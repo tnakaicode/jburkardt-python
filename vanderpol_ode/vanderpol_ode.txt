@@ -1,0 +1,24 @@
+Wed Oct  8 09:08:20 2025
+
+vanderpol_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve vanderpol_ode().
+
+  parameters:
+    mu    =  2.0
+    t0    =  0.0
+    y0    =  [1. 0.]
+    tstop =  40.0
+
+vanderpol_solve_ivp():
+  Solve vanderpol_ode() using solve_ivp().
+  Graphics saved as "vanderpol_solve_ivp_plot.png"
+  Graphics saved as "vanderpol_solve_ivp_phase.png"
+
+vanderpol_solve_ivp():
+  Normal end of execution.
+
+vanderpol_ode_test():
+  Normal end of execution.
+Wed Oct  8 09:08:21 2025

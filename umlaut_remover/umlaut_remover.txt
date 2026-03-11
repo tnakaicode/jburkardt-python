@@ -1,0 +1,29 @@
+Wed Oct  8 09:08:06 2025
+
+umlaut_remover_test:
+  python version: 3.10.12
+  numpy version:  1.26.4
+  umlaut_remover() replaces some special characters in German text
+  with equivalent English versions.
+
+umlaut_remover_string_test():
+  umlaut_remover() can modify a string of German text,
+  replacing special characters by English equivalents.
+
+  Initial string:
+
+»Dies frühzeitige Aufstehen«, dachte er, »macht einen ganz blödsinnig.«  Er fühlte ein leichtes Jucken oben auf dem Bauch; schob sich auf dem Rücken langsam näher zum Bettpfosten, um den Kopf besser heben zu können; fand die juckende Stelle, die mit lauter kleinen weißen Pünktchen besetzt war, die er nicht zu beurteilen verstand; und wollte mit einem Bein die Stelle betasten, zog es aber gleich zurück, denn bei der Berührung umwehten ihn Kälteschauer
+
+  Modified string:
+
+"Dies fruehzeitige Aufstehen", dachte er, "macht einen ganz bloedsinnig."  Er fuehlte ein leichtes Jucken oben auf dem Bauch; schob sich auf dem Ruecken langsam naeher zum Bettpfosten, um den Kopf besser heben zu koennen; fand die juckende Stelle, die mit lauter kleinen weissen Puenktchen besetzt war, die er nicht zu beurteilen verstand; und wollte mit einem Bein die Stelle betasten, zog es aber gleich zurueck, denn bei der Beruehrung umwehten ihn Kaelteschauer
+
+umlaut_remover_file_test():
+  umlaut_remover() can modify a German text file,
+  replacing special characters by English equivalents.
+  Reading ' die_verwandlung.txt '.
+  Writing ' die_verwandlung_normalized.txt '.
+
+umlaut_remover_test():
+  Normal end of execution.
+Wed Oct  8 09:08:06 2025

@@ -1,0 +1,331 @@
+<html>
+
+  <head>
+    <title>
+      triangle_exactness
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      triangle_exactness
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>triangle_exactness</b>,
+      a Python code which 
+      investigates the polynomial exactness of a quadrature rule 
+      over the interior of a triangle in 2D.
+    </p>
+
+    <p>
+      The polynomial exactness of a quadrature rule is defined as the
+      highest total degree D such that the quadrature rule is
+      guaranteed to integrate exactly all polynomials of total degree
+      <b>DEGREE_MAX</b> or less, ignoring roundoff.
+      The total degree of a polynomial is the maximum of the degrees 
+      of all its monomial terms.  For a triangle, the degree of a monomial
+      term is the sum of the exponents of <b>x</b> and <b>y</b>. 
+      Thus, for instance, the <b>DEGREE</b> of 
+      <blockquote><b>
+        x<sup>2</sup>y<sup>5</sup>
+      </b></blockquote>
+      is 2+5=7.
+    </p>
+
+    <p>
+      To be thorough, the program starts at <b>DEGREE</b> = 0, and then 
+      proceeds to <b>DEGREE</b> = 1, 2, and so on up to a maximum degree 
+      <b>DEGREE_MAX</b> specified by the user.  At each value of <b>DEGREE</b>,
+      the program generates every possible monomial term, applies the 
+      quadrature rule to it, and determines the quadrature error.  The program 
+      uses a scaling factor on each monomial so that the exact integral 
+      should always be 1; therefore, each reported error can be compared
+      on a fixed scale.
+    </p>
+
+    <p>
+      The program is very flexible and interactive.  The quadrature rule 
+      is defined by three files, to be read at input, and the 
+      maximum degree is specified by the user as well.
+    </p>
+
+    <p>
+      Note that the three files that define the quadrature rule
+      are assumed to have related names, of the form
+      <ul>
+        <li>
+          <i>prefix</i>_<b>x.txt</b>
+        </li>
+        <li>
+          <i>prefix</i>_<b>w.txt</b>
+        </li>
+        <li>
+          <i>prefix</i>_<b>r.txt</b>
+        </li>
+      </ul>
+      When running the program, the user only enters the common <i>prefix</i> 
+      part of the file names, which is enough information for the program
+      to find all three files.
+    </p>
+
+    <p>
+      The exactness results are written to an output file with the 
+      corresponding name:
+      <ul>
+        <li>
+          <i>prefix</i>_<b>exact.txt</b>
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>triangle_exactness</b> ( '<i>prefix</i>', <i>degree_max</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>prefix</i> is the common prefix for the files containing the abscissa, weight
+          and region information of the quadrature rule;
+        </li>
+        <li>
+          <i>degree_max</i> is the maximum total monomial degree to check.  This should be
+          a relatively small nonnegative number, particularly if the
+          spatial dimension is high.  A value of 5 or 10 might be
+          reasonable, but a value of 50 or 100 is probably never a
+          good input!
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      If the arguments are not supplied on the command line, the
+      program will prompt for them.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>triangle_exactness</b> is available in
+      <a href = "../../c_src/triangle_exactness/triangle_exactness.html">a C version</a> and
+      <a href = "../../cpp_src/triangle_exactness/triangle_exactness.html">a C++ version</a> and
+      <a href = "../../f_src/triangle_exactness/triangle_exactness.html">a Fortran90 version</a> and
+      <a href = "../../m_src/triangle_exactness/triangle_exactness.html">a MATLAB version</a> and
+      <a href = "../../octave_src/triangle_exactness/triangle_exactness.html">an Octave version</a> and
+      <a href = "../../py_src/triangle_exactness/triangle_exactness.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/cube_exactness/cube_exactness.html">
+      cube_exactness</a>,
+      a Python code which
+      investigates the polynomial exactness of quadrature rules
+      over the interior of a cube in 3d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/hypercube_exactness/hypercube_exactness.html">
+      hypercube_exactness</a>,
+      a Python code which
+      measures the monomial exactness of an m-dimensional quadrature rule
+      over the interior of the unit hypercube in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pyramid_exactness/pyramid_exactness.html">
+      pyramid_exactness</a>,
+      a Python code which
+      investigates the polynomial exactness of a quadrature rule 
+      over the interior of the unit pyramid in 3d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/simplex_gm_rule/simplex_gm_rule.html">
+      simplex_gm_rule</a>,
+      a Python code which
+      defines Grundmann-Moeller quadrature rules 
+      over the interior of a triangle in 2d, a tetrahedron in 3d, or
+      over the interior of the simplex in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/sphere_exactness/sphere_exactness.html">
+      sphere_exactness</a>, 
+      a Python code which 
+      tests the polynomial exactness of a quadrature rule 
+      over the surface of the unit sphere in 3d; 
+    </p>
+
+    <p>
+      <a href = "../../py_src/square_exactness/square_exactness.html">
+      square_exactness</a>,
+      a Python code which
+      investigates the polynomial exactness of quadrature rules for f(x,y) 
+      over the interior of a square (rectangle/quadrilateral) in 2d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tetrahedron_exactness/tetrahedron_exactness.html">
+      tetrahedron_exactness</a>, 
+      a Python code which 
+      investigates the polynomial exactness of a quadrature rule 
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangle_dunavant_rule/triangle_dunavant_rule.html">
+      triangle_dunavant_rule</a>,
+      a Python code which 
+      returns a Dunavant quadrature rule
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangle_fekete_rule/triangle_fekete_rule.html">
+      triangle_fekete_rule</a>,
+      a Python code which
+      defines a Fekete rule for quadrature or interpolation 
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangle_felippa_rule/triangle_felippa_rule.html">
+      triangle_felippa_rule</a>,
+      a Python code which
+      returns a Felippa quadrature rule for approximating integrals
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangle_lyness_rule/triangle_lyness_rule.html">
+      triangle_lyness_rule</a>,
+      a Python code which
+      returns a Lyness-Jespersen quadrature rules
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangle_monte_carlo/triangle_monte_carlo.html">
+      triangle_monte_carlo</a>, 
+      a Python code which 
+      uses the Monte Carlo method to estimate integrals
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangle_symq_rule/triangle_symq_rule.html">
+      triangle_symq_rule</a>,
+      a Python code which
+      returns efficient symmetric quadrature rules, 
+      with exactness up to total degree 50,
+      over the interior of an arbitrary triangle in 2d,
+      by Hong Xiao and Zydrunas Gimbutas.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangle_wandzura_rule/triangle_wandzura_rule.html">
+      triangle_wandzura_rule</a>, 
+      a Python code which 
+      returns a Wandzura quadrature rule of exactness 5, 10, 15, 20, 25 or 30
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/wedge_exactness/wedge_exactness.html">
+      wedge_exactness</a>,
+      a Python code which
+      investigates the monomial exactness of a quadrature rule 
+      over the interior of the unit wedge in 3d.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Philip Davis, Philip Rabinowitz,<br>
+          Methods of Numerical Integration,<br>
+          Second Edition,<br>
+          Dover, 2007,<br>
+          ISBN: 0486453391,<br>
+          LC: QA299.3.D28.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "triangle_exactness.py">triangle_exactness.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "triangle_exactness.sh">triangle_exactness.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "triangle_exactness.txt">triangle_exactness.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>STRANG5</b> is Strang's fifth rule for triangles.
+      <ul>
+        <li>
+          <a href = "strang5_r.txt">strang5_r.txt</a>,
+          the region file.
+        </li>
+        <li>
+          <a href = "strang5_w.txt">strang5_w.txt</a>,
+          the weight file.
+        </li>
+        <li>
+          <a href = "strang5_x.txt">strang5_x.txt</a>,
+          the point file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 20 May 2023.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

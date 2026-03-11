@@ -1,0 +1,192 @@
+<html>
+
+  <head>
+    <title>
+      tsp_random
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      tsp_random
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>tsp_random</b>,
+      a Python code which
+      seeks a solution of the Traveling Salesperson Problem (TSP), by
+      accepting a table of city-to-city distances, and randomly generating
+      round trips that visit every city, returning the tour of shortest length.
+    </p>
+
+    <p>
+      The user must prepare a file beforehand, containing the city-to-city
+      distances.  The program will request the name of this file, and then
+      read it in as a matrix d.  An example of such a file is:
+      <pre>
+        0  3  4  2  7
+        3  0  4  6  3
+        4  4  0  5  8
+        2  6  5  0  6
+        7  3  8  6  0
+      </pre>
+      The distance file d should be square, symmetric, and have a zero diagonal.
+    </p>
+
+    <p>
+      A tour of n cities can be represented as a permutation p on the integers
+      1 through n.  The cost of the tour, that is, the length, is the sum 
+      <pre>
+        cost = sum ( 1 <= i <= n ) ( d(p(i),p(i+1)) )
+      </pre>
+      where p(n+1) is understood to mean p(1).
+    </p>
+
+    <p>
+      In the sampling method, we simply generate sample_num permutations,
+      each of which represents a tour, and return the permutation which has
+      observed to have the shortest length.  Since, except for small problems,
+      there are typically an enormous number of possible tours, this method
+      is unlikely to produce optimal results, but it may give some idea of the
+      range of length of typical tours.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>tsp_random</b> is available in
+      <a href = "../../m_src/tsp_random/tsp_random.html">a MATLAB version</a> and
+      <a href = "../../octave_src/tsp_random/tsp_random.html">an Octave version</a> and
+      <a href = "../../py_src/tsp_random/tsp_random.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_combinatorics/python_combinatorics.html">
+      python_combinatorics</a>,
+      a Python code which
+      considers a variety of problems in combinatorics involving
+      counting, combinations, permutations, and so on.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_brute/tsp_brute.html">
+      tsp_brute</a>,
+      a Python code which
+      is given a city-to-city distance table, and solves a (small) 
+      traveling salesperson problem (TSP), using brute force.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_descent/tsp_descent.html">
+      tsp_descent</a>,
+      a Python code which
+      is given a city-to-city distance table, chooses an initial tour at random,
+      and then tries simple variations, seeking to quickly find
+      a tour of lower cost for the traveling salesperson problem (TSP).
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_greedy/tsp_greedy.html">
+      tsp_greedy</a>,
+      a Python code which
+      is given a city-to-city distance table,, and solves a small
+      traveling salesperson problem (TSP) using the greedy algorithm.
+      It picks a starting city at random, and then successively visits 
+      the nearest unvisited city.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_moler/tsp_moler.html">
+      tsp_moler</a>,
+      a Python code which
+      tries to optimize the traveling salesperson problem (TSP),
+      written by Cleve Moler.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Gerhard Reinelt,<br>
+          TSPLIB - A Traveling Salesman Problem Library,<br>
+          ORSA Journal on Computing,<br>
+          Volume 3, Number 4, Fall 1991, pages 376-384.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "tsp_random.py">tsp_random.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "tsp_random.sh">tsp_random.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "tsp_random.txt">tsp_random.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "five.txt">five.txt</a>,
+          a 5 city distance matrix, whose minimal tour has length 19.
+        </li>
+        <li>
+          <a href = "fifteen.txt">fifteen.txt</a>,
+          a 15 city distance matrix, whose minimal tour has length 291.
+        </li>
+        <li>
+          <a href = "fortyeight.txt">fortyeight.txt</a>,
+          a 48 city distance matrix, whose minimal tour has length 33,523.
+        </li>
+        <li>
+          <a href = "seventeen.txt">seventeen.txt</a>,
+          a 17 city distance matrix, whose minimal tour has length 2,085.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 October 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

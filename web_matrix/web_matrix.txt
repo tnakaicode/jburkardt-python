@@ -1,0 +1,78 @@
+Wed Oct  8 09:16:12 2025
+
+web_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test web_matrix()
+
+  Process the "tiny" web matrix
+
+power_rank():
+  Given an NxN incidence matrix A,
+  compute the transition matrix T,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= T*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x, T*x, T*T*x
+[[1.00000000e+00 1.00000000e+00 1.00000000e+00]
+ [3.25676628e-14 2.42996774e-14 1.81306938e-14]
+ [5.43920813e-14 4.05835087e-14 3.02805324e-14]
+ [7.28990321e-14 5.43920813e-14 4.05835087e-14]
+ [0.00000000e+00 0.00000000e+00 0.00000000e+00]]
+
+  Process the "moler" web matrix
+
+power_rank():
+  Given an NxN incidence matrix A,
+  compute the transition matrix T,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= T*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x, T*x, T*T*x
+[[0.01096194 0.01060736 0.01026425]
+ [0.00566419 0.00548097 0.00530368]
+ [0.00292677 0.0028321  0.00274049]
+ [0.00393497 0.00380768 0.00368452]
+ [0.96983974 0.97081533 0.97175936]
+ [0.00667239 0.00645656 0.00624771]]
+
+  Process the "sauer" web matrix
+
+power_rank():
+  Given an NxN incidence matrix A,
+  compute the transition matrix T,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= T*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x, T*x, T*T*x
+[[0.01544402 0.01544402 0.01544402]
+ [0.01158301 0.01158301 0.01158301]
+ [0.01158301 0.01158301 0.01158301]
+ [0.01544402 0.01544402 0.01544402]
+ [0.03088803 0.03088803 0.03088803]
+ [0.03088803 0.03088803 0.03088803]
+ [0.03088803 0.03088803 0.03088803]
+ [0.03088803 0.03088803 0.03088803]
+ [0.08108108 0.08108108 0.08108108]
+ [0.11003861 0.11003861 0.11003861]
+ [0.11003861 0.11003861 0.11003861]
+ [0.08108108 0.08108108 0.08108108]
+ [0.14671815 0.14671815 0.14671815]
+ [0.14671815 0.14671815 0.14671815]
+ [0.14671815 0.14671815 0.14671815]]
+
+web_matrix_test():
+  Normal end of execution.
+Wed Oct  8 09:16:13 2025

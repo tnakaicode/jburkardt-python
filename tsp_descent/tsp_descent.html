@@ -1,0 +1,232 @@
+<html>
+
+  <head>
+    <title>
+      tsp_descent
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      tsp_descent
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>tsp_descent</b>,
+      a Python code which
+      solves small versions of the traveling salesperson problem (TSP), using
+      a descent method.
+    </p>
+
+    <p>
+      The user must prepare a file beforehand, containing the city-to-city
+      distances.  The program will request the name of this file, and then
+      read it in as a matrix d.  An example of such a file is:
+      <pre>
+        0  3  4  2  7
+        3  0  4  6  3
+        4  4  0  5  8
+        2  6  5  0  6
+        7  3  8  6  0
+      </pre>
+      The distance file d should be square, symmetric, and have a zero diagonal.
+    </p>
+
+    <p>
+      A tour of n cities can be represented as a permutation p on the integers
+      1 through n.  The cost of the tour, that is, the length, is the sum 
+      <pre>
+        cost = sum ( 1 <= i <= n ) ( d(p(i),p(i+1)) )
+      </pre>
+      where p(n+1) is understood to mean p(1).
+    </p>
+
+    <p>
+      Given a permutation p, we can consider a transposition variation p2 of p by selecting
+      two indices i1 and i2, with i1 + 1 &lt; i2, and constructing a tour in which
+      the i2 item now follows i1 immediately.  
+      <pre>
+        p = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+        i1 = 3, i2 = 7
+        p2 = [ 1, 2, 3, 7, 4, 5, 6, 8, 9, 10 ]
+      </pre>
+    </p>
+
+    <p>
+      Given a permutation p, we can consider a reversal variation p2 of p by selecting
+      two indices i1 and i2, with i1 &lt; i2, and constructing a tour in which
+      the ordering of cities between steps i1 and i2 is reversed.  
+      <pre>
+        p = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+        i1 = 3, i2 = 7
+        p2 = [ 1, 2, 7, 6, 5, 4, 3, 8, 9, 10 ]
+      </pre>
+    </p>
+
+    <p>
+      Starting with a random choice for p, we can generate random reversals
+      and transpositions.  The current value of p is replaced whenever a
+      variation is seen to have a lower cost.  By repeating this process,
+      a sequence of tours is produced of successively lower cost.  It is 
+      hoped that this process will find a good tour, if not the best.
+    </p>
+
+    <p>
+      This program is set to check only a limited number of variations,
+      currently set to 1000.  Thus, it will return an "answer" relatively
+      quickly, even for problems of 50 or 100 cities, where the search
+      space of possible tours is unimaginably complex.
+    </p>
+
+    <p>
+      However, even for small problems, there is no guarantee that the
+      tour that is returned is optimal, or even close to optimal.  Even
+      if it can be shown that no reversal or transposition can improve the
+      tour that is returned, this may merely mean that the tour is a local
+      minimum.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>tsp_descent</b> is available in
+      <a href = "../../m_src/tsp_descent/tsp_descent.html">a MATLAB version</a> and
+      <a href = "../../octave_src/tsp_descent/tsp_descent.html">an Octave version</a> and
+      <a href = "../../py_src/tsp_descent/tsp_descent.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_combinatorics/python_combinatorics.html">
+      python_combinatorics</a>,
+      a Python code which
+      considers a variety of problems in combinatorics involving
+      counting, combinations, permutations, and so on.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_brute/tsp_brute.html">
+      tsp_brute</a>,
+      a Python code which
+      is given a city-to-city distance table, and solves a (small) 
+      traveling salesperson problem (TSP), using brute force.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_greedy/tsp_greedy.html">
+      tsp_greedy</a>,
+      a Python code which
+      is given a city-to-city distance table,, and solves a small
+      traveling salesperson problem (TSP) using the greedy algorithm.
+      It picks a starting city at random, and then successively visits 
+      the nearest unvisited city.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_moler/tsp_moler.html">
+      tsp_moler</a>,
+      a Python code which
+      tries to optimize the traveling salesperson problem (TSP),
+      written by Cleve Moler.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_random/tsp_random.html">
+      tsp_random</a>,
+      a Python code which
+      is given a city-to-city distance table,
+      seeks a solution of the Traveling Salesperson Problem (TSP), by
+      randomly generating
+      round trips that visit every city, returning the tour of shortest length.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Gerhard Reinelt,<br>
+          TSPLIB - A Traveling Salesman Problem Library,<br>
+          ORSA Journal on Computing,<br>
+          Volume 3, Number 4, Fall 1991, pages 376-384.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "tsp_descent.py">tsp_descent.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "tsp_descent.sh">tsp_descent.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "tsp_descent.txt">tsp_descent.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "five.txt">five.txt</a>,
+          a 5 city distance matrix, whose minimal tour has length 19.
+        </li>
+        <li>
+          <a href = "fifteen.txt">fifteen.txt</a>,
+          a 15 city distance matrix, whose minimal tour has length 291.
+        </li>
+        <li>
+          <a href = "fortyeight.txt">fortyeight.txt</a>,
+          a 48 city distance matrix, whose minimal tour has length 33523.
+          (The tsp_descent() program does very badly on this example,
+          with only 1000 variations allowed.  The results don't get much
+          better if we allow 100,000 variations!)
+        </li>
+        <li>
+          <a href = "seventeen.txt">seventeen.txt</a>,
+          a 17 city distance matrix, whose minimal tour has length 2085.
+        </li>
+      </ul>
+    </p>
+
+
+    <hr>
+
+    <i>
+      Last revised on 06 November 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

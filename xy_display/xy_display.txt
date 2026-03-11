@@ -1,0 +1,21 @@
+Tue Mar 10 15:10:18 2026
+
+xy_display_test():
+  matplotlib version: 3.5.1
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test xy_display() which displays an xy file of point data.
+
+  Number of points POINT_NUM  =  303
+
+  First 5 nodes:
+[[-8.9154147  1.661592 ]
+ [-8.8847064  1.5538653]
+ [-8.7270571  1.4396306]
+ [-8.6780329  1.3310253]
+ [-8.2763869  1.3642085]]
+  Graphics saved as "lsup_303.png"
+
+xy_display_test():
+  Normal end of execution.
+Tue Mar 10 15:10:19 2026
