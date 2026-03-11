@@ -1,0 +1,53 @@
+Wed Oct  8 08:53:01 2025
+
+risk_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  risk_matrix() returns matrices defining the game of RISK.
+  i =  0   rowsum =  3.0
+  i =  1   rowsum =  4.0
+  i =  2   rowsum =  4.0
+  i =  3   rowsum =  6.0
+  i =  4   rowsum =  4.0
+  i =  5   rowsum =  3.0
+  i =  6   rowsum =  4.0
+  i =  7   rowsum =  4.0
+  i =  8   rowsum =  3.0
+  i =  9   rowsum =  3.0
+  i =  10   rowsum =  3.0
+  i =  11   rowsum =  4.0
+  i =  12   rowsum =  2.0
+  i =  13   rowsum =  6.0
+  i =  14   rowsum =  4.0
+  i =  15   rowsum =  6.0
+  i =  16   rowsum =  3.0
+  i =  17   rowsum =  3.0
+  i =  18   rowsum =  2.0
+  i =  19   rowsum =  3.0
+  i =  20   rowsum =  4.0
+  i =  21   rowsum =  4.0
+  i =  22   rowsum =  5.0
+  i =  23   rowsum =  6.0
+  i =  24   rowsum =  4.0
+  i =  25   rowsum =  6.0
+  i =  26   rowsum =  6.0
+  i =  27   rowsum =  5.0
+  i =  28   rowsum =  4.0
+  i =  29   rowsum =  5.0
+  i =  30   rowsum =  3.0
+  i =  31   rowsum =  4.0
+  i =  32   rowsum =  5.0
+  i =  33   rowsum =  5.0
+  i =  34   rowsum =  2.0
+  i =  35   rowsum =  6.0
+  i =  36   rowsum =  4.0
+  i =  37   rowsum =  3.0
+  i =  38   rowsum =  3.0
+  i =  39   rowsum =  3.0
+  i =  40   rowsum =  2.0
+  i =  41   rowsum =  3.0
+  Graphics saved as "risk_transition_matrix_test.png"
+
+risk_matrix_test():
+  Normal end of execution.
+Wed Oct  8 08:53:02 2025

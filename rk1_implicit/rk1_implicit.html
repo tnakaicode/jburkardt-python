@@ -1,0 +1,113 @@
+<html>
+
+  <head>
+    <title>
+      rk1_implicit
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      rk1_implicit
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>rk1_implicit</b>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the Runge-Kutta order 1 implicit method, using fsolve() 
+      to solve the implicit equation, and using a fixed time step.
+      rk1_implicit() is commonly called the backward Euler method.
+    </p>
+
+    <p>
+      Unless the right hand side of the ODE is linear in the dependent variable,
+      each step requires the solution of an implicit nonlinear
+      equation.  Such equations can be approximately solved using methods
+      such as fixed point iteration, or an implicit equation solver like fsolve().
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>rk1_implicit</b> is available in
+      <a href = "../../c_src/rk1_implicit/rk1_implicit.html">a C version</a> and
+      <a href = "../../cpp_src/rk1_implicit/rk1_implicit.html">a C++ version</a> and
+      <a href = "../../f_src/rk1_implicit/rk1_implicit.html">a Fortran90 version</a> and
+      <a href = "../../m_src/rk1_implicit/rk1_implicit.html">a MATLAB version</a> and
+      <a href = "../../octave_src/rk1_implicit/rk1_implicit.html">an Octave version</a> and
+      <a href = "../../py_src/rk1_implicit/rk1_implicit.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_ode_solver/python_ode_solver.html">
+      python_ode_solver</a>,
+      a Python code which 
+      solves one or more differential equations (ODE) using a method of a
+      particular order, either explicit or implicit.  Some methods require
+      a nonlinear equation solver.  Some methods used a fixed stepsize,
+      while others adapt the stepsize based on an error estimate.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "rk1_implicit.py">rk1_implicit.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "rk1_implicit.sh">rk1_implicit.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "rk1_implicit.txt">rk1_implicit.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "humps_rk1_implicit.png">
+          humps_rk1_implicit.png</a>,
+        </li>
+        <li>
+          <a href = "predator_prey_rk1_implicit.png">
+          predator_prey_rk1_implicit.png</a>,
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 13 November 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,36 @@
+Wed Oct  8 08:53:35 2025
+
+runge_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  matplotlib version: 3.5.1
+  Test runge.
+
+runge_antideriv_test():
+  runge_antideriv() evaluates the antiderivative of runge(x).
+  Graphics saved as "runge_antideriv.png"
+
+runge_deriv_test():
+  runge_deriv() evaluates the derivative of runge(x).
+  Graphics saved as "runge_deriv.png"
+
+runge_deriv2_test():
+  runge_deriv2() evaluates the second derivative of runge(x).
+  Graphics saved as "runge_deriv2.png"
+
+runge_fun_test():
+  runge_fun() evaluates the runge function.
+  Graphics saved as "runge_fun.png"
+
+runge_power_series_test():
+  runge_power_series() evaluates a power series
+  for the runge function, valid in (-0.2, +0.2).
+  Graphics saved as "runge_power_series.png"
+
+
+runge_power_series_test():
+  Normal end of execution.
+
+runge_test():
+  Normal end of execution.
+Wed Oct  8 08:53:36 2025

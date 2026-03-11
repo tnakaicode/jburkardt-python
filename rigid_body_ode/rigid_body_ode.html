@@ -1,0 +1,203 @@
+<html>
+
+  <head>
+    <title>
+      rigid_body_ode
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      rigid_body_ode
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>rigid_body_ode</b>,
+      a Python code which 
+      solves the ordinary differential equations (ODE)
+      representing the Euler equations for a rotating rigid body with three
+      unequal moments of inertia, originally proposed by Fred Krogh.
+    </p>
+
+    <p>
+      A rectangular object can rotate stably about its longest or shortest
+      axis, but not the intermediate one.  We let x(t), y(t), and z(t) be
+      the angular momenta, and I1, I2, I3 the moments of inertia about
+      the three principal axes.
+    </p>
+
+    <p>
+      The ODE can be written:
+<pre>
+        x' = a y z
+        y' = b x z
+        z' = c x y
+</pre>
+      where:
+<pre>
+        a = 1/I3 - 1/I2
+        b = 1/I1 - 1/I3
+        c = 1/I2 - 1/I1
+</pre>
+    </p>
+
+    <p>
+      Example choices include (I1,I2,I3) = (1,1/2,1/3) and (I1,I2,I3) = (1/6,1,2/3).
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>rigid_body_ode</b> is available in
+      <a href = "../../m_src/rigid_body_ode/rigid_body_ode.html">a MATLAB version</a> and
+      <a href = "../../octave_src/rigid_body_ode/rigid_body_ode.html">an Octave version</a> and
+      <a href = "../../py_src/rigid_body_ode/rigid_body_ode.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_ode/python_ode.html">
+      python_ode</a>,
+      Python codes which 
+      sets up various systems of ordinary differential equations (ODE).
+    </p>
+
+    <h3 align = "center">
+      References:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Ernst Hairer,<br>
+          Solving differential equations on manifolds,<br>
+          Universite de Geneve,<br>
+          June 2011.
+        </li>
+        <li>
+          Ernst Hairer, Christian Lubich, Gerhard Wanner,<br>
+          Geometric numerical integration,<br>
+          Springer, 2006.
+        </li>
+        <li>
+          Cleve Moler,<br>
+          Tumbling Box ODE,<br>
+          <a href = "https://blogs.mathworks.com/cleve/2015/08/10/tumbling-box-ode">
+                     https://blogs.mathworks.com/cleve/2015/08/10/tumbling-box-ode/ </a>
+        </li>
+        <li>
+          Lawrence Shampine, Marilyn Gordon,<br>
+          Computer Solution of Ordinary Differential Equations:
+          The Initial Value Problem,<br>
+          Freeman, 1975,<br>
+          ISBN: 0716704617,<br>
+          LC: QA372.S416.
+        </li>
+        <li>
+          Gilbert Strang,<br>
+          Differential equations and linear algebra,<br>
+          Wellesley-Cambridge Press, 2015,
+          ISBN13: 9780980232790.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "rigid_body_ode.py">rigid_body_ode.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "rigid_body_ode.sh">rigid_body_ode.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "rigid_body_ode.txt">rigid_body_ode.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "rigid_body_ode_euler_conservation_h1.png">
+          rigid_body_ode_euler_conservation_h1.png</a>
+        </li>
+        <li>
+          <a href = "rigid_body_ode_euler_conservation_h2.png">
+          rigid_body_ode_euler_conservation_h2.png</a>
+        </li>
+        <li>
+          <a href = "rigid_body_ode_euler_plot.png">
+          rigid_body_ode_euler_plot.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "rigid_body_ode_midpoint_conservation_h1.png">
+          rigid_body_ode_midpoint_conservation_h1.png</a>
+        </li>
+        <li>
+          <a href = "rigid_body_ode_midpoint_conservation_h2.png">
+          rigid_body_ode_midpoint_conservation_h2.png</a>
+        </li>
+        <li>
+          <a href = "rigid_body_ode_midpoint_plot.png">
+          rigid_body_ode_midpoint_plot.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "rigid_body_ode_rk4_conservation_h1.png">
+          rigid_body_ode_rk4_conservation_h1.png</a>
+        </li>
+        <li>
+          <a href = "rigid_body_ode_rk4_conservation_h2.png">
+          rigid_body_ode_rk4_conservation_h2.png</a>
+        </li>
+        <li>
+          <a href = "rigid_body_ode_rk4_plot.png">
+          rigid_body_ode_rk4_plot.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 03 May 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

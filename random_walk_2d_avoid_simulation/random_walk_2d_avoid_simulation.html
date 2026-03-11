@@ -1,0 +1,163 @@
+<html>
+
+  <head>
+    <title>
+      random_walk_2d_avoid_simulation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      random_walk_2d_avoid_simulation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>random_walk_2d_avoid_simulation</b>,
+      a Python code which
+      simulates a self-avoiding random walk in a 2D region.
+    </p>
+
+    <p>
+      A random self-avoiding walk of length STEP_NUM in 2D can be generated 
+      by generating a random walk in 2D and "hoping" it doesn't intersect itself.
+      If the next step would cause an intersection, then the generation is 
+      terminated prematurely; to ensure that the self-avoiding random walks are
+      selected uniformly, we have to just keep trying random walks this way and
+      "hoping".
+    </p>
+
+    <p>
+      The code random_walk_2d_avoid_plot() plots the trajectories of one
+      or more self-avoiding random walks.  The user gives a desired length STEP_NUM,
+      and the code generates a random walk that either reaches STEP_NUM without
+      self-intersection, or is terminated early to avoid intersection.
+    </p>
+
+    <p>
+      The code random_walk_2d_avoid_simulation() plots averaged data for
+      any number of self-avoiding random walks that each try to achieve 
+      the same number of steps.  The data plotted includes the number of steps
+      each walk reached before termination, and a least squares fit to the
+      distance versus number of steps.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>random_walk_2d_avoid_simulation</b> is available in
+      <a href = "../../m_src/random_walk_2d_avoid_simulation/random_walk_2d_avoid_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/random_walk_2d_avoid_simulation/random_walk_2d_avoid_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/random_walk_2d_avoid_simulation/random_walk_2d_avoid_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Brian Hayes,<br>
+          How To Avoid Yourself,<br>
+          American Scientist,<br>
+          Volume 86, Number 4, July-August 1998, pages 314-319.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "random_walk_2d_avoid_simulation.py">
+          random_walk_2d_avoid_simulation.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_simulation.sh">
+          random_walk_2d_avoid_simulation.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_simulation.txt">
+          random_walk_2d_avoid_simulation.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "random_walk_2d_avoid_0_100.png">random_walk_2d_avoid_0_100.png</a>
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_1_53.png">random_walk_2d_avoid_1_53.png</a>
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_2_57.png">random_walk_2d_avoid_2_57.png</a>
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_3_18.png">random_walk_2d_avoid_3_18.png</a>
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_4_27.png">random_walk_2d_avoid_4_27.png</a>
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_5_84.png">random_walk_2d_avoid_5_84.png</a>
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_6_23.png">random_walk_2d_avoid_6_23.png</a>
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_7_100.png">random_walk_2d_avoid_7_100.png</a>
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_8_100.png">random_walk_2d_avoid_8_100.png</a>
+        </li>
+        <li>
+          <a href = "random_walk_2d_avoid_9_61.png">random_walk_2d_avoid_9_61.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 November 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

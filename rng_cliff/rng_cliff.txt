@@ -1,0 +1,45 @@
+Wed Oct  8 08:53:14 2025
+
+rng_cliff_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test rng_cliff().
+
+rng_cliff_test01():
+  rng_cliff_next() computes the next entry in the
+  Cliff pseudorandom number generator sequence.
+
+       i         r(i)
+
+       0        0.50000000
+       1        0.31471806
+       2        0.60781013
+       3        0.78927325
+       4        0.66426981
+       5        0.90668694
+       6        0.79580490
+       7        0.84012241
+       8        0.42076663
+       9        0.56769273
+      10        0.61749712
+
+rng_cliff_test02():
+  rng_cliff_next() computes the next entry in the
+  Cliff pseudorandom number generator sequence.
+
+  Generate a sequence of length n.
+  Compute mean and standard deviation.
+
+       n        mean         std
+
+        10    0.640714    0.183861
+       100    0.551364    0.291310
+      1000    0.521118    0.297614
+     10000    0.500638    0.290456
+    100000    0.498198    0.288748
+   1000000    0.498593    0.288876
+  10000000    0.499063    0.288719
+
+rng_cliff_test():
+  Normal end of execution.
+Wed Oct  8 08:53:28 2025

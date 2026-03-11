@@ -1,0 +1,30 @@
+Wed Oct  8 08:52:26 2025
+
+reaction_twoway_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve reaction_twoway_ode().
+
+  Reaction differential equation:
+    dW1/dt = - k1 W1 + k2 W2
+    dW2/dt = + k1 W1 - k2 W2
+
+  parameters:
+    k1    =  1.0 , (reaction rate)
+    k2    =  10.0 , (reaction rate)
+    t0    =  0.0 , (initial time, in seconds s)
+    w10   =  0.1 , (initial amount of species W1)
+    w20   =  0.9 , (initial amount of species W2)
+    tstop =  1.0 , (final time, in seconds s)
+
+reaction_twoway_odefun():
+  Solve reaction_twoway_ode() using odefun()
+
+Mpmath settings:
+  mp.prec = 53                [default: 53]
+  mp.dps = 15                 [default: 15]
+  mp.trap_complex = False     [default: False]
+
+reaction_twoway_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:52:27 2025

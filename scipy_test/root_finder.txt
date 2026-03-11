@@ -1,0 +1,7 @@
+
+root_finder():
+  brentq() seeks a root of a given function.
+  Graphics saved as "root_finder.png"
+
+  Root found at  -0.5933306271014237
+  f(x) =  -3.3029134982598407e-15

@@ -1,0 +1,28 @@
+Wed Oct  8 08:54:11 2025
+
+sawtooth_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve sawtooth_ode().
+
+  parameters:
+    omega =  1.0
+    t0    =  0.0
+    y0    =  [1. 1.]
+    tstop =  20.0
+
+sawtooth_solve_ivp():
+  Solve sawtooth_ode() using solve_ivp().
+  Graphics saved as "sawtooth_solve_ivp.png"
+
+sawtooth_driver_test()
+  Plot the right hand side of sawtooth_ode().
+  Graphics saved as "sawtooth_driver_0.5.png"
+
+sawtooth_driver_test()
+  Plot the right hand side of sawtooth_ode().
+  Graphics saved as "sawtooth_driver_1.0.png"
+
+sawtooth_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:54:12 2025

@@ -1,0 +1,235 @@
+Wed Oct  8 08:50:35 2025
+
+r8sto_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8sto().
+
+r8sto_dif2_test():
+  r8sto_dif2() sets up a R8STO second difference matrix.
+  Matrix order N =  5
+
+  The matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           2            -1             0             0             0  
+      1 :          -1             2            -1             0             0  
+      2 :           0            -1             2            -1             0  
+      3 :           0             0            -1             2            -1  
+      4 :           0             0             0            -1             2  
+
+r8sto_indicator_test():
+  r8sto_indicator() sets up a R8STO indicator matrix.
+
+  Matrix order N =  5
+
+  The R8STO indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          12            11            12            13            14  
+      2 :          13            12            11            12            13  
+      3 :          14            13            12            11            12  
+      4 :          15            14            13            12            11  
+
+R8STO_INVERSE_TEST
+  R8STO_INVERSE computes the inverse of a positive
+  definite symmetric Toeplitz matrix.
+
+  Matrix order N =  3
+
+  The symmetric Toeplitz matrix A:
+
+  Col:       0             1             2       
+  Row
+      0 :           4             2           0.8  
+      1 :           2             4             2  
+      2 :         0.8             2             4  
+
+  The inverse matrix B:
+[[ 0.33482143 -0.17857143  0.02232143]
+ [-0.17857143  0.42857143 -0.17857143]
+ [ 0.02232143 -0.17857143  0.33482143]]
+
+  The product C = A * B:
+[[ 1.00000000e+00  3.64787565e-17 -7.33540213e-18]
+ [ 4.16333634e-17  1.00000000e+00  0.00000000e+00]
+ [ 2.77555756e-17  0.00000000e+00  1.00000000e+00]]
+
+R8STO_MV_TEST
+  R8STO_MV computes b=A*x, where A is an R8STO matrix.
+
+  Matrix order N =  5
+
+  The R8STO matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.975941     0.0212051      0.248101      0.342038      0.256454  
+      1 :   0.0212051      0.975941     0.0212051      0.248101      0.342038  
+      2 :    0.248101     0.0212051      0.975941     0.0212051      0.248101  
+      3 :    0.342038      0.248101     0.0212051      0.975941     0.0212051  
+      4 :    0.256454      0.342038      0.248101     0.0212051      0.975941  
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  b=A*x:
+
+     0:       4.41307
+     1:       4.73929
+     2:       4.54366
+     3:       4.91164
+     4:       6.64935
+
+R8STO_PRINT_TEST
+  R8STO_PRINT prints an R8STO matrix.
+
+  Matrix order N =  5
+
+  The R8STO matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          12            11            12            13            14  
+      2 :          13            12            11            12            13  
+      3 :          14            13            12            11            12  
+      4 :          15            14            13            12            11  
+
+R8STO_PRINT_SOME_TEST
+  R8STO_PRINT_SOME prints some of an R8STO matrix.
+
+  Matrix order N =  5
+
+  Rows 1:4, Cols 0:2
+
+  Col:       0             1             2       
+  Row
+      1 :          12            11            12  
+      2 :          13            12            11  
+      3 :          14            13            12  
+      4 :          15            14            13  
+
+R8STO_RANDOM_TEST
+  R8STO_RANDOM randomizes an R8STO matrix.
+
+  Matrix order N =  5
+
+  The R8STO matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.370234      0.221435      0.766826      0.350782      0.117178  
+      1 :    0.221435      0.370234      0.221435      0.766826      0.350782  
+      2 :    0.766826      0.221435      0.370234      0.221435      0.766826  
+      3 :    0.350782      0.766826      0.221435      0.370234      0.221435  
+      4 :    0.117178      0.350782      0.766826      0.221435      0.370234  
+
+R8STO_SL_TEST
+  R8STO_SL solves a positive definite symmetric
+  Toeplitz system.
+
+  Matrix order N =  3
+
+  The symmetric Toeplitz matrix A:
+
+  Col:       0             1             2       
+  Row
+      0 :           1           0.5           0.2  
+      1 :         0.5             1           0.5  
+      2 :         0.2           0.5             1  
+
+  The right hand side vector B:
+
+     0:             4
+     1:            -1
+     2:             3
+
+  The solution X:
+
+     0:       6.33929
+     1:      -6.71429
+     2:       5.08929
+
+  Norm of residual error A * x - b =  0.0
+
+R8STO_TO_R8GE_TEST
+  R8STO_TO_R8GE converts a matrix from R8STO to R8GE format.
+
+  Matrix order N =  5
+
+  The R8STO matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.346029      0.326237       0.45454      0.432417      0.438752  
+      1 :    0.326237      0.346029      0.326237       0.45454      0.432417  
+      2 :     0.45454      0.326237      0.346029      0.326237       0.45454  
+      3 :    0.432417       0.45454      0.326237      0.346029      0.326237  
+      4 :    0.438752      0.432417       0.45454      0.326237      0.346029  
+
+  The R8GE matrix:
+[[0.34602851 0.32623726 0.45453963 0.43241673 0.43875244]
+ [0.32623726 0.34602851 0.32623726 0.45453963 0.43241673]
+ [0.45453963 0.32623726 0.34602851 0.32623726 0.45453963]
+ [0.43241673 0.45453963 0.32623726 0.34602851 0.32623726]
+ [0.43875244 0.43241673 0.45453963 0.32623726 0.34602851]]
+
+R8STO_YW_SL_TEST
+  R8STO_YW_SL solves the Yule-Walker equations for a
+  symmetric Toeplitz system.
+
+  Matrix order N =  3
+
+  The symmetric Toeplitz matrix:
+
+  Col:       0             1             2       
+  Row
+      0 :           1           0.5           0.2  
+      1 :         0.5             1           0.5  
+      2 :         0.2           0.5             1  
+
+  The right hand side, B:
+
+     0:          -0.5
+     1:          -0.2
+     2:          -0.1
+
+  The computed solution, X:
+
+     0:     -0.535714
+     1:     0.0857143
+     2:    -0.0357143
+
+  The product A*x:
+
+     0:          -0.5
+     1:          -0.2
+     2:          -0.1
+
+R8STO_ZEROS_TEST
+  R8STO_ZEROS zeros an R8STO matrix.
+
+  Matrix order N =  5
+
+  The R8STO matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           0             0             0             0             0  
+      1 :           0             0             0             0             0  
+      2 :           0             0             0             0             0  
+      3 :           0             0             0             0             0  
+      4 :           0             0             0             0             0  
+
+r8sto_test():
+  Normal end of execution.
+Wed Oct  8 08:50:35 2025

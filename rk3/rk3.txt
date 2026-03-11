@@ -1,0 +1,22 @@
+Wed Oct  8 08:53:09 2025
+
+rk3_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test rk3() for solving an ordinary differential equation.
+
+rk3_humps_test():
+  Solve the humps_ode() using rk3().
+  Graphics saved as "rk3_humps.png"
+
+rk3_predator_prey_test():
+  Solve the predator_prey_ode() using rk3().
+  Graphics saved as "rk3_predator_prey.png"
+
+rk3_stiff_test():
+  Use rk3() to solve the stiff ODE.
+  Graphics saved as "rk3_stiff.png"
+
+rk3_test():
+  Normal end of execution.
+Wed Oct  8 08:53:10 2025

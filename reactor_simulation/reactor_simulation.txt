@@ -1,0 +1,80 @@
+Wed Oct  8 08:52:28 2025
+
+reactor_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test reactor_simulation()
+
+  The reactor shielding simulation.
+  Shield thickness is THICK = 2.0
+  Number of simulated particles is NTOT = 100000
+  Number of tests TEST_NUM = 5
+
+  Test # 0
+
+  The Reactor Shielding Problem:
+
+                           Total                   Average
+                    %      Energy      Percent     Energy         StDev
+
+Absorbed        39162         15525.1   39.16        0.396434        0.566612
+Reflected       52855         18110.4   52.85        0.342643        0.447417
+Transmitted      7983         3483.18    7.98        0.436325        0.600746
+
+Total          100000         37118.7  100.00
+
+  Test # 1
+
+  The Reactor Shielding Problem:
+
+                           Total                   Average
+                    %      Energy      Percent     Energy         StDev
+
+Absorbed        38901           15124   38.90        0.388781         0.55999
+Reflected       53134         18370.2   53.13        0.345733        0.448868
+Transmitted      7965         3520.43    7.96        0.441987        0.602722
+
+Total          100000         37014.6  100.00
+
+  Test # 2
+
+  The Reactor Shielding Problem:
+
+                           Total                   Average
+                    %      Energy      Percent     Energy         StDev
+
+Absorbed        38861         15235.8   38.86         0.39206        0.563531
+Reflected       53151           18253   53.15        0.343418        0.446646
+Transmitted      7988            3532    7.99        0.442163        0.607228
+
+Total          100000         37020.8  100.00
+
+  Test # 3
+
+  The Reactor Shielding Problem:
+
+                           Total                   Average
+                    %      Energy      Percent     Energy         StDev
+
+Absorbed        39021         15091.2   39.02        0.386745        0.555523
+Reflected       53265         18423.7   53.27        0.345887        0.450048
+Transmitted      7714         3405.07    7.71        0.441415         0.60605
+
+Total          100000         36919.9  100.00
+
+  Test # 4
+
+  The Reactor Shielding Problem:
+
+                           Total                   Average
+                    %      Energy      Percent     Energy         StDev
+
+Absorbed        39051         15193.8   39.05        0.389076         0.56137
+Reflected       53104         18360.2   53.10        0.345741        0.449125
+Transmitted      7845         3345.54    7.84        0.426456        0.589594
+
+Total          100000         36899.6  100.00
+
+reactor_simulation_test():
+  Normal end of execution.
+Wed Oct  8 08:52:55 2025

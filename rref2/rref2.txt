@@ -1,0 +1,189 @@
+Wed Oct  8 08:53:32 2025
+
+rref2_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test rref(), which analyzes matrices using the
+  reduced row echelon form (RREF)
+
+is_rref_test():
+  is_rref() reports whether a matrix is in reduced row echelon format.
+
+  A0:
+[[1 0 0 9 4]
+ [0 0 1 0 8]
+ [0 0 0 0 0]
+ [0 0 0 1 0]]
+  is_rref(A0) =  False
+
+  A1:
+[[1 0 0 9 4]
+ [0 0 0 1 0]
+ [0 0 1 0 8]
+ [0 0 0 0 0]]
+  is_rref(A1) =  False
+
+  A2:
+[[1 0 0 9 4]
+ [0 1 0 2 8]
+ [0 0 3 0 0]
+ [0 0 0 0 0]]
+  is_rref(A2) =  False
+
+  A3:
+[[1 0 3 9 4]
+ [0 1 0 2 8]
+ [0 0 1 0 0]
+ [0 0 0 0 0]]
+  is_rref(A3) =  False
+
+  A4:
+[[1 0 3 0 4]
+ [0 1 2 0 8]
+ [0 0 0 1 0]
+ [0 0 0 0 0]]
+  is_rref(A4) =  True
+
+rref_columns_test():
+  rref_columns() uses the reduced row echelon form (RREF)
+  of a matrix to find the linearly independent columns.
+
+  Matrix A:
+[[ 1  2  3  1]
+ [ 2  4  9  3]
+ [ 3  6  0  0]
+ [ 4  8  0  2]
+ [ 5 10  6  6]
+ [ 6 12  6  3]
+ [ 7 14  2  1]]
+
+  Number of independent columns is  3
+
+  Independent columns of A:
+[[1 3 1]
+ [2 9 3]
+ [3 0 0]
+ [4 0 2]
+ [5 6 6]
+ [6 6 3]
+ [7 2 1]]
+
+rref_compute_test():
+  rref_compute() is a user-written code to compute the
+  reduced row echelon form (RREF) of a matrix.
+  Compare it to MATLABs built-in version.
+
+  Matrix A:
+[[ 1  3  0  2  6  3  1]
+ [-2 -6  0 -2 -8  3  1]
+ [ 3  9  0  0  6  6  2]
+ [-1 -3  0  1  0  9  3]]
+
+  rref_compute(A):
+[[1.         3.         0.         0.         2.         0.
+  0.        ]
+ [0.         0.         0.         1.         2.         0.
+  0.        ]
+ [0.         0.         0.         0.         0.         1.
+  0.33333333]
+ [0.         0.         0.         0.         0.         0.
+  0.        ]]
+
+  a_cols:
+[0 3 5]
+
+rref_determinant_test():
+  rref_determinant() uses the reduced row echelon form 
+  of a square matrix to compute the determinant.
+
+  Matrix A:
+[[ 5  7  6  5]
+ [ 7 10  8  7]
+ [ 6  8 10  9]
+ [ 5  7  9 10]]
+
+  Estimated determinant of A = : 1.0
+
+  np.linalg.det(A) =  0.999999999999988
+
+rref_inverse_test():
+  rref_inverse() uses the reduced row echelon form 
+  of a square matrix to compute its inverse.
+
+  Matrix A:
+[[ 5  7  6  5]
+ [ 7 10  8  7]
+ [ 6  8 10  9]
+ [ 5  7  9 10]]
+
+  Estimated inverse of A, A_inv:
+[[ 68. -41. -17.  10.]
+ [-41.  25.  10.  -6.]
+ [-17.  10.   5.  -3.]
+ [ 10.  -6.  -3.   2.]]
+
+  np.linalg.inv ( A ):
+[[ 68. -41. -17.  10.]
+ [-41.  25.  10.  -6.]
+ [-17.  10.   5.  -3.]
+ [ 10.  -6.  -3.   2.]]
+
+  Product A_inv * A:
+[[ 1.00000000e+00  7.46069873e-14 -3.19744231e-14  6.39488462e-14]
+ [ 5.32907052e-15  1.00000000e+00  8.88178420e-15  3.55271368e-15]
+ [-1.77635684e-15 -2.84217094e-14  1.00000000e+00 -3.55271368e-15]
+ [ 4.66293670e-15  1.75415238e-14  5.55111512e-15  1.00000000e+00]]
+
+rref_rank_test():
+  rref_rank() uses the reduced row echelon form 
+  of a matrix to estimate its rank.
+
+  Matrix A:
+[[ 1 -2  3 -1]
+ [ 3 -6  9 -3]
+ [ 0  0  0  0]
+ [ 2 -2  0  1]
+ [ 6 -8  6  0]
+ [ 3  3  6  9]
+ [ 1  1  2  3]]
+
+  A has rank  3
+  np.linalg.matrix_rank(A)  3
+
+rref_solve_test():
+  rref_solve() uses the reduced row echelon form 
+  of a square matrix to solve a linear system.
+
+  Matrix A:
+[[ 5.  7.  6.  5.]
+ [ 7. 10.  8.  7.]
+ [ 6.  8. 10.  9.]
+ [ 5.  7.  9. 10.]]
+
+  Right hand side b:
+[[57.]
+ [79.]
+ [88.]
+ [86.]]
+
+  Estimated solution:
+[[1.]
+ [2.]
+ [3.]
+ [4.]]
+
+  np.linalg.solve ( A, b ):
+[[1.]
+ [2.]
+ [3.]
+ [4.]]
+
+  Product A * x:
+[[57.]
+ [79.]
+ [88.]
+ [86.]]
+
+rref2_test():
+  Normal end of execution.
+Wed Oct  8 08:53:32 2025

@@ -1,0 +1,176 @@
+Wed Oct  8 08:50:36 2025
+
+r8vm_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8vm().
+
+r8ge_to_r8vm_test():
+  r8ge_to_r8vm() converts an R8GE matrix to R8VM format.
+
+  The random R8GE matrix:
+[[0.89024404 0.38884894 0.97534572 0.07057376]
+ [0.36450491 0.31945172 0.97154638 0.30574   ]
+ [0.04239228 0.73101933 0.94534486 0.62681683]
+ [0.45762142 0.6851098  0.75290554 0.28917637]
+ [0.35456593 0.68670253 0.53248029 0.94477293]]
+
+  The R8VM matrix:
+
+  Col:       1             2             3             4       
+  Row
+  ---
+   1             1             1             1             1  
+   2      0.364505      0.319452      0.971546       0.30574  
+   3      0.132864      0.102049      0.943902     0.0934769  
+   4     0.0484295     0.0325999      0.917045     0.0285796  
+
+r8vm_det_test
+  r8vm_det computes the determinant of an R8VM matrix.
+
+  The R8VM matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+   1             1             1             1             1             1  
+   2             1             2             3             4             5  
+   3             1             4             9            16            25  
+   4             1             8            27            64           125  
+   5             1            16            81           256           625  
+
+  R8VM_DET =  288.0
+  Exact    =  288.0
+
+r8vm_indicator_test
+  r8vm_indicator returns an R8VM indicator matrix.
+
+  Matrix A:
+
+  Col:       1             2             3             4       
+  Row
+  ---
+   1             1             1             1             1  
+   2             1             2             3             4  
+   3             1             4             9            16  
+   4             1             8            27            64  
+
+r8vm_mtv_test()
+  r8vm_mtv)_ computes b=A'*x, where A is an R8VM matrix.
+
+  b=A'*x
+
+     0:       5.23116
+     1:       8.43497
+     2:       2.18074
+     3:       1.00966
+     4:       2.08407
+
+r8vm_mv_test()
+  r8vm_mv() computes b=A*x, where A is an R8VM matrix.
+
+  b=A*x
+
+     0:            15
+     1:       10.6374
+     2:       8.79061
+     3:       7.56645
+     4:       6.63411
+
+r8vm_print_test
+  r8vm_print prints an R8VM matrix.
+
+  The R8VM matrix:
+
+  Col:       1             2             3             4       
+  Row
+  ---
+   1             1             1             1             1  
+   2             1             2             3             4  
+   3             1             4             9            16  
+   4             1             8            27            64  
+
+r8vm_print_some_test
+  r8vm_print_some prints some of an R8VM format.
+
+  Rows 2-5, Cols 2:4
+
+  Col:       2             3             4       
+  Row
+  ---
+   2             2             3             4  
+   3             4             9            16  
+   4             8            27            64  
+   5            16            81           256  
+
+r8vm_random_test():
+  r8vm_random() randomizes an R8VM matrix.
+
+  Matrix A:
+
+  Col:       1             2             3             4       
+  Row
+  ---
+   1             1             1             1             1  
+   2     0.0280768     0.0374687       0.28458       0.45626  
+   3   0.000788305     0.0014039      0.080986      0.208173  
+   4    2.2133e-05   5.26025e-05      0.023047     0.0949812  
+
+r8vm_sl_test()
+  r8vm_sl() solves A*x=b, where A is an R8VM matrix.
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+r8vm_slt_test()
+  r8vm_slt() solves a transposed Vandermonde system.
+
+  Solution to transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+r8vm_to_r8ge_test()
+  r8vm_to_r8ge() converts an R8VM matrix to R8GE format.
+
+  The random R8VM matrix:
+
+  Col:       1             2             3             4       
+  Row
+  ---
+   1             1             1             1             1  
+   2       0.47232      0.188956      0.250976      0.410718  
+   3      0.223086     0.0357044      0.062989      0.168689  
+   4      0.105368    0.00674657     0.0158087     0.0692838  
+
+  The R8GE matrix
+[[1.         1.         1.         1.        ]
+ [0.47231971 0.18895615 0.25097606 0.41071809]
+ [0.2230859  0.03570443 0.06298898 0.16868935]
+ [0.10536787 0.00674657 0.01580873 0.06928377]
+ [0.04976732 0.00127481 0.00396761 0.0284561 ]]
+
+r8vm_zeros_test():
+  r8vm_zeros() zeros out an R8VM matrix.
+
+  Matrix A:
+
+  Col:       1             2             3             4       
+  Row
+  ---
+   1             1             1             1             1  
+   2             0             0             0             0  
+   3             0             0             0             0  
+   4             0             0             0             0  
+
+r8vm_test():
+  Normal end of execution.
+Wed Oct  8 08:50:36 2025

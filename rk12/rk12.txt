@@ -1,0 +1,16 @@
+Wed Oct  8 08:53:03 2025
+
+rk12_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test rk12().
+  Graphics saved as "predator_rk1_time.png"
+  Graphics saved as "predator_rk1_phase.png"
+  Graphics saved as "predator_rk2_time.png"
+  Graphics saved as "predator_rk2_phase.png"
+  Graphics saved as "error_rk12_time.png"
+  Graphics saved as "error_rk12_phase.png"
+
+rk12_test():
+  Normal end of execution.
+Wed Oct  8 08:53:04 2025

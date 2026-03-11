@@ -1,0 +1,22 @@
+Wed Oct  8 08:53:06 2025
+
+rk2_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test rk2() for solving an ordinary differential equation.
+
+rk2_humps_test():
+  Solve the humps_ode() using rk2().
+  Graphics saved as "rk2_humps.png"
+
+rk2_predator_prey_test():
+  Solve the predator_prey_ode() using rk2().
+  Graphics saved as "rk2_predator_prey.png"
+
+rk2_stiff_test():
+  Use rk2() to solve the stiff ODE.
+  Graphics saved as "rk2_stiff.png"
+
+rk2_test():
+  Normal end of execution.
+Wed Oct  8 08:53:07 2025

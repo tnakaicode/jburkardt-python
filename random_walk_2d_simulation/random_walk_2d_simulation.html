@@ -1,0 +1,200 @@
+<html>
+
+  <head>
+    <title>
+      random_walk_2d_simulation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      random_walk_2d_simulation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>random_walk_2d_simulation</b>,
+      a Python code which
+      simulates a random walk in a 2D region.
+    </p>
+
+    <p>
+      random_walk_2d_plot() plots the trajectories of one
+      or more random walks.  
+    </p>
+
+    <p>
+      random_walk_2d_simulation() plots averaged data for
+      any number of random walks that each use the same number of steps.
+      The data plotted is the average and maximum of the distance squared
+      at each time step.  The average distance squared should behave like 
+      the number of time steps.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>random_walk_2d_plot</b> ( <i>step_num</i>, <i>walk_num</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>step_num</i> is the number of steps to take.  500 might be
+          a typical value.
+        </li>
+        <li>
+          <i>walk_num</i> is the number of random walks to take.  Each 
+          walk is displayed on a common grid.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <blockquote>
+        <b>random_walk_2d_simulation</b> ( <i>step_num</i>, <i>walk_num</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>step_num</i> is the number of steps to take.  500 might be
+          a typical value.
+        </li>
+        <li>
+          <i>walk_num</i> is the number of random walks to take.  The data
+          that is plotted comes from the average over all these walks.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>random_walk_2d_simulation</b> is available in
+      <a href = "../../m_src/random_walk_2d_simulation/random_walk_2d_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/random_walk_2d_simulation/random_walk_2d_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/random_walk_2d_simulation/random_walk_2d_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Martin Gardner,<br>
+          The Mathematical Circus,<br>
+          Mathematics Association of America, 1996,<br>
+          ISBN13: 978-0883855065,<br>
+          LC: QA95.G287.
+        </li>
+        <li>
+          Ian Stewart,<br>
+          "Repealing the Law of Averages",<br>
+          Scientific American,<br>
+          Volume 278, Number 4, April 1998, pages 102-104.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "random_walk_2d_simulation.py">
+          random_walk_2d_simulation.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "random_walk_2d_simulation.sh">
+          random_walk_2d_simulation.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "random_walk_2d_simulation.txt">
+          random_walk_2d_simulation.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "walks_1_steps_500_stats.png">walks_1_steps_500_stats.png</a>, 
+          statistics for 1 walk of 500 steps.
+        </li>
+        <li>
+          <a href = "walks_10_steps_500.png">walks_10_steps_500.png</a>, 
+          statistics for 10 walks of 500 steps.
+        </li>
+        <li>
+          <a href = "walks_100_steps_500.png">walks_100_steps_500.png</a>, 
+          statistics for 100 walks of 500 steps.
+        </li>
+        <li>
+          <a href = "walks_1_steps_10_plot.png">walks_1_steps_10_plot.png</a>, 
+          the trajectories of 1 walk of 10 steps.
+        </li>
+        <li>
+          <a href = "walks_1_steps_100_plot.png">walks_1_steps_100_plot.png</a>, 
+          the trajectories of 1 walk of 100 steps.
+        </li>
+        <li>
+          <a href = "walks_1_steps_1000_plot.png">walks_1_steps_1000_plot.png</a>, 
+          the trajectories of 1 walk of 1000 steps.
+        </li>
+        <li>
+          <a href = "walks_1_steps_10000_plot.png">walks_1_steps_10000_plot.png</a>, 
+          the trajectories of 1 walk of 10000 steps.
+        </li>
+        <li>
+          <a href = "walks_20_steps_100_plot.png">
+          walks_20_steps_100_plot.png</a>, 
+          the trajectories of 20 walks of 100 steps.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 November 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

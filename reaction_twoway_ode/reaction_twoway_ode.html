@@ -1,0 +1,156 @@
+<html>
+
+  <head>
+    <title>
+      reaction_twoway_ode
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      reaction_twoway_ode
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>reaction_twoway_ode</b>,
+      a Python code which 
+      sets up and solves the ordinary differential equations (ODE) which model a 
+      two-way chemical reaction between species W1 and W2.
+    </p>
+
+    <p>
+      The reference suggests an experiment in which the Forward Euler method
+      is used, with a timestep of 1/50.  The problem is to be solved three
+      times, with the second reaction coefficient, k2, set to 10 (the default), 
+      100, and 1000.  The value k2=1000 makes the solution very difficult
+      to compute accurately.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>reaction_twoway_ode</b> is available in
+      <a href = "../../m_src/reaction_twoway_ode/reaction_twoway_ode.html">a MATLAB version</a> and
+      <a href = "../../octave_src/reaction_twoway_ode/reaction_twoway_ode.html">an Octave version</a> and
+      <a href = "../../py_src/reaction_twoway_ode/reaction_twoway_ode.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_ode/python_ode.html">
+      python_ode</a>,
+      Python codes which 
+      sets up various systems of ordinary differential equations (ODE).
+    </p>
+
+    <h3 align = "center">
+      References:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Willem Hundsdorfer, Jan Verwer,<br>
+          Numerical solution of time-dependent advection-diffusion-reaction equations,<br>
+          Springer, 2003<br>
+          ISBN: 978-3-662-09017-6
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "reaction_twoway_ode.py">
+          reaction_twoway_ode.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "reaction_twoway_ode.sh">
+          reaction_twoway_ode.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "reaction_twoway_ode.txt">
+          reaction_twoway_ode.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "reaction_twoway_euler_conservation.png">
+          reaction_twoway_euler_conservation.png</a>, 
+          displays the conserved quantity.
+        </li>
+        <li>
+          <a href = "reaction_twoway_euler_solution.png">
+          reaction_twoway_euler_solution.png</a>, 
+          displays the solution.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "reaction_twoway_midpoint_conservation.png">
+          reaction_twoway_midpoint_conservation.png</a>, 
+          displays the conserved quantity.
+        </li>
+        <li>
+          <a href = "reaction_twoway_midpoint_solution.png">
+          reaction_twoway_midpoint_solution.png</a>, 
+          displays the solution.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "reaction_twoway_solve_ivp_conservation.png">
+          reaction_twoway_solve_ivp_conservation.png</a>, 
+          displays the conserved quantity.
+        </li>
+        <li>
+          <a href = "reaction_twoway_solve_ivp_solution.png">
+          reaction_twoway_solve_ivp_solution.png</a>, 
+          displays the solution.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 30 May 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

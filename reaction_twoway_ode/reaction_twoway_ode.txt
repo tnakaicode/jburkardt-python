@@ -1,0 +1,43 @@
+Wed Oct  8 08:52:25 2025
+
+reaction_twoway_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve reaction_twoway_ode().
+
+  Reaction differential equation:
+    dW1/dt = - k1 W1 + k2 W2
+    dW2/dt = + k1 W1 - k2 W2
+
+  parameters:
+    k1    =  1.0 , (reaction rate)
+    k2    =  10.0 , (reaction rate)
+    t0    =  0.0 , (initial time, in seconds s)
+    w10   =  0.1 , (initial amount of species W1)
+    w20   =  0.9 , (initial amount of species W2)
+    tstop =  1.0 , (final time, in seconds s)
+
+reaction_twoway_euler():
+  Solve reaction_twoway_ode() using euler()
+
+  Number of steps will be  51
+  Stepsize will be  0.02
+  Graphics saved as "reaction_twoway_euler_solution.png"
+  Graphics saved as "reaction_twoway_euler_conservation.png"
+
+reaction_twoway_midpoint():
+  Solve reaction_twoway_ode() using midpoint()
+
+  Number of steps will be  51
+  Stepsize will be 0.02
+  Graphics saved as "reaction_twoway_midpoint_solution.png"
+  Graphics saved as "reaction_twoway_midpoint_conservation.png"
+
+reaction_twoway_solve_ivp():
+  Solve reaction_twoway_ode() using solve_ivp()
+  Graphics saved as "reaction_twoway_solve_ip_solution.png"
+  Graphics saved as "reaction_twoway_solve_ip_conservation.png"
+
+reaction_twoway_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:52:26 2025

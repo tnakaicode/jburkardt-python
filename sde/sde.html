@@ -1,0 +1,217 @@
+<html>
+
+  <head>
+    <title>
+      sde
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      sde
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>sde</b>,
+      a Python code which 
+      illustrates properties of 
+      stochastic ordinary differential equations (SDE), and
+      common algorithms for their analysis, including the Euler method,
+      the Euler-Maruyama method, and the Milstein method,
+      by Desmond Higham;
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>sde</b> is available in
+      <a href = "../../c_src/sde/sde.html">a C version</a> and
+      <a href = "../../cpp_src/sde/sde.html">a C++ version</a> and
+      <a href = "../../f77_src/sde/sde.html">a Fortran77 version</a> and
+      <a href = "../../f_src/sde/sde.html">a Fortran90 version</a> and
+      <a href = "../../m_src/sde/sde.html">a MATLAB version</a> and
+      <a href = "../../octave_src/sde/sde.html">an Octave version</a> and
+      <a href = "../../py_src/sde/sde.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/black_scholes/black_scholes.html">
+      black_scholes</a>,
+      a Python code which
+      implements some simple approaches to
+      the Black-Scholes option valuation theory,
+      by Desmond Higham.
+    </p>
+
+    <p>
+      <a href = "../../py_src/brownian_motion_simulation/brownian_motion_simulation.html">
+      brownian_motion_simulation</a>,
+      a Python code which
+      simulates Brownian motion in an M-dimensional region.
+    </p>
+
+    <p>
+      <a href = "../../py_src/colored_noise/colored_noise.html">
+      colored_noise</a>,
+      a Python code which
+      generates samples of noise obeying a 1/f^alpha power law.
+    </p>
+
+    <p>
+      <a href = "../../py_src/ornstein_uhlenbeck/ornstein_uhlenbeck.html">
+      ornstein_uhlenbeck</a>,
+      a Python code which 
+      approximates solutions of the Ornstein-Uhlenbeck 
+      stochastic differential equation (SDE) using the Euler method and
+      the Euler-Maruyama method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pink_noise/pink_noise.html">
+      pink_noise</a>,
+      a Python code which
+      computes a pink noise signal obeying a 1/f power law.
+    </p>
+
+    <p>
+      <a href = "../../py_src/stochastic_diffusion/stochastic_diffusion.html">
+      stochastic_diffusion</a>,
+      a Python code which
+      implement several versions of a stochastic diffusivity coefficient.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Original MATLAB version by Desmond Higham. 
+      This version by John Burkardt.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Desmond Higham,<br>
+          An Algorithmic Introduction to Numerical Simulation of
+          Stochastic Differential Equations,<br>
+          SIAM Review,<br>
+          Volume 43, Number 3, September 2001, pages 525-546.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sde.py">sde.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "sde.sh">sde.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "sde.txt">sde.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "bpath.png">bpath.png</a>,
+          an image of the computed path for BPATH.
+        </li>
+        <li>
+          <a href = "bpath1.png">bpath1.png</a>
+        </li>
+        <li>
+          <a href = "bpath2.png">bpath2.png</a>
+        </li>
+        <li>
+          <a href = "bpath_average.png">bpath_average.png</a>,
+          an image of the averaged paths for BPATH_AVERAGE.
+        </li>
+        <li>
+          <a href = "bpath_vectorized.png">bpath_vectorized.png</a>,
+          an image of the computed path for BPATH_VECTORIZED.
+        </li>
+        <li>
+          <a href = "chain.png">chain.png</a>,
+          an image comparing solutions done with and without the chain rule.
+        </li>
+        <li>
+          <a href = "em.png">em.png</a>,
+          an image of a true solution versus the Euler-Maruyama estimate.
+        </li>
+        <li>
+          <a href = "emstrong.png">emstrong.png</a>,
+          an image of the strong convergence of the Euler-Maruyama error with stepsize.
+        </li>
+        <li>
+          <a href = "emweak0.png">emweak0.png</a>,
+          an image of the weak convergence of the standard Euler-Maruyama method.
+        </li>
+        <li>
+          <a href = "emweak1.png">emweak1.png</a>,
+          an image of the weak convergence of the weak Euler-Maruyama method.
+        </li>
+        <li>
+          <a href = "milstrong.png">milstrong.png</a>,
+          an image of the strong convergence of the Milstein method.
+        </li>
+        <li>
+          <a href = "stab_asymptotic.png">stab_asymptotic.png</a>,
+          an image of an asymptotic stability check.
+        </li>
+        <li>
+          <a href = "stab_meansquare.png">stab_meansquare.png</a>,
+          an image of a meansquare stability check.
+        </li>
+        <li>
+          <a href = "stab1.png">stab1.png</a>
+        </li>
+        <li>
+          <a href = "stab2.png">stab2.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 30 April 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

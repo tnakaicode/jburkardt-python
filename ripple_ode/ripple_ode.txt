@@ -1,0 +1,19 @@
+Wed Oct  8 08:53:00 2025
+
+ripple_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  ripple_ode() models an equation with ripples and hyperbolas.
+
+  parameters:
+    t0 =     0.0
+    y0 =     7.0
+    tstop =  25.0
+
+ripple_euler()
+  Use euler() to solve ripple_ode().
+  Graphics saved as "ripple_euler.png"
+
+ripple_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:53:01 2025

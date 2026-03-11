@@ -1,0 +1,20 @@
+Wed Oct  8 08:53:32 2025
+
+rubber_band_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve rubber_band_ode().
+
+  parameters:
+    a =      17.0
+    b =      1.0
+    lam =    15.4
+    mu =     0.75
+    t0 =     0.0
+    y0 =     [1. 0.]
+    tstop =  100.0
+  Graphics saved as "rubber_band_ode.png"
+
+rubber_band_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:53:33 2025

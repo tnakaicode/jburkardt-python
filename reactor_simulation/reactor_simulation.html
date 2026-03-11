@@ -1,0 +1,182 @@
+<html>
+
+  <head>
+    <title>
+      reactor_simulation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      reactor_simulation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>reactor_simulation</b>,
+      a Python code which
+      simulates the shielding effect of a slab intended to absorb
+      or reflect most of the radiation from a neutron source.
+      This code is intended as a simple demonstration of Monte Carlo
+      simulation as applied to the analysis of complicated probabilistic
+      systems.
+    </p>
+
+    <p>
+      The code was developed
+      in the book "Numerical Methods and Software".
+    </p>
+
+    <p>
+      The reactor is modeled as a point source,
+      located at (0,0,0).
+    </p>
+
+    <p>
+      A particle emitted from the reactor has a random
+      initial direction, and an energy selected from
+      [Emin,Emax] with a 1/Sqrt(E) distribution.
+    </p>
+
+    <p>
+      The shield is modeled as a wall of thickness THICK,
+      extending from 0 to THICK in the X direction, and
+      extending forever in the Y and Z directions.
+    </p>
+
+    <p>
+      Based on the particle energy, a distance D is computed
+      which measures how far the particle could travel through
+      the shield before colliding.
+    </p>
+
+    <p>
+      Based on the particle direction, the position is updated
+      by D units.
+    </p>
+
+    <p>
+      If the particle is now to the left of the shield, it is
+       counted as being REFLECTED.
+    </p>
+
+    <p>
+      If the particle is to the right of the shield, it is
+      counted as being ABSORBED.
+    </p>
+
+    <p>
+      If the particle is inside the shield, it has COLLIDED.
+      A particle that collides is either absorbed (end of story)
+      or SCATTERED with a new random direction and a new (lower)
+      energy.
+    </p>
+
+    <p>
+      Every particle is followed from origin to its final fate,
+      which is reflection, transmission, or absorption.
+      At the end, a summary is printed, giving the number of
+      particles with each fate, and the average energy of each
+      group of particles.
+    </p>
+
+    <p>
+      Increasing NTOT, the number of particles used, will improve the
+      expected reliability of the results.
+    </p>
+
+    <p>
+      Increasing THICK, the thickness of the shield, should 
+      result in more absorptions and reflections.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>reactor_simulation</b> is available in
+      <a href = "../../c_src/reactor_simulation/reactor_simulation.html">a C version</a> and
+      <a href = "../../cpp_src/reactor_simulation/reactor_simulation.html">a C++ version</a> and
+      <a href = "../../f_src/reactor_simulation/reactor_simulation.html">a Fortran90 version</a> and
+      <a href = "../../m_src/reactor_simulation/reactor_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/reactor_simulation/reactor_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/reactor_simulation/reactor_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/reactor_simulation_test/reactor_simulation_test.html">
+      reactor_simulation_test</a>
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          David Kahaner, Cleve Moler, Steven Nash,<br>
+          Numerical Methods and Software,<br>
+          Prentice Hall, 1989,<br>
+          ISBN: 0-13-627258-4,<br>
+          LC: TA345.K34.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "reactor_simulation.py">reactor_simulation.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "reactor_simulation.sh">reactor_simulation.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "reactor_simulation.txt">reactor_simulation.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 26 November 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body
+
+</html>

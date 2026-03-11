@@ -1,0 +1,17 @@
+Wed Oct  8 08:53:29 2025
+
+robertson_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve robertson_ode().
+
+  parameters:
+    t0 =     0.0
+    y0 =     [1. 0. 0.]
+    tstop =  40.0
+  Graphics saved as "robertson_ode.png"
+  Graphics saved as "robertson_ode_conservation.png"
+
+robertson_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:53:30 2025

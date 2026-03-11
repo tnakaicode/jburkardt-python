@@ -1,0 +1,85 @@
+Sat Feb  7 15:51:17 2026
+
+root_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  root() seeks a solution x of one or more nonlinear
+  equations f(x)=0.
+
+root_test01
+  Use root_scalar() to solve 1 equation in 1 unknown.
+    Initial X0 =  0.0   f(x0) =  -5.0
+    Final X =  4.275232621860821   f(x) =  -4.440892098500626e-16
+
+root_test02
+  Use root() to solve 1 nonlinear equation.
+
+  Initial X and F(X)
+
+       0:              0            -5
+
+  Final X and F(X)
+
+       0:        4.27523  -4.44089e-16
+
+root_test03():
+  Use root() to solve 2 nonlinear equations in 2 variables.
+
+  Initial X and F(X)
+
+       0:              3           -13
+       1:              0            11
+
+  Final X and F(X)
+
+       0:              1  -1.77636e-15
+       1:              1  -1.27898e-13
+
+root_test04
+  Use root() to solve 4 nonlinear equations in 4 variables.
+
+  Initial X and F(X)
+
+       0:              0             1
+       1:              0             4
+       2:              0             9
+       3:              0            16
+
+  Final X and F(X)
+
+       0:              1    1.2326e-32
+       1:              2   4.43734e-31
+       2:              3   3.15544e-30
+       3:              4   1.77494e-30
+
+root_test05():
+  Use root() to solve 8 nonlinear equations in 8 variables.
+
+  Initial X and F(X)
+
+       0:              0             1
+       1:              0             1
+       2:              0             1
+       3:              0             1
+       4:              0             1
+       5:              0             1
+       6:              0             1
+       7:              0             1
+
+  Final X and F(X)
+
+       0:       -0.57047      1.28e-11
+       1:      -0.681141   -3.0721e-11
+       2:      -0.700428   4.27283e-11
+       3:      -0.700672  -2.40672e-11
+       4:      -0.691736   1.62188e-11
+       5:      -0.665767  -4.45932e-12
+       6:      -0.596029  -1.06826e-11
+       7:      -0.416411   1.17305e-11
+
+root_test06():
+  Use root() to minimize 1 function in 3 unknowns.
+
+  Initial X and F(X)
+
+       0:              0             0

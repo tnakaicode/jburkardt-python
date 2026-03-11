@@ -1,0 +1,20 @@
+Wed Oct  8 08:51:30 2025
+
+random_walk_2d_avoid_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test random_walk_2d_avoid_simulation().
+  Graphics saved as "random_walk_2d_avoid_0_81.png"
+  Graphics saved as "random_walk_2d_avoid_1_100.png"
+  Graphics saved as "random_walk_2d_avoid_2_24.png"
+  Graphics saved as "random_walk_2d_avoid_3_53.png"
+  Graphics saved as "random_walk_2d_avoid_4_81.png"
+  Graphics saved as "random_walk_2d_avoid_5_26.png"
+  Graphics saved as "random_walk_2d_avoid_6_85.png"
+  Graphics saved as "random_walk_2d_avoid_7_20.png"
+  Graphics saved as "random_walk_2d_avoid_8_20.png"
+  Graphics saved as "random_walk_2d_avoid_9_100.png"
+
+random_walk_2d_avoid_simulation_test():
+  Normal end of execution.
+Wed Oct  8 08:51:32 2025

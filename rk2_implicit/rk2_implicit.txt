@@ -1,0 +1,22 @@
+Wed Oct  8 08:53:08 2025
+
+rk2_implicit_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test rk2_implicit() for solving an ordinary differential equation.
+
+rk2_implicit_humps_test():
+  Solve humps_ode() using rk2_implicit().
+  Graphics saved as "rk2_implicit_humps.png"
+
+rk2_implicit_predator_prey_test():
+  Solve predator_prey_ode() using rk2_implicit().
+  Graphics saved as "rk2_implicit_predator_prey.png"
+
+rk2_implicit_stiff_test():
+  Use rk2_implicit() to solve the stiff ODE.
+  Graphics saved as "rk2_implicit_stiff.png"
+
+rk2_implicit_test():
+  Normal end of execution.
+Wed Oct  8 08:53:09 2025

@@ -1,0 +1,21 @@
+Wed Oct  8 08:53:33 2025
+
+rucklidge_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve rucklidge_ode().
+  Plot solution components (T,X(T)), (T,Y(T)), and (T,Z(T)).
+  Plot (X(T),Y(T),Z(T)).
+
+  parameters:
+    kappa =  -2.0
+    lamda =  -6.7
+    t0 =     0.0
+    xyz0 =   [1.  0.  4.5]
+    tstop =  100.0
+  Graphics saved as "rucklidge_ode_components.png"
+  Graphics saved as "rucklidge_ode_3d.png"
+
+rucklidge_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:53:35 2025
