@@ -1,0 +1,63 @@
+Wed Oct  8 08:24:53 2025
+
+line_integrals_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test line_integrals().
+
+line01_length_test
+  line01_length returns the length of the unit line.
+
+  line01_length() =  1.0
+
+line01_monomial_integral_test
+  line01_monomial_integral computes integrals of monomials
+  along the length of the unit line in 1D.
+  Compare with a Monte Carlo estimate.
+
+  Number of sample points used is 4192
+
+   E     MC-Estimate      Exact           Error
+
+   0               1               1           0
+   1        0.509059             0.5      0.0091
+   2        0.342861        0.333333      0.0095
+   3        0.258932            0.25      0.0089
+   4        0.208195             0.2      0.0082
+   5        0.174183        0.166667      0.0075
+   6        0.149789        0.142857      0.0069
+   7        0.131438           0.125      0.0064
+   8         0.11713        0.111111       0.006
+   9        0.105662             0.1      0.0057
+  10       0.0962639       0.0909091      0.0054
+
+line01_sample_test():
+  line01_sample() samples the unit line.
+
+  Sample points in the unit line.
+
+     0:      0.296109
+     1:      0.672723
+     2:      0.853134
+     3:      0.750878
+     4:       0.67049
+     5:       0.42745
+     6:      0.914588
+     7:      0.938303
+     8:      0.049037
+     9:      0.326541
+
+monomial_value_1d_test():
+  monomial_value_1d() evaluates a monomial of a 1D argument.
+
+      X^(-1)       X^(0)       X^(1)       X^(2)       X^(5)
+
+     0.11703           1     8.54485     73.0145     45553.6
+    -2.03122           1   -0.492316    0.242375  -0.0289213
+    0.194578           1     5.13934     26.4128     3585.39
+     0.17359           1      5.7607     33.1857     6344.21
+    -1.70359           1   -0.586995    0.344563  -0.0696902
+
+line_integrals_test():
+  Normal end of execution.
+Wed Oct  8 08:24:53 2025

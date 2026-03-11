@@ -1,0 +1,16 @@
+Wed Oct  8 08:24:58 2025
+
+lissajous_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Display a Lissajous figure, using N points, of the form:
+    x(i) = sin ( A1 * t + B1 ).
+    y(i) = sin ( A2 * t + B2 ).
+  for 0 <= t <= TSTOP.
+
+lissajous_plot():
+  Graphics saved as "lissajous.png"
+
+lissajous_test():
+  Normal end of execution.
+Wed Oct  8 08:24:59 2025

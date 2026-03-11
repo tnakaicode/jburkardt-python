@@ -1,0 +1,20 @@
+Wed Oct  8 08:24:50 2025
+
+line_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test line_distance().
+
+  Using N = 10000 sample points.
+  Estimated mean distance = 0.334744
+  Exact mean distance     = 0.333333
+  Estimated variance      = 0.0547062
+  Exact variance          = 0.0555556
+
+  Graphics saved as "line_distance_histogram.png"
+  Graphics saved as "line_distance_pdf.png"
+  Graphics saved as "line_distance_compare.png"
+
+line_distance_test:
+  Normal end of execution.
+Wed Oct  8 08:24:53 2025

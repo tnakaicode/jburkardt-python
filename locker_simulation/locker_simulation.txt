@@ -1,0 +1,82 @@
+Wed Oct  8 08:25:02 2025
+
+locker_simulation_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test several strategies for the locker puzzle.
+
+strategy1_test():
+  Each player simply opens lockers at random.
+  They may even open some lockers several times.
+
+  Number of lockers was  100
+  Number of players was  100
+  Number of lockers a player can check  50
+  Number of trials was  1000
+
+  Success rate = number of players who found wallet / number of players.
+
+  Minimum  =  0.21
+  Maximum  =  0.56
+  Mean     =  0.3943
+  STD      =  0.050166821705186784
+
+  All players found their wallets 0 times out of 1000
+
+strategy2_test():
+  Each player opens lockers based on a random list.
+  However, this list has no duplicates.
+
+  Number of lockers was  100
+  Number of players was  100
+  Number of lockers a player can check  50
+  Number of trials was  1000
+
+  Success rate = number of players who found wallet / number of players.
+
+  Minimum  =  0.33
+  Maximum  =  0.67
+  Mean     =  0.49839999999999995
+  STD      =  0.05120781190404449
+
+  All players found their wallets 0 times out of 1000
+
+strategy3_test():
+  Each player starts at their own locker.
+  Next try the locker corresponding to the wallet they found.
+
+  Number of lockers was  100
+  Number of players was  100
+  Number of lockers a player can check  50
+  Number of trials was  1000
+
+  Success rate = number of players who found wallet / number of players.
+
+  Minimum  =  0.0
+  Maximum  =  1.0
+  Mean     =  0.49016999999999994
+  STD      =  0.3529947182324404
+
+  All players found their wallets 297 times out of 1000
+
+strategy4_test():
+  Each player starts at a random locker.
+  Next try the locker corresponding to the wallet they found.
+
+  Number of lockers was  100
+  Number of players was  100
+  Number of lockers a player can check  50
+  Number of trials was  1000
+
+  Success rate = number of players who found wallet / number of players.
+
+  Minimum  =  0.12
+  Maximum  =  0.62
+  Mean     =  0.37638
+  STD      =  0.08373467382154182
+
+  All players found their wallets 0 times out of 1000
+
+locker_simulation_test()
+  Normal end of execution.
+Wed Oct  8 08:25:07 2025

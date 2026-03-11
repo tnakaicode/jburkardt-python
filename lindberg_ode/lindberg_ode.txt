@@ -1,0 +1,22 @@
+Wed Oct  8 08:03:11 2025
+
+lindberg_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve lindberg_ode().
+
+  parameters:
+    t0    =  0.0
+    y0    =  [ 1.  1. -1.  0.]
+    tstop =  0.55
+
+lindberg_solve_ivp():
+  Solve lindberg_ode() using solve_ivp().
+  Graphics saved as "lindberg_solve_ivp_y1.png"
+  Graphics saved as "lindberg_solve_ivp_y2.png"
+  Graphics saved as "lindberg_solve_ivp_y3.png"
+  Graphics saved as "lindberg_solve_ivp_y4.png"
+
+lindberg_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:03:12 2025

@@ -1,0 +1,200 @@
+<html>
+
+  <head>
+    <title>
+      linpack_bench
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      linpack_bench
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>linpack_bench</b>,
+      a Python code which 
+      carries out the LINPACK Benchmark,
+      which measures the time required to factor and solve a large
+      linear system.
+    </p>
+
+    <p>
+      The LINPACK benchmark is a test problem used to rate the performance 
+      of a computer on a simple linear algebra problem.
+    </p>
+
+    <p>
+      The test problem requires the user to set up a random dense matrix
+      <b>A</b> of size <b>N</b> = 1000, and a right hand side vector <b>B</b>
+      which is the product of <b>A</b> and a vector <b>X</b> of all 1's.  
+      The first task is to compute an LU factorization of <b>A</b>.  The 
+      second task is to use the LU factorization to solve the linear system 
+      <blockquote>
+        <b>A</b> * <b>X</b> = <b>B</b>.
+      </blockquote>
+    </p>
+
+    <p>
+      The number of floating point operations required for these two
+      tasks is roughly
+      <blockquote>
+        ops = 2 * N*N*N / 3 + 2 * N * N,
+      </blockquote>
+      therefore, the "MegaFLOPS" rating, or millions of floating point
+      operations per second, can be found as
+      <blockquote>
+        mflops = ops / ( cpu * 1000000 ).
+      </blockquote>
+    </p>
+
+    <p>
+      On a given computer, if you run the benchmark for a sequence of increasing
+      values of N, the behavior of the MegaFLOPS rating will vary as you pass through
+      three main zones of behavior:
+      <ul>
+        <li>
+          a <i>rising</i> zone, as both the local cache memory and the processor
+          are not challenged.
+        </li>
+        <li>
+          a <i>flat</i> zone, where the processor is challenged, that is, it is
+          performing at top efficiency.
+        </li>
+        <li>
+          a <i>decaying</i> zone, where the local cache memory is also challenged,
+          that is the matrix is so large that the cache is not big enough to
+          keep the necessary data close enough to the processor to keep it running
+          at top speed.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <table border="1">
+        <tr>
+          <th>Language</th><th>Precision</th><th>Type</th><th>Machine</th><th>Comment</t><th>MegaFLOPS</th>
+        </tr>
+        <tr>
+          <td>MATLAB</td><td>Double</td><td>Real</td><td>Prism</td><td>&nbsp;</td><td>22</td>
+        </tr>
+        <tr>
+          <td>MATLAB</td><td>Double</td><td>Real</td><td>DHCP95 (Apple G95)</td><td>&nbsp;</td><td>20</td>
+        </tr>
+        <tr>
+          <td>MATLAB</td><td>Double</td><td>Real</td><td>PC</td><td>&nbsp;</td><td>9</td>
+        </tr>
+      </table>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>linpack_bench</b> is available in
+      <a href = "../../c_src/linpack_bench/linpack_bench.html">a C version</a> and
+      <a href = "../../cpp_src/linpack_bench/linpack_bench.html">a C++ version</a> and
+      <a href = "../../f77_src/linpack_bench/linpack_bench.html">a Fortran77 version</a> and
+      <a href = "../../f_src/linpack_bench/linpack_bench.html">a Fortran90 version</a> and
+      <a href = "../../java_src/linpack_bench/linpack_bench.html">a Java version</a> and
+      <a href = "../../m_src/linpack_bench/linpack_bench.html">a MATLAB version</a> and
+      <a href = "../../octave_src/linpack_bench/linpack_bench.html">an Octave version</a> and
+      <a href = "../../py_src/linpack_bench/linpack_bench.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/linalg_solve_bench/linalg_solve_bench.html">
+      linalg_solve_bench</a>,
+      a Python code which 
+      applies scipy.linalg.solve() to the LINPACK Benchmark,
+      which measures the time required to factor and solve a large
+      linear system.
+    </p>
+
+    <p>
+      <a href = "../../py_src/mxm/mxm.html">
+      mxm</a>,
+      a Python code which
+      sets up a matrix multiplication problem A=B*C of arbitrary size,
+      and compares the time required for IJK, IKJ, JIK, JKI, KIJ and KJI orderings
+      of the loops.
+    </p>
+
+    <p>
+      <a href = "../../py_src/timer_test/timer_test.html">
+      timer_test</a>,
+      a Python code which
+      demonstrates how to measure CPU time or elapsed time.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Jack Dongarra,<br>
+          Performance of Various Computers Using Standard Linear Equations Software,
+          Technical Report CS-89-85,<br>
+          Electrical Engineering and Computer Science Department,<br>
+          University of Tennessee, 2008.
+        </li>
+        <li>
+          Jack Dongarra, Jim Bunch, Cleve Moler, Pete Stewart,<br>
+          LINPACK User's Guide,<br>
+          SIAM, 1979,<br>
+          ISBN13: 978-0-898711-72-1,<br>
+          LC: QA214.L56.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "linpack_bench.py">linpack_bench.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "linpack_bench.sh">linpack_bench.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "linpack_bench.txt">linpack_bench.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 04 February 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

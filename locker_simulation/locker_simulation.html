@@ -1,0 +1,152 @@
+<html>
+
+  <head>
+    <title>
+      locker_simulation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      locker_simulation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>locker_simulation</b>,
+      a Python code which
+      simulates the locker problem, in which gym users have left
+      their wallets in lockers; someone has scrambled all the lockers,
+      and the gym users need a strategy that maximizes the chance
+      that everyone will find their wallet by searching a limited
+      number of lockers.
+    </p>
+
+    <p>
+      This puzzle is often given assuming there are 100 gym users and
+      100 lockers, and each user is allowed to examine no more than
+      50 lockers.
+    </p>
+
+    <p>
+      It might seem that there is no winning strategy.  Indeed, a
+      single user opening lockers are random has a reasonable chance
+      of finding their wallet, which you might estimate at roughly
+      a 50% chance.
+    </p>
+
+    <p>
+      However, the puzzle asks a more challenging question: 
+      <blockquote><i>
+        Is there a strategy that makes it likely that all 100 users
+        will find their wallets?
+      </i></blockquote>
+      Now it would seem that if each user does a random search, the
+      likelyhood that they will all succeed will be something
+      like (1/2)^100, essentially a hopeless case.
+    </p>
+
+    <p>
+      Surprisingly, assuming that the wallet scrambling was really
+      done at random, it turns out that there is at least one strategy
+      that offers a roughly 31% chance that all 100 users will find
+      their wallets.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>locker_simulation</b> is available in
+      <a href = "../../m_src/locker_simulation/locker_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/locker_simulation/locker_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/locker_simulation/locker_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Nick Berry,<br>
+          100 Prisoners Escape Puzzle,<br>
+          https://datagenetics.com/blog/december42014/index.html<br>
+          Posted December 2014.
+        </li>
+        <li>
+          Pradeep Mutalik,<br>
+          Help Star Trek's Lieutenant Uhura Overcome Astronomical Odds,<br>
+          Quanta Magazine, 18 August 2022,<br>
+          https://www.quantamagazine.org/help-star-treks-lieutenant-uhura-in-this-probability-puzzle-20220818/
+        </li>
+        <li>
+          Wikipedia,<br>
+          100 Prisoners Problem,<br>
+          https://en.wikipedia.org/wiki/100_prisoners_problem
+        </li>
+        <li>
+          Peter Winkler,<br>
+          Seven puzzles you think you must not have heard correctly,<br>
+          https://math.dartmouth.edu/~pw/solutions.pdf
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "locker_simulation.py">locker_simulation.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "locker_simulation.sh">locker_simulation.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "locker_simulation.txt">locker_simulation.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 November 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

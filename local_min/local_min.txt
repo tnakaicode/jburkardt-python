@@ -1,0 +1,39 @@
+Wed Oct  8 08:25:01 2025
+
+local_min():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  local_min() seeks a local minimizer of a function F(X)
+  in an interval [A,B].
+
+  g_01(x) = ( x - 2 ) * ( x - 2 ) + 1
+  g_01(2) = 1
+  Number of calls to F =  6
+
+  g_02(x) = x * x + exp ( - x )
+  g_02(0.351734) = 0.827184
+  Number of calls to F =  9
+
+  g_03(x) = x^4 + 2x^2 + x + 3
+  g_03(-0.236733) = 2.87849
+  Number of calls to F =  12
+
+  g_04(x) = exp ( x ) + 1 / ( 100 x )
+  g_04(0.0953446) = 1.20492
+  Number of calls to F =  14
+
+  g_05(x) = exp ( x ) - 2x + 1/(100x) - 1/(1000000x^2)
+  g_05(0.703205) = 0.628026
+  Number of calls to F =  11
+
+  g_06(x) = - x sin ( 10 pi x ) - 1
+  g_06(1.85055) = -2.85027
+  Number of calls to F =  9
+
+  g_07(x) = max(-2(x-1), 8(x-1)) + 25 (x-1)^2
+  g_07(1) = 1.93619e-08
+  Number of calls to F =  38
+
+local_min_test():
+  Normal end of execution.
+Wed Oct  8 08:25:01 2025
