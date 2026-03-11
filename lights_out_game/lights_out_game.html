@@ -1,0 +1,159 @@
+<html>
+
+  <head>
+    <title>
+      lights_out_game
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      lights_out_game
+    </title>
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>lights_out_game</b>,
+      a Python code which
+      sets up the "Lights Out" game, lighting up a few squares on
+      a grid.  An interactive user must then try to press squares
+      in such a way that all the lights are turned off.
+    </p>
+
+    <p>
+      The Lights Out game is played on a rectangular board of squares,
+      usually a 5x5 grid,
+      each square containingr a light that may be on or off.  Clicking the mouse
+      on a light switches it from on to off and vice versa.  However, when
+      you switch a light, you also switch the lights to the immediate left,
+      right, above and below.
+    </p>
+
+    <p>
+      You start the game with a randomly chosen configuration of lights
+      and it's up to you to figure out how to get them all out.
+    </p>
+
+    <p>
+      A strategy to solve the game begins by driving all the lighted squares
+      to the bottom row.  This is done by starting in the second row, and
+      clicking just below any light in the first row.  This blacks out row 1.
+      Repeating this process by working downwards results in turning off all
+      the lights except in the last row.
+    </p>
+
+    <p>
+      For the 5x5 case, the strategy then depends on the pattern of lights
+      in the bottom row.  Depending on that pattern, click lights ON in the
+      first row, and then repeat the process of driving all the lighted
+      squares to the bottom row.  This time, you should end with no lights on.
+    </p>
+
+    <p>
+      <pre>
+      if bottom is   start top as
+
+         00111            00010
+         01010            01001
+         01101            10000
+         10001            00011
+         10110            00001
+         11011            00100
+         11100            01000
+      </pre>
+      where, of course, "0" means a light is out, and "1" means a light is on.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>lights_out_game</b> is available in
+      <a href = "../../c_src/lights_out_game/lights_out_game.html">a C version</a> and
+      <a href = "../../cpp_src/lights_out_game/lights_out_game.html">a C++ version</a> and
+      <a href = "../../m_src/lights_out_game/lights_out_game.html">a MATLAB version</a> and
+      <a href = "../../octave_src/lights_out_game/lights_out_game.html">an Octave version</a> and
+      <a href = "../../py_src/lights_out_game/lights_out_game.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/spelling_bee_game/spelling_bee_game.html">
+      spelling_bee_game</a>,
+      a Python code which
+      handles the Spelling-Bee puzzle popularized in the New York Times,
+      in which one must make as many words as possible from a given
+      set of seven letters.  The first letter must appear in each word,
+      while the other letters may be omitted or repeated.  All words must
+      be at least 4 letters long.  The code is by Christian Hill.
+    </p>
+
+    <p>
+      <a href = "../../py_src/reversi_game/reversi_game.html">
+      reversi_game</a>,
+      a Python code which
+      sets up a match of the game reversi (also called Othello) 
+      between the computer and a player, using text-based graphics.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Marlow Anderson, Todd Feil,<br>
+          Turning Lights Out With Linear Algebra,<br>
+          Mathematics Magazine,<br>
+          Volume 71, Number 4, October 1998, pages 300-303.
+        </li>
+        <li>
+          Oscar Martin-Sanchez,<br>
+          Two Analyses of Lights Out,<br>
+          Mathematics Magazine,<br>
+          Volume 74, Number 4, October 2001, pages 295-304.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lights_out_game.py">lights_out_game.py</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 03 March 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

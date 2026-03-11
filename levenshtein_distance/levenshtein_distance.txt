@@ -1,0 +1,28 @@
+Wed Oct  8 08:03:05 2025
+
+levenshtein_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  levenshtein_distance() computes the Levenshtein distance
+  between two strings.
+
+  S = "water"
+  T = "wine"
+  Computed distance = 3, correct distance = 3
+
+  S = "kitten"
+  T = "sitting"
+  Computed distance = 3, correct distance = 3
+
+  S = "saturday"
+  T = "sunday"
+  Computed distance = 3, correct distance = 3
+
+  S = "pheromones"
+  T = "photographer"
+  Computed distance = 8, correct distance = 8
+
+levenshtein_distance_test():
+  Normal end of execution.
+
+Wed Oct  8 08:03:05 2025

@@ -1,0 +1,16 @@
+Wed Oct  8 08:02:52 2025
+
+laplace_radial_exact_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test laplace_radial_exact().
+
+  Radial solution in 2D:
+  RMS norm of residuals =  1.1707458404032482e-15
+
+  Radial solution in 3D:
+  RMS norm of residuals =  1.5990507490627507e-15
+
+laplace_radial_exact_test():
+  Normal end of execution.
+Wed Oct  8 08:02:52 2025

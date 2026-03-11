@@ -1,0 +1,60 @@
+Wed Oct  8 08:02:52 2025
+
+laplacian_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test laplacian().
+
+laplacian3_interval_test():
+  laplacian3_interval() approximates the Laplacian operator
+  applied to a function on an interval.
+
+  DX = 1.5708, RMS error = 0.154669
+  DX = 0.698132, RMS error = 0.0299711
+  DX = 0.330694, RMS error = 0.00659651
+
+laplacian3_interval_uneven_test():
+  laplacian3_interval_uneven() approximates the Laplacian
+  operator applied to a function on an unevenly spaced grid.
+
+  Use EVEN spacing:
+
+  DXMAX = 1.5708, RMS error = 0.154669
+  DXMAX = 0.698132, RMS error = 0.0299711
+  DXMAX = 0.330694, RMS error = 0.00659651
+  DXMAX = 0.161107, RMS error = 0.0015481
+
+  Use UNEVEN spacing:
+
+  DXMAX = 2.22144, RMS error = 0.0140046
+  DXMAX = 1.09106, RMS error = 0.0759395
+  DXMAX = 0.518861, RMS error = 0.0186455
+  DXMAX = 0.252998, RMS error = 0.00454362
+
+laplacian5_plane_test():
+  laplacian5_plane() approximates the Laplacian operator
+  applied to a function on a 2D plane.
+
+  DX = 1.5708, DY = 1.5708, RMS error = 0.151544
+  DX = 0.698132, DY = 0.698132, RMS error = 0.0359654
+  DX = 0.330694, DY = 0.330694, RMS error = 0.00862605
+
+laplacian5_torus_test():
+  laplacian5_torus() approximates the Laplacian operator
+  applied to a function on a 2D torus.
+
+  DX = 1.5708, DY = 1.5708, RMS error = 0.151544
+  DX = 0.698132, DY = 0.698132, RMS error = 0.0359654
+  DX = 0.330694, DY = 0.330694, RMS error = 0.00862605
+
+laplacian9_torus_test():
+  laplacian9_torus() approximates the Laplacian operator
+  applied to a function on a 2D torus.
+
+  DX = 1.5708, DY = 1.5708, RMS error = 0.25962
+  DX = 0.698132, DY = 0.698132, RMS error = 0.0696563
+  DX = 0.330694, DY = 0.330694, RMS error = 0.0171271
+
+laplacian_test():
+  Normal end of execution.
+Wed Oct  8 08:02:52 2025

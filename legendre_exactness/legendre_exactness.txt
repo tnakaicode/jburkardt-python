@@ -1,0 +1,60 @@
+Wed Oct  8 08:03:03 2025
+
+legendre_exactness_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test legendre_exactness().
+
+legendre_exactness():
+  Investigate the polynomial exactness of a Gauss-Legendre
+  quadrature rule by integrating all monomials up to a given
+  degree over the [-1,+1] interval.
+
+User input:
+  Quadrature rule X file = "leg_o004_x.txt".
+  Quadrature rule W file = "leg_o004_w.txt".
+  Quadrature rule R file = "leg_o004_r.txt".
+  Maximum degree to check =  10
+
+  The quadrature rule to be tested is
+  a Gauss-Legendre rule
+  ORDER =  4
+
+  Standard rule:
+    Integral ( -1 <= x <= +1 ) f(x) dx
+    is to be approximated by
+    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).
+
+  Weights W:
+
+[0.34785485 0.65214515 0.65214515 0.34785485]
+
+  Abscissas X:
+
+[-0.86113631 -0.33998104  0.33998104  0.86113631]
+
+  Region R:
+
+[-1.  1.]
+
+  A Gauss-Legendre rule would be able to exactly
+  integrate monomials up to and including 
+  degree =  7
+
+  Degree          Error
+
+   0        0.0000000000000002
+   1        0.0000000000000000
+   2        0.0000000000000000
+   3        0.0000000000000000
+   4        0.0000000000000001
+   5        0.0000000000000000
+   6        0.0000000000000000
+   7        0.0000000000000000
+   8        0.0522448979591839
+   9        0.0000000000000000
+  10        0.1418075801749273
+
+legendre_exactness_test():
+  Normal end of execution.
+Wed Oct  8 08:03:03 2025

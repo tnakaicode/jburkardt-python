@@ -1,0 +1,328 @@
+Wed Oct  8 08:02:52 2025
+
+lapack_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test lapack().
+
+dgbtrf_test():
+  dgbtrf() factors a general band matrix.
+  dgbtrs() solves a factored system.
+  For a double precision real matrix (D)
+  in general band storage mode (GB):
+
+  Band matrix has kl =  1  ku =  1
+
+  Solution x (all should be 1)
+[1. 1. 1. 1. 1.]
+
+dgecon_test():
+  dgecon() computes the condition of a matrix that has been
+  factored by dgetrf.
+
+  The matrix A:
+[[1. 2. 3.]
+ [4. 5. 6.]
+ [7. 8. 0.]]
+
+  Matrix 1-norm is  15.0
+
+  Reciprocal condition number for 1-norm is 0.019354838709677417
+
+dgeev_test():
+  dgeev() computes the eigenvalues and eigenvectors
+  of a matrix.
+
+  The matrix A:
+[[0.         2.         0.         0.         0.        ]
+ [2.         0.         2.44948974 0.         0.        ]
+ [0.         2.44948974 0.         2.44948974 0.        ]
+ [0.         0.         2.44948974 0.         2.        ]
+ [0.         0.         0.         2.         0.        ]]
+
+  Eigenvalues:
+[[ 4.00000000e+00  0.00000000e+00]
+ [-4.00000000e+00  0.00000000e+00]
+ [-2.00000000e+00  0.00000000e+00]
+ [-1.08455718e-16  0.00000000e+00]
+ [ 2.00000000e+00  0.00000000e+00]]
+
+  Eigenvectors (real parts):
+[[ 2.50000000e-01 -2.50000000e-01 -5.00000000e-01  6.12372436e-01
+  -5.00000000e-01]
+ [ 5.00000000e-01  5.00000000e-01  5.00000000e-01 -7.39078793e-18
+  -5.00000000e-01]
+ [ 6.12372436e-01 -6.12372436e-01 -2.65970010e-16 -5.00000000e-01
+   0.00000000e+00]
+ [ 5.00000000e-01  5.00000000e-01 -5.00000000e-01  1.94637744e-16
+   5.00000000e-01]
+ [ 2.50000000e-01 -2.50000000e-01  5.00000000e-01  6.12372436e-01
+   5.00000000e-01]]
+
+  Eigenvectors (imaginary parts):
+[[ 2.50000000e-01 -2.50000000e-01 -5.00000000e-01  6.12372436e-01
+  -5.00000000e-01]
+ [ 5.00000000e-01  5.00000000e-01  5.00000000e-01  1.16614303e-16
+  -5.00000000e-01]
+ [ 6.12372436e-01 -6.12372436e-01 -4.53779085e-16 -5.00000000e-01
+   3.59413791e-17]
+ [ 5.00000000e-01  5.00000000e-01 -5.00000000e-01  1.55267443e-17
+   5.00000000e-01]
+ [ 2.50000000e-01 -2.50000000e-01  5.00000000e-01  6.12372436e-01
+   5.00000000e-01]]
+
+dgeqrf_test()
+  dgeqrf() computes the QR factorization:
+    A = Q * R
+  dorgqr() computes the explicit form of the Q factor.
+  For a double precision real matrix (D)
+  in general storage mode (GE):
+
+  The matrix A:
+[[ 1.  2.  3.]
+ [ 4.  5.  6.]
+ [ 7.  8.  0.]
+ [ 5. 13.  3.]]
+
+  Q:
+[[-0.10482848  0.07018624  0.42750483]
+ [-0.41931393 -0.21055872  0.78375885]
+ [-0.73379939 -0.49130368 -0.4400785 ]
+ [-0.52414242  0.84223489 -0.09639815]]
+
+  R:
+[[ -9.53939201 -14.99047317  -4.40279631]
+ [  0.           6.10620294   1.47391105]
+ [  0.           0.           5.69587314]]
+
+  Q * R:
+[[1.00000000e+00 2.00000000e+00 3.00000000e+00]
+ [4.00000000e+00 5.00000000e+00 6.00000000e+00]
+ [7.00000000e+00 8.00000000e+00 1.43137723e-16]
+ [5.00000000e+00 1.30000000e+01 3.00000000e+00]]
+
+dgesvd_test():
+  dgesvd() computes the singular value decomposition
+  of a matrix.
+
+  The matrix A:
+[[1. 2. 3.]
+ [4. 5. 6.]
+ [7. 8. 0.]]
+
+  U:
+[[-0.23035703 -0.39607121 -0.88885501]
+ [-0.60728383 -0.65520761  0.44934322]
+ [-0.76035649  0.64329665 -0.08959596]]
+  S:
+[13.20145862  5.43875711  0.37604705]
+  vt:
+[[-0.60462923 -0.72567626 -0.32835569]
+ [ 0.27325634  0.19824248 -0.94129214]
+ [ 0.74816741 -0.65885802  0.07843244]]
+
+  U*S*VT:
+[[ 1.00000000e+00  2.00000000e+00  3.00000000e+00]
+ [ 4.00000000e+00  5.00000000e+00  6.00000000e+00]
+ [ 7.00000000e+00  8.00000000e+00 -2.37893053e-16]]
+
+dgetrf_test():
+  DGETRF factors a general matrix;
+  DGETRS solves a linear system;
+  For a double precision real matrix (D)
+  in general storage mode (GE):
+
+  The matrix A:
+[[ 5. -1. -1. -1. -1.]
+ [-1.  5. -1. -1. -1.]
+ [-1. -1.  5. -1. -1.]
+ [-1. -1. -1.  5. -1.]
+ [-1. -1. -1. -1.  5.]]
+
+  The right hand side b:
+[1. 1. 1. 1. 1.]
+
+  The solution x (all entries should equal 1):
+[1. 1. 1. 1. 1.]
+
+dgetri_test():
+  dgetri() computes the inverse of a matrix that has been
+  factored by dgetrf.
+
+  The matrix A:
+[[1. 2. 3.]
+ [4. 5. 6.]
+ [7. 8. 0.]]
+
+  Ainv:
+[[-1.77777778  0.88888889 -0.11111111]
+ [ 1.55555556 -0.77777778  0.22222222]
+ [-0.11111111  0.22222222 -0.11111111]]
+
+  A * Ainv:
+[[ 1.00000000e+00  5.55111512e-17 -4.16333634e-17]
+ [ 5.55111512e-17  1.00000000e+00 -8.32667268e-17]
+ [ 1.77635684e-15 -8.88178420e-16  1.00000000e+00]]
+
+dgtsv_test():
+  dgtsv() factors and solves a linear system
+  with a general tridiagonal matrix
+  for a double precision real matrix (D)
+  in general tridiagonal storage mode (GT).
+
+  Solution x (should be 1, 2, 3, ... ):
+[1. 2. 3. 4. 5.]
+
+dormqr_test():
+  dormqr() computes Q' * b.
+  after dgeqrf() computes the QR factorization:
+    A = Q * R
+  storing a double precision real matrix (D)
+  in general storage mode (GE).
+
+  We use these routines to carry out a QR
+  solve of an M by N linear system A * x = b.
+
+  In this case, our M x N matrix A has more rows
+  than columns:
+
+  M =  8
+  N =  6
+
+  A:
+[[0.47574399 0.27280965 0.20216916 0.32140108 0.59761492 0.26537192]
+ [0.40464461 0.46788841 0.21625051 0.77148967 0.59407768 0.14433912]
+ [0.80396716 0.38655909 0.45107687 0.48760715 0.40629599 0.90799   ]
+ [0.34855056 0.55427014 0.39349571 0.09641055 0.27370412 0.49069631]
+ [0.90616462 0.54301501 0.82410413 0.31968549 0.42791683 0.76911575]
+ [0.61609259 0.84102792 0.26247647 0.5079789  0.84989825 0.64081491]
+ [0.97379295 0.71036978 0.9712529  0.68861807 0.7024363  0.06628789]
+ [0.7537864  0.17764786 0.80924009 0.14211179 0.45152238 0.0599682 ]]
+
+  Computed solution x:
+[1. 2. 3. 4. 5. 6.]
+
+dpbtrf_test():
+  dpbtrf() computes
+  the lower Cholesky factor A = L*L' or
+  the upper Cholesky factor A = U'*U;
+  For a double precision real matrix (D)
+  in positive definite band storage mode (PB):
+
+AB:
+[[ 0. -1. -1. -1. -1.]
+ [ 2.  2.  2.  2.  2.]]
+
+  The lower Cholesky factor L:
+
+[ 1.41421356 -0.70710678  0.          0.          0.        ]
+[ 0.          1.22474487 -0.81649658  0.          0.        ]
+[ 0.          0.          1.15470054 -0.8660254   0.        ]
+[ 0.          0.          0.          1.11803399 -0.89442719]
+[0.         0.         0.         0.         1.09544512]
+
+dpbtrs_test():
+  dpbtrs() solves a linear system factored by dpbtrf().
+
+AB:
+[[ 0. -1. -1. -1. -1.]
+ [ 2.  2.  2.  2.  2.]]
+
+  Solution X:
+[1. 1. 1. 1. 1.]
+
+dpotrf_test():
+  dpotrf() computes the Cholesky factorization R'*R
+  for a double precision real matrix (D)
+  in positive definite storage mode (PO).
+
+  The matrix A:
+[[ 2. -1.  0.  0.  0.]
+ [-1.  2. -1.  0.  0.]
+ [ 0. -1.  2. -1.  0.]
+ [ 0.  0. -1.  2. -1.]
+ [ 0.  0.  0. -1.  2.]]
+
+  Cholesky factor R:
+[[ 1.41421356 -0.70710678  0.          0.          0.        ]
+ [ 0.          1.22474487 -0.81649658  0.          0.        ]
+ [ 0.          0.          1.15470054 -0.8660254   0.        ]
+ [ 0.          0.          0.          1.11803399 -0.89442719]
+ [ 0.          0.          0.          0.          1.09544512]]
+
+  R' * R:
+[[ 2. -1.  0.  0.  0.]
+ [-1.  2. -1.  0.  0.]
+ [ 0. -1.  2. -1.  0.]
+ [ 0.  0. -1.  2. -1.]
+ [ 0.  0.  0. -1.  2.]]
+
+dpotri_test():
+  dpotri() computes the inverse
+  for a double precision real matrix (D)
+  in positive definite storage mode (PO).
+
+  The matrix A:
+[[ 2. -1.  0.  0.  0.]
+ [-1.  2. -1.  0.  0.]
+ [ 0. -1.  2. -1.  0.]
+ [ 0.  0. -1.  2. -1.]
+ [ 0.  0.  0. -1.  2.]]
+
+  The Cholesky factor C:
+[[ 1.41421356 -0.70710678  0.          0.          0.        ]
+ [ 0.          1.22474487 -0.81649658  0.          0.        ]
+ [ 0.          0.          1.15470054 -0.8660254   0.        ]
+ [ 0.          0.          0.          1.11803399 -0.89442719]
+ [ 0.          0.          0.          0.          1.09544512]]
+
+  Inverse matrix Ainv:
+[[0.83333333 0.66666667 0.5        0.33333333 0.16666667]
+ [0.66666667 1.33333333 1.         0.66666667 0.33333333]
+ [0.5        1.         1.5        1.         0.5       ]
+ [0.33333333 0.66666667 1.         1.33333333 0.66666667]
+ [0.16666667 0.33333333 0.5        0.66666667 0.83333333]]
+
+  Product I = A * Ainv:
+[[ 1.00000000e+00 -4.44089210e-16 -4.44089210e-16 -4.44089210e-16
+  -1.66533454e-16]
+ [ 3.33066907e-16  1.00000000e+00  4.44089210e-16  6.66133815e-16
+   2.22044605e-16]
+ [ 0.00000000e+00  0.00000000e+00  1.00000000e+00  0.00000000e+00
+   0.00000000e+00]
+ [-1.11022302e-16  5.55111512e-17 -4.44089210e-16  1.00000000e+00
+  -2.22044605e-16]
+ [ 0.00000000e+00 -1.11022302e-16  0.00000000e+00  0.00000000e+00
+   1.00000000e+00]]
+
+dsyev_test()
+  dsyev() computes eigenvalues and eigenvectors
+  For a double precision real matrix (D)
+  in symmetric storage mode (SY).
+
+  (symmetric half) of A:
+[[0.         2.         0.         0.         0.        ]
+ [0.         0.         2.44948974 0.         0.        ]
+ [0.         0.         0.         2.44948974 0.        ]
+ [0.         0.         0.         0.         2.        ]
+ [0.         0.         0.         0.         0.        ]]
+
+  Eigenvalues w:
+[-4.00000000e+00 -2.00000000e+00  1.95870839e-16  2.00000000e+00
+  4.00000000e+00]
+
+  Eigenvector matrix V:
+[[ 2.50000000e-01  5.00000000e-01  6.12372436e-01 -5.00000000e-01
+  -2.50000000e-01]
+ [-5.00000000e-01 -5.00000000e-01  2.16639351e-16 -5.00000000e-01
+  -5.00000000e-01]
+ [ 6.12372436e-01 -1.32719831e-16 -5.00000000e-01  5.69534140e-17
+  -6.12372436e-01]
+ [-5.00000000e-01  5.00000000e-01 -3.81240716e-17  5.00000000e-01
+  -5.00000000e-01]
+ [ 2.50000000e-01 -5.00000000e-01  6.12372436e-01  5.00000000e-01
+  -2.50000000e-01]]
+
+lapack_test():
+  Normal end of execution.
+Wed Oct  8 08:02:52 2025

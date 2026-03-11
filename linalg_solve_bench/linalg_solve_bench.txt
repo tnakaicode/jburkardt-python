@@ -1,0 +1,22 @@
+Wed Oct  8 08:03:09 2025
+
+linalg_solve_bench():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test scipy.linalg.solve() on the LINPACK benchmark.
+  Datatype: float64
+  Matrix order N =  1000
+
+  Normalized residual =  10.427983501509962
+  Residual norm       =  1.2185807918285718e-12
+  Machine epsilon     =  2.220446049250313e-16
+  First X[]           =  1.0000000000005997
+  Last X[]            =  1.0000000000003086
+  Time in seconds     =  0.15536685098777525
+  MegaFLOPS           =  4303.792362498738
+  Unit                =  0.0004647064336623388
+  Cray ratio          =  2.7744080533531292
+
+linalg_solve_bench():
+  Normal end of execution.
+Wed Oct  8 08:03:10 2025

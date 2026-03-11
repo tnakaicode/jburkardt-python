@@ -1,0 +1,12 @@
+Wed Oct  8 08:03:05 2025
+
+levy_dragon_chaos_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  levy_dragon_chaos() uses an iterated map to plot the Levy dragon.
+  Apply the iteration map 5000 times.
+  Graphics saved as "levy_dragon_chaos.png"
+
+levy_dragon_chaos_test():
+  Normal end of execution.
+Wed Oct  8 08:03:09 2025
