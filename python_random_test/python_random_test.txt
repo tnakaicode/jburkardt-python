@@ -1,0 +1,112 @@
+Wed Oct  8 08:48:34 2025
+
+python_random_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test random number generation.
+
+seed_test():
+  Set seed to get or recover a specific sequence.
+
+  Initializing with seed =  123456789
+   0 :   0.02771273928251694
+   1 :   0.9067000554840227
+   2 :   0.8813935546997342
+   3 :   0.6248972754209087
+   4 :   0.7907148110979404
+
+  Initializing with seed =  987654321
+   0 :   0.28459937866143237
+   1 :   0.17186692398444947
+   2 :   0.198879542509397
+   3 :   0.3608632071998167
+   4 :   0.14729796998020273
+
+  Initializing with seed =  123456789
+   0 :   0.02771273928251694
+   1 :   0.9067000554840227
+   2 :   0.8813935546997342
+   3 :   0.6248972754209087
+   4 :   0.7907148110979404
+
+normal_test():
+  Generate normal random values with standard_normal().
+
+  Seed     =  123456789
+  Values   =  1000
+  Minimum  =  -2.8406528625974925
+  Mean     =  -0.008594874567067168
+  Maximum  =  2.8064730345899958
+  STD      =  0.952942100337553
+  Variance =  0.9080986465957469
+
+  Seed     =  987654321
+  Values   =  1000
+  Minimum  =  -3.251462162583658
+  Mean     =  0.019447658258608797
+  Maximum  =  3.0459154754343345
+  STD      =  0.9921588217795121
+  Variance =  0.9843791276349095
+
+  Seed     =  123456789
+  Values   =  1000
+  Minimum  =  -2.8406528625974925
+  Mean     =  -0.008594874567067168
+  Maximum  =  2.8064730345899958
+  STD      =  0.952942100337553
+  Variance =  0.9080986465957469
+
+chi_test():
+  Generate random chi values.
+
+  Seed =  123456789
+  Chi values generated =  1000
+  Minimum =  0.42110316426422983
+  Mean    =  2.106641692553553
+  Maximum =  4.796071316800936
+  STD =      0.6671404540696627
+
+  Seed =  987654321
+  Chi values generated =  1000
+  Minimum =  0.31624687336201707
+  Mean    =  2.1452107370079037
+  Maximum =  4.459957389533174
+  STD =      0.6995077385278535
+
+  Seed =  123456789
+  Chi values generated =  1000
+  Minimum =  0.42110316426422983
+  Mean    =  2.106641692553553
+  Maximum =  4.796071316800936
+  STD =      0.6671404540696627
+
+rng_shared_test():
+  Share the rng with a lower level function.
+
+  Initializing with seed =  123456789
+  Executing rng only in main function.
+   0  (main):      0.02771273928251694
+   1  (main):      0.9067000554840227
+   2  (main):      0.8813935546997342
+   3  (main):      0.6248972754209087
+   4  (main):      0.7907148110979404
+
+  Initializing with seed =  123456789
+  Executing shared rng in main and lower function.
+   0  (main):      0.02771273928251694
+   1  (main):      0.9067000554840227
+   2  (main):      0.8813935546997342
+   3  (shared):    0.6248972754209087
+   4  (shared):    0.7907148110979404
+
+  Initializing with seed =  123456789
+  Executing rng in main and separate rng in lower function.
+   0  (main):      0.02771273928251694
+   1  (main):      0.9067000554840227
+   2  (main):      0.8813935546997342
+   3  (unshared):  0.25733636662117076
+   4  (unshared):  0.21999666270097418
+
+python_random_test():
+  Normal end of execution.
+Wed Oct  8 08:48:34 2025

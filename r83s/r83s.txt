@@ -1,0 +1,315 @@
+Wed Oct  8 08:50:28 2025
+
+r83s_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r83s().
+
+r83s_cg_test():
+  r83s_cg() applies CG to an R83S matrix.
+
+  Number of variables N =  10
+  Norm of residual ||Ax-b|| =  5.7851568865142825e-15
+  Norm of error ||x1-x2|| =  2.5044697328736774e-15
+
+R83S_DIF2_TEST
+  R83S_DIF2 sets an R83S matrix to the second difference.
+  We check three cases, M<N, M=N, M>N.
+
+  Second difference in R83S format:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             2            -1                                          
+    2:            -1             2            -1                            
+
+  Second difference in R83S format:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             2            -1                                          
+    2:            -1             2            -1                            
+    3:                          -1             2            -1              
+    4:                                        -1             2            -1
+
+  Second difference in R83S format:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:             2            -1              
+    2:            -1             2            -1
+    3:                          -1             2
+    4:                                        -1
+
+r83s_gs_sl_test():
+  r83s_gs_sl() applies Gauss-Seidel iteration with an R83S matrix
+  to solve a linear system A*x=b.
+
+  Number of variables N =  10
+  Norm of residual ||Ax-b|| =  3.310542073527591e-05
+  Norm of error ||x1-x2|| =  0.00038800856652803484
+
+R83S_INDICATOR_TEST
+  R83S_INDICATOR sets an R83S indicator matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  R83S indicator matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             2             3                                          
+    2:             1             2             3                            
+
+  R83S indicator matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             2             3                                          
+    2:             1             2             3                            
+    3:                           1             2             3              
+    4:                                         1             2             3
+
+  R83S indicator matrix:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:             2             3              
+    2:             1             2             3
+    3:                           1             2
+    4:                                         1
+
+r83s_jac_sl_test():
+  r83s_jac_sl() applies Jacobi iteration with an R83S matrix
+  to solve a linear system A*x=b.
+
+  Number of variables N =  10
+  Norm of residual ||Ax-b|| =  0.03125411599398804
+  Norm of error ||x1-x2|| =  0.02793667918241072
+
+r83s_mtv_test():
+  r83s_mtv() computes b=A'*x, where A is an R83S matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Product comparison:
+
+       0:         1.4936        1.4936
+       1:        3.27783       3.27783
+       2:        2.36438       2.36438
+       3:        2.89517       2.89517
+       4:              0             0
+
+  Product comparison:
+
+       0:        2.49554       2.49554
+       1:        4.15299       4.15299
+       2:        5.81045       5.81045
+       3:        7.46791       7.46791
+       4:        3.88739       3.88739
+
+  Product comparison:
+
+       0:        1.61078       1.61078
+       1:        3.50107       3.50107
+       2:        5.39135       5.39135
+
+r83s_mv_test():
+  r83s_mv() computes b=A*x, where A is an R83S matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Product comparison:
+
+       0:        1.92415       1.92415
+       1:        3.97045       3.97045
+       2:        6.01676       6.01676
+
+  Product comparison:
+
+       0:       0.460131      0.460131
+       1:        1.41941       1.41941
+       2:         2.3787        2.3787
+       3:        3.33798       3.33798
+       4:        3.12666       3.12666
+
+  Product comparison:
+
+       0:        1.86498       1.86498
+       1:        3.26186       3.26186
+       2:        2.02265       2.02265
+       3:       0.572774      0.572774
+       4:              0             0
+
+R83S_PRINT_TEST
+  R83S_PRINT prints an R83S matrix.
+
+  R83S matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             2             3                                          
+    2:             1             2             3                            
+    3:                           1             2             3              
+    4:                                         1             2             3
+
+R83S_PRINT_SOME_TEST
+  R83S_PRINT_SOME prints some of an R83S matrix.
+
+  Rows 2-5, Cols 2-4:
+
+  Col:       2             3             4       
+  Row
+  ---
+    2:             2             3              
+    3:             1             2             3
+    4:                           1             2
+
+r83s_random_test():
+  r83s_random() randomizes an R83S matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Random R83S matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:      0.419882      0.553678                                          
+    2:      0.893945      0.419882      0.553678                            
+
+  Random R83S matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:      0.141536      0.522963                                          
+    2:      0.221301      0.141536      0.522963                            
+    3:                    0.221301      0.141536      0.522963              
+    4:                                  0.221301      0.141536      0.522963
+
+  Random R83S matrix:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:      0.985233      0.701196              
+    2:      0.407626      0.985233      0.701196
+    3:                    0.407626      0.985233
+    4:                                  0.407626
+
+r83s_res_test():
+  r83s_res() computes b-A*x, where A is an R83S matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Residual A*x-b:
+
+     0:             0
+     1:             0
+     2:             0
+
+  Residual A*x-b:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+     4:             0
+
+  Residual A*x-b:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+     4:             0
+
+r83s_to_r8ge_test():
+  r83s_to_r8ge() converts an R83S matrix to R8GE format.
+  We check three cases, M<N, M=N, M>N.
+
+  R83s matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:        0.9601      0.803972                                          
+    2:      0.244824        0.9601      0.803972                            
+
+  The R8GE matrix:
+[[0.9601003  0.80397235 0.         0.         0.        ]
+ [0.24482386 0.9601003  0.80397235 0.         0.        ]
+ [0.         0.24482386 0.9601003  0.80397235 0.        ]]
+
+  R83s matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:      0.775363      0.780717                                          
+    2:      0.884732      0.775363      0.780717                            
+    3:                    0.884732      0.775363      0.780717              
+    4:                                  0.884732      0.775363      0.780717
+
+  The R8GE matrix:
+[[0.77536308 0.78071722 0.         0.         0.        ]
+ [0.88473203 0.77536308 0.78071722 0.         0.        ]
+ [0.         0.88473203 0.77536308 0.78071722 0.        ]
+ [0.         0.         0.88473203 0.77536308 0.78071722]
+ [0.         0.         0.         0.88473203 0.77536308]]
+
+  R83s matrix:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:      0.167229      0.897756              
+    2:       0.86005      0.167229      0.897756
+    3:                     0.86005      0.167229
+    4:                                   0.86005
+
+  The R8GE matrix:
+[[0.16722869 0.89775609 0.        ]
+ [0.86005042 0.16722869 0.89775609]
+ [0.         0.86005042 0.16722869]
+ [0.         0.         0.86005042]
+ [0.         0.         0.        ]]
+
+r83s_zeros_test():
+  r83s_zeros() zeros an R83S matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Zeroed R83S matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             0             0                                          
+    2:             0             0             0                            
+
+  Zeroed R83S matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             0             0                                          
+    2:             0             0             0                            
+    3:                           0             0             0              
+    4:                                         0             0             0
+
+  Zeroed R83S matrix:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:             0             0              
+    2:             0             0             0
+    3:                           0             0
+    4:                                         0
+
+r83s_test():
+  Normal end of execution.
+Wed Oct  8 08:50:28 2025

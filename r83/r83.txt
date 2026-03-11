@@ -1,0 +1,520 @@
+Wed Oct  8 08:50:28 2025
+
+r83_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r83().
+
+r83_cg_test():
+  r83_cg() applies CG to an R83 matrix.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 4.86729e-15
+  Norm of error ||x1-x2|| = 1.41145e-15
+
+r83_cr_fa_test():
+  r83_cr_fa() factors a real tridiagonal matrix;
+  Once the matrix has been factored, we can call
+  r83_CR_SL to solve a linear system.
+
+  Matrix order N = 5
+  Demonstrate multiple system solution method.
+
+
+  System matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+    3:                                        -1             2            -1
+    4:                                                      -1             2
+
+  Solve linear system number 1
+
+  Solution:
+
+[1. 2. 3. 4. 5.]
+
+  Solve linear system number 2
+
+  Solution:
+
+[1. 1. 1. 1. 1.]
+
+r83_cr_sl_test():
+  r83_cr_sl() solves a factored system after 
+  r83_cr_fa() has factored it..
+
+  Matrix order N = 5
+  Demonstrate multiple system solution method.
+
+
+  System matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+    3:                                        -1             2            -1
+    4:                                                      -1             2
+
+  Solve linear system number 1
+
+  Solution
+
+[1. 2. 3. 4. 5.]
+
+  Solve linear system number 2
+
+  Solution
+
+[1. 1. 1. 1. 1.]
+
+r83_cr_sls_test():
+  r83_cr_sls solves linear systems by cyclic reduction
+  after the R83 matrix has been factored by r83_CR_FA.
+
+  Matrix order N = 5
+  Demonstrate multiple system solution method.
+
+
+  System matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+    3:                                        -1             2            -1
+    4:                                                      -1             2
+
+  Solutions:
+
+  Col: 
+      0       
+      1       
+
+  Row
+      0 :
+           0  
+           1  
+
+      1 :
+           0  
+           1  
+
+      2 :
+           0  
+           1  
+
+      3 :
+           0  
+           1  
+
+      4 :
+           3  
+           1  
+
+
+r83_dif2_test():
+  r83_dif2 sets an R83 matrix to the second difference.
+  We check three cases, M<N, M=N, M>N.
+
+  Second difference in R83 format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+
+  Second difference in R83 format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             2            -1                                          
+    1:            -1             2            -1                            
+    2:                          -1             2            -1              
+    3:                                        -1             2            -1
+    4:                                                      -1             2
+
+  Second difference in R83 format:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:             2            -1              
+    1:            -1             2            -1
+    2:                          -1             2
+    3:                                        -1
+
+r83_gs_sl_test():
+  r83_gs_sl() applies Gauss-Seidel iteration with an R83 matrix
+  to solve a linear system A*x=b.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 3.58267e-05
+  Norm of error ||x1-x2|| = 0.000419903
+
+r83_indicator_test():
+  r83_indicator() returns an indicator matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  R83 indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:            11            12                                          
+    1:            21            22            23                            
+    2:                          32            33            34              
+
+  R83 indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:            11            12                                          
+    1:            21            22            23                            
+    2:                          32            33            34              
+    3:                                        43            44            45
+    4:                                                      54            55
+
+  R83 indicator matrix:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:            11            12              
+    1:            21            22            23
+    2:                          32            33
+    3:                                        43
+
+r83_jac_sl_test():
+  r83_jac_sl() applies Jacobi iteration with an R83 matrix
+  to solve a linear system A*x=b.
+
+  Number of variables N = 10
+  Norm of residual ||Ax-b|| = 0.00636751
+  Norm of error ||x1-x2|| = 0.0261324
+
+r83_mtv_test():
+  r83_mv() computes b=A'*x, where A is an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Product comparison:
+
+       0:       0.941385      0.941385
+       1:       0.911234      0.911234
+       2:        3.10366       3.10366
+       3:        2.59745       2.59745
+       4:              0             0
+
+  Product comparison:
+
+       0:        1.92898       1.92898
+       1:        3.79521       3.79521
+       2:        2.43714       2.43714
+       3:        8.77503       8.77503
+       4:        5.51501       5.51501
+
+  Product comparison:
+
+       0:        1.59808       1.59808
+       1:        3.85919       3.85919
+       2:        1.75517       1.75517
+
+r83_mv_test():
+  r83_mv computes b=A*x, where A is an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Product comparison:
+
+       0:        2.75248       2.75248
+       1:        3.76336       3.76336
+       2:        3.35308       3.35308
+
+  Product comparison:
+
+       0:        2.55879       2.55879
+       1:        2.03955       2.03955
+       2:        5.51774       5.51774
+       3:        4.50022       4.50022
+       4:        5.72724       5.72724
+
+  Product comparison:
+
+       0:        1.58881       1.58881
+       1:        2.57815       2.57815
+       2:        4.07563       4.07563
+       3:       0.718033      0.718033
+       4:              0             0
+
+r83_print_test():
+  r83_print prints an R83 matrix.
+
+  R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:            11            12                                          
+    1:            21            22            23                            
+    2:                          32            33            34              
+    3:                                        43            44            45
+    4:                                                      54            55
+
+r83_print_some_test():
+  r83_print_some() prints some of an R83 matrix.
+
+  Rows 1-4, Cols 1-3:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:            22            23              
+    2:            32            33            34
+    3:                          43            44
+    4:                                        54
+
+r83_random_test():
+  r83_random() randomizes an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Random R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:      0.434879      0.611123                                          
+    1:      0.482272      0.396726     0.0777484                            
+    2:                    0.739967      0.505678      0.153214              
+
+  Random R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:       0.55606      0.440766                                          
+    1:     0.0692368      0.104107      0.762382                            
+    2:                    0.469185      0.444749      0.441681              
+    3:                                  0.473221      0.374479      0.931117
+    4:                                                0.510667      0.651242
+
+  Random R83 matrix:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:       0.29505      0.253939              
+    1:      0.632603      0.205177      0.985144
+    2:                    0.944144      0.658555
+    3:                                  0.830739
+
+r83_res_test():
+  r83_res() computes b-A*x, where A is an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Residual A*x-b
+
+[0. 0. 0.]
+
+  Residual A*x-b
+
+[0. 0. 0. 0. 0.]
+
+  Residual A*x-b
+
+[0. 0. 0. 0. 0.]
+
+r83_to_r8ge_test():
+  r83_to_r8ge() converts an R83 matrix to R8GE format.
+  We check three cases, M<N, M=N, M>N.
+
+  R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:      0.626497      0.249164                                          
+    1:      0.726704      0.907912      0.659055                            
+    2:                    0.350721      0.729682      0.413325              
+
+  R8GE matrix:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Row
+      0 :
+    0.626497  
+    0.249164  
+           0  
+           0  
+           0  
+
+      1 :
+    0.726704  
+    0.907912  
+    0.659055  
+           0  
+           0  
+
+      2 :
+           0  
+    0.350721  
+    0.729682  
+    0.413325  
+           0  
+
+
+  R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:      0.436699      0.697721                                          
+    1:      0.183323      0.859722      0.760924                            
+    2:                    0.780959       0.25001      0.918678              
+    3:                                  0.181776      0.305912      0.681744
+    4:                                               0.0227944      0.926214
+
+  R8GE matrix:
+
+  Col: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Row
+      0 :
+    0.436699  
+    0.697721  
+           0  
+           0  
+           0  
+
+      1 :
+    0.183323  
+    0.859722  
+    0.760924  
+           0  
+           0  
+
+      2 :
+           0  
+    0.780959  
+     0.25001  
+    0.918678  
+           0  
+
+      3 :
+           0  
+           0  
+    0.181776  
+    0.305912  
+    0.681744  
+
+      4 :
+           0  
+           0  
+           0  
+   0.0227944  
+    0.926214  
+
+
+  R83 matrix:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:      0.123691      0.205981              
+    1:       0.58437      0.359232      0.410224
+    2:                    0.832786     0.0557499
+    3:                                  0.762458
+
+  R8GE matrix:
+
+  Col: 
+      0       
+      1       
+      2       
+
+  Row
+      0 :
+    0.123691  
+    0.205981  
+           0  
+
+      1 :
+     0.58437  
+    0.359232  
+    0.410224  
+
+      2 :
+           0  
+    0.832786  
+   0.0557499  
+
+      3 :
+           0  
+           0  
+    0.762458  
+
+      4 :
+           0  
+           0  
+           0  
+
+
+r83_zeros_test():
+  r83_zeros zeros an R83 matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Zeroed R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             0             0                                          
+    1:             0             0             0                            
+    2:                           0             0             0              
+
+  Zeroed R83 matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:             0             0                                          
+    1:             0             0             0                            
+    2:                           0             0             0              
+    3:                                         0             0             0
+    4:                                                       0             0
+
+  Zeroed R83 matrix:
+
+  Col:       0             1             2       
+  Row
+  ---
+    0:             0             0              
+    1:             0             0             0
+    2:                           0             0
+    3:                                         0
+
+r83_test():
+  Normal end of execution.
+Wed Oct  8 08:50:28 2025

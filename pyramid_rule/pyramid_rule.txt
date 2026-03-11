@@ -1,0 +1,33 @@
+Wed Oct  8 08:48:32 2025
+
+pyramid_rule_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test pyramid_rule().
+
+pyramid_rule():
+  Compute a quadrature rule for approximating
+  the integral of a function over a unit pyramid.
+
+  The user specifies:
+  * LEGENDRE_ORDER, the order of the Legendre rule for X and Y.
+  * JACOBI_ORDER, the order of the Jacobi rule for Z,
+  * FILENAME, the prefix for the three output files:
+
+    filename_w.txt - the weight file
+    filename_x.txt - the abscissa file.
+    filename_r.txt - the region file.
+
+  The requested Legendre order is  4
+  The requested Jacobi order is  3
+  The "root name" is "pyramid_l4_j3"
+
+  Creating quadrature files.
+
+  Weight file will be   "pyramid_l4_j3_w.txt".
+  Abscissa file will be "pyramid_l4_j3_x.txt".
+  Region file will be   "pyramid_l4_j3_r.txt".
+
+pyramid_rule_test():
+  Normal end of execution.
+Wed Oct  8 08:48:32 2025

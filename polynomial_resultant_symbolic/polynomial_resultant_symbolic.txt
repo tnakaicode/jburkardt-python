@@ -1,0 +1,70 @@
+Wed Oct  8 08:46:33 2025
+
+polynomial_resultant_symbolic_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test polynomial_resultant_symbolic().
+
+coefficients_test ( ):
+  Return vector of polynomial coefficients.
+
+  Polynomial P:
+    Poly(6*x**5 - 3*x**4 + 2*x**2 - x + 9, x, domain='ZZ')
+
+  Coefficient vector C:
+    (6, -3, 0, 2, -1, 9)
+
+sylvester_matrix_test ( ):
+  Test sylvester_matrix(),
+  which computes S, the sylvester matrix of polynomials P and Q.
+
+  Polynomial P:
+    Poly(2*x**4 + 3*x**3 + 4*x**2 + 5*x + 6, x, domain='ZZ')
+
+  Polynomial Q:
+    Poly(7*x**3 + 8*x**2 + 9*x + 10, x, domain='ZZ')
+
+  Matrix S:
+⎡2  3  4  5   6   0   0 ⎤
+⎢                       ⎥
+⎢0  2  3  4   5   6   0 ⎥
+⎢                       ⎥
+⎢0  0  2  3   4   5   6 ⎥
+⎢                       ⎥
+⎢7  8  9  10  0   0   0 ⎥
+⎢                       ⎥
+⎢0  7  8  9   10  0   0 ⎥
+⎢                       ⎥
+⎢0  0  7  8   9   10  0 ⎥
+⎢                       ⎥
+⎣0  0  0  7   8   9   10⎦
+
+resultant_user_test():
+  Test resultant_user(),
+  user-written code which
+  which computes the resultant R of polynomials P and Q
+
+  Polynomial P:
+    Poly(2*x**4 + 3*x**3 + 4*x**2 + 5*x + 6, x, domain='ZZ')
+
+  Polynomial Q:
+    Poly(7*x**3 + 8*x**2 + 9*x + 10, x, domain='ZZ')
+
+  Resultant r =  204496
+
+resultant_sympy_test():
+  Test the resultant() function,
+  a utility that is part of the sympy package,
+  which computes the resultant R of polynomials P and Q
+
+  Polynomial P:
+    Poly(2*x**4 + 3*x**3 + 4*x**2 + 5*x + 6, x, domain='ZZ')
+
+  Polynomial Q:
+    Poly(7*x**3 + 8*x**2 + 9*x + 10, x, domain='ZZ')
+
+  Resultant r =  204496
+
+polynomial_resultant_symbolic_test():
+  Normal end of execution.
+Wed Oct  8 08:46:34 2025

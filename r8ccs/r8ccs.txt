@@ -1,0 +1,626 @@
+Wed Oct  8 08:50:30 2025
+
+r8ccs_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8ccs().
+
+r8ccs_dif2_test():
+  r8ccs_dif2() returns the second difference as a CCS matrix.
+
+The second difference matrix in CCS format:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  13
+  The COLPTR vector:
+[ 0  2  5  8 11 13]
+  The ROWIND vector:
+[0 1 0 1 2 1 2 3 2 3 4 3 4]
+
+The second difference matrix in CCS format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0             2            -1             0             0             0
+   1            -1             2            -1             0             0
+   2             0            -1             2            -1             0
+   3             0             0            -1             2            -1
+   4             0             0             0            -1             2
+
+r8ccs_get_test():
+  r8ccs_get() gets an entry of a matrix in the CCS format.
+
+A random CCS matrix:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+A random CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.815202      0.741464             0             0       1.48338
+   1      -1.10646     0.0514881             0             0      0.246607
+   2             0             0       1.14401             0             0
+   3     -0.968619             0             0       1.00237             0
+   4             0             0     -0.815829      -0.47883       1.41265
+
+  r8ccs_get() retrieves 10 entries.
+
+         I         J         K      VALUE
+
+0
+2
+         0         0         0        0.815202
+5
+6
+         2         2         5         1.14401
+7
+8
+         3         3         7         1.00237
+0
+2
+         0         0         0        0.815202
+5
+6
+         4         2         6       -0.815829
+0
+2
+         1         0         1        -1.10646
+0
+2
+         3         0         2       -0.968619
+9
+11
+         0         4         9         1.48338
+9
+11
+         0         4         9         1.48338
+9
+11
+         4         4        11         1.41265
+
+r8ccs_ijk_test():
+  r8ccs_ijk() gets K from (I,J) for a CCS matrix.
+
+A random CCS matrix:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+A random CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0     -0.299513        1.0521             0             0       1.39085
+   1     -0.294571     -0.619483             0             0      0.677781
+   2             0             0     -0.336875             0             0
+   3       0.97625             0             0      0.140065             0
+   4             0             0        1.3294     -0.197338     -0.640243
+
+  r8ccs_ijk() locates some (I,J) entries.
+
+         I         J         K
+
+9
+11
+         2         4        -1
+9
+11
+         3         4        -1
+5
+6
+         2         2         5
+9
+11
+         3         4        -1
+9
+11
+         3         4        -1
+0
+2
+         2         0        -1
+5
+6
+         1         2        -1
+0
+2
+         1         0         1
+3
+4
+         0         1         3
+7
+8
+         1         3        -1
+5
+6
+         3         2        -1
+0
+2
+         3         0         2
+9
+11
+         3         4        -1
+9
+11
+         3         4        -1
+7
+8
+         4         3         8
+3
+4
+         4         1        -1
+7
+8
+         1         3        -1
+9
+11
+         0         4         9
+3
+4
+         3         1        -1
+0
+2
+         2         0        -1
+
+r8ccs_inc_test():
+  r8ccs_inc() increments entries in a CCS matrix.
+
+A random CCS matrix:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+A random CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0     -0.822678      0.784772             0             0     -0.628465
+   1      0.334199     -0.393929             0             0      -1.30616
+   2             0             0     -0.745858             0             0
+   3      0.895097             0             0      0.502139             0
+   4             0             0      0.171631      0.087358      -1.74051
+
+  r8ccs_inc() increments 10 entries at random.
+
+         I         J         K       NEW_VALUE
+
+9
+11
+9
+11
+         4         4        11       18.259492
+5
+6
+5
+6
+         4         2         6       21.171631
+9
+11
+9
+11
+         4         4        11       40.259492
+0
+2
+0
+2
+         3         0         2       23.895097
+7
+8
+7
+8
+         4         3         8       24.087358
+9
+11
+9
+11
+         0         4         9       24.371535
+7
+8
+7
+8
+         3         3         7       26.502139
+0
+2
+0
+2
+         3         0         2       50.895097
+5
+6
+5
+6
+         4         2         6       49.171631
+0
+2
+0
+2
+         1         0         1       29.334199
+
+  The final CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0     -0.822678      0.784772             0             0       24.3715
+   1       29.3342     -0.393929             0             0      -1.30616
+   2             0             0     -0.745858             0             0
+   3       50.8951             0             0       26.5021             0
+   4             0             0       49.1716       24.0874       40.2595
+
+r8ccs_indicator_test():
+  r8ccs_indicator() sets up a CCS indicator matrix;
+
+An indicator matrix in CCS format:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+An indicator matrix in CCS format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0            11            12             0             0            15
+   1            21            22             0             0            25
+   2             0             0            33             0             0
+   3            41             0             0            44             0
+   4             0             0            53            54            55
+
+r8ccs_kij_test():
+  r8ccs_kij() gets (I,J) from K in a CCS matrix.
+
+A random CCS matrix:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+A random CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      -1.24056      0.408143             0             0     -0.992416
+   1      0.270034      -1.11827             0             0      -1.33082
+   2             0             0      0.121686             0             0
+   3      0.452058             0             0     -0.772907             0
+   4             0             0      0.424044      0.411716       1.28772
+
+  r8ccs_kij() locates some K entries.
+
+         K         I         J
+
+         6         4         2
+        10         1         4
+        11         4         4
+         4         1         1
+         8         4         3
+         7         3         3
+         5         2         2
+         8         4         3
+         6         4         2
+         7         3         3
+         5         2         2
+         8         4         3
+         1         1         0
+         6         4         2
+         7         3         3
+        10         1         4
+         7         3         3
+         1         1         0
+         5         2         2
+         3         0         1
+
+r8ccs_mtv_test():
+  r8ccs_mtv() computes b=A'*x, where A is a CCS matrix.
+
+A random CCS matrix:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+A random CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.604512     -0.174465             0             0       1.90809
+   1     -0.648965      0.450049             0             0     -0.891338
+   2             0             0      0.481611             0             0
+   3       1.82168             0             0     -0.608324             0
+   4             0             0      0.172942      0.634406     -0.510369
+  x:
+[ 1.  0.  0.  0. -1.]
+  b=A'*x:
+[ 0.60451191 -0.17446457 -0.17294176 -0.63440636  2.41846368]
+
+r8ccs_mv_test():
+  r8ccs_mv() computes b=A*x, where A is a CCS matrix.
+
+A random CCS matrix:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+A random CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0     0.0102063     -0.265394             0             0       1.11825
+   1     -0.427608     -0.250111             0             0      0.759025
+   2             0             0     -0.114151             0             0
+   3     -0.399901             0             0     -0.277198             0
+   4             0             0      -2.00517      0.360933    -0.0447788
+  x:
+[ 1.  0.  0.  0. -1.]
+  b=A*x:
+[-1.10804826 -1.1866327   0.         -0.39990122  0.04477878]
+
+r8ccs_print_test():
+  r8ccs_print() prints a CCS matrix.
+
+A random CCS matrix:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+A random CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      -1.25375       0.54378             0             0       1.63054
+   1      0.732703    -0.0702631             0             0       0.76311
+   2             0             0       0.34695             0             0
+   3       1.24691             0             0      0.481802             0
+   4             0             0       1.41577     -0.922947      -0.23825
+
+r8ccs_print_some_test():
+  r8ccs_print_some() prints some of a CCS matrix.
+
+The indicator matrix in CCS format:
+  Matrix rows M =           10
+  Matrix columns N =        10
+  Matrix nonzeros NZ_NUM =  28
+  The COLPTR vector:
+[ 0  2  5  8 11 14 17 20 23 26 28]
+  The ROWIND vector:
+[ 1  2  1  2  3  2  3  4  3  4  5  4  5  6  5  6  7  6  7  8  7  8  9  8
+  9 10  9 10]
+
+Rows 1-5, Cols 4-7:
+
+  Col:       4             5             6             7       
+  Row
+  ---
+   1             0             0             0             0
+   2             0             0             0             0
+   3             0             0             0             0
+   4           505             0             0             0
+   5           605           606             0             0
+
+r8ccs_random_test():
+  r8ccs_random() randomizes a CCS matrix;
+
+A random matrix in CCS format:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+A random matrix in CCS format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0     -0.436342     -0.809452             0             0     -0.356225
+   1     -0.205335     -0.783667             0             0       -1.5529
+   2             0             0      0.247684             0             0
+   3      0.695004             0             0       1.53927             0
+   4             0             0      -1.19364   -0.00690665       1.94096
+
+r8ccs_read_test():
+  r8ccs_read() reads a CCS matrix from a file.
+
+The CCS matrix read from the file:
+  Matrix rows M =           4
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12  0  0  0  0  0  0]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+The CCS matrix read from the file:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0            11            12             0             0            15
+   1            21            22             0             0            25
+   2             0             0            33             0             0
+   3            41             0             0            44             0
+
+r8ccs_set_test():
+  r8ccs_set() sets entries in a CCS matrix
+
+A random CCS matrix:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+A random CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      -1.49294      0.496733             0             0     -0.636171
+   1      0.241823     -0.436886             0             0      0.469792
+   2             0             0      0.687705             0             0
+   3     -0.125579             0             0     -0.865039             0
+   4             0             0       1.67176     -0.637583       2.06873
+
+  r8ccs_set() sets 10 entries at random.
+
+         I         J         K      NEW_VALUE
+
+3
+4
+         1         1         4      100.000000
+7
+8
+         3         3         7      101.000000
+7
+8
+         3         3         7      102.000000
+7
+8
+         3         3         7      103.000000
+9
+11
+         0         4         9      104.000000
+0
+2
+         1         0         1      105.000000
+0
+2
+         3         0         2      106.000000
+9
+11
+         1         4        10      107.000000
+7
+8
+         3         3         7      108.000000
+0
+2
+         1         0         1      109.000000
+
+  The final CCS matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      -1.49294      0.496733             0             0           104
+   1           109           100             0             0           107
+   2             0             0      0.687705             0             0
+   3           106             0             0           108             0
+   4             0             0       1.67176     -0.637583       2.06873
+
+r8ccs_to_r8ge_test():
+  r8ccs_to_r8ge() converts a matrix from CCS to GE format;
+
+An indicator matrix in CCS format:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+An indicator matrix in CCS format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0            11            12             0             0            15
+   1            21            22             0             0            25
+   2             0             0            33             0             0
+   3            41             0             0            44             0
+   4             0             0            53            54            55
+  The GE matrix:
+[[11. 12.  0.  0. 15.]
+ [21. 22.  0.  0. 25.]
+ [ 0.  0. 33.  0.  0.]
+ [41.  0.  0. 44.  0.]
+ [ 0.  0. 53. 54. 55.]]
+
+r8ccs_write_test():
+  r8ccs_write() writes a CCS matrix to 3 files
+
+An indicator matrix in CCS format:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+An indicator matrix in CCS format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0            11            12             0             0            15
+   1            21            22             0             0            25
+   2             0             0            33             0             0
+   3            41             0             0            44             0
+   4             0             0            53            54            55
+
+r8ccs_zeros_test():
+  r8ccs_zeros() zeros a CCS matrix;
+
+Zero matrix in CCS format:
+  Matrix rows M =           5
+  Matrix columns N =        5
+  Matrix nonzeros NZ_NUM =  12
+  The COLPTR vector:
+[ 0  3  5  7  9 12]
+  The ROWIND vector:
+[0 1 3 0 1 2 4 3 4 0 1 4]
+
+Zero matrix in CCS format:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0             0             0             0             0             0
+   1             0             0             0             0             0
+   2             0             0             0             0             0
+   3             0             0             0             0             0
+   4             0             0             0             0             0
+Wed Oct  8 08:50:30 2025

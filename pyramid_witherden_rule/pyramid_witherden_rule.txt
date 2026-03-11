@@ -1,0 +1,72 @@
+Wed Oct  8 08:48:32 2025
+
+pyramid_witherden_rule_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test pyramid_witherden_rule().
+
+pyramid_witherden_rule_test01():
+  Quadrature rule for the unit pyramid,
+  Precision p = 5
+
+     I      W          X           Y           Z
+
+     0   0.0684354           0           0    0.729858
+     1    0.169397           0           0    0.300401
+     2   0.0587045           0           0  6.49177e-09
+     3   0.0764413    0.706526           0       0.125
+     4   0.0764413           0    0.706526       0.125
+     5   0.0764413   -0.706526           0       0.125
+     6   0.0764413           0   -0.706526       0.125
+     7   0.0396709    0.705117    0.705117   0.0611119
+     8   0.0396709    0.705117   -0.705117   0.0611119
+     9   0.0396709   -0.705117    0.705117   0.0611119
+    10   0.0396709   -0.705117   -0.705117   0.0611119
+    11   0.0597536    0.432883    0.432883    0.423601
+    12   0.0597536    0.432883   -0.432883    0.423601
+    13   0.0597536   -0.432883    0.432883    0.423601
+    14   0.0597536   -0.432883   -0.432883    0.423601
+
+  Weight Sum 1.0000000000000002
+
+pyramid_witherden_rule_test02():
+  Test the precision of a quadrature rule for the unit pyramid.
+
+  Stated precision of rule    =  5
+  Number of quadrature points =  15
+
+  Degree  Maximum error
+
+   0     2.220446049250313e-16
+   1     1.110223024625157e-16
+   2     5.551115123125783e-17
+   3      1.52655665885959e-16
+   4     1.266348137463069e-16
+   5     3.122502256758253e-17
+   6        0.0100361111063078
+   7     0.0007024040490240255
+
+pyramid_witherden_rule_test03():
+  Test the precision of quadrature rules for the unit pyramid.
+  Check rules of precision p = 0 through 10
+  for error in approximating integrals of monomials.
+
+              maximum                   maximum
+   p          absolute                  relative
+              error                     error
+
+   0                         0                         0
+   1     1.665334536937735e-16     4.996003610813202e-16
+   2     6.661338147750939e-16     4.996003610813204e-16
+   3     1.249000902703301e-16     1.873501354054955e-15
+   4     2.220446049250313e-16     9.835882108788589e-15
+   5     2.220446049250313e-16     9.972491582521764e-15
+   6     6.661338147750939e-16     7.445216318458507e-14
+   7     4.345482307321902e-16     7.389206434227901e-14
+   8     1.110223024625157e-15     6.166454066123704e-13
+   9     1.311450947838466e-15     1.067657924960871e-12
+  10     1.299741564375623e-15     4.703851596540448e-12
+
+pyramid_witherden_rule_test():
+  Normal end of execution.
+Wed Oct  8 08:48:33 2025

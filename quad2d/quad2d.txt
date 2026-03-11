@@ -1,0 +1,20 @@
+Wed Oct  8 08:48:35 2025
+
+quad2d_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test quad2d().
+  Estimate the integral of f(x,y) over [a,b]x[c,d].
+  f(x,y) = 1 / ( 1 - x * y ).
+  using a  16384  x  16384  grid of  268435456  points.
+   0.0  <= x <=  1.0
+   0.0  <= y <=  1.0
+
+  Exact =     1.6449340668482264
+  Estimate =  1.6449035528760592
+  Error    =  3.0513972167245385e-05
+  Time     =  99.92752504348755
+
+quad2d_test():
+  Normal end of execution.
+Wed Oct  8 08:50:15 2025

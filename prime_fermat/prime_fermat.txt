@@ -1,0 +1,16 @@
+Wed Oct  8 08:47:26 2025
+
+prime_fermat_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  prime_fermat() applies Fermat's primality test to an integer.
+
+  The test will be repeated with  3  different bases.
+
+   11  may be a prime.
+   15  is definitely not a prime.
+   221  is definitely not a prime.
+
+prime_fermat_test():
+  Normal end of execution.
+Wed Oct  8 08:47:26 2025

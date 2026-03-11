@@ -1,0 +1,365 @@
+Wed Oct  8 08:50:28 2025
+
+r83p_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r83p().
+
+r83_np_sl_test():
+  r83_np_sl() solves a linear system after the tridiagonal
+  matrix has been factored by r83_np_fa().
+
+  Matrix order N =  10
+
+  The tridiagonal matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:      0.915723     0.0885576                                          
+    1:       0.39118       0.36233      0.678182                            
+    2:                    0.179914      0.252529      0.852698              
+    3:                                  0.614566      0.739161      0.526921
+    4:                                                0.166774      0.403369
+    5:                                                               0.71792
+
+  Col:       5             6             7             8             9       
+  Row
+  ---
+    4:       0.85245                                                        
+    5:     0.0389748       0.36864                                          
+    6:      0.670823     0.0254068      0.622492                            
+    7:                    0.828322      0.385664      0.172601              
+    8:                                  0.857467      0.547518      0.755172
+    9:                                                0.254683       0.26253
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution to tranposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+r83p_det_test():
+  r83p_det() computes determinant of a tridiagonal periodic matrix.
+
+  The periodic tridiagonal matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:           11            12                                        15  
+    1:           21            22            23                              
+    2:                         32            33            34                
+    3:                                       43            44            45  
+    4:           51                                        54            55  
+
+  r83p_det() computes the determinant =  70772459.99999996
+  r8ge_det() computes the determinant =  70772460.0
+  np.linalg.det() computes            =  70772460.00000009
+
+r83p_fa_test():
+  r83p_fa() factors a tridiagonal periodic system
+  which then can be solved by R83P_SL.
+
+  Matrix order N =  10
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution to transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R83P_INDICATOR_TEST
+  R83P_INDICATOR sets up an R83P indicator matrix.
+
+  Matrix order N =  10
+
+  The R83P indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:          101           102                                            
+    1:          201           202           203                              
+    2:                        302           303           304                
+    3:                                      403           404           405  
+    4:                                                    504           505  
+    5:                                                                  605  
+    6:                                                                       
+    7:                                                                       
+    8:                                                                       
+    9:         1001                                                          
+
+  Col:       5             6             7             8             9       
+  Row
+  ---
+    0:                                                                  110  
+    1:                                                                       
+    2:                                                                       
+    3:                                                                       
+    4:          506                                                          
+    5:          606           607                                            
+    6:          706           707           708                              
+    7:                        807           808           809                
+    8:                                      908           909           910  
+    9:                                                   1009          1010  
+
+r83p_ml_test()
+  r83p_ml() computes A*x or A'*X
+  where A has been factored by R83P_FA.
+
+  Matrix order N =  10
+
+  A*x and PLU*x
+
+     0:        9.74917         9.74917
+     1:        4.02341         4.02341
+     2:        5.06446         5.06446
+     3:        4.91174         4.91174
+     4:        4.56352         4.56352
+     5:        6.71819         6.71819
+     6:         11.727          11.727
+     7:         17.794          17.794
+     8:        13.6783         13.6783
+     9:        1.03403         1.03403
+
+  A'*x and (PLU)'*x
+
+     0:        2.76111         2.76111
+     1:        4.50234         4.50234
+     2:        4.58983         4.58983
+     3:        7.98324         7.98324
+     4:        7.06837         7.06837
+     5:        9.00684         9.00684
+     6:        8.07171         8.07171
+     7:        16.5574         16.5574
+     8:        7.45572         7.45572
+     9:        13.9632         13.9632
+
+R83P_MTV_TEST
+  R83P_MTV computes A'*x=b for an R83P matrix.
+
+  Matrix order N =  5
+
+  The R83P matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:           11            12                                        15  
+    1:           21            22            23                              
+    2:                         32            33            34                
+    3:                                       43            44            45  
+    4:           51                                        54            55  
+
+  The vector X:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  The product b = A'*x:
+
+     0:           308
+     1:           152
+     2:           317
+     3:           548
+     4:           470
+
+R83P_MV_TEST
+  R83P_MV computes A*x=b for an R83P matrix.
+
+  Matrix order N =  5
+
+  The R83P matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:           11            12                                        15  
+    1:           21            22            23                              
+    2:                         32            33            34                
+    3:                                       43            44            45  
+    4:           51                                        54            55  
+
+  The vector X:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  The product b = A*x:
+
+     0:           110
+     1:           134
+     2:           299
+     3:           530
+     4:           542
+
+R83P_PRINT_TEST
+  R83P_PRINT prints an R83P matrix.
+
+  Matrix order N =  5
+
+  The R83P matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:           11            12                                        15  
+    1:           21            22            23                              
+    2:                         32            33            34                
+    3:                                       43            44            45  
+    4:           51                                        54            55  
+
+R83P_PRINT_SOME_TEST
+  R83P_PRINT_SOME prints some of an R83P matrix.
+
+  Matrix order N =  10
+
+  Rows 1:N, Cols 1:2:
+
+  Col:       1             2       
+  Row
+  ---
+    1:          202           203  
+    2:          302           303  
+    3:                        403  
+
+r83p_random_test():
+  r83p_random() sets up a random R83P matrix.
+
+  Matrix order N =  5
+
+  The R83P matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:    0.0444873      0.130857                                  0.772775  
+    1:     0.400019      0.757493     0.0971956                              
+    2:                   0.195648      0.303022     0.0461929                
+    3:                                 0.555247      0.645341      0.103871  
+    4:     0.043082                                  0.968355     0.0744277  
+
+r83p_sl_test():
+  r83p_sl() solves a tridiagonal periodic system
+  after it has been factored by R83P_FA.
+
+  Matrix order N =  10
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution to transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+r83p_to_r8ge_test():
+  r83p_to_r8ge() converts an r83p matrix to R8GE format.
+
+  Matrix order N =  5
+
+  The R83P matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:     0.545654      0.945257                                  0.367463  
+    1:     0.830104      0.254657      0.985103                              
+    2:                  0.0845441      0.941422      0.485651                
+    3:                                 0.504455      0.714242      0.476301  
+    4:     0.259128                                  0.713463      0.406024  
+
+  The R8GE matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.545654      0.945257             0             0      0.367463  
+      1 :    0.830104      0.254657      0.985103             0             0  
+      2 :           0     0.0845441      0.941422      0.485651             0  
+      3 :           0             0      0.504455      0.714242      0.476301  
+      4 :    0.259128             0             0      0.713463      0.406024  
+
+R83P_ZEROS_TEST
+  R83P_ZEROS sets up a zero R83P matrix.
+
+  Matrix order N =  5
+
+  The R83P matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+    0:            0             0                                         0  
+    1:            0             0             0                              
+    2:                          0             0             0                
+    3:                                        0             0             0  
+    4:            0                                         0             0  
+
+r83p_test():
+  Normal end of execution.
+Wed Oct  8 08:50:28 2025

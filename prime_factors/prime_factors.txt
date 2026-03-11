@@ -1,0 +1,22 @@
+Wed Oct  8 08:47:26 2025
+
+prime_factors_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test prime_factors().
+
+  Prime factors of 61
+[61]
+
+  Prime factors of 75
+[3, 5, 5]
+
+  Prime factors of 3628800
+[2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 5, 5, 7]
+
+  Prime factors of 123456789
+[3, 3, 3607, 3803]
+
+prime_factors_test():
+  Normal end of execution.
+Wed Oct  8 08:47:26 2025

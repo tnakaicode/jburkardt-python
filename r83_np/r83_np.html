@@ -1,0 +1,98 @@
+<html>
+
+  <head>
+    <title>
+      r83_np
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      r83_np
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>r83_np</b>,
+      a Python code which 
+      carries out some basic linear algebra operations on R83_NP matrices
+      (real 64 bit precision tridiagonal 3xN format, nonpivoting factorization).
+    </p>
+
+    <p>
+      These utilities are distinguished by the fact that an LU factorization
+      is attempted without the use of pivoting.  Such an approach will
+      fail if a zero pivot is encountered, and will generally not be as
+      accurate as a pivoting factorization.  It is only recommended in cases
+      where pivoting is known to be unnecessary, such as for a symmetric
+      positive definite matrix.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>r83_np</b> is available in 
+      <a href = "../../c_src/r83_np/r83_np.html">a C version </a> and 
+      <a href = "../../cpp_src/r83_np/r83_np.html">a C++ version </a> and 
+      <a href = "../../f_src/r83_np/r83_np.html">a Fortran90 version </a> and 
+      <a href = "../../m_src/r83_np/r83_np.html">a MATLAB version</a> and 
+      <a href = "../../octave_src/r83_np/r83_np.html">an Octave version</a> and 
+      <a href = "../../py_src/r83_np/r83_np.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/linear_algebra/linear_algebra.html">
+      linear_algebra</a>,
+      a Python code which 
+      carries out various linear algebra operations for matrices
+      stored in a variety of formats.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "r83_np.py">r83_np.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "r83_np.sh">r83_np.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "r83_np.txt">r83_np.txt</a>, 
+          the output file;
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 August 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

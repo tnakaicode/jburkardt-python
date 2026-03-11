@@ -1,0 +1,353 @@
+Wed Oct  8 08:50:31 2025
+
+r8ltt_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8ltt().
+
+R8LTT_DET_TEST
+  R8LTT_DET computes the determinant of an R8LTT matrix.
+
+  Matrix order N =  5
+
+  The matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     0.29137                                                          
+      1 :    0.606046       0.29137                                            
+      2 : 0.000174931      0.606046       0.29137                              
+      3 :    0.311882   0.000174931      0.606046       0.29137                
+      4 :    0.887333      0.311882   0.000174931      0.606046       0.29137  
+
+  The determinant =  0.00210001756004646
+
+R8LTT_INDICATOR_TEST
+  R8LTT_INDICATOR sets up an indicator matrix in R8LTT format
+
+  Matrix order n =  5
+
+  The indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1                                                          
+      1 :           2             1                                            
+      2 :           3             2             1                              
+      3 :           4             3             2             1                
+      4 :           5             4             3             2             1  
+
+R8LTT_INVERSE_TEST
+  R8LTT_INVERSE computes the inverse of an R8LTT matrix.
+
+  The matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.352013                                                          
+      1 :    0.257111      0.352013                                            
+      2 :    0.965923      0.257111      0.352013                              
+      3 :    0.175794      0.965923      0.257111      0.352013                
+      4 :   0.0419422      0.175794      0.965923      0.257111      0.352013  
+
+  The inverse matrix B:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :     2.84081                                                          
+      1 :    -2.07493       2.84081                                            
+      2 :    -6.27964      -2.07493       2.84081                              
+      3 :     8.86159      -6.27964      -2.07493       2.84081                
+      4 :     11.4566       8.86159      -6.27964      -2.07493       2.84081  
+
+  The product A * B:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1                                                          
+      1 : 1.11022e-16             1                                            
+      2 :           0   1.11022e-16             1                              
+      3 :-2.77556e-16             0   1.11022e-16             1                
+      4 :-1.08247e-15  -2.77556e-16             0   1.11022e-16             1  
+
+R8LTT_MM_TEST
+  R8LTT_MM computes C = A * B for R8LTT matrices.
+
+  Matrix order N =  5
+
+  Factor A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.919468                                                          
+      1 :    0.166059      0.919468                                            
+      2 :    0.499973      0.166059      0.919468                              
+      3 :    0.518502      0.499973      0.166059      0.919468                
+      4 :    0.487423      0.518502      0.499973      0.166059      0.919468  
+
+  Factor B:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :      0.3418                                                          
+      1 :   0.0699336        0.3418                                            
+      2 :      0.5872     0.0699336        0.3418                              
+      3 :    0.547171        0.5872     0.0699336        0.3418                
+      4 :    0.790514      0.547171        0.5872     0.0699336        0.3418  
+
+  The product C = A * B
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.314275                                                          
+      1 :    0.121061      0.314275                                            
+      2 :    0.722416      0.121061      0.314275                              
+      3 :    0.812805      0.722416      0.121061      0.314275                
+      4 :     1.31416      0.812805      0.722416      0.121061      0.314275  
+
+  The product C = A * B using R8GE format:
+[[0.31427458 0.         0.         0.         0.        ]
+ [0.12106072 0.31427458 0.         0.         0.        ]
+ [0.72241589 0.12106072 0.31427458 0.         0.        ]
+ [0.81280539 0.72241589 0.12106072 0.31427458 0.        ]
+ [1.31416129 0.81280539 0.72241589 0.12106072 0.31427458]]
+
+R8LTT_MTM_TEST
+  R8LTT_MTM computes C = A' * B for R8LTT matrices.
+
+  The matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.478961                                                          
+      1 :    0.878026      0.478961                                            
+      2 :    0.722455      0.878026      0.478961                              
+      3 :   0.0884537      0.722455      0.878026      0.478961                
+      4 :     0.44209     0.0884537      0.722455      0.878026      0.478961  
+
+  The matrix B:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.762237                                                          
+      1 :    0.385261      0.762237                                            
+      2 :    0.445569      0.385261      0.762237                              
+      3 :    0.336322      0.445569      0.385261      0.762237                
+      4 :    0.638897      0.336322      0.445569      0.385261      0.762237  
+
+  The product C = A' * B, using R8LTT format:
+[[1.33745328 1.13569394 0.78174151 0.23774266 0.33697753]
+ [0.87523643 1.05500333 0.98700928 0.58475963 0.06742269]
+ [0.97028372 0.81872366 1.02525441 0.94759702 0.5506819 ]
+ [0.72205269 0.50870969 0.57574619 0.70335058 0.66926355]
+ [0.30600664 0.16108514 0.21341042 0.18452487 0.36508189]]
+
+  The product C = A' * B, using R8GE format:
+1.3374532820314289
+
+R8LTT_MTV_TEST
+  R8LTT_MTV computes a matrix product b=A'*x for an R8LTT matrix.
+
+  Matrix order N =  5
+
+  The matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1                                                          
+      1 :           2             1                                            
+      2 :           3             2             1                              
+      3 :           4             3             2             1                
+      4 :           5             4             3             2             1  
+
+  The vector X:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  The vector b=A'*x:
+
+     0:            55
+     1:            40
+     2:            26
+     3:            14
+     4:             5
+
+R8LTT_MV_TEST
+  R8LTT_MV computes a product b=A*x for an R8LTT matrix.
+
+  Matrix order N =  5
+
+  The R8LTT matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1                                                          
+      1 :           2             1                                            
+      2 :           3             2             1                              
+      3 :           4             3             2             1                
+      4 :           5             4             3             2             1  
+
+  Vector x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  Vector b = A*x:
+
+     0:             1
+     1:             4
+     2:            10
+     3:            20
+     4:            35
+
+R8LTT_PRINT_TEST
+  R8LTT_PRINT prints an R8LTT matrix.
+
+  Matrix order N =  5
+
+  The matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1                                                          
+      1 :           2             1                                            
+      2 :           3             2             1                              
+      3 :           4             3             2             1                
+      4 :           5             4             3             2             1  
+
+R8LTT_PRINT_SOME_TEST
+  R8LTT_PRINT_SOME prints some of an R8LTT matrix.
+
+  Matrix order N =  6
+
+  Some of the matrix:
+
+  Col:       0             1             2             3       
+  Row
+      1 :           2             1                              
+      2 :           3             2             1                
+      3 :           4             3             2             1  
+      4 :           5             4             3             2  
+
+R8LTT_RANDOM_TEST
+  R8LTT_RANDOM randomizes an R8LTT matrix.
+
+  Matrix order N =  5
+
+  Matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.556014                                                          
+      1 :    0.226717      0.556014                                            
+      2 :    0.184193      0.226717      0.556014                              
+      3 :    0.191881      0.184193      0.226717      0.556014                
+      4 :    0.245045      0.191881      0.184193      0.226717      0.556014  
+
+R8LTT_SL_TEST
+  R8LTT_SL solves a linear system A*x=b with R8LTT matrix
+
+  Matrix order N =  5
+
+  Matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.192262                                                          
+      1 :    0.380551      0.192262                                            
+      2 :   0.0912509      0.380551      0.192262                              
+      3 :    0.062738     0.0912509      0.380551      0.192262                
+      4 :    0.559249      0.062738     0.0912509      0.380551      0.192262  
+
+  Right hand side b:
+
+     0:      0.192262
+     1:      0.765075
+     2:       1.42914
+     3:       2.15594
+     4:       3.44199
+
+  Solution x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+R8LTT_SLT_TEST
+  R8LTT_SLT solves a linear system A'x=b with R8LTT matrix
+
+  Matrix order N =  5
+
+  Matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.141198                                                          
+      1 :     0.56225      0.141198                                            
+      2 :    0.667964       0.56225      0.141198                              
+      3 :   0.0363597      0.667964       0.56225      0.141198                
+      4 :   0.0546461     0.0363597      0.667964       0.56225      0.141198  
+
+  Right hand side b:
+
+     0:       3.68826
+     1:        4.8228
+     2:       6.01241
+     3:       3.37604
+     4:      0.705991
+
+  Solution x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+R8LTT_TO_R8GE_TEST
+  R8LTT_TO_R8GE converts an R8LTT matrix to R8GE format.
+
+  The random R8LTT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.142567                                                          
+      1 :    0.839993      0.142567                                            
+      2 :    0.449274      0.839993      0.142567                              
+      3 :    0.419271      0.449274      0.839993      0.142567                
+      4 :    0.562237      0.419271      0.449274      0.839993      0.142567  
+
+  The R8GE matrix:
+[[0.14256729 0.         0.         0.         0.        ]
+ [0.83999326 0.14256729 0.         0.         0.        ]
+ [0.44927435 0.83999326 0.14256729 0.         0.        ]
+ [0.41927138 0.44927435 0.83999326 0.14256729 0.        ]
+ [0.5622367  0.41927138 0.44927435 0.83999326 0.14256729]]
+
+R8LTT_ZEROS_TEST
+  R8LTT_ZEROS zeros out space for an R8LTT matrix.
+
+  Matrix order N =  5
+
+  The matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           0                                                          
+      1 :           0             0                                            
+      2 :           0             0             0                              
+      3 :           0             0             0             0                
+      4 :           0             0             0             0             0  
+
+r8ltt_test():
+  Normal end of execution.
+Wed Oct  8 08:50:32 2025

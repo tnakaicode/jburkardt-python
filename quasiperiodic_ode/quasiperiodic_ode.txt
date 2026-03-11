@@ -1,0 +1,16 @@
+Wed Oct  8 08:50:26 2025
+
+quasiperiodic_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve quasiperiodic_ode().
+
+  parameters:
+    t0 =     0.0
+    y0 =     [  2.          0.        -10.8696044   0.       ]
+    tstop =  20.0
+  Graphics saved as "quasiperiodic_ode.png"
+
+quasiperiodic_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:50:27 2025

@@ -1,0 +1,284 @@
+Wed Oct  8 08:50:30 2025
+
+r8ci_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8ci().
+
+R8CI_DET_TEST
+  R8CI_DET finds the determinant of a real circulant system.
+
+  Matrix order N =  5
+
+  The circulant matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.132509      0.263237    0.00590217       0.98182      0.931243  
+      1 :    0.931243      0.132509      0.263237    0.00590217       0.98182  
+      2 :     0.98182      0.931243      0.132509      0.263237    0.00590217  
+      3 :  0.00590217       0.98182      0.931243      0.132509      0.263237  
+      4 :    0.263237    0.00590217       0.98182      0.931243      0.132509  
+
+  Computed determinant =  2.031481865553511
+
+R8CI_DIF2_TEST
+  R8CI_DIF2 sets up an R8CI periodic second difference matrix.
+
+  Matrix order N =  5
+
+  The R8CI periodic second difference matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           2            -1             0             0            -1  
+      1 :          -1             2            -1             0             0  
+      2 :           0            -1             2            -1             0  
+      3 :           0             0            -1             2            -1  
+      4 :          -1             0             0            -1             2  
+
+R8CI_EVAL_TEST
+  R8CI_EVAL finds the eigenvalues of
+  a real circulant system.
+
+  Matrix order N =  5
+
+  The circulant matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.882869      0.836299      0.341684      0.310927      0.560306  
+      1 :    0.560306      0.882869      0.836299      0.341684      0.310927  
+      2 :    0.310927      0.560306      0.882869      0.836299      0.341684  
+      3 :    0.341684      0.310927      0.560306      0.882869      0.836299  
+      4 :    0.836299      0.341684      0.310927      0.560306      0.882869  
+
+  The eigenvalues:
+
+     0    -0.0453413     -0.132973
+     1    -0.0453413      0.132973
+     2      0.786471      0.280564
+     3      0.786471     -0.280564
+     4       2.93208             0
+
+R8CI_INDICATOR_TEST
+  R8CI_INDICATOR sets up a R8CI indicator matrix.
+
+  Matrix order N =  5
+
+  The R8CI indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          15            11            12            13            14  
+      2 :          14            15            11            12            13  
+      3 :          13            14            15            11            12  
+      4 :          12            13            14            15            11  
+
+R8CI_MTV_TEST
+  R8CI_MTV computes b=A*x where A is an R8CI indicator matrix.
+
+  Matrix order N =  5
+
+  The R8CI matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          15            11            12            13            14  
+      2 :          14            15            11            12            13  
+      3 :          13            14            15            11            12  
+      4 :          12            13            14            15            11  
+
+  The vector x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  The product b=A*x:
+
+     0:           195
+     1:           200
+     2:           200
+     3:           195
+     4:           185
+
+R8CI_MV_TEST
+  R8CI_MV computes b=A*x where A is an R8CI indicator matrix.
+
+  Matrix order N =  5
+
+  The R8CI matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          15            11            12            13            14  
+      2 :          14            15            11            12            13  
+      3 :          13            14            15            11            12  
+      4 :          12            13            14            15            11  
+
+  The vector x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  The product b=A*x:
+
+     0:           205
+     1:           195
+     2:           190
+     3:           190
+     4:           195
+
+R8CI_PRINT_TEST
+  R8CI_PRINT prints an R8CI matrix.
+
+  Matrix order N =  5
+
+  The R8CI matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          15            11            12            13            14  
+      2 :          14            15            11            12            13  
+      3 :          13            14            15            11            12  
+      4 :          12            13            14            15            11  
+
+R8CI_PRINT_SOME_TEST
+  R8CI_PRINT_SOME prints some of an R8CI matrix.
+
+  Matrix order N =  10
+
+  Rows 2-6, Cols 3-5:
+
+  Col:       3             4             5       
+  Row
+      2 :         102           103           104  
+      3 :         101           102           103  
+      4 :         110           101           102  
+      5 :         109           110           101  
+      6 :         108           109           110  
+
+r8ci_random_test():
+  r8ci_random() computes a random R8CI matrix.
+
+  Matrix order N =  5
+
+  The random R8CI matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.689051      0.532792      0.679473      0.510532      0.225825  
+      1 :    0.225825      0.689051      0.532792      0.679473      0.510532  
+      2 :    0.510532      0.225825      0.689051      0.532792      0.679473  
+      3 :    0.679473      0.510532      0.225825      0.689051      0.532792  
+      4 :    0.532792      0.679473      0.510532      0.225825      0.689051  
+
+R8CI_SL_TEST
+  R8CI_SL solves a circulant system.
+
+  Matrix order N =  10
+
+  The circulant matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.474919      0.683989      0.998366     0.0606042      0.434518  
+      1 :    0.132031      0.474919      0.683989      0.998366     0.0606042  
+      2 :    0.180487      0.132031      0.474919      0.683989      0.998366  
+      3 :     0.36451      0.180487      0.132031      0.474919      0.683989  
+      4 :    0.244757       0.36451      0.180487      0.132031      0.474919  
+      5 :    0.773568      0.244757       0.36451      0.180487      0.132031  
+      6 :    0.434518      0.773568      0.244757       0.36451      0.180487  
+      7 :   0.0606042      0.434518      0.773568      0.244757       0.36451  
+      8 :    0.998366     0.0606042      0.434518      0.773568      0.244757  
+      9 :    0.683989      0.998366     0.0606042      0.434518      0.773568  
+
+  Col:       5             6             7             8             9       
+  Row
+      0 :    0.773568      0.244757       0.36451      0.180487      0.132031  
+      1 :    0.434518      0.773568      0.244757       0.36451      0.180487  
+      2 :   0.0606042      0.434518      0.773568      0.244757       0.36451  
+      3 :    0.998366     0.0606042      0.434518      0.773568      0.244757  
+      4 :    0.683989      0.998366     0.0606042      0.434518      0.773568  
+      5 :    0.474919      0.683989      0.998366     0.0606042      0.434518  
+      6 :    0.132031      0.474919      0.683989      0.998366     0.0606042  
+      7 :    0.180487      0.132031      0.474919      0.683989      0.998366  
+      8 :     0.36451      0.180487      0.132031      0.474919      0.683989  
+      9 :    0.244757       0.36451      0.180487      0.132031      0.474919  
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution to transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8CI_TO_R8GE_TEST
+  R8CI_TO_R8GE converts an R8CI matrix to R8GE format.
+
+  Matrix order N =  5
+
+  The R8CI matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12            13            14            15  
+      1 :          15            11            12            13            14  
+      2 :          14            15            11            12            13  
+      3 :          13            14            15            11            12  
+      4 :          12            13            14            15            11  
+
+  The R8GE matrix:
+[[11. 12. 13. 14. 15.]
+ [15. 11. 12. 13. 14.]
+ [14. 15. 11. 12. 13.]
+ [13. 14. 15. 11. 12.]
+ [12. 13. 14. 15. 11.]]
+
+R8CI_ZEROS_TEST
+  R8CI_ZEROS zeros an R8CI matrix.
+
+  Matrix order N =  5
+
+  The zero R8CI matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           0             0             0             0             0  
+      1 :           0             0             0             0             0  
+      2 :           0             0             0             0             0  
+      3 :           0             0             0             0             0  
+      4 :           0             0             0             0             0  
+
+r8ci_test():
+  Normal end of execution.
+Wed Oct  8 08:50:30 2025

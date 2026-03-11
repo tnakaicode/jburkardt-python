@@ -1,0 +1,286 @@
+Wed Oct  8 08:50:29 2025
+
+r8blt_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8blt().
+
+R8BLT_DET_TEST
+  R8BLT_DET computes the determinant of an R8BLT matrix.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.364371                                                        
+   1      0.261923      0.657628                                          
+   2      0.278482      0.546356     0.0166607                            
+   3      0.169585      0.685982      0.784503      0.953026              
+   4                    0.106272      0.390734      0.802315     0.0331122
+
+  Determinant =  0.00012598256830212299
+
+R8BLT_INDICATOR_TEST
+  R8BLT_INDICATOR sets up an R8BLT indicator matrix.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0            11                                                        
+   1            21            22                                          
+   2            31            32            33                            
+   3            41            42            43            44              
+   4                          52            53            54            55
+
+R8BLT_MTV_TEST
+  R8BLT_MTV computes b=A'*x, where A is an R8BLT matrix.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.287215                                                        
+   1      0.578026      0.321038                                          
+   2      0.904506      0.574408      0.250014                            
+   3       0.36219      0.192134      0.589972      0.336011              
+   4                  0.00644357      0.614334      0.653341    0.00892027
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  b=A'*x:
+
+     0:       5.60555
+     1:       3.16605
+     2:        6.1816
+     3:       4.61075
+     4:     0.0446013
+
+R8BLT_MV_TEST
+  R8BLT_MV computes b=A*x, where A is an R8BLT matrix.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.138574                                                        
+   1      0.492753      0.713652                                          
+   2      0.158887      0.149932      0.810409                            
+   3     0.0634214      0.859561       0.77333      0.535776              
+   4                    0.542402      0.803831      0.591919      0.305584
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  b=A*x:
+
+     0:      0.138574
+     1:       1.92006
+     2:       2.88998
+     3:       6.24564
+     4:       7.39189
+
+R8BLT_PRINT_TEST
+  R8BLT_PRINT prints an R8BLT matrix.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0            11                                                        
+   1            21            22                                          
+   2            31            32            33                            
+   3            41            42            43            44              
+   4                          52            53            54            55
+
+R8BLT_PRINT_SOME_TEST
+  R8BLT_PRINT_SOME prints some of an R8BLT matrix.
+
+  Matrix order N     =  10
+  Lower bandwidth ML =  3
+
+  Rows 0:3, Cols 1:3:
+
+  Col:       1             2       
+  Row
+  ---
+   1           202              
+   2           302           303
+
+r8blt_random_test():
+  r8blt_random() randomizes an R8BLT matrix.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.430098                                                        
+   1      0.422008       0.85887                                          
+   2      0.775739    0.00135311      0.667117                            
+   3      0.782635      0.733843       0.60461      0.874689              
+   4                    0.672442      0.185995      0.750939      0.296531
+
+R8BLT_SL_TEST
+  R8BLT_SL solves A*x=b, where A is an R8BLT matrix.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.659132                                                        
+   1      0.357674      0.703235                                          
+   2      0.840976      0.956048      0.790754                            
+   3        0.3522      0.643133      0.790501     0.0267616              
+   4                    0.816901      0.255019      0.689811      0.850493
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  b=A*x:
+
+     0:      0.659132
+     1:       1.76414
+     2:       5.12533
+     3:       4.11701
+     4:       9.41057
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+R8BLT_SLT_TEST
+  R8BLT_SLT solves A'*x=b, where A is an R8BLT matrix.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.716018                                                        
+   1      0.537084       0.87615                                          
+   2      0.256803      0.580392      0.528463                            
+   3      0.908382       0.29209     0.0136469       0.34451              
+   4                    0.251038      0.665969      0.354869      0.382293
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  b=A'*x:
+
+     0:       6.19412
+     1:       5.91703
+     2:       4.96982
+     3:       3.15239
+     4:       1.91147
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+R8BLT_TO_R8GE_TEST
+  R8BLT_TO_R8GE converts a matrix from R8BLT to R8GE format.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.740677                                                        
+   1      0.416476      0.477263                                          
+   2     0.0477415      0.340308      0.819205                            
+   3       0.63022      0.486822     0.0862853      0.667979              
+   4                     0.69363     0.0619948      0.607792       0.99735
+
+  The R8GE matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.740677             0             0             0             0  
+      1 :    0.416476      0.477263             0             0             0  
+      2 :   0.0477415      0.340308      0.819205             0             0  
+      3 :     0.63022      0.486822     0.0862853      0.667979             0  
+      4 :           0       0.69363     0.0619948      0.607792       0.99735  
+
+R8BLT_ZEROS_TEST
+  R8BLT_ZEROS zeros an R8BLT matrix.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  3
+
+  The R8BLT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0             0                                                        
+   1             0             0                                          
+   2             0             0             0                            
+   3             0             0             0             0              
+   4                           0             0             0             0
+
+r8blt_test():
+  Normal end of execution.
+Wed Oct  8 08:50:29 2025

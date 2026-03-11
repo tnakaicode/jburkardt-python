@@ -1,0 +1,555 @@
+Wed Oct  8 08:50:29 2025
+
+r8cb_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8cb().
+
+r8cb_det_test():
+  r8cb_det() computes the determinant of a matrix
+  that has been factored by R8CB_NP_FA.
+
+  Matrix order N     =  5
+  Lower bandwidth ML =  1
+  Upper bandwidth MU =  1
+
+  The compact band matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :             2            -1                                          
+      1 :            -1             2            -1                            
+      2 :                          -1             2            -1              
+      3 :                                        -1             2            -1
+      4 :                                                      -1             2
+
+  R8CB_DET computes the determinant         =  6.0
+  scipy.linalg.det computes the determinant =  6.0
+
+r8cb_dif2_test()
+  r8cb_dif2() returns the second difference matrix as an R8CB matrix
+
+  Matrix rows M      =  5
+  Matrix columns N   =  5
+  Lower bandwidth ML =  1
+  Upper bandwidth MU =  1
+
+  The R8CB second difference matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :             2            -1                                          
+      1 :            -1             2            -1                            
+      2 :                          -1             2            -1              
+      3 :                                        -1             2            -1
+      4 :                                                      -1             2
+
+R8CB_INDICATOR_TEST
+  R8CB_INDICATOR computes the indicator matrix in R8CB format
+
+  Matrix rows M      =  8
+  Matrix columns N   =  10
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  3
+
+  The R8CB indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           101           102           103           104              
+      1 :           201           202           203           204           205
+      2 :           301           302           303           304           305
+      3 :                         402           403           404           405
+      4 :                                       503           504           505
+      5 :                                                     604           605
+      6 :                                                                   705
+
+  Col:       5             6             7             8             9       
+  Row
+      2 :           306                                                        
+      3 :           406           407                                          
+      4 :           506           507           508                            
+      5 :           606           607           608           609              
+      6 :           706           707           708           709           710
+      7 :           806           807           808           809           810
+
+R8CB_ML_TEST
+  R8CB_ML computes A*x or A'*x for an R8CB matrix A
+  after A has been factored by R8CB_FA.
+
+  Matrix order N     =  10
+  Lower bandwidth ML =  1
+  Upper bandwidth MU =  2
+
+  A*x and PLU*x
+
+       0:        2.89314       17.5726
+       1:        3.70178        95.043
+       2:        5.65779       10.2626
+       3:        7.47456      -10.9103
+       4:        8.95162       93.4834
+       5:        13.9267      -92.9217
+       6:          11.41        89.183
+       7:        6.23428       6.23428
+       8:        9.19608       9.19608
+       9:        5.14514       5.14514
+
+  A'*x and (PLU)'*x
+
+       0:        1.42534       1.42534
+       1:        3.18731       3.18731
+       2:        3.17766       3.17766
+       3:        2.80906     -0.818173
+       4:        8.87829       4.93369
+       5:        6.49003       16.9912
+       6:        11.5484       6961.25
+       7:        21.8264       21.8231
+       8:        13.5924       14.4053
+       9:        14.2048       14.2048
+
+R8CB_MTV_TEST
+  R8CB_MTV computes b=A'*x, where A is an R8CB matrix
+
+  Matrix rows M      =  8
+  Matrix columns N   =  8
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  1
+
+  The R8CB matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :            11            12                                          
+      1 :            21            22            23                            
+      2 :            31            32            33            34              
+      3 :                          42            43            44            45
+      4 :                                        53            54            55
+      5 :                                                      64            65
+      6 :                                                                    75
+
+  Col:       5             6             7       
+  Row
+      4 :            56                            
+      5 :            66            67              
+      6 :            76            77            78
+      7 :            86            87            88
+
+  The vector x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+
+  The product b=A'*x:
+
+     0:           146
+     1:           320
+     2:           582
+     3:           932
+     4:          1370
+     5:          1896
+     6:          1637
+     7:          1250
+
+R8CB_MV_TEST
+  R8CB_MV computes b=A*x, where A is an R8CB matrix
+
+  Matrix rows M      =  8
+  Matrix columns N   =  8
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  1
+
+  The R8CB matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :            11            12                                          
+      1 :            21            22            23                            
+      2 :            31            32            33            34              
+      3 :                          42            43            44            45
+      4 :                                        53            54            55
+      5 :                                                      64            65
+      6 :                                                                    75
+
+  Col:       5             6             7       
+  Row
+      4 :            56                            
+      5 :            66            67              
+      6 :            76            77            78
+      7 :            86            87            88
+
+  The vector x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+
+  The product b=A*x:
+
+     0:            35
+     1:           134
+     2:           330
+     3:           614
+     4:           986
+     5:          1446
+     6:          1994
+     7:          1829
+
+R8CB_NP_FA_TEST
+  R8CB_NP_FA factors an R8CB matrix with no pivoting
+
+  Matrix order N     =  10
+  Lower bandwidth ML =  1
+  Upper bandwidth MU =  2
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution to transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8CB_NP_SL_TEST
+  R8CB_NP_SL solves a linear system factored by R8CB_NP_FA.
+
+  Matrix order N     =  10
+  Lower bandwidth ML =  1
+  Upper bandwidth MU =  2
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution to transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8CB_PRINT_TEST
+  R8CB_PRINT prints an R8CB matrix
+
+  Matrix rows M      =  8
+  Matrix columns N   =  10
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  3
+
+  The R8CB matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           101           102           103           104              
+      1 :           201           202           203           204           205
+      2 :           301           302           303           304           305
+      3 :                         402           403           404           405
+      4 :                                       503           504           505
+      5 :                                                     604           605
+      6 :                                                                   705
+
+  Col:       5             6             7             8             9       
+  Row
+      2 :           306                                                        
+      3 :           406           407                                          
+      4 :           506           507           508                            
+      5 :           606           607           608           609              
+      6 :           706           707           708           709           710
+      7 :           806           807           808           809           810
+
+R8CB_PRINT_SOME_TEST
+  R8CB_PRINT_SOME prints some of an R8CB matrix
+
+  Matrix rows M      =  8
+  Matrix columns N   =  10
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  3
+
+  Rows 3-6, Cols 3-6:
+
+  Col:       3             4             5             6       
+  Row
+      3 :           404           405           406           407
+      4 :           504           505           506           507
+      5 :           604           605           606           607
+      6 :                         705           706           707
+
+R8CB_RANDOM_TEST
+  R8CB_RANDOM randomizes an R8CB matrix
+
+  Matrix order M     =  8
+  Matrix order N     =  10
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  3
+
+  The R8CB random matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :      0.530762     0.0427835     0.0845467      0.848313              
+      1 :      0.360725      0.232967      0.726517       0.63369      0.103431
+      2 :      0.102731      0.747924      0.921592      0.749822      0.721168
+      3 :                    0.508019      0.341972     0.0551191     0.0275441
+      4 :                                  0.858078       0.51515      0.625939
+      5 :                                                0.235066         0.055
+      6 :                                                              0.590599
+
+  Col:       5             6             7             8             9       
+  Row
+      2 :      0.488213                                                        
+      3 :      0.368733      0.304833                                          
+      4 :      0.362215      0.358989      0.431476                            
+      5 :      0.563512      0.940712      0.628667      0.665251              
+      6 :      0.243545      0.836942      0.952472      0.101348      0.836445
+      7 :       0.23535      0.480274      0.203366      0.100114      0.439202
+
+R8CB_TO_R8GE_TEST
+  R8CB_TO_R8GE converts an R8CB matrix to R8GE format
+
+  Matrix rows M      =  8
+  Matrix columns N   =  10
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  3
+
+  The R8CB matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           101           102           103           104              
+      1 :           201           202           203           204           205
+      2 :           301           302           303           304           305
+      3 :                         402           403           404           405
+      4 :                                       503           504           505
+      5 :                                                     604           605
+      6 :                                                                   705
+
+  Col:       5             6             7             8             9       
+  Row
+      2 :           306                                                        
+      3 :           406           407                                          
+      4 :           506           507           508                            
+      5 :           606           607           608           609              
+      6 :           706           707           708           709           710
+      7 :           806           807           808           809           810
+
+  The R8GE matrix:
+[[101. 102. 103. 104.   0.   0.   0.   0.   0.   0.]
+ [201. 202. 203. 204. 205.   0.   0.   0.   0.   0.]
+ [301. 302. 303. 304. 305. 306.   0.   0.   0.   0.]
+ [  0. 402. 403. 404. 405. 406. 407.   0.   0.   0.]
+ [  0.   0. 503. 504. 505. 506. 507. 508.   0.   0.]
+ [  0.   0.   0. 604. 605. 606. 607. 608. 609.   0.]
+ [  0.   0.   0.   0. 705. 706. 707. 708. 709. 710.]
+ [  0.   0.   0.   0.   0. 806. 807. 808. 809. 810.]]
+
+R8CB_TO_R8VEC_TEST
+  R8CB_TO_R8VEC converts an R8CB matrix to an R8VEC.
+
+  Matrix rows M      =  5
+  Matrix columns N   =  8
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  1
+
+  The R8CB indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :            11            12                                          
+      1 :            21            22            23                            
+      2 :            31            32            33            34              
+      3 :                          42            43            44            45
+      4 :                                        53            54            55
+
+  Col:       5             6             7       
+  Row
+      4 :            56                            
+   0     0     0               0
+   1     0     1              11
+   2     0     2              21
+   3     0     3              31
+   0     1     4              12
+   1     1     5              22
+   2     1     6              32
+   3     1     7              42
+   0     2     8              23
+   1     2     9              33
+   2     2    10              43
+   3     2    11              53
+   0     3    12              34
+   1     3    13              44
+   2     3    14              54
+   3     3    15               0
+   0     4    16              45
+   1     4    17              55
+   2     4    18               0
+   3     4    19               0
+   0     5    20              56
+   1     5    21               0
+   2     5    22               0
+   3     5    23               0
+   0     6    24               0
+   1     6    25               0
+   2     6    26               0
+   3     6    27               0
+   0     7    28               0
+   1     7    29               0
+   2     7    30               0
+   3     7    31               0
+
+  The recovered R8CB indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :            11            12                                          
+      1 :            21            22            23                            
+      2 :            31            32            33            34              
+      3 :                          42            43            44            45
+      4 :                                        53            54            55
+
+  Col:       5             6             7       
+  Row
+      4 :            56                            
+
+r8cb_zeros_test()
+  r8cb_zeros() zeros an R8CB matrix
+
+  Matrix rows M      =  8
+  Matrix columns N   =  10
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  3
+
+  The R8CB zero matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :             0             0             0             0              
+      1 :             0             0             0             0             0
+      2 :             0             0             0             0             0
+      3 :                           0             0             0             0
+      4 :                                         0             0             0
+      5 :                                                       0             0
+      6 :                                                                     0
+
+  Col:       5             6             7             8             9       
+  Row
+      2 :             0                                                        
+      3 :             0             0                                          
+      4 :             0             0             0                            
+      5 :             0             0             0             0              
+      6 :             0             0             0             0             0
+      7 :             0             0             0             0             0
+
+R8VEC_TO_R8CB_TEST
+  R8VEC_TO_R8CB converts an R8VEC to an R8CB matrix.
+
+  Matrix rows M      =  5
+  Matrix columns N   =  8
+  Lower bandwidth ML =  2
+  Upper bandwidth MU =  1
+
+  The R8CB indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :            11            12                                          
+      1 :            21            22            23                            
+      2 :            31            32            33            34              
+      3 :                          42            43            44            45
+      4 :                                        53            54            55
+
+  Col:       5             6             7       
+  Row
+      4 :            56                            
+   0     0     0               0
+   1     0     1              11
+   2     0     2              21
+   3     0     3              31
+   0     1     4              12
+   1     1     5              22
+   2     1     6              32
+   3     1     7              42
+   0     2     8              23
+   1     2     9              33
+   2     2    10              43
+   3     2    11              53
+   0     3    12              34
+   1     3    13              44
+   2     3    14              54
+   3     3    15               0
+   0     4    16              45
+   1     4    17              55
+   2     4    18               0
+   3     4    19               0
+   0     5    20              56
+   1     5    21               0
+   2     5    22               0
+   3     5    23               0
+   0     6    24               0
+   1     6    25               0
+   2     6    26               0
+   3     6    27               0
+   0     7    28               0
+   1     7    29               0
+   2     7    30               0
+   3     7    31               0
+
+  The recovered R8CB indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :            11            12                                          
+      1 :            21            22            23                            
+      2 :            31            32            33            34              
+      3 :                          42            43            44            45
+      4 :                                        53            54            55
+
+  Col:       5             6             7       
+  Row
+      4 :            56                            
+
+r8cb_test():
+  Normal end of execution.
+Wed Oct  8 08:50:29 2025

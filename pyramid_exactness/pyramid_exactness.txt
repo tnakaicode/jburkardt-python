@@ -1,0 +1,36 @@
+Wed Oct  8 08:48:04 2025
+
+pyramid_exactness_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test pyramid_exactness().
+
+pyramid_exactness():
+  Investigate the polynomial exactness of
+  a quadrature rule for the pyramid.
+
+pyramid_exactness(): User input:
+  Quadrature rule X file = "pyramid_l3x3_j3_x.txt".
+  Quadrature rule W file = "pyramid_l3x3_j3_w.txt".
+  Maximum total degree to check =  5
+
+  Number of points  =  27
+  Spatial dimension =  3
+
+      Error    Degree  Exponents
+
+   0        0.0000000000000011
+   1        0.0000000000000001
+   2        0.0000000000000003
+   3        0.0000000000000002
+   4        0.0000000000000001
+   5        0.0000000000000000
+   6        0.0101757369614512
+   7        0.0009601757369619
+
+pyramid_exactness():
+  Normal end of execution.
+
+pyramid_exactness_test():
+  Normal end of execution.
+Wed Oct  8 08:48:04 2025

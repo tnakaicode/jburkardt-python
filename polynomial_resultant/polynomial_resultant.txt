@@ -1,0 +1,118 @@
+Wed Oct  8 08:46:33 2025
+
+polynomial_resultant_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test polynomial_resultant().
+
+polynomial_resultant_roots_test():
+  polynomial_resultant_roots() computes 
+  the resultant R of polynomials P and Q
+  based on knowledge of the roots of P and Q.
+
+P(x):
+  p(x) =   1
+Q(x):
+  p(x) =   2
+   R (tabulated):    1
+   R (calculated):   1.0
+
+P(x):
+  p(x) =   3 * x + 3
+Q(x):
+  p(x) =   1 * x^2 + 2 * x + 1
+   R (tabulated):    0
+   R (calculated):   0.0
+
+P(x):
+  p(x) =   1 * x^3 + 3 * x^2 + 3 * x + 1
+Q(x):
+  p(x) =   1 * x^2 - 1
+   R (tabulated):    0
+   R (calculated):   -0j
+
+P(x):
+  p(x) =   1 * x^3 + 2 * x^2 + 3 * x + 4
+Q(x):
+  p(x) =   5 * x^2 + 6 * x + 7
+   R (tabulated):    832
+   R (calculated):   (832-0j)
+
+P(x):
+  p(x) =   1 * x^3 + 2 * x^2 + 3 * x + 4
+Q(x):
+  p(x) =   4 * x^3 + 3 * x^2 + 2 * x + 1
+   R (tabulated):    -2000
+   R (calculated):   (-2000+0j)
+
+P(x):
+  p(x) =   1 * x^4 - 4 * x^3 + 5 * x^2 - 2 * x
+Q(x):
+  p(x) =   1 * x^4 - 4 * x^3 + 5 * x^2 - 2 * x + 1
+   R (tabulated):    1
+   R (calculated):   (1+0j)
+
+P(x):
+  p(x) =   1 * x^4 - 4 * x^3 + 5 * x^2 - 2 * x
+Q(x):
+  p(x) =   1 * x^7 - 12 * x^6 + 60 * x^5 - 160 * x^4 + 240 * x^3 - 192 * x^2 + 64 * x
+   R (tabulated):    0
+   R (calculated):   0j
+
+polynomial_resultant_sylvester_test():
+  polynomial_resultant_sylvester() computes 
+  the resultant R of polynomials P and Q
+  based on the determinant of the Sylvester matrix.
+
+P(x):
+  p(x) =   1
+Q(x):
+  p(x) =   2
+   R (tabulated):    1
+   R (calculated):   1.0
+
+P(x):
+  p(x) =   3 * x + 3
+Q(x):
+  p(x) =   1 * x^2 + 2 * x + 1
+   R (tabulated):    0
+   R (calculated):   0.0
+
+P(x):
+  p(x) =   1 * x^3 + 3 * x^2 + 3 * x + 1
+Q(x):
+  p(x) =   1 * x^2 - 1
+   R (tabulated):    0
+   R (calculated):   0.0
+
+P(x):
+  p(x) =   1 * x^3 + 2 * x^2 + 3 * x + 4
+Q(x):
+  p(x) =   5 * x^2 + 6 * x + 7
+   R (tabulated):    832
+   R (calculated):   832.0
+
+P(x):
+  p(x) =   1 * x^3 + 2 * x^2 + 3 * x + 4
+Q(x):
+  p(x) =   4 * x^3 + 3 * x^2 + 2 * x + 1
+   R (tabulated):    -2000
+   R (calculated):   -1999.9999999999998
+
+P(x):
+  p(x) =   1 * x^4 - 4 * x^3 + 5 * x^2 - 2 * x
+Q(x):
+  p(x) =   1 * x^4 - 4 * x^3 + 5 * x^2 - 2 * x + 1
+   R (tabulated):    1
+   R (calculated):   1.000000000000029
+
+P(x):
+  p(x) =   1 * x^4 - 4 * x^3 + 5 * x^2 - 2 * x
+Q(x):
+  p(x) =   1 * x^7 - 12 * x^6 + 60 * x^5 - 160 * x^4 + 240 * x^3 - 192 * x^2 + 64 * x
+   R (tabulated):    0
+   R (calculated):   0.0
+
+polynomial_resultant_test()
+  Normal end of execution.
+Wed Oct  8 08:46:33 2025

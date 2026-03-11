@@ -1,0 +1,284 @@
+Wed Oct  8 08:50:29 2025
+
+r8but_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8but().
+
+R8BUT_DET_TEST
+  R8BUT_DET computes the determinant of an R8BUT matrix.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.672158       0.59445      0.179855      0.742132              
+   1                    0.372348      0.639704      0.944698      0.753664
+   2                                   0.94344      0.545204       0.76761
+   3                                               0.0103269      0.998552
+   4                                                              0.522092
+
+  Determinant =  0.001273064608549452
+
+R8BUT_INDICATOR_TEST
+  R8BUT_INDICATOR sets up an R8BUT indicator matrix.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0            11            12            13            14              
+   1                          22            23            24            25
+   2                                        33            34            35
+   3                                                      44            45
+   4                                                                    55
+
+R8BUT_MTV_TEST
+  R8BUT_MTV computes b=A'*x, where A is an R8BUT matrix.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.638269       0.38858     0.0490988      0.940122              
+   1                    0.684275      0.566545      0.300689      0.454598
+   2                                  0.717861      0.590599       0.66514
+   3                                                0.217295      0.857835
+   4                                                             0.0223626
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  b=A'*x:
+
+     0:      0.638269
+     1:       1.75713
+     2:       3.33577
+     3:       4.18248
+     4:       6.44777
+
+R8BUT_MV_TEST
+  R8BUT_MV computes b=A*x, where A is an R8BUT matrix.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.983122      0.801668       0.21601     0.0578427              
+   1                     0.77961      0.226276      0.418074      0.455735
+   2                                  0.362268      0.836549      0.143889
+   3                                                0.102659       0.87913
+   4                                                             0.0691418
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  b=A*x:
+
+     0:       3.46586
+     1:       6.18902
+     2:       5.15245
+     3:       4.80628
+     4:      0.345709
+
+R8BUT_PRINT_TEST
+  R8BUT_PRINT prints an R8BUT matrix.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0            11            12            13            14              
+   1                          22            23            24            25
+   2                                        33            34            35
+   3                                                      44            45
+   4                                                                    55
+
+R8BUT_PRINT_SOME_TEST
+  R8BUT_PRINT_SOME prints some of an R8BUT matrix.
+
+  Matrix order N     =  10
+  Upper bandwidth MU =  3
+
+  Rows 1:4, Cols 2:4:
+
+  Col:       2             3             4       
+  Row
+  ---
+   2           303           304           305
+   3                         404           405
+   4                                       505
+
+R8BUT_RANDOM_TEST
+  R8BUT_RANDOM randomizes an R8BUT matrix.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.151329     0.0686762       0.33232      0.723896              
+   1                     0.44138       0.16764      0.719668     0.0464922
+   2                                   0.17835      0.011106     0.0803085
+   3                                                 0.90497      0.262541
+   4                                                              0.990825
+
+R8BUT_SL_TEST
+  R8BUT_SL solves A*x=b, where A is an R8BUT matrix.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.293829      0.245028      0.480308      0.628226              
+   1                    0.272377      0.848882       0.84139      0.591234
+   2                                0.00117911      0.668371      0.443609
+   3                                                0.218358      0.857937
+   4                                                             0.0277423
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  b=A*x:
+
+     0:       4.73771
+     1:       9.41313
+     2:       4.89507
+     3:       5.16312
+     4:      0.138712
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+R8BUT_SLT_TEST
+  R8BUT_SLT solves A'*x=b, where A is an R8BUT matrix.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.364012     0.0904468      0.716666      0.643323              
+   1                    0.493251      0.815832      0.311041      0.466147
+   2                                  0.658314      0.768507      0.737585
+   3                                                0.740791      0.227996
+   4                                                             0.0568347
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  b=A'*x:
+
+     0:      0.364012
+     1:       1.07695
+     2:       4.32327
+     3:       6.53409
+     4:       4.34121
+
+  x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+R8BUT_TO_R8GE_TEST
+  R8BUT_TO_R8GE converts a matrix from R8BUT to R8GE format.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0      0.439672      0.805599      0.871563      0.220666              
+   1                    0.863152      0.490697      0.738641      0.505256
+   2                                  0.569842     0.0320294      0.733173
+   3                                                0.846452      0.414165
+   4                                                              0.776407
+
+  The R8GE matrix:
+[[0.43967153 0.80559945 0.87156324 0.22066553 0.        ]
+ [0.         0.86315152 0.4906974  0.73864099 0.5052555 ]
+ [0.         0.         0.56984243 0.03202941 0.73317305]
+ [0.         0.         0.         0.84645196 0.41416499]
+ [0.         0.         0.         0.         0.77640737]]
+
+R8BUT_ZEROS_TEST
+  R8BUT_ZEROS zeros an R8BUT matrix.
+
+  Matrix order N     =  5
+  Upper bandwidth MU =  3
+
+  The R8BUT matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+  ---
+   0             0             0             0             0              
+   1                           0             0             0             0
+   2                                         0             0             0
+   3                                                       0             0
+   4                                                                     0
+
+r8but_test():
+  Normal end of execution.
+Wed Oct  8 08:50:29 2025

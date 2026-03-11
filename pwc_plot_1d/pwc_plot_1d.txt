@@ -1,0 +1,31 @@
+Sun Mar  8 20:09:43 2026
+
+pwc_plot_1d_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test pwc_plot().
+
+pwc_bars_1d_test():
+  pwc_bars_1d() displays a piecewise
+  constant function of a 1D argument as a sequence of bars.
+  Graphics saved as "pwc_bars_1d.png"
+
+pwc_lines_1d_test()
+  pwc_lines_1d() displays a piecewise
+  constant function of a 1D argument as a broken line.
+  Graphics saved as "pwc_lines_1d.png"
+
+pwc_patch_1d_test():
+  pwc_patch_1d() displays a piecewise
+  constant function of a 1D argument as a color patch plot.
+  Graphics saved as "pwc_patch_1d.png"
+
+interval_width_test()
+  pwc_lines_1d() displays a piecewise
+  constant function of a 1D argument as a broken line.
+  Graphics saved as "interval_width_test.png"
+
+pwc_plot_1d_test():
+  Normal end of execution.
+Sun Mar  8 20:09:45 2026

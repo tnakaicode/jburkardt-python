@@ -1,0 +1,323 @@
+<html>
+
+  <head>
+    <title>
+      matlab_ode_solver
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      matlab_ode_solver
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>matlab_ode_solver</b>,
+      a Python code which 
+      solves one or more differential equations (ODE) using a method of a
+      particular order, either explicit or implicit.  Some methods require
+      a nonlinear equation solver.  Some methods used a fixed stepsize,
+      while others adapt the stepsize based on an error estimate.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>matlab_ode_solver</b> is available in
+      <a href = "../../c_src/c_ode_solver/c_ode_solver.html">a C version</a> and
+      <a href = "../../cpp_src/cpp_ode_solver/cpp_ode_solver.html">a C++ version</a> and
+      <a href = "../../f_src/f90_ode_solver/f90_ode_solver.html">a Fortran90 version</a> and
+      <a href = "../../m_src/matlab_ode_solver/matlab_ode_solver.html">a MATLAB version</a> and
+      <a href = "../../octave_src/octave_ode_solver/octave_ode_solver.html">an Octave version</a> and
+      <a href = "../../py_src/python_ode_solver/python_ode_solver.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/b1g3/b1g3.html">
+      b1g3</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      with the b1g3 method, using fsolve() to solve the implicit equation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/backward_euler/backward_euler.html">
+      backward_euler</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) backward Euler method, using a version of
+      fsolve() for the implicit equation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/backward_euler_fixed/backward_euler_fixed.html">
+      backward_euler_fixed</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) backward Euler method, using fixed point iteration 
+      to solve the implicit equation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/bdf2/bdf2.html">
+      bdf2</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) backward difference formula (BDF) of order 2, 
+      using fsolve() to solve the implicit equation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/bdf3/bdf3.html">
+      bdf3</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) backward difference formula (BDF) of order 3, 
+      using fsolve() to solve the implicit equation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/bowie/bowie.html">
+      bowie</a>,
+      a Python code which
+      solves a second order system of autonomous differential equations of the
+      form y''=f(y), with y(t0) and y'(t0) given.  The algorithm was used
+      by NASA for astronomical orbit calculations.  It has a high accuracy,
+      but is not widely known or documented.
+    </p>
+
+    <p>
+      <a href = "../../py_src/cauchy_method/cauchy_method.html">
+      cauchy_method</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the Cauchy method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/euler/euler.html">
+      euler</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the forward Euler method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fsolve_test/fsolve_test.html">
+      fsolve_test</a>,
+      a Python code which 
+      solves systems of nonlinear equations,
+      inspired by the fsolve() function in minpack(), 
+      with special interfaces fsolve_bdf2(), fsolve_be() and
+      fsolve_tr() for handling systems associated
+      with implicit ODE solvers of type bdf2, backward Euler,
+      midpoint, or trapezoidal.
+    </p>
+
+    <p>
+      <a href = "../../py_src/leapfrog/leapfrog.html">
+      leapfrog</a>,
+      a Python code which
+      uses the leapfrog method to solve a second order ordinary
+      differential equation (ODE) of the form y''=f(t,y).
+    </p>
+
+    <p>
+      <a href = "../../py_src/midpoint/midpoint.html">
+      midpoint</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) midpoint method, with a version of
+      fsolve() handling the associated nonlinear equations,
+      and using a fixed time step.
+    </p>
+
+    <p>
+      <a href = "../../py_src/midpoint_adaptive/midpoint_adaptive.html">
+      midpoint_adaptive</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) midpoint method, relying on fsolve()
+      to solve the implicit equation, and using an adaptive timestep.
+    </p>
+
+    <p>
+      <a href = "../../py_src/midpoint_explicit/midpoint_explicit.html">
+      midpoint_explicit</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (explicit) midpoint method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/midpoint_fixed/midpoint_fixed.html">
+      midpoint_fixed</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) midpoint method, using a fixed point method
+      for the implicit equation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk1/rk1.html">
+      rk1</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using an explicit Runge-Kutta method of order 1, usually known
+      as Euler's explicit method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk1_implicit/rk1_implicit.html">
+      rk1_implicit</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the Runge-Kutta order 1 implicit method, using fsolve() 
+      to solve the implicit equation, and using a fixed time step.
+      rk1_implicit() is commonly called the backward Euler method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk12/rk12.html">
+      rk12</a>,
+      a Python code which 
+      implements Runge-Kutta solvers of orders 1 and 2 for a system
+      of ordinary differential equations (ODE).
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk2/rk2.html">
+      rk2</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using an explicit Runge-Kutta method of order 2,
+      also known as Heun's method, the explicit midpoint method,
+      or the modified Euler method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk2_implicit/rk2_implicit.html">
+      rk2_implicit</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the Runge-Kutta order 2 implicit method, using fsolve() 
+      to solve the implicit equation, and using a fixed time step.
+      rk2_implicit() is also known as the implicit midpoint method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk23/rk23.html">
+      rk23</a>,
+      a Python code which 
+      implements Runge-Kutta ODE solvers of orders 2 and 3.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk3/rk3.html">
+      rk3</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using an explicit Runge-Kutta method of order 3.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk34/rk34.html">
+      rk34</a>,
+      a Python code which 
+      implements Runge-Kutta ODE solvers of orders 3 and 4.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk4/rk4.html">
+      rk4</a>,
+      a Python code which
+      applies the fourth order Runge-Kutta (RK) algorithm to estimate the
+      solution of an ordinary differential equation (ODE).
+    </p>
+
+    <p>
+      <a href = "../../py_src/rk45/rk45.html">
+      rk45</a>,
+      a Python code which 
+      implements Runge-Kutta ODE solvers of orders 4 and 5.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rkf45/rkf45.html">
+      rkf45</a>,
+      a Python code which
+      implements the Runge-Kutta-Fehlberg solver for ordinary differential
+      equations (ODE).
+    </p>
+
+    <p>
+      <a href = "../../py_src/theta_method/theta_method.html">
+      theta_method</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the theta method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/trapezoidal/trapezoidal.html">
+      trapezoidal</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) trapezoidal method, and a version of
+      fsolve() to handle the nonlinear equation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/trapezoidal_explicit/trapezoidal_explicit.html">
+      trapezoidal_explicit</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (explicit) trapezoidal method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/trapezoidal_fixed/trapezoidal_fixed.html">
+      trapezoidal_fixed</a>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) trapezoidal method, using the fixed point
+      method to handle the implicit system.
+    </p>
+
+    <p>
+      <a href = "../../py_src/velocity_verlet/velocity_verlet.html">
+      velocity_verlet</a>,
+      a Python code which
+      uses a version of the velocity Verlet method to solve
+      a secord order ordinary differential equation (ODE) 
+      of the form y''=f(t,y).
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 04 January 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

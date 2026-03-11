@@ -1,0 +1,790 @@
+Wed Oct  8 08:50:28 2025
+
+r83v_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r83v().
+
+r83v_cg_test()
+  r83v_cg() applies CG to an R83V matrix.
+
+  Number of variables N =  10
+  Norm of residual ||Ax-b|| =  1.6504651808933464e-15
+  Norm of error ||x1-x2|| =  7.767843018345061e-16
+
+R83V_COPY_TEST
+  R83V_COPY copies an R83V matrix.
+
+  Indicator matrix A:
+
+  Col:       1             2             3             4       
+  Row
+  ---
+    1:            11            12                            
+    2:            21            22            23              
+    3:                          32            33            34
+    4:                                        43            44
+    5:                                                      54
+
+  B = copy of A:
+
+  Col:       1             2             3             4       
+  Row
+  ---
+    1:            11            12                            
+    2:            21            22            23              
+    3:                          32            33            34
+    4:                                        43            44
+    5:                                                      54
+
+R83V_CR_FA_TEST
+  R83V_CR_FA factors an R83V matrix
+  Once the matrix has been factored, we can call
+  R83V_CR_SL to solve a linear system.
+
+  Matrix order N =  5
+  Demonstrate multiple system solution method.
+
+
+  System matrix A:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             2            -1                                          
+    2:            -1             2            -1                            
+    3:                          -1             2            -1              
+    4:                                        -1             2            -1
+    5:                                                      -1             2
+
+  Solve linear system number  1
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+  Solve linear system number  2
+
+  Solution:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+
+R83V_CR_SL_TEST
+  R83V_CR_SL solves a factored system
+  after R83V_CR_FA has factored it.
+
+  Matrix order N =  5
+  Demonstrate multiple system solution method.
+
+
+  Input matrix A:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             4             2                                          
+    2:             1             4             2                            
+    3:                           1             4             2              
+    4:                                         1             4             2
+    5:                                                       1             4
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+
+R83V_CR_SLS_TEST
+  R83V_CR_SLS solves multiple linear systems A*x1:xn=b1:bn
+  after R83V_CR_FA has factored it.
+
+  Matrix order N =  5
+  Demonstrate multiple system solution method.
+
+
+  Input matrix A:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             2            -1                                          
+    2:            -1             2            -1                            
+    3:                          -1             2            -1              
+    4:                                        -1             2            -1
+    5:                                                      -1             2
+
+  Right hand sides b1:b2
+
+  Col:       0             1       
+  Row
+      0 :           0             1  
+      1 :           0             0  
+      2 :           0             0  
+      3 :           0             0  
+      4 :           6             1  
+
+  Solutions x1:x2
+
+  Col:       0             1       
+  Row
+      0 :           1             1  
+      1 :           2             1  
+      2 :           3             1  
+      3 :           4             1  
+      4 :           5             1  
+
+R83V_DIF2_TEST
+  R83V_DIF2 sets an R83V matrix to the second difference.
+  We check three cases, M<N, M=N, M>N.
+
+  Second difference in R83V format:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             2            -1                                          
+    2:            -1             2            -1                            
+    3:                          -1             2            -1              
+
+  Second difference in R83V format:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             2            -1                                          
+    2:            -1             2            -1                            
+    3:                          -1             2            -1              
+    4:                                        -1             2            -1
+    5:                                                      -1             2
+
+  Second difference in R83V format:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:             2            -1              
+    2:            -1             2            -1
+    3:                          -1             2
+    4:                                        -1
+
+R83V_FS_TEST
+  R83V_FS factors and solves a linear system
+  for an R83V matrix.
+
+  Matrix order N =  10
+
+  The right hand side:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+     4:             0
+     5:             0
+     6:             0
+     7:             0
+     8:             0
+     9:            11
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R83V_GS_SL_TEST
+  R83V_GS_SL applies Gauss-Seidel iteration with an R83V matrix
+  to solve a linear system A*x=b.
+
+  Current solution estimate:
+
+     0:      0.634606
+     1:        1.3265
+     2:       2.09566
+     3:       2.95451
+     4:       3.90741
+     5:       4.95088
+     6:       6.07442
+     7:        7.2619
+     8:        8.4933
+     9:       9.74665
+
+  Current solution estimate:
+
+     0:      0.953567
+     1:        1.9145
+     2:       2.88533
+     3:       3.86757
+     4:       4.86173
+     5:       5.86733
+     6:       6.88302
+     7:       7.90675
+     8:       8.93599
+     9:         9.968
+
+  Current solution estimate:
+
+     0:      0.994126
+     1:       1.98918
+     2:       2.98549
+     3:       3.98325
+     4:       4.98251
+     5:       5.98322
+     6:        6.9852
+     7:        7.9882
+     8:        8.9919
+     9:       9.99595
+
+R83V_INDICATOR_TEST
+  R83V_INDICATOR sets an R83V indicator matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  R83V indicator matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:            11            12                                          
+    2:            21            22            23                            
+    3:                          32            33            34              
+
+  R83V indicator matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:            11            12                                          
+    2:            21            22            23                            
+    3:                          32            33            34              
+    4:                                        43            44            45
+    5:                                                      54            55
+
+  R83V indicator matrix:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:            11            12              
+    2:            21            22            23
+    3:                          32            33
+    4:                                        43
+
+R83V_JAC_SL_TEST
+  R83V_JAC_SL applies Jacobi iteration with an R83V matrix
+  to solve a linear system A*x=b.
+
+  Current solution:
+
+     0:      0.315171
+     1:      0.727797
+     2:       1.14042
+     3:       1.82758
+     4:       2.51474
+     5:       3.59047
+     6:        4.6662
+     7:        6.1282
+     8:        7.5902
+     9:        9.2951
+
+  Current solution:
+
+     0:      0.757545
+     1:       1.51509
+     2:       2.34936
+     3:       3.18363
+     4:       4.14729
+     5:       5.11094
+     6:       6.21581
+     7:       7.32068
+     8:       8.53366
+     9:       9.74665
+
+  Current solution:
+
+     0:      0.910021
+     1:       1.83432
+     2:       2.75863
+     3:       3.72124
+     4:       4.68386
+     5:       5.69666
+     6:       6.70946
+     7:       7.76839
+     8:       8.82731
+     9:       9.91366
+
+r83v_mtv_test()
+  r83v_mv() computes b=A*x, where A is an R83V matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Product comparison:
+
+       0:        1.59559       1.59559
+       1:        2.58549       2.58549
+       2:        2.49724       2.49724
+       3:        2.98544       2.98544
+       4:              0             0
+
+  Product comparison:
+
+       0:       0.447298      0.447298
+       1:          2.071         2.071
+       2:        5.32793       5.32793
+       3:         8.1855        8.1855
+       4:        3.97942       3.97942
+
+  Product comparison:
+
+       0:        1.33211       1.33211
+       1:        2.80398       2.80398
+       2:        5.92605       5.92605
+
+r83v_mv_test():
+  r83v_mv() computes b=A*x, where A is an R83V matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Product comparison:
+
+       0:        1.88519       1.88519
+       1:        1.64076       1.64076
+       2:        4.50815       4.50815
+
+  Product comparison:
+
+       0:        1.27533       1.27533
+       1:        3.40873       3.40873
+       2:        3.98288       3.98288
+       3:        2.84781       2.84781
+       4:         2.2616        2.2616
+
+  Product comparison:
+
+       0:        2.83713       2.83713
+       1:        4.93251       4.93251
+       2:        2.09273       2.09273
+       3:        1.75364       1.75364
+       4:              0             0
+
+R83V_PRINT_TEST
+  R83V_PRINT prints an R83V matrix.
+
+  R83V matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:            11            12                                          
+    2:            21            22            23                            
+    3:                          32            33            34              
+    4:                                        43            44            45
+    5:                                                      54            55
+
+r83v_print_some_test():
+  r83v_print_some() prints some of an R83V matrix.
+
+  Rows 2-5, Cols 2-4:
+
+  Col:       2             3             4       
+  Row
+  ---
+    2:            22            23              
+    3:            32            33            34
+    4:                          43            44
+    5:                                        54
+
+r83v_random_test():
+  r83v_random() randomizes an R83V matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Random R83V matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:      0.459062      0.667246                                          
+    2:      0.391712      0.547096      0.830436                            
+    3:                    0.139037      0.551958      0.285331              
+
+  Random R83V matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:      0.467376      0.208959                                          
+    2:      0.276074      0.726558      0.170342                            
+    3:                    0.667116      0.241488      0.381752              
+    4:                                   0.19536      0.562863       0.61775
+    5:                                               0.0822192      0.867685
+
+  Random R83V matrix:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:      0.780866      0.808545              
+    2:      0.743848       0.87037       0.79312
+    3:                    0.744344       0.88239
+    4:                                  0.914097
+
+r83v_res_test():
+  r83v_res() computes b-A*x, where A is an R83V matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Residual A*x-b:
+
+     0:             0
+     1:             0
+     2:             0
+
+  Residual A*x-b:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+     4:             0
+
+  Residual A*x-b:
+
+     0:             0
+     1:             0
+     2:             0
+     3:             0
+     4:             0
+
+r83v_to_r8ge_test():
+  r83v_to_r8ge() converts an R83V matrix to R8GE format.
+  We check three cases, M<N, M=N, M>N.
+
+  R83V matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:      0.440252      0.654134                                          
+    2:       0.17225      0.714271      0.757211                            
+    3:                     0.47848      0.131775       0.13927              
+
+  R8GE matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.440252      0.654134             0             0             0  
+      1 :     0.17225      0.714271      0.757211             0             0  
+      2 :           0       0.47848      0.131775       0.13927             0  
+
+  R83V matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:      0.742488      0.175468                                          
+    2:      0.873673      0.242198       0.16313                            
+    3:                    0.521046     0.0453484       0.54281              
+    4:                                   0.94414      0.545099       0.43466
+    5:                                                0.220327      0.315383
+
+  R8GE matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.742488      0.175468             0             0             0  
+      1 :    0.873673      0.242198       0.16313             0             0  
+      2 :           0      0.521046     0.0453484       0.54281             0  
+      3 :           0             0       0.94414      0.545099       0.43466  
+      4 :           0             0             0      0.220327      0.315383  
+
+  R83V matrix:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:      0.444383      0.238307              
+    2:      0.455227      0.360688     0.0131873
+    3:                    0.277249      0.840292
+    4:                                  0.499314
+
+  R8GE matrix:
+
+  Col:       0             1             2       
+  Row
+      0 :    0.444383      0.238307             0  
+      1 :    0.455227      0.360688     0.0131873  
+      2 :           0      0.277249      0.840292  
+      3 :           0             0      0.499314  
+      4 :           0             0             0  
+
+R83V_TO_R8VEC_TEST
+  R83V_TO_R8VEC copies an R83V matrix to an R8VEC.
+  We check three cases, M<N, M=N, M>N.
+
+  R83V matrix A:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:            11            12                                          
+    2:            21            22            23                            
+    3:                          32            33            34              
+
+  Vector version of A:
+
+     0:            11
+     1:            21
+     2:            12
+     3:            22
+     4:            32
+     5:            23
+     6:            33
+     7:            34
+
+  R83V matrix A:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:            11            12                                          
+    2:            21            22            23                            
+    3:                          32            33            34              
+    4:                                        43            44            45
+    5:                                                      54            55
+
+  Vector version of A:
+
+     0:            11
+     1:            21
+     2:            12
+     3:            22
+     4:            32
+     5:            23
+     6:            33
+     7:            43
+     8:            34
+     9:            44
+    10:            54
+    11:            45
+    12:            55
+
+  R83V matrix A:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:            11            12              
+    2:            21            22            23
+    3:                          32            33
+    4:                                        43
+
+  Vector version of A:
+
+     0:            11
+     1:            21
+     2:            12
+     3:            22
+     4:            32
+     5:            23
+     6:            33
+     7:            43
+
+R83V_TRANSPOSE_TEST
+  R83V_TRANSPOSE makes a transposed copy of an R83V matrix.
+
+  Indicator matrix A:
+
+  Col:       1             2             3             4       
+  Row
+  ---
+    1:            11            12                            
+    2:            21            22            23              
+    3:                          32            33            34
+    4:                                        43            44
+    5:                                                      54
+
+  B = transposed copy of A:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:            11            21                                          
+    2:            12            22            32                            
+    3:                          23            33            43              
+    4:                                        34            44            54
+
+R83V_ZEROS_TEST
+  R83V_ZEROS zeros an R83V matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Zeroed R83V matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             0             0                                          
+    2:             0             0             0                            
+    3:                           0             0             0              
+
+  Zeroed R83V matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             0             0                                          
+    2:             0             0             0                            
+    3:                           0             0             0              
+    4:                                         0             0             0
+    5:                                                       0             0
+
+  Zeroed R83V matrix:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:             0             0              
+    2:             0             0             0
+    3:                           0             0
+    4:                                         0
+
+r8ge_to_r83v_test():
+  r8ge_to_r83v() copies an R8GE matrix to an R83V matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  Initial R8GE matrix A:
+[[11. 12. 13. 14. 15.]
+ [21. 22. 23. 24. 25.]
+ [31. 32. 33. 34. 35.]]
+
+  R83V copy of (some of ) matrix A:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:            11            12                                          
+    2:            21            22            23                            
+    3:                          32            33            34              
+
+  Initial R8GE matrix A:
+[[11. 12. 13. 14. 15.]
+ [21. 22. 23. 24. 25.]
+ [31. 32. 33. 34. 35.]
+ [41. 42. 43. 44. 45.]
+ [51. 52. 53. 54. 55.]]
+
+  R83V copy of (some of ) matrix A:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:            11            12                                          
+    2:            21            22            23                            
+    3:                          32            33            34              
+    4:                                        43            44            45
+    5:                                                      54            55
+
+  Initial R8GE matrix A:
+[[11. 12. 13.]
+ [21. 22. 23.]
+ [31. 32. 33.]
+ [41. 42. 43.]
+ [51. 52. 53.]]
+
+  R83V copy of (some of ) matrix A:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:            11            12              
+    2:            21            22            23
+    3:                          32            33
+    4:                                        43
+
+R8VEC_TO_R83V_TEST
+  R8VEC_TO_R83V copies an R8VEC to an R83V matrix.
+  We check three cases, M<N, M=N, M>N.
+
+  R8VEC:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+
+  R83V matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             1             3                                          
+    2:             2             4             6                            
+    3:                           5             7             8              
+
+  R8VEC:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+    10:            11
+    11:            12
+    12:            13
+
+  R83V matrix:
+
+  Col:       1             2             3             4             5       
+  Row
+  ---
+    1:             1             3                                          
+    2:             2             4             6                            
+    3:                           5             7             9              
+    4:                                         8            10            12
+    5:                                                      11            13
+
+  R8VEC:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+
+  R83V matrix:
+
+  Col:       1             2             3       
+  Row
+  ---
+    1:             1             3              
+    2:             2             4             6
+    3:                           5             7
+    4:                                         8
+
+r83v_test():
+  Normal end of execution.
+Wed Oct  8 08:50:29 2025

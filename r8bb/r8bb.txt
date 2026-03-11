@@ -1,0 +1,392 @@
+Wed Oct  8 08:50:29 2025
+
+r8bb_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8bb().
+
+R8BB_ADD_TEST
+  R8BB_ADD adds a value to elements of an R8BB matrix.
+
+  Matrix order N =     5
+  Matrix suborder N1 = 3
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 0
+
+  Matrix before additions:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11             0             0            14            15  
+      1 :          21            22             0            24            25  
+      2 :           0            32            33            34            35  
+      3 :          41            42            43            44            45  
+      4 :          51            52            53            54            55  
+
+  The R8BB matrix after additions:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :         111             0             0           214           215  
+      1 :          21           122             0           224           225  
+      2 :           0            32           133           234           235  
+      3 :          41            42            43            44           445  
+      4 :          51            52            53           454            55  
+
+R8BB_DIF2_TEST
+  R8BB_DIF2 sets up an R8BB second difference matrix.
+
+  Matrix order N =     5
+  Matrix suborder N1 = 3
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  The R8BB second difference matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           2            -1             0             0             0  
+      1 :          -1             2            -1             0             0  
+      2 :           0            -1             2            -1             0  
+      3 :           0             0            -1             2            -1  
+      4 :           0             0             0            -1             2  
+
+r8bb_fa_test()
+  r8bb_fa() factors an R8BB matrix
+
+  Matrix order N     = 5
+  Matrix suborder N1 = 3
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  Solution:
+
+     0:      -2.62323
+     1:        0.8892
+     2:       3.92378
+     3:       8.27676
+     4:       4.43798
+
+r8bb_get_test():
+  r8bb_get() gets a value of an element of an R8BB matrix.
+
+  Matrix order N =     5
+  Matrix suborder N1 = 3
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 0
+
+  The matrix to be queried:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11             0             0            14            15  
+      1 :          21            22             0            24            25  
+      2 :           0            32            33            34            35  
+      3 :          41            42            43            44            45  
+      4 :          51            52            53            54            55  
+
+  A(1,0) = 21
+  A(4,2) = 53
+  A(3,1) = 42
+  A(4,2) = 53
+  A(4,1) = 52
+  A(3,3) = 44
+  A(3,1) = 42
+  A(0,1) = 0
+  A(1,4) = 25
+  A(1,3) = 24
+
+R8BB_INDICATOR_TEST
+  R8BB_INDICATOR sets up an indicator matrix.
+
+  Matrix order N     = 5
+  Matrix suborder N1 = 3
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  The indicator matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12             0            14            15  
+      1 :          21            22            23            24            25  
+      2 :           0            32            33            34            35  
+      3 :          41            42            43            44            45  
+      4 :          51            52            53            54            55  
+
+R8BB_MTV_TEST
+  R8BB_MTV computes b=A*x, where A is an R8BB matrix.
+
+  Matrix order N =     8
+  Matrix suborder N1 = 6
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  The R8BB matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12             0             0             0  
+      1 :          21            22            23             0             0  
+      2 :           0            32            33            34             0  
+      3 :           0             0            43            44            45  
+      4 :           0             0             0            54            55  
+      5 :           0             0             0             0            65  
+      6 :          71            72            73            74            75  
+      7 :          81            82            83            84            85  
+
+  Col:       5             6             7       
+  Row
+      0 :           0            17            18  
+      1 :           0            27            28  
+      2 :           0            37            38  
+      3 :           0            47            48  
+      4 :          56            57            58  
+      5 :          66            67            68  
+      6 :          76            77            78  
+      7 :          86            87            88  
+
+  The vector x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+
+  The product b=A*x:
+
+     0:          1198
+     1:          1312
+     2:          1492
+     3:          1738
+     4:          2050
+     5:          1896
+     6:          2694
+     7:          2328
+
+R8BB_MV_TEST
+  R8BB_MV computes b=A*x, where A is an R8BB matrix.
+
+  Matrix order N =     8
+  Matrix suborder N1 = 6
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  The R8BB matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12             0             0             0  
+      1 :          21            22            23             0             0  
+      2 :           0            32            33            34             0  
+      3 :           0             0            43            44            45  
+      4 :           0             0             0            54            55  
+      5 :           0             0             0             0            65  
+      6 :          71            72            73            74            75  
+      7 :          81            82            83            84            85  
+
+  Col:       5             6             7       
+  Row
+      0 :           0            17            18  
+      1 :           0            27            28  
+      2 :           0            37            38  
+      3 :           0            47            48  
+      4 :          56            57            58  
+      5 :          66            67            68  
+      6 :          76            77            78  
+      7 :          86            87            88  
+
+  The vector x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+
+  The product b=A*x:
+
+     0:           298
+     1:           547
+     2:           862
+     3:          1243
+     4:          1690
+     5:          2203
+     6:          2724
+     7:          3084
+
+r8bb_print_test():
+  r8bb_print() prints an R8BB matrix
+
+  Matrix order N     = 10
+  Matrix suborder N1 = 8
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  The R8BB matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.326576      0.879918             0             0             0  
+      1 :    0.405382       0.64291      0.910707             0             0  
+      2 :           0      0.507292      0.507637      0.223426             0  
+      3 :           0             0       0.36035      0.899977      0.258348  
+      4 :           0             0             0      0.621182      0.225118  
+      5 :           0             0             0             0     0.0935036  
+      6 :           0             0             0             0             0  
+      7 :           0             0             0             0             0  
+      8 :    0.219238     0.0877118      0.322239      0.529402      0.512667  
+      9 :    0.110326       0.74357      0.237077      0.682683     0.0826482  
+
+  Col:       5             6             7             8             9       
+  Row
+      0 :           0             0             0      0.454301      0.660737  
+      1 :           0             0             0      0.429224      0.745094  
+      2 :           0             0             0      0.668875      0.566013  
+      3 :           0             0             0      0.519566     0.0938277  
+      4 :    0.665315             0             0      0.572678      0.361351  
+      5 :    0.147631       0.35869             0      0.817146      0.803995  
+      6 :    0.613299      0.859875      0.755989     0.0687676      0.231884  
+      7 :           0      0.919746      0.158266       0.43013      0.484355  
+      8 :    0.726247      0.544866      0.220625      0.263992      0.316088  
+      9 :    0.706782      0.735831      0.148918      0.109492     0.0612733  
+
+R8BB_PRINT_SOME_TEST
+  R8BB_PRINT_SOME prints some of an R8BB matrix
+
+  Matrix order N     = 8
+  Matrix suborder N1 = 6
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  The Lower Right Block:
+
+  Col:       6             7       
+  Row
+      6 :          77            78  
+      7 :          87            88  
+
+r8bb_random_test():
+  r8bb_random() returns a random R8BB matrix
+
+  Matrix order N     = 5
+  Matrix suborder N1 = 3
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  The border-banded matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :    0.357402       0.29894             0      0.491155      0.441586  
+      1 :    0.340623      0.164084     0.0158341      0.710471      0.557904  
+      2 :           0      0.337827      0.390756      0.912438      0.729996  
+      3 :    0.681334      0.516186      0.356216      0.380039      0.754785  
+      4 :    0.918414      0.886192       0.18629     0.0280026       0.05643  
+
+R8BB_SET_TEST
+  R8BB_SET sets elements of an R8BB matrix.
+
+  Matrix order N =     5
+  Matrix suborder N1 = 4
+  Matrix suborder N2 = 1
+  Lower bandwidth ML = 2
+  Upper bandwidth MU = 1
+
+  The R8BB matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12             0             0            15  
+      1 :          21            22            23             0            25  
+      2 :          31            32            33            34            35  
+      3 :           0            42            43            44            45  
+      4 :          51            52            53            54            55  
+
+r8bb_sl_test():
+  r8bb_sl() solves a linear system factored by R8BB_FA.
+
+  Matrix order N     = 10
+  Matrix suborder N1 = 8
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 0
+  Upper bandwidth MU = 0
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8BB_TO_R8GE_TEST
+  R8BB_TO_R8GE converts an R8BB matrix to R8GE format.
+
+  Matrix order N     = 5
+  Matrix suborder N1 = 3
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  The R8BB matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :          11            12             0            14            15  
+      1 :          21            22            23            24            25  
+      2 :           0            32            33            34            35  
+      3 :          41            42            43            44            45  
+      4 :          51            52            53            54            55  
+
+  The R8GE matrix:
+[[11. 12.  0. 14. 15.]
+ [21. 22. 23. 24. 25.]
+ [ 0. 32. 33. 34. 35.]
+ [41. 42. 43. 44. 45.]
+ [51. 52. 53. 54. 55.]]
+
+R8BB_ZEROS_TEST
+  R8BB_ZEROS zeros an R8BB matrix.
+
+  Matrix order N     = 5
+  Matrix suborder N1 = 3
+  Matrix suborder N2 = 2
+  Lower bandwidth ML = 1
+  Upper bandwidth MU = 1
+
+  The zero R8BB matrix:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           0             0             0             0             0  
+      1 :           0             0             0             0             0  
+      2 :           0             0             0             0             0  
+      3 :           0             0             0             0             0  
+      4 :           0             0             0             0             0  
+
+r8bb_test():
+  Normal end of execution.
+Wed Oct  8 08:50:29 2025

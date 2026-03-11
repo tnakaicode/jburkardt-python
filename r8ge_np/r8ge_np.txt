@@ -1,0 +1,306 @@
+Wed Oct  8 08:50:31 2025
+
+r8ge_np_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test r8ge_np().
+
+R8GE_NP_DET_TEST
+  R8GE_NP_DET computes the determinant of a matrix
+  that was factored by R8GE_NP_FA,
+
+  Matrix order N =  10
+
+  Determinant of -1, 2, -1 matrix is  10.999999999999998
+  Exact value is  11
+
+R8GE_NP_FA_TEST
+  R8GE_NP_FA LU factors an R8GE matrix without pivoting.
+
+  Matrix order N =  10
+
+  Solution:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+     5:             1
+     6:             1
+     7:             1
+     8:             1
+     9:             1
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution of transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8GE_NP_INVERSE_TEST
+  R8GE_NP_INVERSE computes the inverse of a matrix
+  that was factored by R8GE_NP_FA.
+
+  Matrix order N =  5
+
+  The R8GE random matrix, A
+[[0.92999717 0.85205111 0.57577617 0.36195071 0.44067808]
+ [0.38575124 0.1053192  0.43311585 0.01169439 0.02724232]
+ [0.24824208 0.36414414 0.18243156 0.28624224 0.83488974]
+ [0.88512974 0.76809344 0.35148514 0.39599022 0.16943091]
+ [0.53268878 0.89632763 0.32838029 0.02961605 0.14149838]]
+
+  The inverse matrix, B
+[[-41.55312594  21.30416305  14.44653924  26.26456164   8.62116609]
+ [ 13.45974239  -7.81854826  -4.8746921   -8.43189568  -1.55453292]
+ [ 33.55129879 -14.65721132 -11.6973429  -21.23899474  -7.21910588]
+ [ 43.7768604  -22.92669761 -15.3886892  -24.83611523 -11.3857281 ]
+ [-15.85557238   8.13881868   6.86043782   9.02426283   3.59569278]]
+
+  C = A * B, the product
+[[ 1.00000000e+00 -4.88498131e-15 -6.21724894e-15 -8.88178420e-16
+   6.66133815e-16]
+ [-2.27595720e-15  1.00000000e+00 -8.88178420e-16  1.88737914e-15
+   8.74300632e-16]
+ [ 5.32907052e-15 -1.77635684e-15  1.00000000e+00 -8.88178420e-16
+  -4.44089210e-16]
+ [ 7.99360578e-15 -5.10702591e-15 -8.43769499e-15  1.00000000e+00
+   8.88178420e-16]
+ [ 5.32907052e-15 -2.44249065e-15 -4.99600361e-15 -1.11022302e-15
+   1.00000000e+00]]
+
+R8GE_NP_ML_TEST
+  R8GE_NP_ML computes A*x or A'*x for a matrix A
+  already factored by R8GE_NP_FA.
+
+  Matrix order N =  10
+
+  A*x and PLU*x
+
+       0:         27.221        27.221
+       1:        27.4692       27.4692
+       2:        15.8182       15.8182
+       3:        23.2847       23.2847
+       4:        22.6405       22.6405
+       5:        25.0275       25.0275
+       6:        28.6109       28.6109
+       7:        20.7575       20.7575
+       8:        30.8373       30.8373
+       9:        29.5481       29.5481
+
+  A'*x and (PLU)'*x
+
+       0:        38.3738       38.3738
+       1:        19.2037       19.2037
+       2:        35.3651       35.3651
+       3:        23.9923       23.9923
+       4:        28.6039       28.6039
+       5:        29.4945       29.4945
+       6:        18.9811       18.9811
+       7:        30.0091       30.0091
+       8:        23.0402       23.0402
+       9:        23.6317       23.6317
+
+R8GE_NP_SL_TEST
+  R8GE_NP_SL solves a linear system factored by R8GE_NP_FA.
+
+  Matrix order N =  10
+
+  Solution:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+     5:             1
+     6:             1
+     7:             1
+     8:             1
+     9:             1
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution of transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8GE_NP_TRF_TEST
+  R8GE_NP_TRF factors an R8GE matrix without pivoting,
+
+  Matrix rows M =     10
+  Matrix columns N =  10
+
+  Solution:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+     5:             1
+     6:             1
+     7:             1
+     8:             1
+     9:             1
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution of transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8GE_NP_TRM_TEST
+  R8GE_NP_TRM computes A*x after A has been factored by R8GE_NP_TRF.
+
+  Matrix rows M =     10
+  Matrix columns N =  10
+
+  Solution:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+     5:             1
+     6:             1
+     7:             1
+     8:             1
+     9:             1
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution of transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+R8GE_NP_TRS_TEST
+  R8GE_NP_TRS solves a linear system factored by R8GE_NP_TRF.
+
+  Matrix rows M =     10
+  Matrix columns N =  10
+
+  Solution:
+
+     0:             1
+     1:             1
+     2:             1
+     3:             1
+     4:             1
+     5:             1
+     6:             1
+     7:             1
+     8:             1
+     9:             1
+
+  Solution:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+  Solution of transposed system:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+     4:             5
+     5:             6
+     6:             7
+     7:             8
+     8:             9
+     9:            10
+
+r8ge_np_test():
+  Normal end of execution.
+Wed Oct  8 08:50:31 2025

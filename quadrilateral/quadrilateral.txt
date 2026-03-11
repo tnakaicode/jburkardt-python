@@ -1,0 +1,547 @@
+Wed Oct  8 08:50:20 2025
+
+quadrilateral_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  quadrilateral() contains functions for geometric computations
+  involving quadrilaterals.
+
+i4_wrap_test():
+  i4_wrap() forces an integer to lie within given limits.
+
+  ILO = 4
+  IHI = 8
+
+     I  i4_wrap(I)
+
+     -10       5
+      -9       6
+      -8       7
+      -7       8
+      -6       4
+      -5       5
+      -4       6
+      -3       7
+      -2       8
+      -1       4
+       0       5
+       1       6
+       2       7
+       3       8
+       4       4
+       5       5
+       6       6
+       7       7
+       8       8
+       9       4
+      10       5
+      11       6
+      12       7
+      13       8
+      14       4
+      15       5
+      16       6
+      17       7
+      18       8
+      19       4
+      20       5
+
+polygon_angles_test():
+  polygon_angles() computes the angles of a polygon.
+
+  Number of polygonal vertices = 6
+
+  polygon vertices:
+[[0. 0.]
+ [1. 0.]
+ [2. 1.]
+ [3. 0.]
+ [3. 2.]
+ [1. 1.]]
+
+  Polygonal angles in degrees:
+
+         0              45
+         1             135
+         2             270
+         3              45
+         4         63.4349
+         5         161.565
+
+quadrilateral_angles_test():
+  quadrilateral_angles() returns the angles of a quadrilateral
+  in radians.
+
+  quadrilateral vertices:
+[[0. 0.]
+ [1. 0.]
+ [1. 1.]
+ [0. 1.]]
+
+  angles:
+[1.57079633 1.57079633 1.57079633 1.57079633]
+  Angles sum to 6.283185307179586
+
+  quadrilateral vertices:
+[[0. 0.]
+ [1. 0.]
+ [2. 1.]
+ [0. 1.]]
+
+  angles:
+[1.57079633 2.35619449 0.78539816 1.57079633]
+  Angles sum to 6.283185307179586
+
+  quadrilateral vertices:
+[[0.   0.  ]
+ [1.   0.  ]
+ [0.25 0.25]
+ [0.   1.  ]]
+
+  angles:
+[1.57079633 0.32175055 4.06888787 0.32175055]
+  Angles sum to 6.283185307179586
+
+  quadrilateral vertices:
+[[ 0.   0. ]
+ [ 1.   0. ]
+ [-0.5  0.5]
+ [ 0.   1. ]]
+
+  angles:
+[1.57079633 0.32175055 5.17603659 5.49778714]
+  Angles sum to 12.566370614359172
+
+quadrilateral_area_test():
+  quadrilateral_area()  finds the area of a quadrilateral
+  quadrilateral_area2() finds the area of a quadrilateral
+
+  quadrilateral vertices:
+[[0. 0.]
+ [1. 0.]
+ [1. 1.]
+ [0. 1.]]
+
+  quadrilateral_area area is = 1.0
+  quadrilateral_area2 area = 1.0
+
+quadrilateral_area_3d_test():
+  quadrilateral_area_3d() finds the area of a quadrilateral in 3D.
+
+  quadrilateral vertices:
+[[2. 2. 0.]
+ [0. 0. 0.]
+ [1. 1. 1.]
+ [3. 3. 1.]]
+
+  Area is 2.8284271247461903
+  Area by 2 calls to triangle_area_3d() = 2.8284271247461903
+
+quadrilateral_contains_point_test()
+  quadrilateral_contains_point() tells if a point is inside
+  a quadrilateral.
+
+  quadrilateral vertices:
+[[0. 0.]
+ [1. 0.]
+ [1. 1.]
+ [0. 1.]]
+
+        P        Contains  Dist    Dist
+                          Signed  Unsigned
+
+      0.250000      0.250000  True
+      0.750000      0.250000  True
+      1.000000      1.000000  True
+     11.000000      0.500000  False
+      0.000000      0.500000  True
+      0.500000    -10.000000  False
+      2.000000      2.000000  False
+
+quadrilateral_is_convex_test():
+  quadrilateral_is_convex() is true if a quadrilateral is convex.
+
+  quadrilateral vertices:
+[[ 0.53901161  1.162167  ]
+ [-1.05196821  0.67105531]
+ [-0.19720195  0.10906651]
+ [ 0.73183911 -0.7893182 ]]
+  quadrilateral_is_convex ( q ) = False
+
+  quadrilateral vertices:
+[[ 1.08667345 -0.0075575 ]
+ [-1.42129531  1.13132281]
+ [ 0.64583979  0.12065038]
+ [-0.90556705 -0.1927468 ]]
+  quadrilateral_is_convex ( q ) = False
+
+  quadrilateral vertices:
+[[ 0.70383715  0.8702424 ]
+ [-0.51486576 -1.62976622]
+ [ 1.26246049  1.37658826]
+ [-1.19127864  0.44359863]]
+  quadrilateral_is_convex ( q ) = False
+
+  quadrilateral vertices:
+[[ 1.43740611 -1.78497521]
+ [ 2.17503813 -0.04449355]
+ [ 0.15204585  1.71980645]
+ [ 0.8488213  -1.0645136 ]]
+  quadrilateral_is_convex ( q ) = True
+
+  quadrilateral vertices:
+[[ 0.25935773  0.82932511]
+ [ 0.22463979 -0.91125412]
+ [ 0.50493617  0.89459381]
+ [-0.76695889  0.61094146]]
+  quadrilateral_is_convex ( q ) = False
+
+quadrilateral_is_simple_test():
+  quadrilateral_is_simple() is true if a quadrilateral is "simple",
+  that is, non-degenerate.
+
+  quadrilateral vertices:
+[[0. 0.]
+ [1. 0.]
+ [1. 1.]
+ [0. 1.]]
+  quadrilateral_is_simple ( q ) = True
+
+  quadrilateral vertices:
+[[0. 0.]
+ [1. 0.]
+ [2. 1.]
+ [0. 1.]]
+  quadrilateral_is_simple ( q ) = True
+
+  quadrilateral vertices:
+[[0.   0.  ]
+ [1.   0.  ]
+ [0.25 0.25]
+ [0.   1.  ]]
+  quadrilateral_is_simple ( q ) = True
+
+  quadrilateral vertices:
+[[ 0.   0. ]
+ [ 1.   0. ]
+ [-0.5  0.5]
+ [ 0.   1. ]]
+  quadrilateral_is_simple ( q ) = False
+
+quadrilateral_perimeter_test():
+  quadrilateral_perimeter() computes the perimeter of
+  a quadrilateral.
+
+  quadrilateral:
+[[0. 0.]
+ [1. 0.]
+ [1. 1.]
+ [0. 1.]]
+  quadrilateral_perimeter = 4.0
+
+  quadrilateral:
+[[0. 0.]
+ [1. 0.]
+ [2. 1.]
+ [0. 1.]]
+  quadrilateral_perimeter = 5.414213562373095
+
+  quadrilateral:
+[[0.   0.  ]
+ [1.   0.  ]
+ [0.25 0.25]
+ [0.   1.  ]]
+  quadrilateral_perimeter = 3.58113883008419
+
+  quadrilateral:
+[[ 0.   0. ]
+ [ 1.   0. ]
+ [-0.5  0.5]
+ [ 0.   1. ]]
+  quadrilateral_perimeter = 4.288245611270738
+
+quadrilateral_point_dist_signed_test():
+  quadrilateral_point_dist_signed() computes the signed distance
+  from a point to a quadrilateral.
+
+  quadrilateral vertices:
+[[0. 0.]
+ [1. 0.]
+ [1. 1.]
+ [0. 1.]]
+
+        P        Dist
+
+  (     0.250000      0.250000 )   -0.250000
+  (     0.750000      0.250000 )   -0.250000
+  (     1.000000      1.000000 )    0.000000
+  (    11.000000      0.500000 )   10.000000
+  (     0.000000      0.500000 )    0.000000
+  (     0.500000    -10.000000 )   10.000000
+  (     2.000000      2.000000 )    1.000000
+
+quadrilateral_point_dist_test()
+  quadrilateral_point_dist() computes the distance from a
+  point to a quadrilateral.
+
+  quadrilateral vertices:
+[[0. 0.]
+ [1. 0.]
+ [1. 1.]
+ [0. 1.]]
+
+        P        Dist
+
+  (     0.250000      0.250000 )    0.250000
+  (     0.750000      0.250000 )    0.250000
+  (     1.000000      1.000000 )    0.000000
+  (    11.000000      0.500000 )   10.000000
+  (     0.000000      0.500000 )    0.000000
+  (     0.500000    -10.000000 )   10.000000
+  (     2.000000      2.000000 )    1.414214
+
+quadrilateral_point_near_test()
+  quadrilateral_point_near() computes the nearest quadrilateral
+  point to a given point.
+
+  quadrilateral vertices:
+[[0. 0.]
+ [1. 0.]
+ [1. 1.]
+ [0. 1.]]
+
+        P1       P2
+
+  (    0.250000      0.250000)  (    0.250000      0.000000)
+  (    0.750000      0.250000)  (    0.750000      0.000000)
+  (    1.000000      1.000000)  (    1.000000      1.000000)
+  (   11.000000      0.500000)  (    1.000000      0.500000)
+  (    0.000000      0.500000)  (    0.000000      0.500000)
+  (    0.500000    -10.000000)  (    0.500000      0.000000)
+  (    2.000000      2.000000)  (    1.000000      1.000000)
+
+quadrilateral_random_test():
+  quadrilateral_random() returns a random quadrilateral
+  within the unit square.
+
+  quadrilateral vertices:
+[[ 0.52712189 -1.51703373]
+ [-0.17413627  0.1335892 ]
+ [ 0.93586661  0.43931586]
+ [-1.46407072 -0.59936597]]
+  quadrilateral_is_simple ( q ) = False
+  quadrilateral_is_convex ( q ) = False
+
+  angles (in degrees):
+[ 42.23880673 277.6188623  351.99634649  48.14598447]
+  Angle sum = 720.0
+  Area = 1.1119856000511064
+  Perimeter = 7.752288573475804
+
+  quadrilateral vertices:
+[[ 1.30217804  0.92114758]
+ [-1.56823087 -0.4681992 ]
+ [-1.36597712 -1.63221881]
+ [-1.00387092 -0.34148746]]
+  quadrilateral_is_simple ( q ) = True
+  quadrilateral_is_convex ( q ) = False
+
+  angles (in degrees):
+[  2.87400897 105.97110146  25.52810963 225.62677993]
+  Angle sum = 360.0
+  Area = 0.5514655703085627
+  Perimeter = 8.340082236214098
+
+  quadrilateral vertices:
+[[-1.01120693  0.14466191]
+ [ 0.57788516  0.26705486]
+ [ 0.20958083 -1.81411514]
+ [ 0.62788532  0.24251096]]
+  quadrilateral_is_simple ( q ) = False
+  quadrilateral_is_convex ( q ) = False
+
+  angles (in degrees):
+[359.01207282 284.4399832    1.46104909  75.08689489]
+  Angle sum = 720.0
+  Area = 0.033988138867640405
+  Perimeter = 7.448052181143238
+
+  quadrilateral vertices:
+[[ 1.42398999  0.15921823]
+ [-0.57026085  0.69110227]
+ [-1.13864261 -1.3769413 ]
+ [-0.89274339  1.90808479]]
+  quadrilateral_is_simple ( q ) = False
+  quadrilateral_is_convex ( q ) = False
+
+  angles (in degrees):
+[337.88506911  90.43407981 348.9131223  302.76772879]
+  Angle sum = 1080.0
+  Area = -1.8070318487880508
+  Perimeter = 10.40562773319583
+
+  quadrilateral vertices:
+[[ 1.16651673  0.91802463]
+ [ 0.19671725 -0.21214421]
+ [-0.13989202 -0.41528561]
+ [ 0.06160906  0.25876418]]
+  quadrilateral_is_simple ( q ) = False
+  quadrilateral_is_convex ( q ) = False
+
+  angles (in degrees):
+[341.45601646 198.25636482 317.75425373 222.53336499]
+  Angle sum = 1080.0
+  Area = -0.39766998162780465
+  Perimeter = 3.872547194155417
+
+quadrilateral_random_convex_test():
+  quadrilateral_random_convex() returns a random convex quadrilateral.
+
+
+  quadrilateral vertices:
+[array([ 0.10599948, -1.19431429,  0.51625624,  0.66893363]), array([ 2.18777348,  0.57852411, -0.14955435, -0.10124494])]
+
+quadrilateral_random_simple_test()
+  quadrilateral_random_simple() returns a random simple quadrilateral.
+
+  quadrilateral vertices:
+[[-0.26839423 -0.28602099]
+ [ 0.88198933  0.16415785]
+ [ 2.26862851 -1.06954506]
+ [ 0.70418763  0.77683886]]
+
+  angles in degrees:
+[ 26.16771238 243.03158519   8.06567656  82.73502587]
+  Angle sum = 360.0
+  Area = 0.7075368739704011
+  Perimeter = 6.95207884656336
+
+  quadrilateral vertices:
+[[ 0.46881386 -0.76757249]
+ [-0.62392425  1.40689151]
+ [-0.80818258 -1.05764468]
+ [ 0.62302835 -0.89231816]]
+
+  angles in degrees:
+[204.34925266  30.95670065  79.13497488  45.55907181]
+  Angle sum = 360.0
+  Area = 1.6488944138704194
+  Perimeter = 6.54408690887681
+
+  quadrilateral vertices:
+[[-0.70665101  0.14912635]
+ [-1.4820591  -0.9349391 ]
+ [ 0.11197826 -1.00335952]
+ [ 1.68208752 -0.01599779]]
+
+  angles in degrees:
+[121.62096142  56.8824783  145.378522    36.11803828]
+  Angle sum = 360.0
+  Area = 2.199453265194224
+  Perimeter = 7.177539164541845
+
+  quadrilateral vertices:
+[[-0.56959212 -0.53752168]
+ [ 1.41226097 -0.51188291]
+ [-0.46637938 -0.03735205]
+ [ 0.1764012  -0.21832092]]
+
+  angles in degrees:
+[ 22.42426571  14.91715157   1.54809857 321.11048415]
+  Angle sum = 360.0
+  Area = 0.3242194248755424
+  Perimeter = 5.3988495843076265
+
+  quadrilateral vertices:
+[[ 0.85651566 -0.55903164]
+ [-2.43109577  2.29992437]
+ [ 1.0776249  -1.55563977]
+ [ 0.88057292  0.53902212]]
+
+  angles in degrees:
+[309.75561659   6.68581795  36.9292803    6.62928515]
+  Angle sum = 359.99999999999994
+  Area = 1.455542096503711
+  Perimeter = 12.772171299685137
+
+segment_point_dist_test():
+  segment_point_dist() computes the distance from a point to a line segment.
+
+  segment endpoint p1:
+[1. 2.]
+
+  segment endpoint p2:
+[3. 4.]
+
+  test point p:
+[2. 3.]
+
+  Distance to segment = 0
+
+  test point p:
+[4. 5.]
+
+  Distance to segment = 1.41421
+
+  test point p:
+[1. 4.]
+
+  Distance to segment = 1.41421
+
+  test point p:
+[0. 0.]
+
+  Distance to segment = 2.23607
+
+segment_point_near_test():
+  segment_point_near() computes the nearest point
+  from a line segment to a point in 2D.
+
+  TEST = 0
+  P1 =       0.462891      0.139630
+  P2 =       0.961972      0.391725
+  P =        0.684083      0.152740
+  PN =       0.644395      0.231311
+  DIST =     0.088026
+  T =        0.363676
+
+  TEST = 1
+  P1 =       0.958232      0.110156
+  P2 =       0.805230      0.860265
+  P =        0.798580      0.855146
+  PN =       0.805967      0.856653
+  DIST =     0.007539
+  T =        0.995185
+
+  TEST = 2
+  P1 =       0.800064      0.124160
+  P2 =       0.665549      0.206185
+  P =        0.206939      0.079182
+  PN =       0.665549      0.206185
+  DIST =     0.475872
+  T =        1.000000
+
+triangle_area_test():
+  triangle_area() computes the area of a triangle.
+
+  Triangle vertices:
+[[0. 1.]
+ [0. 0.]
+ [1. 0.]]
+
+  Triangle area is  0.5
+
+triangle_area_3d():
+  triangle_area_3d() computes the area
+  of a triangle in 3D.
+
+  Triangle vertices:
+[[1.        2.        3.       ]
+ [2.4142137 3.4142137 3.       ]
+ [1.7071068 2.7071068 4.       ]]
+
+  Computed area is  1.0000000973169176
+
+quadrilateral_test():
+  Normal end of execution.
+Wed Oct  8 08:50:20 2025

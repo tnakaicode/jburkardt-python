@@ -1,0 +1,35 @@
+Wed Oct  8 08:46:34 2025
+
+polynomial_root_bound_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test polynomial_root_bound()
+
+polynomial1_test():
+  Bound the roots of a specific polynomial:
+    12z^5 + 2z^2 + 23i.
+
+  Root magnitude bound is  1.1646451258316848
+
+  Polynomial roots are:
+[-1.10401598-0.33686293j -0.66152059+0.89701442j  0.02570877-1.13896251j
+  0.67740946+0.94586564j  1.06241834-0.36705461j]
+  Graphics saved as "polynomial1_test.png"
+
+polynomial2_test():
+  Bound the roots of a random polynomial:
+
+  Polynomial roots are:
+[ 0.76144076+0.66747366j -0.48752383+0.810627j   -0.71567763-0.16295153j
+ -0.61677981-0.34451107j -0.28072335+0.58410131j]
+
+  Polynomial coefficients are:
+[-0.24636905+0.20714404j -1.15264679+0.14699161j -1.85446532-1.06830079j
+ -0.41171156-2.36038531j  1.33926387-1.55473939j  1.        +0.j        ]
+
+  Root magnitude bound is  3.093133172883757
+  Graphics saved as "polynomial2_test.png"
+
+polynomial_root_bound_test():
+  Normal end of execution.
+Wed Oct  8 08:46:35 2025

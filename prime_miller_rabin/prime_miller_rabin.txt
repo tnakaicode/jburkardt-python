@@ -1,0 +1,48 @@
+Wed Oct  8 08:47:26 2025
+
+prime_miller_rabin_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  prime_miller_rabin() tests an integer for primality.
+  The test is always true for a prime.
+  The test is usually false for a composite number.
+ 
+  Apply the test 1  times.
+
+       n  prime  miller
+
+       3   True   True
+      30  False  False
+     561  False  False
+    1105  False  False
+    1729  False  False
+   13441   True   True
+   13443  False  False
+ 
+  Apply the test 3  times.
+
+       n  prime  miller
+
+       3   True   True
+      30  False  False
+     561  False  False
+    1105  False  False
+    1729  False  False
+   13441   True   True
+   13443  False  False
+ 
+  Apply the test 5  times.
+
+       n  prime  miller
+
+       3   True   True
+      30  False  False
+     561  False  False
+    1105  False  False
+    1729  False  False
+   13441   True   True
+   13443  False  False
+
+prime_miller_rabin_test():
+  Normal end of execution.
+Wed Oct  8 08:47:26 2025

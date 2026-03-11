@@ -1,0 +1,51 @@
+Wed Oct  8 08:47:22 2025
+
+power_method_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test power_method().
+
+power_method_test01():
+  Use the power method on the Fibonacci2 matrix.
+
+  Matrix order N       =  50
+  Maximum iterations   =  300
+  Error tolerance      =  1e-06
+
+  Number of iterations =  201
+  CPU time             =  0.003253459930419922
+  Estimated eigenvalue =  1.6180374887130475
+  Correct value        =  1.618033988749895
+  Error                =  3.4999631526311248e-06
+
+  Sine of angle between true and estimated vectors =  3.77329062124126e-06
+
+power_method_test02():
+  power_method2() is applied to the Fibonacci2 matrix.
+
+  Matrix order N       =  50
+  Maximum iterations   =  300
+  Error tolerance      =  1e-06
+
+  Number of iterations =  195
+  CPU time             =  0.003152132034301758
+  Estimated eigenvalue =  1.6180374227906056 0.0
+  Correct value        =  1.618033988749895
+  Error                =  3.4340407106814297e-06
+
+power_method_test03():
+  power method2() is applied to the tris() matrix.
+
+  Matrix order N       =  50
+  Maximum iterations   =  4000
+  Error tolerance      =  1e-06
+
+  Number of iterations =  2867
+  CPU time             =  0.045658111572265625
+  Estimated eigenvalue =  10.00183337815757 5.647981099064873
+  Correct value        =  10.0 5.646125056598638
+  Error                =  0.0026088635658318227
+
+power_method_test():
+  Normal end of execution.
+Wed Oct  8 08:47:22 2025

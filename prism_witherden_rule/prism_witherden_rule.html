@@ -1,0 +1,125 @@
+<html>
+
+  <head>
+    <title>
+      prism_witherden_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      prism_witherden_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>prism_witherden_rule</b>,
+      a Python code which
+      returns a symmetric Witherden quadrature rule for a prism with
+      triangular base, with exactness up to total degree 10.
+    </p>
+
+    <p>
+      The data is given for the unit prism:
+      with vertices (1,0,0), (0,1,0), (0,0,0), (1,0,1), (0,1,1), (0,0,1).
+    </p>
+
+    <p>
+      Suppose we are given a triangular prism P with vertices
+        (1,0,0), (0,1,0), (0,0,0), (1,0,1), (0,1,1), (0,0,1).
+      We call a rule with n points, returning coordinates
+      x, y, z, and weights w.  Then the integral I of f(x,y,z) over P is
+      approximated by Q as follows:
+<pre>
+        Q = volume(P) * sum ( 1 <= i <= n ) w(i) * f(x(i),y(i),z(i))
+</pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>prism_witherden_rule</b> is available in
+      <a href = "../../c_src/prism_witherden_rule/prism_witherden_rule.html">a C version</a> and
+      <a href = "../../cpp_src/prism_witherden_rule/prism_witherden_rule.html">a C++ version</a> and
+      <a href = "../../f_src/prism_witherden_rule/prism_witherden_rule.html">a Fortran90 version</a> and
+     <a href = "../../m_src/prism_witherden_rule/prism_witherden_rule.html">a MATLAB version</a> and
+      <a href = "../../octave_src/prism_witherden_rule/prism_witherden_rule.html">an Octave version</a>and
+      <a href = "../../py_src/prism_witherden_rule/prism_witherden_rule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_rule/python_rule.html">
+      python_rule</a>,
+      a Python code which
+      computes a quadrature rule which
+      estimates the integral of a function f(x), which might be defined over 
+      a one dimensional region (a line) or more complex shapes such as 
+      a circle, a triangle, a quadrilateral, a polygon, or a higher dimensional
+      region, and which might include an associated weight function w(x).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Freddie Witherden, Peter Vincent,<br>
+          On the identification of symmetric quadrature rules for finite element methods,<br>
+          Computers and Mathematics with Applications,<br>
+          Volume 69, pages 1232-1241, 2015.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "prism_witherden_rule.py">prism_witherden_rule.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "prism_witherden_rule.sh">prism_witherden_rule.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "prism_witherden_rule.txt">prism_witherden_rule.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 April 2023.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

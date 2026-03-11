@@ -1,0 +1,39 @@
+Wed Oct  8 08:50:19 2025
+Wed Oct  8 08:50:19 2025
+Wed Oct  8 08:50:19 2025
+Wed Oct  8 08:50:19 2025
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/quad_mpi/quad_mpi.py", line 149, in <module>
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/quad_mpi/quad_mpi.py", line 149, in <module>
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/quad_mpi/quad_mpi.py", line 149, in <module>
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/quad_mpi/quad_mpi.py", line 149, in <module>
+    quad_mpi ( )
+  File "/home/john/public_html/py_src/quad_mpi/quad_mpi.py", line 21, in quad_mpi
+    quad_mpi ( )
+  File "/home/john/public_html/py_src/quad_mpi/quad_mpi.py", line 21, in quad_mpi
+    quad_mpi ( )
+  File "/home/john/public_html/py_src/quad_mpi/quad_mpi.py", line 21, in quad_mpi
+    quad_mpi ( )
+  File "/home/john/public_html/py_src/quad_mpi/quad_mpi.py", line 21, in quad_mpi
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+    from mpi4py import MPI
+ModuleNotFoundError: No module named 'mpi4py'
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[12199,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
