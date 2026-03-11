@@ -1,0 +1,208 @@
+<html>
+
+  <head>
+    <title>
+      spiral_pde
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      spiral_pde
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>spiral_pde</b>,
+      a Python code which
+      solves a pair of reaction-diffusion partial differential equations
+      (PDE), in two spatial dimensions and time,
+      over a rectangular domain with periodic boundary condition,
+      whose solution is known to evolve into a pair of spirals.
+    </p>
+
+    <p>
+      A simple Forward Euler ODE approach is used to solve the differential
+      equations.
+    </p>
+
+    <p>
+      The PDE has the form:
+      <pre>
+        du/dt =         del u + u * ( 1 - u ) * ( u - ( v + beta ) / alpha ) ) / epsilon
+        dv/dt = delta * del v + u - v
+      </pre>
+    </p>
+
+    <p>
+      The domain is the square 0 <= x <= 80, 0 <= y <= 80, 
+      with zero Neumann boundary conditions.
+    </p>
+
+    <p>
+      The initial conditions are
+      <pre>
+        u = 0       for x < 40
+            1       for     40 < x
+        v = 0       for y < 40
+            alpha/2 for     40 < y
+      </pre>
+    </p>
+
+    <p>
+      The parameters are
+      <pre>
+        alpha   = 0.25
+        beta    = 0.001
+        delta   = 0.0
+        epsilon = 0.002
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>spiral_pde</b> is available in
+      <a href = "../../m_src/spiral_pde/spiral_pde.html">a MATLAB version</a> and
+      <a href = "../../octave_src/spiral_pde/spiral_pde.html">an Octave version</a> and
+      <a href = "../../py_src/spiral_pde/spiral_pde.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/allen_cahn_pde/allen_cahn_pde.html">
+      allen_cahn_pde</a>,
+      a Python code which 
+      sets up and solves the Allen-Cahn reaction-diffusion 
+      system of partial differential equations (PDE)
+      in 1 space dimension and time.
+    </p>
+
+    <p>
+      <a href = "../../py_src/diffusion_pde/diffusion_pde.html">
+      diffusion_pde</a>,
+      a Python code which
+      solves the diffusion partial differential equation (PDE) 
+      dudt - mu * d2udx2 = 0 in one spatial dimension, with
+      a constant diffusion coefficient mu, and periodic boundary conditions, 
+      using FTCS, the forward time difference, centered space difference method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/gray_scott_pde/gray_scott_pde.html">
+      gray_scott_pde</a>,
+      a Python code which
+      solves the partial differential equation (PDE) known
+      as the Gray-Scott reaction diffusion equation, displaying 
+      a sequence of solutions as time progresses.
+    </p>
+
+    <p>
+      <a href = "../../py_src/wave_pde/wave_pde.html">
+      wave_pde</a>,
+      a Python code which
+      uses the finite difference method (FDM) in space, and the method of 
+      lines in time, to set up and solve the partial differential equations (PDE) 
+      known as the wave equations, utt = c uxx, 
+      in one spatial dimension and time.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        Willem Hundsdorfer, Jan Verwer,<br>
+        Numerical solution of time dependent advection-diffusion-reaction equations,<br>
+        Springer Series in Computational Mathematics,<br>
+        Volume 33, Berlin, 2003.
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "spiral_pde.py">spiral_test.py</a>
+          the source code.
+        </li>
+        <li>
+          <a href = "spiral_pde.sh">spiral_test.sh</a>
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "spiral_pde.txt">spiral_pde.txt</a>
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Plots were made every 500 steps.
+      <ul>
+        <li>
+          <a href = "spiral_0000.png">spiral_0000.png</a>
+        </li>
+        <li>
+          <a href = "spiral_0500.png">spiral_0500.png</a>
+        </li>
+        <li>
+          <a href = "spiral_1000.png">spiral_1000.png</a>
+        </li>
+        <li>
+          <a href = "spiral_1500.png">spiral_1500.png</a>
+        </li>
+        <li>
+          <a href = "spiral_2000.png">spiral_2000.png</a>
+        </li>
+        <li>
+          <a href = "spiral_2500.png">spiral_2500.png</a>
+        </li>
+        <li>
+          <a href = "spiral_3000.png">spiral_3000.png</a>
+        </li>
+        <li>
+          <a href = "spiral_3500.png">spiral_3500.png</a>
+        </li>
+        <li>
+          <a href = "spiral_4000.png">spiral_4000.png</a>
+        </li>
+        <li>
+          <a href = "spiral_4500.png">spiral_4500.png</a>
+        </li>
+        <li>
+          <a href = "spiral_5000.png">spiral_5000.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 22 September 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

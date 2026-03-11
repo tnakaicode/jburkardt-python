@@ -1,0 +1,160 @@
+<html>
+
+  <head>
+    <title>
+      snakes_histogram
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      snakes_histogram
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>snakes_and_ladders_simulation</b>,
+      a Python code which
+      simulates a one-player game of Snakes and Ladders, to
+      produce histograms of the count, PDF and CDF estimates for the
+      length of a one-player game.
+    </p>
+
+    <p>
+      Snakes and Ladders is a children's game played on a 10x10 numbered
+      board.  A player's turn consists of rolling a single die, and moving
+      the indicated number of squares.  If the final square is the foot of
+      a ladder, the player moves up to a higher numbered square.  If the
+      final square is the mouth of a snake, the player moves downward.
+    </p>
+
+    <p>
+      For the one-player version of the game, it is interesting to pose the
+      question of the probability that a particular game will take a 
+      certain number of moves. 
+    </p>
+
+    <p>
+      By adding a square 0, where the player begins, the game board can
+      be modeled as a vector of length 101, and the transitions from one
+      square to another can be modeled by a transition matrix.  Most commonly,
+      the entries in row I will be zero except that columns I+1 through
+      I+6 will have the value 1/6.  However, rows which correspond to a 
+      snake or ladder, and rows for which I+6 is greater than 100, must
+      be handled specially.
+    </p>
+
+    <p>
+      This program allows the user to specify the number N of games to
+      simulate.  It then creates histograms showing the count, PDF and
+      CDF based on the observed data.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>snakes_and_ladders_simulation</b> is available in
+      <a href = "../../m_src/snakes_and_ladders_simulation/snakes_and_ladders_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/snakes_and_ladders_simulation/snakes_and_ladders_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/snakes_and_ladders_simulation/snakes_and_ladders_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Steve Althoen, Larry King, Kenneth Schilling,<br>
+          How long is a game of Snakes and Ladders?,<br>
+          The Mathematical Gazette,<br>
+          Volume 77, Number 478, March 1993, pages 71-76.
+        </li>
+        <li>
+          Nick Berry,<br>
+          A Mathematical Analysis of Snakes and Ladders,<br>
+          https://www.datagenetics.com/blog/november12011/index.html
+        </li>
+        <li>
+          Christian Hill,<br>
+          Analysing Snakes and Ladders as a Markov Chain,<br>
+          https://scipython.com/book/chapter-6-numpy/additional-problems/analysing-snakes-and-ladders-as-a-markov-chain/
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "snakes_and_ladders_simulation.py">
+          snakes_and_ladders_simulation.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "snakes_and_ladders_simulation.sh">
+          snakes_and_ladders_simulation.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "snakes_and_ladders_simulation.txt">
+          snakes_and_ladders_simulation.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "snakes_pdf.png">snakes_pdf.png</a>,
+          histogram of game length PDF estimates.
+        </li>
+        <li>
+          <a href = "snakes_cdf.png">snakes_cdf.png</a>,
+          histogram of game length CDF estimates.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 05 December 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

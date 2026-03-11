@@ -1,0 +1,362 @@
+<html>
+
+  <head>
+    <title>
+      sir_simulation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      sir_simulation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>sir_simulation</b>,
+      a Python code which
+      simulates the spread of a disease through a hospital room of M by N beds,
+      using the Susceptible/Infected/Recovered (SIR) model.
+    </p>
+
+    <p>
+      We consider the evolution of a disease in a hospital
+      in which patients are arranged on an array of beds.
+    </p>
+
+    <p>
+      We assume that the beds form an array of M rows and N columns, so that
+      there are a total of M * N patients.
+    </p>
+
+    <p>
+      We assume that the patients can be classified as Susceptible, Infected or
+      Recovering, with the properties that:
+      <ul>
+        <li>
+          <i>Susceptible</i>: A patient who has never been infected with the
+          disease.  A susceptible patient can get the disease.
+        </li>
+        <li>
+          <i>Infected</i>: A patient who has never gotten the disease.
+          A patient stays infected for K days.  On the K+1 of the disease,
+          the patient "recovers".
+        </li>
+        <li>
+          <i>Recovered</i>: A patient who has had the disease, that is,
+          has caught the disease and been sick for a full K days.  A recovered
+          patient never gets sick again.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      We set up an M by N array <b>A</b> to represent the patients.
+      A(I,J) contains information on the patient in row I, column J.
+      A(I,J) will be
+      <ul>
+        <li>
+          0, if the patient is susceptible.
+        </li>
+        <li>
+          a value between 1 and K, if the patient is infected.  The value
+          is the number of days the patient has been infected.
+        </li>
+        <li>
+          -1, if the patient is recovered.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The rules for transmission of the disease essentially update the
+      patient array once a day.  If patient A(I,J) was:
+      <ul>
+        <li>
+          0, then check the four neighbors A(I-1,J), A(I+1,J), A(I,J-1)
+          and A(I,J+1).  For each neighbor that is infected, pick a random
+          number, and if that random number is less than TAU, then patient
+          A(I,J) becomes infected, that is, we set A(I,J) to 1.
+        </li>
+        <li>
+          a value between 1 and K, then the value is increased by 1.
+          But if the value was already K, it is now reset to -1, because the
+          patient has recovered.
+        </li>
+        <li>
+          -1, nothing happens.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Quantities of interest include an animation of the day to day status
+      of patients in the hospital (the "geometry") and the values of S, I, and R,
+      that is, the total number of patients in each category, as it evolves 
+      over time.
+    </p>
+
+    <p>
+      Since this problem contains a probabilistic element in the transmission of
+      disease, the outcome of any single run has limited meaning.  It is much
+      more valuable to run many simulations, and thus to get both average or
+      "expected" values, as well as a feeling for the variance of the data 
+      from these averages.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>sir_simulation</b> is available in
+      <a href = "../../m_src/sir_simulation/sir_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/sir_simulation/sir_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/sir_simulation/sir_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Dianne OLeary,<br>
+          Models of Infection: Person to Person,<br>
+          Computing in Science and Engineering,<br>
+          Volume 6, Number 1, January/February 2004.
+        </li>
+        <li>
+          Dianne OLeary,<br>
+          Scientific Computing with Case Studies,<br>
+          SIAM, 2008,<br>
+          ISBN13: 978-0-898716-66-5,<br>
+          LC: QA401.O44.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sir_simulation.py">sir_simulation.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "sir_simulation.sh">sir_simulation.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "sir_simulation.txt">sir_simulation.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sir_area.png">sir_area.png</a>,
+          an area plot of the SIR data.
+        </li>
+        <li>
+          <a href = "sir_line.png">sir_line.png</a>,
+          an line plot of the SIR data.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sir_day0.png">sir_day0.png</a>
+        </li>
+        <li>
+          <a href = "sir_day1.png">sir_day1.png</a>
+        </li>
+        <li>
+          <a href = "sir_day2.png">sir_day2.png</a>
+        </li>
+        <li>
+          <a href = "sir_day3.png">sir_day3.png</a>
+        </li>
+        <li>
+          <a href = "sir_day4.png">sir_day4.png</a>
+        </li>
+        <li>
+          <a href = "sir_day5.png">sir_day5.png</a>
+        </li>
+        <li>
+          <a href = "sir_day6.png">sir_day6.png</a>
+        </li>
+        <li>
+          <a href = "sir_day7.png">sir_day7.png</a>
+        </li>
+        <li>
+          <a href = "sir_day8.png">sir_day8.png</a>
+        </li>
+        <li>
+          <a href = "sir_day9.png">sir_day9.png</a>
+        </li>
+        <li>
+          <a href = "sir_day10.png">sir_day10.png</a>
+        </li>
+        <li>
+          <a href = "sir_day11.png">sir_day11.png</a>
+        </li>
+        <li>
+          <a href = "sir_day12.png">sir_day12.png</a>
+        </li>
+        <li>
+          <a href = "sir_day13.png">sir_day13.png</a>
+        </li>
+        <li>
+          <a href = "sir_day14.png">sir_day14.png</a>
+        </li>
+        <li>
+          <a href = "sir_day15.png">sir_day15.png</a>
+        </li>
+        <li>
+          <a href = "sir_day16.png">sir_day16.png</a>
+        </li>
+        <li>
+          <a href = "sir_day17.png">sir_day17.png</a>
+        </li>
+        <li>
+          <a href = "sir_day18.png">sir_day18.png</a>
+        </li>
+        <li>
+          <a href = "sir_day19.png">sir_day19.png</a>
+        </li>
+        <li>
+          <a href = "sir_day20.png">sir_day20.png</a>
+        </li>
+        <li>
+          <a href = "sir_day21.png">sir_day21.png</a>
+        </li>
+        <li>
+          <a href = "sir_day22.png">sir_day22.png</a>
+        </li>
+        <li>
+          <a href = "sir_day23.png">sir_day23.png</a>
+        </li>
+        <li>
+          <a href = "sir_day24.png">sir_day24.png</a>
+        </li>
+        <li>
+          <a href = "sir_day25.png">sir_day25.png</a>
+        </li>
+        <li>
+          <a href = "sir_day26.png">sir_day26.png</a>
+        </li>
+        <li>
+          <a href = "sir_day27.png">sir_day27.png</a>
+        </li>
+        <li>
+          <a href = "sir_day28.png">sir_day28.png</a>
+        </li>
+        <li>
+          <a href = "sir_day29.png">sir_day29.png</a>
+        </li>
+        <li>
+          <a href = "sir_day30.png">sir_day30.png</a>
+        </li>
+        <li>
+          <a href = "sir_day31.png">sir_day31.png</a>
+        </li>
+        <li>
+          <a href = "sir_day32.png">sir_day32.png</a>
+        </li>
+        <li>
+          <a href = "sir_day33.png">sir_day33.png</a>
+        </li>
+        <li>
+          <a href = "sir_day34.png">sir_day34.png</a>
+        </li>
+        <li>
+          <a href = "sir_day35.png">sir_day35.png</a>
+        </li>
+        <li>
+          <a href = "sir_day36.png">sir_day36.png</a>
+        </li>
+        <li>
+          <a href = "sir_day37.png">sir_day37.png</a>
+        </li>
+        <li>
+          <a href = "sir_day38.png">sir_day38.png</a>
+        </li>
+        <li>
+          <a href = "sir_day39.png">sir_day39.png</a>
+        </li>
+        <li>
+          <a href = "sir_day40.png">sir_day40.png</a>
+        </li>
+        <li>
+          <a href = "sir_day41.png">sir_day41.png</a>
+        </li>
+        <li>
+          <a href = "sir_day42.png">sir_day42.png</a>
+        </li>
+        <li>
+          <a href = "sir_day43.png">sir_day43.png</a>
+        </li>
+        <li>
+          <a href = "sir_day44.png">sir_day44.png</a>
+        </li>
+        <li>
+          <a href = "sir_day45.png">sir_day45.png</a>
+        </li>
+        <li>
+          <a href = "sir_day46.png">sir_day46.png</a>
+        </li>
+        <li>
+          <a href = "sir_day47.png">sir_day47.png</a>
+        </li>
+        <li>
+          <a href = "sir_day48.png">sir_day48.png</a>
+        </li>
+        <li>
+          <a href = "sir_day49.png">sir_day49.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 07 July 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,15 @@
+Wed Oct  8 08:55:59 2025
+
+sphere_positive_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test sphere_positive_distance().
+
+  Using N = 10000 sample points,
+  Estimated mean distance = 0.640978
+  Estimated variance      = 0.0887706
+  Graphics saved as "sphere_positive_distance_histogram.png"
+
+sphere_positive_distance_test():
+  Normal end of execution.
+Wed Oct  8 08:56:02 2025

@@ -1,0 +1,43 @@
+Wed Oct  8 08:55:18 2025
+
+sincu_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  matplotlib version: 3.5.1
+  Test sinc().
+
+sincn_antideriv_test():
+  sincn_antideriv() evaluates the antiderivative of sincn(x).
+  Graphics saved as "sincn_antideriv.png"
+
+sincn_deriv_test():
+  sincn_deriv() evaluates the derivative of sincn(x).
+  Graphics saved as "sincn_deriv.png"
+
+sincn_deriv2_test():
+  sincn_deriv2() evaluates the second derivative of sincn(x).
+  Graphics saved as "sincn_deriv2.png"
+
+sincn_fun_test():
+  sincn_fun() evaluates the normalized sinc() function.
+  Graphics saved as "sincn_fun.png"
+
+sincu_antideriv_test():
+  sincu_antideriv() evaluates the antiderivative of sincu(x).
+  Graphics saved as "sincu_antideriv.png"
+
+sincu_deriv_test():
+  sincu_deriv() evaluates the derivative of sincu(x).
+  Graphics saved as "sincu_deriv.png"
+
+sincu_deriv2_test():
+  sincu_deriv2() evaluates the second derivative of sincu(x).
+  Graphics saved as "sincu_deriv2.png"
+
+sincu_fun_test():
+  sincu_fun() evaluates the unnormalized sinc() function.
+  Graphics saved as "sincu_fun.png"
+
+sinc_test():
+  Normal end of execution.
+Wed Oct  8 08:55:20 2025

@@ -1,0 +1,41 @@
+Wed Oct  8 08:55:31 2025
+
+snakes_and_ladders_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test snakes_and_ladders_simulation().
+
+snakes_stats():
+  Simulate N =  1000  one-player games of Snakes and Ladders,
+  report minimum, mean, and maximum game lengths.
+  Do this M =  10  times.
+
+  Batch    Min   Mean   Max    Std
+
+      0      7     35    193  22.9193
+      1      7     36    194  24.5429
+      2      8     36    194  24.478
+      3      7     36    196  23.5066
+      4      7     36    154  23.3988
+      5      7     34    176  21.7399
+      6      7     37    428  27.2254
+      7      7     36    178  23.4634
+      8      7     36    258  24.6571
+      9      7     35    169  24.1002
+
+snakes_histogram():
+  Simulate N one-player games of Snakes and Ladders.
+  Use the simulation data to create histograms
+  of the estimated PDF and CDF of the game length.
+
+  Number of trials was n =    1000
+  Minimum number of steps was 7.0
+  Mean number of steps was    36.544
+  Maximum number of steps was 184.0
+  Standard deviation was      24.697733985125033
+  Graphics saved as "snakes_pdf.png"
+  Graphics saved as "snakes_cdf.png"
+
+snakes_and_ladders_simulation_test():
+  Normal end of execution.
+Wed Oct  8 08:55:46 2025

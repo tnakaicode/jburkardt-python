@@ -1,0 +1,140 @@
+<html>
+
+  <head>
+    <title>
+      simplex_integrals
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      simplex_integrals
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>simplex_integrals</b>,
+      a Python code which
+      returns the exact value of the integral of any monomial
+      over the interior of the unit simplex in M dimensions.
+    </p>
+
+    <p>
+      The interior of the unit simplex in M dimensions is defined by
+      <pre>
+        0 <= X(1:M)
+        sum ( 1 <= I <= M ) X(I) <= 1
+      </pre>
+    </p>
+
+    <p>
+      The integrands are all of the form
+      <pre>
+        f(x) = product ( 1 <= I <= M) X(I)^E(I)
+      </pre>
+      where the exponents are nonnegative integers.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>simplex_integrals</b> is available in
+      <a href = "../../c_src/simplex_integrals/simplex_integrals.html">a C version</a> and
+      <a href = "../../cpp_src/simplex_integrals/simplex_integrals.html">a C++ version</a> and
+      <a href = "../../f_src/simplex_integrals/simplex_integrals.html">a Fortran90 version</a> and
+      <a href = "../../m_src/simplex_integrals/simplex_integrals.html">a MATLAB version</a> and
+      <a href = "../../octave_src/simplex_integrals/simplex_integrals.html">an Octave version</a> and
+      <a href = "../../py_src/simplex_integrals/simplex_integrals.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_integrals/python_integrals.html">
+      python_integrals</a>,
+      a Python code which
+      returns the exact value of the integral of any monomial
+      over the surface or interior of some geometric object,
+      including a line, quadrilateral, box, circle, disk, sphere,
+      ball and others.
+    </p>
+
+    <p>
+      <a href = "../../py_src/simplex_grid/simplex_grid.html">
+      simplex_grid</a>,
+      a Python code which
+      generates a regular grid of points 
+      over the interior of an arbitrary simplex in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/simplex_monte_carlo/simplex_monte_carlo.html">
+      simplex_monte_carlo</a>,
+      a Python code which
+      uses the monte carlo method to estimate integrals 
+      over the interior of the unit simplex in m dimensions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Jean Lasserre, Konstantin Avrachenkov,<br>
+          The multidimensional version of the integral from A to B of X to the P,<br>
+          American Mathematics Monthly,<br>
+          Volume 108, Number 2, 2001, pages 151`-154.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "simplex_integrals.py">simplex_integrals.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "simplex_integrals.sh">simplex_integrals.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "simplex_integrals.txt">simplex_integrals.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 February 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

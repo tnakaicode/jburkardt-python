@@ -1,0 +1,47 @@
+Wed Oct  8 08:55:23 2025
+
+sir_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test sir_simulation().
+  Graphics saved as " sir_day0.png "
+  Graphics saved as " sir_day1.png "
+  Graphics saved as " sir_day2.png "
+  Graphics saved as " sir_day3.png "
+  Graphics saved as " sir_day4.png "
+  Graphics saved as " sir_day5.png "
+  Graphics saved as " sir_day6.png "
+  Graphics saved as " sir_day7.png "
+  Graphics saved as " sir_day8.png "
+  Graphics saved as " sir_day9.png "
+  Graphics saved as " sir_day10.png "
+  Graphics saved as " sir_day11.png "
+  Graphics saved as " sir_day12.png "
+  Graphics saved as " sir_day13.png "
+  Graphics saved as " sir_day14.png "
+  Graphics saved as " sir_day15.png "
+  Graphics saved as " sir_day16.png "
+  Graphics saved as " sir_day17.png "
+  Graphics saved as " sir_day18.png "
+  Graphics saved as " sir_day19.png "
+  Graphics saved as " sir_day20.png "
+  Graphics saved as " sir_day21.png "
+  Graphics saved as " sir_day22.png "
+  Graphics saved as " sir_day23.png "
+  Graphics saved as " sir_day24.png "
+  Graphics saved as " sir_day25.png "
+  Graphics saved as " sir_day26.png "
+  Graphics saved as " sir_day27.png "
+  Graphics saved as " sir_day28.png "
+  Terminate simulation: No infected individuals remain.
+
+  At final time:
+  S =  0.22000000000000003
+  I =  0.0
+  R =  0.78
+  Graphics saved as "sir_line.png"
+  Graphics saved as "sir_area.png"
+
+sir_simulation_test():
+  Normal end of execution.
+Wed Oct  8 08:55:28 2025

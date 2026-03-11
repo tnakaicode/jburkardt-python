@@ -1,0 +1,119 @@
+<html>
+
+  <head>
+    <title>
+      simplex_monte_carlo
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      simplex_monte_carlo
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>simplex_monte_carlo</b>,
+      a Python code which
+      uses the Monte Carlo method to estimate the integral of a function F(X)
+      over the interior of the unit simplex in M dimensions.
+    </p>
+
+    <p>
+      The interior of the unit simplex in M dimensions is defined by the constraints:
+      <pre>
+        0 <= X(1:M)
+        sum ( 1 <= I <= M ) X(I) <= 1
+      </pre>
+      The functions F(X) are monomials, having the form
+      <pre>
+        F(X) = product ( 1 <= I <= M ) X(I)^E(I)
+      </pre>
+      where the exponents are nonnegative integers.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>simplex_monte_carlo</b> is available in
+      <a href = "../../c_src/simplex_monte_carlo/simplex_monte_carlo.html">a C version</a> and
+      <a href = "../../cpp_src/simplex_monte_carlo/simplex_monte_carlo.html">a C++ version</a> and
+      <a href = "../../f_src/simplex_monte_carlo/simplex_monte_carlo.html">a Fortran90 version</a> and
+      <a href = "../../m_src/simplex_monte_carlo/simplex_monte_carlo.html">a MATLAB version</a> and
+      <a href = "../../octave_src/simplex_monte_carlo/simplex_monte_carlo.html">an Octave version</a> and
+      <a href = "../../py_src/simplex_monte_carlo/simplex_monte_carlo.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_monte_carlo/python_monte_carlo.html">
+      python_monte_carlo</a>,
+      a Python code which
+      uses Monte Carlo sampling to estimate areas and integrals.
+    </p>
+
+    <p>
+      <a href = "../../py_src/simplex_grid/simplex_grid.html">
+      simplex_grid</a>,
+      a python code which
+      generates a regular grid of points 
+      over the interior of an arbitrary simplex in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/simplex_integrals/simplex_integrals.html">
+      simplex_integrals</a>,
+      a python code which
+      returns the exact value of the integral of any monomial
+      over the interior of the unit simplex in m dimensions.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "simplex_monte_carlo.py">simplex_monte_carlo.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "simplex_monte_carlo.sh">simplex_monte_carlo.sh</a>,
+          runs all the tests
+        </li>
+        <li>
+          <a href = "simplex_monte_carlo.txt">simplex_monte_carlo.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 13 November 2016
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

@@ -1,0 +1,124 @@
+Wed Oct  8 08:55:54 2025
+
+sphere_integrals_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test sphere_integrals().
+
+sphere01_area_test
+  sphere01_area returns the volume of the unit sphere.
+
+  sphere01_area() =  12.5664
+
+sphere01_monomial_integral_test():
+  sphere01_monomial_integral() returns the integral of a monomial
+  over the surface of the unit sphere in 3D.
+  Compare with a Monte Carlo estimate.
+
+  If any exponent is odd, the integral is zero.
+  We will restrict this test to randomly chosen even exponents.
+
+  Ex  Ey  Ez     MC-Estimate           Exact      Error
+
+   8
+   4
+   0
+       0.0287233       0.0292922     0.00057
+   2
+   0
+   2
+         0.84274        0.837758       0.005
+   6
+   0
+   2
+         0.20093        0.199466      0.0015
+   4
+   8
+   2
+      0.00193104      0.00195282     2.2e-05
+   4
+   6
+   0
+       0.0548628       0.0543999     0.00046
+   0
+   0
+   0
+         12.5664         12.5664     1.8e-15
+   6
+   6
+   6
+     6.53671e-05     6.47772e-05     5.9e-07
+   6
+   0
+   0
+         1.79409          1.7952      0.0011
+   8
+   8
+   2
+     0.000207497     0.000211605     4.1e-06
+   4
+   8
+   4
+     0.000342832     0.000344615     1.8e-06
+   2
+   0
+   2
+         0.84274        0.837758       0.005
+   8
+   6
+   8
+     6.64913e-06      6.5716e-06     7.8e-08
+   2
+   0
+   0
+         4.18538         4.18879      0.0034
+   2
+   0
+   6
+        0.202212        0.199466      0.0027
+   8
+   0
+   2
+        0.128084        0.126933      0.0012
+   4
+   8
+   6
+     9.08308e-05      9.0688e-05     1.4e-07
+   0
+   4
+   8
+       0.0284925       0.0292922      0.0008
+   0
+   4
+   8
+       0.0284925       0.0292922      0.0008
+   8
+   6
+   4
+     9.04521e-05      9.0688e-05     2.4e-07
+   6
+   0
+   0
+         1.79409          1.7952      0.0011
+
+sphere01_sample_test():
+  sphere01_sample() samples the unit sphere.
+
+  Sample points on the unit sphere.
+
+  Row:       0             1             2       
+  Col
+      0 :   -0.997124     0.0114407     0.0749144  
+      1 :   -0.858213     -0.398626      -0.32337  
+      2 :  -0.0917259      0.973477     -0.209594  
+      3 :    0.823306     -0.133892      0.551579  
+      4 :    0.410162      0.246416     -0.878092  
+      5 :   -0.872424      -0.48516     0.0591233  
+      6 :    0.823052     -0.564015    -0.0668815  
+      7 :   -0.104837     -0.173199      0.979291  
+      8 :  -0.0410237     -0.314898     -0.948238  
+      9 :   -0.112008     -0.109378      0.987669  
+
+sphere_integrals_test():
+  Normal end of execution.
+Wed Oct  8 08:55:55 2025

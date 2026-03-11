@@ -1,0 +1,34 @@
+
+sensitive_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve sensitive_ode().
+
+  parameters:
+    t0    =  0.0
+    y0    =  [ 1. -1.]
+    tstop =  15.0
+
+sensitive_solve_ivp():
+  Use solve_ivp() to solve sensitive_ode()
+
+  Initial condition perturbation ep =  1e-06
+
+  parameters:
+    t0 =     0.0
+    y0 =     [ 1.000001 -1.      ]
+    tstop =  15.0
+
+  parameters:
+    t0 =     0.0
+    y0 =     [ 1. -1.]
+    tstop =  15.0
+
+  parameters:
+    t0 =     0.0
+    y0 =     [ 0.999999 -1.      ]
+    tstop =  15.0
+  Graphics saved as "sensitive_solve_ivp.png'
+
+sensitive_ode_test():
+  Normal end of execution.

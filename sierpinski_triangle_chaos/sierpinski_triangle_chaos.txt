@@ -1,0 +1,13 @@
+Wed Oct  8 08:55:00 2025
+
+sierpinski_triangle_chaos_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  sierpinski_triangle_chaos() uses an iterated map to plot
+  the Sierpinski triangle.
+  Apply the iteration map 10000 times.
+  Graphics saved as "sierpinski_triangle_chaos.png"
+
+sierpinski_triangle_chaos_test():
+  Normal end of execution.
+Wed Oct  8 08:55:07 2025

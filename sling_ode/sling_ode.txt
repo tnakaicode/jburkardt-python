@@ -1,0 +1,34 @@
+Wed Oct  8 08:55:29 2025
+
+sling_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve sling_ode().
+
+  parameters:
+    s     =  1.0
+    t0    =  0.0
+    y0    =  [1. 0.]
+    tstop =  30.0
+
+sling_solve_ivp():
+  Test sling_ode() using solve_ivp().
+  Graphics saved as "sling_solve_ivp_plot_1.png"
+  Graphics saved as "sling_solve_ivp_phase_1.png"
+  Graphics saved as "sling_solve_ivp_conservation_1.png"
+
+  parameters:
+    s     =  0.4
+    t0    =  0.0
+    y0    =  [1. 0.]
+    tstop =  30.0
+
+sling_solve_ivp():
+  Test sling_ode() using solve_ivp().
+  Graphics saved as "sling_solve_ivp_plot_0.4.png"
+  Graphics saved as "sling_solve_ivp_phase_0.4.png"
+  Graphics saved as "sling_solve_ivp_conservation_0.4.png"
+
+sling_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:55:30 2025

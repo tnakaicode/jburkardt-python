@@ -1,0 +1,75 @@
+Wed Oct  8 08:55:12 2025
+
+simplex_integrals_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test simplex_integrals().
+
+simplex_integrals_test01():
+  Estimate monomial integrals using Monte Carlo
+  over the interior of the unit simplex in M dimensions.
+
+  Number of sample points used is 4192
+
+  We randomly choose the exponents.
+
+  Ex  Ey  Ez     MC-Estimate      Exact           Error
+
+   2   3   0     0.000291424     0.000297619     6.2e-06
+   3   4   0     3.76752e-05     3.96825e-05       2e-06
+   2   0   0       0.0162999       0.0166667     0.00037
+   1   2   0      0.00278784      0.00277778       1e-05
+   3   0   1      0.00114555      0.00119048     4.5e-05
+   1   4   1     6.65422e-05     6.61376e-05       4e-07
+   0   0   2       0.0163098       0.0166667     0.00036
+   1   2   0      0.00278784      0.00277778       1e-05
+   2   2   1     0.000100697     9.92063e-05     1.5e-06
+   4   2   3     5.83805e-07     6.01251e-07     1.7e-08
+   2   4   2     2.47375e-06       2.405e-06     6.9e-08
+   4   0   4     1.39229e-05       1.443e-05     5.1e-07
+   2   4   0     0.000127534     0.000132275     4.7e-06
+   0   2   1      0.00287828      0.00277778      0.0001
+   3   4   4     4.05164e-08     3.96429e-08     8.7e-10
+   4   2   0     0.000128786     0.000132275     3.5e-06
+   4   4   3     4.11228e-08     3.96429e-08     1.5e-09
+   4   2   3     5.83805e-07     6.01251e-07     1.7e-08
+   1   0   1      0.00809885      0.00833333     0.00023
+   4   4   0      1.3548e-05       1.443e-05     8.8e-07
+
+simplex01_sample_test():
+  simplex01_sample() samples the unit simplex in M dimensions.
+
+  Sample points in the unit simplex.
+
+  Row:       0             1             2       
+  Col
+      0 :    0.666511      0.184612     0.0722532  
+      1 :    0.134549      0.543183      0.246911  
+      2 :   0.0903109      0.122595     0.0482353  
+      3 :    0.727536      0.148804      0.106705  
+      4 :    0.775092       0.17181     0.0123564  
+      5 :     0.28342     0.0978633      0.183544  
+      6 :    0.270894      0.473571     0.0249841  
+      7 :   0.0194294      0.396831      0.181986  
+      8 :   0.0811617      0.378731      0.206732  
+      9 :     0.21227       0.19081     0.0441368  
+
+simplex01_volume_test():
+  simplex01_volume() returns the volume of the unit simplex
+  in M dimensions.
+
+   M   Volume
+
+   1  1
+   2  0.5
+   3  0.166667
+   4  0.0416667
+   5  0.00833333
+   6  0.00138889
+   7  0.000198413
+   8  2.48016e-05
+   9  2.75573e-06
+
+simplex_integrals_test():
+  Normal end of execution.
+Wed Oct  8 08:55:12 2025

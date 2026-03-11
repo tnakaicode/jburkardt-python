@@ -1,0 +1,73 @@
+Wed Oct  8 08:54:30 2025
+
+set_theory_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  set_theory() demonstrates some set theory operations.
+
+  Let U be the "universal" set.
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50}
+
+  len(U) counts the elements.
+50
+
+  Find A: x in u with mod(x,5)=2.
+{32, 2, 37, 7, 42, 12, 47, 17, 22, 27}
+
+  Define B as 3, 6, 9, 12, ..., 48.
+{33, 3, 36, 6, 39, 9, 42, 12, 45, 15, 48, 18, 21, 24, 27, 30}
+
+  Define C as complement of B relative to U.
+{1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20, 22, 23, 25, 26, 28, 29, 31, 32, 34, 35, 37, 38, 40, 41, 43, 44, 46, 47, 49, 50}
+
+  Define D is intersection of A and B.
+{42, 27, 12}
+
+  Define E is union of A and B.
+{2, 3, 6, 7, 9, 12, 15, 17, 18, 21, 22, 24, 27, 30, 32, 33, 36, 37, 39, 42, 45, 47, 48}
+
+  Define F is symmetric difference of A and B.
+{2, 3, 6, 7, 9, 15, 17, 18, 21, 22, 24, 30, 32, 33, 36, 37, 39, 45, 47, 48}
+
+  Define G is the complement of B with respect to A.
+         H is the complement of A with respect to B.
+{32, 2, 37, 7, 47, 17, 22}
+{33, 3, 36, 6, 39, 9, 45, 15, 48, 18, 21, 24, 30}
+
+  x in A reports whether x is a member of A
+
+   10  is not a member of A.
+   11  is not a member of A.
+   12  is a member of A.
+   13  is not a member of A.
+   14  is not a member of A.
+   15  is not a member of A.
+   16  is not a member of A.
+   17  is a member of A.
+   18  is not a member of A.
+   19  is not a member of A.
+   20  is not a member of A.
+
+  ( I < A ) reports whether I is a proper subset of A
+
+{42, 27, 12}
+  I is a proper subset of A.
+
+  J is set to numbers ending in 1.
+{1, 41, 11, 21, 31}
+  J.add(x) adds an item to the set.
+{1, 6, 41, 11, 21, 31}
+  J.remove(x) removes an item from the set.
+{1, 6, 41, 11, 31}
+
+  J.pop() returns an entry at random.
+1
+6
+41
+11
+31
+
+set_theory_test():
+  Normal end of execution.
+
+Wed Oct  8 08:54:30 2025

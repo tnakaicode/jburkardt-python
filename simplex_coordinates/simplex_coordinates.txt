@@ -1,0 +1,415 @@
+Wed Oct  8 08:55:11 2025
+
+simplex_coordinates_test
+  Python version: 3.10.12
+  Test the simplex_coordinates library.
+
+simplex_coordinates1_test
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test simplex_coordinates1
+
+  Simplex vertex coordinates:
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      0 :
+           1  
+           0  
+           0  
+
+      1 :
+   -0.333333  
+    0.942809  
+           0  
+
+      2 :
+   -0.333333  
+   -0.471405  
+    0.816497  
+
+      3 :
+   -0.333333  
+   -0.471405  
+   -0.816497  
+
+
+  Side length =     1.63299
+  Volume =          0.5132
+  Expected volume = 0.5132
+
+  Dot product matrix:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+           1  
+   -0.333333  
+   -0.333333  
+   -0.333333  
+
+      1 :
+   -0.333333  
+           1  
+   -0.333333  
+   -0.333333  
+
+      2 :
+   -0.333333  
+   -0.333333  
+           1  
+   -0.333333  
+
+      3 :
+   -0.333333  
+   -0.333333  
+   -0.333333  
+           1  
+
+
+simplex_coordinates1_test
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test simplex_coordinates1
+
+  Simplex vertex coordinates:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+           1  
+           0  
+           0  
+           0  
+
+      1 :
+       -0.25  
+    0.968246  
+           0  
+           0  
+
+      2 :
+       -0.25  
+   -0.322749  
+    0.912871  
+           0  
+
+      3 :
+       -0.25  
+   -0.322749  
+   -0.456435  
+    0.790569  
+
+      4 :
+       -0.25  
+   -0.322749  
+   -0.456435  
+   -0.790569  
+
+
+  Side length =     1.58114
+  Volume =          0.145577
+  Expected volume = 0.145577
+
+  Dot product matrix:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Col
+      0 :
+           1  
+       -0.25  
+       -0.25  
+       -0.25  
+       -0.25  
+
+      1 :
+       -0.25  
+           1  
+       -0.25  
+       -0.25  
+       -0.25  
+
+      2 :
+       -0.25  
+       -0.25  
+           1  
+       -0.25  
+       -0.25  
+
+      3 :
+       -0.25  
+       -0.25  
+       -0.25  
+           1  
+       -0.25  
+
+      4 :
+       -0.25  
+       -0.25  
+       -0.25  
+       -0.25  
+           1  
+
+
+simplex_coordinates2_test
+  Python version: 3.10.12
+  Test simplex_coordinates2
+
+  Simplex vertex coordinates:
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      0 :
+     0.96225  
+    -0.19245  
+    -0.19245  
+
+      1 :
+    -0.19245  
+     0.96225  
+    -0.19245  
+
+      2 :
+    -0.19245  
+    -0.19245  
+     0.96225  
+
+      3 :
+    -0.57735  
+    -0.57735  
+    -0.57735  
+
+
+  Side length =     1.63299
+  Volume =          0.5132
+  Expected volume = 0.5132
+
+  Dot product matrix:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+           1  
+   -0.333333  
+   -0.333333  
+   -0.333333  
+
+      1 :
+   -0.333333  
+           1  
+   -0.333333  
+   -0.333333  
+
+      2 :
+   -0.333333  
+   -0.333333  
+           1  
+   -0.333333  
+
+      3 :
+   -0.333333  
+   -0.333333  
+   -0.333333  
+           1  
+
+
+simplex_coordinates2_test
+  Python version: 3.10.12
+  Test simplex_coordinates2
+
+  Simplex vertex coordinates:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+
+  Col
+      0 :
+    0.963525  
+   -0.154508  
+   -0.154508  
+   -0.154508  
+
+      1 :
+   -0.154508  
+    0.963525  
+   -0.154508  
+   -0.154508  
+
+      2 :
+   -0.154508  
+   -0.154508  
+    0.963525  
+   -0.154508  
+
+      3 :
+   -0.154508  
+   -0.154508  
+   -0.154508  
+    0.963525  
+
+      4 :
+        -0.5  
+        -0.5  
+        -0.5  
+        -0.5  
+
+
+  Side length =     1.58114
+  Volume =          0.145577
+  Expected volume = 0.145577
+
+  Dot product matrix:
+
+  Row: 
+      0       
+      1       
+      2       
+      3       
+      4       
+
+  Col
+      0 :
+           1  
+       -0.25  
+       -0.25  
+       -0.25  
+       -0.25  
+
+      1 :
+       -0.25  
+           1  
+       -0.25  
+       -0.25  
+       -0.25  
+
+      2 :
+       -0.25  
+       -0.25  
+           1  
+       -0.25  
+       -0.25  
+
+      3 :
+       -0.25  
+       -0.25  
+       -0.25  
+           1  
+       -0.25  
+
+      4 :
+       -0.25  
+       -0.25  
+       -0.25  
+       -0.25  
+           1  
+
+
+simplex_volume_test
+  Python version: 3.10.12
+  simplex_volume returns the volume of a simplex
+  in M dimensions.
+
+  Triangle:
+
+  Row: 
+      0       
+      1       
+
+  Col
+      0 :
+           0  
+           0  
+
+      1 :
+           7  
+           2  
+
+      2 :
+           4  
+           4  
+
+
+  Volume = 10
+
+  Tetrahedron:
+
+  Row: 
+      0       
+      1       
+      2       
+
+  Col
+      0 :
+           0  
+           0  
+           0  
+
+      1 :
+           7  
+           2  
+           0  
+
+      2 :
+           4  
+           4  
+           0  
+
+      3 :
+           0  
+           0  
+           6  
+
+
+  Volume = 20
+
+simplex01_volume_test
+  simplex01_volume returns the volume of the unit simplex
+  in M dimensions.
+
+   M   Volume
+
+   1  1
+   2  0.5
+   3  0.166667
+   4  0.0416667
+   5  0.00833333
+   6  0.00138889
+   7  0.000198413
+   8  2.48016e-05
+   9  2.75573e-06
+
+simplex_coordinates_test():
+  Normal end of execution.
+Wed Oct  8 08:55:11 2025

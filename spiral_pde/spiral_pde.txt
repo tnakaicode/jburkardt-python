@@ -1,0 +1,33 @@
+Fri May 16 22:15:34 2025
+
+spiral_pde_test():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  spiral_pde() solves a reaction-diffusion
+  partial differential equation with spiral solution.
+
+  discretization values:
+
+    nx =  401
+    xmin =  0.0
+    xmax =  80.0
+    dx =  0.2
+    ny =  401
+    ymin =  0.0
+    ymax =  80.0
+    dy =  0.2
+    nt =  401
+    tmin =  0.0
+    tmax =  5.0
+    dt =  0.2
+
+  parameters:
+
+    alpha =  0.25
+    beta =  0.001
+    delta =  1e-05
+    epsilon =  0.002
+  Graphics saved as "spiral_0000.png"
+  Graphics saved as "spiral_0500.png"
+  Graphics saved as "spiral_1000.png"

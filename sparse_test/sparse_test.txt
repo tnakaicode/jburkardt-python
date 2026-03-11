@@ -1,0 +1,23 @@
+Wed Oct  8 08:55:49 2025
+
+sparse_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  sparse() is a scipy library of functions for dealing with
+  sparse matrices.
+
+sparse_test01()
+  Define a tiny sparse matrix.
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/sparse_test/sparse_test.py", line 256, in <module>
+    sparse_test ( )
+  File "/home/john/public_html/py_src/sparse_test/sparse_test.py", line 31, in sparse_test
+    sparse_test01 ( )
+  File "/home/john/public_html/py_src/sparse_test/sparse_test.py", line 82, in sparse_test01
+    A = coo_matrix ( ( s, ( i, j ) ), shape = ( m, n ), dtype = np.float )
+  File "/usr/local/lib/python3.10/dist-packages/numpy/__init__.py", line 324, in __getattr__
+    raise AttributeError(__former_attrs__[attr])
+AttributeError: module 'numpy' has no attribute 'float'.
+`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations. Did you mean: 'cfloat'?

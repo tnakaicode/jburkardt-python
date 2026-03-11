@@ -1,0 +1,29 @@
+Wed Oct  8 08:55:09 2025
+
+sigmoid_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test sigmoid.
+
+sigmoid_coef_test():
+  sigmoid_coef() returns the coefficients of
+  the expansion of the nth derivative of the sigmoid
+  function in terms of powers of the sigmoid function.
+  s^(0)(x) =   1 * s(x)
+  s^(1)(x) =   1 * s(x) - 1 * s(x)^2
+  s^(2)(x) =   1 * s(x) - 3 * s(x)^2 + 2 * s(x)^3
+  s^(3)(x) =   1 * s(x) - 7 * s(x)^2 + 12 * s(x)^3 - 6 * s(x)^4
+  s^(4)(x) =   1 * s(x) - 15 * s(x)^2 + 50 * s(x)^3 - 60 * s(x)^4 + 24 * s(x)^5
+
+sigmoid_value_test():
+  sigmoid_value() evaluates the nth derivative
+  of the sigmoid function at the location x.
+  Graphics saved as "sigmoid_0.png"
+  Graphics saved as "sigmoid_1.png"
+  Graphics saved as "sigmoid_2.png"
+  Graphics saved as "sigmoid_3.png"
+
+sigmoid_test():
+  Normal end of execution.
+
+Wed Oct  8 08:55:11 2025

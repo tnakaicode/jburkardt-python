@@ -1,0 +1,149 @@
+<html>
+
+  <head>
+    <title>
+      sir_ode
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      sir_ode
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>sir_ode</b>,
+      a Python code which
+      sets up the ordinary differential equations (ODE) which
+      simulate the spread of a disease
+      using the Susceptible/Infected/Recovered (SIR) model.
+    </p>
+
+    <p>
+      We consider the evolution of a disease epidemic in a population of
+      N people.
+    </p>
+
+    <p>
+      We assume that the patients can be classified as Susceptible, Infected or
+      Recovering, with the properties that:
+      <ul>
+        <li>
+          <i>Susceptible</i>: A patient who has never been infected with the
+          disease.  A susceptible patient can become infected, with
+          an infectivity coefficient alpha.
+        </li>
+        <li>
+          <i>Infected</i>: A patient who was susceptible, and has now contracted
+          the disease.  Infected patients can spread the disease to susceptible
+          patients.  An infected patient can become recovered, with recovery 
+          coefficient beta.
+        </li>
+        <li>
+          <i>Recovered</i>: A patient who was infectious, but has recovered.
+          Such patients cannot contract the disease, and cannot transmit it.
+          A recovered patient can become susceptible, with
+          susceptibility coefficient gamma.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>sir_ode</b> is available in
+      <a href = "../../m_src/sir_ode/sir_ode.html">a MATLAB version</a> and
+      <a href = "../../octave_src/sir_ode/sir_ode.html">an Octave version</a> and
+      <a href = "../../py_src/sir_ode/sir_ode.html">a Python version.</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_ode/python_ode.html">
+      python_ode</a>,
+      Python codes which 
+      sets up various systems of ordinary differential equations (ODE).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Dianne OLeary,<br>
+          Models of Infection: Person to Person,<br>
+          Computing in Science and Engineering,<br>
+          Volume 6, Number 1, January/February 2004.
+        </li>
+        <li>
+          Dianne OLeary,<br>
+          Scientific Computing with Case Studies,<br>
+          SIAM, 2008,<br>
+          ISBN13: 978-0-898716-66-5,<br>
+          LC: QA401.O44.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+      <ul>
+        <li>
+          <a href = "sir_ode.py">sir_ode.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "sir_ode.sh">sir_ode.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "sir_ode.txt">sir_ode.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sir_solve_ivp.png">sir_solve_ivp.png</a>, 
+          a time history plot.
+        </li>
+        <li>
+          <a href = "sir_solve_ivp_conservation.png">sir_solve_ivp_conservation.png</a>, 
+          a plot of S+I+R, should be constant.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 October 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

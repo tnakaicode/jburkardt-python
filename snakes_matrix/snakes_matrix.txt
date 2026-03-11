@@ -1,0 +1,12 @@
+Wed Oct  8 08:55:46 2025
+
+snakes_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  snakes_matrix() constructs the transition matrix for the
+  game of snakes and ladders.
+  Graphics saved as "snakes_matrix.png"
+
+snakes_matrix_test():
+  Normal end of execution.
+Wed Oct  8 08:55:47 2025

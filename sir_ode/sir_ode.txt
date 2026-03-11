@@ -1,0 +1,23 @@
+Wed Oct  8 08:55:22 2025
+
+sir_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve sir_ode().
+
+  parameters:
+    alpha =  0.0075
+    beta  =  0.005
+    gamma =  0.001
+    t0    =  0.0
+    y0    =  [99.  1.  0.]
+    tstop =  5000.0
+
+sir_solve_ivp():
+  Solve sir_ode() using solve_ivp().
+  Graphics saved as "sir_solve_ivp.png"
+  Graphics saved as "sir_solve_ivp_conservation.png"
+
+sir_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:55:23 2025

@@ -1,0 +1,158 @@
+Wed Oct  8 08:54:16 2025
+
+sde_test():
+  python version:     3.10.12
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  Test sde().
+
+bpath():
+  Brownian path simulation
+  Computation required  -0.00024890899658203125  seconds.
+  Graphics saved as "bpath.png"
+
+bpath1():
+  Brownian path simulation
+  Graphics saved as "bpath1.png"
+
+bpath2():
+  Brownian path simulation
+  Graphics saved as "bpath2.png"
+
+bpath3():
+  Average 1000 Brownian path simulations.
+  Graphics saved as "bpath3.png"
+
+  Maximum error in averaged data is  0.11373436310082363
+
+bpath_average():
+  Average  1000  Brownian path simulations.
+  Computation required  0.01593184471130371  seconds.
+  Graphics saved as "bpath_average.png"
+
+  Maximum error in averaged data is  0.05885230569506561
+
+bpath_vectorized():
+  Brownian path simulation
+  Computation required  0.00010991096496582031  seconds
+  Graphics saved as "bpath_vectorized.png"
+
+chain():
+  Solve a stochastic differential equation involving a function
+  of a stochastic variable X.
+  We can solve for X(t), and then evaluate V(X(t)).
+  Or, apply the stochastic chain rule to derive an
+  an SDE for V, and solve that.
+
+  Maximum difference =  0.005867597738770103
+  Graphics saved as "chain.png"
+
+em():
+  Apply the Euler-Maruyama method to an SDE.
+
+  Xem(Tfinal) - Xtrue(Tfinal) =  3.157290214848576
+  Graphics saved as "em.png"
+
+emstrong():
+  Test the strong convergence of the Euler-Maruyama method.
+
+  Least squares solution to Error = c * dt ^ q
+  Expecting a value near 0.5
+  q =  42.38558206927076
+  Residual is  0.35795151892435395
+  Graphics saved as "emstrong.png"
+
+emweak():
+  Test the weak convergence of the Euler-Maruyama method.
+
+  Using standard Euler-Maruyama method.
+  Least squares solution to Error = c * dt ^ q
+  Expecting a q value near 1
+  q =  0.9377736357917645
+  Residual is  0.0759869713388224
+  Graphics saved as "emweak0.png"
+
+emweak():
+  Test the weak convergence of the Euler-Maruyama method.
+
+  Using weak Euler-Maruyama method.
+  Least squares solution to Error = c * dt ^ q
+  Expecting a q value near 1
+  q =  0.926053050246431
+  Residual is  0.08068112149402334
+  Graphics saved as "emweak1.png"
+
+milstrong():
+  Test the strong convergence of the Milstein method.
+
+  Least squares solution to Error = c * dt ^ q
+  Expecting a value near 0.5
+  q =  1.044060398937449
+  Residual is  0.034653732732343935
+  Graphics saved as "milstrong.png"
+
+stab():
+  Check asymptotic and mean-square stability.
+  Graphics saved as "stab1.png"
+  Graphics saved as "stab2.png"
+
+stab_asymptotic():
+  Investigate asymptotic stability of Euler-Maruyama
+  solution with stepsize DT and MU.
+
+  SDE is asymptotically stable if
+    Real ( lambda - 1/2 mu^2 ) < 0.
+
+  EM with DT is asymptotically stable if
+    E log ( 1 + lambda dt - sqrt(dt) mu n(0,1) ) < 0.
+  where n(0,1) is a normal random value.
+
+  Lambda =  0.5
+  Mu =      2.449489742783178
+  SDE asymptotic test =  -2.4999999999999996
+  Graphics saved as "stab_asymptotic.png"
+
+stabmeansquare():
+  Check mean-square stability.
+  Graphics saved as "stab_meansquare.png"
+
+strint():
+  Approximate a stochastic integral.
+                                                  Abs      Rel
+              N        Exact        Estimate      Error    Error
+
+    Ito    100000  -0.090571334  -0.090393142   0.00018    -0.002
+  Strat    100000    0.40942867    0.40799067    0.0014    0.0035
+
+stochastic_integral_ito_test():
+  Estimate the Ito integral of W(t) dW over [0,1].
+
+                                             Abs      Rel
+         N        Exact        Estimate      Error    Error
+
+       100   -0.49949198   -0.61709775      0.12     -0.24
+       400    -0.4803497   -0.43517671     0.045    -0.094
+      1600   -0.29386332   -0.31271543     0.019    -0.064
+      6400    0.57241735    0.57749281    0.0051    0.0089
+     25600   0.001855095  -0.0020669358    0.0039       2.1
+    102400    -0.4687373   -0.46627784    0.0025   -0.0052
+    409600   -0.28355485   -0.28247579    0.0011   -0.0038
+
+stochastic_integral_strat_test():
+  stochastic_integral_strat() estimates the Stratonovich
+  integral of W(t) dW over [0,1].
+
+                                             Abs      Rel
+         N        Exact        Estimate      Error    Error
+
+       100  0.0086497865   0.017075933    0.0084      0.97
+       400   0.096254348    0.13635214      0.04      0.42
+      1600     2.0129699     1.9949337     0.018     0.009
+      6400   0.090939377   0.087897895     0.003     0.033
+     25600    0.12247738    0.12758992    0.0051     0.042
+    102400  0.0052414449  0.0032061866     0.002      0.39
+    409600    0.65577874    0.65573445   4.4e-05   6.8e-05
+
+sde_test():
+  Normal end of execution.
+Wed Oct  8 08:54:24 2025

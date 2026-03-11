@@ -1,0 +1,14 @@
+Wed Oct  8 08:55:47 2025
+
+solve_bvp_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Use solve_bvp() to solve Bratus problem:
+  y" + k e^y = 0
+  0 <= x <= 1
+  y(0) = 0, y(1) = 0
+  Graphics saved as "solve_bvp_test.png"
+
+solve_bvp_test():
+  Normal end of execution.
+Wed Oct  8 08:55:48 2025
