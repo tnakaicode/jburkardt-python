@@ -1,0 +1,52 @@
+Wed Oct  8 08:44:40 2025
+
+ornstein_uhlenbeck_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test ornstein_uhlenbeck().
+
+ornstein_uhlenbeck_euler_test():
+  Estimate a solution to the Ornstein-Uhlenbeck equation
+  using the Euler method for stochastic differential equations.
+
+  Using decay rate THETA =  2.0
+  Using mean MU =  1.0
+  Using variance SIGMA =  0.15
+  Using initial value X0 =  2.0
+  Using final time TMAX =  3.0
+  Using number of timesteps N =  10000
+
+ornstein_uhlenbeck_euler():
+  Use the Euler method to approximate the solution of
+  the Ornstein-Uhlenbeck stochastic differential equation:
+
+    d x(t) = theta * ( mu - x(t) ) dt + sigma dW
+
+  with initial condition x(0) = x0.
+  Graphics saved as "ornstein_uhlenbeck_euler.png"
+
+ornstein_uhlenbeck_euler_maruyama_test():
+  Estimate a solution to the Ornstein-Uhlenbeck equation
+  using the Euler-Maruyama method for stochastic 
+  differential equations.
+
+  Using decay rate THETA =  2.0
+  Using mean MU =  1.0
+  Using variance SIGMA =  0.15
+  Using initial value X0 =  2.0
+  Using final time TMAX =  3.0
+  Using number of large timesteps N =  10000
+  Using R =  16  small time steps per one large time step
+
+ornstein_uhlenbeck_euler_maruyama():
+  Use the Euler-Maruyama method to approximate the solution of
+  the Ornstein-Uhlenbeck stochastic differential equation:
+
+    d x(t) = theta * ( mu - x(t) ) dt + sigma dW
+
+  with initial condition x(0) = x0.
+  Graphics saved as "ornstein_uhlenbeck_maruyama.png"
+
+ornstein_uhlenbeck_test():
+  Normal end of execution.
+Wed Oct  8 08:44:41 2025

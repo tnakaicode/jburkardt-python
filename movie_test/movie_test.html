@@ -1,0 +1,169 @@
+<html>
+
+  <head>
+    <title>
+      movie_test
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      movie_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>movie_test</b>,
+      a Python code which
+      creates a movie file from a sequence of solutions to a
+      partial differential equation, using matplotlib.
+    </p>
+
+    <p>
+      matplotlib() provides a procedure <b>FuncAnimation()</b> for creating
+      animations.  However, this procedure has limited documentation, and
+      a peculiarly constrained user interface.  The user provides a ``frame(i)''
+      function whose only input is the frame counter i, which must return,
+      in a somewhat obscure fashion, the raw plot elements involved in the frame.
+    </p>
+
+    <p>
+      While it's not too hard to use this facility to create an animation of
+      a sine curve, it's more difficult to see how to, for instance, compute
+      a sequence of solutions to a partial differential equation, and display
+      the sequence of time solutions in a movie file.  One difficulty is that
+      this calculation requires the frame function to have access to the
+      data at the previous time step, which can't be done through the parameter
+      list, and which isn't easily done simply by declaring the data in the
+      user's main program.  This code demonstrates one way of computing a
+      scientifically interesting result and creating a movie from it.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>movie_test</b> is available in
+      <a href = "../../py_src/movie_test/movie_test.html">a Python version.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/allen_cahn_pde/allen_cahn_pde.html">
+      allen_cahn_pde</a>,
+      a Python code which 
+      sets up and solves the 1D Allen-Cahn reaction-diffusion 
+      partial differential equation (PDE).
+    </p>
+
+    <p>
+      <a href = "../../py_src/animation_test/animation_test.html">
+      animation_test</a>,
+      a Python code which
+      computes a sequence of solutions to a partial differential equation, 
+      using matplotlib, displaying each solution to the screen WITHOUT 
+      requiring the user to hit RETURN to see the next image.
+    </p>
+
+    <p>
+      <a href = "../../py_src/graphics_test/graphics_test.html">
+      graphics_test</a>,
+      a Python code which
+      illustrates how various kinds of data can be displayed and 
+      analyzed graphically.
+    </p>
+
+    <p>
+      <a href = "../../py_src/peak_movie/peak_movie.html">
+      peak_movie</a>,
+      a Python code which
+      creates a sequence of frames, and then an animation or movie
+      from the data displayed by the peaks() function.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Qingkai Kong, Timmy Siauw, Alexandre Bayen, <br>
+          Python Programming and Numerical Methods,<br>
+          Academic Press, 2022,<br>
+          ISBN: 978-0-12-819549-9
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "movie_test.py">movie_test.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "movie_test.sh">movie_test.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "movie_test.txt">movie_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "allen_cahn_movie.py">allen_cahn_movie.py</a>,
+          creates a movie of a sequence of solutions to the Allen-Cahn
+          equations.
+        </li>
+        <li>
+          <a href = "allen_cahn_movie.mp4">allen_cahn_movie.mp4</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sine_movie.py">sine_movie.py</a>,
+          creates a movie in which a red ball traces out a sine curve.
+        </li>
+        <li>
+          <a href = "sine_movie.mp4">sine_movie.mp4</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 24 February 2023.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

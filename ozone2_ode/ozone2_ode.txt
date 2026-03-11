@@ -1,0 +1,27 @@
+Wed Oct  8 08:44:43 2025
+
+ozone2_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve ozone2_ode().
+
+  parameters:
+    k2     =  100000.0
+    k3     =  1e-16
+    sigma2 =  1000000.0
+    t0     =  14400.0
+    y0     =  [0.0e+00 1.3e+10 5.0e+11 8.0e+11]
+    tstop  =  504000.0
+
+ozone2_solve_ivp():
+  Use solve_ivp() to solve ozone2_ode().
+  Graphics saved as "ozone2_solve_ivp_y1.png"
+  Graphics saved as "ozone2_solve_ivp_y2.png"
+  Graphics saved as "ozone2_solve_ivp_y3.png"
+  Graphics saved as "ozone2_solve_ivp_y4.png"
+  Graphics saved as "ozone2_solve_ivp_conservation.png"
+
+ozone_ode_test():
+  Normal end of execution.
+
+Wed Oct  8 08:44:44 2025

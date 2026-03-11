@@ -1,0 +1,84 @@
+Wed Oct  8 08:25:38 2025
+
+mgs_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test mgs():
+
+mgs_undoc_test():
+  mgs_undoc() is an undocumented function.
+  This code does a test on it.
+  A is a random  200  by  50  matrix.
+  mgs() computes factors Q and R.
+  Q is an  200  by  200  orthogonal matrix.
+  R is an  200  by  50  upper triangular matrix.
+  Frobenius norm of A - Q * R =  1.3431249409572477e-14
+
+mgs_doc_test():
+  mgs_doc() is a documented function.
+  This code does a test on it.
+  A is a random  200  by  50  matrix.
+  mgs() computes factors Q and R.
+  Q is an  200  by  200  orthogonal matrix.
+  R is an  200  by  50  upper triangular matrix.
+  Frobenius norm of A - Q * R =  1.3389706338606964e-14
+
+mgs_vector_test():
+  mgs_vector() is a vectorized function.
+  This code does a test on it.
+  A is a random  200  by  50  matrix.
+  mgs() computes factors Q and R.
+  Q is an  200  by  200  orthogonal matrix.
+  R is an  200  by  50  upper triangular matrix.
+  Frobenius norm of A - Q * R =  1.3216062277869547e-14
+
+mgs_comparison_test():
+  Compare mgs_undoc(), mgs_doc(), mgs_vector() and np.linalg.qr() algorithms.
+
+  Test #1: 7x5 real matrix.
+  Algorithm     norm(Q^T*Q-I)    norm(Q*R-A)
+   mgs_undoc     5.731065e-16     9.126690e-17
+   mgs_doc       5.731065e-16     9.126690e-17
+   mgs_vector    5.486526e-16     2.082824e-16
+   np.linalg.qr  1.291561e-15     1.185272e-15
+
+  Test #2: 3x5 real matrix.
+  Algorithm     norm(Q^T*Q-I)    norm(Q*R-A)
+   mgs_undoc     6.700229e-15     1.595946e-16
+   mgs_doc       6.700229e-15     1.595946e-16
+   mgs_vector    6.700229e-15     2.111899e-15
+   np.linalg.qr  1.013509e-15     1.259232e-15
+
+  Test #3: 8x4 complex matrix.
+  Algorithm     norm(Q^T*Q-I)    norm(Q*R-A)
+   mgs_undoc     1.034341e-15     4.797702e-16
+   mgs_doc       1.034341e-15     4.797702e-16
+   mgs_vector    7.008626e-16     4.618536e-16
+   np.linalg.qr  7.566060e-16     1.177634e-15
+
+mgs_timing_test():
+  Compare timings of mgs algorithms.
+
+  n  mgs_undoc  mgs_doc  mgs_vector  np.linalg.qr
+
+ 50  5.6651e-01  5.6782e-01  6.2695e-03  5.2261e-04
+ 60  9.0147e-01  8.1907e-01  8.9216e-03  5.6601e-04
+ 70  1.1923e+00  1.1090e+00  1.2159e-02  6.5303e-04
+ 80  1.5368e+00  1.4576e+00  1.6615e-02  7.8177e-04
+ 90  1.9198e+00  1.8346e+00  2.0253e-02  8.2564e-04
+100  2.3633e+00  2.2811e+00  2.4383e-02  9.1124e-04
+110  2.8313e+00  2.7487e+00  2.9395e-02  1.0247e-03
+120  3.3677e+00  3.2820e+00  3.5365e-02  1.0805e-03
+130  3.9201e+00  3.8433e+00  4.1338e-02  1.5707e-03
+140  4.5556e+00  4.4791e+00  4.7542e-02  1.5285e-03
+150  5.2023e+00  5.1114e+00  5.4364e-02  1.4501e-03
+160  5.9295e+00  5.8502e+00  6.4487e-02  1.6544e-03
+170  6.6440e+00  6.5672e+00  7.0325e-02  1.8284e-03
+180  7.4726e+00  7.4034e+00  7.8057e-02  1.9641e-03
+190  8.2870e+00  8.2009e+00  8.7120e-02  2.1467e-03
+200  9.2221e+00  9.1305e+00  9.4425e-02  2.2967e-03
+  Graphics saved as "mgs_timing.png"
+
+mgs_test():
+  Normal end of execution.
+Wed Oct  8 08:27:52 2025

@@ -1,0 +1,15 @@
+Wed Oct  8 08:40:16 2025
+
+neural_network_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Demonstrate back propagation.
+  Using learning rate eta = 0.05
+  Number of iterations =  1000000
+  Graphics saved as "neural_network.png"
+  Initial cost =  5.3879661267490135
+  Final cost   =  0.0007488562375722192
+
+neural_network_test():
+  Normal end of execution.
+Wed Oct  8 08:44:05 2025

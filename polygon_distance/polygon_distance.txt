@@ -1,0 +1,63 @@
+Wed Oct  8 08:46:27 2025
+
+polygon_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test polygon_distance().
+
+polygon_sample_test():
+  Test polygon_sample().
+
+  Polygonal vertices:
+[[0.  0. ]
+ [0.5 0.3]
+ [1.  0. ]
+ [0.7 0.4]
+ [1.  0.6]
+ [0.6 0.6]
+ [0.5 1. ]
+ [0.4 0.6]
+ [0.  0.6]
+ [0.3 0.4]]
+  Graphics saved as "polygon_sample_test.png"
+
+polygon_distance_stats_test():
+  Test polygon_distance_stats().
+
+  Polygonal vertices:
+[[0.  0. ]
+ [0.5 0.3]
+ [1.  0. ]
+ [0.7 0.4]
+ [1.  0.6]
+ [0.6 0.6]
+ [0.5 1. ]
+ [0.4 0.6]
+ [0.  0.6]
+ [0.3 0.4]]
+
+  N    = 10000
+  Min  = 0.004746421462028701
+  Mean = 0.3521659220742946
+  Max  = 1.0724491965786658
+  Var  = 0.033962725370453466
+
+polygon_distance_histogram_test()
+  Test polygon_distance_histogram().
+
+  Polygonal vertices:
+[[0.  0. ]
+ [0.5 0.3]
+ [1.  0. ]
+ [0.7 0.4]
+ [1.  0.6]
+ [0.6 0.6]
+ [0.5 1. ]
+ [0.4 0.6]
+ [0.  0.6]
+ [0.3 0.4]]
+  Graphics saved as "polygon_distance_histogram.png"
+
+polygon_distance_test():
+  Normal end of execution.
+Wed Oct  8 08:46:28 2025

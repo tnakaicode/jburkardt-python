@@ -1,0 +1,8 @@
+Wed Oct  8 08:46:07 2025
+
+poisson_1d_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  poisson_1d() solves a boundary value problem.
+  Graphics saved as "poisson_1d.png"
+Wed Oct  8 08:46:08 2025

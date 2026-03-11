@@ -1,0 +1,46 @@
+Wed Oct  8 08:46:06 2025
+
+plasma_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test plasma_matrix()
+
+plasma_matrix_test01():
+  Linear order of spatial grid =  5
+  Number of grid points is  25
+  Approximate number of nonzero matrix entries is  125
+  Full storage matrix would require 625 entries.
+
+  Norm of right hand side b is 6.199696856577434
+  Graphics saved as "plasma_5_sparsity.png"
+
+  Norm of solution is 0.3236676629366563
+
+plasma_matrix_test01():
+  Linear order of spatial grid =  101
+  Number of grid points is  10201
+  Approximate number of nonzero matrix entries is  51005
+  Full storage matrix would require 104060401 entries.
+
+  Norm of right hand side b is 27.725887222397816
+  Graphics saved as "plasma_101_sparsity.png"
+
+  Norm of solution is 29.26996141869852
+
+plasma_matrix_test02():
+  Linear order of spatial grid = 101
+  Number of grid points is 10201
+  Approximate number of nonzero matrix entries is  51005
+  Full storage matrix would require 104060401 entries.
+
+  Norm of right hand side b is 27.725887222397816
+
+  Norm of backslash solution x is 29.26996141869852
+
+  Norm of bicg solution x is 29.269955280077497
+
+  Norm of ilu solution x is 22.07114060409629
+
+plasma_matrix_test():
+  Normal end of execution.
+Wed Oct  8 08:46:07 2025

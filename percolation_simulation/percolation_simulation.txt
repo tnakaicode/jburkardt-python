@@ -1,0 +1,47 @@
+Wed Oct  8 08:45:12 2025
+
+percolation_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  percolation_simulation() simulates percolation.
+  A rectangular region is formed by a grid of M x N squares.
+  Each square may be porous or solid.
+  We are interested in paths of porous squares connecting
+  the top and bottom, or the left and right boundaries.
+
+  Grid uses 32 rows x 32 columns.
+  Prescribed probability of occupation = 0.6
+
+  Total number of sites =  1024
+  Number of occupied sites =  596
+  Observed probability of occupation =  0.58203125
+  Number of components =  40
+  Mean component size =  14.536585365853659
+
+  component size distribution
+    Size  Number  Probability
+
+        0   1  0.0243902
+        1  22  0.536585
+        2   2  0.0487805
+        3   5  0.121951
+        4   1  0.0243902
+        5   1  0.0243902
+        7   1  0.0243902
+       12   1  0.0243902
+       13   1  0.0243902
+       18   1  0.0243902
+       19   1  0.0243902
+       24   1  0.0243902
+       55   1  0.0243902
+       65   1  0.0243902
+       333   1  0.0243902
+
+  Number of horizontal spanning components =  1
+  Number of vertical spanning components   =  0
+  Graphics saved as "occupation.png"
+  Graphics saved as "components.png"
+
+percolation_simulation_test()
+  Normal end of execution.
+Wed Oct  8 08:45:15 2025

@@ -1,0 +1,400 @@
+Wed Oct  8 08:46:33 2025
+
+polynomial_conversion_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test polynomial_conversion().
+
+bernstein_to_legendre01_test ( ):
+  bernstein_to_legendre01() converts a
+  polynomial from Bernstein form
+  to Legendre01 form.
+
+           P010    P011    P012    P013    P014    P015    P016    
+
+B0(x) =    1.000
+B1(x) =   -1.000   1.000
+B2(x) =    1.000  -2.000   1.000
+B3(x) =   -1.000   3.000  -3.000   1.000
+B4(x) =    1.000  -4.000   6.000  -4.000   1.000
+B5(x) =   -1.000   5.000 -10.000  10.000  -5.000   1.000
+B6(x) =    1.000  -6.000  15.000 -20.000  15.000  -6.000   1.000
+
+bernstein_to_legendre01_matrix_test ( ):
+  bernstein_to_legendre01_matrix() returns the matrix which
+  maps polynomial coefficients from Bernstein form
+  to Legendre01 form.
+
+[[ 0.2         0.2         0.2         0.2         0.2       ]
+ [-0.4        -0.2         0.          0.2         0.4       ]
+ [ 0.28571429 -0.14285714 -0.28571429 -0.14285714  0.28571429]
+ [-0.1         0.2         0.         -0.2         0.1       ]
+ [ 0.01428571 -0.05714286  0.08571429 -0.05714286  0.01428571]]
+
+legendre01_to_bernstein_test ( ):
+  legendre01_to_bernstein() converts a
+  polynomial from Legendre01 form
+  to Bernstein form.
+
+           B0(X)    B1(X)    B2(X)    B3(X)    B4(X)    B5(X)    B6(X)    
+
+P010(x) =    1.000
+P011(x) =   -1.000   1.000
+P012(x) =    1.000  -2.000   1.000
+P013(x) =   -1.000   3.000  -3.000   1.000
+P014(x) =    1.000  -4.000   6.000  -4.000   1.000
+P015(x) =   -1.000   5.000 -10.000  10.000  -5.000   1.000
+P016(x) =    1.000  -6.000  15.000 -20.000  15.000  -6.000   1.000
+
+legendre01_to_bernstein_matrix_test ( ):
+  legendre01_to_bernstein_matrix() returns the matrix which
+  maps polynomial coefficients from Legendre01 form
+  to Bernstein form.
+
+[[  1.   -1.    1.   -1.    1.   -1. ]
+ [  1.   -0.6  -0.2   1.4  -3.    5. ]
+ [  1.   -0.2  -0.8   0.8   2.  -10. ]
+ [  1.    0.2  -0.8  -0.8   2.   10. ]
+ [  1.    0.6  -0.2  -1.4  -3.   -5. ]
+ [  1.    1.    1.    1.    1.    1. ]]
+
+bernstein_legendre01_bernstein_test ( ):
+  Convert a polynomial from Bernstein form
+  to Legendre01 form and back.
+
+  L2 difference =  1.6238501066610442e-12
+
+bernstein_to_monomial_test ( ):
+  bernstein_to_monomial() converts a
+  polynomial from Bernstein form
+  to monomial form.
+
+           X**0    X**1    X**2    X**3    X**4    X**5    X**6    
+
+B0(x) =    1.000
+B1(x) =   -1.000   1.000
+B2(x) =    1.000  -2.000   1.000
+B3(x) =   -1.000   3.000  -3.000   1.000
+B4(x) =    1.000  -4.000   6.000  -4.000   1.000
+B5(x) =   -1.000   5.000 -10.000  10.000  -5.000   1.000
+B6(x) =    1.000  -6.000  15.000 -20.000  15.000  -6.000   1.000
+
+bernstein_to_monomial_matrix_test ( ):
+  bernstein_to_monomial_matrix() returns the matrix which
+  maps polynomial coefficients from Bernstein form
+  to monomial form.
+
+[[  1.  -4.   6.  -4.   1.]
+ [  0.   4. -12.  12.  -4.]
+ [  0.   0.   6. -12.   6.]
+ [  0.   0.   0.   4.  -4.]
+ [  0.   0.   0.   0.   1.]]
+
+monomial_to_bernstein_test ( ):
+  monomial_to_bernstein() converts a
+  polynomial from monomial form to 
+  Bernstein form.
+
+        B0(x)   B1(x)   B2(x)   B3(x)   B4(x)   B5(x)   B6(x)   
+
+X**0 =  1.00000
+X**1 =  1.00000 1.00000
+X**2 =  1.00000 1.00000 1.00000
+X**3 =  1.00000 1.00000 1.00000 1.00000
+X**4 =  1.00000 1.00000 1.00000 1.00000 1.00000
+X**5 =  1.00000 1.00000 1.00000 1.00000 1.00000 1.00000
+X**6 =  1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000
+
+monomial_to_bernstein_matrix_test ( ):
+  monomial_to_bernstein_matrix() returns the matrix which
+  maps polynomial coefficients from monomial form
+  to Bernstein form.
+
+[[1.         1.         1.         1.         1.        ]
+ [0.         0.25       0.5        0.75       1.        ]
+ [0.         0.         0.16666667 0.5        1.        ]
+ [0.         0.         0.         0.25       1.        ]
+ [0.         0.         0.         0.         1.        ]]
+
+bernstein_monomial_bernstein_test ( ):
+  Convert a polynomial from Bernstein form
+  to monomial form and back.
+
+  L2 difference =  2.3077731491409604e-13
+
+chebyshev_to_monomial_test ( ):
+  chebyshev_to_monomial() converts a
+  polynomial from Chebyshev form
+  to monomial form.
+
+           X**0    X**1    X**2    X**3    X**4    X**5    X**6    
+
+T0(x) =    1.000
+T1(x) =    0.000   1.000
+T2(x) =   -1.000   0.000   2.000
+T3(x) =    0.000  -3.000   0.000   4.000
+T4(x) =    1.000   0.000  -8.000   0.000   8.000
+T5(x) =    0.000   5.000   0.000 -20.000   0.000  16.000
+T6(x) =   -1.000   0.000  18.000   0.000 -48.000   0.000  32.000
+
+monomial_to_chebyshev_test ( ):
+  monomial_to_chebyshev() converts a
+  polynomial from monomial form to 
+  Chebyshev form.
+
+        T0(x)   T1(x)   T2(x)   T3(x)   T4(x)   T5(x)   T6(x)   
+
+X**0 =  2.00000
+X**1 =  0.00000 1.00000
+X**2 =  0.50000 0.00000 0.50000
+X**3 =  0.00000 0.75000 0.00000 0.25000
+X**4 =  0.37500 0.00000 0.50000 0.00000 0.12500
+X**5 =  0.00000 0.62500 0.00000 0.31250 0.00000 0.06250
+X**6 =  0.31250 0.00000 0.46875 0.00000 0.18750 0.00000 0.03125
+
+chebyshev_monomial_chebyshev_test ( ):
+  Convert a polynomial from Chebyshev form
+  to monomial form and back.
+
+  L2 difference =  1.967320211922957e-15
+
+gegenbauer_to_monomial_test ( ):
+  gegenbauer_to_monomial() converts a
+  polynomial from Gegenbauer form
+  to monomial form.
+
+  Gegenbauer parameter alpha =  0.5
+
+           X**0    X**1    X**2    X**3    X**4    X**5    X**6    
+
+C0(x) =    1.000
+C1(x) =    0.000   1.000
+C2(x) =   -0.500   0.000   1.500
+C3(x) =    0.000  -1.500   0.000   2.500
+C4(x) =    0.375   0.000  -3.750   0.000   4.375
+C5(x) =    0.000   1.875   0.000  -8.750   0.000   7.875
+C6(x) =   -0.312   0.000   6.562   0.000 -19.687   0.000  14.438
+
+gegenbauer_to_monomial_matrix_test ( ):
+  gegenbauer_to_monomial_matrix() returns the matrix which
+  maps polynomial coefficients from Gegenbauer form
+  to monomial form.
+
+  alpha =  0.5
+[[ 1.     0.    -0.5    0.     0.375]
+ [ 0.     1.     0.    -1.5    0.   ]
+ [ 0.     0.     1.5    0.    -3.75 ]
+ [ 0.     0.     0.     2.5    0.   ]
+ [ 0.     0.     0.     0.     4.375]]
+
+monomial_to_gegenbauer_test ( ):
+  monomial_to_gegenbauer() converts a
+  polynomial from monomial form to 
+  Gegenbauer form.
+
+  Gegenbauer parameter alpha =  0.5
+
+        C0(x)   C1(x)   C2(x)   C3(x)   C4(x)   C5(x)   C6(x)   
+
+X**0 =  1.00000
+X**1 =  0.00000 1.00000
+X**2 =  0.33333 0.00000 0.66667
+X**3 =  0.00000 0.60000 0.00000 0.40000
+X**4 =  0.20000 0.00000 0.57143 0.00000 0.22857
+X**5 =  0.00000 0.42857 0.00000 0.44444 0.00000 0.12698
+X**6 =  0.14286 0.00000 0.47619 0.00000 0.31169 0.00000 0.06926
+
+monomial_to_gegenbauer_matrix_test ( ):
+  monomial_to_gegenbauer_matrix() returns the matrix which
+  maps polynomial coefficients from monomial form
+  to Gegenbauer form.
+
+  Gegenbauer parameter alpha =  0.5
+
+[[1.         0.         0.33333333 0.        ]
+ [0.         1.         0.         0.6       ]
+ [0.         0.         0.66666667 0.        ]
+ [0.         0.         0.         0.4       ]]
+
+gegenbauer_monomial_gegenbauer_test ( ):
+  Convert a polynomial from Gegenbauer form
+  to monomial form and back.
+
+  Gegenbauer parameter alpha =  0.5
+
+  L2 difference =  2.0528697385542928e-14
+
+hermite_to_monomial_test ( ):
+  hermite_to_monomial() converts a
+  polynomial from Hermite form
+  to monomial form.
+
+           X**0    X**1    X**2    X**3    X**4    X**5    X**6    
+
+H0(x) =    1.000
+H1(x) =    0.000   2.000
+H2(x) =   -2.000   0.000   4.000
+H3(x) =    0.000 -12.000   0.000   8.000
+H4(x) =   12.000   0.000 -48.000   0.000  16.000
+H5(x) =    0.000 120.000   0.000-160.000   0.000  32.000
+H6(x) = -120.000   0.000 720.000   0.000-480.000   0.000  64.000
+
+hermite_to_monomial_matrix_test ( ):
+  hermite_to_monomial_matrix() returns the matrix which
+  maps polynomial coefficients from Hermite form
+  to monomial form.
+
+[[  1.   0.  -2.  -0.  12.]
+ [  0.   2.   0. -12.  -0.]
+ [  0.   0.   4.   0. -48.]
+ [  0.   0.   0.   8.   0.]
+ [  0.   0.   0.   0.  16.]]
+
+monomial_to_hermite_test ( ):
+  monomial_to_hermite() converts a
+  polynomial from monomial form to 
+  Hermite form.
+
+        H0(x)   H1(x)   H2(x)   H3(x)   H4(x)   H5(x)   H6(x)   
+
+X**0 =  1.00000
+X**1 =  0.00000 0.50000
+X**2 =  0.50000 0.00000 0.25000
+X**3 =  0.00000 0.75000 0.00000 0.12500
+X**4 =  0.75000 0.00000 0.75000 0.00000 0.06250
+X**5 =  0.00000 1.87500 0.00000 0.62500 0.00000 0.03125
+X**6 =  1.87500 0.00000 2.81250 0.00000 0.46875 0.00000 0.01562
+
+monomial_to_hermite_matrix_test ( ):
+  monomial_to_hermite_matrix() returns the matrix which
+  maps polynomial coefficients from monomial form
+  to Hermite form.
+
+[[1.    0.    0.5   0.   ]
+ [0.    0.5   0.    0.75 ]
+ [0.    0.    0.25  0.   ]
+ [0.    0.    0.    0.125]]
+
+hermite_monomial_hermite_test ( ):
+  Convert a polynomial from Hermite form
+  to monomial form and back.
+
+  L2 difference =  4.096125991114661e-11
+
+laguerre_to_monomial_test ( ):
+  laguerre_to_monomial() converts a
+  polynomial from Laguerre form
+  to monomial form.
+
+           X**0    X**1    X**2    X**3    X**4    X**5    X**6    
+
+L0(x) =    1.000
+L1(x) =    1.000  -1.000
+L2(x) =    1.000  -2.000   0.500
+L3(x) =    1.000  -3.000   1.500  -0.167
+L4(x) =    1.000  -4.000   3.000  -0.667   0.042
+L5(x) =    1.000  -5.000   5.000  -1.667   0.208  -0.008
+L6(x) =    1.000  -6.000   7.500  -3.333   0.625  -0.050   0.001
+
+laguerre_to_monomial_matrix_test ( ):
+  laguerre_to_monomial_matrix() returns the matrix which
+  maps polynomial coefficients from Laguerre form
+  to monomial form.
+
+[[ 1.          1.          1.          1.          1.        ]
+ [ 0.         -1.         -2.         -3.         -4.        ]
+ [ 0.          0.          0.5         1.5         3.        ]
+ [ 0.          0.          0.         -0.16666667 -0.66666667]
+ [ 0.          0.          0.          0.          0.04166667]]
+
+monomial_to_laguerre_test ( ):
+  monomial_to_laguerre() converts a
+  polynomial from monomial form to 
+  Laguerre form.
+
+        L0(x)   L1(x)   L2(x)   L3(x)   L4(x)   L5(x)   L6(x)   
+
+X**0 =      1.0
+X**1 =      1.0    -1.0
+X**2 =      2.0    -4.0     2.0
+X**3 =      6.0   -18.0    18.0    -6.0
+X**4 =     24.0   -96.0   144.0   -96.0    24.0
+X**5 =    120.0  -600.0  1200.0 -1200.0   600.0  -120.0
+X**6 =    720.0 -4320.0 10800.0-14400.0 10800.0 -4320.0   720.0
+
+monomial_to_laguerre_matrix_test ( ):
+  monomial_to_laguerre_matrix() returns the matrix which
+  maps polynomial coefficients from monomial form
+  to Laguerre form.
+
+[[  1.   1.   2.   6.]
+ [  0.  -1.  -4. -18.]
+ [  0.   0.   2.  18.]
+ [  0.   0.   0.  -6.]]
+
+laguerre_monomial_laguerre_test ( ):
+  Convert a polynomial from Laguerre form
+  to monomial form and back.
+
+  L2 difference =  1.1235872924602822e-12
+
+legendre_to_monomial_test ( ):
+  legendre_to_monomial() converts a
+  polynomial from Legendre form
+  to monomial form.
+
+           X**0    X**1    X**2    X**3    X**4    X**5    X**6    
+
+P0(x) =    1.000
+P1(x) =    0.000   1.000
+P2(x) =   -0.500   0.000   1.500
+P3(x) =    0.000  -1.500   0.000   2.500
+P4(x) =    0.375   0.000  -3.750   0.000   4.375
+P5(x) =    0.000   1.875   0.000  -8.750   0.000   7.875
+P6(x) =   -0.312   0.000   6.562   0.000 -19.688   0.000  14.438
+
+legendre_to_monomial_matrix_test ( ):
+  legendre_to_monomial_matrix() returns the matrix which
+  maps polynomial coefficients from Legendre form
+  to monomial form.
+
+[[ 1.     0.    -0.5   -0.     0.375]
+ [ 0.     1.     0.    -1.5   -0.   ]
+ [ 0.     0.     1.5    0.    -3.75 ]
+ [ 0.     0.     0.     2.5    0.   ]
+ [ 0.     0.     0.     0.     4.375]]
+
+monomial_to_legendre_test ( ):
+  monomial_to_legendre() converts a
+  polynomial from monomial form to 
+  Legendre form.
+
+        P0(x)   P1(x)   P2(x)   P3(x)   P4(x)   P5(x)   P6(x)   
+
+X**0 =  1.00000
+X**1 =  0.00000 1.00000
+X**2 =  0.33333 0.00000 0.66667
+X**3 =  0.00000 0.60000 0.00000 0.40000
+X**4 =  0.20000 0.00000 0.57143 0.00000 0.22857
+X**5 =  0.00000 0.42857 0.00000 0.44444 0.00000 0.12698
+X**6 =  0.14286 0.00000 0.47619 0.00000 0.31169 0.00000 0.06926
+
+monomial_to_legendre_matrix_test ( ):
+  monomial_to_legendre_matrix() returns the matrix which
+  maps polynomial coefficients from monomial form
+  to Legendre form.
+
+[[1.         0.         0.33333333 0.        ]
+ [0.         1.         0.         0.6       ]
+ [0.         0.         0.66666667 0.        ]
+ [0.         0.         0.         0.4       ]]
+
+legendre_monomial_legendre_test ( ):
+  Convert a polynomial from Legendre form
+  to monomial form and back.
+
+  L2 difference =  4.828193870057736e-15
+
+polynomial_conversion_test():
+  Normal end of execution.
+Wed Oct  8 08:46:33 2025

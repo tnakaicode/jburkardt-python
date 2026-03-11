@@ -1,0 +1,30 @@
+Wed Oct  8 08:29:28 2025
+
+mxm_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test mxm().
+
+mxm():
+  Compute matrix-matrix product A = B * C
+
+  Matrix B is  300  by  300
+  Matrix C is  300  by  300
+  Matrix A is  300  by  300
+
+  Number of floating point operations =  54000000
+  Estimated CPU time is  0.02076923076923077  seconds
+
+  Method     Cpu Seconds       MegaFlopS
+  ------  --------------  --------------
+  IJK          12.515831        4.314536
+  IKJ          12.511250        4.316116
+  JIK          12.514508        4.314992
+  JKI          12.504473        4.318455
+  KIJ          12.504089        4.318587
+  KJI          12.506944        4.317601
+  matmul()      0.000710    76108.220651
+
+mxm_test():
+  Normal end of execution.
+Wed Oct  8 08:30:43 2025

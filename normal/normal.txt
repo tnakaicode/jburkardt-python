@@ -1,0 +1,167 @@
+Wed Oct  8 08:44:08 2025
+
+normal_test:
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test normal().
+
+c8_normal_01_test
+  c8_normal_01 computes pseudonormal complex values.
+
+       1  ( -0.016003, -0.432657 )
+       2  ( 0.209393, -0.894746 )
+       3  ( 0.416784, 1.003959 )
+       4  ( 0.942806, -0.705439 )
+       5  ( 0.390758, -0.180090 )
+       6  ( -0.187962, 0.751011 )
+       7  ( 0.687603, -0.205996 )
+       8  ( 2.034035, -0.988237 )
+       9  ( 1.108889, -0.822684 )
+      10  ( -0.748111, -1.875500 )
+
+i4_normal_ab_test
+  i4_normal_ab() computes integer pseudonormal values with
+  mean MU and standard deviation SIGMA.
+
+  MU = 10
+  SIGMA = 2
+
+   0             8
+   1             9
+   2            10
+   3             6
+   4             9
+   5            10
+   6             9
+   7             8
+   8            10
+   9            12
+
+r8_normal_01_test
+  Python version: 3.10.12
+  r8_normal_01 generates normally distributed
+  random values.
+
+  0.105165
+  0.133801
+  -0.769300
+  2.445065
+  0.480930
+  1.322916
+  1.205790
+  1.440972
+  0.330415
+  -0.104615
+  0.099054
+  1.772446
+  -0.001123
+  0.005624
+  0.767421
+  -0.869662
+  -0.385409
+  -0.314857
+  0.930122
+  -1.041738
+
+r8_normal_ab_test
+  Python version: 3.10.12
+  r8_normal_ab generates normally distributed values
+  with given mean and standard deviation.
+
+  MEAN = 100
+  STD = 10
+
+  91.931
+  105.289
+  92.2585
+  103.704
+  112.065
+  112.851
+  113.611
+  88.3695
+  103.114
+  97.3468
+  98.2183
+  90.7484
+  83.8765
+  93.835
+  111.534
+  105.704
+  106.249
+  110.604
+  99.5562
+  104.966
+
+r8mat_normal_01_test
+  Python version: 3.10.12
+  r8mat_normal_01 returns a matrix of Normal 01 values
+
+
+  Matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :     1.58374       2.43492        2.5727     -0.414349  
+      1 :    0.833359      0.511044       1.55895      0.614367  
+      2 :    0.284769    -0.0423118     -0.882548       1.08405  
+      3 :    0.253878      -1.87714      0.791266       2.00256  
+      4 :    0.391742     -0.729589     -0.980779       0.98661  
+
+r8mat_normal_ab_test
+  Python version: 3.10.12
+  r8mat_normal_ab returns a matrix of Normal AB values
+
+  Mean = 100
+  Standard deviation = 5
+
+  Matrix:
+
+  Col:       0             1             2             3       
+  Row
+      0 :      90.989       96.7045       109.091       95.3329  
+      1 :     109.061       108.834       101.467       104.902  
+      2 :     96.4412       95.7555       94.7607       98.3315  
+      3 :     103.029       102.149        97.337       94.6374  
+      4 :     99.1919       108.883       97.6892       101.705  
+
+r8vec_normal_01_test
+  Python version: 3.10.12
+  r8vec_normal_01 returns a vector of Normal 01 values
+
+
+  Vector:
+
+     0:      0.204563
+     1:      -1.03363
+     2:       1.19495
+     3:      -2.36403
+     4:      -1.29035
+     5:     -0.431833
+     6:      0.486693
+     7:     -0.467827
+     8:      0.702202
+     9:      0.780839
+
+r8vec_normal_ab_test
+  Python version: 3.10.12
+  r8vec_normal_ab returns a vector of Normal AB values
+
+  Mean = 15
+  Standard deviation = 0.25
+
+  Vector:
+
+     0:       14.5841
+     1:       15.1646
+     2:        14.858
+     3:       15.0507
+     4:        15.116
+     5:       15.1729
+     6:       14.7043
+     7:       14.8919
+     8:       14.7176
+     9:       15.2669
+
+normal_test():
+  Normal end of execution.
+Wed Oct  8 08:44:08 2025

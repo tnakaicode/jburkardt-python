@@ -1,0 +1,56 @@
+Wed Oct  8 08:27:58 2025
+
+monoalphabetic_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test monoalphabetic()
+
+  mono_encrypt() encrypts a plain text using a monoalphabetic
+  substitution cipher.
+  mono_decrypt() decrypts an encryted text.
+
+  Here we use a "typewriter code" to encrypt the message.
+
+
+ABC:  "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+CODE: "QWERTYUIOPASDFGHJKLZXCVBNM"
+
+PLAIN:   "A man, a plan, a canal - Panama!"
+CRYPT:   "Q DQF, Q HSQF, Q EQFQS - HQFQDQ!"
+DECRYPT: "A MAN, A PLAN, A CANAL - PANAMA!"
+
+  We can use symbols in the code, but if the plaintext
+  and code both use punctuation, we will have some mistakes.
+
+
+ABC:  "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+CODE: "~`!@#$#^&*()-_=+[{]}:,<.>"
+
+PLAIN:   "A man, a plan, a canal - Panama!"
+CRYPT:   "~ -~_, ~ +)~_, ~ !~_~) - +~_~-~!"
+DECRYPT: "A MANV A PLANV A CANAL M PANAMAC"
+
+  If we use a "symmetric" code, then encrypting twice
+  actually decodes the message.
+
+
+ABC:  "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+CODE: "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+
+PLAIN:   "A man, a plan, a canal - Panama!"
+CRYPT:   "Z NZM, Z KOZM, Z XZMZO - KZMZNZ!"
+CRYPT2:  "A MAN, A PLAN, A CANAL - PANAMA!"
+
+  Another ATBASH example.
+
+
+ABC:  "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+CODE: "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+
+PLAIN:   "There are a thousand hacking at the branches of evil for every one who is striking at its root."
+CRYPT:   "GSVIV ZIV Z GSLFHZMW SZXPRMT ZG GSV YIZMXSVH LU VERO ULI VEVIB LMV DSL RH HGIRPRMT ZG RGH ILLG."
+CRYPT2:  "THERE ARE A THOUSAND HACKING AT THE BRANCHES OF EVIL FOR EVERY ONE WHO IS STRIKING AT ITS ROOT."
+
+monoalphabetic_test(:
+  Normal end of execution.
+Wed Oct  8 08:27:58 2025

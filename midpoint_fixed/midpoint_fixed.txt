@@ -1,0 +1,18 @@
+Wed Oct  8 08:27:57 2025
+
+midpoint_fixed_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test midpoint_fixed() for solving an ODE.
+
+midpoint_fixed_humps_test():
+  Solve the humps_ode() using midpoint_fixed().
+  Graphics saved as "midpoint_fixed_humps.png"
+
+midpoint_fixed_predator_prey_test():
+  Solve the predator_prey_ode() using midpoint_fixed().
+  Graphics saved as "midpoint_fixed_predator_prey.png"
+
+midpoint_fixed_test():
+  Normal end of execution.
+Wed Oct  8 08:27:58 2025

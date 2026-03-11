@@ -1,0 +1,57 @@
+Wed Oct  8 08:27:59 2025
+
+monopoly_matrix_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test monopoly_matrix()
+
+monopoly_labels_test():
+  Test monopoly_labels()
+
+  Square  Label
+
+       0  Go
+       1  Mediterranean Avenue
+       2  Community Chest #1
+       3  Baltic Avenue
+       4  Income Tax
+       5  Reading Railroad
+       6  Oriental Avenue
+       7  Chance #1
+       8  Vermont Avenue
+       9  Connecticut Avenue
+      10  Just Visiting
+      11  St Charles Place
+      12  Electric Company
+      13  States Avenue
+      14  Virginia Avenue
+      15  Pennsylvania Railroad
+      16  St James Place
+      17  Community Chest #2
+      18  Tennessee Avenue
+      19  New York Avenue
+      20  Free Parking
+      21  Kentucky Avenue
+      22  Chance #2
+      23  Indiana Avenue
+      24  Illinois Avenue
+      25  B&O Railroad
+      26  Atlantic Avenue
+      27  Ventnor Avenut
+      28  Water Works
+      29  Marvin Gardens
+      30  Go to Jail
+      31  Pacific Avenue
+      32  North Carolina Avenue
+      33  Community Chest #3
+      34  Pennsylvania Avenue
+      35  Short Line Railroad
+      36  Chance #3
+      37  Park Place
+      38  Luxury Tax
+      39  Boardwalk
+      40  Jail
+
+monopoly_matrix_test():
+  Normal end of execution.
+Wed Oct  8 08:27:59 2025

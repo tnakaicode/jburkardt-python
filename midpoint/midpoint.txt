@@ -1,0 +1,22 @@
+Wed Oct  8 08:27:53 2025
+
+midpoint_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test midpoint() for solving an ordinary differential equation.
+
+midpoint_humps_test():
+  Solve humps_ode() using midpoint().
+  Graphics saved as "midpoint_humps.png"
+
+midpoint_predator_prey_test():
+  Solve predator_prey_ode() using midpoint().
+  Graphics saved as "midpoint_predator_prey.png"
+
+midpoint_stiff_test():
+  Use midpoint() to solve the stiff ODE.
+  Graphics saved as "midpoint_stiff.png"
+
+midpoint_test():
+  Normal end of execution.
+Wed Oct  8 08:27:55 2025

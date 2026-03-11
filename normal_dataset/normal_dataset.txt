@@ -1,0 +1,45 @@
+Wed Oct  8 08:44:10 2025
+
+normal_dataset_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test normal_dataset().
+
+normal_dataset():
+  Generate a multivariate normal random dataset.
+
+  The program requests input values from the user:
+
+  * M, the spatial dimension,
+  * N, the number of points to generate,
+  * RNG, the current random number generator.
+  * MU, the mean vector of length M.
+  * A, the MxM positive definite symmetric variance-covariance matrix.
+
+  The program generates the data and writes it to the file
+
+    normal_M_N.txt
+
+  where "M" and "N" are the numeric values.
+
+  Spatial dimension M =  2
+  Number of points N =  1000
+
+  The mean vector MU:
+
+     0:             1
+     1:             2
+
+  The variance-covariance matrix A:
+
+  Col:       0             1       
+  Row
+      0 :           1             1  
+      1 :           1             3  
+
+  The data was written to "normal_2_1000.txt'
+  Graphics saved as "normal_2_1000.png"
+
+normal_dataset_test():
+  Normal end of execution.
+Wed Oct  8 08:44:11 2025

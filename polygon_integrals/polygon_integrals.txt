@@ -1,0 +1,68 @@
+Wed Oct  8 08:46:29 2025
+
+polygon_integrals_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test polygon_integrals().
+
+r8_mop_test():
+  r8_mop() evaluates (-1.0)^I4 as an R8.
+
+    I4  r8_mop(I4)
+
+   -63  -1.0
+  -100   1.0
+    98   1.0
+    72   1.0
+   -29  -1.0
+    -5  -1.0
+   -43  -1.0
+    89  -1.0
+    83  -1.0
+   -29  -1.0
+
+moment_test():
+  moment() computes moments of a polygon.
+  Here, we test the code using a rectangle with known moments.
+
+   P   Q             Nu(P,Q)
+            Computed         Exact
+
+   0   0              40              40
+   1   0             200             200
+   0   1             160             160
+   2   0         1226.67         1226.67
+   1   1             880             880
+   0   2         746.667         746.667
+
+moment_central_test():
+  moment_central() computes central moments of a polygon.
+  Here, we test the code using a rectangle with known moments.
+
+   P   Q             Mu(P,Q)
+            Computed         Exact
+
+   0   0               1               1
+   1   0               0               0
+   0   1               0               0
+   2   0         5.66667         5.66667
+   1   1               2               2
+   0   2         2.66667         2.66667
+
+moment_normalized_test():
+  moment_normalized() computes normalized moments of a polygon.
+  Here, we test the code using a rectangle with known moments.
+
+   P   Q          Alpha(P,Q)
+            Computed         Exact
+
+   0   0               1               1
+   1   0               5               5
+   0   1               4               4
+   2   0         30.6667         30.6667
+   1   1              22              22
+   0   2         18.6667         18.6667
+
+polygon_integrals_test():
+  Normal end of execution.
+Wed Oct  8 08:46:30 2025

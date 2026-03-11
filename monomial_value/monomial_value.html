@@ -1,0 +1,111 @@
+<html>
+
+  <head>
+    <title>
+      monomial_value
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      monomial_value
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>monomial_value</b>,
+      a Python code which
+      evaluates a monomial in M dimensions.
+    </p>
+
+    <p>
+      Let X represent a point in M dimensional space, and let E be a vector
+      of M integers.  The value of the monomial with exponents E at the point X 
+      is
+      <pre>
+        V(X) = X(1)^E(1) * X(2)^E(2) * ... * X(M)^E(M)
+      </pre>
+      This code supplies a convenient method of evaluating V(X) at 
+      multiple points X.
+    </p>
+
+    <p>
+      The factor 0.0^0 might occur if, for some I, we have X(I) = 0.0
+      and E(I) = 0.  In this case, we take the corresponding value to be 1.
+    </p>
+
+    <p>
+      The factor 0.0^E(I) will cause problems if E(I) is negative.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>monomial_value</b> is available in
+      <a href = "../../c_src/monomial_value/monomial_value.html">a C version</a> and
+      <a href = "../../cpp_src/monomial_value/monomial_value.html">a C++ version</a> and
+      <a href = "../../f_src/monomial_value/monomial_value.html">a Fortran90 version</a> and
+      <a href = "../../m_src/monomial_value/monomial_value.html">a MATLAB version</a> and
+      <a href = "../../octave_src/monomial_value/monomial_value.html">an Octave version</a> and
+      <a href = "../../py_src/monomial_value/monomial_value.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/monomial/monomial.html">
+      monomial</a>,
+      a Python code which
+      enumerates, lists, ranks, unranks and randomizes multivariate monomials 
+      in a space of M dimensions, with total degree less than N,
+      equal to N, or lying within a given range.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "monomial_value.py">monomial_value.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "monomial_value.sh">monomial_value.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "monomial_value.txt">monomial_value.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 06 March 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

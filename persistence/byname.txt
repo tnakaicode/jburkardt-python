@@ -1,0 +1,37 @@
+Wed Oct  8 08:46:04 2025
+
+byname_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test byname(), with the interface:
+    value_out = byname(action,name,value_in)
+
+    byname ( "print", "*", None )
+  alpha =  1.0
+  beta  =  2.0
+  gamma =  3.0
+    alpha = byname ( "set", "alpha", 1.0 )
+    beta = byname ( "set", "beta", 99 )
+    byname ( "set", "gamma", alpha + beta )
+    byname ( "print", "*", None )
+  alpha =  1.0
+  beta  =  99.0
+  gamma =  100.0
+    gamma = byname ( "get", "gamma", None )
+    byname ( "set", "gamma", 2.0*gamma )
+    byname ( "print", "gamma", None )
+  gamma =  200.0
+    beta = byname ( "set", "beta", "Shazam!" )
+    byname ( "print", "*", None )
+  alpha =  1.0
+  beta  =  Shazam!
+  gamma =  200.0
+    byname ( "reset", None, None )
+    byname ( "print", "*" )
+  alpha =  1.0
+  beta  =  2.0
+  gamma =  3.0
+
+byname_test():
+  Normal end of execution.
+Wed Oct  8 08:46:04 2025

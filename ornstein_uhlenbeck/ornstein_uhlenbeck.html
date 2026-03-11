@@ -1,0 +1,185 @@
+<html>
+
+  <head>
+    <title>
+      ornstein_uhlenbeck
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      ornstein_uhlenbeck
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>ornstein_uhlenbeck</b>,
+      a Python code which 
+      approximates solutions of the Ornstein-Uhlenbeck 
+      stochastic differential equation (SDE) using the Euler method
+      and the Euler-Maruyama method.
+    </p>
+
+    <p>
+      The Ornstein-Uhlenbeck stochastic differential equation has the form:
+      <pre>
+        dx(t) = theta * ( mu - x(t) ) dt + sigma dW,   
+        x(0) = x0.
+      </pre>
+      where 
+      <ul>
+        <li>
+          <b>theta</b> is a nonnegative decay rate;
+        </li>
+        <li>
+          <b>mu</b> is a mean value for x;
+        </li>
+        <li>
+          <b>sigma</b> measures the strength of the stochastic perturbation.
+        </li>
+      </ul>
+      and the equation is to be integrated over the interval [0,<b>tmax</b>].
+    </p>
+
+    <p>
+      The starting value <b>x0</b> represents a deviation from the mean value
+      <b>mu</b>.
+      The decay rate <b>theta</b> determines how fast <b>x(t)</b> will move
+      back towards its mean value.  The coefficient <b>sigma</b> determines
+      the relative magnitude of stochastic perturbations.  
+    </p>
+
+    <p>
+      In general, the solution starts at <b>x0</b> and over time moves towards
+      the value <b>mu</b>, but experiences random "wobbles" whose size is
+      determined by <b>sigma</b>.  Increasing <b>theta</b> makes the solution
+      move towards the mean faster.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>ornstein_uhlenbeck</b> is available in
+      <a href = "../../c_src/ornstein_uhlenbeck/ornstein_uhlenbeck.html">a C version</a> and
+      <a href = "../../cpp_src/ornstein_uhlenbeck/ornstein_uhlenbeck.html">a C++ version</a> and
+      <a href = "../../f_src/ornstein_uhlenbeck/ornstein_uhlenbeck.html">a Fortran90 version</a> and
+      <a href = "../../m_src/ornstein_uhlenbeck/ornstein_uhlenbeck.html">a MATLAB version</a> and
+      <a href = "../../octave_src/ornstein_uhlenbeck/ornstein_uhlenbeck.html">an Octave version</a> and
+      <a href = "../../py_src/ornstein_uhlenbeck/ornstein_uhlenbeck.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/black_scholes/black_scholes.html">
+      black_scholes</a>,
+      a Python code which
+      implements some simple approaches to
+      the Black-Scholes option valuation theory,
+      by Desmond Higham.
+    </p>
+
+    <p>
+      <a href = "../../py_src/brownian_motion_simulation/brownian_motion_simulation.html">
+      brownian_motion_simulation</a>,
+      a Python code which
+      simulates Brownian motion in an M-dimensional region.
+    </p>
+
+    <p>
+      <a href = "../../py_src/colored_noise/colored_noise.html">
+      colored_noise</a>,
+      a Python code which
+      generates samples of noise obeying a 1/f^alpha power law.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pink_noise/pink_noise.html">
+      pink_noise</a>,
+      a Python code which
+      computes a "pink noise" signal obeying a 1/f power law.
+    </p>
+
+    <p>
+      <a href = "../../py_src/stochastic_diffusion/stochastic_diffusion.html">
+      stochastic_diffusion</a>,
+      a Python code which
+      implements several versions of a stochastic diffusivity coefficient.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Desmond Higham,<br>
+          An Algorithmic Introduction to Numerical Simulation of
+          Stochastic Differential Equations,<br>
+          SIAM Review,<br>
+          Volume 43, Number 3, September 2001, pages 525-546.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ornstein_uhlenbeck.py">ornstein_uhlenbeck.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "ornstein_uhlenbeck.sh">ornstein_uhlenbeck.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "ornstein_uhlenbeck.txt">ornstein_uhlenbeck.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ornstein_uhlenbeck_euler.png">ornstein_uhlenbeck_euler.png</a>,
+          the approximate solution computed by ornstein_uhlenbeck_euler().
+        </li>
+        <li>
+          <a href = "ornstein_uhlenbeck_euler_maruyama.png">
+          ornstein_uhlenbeck_euler_maruyama.png</a>,
+          the approximate solution computed by ornstein_uhlenbeck_euler_maruyama().
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 06 October 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

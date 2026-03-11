@@ -1,0 +1,21 @@
+Wed Oct  8 08:44:41 2025
+
+oscillator_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve oscillator_ode().
+
+  parameters:
+    alpha =    0.0
+    beta =     1.0
+    epsilon =  0.1
+    t0 =       0.0
+    y0 =       [0.1 0. ]
+    tstop =    6.283185307179586
+  Graphics saved as "oscillator_plot.png"
+  Graphics saved as "oscillator_phase.png"
+  Graphics saved as "oscillator_conservation.png"
+
+oscillator_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:44:43 2025

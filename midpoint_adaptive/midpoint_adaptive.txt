@@ -1,0 +1,34 @@
+Wed Oct  8 08:27:55 2025
+
+midpoint_adaptive_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test midpoint_adaptive().
+
+lotka_test():
+  midpoint_adaptive() solves lotka_ode().
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using midpoint().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+
+  Steady state at r = 5000, f = 2000.
+
+  mad_compute(): count =  1738
+  Graphics saved as "lotka_phase.png"
+  Graphics saved as "lotka_solution.png"
+  Graphics saved as "lotka_timestep.png"
+
+mad_stats():
+
+  Number of timesteps  1738
+  Rejected timesteps   0
+  First time interval is [ 0.0 , 0.025 ]
+  Final time interval is [ 19.99748885027755 , 20.010126055063658 ]
+  Minimum timestep is  0.0062788423743942445
+  Maximum timestep is  0.04958458110905006
+
+midpoint_adaptive_test():
+  Normal end of execution.
+Wed Oct  8 08:27:56 2025

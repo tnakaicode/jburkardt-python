@@ -1,0 +1,74 @@
+Wed Oct  8 08:46:09 2025
+
+poisson_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test poisson_simulation().
+
+poisson_fixed_events_test():
+  poisson_fixed_events() simulates a Poisson process
+  until a given number of events have occurred.
+
+  Simulate a Poisson process, for which, on average,
+  lam events occur per unit time.
+  Run until you have observed EVENT_NUM events.
+
+  lam = 0.5
+  EVENT_NUM = 1000
+
+  Minimum wait = 0.0002258426974037
+  Average wait = 2.0052722912224006
+  Maximum wait = 11.147097468702764
+
+ Count            Time            Wait
+
+     0               0               0
+     1          2.7591          2.7591
+     2         3.37389        0.614795
+     3         5.13186         1.75796
+     4         6.20098         1.06913
+     5         8.97068         2.76969
+  ....  ..............  ..............
+   995         1993.76        0.378787
+   996         1997.26         3.49874
+   997         1998.81         1.54993
+   998         2001.05         2.23888
+   999         2005.22          4.1697
+  1000         2005.27       0.0547804
+  Graphics saved as "poisson_timeline.png"
+  Graphics saved as "poisson_times.png"
+
+poisson_fixed_time_test():
+  poisson_fixed_time() simulates a Poisson process
+  counting the number of events that occur during
+  a given time.
+
+  Simulate a Poisson process, for which, on average,
+  lam events occur per unit time.
+  Run for a total of 1000.0 time units.
+  lam = 0.5
+
+  Mean number of events = 500.9499
+  Variance = 490.66038999000006   STD =  22.15085528800186
+  Graphics saved as "poisson_events.png"
+
+poisson_next_event_test():
+  poisson_next_event() simulates a Poisson process
+  until a single event has occurred.
+
+  Simulate a Poisson process, for which, on average,
+  lam events occur per unit time.
+
+  lam = 0.5
+  Event # 1 at time 0.9823471574860552 , after waiting 0.9823471574860552
+  Event # 2 at time 1.0395298453612918 , after waiting 0.057182687875236705
+  Event # 3 at time 4.6038284448036695 , after waiting 3.564298599442378
+  Event # 4 at time 4.896455994181286 , after waiting 0.29262754937761637
+  Event # 5 at time 6.535186045333048 , after waiting 1.6387300511517617
+  Event # 6 at time 7.672366679997132 , after waiting 1.1371806346640838
+  Event # 7 at time 7.892204330420457 , after waiting 0.21983765042332468
+  Event # 8 at time 15.694923142698304 , after waiting 7.802718812277848
+
+poisson_simulation_test():
+  Normal end of execution.
+Wed Oct  8 08:46:21 2025

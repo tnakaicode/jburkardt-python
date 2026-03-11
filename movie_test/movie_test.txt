@@ -1,0 +1,23 @@
+Wed Oct  8 08:28:33 2025
+
+movie_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test movie making in Python.
+
+allen_cahn_movie():
+  Use the Euler method to solve the
+  Allen-Cahn 1D reaction-diffusion equation.
+  Save the successive time solutions to a movie file.
+  Interface thickness xi = 0.015
+  Diffusion coefficient nu = 1
+  Use 101 nodes, with dx=0.02 in space interval [0,2]
+  Use 1501 nodes, with dt=0.0001 in time interval [0,0.15]
+  Graphics saved as "allen_cahn_movie.mp4"
+
+allen_cahn_movie():
+  Normal end of execution.
+
+movie_test():
+  Normal end of execution.
+Wed Oct  8 08:29:28 2025

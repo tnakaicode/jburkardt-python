@@ -1,0 +1,20 @@
+Wed Oct  8 08:45:06 2025
+
+pendulum_nonlinear_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve pendulum_nonlinear_ode().
+
+  parameters:
+    g =      9.81
+    l =      1.0
+    m =      1.0
+    t0 =     0.0
+    y0 =     [1.22173048 0.        ]
+    tstop =  50.0
+  Graphics saved as "pendulum_nonlinear_theta.png"
+  Graphics saved as "pendulum_nonlinear_energy.png"
+
+pendulum_nonlinear_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:45:07 2025

@@ -1,0 +1,27 @@
+Tue Jan 13 18:55:16 2026
+
+newton_maehly_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  newton_maehly() uses the Newton-Maehly algorithm
+  to compute all roots of a polynomial.
+
+newton_maehly_test01():
+  Try newton_maehly() on a degree four polynomial with a pair of complex roots.
+
+  Polynomial to be analyzed:
+  p(x) = - 56 * x^4 - 75 * x^3 - 26 * x^2 + 1
+
+  Computed roots:
+
+array([ 6.27491722-1.23023937e-49j, -2.5       +8.66025404e-01j,
+       -2.5       -8.66025404e-01j, -1.27491722-2.67276471e-51j])
+
+  Exact roots:
+
+array([ 6.27491722+0.j       , -1.27491722+0.j       ,
+       -2.5       +0.8660254j, -2.5       -0.8660254j])
+
+newton_maehly_test():
+  Normal end of execution.
+Tue Jan 13 18:55:16 2026

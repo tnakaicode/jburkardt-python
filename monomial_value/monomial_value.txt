@@ -1,0 +1,59 @@
+Wed Oct  8 08:27:59 2025
+
+monomial_value_tests():
+  Python version: 3.10.12
+  Test monomial_value().
+
+monomial_value_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  monomial_value() evaluates monomials
+  in dimensions 1 through 3.
+
+  Spatial dimension M =  1
+  Exponents: 3
+
+   V(X)               X(0)
+
+       11.6503      2.2670
+       680.604      8.7963
+      0.753974      0.9102
+       73.8173      4.1949
+       274.813      6.5015
+
+  Spatial dimension M =  2
+  Exponents: 3 2
+
+   V(X)               X(0)      X(1)
+
+       7878.91      7.5372    4.2896
+       29004.8      7.6009    8.1271
+       55.7022      1.3716    4.6461
+       79.6881      2.8743   -1.8318
+       5438.71      4.5194    7.6758
+
+  Spatial dimension M =  3
+  Exponents: 6 1 5
+
+   V(X)               X(0)      X(1)      X(2)
+
+   2.45462e+06      2.5474    1.7675    5.5107
+   3.59641e+09      8.4550    2.4450    5.2599
+       -162829      3.1784   -0.6156    3.0328
+   4.69124e+07      3.2593    5.0648    5.9924
+       23046.8      9.9862    9.3103    0.3016
+
+monomial_value_1d_test():
+  monomial_value_1d() evaluates a monomial of a 1D argument.
+
+      X^(-1)       X^(0)       X^(1)       X^(2)       X^(5)
+
+    0.169297           1     5.90679     34.8902     7190.48
+    0.112672           1     8.87529     78.7709     55069.9
+     1.37985           1    0.724714    0.525211     0.19991
+    0.567903           1     1.76086     3.10064     16.9289
+   -0.782236           1    -1.27839     1.63427    -3.41437
+
+monomial_value_tests():
+  Normal end of execution.
+Wed Oct  8 08:27:59 2025

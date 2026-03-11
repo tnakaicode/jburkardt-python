@@ -1,0 +1,22 @@
+Wed Oct  8 08:46:04 2025
+
+counter_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test counter(), with the interface:
+    counter()
+
+counter() has been called  1  times.
+counter() has been called  2  times.
+counter() has been called  3  times.
+counter() has been called  4  times.
+counter() has been called  5  times.
+counter() has been called  6  times.
+counter() has been called  7  times.
+counter() has been called  8  times.
+counter() has been called  9  times.
+counter() has been called  10  times.
+
+counter_test():
+  Normal end of execution.
+Wed Oct  8 08:46:04 2025

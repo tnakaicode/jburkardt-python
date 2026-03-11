@@ -1,0 +1,695 @@
+Wed Oct  8 08:44:48 2025
+
+pagerank_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  pagerank() demonstrates several page rank algorithms.
+
+  Test 0
+5 node MacCormick example with a cycle
+  adjacency matrix A:
+[[0. 1. 0. 0. 0.]
+ [0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0.]
+ [1. 0. 0. 0. 0.]
+ [1. 0. 0. 0. 0.]]
+  Transition matrix T:
+[[0. 0. 1. 1. 1.]
+ [1. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]]
+// mac1
+digraph {
+	0 [label=0]
+	1 [label=1]
+	2 [label=2]
+	3 [label=3]
+	4 [label=4]
+	0 -> 1
+	1 -> 4
+	2 -> 0
+	3 -> 0
+	4 -> 0
+}
+
+  Graphics saved as "mac1.png"
+
+google_rank():
+  Given an NxN adjacency matrix A,
+  compute the Google matrix G,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= G*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> G*x -> G*G*x
+
+  x, G*x, G*G*x
+[[0.33216717 0.33216714 0.33216714]
+ [0.31234207 0.3123421  0.31234207]
+ [0.03       0.03       0.03      ]
+ [0.03       0.03       0.03      ]
+ [0.29549076 0.29549076 0.29549078]]
+
+power_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= T*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> T*x -> T*T*x
+[[0.6 0.2 0.2]
+ [0.2 0.6 0.2]
+ [0.  0.  0. ]
+ [0.  0.  0. ]
+ [0.2 0.2 0.6]]
+
+surf_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  and then repeatedly visit nodes, keeping track of
+  how often you visited.
+
+  15 per cent of the time, simply take a random jump to a node.
+  The rest of the time, follow a random link from the current node.
+
+  When done, the node weight is the number of visits
+  normalized by the total number of visits.
+
+  index, count, weight
+[[0.000e+00 3.334e+03 3.334e-01]
+ [1.000e+00 3.139e+03 3.139e-01]
+ [2.000e+00 2.840e+02 2.840e-02]
+ [3.000e+00 2.970e+02 2.970e-02]
+ [4.000e+00 2.946e+03 2.946e-01]]
+
+  Test 1
+16 node MacCormick example
+  adjacency matrix A:
+[[0. 1. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 1. 1. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]]
+  Transition matrix T:
+[[0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         1.        ]
+ [0.33333333 0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.33333333 0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         1.         0.5        0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.5        1.         0.         0.5
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.33333333 0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.5        0.5
+  0.         0.33333333 0.         0.2        0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.5        0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.33333333 0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.33333333 1.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.2        0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.2        0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.2        0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.2        0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  1.         0.         0.         0.         1.         1.
+  1.         1.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         1.         0.        ]]
+// mac2
+digraph {
+	0 [label=0]
+	1 [label=1]
+	2 [label=2]
+	3 [label=3]
+	4 [label=4]
+	5 [label=5]
+	6 [label=6]
+	7 [label=7]
+	8 [label=8]
+	9 [label=9]
+	10 [label=10]
+	11 [label=11]
+	12 [label=12]
+	13 [label=13]
+	14 [label=14]
+	15 [label=15]
+	0 -> 1
+	0 -> 2
+	0 -> 5
+	1 -> 3
+	2 -> 3
+	2 -> 4
+	3 -> 4
+	4 -> 6
+	4 -> 7
+	5 -> 4
+	5 -> 6
+	6 -> 14
+	7 -> 6
+	7 -> 8
+	7 -> 9
+	8 -> 9
+	9 -> 6
+	9 -> 10
+	9 -> 11
+	9 -> 12
+	9 -> 13
+	10 -> 14
+	11 -> 14
+	12 -> 14
+	13 -> 14
+	14 -> 15
+	15 -> 0
+}
+
+  Graphics saved as "mac2.png"
+
+google_rank():
+  Given an NxN adjacency matrix A,
+  compute the Google matrix G,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= G*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> G*x -> G*G*x
+
+  x, G*x, G*G*x
+[[0.12464052 0.12464052 0.12464052]
+ [0.04468981 0.04468981 0.04468981]
+ [0.04468981 0.04468981 0.04468981]
+ [0.06635451 0.06635451 0.06635451]
+ [0.10376268 0.10376268 0.10376268]
+ [0.04468981 0.04468981 0.04468981]
+ [0.09533174 0.09533174 0.09533174]
+ [0.05347414 0.05347414 0.05347414]
+ [0.02452601 0.02452601 0.02452601]
+ [0.04537311 0.04537311 0.04537311]
+ [0.01708843 0.01708843 0.01708843]
+ [0.01708843 0.01708843 0.01708843]
+ [0.01708843 0.01708843 0.01708843]
+ [0.01708843 0.01708843 0.01708843]
+ [0.14850764 0.14850764 0.14850764]
+ [0.13560649 0.13560649 0.13560649]]
+
+power_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= T*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> T*x -> T*T*x
+[[0.13953502 0.13953496 0.13953486]
+ [0.04651167 0.04651167 0.04651165]
+ [0.04651167 0.04651167 0.04651165]
+ [0.06976744 0.0697675  0.06976751]
+ [0.11627898 0.1162791  0.11627917]
+ [0.04651167 0.04651167 0.04651165]
+ [0.10852702 0.10852707 0.10852715]
+ [0.05813945 0.05813949 0.05813955]
+ [0.01937982 0.01937982 0.01937983]
+ [0.03875966 0.03875964 0.03875965]
+ [0.00775194 0.00775193 0.00775193]
+ [0.00775194 0.00775193 0.00775193]
+ [0.00775194 0.00775193 0.00775193]
+ [0.00775194 0.00775193 0.00775193]
+ [0.13953486 0.1395348  0.13953481]
+ [0.13953496 0.13953486 0.1395348 ]]
+
+surf_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  and then repeatedly visit nodes, keeping track of
+  how often you visited.
+
+  15 per cent of the time, simply take a random jump to a node.
+  The rest of the time, follow a random link from the current node.
+
+  When done, the node weight is the number of visits
+  normalized by the total number of visits.
+
+  index, count, weight
+[[0.000e+00 1.256e+03 1.256e-01]
+ [1.000e+00 4.500e+02 4.500e-02]
+ [2.000e+00 4.410e+02 4.410e-02]
+ [3.000e+00 6.610e+02 6.610e-02]
+ [4.000e+00 1.055e+03 1.055e-01]
+ [5.000e+00 4.400e+02 4.400e-02]
+ [6.000e+00 9.300e+02 9.300e-02]
+ [7.000e+00 5.280e+02 5.280e-02]
+ [8.000e+00 2.540e+02 2.540e-02]
+ [9.000e+00 4.560e+02 4.560e-02]
+ [1.000e+01 1.570e+02 1.570e-02]
+ [1.100e+01 1.760e+02 1.760e-02]
+ [1.200e+01 1.750e+02 1.750e-02]
+ [1.300e+01 1.860e+02 1.860e-02]
+ [1.400e+01 1.492e+03 1.492e-01]
+ [1.500e+01 1.343e+03 1.343e-01]]
+
+  Test 2
+6 node Moler example
+  adjacency matrix A:
+[[0. 1. 0. 0. 0. 1.]
+ [0. 0. 1. 1. 0. 0.]
+ [0. 0. 0. 1. 1. 1.]
+ [1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0.]
+ [1. 0. 0. 0. 0. 0.]]
+  Transition matrix T:
+[[0.         0.         0.         1.         0.         1.        ]
+ [0.5        0.         0.         0.         0.         0.        ]
+ [0.         0.5        0.         0.         0.         0.        ]
+ [0.         0.5        0.33333333 0.         0.         0.        ]
+ [0.         0.         0.33333333 0.         1.         0.        ]
+ [0.5        0.         0.33333333 0.         0.         0.        ]]
+// moler
+digraph {
+	0 [label=0]
+	1 [label=1]
+	2 [label=2]
+	3 [label=3]
+	4 [label=4]
+	5 [label=5]
+	0 -> 1
+	0 -> 5
+	1 -> 2
+	1 -> 3
+	2 -> 3
+	2 -> 4
+	2 -> 5
+	3 -> 0
+	4 -> 4
+	5 -> 0
+}
+
+  Graphics saved as "moler.png"
+
+google_rank():
+  Given an NxN adjacency matrix A,
+  compute the Google matrix G,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= G*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> G*x -> G*G*x
+
+  x, G*x, G*G*x
+[[0.23527488 0.23527488 0.23527488]
+ [0.12499183 0.12499183 0.12499183]
+ [0.07812153 0.07812153 0.07812153]
+ [0.10025596 0.10025596 0.10025596]
+ [0.31422955 0.31422955 0.31422955]
+ [0.14712626 0.14712626 0.14712626]]
+
+power_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= T*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> T*x -> T*T*x
+[[0.01096194 0.01060736 0.01026425]
+ [0.00566419 0.00548097 0.00530368]
+ [0.00292677 0.0028321  0.00274049]
+ [0.00393497 0.00380768 0.00368452]
+ [0.96983974 0.97081533 0.97175936]
+ [0.00667239 0.00645656 0.00624771]]
+
+surf_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  and then repeatedly visit nodes, keeping track of
+  how often you visited.
+
+  15 per cent of the time, simply take a random jump to a node.
+  The rest of the time, follow a random link from the current node.
+
+  When done, the node weight is the number of visits
+  normalized by the total number of visits.
+
+  index, count, weight
+[[0.000e+00 2.383e+03 2.383e-01]
+ [1.000e+00 1.231e+03 1.231e-01]
+ [2.000e+00 7.680e+02 7.680e-02]
+ [3.000e+00 1.009e+03 1.009e-01]
+ [4.000e+00 3.117e+03 3.117e-01]
+ [5.000e+00 1.492e+03 1.492e-01]]
+
+  Test 3
+6 node example
+  adjacency matrix A:
+[[0. 1. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 1. 0.]
+ [1. 0. 0. 1. 0. 0.]
+ [1. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 1.]
+ [0. 0. 0. 1. 0. 0.]]
+  Transition matrix T:
+[[0.  0.  0.5 1.  0.  0. ]
+ [1.  0.  0.  0.  0.5 0. ]
+ [0.  0.5 0.  0.  0.  0. ]
+ [0.  0.  0.5 0.  0.  1. ]
+ [0.  0.5 0.  0.  0.  0. ]
+ [0.  0.  0.  0.  0.5 0. ]]
+// six
+digraph {
+	0 [label=0]
+	1 [label=1]
+	2 [label=2]
+	3 [label=3]
+	4 [label=4]
+	5 [label=5]
+	0 -> 1
+	1 -> 2
+	1 -> 4
+	2 -> 0
+	2 -> 3
+	3 -> 0
+	4 -> 1
+	4 -> 5
+	5 -> 3
+}
+
+  Graphics saved as "six.png"
+
+google_rank():
+  Given an NxN adjacency matrix A,
+  compute the Google matrix G,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= G*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> G*x -> G*G*x
+
+  x, G*x, G*G*x
+[[0.21593282 0.21593282 0.21593282]
+ [0.26748179 0.26748179 0.26748179]
+ [0.13867976 0.13867976 0.13867976]
+ [0.15528696 0.15528696 0.15528696]
+ [0.13867976 0.13867976 0.13867976]
+ [0.0839389  0.0839389  0.0839389 ]]
+
+power_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= T*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> T*x -> T*T*x
+[[0.21428571 0.21428571 0.21428571]
+ [0.28571429 0.28571429 0.28571429]
+ [0.14285714 0.14285714 0.14285714]
+ [0.14285714 0.14285714 0.14285714]
+ [0.14285714 0.14285714 0.14285714]
+ [0.07142857 0.07142857 0.07142857]]
+
+surf_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  and then repeatedly visit nodes, keeping track of
+  how often you visited.
+
+  15 per cent of the time, simply take a random jump to a node.
+  The rest of the time, follow a random link from the current node.
+
+  When done, the node weight is the number of visits
+  normalized by the total number of visits.
+
+  index, count, weight
+[[0.000e+00 2.158e+03 2.158e-01]
+ [1.000e+00 2.709e+03 2.709e-01]
+ [2.000e+00 1.357e+03 1.357e-01]
+ [3.000e+00 1.519e+03 1.519e-01]
+ [4.000e+00 1.424e+03 1.424e-01]
+ [5.000e+00 8.330e+02 8.330e-02]]
+
+  Test 4
+15 node Sauer example
+  adjacency matrix A:
+[[0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [0. 0. 0. 0. 0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 1.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.]]
+  Transition matrix T:
+[[0.         0.         0.         0.         0.5        0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.        ]
+ [0.5        0.         0.33333333 0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.        ]
+ [0.         0.33333333 0.         0.5        0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.5        0.         0.         0.         0.
+  0.         0.         0.        ]
+ [0.         0.33333333 0.         0.         0.         0.
+  0.         0.         0.33333333 0.         0.         0.
+  0.         0.         0.        ]
+ [0.         0.         0.33333333 0.         0.         0.
+  0.         0.         0.33333333 0.         0.         0.
+  0.         0.         0.        ]
+ [0.         0.33333333 0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.33333333
+  0.         0.         0.        ]
+ [0.         0.         0.33333333 0.         0.         0.
+  0.         0.         0.         0.         0.         0.33333333
+  0.         0.         0.        ]
+ [0.5        0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.5        0.         0.        ]
+ [0.         0.         0.         0.         0.5        0.5
+  0.5        0.         0.33333333 0.         0.         0.
+  0.         0.25       0.        ]
+ [0.         0.         0.         0.         0.         0.5
+  0.5        0.5        0.         0.         0.         0.33333333
+  0.         0.25       0.        ]
+ [0.         0.         0.         0.5        0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.5       ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         1.         0.         0.
+  0.         0.25       0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.5        0.         0.5       ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         1.         0.
+  0.         0.25       0.        ]]
+// sauer
+digraph {
+	0 [label=0]
+	1 [label=1]
+	2 [label=2]
+	3 [label=3]
+	4 [label=4]
+	5 [label=5]
+	6 [label=6]
+	7 [label=7]
+	8 [label=8]
+	9 [label=9]
+	10 [label=10]
+	11 [label=11]
+	12 [label=12]
+	13 [label=13]
+	14 [label=14]
+	0 -> 1
+	0 -> 8
+	1 -> 2
+	1 -> 4
+	1 -> 6
+	2 -> 1
+	2 -> 5
+	2 -> 7
+	3 -> 2
+	3 -> 11
+	4 -> 0
+	4 -> 9
+	5 -> 9
+	5 -> 10
+	6 -> 9
+	6 -> 10
+	7 -> 3
+	7 -> 10
+	8 -> 4
+	8 -> 5
+	8 -> 9
+	9 -> 12
+	10 -> 14
+	11 -> 6
+	11 -> 7
+	11 -> 10
+	12 -> 8
+	12 -> 13
+	13 -> 9
+	13 -> 10
+	13 -> 12
+	13 -> 14
+	14 -> 11
+	14 -> 13
+}
+
+  Graphics saved as "sauer.png"
+
+google_rank():
+  Given an NxN adjacency matrix A,
+  compute the Google matrix G,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= G*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> G*x -> G*G*x
+
+  x, G*x, G*G*x
+[[0.02682457 0.02682457 0.02682457]
+ [0.02986108 0.02986108 0.02986108]
+ [0.02986108 0.02986108 0.02986108]
+ [0.02682457 0.02682457 0.02682457]
+ [0.03958722 0.03958722 0.03958722]
+ [0.03958722 0.03958722 0.03958722]
+ [0.03958722 0.03958722 0.03958722]
+ [0.03958722 0.03958722 0.03958722]
+ [0.07456439 0.07456439 0.07456439]
+ [0.10631995 0.10631995 0.10631995]
+ [0.10631995 0.10631995 0.10631995]
+ [0.07456439 0.07456439 0.07456439]
+ [0.12509164 0.12509164 0.12509164]
+ [0.11632789 0.11632789 0.11632789]
+ [0.12509164 0.12509164 0.12509164]]
+
+power_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  Then start with a vector of N values 1/N,
+  and repeatedly compute x <= T*x
+
+  After many steps, compare last three iterates.
+  If they are close, we are probably at an eigenvector
+  associated with the eigenvalue 1.
+
+  x -> T*x -> T*T*x
+[[0.01544402 0.01544402 0.01544402]
+ [0.01158301 0.01158301 0.01158301]
+ [0.01158301 0.01158301 0.01158301]
+ [0.01544402 0.01544402 0.01544402]
+ [0.03088803 0.03088803 0.03088803]
+ [0.03088803 0.03088803 0.03088803]
+ [0.03088803 0.03088803 0.03088803]
+ [0.03088803 0.03088803 0.03088803]
+ [0.08108108 0.08108108 0.08108108]
+ [0.11003861 0.11003861 0.11003861]
+ [0.11003861 0.11003861 0.11003861]
+ [0.08108108 0.08108108 0.08108108]
+ [0.14671815 0.14671815 0.14671815]
+ [0.14671815 0.14671815 0.14671815]
+ [0.14671815 0.14671815 0.14671815]]
+
+surf_rank():
+  Given an NxN adjacency matrix A,
+  compute the transition matrix T,
+  and then repeatedly visit nodes, keeping track of
+  how often you visited.
+
+  15 per cent of the time, simply take a random jump to a node.
+  The rest of the time, follow a random link from the current node.
+
+  When done, the node weight is the number of visits
+  normalized by the total number of visits.
+
+  index, count, weight
+[[0.000e+00 2.640e+02 2.640e-02]
+ [1.000e+00 3.110e+02 3.110e-02]
+ [2.000e+00 3.220e+02 3.220e-02]
+ [3.000e+00 2.640e+02 2.640e-02]
+ [4.000e+00 3.700e+02 3.700e-02]
+ [5.000e+00 4.200e+02 4.200e-02]
+ [6.000e+00 3.820e+02 3.820e-02]
+ [7.000e+00 4.040e+02 4.040e-02]
+ [8.000e+00 7.380e+02 7.380e-02]
+ [9.000e+00 1.074e+03 1.074e-01]
+ [1.000e+01 1.070e+03 1.070e-01]
+ [1.100e+01 7.380e+02 7.380e-02]
+ [1.200e+01 1.255e+03 1.255e-01]
+ [1.300e+01 1.162e+03 1.162e-01]
+ [1.400e+01 1.226e+03 1.226e-01]]
+
+pagerank_test():
+  Normal end of execution.
+Wed Oct  8 08:44:48 2025

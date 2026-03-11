@@ -1,0 +1,163 @@
+<html>
+
+  <head>
+    <title>
+      polygon_average
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      polygon_average
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>polygon_average</b>,
+      a Python code which
+      demonstrates a process of repeatedly averaging and normalizing the
+      vertices of a polygon, illustrating a property of the power method.
+    </p>
+
+    <p>
+      The process can be analyzed in terms of the power method, and the
+      eigenvalues of the matrix that carries out the averaging process.
+    </p>
+
+    <p>
+      A polygon is represented by a list of N vertices.  An averaging step 
+      involves:
+      <ul>
+        <li>
+          replacing each vertex by the average of its two neighbors, 
+        </li>
+        <li>
+          shifting these vertices to have centroid 0;
+        </li>
+        <li>
+          scaling the X and Y coordinates separately so that the max-norms
+          of the X and Y coordinate vectors are both 1.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      If the averaging process is carried out recursively, the resulting
+      polygon rapidly converges to an ellipse at a 45 degree tilt.
+    </p>
+
+    <p>
+      The direction of the tilt, and the ratio between the major and minor
+      axis lengths, vary depending on the initial polygon.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>polygon_average</b> is available in
+      <a href = "../../m_src/polygon_average/polygon_average.html">a MATLAB version</a> and
+      <a href = "../../octave_src/polygon_average/polygon_average.html">an Octave version</a> and
+      <a href = "../../py_src/polygon_average/polygon_average.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/polygon/polygon.html">
+      polygon</a>,
+      a Python code which
+      carries out geometric calculations on polygons, including angles, area,
+      centroid, containment of a point, diameter, integrals of monomials,
+      convexity, distance to a point, sampling, triangulation.
+    </p>
+
+    <p>
+      <a href = "../../py_src/power_method/power_method.html">
+      power_method</a>,
+      a Python code which
+      carries out the power method for finding a dominant eigenvalue
+      and its eigenvector.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Charles Van Loan, Daisy Fan,<br>
+          Insight Through Computing,<br>
+          SIAM Publishing, 2010,<br>
+          ISBN: 978-0-898716-91-7
+        </li>
+        <li>
+          Adam Elmachtoub, Charles Van Loan,<br>
+          From Random Polygon to Ellipse: An Eigenanalysis,<br>
+          SIAM Review,<br>
+          Volume 52, Number 1, March 2010, pages 151-170.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "polygon_average.py">polygon_average.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "polygon_average.sh">polygon_average.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "polygon_average.txt">polygon_average.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "polygon_original.png">polygon_original.png</a>,
+          a plot of the starting polygon.
+        </li>
+        <li>
+          <a href = "polygon_average.png">polygon_average.png</a>,
+          a plot of the polygon after 20 averaging steps.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 September 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

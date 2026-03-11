@@ -1,0 +1,170 @@
+<html>
+
+  <head>
+    <title>
+      monomial_symmetrize
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      monomial_symmetrize
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>monomial_symmetrize</b>,
+      a Python code which
+      symmetrizes the coefficients of equivalent monomials in a polynomial.
+    </p>
+
+    <p>
+      The polynomial is assumed to be written as a sum of monomials.
+    </p>
+
+    <p>
+      Each monomial is of total degree D.
+    </p>
+
+    <p>
+      Each monomial involves factors selected from a B-dimensional space.
+    </p>
+
+    <p>
+      Each monomial has a coefficient C.
+    </p>
+
+    <p>
+      Every possible permutation of D factors from a B dimensional space
+      is used to form a separate monomial.
+    </p>
+
+    <p>
+      For instance, if D = 3 and B = 2, the polynomial has the form
+<pre>
+      P = C111 X1 X1 X1
+        + C112 X1 X1 X2
+        + C121 X1 X2 X1
+        + C122 X1 X2 X2
+        + C211 X2 X1 X1
+        + C212 X2 X1 X2
+        + C221 X2 X2 X1
+        + C222 X2 X2 X2
+</pre>
+    </p>
+
+    <p>
+      There are 4 equivalence classes of monomials, with representatives
+      X1 X1 X1, X1 X1 X2, X1 X2 X2 and X2 X2 X2.  (Two monomial are equivalent
+      if one is simply a permutation of the other.)  It is the task of this
+      function to take the values of D, B and the coefficient vector C, and
+      produce a new coefficient vector C2.  The C2 vector is computed by averaging
+      the coefficients of equivalent monomials.
+    </p>
+
+    <p>
+      By grouping the equivalent monomials, we have
+<pre>
+      P = C111 X1 X1 X1
+        + C112 X1 X1 X2 + C121 X1 X2 X1 + C211 X2 X1 X1
+        + C122 X1 X2 X2 + C212 X2 X1 X2 + C221 X2 X2 X1
+        + C222 X2 X2 X2
+</pre>
+      and taking advantage of the equivalence of the monomials, we can write:
+<pre>
+      P = C111 X1 X1 X1
+        + ( C112 + C121 + C211 ) / 3 * ( X1 X1 X2 + X1 X2 X1 + X2 X1 X1 )
+        + ( C122 + C212 + C221 ) / 3 * ( X1 X2 X2 + X2 X1 X2 + X2 X2 X1 )
+        + C222 X2 X2 X2
+</pre>
+      which means that our equivalent polynomial P2 can be written in the form
+<pre>
+      P2 =  C111                     * X1 X1 X1
+        + ( C112 + C121 + C211 ) / 3 * X1 X1 X2
+        + ( C112 + C121 + C211 ) / 3 * X1 X2 X1
+        + ( C122 + C212 + C221 ) / 3 * X1 X2 X2
+        + ( C112 + C121 + C211 ) / 3 * X2 X1 X1
+        + ( C122 + C212 + C221 ) / 3 * X2 X1 X2
+        + ( C122 + C212 + C221 ) / 3 * X2 X2 X1
+        +   C222                     * X2 X2 X2
+</pre>
+     where, now, the equivalent monomials have equal coefficients.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>monomial_symmetrize</b> is available in
+      <a href = "../../m_src/monomial_symmetrize/monomial_symmetrize.html">a MATLAB version</a> and
+      <a href = "../../octave_src/monomial_symmetrize/monomial_symmetrize.html">an Octave version</a> and
+      <a href = "../../py_src/monomial_symmetrize/monomial_symmetrize.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/monomial/monomial.html">
+      monomial</a>,
+      a Python code which
+      enumerates, lists, ranks, unranks and randomizes multivariate monomials 
+      in a space of M dimensions, with total degree less than N,
+      equal to N, or lying within a given range.
+    </p>
+
+    <p>
+      <a href = "../../py_src/vector/vector.html">
+      vector</a>,
+      a Python code which
+      considers a problem involving vectors, which can be 
+      considered to belong to equivalence classes,
+      for which an arbitrary collection of coefficients must be
+      gathered, averaged, and then scattered again.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "monomial_symmetrize.py">monomial_symmetrize.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "monomial_symmetrize.sh">monomial_symmetrize.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "monomial_symmetrize.txt">monomial_symmetrize.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 19 March 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

@@ -1,0 +1,155 @@
+<html>
+
+  <head>
+    <title>
+      mxm
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      mxm
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>mxm</b>,
+      a Python code which 
+      sets up a matrix-matrix multiplication problem A = B * C,
+      and carries it out using 
+      <ul>
+        <li>
+          Nested DO I, J, K loops;
+        </li>
+        <li>
+          Nested DO I, K, J loops;
+        </li>
+        <li>
+          Nested DO J, I, K loops;
+        </li>
+        <li>
+          Nested DO J, K, I loops;
+        </li>
+        <li>
+          Nested DO K, I, J loops;
+        </li>
+        <li>
+          Nested DO K, J, I loops;
+        </li>
+        <li>
+          the numpy matmul() function: A = np.matmul ( B, C );
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The user is allowed to specify N1, N2, and N3, which define
+      the matrix sizes.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>mxm</b> <i>n1</i> <i>n2</i> <i>n3</i>
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <b>n1</b> is the number of rows in B.
+        </li>
+        <li>
+          <b>n2</b> is the number of columns in B and rows in C.
+        </li>
+        <li>
+          <b>n3</b> is the number of columns in C;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>mxm</b> is available in
+      <a href = "../../c_src/mxm/mxm.html">a C version</a> and
+      <a href = "../../cpp_src/mxm/mxm.html">a C++ version</a> and
+      <a href = "../../f77_src/mxm/mxm.html">a Fortran77 version</a> and
+      <a href = "../../f_src/mxm/mxm.html">a Fortran90 version</a> and
+      <a href = "../../m_src/mxm/mxm.html">a MATLAB version</a> and
+      <a href = "../../octave_src/mxm/mxm.html">an Octave version</a> and
+      <a href = "../../py_src/mxm/mxm.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/timer_test/timer_test.html">
+      timer_test</a>,
+      a Python code which
+      demonstrates how to compute CPU time or elapsed time.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          John Burkardt, Paul Puglielli,<br>
+          Pittsburgh Supercomputing Center,<br>
+          MATMUL: An Interactive Matrix Multiplication Benchmark
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "mxm.py">mxm.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "mxm.sh">mxm.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "mxm.txt">mxm.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 01 January 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

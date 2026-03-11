@@ -1,0 +1,28 @@
+Wed Oct  8 08:27:52 2025
+
+mhd_exact_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Define the Hartmann exact solution of the 2D MHD equation.
+
+mhd_resid_test():
+  Compute maximum residual over sample points for
+  functions u(y) and b(y) that define an exact solution
+  of the Hartmann MHD solution.
+
+  Maximum residual in u(y) equation =  1.7763568394002505e-15
+  Maximum residual in b(y) equation =  7.105427357601002e-15
+
+vector_plot():
+  Plot velocity and magnetic fields using vectors.
+  Graphics saved as "velocity_vector.png"
+  Graphics saved as "magnetic_vector.png"
+
+contour_plot():
+  Make a filled color contour plot of pressure.
+
+  Graphics saved as "pressure_contour.png"
+
+mhd_exact_test():
+  Normal end of execution.
+Wed Oct  8 08:27:53 2025

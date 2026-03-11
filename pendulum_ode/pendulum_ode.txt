@@ -1,0 +1,31 @@
+Wed Oct  8 08:45:07 2025
+
+pendulum_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve pendulum_ode().
+
+  parameters:
+    gravity (m/s^2)   =  9.81
+    length (m)        =  1.0
+    mass (g)          =  1.0
+    t0 (s)            =  0.0
+    u0,v0 (rad,rad/s) =  [1.04719755 0.        ]
+    tstop (s)         =  20.0
+    period (s)        =  2.0060666807106475
+
+pendulum_euler():
+  Solve pendulum_ode() using euler().
+  Graphics saved as "pendulum_euler_theta.png"
+  Graphics saved as "pendulum_euler_thetadot.png"
+  Graphics saved as "pendulum_euler_energy.png"
+
+pendulum_solve_ivp():
+  Solve pendulum_ode() using solve_ivp().
+  Graphics saved as "pendulum_solve_ivp_theta.png"
+  Graphics saved as "pendulum_solve_ivp_thetadot.png"
+  Graphics saved as "pendulum_solve_ivp_energy.png"
+
+pendulum_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:45:09 2025

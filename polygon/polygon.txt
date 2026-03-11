@@ -1,0 +1,468 @@
+Wed Oct  8 08:46:25 2025
+
+polygon_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test polygon().
+
+polygon_angles_test():
+  polygon_angles() computes the angles of a polygon.
+
+  Number of polygonal vertices = 6
+
+  polygon vertices:
+[[0. 1. 2. 3. 3. 1.]
+ [0. 0. 1. 0. 2. 1.]]
+
+  Polygonal angles in degrees:
+
+         0              45
+         1             135
+         2             270
+         3              45
+         4         63.4349
+         5         161.565
+
+polygon_area_test():
+  polygon_area()   computes the area of a polygon.
+  polygon_area_2() computes the area of a polygon.
+  polygon_area_3() computes the area of a polygon.
+
+  Number of polygonal vertices = 4
+
+  polygon vertices:
+[[1. 2. 1. 0.]
+ [0. 1. 2. 1.]]
+
+  Exact area is      2.0
+  polygon_area():    2.0
+  polygon_area_2():  2.0
+  polygon_area_3():  2.0
+
+  Number of polygonal vertices = 8
+
+  polygon vertices:
+[[0. 3. 3. 2. 2. 1. 1. 0.]
+ [0. 0. 3. 3. 1. 1. 2. 2.]]
+
+  Exact area is      6.0
+  polygon_area():    6.0
+  polygon_area_2():  6.0
+  polygon_area_3():  6.0
+
+polygon_centroid_test():
+  polygon_centroid()   computes the centroid of a polygon.
+  polygon_centroid_2() computes the centroid of a polygon.
+
+  polygon vertices:
+[[1. 2. 1. 0.]
+ [0. 1. 2. 1.]]
+
+  polygon_centroid():
+[1. 1.]
+
+  polygon_centroid_2():
+[1. 1.]
+
+polygon_contains_point_test():
+  polygon_contains_point() determines if 
+  a point is in a polygon.
+
+  polygon vertices:
+[[0. 0.]
+ [5. 0.]
+ [5. 4.]
+ [2. 4.]
+ [2. 2.]
+ [3. 2.]
+ [3. 3.]
+ [4. 3.]
+ [4. 1.]
+ [1. 1.]
+ [1. 5.]
+ [6. 5.]
+ [6. 6.]
+ [0. 6.]]
+
+          P               Inside  Inside
+
+      0.500000      5.500000  True  True
+      1.500000      4.500000  False  False
+      2.500000      3.500000  True  True
+      3.500000      2.500000  False  False
+      4.500000      1.500000  True  True
+      5.500000      0.500000  False  False
+
+polygon_convex_contains_point_test():
+  polygon_convex_contains_point() determines if
+  a point is in a convex polygon.
+
+  polygon vertices:
+[[0. 0.]
+ [1. 0.]
+ [2. 1.]
+ [1. 2.]
+ [0. 2.]]
+
+          P          Inside
+
+               1               1    1
+               3               4    0
+               0               2    1
+             0.5           -0.25    0
+
+polygon_contains_point_3_test():
+  polygon_contains_point_3() determines if 
+  a point is in a polygon.
+
+  polygon vertices:
+[[0. 0.]
+ [5. 0.]
+ [5. 4.]
+ [2. 4.]
+ [2. 2.]
+ [3. 2.]
+ [3. 3.]
+ [4. 3.]
+ [4. 1.]
+ [1. 1.]
+ [1. 5.]
+ [6. 5.]
+ [6. 6.]
+ [0. 6.]]
+
+          P               Inside  Inside
+
+      0.500000      5.500000  True  True
+      1.500000      4.500000  False  False
+      2.500000      3.500000  True  True
+      3.500000      2.500000  False  False
+      4.500000      1.500000  True  True
+      5.500000      0.500000  False  False
+
+polygon_data_test():
+  polygon_data_inrad() describes a regular polygon using the inradius.
+  polygon_data_outrad() describes a regular polygon using the outradius.
+  polygon_data_side() describes a regular polygon using the side.
+
+  Number of polygonal sides = 3
+
+    AREA =    0.43301270189221946
+    RADIN =   0.288675134594813
+    RADOUT =  0.5773502691896258
+    SIDE =    1.0   (given)
+
+    AREA =    0.43301270189221946
+    RADIN =   0.288675134594813   (given)
+    RADOUT =  0.5773502691896258
+    SIDE =    1.0
+
+    AREA =    0.43301270189221946
+    RADIN =   0.288675134594813
+    RADOUT =  0.5773502691896258   (given)
+    SIDE =    1.0
+
+  Number of polygonal sides = 4
+
+    AREA =    1.0000000000000002
+    RADIN =   0.5000000000000001
+    RADOUT =  0.7071067811865476
+    SIDE =    1.0   (given)
+
+    AREA =    1.0000000000000002
+    RADIN =   0.5000000000000001   (given)
+    RADOUT =  0.7071067811865476
+    SIDE =    1.0
+
+    AREA =    1.0000000000000002
+    RADIN =   0.5000000000000001
+    RADOUT =  0.7071067811865476   (given)
+    SIDE =    1.0
+
+  Number of polygonal sides = 5
+
+    AREA =    1.720477400588967
+    RADIN =   0.6881909602355868
+    RADOUT =  0.8506508083520399
+    SIDE =    1.0   (given)
+
+    AREA =    1.720477400588967
+    RADIN =   0.6881909602355868   (given)
+    RADOUT =  0.8506508083520399
+    SIDE =    1.0
+
+    AREA =    1.7204774005889665
+    RADIN =   0.6881909602355868
+    RADOUT =  0.8506508083520399   (given)
+    SIDE =    1.0
+
+polygon_diameter_test():
+  polygon_diameter() computes the diameter of a polygon.
+
+  polygon vertices:
+[[1. 2. 1. 0.]
+ [0. 1. 2. 1.]]
+
+  Diameter ( computed ) 2
+  Diameter ( exact )    2
+
+polygon_expand_test():
+  polygon_expand() "expands" a polygon by an amount H.
+
+  polygon vertices:
+[[1. 5. 2. 1.]
+ [1. 1. 4. 3.]]
+
+  The expansion amount H = 0.5
+
+  expanded polygon vertices:
+[[0.5        6.20710678 2.         0.5       ]
+ [0.5        0.5        4.70710678 3.20710678]]
+
+polygon_integral_test():
+  polygon_integral_1()  integrates 1 over a polygon
+  polygon_integral_x()  integrates x over a polygon
+  polygon_integral_y()  integrates y over a polygon
+  polygon_integral_xx() integrates xx over a polygon
+  polygon_integral_xy() integrates xy over a polygon
+  polygon_integral_yy() integrates yy over a polygon
+
+  polygon vertices:
+[[1. 4. 2.]
+ [1. 3. 5.]]
+
+  1:     5.0
+  x:     11.666666666666666
+  y:     15.0
+  xx:    29.166666666666668
+  xy:    35.833333333333336
+  yy:    48.333333333333336
+
+polygon_is_ccw_test():
+  polygon_is_cc2() determines if the vertices of a polygon
+  are listed in counter-clockwise order.
+
+  polygon vertices:
+[[0. 0.]
+ [1. 0.]
+ [1. 1.]
+ [0. 1.]]
+  The polygon vertices are counter clockwise.
+
+  polygon vertices:
+[[0. 0.]
+ [1. 0.]
+ [0. 1.]
+ [1. 1.]]
+  The polygon vertices are NOT counter clockwise.
+
+  polygon vertices:
+[[0. 0.]
+ [1. 1.]
+ [1. 0.]
+ [0. 1.]]
+  The polygon vertices are NOT counter clockwise.
+
+  polygon vertices:
+[[0. 0.]
+ [1. 1.]
+ [0. 1.]
+ [1. 0.]]
+  The polygon vertices are NOT counter clockwise.
+
+  polygon vertices:
+[[0. 0.]
+ [0. 1.]
+ [1. 0.]
+ [1. 1.]]
+  The polygon vertices are NOT counter clockwise.
+
+  polygon vertices:
+[[0. 0.]
+ [0. 1.]
+ [1. 1.]
+ [1. 0.]]
+  The polygon vertices are NOT counter clockwise.
+
+polygon_is_convex_test():
+  polygon_is_convex() determines if a polygon is convex.
+
+  polygon vertices:
+[[0.]
+ [0.]]
+  The polygon is degenerate and convex.
+
+  polygon vertices:
+[[0. 1.]
+ [0. 2.]]
+  The polygon is degenerate and convex.
+
+  polygon vertices:
+[[0. 2. 1.]
+ [0. 0. 0.]]
+  The polygon is convex and clockwise.
+
+  polygon vertices:
+[[0. 1. 0.]
+ [0. 0. 2.]]
+  The polygon is convex and counterclockwise.
+
+  polygon vertices:
+[[0. 0. 1.]
+ [0. 2. 0.]]
+  The polygon is convex and clockwise.
+
+  polygon vertices:
+[[1. 2. 3. 0.]
+ [0. 0. 1. 1.]]
+  The polygon is convex and counterclockwise.
+
+  polygon vertices:
+[[0.  0.5 1.  1.  0. ]
+ [0.  0.5 0.  1.  1. ]]
+  The polygon is not convex.
+
+  polygon vertices:
+[[ 1.         -0.80901699  0.30901699  0.30901699 -0.80901699]
+ [ 0.          0.58778525 -0.95105652  0.95105652 -0.58778525]]
+  The polygon is not convex.
+
+  polygon vertices:
+[[ 1.00000000e+00  5.00000000e-01 -5.00000000e-01 -1.00000000e+00
+  -5.00000000e-01  5.00000000e-01]
+ [ 0.00000000e+00  8.66025404e-01  8.66025404e-01  1.22464680e-16
+  -8.66025404e-01 -8.66025404e-01]]
+  The polygon is convex and counterclockwise.
+
+  polygon vertices:
+[[0. 2. 1. 0. 2. 1.]
+ [0. 0. 1. 0. 0. 1.]]
+  The polygon is not convex.
+
+  polygon vertices:
+[[1. 3. 3. 0. 0. 2. 2. 1.]
+ [0. 0. 3. 3. 1. 1. 2. 1.]]
+  The polygon is not convex.
+
+polygon_area_lattice_test():
+  polygon_area_lattice() returns the "area"
+  of a polygon, measured in lattice points.
+
+  Number of interior lattice points = 5
+  Number of boundary lattice points = 6
+  Area of polygon is 7
+
+polygon_perimeter_test():
+  polygon_perimeter() computes the perimeter of a polygon.
+
+  polygon vertices:
+[[0. 1. 1. 0.]
+ [0. 0. 1. 1.]]
+
+  Perimeter of V1 = 4
+
+  polygon vertices:
+[[1. 4. 2.]
+ [1. 3. 5.]]
+
+  Perimeter of V2 = 10.5571
+
+polygon_perimeter_quad_test():
+  polygon_perimeter_quad() estimates the integral of
+  a function over the perimeter of a polygon using
+  the composite midpoint rule over each side.
+
+  polygon vertices:
+[[0. 1. 1. 0.]
+ [0. 0. 1. 1.]]
+
+  Using HMAX = 0.5, estimated integral of 1 over perimeter = 4
+
+  Using HMAX = 1, estimated integral of x^2 over perimeter = 1.5
+  Using HMAX = 0.5, estimated integral of x^2 over perimeter = 1.625
+  Using HMAX = 0.25, estimated integral of x^2 over perimeter = 1.65625
+
+  polygon vertices:
+[[1. 4. 2.]
+ [1. 3. 5.]]
+
+  Using HMAX = 0.5, estimated integral of 1 over perimeter = 10.5571
+
+  Using HMAX = 1, estimated integral of x^2 over perimeter = 60.9706
+  Using HMAX = 0.5, estimated integral of x^2 over perimeter = 61.1854
+  Using HMAX = 0.25, estimated integral of x^2 over perimeter = 61.2383
+
+polygon_point_dist_test():
+  polygon_point_dist() computes polygon-point distance.
+
+  polygon vertices:
+[[1. 4. 2.]
+ [1. 3. 5.]]
+
+       X             Y             DIST
+
+               4               5         1.41421
+               2               3        0.485071
+              -2              -1         3.60555
+
+polygon_point_near_test():
+  polygon_point_near() computes nearest point on polygon.
+
+  polygon vertices:
+[[1. 4. 2.]
+ [1. 3. 5.]]
+
+       X             Y             XN             YN
+
+               4               5               3               4
+               2               3         1.52941         3.11765
+              -2              -1               1               1
+
+polygon_sample_test():
+  polygon_sample() samples a polygon.
+
+  sample points:
+[[0.75393193 0.08447228 1.27123674 1.68078158 0.44029527 0.74671877
+  1.42735859 1.00095981 1.72359924 1.54439533 1.86726073 0.71490802
+  1.52752734 0.03133475 0.58486274 1.64404239 0.01600093 0.24874321
+  0.41579089 0.83328224]
+ [1.49632554 0.01571371 0.78231846 0.16149538 0.73545205 0.13728387
+  0.43419007 0.17635483 0.82901459 0.97375422 0.09698251 1.27278639
+  0.91075777 0.25572513 0.92251604 0.40615538 0.93555579 0.98883528
+  1.39747082 0.57016806]]
+
+polygon_triangulate_test():
+  polygon_triangulate() triangulates a polygon.
+
+  Triangles of the trinangulation:
+[[2 0 1]
+ [4 2 3]
+ [6 4 5]
+ [8 6 7]
+ [9 6 8]
+ [2 9 0]
+ [4 9 2]
+ [6 9 4]]
+
+triangle_barycentric_test():
+  triangle_barycentric() converts XY coordinates
+  to barycentric XSI coordinates in a triangle.
+
+  Triangle vertices:
+[[0. 1.]
+ [0. 0.]
+ [1. 0.]]
+
+   X       Y     XSI
+
+    0.250000    0.250000      0.500000    0.250000    0.250000
+    0.750000    0.250000     -0.000000    0.750000    0.250000
+    1.000000    1.000000     -1.000000    1.000000    1.000000
+   11.000000    0.500000    -10.500000   11.000000    0.500000
+    0.000000    1.000000     -0.000000    0.000000    1.000000
+    0.500000  -10.000000     10.500000    0.500000  -10.000000
+    0.600000    0.600000     -0.200000    0.600000    0.600000
+
+polygon_test():
+  Normal end of execution.
+Wed Oct  8 08:46:25 2025

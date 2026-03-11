@@ -1,0 +1,67 @@
+Wed Oct  8 08:40:13 2025
+
+navier_stokes_3d_exact_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test navier_stokes_3d_exact()
+
+uvwp_burgers_test():
+  uvwp_burgers() samples the Burgers solution.
+  Estimate the range of velocity and pressure
+  at the initial time T = 0, using a region that is
+  the cube centered at (0,0,0) with "radius" 1.0,
+  Viscosity NU = 0.25
+
+           Minimum       Maximum
+
+  U:        -1.99902         1.98992
+  V:        -1.99875          1.9941
+  W:       -0.995199        0.995296
+  P:        -3.69011    -0.000770261
+
+resid_burgers_test():
+  resid_burgers() evaluates the Burgers residual.
+  Sample at the initial time T = 0, using a region that is
+  the cube centered at (0,0,0) with "radius" 1.0,
+  Viscosity NU = 0.25
+
+           Minimum       Maximum
+
+  Ur:               0               0
+  Vr:               0               0
+  Wr:               0     2.22045e-16
+  Pr:               0               0
+
+uvwp_ethier_test():
+  uvwp_ethier() evaluates the Ethier solution.
+  Estimate the range of velocity and pressure
+  at the initial time T = 0, using a region that is
+  the cube centered at (0,0,0) with "radius" 1.0,
+  Parameter A = 0.785398
+  Parameter D = 1.5708
+
+           Minimum       Maximum
+
+  U:        -3.16023         1.36156
+  V:        -2.99007         1.49003
+  W:        -3.10553         1.49389
+  P:       0.0022952         5.45651
+
+resid_ethier_test():
+  resid_ethier() evaluates the Ethier residual.
+  Sample the residuals
+  at the initial time T = 0, using a region that is
+  the cube centered at (0,0,0) with "radius" 1.0,
+  Parameter A = 0.785398
+  Parameter D = 1.5708
+
+           Minimum       Maximum
+
+  Ur:               0     3.55271e-15
+  Vr:               0     2.66454e-15
+  Wr:               0     3.55271e-15
+  Pr:               0     3.60822e-16
+
+navier_stokes_3d_exact_test():
+  Normal end of execution.
+Wed Oct  8 08:40:13 2025

@@ -1,0 +1,202 @@
+<html>
+
+  <head>
+    <title>
+      pagerank
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      pagerank
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>pagerank</b>,
+      a Python code which
+      uses the eigenvalue (power method) and surfer 
+      (Markov Chain Monte Carlo MCMC)
+      approaches to ranking web pages.
+    </p>
+
+    <p>
+      For discussion, the web can be thought of as an enormous directed
+      graph, comprising nodes (web pages), and directed links (hyperlinks
+      embedded in one page that refer to another page.)
+    </p>
+
+    <p>
+      A mathematical model of this situation is the adjacency
+      matrix A such that A(I,J) = 1 if page I has a hyperlink to page J.
+    </p>
+
+    <p>
+      There is a related matrix, the transition matrix T, formed by
+      taking the transpose of A, and then normalizing each column so that
+      it has sum 1.  Then we may suppose that, if one of the hyperlinks on page
+      J is selected at random, then T(I,J) is the probability that selecting
+      a hyperlink on page J will take you to page I.
+    </p>
+
+    <p>
+      Now imagine that we start at page I and move to page J in accordance
+      with a randomly selected hyperlink A(I,J).  We can repeat this process
+      indefinitely, barring the case where we reach a page with no hyperlinks.
+    </p>
+
+    <p>
+      We can model this process mathematically by starting with a vector X
+      that is entirely 0 except for a 1 in position I.  Then T*x produces a
+      vector such that (T*x)(j) is the probability that we will have moved to
+      page J in one step.  Similarly, T*T*x will give us the probability 
+      distribution for our location at step 2, and so on.  If we take enough
+      powers of T, then we may hope that we reach a result that does not
+      change significantly, in which case we have discovered an eigenvector
+      of T that represents the limiting distribution of locations assuming
+      we start at page I.
+    </p>
+
+    <p>
+      We may also take a Markov chain approach.  As a first version, we could
+      start at an arbitrary page, and move repeatedly according to randomly
+      selected hyperlinks.  We keep track of the number of times we have
+      visited each page, and when we feel we have explored enough, the
+      counts divided by the total number of moves will give us an estimate of
+      the visit probability.
+    </p>
+
+    <p>
+      However, such a process is very vulnerable to being trapped in an isolated
+      corner of the web, or of hitting an inescapable cycle.  A much more robust
+      procedure is reached if we agree that a move consists of a 15 percent
+      chance of jumping to a completely arbitrary page, or else of taking a
+      random hyperlink from the current page.  This procedure is termed by
+      MacCormick the "random surfer" procedure.
+    </p>
+
+    <p>
+      Statistics gathered by the eigenvalue or Markov approach can be used to
+      assert the relative "importance" or rank of each web page.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>pagerank</b> is available in
+      <a href = "../../m_src/pagerank/pagerank.html">a MATLAB version</a> and
+      <a href = "../../octave_src/pagerank/pagerank.html">an Octave version</a> and
+      <a href = "../../py_src/pagerank/pagerank.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/power_method/power_method.html">
+      power_method</a>,
+      a Python code which
+      carries out the power method for finding a dominant eigenvalue
+      and its eigenvector.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          John MacCormick,<br>
+          Nine Algorithms That Changed the Future: The Ingenious Ideas that 
+          Drive Today's Computers,<br>
+          Princeton University Press,<br>
+          ISBN-13: 978-0691158198.
+        </li>
+        <li>
+          Cleve Moler,<br>
+          Experiments with Matlab,<br>
+          Chapter 7: Google PageRank<br>
+          https://www.mathworks.com/moler/exm/chapters/pagerank.pdf
+        </li>
+        <li>
+          Xindong Wu, Vipin Kumar, J Ross Quinlan, Joydeep Ghosh, Qiang Yang,
+          Hiroshi Motoda, Geoffrey McLachlan, Angus Ng, Bing Lu, Philip Yu,
+          Zhi-Hua Zhou, Michael Steinbach, David Hand, Dan Steinberg,<br>
+          Top 10 algorithms in data mining,<br>
+          Knowledge and Information Systems,<br>
+          Volume 14, Number 1, January 2008, pages 1-37.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "pagerank.py">pagerank.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "pagerank.sh">pagerank.sh</a>, runs all the tests;
+        </li>
+        <li>
+          <a href = "pagerank.txt">pagerank.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "mac1.png">mac1.png</a>,
+          a plot of graph 1.
+        </li>
+        <li>
+          <a href = "mac2.png">mac2.png</a>,
+          a plot of graph 2.
+        </li>
+        <li>
+          <a href = "moler.png">moler.png</a>,
+          a plot of graph 3.
+        </li>
+        <li>
+          <a href = "sauer.png">sauer.png</a>,
+          a plot of the 15-node Sauer example.
+        </li>
+        <li>
+          <a href = "six.png">six.png</a>,
+          a plot of the 6-node example.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 07 August 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

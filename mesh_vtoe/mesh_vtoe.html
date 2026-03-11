@@ -1,0 +1,151 @@
+<html>
+
+  <head>
+    <title>
+      mesh_vtoe
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      mesh_vtoe
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>mesh_vtoe</b>,
+      a Python code which
+      uses ETOV, the element-to-vertex connectivity information, to construct
+      VTOE, the vertex-to-element connectivity, for a 2D mesh.
+    </p>
+
+    <p>
+      The mesh is assumed to consist of E_NUM elements, each of which is defined
+      by E_ORDER vertices, provided in ETOV, an E_ORDER by E_NUM array.
+    </p>
+
+    <p>
+      The desired VTOE information gives, for each vertex, a list of the
+      elements in which it occurs.  It is essentially an "inverse" to ETOV,
+      but since the number of elements that any vertex can participate in
+      will vary, the storage for VTOE must use a scheme typically used for
+      sparse arrays.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>mesh_vtoe</b> is available in
+      <a href = "../../m_src/mesh_vtoe/mesh_vtoe.html">a MATLAB version</a> and
+      <a href = "../../octave_src/mesh_vtoe/mesh_vtoe.html">an Octave version</a> and
+      <a href = "../../py_src/mesh_vtoe/mesh_vtoe.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/mesh_bandwidth/mesh_bandwidth.html">
+      mesh_bandwidth</a>, 
+      a Python code which
+      returns the geometric bandwidth associated with a mesh of
+      elements of any order and in a space of arbitrary dimension.
+    </p>
+
+    <p>
+      <a href = "../../py_src/mesh_etoe/mesh_etoe.html">
+      mesh_etoe</a>,
+      a Python code which
+      uses ETOV, the mesh element-to-vertex connectivity,
+      to construct ETOE, the element-to-element connectivity.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "mesh_vtoe.py">mesh_vtoe.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "mesh_vtoe.sh">mesh_vtoe.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "mesh_vtoe.txt">mesh_vtoe.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>BOXY</b> is a mesh using 16 triangles and 13 nodes.
+      <ul>
+        <li>
+          <a href = "boxy_elements.png">
+          boxy_elements.png</a>, 
+          a plot of the mesh.
+        </li>
+        <li>
+          <a href = "boxy_elements.txt">
+          boxy_elements.txt</a>, 
+          the ETOV information;
+        </li>
+        <li>
+          <a href = "boxy_nodes.txt">
+          boxy_nodes.txt</a>, 
+          the vertex coordinates.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>POOL</b> is a mesh using 18 quadrilaterals and 28 nodes.
+      <ul>
+        <li>
+          <a href = "pool_elements.png">
+          pool_elements.png</a>, 
+          a plot of the mesh.
+        </li>
+        <li>
+          <a href = "pool_elements.txt">
+          pool_elements.txt</a>, 
+          the ETOV information;
+        </li>
+        <li>
+          <a href = "pool_nodes.txt">
+          pool_nodes.txt</a>, 
+          the vertex coordinates.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 20 February 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

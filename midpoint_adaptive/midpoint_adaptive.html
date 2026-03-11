@@ -1,0 +1,137 @@
+<html>
+
+  <head>
+    <title>
+      midpoint_adaptive
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      midpoint_adaptive
+    </h1>
+
+    <p>
+      <b>midpoint_adaptive</b>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the (implicit) midpoint method, relying on fsolve()
+      to solve the implicit equation, and using an adaptive timestep.
+      Plots of the solution and timestep history are created.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>midpoint_adaptive</b> is available in
+      <a href = "../../c_src/midpoint_adaptive/midpoint_adaptive.html">a C version</a> and
+      <a href = "../../cpp_src/midpoint_adaptive/midpoint_adaptive.html">a C++ version</a> and
+      <a href = "../../f_src/midpoint_adaptive/midpoint_adaptive.html">a Fortran90 version</a> and
+      <a href = "../../m_src/midpoint_adaptive/midpoint_adaptive.html">a MATLAB version</a> and
+      <a href = "../../octave_src/midpoint_adaptive/midpoint_adaptive.html">an Octave version</a> and
+      <a href = "../../py_src/midpoint_adaptive/midpoint_adaptive.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_ode_solver/python_ode_solver.html">
+      python_ode_solver</a>,
+      a Python code which 
+      solves one or more differential equations (ODE) using a method of a
+      particular order, either explicit or implicit.  Some methods require
+      a nonlinear equation solver.  Some methods used a fixed stepsize,
+      while others adapt the stepsize based on an error estimate.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          William Milne,<br>
+          Numerical Integration of Ordinary Differential Equations,<br>
+          American Mathematical Monthly,<br>
+          Volume 33, number 9, pages 455–460, 1926.
+        </li>
+        <li>
+          Ernst Hairer, Syvert Norsett, Gerhard Wanner,<br> 
+          Solving ordinary differential equations, I. Nonstiff problems,<br>
+          Springer Series in Computational Mathematics, Number 8,<br> 
+          Springer-Verlag, Berlin, 1987.
+        </li>
+        <li>
+          Catalin Trenchea, John Burkardt,<br>
+          Refactorization of the midpoint rule,<br>
+          Applied Mathematics Letters,<br>
+          Volume 107, September 2020.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "midpoint_adaptive.py">midpoint_adaptive.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "midpoint_adaptive.sh">midpoint_adaptive.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "midpoint_adaptive.txt">midpoint_adaptive.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lotka_solution.png">
+          lotka_solution.png</a>,
+          a plot of the solution over time.
+        </li>
+        <li>
+          <a href = "lotka_phase.png">
+          lotka_phase.png</a>,
+          a plot of the phase plane.
+        </li>
+        <li>
+          <a href = "lotka_timestep.png">
+          lotka_timestep.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 26 May 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

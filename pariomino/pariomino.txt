@@ -1,0 +1,1356 @@
+Wed Oct  8 08:44:48 2025
+
+pariomino_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test pariomino().
+
+filename_inc_test():
+  filename_inc() "increments" a string
+
+     Input             Output
+
+   file???.dat   None
+
+   file072.dat   file073.dat
+   file073.dat   file074.dat
+   file074.dat   file075.dat
+   file075.dat   file076.dat
+
+   2cat9.dat     3cat0.dat  
+   3cat0.dat     3cat1.dat  
+   3cat1.dat     3cat2.dat  
+   3cat2.dat     3cat3.dat  
+
+   fred99.txt    fred90.txt 
+   fred90.txt    fred91.txt 
+   fred91.txt    fred92.txt 
+   fred92.txt    fred93.txt 
+
+i4mat_is_ternary_test():
+  i4mat_is_ternary() is TRUE if an I4MAT only contains
+  -1, 0 and +1 entries.
+
+  X:
+
+  Col:       0        1        2  
+  Row
+    0:       0       -1        0  
+    1:       1        0        1  
+  X is ternary
+
+  X:
+
+  Col:       0        1        2  
+  Row
+    0:       1        1        1  
+    1:       1        1        1  
+  X is ternary
+
+  X:
+
+  Col:       0        1        2  
+  Row
+    0:       0        1        0  
+    1:      -1        2       -1  
+  X is NOT ternary.
+
+i4mat_print_test():
+  i4mat_print() prints an I4MAT.
+
+  A 5 x 6 integer matrix:
+
+  Col:       0        1        2        3        4        5  
+  Row
+    0:      11       12       13       14       15       16  
+    1:      21       22       23       24       25       26  
+    2:      31       32       33       34       35       36  
+    3:      41       42       43       44       45       46  
+    4:      51       52       53       54       55       56  
+
+i4mat_print_some_test():
+  i4mat_print_some() prints some of an I4MAT.
+
+  Here is I4MAT, rows 0:2, cols 3:5:
+
+  Col:       3        4        5  
+  Row
+    0:      14       15       16  
+    1:      24       25       26  
+    2:      34       35       36  
+
+ksub_next4_test():
+  ksub_next4() generates K subsets of an N set.
+  N = 5
+  K = 3
+
+Rank    Subset
+
+   1     1   2   3
+   2     1   2   4
+   3     1   3   4
+   4     2   3   4
+   5     1   2   5
+   6     1   3   5
+   7     2   3   5
+   8     1   4   5
+   9     2   4   5
+  10     3   4   5
+
+pariomino_area_test
+  pariomino_area() returns the area of a pariomino.
+
+  pariomino #1:
+
+  WBWB
+  Area is 4
+
+  pariomino #2:
+
+  BW.
+  .B.
+  .WB
+  Area is 5
+
+  pariomino #3:
+
+  W..
+  BWB
+  Area is 4
+
+  pariomino #4:
+
+  ....B.
+  W...WB
+  B.BWB.
+  W.W.W.
+  BWBWB.
+  Area is 16
+
+pariomino_condense_test:
+  pariomino_condense() "cleans up" a matrix that
+  represents a pariomino by eliminating initial and final:
+  rows and columns of zeros.
+
+  The initial (3,3) pariomino P:
+
+  .BW
+  BW.
+  .B.
+
+  The condensed (3,3) pariomino Q:
+
+  .BW
+  BW.
+  .B.
+
+  The initial (4,4) pariomino P:
+
+  ....
+  .WB.
+  .BW.
+  ....
+
+  The condensed (2,2) pariomino Q:
+
+  WB
+  BW
+
+  The initial (3,4) pariomino P:
+
+  WB.B
+  ....
+  WB.B
+
+  The condensed (3,4) pariomino Q:
+
+  WB.B
+  ....
+  WB.B
+
+  The initial (2,4) pariomino P:
+
+  ....
+  ....
+
+  The condensed (0,0) pariomino Q:
+
+  [ Null matrix ]
+
+pariomino_embed_list_test:
+  pariomino_embed_list() lists the offsets used
+  to embed a fixed pariomino in a region.
+
+  region R:
+
+  .WBW
+  WB.B
+  BWBW
+  W.WB
+
+  pariomino P:
+
+  .W
+  .B
+  BW
+
+  P can be embedded in R in 2 ways.
+
+  Embedding #0
+
+  .*BW
+  W*.B
+  **BW
+  W.WB
+
+  Embedding #1
+
+  .*B*
+  W*.*
+  ****
+  W.WB
+
+pariomino_embed_number_test:
+  pariomino_embed_number() reports the number of ways a
+  fixed pariomino can be embedded in a region.
+
+  Region R:
+
+  .BWB
+  BW.W
+  WBWB
+  B.BW
+
+  Pariomino P:
+
+  .B
+  .W
+  WB
+
+  P can be embedded in R in 2 ways.
+
+  Pariomino P:
+
+  .W
+  .B
+  BW
+
+  P can be embedded in R in 1 ways.
+
+pariomino_equal_test
+  pariomino_equal() determines if pariominoes are equal.
+
+  The pariomino P1:
+
+  W.WB
+  BWB.
+  .BW.
+
+  The pariomino P2:
+
+  W.WB
+  BWB.
+  .BW.
+
+  The pariomino P3:
+
+  W.WB.
+  BWB..
+  .BW..
+
+  The pariomino P4:
+
+  W.WB
+  BWB.
+  .BW.
+
+  P1 == P1? True
+  P1 == P2? False
+  P1 == P3? False
+  P1 == P4? True
+
+pariomino_index_test
+  pariomino_index() assigns an index to each nonzero entry
+  of a pariomino.
+
+  The pariomino P:
+
+  W.WB
+  BWB.
+  .BW.
+
+  The index array for P:
+
+  Col:       0        1        2        3  
+  Row
+    0:       1        0        2        3  
+    1:       4        5        6        0  
+    2:       0        7        8        0  
+
+pariomino_lp_write_test:
+  pariomino_lp_write() writes an LP file associated
+  with a binary programming problem for tiling a region
+  with copies of a single pariomino.
+
+  pariomino_lp_write created the LP file "reid.lp"
+
+pariomino_matrix_test:
+  pariomino_matrix() sets up the linear system
+  associated with a pariomino tiling problem.
+
+  Region R:
+
+  WBWB
+  BWBW
+
+  pariomino N:
+
+  B
+
+  pariomino O:
+
+  WBW
+
+  pariomino P:
+
+  ..B
+  WBW
+
+  System matrix A and right hand side B:
+
+   0:   0 0 0 0 1 0 0 1 0 1   1
+   1:   1 0 0 0 1 0 0 1 1 1   1
+   2:   0 0 0 0 1 0 0 1 0 1   1
+   3:   0 1 0 0 0 0 1 0 0 0   1
+   4:   0 0 1 0 0 0 0 1 0 0   1
+   5:   0 0 0 0 0 1 1 0 1 0   1
+   6:   0 0 0 1 0 1 1 0 1 1   1
+   7:   0 0 0 0 0 1 1 0 1 0   1
+   8:   1 1 1 1 0 0 0 0 0 0   1
+   9:   0 0 0 0 1 1 0 0 0 0   1
+  10:   0 0 0 0 0 0 1 1 1 1   1
+  11:   1 1 1 1 3 3 4 4 4 4   8
+
+  Linear system saved in LP file:"2x4.lp"
+
+pariomino_matrix_reid_test:
+  pariomino_matrix_reid() sets up the linear system
+  associated with the Reid pariomino tiling problem.
+
+  System matrix A and right hand side B:
+
+   1 0 0 0 0 1 0 0 0 0   1
+   0 0 1 0 0 1 0 0 0 0   1
+   1 1 0 0 0 0 1 0 0 0   1
+   0 0 1 1 0 0 1 1 0 0   1
+   0 0 0 0 1 0 0 1 0 0   1
+   0 1 0 0 0 0 0 0 1 0   1
+   0 0 0 1 0 0 0 0 1 1   1
+   0 0 0 0 1 0 0 0 0 1   1
+   2 2 2 2 2 2 2 2 2 2   8
+
+pariomino_parity_test
+  pariomino_parity() returns the parity of a pariomino.
+
+  pariomino #1:
+
+  WBWB
+  parity is 0
+
+  pariomino #2:
+
+  BW.
+  .B.
+  .WB
+  parity is -1
+
+  pariomino #3:
+
+  W..
+  BWB
+  parity is 0
+
+  pariomino #4:
+
+  ....B.
+  W...WB
+  B.BWB.
+  W.W.W.
+  BWBWB.
+  parity is 0
+
+pariomino_print_test
+  pariomino_print() prints a pariomino.
+
+  pariomino #1:
+
+  WBWB
+
+  pariomino #2:
+
+  BW.
+  .B.
+  .WB
+
+  pariomino #3:
+
+  W..
+  BWB
+
+  pariomino #4:
+
+  ....B.
+  W...WB
+  B.BWB.
+  W.W.W.
+  BWBWB.
+
+pariomino_reverse_test
+  pariomino_reverse() reverses the parity of the cells
+  of a pariomino.
+
+  pariomino:
+
+  ....B.
+  W...WB
+  B.BWB.
+  W.W.W.
+  BWBWB.
+
+  reverse parity pariomino:
+
+  ....W.
+  B...BW
+  W.WBW.
+  B.B.B.
+  WBWBW.
+
+pariomino_tiling_print_test01
+  Given solutions for the 2x4 pariomino
+  tiling problem, print a representation of the tiling
+  corresponding to each solution.
+
+  Region R:
+
+  WBWB
+  BWBW
+
+  pariomino N:
+
+  B
+
+  pariomino O:
+
+  WBW
+
+  pariomino P:
+
+  ..B
+  WBW
+
+  2x4 Tiling #0
+  Numeric Labels
+
+  2 2 2 3
+  1 3 3 3
+
+  2x4 Tiling #0
+  "Colors"
+
+  2 2 2 3
+  1 3 3 3
+
+  2x4 Tiling #1
+  Numeric Labels
+
+  3 3 3 1
+  3 2 2 2
+
+  2x4 Tiling #1
+  "Colors"
+
+  3 3 3 1
+  3 2 2 2
+
+pariomino_tiling_print_test02
+  Given 4 solutions for the 2x4 pariomino
+  tiling problem, print corresponding tilings.
+
+  Region R:
+
+  W...
+  B...
+  WBWB
+  BWBW
+
+  pariomino N:
+
+  ..B
+  WBW
+
+  pariomino O:
+
+  BWB
+
+  pariomino P:
+
+  .W
+  WB
+
+  4x4 Pariomino Tiling
+  Numeric Labels
+
+  1 0 0 0
+  1 0 0 0
+  1 1 3 3
+  2 2 2 3
+
+  4x4 Pariomino Tiling
+  "Colors"
+
+  1 0 0 0
+  1 0 0 0
+  1 1 3 3
+  2 2 2 3
+
+pariomino_tiling_solver_test01:
+  pariomino_tiling_solver solves a pariomino
+  tiling problem for a 2x4 rectangle.
+
+  Region R:
+
+  BWBW
+  WBWB
+
+  pariomino N:
+
+  B
+
+  pariomino O:
+
+  WBW
+
+  pariomino P:
+
+  ..B
+  WBW
+
+  12x10 system matrix A and right hand side B:
+
+   1 0 0 0 0 0 0 0 1 0   1
+   0 0 0 0 1 0 0 1 0 1   1
+   0 1 0 0 1 0 1 1 0 1   1
+   0 0 0 0 1 0 0 1 0 1   1
+   0 0 0 0 0 1 1 0 1 0   1
+   0 0 1 0 0 1 1 1 1 0   1
+   0 0 0 0 0 1 1 0 1 0   1
+   0 0 0 1 0 0 0 0 0 1   1
+   1 1 1 1 0 0 0 0 0 0   1
+   0 0 0 0 1 1 0 0 0 0   1
+   0 0 0 0 0 0 1 1 1 1   1
+   1 1 1 1 3 3 4 4 4 4   8
+
+VERBOSE:
+  System has 3 degrees of freedom.
+
+VERBOSE:
+  Augmented Row-Reduced Echelon Form system matrix A and right hand side B:
+  Columns associated with a free variable are headed with a "*"
+
+   : : : : : : : * * *
+   1 0 0 0 0 0 0 0 1 0   1
+   0 1 0 0 0 0 0-1-1-1  -1
+   0 0 1 0 0 0 0 1 0 0   0
+   0 0 0 1 0 0 0 0 0 1   1
+   0 0 0 0 1 0 0 1 0 1   1
+   0 0 0 0 0 1 0-1 0-1   0
+   0 0 0 0 0 0 1 1 1 1   1
+   0 0 0 0 0 0 0 1 0 0   0
+   0 0 0 0 0 0 0 0 1 0   0
+   0 0 0 0 0 0 0 0 0 1   0
+
+VERBOSE:
+  Tried 8 right hands sides, found 2 solutions.
+
+  2 binary solutions were found.
+
+  Binary solution vectors x:
+
+   0 1
+   0 0
+   0 0
+   1 0
+   1 0
+   0 1
+   0 0
+   0 0
+   1 0
+   0 1
+
+  Check Loo residuals ||Ax-b||:
+
+  All solutions had zero residual.
+
+  Check Loo residuals ||Ax-b||:
+
+  All solutions had zero residual.
+
+  Translate each correct solution into a tiling:
+
+  Tiling based on solution 0
+  Numeric Labels
+
+  3 2 2 2
+  3 3 3 1
+
+  Tiling based on solution 0
+  "Colors"
+
+  3 2 2 2
+  3 3 3 1
+
+  Tiling based on solution 1
+  Numeric Labels
+
+  1 3 3 3
+  2 2 2 3
+
+  Tiling based on solution 1
+  "Colors"
+
+  1 3 3 3
+  2 2 2 3
+
+  pariomino -N:
+
+  W
+
+  pariomino -O:
+
+  BWB
+
+  pariomino -P:
+
+  ..W
+  BWB
+
+  12x10 system matrix A and right hand side B:
+
+   0 0 0 0 1 0 0 1 0 1   1
+   1 0 0 0 1 0 0 1 1 1   1
+   0 0 0 0 1 0 0 1 0 1   1
+   0 1 0 0 0 0 1 0 0 0   1
+   0 0 1 0 0 0 0 1 0 0   1
+   0 0 0 0 0 1 1 0 1 0   1
+   0 0 0 1 0 1 1 0 1 1   1
+   0 0 0 0 0 1 1 0 1 0   1
+   1 1 1 1 0 0 0 0 0 0   1
+   0 0 0 0 1 1 0 0 0 0   1
+   0 0 0 0 0 0 1 1 1 1   1
+   1 1 1 1 3 3 4 4 4 4   8
+
+VERBOSE:
+  System has 3 degrees of freedom.
+
+VERBOSE:
+  Augmented Row-Reduced Echelon Form system matrix A and right hand side B:
+  Columns associated with a free variable are headed with a "*"
+
+   : : : : : : : * * *
+   1 0 0 0 0 0 0 0 1 0   0
+   0 1 0 0 0 0 0-1-1-1   0
+   0 0 1 0 0 0 0 1 0 0   1
+   0 0 0 1 0 0 0 0 0 1   0
+   0 0 0 0 1 0 0 1 0 1   1
+   0 0 0 0 0 1 0-1 0-1   0
+   0 0 0 0 0 0 1 1 1 1   1
+   0 0 0 0 0 0 0 1 0 0   0
+   0 0 0 0 0 0 0 0 1 0   0
+   0 0 0 0 0 0 0 0 0 1   0
+
+VERBOSE:
+  Tried 8 right hands sides, found 2 solutions.
+
+  2 binary solutions were found.
+
+  Binary solution vectors x:
+
+   0 0
+   0 1
+   1 0
+   0 0
+   1 0
+   0 1
+   1 0
+   0 1
+   0 0
+   0 0
+
+  Check Loo residuals ||Ax-b||:
+
+  All solutions had zero residual.
+
+  Check Loo residuals ||Ax-b||:
+
+  All solutions had zero residual.
+
+  Translate each correct solution into a tiling:
+
+  Tiling based on solution 0
+  Numeric Labels
+
+  2 2 2 3
+  1 3 3 3
+
+  Tiling based on solution 0
+  "Colors"
+
+  2 2 2 3
+  1 3 3 3
+
+  Tiling based on solution 1
+  Numeric Labels
+
+  3 3 3 1
+  3 2 2 2
+
+  Tiling based on solution 1
+  "Colors"
+
+  3 3 3 1
+  3 2 2 2
+
+pariomino_tiling_solver_test02:
+  pariomino_tiling_solver solves a pariomino
+  tiling problem for a subset of a 4x4 rectangle.
+
+  Region R:
+
+  W...
+  B...
+  WBWB
+  BWBW
+
+  pariomino N:
+
+  ..B
+  WBW
+
+  pariomino O:
+
+  BWB
+
+  pariomino P:
+
+  .W
+  WB
+
+  14x15 system matrix A and right hand side B:
+
+   0 0 1 0 0 0 0 0 0 0 0 0 0 0 0   1
+   0 0 1 1 0 0 0 0 1 0 0 0 0 0 0   1
+   0 1 1 1 0 1 0 0 1 0 1 0 0 1 0   1
+   0 1 1 1 1 1 1 0 0 0 1 0 1 0 0   1
+   0 1 0 1 0 1 1 0 0 1 0 1 1 0 1   1
+   1 0 0 0 0 0 1 0 0 0 0 1 0 0 0   1
+   0 1 0 0 0 0 0 1 1 0 0 0 0 1 0   1
+   1 0 0 0 1 0 0 1 0 1 1 0 1 1 0   1
+   1 0 0 0 1 1 0 1 0 1 0 0 0 0 1   1
+   1 0 0 0 1 0 0 0 0 0 0 1 0 0 1   1
+   1 1 1 1 1 1 0 0 0 0 0 0 0 0 0   1
+   0 0 0 0 0 0 1 1 1 0 0 0 0 0 0   1
+   0 0 0 0 0 0 0 0 0 1 1 1 1 1 1   1
+   4 4 4 4 4 4 3 3 3 3 3 3 3 3 3  10
+
+VERBOSE:
+  System has 4 degrees of freedom.
+
+VERBOSE:
+  Augmented Row-Reduced Echelon Form system matrix A and right hand side B:
+  Columns associated with a free variable are headed with a "*"
+
+   : : : : : : : : : : : * * * *
+   1 0 0 0 0 0 0 0 0 0 0 0 0 0 0   0
+   0 1 0 0 0 0 0 0 0 0 0 1 0 1 0   1
+   0 0 1 0 0 0 0 0 0 0 0 0 0 0 0   1
+   0 0 0 1 0 0 0 0 0 0 0-1 0 0-2  -1
+   0 0 0 0 1 0 0 0 0 0 0 1 0 0 1   1
+   0 0 0 0 0 1 0 0 0 0 0 0-1 0 0   0
+   0 0 0 0 0 0 1 0 0 0 0 1 0 0 0   1
+   0 0 0 0 0 0 0 1 0 0 0-2 0 0-2  -1
+   0 0 0 0 0 0 0 0 1 0 0 1 0 0 2   1
+   0 0 0 0 0 0 0 0 0 1 0 1 1 0 2   1
+   0 0 0 0 0 0 0 0 0 0 1 0 0 1-1   0
+   0 0 0 0 0 0 0 0 0 0 0 1 0 0 0   0
+   0 0 0 0 0 0 0 0 0 0 0 0 1 0 0   0
+   0 0 0 0 0 0 0 0 0 0 0 0 0 1 0   0
+   0 0 0 0 0 0 0 0 0 0 0 0 0 0 1   0
+
+VERBOSE:
+  Tried 15 right hands sides, found 1 solutions.
+
+  1 binary solutions were found.
+
+  Binary solution vectors x:
+
+   0
+   0
+   1
+   0
+   0
+   0
+   0
+   1
+   0
+   0
+   0
+   1
+   0
+   0
+   0
+
+  Check Loo residuals ||Ax-b||:
+
+  All solutions had zero residual.
+
+  Check Loo residuals ||Ax-b||:
+
+  All solutions had zero residual.
+
+  Translate each correct solution into a tiling:
+
+  Tiling based on solution 0
+  Numeric Labels
+
+  1 0 0 0
+  1 0 0 0
+  1 1 3 3
+  2 2 2 3
+
+  Tiling based on solution 0
+  "Colors"
+
+  1 0 0 0
+  1 0 0 0
+  1 1 3 3
+  2 2 2 3
+
+pariomino_transform_test:
+  pariomino_transform() transforms a pariomino.
+  Generate all 8 combinations of rotation and reflection
+  applied to a pariomino represented by a -1/0/+1 matrix.
+
+  The given pariomino P:
+
+  .BW
+  BW.
+  .B.
+
+  P after 0 reflections and 0 rotations:
+
+  .BW
+  BW.
+  .B.
+
+  P after 0 reflections and 1 rotations:
+
+  W..
+  BWB
+  .B.
+
+  P after 0 reflections and 2 rotations:
+
+  .B.
+  .WB
+  WB.
+
+  P after 0 reflections and 3 rotations:
+
+  .B.
+  BWB
+  ..W
+
+  P after 1 reflections and 0 rotations:
+
+  WB.
+  .WB
+  .B.
+
+  P after 1 reflections and 1 rotations:
+
+  .B.
+  BWB
+  W..
+
+  P after 1 reflections and 2 rotations:
+
+  .B.
+  BW.
+  .BW
+
+  P after 1 reflections and 3 rotations:
+
+  ..W
+  BWB
+  .B.
+
+pariomino_variants_test01
+  pariomino_variants() determines variants
+  of an array of pariominoes.
+
+  Region in which pariominoes must fit:
+
+  WBWBW
+  BWBWB
+  WBWBW
+
+  Array of pariominoes to be analyzed:
+
+  3x5 array of 3 pariominoes:
+
+  pariomino #0
+
+  WBWB
+
+  pariomino #1
+
+  WB.
+  .W.
+  .BW
+
+  pariomino #2
+
+  W..
+  BWB
+
+  14 variants fit the region
+
+  Variant #0 of pariomino #0
+
+  WBWB
+
+  Variant #1 of pariomino #0
+
+  BWBW
+
+  Variant #2 of pariomino #1
+
+  WB.
+  .W.
+  .BW
+
+  Variant #3 of pariomino #1
+
+  ..W
+  BWB
+  W..
+
+  Variant #4 of pariomino #1
+
+  .BW
+  .W.
+  WB.
+
+  Variant #5 of pariomino #1
+
+  W..
+  BWB
+  ..W
+
+  Variant #6 of pariomino #2
+
+  W..
+  BWB
+
+  Variant #7 of pariomino #2
+
+  .B
+  .W
+  WB
+
+  Variant #8 of pariomino #2
+
+  BWB
+  ..W
+
+  Variant #9 of pariomino #2
+
+  BW
+  W.
+  B.
+
+  Variant #10 of pariomino #2
+
+  ..W
+  BWB
+
+  Variant #11 of pariomino #2
+
+  WB
+  .W
+  .B
+
+  Variant #12 of pariomino #2
+
+  BWB
+  W..
+
+  Variant #13 of pariomino #2
+
+  B.
+  W.
+  BW
+
+pariomino_variants_test02
+  pariomino_variants() determines variants
+  of an array of pariominoes.
+
+  Region in which pariominoes must fit:
+
+  WBWB
+  BWBW
+
+  Array of pariominoes to be analyzed:
+
+  2x4 array of 3 pariominoes:
+
+  pariomino #0
+
+  B
+
+  pariomino #1
+
+  WBW
+
+  pariomino #2
+
+  ..B
+  WBW
+
+  6 variants fit the region
+
+  Variant 0 of pariomino 0
+
+  B
+
+  Variant 1 of pariomino 1
+
+  WBW
+
+  Variant 2 of pariomino 2
+
+  ..B
+  WBW
+
+  Variant 3 of pariomino 2
+
+  WBW
+  B..
+
+  Variant 4 of pariomino 2
+
+  B..
+  WBW
+
+  Variant 5 of pariomino 2
+
+  WBW
+  ..B
+
+pariominoes_print_test
+  pariominoes_print() prints an array of pariominoes.
+
+  Array of pariominoes to be analyzed:
+
+  3x5 array of 3 pariominoes:
+
+  pariomino #0
+
+  WBWB
+
+  pariomino #1
+
+  WB.
+  .W.
+  .BW
+
+  pariomino #2
+
+  W..
+  BWB
+
+polyomino_charge_test
+  polyomino_charge() charges the cells of a polyomino,
+  creating a pariomino.
+
+  polyomino:
+
+  0  0  0  0  1  0
+  1  0  0  0  1  1
+  1  0  1  1  1  0
+  1  0  1  0  1  0
+  1  1  1  1  1  0
+
+  resulting pariomino:
+
+  ....W.
+  B...BW
+  W.WBW.
+  B.B.B.
+  WBWBW.
+
+polyomino_print_test:
+  polyomino_print prints a polyomino.
+
+  A sample polyomino:
+
+  1  0  1  1
+  1  1  1  0
+  0  1  1  0
+
+polyomino_print_test:
+  Normal end of execution.
+
+r8mat_rref_test
+  r8mat_rref computes the reduced row echelon form of a matrix.
+
+  Input A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             3             0             2             6  
+      1 :          -2            -6             0            -2            -8  
+      2 :           3             9             0             0             6  
+      3 :          -1            -3             0             1             0  
+
+  Col:       5             6       
+  Row
+      0 :           3             1  
+      1 :           3             1  
+      2 :           6             2  
+      3 :           9             3  
+
+  Pseudo-determinant = 48
+
+  RREF form:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             3             0             0             2  
+      1 :           0             0             0             1             2  
+      2 :           0             0             0             0             0  
+      3 :           0             0             0             0             0  
+
+  Col:       5             6       
+  Row
+      0 :           0             0  
+      1 :           0             0  
+      2 :           1      0.333333  
+      3 :           0             0  
+
+r8mat_rref_solve_binary_test():
+  r8mat_rref_solve_binary() seeks binary solutions of
+  a Row-Reduced Echelon Form linear system A*x=b.
+
+  The RREF matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             0             0  
+      1 :           0             1             0             0             0  
+      2 :           0             0             1             0             0  
+      3 :           0             0             0             1             0  
+      4 :           0             0             0             0             1  
+      5 :           0             0             0             0             0  
+      6 :           0             0             0             0             0  
+      7 :           0             0             0             0             0  
+      8 :           0             0             0             0             0  
+
+  Col:       5             6             7             8             9       
+  Row
+      0 :           0             1             0            -1             0  
+      1 :           0             0             0             1             0  
+      2 :           0             1             0            -1             0  
+      3 :           0             0             0             1             1  
+      4 :           0             0             0             0             1  
+      5 :           1            -1             0             1             0  
+      6 :           0             0             1             0            -1  
+      7 :           0             0             0             0             0  
+      8 :           0             0             0             0             0  
+
+  The RREF right hand side b:
+
+     0:             0
+     1:             1
+     2:             0
+     3:             1
+     4:             1
+     5:             1
+     6:             0
+     7:             0
+     8:             0
+
+  Binary solution vectors x:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           0             0             1             0  
+      1 :           1             1             0             0  
+      2 :           0             0             1             0  
+      3 :           1             0             0             0  
+      4 :           1             0             1             1  
+      5 :           1             1             0             1  
+      6 :           0             0             0             1  
+      7 :           0             1             0             0  
+      8 :           0             0             1             1  
+      9 :           0             1             0             0  
+
+r8mat_rref_solve_binary_nz_test():
+  r8mat_rref_solve_binary_nz() seeks binary solutions of
+  a Row-Reduced Echelon Form linear system A*x=b
+  which have exactly NZ nonzeros.
+
+  The RREF matrix A:
+
+  Col:       0             1             2             3             4       
+  Row
+      0 :           1             0             0             0             0  
+      1 :           0             1             0             0             0  
+      2 :           0             0             1             0             0  
+      3 :           0             0             0             1             0  
+      4 :           0             0             0             0             1  
+      5 :           0             0             0             0             0  
+      6 :           0             0             0             0             0  
+      7 :           0             0             0             0             0  
+      8 :           0             0             0             0             0  
+
+  Col:       5             6             7             8             9       
+  Row
+      0 :           0             1             0            -1             0  
+      1 :           0             0             0             1             0  
+      2 :           0             1             0            -1             0  
+      3 :           0             0             0             1             1  
+      4 :           0             0             0             0             1  
+      5 :           1            -1             0             1             0  
+      6 :           0             0             1             0            -1  
+      7 :           0             0             0             0             0  
+      8 :           0             0             0             0             0  
+
+  The RREF right hand side b:
+
+     0:             0
+     1:             1
+     2:             0
+     3:             1
+     4:             1
+     5:             1
+     6:             0
+     7:             0
+     8:             0
+
+  Only consider binary solutions with exactly 4 nonzeros.
+
+VERBOSE:
+  System has 3 degrees of freedom.
+
+VERBOSE:
+  Augmented Row-Reduced Echelon Form system matrix A and right hand side B:
+  Columns associated with a free variable are headed with a "*"
+
+   : : : : : : * : * *
+   1 0 0 0 0 0 1 0-1 0   0
+   0 1 0 0 0 0 0 0 1 0   1
+   0 0 1 0 0 0 1 0-1 0   0
+   0 0 0 1 0 0 0 0 1 1   1
+   0 0 0 0 1 0 0 0 0 1   1
+   0 0 0 0 0 1-1 0 1 0   1
+   0 0 0 0 0 0 1 0 0 0   0
+   0 0 0 0 0 0 0 1 0-1   0
+   0 0 0 0 0 0 0 0 1 0   0
+   0 0 0 0 0 0 0 0 0 1   0
+
+VERBOSE:
+  Tried 8 right hands sides, found 4 solutions.
+
+  Binary solution vectors x:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           0             1             0             0  
+      1 :           1             0             1             0  
+      2 :           0             1             0             0  
+      3 :           1             0             0             0  
+      4 :           1             1             0             1  
+      5 :           1             0             1             1  
+      6 :           0             0             0             1  
+      7 :           0             0             1             0  
+      8 :           0             1             0             1  
+      9 :           0             0             1             0  
+
+r8mat_u_solve_test
+  r8mat_u_solve() solves an upper triangular system.
+
+  Input matrix A:
+
+  Col:       0             1             2             3       
+  Row
+      0 :           1             2             4             7  
+      1 :           0             3             5             8  
+      2 :           0             0             6             9  
+      3 :           0             0             0            10  
+
+  Right hand side b:
+
+     0:            45
+     1:            53
+     2:            54
+     3:            40
+
+  Computed solution x:
+
+     0:             1
+     1:             2
+     2:             3
+     3:             4
+
+  Norm of A*x-b = 0
+
+r8vec_binary_next_test
+  r8vec_binary_next() generates the next binary vector.
+
+  000
+  001
+  010
+  011
+  100
+  101
+  110
+  111
+
+r8vec_identity_row_test
+  r8vec_identity_row() returns a row of the identity matrix.
+
+  -1:  0 0 0 0 0
+   0:  1 0 0 0 0
+   1:  0 1 0 0 0
+   2:  0 0 1 0 0
+   3:  0 0 0 1 0
+   4:  0 0 0 0 1
+   5:  0 0 0 0 0
+
+r8vec_is_binary_test():
+  r8vec_is_binary() is TRUE if an R8VEC only contains
+  0 or 1 entries.
+
+  X:               0             0             0
+  X is binary
+
+  X:               1             0             1
+  X is binary
+
+  X:               0             2             1
+  X is NOT binary.
+
+pariomino_test():
+  Normal end of execution.
+Wed Oct  8 08:44:49 2025

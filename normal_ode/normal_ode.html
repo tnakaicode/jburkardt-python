@@ -1,0 +1,123 @@
+<html>
+
+  <head>
+    <title>
+      normal_ode
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      normal_ode
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>normal_ode</b>,
+      a Python code which 
+      describes an ordinary differential equation (ODE)
+      for the normal probability density function (PDF).
+    </p>
+
+    <p>
+      The normal probability density function (PDF) can be written as
+      <pre>
+        y(t) = 1/sqrt(2 pi) e^(-t^2/2)
+      </pre>
+      The derivative of the normal PDF is
+      <pre>
+        y'(t) = -t/sqrt(2 pi) e^(-t^2/2) = - t * y(t)
+      </pre>
+    </p>
+
+    <p>
+      Thus, along with an initial condition, an ODE for the normal PDF
+      can be written either as:
+      <pre>
+        y'(t) = -t/sqrt(2 pi) e^(-t^2/2)
+      </pre>
+      or
+      <pre>
+        y'(t) = -t * y(t)
+      </pre>
+      While both of these ODE's have the same solution, an ODE solver will
+      generally have more difficulty solving the second version.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>normal_ode</b> is available in
+      <a href = "../../m_src/normal_ode/normal_ode.html">a MATLAB version</a> and
+      <a href = "../../octave_src/normal_ode/normal_ode.html">an Octave version</a> and
+      <a href = "../../py_src/normal_ode/normal_ode.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_ode/python_ode.html">
+      python_ode</a>,
+      Python codes which 
+      sets up various systems of ordinary differential equations (ODE).
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "normal_ode.py">normal_ode.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "normal_ode.sh">normal_ode.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "normal_ode.txt">normal_ode.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "normal_ode.png">normal_ode.png</a>, 
+          a plot of the solution using N and 2*N steps.
+        </li>
+        <li>
+          <a href = "normal_ode_error.png">normal_ode_error.png</a>, 
+          a plot of the error using N and 2*N steps.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 30 October 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
