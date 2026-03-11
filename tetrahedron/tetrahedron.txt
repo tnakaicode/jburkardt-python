@@ -1,0 +1,676 @@
+Wed Oct  8 09:07:07 2025
+
+tetrahedron_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test tetrahedron().
+
+tetrahedron_barycentric_test():
+  tetrahedron_barycentric() converts XYZ to XSI.
+  We are computing the XSI coordinates just to verify
+  that the points are inside the tetrahedron.
+
+  tetrahedron vertices
+[[1. 4. 3.]
+ [2. 4. 3.]
+ [1. 6. 3.]
+ [1. 4. 4.]]
+
+  (X,Y,Z)   (XSI1,XSI2,XSI3,XSI4):
+
+[1.25201034 4.34449885 3.05536873] [0.5203715  0.25201034 0.17224942 0.05536873]
+[1.15071858 4.25443528 3.0623185 ] [0.65974528 0.15071858 0.12721764 0.0623185 ]
+[1.28942363 4.24290637 3.13314891] [0.45597428 0.28942363 0.12145319 0.13314891]
+[1.04325812 4.0114471  3.00759419] [0.94342413 0.04325812 0.00572355 0.00759419]
+[1.0627002  4.02081266 3.01891444] [0.90797903 0.0627002  0.01040633 0.01891444]
+[1.09728166 4.04938078 3.04246182] [0.83556613 0.09728166 0.02469039 0.04246182]
+[1.03886696 4.00769227 3.00432088] [0.95296603 0.03886696 0.00384614 0.00432088]
+[1.04666166 4.01745484 3.06871293] [0.87589799 0.04666166 0.00872742 0.06871293]
+[1.02811943 4.01468613 3.03503473] [0.92950277 0.02811943 0.00734307 0.03503473]
+[1.26735972 4.04902662 3.0205309 ] [0.68759607 0.26735972 0.02451331 0.0205309 ]
+
+tetrahedron_centroid_test():
+  tetrahedron_centroid() computes the centroid of a tetrahedron
+
+  tetrahedron vertices
+[[ 0.        0.942809 -0.333333]
+ [-0.816496 -0.816496 -0.333333]
+ [ 0.816496 -0.816496 -0.333333]
+ [ 0.        0.        1.      ]]
+
+  tetrahedron centroid():
+[ 0.0000000e+00 -1.7254575e-01  2.5000000e-07]
+
+tetrahedron_circumsphere_test():
+  tetrahedron_circumsphere() computes the circumsphere
+  of a tetrahedron.
+
+  tetrahedron vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.        ]
+ [ 0.          0.          0.81649658]]
+
+  tetrahedron circumsphere center:
+[1.11022302e-16 0.00000000e+00 2.04124145e-01]
+
+  Circumsphere radius is  0.6123724356957946
+
+tetrahedron_contains_point_test():
+  tetrahedron_contains_point() finds if a point
+  is inside a tetrahderon
+
+  tetrahedron vertices:
+[[ 0.        0.942809 -0.333333]
+ [-0.816496 -0.816496 -0.333333]
+ [ 0.816496 -0.816496 -0.333333]
+ [ 0.        0.        1.      ]]
+
+  P, Inside_Tetra?
+
+[ 0.0816496 -0.2449488  0.6000001] True
+[-1.4696928 -3.0219429 -0.1999997] False
+[-0.8981456  0.6725976 -0.1999997] False
+
+tetrahedron_dihedral_angles_test():
+  tetrahedron_dihedral_angles() computes the dihedral angles
+  of a tetrahedron.
+
+  tetrahedron1 vertices:
+[[ 0.        0.942809 -0.333333]
+ [-0.816496 -0.816496 -0.333333]
+ [ 0.816496 -0.816496 -0.333333]
+ [ 0.        0.        1.      ]]
+
+  Dihedral angles:
+[1.28147531 1.28147531 1.03372905 1.02132929 1.37444431 1.37444431]
+
+  tetrahedron2 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+
+  Dihedral angles:
+[1.57079633 1.57079633 1.57079633 0.95531662 0.95531662 0.95531662]
+
+  tetrahedron3 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 2. 0.]
+ [0. 0. 4.]]
+
+  Dihedral angles:
+[1.57079633 1.57079633 1.57079633 1.35080835 1.11916289 0.50973968]
+
+  tetrahedron4 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [1. 1. 1.]]
+
+  Dihedral angles:
+[0.78539816 0.78539816 2.0943951  2.18627604 0.61547971 0.61547971]
+
+tetrahedron_edge_length_test():
+  tetrahedron_edge_length() computes the edge lengths.
+
+  tetrahedron vertices
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.        ]
+ [ 0.          0.          0.81649658]]
+
+  tetrahedron edge lengths:
+[1. 1. 1. 1. 1. 1.]
+
+tetrahedron_edges_test():
+  tetrahedron_edges() computes the edges.
+
+  tetrahedron vertices
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.        ]
+ [ 0.          0.          0.81649658]]
+
+  tetrahedron edges:
+  ab: [-0.8660254  0.5        0.       ]
+  ac: [-0.8660254 -0.5        0.       ]
+  ad: [-0.57735027  0.          0.81649658]
+  bc: [ 0. -1.  0.]
+  bd: [ 0.28867513 -0.5         0.81649658]
+  cd: [0.28867513 0.5        0.81649658]
+
+tetrahedron_face_angles_test():
+  tetrahedron_face_angles() computes the 6 pairwise angles
+  of the 4 faces of a tetrahedron.
+
+  tetrahedron1 vertices:
+[[ 0.        0.942809 -0.333333]
+ [-0.816496 -0.816496 -0.333333]
+ [ 0.816496 -0.816496 -0.333333]
+ [ 0.        0.        1.      ]]
+
+  Face angles:
+[[0.86903723 1.13627771 1.13627771]
+ [1.01960934 0.90870714 1.21327617]
+ [1.01960934 0.90870714 1.21327617]
+ [1.08952109 1.08952109 0.96255047]]
+
+  tetrahedron2 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+
+  Face angles:
+[[1.57079633 0.78539816 0.78539816]
+ [1.57079633 0.78539816 0.78539816]
+ [1.57079633 0.78539816 0.78539816]
+ [1.04719755 1.04719755 1.04719755]]
+
+  tetrahedron3 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 2. 0.]
+ [0. 0. 4.]]
+
+  Face angles:
+[[1.57079633 1.10714872 0.46364761]
+ [1.57079633 1.32581766 0.24497866]
+ [1.57079633 1.10714872 0.46364761]
+ [1.46211729 1.15927948 0.52019589]]
+
+  tetrahedron4 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [1. 1. 1.]]
+
+  Face angles:
+[[1.57079633 0.78539816 0.78539816]
+ [0.95531662 1.57079633 0.61547971]
+ [0.95531662 1.57079633 0.61547971]
+ [1.04719755 1.04719755 1.04719755]]
+
+tetrahedron_face_areas_test():
+  tetrahedron_face_areas() computes the areas of the
+  4 faces of a tetrahedron.
+
+  tetrahedron1 vertices:
+[[ 0.        0.942809 -0.333333]
+ [-0.816496 -0.816496 -0.333333]
+ [ 0.816496 -0.816496 -0.333333]
+ [ 0.        0.        1.      ]]
+
+  Face areas:
+[1.4364655  1.34909859 1.34909859 1.27656809]
+
+  tetrahedron2 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+
+  Face areas:
+[0.5       0.5       0.5       0.8660254]
+
+  tetrahedron3 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 2. 0.]
+ [0. 0. 4.]]
+
+  Face areas:
+[1.         2.         4.         4.58257569]
+
+  tetrahedron4 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [1. 1. 1.]]
+
+  Face areas:
+[0.5        0.70710678 0.70710678 0.8660254 ]
+
+tetrahedron_insphere_test():
+  tetrahedron_insphere() computes the insphere
+  of a tetrahedron.
+
+  tetrahedron vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.        ]
+ [ 0.          0.          0.81649658]]
+
+  insphere center:
+[-3.20493781e-17  0.00000000e+00  2.04124145e-01]
+
+  Insphere radius is  0.20412414523193154
+
+tetrahedron_lattice_layer_point_next_test():
+  tetrahedron_lattice_layer_point_next() returns the next
+  point in a tetrahedron lattice layer defined by:
+
+    C(4) - 1 < X(1)/C(1) + X(2)/C(2) +X(3)/C(3) <= C(4).
+
+  N =  3
+  C =  [2. 3. 4. 0.]
+
+  Layer 0
+
+1 [0. 0. 0.]
+  No more.
+
+  Layer 1
+
+1 [1. 0. 0.]
+2 [2. 0. 0.]
+3 [0. 1. 0.]
+4 [1. 1. 0.]
+5 [0. 2. 0.]
+6 [0. 3. 0.]
+7 [0. 0. 1.]
+8 [1. 0. 1.]
+9 [0. 1. 1.]
+10 [0. 2. 1.]
+11 [0. 0. 2.]
+12 [1. 0. 2.]
+13 [0. 1. 2.]
+14 [0. 0. 3.]
+15 [0. 0. 4.]
+  No more.
+
+  Layer 2
+
+1 [3. 0. 0.]
+2 [4. 0. 0.]
+3 [2. 1. 0.]
+4 [3. 1. 0.]
+5 [1. 2. 0.]
+6 [2. 2. 0.]
+7 [1. 3. 0.]
+8 [2. 3. 0.]
+9 [0. 4. 0.]
+10 [1. 4. 0.]
+11 [0. 5. 0.]
+12 [0. 6. 0.]
+13 [2. 0. 1.]
+14 [3. 0. 1.]
+15 [1. 1. 1.]
+16 [2. 1. 1.]
+17 [1. 2. 1.]
+18 [2. 2. 1.]
+19 [0. 3. 1.]
+20 [1. 3. 1.]
+21 [0. 4. 1.]
+22 [0. 5. 1.]
+23 [2. 0. 2.]
+24 [3. 0. 2.]
+25 [1. 1. 2.]
+26 [2. 1. 2.]
+27 [0. 2. 2.]
+28 [1. 2. 2.]
+29 [0. 3. 2.]
+30 [1. 3. 2.]
+31 [0. 4. 2.]
+32 [1. 0. 3.]
+33 [2. 0. 3.]
+34 [0. 1. 3.]
+35 [1. 1. 3.]
+36 [0. 2. 3.]
+37 [1. 2. 3.]
+38 [0. 3. 3.]
+39 [1. 0. 4.]
+40 [2. 0. 4.]
+41 [0. 1. 4.]
+42 [1. 1. 4.]
+43 [0. 2. 4.]
+44 [0. 3. 4.]
+45 [0. 0. 5.]
+46 [1. 0. 5.]
+47 [0. 1. 5.]
+48 [0. 2. 5.]
+49 [0. 0. 6.]
+50 [1. 0. 6.]
+51 [0. 1. 6.]
+52 [0. 0. 7.]
+53 [0. 0. 8.]
+  No more.
+
+tetrahedron_lattice_point_next_test():
+  tetrahedron_lattice_point_next() returns the next lattice
+  point in a tetrahedron defined by:
+
+    0 <= X[0]/C[0] + X[1]/C[1] + X[2]/C[2] <= C[3]
+
+  N =  3
+  C =  [4 3 2 1]
+
+1 [0. 0. 0.]
+2 [1. 0. 0.]
+3 [2. 0. 0.]
+4 [0. 1. 0.]
+5 [1. 1. 0.]
+  No more.
+
+tetrahedron_quality1_test():
+  tetrahedron_quality1() computes quality measure #1
+  for a tetrahedron.
+
+  tetrahedron1 vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.81649658]
+ [ 0.          0.          0.81649658]]
+
+  Tetrahedron quality is  0.5804677483825404
+
+  tetrahedron2 vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.        ]
+ [ 0.          0.          0.40824829]]
+
+  Tetrahedron quality is  0.7320508075688775
+
+tetrahedron_quality2_test():
+  tetrahedron_quality2() computes quality measure #2
+  for a tetrahedron.
+
+  tetrahedron1 vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.81649658]
+ [ 0.          0.          0.81649658]]
+
+  Tetrahedron quality is  0.5657699767278936
+
+  tetrahedron2 vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.        ]
+ [ 0.          0.          0.40824829]]
+
+  Tetrahedron quality is  0.7320508075688775
+
+tetrahedron_quality3_test()
+  tetrahedron_quality3() computes quality measure #3
+  for a tetrahedron.
+
+  tetrahedron1 vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.81649658]
+ [ 0.          0.          0.81649658]]
+
+  Tetrahedron quality is  0.6868285455319992
+
+  tetrahedron2 vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.        ]
+ [ 0.          0.          0.40824829]]
+
+  Tetrahedron quality is  0.8399473665965823
+
+tetrahedron_quality4_test():
+  tetrahedron_quality4() computes quality measure #4
+  for a tetrahedron.
+
+  tetrahedron vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.81649658]
+ [ 0.          0.          0.81649658]]
+
+  Tetrahedron quality is  0.47664153118723623
+
+  tetrahedron vertices:
+[[ 0.57735027  0.          0.        ]
+ [-0.28867513  0.5         0.        ]
+ [-0.28867513 -0.5         0.        ]
+ [ 0.          0.          0.40824829]]
+
+  Tetrahedron quality is  0.6213203435596423
+
+tetrahedron_rhombic_shape_test():
+  tetrahedron_rhombic_size() returns dimension information
+  tetrahedron_rhombic_shape() returns face and order info.
+
+  We will use this information to compute the
+  areas and centers of each face.
+
+  Number of points =    10
+  Number of edges =     6
+  Number of faces =     4
+  Maximum face order =  6
+
+shape_print():
+  Information about a polytope.
+
+  The number of vertices is  10
+
+  Vertices:
+
+     Index          X               Y               Z
+
+0 [-0.81649658  0.          0.        ]
+1 [ 0.         -0.57735027  0.        ]
+2 [0.         0.57735027 0.        ]
+3 [0.         0.         0.81649658]
+4 [-0.40824829 -0.28867513  0.        ]
+5 [-0.40824829  0.28867513  0.        ]
+6 [-0.40824829  0.          0.40824829]
+7 [0. 0. 0.]
+8 [ 0.         -0.28867513  0.40824829]
+9 [0.         0.28867513 0.40824829]
+
+  The number of faces is  4
+  The maximum order of any face is  6
+
+     Index     Order         Indices of Nodes in Face
+                      
+0 6 0 4 1 8 3 6 
+1 6 1 7 2 9 3 8 
+2 6 2 5 0 6 3 9 
+3 6 0 5 2 7 1 4 
+
+  Face  Order  Area
+
+0 6 0.4714045207910318
+1 6 0.4714045207910318
+2 6 0.4714045207910318
+3 6 0.4714045207910318
+
+  Face  Center
+
+0 [-0.27216553 -0.19245009  0.27216553]
+1 [0.         0.         0.27216553]
+2 [-0.27216553  0.19245009  0.27216553]
+3 [-0.27216553  0.          0.        ]
+
+tetrahedron_sample_test():
+  tetrahedron_sample() samples a tetrahedron.
+  We are computing the XSI coordinates just to verify
+  that the points are inside the tetrahedron.
+
+  tetrahedron vertices
+[[1. 4. 3.]
+ [2. 4. 3.]
+ [1. 6. 3.]
+ [1. 4. 4.]]
+
+  (X,Y,Z)   (XSI1,XSI2,XSI3,XSI4):
+
+[1.11798538 4.18037554 3.07019851] [0.72162834 0.11798538 0.09018777 0.07019851]
+[1.2293246  4.01169454 3.00678057] [0.75804756 0.2293246  0.00584727 0.00678057]
+[1.12910517 4.025645   3.01554706] [0.84252527 0.12910517 0.0128225  0.01554706]
+[1.14502812 4.00055638 3.00093569] [8.53758001e-01 1.45028117e-01 2.78190527e-04 9.35691266e-04]
+[1.1661302  4.01438412 3.00062387] [8.26053870e-01 1.66130202e-01 7.19206219e-03 6.23865851e-04]
+[1.25742498 4.01845248 3.00480934] [0.72853944 0.25742498 0.00922624 0.00480934]
+[1.3175936  4.46854809 3.01394438] [0.43418797 0.3175936  0.23427405 0.01394438]
+[1.20174339 4.03268307 3.00623935] [0.77567572 0.20174339 0.01634154 0.00623935]
+[1.05115443 4.00190597 3.00507326] [0.94281932 0.05115443 0.00095299 0.00507326]
+[1.27476972 4.00093904 3.00504323] [7.19717523e-01 2.74769724e-01 4.69520715e-04 5.04323249e-03]
+
+tetrahedron_shape_test():
+  tetrahedron_size() returns dimension information
+  tetrahedron_shape() returns face and order info.
+
+  We will use this information to compute the
+  areas and centers of each face.
+
+  Number of points =    4
+  Number of edges =     6
+  Number of faces =     4
+  Maximum face order =  3
+
+shape_print():
+  Information about a polytope.
+
+  The number of vertices is  4
+
+  Vertices:
+
+     Index          X               Y               Z
+
+0 [ 0.942809  0.       -0.333333]
+1 [-0.471405  0.816497 -0.333333]
+2 [-0.471405 -0.816497 -0.333333]
+3 [0. 0. 1.]
+
+  The number of faces is  4
+  The maximum order of any face is  3
+
+     Index     Order         Indices of Nodes in Face
+                      
+0 3 0 2 1 
+1 3 0 1 3 
+2 3 0 3 2 
+3 3 1 2 3 
+
+  Face  Order  Area
+
+0 3 1.154701488358
+1 3 1.1547007118869246
+2 3 1.1547007118869248
+3 3 1.1547010048610136
+
+  Face  Center
+
+0 [-3.33333333e-07  0.00000000e+00 -3.33333000e-01]
+1 [0.15713467 0.27216567 0.11111133]
+2 [ 0.15713467 -0.27216567  0.11111133]
+3 [-0.31427     0.          0.11111133]
+
+tetrahedron_solid_angles_test():
+  tetrahedron_solid_angles() computes the solid angles
+  associated with the vertices of a tetrahedron.
+
+  tetrahedron1 vertices:
+[[ 0.        0.942809 -0.333333]
+ [-0.816496 -0.816496 -0.333333]
+ [ 0.816496 -0.816496 -0.333333]
+ [ 0.        0.        1.      ]]
+
+  solid angles:
+[0.45508702 0.53565626 0.53565626 0.64102502]
+
+  tetrahedron2 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+
+  solid angles:
+[1.57079633 0.33983691 0.33983691 0.33983691]
+
+  tetrahedron3 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 2. 0.]
+ [0. 0. 4.]]
+
+  solid angles:
+[1.57079633 0.33983691 0.33983691 0.33983691]
+
+  tetrahedron4 vertices:
+[[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [1. 1. 1.]]
+
+  solid angles:
+[0.52359878 0.44556125 0.44556125 0.18376187]
+
+tetrahedron_volume_test():
+  tetrahedron_volume() computes the volume of a tetrahedron
+
+  tetrahedron vertices
+[[ 0.        0.942809 -0.333333]
+ [-0.816496 -0.816496 -0.333333]
+ [ 0.816496 -0.816496 -0.333333]
+ [ 0.        0.        1.      ]]
+
+  Volume =  0.6384289494060559
+
+tetrahedron01_lattice_point_num_test():
+  tetrahedron01_lattice_point_num() counts
+  lattice points inside the unit tetrahedron.
+
+   0    1
+   1    4
+   2    10
+   3    20
+   4    35
+   5    56
+   6    84
+   7    120
+   8    165
+   9    220
+   10    286
+
+tetrahedron01_sample_test()
+  tetrahedron01_sample() samples the unit tetrahedron.
+
+  Sample points in the unit tetrahedron:
+[[0.06285074 0.00907099 0.33883319 0.00205012 0.07177621 0.24344238
+  0.51599352 0.30651826 0.29782975 0.22365029]
+ [0.754005   0.08748071 0.30614811 0.03304988 0.18296824 0.69649705
+  0.17337048 0.41962116 0.34971387 0.40313015]
+ [0.02853506 0.11932068 0.11825307 0.56406949 0.02399831 0.03767487
+  0.02985716 0.16042637 0.07530167 0.1337789 ]]
+
+tetrahedron01_volume_test():
+  tetrahedron01_volume() returns the volume of the unit tetrahedron.
+
+  tetrahedron01_volume() =  0.16666666666666666
+
+triangle_angles_3d_test():
+  triangle_angles_3d() computes the angles of a triangle in 3D.
+
+  triangle vertices:
+[[1.        2.        3.       ]
+ [2.4142137 3.4142137 3.       ]
+ [1.7071068 2.7071068 4.       ]]
+
+      Radians      Degrees
+
+0.7853981500943285 44.999999237787385
+0.7853980793836574 44.99999518636436
+1.570796424111807 90.00000557584825
+
+triangle_area_3d_test():
+  triangle_area_3d() computes the area of a triangle in 3D.
+
+  triangle vertices:
+[[1.        2.4142137 1.7071068]
+ [2.        3.4142137 2.7071068]
+ [3.        3.        4.       ]]
+
+  Area =  1.1180340763927479
+
+tetrahedron_test():
+  Normal end of execution.
+Wed Oct  8 09:07:07 2025

@@ -1,0 +1,469 @@
+<html>
+
+  <head>
+    <title>
+      test_opt
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      test_opt
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>test_opt</b>,
+      a Python code which 
+      defines test problems for the scalar function optimization problem. 
+    </p>
+
+    <p>
+      The scalar function optimization problem is to find a value
+      for the N-dimensional vector X which minimizes the value of
+      the given scalar function F(X).  The function F(X) is 
+      not usually defined as the sum of squares of other functions.  
+      The minimum function value is not guaranteed to be zero.  
+    </p>
+
+    <p>
+      Any system of M nonlinear functions in N unknowns can be turned into
+      a scalar optimization problem.  One way to do this is to define the functional
+      F(X) to be the sum of the squares of the original nonlinear functions.
+      The minimizer of F will then minimize the sum of the squares of the
+      residuals.  Since this process involves squaring, it can be less accurate
+      than dealing directly with the original nonlinear functions: that is to say,
+      the derived optimization problem may be more convenient to solve, but might
+      provide less accurate results than applying a nonlinear solver to the original
+      system.
+    </p>
+
+    <p>
+      If a function F(X) is differentiable, then at an optimum, the
+      gradient vector must vanish.  Thus, it is also possible to start with an
+      optimization problem involving F(X) and turn it into a problem in
+      which we seek a zero of the nonlinear functions represented by the gradient
+      of F.  Of course, the gradient must be zero at a mininum, but 
+      the converse does not hold; thus unless we know more about F, it is not
+      safe to try to replace the optimization problem by a nonlinear function
+      solution.
+    </p>
+
+    <p>
+      For each test problem, routines are provided to evaluate the function,
+      gradient vector, and hessian matrix.  Routines are also provided to
+      indicate the number of variables, the problem title, a suitable starting 
+      point, and a minimizing solution, if known.
+    </p>
+
+    <p>
+      The functions defined include:
+      <ol>
+        <li>
+          The Fletcher-Powell helical valley function,<br>
+          N = 3.
+        </li>
+        <li>
+          The Biggs EXP6 function,<br>
+          N = 6.
+        </li>
+        <li>
+          The Gaussian function,<br>
+          N = 3.
+        </li>
+        <li>
+          The Powell badly scaled function,<br>
+          N = 2.
+        </li>
+        <li>
+          The Box 3-dimensional function,<br>
+          N = 3.
+        </li>
+        <li>
+          The variably dimensioned function,<br>
+          1 &lt;= N.
+        </li>
+        <li>
+          The Watson function,<br>
+          2 &lt;= N.
+        </li>
+        <li>
+          The penalty function #1,<br>
+          1 &lt;= N.
+        </li>
+        <li>
+          The penalty function #2,<br>
+          1 &lt;= N.
+        </li>
+        <li>
+          The Brown badly scaled function,<br>
+          N = 2.
+        </li>
+        <li>
+          The Brown and Dennis function,<br>
+          N = 4.
+        </li>
+        <li>
+          The Gulf R&D function,<br>
+          N = 3.
+        </li>
+        <li>
+          The trigonometric function,<br>
+          1 &lt;= N.
+        </li>
+        <li>
+          The extended Rosenbrock parabolic valley function,<br>
+          1 &lt;= N.
+        </li>
+        <li>
+          The extended Powell singular quartic function,<br>
+          4 &lt;= N.
+        </li>
+        <li>
+          The Beale function,<br>
+          N = 2.
+        </li>
+        <li>
+          The Wood function,<br>
+          N = 4.
+        </li>
+        <li>
+          The Chebyquad function,<br>
+          1 &lt;= N.
+        </li>
+        <li>
+          Leon's cubic valley function,<br>
+          N = 2.
+        </li>
+        <li>
+          Gregory and Karney's Tridiagonal Matrix Function,<br>
+          1 &lt;= N.
+        </li>
+        <li>
+          The Hilbert function,<br>
+          1 &lt;= N.
+        </li>
+        <li>
+          The De Jong Function F1,<br>
+          N = 3.
+        </li>
+        <li>
+          The De Jong Function F2,<br>
+          N = 2.
+        </li>
+        <li>
+          The De Jong Function F3 (discontinuous),<br>
+          N = 5.
+        </li>
+        <li>
+          The De Jong Function F4 (Gaussian noise),<br>
+          N = 30.
+        </li>
+        <li>
+          The De Jong Function F5,<br>
+          N = 2.
+        </li>
+        <li>
+          The Schaffer Function F6,<br>
+          N = 2.
+        </li>
+        <li>
+          The Schaffer Function F7,<br>
+          N = 2.
+        </li>
+        <li>
+          The Goldstein Price Polynomial,<br>
+          N = 2.
+        </li>
+        <li>
+          The Branin RCOS Function,<br>
+          N = 2.
+        </li>
+        <li>
+          The Shekel SQRN5 Function,<br>
+          N = 4.
+        </li>
+        <li>
+          The Shekel SQRN7 Function,<br>
+          N = 4.
+        </li>
+        <li>
+          The Shekel SQRN10 Function,<br>
+          N = 4.
+        </li>
+        <li>
+          The Six-Hump Camel-Back Polynomial,<br>
+          N = 2.
+        </li>
+        <li>
+          The Shubert Function,<br>
+          N = 2.
+        </li>
+        <li>
+          The Stuckman Function,<br>
+          N = 2.
+        </li>
+        <li>
+          The Easom Function,<br>
+          N = 2.
+        </li>
+        <li>
+          The Bohachevsky Function #1,<br>
+          N = 2.
+        </li>
+        <li>
+          The Bohachevsky Function #2,<br>
+          N = 2.
+        </li>
+        <li>
+          The Bohachevsky Function #3,<br>
+          N = 2.
+        </li>
+        <li>
+          The Colville Polynomial,<br>
+          N = 4.
+        </li>
+        <li>
+          The Powell 3D function,<br>
+          N = 3.
+        </li>
+        <li>
+          The Himmelblau function,<br>
+          N = 2.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>test_opt</b> is available in
+      <a href = "../../f_src/test_opt/test_opt.html">a Fortran90 version</a> and
+      <a href = "../../m_src/test_opt/test_opt.html">a MATLAB version</a> and
+      <a href = "../../octave_src/test_opt/test_opt.html">an Octave version</a> and
+      <a href = "../../py_src/test_opt/test_opt.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/asa047/asa047.html">
+      asa047</a>,
+      a Python code which
+      minimizes a scalar function of several variables using the Nelder-Mead
+      algorithm.
+    </p>
+
+    <p>
+      <a href = "../../py_src/compass_search/compass_search.html">
+      compass_search</a>,
+      a Python code which 
+      seeks the minimizer of a scalar function of several variables
+      using compass search, a direct search algorithm that 
+      does not use derivatives.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polynomials/polynomials.html">
+      polynomials</a>,
+      a Python code which
+      defines multivariate polynomials over rectangular domains, for
+      which certain information is to be determined, such as the maximum
+      and minimum values.
+    <p>
+
+    <p>
+      <a href = "../../py_src/praxis/praxis.html">
+      praxis</a>,
+      a Python code which
+      minimizes a scalar function of several variables, without
+      requiring derivative information,
+      by Richard Brent.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_opt_con/test_opt_con.html">
+      test_opt_con</a>,
+      a Python code which
+      defines test problems for the minimization of a scalar function
+      of several variables, with the search constrained 
+      to lie within a specified hyper-rectangle.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_optimization/test_optimization.html">
+      test_optimization</a>,
+      a Python code which
+      defines test problems for the minimization of a scalar function
+      of several variables, as described by Molga and Smutnicki.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>   
+        <li>
+          Evelyn Beale,<br>
+          On an Iterative Method for Finding a Local Minimum of a Function
+          of More than One Variable,<br>
+          Technical Report 25, <br>
+          Statistical Techniques Research Group,<br>
+          Princeton University, 1958.
+        </li>
+        <li>
+          Richard Brent,<br>
+          Algorithms for Minimization without Derivatives,<br>
+          Dover, 2002,<br>
+          ISBN: 0-486-41998-3,<br>
+          LC: QA402.5.B74.
+        </li>   
+        <li>
+          John Dennis, David Gay, Phuong Vu,<br>
+          A new nonlinear equations test problem,<br>
+          Technical Report 83-16,<br>
+          Mathematical Sciences Department,<br>
+          Rice University, 1983.
+        </li>
+        <li>
+          John Dennis, Robert Schnabel,<br>
+          Numerical Methods for Unconstrained Optimization 
+          and Nonlinear Equations,<br>
+          SIAM, 1996,<br>
+          ISBN13: 978-0-898713-64-0,<br>
+          LC: QA402.5.D44.
+        </li>
+        <li>
+          Noel deVilliers, David Glasser,<br>
+          A continuation method for nonlinear regression,<br>
+          SIAM Journal on Numerical Analysis,<br>
+          Volume 18, 1981, pages 1139-1154.
+        </li>  
+        <li>
+          Chris Fraley,<br>
+          Solution of nonlinear least-squares problems,<br>
+          Technical Report STAN-CS-1165,<br>
+          Computer Science Department,<br>
+          Stanford University, 1987.
+        </li>  
+        <li>
+          Chris Fraley,<br>
+          Software performance on nonlinear least-squares problems,<br>
+          Technical Report SOL 88-17,<br>
+          Systems Optimization Laboratory,<br>
+          Department of Operations Research,<br>
+          Stanford University, 1988.
+        </li>
+        <li>
+          David Himmelblau,<br>
+          Applied Nonlinear Programming,<br>
+          McGraw Hill, 1972,<br>
+          ISBN13: 978-0070289215,<br>
+          LC: T57.8.H55.
+        </li>
+        <li>
+          A Leon,<br>
+          A Comparison of Eight Known Optimizing Procedures,<br>
+          in Recent Advances in Optimization Techniques,<br>
+          edited by Abraham Lavi, Thomas Vogl,<br>
+          Wiley, 1966.
+        </li> 
+        <li>
+          JJ McKeown,<br>
+          Specialized versus general-purpose algorithms for functions 
+          that are sums of squared terms,<br>
+          Mathematical Programming,<br>
+          Volume 9, 1975, pages 57-68.
+        </li>  
+        <li>
+          JJ McKeown,<br>
+          On algorithms for sums of squares problems,<br>
+          in Towards Global Optimization,<br>
+          edited by L Dixon, Gabor Szego,<br>
+          North-Holland, 1975, pages 229-257.
+        </li>    
+        <li>
+          Zbigniew Michalewicz,<br>
+          Genetic Algorithms + Data Structures = Evolution Programs,<br>
+          Third Edition,<br>
+          Springer, 1996,<br>
+          ISBN: 3-540-60676-9,<br>
+          LC: QA76.618.M53.
+        </li> 
+        <li>
+          Jorge More, Burton Garbow, Kenneth Hillstrom,<br>
+          Testing unconstrained optimization software,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 7, Number 1, March 1981, pages 17-41.
+        </li>
+        <li>
+          Jorge More, Burton Garbow, Kenneth Hillstrom,<br>
+          Algorithm 566:
+          Fortran Subroutines for Testing unconstrained optimization software,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 7, Number 1, March 1981, pages 136-140.
+        </li>
+        <li>
+          Michael Powell,<br>
+          An Efficient Method for Finding the Minimum of a Function of
+          Several Variables Without Calculating Derivatives,<br>
+          Computer Journal,<br>
+          Volume 7, Number 2, 1964, pages 155-162.
+        </li>  
+        <li>
+          Douglas Salane,<br>
+          A continuation approach for solving large residual nonlinear 
+          least squares problems,<br>
+          SIAM Journal on Scientific and Statistical Computing,<br>
+          Volume 8, 1987, pages 655-671.
+        </li>
+      </ol>
+    </p>
+ 
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_opt_test.m">test_opt_test.m</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "test_opt_test.sh">test_opt_test.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "test_opt_test.txt">test_opt_test.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 10 February 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

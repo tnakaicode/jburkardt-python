@@ -1,0 +1,2042 @@
+Wed Oct  8 07:24:39 AM EDT 2025
+allen_cahn_pde
+/usr/lib/python3/dist-packages/matplotlib/animation.py:889: UserWarning: Animation was deleted without rendering anything. This is most likely not intended. To prevent deletion, assign the Animation to a variable, e.g. `anim`, that exists until you have outputted the Animation using `plt.show()` or `anim.save()`.
+  warnings.warn(
+Normal end of execution.
+alpert_rule
+Normal end of execution.
+analemma
+Normal end of execution.
+animation_test
+Run error.
+anishchenko_ode
+Normal end of execution.
+annulus_distance
+Normal end of execution.
+annulus_grid
+Normal end of execution.
+annulus_integrals
+Normal end of execution.
+annulus_monte_carlo
+Normal end of execution.
+annulus_rule
+Normal end of execution.
+approx_bernstein
+Normal end of execution.
+apriori
+Normal end of execution.
+arclength
+Normal end of execution.
+arenstorf_ode
+Normal end of execution.
+args
+Normal end of execution.
+arneodo_ode
+Normal end of execution.
+asa005
+Normal end of execution.
+asa006
+Normal end of execution.
+asa007
+Normal end of execution.
+asa032
+Normal end of execution.
+asa047
+Normal end of execution.
+asa053
+Normal end of execution.
+asa063
+Normal end of execution.
+asa066
+Normal end of execution.
+asa076
+Normal end of execution.
+asa082
+Normal end of execution.
+asa091
+Normal end of execution.
+asa103
+Normal end of execution.
+asa109
+Normal end of execution.
+asa111
+Normal end of execution.
+asa121
+Normal end of execution.
+asa147
+Normal end of execution.
+asa152
+Normal end of execution.
+asa183
+Normal end of execution.
+asa226
+Normal end of execution.
+asa239
+Normal end of execution.
+asa241
+Normal end of execution.
+asa243
+Normal end of execution.
+asa245
+Normal end of execution.
+asa299
+Normal end of execution.
+atbash
+Normal end of execution.
+autocatalytic_ode
+Normal end of execution.
+axon_ode
+Normal end of execution.
+backtrack_binary_rc
+Normal end of execution.
+backward_euler
+Normal end of execution.
+backward_euler_fixed
+Normal end of execution.
+ball_distance
+Normal end of execution.
+ball_grid
+Normal end of execution.
+ball_integrals
+Normal end of execution.
+ball_monte_carlo
+Normal end of execution.
+ball_positive_distance
+Normal end of execution.
+bank
+Normal end of execution.
+barycentric_interp_1d
+Normal end of execution.
+basketball_dynamic
+Normal end of execution.
+bdf2
+Normal end of execution.
+bdf3
+Normal end of execution.
+bellman_ford
+Normal end of execution.
+bernstein_approximation
+Normal end of execution.
+bernstein_polynomial
+Normal end of execution.
+besselj
+Normal end of execution.
+besselj_zero
+Normal end of execution.
+besselzero
+Normal end of execution.
+biharmonic_exact
+/home/john/public_html/py_src/biharmonic_exact/biharmonic_exact.py:630: RuntimeWarning: divide by zero encountered in log
+  a * ( - 2 * e + 2 * X ) * np.log ( np.sqrt ( ( - e + X )**2 + ( - f + Y )**2 ) ) \
+/home/john/public_html/py_src/biharmonic_exact/biharmonic_exact.py:630: RuntimeWarning: invalid value encountered in multiply
+  a * ( - 2 * e + 2 * X ) * np.log ( np.sqrt ( ( - e + X )**2 + ( - f + Y )**2 ) ) \
+/home/john/public_html/py_src/biharmonic_exact/biharmonic_exact.py:633: RuntimeWarning: invalid value encountered in divide
+  + c * ( - e + X ) / ( ( - e + X )**2 + ( - f + Y )**2 )
+/home/john/public_html/py_src/biharmonic_exact/biharmonic_exact.py:636: RuntimeWarning: divide by zero encountered in log
+  a * ( - 2 * f + 2 * Y ) * np.log ( np.sqrt ( ( - e + X )**2 + ( - f + Y )**2 ) ) \
+/home/john/public_html/py_src/biharmonic_exact/biharmonic_exact.py:636: RuntimeWarning: invalid value encountered in multiply
+  a * ( - 2 * f + 2 * Y ) * np.log ( np.sqrt ( ( - e + X )**2 + ( - f + Y )**2 ) ) \
+/home/john/public_html/py_src/biharmonic_exact/biharmonic_exact.py:639: RuntimeWarning: invalid value encountered in divide
+  + c * ( - f + Y ) / ( ( - e + X )**2 + ( - f + Y )**2 )
+Normal end of execution.
+biochemical_linear_ode
+Normal end of execution.
+biochemical_nonlinear_ode
+Normal end of execution.
+bioconvection_ode
+Normal end of execution.
+bird_egg
+Normal end of execution.
+bisect
+Normal end of execution.
+bisection
+Normal end of execution.
+bisection_rc
+Normal end of execution.
+black_scholes
+Normal end of execution.
+blood_pressure_ode
+Normal end of execution.
+blowup_ode
+Normal end of execution.
+boundary_locus
+/home/john/public_html/py_src/boundary_locus/boundary_locus.py:197: RuntimeWarning: divide by zero encountered in divide
+  r = lambda z: ( 1 + 0.5 * z ) / ( 1 - 0.5 * z )
+/home/john/public_html/py_src/boundary_locus/boundary_locus.py:197: RuntimeWarning: invalid value encountered in divide
+  r = lambda z: ( 1 + 0.5 * z ) / ( 1 - 0.5 * z )
+/home/john/public_html/py_src/boundary_locus/boundary_locus.py:205: RuntimeWarning: divide by zero encountered in divide
+  r = lambda z: (1 + (5/12) * z) / (1 - (7/12) * z + (1/12) * z**2 )
+/home/john/public_html/py_src/boundary_locus/boundary_locus.py:205: RuntimeWarning: invalid value encountered in divide
+  r = lambda z: (1 + (5/12) * z) / (1 - (7/12) * z + (1/12) * z**2 )
+Normal end of execution.
+boundary_locus2
+Normal end of execution.
+boundary_word_equilateral
+Normal end of execution.
+boundary_word_hexagon
+Normal end of execution.
+boundary_word_square
+Normal end of execution.
+box_distance
+Normal end of execution.
+brc_data
+Normal end of execution.
+brownian_motion_simulation
+Normal end of execution.
+broyden
+Normal end of execution.
+brusselator_ode
+Normal end of execution.
+burgers_exact
+Normal end of execution.
+bvec
+Normal end of execution.
+bvp_fd
+Normal end of execution.
+bwlabel_test
+Normal end of execution.
+c8lib
+Normal end of execution.
+caesar
+Normal end of execution.
+california_migration
+Normal end of execution.
+calpak
+Normal end of execution.
+candy_count
+Normal end of execution.
+cards
+Normal end of execution.
+casino_simulation
+Normal end of execution.
+cauchy_method
+/home/john/public_html/py_src/cauchy_method/cauchy_method.py:114: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  yc = fsolve ( backward_euler_residual, yc, args = ( f, to, yo, tc ) )
+Normal end of execution.
+cauchy_principal_value
+Normal end of execution.
+caustic
+Normal end of execution.
+ccn_rule
+Normal end of execution.
+ccs_io
+Normal end of execution.
+ccs_to_st
+Normal end of execution.
+cellular_automaton
+Normal end of execution.
+cfd_barba
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/cfd_barba/step02.py", line 84, in <module>
+    x = numpy.linspace ( 0.0, 2.0, nx )
+NameError: name 'numpy' is not defined
+Run error.
+cg
+Normal end of execution.
+cg_rc
+Normal end of execution.
+change_diophantine
+Normal end of execution.
+change_dynamic
+Normal end of execution.
+change_greedy
+Normal end of execution.
+change_polynomial
+Normal end of execution.
+chebyshev
+Normal end of execution.
+chebyshev1_exactness
+Normal end of execution.
+chebyshev1_rule
+Normal end of execution.
+chebyshev2_exactness
+Normal end of execution.
+chebyshev2_rule
+Normal end of execution.
+chebyshev_interp_1d
+Normal end of execution.
+chebyshev_matrix
+Normal end of execution.
+chebyshev_polynomial
+Normal end of execution.
+chen_ode
+Normal end of execution.
+chinese_remainder_theorem
+Normal end of execution.
+chrpak
+Normal end of execution.
+chuckaluck_simulation
+Normal end of execution.
+circle_arc_grid
+Normal end of execution.
+circle_circles_packing
+Normal end of execution.
+circle_distance
+Normal end of execution.
+circle_integrals
+Normal end of execution.
+circle_map
+Normal end of execution.
+circle_monte_carlo
+Normal end of execution.
+circle_positive_distance
+Normal end of execution.
+circle_rule
+Normal end of execution.
+clausen
+Normal end of execution.
+clenshaw_curtis_rule
+Normal end of execution.
+clock_solitaire_simulation
+Normal end of execution.
+closest_pair_brute
+Normal end of execution.
+closest_pair_divcon
+Normal end of execution.
+closest_point_brute
+Normal end of execution.
+cobweb_plot
+Normal end of execution.
+coin_simulation
+Normal end of execution.
+collatz
+Normal end of execution.
+collatz_dict
+Normal end of execution.
+collatz_polynomial
+Normal end of execution.
+collatz_recursive
+Normal end of execution.
+colored_noise
+Normal end of execution.
+columns
+Normal end of execution.
+combo
+Normal end of execution.
+companion_matrix
+Normal end of execution.
+compass_search
+Normal end of execution.
+complex_numbers_test
+Normal end of execution.
+components
+Normal end of execution.
+condition
+Normal end of execution.
+conservation_ode
+Normal end of execution.
+continued_fraction
+/home/john/public_html/py_src/continued_fraction/continued_fraction.py:283: RuntimeWarning: overflow encountered in scalar add
+  p[i] = a[i] * p[i-1] + b[i] * p[i-2]
+/home/john/public_html/py_src/continued_fraction/continued_fraction.py:283: RuntimeWarning: overflow encountered in scalar multiply
+  p[i] = a[i] * p[i-1] + b[i] * p[i-2]
+/home/john/public_html/py_src/continued_fraction/continued_fraction.py:284: RuntimeWarning: overflow encountered in scalar multiply
+  q[i] = a[i] * q[i-1] + b[i] * q[i-2]
+/home/john/public_html/py_src/continued_fraction/continued_fraction.py:284: RuntimeWarning: overflow encountered in scalar add
+  q[i] = a[i] * q[i-1] + b[i] * q[i-2]
+/home/john/public_html/py_src/continued_fraction/continued_fraction.py:178: RuntimeWarning: overflow encountered in scalar multiply
+  p[i] = a[i] * p[i-1] + p[i-2]
+/home/john/public_html/py_src/continued_fraction/continued_fraction.py:179: RuntimeWarning: overflow encountered in scalar multiply
+  q[i] = a[i] * q[i-1] + q[i-2]
+/home/john/public_html/py_src/continued_fraction/continued_fraction.py:178: RuntimeWarning: overflow encountered in scalar add
+  p[i] = a[i] * p[i-1] + p[i-2]
+/home/john/public_html/py_src/continued_fraction/continued_fraction.py:179: RuntimeWarning: overflow encountered in scalar add
+  q[i] = a[i] * q[i-1] + q[i-2]
+Normal end of execution.
+continuity_exact
+Normal end of execution.
+convergence
+Normal end of execution.
+cordic
+Normal end of execution.
+cosine_integral
+Normal end of execution.
+cosine_transform
+Normal end of execution.
+counterfeit_detection
+Normal end of execution.
+cpr
+Normal end of execution.
+craps_simulation
+Normal end of execution.
+cross_chaos
+Normal end of execution.
+crs_io
+Normal end of execution.
+csv_test
+Normal end of execution.
+cube_distance
+Normal end of execution.
+cube_exactness
+Normal end of execution.
+cube_grid
+Normal end of execution.
+cube_integrals
+Normal end of execution.
+cube_monte_carlo
+Normal end of execution.
+cube_surface_distance
+Normal end of execution.
+cuda_loop
+Normal end of execution.
+cvt_1d_lloyd
+Normal end of execution.
+cvt_1d_sampling
+Normal end of execution.
+cvt_2d_sampling
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/cvt_2d_sampling/cvt_2d_sampling.py", line 278, in <module>
+    cvt_2d_sampling_test ( )
+  File "/home/john/public_html/py_src/cvt_2d_sampling/cvt_2d_sampling.py", line 241, in cvt_2d_sampling_test
+    cvt_2d_sampling ( 16, 20, 100 )
+  File "/home/john/public_html/py_src/cvt_2d_sampling/cvt_2d_sampling.py", line 44, in cvt_2d_sampling
+    from scipy import argmin
+ImportError: cannot import name 'argmin' from 'scipy' (/usr/local/lib/python3.10/dist-packages/scipy/__init__.py)
+Run error.
+cvt_circle_uniform
+Normal end of execution.
+cycle_brent
+Normal end of execution.
+cycle_floyd
+Normal end of execution.
+delaunay_test
+Normal end of execution.
+delsq
+Normal end of execution.
+dg1d_poisson
+Normal end of execution.
+dice_simulation
+Normal end of execution.
+dictionary_code
+Normal end of execution.
+differ
+Normal end of execution.
+diffusion_pde
+Normal end of execution.
+digital_dice
+Normal end of execution.
+digraph_adj
+Normal end of execution.
+digraph_dict
+Normal end of execution.
+dijkstra
+Normal end of execution.
+diophantine
+Normal end of execution.
+diophantine_nd
+Normal end of execution.
+dirichlet
+Normal end of execution.
+disk01_integrals
+Normal end of execution.
+disk01_integrands
+Normal end of execution.
+disk01_monte_carlo
+Normal end of execution.
+disk01_positive_monte_carlo
+Normal end of execution.
+disk01_rule
+Normal end of execution.
+disk_distance
+Normal end of execution.
+disk_grid
+Normal end of execution.
+disk_integrals
+Normal end of execution.
+disk_integrands
+Normal end of execution.
+disk_monte_carlo
+Normal end of execution.
+disk_positive_distance
+Normal end of execution.
+disk_rule
+Normal end of execution.
+disk_triangle_picking
+Normal end of execution.
+divdif
+Normal end of execution.
+doomsday
+Normal end of execution.
+dosage_ode
+Normal end of execution.
+double_c_data
+Normal end of execution.
+double_well_ode
+Normal end of execution.
+dragon_chaos
+Normal end of execution.
+dueling_idiots
+Normal end of execution.
+duel_simulation
+Normal end of execution.
+duffing_ode
+Normal end of execution.
+eigs_test
+Normal end of execution.
+elements
+Normal end of execution.
+ellipse
+Normal end of execution.
+ellipse_distance
+Normal end of execution.
+ellipse_grid
+Normal end of execution.
+ellipse_monte_carlo
+Normal end of execution.
+ellipsoid
+Normal end of execution.
+ellipsoid_grid
+Normal end of execution.
+ellipsoid_monte_carlo
+Normal end of execution.
+elliptic_integral
+Normal end of execution.
+epicycloid
+Normal end of execution.
+eros
+Normal end of execution.
+e_spigot
+Normal end of execution.
+euclid
+Normal end of execution.
+euler
+Normal end of execution.
+exactness
+Normal end of execution.
+exp_ode
+/home/john/public_html/py_src/exp_ode/exp_ode.py:58: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  yp = fsolve ( backward_euler_residual, yp, args = ( f, to, yo, tp ) )
+/home/john/public_html/py_src/exp_ode/exp_ode.py:603: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  yh = fsolve ( midpoint_residual, yh, args = ( f, to, yo, th ) )
+Normal end of execution.
+fair_dice_simulation
+Normal end of execution.
+fd1d_advection_lax_wendroff
+Normal end of execution.
+fd1d_bvp
+Normal end of execution.
+fd1d_heat_explicit
+Normal end of execution.
+fd1d_heat_implicit
+Normal end of execution.
+fd1d_wave
+Normal end of execution.
+fd2d_convergence_test
+Normal end of execution.
+fd2d_heat_steady
+Normal end of execution.
+fd_predator_prey
+Normal end of execution.
+fem1d
+Normal end of execution.
+fem1d_bvp_linear
+Normal end of execution.
+fem1d_bvp_quadratic
+Normal end of execution.
+fem1d_heat_explicit
+Normal end of execution.
+fem1d_model
+Normal end of execution.
+fem2d_bvp_linear
+Normal end of execution.
+fem_basis
+Normal end of execution.
+fem_to_xml
+Normal end of execution.
+fermat_factor
+Normal end of execution.
+fern_chaos
+Normal end of execution.
+fibonacci_spiral
+Normal end of execution.
+file_name_sequence
+Normal end of execution.
+filum
+Normal end of execution.
+fire_simulation
+Normal end of execution.
+fisher_exact
+Normal end of execution.
+fisher_pde_ftcs
+Normal end of execution.
+fitzhugh_nagumo_ode
+Normal end of execution.
+flame_exact
+Normal end of execution.
+flame_ode
+Normal end of execution.
+flame_odefun
+Normal end of execution.
+flies_simulation
+Normal end of execution.
+florida_cvt_geo
+Normal end of execution.
+florida_cvt_pop
+Normal end of execution.
+floyd
+Normal end of execution.
+fly_simulation
+Normal end of execution.
+fn
+Normal end of execution.
+football2_diophantine
+Normal end of execution.
+football2_dynamic
+Normal end of execution.
+football_dynamic
+Normal end of execution.
+four_fifths
+Normal end of execution.
+fractal_coastline
+Normal end of execution.
+freefem_msh_io
+Normal end of execution.
+fresnel
+Normal end of execution.
+fsolve_test
+/home/john/public_html/py_src/fsolve_test/fsolve_test.py:300: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  x = fsolve ( f3, x0 )
+Normal end of execution.
+full_deck_simulation
+Normal end of execution.
+gamblers_ruin_simulation
+Normal end of execution.
+gaussian
+Normal end of execution.
+gaussian_2d
+Normal end of execution.
+gaussian_prime_spiral
+Normal end of execution.
+gauss_seidel
+Normal end of execution.
+gauss_seidel_stochastic
+Normal end of execution.
+gegenbauer_cc
+Normal end of execution.
+gegenbauer_exactness
+Normal end of execution.
+gegenbauer_polynomial
+Normal end of execution.
+gen_hermite_exactness
+Normal end of execution.
+gen_laguerre_exactness
+Normal end of execution.
+geometry
+Normal end of execution.
+ge_to_crs
+Normal end of execution.
+gl_fast_rule
+Normal end of execution.
+glomin
+Normal end of execution.
+glycolysis_ode
+Normal end of execution.
+gmgsolve
+Normal end of execution.
+gnuplot_test
+Normal end of execution.
+gradient_descent
+Normal end of execution.
+gram_polynomial
+Normal end of execution.
+gram_schmidt
+Normal end of execution.
+graph_adj
+Normal end of execution.
+graph_class
+Normal end of execution.
+graph_dist
+Normal end of execution.
+graphics_test
+/home/john/public_html/py_src/graphics_test/sombrero_surface.py:41: RuntimeWarning: invalid value encountered in divide
+  zmat = np.sin ( rmat ) / rmat
+Normal end of execution.
+graphviz_test
+Normal end of execution.
+gray_scott_movie
+Skip execution of gray_scott_movie.  It can take 45 minutes!
+gray_scott_pde
+Skip execution of gray_scott_pde.  It can take 7 or 8 hours!
+grazing_ode
+Normal end of execution.
+grf_io
+Normal end of execution.
+gurobi_solution_read
+Normal end of execution.
+gyroscope_ode
+Normal end of execution.
+haar_transform
+Normal end of execution.
+halton
+Normal end of execution.
+hammersley
+Normal end of execution.
+hamming
+Normal end of execution.
+hand
+Normal end of execution.
+hand_area
+Normal end of execution.
+hankel_cholesky
+Normal end of execution.
+hankel_inverse
+Normal end of execution.
+hankel_spd
+Normal end of execution.
+hdf5_test
+Normal end of execution.
+heartbeat_ode
+Normal end of execution.
+heated_plate
+Normal end of execution.
+hello
+Normal end of execution.
+hello_mpi
+Run error.
+helmholtz_exact
+Normal end of execution.
+henon_heiles_ode
+Normal end of execution.
+henon_orbit
+Normal end of execution.
+hermite_exactness
+Normal end of execution.
+hermite_polynomial
+Normal end of execution.
+hermite_rule
+Normal end of execution.
+hexagon_integrals
+Normal end of execution.
+hexagon_monte_carlo
+Normal end of execution.
+hexagon_stroud_rule
+Normal end of execution.
+hexahedron_jaskowiec_rule
+Normal end of execution.
+hexahedron_witherden_rule
+Normal end of execution.
+high_card_simulation
+Normal end of execution.
+hilbert_curve
+Normal end of execution.
+hilbert_curve_3d
+Normal end of execution.
+hits
+Normal end of execution.
+house_data
+Normal end of execution.
+humps
+Normal end of execution.
+humps_bvp
+Normal end of execution.
+humps_ode
+Normal end of execution.
+hyper_2f1
+Normal end of execution.
+hyperball_distance
+Normal end of execution.
+hyperball_integrals
+Normal end of execution.
+hyperball_monte_carlo
+Normal end of execution.
+hyperball_positive_distance
+Normal end of execution.
+hypercube_distance
+Normal end of execution.
+hypercube_grid
+Normal end of execution.
+hypercube_integrals
+Normal end of execution.
+hypercube_monte_carlo
+Normal end of execution.
+hypercube_surface_distance
+Normal end of execution.
+hypersphere
+Normal end of execution.
+hypersphere_angle
+Normal end of execution.
+hypersphere_angle_distance
+Normal end of execution.
+hypersphere_distance
+Normal end of execution.
+hypersphere_integrals
+Normal end of execution.
+hypersphere_monte_carlo
+Normal end of execution.
+hypersphere_positive_distance
+Normal end of execution.
+i4lib
+Skip this test, as it does not seem to run properly in batch!
+ill_bvp
+Normal end of execution.
+image_boundary
+Normal end of execution.
+image_edge
+Normal end of execution.
+imageio_test
+Normal end of execution.
+Normal end of execution.
+image_rgb_to_gray
+Normal end of execution.
+insurance_simulation
+Normal end of execution.
+interp
+Normal end of execution.
+isbn
+Normal end of execution.
+is_gaussian_prime
+Normal end of execution.
+ising_2d_simulation
+Normal end of execution.
+is_prime
+Normal end of execution.
+jaccard_distance
+Normal end of execution.
+jacobi
+Normal end of execution.
+jacobi_eigenvalue
+Normal end of execution.
+jacobi_exactness
+Normal end of execution.
+jacobi_poisson_1d
+Normal end of execution.
+jacobi_polynomial
+Normal end of execution.
+jacobi_rule
+Normal end of execution.
+jai_alai_simulation
+Normal end of execution.
+jeopardy
+Normal end of execution.
+jordan_matrix
+Normal end of execution.
+joukowsky_transform
+Normal end of execution.
+julia_set
+Normal end of execution.
+jumping_bean_simulation
+Normal end of execution.
+jupyter
+jupyter: No executable codes here.
+Normal end of execution.
+kdv_exact
+Normal end of execution.
+kepler_ode
+Normal end of execution.
+kepler_perturbed_ode
+Normal end of execution.
+knapsack_01_brute
+Normal end of execution.
+knapsack_brute
+Normal end of execution.
+knapsack_dynamic
+Normal end of execution.
+knapsack_greedy
+Normal end of execution.
+knapsack_random
+Normal end of execution.
+knapsack_rational
+Normal end of execution.
+knapsack_values
+Normal end of execution.
+kronrod_rule
+Normal end of execution.
+l4lib
+Normal end of execution.
+ladders
+Normal end of execution.
+lagrange
+Normal end of execution.
+lagrange_approx_1d
+Normal end of execution.
+lagrange_basis_display
+Normal end of execution.
+lagrange_interp_1d
+Normal end of execution.
+laguerre_exactness
+Normal end of execution.
+laguerre_polynomial
+Normal end of execution.
+laguerre_rule
+Normal end of execution.
+lambert_w
+Normal end of execution.
+langford_ode
+Normal end of execution.
+lapack_test
+Normal end of execution.
+laplace_radial_exact
+Normal end of execution.
+laplacian
+Normal end of execution.
+latin_center
+Normal end of execution.
+latin_edge
+Normal end of execution.
+latin_random
+Normal end of execution.
+leaf_chaos
+Normal end of execution.
+leapfrog
+Normal end of execution.
+lebesgue
+Normal end of execution.
+legendre_exactness
+Normal end of execution.
+legendre_polynomial
+Normal end of execution.
+legendre_product_polynomial
+Normal end of execution.
+legendre_rule
+Normal end of execution.
+legendre_shifted_polynomial
+Normal end of execution.
+levenshtein_distance
+Normal end of execution.
+levenshtein_matrix
+Normal end of execution.
+levy_dragon_chaos
+Normal end of execution.
+lights_out_game
+This is an interactive game.  No batch executable usage!
+Normal end of execution.
+linalg_solve_bench
+Normal end of execution.
+lindberg_exact
+Normal end of execution.
+lindberg_ode
+Normal end of execution.
+lindberg_odefun
+./lindberg_odefun.sh: line 3: 413709 Killed                  python3 lindberg_odefun.py > lindberg_odefun.txt
+Run error.
+linear_algebra
+linear_algebra: No executable codes here.
+Normal end of execution.
+line_distance
+Normal end of execution.
+line_grid
+Normal end of execution.
+line_integrals
+Normal end of execution.
+line_lines_packing
+Normal end of execution.
+line_monte_carlo
+Normal end of execution.
+line_ncc_rule
+Normal end of execution.
+linpack_bench
+Normal end of execution.
+linpack_d
+Normal end of execution.
+linplus_c8
+Normal end of execution.
+lissajous
+Normal end of execution.
+llsq
+Normal end of execution.
+loadtxt_test
+Normal end of execution.
+lobatto_polynomial
+Normal end of execution.
+local_min
+Normal end of execution.
+local_min_rc
+Normal end of execution.
+locker_simulation
+Normal end of execution.
+logistic_bifurcation
+Normal end of execution.
+logistic_exact
+Normal end of execution.
+logistic_ode
+Normal end of execution.
+log_norm
+Normal end of execution.
+log_normal
+Normal end of execution.
+log_normal_truncated_ab
+Normal end of execution.
+lorenz96_ode
+Normal end of execution.
+lorenz_ode
+Normal end of execution.
+lorenz_ode_sensitivity_test
+Normal end of execution.
+lucas_lehmer
+Normal end of execution.
+luhn
+Normal end of execution.
+machar
+Normal end of execution.
+machine
+Normal end of execution.
+magic4_matrix
+Normal end of execution.
+magic_matrix
+Normal end of execution.
+mandelbrot
+Normal end of execution.
+mandelbrot_orbit
+Normal end of execution.
+mario
+Normal end of execution.
+markov_text
+Normal end of execution.
+matrix_chain_brute
+Normal end of execution.
+matrix_chain_dynamic
+Normal end of execution.
+matrix_exponential
+Normal end of execution.
+mcnuggets
+Normal end of execution.
+mcnuggets_diophantine
+Normal end of execution.
+md
+Normal end of execution.
+menger_sponge_chaos
+Normal end of execution.
+mesh_bandwidth
+Normal end of execution.
+mesh_boundary
+Normal end of execution.
+mesh_etoe
+Normal end of execution.
+mgs
+Normal end of execution.
+mhd_exact
+Normal end of execution.
+middle_square
+Normal end of execution.
+midpoint
+Normal end of execution.
+midpoint_adaptive
+Normal end of execution.
+midpoint_explicit
+Normal end of execution.
+midpoint_fixed
+Normal end of execution.
+minimal_surface_exact
+Normal end of execution.
+monoalphabetic
+Normal end of execution.
+monomial
+Normal end of execution.
+monomial_symmetrize
+Normal end of execution.
+monomial_value
+Normal end of execution.
+monopoly_matrix
+Normal end of execution.
+monty_hall_simulation
+Normal end of execution.
+mortality
+Normal end of execution.
+movie_test
+Normal end of execution.
+mxm
+Normal end of execution.
+naca
+Normal end of execution.
+nas
+Normal end of execution.
+navier_stokes_2d_exact
+Normal end of execution.
+navier_stokes_3d_exact
+Normal end of execution.
+nearest_interp_1d
+Normal end of execution.
+neighbor_risk
+Normal end of execution.
+neighbor_states
+Normal end of execution.
+neural_network
+Normal end of execution.
+newton
+Normal end of execution.
+newton_interp_1d
+Normal end of execution.
+ngrams
+Normal end of execution.
+normal
+Normal end of execution.
+normal01_multivariate_distance
+Normal end of execution.
+normal_dataset
+Normal end of execution.
+normal_ode
+Normal end of execution.
+numgrid
+Normal end of execution.
+obscure
+./tester_code.sh: line 12: ./obscure.sh: No such file or directory
+ode_euler
+Normal end of execution.
+odefun_test
+Normal end of execution.
+oregonator_ode
+Normal end of execution.
+ornstein_uhlenbeck
+Normal end of execution.
+oscillator_ode
+Normal end of execution.
+owen
+Normal end of execution.
+ozone2_ode
+Normal end of execution.
+ozone_ode
+Normal end of execution.
+padua
+Normal end of execution.
+pagerank
+Normal end of execution.
+pariomino
+Normal end of execution.
+partial_digest
+Normal end of execution.
+partition_brute
+Normal end of execution.
+partition_greedy
+Normal end of execution.
+patterson_rule
+Normal end of execution.
+pbma_io
+Normal end of execution.
+pbmb_io
+Normal end of execution.
+pdflib
+Normal end of execution.
+peaks
+Normal end of execution.
+peaks_movie
+Animation created as 'peaks_movie.gif'.
+Normal end of execution.
+pendulum_double_ode
+Normal end of execution.
+pendulum_elastic_ode
+Normal end of execution.
+pendulum_nonlinear_ode
+Normal end of execution.
+pendulum_ode
+Normal end of execution.
+pentominoes
+Normal end of execution.
+perceptron
+Normal end of execution.
+percolation_simulation
+Normal end of execution.
+permutation_distance
+Normal end of execution.
+persistence
+Normal end of execution.
+Normal end of execution.
+Normal end of execution.
+Normal end of execution.
+Normal end of execution.
+Normal end of execution.
+pgma_io
+Normal end of execution.
+pgmb_io
+Normal end of execution.
+pink_noise
+Normal end of execution.
+pip3_test
+pip3_test
+Normal end of execution.
+pi_spigot
+Normal end of execution.
+plasma_matrix
+Normal end of execution.
+poisson_1d
+Normal end of execution.
+poisson_1d_multigrid
+Normal end of execution.
+poisson_2d
+Normal end of execution.
+poisson_2d_exact
+Normal end of execution.
+poisson_simulation
+Normal end of execution.
+polar_ode
+Normal end of execution.
+polpak
+Normal end of execution.
+polygon
+Normal end of execution.
+polygon_average
+Normal end of execution.
+polygon_distance
+Normal end of execution.
+polygon_grid
+Normal end of execution.
+polygon_integrals
+Normal end of execution.
+polygon_monte_carlo
+Normal end of execution.
+polygon_sample
+Normal end of execution.
+polygon_triangulate
+Normal end of execution.
+polynomial
+Normal end of execution.
+polynomial_conversion
+Normal end of execution.
+polynomial_multiply
+Normal end of execution.
+polynomial_resultant
+Normal end of execution.
+polynomial_resultant_symbolic
+Normal end of execution.
+polynomial_root_bound
+Normal end of execution.
+polynomials
+Normal end of execution.
+polyominoes
+Normal end of execution.
+polyomino_parity
+Normal end of execution.
+porous_medium_exact
+Normal end of execution.
+power_method
+Normal end of execution.
+ppma_io
+Normal end of execution.
+ppmb_io
+Normal end of execution.
+praxis
+Normal end of execution.
+predator_prey_ode
+Normal end of execution.
+predator_prey_ode_period
+Normal end of execution.
+prime
+Normal end of execution.
+prime_factors
+Normal end of execution.
+prime_fermat
+Normal end of execution.
+prime_miller_rabin
+Normal end of execution.
+prime_pi
+Normal end of execution.
+prime_plot
+Normal end of execution.
+prism_jaskowiec_rule
+Normal end of execution.
+prism_witherden_rule
+Normal end of execution.
+prob
+Normal end of execution.
+profile_data
+Normal end of execution.
+profile_interp
+Normal end of execution.
+pwl_interp_1d
+Normal end of execution.
+pwl_interp_2d
+Normal end of execution.
+pyramid_exactness
+Normal end of execution.
+pyramid_felippa_rule
+Normal end of execution.
+pyramid_grid
+Normal end of execution.
+pyramid_integrals
+Normal end of execution.
+pyramid_jaskowiec_rule
+Normal end of execution.
+pyramid_monte_carlo
+Normal end of execution.
+pyramid_rule
+Normal end of execution.
+pyramid_witherden_rule
+Normal end of execution.
+py_test
+Normal end of execution.
+python_combinatorics
+python_combinatorics: No executable codes here.
+Normal end of execution.
+python_distance
+python_distance: No executable codes here.
+Normal end of execution.
+python_exact
+python_exact: No executable codes here.
+Normal end of execution.
+python_grid
+python_grid: No executable codes here.
+Normal end of execution.
+python_import
+Normal end of execution.
+python_integrals
+python_integrals: No executable codes here.
+Normal end of execution.
+python_intrinsics_test
+Normal end of execution.
+python_mistake
+Normal end of execution.
+python_monte_carlo
+python_monte_carlo: No executable codes here.
+Normal end of execution.
+python_ode
+python_ode: No executable codes here.
+Normal end of execution.
+python_ode_solver
+python_ode_solver: No executable codes here.
+Normal end of execution.
+python_plots
+python_plots: No executable codes here.
+Normal end of execution.
+python_polynomial
+python_polynomial: No executable codes here.
+Normal end of execution.
+python_random_test
+Normal end of execution.
+python_rule
+python_rule: No executable codes here.
+Normal end of execution.
+python_simulation
+python_simulation: No executable codes here.
+Normal end of execution.
+qr_solve
+Normal end of execution.
+quad2d
+Normal end of execution.
+quadex_ode
+/home/john/public_html/py_src/quadex_ode/quadex_ode.py:58: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  yp = fsolve ( backward_euler_residual, yp, args = ( f, to, yo, tp ) )
+Normal end of execution.
+quad_mpi
+Run error.
+quadrilateral
+Normal end of execution.
+quadrilateral_witherden_rule
+Normal end of execution.
+quad_rule
+Normal end of execution.
+quad_serial
+Normal end of execution.
+quasiperiodic_ode
+Normal end of execution.
+quaternions
+Normal end of execution.
+r83
+Normal end of execution.
+r83_np
+Normal end of execution.
+r83p
+Normal end of execution.
+r83s
+Normal end of execution.
+r83t
+Normal end of execution.
+r83v
+Normal end of execution.
+r85
+Normal end of execution.
+r8bb
+Normal end of execution.
+r8blt
+Normal end of execution.
+r8bto
+Normal end of execution.
+r8but
+Normal end of execution.
+r8cb
+Normal end of execution.
+r8cbb
+Normal end of execution.
+r8ccs
+Normal end of execution.
+r8ci
+Normal end of execution.
+r8col
+Normal end of execution.
+r8crs
+Normal end of execution.
+r8gb
+Normal end of execution.
+r8gd
+Normal end of execution.
+r8ge
+Normal end of execution.
+r8ge_np
+Normal end of execution.
+r8lib
+Normal end of execution.
+r8lt
+Normal end of execution.
+r8ltt
+Normal end of execution.
+r8ncf
+Normal end of execution.
+r8pbl
+Normal end of execution.
+r8pbu
+Normal end of execution.
+r8po
+Normal end of execution.
+r8poly
+Normal end of execution.
+r8pp
+Normal end of execution.
+r8ri
+Normal end of execution.
+r8row
+Normal end of execution.
+r8sd
+Normal end of execution.
+r8sm
+Normal end of execution.
+r8sr
+Normal end of execution.
+r8ss
+Normal end of execution.
+r8st
+Normal end of execution.
+r8sto
+Normal end of execution.
+r8to
+Normal end of execution.
+r8ut
+Normal end of execution.
+r8utp
+Normal end of execution.
+r8utt
+Normal end of execution.
+r8vm
+Normal end of execution.
+randlc
+Normal end of execution.
+random_data
+Normal end of execution.
+random_matrix_eigenvalues
+Normal end of execution.
+random_sorted
+Normal end of execution.
+random_walk_1d_simulation
+Normal end of execution.
+random_walk_2d_avoid_simulation
+Normal end of execution.
+random_walk_2d_simulation
+Normal end of execution.
+random_walk_3d_simulation
+Normal end of execution.
+ranlib
+Normal end of execution.
+rbf_interp_1d
+Normal end of execution.
+rbf_interp_2d
+Normal end of execution.
+reaction_ode
+Normal end of execution.
+reaction_twoway_ode
+Normal end of execution.
+reaction_twoway_odefun
+Normal end of execution.
+reactor_simulation
+Normal end of execution.
+rectangle_distance
+Normal end of execution.
+reid_tiling
+Normal end of execution.
+reversi_game
+./tester_code.sh: line 12: ./reversi_game.sh: No such file or directory
+rigid_body_ode
+Normal end of execution.
+ring_data
+Normal end of execution.
+ripple_ode
+Normal end of execution.
+risk_matrix
+Normal end of execution.
+rk1
+Normal end of execution.
+rk12
+Normal end of execution.
+rk1_implicit
+Normal end of execution.
+rk2
+Normal end of execution.
+rk23
+Normal end of execution.
+rk2_implicit
+Normal end of execution.
+rk3
+Normal end of execution.
+rk34
+Normal end of execution.
+rk4
+Normal end of execution.
+rk45
+Normal end of execution.
+rkf45
+Normal end of execution.
+rng_cliff
+Normal end of execution.
+rnglib
+Normal end of execution.
+robertson_ode
+Normal end of execution.
+roessler_ode
+Normal end of execution.
+root_rc
+Normal end of execution.
+roots_rc
+Normal end of execution.
+rot13
+Normal end of execution.
+roulette_simulation
+Normal end of execution.
+row_echelon_integer
+Normal end of execution.
+rref2
+Normal end of execution.
+rref2_old
+Normal end of execution.
+rubber_band_ode
+Normal end of execution.
+rucklidge_ode
+Normal end of execution.
+runge
+Normal end of execution.
+sammon_data
+Normal end of execution.
+satisfy_brute
+Normal end of execution.
+sawtooth_ode
+Normal end of execution.
+scipy_test
+/home/john/public_html/py_src/scipy_test/brentq_test.py:51: RuntimeWarning: divide by zero encountered in divide
+  value = 0.2 + x * np.cos ( 3.0 / x )
+/home/john/public_html/py_src/scipy_test/brentq_test.py:51: RuntimeWarning: invalid value encountered in cos
+  value = 0.2 + x * np.cos ( 3.0 / x )
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Normal end of execution.
+sde
+Normal end of execution.
+search_mpi
+Run error.
+search_serial
+Normal end of execution.
+sensitive_ode
+Normal end of execution.
+set_theory
+Normal end of execution.
+sftpack
+Normal end of execution.
+shallow_water_1d
+Normal end of execution.
+shepard_interp_1d
+Normal end of execution.
+sierpinski_carpet_chaos
+Normal end of execution.
+sierpinski_triangle_chaos
+Normal end of execution.
+sigmoid
+Normal end of execution.
+simplex_coordinates
+Normal end of execution.
+simplex_gm_rule
+Normal end of execution.
+simplex_grid
+Normal end of execution.
+simplex_integrals
+Normal end of execution.
+simplex_monte_carlo
+Normal end of execution.
+sinc
+Normal end of execution.
+sine_gordon_exact
+Normal end of execution.
+sine_integral
+Normal end of execution.
+sine_transform
+Normal end of execution.
+sir_ode
+Normal end of execution.
+sir_simulation
+Normal end of execution.
+sling_ode
+Normal end of execution.
+snakes_and_ladders
+Normal end of execution.
+snakes_and_ladders_simulation
+Normal end of execution.
+snakes_matrix
+Normal end of execution.
+sncndn
+Normal end of execution.
+sobol
+Normal end of execution.
+solve
+Normal end of execution.
+solve_bvp_test
+Normal end of execution.
+sort_rc
+Normal end of execution.
+sortrows
+Normal end of execution.
+sparse_test
+Run error.
+spelling_bee_game
+Normal end of execution.
+sphere_distance
+Normal end of execution.
+sphere_fibonacci_grid
+Normal end of execution.
+sphere_integrals
+Normal end of execution.
+sphere_llq_grid
+Normal end of execution.
+sphere_llt_grid
+Normal end of execution.
+sphere_monte_carlo
+Normal end of execution.
+sphere_positive_distance
+Normal end of execution.
+spiral_pde
+Do not run this example.  It takes too long!
+spring_double_ode
+Normal end of execution.
+spring_ode
+Normal end of execution.
+spring_sweep_ode
+Normal end of execution.
+square_circles_packing
+Normal end of execution.
+square_distance
+Normal end of execution.
+square_grid
+Normal end of execution.
+square_integrals
+Normal end of execution.
+square_minimal_rule
+Normal end of execution.
+square_monte_carlo
+Normal end of execution.
+square_surface_distance
+Normal end of execution.
+square_symq_rule
+Normal end of execution.
+squircle_ode
+Normal end of execution.
+standing_wave_exact
+Normal end of execution.
+steinerberger
+/home/john/public_html/py_src/steinerberger/steinerberger.py:63: IntegrationWarning: The maximum number of subdivisions (50) has been achieved.
+  If increasing the limit yields no improvement it is advised to analyze 
+  the integrand in order to determine the difficulties.  If the position of a 
+  local difficulty can be determined (singularity, discontinuity) one will 
+  probably gain from splitting up the interval and calling the integrator 
+  on the subranges.  Perhaps a special-purpose integrator should be used.
+  q, err_est = quad ( lambda x: steinerberger_function ( n, x ), xmin, xmax )
+Normal end of execution.
+stetter_ode
+Normal end of execution.
+stiff_exact
+Normal end of execution.
+stiff_ode
+Normal end of execution.
+st_io
+Normal end of execution.
+stochastic_diffusion
+Normal end of execution.
+stochastic_rk
+Normal end of execution.
+stokes_2d_exact
+Normal end of execution.
+st_to_ccs
+Normal end of execution.
+subset
+Normal end of execution.
+subset_distance
+Normal end of execution.
+subset_sum
+Normal end of execution.
+subset_sum_backtrack
+Normal end of execution.
+subset_sum_brute
+Normal end of execution.
+subset_sum_swap
+Normal end of execution.
+sudoku
+Normal end of execution.
+svd_circle
+Normal end of execution.
+svd_lls
+Normal end of execution.
+svd_powers
+Normal end of execution.
+svd_snowfall
+Normal end of execution.
+svd_sphere
+Normal end of execution.
+svd_test
+Normal end of execution.
+svd_truncated_test
+Normal end of execution.
+sympy_test
+Normal end of execution.
+table_io
+Normal end of execution.
+task_division
+Normal end of execution.
+tennis_matrix
+Normal end of execution.
+test_approx
+Normal end of execution.
+test_eigen
+Normal end of execution.
+tester
+
+tester.sh
+  This is a dummy script.
+  The real code is tester_code.sh
+  We just need to avoid having tester_code.sh call itself!
+
+tester.sh:
+  Normal end of execution.
+test_int
+/home/john/public_html/py_src/test_int/test_int.py:1721: RuntimeWarning: divide by zero encountered in scalar divide
+  fx = 1.0 / np.sqrt ( x )
+/home/john/public_html/py_src/test_int/test_int.py:288: RuntimeWarning: invalid value encountered in scalar divide
+  ratio = err_old / err
+/home/john/public_html/py_src/test_int/test_int.py:2377: RuntimeWarning: invalid value encountered in scalar divide
+  fx = np.sin ( x ) / x
+/home/john/public_html/py_src/test_int/test_int.py:3028: RuntimeWarning: divide by zero encountered in log
+  fx = np.log ( x )
+/home/john/public_html/py_src/test_int/test_int.py:3473: RuntimeWarning: divide by zero encountered in scalar divide
+  fx = ( 1.0 / x ) * np.sin ( 1.0 / x )
+/home/john/public_html/py_src/test_int/test_int.py:3473: RuntimeWarning: invalid value encountered in sin
+  fx = ( 1.0 / x ) * np.sin ( 1.0 / x )
+/home/john/public_html/py_src/test_int/test_int.py:3928: RuntimeWarning: divide by zero encountered in scalar divide
+  fx = 1.0 / ( np.sqrt ( x ) + x**(1.0/3.0) )
+/home/john/public_html/py_src/test_int/test_int.py:4700: RuntimeWarning: divide by zero encountered in log
+  fx = np.sqrt ( - np.log ( x ) )
+/home/john/public_html/py_src/test_int/test_int.py:5027: RuntimeWarning: divide by zero encountered in scalar power
+  fx = x**alpha * np.log ( 1.0 / x )
+/home/john/public_html/py_src/test_int/test_int.py:5027: RuntimeWarning: divide by zero encountered in scalar divide
+  fx = x**alpha * np.log ( 1.0 / x )
+/home/john/public_html/py_src/test_int/test_int.py:5876: RuntimeWarning: divide by zero encountered in scalar divide
+  fx = 1.0 / ( np.sqrt ( 1.0 - x**2 ) * ( x + 1.0 + 0.5**alpha ) )
+/home/john/public_html/py_src/test_int/test_int.py:6043: RuntimeWarning: divide by zero encountered in scalar power
+  fx = np.sin ( x )**( alpha - 1.0 )
+/home/john/public_html/py_src/test_int/test_int.py:6214: RuntimeWarning: divide by zero encountered in scalar divide
+  fx = ( np.log ( 1.0 / x ) )**( alpha - 1.0 )
+/home/john/public_html/py_src/test_int/test_int.py:6214: RuntimeWarning: divide by zero encountered in scalar power
+  fx = ( np.log ( 1.0 / x ) )**( alpha - 1.0 )
+/home/john/public_html/py_src/test_int/test_int.py:6552: RuntimeWarning: divide by zero encountered in scalar divide
+  fx = np.cos ( 2.0**alpha * x ) / np.sqrt ( x * ( 1.0 - x ) )
+/home/john/public_html/py_src/test_int/test_int.py:967: RuntimeWarning: invalid value encountered in scalar add
+  0.5 *          p00_fun ( prob, x[0]           )   \
+/home/john/public_html/py_src/test_int/test_int.py:6878: RuntimeWarning: divide by zero encountered in log
+  fx = np.sqrt ( x ) * np.log ( x )
+/home/john/public_html/py_src/test_int/test_int.py:6878: RuntimeWarning: invalid value encountered in scalar multiply
+  fx = np.sqrt ( x ) * np.log ( x )
+/home/john/public_html/py_src/test_int/test_int.py:6986: RuntimeWarning: divide by zero encountered in log
+  fx = np.log ( x ) / np.sqrt ( x )
+/home/john/public_html/py_src/test_int/test_int.py:7214: RuntimeWarning: divide by zero encountered in log
+  fx = np.log ( x ) * np.sin ( 10.0 * np.pi * x )
+/home/john/public_html/py_src/test_int/test_int.py:7214: RuntimeWarning: invalid value encountered in scalar multiply
+  fx = np.log ( x ) * np.sin ( 10.0 * np.pi * x )
+/home/john/public_html/py_src/test_int/test_int.py:7328: RuntimeWarning: divide by zero encountered in log
+  fx = np.log ( x ) / ( 1.0 + ( np.log ( x ) )**2 )**2
+/home/john/public_html/py_src/test_int/test_int.py:7328: RuntimeWarning: invalid value encountered in scalar divide
+  fx = np.log ( x ) / ( 1.0 + ( np.log ( x ) )**2 )**2
+Normal end of execution.
+test_int_2d
+Normal end of execution.
+test_interp
+Normal end of execution.
+test_interp_1d
+Normal end of execution.
+test_interp_2d
+Normal end of execution.
+test_interp_fun
+Normal end of execution.
+test_lls
+Normal end of execution.
+test_matrix
+Normal end of execution.
+test_matrix_exponential
+Normal end of execution.
+test_min
+Normal end of execution.
+test_nearest
+Normal end of execution.
+test_nonlin
+/home/john/public_html/py_src/test_nonlin/test_nonlin.py:7275: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  x1 = fsolve ( p00_fx2, x0, args = ( n, problem ) )
+/home/john/public_html/py_src/test_nonlin/test_nonlin.py:7275: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last five Jacobian evaluations.
+  x1 = fsolve ( p00_fx2, x0, args = ( n, problem ) )
+/home/john/public_html/py_src/test_nonlin/test_nonlin.py:7275: RuntimeWarning: The number of calls to function has reached maxfev = 1000.
+  x1 = fsolve ( p00_fx2, x0, args = ( n, problem ) )
+/home/john/public_html/py_src/test_nonlin/test_nonlin.py:7275: RuntimeWarning: The number of calls to function has reached maxfev = 2000.
+  x1 = fsolve ( p00_fx2, x0, args = ( n, problem ) )
+/home/john/public_html/py_src/test_nonlin/test_nonlin.py:7275: RuntimeWarning: The number of calls to function has reached maxfev = 600.
+  x1 = fsolve ( p00_fx2, x0, args = ( n, problem ) )
+Normal end of execution.
+test_opt_con
+Normal end of execution.
+test_optimization
+Normal end of execution.
+test_partial_digest
+Normal end of execution.
+test_values
+Normal end of execution.
+test_zero
+Normal end of execution.
+tetrahedron
+Normal end of execution.
+tetrahedron01_monte_carlo
+Normal end of execution.
+tetrahedron_arbq_rule
+Normal end of execution.
+tetrahedron_exactness
+Normal end of execution.
+tetrahedron_felippa_rule
+Normal end of execution.
+tetrahedron_grid
+Normal end of execution.
+tetrahedron_integrals
+Normal end of execution.
+tetrahedron_jaskowiec_rule
+Normal end of execution.
+tetrahedron_monte_carlo
+Normal end of execution.
+tetrahedron_witherden_rule
+Normal end of execution.
+text_to_wordlist
+Normal end of execution.
+theta_method
+Normal end of execution.
+three_body_ode
+Normal end of execution.
+tictoc
+Normal end of execution.
+timer_test
+Normal end of execution.
+timestamp
+Normal end of execution.
+toeplitz_cholesky
+Normal end of execution.
+toeplitz_inverse
+Normal end of execution.
+toms097
+Normal end of execution.
+toms112
+Normal end of execution.
+toms178
+Normal end of execution.
+toms179
+Normal end of execution.
+toms243
+Normal end of execution.
+toms443
+Normal end of execution.
+toms515
+Normal end of execution.
+toms577
+Normal end of execution.
+toms655
+Normal end of execution.
+toms743
+Normal end of execution.
+toms923
+Normal end of execution.
+tough_ode
+/home/john/public_html/py_src/tough_ode/tough_ode.py:45: RuntimeWarning: overflow encountered in exp
+  dy2dt = 10.0 * t * np.exp ( 5.0 * ( y2 - 1.0 ) ) * y4
+/usr/local/lib/python3.10/dist-packages/scipy/integrate/_ivp/lsoda.py:161: UserWarning: lsoda: Excess accuracy requested (tolerances too small).
+  solver._y, solver.t = integrator.run(
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/tough_ode/tough_ode.py", line 344, in <module>
+    tough_ode_test ( )
+  File "/home/john/public_html/py_src/tough_ode/tough_ode.py", line 131, in tough_ode_test
+    tough_solve_ivp ( )
+  File "/home/john/public_html/py_src/tough_ode/tough_ode.py", line 256, in tough_solve_ivp
+    plt.plot ( t, sol.y[0], 'ro', linewidth = 2 )
+  File "/usr/lib/python3/dist-packages/matplotlib/pyplot.py", line 2757, in plot
+    return gca().plot(
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_axes.py", line 1632, in plot
+    lines = [*self._get_lines(*args, data=data, **kwargs)]
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 312, in __call__
+    yield from self._plot_args(this, kwargs)
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 498, in _plot_args
+    raise ValueError(f"x and y must have same first dimension, but "
+ValueError: x and y must have same first dimension, but have shapes (101,) and (7,)
+Run error.
+traffic_simulation
+Normal end of execution.
+trapezoidal
+Normal end of execution.
+trapezoidal_explicit
+Normal end of execution.
+trapezoidal_fixed
+Normal end of execution.
+traveling_wave_exact
+Normal end of execution.
+tree_chaos
+Normal end of execution.
+triangle
+Normal end of execution.
+triangle01_integrals
+Normal end of execution.
+triangle01_monte_carlo
+Normal end of execution.
+triangle_distance
+Normal end of execution.
+triangle_exactness
+Normal end of execution.
+triangle_grid
+Normal end of execution.
+triangle_integrals
+Normal end of execution.
+triangle_interpolate
+Normal end of execution.
+triangle_monte_carlo
+Normal end of execution.
+triangle_symq_rule
+Normal end of execution.
+triangle_twb_rule
+Normal end of execution.
+triangle_witherden_rule
+Normal end of execution.
+tridiagonal_solver
+Normal end of execution.
+truel_simulation
+Normal end of execution.
+truncated_normal
+Normal end of execution.
+truncated_normal_rule
+Traceback (most recent call last):
+  File "/home/john/public_html/py_src/truncated_normal_rule/truncated_normal_rule.py", line 2137, in <module>
+    truncated_normal_rule_test ( )
+  File "/home/john/public_html/py_src/truncated_normal_rule/truncated_normal_rule.py", line 43, in truncated_normal_rule_test
+    moment_method_test ( )
+  File "/home/john/public_html/py_src/truncated_normal_rule/truncated_normal_rule.py", line 196, in moment_method_test
+    x, w = moment_method ( n, moments )
+  File "/home/john/public_html/py_src/truncated_normal_rule/truncated_normal_rule.py", line 114, in moment_method
+    r = np.linalg.cholesky ( h )
+  File "/usr/local/lib/python3.10/dist-packages/numpy/linalg/linalg.py", line 779, in cholesky
+    r = gufunc(a, signature=signature, extobj=extobj)
+  File "/usr/local/lib/python3.10/dist-packages/numpy/linalg/linalg.py", line 115, in _raise_linalgerror_nonposdef
+    raise LinAlgError("Matrix is not positive definite")
+numpy.linalg.LinAlgError: Matrix is not positive definite
+Run error.
+tsp_brute
+Normal end of execution.
+tsp_descent
+Normal end of execution.
+tsp_greedy
+Normal end of execution.
+tsp_moler
+Normal end of execution.
+tsp_random
+Normal end of execution.
+turtle
+My fault, have not made a good executable.
+Semi-normal end of execution.
+two_body_ode
+Normal end of execution.
+ubvec
+Normal end of execution.
+ulam_spiral
+Normal end of execution.
+umlaut_remover
+Normal end of execution.
+unicycle
+Normal end of execution.
+uniform
+Normal end of execution.
+unstable_ode
+Normal end of execution.
+upc
+Normal end of execution.
+urn_simulation
+Normal end of execution.
+usa_box_plot
+Normal end of execution.
+usa_matrix
+Normal end of execution.
+van_der_corput
+Normal end of execution.
+vandermonde_approx_1d
+Normal end of execution.
+vandermonde_interp_1d
+Normal end of execution.
+vanderpol_ode
+Normal end of execution.
+vanderpol_ode_period
+Normal end of execution.
+vector
+Normal end of execution.
+velocity_verlet
+Normal end of execution.
+vin
+Normal end of execution.
+voronoi_plot
+Normal end of execution.
+voronoi_test
+Normal end of execution.
+walker_sample
+Normal end of execution.
+walsh_transform
+Normal end of execution.
+wathen_matrix
+Normal end of execution.
+wave_2d_pde
+./tester_code.sh: line 12: ./wave_2d_pde.sh: Permission denied
+wave_pde
+Normal end of execution.
+web_matrix
+Normal end of execution.
+wedge_exactness
+Normal end of execution.
+wedge_felippa_rule
+Normal end of execution.
+wedge_grid
+Normal end of execution.
+wedge_integrals
+Normal end of execution.
+wedge_monte_carlo
+Normal end of execution.
+weekday
+Normal end of execution.
+weekday_zeller
+Normal end of execution.
+will_you_be_alive
+Normal end of execution.
+wishart_matrix
+Normal end of execution.
+wtime
+Normal end of execution.
+xml_to_fem
+Normal end of execution.
+xyz_display
+Normal end of execution.
+zero_brent
+Normal end of execution.
+zero_chandrupatla
+Normal end of execution.
+zero_itp
+Normal end of execution.
+zero_laguerre
+Normal end of execution.
+zero_muller
+Normal end of execution.
+zero_rc
+Normal end of execution.
+zombie_ode
+Normal end of execution.
+
+tester_code.sh:
+  Normal end of execution.
+Wed Oct  8 09:19:41 AM EDT 2025

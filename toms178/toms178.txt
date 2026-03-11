@@ -1,0 +1,56 @@
+Wed Oct  8 09:07:22 2025
+
+toms178_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test toms178().
+
+rosenbrock_test():
+  hooke() seeks a minimizer of F(X).
+  Here we use the Rosenbrock function.
+
+  Initial estimate for X:
+
+     0:          -1.2
+     1:             1
+
+  F(X) = 24.2
+
+  Number of iterations taken = 19
+
+  Final estimate for X:
+
+     0:             1
+     1:             1
+
+  F(X*) = 1.51339e-11
+
+woods_test():
+  Python version: 3.10.12
+  hooke() seeks a minimizer of F(X).
+  Here we use the Woods function.
+
+  Initial estimate for X:
+
+     0:            -3
+     1:            -1
+     2:            -3
+     3:            -1
+
+  F(X) = 19192
+
+  Number of iterations taken = 19
+
+
+  Final estimate for X:
+
+     0:       1.00004
+     1:       1.00007
+     2:      0.999968
+     3:      0.999935
+
+  F(X*) = 4.83269e-09
+
+toms178_test():
+  Normal end of execution.
+Wed Oct  8 09:07:22 2025

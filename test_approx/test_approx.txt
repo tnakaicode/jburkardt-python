@@ -1,0 +1,268 @@
+Wed Oct  8 08:57:55 2025
+
+test_approx_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test test_approx().
+
+test_approx_test01():
+  Demonstrate some of the bookkeeping routines.
+  p00_prob_num() returns the number of problems.
+  p00_title() returns the problem title.
+  p00_limit() returns the problem limits.
+
+  Number of problems =  10
+
+   1  DeBoor example, Mars position
+   2  DeBoor example, roughly linear data
+   3  The pulse data, 0 0 0 0 0 1 0 0 0 0 0
+   4  The jump data, 0 0 0 0 0 1/2 1 1 1 1 1
+   5  DeBoor's Titanium property data
+   6  The Sawtooth data
+   7  Concavity test data
+   8  Extrapolation test data
+   9  Sunspot data, 1700-1960.
+  10  Y = 2 + 5*X + 10*N(0,1).
+
+test_approx_test02
+  p00_story() prints the problem "story".
+
+  Problem  1
+
+  This example is due to deBoor.
+  For this example, X is measured in days,
+  and Y records the observed position of Mars in a heliocentric
+  coordinate system.
+
+  Problem  2
+
+  This example is due to deBoor.
+  The data lies roughly along a straight line.  Polynomial
+  interpolation is inappropriate.  Instead, a least squares
+  approximation should be sought, of the form:
+    F(X) = A + B * X
+
+  Problem  3
+
+  The data is all zero except for a single value of 1 in the center.
+  This data set is interesting because an interpolation method that
+  is "local" will produce an interpolating curve that is exactly
+  zero over most of the outlying intervals, whereas a nonlocal
+  interpolation method may produce a curve that "wiggles" over the
+  entire interpolation interval.
+
+  Problem  4
+
+  Theoretically, the data is a step, 0 to the left of 5, and 1
+  to the right.  To keep things simple, the data is defined
+  to be 0 up to 5 - RADIUS, 1/2 at 5, 1 at 5 + RADIUS and beyond,
+  with RADIUS set to a "small" value, currently 0.01.
+  Some interpolation methods will violently overreact to this jump.
+
+  Problem  5
+
+  This example is due to deBoor.
+  This data represents a temperature dependent property of titanium.
+
+  Problem  6
+
+  This is a data vector.
+
+  Problem  7
+
+  This is a data vector.
+
+  Problem  8
+
+  This example is due to Pierre Blais.
+  Data is only available over the interval [0, 238], but extrapolation
+  is to be used to extend the approximate function to a maximum argument
+  of 1023.  The behavior of the extrapolated curve is of great interest.
+
+  Problem  9
+
+  This example is due to Max Waldmeier.
+  This data represents a measure of sunspot activity over the
+  years 1700 to 1960.  The X value is the year, and the Y value
+  is a measure of the sunspot activity, which is usually, but
+  not always, an integer.
+
+  Problem  10
+
+  100 uniformly random X values between -2 and 5 were selected, and
+  the formula Y = 2 + 5 * X + 10 * N(0,1) was evaluated, where N(0,1)
+  represents random normal values with 0 mean and unit variance.
+
+test_approx_test03():
+  Polynomial interpolation to a vector of data.
+  Original data marked with "*"
+
+  Problem  1
+  DeBoor example, Mars position
+  data_num =  10
+
+  Interpolating polynomial order =  10
+
+  *          1250.5          1.3914
+             1255.5         1.38606
+  *          1260.5         1.37696
+             1265.5          1.3642
+  *          1270.5         1.34783
+             1275.5         1.32792
+  *          1280.5         1.30456
+             1285.5         1.27784
+  *          1290.5         1.24787
+             1295.5         1.21476
+  *          1300.5         1.17862
+             1305.5         1.13958
+  *          1310.5         1.09776
+             1315.5         1.05331
+  *          1320.5         1.00636
+             1325.5        0.957057
+  *          1330.5         0.90553
+             1335.5         0.85192
+  *          1340.5         0.79642
+
+  Problem  2
+  DeBoor example, roughly linear data
+  data_num =  11
+
+  Interpolating polynomial order =  11
+
+  *               1               0
+                1.5        -4.83067
+  *               2             0.6
+                2.5          2.3948
+  *               3            1.77
+                3.5         1.37568
+  *               4            1.92
+                4.5         2.78486
+  *               5            3.31
+                5.5         3.42747
+  *               6            3.52
+                6.5          3.9258
+  *               7            4.59
+                7.5         5.14001
+  *               8            5.31
+                8.5         5.32911
+  *               9            5.79
+                9.5         6.80032
+  *              10            7.06
+               10.5         5.07361
+  *              11            7.17
+
+  Problem  3
+  The pulse data, 0 0 0 0 0 1 0 0 0 0 0
+  data_num =  11
+
+  Interpolating polynomial order =  11
+
+  *               0               0
+                0.5         4.93352
+  *               1               0
+                1.5        -1.00154
+  *               2               0
+                2.5        0.412399
+  *               3               0
+                3.5       -0.320755
+  *               4               0
+                4.5        0.666183
+  *               5               1
+                5.5        0.666183
+  *               6               0
+                6.5       -0.320755
+  *               7               0
+                7.5        0.412399
+  *               8     1.16573e-14
+                8.5        -1.00154
+  *               9      2.6229e-14
+                9.5         4.93352
+  *              10     2.09832e-13
+
+  Problem  4
+  The jump data, 0 0 0 0 0 1/2 1 1 1 1 1
+  data_num =  13
+
+  This problem size exceeds limit of  12
+
+  Problem  5
+  DeBoor's Titanium property data
+  data_num =  49
+
+  This problem size exceeds limit of  12
+
+  Problem  6
+  The Sawtooth data
+  data_num =  31
+
+  This problem size exceeds limit of  12
+
+  Problem  7
+  Concavity test data
+  data_num =  9
+
+  Interpolating polynomial order =  9
+
+  *               0               0
+               0.05         1.32484
+  *             0.1             0.9
+               0.15        0.752561
+  *             0.2            0.95
+               0.25         1.07856
+  *             0.3             0.9
+               0.35        0.489281
+  *             0.4             0.1
+               0.45      -0.0517323
+  *             0.5            0.05
+               0.55        0.190582
+  *             0.6            0.05
+                0.7        -1.36104
+  *             0.8             0.2
+                0.9         11.7975
+  *               1               1
+
+  Problem  8
+  Extrapolation test data
+  data_num =  12
+
+  Interpolating polynomial order =  12
+
+  *               0               0
+               35.5         53263.6
+  *              71          7.7554
+               87.5        -365.169
+  *             104         19.7062
+              119.5         52.6291
+  *             135         35.5379
+                140         38.2108
+  *             145         42.9154
+              152.5         50.0208
+  *             160         54.7752
+              170.5         59.3723
+  *             181         66.7587
+                187         72.5336
+  *             193         78.4929
+                199         84.1117
+  *             205         89.7683
+                210         95.2479
+  *             215         101.746
+                220         108.479
+  *             225         113.482
+              231.5         116.128
+  *             238         135.457
+
+  Problem  9
+  Sunspot data, 1700-1960.
+  data_num =  261
+
+  This problem size exceeds limit of  12
+
+  Problem  10
+  Y = 2 + 5*X + 10*N(0,1).
+  data_num =  100
+
+  This problem size exceeds limit of  12
+
+test_approx_test():
+  Normal end of execution.
+Wed Oct  8 08:57:55 2025

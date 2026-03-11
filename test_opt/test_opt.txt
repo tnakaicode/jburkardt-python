@@ -1,0 +1,724 @@
+Thu Feb 12 19:11:42 2026
+
+test_opt_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test test_opt().
+
+p00_title_test():
+  p00_title() prints the title for any problem.
+
+  Problem	 Title
+
+  1  "The Fletcher-Powell helical valley function."
+  2  "The Biggs EXP6 function."
+  3  "The Gaussian function."
+  4  "The Powell badly scaled function."
+  5  "The Box 3-dimensional function."
+  6  "The variably dimensioned function."
+  7  "The Watson function."
+  8  "The Penalty Function #1."
+  9  "The Penalty Function #2."
+  10  "The Brown Badly Scaled Function."
+  11  "The Brown and Dennis Function."
+  12  "The Gulf R&D Function."
+  13  "The Trigonometric Function."
+  14  "The Extended Rosenbrock parabolic valley Function."
+  15  "The Extended Powell Singular Quartic Function."
+  16  "The Beale Function."
+  17  "The Wood Function."
+  18  "The Chebyquad Function"
+  19  "The Leon cubic valley function"
+  20  "The Gregory and Karney Tridiagonal Matrix Function"
+  21  "The Hilbert Matrix Function F = x'Ax"
+  22  "The De Jong Function F1"
+  23  "The De Jong Function F2"
+  24  "The De Jong Function F3, (discontinuous)"
+  25  "The De Jong Function F4 (with Gaussian noise)"
+  26  "The De Jong Function F5"
+  27  "The Schaffer Function F6"
+  28  "The Schaffer Function F7"
+  29  "The Goldstein Price Polynomial"
+  30  "The Branin RCOS Function"
+  31  "The Shekel SQRN5 Function"
+  32  "The Shekel SQRN7 Function"
+  33  "The Shekel SQRN10 Function"
+  34  "The Six-Hump Camel-Back Polynomial"
+  35  "The Shubert Function"
+  36  "The Himmelblau function."
+  37  "The Easom Function"
+  38  "The Bohachevsky Function #1"
+  39  "The Bohachevsky Function #2"
+  40  "The Bohachevsky Function #3"
+  41  "The Colville Polynomial"
+  42  "The Powell 3D Function"
+  43  "The Himmelblau function."
+
+p00_n_test():
+  p00_n() returns problem size or a minimum problem size.
+
+   1  3
+   2  6
+   3  3
+   4  2
+   5  3
+   6  1 (minimum)
+   7  2 (minimum)
+   8  1 (minimum)
+   9  1 (minimum)
+   10  2
+   11  4
+   12  3
+   13  1 (minimum)
+   14  1 (minimum)
+   15  4 (minimum)
+   16  2
+   17  4
+   18  1 (minimum)
+   19  2
+   20  1 (minimum)
+   21  1 (minimum)
+   22  3
+   23  2
+   24  5
+   25  30
+   26  2
+   27  2
+   28  2
+   29  2
+   30  2
+   31  4
+   32  4
+   33  4
+   34  2
+   35  2
+   36  2
+   37  2
+   38  2
+   39  2
+   40  2
+   41  4
+   42  3
+   43  2
+
+p00_start_test():
+  p00_start() provides a starting point for minimization.
+
+  1: "The Fletcher-Powell helical valley function."
+array([-1.,  0.,  0.])
+
+  2: "The Biggs EXP6 function."
+array([1., 2., 1., 1., 1., 1.])
+
+  3: "The Gaussian function."
+array([0.4, 1. , 0. ])
+
+  4: "The Powell badly scaled function."
+array([0., 1.])
+
+  5: "The Box 3-dimensional function."
+array([ 0., 10.,  5.])
+
+  6: "The variably dimensioned function."
+array([0.75, 0.5 , 0.25, 0.  ])
+
+  7: "The Watson function."
+array([0., 0., 0., 0.])
+
+  8: "The Penalty Function #1."
+array([1., 2., 3., 4.])
+
+  9: "The Penalty Function #2."
+array([0.5, 0.5, 0.5, 0.5])
+
+  10: "The Brown Badly Scaled Function."
+array([1., 1.])
+
+  11: "The Brown and Dennis Function."
+array([25.,  5., -5., -1.])
+
+  12: "The Gulf R&D Function."
+array([40. , 20. ,  1.2])
+
+  13: "The Trigonometric Function."
+array([0.25, 0.25, 0.25, 0.25])
+
+  14: "The Extended Rosenbrock parabolic valley Function."
+array([-1.2,  1. , -1.2,  1. ])
+
+  15: "The Extended Powell Singular Quartic Function."
+array([ 3., -1.,  0.,  1.])
+
+  16: "The Beale Function."
+array([1., 1.])
+
+  17: "The Wood Function."
+array([-3., -1., -3., -1.])
+
+  18: "The Chebyquad Function"
+array([0.2, 0.4, 0.6, 0.8])
+
+  19: "The Leon cubic valley function"
+array([-1.2, -1. ])
+
+  20: "The Gregory and Karney Tridiagonal Matrix Function"
+array([0., 0., 0., 0.])
+
+  21: "The Hilbert Matrix Function F = x'Ax"
+array([1., 1., 1., 1.])
+
+  22: "The De Jong Function F1"
+array([-5.12,  0.  ,  5.12])
+
+  23: "The De Jong Function F2"
+array([-2.048,  2.048])
+
+  24: "The De Jong Function F3, (discontinuous)"
+array([-5.12, -2.56,  0.  ,  2.56,  5.12])
+
+  25: "The De Jong Function F4 (with Gaussian noise)"
+array([-1.28      , -1.19172414, -1.10344828, -1.01517241, -0.92689655,
+       -0.83862069, -0.75034483, -0.66206897, -0.5737931 , -0.48551724,
+       -0.39724138, -0.30896552, -0.22068966, -0.13241379, -0.04413793,
+        0.04413793,  0.13241379,  0.22068966,  0.30896552,  0.39724138,
+        0.48551724,  0.5737931 ,  0.66206897,  0.75034483,  0.83862069,
+        0.92689655,  1.01517241,  1.10344828,  1.19172414,  1.28      ])
+
+  26: "The De Jong Function F5"
+array([-32.01, -32.02])
+
+  27: "The Schaffer Function F6"
+array([-5., 10.])
+
+  28: "The Schaffer Function F7"
+array([-5., 10.])
+
+  29: "The Goldstein Price Polynomial"
+array([-0.5 ,  0.25])
+
+  30: "The Branin RCOS Function"
+array([-1.,  1.])
+
+  31: "The Shekel SQRN5 Function"
+array([1., 3., 5., 6.])
+
+  32: "The Shekel SQRN7 Function"
+array([1., 3., 5., 6.])
+
+  33: "The Shekel SQRN10 Function"
+array([1., 3., 5., 6.])
+
+  34: "The Six-Hump Camel-Back Polynomial"
+array([-1.5,  0.5])
+
+  35: "The Shubert Function"
+array([0.5, 1. ])
+
+  36: "The Himmelblau function."
+array([-1.3,  2.7])
+
+  37: "The Easom Function"
+array([0.5, 1. ])
+
+  38: "The Bohachevsky Function #1"
+array([0.5, 1. ])
+
+  39: "The Bohachevsky Function #2"
+array([0.6, 1.3])
+
+  40: "The Bohachevsky Function #3"
+array([0.5, 1. ])
+
+  41: "The Colville Polynomial"
+array([ 0.5,  1. , -0.5, -1. ])
+
+  42: "The Powell 3D Function"
+array([0., 1., 2.])
+
+  43: "The Himmelblau function."
+array([-1.3,  2.7])
+
+p00_f_test():
+  p00_f() evaluates the objective function F(X).
+  In this test, we evaluate F at a typical starting point.
+
+  1: "The Fletcher-Powell helical valley function."
+  f(x_start) =  2500.0
+
+  2: "The Biggs EXP6 function."
+  f(x_start) =  0.7790700756559702
+
+  3: "The Gaussian function."
+  f(x_start) =  0.0685525406311173
+
+  4: "The Powell badly scaled function."
+  f(x_start) =  1.1352617173483783
+
+  5: "The Box 3-dimensional function."
+  f(x_start) =  34.732488161400184
+
+  6: "The variably dimensioned function."
+  f(x_start) =  3222.1875
+
+  7: "The Watson function."
+  f(x_start) =  30.0
+
+  8: "The Penalty Function #1."
+  f(x_start) =  885.06264
+
+  9: "The Penalty Function #2."
+  f(x_start) =  2.3400088054630244
+
+  10: "The Brown Badly Scaled Function."
+  f(x_start) =  999998000003.0
+
+  11: "The Brown and Dennis Function."
+  f(x_start) =  7926693.336997435
+
+  12: "The Gulf R&D Function."
+  f(x_start) =  1.2053838794073308
+
+  13: "The Trigonometric Function."
+  f(x_start) =  0.013053127851381652
+
+  14: "The Extended Rosenbrock parabolic valley Function."
+  f(x_start) =  48.39999999999999
+
+  15: "The Extended Powell Singular Quartic Function."
+  f(x_start) =  215.0
+
+  16: "The Beale Function."
+  f(x_start) =  14.203125
+
+  17: "The Wood Function."
+  f(x_start) =  19192.0
+
+  18: "The Chebyquad Function"
+  f(x_start) =  0.07118392888888889
+
+  19: "The Leon cubic valley function"
+  f(x_start) =  57.8384
+
+  20: "The Gregory and Karney Tridiagonal Matrix Function"
+  f(x_start) =  0.0
+
+  21: "The Hilbert Matrix Function F = x'Ax"
+  f(x_start) =  5.076190476190478
+
+  22: "The De Jong Function F1"
+  f(x_start) =  52.4288
+
+  23: "The De Jong Function F2"
+  f(x_start) =  469.9523900415999
+
+  24: "The De Jong Function F3, (discontinuous)"
+  f(x_start) =  -2.0
+
+  25: "The De Jong Function F4 (with Gaussian noise)"
+  f(x_start) =  284.84304906748457
+
+  26: "The De Jong Function F5"
+  f(x_start) =  0.001999999999629697
+
+  27: "The Schaffer Function F6"
+  f(x_start) =  0.8683937850908159
+
+  28: "The Schaffer Function F7"
+  f(x_start) =  4.563758239636366
+
+  29: "The Goldstein Price Polynomial"
+  f(x_start) =  2738.7433013916016
+
+  30: "The Branin RCOS Function"
+  f(x_start) =  60.356308294938096
+
+  31: "The Shekel SQRN5 Function"
+  f(x_start) =  -0.167128036847102
+
+  32: "The Shekel SQRN7 Function"
+  f(x_start) =  -0.21514367838792342
+
+  33: "The Shekel SQRN10 Function"
+  f(x_start) =  -0.2709847141369527
+
+  34: "The Six-Hump Camel-Back Polynomial"
+  f(x_start) =  0.6656249999999986
+
+  35: "The Shubert Function"
+  f(x_start) =  -3.1044209149932107
+
+  36: "The Himmelblau function."
+  f(x_start) =  44.71219999999999
+
+  37: "The Easom Function"
+  f(x_start) =  -4.503563650592924e-06
+
+  38: "The Bohachevsky Function #1"
+  f(x_start) =  2.55
+
+  39: "The Bohachevsky Function #2"
+  f(x_start) =  4.236352549156242
+
+  40: "The Bohachevsky Function #3"
+  f(x_start) =  3.55
+
+  41: "The Colville Polynomial"
+  f(x_start) =  239.775
+
+  42: "The Powell 3D Function"
+  f(x_start) =  2.4999998874648255
+
+  43: "The Himmelblau function."
+  f(x_start) =  44.71219999999999
+
+p00_sol_test():
+  p00_sol() returns a minimizing solution.
+  Print the value of f(x) there.
+
+  1: "The Fletcher-Powell helical valley function."
+  f(x_start) =  2500.0
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  2: "The Biggs EXP6 function."
+  f(x_start) =  0.7790700756559702
+  f(x_sol)   =  1.449262283151395e-32
+  ||f'(x_sol)||   1.8180274942663133e-16
+
+  3: "The Gaussian function."
+  f(x_start) =  0.0685525406311173
+  x_sol not given.
+
+  4: "The Powell badly scaled function."
+  f(x_start) =  1.1352617173483783
+  f(x_sol)   =  1.4552592950009715e-13
+  ||f'(x_sol)||   0.0694759967078489
+
+  5: "The Box 3-dimensional function."
+  f(x_start) =  34.732488161400184
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  6: "The variably dimensioned function."
+  f(x_start) =  3222.1875
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  7: "The Watson function."
+  f(x_start) =  30.0
+  f(x_sol)   =  0.002287670069769948
+  ||f'(x_sol)||   8.736682679655731e-05
+
+  8: "The Penalty Function #1."
+  f(x_start) =  885.06264
+  x_sol not given.
+
+  9: "The Penalty Function #2."
+  f(x_start) =  2.3400088054630244
+  x_sol not given.
+
+  10: "The Brown Badly Scaled Function."
+  f(x_start) =  999998000003.0
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  11: "The Brown and Dennis Function."
+  f(x_start) =  7926693.336997435
+  f(x_sol)   =  85822.35415219344
+  ||f'(x_sol)||   37.877197155280115
+
+  12: "The Gulf R&D Function."
+  f(x_start) =  1.2053838794073308
+  f(x_sol)   =  8.435603249071474e-31
+  ||f'(x_sol)||   7.130177410726175e-15
+
+  13: "The Trigonometric Function."
+  f(x_start) =  0.013053127851381652
+  x_sol not given.
+
+  14: "The Extended Rosenbrock parabolic valley Function."
+  f(x_start) =  48.39999999999999
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  15: "The Extended Powell Singular Quartic Function."
+  f(x_start) =  215.0
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  16: "The Beale Function."
+  f(x_start) =  14.203125
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  17: "The Wood Function."
+  f(x_start) =  19192.0
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  18: "The Chebyquad Function"
+  f(x_start) =  0.07118392888888889
+  f(x_sol)   =  9.249617598971389e-14
+  ||f'(x_sol)||   2.0289812759594104e-06
+
+  19: "The Leon cubic valley function"
+  f(x_start) =  57.8384
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  20: "The Gregory and Karney Tridiagonal Matrix Function"
+  f(x_start) =  0.0
+  f(x_sol)   =  -4.0
+  ||f'(x_sol)||   1.0
+
+  21: "The Hilbert Matrix Function F = x'Ax"
+  f(x_start) =  5.076190476190478
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  22: "The De Jong Function F1"
+  f(x_start) =  52.4288
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  23: "The De Jong Function F2"
+  f(x_start) =  469.9523900415999
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  24: "The De Jong Function F3, (discontinuous)"
+  f(x_start) =  -2.0
+  f(x_sol)   =  -25.0
+  ||f'(x_sol)||   0.0
+
+  25: "The De Jong Function F4 (with Gaussian noise)"
+  f(x_start) =  284.84304906748457
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  26: "The De Jong Function F5"
+  f(x_start) =  0.001999999999629697
+  f(x_sol)   =  0.0019999999996281013
+  ||f'(x_sol)||   1.157177951413654e-13
+
+  27: "The Schaffer Function F6"
+  f(x_start) =  0.8683937850908159
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  28: "The Schaffer Function F7"
+  f(x_start) =  4.563758239636366
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  29: "The Goldstein Price Polynomial"
+  f(x_start) =  2738.7433013916016
+  f(x_sol)   =  3.0
+  ||f'(x_sol)||   0.0
+
+  30: "The Branin RCOS Function"
+  f(x_start) =  60.356308294938096
+  f(x_sol)   =  0.39788735772973816
+  ||f'(x_sol)||   1.175919651240861e-15
+
+  31: "The Shekel SQRN5 Function"
+  f(x_start) =  -0.167128036847102
+  f(x_sol)   =  -10.15271993245629
+  ||f'(x_sol)||   0.0387847606420869
+
+  32: "The Shekel SQRN7 Function"
+  f(x_start) =  -0.21514367838792342
+  f(x_sol)   =  -10.402342918407555
+  ||f'(x_sol)||   0.22044529174090632
+
+  33: "The Shekel SQRN10 Function"
+  f(x_start) =  -0.2709847141369527
+  f(x_sol)   =  -10.535807807696854
+  ||f'(x_sol)||   0.224451918203128
+
+  34: "The Six-Hump Camel-Back Polynomial"
+  f(x_start) =  0.6656249999999986
+  f(x_sol)   =  -1.0316284229280819
+  ||f'(x_sol)||   0.0009224226016144319
+
+  35: "The Shubert Function"
+  f(x_start) =  -3.1044209149932107
+  f(x_sol)   =  -185.96776816075703
+  ||f'(x_sol)||   82.64981640236705
+
+  36: "The Himmelblau function."
+  f(x_start) =  44.71219999999999
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  37: "The Easom Function"
+  f(x_start) =  -4.503563650592924e-06
+  f(x_sol)   =  -1.0
+  ||f'(x_sol)||   1.7319121124709866e-16
+
+  38: "The Bohachevsky Function #1"
+  f(x_start) =  2.55
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  39: "The Bohachevsky Function #2"
+  f(x_start) =  4.236352549156242
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+  40: "The Bohachevsky Function #3"
+  f(x_start) =  3.55
+  f(x_sol)   =  1.0
+  ||f'(x_sol)||   0.0
+
+  41: "The Colville Polynomial"
+  f(x_start) =  239.775
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   1.4210854715202004e-14
+
+  42: "The Powell 3D Function"
+  f(x_start) =  2.4999998874648255
+  f(x_sol)   =  0.9999998874648253
+  ||f'(x_sol)||   2.205230049456371e-06
+
+  43: "The Himmelblau function."
+  f(x_start) =  44.71219999999999
+  f(x_sol)   =  0.0
+  ||f'(x_sol)||   0.0
+
+p00_gdif_test():
+  p00_gdif() estimates the gradient vector G
+  with a finite difference estimate GDIF
+
+  Problem 1:  "The Fletcher-Powell helical valley function."
+  1879.64  1879.64
+
+  Problem 2:  "The Biggs EXP6 function."
+  2.5539  2.5539
+
+  Problem 3:  "The Gaussian function."
+  0.00745153  0.320629
+
+  Problem 4:  "The Powell badly scaled function."
+  20000.7  20000.7
+
+  Problem 5:  "The Box 3-dimensional function."
+  26.2587  26.2587
+
+  Problem 6:  "The variably dimensioned function."
+  9327.72  9327.72
+
+  Problem 7:  "The Watson function."
+  104.524  104.524
+
+  Problem 8:  "The Penalty Function #1."
+  651.79  651.79
+
+  Problem 9:  "The Penalty Function #2."
+  16.8748  16.8748
+
+  Problem 10:  "The Brown Badly Scaled Function."
+  2e+06  1.99885e+06
+
+  Problem 11:  "The Brown and Dennis Function."
+  2.14049e+06  2.14049e+06
+
+  Problem 12:  "The Gulf R&D Function."
+  5.2891  5.2891
+
+  Problem 13:  "The Trigonometric Function."
+  0.129316  0.129316
+
+  Problem 14:  "The Extended Rosenbrock parabolic valley Function."
+  329.325  329.325
+
+  Problem 15:  "The Extended Powell Singular Quartic Function."
+  458.777  458.777
+
+  Problem 16:  "The Beale Function."
+  27.75  27.75
+
+  Problem 17:  "The Wood Function."
+  16397.1  16397.1
+
+  Problem 18:  "The Chebyquad Function"
+  0.912348  0.912348
+
+  Problem 19:  "The Leon cubic valley function"
+  649.911  649.911
+
+  Problem 20:  "The Gregory and Karney Tridiagonal Matrix Function"
+  2  2
+
+  Problem 21:  "The Hilbert Matrix Function F = x'Ax"
+  5.46502  5.46502
+
+  Problem 22:  "The De Jong Function F1"
+  14.4815  14.4815
+
+  Problem 23:  "The De Jong Function F2"
+  1815.82  1815.82
+
+  Problem 24:  "The De Jong Function F3, (discontinuous)"
+  0  3.35544e+07
+
+  Problem 25:  "The De Jong Function F4 (with Gaussian noise)"
+  389.787  389.787
+
+  Problem 26:  "The De Jong Function F5"
+  1.15132e-13  0
+
+  Problem 27:  "The Schaffer Function F6"
+  0.30002  0.30002
+
+  Problem 28:  "The Schaffer Function F7"
+  4.46246  4.46246
+
+  Problem 29:  "The Goldstein Price Polynomial"
+  16554.3  16554.3
+
+  Problem 30:  "The Branin RCOS Function"
+  21.5043  21.5043
+
+  Problem 31:  "The Shekel SQRN5 Function"
+  0.055138  0.055138
+
+  Problem 32:  "The Shekel SQRN7 Function"
+  0.0674852  0.0674852
+
+  Problem 33:  "The Shekel SQRN10 Function"
+  0.0785522  0.0785522
+
+  Problem 34:  "The Six-Hump Camel-Back Polynomial"
+  3.87478  3.87478
+
+  Problem 35:  "The Shubert Function"
+  51.9614  51.9614
+
+  Problem 36:  "The Himmelblau function."
+  40.3585  40.3585
+
+  Problem 37:  "The Easom Function"
+  2.46127e-05  2.46127e-05
+
+  Problem 38:  "The Bohachevsky Function #1"
+  4.39767  4.39767
+
+  Problem 39:  "The Bohachevsky Function #2"
+  4.25256  4.25256
+
+  Problem 40:  "The Bohachevsky Function #3"
+  4.39767  4.39767
+
+  Problem 41:  "The Colville Polynomial"
+  396.75  396.75
+
+  Problem 42:  "The Powell 3D Function"
+  3.99732  3.99732
+
+  Problem 43:  "The Himmelblau function."
+  40.3585  40.3585
+
+test_opt_test():
+  Normal end of execution.
+Thu Feb 12 19:11:42 2026

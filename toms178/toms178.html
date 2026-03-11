@@ -1,0 +1,175 @@
+<html>
+
+  <head>
+    <title>
+      toms178
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      toms178
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>toms178</b>,
+      a Python code which 
+      uses the Hooke-Jeeves direct search algorithm to seek the minimizing 
+      point of a function F(X) of several variables,
+      by Arthur Kaupe.
+    </p>
+
+    <p>
+      The Hooke_Jeeves algorithm does not required the function F(X) to
+      be differentiable.  It does not even require the function to be 
+      continuous, although it should probably only be "weakly discontinuous",
+      like a step function, with finitely many well-separated jumps.  In any
+      case, the algorithm only examines function values, never derivatives,
+      remembers the location of the best value encountered, and seeks to
+      improve this value by a clever pattern search.
+    </p>
+
+    <p>
+      The user supplies a quantity <b>rho</b>, between 0 and 1, which controls 
+      how cautious or daring the search is, as well as a routine to evaluate the
+      function, and a few input parameters.
+    </p>
+
+    <p>
+      A C version of the algorithm, as written by Mark Johnson,
+      is available at
+      <a href = "https://www.netlib.org/opt/hooke.c">
+                 https://www.netlib.org/opt/hooke.c</a>
+    </p>
+
+    <p>
+      The text of many ACM TOMS algorithms is available online
+      through ACM:
+              <a href = "https://calgo.acm.org">
+                         https://calgo.acm.org/</a> 
+      or NETLIB:
+      <a href = "https://www.netlib.org/toms/index.html">
+      https://www.netlib.org/toms/index.html</a>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>toms178</b> is available in
+      <a href = "../../c_src/toms178/toms178.html">a C version</a> and
+      <a href = "../../cpp_src/toms178/toms178.html">a C++ version</a> and
+      <a href = "../../f_src/toms178/toms178.html">a Fortran90 version</a> and
+      <a href = "../../m_src/toms178/toms178.html">a MATLAB version</a> and
+      <a href = "../../octave_src/toms178/toms178.html">an Octave version</a> and
+      <a href = "../../py_src/toms178/toms178.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/asa047/asa047.html">
+      asa047</a>,
+      a Python code which
+      minimizes a scalar function of several variables using the Nelder-Mead
+      algorithm.
+    </p>
+
+    <p>
+      <a href = "../../py_src/compass_search/compass_search.html">
+      compass_search</a>,
+      a Python code which 
+      seeks the minimizer of a scalar function of several variables
+      using compass search, a direct search algorithm that does not use
+      derivatives.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Original Algol version by Arthur Kaupe;
+      This version by John Burkardt.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          M Bell, Malcolm Pike,<br>
+          Remark on Algorithm 178: Direct Search,<br>
+          Communications of the ACM,<br>
+          Volume 9, Number 9, September 1966, page 684.
+        </li>
+        <li>
+          Robert Hooke, Terry Jeeves,<br>
+          Direct Search Solution of Numerical and Statistical Problems,<br>
+          Journal of the ACM,<br>
+          Volume 8, Number 2, April 1961, pages 212-229.
+        </li>
+        <li>
+          Arthur Kaupe,<br>
+          Algorithm 178:
+          Direct Search,<br>
+          Communications of the ACM,<br>
+          Volume 6, Number 6, June 1963, page 313.
+        </li>
+        <li>
+          FK Tomlin, LB Smith,<br>
+          Remark on Algorithm 178: Direct Search,<br>
+          Communications of the ACM,<br>
+          Volume 12, Number 11, November 1969, page 637-638.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "toms178.py">toms178.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "toms178.sh">toms178.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "toms178.txt">toms178.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 January 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

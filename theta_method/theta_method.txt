@@ -1,0 +1,32 @@
+Wed Oct  8 09:07:12 2025
+
+theta_method_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test theta method().
+  We use a constant stepsize.
+
+  parameters:
+    lamda =  50.0
+    t0    =  0.0
+    y0    =  [0.]
+    tstop =  1.0
+
+stiff_theta_method():
+  Solve stiff ODE using the theta method + fsolve().
+  Using theta =  0.0
+  Graphics saved as "stiff_theta_method_fixed_0.0.png"
+
+stiff_theta_method():
+  Solve stiff ODE using the theta method + fsolve().
+  Using theta =  0.5
+  Graphics saved as "stiff_theta_method_fixed_0.5.png"
+
+stiff_theta_method():
+  Solve stiff ODE using the theta method + fsolve().
+  Using theta =  1.0
+  Graphics saved as "stiff_theta_method_fixed_1.0.png"
+
+theta_method_test():
+  Normal end of execution.
+Wed Oct  8 09:07:14 2025

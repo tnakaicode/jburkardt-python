@@ -1,0 +1,16 @@
+Wed Oct  8 09:07:21 2025
+
+toeplitz_inverse_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  toeplitz_inverse() computes the inverse of a Toeplitz matrix.
+
+     N      |A|      |C|      |I-AC|        |I-AB|
+
+     5         6.3           1      8.6199e-16     1.12571e-15
+    10          11           2     2.46059e-15     7.84794e-15
+    20          20         5.9     1.55846e-14     6.10047e-14
+
+toeplitz_inverse_test():
+  Normal end of execution.
+Wed Oct  8 09:07:21 2025

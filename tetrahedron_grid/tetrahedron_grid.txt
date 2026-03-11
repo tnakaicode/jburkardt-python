@@ -1,0 +1,104 @@
+Wed Oct  8 09:07:08 2025
+
+tetrahedron_grid_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test tetrahedron_grid().
+
+r83col_print_part_test
+  r83col_print_part prints part of an R83COL.
+
+  Output with MAX_print = 2
+
+     0              11              12              13
+     1              21              22              23  ...more entries...
+
+  Output with MAX_print = 5
+
+     0              11              12              13
+     1              21              22              23
+     2              31              32              33
+  ....  ..............  ..............  ..............
+     9             101             102             103
+
+  Output with MAX_print = 25
+
+     0              11              12              13
+     1              21              22              23
+     2              31              32              33
+     3              41              42              43
+     4              51              52              53
+     5              61              62              63
+     6              71              72              73
+     7              81              82              83
+     8              91              92              93
+     9             101             102             103
+
+r8mat_write_test:
+  Test r8mat_write, which writes an R8MAT to a file.
+
+  Created file "r8mat_write_test.txt".
+
+tetrahedron_grid_count_test:
+  tetrahedron_grid_count can count the points in a grid
+  with N+1 points on a side, based on any tetrahedron.
+
+     N        NG
+
+     1         4
+     2        10
+     3        20
+     4        35
+     5        56
+    10       286
+    15       816
+    20      1771
+    25      3276
+    50     23426
+   100    176851
+
+tetrahedron_grid_display_test:
+  tetrahedron_grid_display can display a grid of points in a tetrahedron.
+
+tetrahedron_grid_points_test:
+  tetrahedron_grid_points can define a tetrahedral grid
+  with N+1 points on a side, based on any tetrahedron.
+  N = 5
+
+  Tetrahedron vertices:
+
+     0               0               0               0
+     1               2               1               0
+     2               1               4               0
+     3               3               3               3
+
+  Tetrahedron grid points:
+
+     0               3               3               3
+     1             2.6             3.2             2.4
+     2             2.2             3.4             1.8
+     3             1.8             3.6             1.2
+     4             1.4             3.8             0.6
+     5               1               4               0
+     6             2.8             2.6             2.4
+     7             2.4             2.8             1.8
+     8               2               3             1.2
+     9             1.6             3.2             0.6
+    10             1.2             3.4               0
+    11             2.6             2.2             1.8
+    12             2.2             2.4             1.2
+    13             1.8             2.6             0.6
+    14             1.4             2.8               0
+    15             2.4             1.8             1.2
+    16               2               2             0.6
+    17             1.6             2.2               0
+  ....  ..............  ..............  ..............
+    55               0               0               0
+
+  Data written to the file "tetrahedron_grid_points.xyz".
+
+  Plot written to the file "tetrahedron_grid_points.png".
+
+tetrahedron_grid_test():
+  Normal end of execution.
+Wed Oct  8 09:07:09 2025

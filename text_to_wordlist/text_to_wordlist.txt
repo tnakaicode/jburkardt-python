@@ -1,0 +1,22 @@
+Wed Oct  8 09:07:12 2025
+
+text_to_wordlist_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Normal end of execution
+
+text_to_wordlist():
+  Convert a text file to a wordlist.
+  Here, we process information from "alice_in_wonderland.txt"
+  This file is now a string of  144073 characters.
+
+  Here are the first 20 characters:
+Alice’s Adventures i
+  The string is now a list of  26448 words.
+
+  Here are the first 20 words:
+['Alice’s', 'Adventures', 'in', 'Wonderland', 'by', 'Lewis', 'Carroll', 'CHAPTER', 'I.', 'Down', 'the', 'Rabbit-Hole', 'Alice', 'was', 'beginning', 'to', 'get', 'very', 'tired', 'of']
+
+text_to_wordlist_test():
+  Normal end of execution
+Wed Oct  8 09:07:12 2025

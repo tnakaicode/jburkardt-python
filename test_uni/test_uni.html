@@ -1,0 +1,323 @@
+<html>
+
+  <head>
+    <title>
+      test_uni
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      test_uni
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>test_uni</b>,
+      a Python code which 
+      defines a number of unimodal functions, each one a scalar valued function
+      of a scalar argument.  Over a specified interval [a,b], each function
+      decreases to a minimum value and then increases.  These functions are
+      designed to test the efficiency of algorithms for locating the minimizing
+      argument, such as bisection, golden search, or Brent's method.
+    </p>
+
+    <p>
+      There are 40 test functions.
+      Each problem has an index number, and there are a corresponding
+      set of routines, with names beginning with the index number.
+      For test function 1, these would be:
+      <ul>
+        <li>
+          fx = p01_f(x) evaluates f(x);
+        </li>
+        <li>
+          title = p01_title() returns the title of the problem;
+        </li>
+        <li>
+          a, b = p01_interval() returns the initial search interval;
+        </li>
+        <li>
+          x = p01_sol() returns an exact minimizer;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      There is also a generic problem interface, whose routines all
+      begin with "p00".  This allows the user to call all possible
+      problems in a single simple loop, by passing the desired index
+      number through the generic interface.
+      <ul>
+        <li>
+          fx = p00_f(test,x) evaluates f(x) for the function with index test;
+        </li>
+        <li>
+          title = p00_title(test) returns the title of the problem;
+        </li>
+        <li>
+          a, b = p00_interval(test) returns the initial search interval;
+        </li>
+        <li>
+          x = p00_sol(test) returns an exact minimizer;
+        </li>
+      </ul>
+    </p>
+    <p>
+      These functions were selected and described by Professor Vladimir
+      Kodnyanko of the Siberian Federal University.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>test_uni</b> is available in
+      <a href = "../../py_src/test_uni/test_uni.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/bisection_min/bisection_min.html">
+      bisection_min</a>,
+       a Python code which 
+      uses the bisection method to estimate a minimizer of a function f(x) 
+      assumed to be strictly unimodal ("U-shaped") over the interval [a,b].
+    </p>
+
+    <p>
+      <a href = "../../py_src/glomin/glomin.html">
+      glomin</a>,
+      a Python code which
+      finds a global minimum of a scalar function of a scalar argument, 
+      without the use of derivative information,
+      by Richard Brent.
+    </p>
+
+    <p>
+      <a href = "../../py_src/golden_section/golden_section.html">
+      golden_section</a>,
+      a Python code which 
+      estimates a minimizer of a function f(x), 
+      assuming f(x) is unimodal ("U-shaped") over [a,b].
+    </p>
+
+    <p>
+      <a href = "../../py_src/local_min/local_min.html">
+      local_min</a>,
+      a Python code which
+      finds a local minimum of a scalar function of a scalar variable, 
+      without the use of derivative information,
+      by Richard Brent.
+    </p>
+
+    <p>
+      <a href = "../../py_src/local_min_rc/local_min_rc.html">
+      local_min_rc</a>,
+      a Python code which
+      finds a local minimum of a scalar function of a scalar variable, 
+      without the use of derivative information,
+      using reverse communication (RC),
+      by Richard Brent.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_min/test_min.html">
+      test_min</a>,
+      a Python code which
+      implements test problems for
+      minimization of a scalar function of a scalar variable.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Vladimir Kodnyanko,<br>
+          Description and software implementation of optisection method
+          for minimizing unimodal functions.
+        </li>
+        <li>
+          Vladimir Kodnyanko,<br>
+          Optimal section method for minimizing unimodal
+          functions,<br>
+          Computational Mathematics and Modeling,<br>
+          Volume 36, pages 235-252, 16 October 2025.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_uni.py">test_uni.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "test_uni.sh">test_uni.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "test_uni.txt">test_uni.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "p01.png">p01.png</a>
+        </li>
+        <li>
+          <a href = "p02.png">p02.png</a>
+        </li>
+        <li>
+          <a href = "p03.png">p03.png</a>
+        </li>
+        <li>
+          <a href = "p04.png">p04.png</a>
+        </li>
+        <li>
+          <a href = "p05.png">p05.png</a>
+        </li>
+        <li>
+          <a href = "p06.png">p06.png</a>
+        </li>
+        <li>
+          <a href = "p07.png">p07.png</a>
+        </li>
+        <li>
+          <a href = "p08.png">p08.png</a>
+        </li>
+        <li>
+          <a href = "p09.png">p09.png</a>
+        </li>
+        <li>
+          <a href = "p10.png">p10.png</a>
+        </li>
+        <li>
+          <a href = "p11.png">p11.png</a>
+        </li>
+        <li>
+          <a href = "p12.png">p12.png</a>
+        </li>
+        <li>
+          <a href = "p13.png">p13.png</a>
+        </li>
+        <li>
+          <a href = "p14.png">p14.png</a>
+        </li>
+        <li>
+          <a href = "p15.png">p15.png</a>
+        </li>
+        <li>
+          <a href = "p16.png">p16.png</a>
+        </li>
+        <li>
+          <a href = "p17.png">p17.png</a>
+        </li>
+        <li>
+          <a href = "p18.png">p18.png</a>
+        </li>
+        <li>
+          <a href = "p19.png">p19.png</a>
+        </li>
+        <li>
+          <a href = "p20.png">p20.png</a>
+        </li>
+        <li>
+          <a href = "p21.png">p21.png</a>
+        </li>
+        <li>
+          <a href = "p22.png">p22.png</a>
+        </li>
+        <li>
+          <a href = "p23.png">p23.png</a>
+        </li>
+        <li>
+          <a href = "p24.png">p24.png</a>
+        </li>
+        <li>
+          <a href = "p25.png">p25.png</a>
+        </li>
+        <li>
+          <a href = "p26.png">p26.png</a>
+        </li>
+        <li>
+          <a href = "p27.png">p27.png</a>
+        </li>
+        <li>
+          <a href = "p28.png">p28.png</a>
+        </li>
+        <li>
+          <a href = "p29.png">p29.png</a>
+        </li>
+        <li>
+          <a href = "p30.png">p30.png</a>
+        </li>
+        <li>
+          <a href = "p31.png">p31.png</a>
+        </li>
+        <li>
+          <a href = "p32.png">p32.png</a>
+        </li>
+        <li>
+          <a href = "p33.png">p33.png</a>
+        </li>
+        <li>
+          <a href = "p34.png">p34.png</a>
+        </li>
+        <li>
+          <a href = "p35.png">p35.png</a>
+        </li>
+        <li>
+          <a href = "p36.png">p36.png</a>
+        </li>
+        <li>
+          <a href = "p37.png">p37.png</a>
+        </li>
+        <li>
+          <a href = "p38.png">p38.png</a>
+        </li>
+        <li>
+          <a href = "p39.png">p39.png</a>
+        </li>
+        <li>
+          <a href = "p40.png">p40.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 March 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

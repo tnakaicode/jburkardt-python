@@ -1,0 +1,38 @@
+Sun Feb  8 14:24:23 2026
+
+theodolite_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test theodolite().
+
+theodolite_test01():
+  Estimate the XYZ coordinates of an event in the sky
+  observed by 10 scattered stations.
+
+  Seek a position XYZ which minimizes the sum of squares
+  of the distance of the event to each of the lines defined
+  by an observers data.
+
+  The scipy.optimize function least_squares() is used.
+
+  Initial location estimate xyz:
+array([1245. ,  759. ,  103.5])
+
+  Initial residual vector f:
+array([ 896.50864097,  204.04163903, 1223.81482102,  634.58934755,
+       1199.82634656,  764.4301293 ,  727.4194862 , 1160.83479422,
+       1083.93122402,  703.74585445])
+  Initial ||F|| = 2883.845597272147
+
+  Final location estimate xyz:
+array([950.11803045,  39.54210364, 999.78206117])
+
+  Final residual vector f:
+array([140.11464406,  60.24473188,  42.97803298, 110.54614969,
+        24.4817375 ,  40.04896008,  68.58667412,  11.43253135,
+        34.4608098 ,  72.44366825])
+  Final ||F|| = 225.39486579140953
+
+theodolite_test():
+  Normal end of execution.
+Sun Feb  8 14:24:24 2026

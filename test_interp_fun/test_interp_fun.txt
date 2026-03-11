@@ -1,0 +1,138 @@
+Wed Oct  8 08:58:27 2025
+Wed Oct  8 08:58:27 2025
+
+test_interp_fun_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test test_interp_fun().
+
+test_interp_fun_test01():
+  p00_prob_num() returns the number of problems.
+  p00_title() returns the problem title.
+  p00_limit() returns the problem limits.
+
+  Number of problems =  5
+
+  Problem  1
+Runge example, f(x) = 1 / ( x * x + 1 ), [-5,5]
+  Range is [ -5.0 , 5.0 ]
+
+  Problem  2
+Bernstein example, f(x) = abs ( x ), [-1,1]
+  Range is [ -1.0 , 1.0 ]
+
+  Problem  3
+Step function, f jumps from 0 to 1 at 0.
+  Range is [ -1.0 , 1.0 ]
+
+  Problem  4
+The Doppler function, highly oscillatory near X = 0.
+  Range is [ 0.0 , 1.0 ]
+
+  Problem  5
+Rabbit ears, f(x) = max(sin(x)+sin(x^2),1-abs(x-5)/5), [0,10].
+  Range is [ 0.0 , 10.0 ]
+
+test_interp_fun_test02():
+  p00_story() prints the problem "story".
+
+  The story for problem  1
+
+  This is a famous example, due to Runge.  If equally spaced
+  abscissas are used, the sequence of interpolating polynomials Pn(X)
+  diverges, in the sense that the max norm of the difference
+  between Pn(X) and F(X) becomes arbitrarily large as N increases.
+
+  The story for problem  2
+
+  This example is due to Bernstein.
+  If equally spaced abscissas are used, the sequence of interpolating
+  polynomials Pn(X) only converges to F(X) at -1, 0, and 1.
+
+  The story for problem  3
+
+  The step function is discontinuous.
+  Attempts to approximate this function by high degree polynomials
+  will rapidly diverge.
+
+  The story for problem  4
+
+  The Doppler function is continuous, but highly oscillatory
+  near the value X = 0.
+
+  The story for problem  5
+
+  This example is very difficult to interpolate.
+  It is essentially defined as a piecewise function,
+  alternating between a straight line and a sinusoidal curve.
+
+test_interp_fun_test03():
+  Equally spaced polynomial interpolation.
+  Evaluate the function at N equally spaced points.
+  Determine the N-1 degre polynomial interpolant.
+  Estimate the maximum difference between the function
+  and the interpolant.
+
+  Problem 1
+  Runge example, f(x) = 1 / ( x * x + 1 ), [-5,5]
+
+     N   Max |Error|
+
+     1        0.961538
+     5        0.438134
+     9         1.04517
+    13         3.60527
+    17         14.0515
+    21         58.2781
+
+  Problem 2
+  Bernstein example, f(x) = abs ( x ), [-1,1]
+
+     N   Max |Error|
+
+     1               1
+     5          0.1472
+     9        0.315753
+    13         1.54906
+    17         10.8772
+    21         92.6992
+
+  Problem 3
+  Step function, f jumps from 0 to 1 at 0.
+
+     N   Max |Error|
+
+     1               1
+     5        0.975672
+     9          1.3314
+    13         9.48697
+    17         88.0671
+    21         933.226
+
+  Problem 4
+  The Doppler function, highly oscillatory near X = 0.
+
+     N   Max |Error|
+
+     1          0.7614
+     5        0.784056
+     9        0.599198
+    13         16.0925
+    17         34.2374
+    21         476.344
+
+  Problem 5
+  Rabbit ears, f(x) = max(sin(x)+sin(x^2),1-abs(x-5)/5), [0,10].
+
+     N   Max |Error|
+
+     1               1
+     5          1.7313
+     9         2.07062
+    13         5.67344
+    17         44.8345
+    21         194.825
+
+test_interp_fun_test():
+  Normal end of execution.
+Wed Oct  8 08:58:27 2025

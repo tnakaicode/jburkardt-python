@@ -1,0 +1,154 @@
+<html>
+
+  <head>
+    <title>
+      tetrahedron01_monte_carlo
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      tetrahedron01_monte_carlo
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>tetrahedron01_monte_carlo</b>,
+      a Python code which
+      uses the Monte Carlo method to estimate the integral of a function 
+      F(X,Y,Z) over the interior of the unit tetrahedron in 3D.
+    </p>
+
+    <p>
+      The interior of the unit tetrahedron in 3D is defined by the constraints:
+      <pre>
+        0 <= X
+        0 <= Y
+        0 <= Z
+             X + Y + Z <= 1
+      </pre>
+      The functions F(X,Y,Z) are monomials, having the form
+      <pre>
+        F(X,Y,Z) = X^E(1) * Y^E(2) * Z^E(3)
+      </pre>
+      where the exponents are nonnegative integers.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>tetrahedron01_monte_carlo</b> is available in
+      <a href = "../../c_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a C version</a> and
+      <a href = "../../cpp_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a C++ version</a> and
+      <a href = "../../f_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a Fortran90 version</a> and
+      <a href = "../../m_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a MATLAB version</a> and
+      <a href = "../../octave_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">an Octave version</a> and
+      <a href = "../../py_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_monte_carlo/python_monte_carlo.html">
+      python_monte_carlo</a>,
+      a Python code which
+      uses Monte Carlo sampling to estimate areas and integrals.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tetrahedron_integrals/tetrahedron_integrals.html">
+      tetrahedron_integrals</a>,
+      a Python code which
+      returns the exact value of the integral of any monomial
+      over the interior of the unit tetrahedron in 3D.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tetrahedron_monte_carlo/tetrahedron_monte_carlo.html">
+      tetrahedron_monte_carlo</a>,
+      a Python code which
+      uses the Monte Carlo method to estimate integrals 
+      over the interior of a general tetrahedron in 3D.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Claudio Rocchini, Paolo Cignoni,<br>
+          Generating Random Points in a Tetrahedron,<br>
+          Journal of Graphics Tools,<br>
+          Volume 5, Number 4, 2000, pages 9-12.
+        </li>
+        <li>
+          Reuven Rubinstein,<br>
+          Monte Carlo Optimization, Simulation and Sensitivity of
+          Queueing Networks,<br>
+          Krieger, 1992,<br>
+          ISBN: 0894647644,<br>
+          LC: QA298.R79.
+        </li>
+        <li>
+          Greg Turk,<br>
+          Generating Random Points in a Triangle,<br>
+          in Graphics Gems I,<br>
+          edited by Andrew Glassner,<br>
+          AP Professional, 1990,<br>
+          ISBN: 0122861663,<br>
+          LC: T385.G697
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "tetrahedron01_monte_carlo.py">tetrahedron01_monte_carlo.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "tetrahedron01_monte_carlo.sh">tetrahedron01_monte_carlo.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "tetrahedron01_monte_carlo.txt">
+          tetrahedron01_monte_carlo.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 10 November 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

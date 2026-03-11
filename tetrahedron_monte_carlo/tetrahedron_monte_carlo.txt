@@ -1,0 +1,66 @@
+Wed Oct  8 09:07:11 2025
+
+tetrahedron_monte_carlo_tests():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test tetrahedron_monte_carlo().
+
+tetrahedron_monte_carlo_test01():
+  Integrate tetrahedron_integrand_03()
+  Integration region is the unit tetrahedron.
+  Use an increasing number of points P_NUM.
+
+     P_NUM      1/(x**2+y**2+1)
+
+         1        0.161015
+         2        0.163147
+         4        0.135434
+         8        0.149234
+        16        0.145898
+        32        0.141937
+        64        0.143106
+       128        0.138562
+       256        0.139893
+       512        0.141427
+      1024        0.141174
+      2048        0.141641
+      4096        0.141395
+      8192        0.140897
+     16384        0.141417
+     32768        0.140960
+     65536        0.141286
+
+tetrahedron_monte_carlo_test02():
+  Integrate tetrahedron_unit_integrand_user()
+  Integration region is over a general tetrahedron.
+  Use an increasing number of points P_NUM.
+
+  Tetrahedron vertices:
+[[1. 2. 3.]
+ [4. 1. 2.]
+ [2. 4. 4.]
+ [3. 2. 5.]]
+
+     P_NUM
+
+         1      0.150728
+         2      0.201044
+         4      0.188688
+         8      0.193237
+        16      0.199445
+        32      0.222754
+        64      0.212618
+       128      0.219311
+       256      0.214467
+       512      0.216672
+      1024      0.220599
+      2048      0.216871
+      4096      0.216081
+      8192      0.216927
+     16384      0.217369
+     32768      0.217437
+     65536      0.217070
+
+tetrahedron_monte_carlo_tests():
+  Normal end of execution.
+Wed Oct  8 09:07:12 2025

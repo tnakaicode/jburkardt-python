@@ -1,0 +1,1457 @@
+Mon Mar  2 09:20:25 2026
+test_uni_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test test_uni().
+
+  The number of unimodal test functions is 40
+
+p00_title_test():
+  p00_title() prints the title for each test.
+
+  Test case title
+
+   1 :  "f(x) = 1."
+   2 :  "f(x) = 20 + 16 / x."
+   3 :  "f(x) = 1.5 + exp(x)."
+   4 :  "f(x) = 3 + max ( 4 * cos ( x ), -3 )."
+   5 :  "f(x) = 1.2 + max ( 5 * exp ( x ) - 1, 1 )."
+   6 :  "f(x) = 1.5 + max ( cos ( 4 - x^2 ), 0.5 )."
+   7 :  "f(x) = 1.2 + max ( exp ( - x ), cos ( x ), x^4, x^2 )."
+   8 :  "f(x) = 0.2 + max ( 3 * ( x - 2 )^2, 20 * ( x - 1 ) )."
+   9 :  "f(x) = 1.2 + abs ( x - 1 )."
+   10 :  "f(x) = 12 + 1000 * abs ( x - 2.8 )^8.4."
+   11 :  "f(x) = 0.3 + cos ( x^2 + 2 * x - 3.0 )"
+   12 :  "f(x) = 0.2 + ( x - 1.5 )^2"
+   13 :  "f(x) = 100 + ( 1 - exp ( x ) * sin ( x ) )^2."
+   14 :  "f(x) = 1.2 - cos ( x^2 )"
+   15 :  "f(x) = 1.2 + exp ( - x^2 ) + x"
+   16 :  "f(x) = 1.2 + exp ( - x ) + 3.5 * sin ( x )."
+   17 :  "f(x) = 2.3 + 3 * exp ( x ) - x^2 + 5 * x"
+   18 :  "f(x) = 1.2 + 3 * cosh ( x - 2 ) - 2 * sinh ( x - 3 )"
+   19 :  "f(x) = 2.3 + ( exp ( 3 - x ) + 4 * ( x - 2 ) )^2"
+   20 :  "f(x) = x^3 - 3 * x^2 - 5 * x - 8"
+   21 :  "f(x) = 1.2 + cos ( x ) + 0.1 * x"
+   22 :  "f(x) = 10.2 + abs ( ( x - 5 )^3 )"
+   23 :  "f(x) = 1.2 + log ( x ) * cos ( 2 * ( 4 - x ) )"
+   24 :  "f(x) = 1.2 + ( x - 7.4 )^2"
+   25 :  "f(x) = 1.2 + exp ( 3 - x ) + 4 * ( x - 2 )"
+   26 :  "f(x) = 1.5 + exp ( - 2 * ( x + 6 ) ) + 13 * sin ( x )"
+   27 :  "f(x) = 1.2 + sinh ( x ) - 2 * x"
+   28 :  "f(x) = 12.2 + 10 * sin ( 19 * x - 2 )"
+   29 :  "f(x) = 2.2 + abs ( x - 8 )"
+   30 :  "f(x) = 1.2 + x - 5 * sin ( 2 * x )"
+   31 :  "f(x) = 1.2 + sin ( 2.5 * sqrt ( abs ( x ) + x ) )"
+   32 :  "f(x) = 1.2 + max ( 20 * log ( x^2 + 3 ), exp ( x - 2.5 ) + x - 1 )"
+   33 :  "f(x) = 1.2 + 5 * x * ( x - 1 ) * exp ( x - 0.5 )"
+   34 :  "f(x) = 1.2 - 4 * x * sin ( x )"
+   35 :  "f(x) = 1.2 + 3 * x^4 + ( x - 1 )^2"
+   36 :  "f(x) = 1.2 + 3 * cos ( exp ( - 2 * x ) )."
+   37 :  "f(x) = 3.2 + 3 * cos ( x^3 + 2.4 )"
+   38 :  "f(x) = exp ( - x^2 ) + 2 * ( x^2 - x + 1 )^2"
+   39 :  "f(x) = 25 * ( x - 1 ) + max ( - 2 * ( x - 1 ), 8 * ( x - 1 ) )"
+   40 :  "f(x) = max ( 2 - x^2, 5 - ( x - 4 )^2 )"
+
+p00_interval_test():
+  p00_interval() returns the finite interval [A,B] over which
+  the optimization procedure is to be carried out.
+
+  test               A            F(A)               B            F(B)
+
+        1             1.9               1             3.1               1
+        2             1.5         30.6667             4.5         23.5556
+        3             0.5         3.14872               4         56.0982
+        4             0.1         6.98002             4.9         3.74605
+        5            -1.6             2.2             1.1         15.2208
+        6             2.9               2             3.2         2.49907
+        7            -0.6         3.02212             1.1          2.6641
+        8              -6           192.2            11.5          270.95
+        9            -0.2             2.4               4             4.2
+       10            -0.4      1.7509e+07             5.1     1.09274e+06
+       11            -0.9       -0.361179             0.5        0.121754
+       12               1            0.45               3            2.45
+       13             0.1         100.792               1         101.657
+       14            -1.2         1.06958             1.5         1.82817
+       15             0.2         6.20395             5.7             6.9
+       16               2         4.51788             6.2        0.911217
+       17            -3.9        -32.3493             2.5         45.0975
+       18               1          13.083             4.9         22.0074
+       19               1         13.7857             2.9         24.4386
+       20               1               1               5              33
+       21            -0.9         1.73161             6.2         2.81654
+       22               3            18.2             7.8          32.152
+       23             2.7        0.348894             3.1        0.942943
+       24               1           42.16              17           93.36
+       25               1         6.58906               4         5.56788
+       26               2         13.3209             6.5         4.29656
+       27             0.6        0.636654             2.7         3.20626
+       28             1.9         16.6172             2.1         14.1954
+       29           -12.3            22.5             5.5             4.7
+       30            -0.5         4.90735             2.2         8.15801
+       31             1.4        0.336733               3         1.04121
+       32              -1         28.9259               1         28.9259
+       33            -1.2         3.61142             1.2          3.6165
+       34             0.3        0.845376             4.5         18.7955
+       35           -13.5           758.2              15           872.2
+       36            -0.8         1.91498             2.1         4.19966
+       37             2.2         5.85872             2.5         5.23665
+       38              -1         18.3679               4             338
+       39               0             -23             2.5            49.5
+       40               1               1             3.8            4.96
+
+p00_f_test():
+  p00_f() evaluates the optimization function f(x)
+  at any point x, and for any test.
+
+  test               X            F(X)
+
+        1             2.5               1
+        2               3         25.3333
+        3            2.25         10.9877
+        4             2.5               0
+        5           -0.25           4.094
+        6            3.05         2.05645
+        7            0.25         2.16891
+        8            2.75            35.2
+        9             1.9             2.1
+       10            2.35         13.2218
+       11            -0.2       -0.676244
+       12               2            0.45
+       13            0.55         100.009
+       14            0.15        0.200253
+       15            2.95         4.15083
+       16             4.1         -1.6474
+       17            -0.7       -0.200244
+       18            2.95         5.75872
+       19            1.95         9.36311
+       20               3              -7
+       21            2.65        0.583418
+       22             5.4          10.264
+       23             2.9        0.573417
+       24               9            3.76
+       25             2.5         3.84872
+       26            4.25        -10.1349
+       27            1.65        0.407465
+       28               2         2.28221
+       29            -3.4            13.6
+       30            0.85        -2.90832
+       31             2.2        0.338031
+       32               0         23.1722
+       33               0             1.2
+       34             2.4        -5.28445
+       35            0.75            2.95
+       36            0.65         4.08928
+       37            2.35        0.361959
+       38             1.5          6.2304
+       39            1.25            8.25
+       40             2.4            2.44
+
+p00_plot_test():
+  plot the optimization functions.
+
+  Graphics saved as "p01.png"
+  Graphics saved as "p02.png"
+  Graphics saved as "p03.png"
+  Graphics saved as "p04.png"
+  Graphics saved as "p05.png"
+  Graphics saved as "p06.png"
+  Graphics saved as "p07.png"
+  Graphics saved as "p08.png"
+  Graphics saved as "p09.png"
+  Graphics saved as "p10.png"
+  Graphics saved as "p11.png"
+  Graphics saved as "p12.png"
+  Graphics saved as "p13.png"
+  Graphics saved as "p14.png"
+  Graphics saved as "p15.png"
+  Graphics saved as "p16.png"
+  Graphics saved as "p17.png"
+  Graphics saved as "p18.png"
+  Graphics saved as "p19.png"
+  Graphics saved as "p20.png"
+  Graphics saved as "p21.png"
+  Graphics saved as "p22.png"
+  Graphics saved as "p23.png"
+  Graphics saved as "p24.png"
+  Graphics saved as "p25.png"
+  Graphics saved as "p26.png"
+  Graphics saved as "p27.png"
+  Graphics saved as "p28.png"
+  Graphics saved as "p29.png"
+  Graphics saved as "p30.png"
+  Graphics saved as "p31.png"
+  Graphics saved as "p32.png"
+  Graphics saved as "p33.png"
+  Graphics saved as "p34.png"
+  Graphics saved as "p35.png"
+  Graphics saved as "p36.png"
+  Graphics saved as "p37.png"
+  Graphics saved as "p38.png"
+  Graphics saved as "p39.png"
+  Graphics saved as "p40.png"
+
+p00_sol_test():
+  p00_sol() returns a minimizer for any test function f(x)
+
+  test               X            F(X)
+
+        1             1.9               1
+        2             4.5         23.5556
+        3             0.5         3.14872
+        4             2.5               0
+        5            -1.6             2.2
+        6             2.9               2
+        7        0.824132         1.87919
+        8         1.11696         2.53926
+        9               1             1.2
+       10         2.79312              12
+       11      -0.0734973            -0.7
+       12             1.5             0.2
+       13        0.588533             100
+       14               0             0.2
+       15         1.67963         3.17732
+       16         4.71495        -2.29103
+       17            -3.9        -32.3493
+       18         2.65767         5.57063
+       19         1.61371         8.32615
+       20         2.63299         -7.7093
+       21         3.04143        0.509155
+       22               5            10.2
+       23             2.7        0.348894
+       24             7.4             1.2
+       25         2.30685         3.81371
+       26         4.71239           -11.5
+       27         1.31696        0.298135
+       28         2.00675             2.2
+       29             5.5             4.7
+       30        0.735314        -3.03962
+       31         1.77653             0.2
+       32               0         23.1722
+       33        0.618034       -0.128216
+       34         2.02876        -6.07882
+       35            0.25            1.95
+       36       -0.572365            -1.8
+       37         2.36976             0.2
+       38        0.638048         1.84847
+       39               0             -23
+       40           1.625       -0.640625
+
+p00_exhaustion_test()
+  Minimize using exhaustion.
+  Compare function values at equally spaced values.
+
+  test 1
+  "f(x) = 1."
+  Function evaluations: 1001
+  f( 1.9 ) =  1.0
+
+  test 2
+  "f(x) = 20 + 16 / x."
+  Function evaluations: 1001
+  f( 4.5 ) =  23.555555555555557
+
+  test 3
+  "f(x) = 1.5 + exp(x)."
+  Function evaluations: 1001
+  f( 0.5 ) =  3.148721270700128
+
+  test 4
+  "f(x) = 3 + max ( 4 * cos ( x ), -3 )."
+  Function evaluations: 1001
+  f( 2.4232000000000005 ) =  0.0
+
+  test 5
+  "f(x) = 1.2 + max ( 5 * exp ( x ) - 1, 1 )."
+  Function evaluations: 1001
+  f( -1.6 ) =  2.2
+
+  test 6
+  "f(x) = 1.5 + max ( cos ( 4 - x^2 ), 0.5 )."
+  Function evaluations: 1001
+  f( 2.9 ) =  2.0
+
+  test 7
+  "f(x) = 1.2 + max ( exp ( - x ), cos ( x ), x^4, x^2 )."
+  Function evaluations: 1001
+  f( 0.8246000000000001 ) =  1.8799651600000002
+
+  test 8
+  "f(x) = 0.2 + max ( 3 * ( x - 2 )^2, 20 * ( x - 1 ) )."
+  Function evaluations: 1001
+  f( 1.1050000000000004 ) =  2.603074999999998
+
+  test 9
+  "f(x) = 1.2 + abs ( x - 1 )."
+  Function evaluations: 1001
+  f( 1.0012000000000003 ) =  1.2012000000000003
+
+  test 10
+  "f(x) = 12 + 1000 * abs ( x - 2.8 )^8.4."
+  Function evaluations: 1001
+  f( 2.7955 ) =  12.0
+
+  test 11
+  "f(x) = 0.3 + cos ( x^2 + 2 * x - 3.0 )"
+  Function evaluations: 1001
+  f( -0.07400000000000007 ) =  -0.6999995662969634
+
+  test 12
+  "f(x) = 0.2 + ( x - 1.5 )^2"
+  Function evaluations: 1001
+  f( 1.5 ) =  0.2
+
+  test 13
+  "f(x) = 100 + ( 1 - exp ( x ) * sin ( x ) )^2."
+  Function evaluations: 1001
+  f( 0.5887 ) =  100.0000001746354
+
+  test 14
+  "f(x) = 1.2 - cos ( x^2 )"
+  Function evaluations: 1001
+  f( -0.0011999999999998678 ) =  0.2000000000010368
+
+  test 15
+  "f(x) = 1.2 + exp ( - x^2 ) + x"
+  Function evaluations: 1001
+  f( 1.6794999999999998 ) =  3.177315134927917
+
+  test 16
+  "f(x) = 1.2 + exp ( - x ) + 3.5 * sin ( x )."
+  Function evaluations: 1001
+  f( 4.7132000000000005 ) =  -2.291022840583139
+
+  test 17
+  "f(x) = 2.3 + 3 * exp ( x ) - x^2 + 5 * x"
+  Function evaluations: 1001
+  f( -3.9 ) =  -32.34927426566259
+
+  test 18
+  "f(x) = 1.2 + 3 * cosh ( x - 2 ) - 2 * sinh ( x - 3 )"
+  Function evaluations: 1001
+  f( 2.6575 ) =  5.570630945414459
+
+  test 19
+  "f(x) = 2.3 + ( exp ( 3 - x ) + 4 * ( x - 2 ) )^2"
+  Function evaluations: 1001
+  f( 1.6137000000000001 ) =  8.326153779404114
+
+  test 20
+  "f(x) = x^3 - 3 * x^2 - 5 * x - 8"
+  Function evaluations: 1001
+  f( 2.632 ) =  -7.709292031999997
+
+  test 21
+  "f(x) = 1.2 + cos ( x ) + 0.1 * x"
+  Function evaluations: 1001
+  f( 3.0405 ) =  0.5091555120049804
+
+  test 22
+  "f(x) = 10.2 + abs ( ( x - 5 )^3 )"
+  Function evaluations: 1001
+  f( 5.0016 ) =  10.200000004096
+
+  test 23
+  "f(x) = 1.2 + log ( x ) * cos ( 2 * ( 4 - x ) )"
+  Function evaluations: 1001
+  f( 2.7 ) =  0.34889372644372174
+
+  test 24
+  "f(x) = 1.2 + ( x - 7.4 )^2"
+  Function evaluations: 1001
+  f( 7.4 ) =  1.2
+
+  test 25
+  "f(x) = 1.2 + exp ( 3 - x ) + 4 * ( x - 2 )"
+  Function evaluations: 1001
+  f( 2.308 ) =  3.813706954400252
+
+  test 26
+  "f(x) = 1.5 + exp ( - 2 * ( x + 6 ) ) + 13 * sin ( x )"
+  Function evaluations: 1001
+  f( 4.7135 ) =  -11.499991976136284
+
+  test 27
+  "f(x) = 1.2 + sinh ( x ) - 2 * x"
+  Function evaluations: 1001
+  f( 1.3161 ) =  0.2981356508923705
+
+  test 28
+  "f(x) = 12.2 + 10 * sin ( 19 * x - 2 )"
+  Function evaluations: 1001
+  f( 2.0068 ) =  2.2000039115569763
+
+  test 29
+  "f(x) = 2.2 + abs ( x - 8 )"
+  Function evaluations: 1001
+  f( 5.5 ) =  4.7
+
+  test 30
+  "f(x) = 1.2 + x - 5 * sin ( 2 * x )"
+  Function evaluations: 1001
+  f( 0.7366000000000001 ) =  -3.039606287832723
+
+  test 31
+  "f(x) = 1.2 + sin ( 2.5 * sqrt ( abs ( x ) + x ) )"
+  Function evaluations: 1001
+  f( 1.7759999999999998 ) =  0.20000024597018862
+
+  test 32
+  "f(x) = 1.2 + max ( 20 * log ( x^2 + 3 ), exp ( x - 2.5 ) + x - 1 )"
+  Function evaluations: 1001
+  f( 0.0 ) =  23.172245773362196
+
+  test 33
+  "f(x) = 1.2 + 5 * x * ( x - 1 ) * exp ( x - 0.5 )"
+  Function evaluations: 1001
+  f( 0.6192 ) =  -0.12820708933699465
+
+  test 34
+  "f(x) = 1.2 - 4 * x * sin ( x )"
+  Function evaluations: 1001
+  f( 2.0304 ) =  -6.078808375902897
+
+  test 35
+  "f(x) = 1.2 + 3 * x^4 + ( x - 1 )^2"
+  Function evaluations: 1001
+  f( 0.2370000000000001 ) =  1.950676
+
+  test 36
+  "f(x) = 1.2 + 3 * cos ( exp ( - 2 * x ) )."
+  Function evaluations: 1001
+  f( -0.5738000000000001 ) =  -1.7998776981106286
+
+  test 37
+  "f(x) = 3.2 + 3 * cos ( x^3 + 2.4 )"
+  Function evaluations: 1001
+  f( 2.3698 ) =  0.2000007773331065
+
+  test 38
+  "f(x) = exp ( - x^2 ) + 2 * ( x^2 - x + 1 )^2"
+  Function evaluations: 1001
+  f( 0.6400000000000001 ) =  1.8484840833354736
+
+  test 39
+  "f(x) = 25 * ( x - 1 ) + max ( - 2 * ( x - 1 ), 8 * ( x - 1 ) )"
+  Function evaluations: 1001
+  f( 0.0 ) =  -23.0
+
+  test 40
+  "f(x) = max ( 2 - x^2, 5 - ( x - 4 )^2 )"
+  Function evaluations: 1001
+  f( 1.6244 ) =  -0.6386753600000001
+
+p00_bisection_test()
+  Minimize using the bisection method.
+  Bisection is halted when the interval is no more than  1e-12
+
+  test 1
+  "f(x) = 1."
+  Number of iterations: 41
+  Function evaluations: 85
+  X:  1.900000000000e+00  1.900000000000e+00  1.900000000001e+00
+  F:  1.000000000000e+00  1.000000000000e+00  1.000000000000e+00
+
+  test 2
+  "f(x) = 20 + 16 / x."
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  4.499999999999e+00  4.500000000000e+00  4.500000000000e+00
+  F:  2.355555555556e+01  2.355555555556e+01  2.355555555556e+01
+
+  test 3
+  "f(x) = 1.5 + exp(x)."
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  5.000000000000e-01  5.000000000004e-01  5.000000000008e-01
+  F:  3.148721270700e+00  3.148721270701e+00  3.148721270701e+00
+
+  test 4
+  "f(x) = 3 + max ( 4 * cos ( x ), -3 )."
+  Number of iterations: 43
+  Function evaluations: 89
+  X:  2.500000000000e+00  2.500000000000e+00  2.500000000001e+00
+  F:  0.000000000000e+00  0.000000000000e+00  0.000000000000e+00
+
+  test 5
+  "f(x) = 1.2 + max ( 5 * exp ( x ) - 1, 1 )."
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  -1.600000000000e+00  -1.600000000000e+00  -1.599999999999e+00
+  F:  2.200000000000e+00  2.200000000000e+00  2.200000000000e+00
+
+  test 6
+  "f(x) = 1.5 + max ( cos ( 4 - x^2 ), 0.5 )."
+  Number of iterations: 39
+  Function evaluations: 81
+  X:  2.900000000000e+00  2.900000000000e+00  2.900000000001e+00
+  F:  2.000000000000e+00  2.000000000000e+00  2.000000000000e+00
+
+  test 7
+  "f(x) = 1.2 + max ( exp ( - x ), cos ( x ), x^4, x^2 )."
+  Number of iterations: 41
+  Function evaluations: 85
+  X:  8.241323123021e-01  8.241323123025e-01  8.241323123029e-01
+  F:  1.879194068181e+00  1.879194068181e+00  1.879194068182e+00
+
+  test 8
+  "f(x) = 0.2 + max ( 3 * ( x - 2 )^2, 20 * ( x - 1 ) )."
+  Number of iterations: 44
+  Function evaluations: 91
+  X:  1.116963119775e+00  1.116963119775e+00  1.116963119776e+00
+  F:  2.539262395514e+00  2.539262395511e+00  2.539262395514e+00
+
+  test 9
+  "f(x) = 1.2 + abs ( x - 1 )."
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  9.999999999997e-01  1.000000000000e+00  1.000000000001e+00
+  F:  1.200000000000e+00  1.200000000000e+00  1.200000000001e+00
+
+  test 10
+  "f(x) = 12 + 1000 * abs ( x - 2.8 )^8.4."
+  Number of iterations: 43
+  Function evaluations: 89
+  X:  2.793115234375e+00  2.793115234375e+00  2.793115234376e+00
+  F:  1.200000000000e+01  1.200000000000e+01  1.200000000000e+01
+
+  test 11
+  "f(x) = 0.3 + cos ( x^2 + 2 * x - 3.0 )"
+  Number of iterations: 41
+  Function evaluations: 85
+  X:  -7.349725067616e-02  -7.349725067584e-02  -7.349725067552e-02
+  F:  -7.000000000000e-01  -7.000000000000e-01  -7.000000000000e-01
+
+  test 12
+  "f(x) = 0.2 + ( x - 1.5 )^2"
+  Number of iterations: 41
+  Function evaluations: 85
+  X:  1.499999996275e+00  1.499999996275e+00  1.499999996276e+00
+  F:  2.000000000000e-01  2.000000000000e-01  2.000000000000e-01
+
+  test 13
+  "f(x) = 100 + ( 1 - exp ( x ) * sin ( x ) )^2."
+  Number of iterations: 40
+  Function evaluations: 83
+  X:  5.885327219963e-01  5.885327219967e-01  5.885327219971e-01
+  F:  1.000000000000e+02  1.000000000000e+02  1.000000000000e+02
+
+  test 14
+  "f(x) = 1.2 - cos ( x^2 )"
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  -8.697509765621e-05  -8.697509734926e-05  -8.697509704230e-05
+  F:  2.000000000000e-01  2.000000000000e-01  2.000000000000e-01
+
+  test 15
+  "f(x) = 1.2 + exp ( - x^2 ) + x"
+  Number of iterations: 43
+  Function evaluations: 89
+  X:  1.679630604506e+00  1.679630604507e+00  1.679630604507e+00
+  F:  3.177315111351e+00  3.177315111351e+00  3.177315111351e+00
+
+  test 16
+  "f(x) = 1.2 + exp ( - x ) + 3.5 * sin ( x )."
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  4.714949074049e+00  4.714949074049e+00  4.714949074050e+00
+  F:  -2.291028207999e+00  -2.291028207999e+00  -2.291028207999e+00
+
+  test 17
+  "f(x) = 2.3 + 3 * exp ( x ) - x^2 + 5 * x"
+  Number of iterations: 43
+  Function evaluations: 89
+  X:  -3.900000000000e+00  -3.900000000000e+00  -3.899999999999e+00
+  F:  -3.234927426566e+01  -3.234927426566e+01  -3.234927426565e+01
+
+  test 18
+  "f(x) = 1.2 + 3 * cosh ( x - 2 ) - 2 * sinh ( x - 3 )"
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  2.657667706907e+00  2.657667706908e+00  2.657667706908e+00
+  F:  5.570630883949e+00  5.570630883949e+00  5.570630883949e+00
+
+  test 19
+  "f(x) = 2.3 + ( exp ( 3 - x ) + 4 * ( x - 2 ) )^2"
+  Number of iterations: 41
+  Function evaluations: 85
+  X:  1.613705632091e+00  1.613705632091e+00  1.613705632091e+00
+  F:  8.326153779092e+00  8.326153779092e+00  8.326153779092e+00
+
+  test 20
+  "f(x) = x^3 - 3 * x^2 - 5 * x - 8"
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  2.632993164465e+00  2.632993164465e+00  2.632993164466e+00
+  F:  -7.709296863229e+00  -7.709296863229e+00  -7.709296863229e+00
+
+  test 21
+  "f(x) = 1.2 + cos ( x ) + 0.1 * x"
+  Number of iterations: 43
+  Function evaluations: 89
+  X:  3.041425240905e+00  3.041425240905e+00  3.041425240905e+00
+  F:  5.091550861362e-01  5.091550861362e-01  5.091550861362e-01
+
+  test 22
+  "f(x) = 10.2 + abs ( ( x - 5 )^3 )"
+  Number of iterations: 43
+  Function evaluations: 89
+  X:  4.999992370605e+00  4.999992370606e+00  4.999992370606e+00
+  F:  1.020000000000e+01  1.020000000000e+01  1.020000000000e+01
+
+  test 23
+  "f(x) = 1.2 + log ( x ) * cos ( 2 * ( 4 - x ) )"
+  Number of iterations: 39
+  Function evaluations: 81
+  X:  2.700000000000e+00  2.700000000000e+00  2.700000000001e+00
+  F:  3.488937264437e-01  3.488937264440e-01  3.488937264442e-01
+
+  test 24
+  "f(x) = 1.2 + ( x - 7.4 )^2"
+  Number of iterations: 44
+  Function evaluations: 91
+  X:  7.399999991059e+00  7.399999991060e+00  7.399999991060e+00
+  F:  1.200000000000e+00  1.200000000000e+00  1.200000000000e+00
+
+  test 25
+  "f(x) = 1.2 + exp ( 3 - x ) + 4 * ( x - 2 )"
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  2.306852798909e+00  2.306852798909e+00  2.306852798910e+00
+  F:  3.813705638880e+00  3.813705638880e+00  3.813705638880e+00
+
+  test 26
+  "f(x) = 1.5 + exp ( - 2 * ( x + 6 ) ) + 13 * sin ( x )"
+  Number of iterations: 43
+  Function evaluations: 89
+  X:  4.712388970889e+00  4.712388970889e+00  4.712388970890e+00
+  F:  -1.149999999950e+01  -1.149999999950e+01  -1.149999999950e+01
+
+  test 27
+  "f(x) = 1.2 + sinh ( x ) - 2 * x"
+  Number of iterations: 41
+  Function evaluations: 85
+  X:  1.316957893968e+00  1.316957893968e+00  1.316957893969e+00
+  F:  2.981350137192e-01  2.981350137192e-01  2.981350137192e-01
+
+  test 28
+  "f(x) = 12.2 + 10 * sin ( 19 * x - 2 )"
+  Number of iterations: 38
+  Function evaluations: 79
+  X:  2.006753447675e+00  2.006753447676e+00  2.006753447676e+00
+  F:  2.200000000000e+00  2.200000000000e+00  2.200000000000e+00
+
+  test 29
+  "f(x) = 2.2 + abs ( x - 8 )"
+  Number of iterations: 45
+  Function evaluations: 93
+  X:  5.499999999999e+00  5.500000000000e+00  5.500000000000e+00
+  F:  4.700000000001e+00  4.700000000000e+00  4.700000000000e+00
+
+  test 30
+  "f(x) = 1.2 + x - 5 * sin ( 2 * x )"
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  7.353144479141e-01  7.353144479144e-01  7.353144479147e-01
+  F:  -3.039622732716e+00  -3.039622732716e+00  -3.039622732716e+00
+
+  test 31
+  "f(x) = 1.2 + sin ( 2.5 * sqrt ( abs ( x ) + x ) )"
+  Number of iterations: 41
+  Function evaluations: 85
+  X:  1.776528787613e+00  1.776528787613e+00  1.776528787614e+00
+  F:  2.000000000000e-01  2.000000000000e-01  2.000000000000e-01
+
+  test 32
+  "f(x) = 1.2 + max ( 20 * log ( x^2 + 3 ), exp ( x - 2.5 ) + x - 1 )"
+  Number of iterations: 41
+  Function evaluations: 85
+  X:  -2.235174179077e-08  -2.235128704342e-08  -2.235083229607e-08
+  F:  2.317224577336e+01  2.317224577336e+01  2.317224577336e+01
+
+  test 33
+  "f(x) = 1.2 + 5 * x * ( x - 1 ) * exp ( x - 0.5 )"
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  6.180339815401e-01  6.180339815403e-01  6.180339815406e-01
+  F:  -1.282156514426e-01  -1.282156514426e-01  -1.282156514426e-01
+
+  test 34
+  "f(x) = 1.2 - 4 * x * sin ( x )"
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  2.028757837450e+00  2.028757837450e+00  2.028757837451e+00
+  F:  -6.078822964639e+00  -6.078822964639e+00  -6.078822964639e+00
+
+  test 35
+  "f(x) = 1.2 + 3 * x^4 + ( x - 1 )^2"
+  Number of iterations: 45
+  Function evaluations: 93
+  X:  2.499999962747e-01  2.499999962751e-01  2.499999962755e-01
+  F:  1.950000000000e+00  1.950000000000e+00  1.950000000000e+00
+
+  test 36
+  "f(x) = 1.2 + 3 * cos ( exp ( - 2 * x ) )."
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  -5.723649442196e-01  -5.723649442193e-01  -5.723649442189e-01
+  F:  -1.800000000000e+00  -1.800000000000e+00  -1.800000000000e+00
+
+  test 37
+  "f(x) = 3.2 + 3 * cos ( x^3 + 2.4 )"
+  Number of iterations: 39
+  Function evaluations: 81
+  X:  2.369757270627e+00  2.369757270627e+00  2.369757270627e+00
+  F:  2.000000000000e-01  2.000000000000e-01  2.000000000000e-01
+
+  test 38
+  "f(x) = exp ( - x^2 ) + 2 * ( x^2 - x + 1 )^2"
+  Number of iterations: 43
+  Function evaluations: 89
+  X:  6.380483150621e-01  6.380483150624e-01  6.380483150627e-01
+  F:  1.848472243225e+00  1.848472243225e+00  1.848472243225e+00
+
+  test 39
+  "f(x) = 25 * ( x - 1 ) + max ( - 2 * ( x - 1 ), 8 * ( x - 1 ) )"
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  0.000000000000e+00  2.842170943040e-13  5.684341886081e-13
+  F:  -2.300000000000e+01  -2.299999999999e+01  -2.299999999999e+01
+
+  test 40
+  "f(x) = max ( 2 - x^2, 5 - ( x - 4 )^2 )"
+  Number of iterations: 42
+  Function evaluations: 87
+  X:  1.624999999999e+00  1.625000000000e+00  1.625000000000e+00
+  F:  -6.406249999984e-01  -6.406249999994e-01  -6.406249999994e-01
+
+p00_golden_section_test()
+  Minimize using the golden section method.
+  Execution is halted when the interval is no more than  1e-12
+
+  test 1
+  "f(x) = 1."
+  Number of iterations: 58
+  Function evaluations: 60
+  X:  3.099999999999e+00  3.100000000000e+00
+  F:  1.000000000000e+00  1.000000000000e+00
+
+  test 2
+  "f(x) = 20 + 16 / x."
+  Number of iterations: 60
+  Function evaluations: 62
+  X:  4.499999999999e+00  4.500000000000e+00
+  F:  2.355555555556e+01  2.355555555556e+01
+
+  test 3
+  "f(x) = 1.5 + exp(x)."
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  5.000000000000e-01  5.000000000006e-01
+  F:  3.148721270700e+00  3.148721270701e+00
+
+  test 4
+  "f(x) = 3 + max ( 4 * cos ( x ), -3 )."
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  3.864326901403e+00  3.864326901403e+00
+  F:  0.000000000000e+00  4.400924069614e-13
+
+  test 5
+  "f(x) = 1.2 + max ( 5 * exp ( x ) - 1, 1 )."
+  Number of iterations: 60
+  Function evaluations: 62
+  X:  -9.162907318747e-01  -9.162907318739e-01
+  F:  2.200000000000e+00  2.200000000001e+00
+
+  test 6
+  "f(x) = 1.5 + max ( cos ( 4 - x^2 ), 0.5 )."
+  Number of iterations: 55
+  Function evaluations: 57
+  X:  3.039076793366e+00  3.039076793367e+00
+  F:  2.000000000000e+00  2.000000000001e+00
+
+  test 7
+  "f(x) = 1.2 + max ( exp ( - x ), cos ( x ), x^4, x^2 )."
+  Number of iterations: 59
+  Function evaluations: 61
+  X:  8.241323123021e-01  8.241323123029e-01
+  F:  1.879194068181e+00  1.879194068182e+00
+
+  test 8
+  "f(x) = 0.2 + max ( 3 * ( x - 2 )^2, 20 * ( x - 1 ) )."
+  Number of iterations: 64
+  Function evaluations: 66
+  X:  1.116963119775e+00  1.116963119776e+00
+  F:  2.539262395513e+00  2.539262395514e+00
+
+  test 9
+  "f(x) = 1.2 + abs ( x - 1 )."
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  9.999999999997e-01  1.000000000000e+00
+  F:  1.200000000000e+00  1.200000000000e+00
+
+  test 10
+  "f(x) = 12 + 1000 * abs ( x - 2.8 )^8.4."
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  2.807095972611e+00  2.807095972612e+00
+  F:  1.200000000000e+01  1.200000000000e+01
+
+  test 11
+  "f(x) = 0.3 + cos ( x^2 + 2 * x - 3.0 )"
+  Number of iterations: 59
+  Function evaluations: 61
+  X:  -7.349723979929e-02  -7.349723979863e-02
+  F:  -7.000000000000e-01  -7.000000000000e-01
+
+  test 12
+  "f(x) = 0.2 + ( x - 1.5 )^2"
+  Number of iterations: 59
+  Function evaluations: 61
+  X:  1.500000003724e+00  1.500000003725e+00
+  F:  2.000000000000e-01  2.000000000000e-01
+
+  test 13
+  "f(x) = 100 + ( 1 - exp ( x ) * sin ( x ) )^2."
+  Number of iterations: 58
+  Function evaluations: 60
+  X:  5.885327777221e-01  5.885327777228e-01
+  F:  1.000000000000e+02  1.000000000000e+02
+
+  test 14
+  "f(x) = 1.2 - cos ( x^2 )"
+  Number of iterations: 60
+  Function evaluations: 62
+  X:  1.026484877507e-04  1.026484885308e-04
+  F:  2.000000000000e-01  2.000000000000e-01
+
+  test 15
+  "f(x) = 1.2 + exp ( - x^2 ) + x"
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  1.679630618590e+00  1.679630618591e+00
+  F:  3.177315111351e+00  3.177315111351e+00
+
+  test 16
+  "f(x) = 1.2 + exp ( - x ) + 3.5 * sin ( x )."
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  4.714949092356e+00  4.714949092357e+00
+  F:  -2.291028207999e+00  -2.291028207999e+00
+
+  test 17
+  "f(x) = 2.3 + 3 * exp ( x ) - x^2 + 5 * x"
+  Number of iterations: 62
+  Function evaluations: 64
+  X:  -3.900000000000e+00  -3.899999999999e+00
+  F:  -3.234927426566e+01  -3.234927426565e+01
+
+  test 18
+  "f(x) = 1.2 + 3 * cosh ( x - 2 ) - 2 * sinh ( x - 3 )"
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  2.657667716687e+00  2.657667716687e+00
+  F:  5.570630883949e+00  5.570630883949e+00
+
+  test 19
+  "f(x) = 2.3 + ( exp ( 3 - x ) + 4 * ( x - 2 ) )^2"
+  Number of iterations: 59
+  Function evaluations: 61
+  X:  1.613705653155e+00  1.613705653156e+00
+  F:  8.326153779092e+00  8.326153779092e+00
+
+  test 20
+  "f(x) = x^3 - 3 * x^2 - 5 * x - 8"
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  2.632993172415e+00  2.632993172415e+00
+  F:  -7.709296863229e+00  -7.709296863229e+00
+
+  test 21
+  "f(x) = 1.2 + cos ( x ) + 0.1 * x"
+  Number of iterations: 62
+  Function evaluations: 64
+  X:  3.041425247489e+00  3.041425247489e+00
+  F:  5.091550861362e-01  5.091550861362e-01
+
+  test 22
+  "f(x) = 10.2 + abs ( ( x - 5 )^3 )"
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  5.000009612434e+00  5.000009612435e+00
+  F:  1.020000000000e+01  1.020000000000e+01
+
+  test 23
+  "f(x) = 1.2 + log ( x ) * cos ( 2 * ( 4 - x ) )"
+  Number of iterations: 56
+  Function evaluations: 58
+  X:  2.700000000000e+00  2.700000000001e+00
+  F:  3.488937264437e-01  3.488937264443e-01
+
+  test 24
+  "f(x) = 1.2 + ( x - 7.4 )^2"
+  Number of iterations: 64
+  Function evaluations: 66
+  X:  7.400000010536e+00  7.400000010537e+00
+  F:  1.200000000000e+00  1.200000000000e+00
+
+  test 25
+  "f(x) = 1.2 + exp ( 3 - x ) + 4 * ( x - 2 )"
+  Number of iterations: 60
+  Function evaluations: 62
+  X:  2.306852838919e+00  2.306852838920e+00
+  F:  3.813705638880e+00  3.813705638880e+00
+
+  test 26
+  "f(x) = 1.5 + exp ( - 2 * ( x + 6 ) ) + 13 * sin ( x )"
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  4.712388990921e+00  4.712388990922e+00
+  F:  -1.149999999950e+01  -1.149999999950e+01
+
+  test 27
+  "f(x) = 1.2 + sinh ( x ) - 2 * x"
+  Number of iterations: 59
+  Function evaluations: 61
+  X:  1.316957913555e+00  1.316957913556e+00
+  F:  2.981350137192e-01  2.981350137192e-01
+
+  test 28
+  "f(x) = 12.2 + 10 * sin ( 19 * x - 2 )"
+  Number of iterations: 55
+  Function evaluations: 57
+  X:  2.006753448780e+00  2.006753448780e+00
+  F:  2.200000000000e+00  2.200000000000e+00
+
+  test 29
+  "f(x) = 2.2 + abs ( x - 8 )"
+  Number of iterations: 64
+  Function evaluations: 66
+  X:  5.499999999999e+00  5.500000000000e+00
+  F:  4.700000000001e+00  4.700000000000e+00
+
+  test 30
+  "f(x) = 1.2 + x - 5 * sin ( 2 * x )"
+  Number of iterations: 60
+  Function evaluations: 62
+  X:  7.353144573323e-01  7.353144573331e-01
+  F:  -3.039622732716e+00  -3.039622732716e+00
+
+  test 31
+  "f(x) = 1.2 + sin ( 2.5 * sqrt ( abs ( x ) + x ) )"
+  Number of iterations: 59
+  Function evaluations: 61
+  X:  1.776528800140e+00  1.776528800141e+00
+  F:  2.000000000000e-01  2.000000000000e-01
+
+  test 32
+  "f(x) = 1.2 + max ( 20 * log ( x^2 + 3 ), exp ( x - 2.5 ) + x - 1 )"
+  Number of iterations: 59
+  Function evaluations: 61
+  X:  2.580901680322e-08  2.580995169044e-08
+  F:  2.317224577336e+01  2.317224577336e+01
+
+  test 33
+  "f(x) = 1.2 + 5 * x * ( x - 1 ) * exp ( x - 0.5 )"
+  Number of iterations: 60
+  Function evaluations: 62
+  X:  6.180339917588e-01  6.180339917595e-01
+  F:  -1.282156514426e-01  -1.282156514426e-01
+
+  test 34
+  "f(x) = 1.2 - 4 * x * sin ( x )"
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  2.028757848019e+00  2.028757848019e+00
+  F:  -6.078822964639e+00  -6.078822964639e+00
+
+  test 35
+  "f(x) = 1.2 + 3 * x^4 + ( x - 1 )^2"
+  Number of iterations: 65
+  Function evaluations: 67
+  X:  2.500000016555e-01  2.500000016562e-01
+  F:  1.950000000000e+00  1.950000000000e+00
+
+  test 36
+  "f(x) = 1.2 + 3 * cos ( exp ( - 2 * x ) )."
+  Number of iterations: 60
+  Function evaluations: 62
+  X:  -5.723649412483e-01  -5.723649412474e-01
+  F:  -1.800000000000e+00  -1.800000000000e+00
+
+  test 37
+  "f(x) = 3.2 + 3 * cos ( x^3 + 2.4 )"
+  Number of iterations: 55
+  Function evaluations: 57
+  X:  2.369757271780e+00  2.369757271781e+00
+  F:  2.000000000000e-01  2.000000000000e-01
+
+  test 38
+  "f(x) = exp ( - x^2 ) + 2 * ( x^2 - x + 1 )^2"
+  Number of iterations: 61
+  Function evaluations: 63
+  X:  6.380483249434e-01  6.380483249443e-01
+  F:  1.848472243225e+00  1.848472243225e+00
+
+  test 39
+  "f(x) = 25 * ( x - 1 ) + max ( - 2 * ( x - 1 ), 8 * ( x - 1 ) )"
+  Number of iterations: 60
+  Function evaluations: 62
+  X:  0.000000000000e+00  7.222400935875e-13
+  F:  -2.300000000000e+01  -2.299999999998e+01
+
+  test 40
+  "f(x) = max ( 2 - x^2, 5 - ( x - 4 )^2 )"
+  Number of iterations: 60
+  Function evaluations: 62
+  X:  1.625000000000e+00  1.625000000000e+00
+  F:  -6.406249999987e-01  -6.406249999980e-01
+
+p00_brent_test():
+  p00_brent() use Brent's method to seek a minimizer.
+
+  test 1
+  "f(x) = 1."
+  Initial interval [A,B]:
+   A,       B:    1.8999999999999999e+00              3.1000000000000001e+00
+  FA,      FB:    1.0000000000000000e+00              1.0000000000000000e+00
+  Number of iterations: 34
+  Function evaluations: 34
+  Final interval [A,X*,B]:
+   A,  X*,  B:    3.0999998477388457e+00    3.0999999058974317e+00    3.1000000000000001e+00
+  FA, FX*, FB:    1.0000000000000000e+00    1.0000000000000000e+00    1.0000000000000000e+00
+
+  test 2
+  "f(x) = 20 + 16 / x."
+  Initial interval [A,B]:
+   A,       B:    1.5000000000000000e+00              4.5000000000000000e+00
+  FA,      FB:    3.0666666666666664e+01              2.3555555555555557e+01
+  Number of iterations: 36
+  Function evaluations: 36
+  Final interval [A,X*,B]:
+   A,  X*,  B:    4.4999998546035362e+00    4.4999999249920926e+00    4.5000000000000000e+00
+  FA, FX*, FB:    2.3555555670436718e+01    2.3555555614821063e+01    2.3555555555555557e+01
+
+  test 3
+  "f(x) = 1.5 + exp(x)."
+  Initial interval [A,B]:
+   A,       B:    5.0000000000000000e-01              4.0000000000000000e+00
+  FA,      FB:    3.1487212707001282e+00              5.6098150033144236e+01
+  Number of iterations: 40
+  Function evaluations: 40
+  Final interval [A,X*,B]:
+   A,  X*,  B:    5.0000000000000000e-01    5.0000001954620654e-01    5.0000003162642648e-01
+  FA, FX*, FB:    3.1487212707001282e+00    3.1487213029263748e+00    3.1487213228432909e+00
+
+  test 4
+  "f(x) = 3 + max ( 4 * cos ( x ), -3 )."
+  Initial interval [A,B]:
+   A,       B:    1.0000000000000001e-01              4.9000000000000004e+00
+  FA,      FB:    6.9800166611121028e+00              3.7460494776903031e+00
+  Number of iterations: 36
+  Function evaluations: 36
+  Final interval [A,X*,B]:
+   A,  X*,  B:    3.0665631459994955e+00    3.0665632132879805e+00    3.0665632623166674e+00
+  FA, FX*, FB:    0.0000000000000000e+00    0.0000000000000000e+00    0.0000000000000000e+00
+
+  test 5
+  "f(x) = 1.2 + max ( 5 * exp ( x ) - 1, 1 )."
+  Initial interval [A,B]:
+   A,       B:   -1.6000000000000001e+00              1.1000000000000001e+00
+  FA,      FB:    2.2000000000000002e+00              1.5220830119732167e+01
+  Number of iterations: 37
+  Function evaluations: 37
+  Final interval [A,X*,B]:
+   A,  X*,  B:   -1.3539212414245843e+00   -1.3539212012565414e+00   -1.3539211764313257e+00
+  FA, FX*, FB:    2.2000000000000002e+00    2.2000000000000002e+00    2.2000000000000002e+00
+
+  test 6
+  "f(x) = 1.5 + max ( cos ( 4 - x^2 ), 0.5 )."
+  Initial interval [A,B]:
+   A,       B:    2.8999999999999999e+00              3.2000000000000002e+00
+  FA,      FB:    2.0000000000000000e+00              2.4990676595343904e+00
+  Number of iterations: 30
+  Function evaluations: 30
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.9708203932499369e+00    2.9708204738735122e+00    2.9708205237016219e+00
+  FA, FX*, FB:    2.0000000000000000e+00    2.0000000000000000e+00    2.0000000000000000e+00
+
+  test 7
+  "f(x) = 1.2 + max ( exp ( - x ), cos ( x ), x^4, x^2 )."
+  Initial interval [A,B]:
+   A,       B:   -5.9999999999999998e-01              1.1000000000000001e+00
+  FA,      FB:    3.0221188003905088e+00              2.6641000000000004e+00
+  Number of iterations: 37
+  Function evaluations: 37
+  Final interval [A,X*,B]:
+   A,  X*,  B:    8.2413229621527062e-01    8.2413231854726110e-01    8.2413233416112297e-01
+  FA, FX*, FB:    1.8791940799884812e+00    1.8791940784740842e+00    1.8791941042098608e+00
+
+  test 8
+  "f(x) = 0.2 + max ( 3 * ( x - 2 )^2, 20 * ( x - 1 ) )."
+  Initial interval [A,B]:
+   A,       B:   -6.0000000000000000e+00              1.1500000000000000e+01
+  FA,      FB:    1.9219999999999999e+02              2.7094999999999999e+02
+  Number of iterations: 40
+  Function evaluations: 40
+  Final interval [A,X*,B]:
+   A,  X*,  B:    1.1169630891734241e+00    1.1169631091508048e+00    1.1169631291281854e+00
+  FA, FX*, FB:    2.5392625576464263e+00    2.5392624518018407e+00    2.5392625825637083e+00
+
+  test 9
+  "f(x) = 1.2 + abs ( x - 1 )."
+  Initial interval [A,B]:
+   A,       B:   -2.0000000000000001e-01              4.0000000000000000e+00
+  FA,      FB:    2.3999999999999999e+00              4.2000000000000002e+00
+  Number of iterations: 26
+  Function evaluations: 26
+  Final interval [A,X*,B]:
+   A,  X*,  B:    9.9999998387677147e-01    1.0000000021112661e+00    1.0000000295938207e+00
+  FA, FX*, FB:    1.2000000161232285e+00    1.2000000021112660e+00    1.2000000295938207e+00
+
+  test 10
+  "f(x) = 12 + 1000 * abs ( x - 2.8 )^8.4."
+  Initial interval [A,B]:
+   A,       B:   -4.0000000000000002e-01              5.0999999999999996e+00
+  FA,      FB:    1.7508950524982933e+07              1.0927444056771307e+06
+  Number of iterations: 38
+  Function evaluations: 38
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.7937852648212638e+00    2.7937853295356083e+00    2.7937853744995880e+00
+  FA, FX*, FB:    1.2000000000000000e+01    1.2000000000000000e+01    1.2000000000000000e+01
+
+  test 11
+  "f(x) = 0.3 + cos ( x^2 + 2 * x - 3.0 )"
+  Initial interval [A,B]:
+   A,       B:   -9.0000000000000002e-01              5.0000000000000000e-01
+  FA,      FB:   -3.6117883777487997e-01              1.2175394435050790e-01
+  Number of iterations: 17
+  Function evaluations: 17
+  Final interval [A,X*,B]:
+   A,  X*,  B:   -7.3497245231241543e-02   -7.3497240802713915e-02   -7.3497236374186342e-02
+  FA, FX*, FB:   -6.9999999999999996e-01   -6.9999999999999996e-01   -6.9999999999999973e-01
+
+  test 12
+  "f(x) = 0.2 + ( x - 1.5 )^2"
+  Initial interval [A,B]:
+   A,       B:    1.0000000000000000e+00              3.0000000000000000e+00
+  FA,      FB:    4.5000000000000001e-01              2.4500000000000002e+00
+  Number of iterations: 6
+  Function evaluations: 6
+  Final interval [A,X*,B]:
+   A,  X*,  B:    1.4999999743149248e+00    1.5000000000000000e+00    1.5000000256850752e+00
+  FA, FX*, FB:    2.0000000000000068e-01    2.0000000000000001e-01    2.0000000000000068e-01
+
+  test 13
+  "f(x) = 100 + ( 1 - exp ( x ) * sin ( x ) )^2."
+  Initial interval [A,B]:
+   A,       B:    1.0000000000000001e-01              1.0000000000000000e+00
+  FA,      FB:    1.0079150739094173e+02              1.0165728363542732e+02
+  Number of iterations: 17
+  Function evaluations: 17
+  Final interval [A,X*,B]:
+   A,  X*,  B:    5.8853275626468438e-01    5.8853277375395097e-01    5.8853278585710600e-01
+  FA, FX*, FB:    1.0000000000000000e+02    1.0000000000000000e+02    1.0000000000000001e+02
+
+  test 14
+  "f(x) = 1.2 - cos ( x^2 )"
+  Initial interval [A,B]:
+   A,       B:   -1.2000000000000000e+00              1.5000000000000000e+00
+  FA,      FB:    1.0695762912618545e+00              1.8281736227227392e+00
+  Number of iterations: 32
+  Function evaluations: 32
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.9153370184524321e-05    2.9156703952276723e-05    2.9161287361526353e-05
+  FA, FX*, FB:    1.9999999999999996e-01    1.9999999999999996e-01    1.9999999999999996e-01
+
+  test 15
+  "f(x) = 1.2 + exp ( - x^2 ) + x"
+  Initial interval [A,B]:
+   A,       B:    2.0000000000000001e-01              5.7000000000000002e+00
+  FA,      FB:    6.2039471957616161e+00              6.9000000000000394e+00
+  Number of iterations: 12
+  Function evaluations: 12
+  Final interval [A,X*,B]:
+   A,  X*,  B:    1.6796305569381709e+00    1.6796306103674470e+00    1.6796306387292268e+00
+  FA, FX*, FB:    3.1773151113512235e+00    3.1773151113512195e+00    3.1773151113512208e+00
+
+  test 16
+  "f(x) = 1.2 + exp ( - x ) + 3.5 * sin ( x )."
+  Initial interval [A,B]:
+   A,       B:    2.0000000000000000e+00              6.2000000000000002e+00
+  FA,      FB:    4.5178762771264989e+00              9.1121652077505844e-01
+  Number of iterations: 9
+  Function evaluations: 9
+  Final interval [A,X*,B]:
+   A,  X*,  B:    4.7149490067039581e+00    4.7149490802955079e+00    4.7149491538870576e+00
+  FA, FX*, FB:   -2.2910282079988109e+00   -2.2910282079988189e+00   -2.2910282079988082e+00
+
+  test 17
+  "f(x) = 2.3 + 3 * exp ( x ) - x^2 + 5 * x"
+  Initial interval [A,B]:
+   A,       B:   -3.8999999999999999e+00              2.5000000000000000e+00
+  FA,      FB:   -3.2349274265662586e+01              4.5097481882110415e+01
+  Number of iterations: 37
+  Function evaluations: 37
+  Final interval [A,X*,B]:
+   A,  X*,  B:   -3.8999999999999999e+00   -3.8999998815221169e+00   -3.8999998082987584e+00
+  FA, FX*, FB:   -3.2349274265662586e+01   -3.2349272741951040e+01   -3.2349271800245532e+01
+
+  test 18
+  "f(x) = 1.2 + 3 * cosh ( x - 2 ) - 2 * sinh ( x - 3 )"
+  Initial interval [A,B]:
+   A,       B:    1.0000000000000000e+00              4.9000000000000004e+00
+  FA,      FB:    1.3082962720139768e+01              2.2007427061192576e+01
+  Number of iterations: 9
+  Function evaluations: 9
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.6576676670690476e+00    2.6576677100047159e+00    2.6576677529403843e+00
+  FA, FX*, FB:    5.5706308839486383e+00    5.5706308839486338e+00    5.5706308839486374e+00
+
+  test 19
+  "f(x) = 2.3 + ( exp ( 3 - x ) + 4 * ( x - 2 ) )^2"
+  Initial interval [A,B]:
+   A,       B:    1.0000000000000000e+00              2.8999999999999999e+00
+  FA,      FB:    1.3785701241699037e+01              2.4438633368304831e+01
+  Number of iterations: 11
+  Function evaluations: 11
+  Final interval [A,X*,B]:
+   A,  X*,  B:    1.6137056113857129e+00    1.6137056387651341e+00    1.6137056661445552e+00
+  FA, FX*, FB:    8.3261537790918965e+00    8.3261537790918929e+00    8.3261537790919000e+00
+
+  test 20
+  "f(x) = x^3 - 3 * x^2 - 5 * x - 8"
+  Initial interval [A,B]:
+   A,       B:    1.0000000000000000e+00              5.0000000000000000e+00
+  FA,      FB:    1.0000000000000000e+00              3.3000000000000000e+01
+  Number of iterations: 11
+  Function evaluations: 11
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.6329931154149953e+00    2.6329931579829839e+00    2.6329932005509726e+00
+  FA, FX*, FB:   -7.7092968632290670e+00   -7.7092968632290777e+00   -7.7092968632290706e+00
+
+  test 21
+  "f(x) = 1.2 + cos ( x ) + 0.1 * x"
+  Initial interval [A,B]:
+   A,       B:   -9.0000000000000002e-01              6.2000000000000002e+00
+  FA,      FB:    1.7316099682706643e+00              2.8165420970232176e+00
+  Number of iterations: 10
+  Function evaluations: 10
+  Final interval [A,X*,B]:
+   A,  X*,  B:    3.0414251795036438e+00    3.0414252281577445e+00    3.0414252768118453e+00
+  FA, FX*, FB:    5.0915508613620475e-01    5.0915508613620342e-01    5.0915508613620430e-01
+
+  test 22
+  "f(x) = 10.2 + abs ( ( x - 5 )^3 )"
+  Initial interval [A,B]:
+   A,       B:    3.0000000000000000e+00              7.7999999999999998e+00
+  FA,      FB:    1.8199999999999999e+01              3.2151999999999994e+01
+  Number of iterations: 45
+  Function evaluations: 45
+  Final interval [A,X*,B]:
+   A,  X*,  B:    4.9999997451644358e+00    4.9999998240661050e+00    4.9999999019052428e+00
+  FA, FX*, FB:    1.0199999999999999e+01    1.0199999999999999e+01    1.0199999999999999e+01
+
+  test 23
+  "f(x) = 1.2 + log ( x ) * cos ( 2 * ( 4 - x ) )"
+  Initial interval [A,B]:
+   A,       B:    2.7000000000000002e+00              3.1000000000000001e+00
+  FA,      FB:    3.4889372644372174e-01              9.4294307032904046e-01
+  Number of iterations: 32
+  Function evaluations: 32
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.7000000000000002e+00    2.7000000821212407e+00    2.7000001328749588e+00
+  FA, FX*, FB:    3.4889372644372174e-01    3.4889378447710051e-01    3.4889382034371563e-01
+
+  test 24
+  "f(x) = 1.2 + ( x - 7.4 )^2"
+  Initial interval [A,B]:
+   A,       B:    1.0000000000000000e+00              1.7000000000000000e+01
+  FA,      FB:    4.2160000000000011e+01              9.3359999999999999e+01
+  Number of iterations: 6
+  Function evaluations: 6
+  Final interval [A,X*,B]:
+   A,  X*,  B:    7.3999998863980743e+00    7.4000000000000004e+00    7.4000001136019264e+00
+  FA, FX*, FB:    1.2000000000000128e+00    1.2000000000000000e+00    1.2000000000000128e+00
+
+  test 25
+  "f(x) = 1.2 + exp ( 3 - x ) + 4 * ( x - 2 )"
+  Initial interval [A,B]:
+   A,       B:    1.0000000000000000e+00              4.0000000000000000e+00
+  FA,      FB:    6.5890560989306497e+00              5.5678794411714421e+00
+  Number of iterations: 11
+  Function evaluations: 11
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.3068527746535512e+00    2.3068528123616701e+00    2.3068528500697894e+00
+  FA, FX*, FB:    3.8137056388801112e+00    3.8137056388801094e+00    3.8137056388801103e+00
+
+  test 26
+  "f(x) = 1.5 + exp ( - 2 * ( x + 6 ) ) + 13 * sin ( x )"
+  Initial interval [A,B]:
+   A,       B:    2.0000000000000000e+00              6.5000000000000000e+00
+  FA,      FB:    1.3320866661269037e+01              4.2965598451554898e+00
+  Number of iterations: 9
+  Function evaluations: 9
+  Final interval [A,X*,B]:
+   A,  X*,  B:    4.7123889119284526e+00    4.7123889854818541e+00    4.7123890590352557e+00
+  FA, FX*, FB:   -1.1499999999504135e+01   -1.1499999999504166e+01   -1.1499999999504125e+01
+
+  test 27
+  "f(x) = 1.2 + sinh ( x ) - 2 * x"
+  Initial interval [A,B]:
+   A,       B:    5.9999999999999998e-01              2.7000000000000002e+00
+  FA,      FB:    6.3665358214824130e-01              3.2062631060665421e+00
+  Number of iterations: 11
+  Function evaluations: 11
+  Final interval [A,X*,B]:
+   A,  X*,  B:    1.3169578732048592e+00    1.3169578961623944e+00    1.3169579191199297e+00
+  FA, FX*, FB:    2.9813501371924422e-01    2.9813501371924378e-01    2.9813501371924422e-01
+
+  test 28
+  "f(x) = 12.2 + 10 * sin ( 19 * x - 2 )"
+  Initial interval [A,B]:
+   A,       B:    1.8999999999999999e+00              2.1000000000000001e+00
+  FA,      FB:    1.6617238066692238e+01              1.4195397052387873e+01
+  Number of iterations: 9
+  Function evaluations: 9
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.0067534150218327e+00    2.0067534482581224e+00    2.0067534814944121e+00
+  FA, FX*, FB:    2.2000000000019888e+00    2.1999999999999993e+00    2.2000000000019959e+00
+
+  test 29
+  "f(x) = 2.2 + abs ( x - 8 )"
+  Initial interval [A,B]:
+   A,       B:   -1.2300000000000001e+01              5.5000000000000000e+00
+  FA,      FB:    2.2500000000000000e+01              4.7000000000000002e+00
+  Number of iterations: 39
+  Function evaluations: 39
+  Final interval [A,X*,B]:
+   A,  X*,  B:    5.4999997963475336e+00    5.4999998816372502e+00    5.5000000000000000e+00
+  FA, FX*, FB:    4.7000002036524666e+00    4.7000001183627500e+00    4.7000000000000002e+00
+
+  test 30
+  "f(x) = 1.2 + x - 5 * sin ( 2 * x )"
+  Initial interval [A,B]:
+   A,       B:   -5.0000000000000000e-01              2.2000000000000002e+00
+  FA,      FB:    4.9073549240394829e+00              8.1580103694475810e+00
+  Number of iterations: 10
+  Function evaluations: 10
+  Final interval [A,X*,B]:
+   A,  X*,  B:    7.3531444121594092e-01    7.3531445550631347e-01    7.3531446979668602e-01
+  FA, FX*, FB:   -3.0396227327164302e+00   -3.0396227327164311e+00   -3.0396227327164285e+00
+
+  test 31
+  "f(x) = 1.2 + sin ( 2.5 * sqrt ( abs ( x ) + x ) )"
+  Initial interval [A,B]:
+   A,       B:    1.3999999999999999e+00              3.0000000000000000e+00
+  FA,      FB:    3.3673266984018047e-01              1.0412139811551915e+00
+  Number of iterations: 10
+  Function evaluations: 10
+  Final interval [A,X*,B]:
+   A,  X*,  B:    1.7765287611687726e+00    1.7765287909744478e+00    1.7765288207801231e+00
+  FA, FX*, FB:    2.0000000000000084e-01    1.9999999999999996e-01    2.0000000000000062e-01
+
+  test 32
+  "f(x) = 1.2 + max ( 20 * log ( x^2 + 3 ), exp ( x - 2.5 ) + x - 1 )"
+  Initial interval [A,B]:
+   A,       B:   -1.0000000000000000e+00              1.0000000000000000e+00
+  FA,      FB:    2.8925887222397812e+01              2.8925887222397812e+01
+  Number of iterations: 28
+  Function evaluations: 28
+  Final interval [A,X*,B]:
+   A,  X*,  B:    6.6666666053149016e-09    1.0403911778263755e-08    1.3737245316297995e-08
+  FA, FX*, FB:    2.3172245773362196e+01    2.3172245773362196e+01    2.3172245773362196e+01
+
+  test 33
+  "f(x) = 1.2 + 5 * x * ( x - 1 ) * exp ( x - 0.5 )"
+  Initial interval [A,B]:
+   A,       B:   -1.2000000000000000e+00              1.2000000000000000e+00
+  FA,      FB:    3.6114225174960977e+00              3.6165032489645714e+00
+  Number of iterations: 12
+  Function evaluations: 12
+  Final interval [A,X*,B]:
+   A,  X*,  B:    6.1803396849989378e-01    6.1803398104265106e-01    6.1803399358540834e-01
+  FA, FX*, FB:   -1.2821565144257185e-01   -1.2821565144257430e-01   -1.2821565144257407e-01
+
+  test 34
+  "f(x) = 1.2 - 4 * x * sin ( x )"
+  Initial interval [A,B]:
+   A,       B:    2.9999999999999999e-01              4.5000000000000000e+00
+  FA,      FB:    8.4537575200639248e-01              1.8795542117971745e+01
+  Number of iterations: 12
+  Function evaluations: 12
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.0287577958606655e+00    2.0287578294248463e+00    2.0287578629890270e+00
+  FA, FX*, FB:   -6.0788229646386025e+00   -6.0788229646386114e+00   -6.0788229646386087e+00
+
+  test 35
+  "f(x) = 1.2 + 3 * x^4 + ( x - 1 )^2"
+  Initial interval [A,B]:
+   A,       B:   -1.3500000000000000e+01              1.5000000000000000e+01
+  FA,      FB:    7.5820000000000005e+02              8.7220000000000005e+02
+  Number of iterations: 6
+  Function evaluations: 6
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.4999999294137593e-01    2.4999999999999956e-01    2.5000000705862319e-01
+  FA, FX*, FB:    1.9500000000000002e+00    1.9500000000000000e+00    1.9500000000000002e+00
+
+  test 36
+  "f(x) = 1.2 + 3 * cos ( exp ( - 2 * x ) )."
+  Initial interval [A,B]:
+   A,       B:   -8.0000000000000004e-01              2.1000000000000001e+00
+  FA,      FB:    1.9149827363375467e+00              4.1996627053343483e+00
+  Number of iterations: 14
+  Function evaluations: 14
+  Final interval [A,X*,B]:
+   A,  X*,  B:   -5.7236495417034250e-01   -5.7236494230810675e-01   -5.7236493044587111e-01
+  FA, FX*, FB:   -1.7999999999999929e+00   -1.8000000000000000e+00   -1.7999999999999907e+00
+
+  test 37
+  "f(x) = 3.2 + 3 * cos ( x^3 + 2.4 )"
+  Initial interval [A,B]:
+   A,       B:    2.2000000000000002e+00              2.5000000000000000e+00
+  FA,      FB:    5.8587239879428497e+00              5.2366492866629679e+00
+  Number of iterations: 10
+  Function evaluations: 10
+  Final interval [A,X*,B]:
+   A,  X*,  B:    2.3697572346045761e+00    2.3697572732500447e+00    2.3697573118955133e+00
+  FA, FX*, FB:    2.0000000000056906e-01    2.0000000000000195e-01    2.0000000000070717e-01
+
+  test 38
+  "f(x) = exp ( - x^2 ) + 2 * ( x^2 - x + 1 )^2"
+  Initial interval [A,B]:
+   A,       B:   -1.0000000000000000e+00              4.0000000000000000e+00
+  FA,      FB:    1.8367879441171443e+01              3.3800000011253519e+02
+  Number of iterations: 12
+  Function evaluations: 12
+  Final interval [A,X*,B]:
+   A,  X*,  B:    6.3804831151520214e-01    6.3804832435619641e-01    6.3804833719719067e-01
+  FA, FX*, FB:    1.8484722432248724e+00    1.8484722432248719e+00    1.8484722432248737e+00
+
+  test 39
+  "f(x) = 25 * ( x - 1 ) + max ( - 2 * ( x - 1 ), 8 * ( x - 1 ) )"
+  Initial interval [A,B]:
+   A,       B:    0.0000000000000000e+00              2.5000000000000000e+00
+  FA,      FB:   -2.3000000000000000e+01              4.9500000000000000e+01
+  Number of iterations: 42
+  Function evaluations: 42
+  Final interval [A,X*,B]:
+   A,  X*,  B:    0.0000000000000000e+00    3.4188892782532407e-09    6.7522227122025334e-09
+  FA, FX*, FB:   -2.3000000000000000e+01   -2.2999999921365546e+01   -2.2999999844698877e+01
+
+  test 40
+  "f(x) = max ( 2 - x^2, 5 - ( x - 4 )^2 )"
+  Initial interval [A,B]:
+   A,       B:    1.0000000000000000e+00              3.7999999999999998e+00
+  FA,      FB:    1.0000000000000000e+00              4.9600000000000000e+00
+  Number of iterations: 31
+  Function evaluations: 31
+  Final interval [A,X*,B]:
+   A,  X*,  B:    1.6249999676860025e+00    1.6249999952337224e+00    1.6250000227814425e+00
+  FA, FX*, FB:   -6.4062489497950903e-01   -6.4062498450959771e-01   -6.4062489178814896e-01
+
+test_uni_test():
+  Normal end of execution.
+Mon Mar  2 09:20:29 2026

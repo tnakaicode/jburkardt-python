@@ -1,0 +1,121 @@
+<html>
+
+  <head>
+    <title>
+      theta_method
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      theta_method
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>theta_method</b>,
+      a Python code which
+      solves one or more ordinary differential equations (ODE)
+      using the theta method, and using a fixed time step.
+    </p>
+
+    <p>
+      The theta method uses a parameter theta, between 0 and 1.
+      Special values of theta are:
+      <ul>
+        <li>
+          theta = 0: backward Euler method;
+        </li>
+        <li>
+          theta = 1/2: trapezoidal method;
+        </li>
+        <li>
+          theta = 1: forward Euler method;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>theta_method</b> is available in
+      <a href = "../../m_src/theta_method/theta_method.html">a MATLAB version</a> and
+      <a href = "../../octave_src/theta_method/theta_method.html">an Octave version</a> and
+      <a href = "../../py_src/theta_method/theta_method.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_ode_solver/python_ode_solver.html">
+      python_ode_solver</a>,
+      a Python code which 
+      solves one or more differential equations (ODE) using a method of a
+      particular order, either explicit or implicit.  Some methods require
+      a nonlinear equation solver.  Some methods used a fixed stepsize,
+      while others adapt the stepsize based on an error estimate.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "theta_method.py">theta_method.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "theta_method.sh">theta_method.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "theta_method.txt">theta_method.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "stiff_theta_method_0.png">stiff_theta_method_0.png</a>,
+          an image of the solution for theta = 0.
+        </li>
+        <li>
+          <a href = "stiff_theta_method_0.5.png">stiff_theta_method_0.5.png</a>,
+          an image of the solution for theta = 0.5.
+        </li>
+        <li>
+          <a href = "stiff_theta_method_1.png">stiff_theta_method_1.png</a>,
+          an image of the solution for theta = 1.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 31 May 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

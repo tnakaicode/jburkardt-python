@@ -1,0 +1,454 @@
+Wed Oct  8 09:06:45 2025
+
+test_nonlin_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  test_nonlin() defines a set of sample systems of
+  nonlinear equations.
+
+p01 test_nonlin problem:
+  Generalized Rosenbrock function
+  Nominal value of n =  -2
+  Suggest using n =  5
+  Suggested starting point xs =  [-1.2  1.   1.   1.   1. ]
+  Norm of f(xs) =  4.919349550499537
+  Approximate root xe =  [1. 1. 1. 1. 1.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[ -1.   0.   0.   0.   0.]
+ [-20.  10.   0.   0.   0.]
+ [  0. -20.  10.   0.   0.]
+ [  0.   0. -20.  10.   0.]
+ [  0.   0.   0. -20.  10.]]
+  Finite difference jacobian at xe:
+[[ -1.   0.   0.   0.   0.]
+ [-20.  10.   0.   0.   0.]
+ [  0. -20.  10.   0.   0.]
+ [  0.   0. -20.  10.   0.]
+ [  0.   0.   0. -20.  10.]]
+
+p02 test_nonlin problem:
+  Powell singular function
+  Nominal value of n =  4
+  Suggested starting point xs =  [ 3. -1.  0.  1.]
+  Norm of f(xs) =  14.662878298615182
+  Approximate root xe =  [0. 0. 0. 0.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[ 1.         10.          0.          0.        ]
+ [ 0.          0.          2.23606798 -2.23606798]
+ [ 0.          0.         -0.          0.        ]
+ [ 0.          0.          0.         -0.        ]]
+  Finite difference jacobian at xe:
+[[ 1.         10.          0.          0.        ]
+ [ 0.          0.          2.23606798 -2.23606798]
+ [ 0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.        ]]
+
+p03 test_nonlin problem:
+  Powell badly scaled function
+  Nominal value of n =  2
+  Suggested starting point xs =  [0. 1.]
+  Norm of f(xs) =  1.0654866105908503
+  Approximate root xe =  [1.098159e-05 9.106146e+00]
+  Norm of f(xe) =  3.814786094921931e-07
+  Jacobian at xe:
+[[ 9.10614600e+04  1.09815900e-01]
+ [-9.99989018e-01 -1.10981615e-04]]
+  Finite difference jacobian at xe:
+[[ 9.10614600e+04  1.09815900e-01]
+ [-9.99989020e-01 -1.10981634e-04]]
+
+p04 test_nonlin problem:
+  Wood function
+  Nominal value of n =  4
+  Suggested starting point xs =  [-3. -1. -3. -1.]
+  Norm of f(xs] =  8550.557408730732
+  Approximate root xe =  [1. 1. 1. 1.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[ 401.  -200.     0.     0. ]
+ [-400.   220.2    0.    19.8]
+ [   0.     0.   361.  -180. ]
+ [   0.    19.8 -360.   300.2]]
+  Finite difference jacobian at xe:
+[[ 401.000008  -200.           0.           0.       ]
+ [-400.         220.2          0.          19.8      ]
+ [   0.           0.         361.0000072 -180.       ]
+ [   0.          19.8       -360.         200.2      ]]
+
+p05 test_nonlin problem:
+  Helical valley function
+  Nominal value of n =  3
+  Suggested starting point xs =  [-1.  0.  0.]
+  Norm of f(xs) =  50.0
+  Approximate root xe =  [1. 0. 0.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[  0.         -15.91549431  10.        ]
+ [ 10.           0.           0.        ]
+ [  0.           0.           1.        ]]
+  Finite difference jacobian at xe:
+[[  0.         -15.91549426  10.        ]
+ [ 10.           0.           0.        ]
+ [  0.           0.           1.        ]]
+
+p06 test_nonlin problem:
+  Watson function
+  Nominal value of n =  -2
+  Suggest using n =  5
+  Suggested starting point xs =  [0. 0. 0. 0. 0.]
+  Norm of f(xs) =  60.781914592238834
+  Jacobian at xs:
+[[61.         30.         20.34482759 15.51724138 12.62298577]
+ [30.         50.34482759 45.51724138 43.14022715 41.72987822]
+ [20.34482759 45.51724138 53.31264094 57.2471196  59.81212647]
+ [15.51724138 43.14022715 57.2471196  66.12361935 72.46257877]
+ [12.62298577 41.72987822 59.81212647 72.46257877 82.05185024]]
+  Finite difference jacobian at xs:
+[[61.0000006  30.00000016 20.34482768 15.51724145 12.62298583]
+ [30.0000003  50.34482771 45.51724146 43.14022721 41.72987828]
+ [20.34482779 45.51724149 53.31264102 57.24711966 59.81212652]
+ [15.51724153 43.14022724 57.24711967 66.12361941 72.46257881]
+ [12.6229859  41.72987831 59.81212653 72.46257882 82.05185029]]
+  Exact solution not given.
+
+p07 test_nonlin problem:
+  Chebyquad function
+  Nominal value of n =  3
+  Suggested starting point xs =  [-0.5  0.   0.5]
+  Norm of f(xs) =  0.3333333333333333
+  Approximate root xe =  [-0.70710678  0.          0.70710678]
+  Norm of f(xe) =  1.6653345369377348e-16
+  Jacobian at xe:
+[[ 0.33333333  0.33333333  0.33333333]
+ [-0.94280904  0.          0.94280904]
+ [ 1.         -1.          1.        ]]
+  Finite difference jacobian at xe:
+[[ 0.33333333  0.33333333  0.33333333]
+ [-0.94280904  0.          0.94280904]
+ [ 1.00000004 -0.99999999  1.00000004]]
+
+p08 test_nonlin problem:
+  Brown almost linear function
+  Nominal value of n =  -1
+  Suggest using n =  5
+  Suggested starting point xs =  [0.5 0.5 0.5 0.5 0.5]
+  Norm of f(xs) =  6.077703230867726
+  Approximate root xe =  [1. 1. 1. 1. 1.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[2. 1. 1. 1. 1.]
+ [1. 2. 1. 1. 1.]
+ [1. 1. 2. 1. 1.]
+ [1. 1. 1. 2. 1.]
+ [1. 1. 1. 1. 1.]]
+  Finite difference jacobian at xe:
+[[2. 1. 1. 1. 1.]
+ [1. 2. 1. 1. 1.]
+ [1. 1. 2. 1. 1.]
+ [1. 1. 1. 2. 1.]
+ [1. 1. 1. 1. 1.]]
+
+p09 test_nonlin problem:
+  Discrete boundary value function
+  Nominal value of n =  -1
+  Suggest using n =  5
+  Suggested starting point xs =  [-0.13888889 -0.22222222 -0.25       -0.22222222 -0.13888889]
+  Norm of f(xs) =  0.06411752655826478
+  Jacobian at xs:
+[[ 2.04401363 -1.          0.          0.          0.        ]
+ [-1.          2.05144033 -1.          0.          0.        ]
+ [ 0.         -1.          2.06510417 -1.          0.        ]
+ [ 0.          0.         -1.          2.08693416 -1.        ]
+ [ 0.          0.          0.         -1.          2.11963092]]
+  Finite difference jacobian at xs:
+[[ 2.04401363 -1.         -0.         -0.         -0.        ]
+ [-1.          2.05144033 -1.         -0.         -0.        ]
+ [-0.         -1.          2.06510417 -1.         -0.        ]
+ [-0.         -0.         -1.          2.08693416 -1.        ]
+ [-0.         -0.         -0.         -1.          2.11963092]]
+  Exact solution not given.
+
+p10 test_nonlin problem:
+  Discrete integral equation function
+  Nominal value of n =  -1
+  Suggest using n =  5
+  Suggested starting point xs =  [-0.13888889 -0.22222222 -0.25       -0.22222222 -0.13888889]
+  Norm of f(xs) =  0.18944291798650298
+  Jacobian at xs:
+[[1.03667803 0.03429355 0.03255208 0.02897805 0.01993849]
+ [0.02934242 1.06858711 0.06510417 0.0579561  0.03987697]
+ [0.02200682 0.05144033 1.09765625 0.08693416 0.05981546]
+ [0.01467121 0.03429355 0.06510417 1.11591221 0.07975394]
+ [0.00733561 0.01714678 0.03255208 0.0579561  1.09969243]]
+  Finite difference jacobian at xs:
+[[1.03667803 0.03429355 0.03255208 0.02897805 0.01993849]
+ [0.02934242 1.06858711 0.06510417 0.0579561  0.03987697]
+ [0.02200682 0.05144033 1.09765625 0.08693416 0.05981546]
+ [0.01467121 0.03429355 0.06510417 1.11591221 0.07975394]
+ [0.00733561 0.01714678 0.03255208 0.0579561  1.09969243]]
+  Exact solution not given.
+
+p11 test_nonlin problem:
+  Trigonometric function
+  Nominal value of n =  -1
+  Suggest using n =  5
+  Suggested starting point xs =  [0.2 0.2 0.2 0.2 0.2]
+  Norm of f(xs) =  0.10796934282689574
+  Jacobian at xs:
+[[-0.58272792  0.19866933  0.19866933  0.19866933  0.19866933]
+ [ 0.19866933 -0.38405859  0.19866933  0.19866933  0.19866933]
+ [ 0.19866933  0.19866933 -0.18538925  0.19866933  0.19866933]
+ [ 0.19866933  0.19866933  0.19866933  0.01328008  0.19866933]
+ [ 0.19866933  0.19866933  0.19866933  0.19866933  0.21194941]]
+  Finite difference jacobian at xs:
+[[-0.58272791  0.19866933  0.19866933  0.19866933  0.19866933]
+ [ 0.19866933 -0.38405858  0.19866933  0.19866933  0.19866933]
+ [ 0.19866933  0.19866933 -0.18538925  0.19866933  0.19866933]
+ [ 0.19866933  0.19866933  0.19866933  0.01328008  0.19866933]
+ [ 0.19866933  0.19866933  0.19866933  0.19866933  0.21194941]]
+  Exact solution not given.
+
+p12 test_nonlin problem:
+  Variably dimensioned function
+  Nominal value of n =  -1
+  Suggest using n =  5
+  Suggested starting point xs =  [0.8 0.6 0.4 0.2 0. ]
+  Norm of f(xs) =  19824.981795704127
+  Approximate root xe =  [1. 1. 1. 1. 1.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[ 2.  2.  3.  4.  5.]
+ [ 2.  5.  6.  8. 10.]
+ [ 3.  6. 10. 12. 15.]
+ [ 4.  8. 12. 17. 20.]
+ [ 5. 10. 15. 20. 26.]]
+  Finite difference jacobian at xe:
+[[ 2.00000008  2.00000064  3.00000216  4.00000512  5.00001   ]
+ [ 2.00000016  5.00000128  6.00000432  8.00001024 10.00002   ]
+ [ 3.00000024  6.00000192 10.00000648 12.00001536 15.00003   ]
+ [ 4.00000032  8.00000256 12.00000864 17.00002048 20.00004   ]
+ [ 5.0000004  10.0000032  15.0000108  20.0000256  26.00005   ]]
+
+p13 test_nonlin problem:
+  Broyden tridiagonal function
+  Nominal value of n =  -1
+  Suggest using n =  5
+  Suggested starting point xs =  [-1. -1. -1. -1. -1.]
+  Norm of f(xs) =  4.0
+  Jacobian at xs:
+[[ 7. -2.  0.  0.  0.]
+ [-1.  7. -2.  0.  0.]
+ [ 0. -1.  7. -2.  0.]
+ [ 0.  0. -1.  7. -2.]
+ [ 0.  0.  0. -1.  7.]]
+  Finite difference jacobian at xs:
+[[ 7. -2. -0. -0. -0.]
+ [-1.  7. -2. -0. -0.]
+ [-0. -1.  7. -2. -0.]
+ [-0. -0. -1.  7. -2.]
+ [-0. -0. -0. -1.  7.]]
+  Exact solution not given.
+
+p14 test_nonlin problem:
+  Broyden banded function
+  Nominal value of n =  -1
+  Suggest using n =  5
+  Suggested starting point xs =  [-1. -1. -1. -1. -1.]
+  Norm of f(xs) =  13.416407864998739
+  Jacobian at xs:
+[[17.  1.  0.  0.  0.]
+ [ 1. 17.  1.  0.  0.]
+ [ 1.  1. 17.  1.  0.]
+ [ 1.  1.  1. 17.  1.]
+ [ 1.  1.  1.  1. 17.]]
+  Finite difference jacobian at xs:
+[[17.0000002  1.        -0.        -0.        -0.       ]
+ [ 1.        17.0000002  1.        -0.        -0.       ]
+ [ 1.         1.        17.0000002  1.        -0.       ]
+ [ 1.         1.         1.        17.0000002  1.       ]
+ [ 1.         1.         1.         1.        17.0000002]]
+  Exact solution not given.
+
+p15 test_nonlin problem:
+  Hammarling 2 by 2 matrix square root problem
+  Nominal value of n =  4
+  Suggested starting point xs =  [1. 0. 0. 1.]
+  Norm of f(xs) =  1.7319353394396686
+  Approximate root xe =  [1.e-02 5.e+01 0.e+00 1.e-02]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[2.e-02 0.e+00 5.e+01 0.e+00]
+ [5.e+01 2.e-02 0.e+00 5.e+01]
+ [0.e+00 0.e+00 2.e-02 0.e+00]
+ [0.e+00 0.e+00 5.e+01 2.e-02]]
+  Finite difference jacobian at xe:
+[[2.e-02 0.e+00 5.e+01 0.e+00]
+ [5.e+01 2.e-02 0.e+00 5.e+01]
+ [0.e+00 0.e+00 2.e-02 0.e+00]
+ [0.e+00 0.e+00 5.e+01 2.e-02]]
+
+p16 test_nonlin problem:
+  Hammarling 3 by 3 matrix square root problem
+  Nominal value of n =  9
+  Suggested starting point xs =  [1. 0. 0. 0. 1. 0. 0. 0. 1.]
+  Norm of f(xs] =  1.9998500018751406
+  Approximate root xe =  [1.e-02 5.e+01 0.e+00 0.e+00 1.e-02 0.e+00 0.e+00 0.e+00 1.e-02]
+  Norm of f(xe] =  0.0
+  Jacobian at xe:
+[[2.e-02 0.e+00 0.e+00 5.e+01 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00]
+ [5.e+01 2.e-02 0.e+00 0.e+00 5.e+01 0.e+00 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 2.e-02 0.e+00 0.e+00 5.e+01 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 2.e-02 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 5.e+01 2.e-02 0.e+00 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 2.e-02 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 2.e-02 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 5.e+01 2.e-02 0.e+00]
+ [0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 2.e-02]]
+  Finite difference jacobian at xe:
+[[2.e-02 0.e+00 0.e+00 5.e+01 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00]
+ [5.e+01 2.e-02 0.e+00 0.e+00 5.e+01 0.e+00 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 2.e-02 0.e+00 0.e+00 5.e+01 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 2.e-02 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 5.e+01 2.e-02 0.e+00 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 2.e-02 0.e+00 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 2.e-02 0.e+00 0.e+00]
+ [0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 5.e+01 2.e-02 0.e+00]
+ [0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 0.e+00 2.e-02]]
+
+p17 test_nonlin problem:
+  Dennis and Schnabel 2 by 2 example
+  Nominal value of n =  2
+  Suggested starting point xs =  [1. 5.]
+  Norm of f(xs) =  17.26267650163207
+  Approximate root xe =  [0. 3.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[1. 1.]
+ [0. 6.]]
+  Finite difference jacobian at xe:
+[[1. 1.]
+ [0. 6.]]
+
+p18 test_nonlin problem:
+  Sample problem 18
+  Nominal value of n =  2
+  Suggested starting point xs =  [2. 2.]
+  Norm of f(xs) =  2.195112963893241
+  Approximate root xe =  [0. 0.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[0. 0.]
+ [0. 0.]]
+  Finite difference jacobian at xe:
+[[0. 0.]
+ [0. 0.]]
+
+p19 test_nonlin problem:
+  Sample problem 19
+  Nominal value of n =  2
+  Suggested starting point xs =  [3. 3.]
+  Norm of f(xs) =  76.36753236814714
+  Approximate root xe =  [0. 0.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[0. 0.]
+ [0. 0.]]
+  Finite difference jacobian at xe:
+[[1.e-08 0.e+00]
+ [0.e+00 1.e-08]]
+
+p20 test_nonlin problem:
+  Scalar problem f(x) = x * ( x - 5 ) * ( x - 5 )
+  Nominal value of n =  1
+  Suggested starting point xs =  [1.]
+  Norm of f(xs) =  16.0
+  Approximate root xe =  [5.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[0.]]
+  Finite difference jacobian at xe:
+[[3.6e-07]]
+
+p21 test_nonlin problem:
+  Freudenstein-Roth function
+  Nominal value of n =  2
+  Suggested starting point xs =  [ 0.5 -2. ]
+  Norm of f(xs) =  20.0124960961895
+  Approximate root xe =  [5. 4.]
+  Norm of f(xe) =  0.0
+  Jacobian at xe:
+[[  1. -10.]
+ [  1.  42.]]
+  Finite difference jacobian at xe:
+[[  1.         -10.00000025]
+ [  1.          42.00000025]]
+
+p22 test_nonlin problem:
+  Boggs function
+  Nominal value of n =  2
+  Suggested starting point xs =  [1. 0.]
+  Norm of f(xs) =  2.0
+  Approximate root xe =  [0. 1.]
+  Norm of f(xe) =  6.123233995736766e-17
+  Jacobian at xe:
+[[ 0.         -1.        ]
+ [ 1.          1.57079633]]
+  Finite difference jacobian at xe:
+[[ 0.        -1.       ]
+ [ 1.         1.5707963]]
+
+p23 test_nonlin problem:
+  Chandrasekhar function
+  Nominal value of n =  -1
+  Suggest using n =  5
+  Suggested starting point xs =  [1. 1. 1. 1. 1.]
+  Norm of f(xs) =  0.7176539271810876
+  Jacobian at xs:
+[[ 0.94410338 -0.02794831 -0.01863221 -0.01397416 -0.01117932]
+ [-0.10435701  0.93042866 -0.05217851 -0.0417428  -0.03478567]
+ [-0.13188492 -0.09891369  0.92086905 -0.06594246 -0.05652211]
+ [-0.15133117 -0.12106494 -0.10088745  0.91352505 -0.07566558]
+ [-0.16624629 -0.13853857 -0.11874735 -0.10390393  0.90764095]]
+  Finite difference jacobian at xs:
+[[ 0.94410338 -0.02794831 -0.01863221 -0.01397416 -0.01117932]
+ [-0.10435701  0.93042866 -0.05217851 -0.0417428  -0.03478567]
+ [-0.13188492 -0.09891369  0.92086905 -0.06594246 -0.05652211]
+ [-0.15133117 -0.12106494 -0.10088745  0.91352505 -0.07566558]
+ [-0.16624629 -0.13853857 -0.11874735 -0.10390393  0.90764095]]
+  Exact solution not given.
+
+nonlin_fsolve_test
+  Seek a root using fsolve()
+
+   #    ------------------------------------------
+Title    N     ||F(start)||   ||F(root)||
+
+   1  Generalized Rosenbrock function                     10     4.91935     4.91935
+   2  Powell singular function                             4     14.6629  3.0054e-34
+   3  Powell badly scaled function                         2     1.06549  2.43057e-10
+   4  Wood function                                        4     8550.56  2.74891e-11
+   5  Helical valley function                              3          50  2.72082e-13
+   6  Watson function                                     10     94.9722    0.719823
+   7  Chebyquad function                                   4    0.266803  6.09615e-12
+   8  Brown almost linear function                        10     16.5302  1.79018e-15
+   9  Discrete boundary value function                    10   0.0280806  2.97791e-15
+  10  Discrete integral equation function                 10    0.251827  1.08253e-14
+  11  Trigonometric function                              10   0.0841175   0.0052881
+  12  Variably dimensioned function                       10  2.24021e+06  1.56061e-10
+  13  Broyden tridiagonal function                        10     4.58258  1.50846e-08
+  14  Broyden banded function                             10     18.9737  2.03548e-09
+  15  Hammarling 2 by 2 matrix square root problem         4     1.73194  1.64175e-05
+  16  Hammarling 3 by 3 matrix square root problem         9     1.99985  5.42866e-06
+  17  Dennis and Schnabel 2 by 2 example                   2     17.2627           0
+  18  Sample problem 18                                    2     2.19511  1.11959e-19
+  19  Sample problem 19                                    2     76.3675  2.77466e-205
+  20  Scalar problem f(x) = x * ( x - 5 ) * ( x - 5 )      1          16           0
+  21  Freudenstein-Roth function                           2     20.0125     6.99888
+  22  Boggs function                                       2           2  9.6368e-13
+  23  Chandrasekhar function                              10     1.02037  5.11672e-11
+
+test_nonlin_test():
+  Normal end of execution.
+Wed Oct  8 09:06:45 2025
