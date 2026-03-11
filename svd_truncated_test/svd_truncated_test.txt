@@ -1,0 +1,46 @@
+Wed Oct  8 08:57:49 2025
+
+svd_truncated_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Demonstrate the use of the truncated
+  Singular Value Decomposition (SVD) for cases where
+  the sizes of M and N are very different.
+
+svd_truncated_u_test():
+  M = 4
+  N = 3
+
+  Original matrix A:
+[[0.90101438 0.28563376 0.07889994]
+ [0.43304785 0.53244186 0.36680798]
+ [0.30872057 0.03247288 0.45752286]
+ [0.53225302 0.04594687 0.85742615]]
+
+  Maximum error |A - U*S*V| =  7.494005416219807e-16
+
+  Recomputed A = U * S * V:
+[[0.90101438 0.28563376 0.07889994]
+ [0.43304785 0.53244186 0.36680798]
+ [0.30872057 0.03247288 0.45752286]
+ [0.53225302 0.04594687 0.85742615]]
+
+svd_truncated_v_test():
+  M = 3
+  N = 4
+
+  Original matrix A:
+[[0.48483093 0.29702868 0.98311609 0.89788261]
+ [0.131214   0.04697484 0.41442448 0.86654716]
+ [0.12805106 0.68321105 0.86515709 0.74725149]]
+
+  Maximum error |A - U*S*V| =  5.551115123125783e-16
+
+  Recomputed A = U * S * V:
+[[0.48483093 0.29702868 0.98311609 0.89788261]
+ [0.131214   0.04697484 0.41442448 0.86654716]
+ [0.12805106 0.68321105 0.86515709 0.74725149]]
+
+svd_truncated_test():
+  Normal end of execution.
+Wed Oct  8 08:57:49 2025

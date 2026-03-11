@@ -1,0 +1,57 @@
+Wed Oct  8 08:57:43 2025
+
+svd_powers_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test svd_powers().
+
+powers_data_test():
+  powers_data() generates a dataset A[i,j] = x[i]^j.
+
+  powers_data() generated this data
+  for xnum = 11 pnum = 4
+
+[[ 1.    -1.     1.    -1.   ]
+ [ 1.    -0.8    0.64  -0.512]
+ [ 1.    -0.6    0.36  -0.216]
+ [ 1.    -0.4    0.16  -0.064]
+ [ 1.    -0.2    0.04  -0.008]
+ [ 1.     0.     0.     0.   ]
+ [ 1.     0.2    0.04   0.008]
+ [ 1.     0.4    0.16   0.064]
+ [ 1.     0.6    0.36   0.216]
+ [ 1.     0.8    0.64   0.512]
+ [ 1.     1.     1.     1.   ]]
+
+svd_vectors_test():
+  svd_vectors() computes SVD vectors.
+  Data is a set of power vectors.
+  Do SVD analysis.
+  Display the SVD vectors.
+  Graphics saved as "svd_vectors_0.png"
+  Graphics saved as "svd_vectors_1.png"
+  Graphics saved as "svd_vectors_2.png"
+  Graphics saved as "svd_vectors_3.png"
+  Graphics saved as "svd_vectors_4.png"
+  Graphics saved as "svd_vectors_5.png"
+  Graphics saved as "svd_vectors_6.png"
+  Graphics saved as "svd_vectors_7.png"
+  Graphics saved as "svd_values.png"
+
+svd_project_test():
+  Compute singular vectors for x(i)^j.
+  Then take an arbitrary vector.
+  Approximate it with 0, 1, 2, ... singular vectors.
+  Graphics saved as "svd_project_test_0.png"
+  Graphics saved as "svd_project_test_1.png"
+  Graphics saved as "svd_project_test_2.png"
+  Graphics saved as "svd_project_test_3.png"
+  Graphics saved as "svd_project_test_4.png"
+  Graphics saved as "svd_project_test_5.png"
+  Graphics saved as "svd_project_test_6.png"
+  Graphics saved as "svd_project_test_7.png"
+  Graphics saved as "svd_project_test_8.png"
+
+svd_powers_test():
+  Normal end of execution.
+Wed Oct  8 08:57:46 2025

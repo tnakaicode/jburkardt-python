@@ -1,0 +1,25 @@
+Wed Oct  8 08:56:31 2025
+
+square_surface_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test square_surface_distance()
+
+  The mean distance between two random points on the surface
+  of a square can be computed as:
+    mu = ( 3 mu_diff + mu_same ) / 4
+  where:
+    mu_diff = mean distance, points are on different sides
+    mu_same = mean distance, points are on same side.
+
+  Using N =  10000  sample points
+  Exact mean distance (diff) =  0.8690090552745344
+  Exact mean distance (same) =  0.3333333333333333
+  Exact mean distance        =  0.7350901247892342
+  Estimated mean distance    =  0.7370156435943804
+  Estimated variance         =  0.12452227396656344
+  Graphics saved as "square_surface_distance_histogram.png"
+
+square_surface_distance_test():
+  Normal end of execution.
+Wed Oct  8 08:56:32 2025

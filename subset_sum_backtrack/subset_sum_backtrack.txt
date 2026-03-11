@@ -1,0 +1,80 @@
+Wed Oct  8 08:57:37 2025
+
+subset_sum_backtrack_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test subset_sum_backtrack().
+
+subset_sum_backtrack_test_all():
+  call subset_sum_backtrack_test_one() for each subset_sum problem.
+
+subset_sum_backtrack_test_one():
+  subset_sum_backtrack() uses backtracking to find solutions of the
+  subset sum problem.
+
+  Desired sum S = 9
+  Number of targets = 5
+  Targets:
+ 1 2 3 5 7
+
+  1:  9 = 1+3+5
+  2:  9 = 2+7
+
+subset_sum_backtrack_test_one():
+  subset_sum_backtrack() uses backtracking to find solutions of the
+  subset sum problem.
+
+  Desired sum S = 8
+  Number of targets = 9
+  Targets:
+ 1 2 3 4 5 6 7 8 9
+
+  1:  8 = 1+2+5
+  2:  8 = 1+3+4
+  3:  8 = 1+7
+  4:  8 = 2+6
+  5:  8 = 3+5
+  6:  8 = 8
+
+subset_sum_backtrack_test_one():
+  subset_sum_backtrack() uses backtracking to find solutions of the
+  subset sum problem.
+
+  Desired sum S = 8
+  Number of targets = 9
+  Targets:
+ 1 2 3 3 5 6 7 8 9
+
+  1:  8 = 1+2+5
+  2:  8 = 1+7
+  3:  8 = 2+3+3
+  4:  8 = 2+6
+  5:  8 = 3+5
+  6:  8 = 3+5
+  7:  8 = 8
+
+subset_sum_backtrack_test_one():
+  subset_sum_backtrack() uses backtracking to find solutions of the
+  subset sum problem.
+
+  Desired sum S = 18
+  Number of targets = 5
+  Targets:
+ 1 2 3 5 7
+
+  1:  18 = 1+2+3+5+7
+
+subset_sum_backtrack_test_one():
+  subset_sum_backtrack() uses backtracking to find solutions of the
+  subset sum problem.
+
+  Desired sum S = 5842
+  Number of targets = 10
+  Targets:
+ 267 493 869 961 1000 1153 1246 1598 1766 1922
+
+  1:  5842 = 869+961+1000+1246+1766
+
+subset_sum_backtrack_test():
+  Normal end of execution.
+Wed Oct  8 08:57:37 2025

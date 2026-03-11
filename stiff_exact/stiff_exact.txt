@@ -1,0 +1,20 @@
+Wed Oct  8 08:56:38 2025
+
+stiff_exact_test()
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  Test stiff_exact(), which evaluates exact solutions
+  of the stiff ODE.
+
+  parameters:
+    lamda =  50.0
+    t0     =  0.0
+    y0     =  0.0
+    tstop  =  1.0
+  Graphics saved as "stiff_value.png"
+  Graphics saved as "stiff_solve_ivp.png"
+
+stiff_exact_test():
+  Normal end of execution.
+Wed Oct  8 08:56:39 2025

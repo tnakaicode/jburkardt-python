@@ -1,0 +1,180 @@
+<html>
+
+  <head>
+    <title>
+      svd_lls
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      svd_lls
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>svd_lls</b>,
+      a Python code which 
+      uses the Singular Value Decomposition (SVD) to construct and plot 
+      the best affine and linear relationships
+      in the sense of least square, between two vectors of data.
+    </p>
+
+    <p>
+      The linear relationship will have the form
+<pre>
+  ( y - mean(y) ) = slope * ( x - mean(x) )
+</pre>
+    </p>
+
+    <p>
+      The affine relationship will have the form
+<pre>
+  y = slope * x + intercept
+</pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>svd_lls</b> is available in
+      <a href = "../../m_src/svd_lls/svd_lls.html">a MATLAB version</a> and
+      <a href = "../../octave_src/svd_lls/svd_lls.html">an Octave version</a> and
+      <a href = "../../py_src/svd_lls/svd_lls.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/svd_circle/svd_circle.html">
+      svd_circle</a>,
+      a Python code which 
+      analyzes a linear map of the unit circle caused by an arbitrary
+      2x2 matrix A, using the singular value decomposition (SVD).
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_powers/svd_powers.html">
+      svd_powers</a>,
+      a Python code which
+      applies singular value decomposition (SVD) analysis to 
+      powers A[i,j] = x[i]^j.
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_snowfall/svd_snowfall.html">
+      svd_snowfall</a>,
+      a Python code which
+      reads a file containing historical snowfall data and 
+      analyzes the data with the singular value decomposition (SVD).
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_sphere/svd_sphere.html">
+      svd_sphere</a>,
+      a Python code which 
+      analyzes a linear map of the unit sphere caused by an arbitrary
+      3x3 matrix A, using the singular value decomposition (SVD).
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_test/svd_test.html">
+      svd_test</a>,
+      a Python code which
+      demonstrates the singular value decomposition (SVD) for a simple example.
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_truncated_test/svd_truncated_test.html">
+      svd_truncated_test</a>,
+      a Python code which
+      demonstrates the computation of the reduced or truncated 
+      Singular Value Decomposition (SVD) that is useful for cases when
+      one dimension of the matrix is much smaller than the other.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Lloyd Trefethen, David Bau,<br>
+          Numerical Linear Algebra,<br>
+          SIAM, 1997,<br>
+          ISBN: 0-89871-361-7,<br>
+          LC: QA184.T74.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "svd_lls.py">svd_lls.py</a>
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "svd_lls.sh">svd_lls.sh</a>
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "svd_lls.txt">svd_lls.txt</a>
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sex_age_height_weight.txt">sex_age_height_weight.txt</a>
+          records sex, age, height and weight for 237 students.
+        </li>
+        <li>
+          <a href = "hw_plot01.png">hw_plot01.png</a>
+          plots height and weight.
+        </li>
+        <li>
+          <a href = "hw_plot02.png">hw_plot02.png</a>
+          plots a linear relationship between centered height and weight.
+        </li>
+        <li>
+          <a href = "hw_plot03.png">hw_plot03.png</a>
+          plots an affine relationship between height and weight.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 31 March 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

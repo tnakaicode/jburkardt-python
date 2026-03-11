@@ -1,0 +1,671 @@
+Wed Oct  8 08:56:52 2025
+
+subset_sum_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test subset_sum().
+
+subset_next_test():
+  subset_next() generates all subsets of an N set.
+
+  (empty set)
+
+  4
+
+  3
+
+  3
+  4
+
+  2
+
+  2
+  4
+
+  2
+  3
+
+  2
+  3
+  4
+
+  1
+
+  1
+  4
+
+  1
+  3
+
+  1
+  3
+  4
+
+  1
+  2
+
+  1
+  2
+  4
+
+  1
+  2
+  3
+
+  1
+  2
+  3
+  4
+
+  0
+
+  0
+  4
+
+  0
+  3
+
+  0
+  3
+  4
+
+  0
+  2
+
+  0
+  2
+  4
+
+  0
+  2
+  3
+
+  0
+  2
+  3
+  4
+
+  0
+  1
+
+  0
+  1
+  4
+
+  0
+  1
+  3
+
+  0
+  1
+  3
+  4
+
+  0
+  1
+  2
+
+  0
+  1
+  2
+  4
+
+  0
+  1
+  2
+  3
+
+  0
+  1
+  2
+  3
+  4
+
+
+subset_sum_count_tests():
+  subset_sum_count_test() calls subset_sum_count() with a
+  particular set of weights and target.
+
+subset_sum_count_test():
+  subset_sum_count() counts solutions to the subset sum problem.
+
+  Seek a subset of W that sums to T.
+
+  Target value T = 53
+
+   I       W(I)
+
+   0        15
+   1        22
+   2        14
+   3        26
+   4        32
+   5         9
+   6        16
+   7         8
+
+  Number of solutions is 3.
+
+subset_sum_count_test():
+  subset_sum_count() counts solutions to the subset sum problem.
+
+  Seek a subset of W that sums to T.
+
+  Target value T = 5842
+
+   I       W(I)
+
+   0       267
+   1       493
+   2       869
+   3       961
+   4      1000
+   5      1153
+   6      1246
+   7      1598
+   8      1766
+   9      1922
+
+  Number of solutions is 1.
+
+subset_sum_count_test():
+  subset_sum_count() counts solutions to the subset sum problem.
+
+  Seek a subset of W that sums to T.
+
+  Target value T = 2463098
+
+   I       W(I)
+
+   0    518533
+   1   1037066
+   2   2074132
+   3   1648264
+   4    796528
+   5   1593056
+   6    686112
+   7   1372224
+   8    244448
+   9    488896
+  10    977792
+  11   1955584
+  12   1411168
+  13    322336
+  14    644672
+  15   1289344
+  16     78688
+  17    157376
+  18    314752
+  19    629504
+  20   1259008
+
+  Number of solutions is 1.
+
+subset_sum_count_test():
+  subset_sum_count() counts solutions to the subset sum problem.
+
+  Seek a subset of W that sums to T.
+
+  Target value T = 50
+
+   I       W(I)
+
+   0        41
+   1        34
+   2        21
+   3        20
+   4         8
+   5         7
+   6         7
+   7         4
+   8         3
+   9         3
+
+  Number of solutions is 2.
+
+subset_sum_count_test():
+  subset_sum_count() counts solutions to the subset sum problem.
+
+  Seek a subset of W that sums to T.
+
+  Target value T = 100
+
+   I       W(I)
+
+   0        81
+   1        80
+   2        43
+   3        40
+   4        30
+   5        26
+   6        12
+   7        11
+   8         9
+
+  Number of solutions is 1.
+
+subset_sum_count_test():
+  subset_sum_count() counts solutions to the subset sum problem.
+
+  Seek a subset of W that sums to T.
+
+  Target value T = 22
+
+   I       W(I)
+
+   0         1
+   1         2
+   2         4
+   3         8
+   4        16
+   5        32
+
+  Number of solutions is 1.
+
+subset_sum_count_test():
+  subset_sum_count() counts solutions to the subset sum problem.
+
+  Seek a subset of W that sums to T.
+
+  Target value T = 50
+
+   I       W(I)
+
+   0        25
+   1        27
+   2         3
+   3        12
+   4         6
+   5        15
+   6         9
+   7        30
+   8        21
+   9        19
+
+  Number of solutions is 1.
+
+subset_sum_find_tests():
+  subset_sum_find_test() calls subset_sum_find() with a
+  particular set of weights and target.
+
+subset_sum_find_test():
+  subset_sum_find() seeks a subset of W that sums to T.
+
+  Target value T = 53
+
+   I       W(I)
+
+   0        15
+   1        22
+   2        14
+   3        26
+   4        32
+   5         9
+   6        16
+   7         8
+
+  53 = 
+ + 22
+ + 14
+ + 9
+ + 8
+
+
+subset_sum_find_test():
+  subset_sum_find() seeks a subset of W that sums to T.
+
+  Target value T = 5842
+
+   I       W(I)
+
+   0       267
+   1       493
+   2       869
+   3       961
+   4      1000
+   5      1153
+   6      1246
+   7      1598
+   8      1766
+   9      1922
+
+  5842 = 
+ + 869
+ + 961
+ + 1000
+ + 1246
+ + 1766
+
+
+subset_sum_find_test():
+  subset_sum_find() seeks a subset of W that sums to T.
+
+  Target value T = 2463098
+
+   I       W(I)
+
+   0    518533
+   1   1037066
+   2   2074132
+   3   1648264
+   4    796528
+   5   1593056
+   6    686112
+   7   1372224
+   8    244448
+   9    488896
+  10    977792
+  11   1955584
+  12   1411168
+  13    322336
+  14    644672
+  15   1289344
+  16     78688
+  17    157376
+  18    314752
+  19    629504
+  20   1259008
+
+  2463098 = 
+ + 1037066
+ + 796528
+ + 629504
+
+
+subset_sum_find_test():
+  subset_sum_find() seeks a subset of W that sums to T.
+
+  Target value T = 50
+
+   I       W(I)
+
+   0        41
+   1        34
+   2        21
+   3        20
+   4         8
+   5         7
+   6         7
+   7         4
+   8         3
+   9         3
+
+  50 = 
+ + 21
+ + 8
+ + 7
+ + 7
+ + 4
+ + 3
+
+
+subset_sum_find_test():
+  subset_sum_find() seeks a subset of W that sums to T.
+
+  Target value T = 100
+
+   I       W(I)
+
+   0        81
+   1        80
+   2        43
+   3        40
+   4        30
+   5        26
+   6        12
+   7        11
+   8         9
+
+  100 = 
+ + 80
+ + 11
+ + 9
+
+
+subset_sum_find_test():
+  subset_sum_find() seeks a subset of W that sums to T.
+
+  Target value T = 22
+
+   I       W(I)
+
+   0         1
+   1         2
+   2         4
+   3         8
+   4        16
+   5        32
+
+  22 = 
+ + 2
+ + 4
+ + 16
+
+
+subset_sum_find_test():
+  subset_sum_find() seeks a subset of W that sums to T.
+
+  Target value T = 50
+
+   I       W(I)
+
+   0        25
+   1        27
+   2         3
+   3        12
+   4         6
+   5        15
+   6         9
+   7        30
+   8        21
+   9        19
+
+  50 = 
+ + 25
+ + 6
+ + 19
+
+
+subset_sum_table_tests:
+  subset_sum_table_test calls SUBSET_SUM_TABLE with a
+  particular set of weights and target.
+
+subset_sum_table_test():
+  subset_sum_table() seeks a subset of W that sums to T.
+
+  Target value T = 53
+
+   I       W(I)
+
+   0        15
+   1        22
+   2        14
+   3        26
+   4        32
+   5         9
+   6        16
+   7         8
+
+  53 =
+16
++
+22
++
+15
+
+
+subset_sum_table_test():
+  subset_sum_table() seeks a subset of W that sums to T.
+
+  Target value T = 5842
+
+   I       W(I)
+
+   0       267
+   1       493
+   2       869
+   3       961
+   4      1000
+   5      1153
+   6      1246
+   7      1598
+   8      1766
+   9      1922
+
+  5842 =
+1766
++
+1246
++
+1000
++
+961
++
+869
+
+
+subset_sum_table_test():
+  subset_sum_table() seeks a subset of W that sums to T.
+
+  Target value T = 2463098
+
+   I       W(I)
+
+   0    518533
+   1   1037066
+   2   2074132
+   3   1648264
+   4    796528
+   5   1593056
+   6    686112
+   7   1372224
+   8    244448
+   9    488896
+  10    977792
+  11   1955584
+  12   1411168
+  13    322336
+  14    644672
+  15   1289344
+  16     78688
+  17    157376
+  18    314752
+  19    629504
+  20   1259008
+
+  2463098 =
+629504
++
+796528
++
+1037066
+
+
+subset_sum_table_test():
+  subset_sum_table() seeks a subset of W that sums to T.
+
+  Target value T = 50
+
+   I       W(I)
+
+   0        41
+   1        34
+   2        21
+   3        20
+   4         8
+   5         7
+   6         7
+   7         4
+   8         3
+   9         3
+
+  50 =
+3
++
+4
++
+7
++
+7
++
+8
++
+21
+
+
+subset_sum_table_test():
+  subset_sum_table() seeks a subset of W that sums to T.
+
+  Target value T = 100
+
+   I       W(I)
+
+   0        81
+   1        80
+   2        43
+   3        40
+   4        30
+   5        26
+   6        12
+   7        11
+   8         9
+
+  100 =
+9
++
+11
++
+80
+
+
+subset_sum_table_test():
+  subset_sum_table() seeks a subset of W that sums to T.
+
+  Target value T = 22
+
+   I       W(I)
+
+   0         1
+   1         2
+   2         4
+   3         8
+   4        16
+   5        32
+
+  22 =
+16
++
+4
++
+2
+
+
+subset_sum_table_test():
+  subset_sum_table() seeks a subset of W that sums to T.
+
+  Target value T = 50
+
+   I       W(I)
+
+   0        25
+   1        27
+   2         3
+   3        12
+   4         6
+   5        15
+   6         9
+   7        30
+   8        21
+   9        19
+
+  50 =
+19
++
+6
++
+25
+
+
+subset_sum_test():
+  Normal end of execution.
+Wed Oct  8 08:57:37 2025

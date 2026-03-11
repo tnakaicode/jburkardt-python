@@ -1,0 +1,22 @@
+Wed Oct  8 08:56:48 2025
+
+subset_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test subset_distance().
+
+  Master set size =  16
+  Using N = 10000 sample points,
+  Estimated mean distance =  7.98
+  Exact mean distance     =  8.0
+  Estimated variance      =  4.0466
+  Exact variance          =  4.0
+
+  Graphics saved as "subset_distance_histogram.png"
+
+  Graphics saved as "subset_distance_pdf.png"
+  Graphics saved as "subset_distance_compare.png"
+
+subset_distance_test()::
+  Normal end of execution.
+Wed Oct  8 08:56:52 2025

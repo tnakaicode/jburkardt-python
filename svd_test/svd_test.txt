@@ -1,0 +1,207 @@
+Wed Oct  8 08:57:49 2025
+
+svd_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  svd() carries out the singular value decomposition.
+
+  A real MxN matrix A can be factored as:
+
+    A = U * S * V
+
+  where
+
+    U = MxM orthogonal,
+    S = MxN zero except for diagonal,
+    V = NxN orthogonal.
+
+  The diagonal of S contains only nonnegative numbers
+  and these are arranged in descending order.
+
+  Matrix row order    M =  3
+  Matrix column order N =  3
+
+  We choose a "random" matrix A, with integral
+  values between 0 and 10.
+
+  The matrix A:
+
+  Col:       0             1             2       
+  Row
+      0 :           2             8             9  
+      1 :           3             4            10  
+      2 :           8             8             9  
+
+  The orthogonal factor U:
+
+  Col:       0             1             2       
+  Row
+      0 :    -0.55597     -0.463995     -0.689642  
+      1 :   -0.505384     -0.470012      0.723654  
+      2 :   -0.659912      0.750864     0.0268174  
+
+  The diagonal factor S:
+
+  Col:       0             1             2       
+  Row
+      0 :     21.3648             0             0  
+      1 :           0       4.25677             0  
+      2 :           0             0       2.90286  
+
+  The orthogonal factor V:
+
+  Col:       0             1             2       
+  Row
+      0 :   -0.370113      0.861895       0.34663  
+      1 :   -0.549905     0.0974703      -0.82952  
+      2 :   -0.748746      -0.49763      0.437886  
+
+svd_product_test( ):
+  Compare A and U*S*V'.
+
+  The product U * S * V
+
+  Col:       0             1             2       
+  Row
+      0 :           2             8             9  
+      1 :           3             4            10  
+      2 :           8             8             9  
+
+  Frobenius Norm of A, A_NORM = 21.977261
+
+  ABSOLUTE ERROR for A = U*S*V':
+  Frobenius norm of difference A-U*S*V' = 0.000000
+
+  RELATIVE ERROR for A = U*S*V':
+  Ratio of DIF_NORM / A_NORM = 0.000000
+
+rank_one_test():
+  Compare A to the sum of R rank one matrices.
+
+         R    Absolute      Relative
+              Error         Error
+
+         0       21.977261        1.000000
+         1        5.152345        0.234440
+         2        2.902858        0.132085
+         3        0.000000        0.000000
+
+rank_one_print_test():
+  Print the sums of R rank one matrices.
+
+  Rank R = 0
+
+  Col:       0             1             2       
+  Row
+      0 :           0             0             0  
+      1 :           0             0             0  
+      2 :           0             0             0  
+
+  Rank R = 1
+
+  Col:       0             1             2       
+  Row
+      0 :     4.39627       6.53187       8.89374  
+      1 :     3.99627       5.93756       8.08452  
+      2 :     5.21818       7.75304       10.5565  
+
+  Rank R = 2
+
+  Col:       0             1             2       
+  Row
+      0 :     2.69393       6.33936       9.87662  
+      1 :     2.27185       5.74254       9.08015  
+      2 :     7.97302       8.06458       8.96591  
+
+  Rank R = 3
+
+  Col:       0             1             2       
+  Row
+      0 :           2             8             9  
+      1 :           3             4            10  
+      2 :           8             8             9  
+
+  Original matrix A:
+
+  Col:       0             1             2       
+  Row
+      0 :           2             8             9  
+      1 :           3             4            10  
+      2 :           8             8             9  
+
+  The pseudoinverse of A:
+
+  Col:       0             1             2       
+  Row
+      0 :   -0.166667  -5.47111e-17      0.166667  
+      1 :    0.200758     -0.204545     0.0265152  
+      2 :   -0.030303      0.181818    -0.0606061  
+
+pseudo_product_test():
+
+  The following relations MUST hold:
+
+   A  * A+ * A  = A
+   A+ * A  * A+ = A+
+ ( A  * A+ ) is MxM symmetric
+ ( A+ * A  ) is NxN symmetric
+
+  Here are the Frobenius norms of the errors
+  in these relationships:
+
+   A  * A+ * A  = A           0.000000
+   A+ * A  * A+ = A+          0.000000
+ ( A  * A+ ) is MxM symmetric 0.000000
+ ( A+ * A  ) is NxN symmetric 0.000000
+
+  In some cases, the matrix A * A+
+  may be interesting (if M <= N, then
+  it MIGHT look like the identity.)
+
+  A * A+:
+
+  Col:       0             1             2       
+  Row
+      0 :           1   8.60423e-16  -4.16334e-16  
+      1 :-2.56739e-16             1  -2.77556e-16  
+      2 :-3.08781e-16   4.16334e-16             1  
+
+  In some cases, the matrix A+ * A
+  may be interesting (if N <= M, then
+  it MIGHT look like the identity.)
+
+  A+ * A
+
+  Col:       0             1             2       
+  Row
+      0 :           1   2.22045e-16             0  
+      1 :-8.32667e-17             1   3.98986e-16  
+      2 :-2.22045e-16  -3.33067e-16             1  
+
+pseudo_linear_solve_test():
+
+  Given:
+    b = A * x1
+  so that b is in the range of A, solve
+    A * x = b
+  using the pseudoinverse:
+    x2 = A+ * b.
+
+  Norm of x1 =       9.949874
+  Norm of x2 =       9.949874
+  Norm of residual = 0.000000
+
+  Given:
+    b = A * x1
+  so that b is in the range of A, solve
+    A * x = b
+  using the pseudoinverse:
+    x2 = A+ * b.
+
+  Norm of x1 =       13.453624
+  Norm of x2 =       13.453624
+  Norm of residual = 0.000000
+
+svd_test():
+  Normal end of execution.
+Wed Oct  8 08:57:49 2025

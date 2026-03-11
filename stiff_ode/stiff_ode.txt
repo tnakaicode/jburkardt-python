@@ -1,0 +1,32 @@
+Wed Oct  8 08:56:39 2025
+
+stiff_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve stiff_ode().
+
+  parameters:
+    lamda =  50.0
+    t0    =  0.0
+    y0    =  0.0
+    tstop =  1.0
+
+stiff_euler_test():
+  Solve stiff_ode() using the Euler method.
+  Graphics saved as "stiff_euler.png"
+
+stiff_backward_euler_test():
+  Solve stiff_ode() using the backward Euler method.
+  Graphics saved as "stiff_euler_backward.png"
+
+stiff_midpoint_test():
+  Solve stiff_ode() using midpoint().
+  Graphics saved as "stiff_midpoint.png"
+
+stiff_solve_ivp_test():
+  Solve stiff_ode() using solve_ivp().
+  Graphics saved as "stiff_solve_ivp.png"
+
+stiff_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:56:40 2025

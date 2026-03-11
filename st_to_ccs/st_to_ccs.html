@@ -1,0 +1,161 @@
+<html>
+
+  <head>
+    <title>
+      st_to_ccs
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      st_to_ccs
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>st_to_ccs</b>,
+      a Python code which
+      converts information describing a sparse matrix from sparse triplet (ST)
+      format to Compressed Column Storage (CCS).
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>st_to_ccs</b> is available in
+      <a href = "../../c_src/st_to_ccs/st_to_ccs.html">a C version</a> and
+      <a href = "../../cpp_src/st_to_ccs/st_to_ccs.html">a C++ version</a> and
+      <a href = "../../f_src/st_to_ccs/st_to_ccs.html">a Fortran90 version</a> and
+      <a href = "../../m_src/st_to_ccs/st_to_ccs.html">a MATLAB version</a> and
+      <a href = "../../octave_src/st_to_ccs/st_to_ccs.html">an Octave version</a> and
+      <a href = "../../py_src/st_to_ccs/st_to_ccs.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../datasets/ccs/ccs.html">
+      ccs</a>,
+      a dataset directory which
+      contains examples of the Compressed Column Storage (CCS)
+      sparse matrix file format;
+    </p>
+
+    <p>
+      <a href = "../../py_src/ccs_io/ccs_io.html">
+      ccs_io</a>,
+      a Python code which
+      reads and writes sparse linear systems 
+      stored in the Compressed Column Storage (CCS) format.
+    </p>
+
+    <p>
+      <a href = "../../py_src/ccs_to_st/ccs_to_st.html">
+      ccs_to_st</a>,
+      a Python code which
+      converts a sparse matrix from Compressed Column Storage (CCS)
+      to sparse triplet (ST) format.
+    </p>
+
+    <p>
+      <a href = "../../data/st/st.html">
+      st</a>,
+      a data directory which
+      contains examples of the Sparse Triplet (ST) format, 
+      a sparse matrix file format, storing just (I,J,A(I,J)), 
+      and using zero-based indexing.
+    </p>
+
+    <p>
+      <a href = "../../py_src/st_io/st_io.html">
+      st_io</a>,
+      a Python code which
+      reads and writes sparse linear systems stored in the ST "sparse triplet"
+      Sparse Matrix format.
+    </p>
+
+    <p>
+      <a href = "../../py_src/wathen_matrix/wathen_matrix.html">
+      wathen_matrix</a>,
+      a Python code which
+      compares storage schemes (full, banded, sparse triplet) and 
+      solution strategies (Linpack full, Linpack banded, 
+      conjugate gradient (CG)) for linear systems involving the Wathen matrix,
+      which can arise when solving a problem using the 
+      finite element method (FEM).
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "st_to_ccs.py">st_to_ccs.py</a>,
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "st_to_ccs.sh">st_to_ccs.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "st_to_ccs.txt">st_to_ccs.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "tiny_st.txt">tiny_st.txt</a>,
+          a tiny matrix, in ST form.
+        </li>
+        <li>
+          <a href = "west_st.txt">west_st.txt</a>,
+          the West matrix, in ST form.
+        </li>
+        <li>
+          <a href = "west_acc.txt">west_acc.txt</a>,
+          the values of the West matrix, in CCS form.
+        </li>
+        <li>
+          <a href = "west_ccc.txt">west_ccc.txt</a>,
+          the compressed columns of the West matrix, in CCS form.
+        </li>
+        <li>
+          <a href = "west_icc.txt">west_icc.txt</a>,
+          the row indices of the West matrix, in CCS form.
+        </li>
+      </ul>
+    </p>
+
+
+    <hr>
+
+    <i>
+      Last revised on 15 February 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

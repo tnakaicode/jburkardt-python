@@ -1,0 +1,170 @@
+Wed Oct  8 08:56:45 2025
+
+stokes_2d_exact_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test stokes_2d_exact().
+
+grid_2d_test():
+  grid_2d() generates a regular grid.
+
+   0   0   0       10.000000        5.000000
+   1   1   0       12.500000        5.000000
+   2   2   0       15.000000        5.000000
+   3   3   0       17.500000        5.000000
+   4   4   0       20.000000        5.000000
+   5   0   1       10.000000        5.500000
+   6   1   1       12.500000        5.500000
+   7   2   1       15.000000        5.500000
+   8   3   1       17.500000        5.500000
+   9   4   1       20.000000        5.500000
+  10   0   2       10.000000        6.000000
+  11   1   2       12.500000        6.000000
+  12   2   2       15.000000        6.000000
+  13   3   2       17.500000        6.000000
+  14   4   2       20.000000        6.000000
+
+uvp_stokes1_test():
+  Exact Stokes solution #1.
+  Estimate the range of velocity and pressure
+  using a region that is the unit square.
+
+           Minimum       Maximum
+
+  U:      -0.0119904       0.0119621
+  V:       -0.012024       0.0119541
+  P:               0               0
+
+rhs_stokes1_test():
+  Exact Stokes solution #1.
+  Estimate the range of the right hand side functions
+  using a region that is the unit square.
+
+           Minimum       Maximum
+
+  U:       -0.758948         0.76069
+  V:       -0.760169         0.75609
+  P:               0               0
+
+resid_stokes1_test():
+  Exact Stokes solution #1.
+  Sample the Stokes residuals.
+
+           Minimum       Maximum
+
+  Ur:               0               0
+  Vr:               0     1.98452e-15
+  Pr:               0     1.59595e-16
+
+stokes1_gnuplot_test:
+  Python version: 3.10.12
+  Exact solution #1.
+  Generate a Stokes velocity field on a regular grid.
+  Store in GNUPLOT data and command files.
+
+  Data written to "stokes1_data.txt".
+  Commands written to "stokes1_commands.txt".
+
+stokes1_matplotlib_test:
+  Python version: 3.10.12
+  Exact flow #1.
+  Generate a Stokes velocity field on a regular grid.
+  Display it using MATPLOTLIB
+
+uvp_stokes2_test():
+  Exact Stokes solution #2.
+  Estimate the range of velocity and pressure
+  using a region that is the unit square.
+
+           Minimum       Maximum
+
+  U:        -1.99704         1.99432
+  V:        -1.99995         1.99072
+  P:     0.000753489         1.89851
+
+rhs_stokes2_test():
+  Exact Stokes solution #2.
+  Estimate the range of the right hand side functions
+  using a region that is the unit square.
+
+           Minimum       Maximum
+
+  U:        -155.394         159.381
+  V:        -157.106         158.759
+  P:               0               0
+
+resid_stokes2_test():
+  Exact Stokes solution #2.
+  Sample the Stokes residuals.
+
+           Minimum       Maximum
+
+  Ur:               0               0
+  Vr:               0               0
+  Pr:               0               0
+
+stokes2_gnuplot_test:
+  Python version: 3.10.12
+  Exact solution #2.
+  Generate a Stokes velocity field on a regular grid.
+  Store in GNUPLOT data and command files.
+
+  Data written to "stokes2_data.txt".
+  Commands written to "stokes2_commands.txt".
+
+stokes2_matplotlib_test:
+  Python version: 3.10.12
+  Exact flow #2.
+  Generate a Stokes velocity field on a regular grid.
+  Display it using MATPLOTLIB
+
+uvp_stokes3_test():
+  Exact Stokes solution #3.
+  Estimate the range of velocity and pressure
+  using a region that is [-1,+1]x[-1,+1].
+
+           Minimum       Maximum
+
+  U:        -16.8508         16.9815
+  V:        -4.97669         4.98576
+  P:        -40.8887         57.8168
+
+rhs_stokes3_test():
+  Exact Stokes solution #3.
+  Estimate the range of the right hand side functions
+  using a region that is [-1,+1]x[-1,+1].
+
+           Minimum       Maximum
+
+  U:               0               0
+  V:               0               0
+  P:               0               0
+
+resid_stokes3_test():
+  Exact Stokes solution #3.
+  Sample the Stokes residuals.
+
+           Minimum       Maximum
+
+  Ur:               0               0
+  Vr:               0               0
+  Pr:               0               0
+
+stokes3_gnuplot_test:
+  Python version: 3.10.12
+  Exact solution #3.
+  Generate a Stokes velocity field on a regular grid.
+  Store in GNUPLOT data and command files.
+
+  Data written to "stokes3_data.txt".
+  Commands written to "stokes3_commands.txt".
+
+stokes3_matplotlib_test:
+  Python version: 3.10.12
+  Exact flow #3.
+  Generate a Stokes velocity field on a regular grid.
+  Display it using MATPLOTLIB
+
+stokes_2d_exact_test():
+  Normal end of execution.
+Wed Oct  8 08:56:46 2025

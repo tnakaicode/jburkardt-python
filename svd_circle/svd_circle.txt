@@ -1,0 +1,33 @@
+Wed Oct  8 08:57:41 2025
+
+svd_circle_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test svd_circle().
+
+svd_circle():
+  Given a matrix A,
+  plot points x on the unit circle, and
+  the images A*x of those points.
+  Show right singular vectors V
+  and their images, the scaled left singular vectors U.
+
+  Matrix A:
+
+[[3. 2.]
+ [1. 0.]]
+  Singular values of A are 3.702459173643833 and 0.5401815134754528
+  Right singular vectors are columns of V:
+[[-0.85065081  0.52573111]
+ [-0.52573111 -0.85065081]]
+  Left singular vectors are columns of U:
+[[-0.97324899 -0.22975292]
+ [-0.22975292  0.97324899]]
+  Aspect ratio of ellipse will be 6.8541019662496865
+  Slope of ellipse will be 0.2360679774997897
+  Graphics saved as "svd_circle_1.png"
+  Graphics saved as "svd_circle_2.png"
+
+svd_circle_test():
+  Normal end of execution.
+Wed Oct  8 08:57:42 2025

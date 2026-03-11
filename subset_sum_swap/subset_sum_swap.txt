@@ -1,0 +1,191 @@
+Wed Oct  8 08:57:41 2025
+
+subset_sum_swap_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test subset_sum_swap().
+
+  Target value:  53
+
+  Available weights
+
+   15
+   22
+   14
+   26
+   32
+   9
+   16
+   8
+
+  Selected weights
+
+   15
+   22
+   16
+
+  The target was       53
+  The achieved sum is  53
+  The defect is        0
+
+  Target value:  5842
+
+  Available weights
+
+   267
+   493
+   869
+   961
+   1000
+   1153
+   1246
+   1598
+   1766
+   1922
+
+  Selected weights
+
+   493
+   869
+   961
+   1000
+   1153
+   1246
+
+  The target was       5842
+  The achieved sum is  5722
+  The defect is        120
+
+  Target value:  2463098
+
+  Available weights
+
+   518533
+   1037066
+   2074132
+   1648264
+   796528
+   1593056
+   686112
+   1372224
+   244448
+   488896
+   977792
+   1955584
+   1411168
+   322336
+   644672
+   1289344
+   78688
+   157376
+   314752
+   629504
+   1259008
+
+  Selected weights
+
+   1648264
+   796528
+
+  The target was       2463098
+  The achieved sum is  2444792
+  The defect is        18306
+
+  Target value:  50
+
+  Available weights
+
+   41
+   34
+   21
+   20
+   8
+   7
+   7
+   4
+   3
+   3
+
+  Selected weights
+
+   41
+   8
+
+  The target was       50
+  The achieved sum is  49
+  The defect is        1
+
+  Target value:  100
+
+  Available weights
+
+   81
+   80
+   43
+   40
+   30
+   26
+   12
+   11
+   9
+
+  Selected weights
+
+   81
+   12
+
+  The target was       100
+  The achieved sum is  93
+  The defect is        7
+
+  Target value:  22
+
+  Available weights
+
+   1
+   2
+   4
+   8
+   16
+   32
+
+  Selected weights
+
+   1
+   2
+   4
+   8
+
+  The target was       22
+  The achieved sum is  15
+  The defect is        7
+
+  Target value:  50
+
+  Available weights
+
+   25
+   27
+   3
+   12
+   6
+   15
+   9
+   30
+   21
+   19
+
+  Selected weights
+
+   27
+   3
+   12
+   6
+
+  The target was       50
+  The achieved sum is  48
+  The defect is        2
+
+subset_sum_swap_test():
+  Normal end of execution.
+Wed Oct  8 08:57:41 2025

@@ -1,0 +1,137 @@
+<html>
+
+  <head>
+    <title>
+      spring_sweep_ode
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      spring_sweep_ode
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>spring_sweep_ode</b>,
+      a Python code which
+      computes a grid of solutions to a parameterized system of 
+      ordinary differential equations (ODE) that represent
+      the motion of a spring with mass m, damping b, and stiffness k.
+    </p>
+
+    <p>
+      Consider the parameterized second order differential equation:
+      <pre>
+        m x'' + b x' + k x = 0
+      </pre>
+      which represents the behavior of a spring mass system with a
+      mass of <b>m</b>, a spring constant of <b>k</b> and a damping
+      coefficient <b>b</b>.
+    </p>
+
+    <p>
+      We now suppose that we are interested in properties of the solution <b>x(t)</b>
+      over the time interval from 0 to 25 seconds, as we vary the physical properties
+      <b>b</b> and <b>k</b>.  In particular, we would like to know the maximum value
+      of <b>x(t)</b> over the time interval for each choice of the physical parameters.
+    </p>
+
+    <p>
+      To answer this question, we must solve the ODE for each choice of the parameters.
+    </p>
+
+    <p>
+      The basic function has the form:
+      <blockquote>
+        function peakVals = ode_fun ( bVals, kVals )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          bVals is an array of B values;
+        </li>
+        <li>
+          kVals is an array of K values;
+        </li>
+        <li>
+          peakVals is an array containing the maximum value of the ODE solution
+          for each combination of B and K.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>spring_sweep_ode</b> is available in
+      <a href = "../../m_src/spring_sweep_ode/spring_sweep_ode.html">a MATLAB version</a>  and
+      <a href = "../../octave_src/spring_sweep_ode/spring_sweep_ode.html">an Octave version</a>  and
+      <a href = "../../py_src/spring_sweep_ode/spring_sweep_ode.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_ode/python_ode.html">
+      python_ode</a>,
+      Python codes which 
+      sets up various systems of ordinary differential equations (ODE).
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "spring_sweep_ode.py">spring_sweep_ode.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "spring_sweep_ode.m">spring_sweep_ode.m</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "spring_sweep_ode.txt">spring_sweep_ode.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "spring_sweep_ode.png">spring_sweep_ode.png</a>,
+          a surface plot of the data XMAX(B,K) computed by the program.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 12 June 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

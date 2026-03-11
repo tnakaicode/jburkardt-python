@@ -1,0 +1,30 @@
+Wed Oct  8 08:56:33 2025
+
+squircle_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Solve squircle_ode().
+
+  parameters:
+    s     =  4.0
+    t0    =  0.0
+    y0    =  [0. 1.]
+    tstop =  20.0
+
+squircle_midpoint():
+  Test squircle_ode() using midpoint().
+
+  Number of steps taken was  100
+  Graphics saved as "squircle_midpoint_plot.png"
+  Graphics saved as "squircle_midpoint_phase.png"
+  Graphics saved as "squircle_midpoint_conservation.png"
+
+squircle_solve_ivp():
+  Test squircle_ode() using solve_ivp().
+  Graphics saved as "squircle_solve_ivp_plot.png"
+  Graphics saved as "squircle_solve_ivp_phase.png"
+  Graphics saved as "squircle_solve_ivp_conservation.png"
+
+squircle_ode_test():
+  Normal end of execution.
+Wed Oct  8 08:56:34 2025

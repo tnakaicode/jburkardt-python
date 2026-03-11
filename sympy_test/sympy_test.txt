@@ -1,0 +1,233 @@
+Wed Oct  8 08:57:49 2025
+
+sympy_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  sympy version:  1.9
+  sympy() is a symbolic mathematics package.
+
+
+sympy_derivative():
+  Demonstrate the computation of derivatives.
+
+
+derivative_humps():
+  Differentiate humps(x).
+
+  humps(x) =  -6 + 100/((10*x - 3)**2 + 1) + 100/((10*x - 9)**2 + 4)
+  d humps /dx =  100*(60 - 200*x)/((10*x - 3)**2 + 1)**2 + 100*(180 - 200*x)/((10*x - 9)**2 + 4)**2
+  d2 humps /dx2 =  20000*(4*(10*x - 9)**2/((10*x - 9)**2 + 4)**3 + 4*(10*x - 3)**2/((10*x - 3)**2 + 1)**3 - 1/((10*x - 3)**2 + 1)**2 - 1/((10*x - 9)**2 + 4)**2)
+
+derivative_x_exp_xt():
+  Differentiate z(x,t) = x*exp(x*t).
+
+  z(x,t) =  x*exp(t*x)
+  dzdx =  t*x*exp(t*x) + exp(t*x)
+  dzdt =  x**2*exp(t*x)
+  d2zdt2 =  x**3*exp(t*x)
+  d2zdtdx =  x*(t*x + 2)*exp(t*x)
+
+derivative_biharmonic():
+  Differentiate biharmonic function.
+
+  w(x,y) =  (e*cos(g*y) + f*sin(g*y))*(a*cosh(g*x) + b*sinh(g*x) + c*x*cosh(g*x) + d*x*sinh(g*x))
+
+  wx =  (e*cos(g*y) + f*sin(g*y))*(a*g*sinh(g*x) + b*g*cosh(g*x) + c*g*x*sinh(g*x) + c*cosh(g*x) + d*g*x*cosh(g*x) + d*sinh(g*x))
+
+  wy =  (-e*g*sin(g*y) + f*g*cos(g*y))*(a*cosh(g*x) + b*sinh(g*x) + c*x*cosh(g*x) + d*x*sinh(g*x))
+
+  wxxxx =  g**3*(e*cos(g*y) + f*sin(g*y))*(a*g*cosh(g*x) + b*g*sinh(g*x) + c*g*x*cosh(g*x) + 4*c*sinh(g*x) + d*g*x*sinh(g*x) + 4*d*cosh(g*x))
+
+  wxxyy =  -g**3*(e*cos(g*y) + f*sin(g*y))*(a*g*cosh(g*x) + b*g*sinh(g*x) + c*g*x*cosh(g*x) + 2*c*sinh(g*x) + d*g*x*sinh(g*x) + 2*d*cosh(g*x))
+
+  wyyyy =  g**4*(e*cos(g*y) + f*sin(g*y))*(a*cosh(g*x) + b*sinh(g*x) + c*x*cosh(g*x) + d*x*sinh(g*x))
+
+  w(x,y) =  (e*cosh(g*y) + f*sinh(g*y))*(a*cos(g*x) + b*sin(g*x) + c*x*cos(g*x) + d*x*sin(g*x))
+
+  wx =  (e*cosh(g*y) + f*sinh(g*y))*(-a*g*sin(g*x) + b*g*cos(g*x) - c*g*x*sin(g*x) + c*cos(g*x) + d*g*x*cos(g*x) + d*sin(g*x))
+
+  wy =  (e*g*sinh(g*y) + f*g*cosh(g*y))*(a*cos(g*x) + b*sin(g*x) + c*x*cos(g*x) + d*x*sin(g*x))
+
+  wxxxx =  g**3*(e*cosh(g*y) + f*sinh(g*y))*(a*g*cos(g*x) + b*g*sin(g*x) + c*g*x*cos(g*x) + 4*c*sin(g*x) + d*g*x*sin(g*x) - 4*d*cos(g*x))
+
+  wxxyy =  -g**3*(e*cosh(g*y) + f*sinh(g*y))*(a*g*cos(g*x) + b*g*sin(g*x) + c*g*x*cos(g*x) + 2*c*sin(g*x) + d*g*x*sin(g*x) - 2*d*cos(g*x))
+
+  wyyyy =  g**4*(e*cosh(g*y) + f*sinh(g*y))*(a*cos(g*x) + b*sin(g*x) + c*x*cos(g*x) + d*x*sin(g*x))
+
+  r(x,y) =  sqrt((-e + x)**2 + (-f + y)**2)
+
+  w(x,y) =  a*((-e + x)**2 + (-f + y)**2)*log(sqrt((-e + x)**2 + (-f + y)**2)) + b*((-e + x)**2 + (-f + y)**2) + c*log(sqrt((-e + x)**2 + (-f + y)**2)) + d
+
+  wx =  a*(-2*e + 2*x)*log(sqrt((-e + x)**2 + (-f + y)**2)) + a*(-e + x) + b*(-2*e + 2*x) + c*(-e + x)/((-e + x)**2 + (-f + y)**2)
+
+  wy =  a*(-2*f + 2*y)*log(sqrt((-e + x)**2 + (-f + y)**2)) + a*(-f + y) + b*(-2*f + 2*y) + c*(-f + y)/((-e + x)**2 + (-f + y)**2)
+
+  wxxxx =  2*(8*a*(e - x)**4/((e - x)**2 + (f - y)**2)**2 - 12*a*(e - x)**2/((e - x)**2 + (f - y)**2) + 3*a - 24*c*(e - x)**4/((e - x)**2 + (f - y)**2)**3 + 24*c*(e - x)**2/((e - x)**2 + (f - y)**2)**2 - 3*c/((e - x)**2 + (f - y)**2))/((e - x)**2 + (f - y)**2)
+
+  wxxyy =  2*(8*a*(e - x)**2*(f - y)**2/((e - x)**2 + (f - y)**2)**2 - 2*a*(e - x)**2/((e - x)**2 + (f - y)**2) - 2*a*(f - y)**2/((e - x)**2 + (f - y)**2) + a - 24*c*(e - x)**2*(f - y)**2/((e - x)**2 + (f - y)**2)**3 + 4*c*(e - x)**2/((e - x)**2 + (f - y)**2)**2 + 4*c*(f - y)**2/((e - x)**2 + (f - y)**2)**2 - c/((e - x)**2 + (f - y)**2))/((e - x)**2 + (f - y)**2)
+
+  wyyyy =  2*(8*a*(f - y)**4/((e - x)**2 + (f - y)**2)**2 - 12*a*(f - y)**2/((e - x)**2 + (f - y)**2) + 3*a - 24*c*(f - y)**4/((e - x)**2 + (f - y)**2)**3 + 24*c*(f - y)**2/((e - x)**2 + (f - y)**2)**2 - 3*c/((e - x)**2 + (f - y)**2))/((e - x)**2 + (f - y)**2)
+
+  w(x,y) =  atan(x*y)
+
+  wx =  y/(x**2*y**2 + 1)
+
+  wy =  x/(x**2*y**2 + 1)
+
+  wxx =  -2*x*y**3/(x**2*y**2 + 1)**2
+
+  wxy =  (-2*x**2*y**2/(x**2*y**2 + 1) + 1)/(x**2*y**2 + 1)
+
+  wyy =  -2*x**3*y/(x**2*y**2 + 1)**2
+
+sympy_derivative():
+  Normal end of execution.
+
+
+sympy_evaluate():
+  Show ways of evaluating the symbolic humps() function.
+
+  humps.subs(x,y) =  -6 + 100/((10*y - 3)**2 + 1) + 100/((10*y - 9)**2 + 4)
+  humps.subs(x,cos(y)) =  -6 + 100/((10*cos(y) - 3)**2 + 1) + 100/((10*cos(y) - 9)**2 + 4)
+  humps.subs(x,1) =  16
+  humps(z) =  [ 5.17647059 19.         16.         -2.81034483 -4.85517241]
+
+sympy_integral():
+  Demonstrate the computation of definite and indefinite integrals.
+
+  humps antiderivative =  -6*x + 5*atan(5*x - 9/2) + 10*atan(10*x - 3)
+  humps integral 0 to 2 =  -12 + 5*atan(9/2) + 5*atan(11/2) + 10*atan(3) + 10*atan(17)
+  humps integral 0 to 2 (numeric) =  29.3262138043911
+
+  f = exp ( - x )
+  f antiderivative =  -exp(-x)
+  f integral 0 to oo =  1
+
+  double = exp ( - x**2 - y**2 )
+  double integral -oo < x < 00, -oo < y < oo =  pi
+
+sympy_limit():
+  Demonstrate the sympy limit() operations.
+
+  limit ( sin ( x ) / x ) as x -> 0 =  1
+  limit ( log ( x ) / x ) as x -> oo =  0
+  limit ( ( 1 + x/n )**n ) as n -> oo =  exp(x)
+
+sympy_linalg():
+  Demonstrate sympy linear algebra operations.
+
+  A =  Matrix([[2, -1, 0, 0], [-1, 2, -1, 0], [0, -1, 2, -1], [0, 0, -1, 2]])
+  x =  Matrix([[1], [2], [3], [4]])
+  b = A*x =  Matrix([[0], [0], [0], [5]])
+  Solved A*x=b =  {x1: 1, x2: 2, x3: 3, x4: 4}
+  det(A) =  5
+  A inverse =  Matrix([[4/5, 3/5, 2/5, 1/5], [3/5, 6/5, 4/5, 2/5], [2/5, 4/5, 6/5, 3/5], [1/5, 2/5, 3/5, 4/5]])
+  A * A_inverse =  Matrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])
+  A eigenvalues : multiplicity =  {5/2 - sqrt(5)/2: 1, sqrt(5)/2 + 5/2: 1, 3/2 - sqrt(5)/2: 1, sqrt(5)/2 + 3/2: 1}
+
+sympy_ode():
+  Demonstrate solving differential equations.
+
+  y-y(1-y)=0 solved by  Eq(y(t), C1/(C1 - exp(t)))
+  y"+y=0 solved by  Eq(y(t), C1*sin(t) + C2*cos(t))
+  ty'+y-y**2=0 solved by  Eq(y(t), -C1/(-C1 + t))
+  y'-a*(cos(t)-y)=0 solved by  Eq(y(t), C1*exp(-a*t) + a**2*cos(t)/(a**2 + 1) + a*sin(t)/(a**2 + 1))
+
+sympy_plot():
+  Plot the humps() function over 0 <= x <= 2.
+  Graphics saved as "sympy_plot.png"
+
+sympy_polynomial():
+  Demonstrate some polynomial operations.
+
+  p(x) =  x**2 - 5*x + 6
+  p(7) =  20
+  p.factor() =  (x - 3)*(x - 2)
+  p**2 =  (x**2 - 5*x + 6)**2
+  p**2.expand =  x**4 - 10*x**3 + 37*x**2 - 60*x + 36
+  q(x) =  3*x - 2
+  p + q =  x**2 - 2*x + 4
+  p * q =  (3*x - 2)*(x**2 - 5*x + 6)
+  p * q.expand =  3*x**3 - 17*x**2 + 28*x - 12
+  p / q =  (x**2 - 5*x + 6)/(3*x - 2)
+  apart ( p / q ) =  x/3 - 13/9 + 28/(9*(3*x - 2))
+  r(x) =  (x - 3)*(x - 2)*(x + 1)
+  r.expand ( ) =  x**3 - 4*x**2 + x + 6
+
+sympy_sample():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  sympy version : 1.9
+  sympy() is a symbolic mathematics package.
+
+  Simple calculations:
+
+pi
+3.14159265358979
+3.14159265358979323846264338328
+1.7724538509055160273
+10*sqrt(6)
+2432902008176640000
+29372339821610944823963760
+
+  Manipulate symbolic variables:
+
+sqrt(1 - cos(x)**2)
+sqrt(sin(x)**2)
+(x + 1)*(x**2 - 4*x + 3)
+(x + 1)*(x**2 - 4*x + 3)/(x - 1)
+
+  define a function, plot it, differentiate it:
+
+100*(60 - 200*x)/((10*x - 3)**2 + 1)**2 + 100*(180 - 200*x)/((10*x - 9)**2 + 4)**2
+
+  definite and indefinite integrals:
+
+-6*x + 5*atan(5*x - 9/2) + 10*atan(10*x - 3)
+-12 + 5*atan(9/2) + 5*atan(11/2) + 10*atan(3) + 10*atan(17)
+29.3262138043911
+
+  polynomials:
+
+  p(x) =  x**2 - 5*x + 6
+  p(7) =  20
+  p.factor() =  (x - 3)*(x - 2)
+
+  limits:
+
+1
+
+  series:
+
+1 + x + x**2/2 + O(x**4)
+
+  differential equations:
+
+Eq(y(t), C1/(C1 - exp(t)))
+
+  linear algebra:
+
+Matrix([[0], [0], [0], [5]])
+{x0: 1, x1: 2, x2: 3, x3: 4}
+
+sympy_sample():
+  Normal end of execution.
+
+sympy_series():
+  Demonstrate Taylor series expansion.
+
+  Order 4 series around x=0 for exp(sin(x))
+1 + x + x**2/2 + O(x**4)
+
+  Order 3 series around x=1 for log(x)
+-1 - (x - 1)**2/2 + x + O((x - 1)**3, (x, 1))
+
+  Order 4 series around x=0 for (1+x)e^x
+1 + 2*x + 3*x**2/2 + 2*x**3/3 + O(x**4)
+
+  Order 6 series around x=0 for e^x/cos(x)
+1 + x + x**2 + 2*x**3/3 + x**4/2 + 3*x**5/10 + O(x**6)
+
+sympy_test():
+  Normal end of execution.
+Wed Oct  8 08:57:53 2025

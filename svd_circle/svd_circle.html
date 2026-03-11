@@ -1,0 +1,190 @@
+<html>
+
+  <head>
+    <title>
+      svd_circle
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      svd_circle
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>svd_circle</b>,
+      a Python code which 
+      analyzes a linear map of the unit circle caused by an arbitrary
+      2x2 matrix A, using the singular value decomposition (SVD).
+    </p>
+
+    <p>
+      The singular value decomposition has uses in solving
+      overdetermined or underdetermined linear systems,
+      linear least squares problems, data compression,
+      the pseudoinverse matrix,
+      reduced order modeling, and
+      the accurate computation of matrix rank and null space.
+    </p>
+
+    <p>
+      The singular value decomposition of an M by N rectangular matrix A has
+      the form
+      <pre>
+        A(mxn) = U(mxm) * S(mxn) * V'(nxn)
+      </pre>
+      where
+      <ul>
+        <li>
+          U is an orthogonal matrix, whose columns are the left singular vectors;
+        </li>
+        <li>
+          S is a diagonal matrix, whose min(m,n) diagonal entries are the singular values;
+        </li>
+        <li>
+          V is an orthogonal matrix, whose columns are the right singular vectors;
+        </li>
+      </ul>
+      Note that the transpose of V is used in the decomposition, and that the diagonal matrix
+      S is typically stored as a vector.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>svd_circle</b> is available in
+      <a href = "../../m_src/svd_circle/svd_circle.html">a MATLAB version</a> and
+      <a href = "../../octave_src/svd_circle/svd_circle.html">an Octave version</a> and
+      <a href = "../../py_src/svd_circle/svd_circle.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/svd_lls/svd_lls.html">
+      svd_lls</a>,
+      a Python code which
+      uses the singular value decomposition (SVD) to construct and 
+      plot the best affine and linear relationships in the sense of 
+      least square, between two vectors of data.
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_powers/svd_powers.html">
+      svd_powers</a>,
+      a Python code which
+      applies singular value decomposition (SVD) analysis to 
+      powers A[i,j] = x[i]^j.
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_snowfall/svd_snowfall.html">
+      svd_snowfall</a>,
+      a Python code which
+      reads a file containing historical snowfall data and 
+      analyzes the data with the Singular Value Decomposition (SVD).
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_sphere/svd_sphere.html">
+      svd_sphere</a>,
+      a Python code which 
+      analyzes a linear map of the unit sphere caused by an arbitrary
+      3x3 matrix A, using the singular value decomposition (SVD).
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_test/svd_test.html">
+      svd_test</a>,
+      a Python code which
+      demonstrates the singular value decomposition (SVD) for a simple example.
+    </p>
+
+    <p>
+      <a href = "../../py_src/svd_truncated_test/svd_truncated_test.html">
+      svd_truncated_test</a>,
+      a Python code which
+      demonstrates the computation of the reduced or truncated 
+      Singular Value Decomposition (SVD) that is useful for cases when
+      one dimension of the matrix is much smaller than the other.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Lloyd Trefethen, David Bau,<br>
+          Numerical Linear Algebra,<br>
+          SIAM, 1997,<br>
+          ISBN: 0-89871-361-7,<br>
+          LC: QA184.T74.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "svd_circle.py">svd_circle.py</a>
+          calls all the tests.
+        </li>
+        <li>
+          <a href = "svd_circle.sh">svd_circle.sh</a>
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "svd_circle.txt">svd_circle.txt</a>
+          the output file.
+        </li>
+      </ul>
+    </p>
+ 
+    <p>
+      <ul>
+        <li>
+          <a href = "svd_circle_1.png">svd_circle_1.png</a>
+          a plot of the unit circle.
+        </li>
+        <li>
+          <a href = "svd_circle_2.png">svd_circle_2.png</a>
+          a plot of the image of the unit circle.
+        </li>
+      </ul>
+    </p>
+
+
+    <hr>
+
+    <i>
+      Last revised on 31 March 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

@@ -1,0 +1,150 @@
+<html>
+
+  <head>
+    <title>
+      sudoku
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      sudoku
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>sudoku</b>,
+      a Python code which 
+      seeks a single solution of a Sudoku puzzle using backtracking.
+    </p>
+
+    <p>
+      The function sudoku_solve() accepts a partially completed Sudoku
+      puzzle, and tries to compute a full solution.  It does
+      this by using an exhaustive search.  That is, it finds the first
+      empty cell in the grid, and then tries, in turn, putting in each
+      of the digits in that cell.  Once it puts in the trial digit,
+      it calls itself again with the slightly more filled-in puzzle.
+      If the routine fills in the whole puzzle, it returns to the user.
+      Otherwise, it backs up to the most recent trial digit, and increases
+      it by one.  And if that's not possible, because we got to "9",
+      it sets that cell back to blank, and backs up to the <i>previous</i>
+      trial digit.
+    </p>
+
+    <p>
+      If there is a solution, this procedure should find it.  If there are
+      multiple solutions, this procedure only finds a single solution.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>sudoku</b> is available in
+      <a href = "../../m_src/sudoku/sudoku.html">a MATLAB version</a> and
+      <a href = "../../octave_src/sudoku/sudoku.html">an Octave version</a> and
+      <a href = "../../py_src/sudoku/sudoku.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../data/sudoku/sudoku.html">
+      sudoku</a>,
+      a data directory which
+      contains examples of Sudoku puzzles.  A 9x9 grid of 3x3 boxes
+      and 81 cells is presented.  In a completed Sudoku, the digits 1 
+      through 9 are placed in the 81 cells, in such a way that each row, 
+      column and box contains each digit exactly once.  A Sudoku puzzle
+      is a partially completed Sudoku in which the user must figure out
+      how to complete the pattern.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      The original Python version of sudoku_solve() was written by 
+      Parineeth MR.
+      This version by John Burkardt.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Brian Hayes,<br>
+          Unwed Numbers,</br>
+          American Scientist,<br>
+          Volume 94, pages 12-15, January-February 2006.
+        </li>
+        <li>
+          Parineeth MR,<br>
+          The Big Book of Coding Interviews in Python,<br>
+          Third Edition, 2018,<br>
+          ISBN13: 978-1983861185
+        </li>
+        <li>
+          Robin Wilson,<br>
+          The Sudoku Epidemic,</br>
+          Focus, <br>
+          pages 5-7, January 2006.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "sudoku.py">
+          sudoku.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "sudoku.sh">
+          sudoku.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "sudoku.txt">
+          sudoku.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 03 August 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

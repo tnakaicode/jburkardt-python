@@ -1,0 +1,49 @@
+Wed Oct  8 08:57:37 2025
+
+subset_sum_brute_test()
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test subset_sum_brute().
+
+subset_sum_brute_test01():
+  Test the subset_sum_brute function, which looks for a selection
+  from a set of weights that adds up to a given target.
+
+  Target value:
+       2463098
+
+   I      W(I)
+
+   0    518533
+   1   1037066
+   2   2074132
+   3   1648264
+   4    796528
+   5   1593056
+   6    686112
+   7   1372224
+   8    244448
+   9    488896
+  10    977792
+  11   1955584
+  12   1411168
+  13    322336
+  14    644672
+  15   1289344
+  16     78688
+  17    157376
+  18    314752
+  19    629504
+  20   1259008
+
+   I*     W*
+
+   1   1037066
+   4    796528
+  19    629504
+
+ Sum   2463098
+
+subset_sum_brute_test():
+  Normal end of execution.
+Wed Oct  8 08:57:41 2025

@@ -1,0 +1,19 @@
+Wed Oct  8 08:56:04 2025
+
+spring_sweep_ode_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Sweep through sets of values of parameters B and K,
+  computing the solution of spring_ode() corresponding to each set.
+  For each solution X(T), determine the maximum value over time.
+  Construct a contour plot of XMAX(B,K).
+
+spring_sweep():
+  Tabulate the maximum solution value of spring_ode()
+  over a range of K and B values.
+  Graphics saved as "spring_sweep_ode.png"
+
+spring_sweep_ode_test():
+  Normal end of execution.
+
+Wed Oct  8 08:56:15 2025

@@ -1,0 +1,40 @@
+Wed Oct  8 08:56:34 2025
+
+steinerberger_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  matplotlib version: 3.5.1
+  Test steinerberger().
+
+  Plot f(n,x) for several values of n
+
+  Graphics saved as "steinerberger_1.png"
+  Graphics saved as "steinerberger_5.png"
+  Graphics saved as "steinerberger_10.png"
+  Graphics saved as "steinerberger_25.png"
+  Graphics saved as "steinerberger_50.png"
+  Graphics saved as "steinerberger_100.png"
+
+  Integrate f(n,x) for several values of n
+
+   n           exact        estimate      error
+
+   1         0.63662         0.63662               0
+   5         1.45362         1.45362     1.33227e-15
+  10         1.86464         1.86464     4.71664e-07
+  25         2.42931         2.42933     1.28254e-05
+  50         2.86428         2.86435     6.79538e-05
+ 100         3.30239          3.3026     0.000213608
+
+  Minimize f(n,x) for several values of n
+
+   1    24        0.210005         0.61292
+   5    19        0.499999         1.53334
+  10    21        0.333335         2.00734
+  25    17             0.5         2.26437
+  50    19        0.500001         2.59127
+ 100    19        0.499999          2.9379
+
+steinerberger_test():
+  Normal end of execution.
+Wed Oct  8 08:56:36 2025

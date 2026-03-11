@@ -1,0 +1,15 @@
+Wed Oct  8 08:56:15 2025
+
+square_circles_packing_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test square_circles_packing().
+
+  Number of "cars" parked  =  1597
+  Number of parking trials =  109858
+  density_obs            =  0.6388
+  jamming density =         0.547
+
+square_circles_packing_test()
+  Normal end of execution.
+Wed Oct  8 08:56:19 2025

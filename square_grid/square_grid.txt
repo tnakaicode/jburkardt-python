@@ -1,0 +1,60 @@
+Wed Oct  8 08:56:22 2025
+
+square_grid_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test square_grid().
+
+square_grid_display_test():
+  square_grid_display() displays a grid of points in a quadrilateral.
+
+  Graphics saved as "square_grid_display.png"
+
+square_grid_points_test():
+  square_grid_points() defines a grid
+  with M*N points on a side, based on a quadrilateral.
+
+  Input value of M is 10
+  Input value of N is 8
+
+  Number of grid points will be 99
+
+  Quadrilateral vertices:
+
+  Col:       0             1       
+  Row
+      0 :           0             1  
+      1 :           3             2  
+      2 :           4             5  
+      3 :           1             3  
+
+  Part of the grid point array:
+
+     0               0               1
+     1             0.3             1.1
+     2             0.6             1.2
+     3             0.9             1.3
+     4             1.2             1.4
+     5             1.5             1.5
+     6             1.8             1.6
+     7             2.1             1.7
+     8             2.4             1.8
+     9             2.7             1.9
+    10               3               2
+    11           0.125            1.25
+    12           0.425          1.3625
+    13           0.725           1.475
+    14           1.025          1.5875
+    15           1.325             1.7
+    16           1.625          1.8125
+    17           1.925           1.925
+  ....  ..............  ..............
+    98               4               5
+
+  Data written to the file "square_grid_points.xy".
+
+  Graphics saved as "square_grid_points.png"
+
+square_grid_test():
+  Normal end of execution.
+Wed Oct  8 08:56:23 2025

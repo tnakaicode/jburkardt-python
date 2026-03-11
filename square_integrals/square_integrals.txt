@@ -1,0 +1,117 @@
+Wed Oct  8 08:56:23 2025
+
+square_integrals_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test square_integrals().
+
+square01_area_test():
+  square01_area returns the area of the unit square.
+
+  square01_area() = 1
+
+square01_monomial_integral_test():
+  square01_monomial_integral() returns the integral of a monomial
+  over the interior of the unit square in 2D.
+  Compare with a Monte Carlo estimate.
+
+  Number of sample points used is 4192
+
+  Ex  Ey     MC-Estimate           Exact      Error
+
+   3   7       0.0298284         0.03125      0.0014
+   4   5       0.0320057       0.0333333      0.0013
+   4   3       0.0485156            0.05      0.0015
+   0   2        0.327151        0.333333      0.0062
+   4   4       0.0386073            0.04      0.0014
+   2   0        0.328116        0.333333      0.0052
+   5   2       0.0541406       0.0555556      0.0014
+   7   2       0.0405028       0.0416667      0.0012
+   7   3       0.0301591         0.03125      0.0011
+   5   3       0.0403759       0.0416667      0.0013
+   5   5       0.0265863       0.0277778      0.0012
+   4   4       0.0386073            0.04      0.0014
+   3   0         0.24596            0.25       0.004
+   7   2       0.0405028       0.0416667      0.0012
+   0   7        0.120742           0.125      0.0043
+   3   3       0.0606548          0.0625      0.0018
+   7   5       0.0197785       0.0208333      0.0011
+   7   5       0.0197785       0.0208333      0.0011
+   6   5       0.0226985       0.0238095      0.0011
+   1   2        0.162291        0.166667      0.0044
+
+square01_sample_test():
+  square01_sample() samples the unit square.
+
+  Sample points in the unit square.
+
+  Row:       0             1       
+  Col
+      0 :    0.495519     0.0332717  
+      1 :    0.429578      0.304518  
+      2 :   0.0298354      0.416739  
+      3 :    0.344488      0.699737  
+      4 :    0.592863      0.909411  
+      5 :    0.470899      0.833374  
+      6 :    0.106998      0.345924  
+      7 :    0.380703      0.886715  
+      8 :    0.865056       0.48775  
+      9 :   0.0678796      0.291032  
+
+squaresym_area_test():
+  Python version: 3.10.12
+  squaresym_area returns the area of the symmetric unit square.
+
+  squaresym_area() = 4
+
+squaresym_monomial_integral_test():
+  squaresym_monomial_integral() returns the integral of a monomial
+  over the interior of the unit square in 2D.
+  Compare with a Monte Carlo estimate.
+
+  Number of sample points used is 4192
+
+  Ex  Ey     MC-Estimate           Exact      Error
+
+   2   1       0.0136654               0       0.014
+   2   2        0.452771        0.444444      0.0083
+   7   3      -0.0104608               0        0.01
+   4   0         0.81399             0.8       0.014
+   7   3      -0.0104608               0        0.01
+   1   1      -0.0450297               0       0.045
+   6   3      0.00599364               0       0.006
+   6   3      0.00599364               0       0.006
+   2   2        0.452771        0.444444      0.0083
+   3   4       0.0113445               0       0.011
+   4   0         0.81399             0.8       0.014
+   1   2       0.0201333               0        0.02
+   6   5      0.00361353               0      0.0036
+   5   3      -0.0132464               0       0.013
+   7   1      -0.0170134               0       0.017
+   0   0               4               4           0
+   3   5      -0.0130833               0       0.013
+   7   7     -0.00587162               0      0.0059
+   1   6      0.00350958               0      0.0035
+   1   0       0.0500967               0        0.05
+
+squaresym_sample_test():
+  squaresym_sample samples the symmeric unit square.
+
+  Sample points in the symmetric unit square.
+
+  Row:       0             1       
+  Col
+      0 :    0.697325    -0.0852319  
+      1 :   0.0241916      0.658538  
+      2 :   -0.935081      0.124688  
+      3 :     0.63797      0.289123  
+      4 :    0.644185      0.834985  
+      5 :  -0.0288343      0.290445  
+      6 :  -0.0975842      0.280927  
+      7 :   -0.314278     -0.846422  
+      8 :   -0.764199     -0.611709  
+      9 :    0.391188     0.0553112  
+
+square_integrals_test():
+  Normal end of execution.
+Wed Oct  8 08:56:23 2025

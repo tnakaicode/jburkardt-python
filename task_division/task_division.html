@@ -1,0 +1,113 @@
+<html>
+
+  <head>
+    <title>
+      task_division
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      task_division
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>task_division</b>,
+      a Python code which
+      implements a simple procedure for smoothly dividing T tasks among
+      P processors; such a method can be useful in MPI and other parallel
+      environments, particularly when T is not an exact multiple of P,
+      and when the processors can be indexed starting from 0 or from 1.
+    </p>
+
+    <p>
+      If we have 16 tasks and 8 processors, it's easy to see that each processor
+      gets two tasks, and that processor 3 gets tasks 5 and 6...(unless we
+      index our processors starting at 0 rather than 1, but let's ignore that
+      possibility for the moment.)
+    </p>
+
+    <p>
+      If we have 17 tasks and 8 processors, then we can just give the last processor
+      the extra task, because someone has to do it.  But if we have 18 tasks, we
+      shouldn't given everyone else 2 tasks, and the last processor 4 tasks.  A
+      better assignment would have two of the processors working on 3 tasks, the
+      rest on 2.
+    </p>
+
+    <p>
+      Moreover, we'd like to do this kind of assignment in a regular enough 
+      nonarbitrary way, so that any processor, knowning just its processor index
+      and the number of tasks, can work out the number of tasks it got assigned,
+      and even the indices of those tasks.
+    </p>
+
+    <p>
+      The code outlines a simple way to do this, which is essentially
+      a "greedy" algorithm that cuts up the "task pie" a slice at a time, using rounding
+      to give each processor about the same number of tasks, in a way that avoids having
+      leftovers.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>task_division</b> is available in
+      <a href = "../../c_src/task_division/task_division.html">a C version</a> and
+      <a href = "../../cpp_src/task_division/task_division.html">a C++ version</a> and
+      <a href = "../../f_src/task_division/task_division.html">a Fortran90 version</a> and
+      <a href = "../../m_src/task_division/task_division.html">a MATLAB version</a> and
+      <a href = "../../octave_src/task_division/task_division.html">an Octave version</a> and
+      <a href = "../../py_src/task_division/task_division.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "task_division.py">task_division.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "task_division.sh">task_division.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "task_division.txt">task_division.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 18 July 2023.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+
