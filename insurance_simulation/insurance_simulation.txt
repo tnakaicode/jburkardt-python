@@ -1,0 +1,58 @@
+Wed Oct  8 07:57:01 2025
+
+insurance_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Simulate term life insurance.
+
+insurance_simulation_test1()
+  Observe a single case year by year.
+
+  Customer age:  25
+  Number of years of coverage  40
+  Annual payment =  500.0
+  Company benefit for death within term  100000.0
+  Annual interest rate is  0.04
+
+Bracket   P(Death)      Pay       Bank  Benefit
+
+[25,26]    0.0018       500       500         0
+[26,27]    0.0018      1000      1020         0
+[27,28]    0.0018      1500      1561         0
+[28,29]    0.0018      2000      2123         0
+[29,30]    0.0018      2500      2708         0
+[30,31]    0.0018      3000      3316         0
+[31,32]    0.0018      3500      3949         0
+[32,33]    0.0018      4000      4607         0
+[33,34]    0.0019      4500      5291         0
+[34,35]    0.0021      5000      6003         0
+[35,36]    0.0023      5500      6743         0
+[36,37]    0.0025      6000      7513         0
+[37,38]    0.0027      6500      8313         0
+[38,39]    0.0029      7000      9146         0
+[39,40]    0.0030      7500     10012         0
+[40,41]    0.0033      8000     10912         0
+[41,42]    0.0037      8500     11849         0
+[42,43]    0.0042      9000     12823         0
+[43,44]    0.0049      9500     13836         0
+[44,45]    0.0054     10000     14889         0
+[45,46]    0.0059     10500     15985         0
+[46,47]    0.0065     11000     17124         0
+[47,48]    0.0071     11500     18309         0
+[48,49]    0.0076     12000     19541         0
+[49,50]    0.0082     12500     20823         0
+[50,51]    0.0090     13000     22156         0
+[51,52]    0.0097     13500     23542    100000
+
+insurance_simulation_test2()
+  Average many instances of a single case.
+
+  The case was simulated  1000  times.
+  Number of (covered) deaths  248
+  Average customer payments  =  18457.5
+  Average company payments   =  24800.0
+  Average bank account value =  47512.757849208174
+
+insurance_simulation_test():
+  Normal end of execution.
+Wed Oct  8 07:57:01 2025

@@ -1,0 +1,59 @@
+Wed Oct  8 07:57:02 2025
+
+ising_2d_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test ising_2d_simulation().
+
+ising_2d_simulation():
+  Monte Carlo simulation of a 2D Ising model.
+
+  The row dimension M = 10
+  The column dimension N = 10
+  The number of iterations taken is ITERATIONS = 15
+  The threshhold THRESH = 0.5
+
+  The transition probability table, based on the number of
+  neighbors with the same charge:
+
+[0.98 0.85 0.5  0.15 0.02]
+
+  Step       Positives       Negatives
+             #     %          #     %
+
+     0      40   40.00      60   60.00
+  Graphics saved as "ising_2d_display.png"
+     1      45   45.00      55   55.00
+  Graphics saved as "ising_2d_display.png"
+     2      48   48.00      52   52.00
+  Graphics saved as "ising_2d_display.png"
+     3      43   43.00      57   57.00
+  Graphics saved as "ising_2d_display.png"
+     4      38   38.00      62   62.00
+  Graphics saved as "ising_2d_display.png"
+     5      41   41.00      59   59.00
+  Graphics saved as "ising_2d_display.png"
+     6      39   39.00      61   61.00
+  Graphics saved as "ising_2d_display.png"
+     7      40   40.00      60   60.00
+  Graphics saved as "ising_2d_display.png"
+     8      45   45.00      55   55.00
+  Graphics saved as "ising_2d_display.png"
+     9      50   50.00      50   50.00
+  Graphics saved as "ising_2d_display.png"
+    10      50   50.00      50   50.00
+  Graphics saved as "ising_2d_display.png"
+    11      48   48.00      52   52.00
+  Graphics saved as "ising_2d_display.png"
+    12      43   43.00      57   57.00
+  Graphics saved as "ising_2d_display.png"
+    13      43   43.00      57   57.00
+  Graphics saved as "ising_2d_display.png"
+    14      42   42.00      58   58.00
+  Graphics saved as "ising_2d_display.png"
+    15      41   41.00      59   59.00
+  Graphics saved as "ising_2d_display.png"
+
+ising_2d_simulation_test():
+  Normal end of execution.
+Wed Oct  8 07:57:05 2025

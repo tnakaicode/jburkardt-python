@@ -1,0 +1,34 @@
+Wed Oct  8 07:58:20 2025
+
+jai_alai_simulation_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test jai_alai_simulation()
+
+  Case of equal strengths:
+  Player  Strength  Wins  Percentage
+
+  0    1.0000  1642    0.1642
+  1    1.0000  1631    0.1631
+  2    1.0000  1359    0.1359
+  3    1.0000  1212    0.1212
+  4    1.0000  1034    0.1034
+  5    1.0000  1046    0.1046
+  6    1.0000   909    0.0909
+  7    1.0000  1167    0.1167
+
+  Case of random strengths
+  Player  Wins  Percentage
+
+  0    0.4455  1602    0.1602
+  1    0.3001   768    0.0768
+  2    0.0281     0    0.0000
+  3    0.4426  1129    0.1129
+  4    0.6817  3008    0.3008
+  5    0.4299  1728    0.1728
+  6    0.4221  1765    0.1765
+  7    0.0056     0    0.0000
+
+jai_alai_simulation_test():
+  Normal end of execution.
+Wed Oct  8 07:58:20 2025

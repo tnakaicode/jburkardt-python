@@ -1,0 +1,91 @@
+Wed Oct  8 07:57:01 2025
+
+is_gaussian_prime_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test is_gaussian_prime()
+
+is_gaussian_prime_real_test():
+  is_gaussian_prime_real() determines if a real integer
+  is a Gaussian prime.
+
+           p          is_gaussian_prime(p)
+
+3   True
+7   True
+11   True
+19   True
+23   True
+31   True
+43   True
+47   True
+59   True
+67   True
+71   True
+79   True
+83   True
+103   True
+211   True
+307   True
+419   True
+503   True
+
+is_gaussian_prime_complex_test():
+  is_gaussian_prime() decides if a complex integer
+  is a Gaussian prime.
+
+           p          is_gaussian_prime(p)
+
+(-5,-4)   True
+(-5,-2)   True
+(-5,2)   True
+(-4,-5)   True
+(-3,-2)   True
+(-3,0)   True
+(-2,-5)   True
+(-2,-1)   True
+(-1,-2)   True
+(-1,-1)   True
+(0,3)   True
+(1,-4)   True
+(1,-2)   True
+(1,-1)   True
+(2,-3)   True
+(3,0)   True
+(4,1)   True
+(5,4)   True
+
+is_gaussian_prime_generic_test():
+  is_gaussian_prime() determines whether a complex number c
+  is a Gaussian prime.
+
+           c          is_gaussian_prime(c)      Correct result
+
+(0,0),  False  False
+(3,0),   True   True
+(2,0),  False  False
+(7,0),   True   True
+(12,0),  False  False
+(11,0),   True   True
+(509,0),  False  False
+(503,0),   True   True
+(2.5,0),  False  False
+(-5,-4),   True   True
+(0,6),  False  False
+(-4,-5),   True   True
+(4,-3),  False  False
+(-3,-2),   True   True
+(-3,3),  False  False
+(-2,-5),   True   True
+(1,5),  False  False
+(-1,-2),   True   True
+(3,1),  False  False
+(1,-4),   True   True
+(0,1),  False  False
+(2,-3),   True   True
+(7,3),  False  False
+(4,1),   True   True
+
+is_gaussian_prime_test():
+  Normal end of execution.
+Wed Oct  8 07:57:02 2025

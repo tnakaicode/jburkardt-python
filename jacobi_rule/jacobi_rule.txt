@@ -1,0 +1,37 @@
+Wed Oct  8 07:58:19 2025
+
+jacobi_rule_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test jacobi_rule().
+
+jacobi_rule():
+  Compute a Gauss-Jacobi rule for approximating
+    Integral ( A <= x <= B ) (B-x)^alpha (x-A)^beta f(x) dx
+  of order ORDER.
+
+  The user specifies ORDER, ALPHA, BETA and FILENAME.
+
+  ORDER is the number of points
+  ALPHA is the exponent of (B-x):
+  BETA is the exponent of (x-A)
+  A is the left endpoint
+  B is the right endpoint
+  FILENAME is used to generate 3 files:
+    filename_w.txt - the weight file
+    filename_x.txt - the abscissa file.
+    filename_r.txt - the region file.
+
+  ORDER =  4
+  ALPHA =  0.5
+  BETA =  1.5
+  A =  -1.0
+  B =  1.0
+  FILENAME = "jac_o4_a0.5_b1.5".
+  abscissas saved as "jac_o4_a0.5_b1.5_x.txt"
+  weights saved as "jac_o4_a0.5_b1.5_w.txt"
+  region saved as "jac_o4_a0.5_b1.5_r.txt"
+
+jacobi_rule_test():
+  Normal end of execution.
+Wed Oct  8 07:58:20 2025

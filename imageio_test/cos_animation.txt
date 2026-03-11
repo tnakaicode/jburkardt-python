@@ -1,0 +1,69 @@
+Wed Oct  8 07:56:54 2025
+
+cos_animation():
+  python version:     3.10.12
+  numpy version:      1.26.4
+  matplotlib version: 3.5.1
+  imageio version:    2.34.0
+  Create a sequence of graphic figures.
+  Save each one to a png file.
+  Use imageio.v2 library to create a gif animation.
+
+  Graphics saved as "cos_00000.png"
+  Graphics saved as "cos_00001.png"
+  Graphics saved as "cos_00002.png"
+  Graphics saved as "cos_00003.png"
+  Graphics saved as "cos_00004.png"
+  Graphics saved as "cos_00005.png"
+  Graphics saved as "cos_00006.png"
+  Graphics saved as "cos_00007.png"
+  Graphics saved as "cos_00008.png"
+  Graphics saved as "cos_00009.png"
+  Graphics saved as "cos_00010.png"
+  Graphics saved as "cos_00011.png"
+  Graphics saved as "cos_00012.png"
+  Graphics saved as "cos_00013.png"
+  Graphics saved as "cos_00014.png"
+  Graphics saved as "cos_00015.png"
+  Graphics saved as "cos_00016.png"
+  Graphics saved as "cos_00017.png"
+  Graphics saved as "cos_00018.png"
+  Graphics saved as "cos_00019.png"
+  Graphics saved as "cos_00020.png"
+  Graphics saved as "cos_00021.png"
+  Graphics saved as "cos_00022.png"
+  Graphics saved as "cos_00023.png"
+  Graphics saved as "cos_00024.png"
+  Graphics saved as "cos_00025.png"
+  Graphics saved as "cos_00026.png"
+  Graphics saved as "cos_00027.png"
+  Graphics saved as "cos_00028.png"
+  Graphics saved as "cos_00029.png"
+  Graphics saved as "cos_00030.png"
+  Graphics saved as "cos_00031.png"
+  Graphics saved as "cos_00032.png"
+  Graphics saved as "cos_00033.png"
+  Graphics saved as "cos_00034.png"
+  Graphics saved as "cos_00035.png"
+  Graphics saved as "cos_00036.png"
+  Graphics saved as "cos_00037.png"
+  Graphics saved as "cos_00038.png"
+  Graphics saved as "cos_00039.png"
+  Graphics saved as "cos_00040.png"
+  Graphics saved as "cos_00041.png"
+  Graphics saved as "cos_00042.png"
+  Graphics saved as "cos_00043.png"
+  Graphics saved as "cos_00044.png"
+  Graphics saved as "cos_00045.png"
+  Graphics saved as "cos_00046.png"
+  Graphics saved as "cos_00047.png"
+  Graphics saved as "cos_00048.png"
+  Graphics saved as "cos_00049.png"
+  Graphics saved as "cos_00050.png"
+
+  Animation saved as "cos_animation.gif"
+  Remove "cos_*.png" files.
+
+cos_animation():
+  Normal end of execution.
+Wed Oct  8 07:56:59 2025

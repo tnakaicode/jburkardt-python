@@ -1,0 +1,184 @@
+<html>
+
+  <head>
+    <title>
+      jacobi_polynomial
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      jacobi_polynomial
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>jacobi_polynomial</b>,
+      a Python code which
+      evaluates the Jacobi polynomial.
+    </p>
+
+    <p>
+      For a given choice of the parameters a and b, both greater than -1,
+      the Jacobi polynomials are a set of polynomials which are
+      pairwise orthogonal with respect to the integral:
+      <pre>
+        integral (-1<=x<=+1) J(i,a,b,x) J(j,a,b,x) (1-x)^a (1+x)^b dx
+      </pre>
+      That is, this integral is 0 unless i = j.  J(i,a,b,x) indicates the 
+      Jacobi polynomial of degree i.
+    </p>
+
+    <p>
+      The standard Jacobi polynomials can be defined by a three term 
+      recurrence formula that is a bit too ugly to quote here.
+    </p>
+
+    <p>
+      It is worth noting that the definition of the Jacobi polynomials
+      is general enough that it includes some familiar families as
+      special cases:
+      <ul>
+        <li>
+          if a = b = 0, we have the Legendre polynomials, P(n,x);
+        </li>
+        <li>
+          if a = b = -1/2, we have the Chebyshev polynomials of the first kind, T(n,x);
+        </li>
+        <li>
+          if a = b = 1/2, we have the Chebyshev polynomials of the second kind, U(n,x);
+        </li>
+        <li>
+          if a = b, we have the Gegenbauer polynomials;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>jacobi_polynomial</b> is available in
+      <a href = "../../c_src/jacobi_polynomial/jacobi_polynomial.html">a C version</a> and
+      <a href = "../../cpp_src/jacobi_polynomial/jacobi_polynomial.html">a C++ version</a> and
+      <a href = "../../f77_src/jacobi_polynomial/jacobi_polynomial.html">a Fortran77 version</a> and
+      <a href = "../../f_src/jacobi_polynomial/jacobi_polynomial.html">a Fortran90 version</a> and
+      <a href = "../../m_src/jacobi_polynomial/jacobi_polynomial.html">a MATLAB version</a> and
+      <a href = "../../octave_src/jacobi_polynomial/jacobi_polynomial.html">an Octave version</a> and
+      <a href = "../../py_src/jacobi_polynomial/jacobi_polynomial.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/jacobi_rule/jacobi_rule.html">
+      jacobi_rule</a>,
+      a Python code which
+      computes and prints a Gauss-Jacobi quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_polynomial/python_polynomial.html">
+      python_polynomial</a>,
+      a Python code which
+      analyzes a variety of polynomial families, returning the polynomial
+      values, coefficients, derivatives, integrals, roots, or other information.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      polpak</a>,
+      a Python code which
+      evaluates a variety of mathematical functions.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_values/test_values.html">
+      test_values</a>,
+      a Python code which
+      supplies test values of various mathematical functions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Theodore Chihara,<br>
+          An Introduction to Orthogonal Polynomials,<br>
+          Gordon and Breach, 1978,<br>
+          ISBN: 0677041500,<br>
+          LC: QA404.5 C44.
+        </li>
+        <li>
+          Walter Gautschi,<br>
+          Orthogonal Polynomials: Computation and Approximation,<br>
+          Oxford, 2004,<br>
+          ISBN: 0-19-850672-4,<br>
+          LC: QA404.5 G3555.
+        </li>
+        <li>
+          Frank Olver, Daniel Lozier, Ronald Boisvert, Charles Clark,<br>
+          NIST Handbook of Mathematical Functions,<br>
+          Cambridge University Press, 2010,<br>
+          ISBN: 978-0521192255,<br>
+          LC: QA331.N57.
+        </li>
+        <li>
+          Gabor Szego,<br>
+          Orthogonal Polynomials,<br>
+          American Mathematical Society, 1992,<br>
+          ISBN: 0821810235,<br>
+          LC: QA3.A5.v23.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "jacobi_polynomial.py">jacobi_polynomial.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "jacobi_polynomial.sh">jacobi_polynomial.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "jacobi_polynomial.txt">jacobi_polynomial.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 02 February 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

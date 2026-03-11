@@ -1,0 +1,190 @@
+<html>
+
+  <head>
+    <title>
+      ising_2d_simulation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      ising_2d_simulation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>ising_2d_simulation</b>,
+      a Python code which
+      carries out a Monte Carlo simulation of a 2D Ising model.
+    </p>
+
+    <p>
+      A 2D Ising model is defined on an MxN array of cells.  Each cell
+      can have a "charge" or "spin" of +1 or -1.  A neighborhood of a cell 
+      is defined to be itself, and the four immediate neighbors to the north, 
+      south, east, and west.  A cell may change its charge; the likelihood of 
+      doing so depends on whether the charge of the neighbors agrees with the 
+      charge of the cell.
+    </p>
+
+    <p>
+      This code begins with a random assignment of charges to the cells.
+      It then computes the neighbor agreement at each cell.  It then updates 
+      the entire configuration in one step, using the neighbor agreement
+      to determine the likelihood of flipping.
+    </p>
+
+    <p>
+      Currently, the chance that a cell will "flip" is determined from a table
+      of probabilities based on the number of agreeing neighbors:
+    </p>
+
+    <p>
+      <table border="1" align="center">
+        <tr>
+          <th>Agree</th><td>1</td><td>2</td><td>3</td><td>4</td><td>4</td>
+        </tr>
+        <tr>
+          <th>Prob</th><td>0.98</td><td>0.85</td><td>0.50</td><td>0.15</td><td>0.02</td>
+        </tr>
+      </table>
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>ising_2d_simulation</b> <i>m</i> <i>n</i> <i>iterations</i> <i>thresh</i>
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>m</i> and <i>n</i> are the number of rows and columns of cells.
+          The default values are 10.
+        </li>
+        <li>
+          <i>iterations</i> is the number of iterations to take.  The default value is 15.
+        </li>
+        <li>
+          <i>thresh</i> is a number between 0 and 1 that chooses the percentage of
+          negative (red) charges.  The default value is 0.5.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Note that the user might also want to vary the transition probabilities.
+      This cannot currently be done on the command line, and requires editing
+      the code and recompiling it.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>ising_2d_simulation</b> is available in
+      <a href = "../../c_src/ising_2d_simulation/ising_2d_simulation.html">a C version</a> and
+      <a href = "../../cpp_src/ising_2d_simulation/ising_2d_simulation.html">a C++ version</a> and
+      <a href = "../../f_src/ising_2d_simulation/ising_2d_simulation.html">a Fortran90 version</a> and
+      <a href = "../../m_src/ising_2d_simulation/ising_2d_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/ising_2d_simulation/ising_2d_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/ising_2d_simulation/ising_2d_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Bryan Hayes,<br>
+          The World in a Spin,<br>
+          On the Ising model of ferromagnets and other physical systems,<br>
+          American Scientist,<br>
+          Volume 88, Number 5, September-October 2000, pages 384-388,
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+   <p>
+      <ul>
+        <li>
+          <a href = "ising_2d_simulation.py">ising_2d_simulation.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "ising_2d_simulation.sh">ising_2d_simulation.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "ising_2d_simulation.txt">ising_2d_simulation.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ising_step00.png">ising_step00.png</a>, 
+          the charges on step 0.
+        </li>
+        <li>
+          <a href = "ising_step15.png">ising_step15.png</a>, 
+          the charges on step 15.
+        </li>
+        <li>
+          <a href = "agree_00to01.png">agree_00to01.png</a>, 
+          the agreement plot that determines the transition from step 0 to step 1.
+        </li>
+        <li>
+          <a href = "agree_14to15.png">agree_14to15.png</a>, 
+          the agreement plot that determines the transition from step 14 to step 15.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 27 November 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

@@ -1,0 +1,31 @@
+Wed Oct  8 07:58:17 2025
+
+jaccard_distance_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  jaccard_distance() computes the jaccard distance
+  between two sets.
+
+  A:{'a', 'y', 'e', 'i', 'o', 'u'}
+  B:{'a', 't', 'r', 'g', 'i', 'o', 'l'}
+  Computed distance =  0.7
+
+  A:{'a', 'y', 'e', 'i', 'o', 'u'}
+  B:{'a', 't', 'r', 'g', 'i', 'o', 'l'}
+  Computed distance =  0.7
+
+  A:{'a', 'y', 'e', 'i', 'o', 'u'}
+  B:{'w', 'c', 't', 'r', 'h'}
+  Computed distance =  1.0
+
+  A:{'a', 'y', 'e', 'i', 'o', 'u'}
+  B:{'a', 'y', 'e', 'i', 'o', 'u'}
+  Computed distance =  0.0
+
+  A:{'a', 'y', 'e', 'i', 'o', 'u'}
+  B:{'d', 'a', 'e', 'i', 'u'}
+  Computed distance =  0.4285714285714286
+
+jaccard_distance_test():
+  Normal end of execution.
+Wed Oct  8 07:58:17 2025

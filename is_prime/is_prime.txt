@@ -1,0 +1,150 @@
+Wed Oct  8 07:57:05 2025
+
+is_prime_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test is_prime()
+
+isprime_test():
+  isprime() returns values of the is_prime() function.
+
+           n          is_prime(n)          isprime(n)
+
+           1  False  False
+           2   True   True
+          12  False  False
+           3   True   True
+          91  False  False
+          53   True   True
+         437  False  False
+         311   True   True
+        1333  False  False
+         719   True   True
+       16483  False  False
+        7919   True   True
+      223609  False  False
+       81799   True   True
+      873599  False  False
+      800573   True   True
+     5693761  False  False
+     7559173   True   True
+    90166053  False  False
+    69600977   True   True
+     6110601  False  False
+   145253029   True   True
+
+is_prime1_test():
+  is_prime1() returns values of the is_prime() function.
+
+           n          is_prime(n)          is_prime1(n)   mod values
+
+           1  False  False             0
+           2   True   True             0
+          12  False  False            10
+           3   True   True             1
+          91  False  False            89
+          53   True   True            51
+         437  False  False           435
+         311   True   True           309
+        1333  False  False          1331
+         719   True   True           717
+       16483  False  False         16481
+        7919   True   True          7917
+      223609  False  False        223607
+       81799   True   True         81797
+      873599  False  False        873597
+      800573   True   True        800571
+     5693761  False  False       5693759
+     7559173   True   True       7559171
+    90166053  False  False      90166051
+    69600977   True   True      69600975
+     6110601  False  False       6110599
+   145253029   True   True     145253027
+
+is_prime2_test():
+  is_prime2() returns values of the is_prime() function.
+
+           n          is_prime(n)          is_prime2(n)   mod values
+
+           1  False  False             0
+           2   True   True             0
+          12  False  False             1
+           3   True   True             1
+          91  False  False             6
+          53   True   True            51
+         437  False  False            18
+         311   True   True           309
+        1333  False  False            30
+         719   True   True           717
+       16483  False  False            52
+        7919   True   True          7917
+      223609  False  False           310
+       81799   True   True         81797
+      873599  False  False            52
+      800573   True   True        800571
+     5693761  False  False           718
+     7559173   True   True       7559171
+    90166053  False  False             2
+    69600977   True   True      69600975
+     6110601  False  False             2
+   145253029   True   True     145253027
+
+is_prime3_test():
+  is_prime3() returns values of the is_prime() function.
+
+           n          is_prime(n)          is_prime3(n)   mod values
+
+           1  False  False             0
+           2   True   True             0
+          12  False  False             1
+           3   True   True             0
+          91  False  False             6
+          53   True   True             6
+         437  False  False            18
+         311   True   True            16
+        1333  False  False            30
+         719   True   True            25
+       16483  False  False            52
+        7919   True   True            87
+      223609  False  False           310
+       81799   True   True           285
+      873599  False  False            52
+      800573   True   True           893
+     5693761  False  False           718
+     7559173   True   True          2748
+    90166053  False  False             2
+    69600977   True   True          8341
+     6110601  False  False             2
+   145253029   True   True         12051
+
+is_prime4_test():
+  is_prime4() returns values of the is_prime() function.
+
+           n          is_prime(n)          is_prime4(n)   mod values
+
+           1  False  False             0
+           2   True   True             0
+          12  False  False             1
+           3   True   True             0
+          91  False  False             4
+          53   True   True             4
+         437  False  False             8
+         311   True   True             8
+        1333  False  False            12
+         719   True   True            10
+       16483  False  False            19
+        7919   True   True            30
+      223609  False  False           105
+       81799   True   True            96
+      873599  False  False            19
+      800573   True   True           300
+     5693761  False  False           241
+     7559173   True   True           918
+    90166053  False  False             2
+    69600977   True   True          2782
+     6110601  False  False             2
+   145253029   True   True          4018
+
+is_prime_test():
+  Normal end of execution.
+Wed Oct  8 07:58:17 2025

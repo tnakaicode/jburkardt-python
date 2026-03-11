@@ -1,0 +1,133 @@
+<html>
+
+  <head>
+    <title>
+      imageio_test
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      imageio_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>imageio_test</b>,
+      a Python code which
+      demonstrates techniques for creating an animation, such as a GIF
+      or MP4 file, using some version (there are at least 3!) of the
+      imageio library.
+    </p>
+
+    <p>
+      So far, my experiences with imageio have been unsatisfactory.  The
+      documentation is scanty and obscure, the existence of three incompatible
+      versions is maddening, and the library doesn't seem to make it easy'
+      to do what I want, namely to create images within matplotlib and
+      display them on the screen as an animation.  In other words, rather
+      that have matplotlib repeatedly issue Show() commands, requiring the
+      user to close the current image before seeing the next, instead 
+      the images would appear automatically with some predetermined interval.
+      Dream on.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>imageio_test</b> is available in
+      <a href = "../../py_src/imageio_test/imageio_test.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/allen_cahn_pde/allen_cahn_pde.html">
+      allen_cahn_pde</a>,
+      a Python code which 
+      sets up and solves the 1D Allen-Cahn reaction-diffusion 
+      partial differential equation (PDE).
+    </p>
+
+    <p>
+      <a href = "../../py_src/graphics_test/graphics_test.html">
+      graphics_test</a>,
+      a Python code which
+      illustrates how various kinds of data can be displayed and 
+      analyzed graphically.
+    </p>
+
+    <p>
+      <a href = "../../py_src/gray_scott_movie/gray_scott_movie.html">
+      gray_scott_movie</a>,
+      a Python code which
+      solves versions of the partial differential equation (PDE) known
+      as the Gray-Scott reaction diffusion equation, converting the
+      solutions to a sequence of graphics frames, which are then 
+      assembled into a movie.
+    </p>
+
+    <p>
+      <a href = "../../py_src/movie_test/movie_test.html">
+      movie_test</a>,
+      a Python code which
+      creates a movie file from a sequence of solutions to a
+      partial differential equation, using matplotlib().
+    </p>
+
+    <p>
+      <a href = "../../py_src/peak_movie/peak_movie.html">
+      peak_movie</a>,
+      a Python code which
+      creates a sequence of frames, and then an animation or movie
+      from the data displayed by the peaks() function.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cos_animation.py">cos_animation.py</a>,
+          generates a sequence of frames, using savefig() to save each 
+          frame as a PNG file.  As these files are written, they are then
+          read back by imageio's imread() function, appending them to
+          a GIF animation file.  Alas, this GIF is not then displayed
+          to the user.  So all I have done is build the animation as part
+          of the program, and in a seemingly inefficient way.  Why can't
+          matplotlib's image go directly into the animation file?
+        </li>
+        <li>
+          <a href = "cos_animation.gif">cos_animation.gif</a>,
+          the GIF animation file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 09 April 2025.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

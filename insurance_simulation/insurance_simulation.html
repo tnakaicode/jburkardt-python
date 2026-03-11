@@ -1,0 +1,116 @@
+<html>
+
+  <head>
+    <title>
+      insurance_simulation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      insurance_simulation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>insurance_simulation</b>,
+      a Python code which
+      simulates a highly simplified model of term life insurance,
+      in which a customer agrees to pay an annual fee for a given
+      number of years, so that if the customer dies within that term,
+      the family receives a large payout.
+    </p>
+
+    <p>
+      To simulate this process, it is necessary to estimate the chances
+      that a person aged Y years will die before reaching the age of Y+1.
+      This program makes a simple estimate of this process using some
+      mortality data from 2007.
+    </p>
+
+    <p>
+      For testing, we might assume a person aged 25 agrees to pay $500
+      a year for 40 years, with a benefit (if dying before age 65) of
+      $100,000.  If this customer lives past age 65, no benefit at all
+      will be paid.
+    </p>
+
+    <p>
+      As a side calculation, the program considers an alternative 
+      plan in which the same payments are put yearly into a bank account 
+      with four percent interest.  Whether the customer dies early or later,
+      this money would be available to the family.
+    </p>
+
+    <p>
+      The benefit of term life insurance is precisely to protect a family
+      from cases in which the income earner dies unexpectedly early, leaving
+      little or no savings to support the survivors.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>insurance_simulation</b> is available in
+      <a href = "../../m_src/insurance_simulation/insurance_simulation.html">a MATLAB version</a> and
+      <a href = "../../octave_src/insurance_simulation/insurance_simulation.html">an Octave version</a> and
+      <a href = "../../py_src/insurance_simulation/insurance_simulation.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/python_simulation/python_simulation.html">
+      python_simulation</a>,
+      a Python code which
+      uses simulation to study card games, contests, and other processes
+      which have a random element.  Usually, the purpose is to try to
+      predict the average behavior of the system over many trials.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "insurance_simulation.py">insurance_simulation.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "insurance_simulation.sh">insurance_simulation.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "insurance_simulation.txt">insurance_simulation.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 10 February 2024.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
