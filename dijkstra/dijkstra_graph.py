@@ -8,26 +8,8 @@ Data source: people.sc.fsu.edu dijkstra (6 nodes, 8 links, nonnegative weights)
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-
-# --- Example adjacency matrix (Inf means no edge), from Burkardt's page ---
-# Nodes: 0..5
-INF = math.inf
-OHD = np.array(
-    [
-        [0, 40, 15, INF, INF, INF],
-        [40, 0, 20, 10, 25, 6],
-        [15, 20, 0, 100, INF, INF],
-        [INF, 10, 100, 0, INF, INF],
-        [INF, 25, INF, INF, 0, 8],
-        [INF, 6, INF, INF, 8, 0],
-    ],
-    dtype=float,
-)
-
-SOURCE = 0  # start node
-
-# --- Dijkstra (heap-based) to compute parent tree for plotting ---
 import heapq
+import networkx as nx
 
 
 def dijkstra_parent_tree(dist_mat: np.ndarray, src: int):
@@ -55,23 +37,7 @@ def dijkstra_parent_tree(dist_mat: np.ndarray, src: int):
     return dist, parent
 
 
-dist, parent = dijkstra_parent_tree(OHD, SOURCE)
-
-# --- Build edge list ---
-edges = []
-weights = {}
-n = OHD.shape[0]
-for i in range(n):
-    for j in range(i + 1, n):
-        if OHD[i, j] != math.inf:
-            edges.append((i, j))
-            weights[(i, j)] = OHD[i, j]
-
-
-# --- Plot with networkx if available; otherwise fallback ---
 def draw_with_networkx():
-    import networkx as nx
-
     G = nx.Graph()
     G.add_nodes_from(range(n))
     for u, v in edges:
@@ -119,5 +85,34 @@ def draw_with_networkx():
 
 
 if __name__ == "__main__":
-    import networkx as _nx  # noqa
+    # --- Example adjacency matrix (Inf means no edge), from Burkardt's page ---
+    # Nodes: 0..5
+    INF = math.inf
+    OHD = np.array(
+        [
+            [  0, 40,  15, INF, INF, INF],
+            [ 40,  0,  20,  10,  25,   6],
+            [ 15, 20,   0, 100, INF, INF],
+            [INF, 10, 100,   0, INF, INF],
+            [INF, 25, INF, INF,   0,   8],
+            [INF,  6, INF, INF,   8,   0],
+        ],
+        dtype=float,
+    )
+
+    SOURCE = 0  # start node
+
+    # --- Dijkstra (heap-based) to compute parent tree for plotting ---
+    dist, parent = dijkstra_parent_tree(OHD, SOURCE)
+
+    # --- Build edge list ---
+    edges = []
+    weights = {}
+    n = OHD.shape[0]
+    for i in range(n):
+        for j in range(i + 1, n):
+            if OHD[i, j] != math.inf:
+                edges.append((i, j))
+                weights[(i, j)] = OHD[i, j]
+
     draw_with_networkx()
