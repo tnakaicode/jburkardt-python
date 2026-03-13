@@ -118,67 +118,6 @@ def draw_with_networkx():
     plt.show()
 
 
-def draw_without_networkx():
-    # very simple circular layout fallback
-    theta = np.linspace(0, 2 * math.pi, n, endpoint=False)
-    R = 1.0
-    pos = {i: (R * math.cos(t), R * math.sin(t)) for i, t in enumerate(theta)}
-
-    plt.figure(figsize=(7, 7))
-
-    # edges
-    tree_edges = set()
-    for v in range(n):
-        if v != SOURCE and parent[v] != -1:
-            a, b = sorted((v, parent[v]))
-            tree_edges.add((a, b))
-
-    for u, v in edges:
-        x = [pos[u][0], pos[v][0]]
-        y = [pos[u][1], pos[v][1]]
-        if (min(u, v), max(u, v)) in tree_edges:
-            plt.plot(x, y, color="#d62728", lw=3.0, zorder=1)
-        else:
-            plt.plot(x, y, color="#999999", lw=1.5, zorder=0)
-        # edge weight label (midpoint)
-        mx, my = (x[0] + x[1]) / 2, (y[0] + y[1]) / 2
-        plt.text(
-            mx,
-            my,
-            f"{int(weights[(min(u,v),max(u,v))])}",
-            color="#333333",
-            ha="center",
-            va="center",
-            fontsize=10,
-            bbox=dict(fc="white", ec="none", alpha=0.7),
-        )
-
-    # nodes
-    for i in range(n):
-        plt.scatter(pos[i][0], pos[i][1], s=600, c="#1f78b4", zorder=2)
-        plt.text(
-            pos[i][0],
-            pos[i][1],
-            str(i),
-            color="white",
-            ha="center",
-            va="center",
-            fontsize=11,
-        )
-
-    dist_str = "  ".join(
-        f"{i}:{(0 if math.isclose(d,0) else int(d))}" for i, d in enumerate(dist)
-    )
-    plt.title(f"Dijkstra shortest-path tree from {SOURCE}\nDistances -> {dist_str}")
-    plt.axis("off")
-    plt.tight_layout()
-    plt.savefig("dijkstra_graph.png", dpi=300)
-    plt.show()
-
-
-try:
+if __name__ == "__main__":
     import networkx as _nx  # noqa
-
     draw_with_networkx()
-except Exception:
-    draw_without_networkx()
