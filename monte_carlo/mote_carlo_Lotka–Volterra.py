@@ -29,6 +29,14 @@ def lotka_volterra_rhs(t: float, y: np.ndarray, p: Dict[str, float]) -> np.ndarr
     return np.array([dx, dz], dtype=float)
 
 
+def lv_logistic_rhs(t, y, p):
+    x, z = y
+    alpha, beta, gamma, delta, K = p["alpha"], p["beta"], p["gamma"], p["delta"], p["K"]
+    dx = alpha * x * (1 - x / K) - beta * x * z
+    dz = delta * x * z - gamma * z
+    return np.array([dx, dz], float)
+
+
 @dataclass
 class ModelSpec:
     rhs: Callable[[float, np.ndarray, Dict[str, float]], np.ndarray]
@@ -209,8 +217,21 @@ if __name__ == "__main__":
         default_y0=np.array([2.0, 1.0], dtype=float),
     )
 
+    LV_LOGISTIC = ModelSpec(
+        rhs=lv_logistic_rhs,
+        state_names=("Prey x", "Predator y"),
+        default_params={
+            "alpha": 1.0,
+            "beta": 0.5,
+            "gamma": 1.5,
+            "delta": 0.75,
+            "K": 4.0,
+        },
+        default_y0=np.array([2.0, 1.0], float),
+    )
+
     # --------- 設定（必要に応じて変更） ---------
-    model = LV_MODEL
+    model = LV_LOGISTIC
     t_span = (0.0, 15.0)
     dt_out = 0.02  # 出力間隔（プロット解像度）
     N = 300  # サンプル本数（重いときは 100 前後に）
@@ -252,7 +273,7 @@ if __name__ == "__main__":
     traj = out["traj"]  # (N, nt, ny)
 
     # --------- 可視化 ---------
-    fig = plt.figure(figsize=(12, 8))
+    fig = plt.figure(figsize=(12, 10))
 
     # (1) 相平面（x vs y）スパゲティ
     ax1 = fig.add_subplot(2, 2, 1)
@@ -265,7 +286,7 @@ if __name__ == "__main__":
     ax1.grid(True, alpha=0.25)
 
     # (2) x(t) の信頼帯＋平均
-    ax2 = fig.add_subplot(2, 2, 2)
+    ax2 = fig.add_subplot(2, 2, 3)
     plot_timeseries_with_band(
         ax2,
         t,
@@ -278,7 +299,7 @@ if __name__ == "__main__":
     )
 
     # (3) y(t) の信頼帯＋平均
-    ax3 = fig.add_subplot(2, 2, 3)
+    ax3 = fig.add_subplot(2, 2, 2)
     plot_timeseries_with_band(
         ax3,
         t,
