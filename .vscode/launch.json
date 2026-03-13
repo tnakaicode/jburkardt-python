@@ -15,6 +15,14 @@
                 ">",
                 "${fileBasenameNoExtension}.txt",
             ]
+        },
+        {
+            "name": "Python: Debug Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal",
         }
     ]
 }
