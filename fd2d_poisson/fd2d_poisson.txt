@@ -1,0 +1,18 @@
+Fri May  8 11:25:01 2026
+
+fd2d_poisson_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  fd2d_poisson() is a simple Poisson equation solver
+  for a rectangular region.
+
+  Using a  21  by  41  grid
+  The RMS error was  0.005859329022381096
+  Graphics saved as "poisson_computed_surface.png"
+  Graphics saved as "poisson_exact_surface.png"
+  Graphics saved as "poisson_computed_contours.png"
+
+fd2d_poisson_test():
+  Normal end of execution.
+Fri May  8 11:25:02 2026

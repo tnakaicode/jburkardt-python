@@ -1,0 +1,414 @@
+<html>
+
+  <head>
+    <title>
+      shepard_interp_2d
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      shepard_interp_2d
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>shepard_interp_2d</b>,
+      a Python code which
+      defines and evaluates Shepard interpolants to scattered 2D data,
+      based on inverse distance weighting.
+    </p>
+
+    <p>
+      The test also needs the test_interp_2d() library.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>shepard_interp_2d</b> is available in
+      <a href = "../../c_src/shepard_interp_2d/shepard_interp_2d.html">a C version</a> and
+      <a href = "../../cpp_src/shepard_interp_2d/shepard_interp_2d.html">a C++ version</a> and
+      <a href = "../../f77_src/shepard_interp_2d/shepard_interp_2d.html">a Fortran77 version</a> and
+      <a href = "../../f_src/shepard_interp_2d/shepard_interp_2d.html">a Fortran90 version</a> and
+      <a href = "../../m_src/shepard_interp_2d/shepard_interp_2d.html">a MATLAB version</a> and
+      <a href = "../../octave_src/shepard_interp_2d/shepard_interp_2d.html">an Octave version</a> and
+      <a href = "../../py_src/shepard_interp_2d/shepard_interp_2d.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/padua/padua.html">
+      padua</a>,
+      a Python code which
+      returns the points and weights for Padua sets, useful for interpolation
+      in 2d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pwl_interp_2d/pwl_interp_2d.html">
+      pwl_interp_2d</a>,
+      a Python code which
+      evaluates a piecewise linear interpolant to data defined on
+      a regular 2d grid.
+    </p>
+
+    <p>
+      <a href = "../../py_src/rbf_interp_2d/rbf_interp_2d.html">
+      rbf_interp_2d</a>,
+      a Python code which
+      defines and evaluates radial basis function (RBF) interpolants to 2d data.
+    </p>
+
+    <p>
+      <a href = "../../py_src/shepard_interp_1d/shepard_interp_1d.html">
+      shepard_interp_1d</a>,
+      a Python code which
+      defines and evaluates Shepard interpolants to 1d data,
+      based on inverse distance weighting.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp_2d/test_interp_2d.html">
+      test_interp_2d</a>,
+      a Python code which
+      defines test problems for interpolation of data z(x,y)),
+      depending on a 2d argument.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Richard Franke,<br>
+          Scattered Data Interpolation: Tests of Some Methods,<br>
+          Mathematics of Computation,<br>
+          Volume 38, Number 157, January 1982, pages 181-200.
+        </li>
+        <li>
+          Donald Shepard,<br>
+          A two-dimensional interpolation function for irregularly spaced
+          data,<br>
+          ACM '68: Proceedings of the 1968 23rd ACM National Conference,<br>
+          ACM, pages 517-524, 1969.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "shepard_interp_2d.py">shepard_interp_2d.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "shepard_interp_2d.sh">shepard_interp_2d.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "shepard_interp_2d.txt">shepard_interp_2d.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The code generates some plots of the data and approximants.
+      <ul>
+        <li>
+          <a href = "p01_data.png">p01_data.png</a>,
+          the data for problem p01 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p01_power1.png">p01_power1.png</a>,
+          the Shepard interpolant for problem p01 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p01_power2.png">p01_power2.png</a>,
+          the Shepard interpolant for problem p01 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p01_power4.png">p01_power4.png</a>,
+          the Shepard interpolant for problem p01 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p01_power8.png">p01_power8.png</a>,
+          the Shepard interpolant for problem p01 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p02_data.png">p02_data.png</a>,
+          the data for problem p02 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p02_power1.png">p02_power1.png</a>,
+          the Shepard interpolant for problem p02 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p02_power2.png">p02_power2.png</a>,
+          the Shepard interpolant for problem p02 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p02_power4.png">p02_power4.png</a>,
+          the Shepard interpolant for problem p02 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p02_power8.png">p02_power8.png</a>,
+          the Shepard interpolant for problem p02 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p03_data.png">p03_data.png</a>,
+          the data for problem p03 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p03_power1.png">p03_power1.png</a>,
+          the Shepard interpolant for problem p03 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p03_power2.png">p03_power2.png</a>,
+          the Shepard interpolant for problem p03 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p03_power4.png">p03_power4.png</a>,
+          the Shepard interpolant for problem p03 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p03_power8.png">p03_power8.png</a>,
+          the Shepard interpolant for problem p03 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p04_data.png">p04_data.png</a>,
+          the data for problem p04 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p04_power1.png">p04_power1.png</a>,
+          the Shepard interpolant for problem p04 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p04_power2.png">p04_power2.png</a>,
+          the Shepard interpolant for problem p04 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p04_power4.png">p04_power4.png</a>,
+          the Shepard interpolant for problem p04 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p04_power8.png">p04_power8.png</a>,
+          the Shepard interpolant for problem p04 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p05_data.png">p05_data.png</a>,
+          the data for problem p05 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p05_power1.png">p05_power1.png</a>,
+          the Shepard interpolant for problem p05 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p05_power2.png">p05_power2.png</a>,
+          the Shepard interpolant for problem p05 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p05_power4.png">p05_power4.png</a>,
+          the Shepard interpolant for problem p05 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p05_power8.png">p05_power8.png</a>,
+          the Shepard interpolant for problem p05 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p06_data.png">p06_data.png</a>,
+          the data for problem p06 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p06_power1.png">p06_power1.png</a>,
+          the Shepard interpolant for problem p06 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p06_power2.png">p06_power2.png</a>,
+          the Shepard interpolant for problem p06 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p06_power4.png">p06_power4.png</a>,
+          the Shepard interpolant for problem p06 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p06_power8.png">p06_power8.png</a>,
+          the Shepard interpolant for problem p06 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p07_data.png">p07_data.png</a>,
+          the data for problem p07 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p07_power1.png">p07_power1.png</a>,
+          the Shepard interpolant for problem p07 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p07_power2.png">p07_power2.png</a>,
+          the Shepard interpolant for problem p07 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p07_power4.png">p07_power4.png</a>,
+          the Shepard interpolant for problem p07 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p07_power8.png">p07_power8.png</a>,
+          the Shepard interpolant for problem p07 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p08_data.png">p08_data.png</a>,
+          the data for problem p08 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p08_power1.png">p08_power1.png</a>,
+          the Shepard interpolant for problem p08 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p08_power2.png">p08_power2.png</a>,
+          the Shepard interpolant for problem p08 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p08_power4.png">p08_power4.png</a>,
+          the Shepard interpolant for problem p08 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p08_power8.png">p08_power8.png</a>,
+          the Shepard interpolant for problem p08 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p09_data.png">p09_data.png</a>,
+          the data for problem p09 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p09_power1.png">p09_power1.png</a>,
+          the Shepard interpolant for problem p09 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p09_power2.png">p09_power2.png</a>,
+          the Shepard interpolant for problem p09 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p09_power4.png">p09_power4.png</a>,
+          the Shepard interpolant for problem p09 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p09_power8.png">p09_power8.png</a>,
+          the Shepard interpolant for problem p09 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p10_data.png">p10_data.png</a>,
+          the data for problem p10 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p10_power1.png">p10_power1.png</a>,
+          the Shepard interpolant for problem p10 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p10_power2.png">p10_power2.png</a>,
+          the Shepard interpolant for problem p10 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p10_power4.png">p10_power4.png</a>,
+          the Shepard interpolant for problem p10 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p10_power8.png">p10_power8.png</a>,
+          the Shepard interpolant for problem p10 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p11_data.png">p11_data.png</a>,
+          the data for problem p11 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p11_power1.png">p11_power1.png</a>,
+          the Shepard interpolant for problem p11 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p11_power2.png">p11_power2.png</a>,
+          the Shepard interpolant for problem p11 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p11_power4.png">p11_power4.png</a>,
+          the Shepard interpolant for problem p11 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p11_power8.png">p11_power8.png</a>,
+          the Shepard interpolant for problem p11 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p12_data.png">p12_data.png</a>,
+          the data for problem p12 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p12_power1.png">p12_power1.png</a>,
+          the Shepard interpolant for problem p12 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p12_power2.png">p12_power2.png</a>,
+          the Shepard interpolant for problem p12 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p12_power4.png">p12_power4.png</a>,
+          the Shepard interpolant for problem p12 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p12_power8.png">p12_power8.png</a>,
+          the Shepard interpolant for problem p12 with P = 8.0.
+        </li>
+        <li>
+          <a href = "p13_data.png">p13_data.png</a>,
+          the data for problem p13 with a linear interpolant.
+        </li>
+        <li>
+          <a href = "p13_power1.png">p13_power1.png</a>,
+          the Shepard interpolant for problem p13 with P = 1.0.
+        </li>
+        <li>
+          <a href = "p13_power2.png">p13_power2.png</a>,
+          the Shepard interpolant for problem p13 with P = 2.0.
+        </li>
+        <li>
+          <a href = "p13_power4.png">p13_power4.png</a>,
+          the Shepard interpolant for problem p13 with P = 4.0.
+        </li>
+        <li>
+          <a href = "p13_power8.png">p13_power8.png</a>,
+          the Shepard interpolant for problem p13 with P = 8.0.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 23 March 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+
