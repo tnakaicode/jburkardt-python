@@ -1,0 +1,302 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /home/john/.local/lib/python3.10/site-packages/pulp/apis/../solverdir/cbc/linux/i64/cbc /tmp/3e4225eaf04a4182b113b456d4a73e60-pulp.mps -max -timeMode elapsed -branch -printingOptions all -solution /tmp/3e4225eaf04a4182b113b456d4a73e60-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 6 COLUMNS
+At line 11 RHS
+At line 13 BOUNDS
+At line 16 ENDATA
+Problem MODEL has 1 rows, 2 columns and 2 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Presolve 1 (0) rows, 2 (0) columns and 2 (0) elements
+0  Obj -0 Dual inf 2.9999998 (2)
+1  Obj 2.5
+Optimal - objective value 2.5
+Optimal objective 2.5 - 1 iterations time 0.002
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.00
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /home/john/.local/lib/python3.10/site-packages/pulp/apis/../solverdir/cbc/linux/i64/cbc /tmp/36a5577345c445028a995b2766e64e34-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /tmp/36a5577345c445028a995b2766e64e34-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 10 COLUMNS
+At line 25 RHS
+At line 31 BOUNDS
+At line 33 ENDATA
+Problem MODEL has 5 rows, 2 columns and 10 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 0.966667 - 0.00 seconds
+Cgl0004I processed model has 0 rows, 0 columns (0 integer (0 of which binary)) and 0 elements
+Cbc3007W No integer variables - nothing to do
+Cuts at root node changed objective from 0.97 to -1.79769e+308
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                0.97000000
+Enumerated nodes:               0
+Total iterations:               1
+Time (CPU seconds):             0.00
+Time (Wallclock seconds):       0.00
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.00
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /home/john/.local/lib/python3.10/site-packages/pulp/apis/../solverdir/cbc/linux/i64/cbc /tmp/4d5a3eba7aa34494aff0151a7cac4ec8-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /tmp/4d5a3eba7aa34494aff0151a7cac4ec8-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 24 COLUMNS
+At line 31207 RHS
+At line 31227 BOUNDS
+At line 35275 ENDATA
+Problem MODEL has 19 rows, 4047 columns and 19059 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 4.66667 - 0.01 seconds
+Cgl0004I processed model has 19 rows, 4047 columns (4047 integer (4047 of which binary)) and 19059 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 15 integers unsatisfied sum - 3.33333
+Cbc0038I Pass   1: suminf.    1.88889 (15) obj. 13.6667 iterations 37
+Cbc0038I Pass   2: suminf.    0.00000 (0) obj. 19 iterations 13
+Cbc0038I Solution found of 19
+Cbc0038I Before mini branch and bound, 4020 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 19 rows 4047 columns, reduced to 19 rows 25 columns
+Cbc0038I Mini branch and bound did not improve solution (0.05 seconds)
+Cbc0038I Round again with cutoff of 16.6668
+Cbc0038I Reduced cost fixing fixed 1078 variables on major pass 2
+Cbc0038I Pass   3: suminf.    2.00000 (10) obj. 10.3333 iterations 33
+Cbc0038I Pass   4: suminf.    1.33333 (4) obj. 12.3333 iterations 27
+Cbc0038I Pass   5: suminf.    1.33333 (4) obj. 12.3333 iterations 30
+Cbc0038I Pass   6: suminf.    4.56524 (20) obj. 16.6668 iterations 51
+Cbc0038I Pass   7: suminf.    3.85189 (15) obj. 16.6668 iterations 55
+Cbc0038I Pass   8: suminf.    1.75000 (6) obj. 14.25 iterations 54
+Cbc0038I Pass   9: suminf.    1.75000 (6) obj. 14.25 iterations 39
+Cbc0038I Pass  10: suminf.    4.77903 (19) obj. 16.6668 iterations 65
+Cbc0038I Pass  11: suminf.    2.54467 (9) obj. 16.6668 iterations 39
+Cbc0038I Pass  12: suminf.    1.58329 (7) obj. 16.6668 iterations 19
+Cbc0038I Pass  13: suminf.    1.37112 (13) obj. 16.6668 iterations 32
+Cbc0038I Pass  14: suminf.    2.54545 (12) obj. 10.1818 iterations 28
+Cbc0038I Pass  15: suminf.    1.75000 (5) obj. 14.25 iterations 29
+Cbc0038I Pass  16: suminf.    1.75000 (5) obj. 14.25 iterations 35
+Cbc0038I Pass  17: suminf.    1.37251 (7) obj. 16.6668 iterations 29
+Cbc0038I Pass  18: suminf.    1.05482 (11) obj. 16.6668 iterations 29
+Cbc0038I Pass  19: suminf.    2.10000 (10) obj. 7.4 iterations 45
+Cbc0038I Pass  20: suminf.    1.75000 (6) obj. 10.25 iterations 34
+Cbc0038I Pass  21: suminf.    1.75000 (6) obj. 10.25 iterations 33
+Cbc0038I Pass  22: suminf.    0.00000 (0) obj. 13 iterations 37
+Cbc0038I Solution found of 13
+Cbc0038I Before mini branch and bound, 3932 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 19 rows 4047 columns, reduced to 19 rows 109 columns
+Cbc0038I Mini branch and bound improved solution from 13 to 7 (0.14 seconds)
+Cbc0038I Round again with cutoff of 5.73341
+Cbc0038I Reduced cost fixing fixed 3523 variables on major pass 3
+Cbc0038I Pass  23: suminf.    2.00000 (9) obj. 5 iterations 19
+Cbc0038I Pass  24: suminf.    3.16667 (12) obj. 5.73341 iterations 30
+Cbc0038I Pass  25: suminf.    3.16667 (12) obj. 5.73341 iterations 2
+Cbc0038I Pass  26: suminf.    1.33333 (4) obj. 5.66667 iterations 12
+Cbc0038I Pass  27: suminf.    1.33333 (4) obj. 5.66667 iterations 13
+Cbc0038I Pass  28: suminf.    1.33333 (4) obj. 5.66667 iterations 15
+Cbc0038I Pass  29: suminf.    4.00000 (12) obj. 5.66667 iterations 21
+Cbc0038I Pass  30: suminf.    2.66667 (9) obj. 5.73341 iterations 30
+Cbc0038I Pass  31: suminf.    2.43694 (9) obj. 5.73341 iterations 21
+Cbc0038I Pass  32: suminf.    2.66667 (8) obj. 5 iterations 14
+Cbc0038I Pass  33: suminf.    2.40008 (10) obj. 5.73341 iterations 10
+Cbc0038I Pass  34: suminf.    1.66667 (5) obj. 5 iterations 12
+Cbc0038I Pass  35: suminf.    1.66667 (5) obj. 5 iterations 16
+Cbc0038I Pass  36: suminf.    2.33333 (10) obj. 5.44444 iterations 20
+Cbc0038I Pass  37: suminf.    3.46683 (15) obj. 5.73341 iterations 28
+Cbc0038I Pass  38: suminf.    1.66667 (5) obj. 5 iterations 29
+Cbc0038I Pass  39: suminf.    3.00000 (6) obj. 5.5 iterations 20
+Cbc0038I Pass  40: suminf.    2.43694 (9) obj. 5.73341 iterations 32
+Cbc0038I Pass  41: suminf.    2.43694 (9) obj. 5.73341 iterations 7
+Cbc0038I Pass  42: suminf.    2.66667 (8) obj. 5 iterations 17
+Cbc0038I Pass  43: suminf.    2.40008 (10) obj. 5.73341 iterations 8
+Cbc0038I Pass  44: suminf.    1.66667 (5) obj. 5 iterations 12
+Cbc0038I Pass  45: suminf.    1.66667 (5) obj. 5 iterations 16
+Cbc0038I Pass  46: suminf.    3.88064 (18) obj. 5.73341 iterations 33
+Cbc0038I Pass  47: suminf.    0.00000 (0) obj. 5 iterations 35
+Cbc0038I Solution found of 5
+Cbc0038I Before mini branch and bound, 3982 integers at bound fixed and 0 continuous
+Cbc0038I Mini branch and bound did not improve solution (0.19 seconds)
+Cbc0038I After 0.19 seconds - Feasibility pump exiting with objective of 5 - took 0.15 seconds
+Cbc0012I Integer solution of 5 found by feasibility pump after 0 iterations and 0 nodes (0.19 seconds)
+Cbc0038I Full problem 19 rows 4047 columns, reduced to 11 rows 40 columns
+Cbc0038I Full problem 19 rows 4047 columns, reduced to 18 rows 19 columns
+Cbc0001I Search completed - best objective 5, took 0 iterations and 0 nodes (0.21 seconds)
+Cbc0035I Maximum depth 0, 3780 variables fixed on reduced cost
+Cuts at root node changed objective from 4.66667 to 4.66667
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                5.00000000
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             0.21
+Time (Wallclock seconds):       0.21
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.22   (Wallclock seconds):       0.22
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /home/john/.local/lib/python3.10/site-packages/pulp/apis/../solverdir/cbc/linux/i64/cbc /tmp/244dc1e000f74322a5f86b8d7cbc5eb3-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /tmp/244dc1e000f74322a5f86b8d7cbc5eb3-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 358 COLUMNS
+At line 4763 RHS
+At line 5117 BOUNDS
+At line 5848 ENDATA
+Problem MODEL has 353 rows, 730 columns and 2945 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 0 - 0.00 seconds
+Cgl0004I processed model has 0 rows, 0 columns (0 integer (0 of which binary)) and 0 elements
+Cbc3007W No integer variables - nothing to do
+Cuts at root node changed objective from 0 to -1.79769e+308
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                0.00000000
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             0.01
+Time (Wallclock seconds):       0.01
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.01   (Wallclock seconds):       0.01
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /home/john/.local/lib/python3.10/site-packages/pulp/apis/../solverdir/cbc/linux/i64/cbc /tmp/3d2c591875b44f78af040f83a9d9ee83-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /tmp/3d2c591875b44f78af040f83a9d9ee83-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 12 COLUMNS
+At line 63 RHS
+At line 71 BOUNDS
+At line 82 ENDATA
+Problem MODEL has 7 rows, 10 columns and 20 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 8600 - 0.00 seconds
+Cgl0004I processed model has 7 rows, 10 columns (10 integer (0 of which binary)) and 20 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0012I Integer solution of 8600 found by DiveCoefficient after 0 iterations and 0 nodes (0.00 seconds)
+Cbc0001I Search completed - best objective 8600, took 0 iterations and 0 nodes (0.00 seconds)
+Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
+Cuts at root node changed objective from 8600 to 8600
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                8600.00000000
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             0.00
+Time (Wallclock seconds):       0.00
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.00
+
+Sun Apr 12 13:22:41 2026
+
+pulp_test():
+  numpy version:  1.26.4
+  pulp version:   3.3.0
+  python version: 3.10.12
+  pulp() sets up and solves a variety of linear programming problems.
+
+pulp_test01():
+  Solve a simple simplex problem.
+Status: Optimal
+x1 = 0.5
+x2 = 1.0
+Objective function value =  2.5
+
+pulp_test02():
+  Solve a simple linear programming problem for cat food.
+Status: Optimal
+BeefPercent = 66.0
+ChickenPercent = 34.0
+Total Cost of Ingredients per can =  0.97
+
+pulp_test03():
+  Solve a set partitioning problem to seat wedding guests.
+Status: Optimal
+The number of possible tables is 4047
+('D', 'E')
+('W', 'B', 'N', 'V')
+('S', 'K', 'Q', 'R')
+('U', 'G', 'I', 'T')
+('Y', 'L', 'Z', 'X')
+  Total happiness =  5
+
+pulp_test04():
+  Solve a Sudoku.
+Status: Optimal
+Solution written to sudoku.txt
+
+pulp_test05():
+  Solve a transportation problem.
+Status: Optimal
+Route_A_1 = 300.0
+Route_A_2 = 0.0
+Route_A_3 = 0.0
+Route_A_4 = 0.0
+Route_A_5 = 700.0
+Route_B_1 = 200.0
+Route_B_2 = 900.0
+Route_B_3 = 1800.0
+Route_B_4 = 200.0
+Route_B_5 = 0.0
+Total Cost of Transportation =  8600.0
+
+pulp_test():
+  Normal end of execution.
+Sun Apr 12 13:22:41 2026
