@@ -1,0 +1,47 @@
+Wed May 20 21:50:42 2026
+
+grf_display_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test grf_display.
+
+grf_display():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Read a GRF file describing an abstract graph, and plot it.
+
+  No GRF file specified.  Will display default example.
+
+  The number of nodes NODE_NUM =  28
+  The number of edges EDGE_NUM =  84
+  Graphics saved as "grf_display.png"
+
+grf_display():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Read a GRF file describing an abstract graph, and plot it.
+
+  Processing GRF file "simple.grf".
+
+  The number of nodes NODE_NUM =  5
+  The number of edges EDGE_NUM =  8
+  Graphics saved as "simple.png"
+
+grf_display():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Read a GRF file describing an abstract graph, and plot it.
+
+  Processing GRF file "coxeter.grf".
+
+  The number of nodes NODE_NUM =  28
+  The number of edges EDGE_NUM =  84
+  Graphics saved as "coxeter.png"
+
+grf_display_test():
+  Normal end of execution.
+Wed May 20 21:50:43 2026
