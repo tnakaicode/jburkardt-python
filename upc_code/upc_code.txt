@@ -1,0 +1,97 @@
+Mon Jun  1 22:36:36 2026
+
+upc_code_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test upc_code().
+
+ch_is_digit_test
+  ch_is_digit is TRUE if a character is a decimal digit.
+
+         0  "0"  True
+         1  "1"  True
+         2  "2"  True
+         3  "3"  True
+         4  "4"  True
+         5  "5"  True
+         6  "6"  True
+         7  "7"  True
+         8  "8"  True
+         9  "9"  True
+        10  "X"  False
+        11  "?"  False
+        12  " "  False
+
+ch_to_digit_test
+  ch_to_digit: character -> decimal digit
+
+         0  "0"         0
+         1  "1"         1
+         2  "2"         2
+         3  "3"         3
+         4  "4"         4
+         5  "5"         5
+         6  "6"         6
+         7  "7"         7
+         8  "8"         8
+         9  "9"         9
+        10  "X"        -1
+        11  "?"        -1
+        12  " "        -1
+
+i4vec_print_test
+  i4vec_print prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+s_to_digits_test
+  s_to_digits: string -> digit vector
+
+  Test string: "34E94-70.6"
+
+  Extracted 5 digits:
+
+     0       3
+     1       4
+     2       9
+     3       4
+     4       7
+
+  Test string: "34E94-70.6"
+
+  Extracted 7 digits:
+
+     0       3
+     1       4
+     2       9
+     3       4
+     4       7
+     5       0
+     6       6
+
+upc_check_digit_calculate_test
+  upc_check_digit_calculate calculates the 12-th digit
+  (the check digit) of a UPC.
+
+  Check digit of "6-39382-00039-3" is 3, expecting 3
+  Check digit of "0 43000 18170" is 6, expecting 6
+  Check digit of "30074660601" is 7, expecting 7
+  Check digit of "24689753124" is 5, expecting 5
+  Check digit of "13579864213" is 9, expecting 9
+
+upc_is_valid_test
+  upc_is_valid reports whether a UPC is valid.
+
+  Validity of "6-39382-00039-3" is 1, expecting 1
+  Validity of "6-39352-00039-3" is 0, expecting 0
+  Validity of "0 43000 18170 6" is 1, expecting 1
+  Validity of "0 43000 18170 9" is 0, expecting 0
+
+upc_code_test():
+  Normal end of execution.
+Mon Jun  1 22:36:36 2026

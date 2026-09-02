@@ -1,0 +1,119 @@
+Sat May 23 12:38:17 2026
+
+bank_code_test():
+  numpy version:  1.26.4
+  python version: 3.10.12
+  Test bank_code().
+
+ch_is_digit_test():
+  Python version: 3.10.12
+  ch_is_digit() is TRUE if a character is a decimal digit.
+
+         0  "0"  True
+         1  "1"  True
+         2  "2"  True
+         3  "3"  True
+         4  "4"  True
+         5  "5"  True
+         6  "6"  True
+         7  "7"  True
+         8  "8"  True
+         9  "9"  True
+        10  "X"  False
+        11  "?"  False
+        12  " "  False
+
+ch_is_digit_test():
+  Normal end of execution.
+
+ch_to_digit_test():
+  Python version: 3.10.12
+  ch_to_digit(): character -> decimal digit
+
+         0  "0"         0
+         1  "1"         1
+         2  "2"         2
+         3  "3"         3
+         4  "4"         4
+         5  "5"         5
+         6  "6"         6
+         7  "7"         7
+         8  "8"         8
+         9  "9"         9
+        10  "X"        -1
+        11  "?"        -1
+        12  " "        -1
+
+ch_to_digit_test():
+  Normal end of execution.
+
+i4vec_print_test():
+  Python version: 3.10.12
+  i4vec_print() prints an I4VEC.
+
+  Here is an I4VEC:
+
+     0      91
+     1      92
+     2      93
+     3      94
+
+i4vec_print_test():
+  Normal end of execution.
+
+s_to_digits_test():
+  Python version: 3.10.12
+  s_to_digits(): string -> digit vector
+
+  Test string: "34E94-70.6"
+
+  Extracted 5 digits:
+
+     0       3
+     1       4
+     2       9
+     3       4
+     4       7
+
+  Test string: "34E94-70.6"
+
+  Extracted 7 digits:
+
+     0       3
+     1       4
+     2       9
+     3       4
+     4       7
+     5       0
+     6       6
+
+s_to_digits_test():
+  Normal end of execution.
+
+bank_check_digit_calculate_test():
+  bank_check_digit_calculate() calculates the 9-th digit
+  (the check digit) of a bank checksum.
+
+  Check digit of "123-456-780" is 0, expecting 0
+  Check digit of "123 456 78" is 0, expecting 0
+  Check digit of "323-371-076" is 6, expecting 6
+  Check digit of "87654321" is 2, expecting 2
+  Check digit of "13579864" is 3, expecting 3
+
+bank_check_digit_calculate_test():
+  Normal end of execution.
+
+bank_is_valid_test():
+  bank_is_valid() reports whether a bank checksum is valid.
+
+  Validity of "323-371-076" is 1, expecting 1
+  Validity of "323-371-576" is 0, expecting 0
+  Validity of "123 456 780" is 1, expecting 1
+  Validity of "123 456 789" is 0, expecting 0
+
+bank_is_valid_test():
+  Normal end of execution.
+
+bank_code_test():
+  Normal end of execution.
+Sat May 23 12:38:17 2026

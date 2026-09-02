@@ -1,0 +1,41 @@
+Sun May 31 22:07:19 2026
+Sun May 31 22:07:19 2026
+
+isbn13_code_test():
+  numpy version:  1.26.4
+  python version: 3.10.12
+  Test isbn13_code().
+
+isbn13_check_digit_test():
+  isbn13_check_digit() calculates the 13-th digit
+  (the check digit) of a 13-digit ISBN.
+
+  Check digit of "978-0-306-40615-2?" is "7", expecting "7"
+  Check digit of "978 0 8493 9640?" is "3", expecting "3"
+  Check digit of "978158488059?" is "2", expecting "2"
+  Check digit of "978246897531?" is "1", expecting "1"
+  Check digit of "978135798642?" is "1", expecting "1"
+
+isbn13_is_valid_test():
+  isbn13_is_valid() reports whether an ISBN13 is valid.
+
+  Validity of "978-0-306-40615-7" is  True , expecting  True
+  Validity of "978-0-326-80615-7" is  False , expecting  False
+  Validity of "978 0 8493 9640 3" is  True , expecting  True
+  Validity of "978 0 8493 9640 9" is  False , expecting  False
+  Validity of "978-0-3878-9654-0" is  True , expecting  True
+
+s_to_digits_test():
+  s_to_digits() converts string to digit vector
+
+  Test string: "34E94-70.6"
+  Extracted 5 digits
+array([3, 4, 9, 4, 7], dtype=int32)
+
+  Test string: "34E94-70.6"
+  Extracted 7 digits
+array([3, 4, 9, 4, 7, 0, 6], dtype=int32)
+
+isbn13_code_test():
+  Normal end of execution.
+Sun May 31 22:07:19 2026
