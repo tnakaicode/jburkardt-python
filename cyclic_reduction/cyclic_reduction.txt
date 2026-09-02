@@ -1,0 +1,55 @@
+Sun May 24 19:46:44 2026
+
+cyclic_reduction_test():
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test cyclic_reduction().
+
+cyclic_reduction_test01():
+  c83_cr_fa() factors a complex tridiagonal matrix;
+  c83_cr_sl() solves a factored system.
+
+  Matrix order N =  10
+  Desired solution x:
+array([ 1. +10.j,  2. +20.j,  3. +30.j,  4. +40.j,  5. +50.j,  6. +60.j,
+        7. +70.j,  8. +80.j,  9. +90.j, 10.+100.j])
+  Right hand side b:
+array([  20.  -2.j,   40.  -4.j,   60.  -6.j,   80.  -8.j,  100. -10.j,
+        120. -12.j,  140. -14.j,  160. -16.j,  180. -18.j, -889.+200.j])
+  Solution x:
+array([ 1. +10.j,  2. +20.j,  3. +30.j,  4. +40.j,  5. +50.j,  6. +60.j,
+        7. +70.j,  8. +80.j,  9. +90.j, 10.+100.j])
+
+cyclic_reduction_test02():
+  r83_cr_fa(): factors a real tridiagonal matrix
+  r83_cr_sls() solves 1 or more systems.
+  Matrix order N =  5
+  Demonstrate multiple system solution method.
+  The matrix A:
+array([[ 0., -1., -1., -1., -1.],
+       [ 2.,  2.,  2.,  2.,  2.],
+       [-1., -1., -1., -1.,  0.]])
+  The pair of solutions [x1,x2]
+array([[0., 1.],
+       [0., 1.],
+       [0., 1.],
+       [0., 1.],
+       [3., 1.]])
+
+cyclic_reduction_test03():
+  r83_cr_fa() factors a real tridiagonal matrix
+  r83_cr_sl() solves 1 system.
+  Matrix order N =  10
+  The matrix is NOT symmetric.
+  The matrix A:
+array([[ 0.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.],
+       [ 4.,  8., 12., 16., 20., 24., 28., 32., 36., 40.],
+       [ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9.,  0.]])
+  The right hand side b:
+array([  8.,  26.,  56.,  98., 152., 218., 296., 386., 488., 481.])
+  The solution x:
+array([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])
+
+cyclic_reduction_test():
+  Normal end of execution.
+Sun May 24 19:46:44 2026
