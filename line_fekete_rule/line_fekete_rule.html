@@ -1,0 +1,166 @@
+<html>
+
+  <head>
+    <title>
+      line_fekete_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      line_fekete_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>line_fekete_rule</b>,
+      a Python code which
+      approximates the location of Fekete points in an interval [A,B].
+      A family of sets of Fekete points, indexed by size N, represents
+      an excellent choice for defining a polynomial interpolant.
+    </p>
+
+    <p>
+      Given a desired number of points N, the best choice for abscissas is
+      a set of Lebesgue points, which minimize the Lebesgue constant,
+      which describes the error in polynomial interpolation.  Sets of
+      Lebesgue points are difficult to define mathematically.  Fekete
+      points are a related, computable set, defined as those sets maximizing
+      the magnitude of the determinant of the Vandermonde matrix associated
+      with the points.  Analytic definitions of these points are known for
+      a few cases, but there is a general computational procedure for 
+      approximating them, which is demonstrated here.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>line_fekete_rule</b> is available in
+      <a href = "../../c_src/line_fekete_rule/line_fekete_rule.html">a C version</a> and
+      <a href = "../../cpp_src/line_fekete_rule/line_fekete_rule.html">a C++ version</a> and
+      <a href = "../../f77_src/line_fekete_rule/line_fekete_rule.html">a Fortran77 version</a> and
+      <a href = "../../f_src/line_fekete_rule/line_fekete_rule.html">a Fortran90 version</a> and
+      <a href = "../../m_src/line_fekete_rule/line_fekete_rule.html">a MATLAB version</a> and
+      <a href = "../../octave_src/line_fekete_rule/line_fekete_rule.html">a Octave version</a> and
+      <a href = "../../py_src/line_fekete_rule/line_fekete_rule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/compressed_solve/compressed_solve.html">
+      compressed_solve</a>,
+      a Python code which
+      handles an underdetermined linear system A*x=b, using a version of
+      the QR factorization, and seeking a solution which has the fewest
+      possible nonzero entries.  This procedure is useful in the field
+      of compressed sensing.
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_rule/python_rule.html">
+      python_rule</a>,
+      a Python code which
+      computes a quadrature rule which
+      estimates the integral of a function f(x), which might be defined over 
+      a one dimensional region (a line) or more complex shapes such as 
+      a circle, a triangle, a quadrilateral, a polygon, or a higher dimensional
+      region, and which might include an associated weight function w(x).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Len Bos, Norm Levenberg,<br>
+          On the calculation of approximate Fekete points: 
+          the univariate case,<br>
+          Electronic Transactions on Numerical Analysis, <br>
+          Volume 30, pages 377-397, 2008.
+        </li>
+        <li>
+          Alvise Sommariva, Marco Vianello,<br>
+          Computing approximate Fekete points by QR factorizations of Vandermonde 
+          matrices,<br>
+          Computers and Mathematics with Applications,<br>
+          Volume 57, 2009, pages 1324-1336.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "line_fekete_rule.py">line_fekete_rule.py</a>
+          the source code.
+        </li>
+        <li>
+          <a href = "line_fekete_rule.sh">line_fekete_rule.sh</a>
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "line_fekete_rule.txt">line_fekete_rule.txt</a>
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "line_fekete_bos_levenberg.png">
+          line_fekete_bos_levenberg.png</a>
+          an image of the Fekete points for N = 21.
+        </li>
+        <li>
+          <a href = "line_fekete_chebyshev.png">
+          line_fekete_chebyshev.png</a>
+          an image of the Fekete points for N = 21.
+        </li>
+        <li>
+          <a href = "line_fekete_legendre.png">
+          line_fekete_legendre.png</a>
+          an image of the Fekete points for N = 21.
+        </li>
+        <li>
+          <a href = "line_fekete_rule_monomial.png">
+          line_fekete_rule_monomial.png</a>
+          an image of the Fekete points for N = 21.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 07 March 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

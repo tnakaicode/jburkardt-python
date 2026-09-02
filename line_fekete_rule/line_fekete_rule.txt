@@ -1,0 +1,260 @@
+Tue Mar 17 15:04:36 2026
+
+line_fekete_rule_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test line_fekete_rule().
+
+line_fekete_bos_levenberg_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 1000 equally spaced sample points
+  for polynomial space of dimension M = 5
+  with the Chebyshev basis
+  and weight 1/sqrt(1-x^2) (Bos-Levenberg approach).
+
+  Fekete points (Bos-Levenberg):
+array([-1.        , -0.66366366, -0.00700701,  0.64164164,  1.        ])
+  Graphics saved as "line_fekete_bos_levenberg.png"
+
+line_fekete_chebyshev_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 1000 equally spaced sample points
+  for polynomials of degree M = 5
+  with the Chebyshev basis
+  and weight 1/sqrt(1-x^2).
+
+  NF = 5
+  Sum(WF) = 3.141592653589793
+
+  Fekete points (Chebyshev basis):
+array([-1.        , -0.66366366, -0.00700701,  0.64164164,  1.        ])
+  Graphics saved as "line_fekete_chebyshev.png"
+
+line_fekete_legendre_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 5001 equally spaced sample points
+  for polynomials of degree M = 5
+  with the Legendre basis and uniform weight.
+
+  Fekete points (Legendre basis):
+array([-1.    , -0.6216, -0.006 ,  0.6048,  1.    ])
+
+  NF = 5
+  Sum(WF) = 2.0
+
+  Fekete points (Legendre basis):
+array([-1.    , -0.6216, -0.006 ,  0.6048,  1.    ])
+  Graphics saved as "line_fekete_legendre.png"
+
+line_fekete_monomial_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 5001 equally spaced sample points 5001
+  for polynomials of degree M = 5
+  using the monomial basis and uniform weight.
+
+  Fekete points (monomial basis):
+array([-1.    , -0.6248,  0.    ,  0.656 ,  1.    ])
+
+  NF = 5
+  Sum(WF) = 2.0000000000000004
+
+  Fekete points (Monomial basis):
+array([-1.    , -0.6248,  0.    ,  0.656 ,  1.    ])
+  Graphics saved as "line_fekete_monomial.png"
+
+line_fekete_bos_levenberg_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 1000 equally spaced sample points
+  for polynomial space of dimension M = 11
+  with the Chebyshev basis
+  and weight 1/sqrt(1-x^2) (Bos-Levenberg approach).
+
+  Fekete points (Bos-Levenberg):
+array([-1.        , -0.93793794, -0.79179179, -0.57357357, -0.2992993 ,
+       -0.003003  ,  0.2992993 ,  0.56956957,  0.78978979,  0.93793794,
+        1.        ])
+  Graphics saved as "line_fekete_bos_levenberg.png"
+
+line_fekete_chebyshev_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 1000 equally spaced sample points
+  for polynomials of degree M = 11
+  with the Chebyshev basis
+  and weight 1/sqrt(1-x^2).
+
+  NF = 11
+  Sum(WF) = 3.141592653589794
+
+  Fekete points (Chebyshev basis):
+array([-1.        , -0.93793794, -0.79179179, -0.57357357, -0.2992993 ,
+       -0.003003  ,  0.2992993 ,  0.56956957,  0.78978979,  0.93793794,
+        1.        ])
+  Graphics saved as "line_fekete_chebyshev.png"
+
+line_fekete_legendre_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 5001 equally spaced sample points
+  for polynomials of degree M = 11
+  with the Legendre basis and uniform weight.
+
+  Fekete points (Legendre basis):
+array([-1.    , -0.9224, -0.7388, -0.5464, -0.2948, -0.0056,  0.2796,
+        0.5412,  0.738 ,  0.9216,  1.    ])
+
+  NF = 11
+  Sum(WF) = 2.0
+
+  Fekete points (Legendre basis):
+array([-1.    , -0.9224, -0.7388, -0.5464, -0.2948, -0.0056,  0.2796,
+        0.5412,  0.738 ,  0.9216,  1.    ])
+  Graphics saved as "line_fekete_legendre.png"
+
+line_fekete_monomial_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 5001 equally spaced sample points 5001
+  for polynomials of degree M = 11
+  using the monomial basis and uniform weight.
+
+  Fekete points (monomial basis):
+array([-1.    , -0.8868, -0.6512, -0.4948, -0.3084,  0.046 ,  0.4124,
+        0.5676,  0.7056,  0.8996,  1.    ])
+
+  NF = 11
+  Sum(WF) = 1.9999999999999998
+
+  Fekete points (Monomial basis):
+array([-1.    , -0.8868, -0.6512, -0.4948, -0.3084,  0.046 ,  0.4124,
+        0.5676,  0.7056,  0.8996,  1.    ])
+  Graphics saved as "line_fekete_monomial.png"
+
+line_fekete_bos_levenberg_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 1000 equally spaced sample points
+  for polynomial space of dimension M = 21
+  with the Chebyshev basis
+  and weight 1/sqrt(1-x^2) (Bos-Levenberg approach).
+
+  Fekete points (Bos-Levenberg):
+array([-1.        , -0.98398398, -0.94394394, -0.88188188, -0.7997998 ,
+       -0.6996997 , -0.58158158, -0.44944945, -0.30730731, -0.15715716,
+       -0.001001  ,  0.15315315,  0.30530531,  0.44944945,  0.58158158,
+        0.6996997 ,  0.8018018 ,  0.88388388,  0.94394394,  0.98398398,
+        1.        ])
+  Graphics saved as "line_fekete_bos_levenberg.png"
+
+line_fekete_chebyshev_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 1000 equally spaced sample points
+  for polynomials of degree M = 21
+  with the Chebyshev basis
+  and weight 1/sqrt(1-x^2).
+
+  NF = 21
+  Sum(WF) = 3.141592653589794
+
+  Fekete points (Chebyshev basis):
+array([-1.        , -0.98398398, -0.94394394, -0.88188188, -0.7997998 ,
+       -0.6996997 , -0.58158158, -0.44944945, -0.30730731, -0.15715716,
+       -0.001001  ,  0.15315315,  0.30530531,  0.44944945,  0.58158158,
+        0.6996997 ,  0.8018018 ,  0.88388388,  0.94394394,  0.98398398,
+        1.        ])
+  Graphics saved as "line_fekete_chebyshev.png"
+
+line_fekete_legendre_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 5001 equally spaced sample points
+  for polynomials of degree M = 21
+  with the Legendre basis and uniform weight.
+
+  Fekete points (Legendre basis):
+array([-1.    , -0.9784, -0.926 , -0.8712, -0.7948, -0.7016, -0.6128,
+       -0.406 , -0.2864, -0.148 , -0.0012,  0.146 ,  0.2908,  0.4208,
+        0.5424,  0.6312,  0.7944,  0.8708,  0.926 ,  0.9784,  1.    ])
+
+  NF = 21
+  Sum(WF) = 1.9999999999999998
+
+  Fekete points (Legendre basis):
+array([-1.    , -0.9784, -0.926 , -0.8712, -0.7948, -0.7016, -0.6128,
+       -0.406 , -0.2864, -0.148 , -0.0012,  0.146 ,  0.2908,  0.4208,
+        0.5424,  0.6312,  0.7944,  0.8708,  0.926 ,  0.9784,  1.    ])
+  Graphics saved as "line_fekete_legendre.png"
+
+line_fekete_monomial_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 5001 equally spaced sample points 5001
+  for polynomials of degree M = 21
+  using the monomial basis and uniform weight.
+
+  Fekete points (monomial basis):
+array([-1.    , -0.9824, -0.9516, -0.8968, -0.838 , -0.7368, -0.5972,
+       -0.4524, -0.3184, -0.1692, -0.0132,  0.1552,  0.3268,  0.4528,
+        0.5588,  0.7228,  0.8324,  0.8932,  0.95  ,  0.9816,  1.    ])
+
+  NF = 21
+  Sum(WF) = 1.9999999999999998
+
+  Fekete points (Monomial basis):
+array([-1.    , -0.9824, -0.9516, -0.8968, -0.838 , -0.7368, -0.5972,
+       -0.4524, -0.3184, -0.1692, -0.0132,  0.1552,  0.3268,  0.4528,
+        0.5588,  0.7228,  0.8324,  0.8932,  0.95  ,  0.9816,  1.    ])
+  Graphics saved as "line_fekete_monomial.png"
+
+line_fekete_bos_levenberg_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 1000 equally spaced sample points
+  for polynomial space of dimension M = 41
+  with the Chebyshev basis
+  and weight 1/sqrt(1-x^2) (Bos-Levenberg approach).
+  Graphics saved as "line_fekete_bos_levenberg.png"
+
+line_fekete_chebyshev_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 1000 equally spaced sample points
+  for polynomials of degree M = 41
+  with the Chebyshev basis
+  and weight 1/sqrt(1-x^2).
+
+  NF = 41
+  Sum(WF) = 3.1415926535897936
+  Graphics saved as "line_fekete_chebyshev.png"
+
+line_fekete_legendre_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 5001 equally spaced sample points
+  for polynomials of degree M = 41
+  with the Legendre basis and uniform weight.
+
+  NF = 41
+  Sum(WF) = 2.0
+
+  Fekete points (Legendre basis):
+array([-1.    , -0.9944, -0.9804, -0.966 , -0.946 , -0.9028, -0.876 ,
+       -0.838 , -0.798 , -0.7516, -0.7004, -0.6464, -0.5836, -0.518 ,
+       -0.4556, -0.3956, -0.3208, -0.2624, -0.132 , -0.068 ,  0.0092,
+        0.0784,  0.1516,  0.2236,  0.2924,  0.3636,  0.4232,  0.5376,
+        0.5864,  0.6428,  0.6996,  0.7524,  0.7984,  0.838 ,  0.8756,
+        0.9028,  0.946 ,  0.966 ,  0.9804,  0.9944,  1.    ])
+  Graphics saved as "line_fekete_legendre.png"
+
+line_fekete_monomial_test():
+  Seek Fekete points in [ -1.0 , 1.0 ]
+  using 5001 equally spaced sample points 5001
+  for polynomials of degree M = 41
+  using the monomial basis and uniform weight.
+
+  NF = 35
+  Sum(WF) = 1.9999999999999998
+
+  Fekete points (Monomial basis):
+array([-1.    , -0.9908, -0.974 , -0.9488, -0.9176, -0.874 , -0.812 ,
+       -0.776 , -0.7344, -0.6532, -0.5712, -0.4888, -0.4256, -0.3648,
+       -0.238 , -0.1052, -0.0372,  0.0284,  0.1764,  0.256 ,  0.3292,
+        0.4004,  0.4716,  0.5328,  0.5908,  0.6964,  0.7712,  0.8164,
+        0.8596,  0.892 ,  0.9184,  0.948 ,  0.9756,  0.9912,  1.    ])
+  Graphics saved as "line_fekete_monomial.png"
+
+line_fekete_rule_test():
+  Normal end of execution.
+Tue Mar 17 15:04:40 2026
