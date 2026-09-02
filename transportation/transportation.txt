@@ -1,0 +1,30 @@
+Thu Apr  2 21:05:00 2026
+
+transportation_test():
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test transportation().
+
+  There are 3 sources and 4 destinations.
+
+  The cost matrix C:
+array([[2, 3, 1, 4],
+       [3, 2, 5, 1],
+       [4, 3, 2, 2]])
+
+  The supply vector:
+array([20, 30, 25])
+
+  The demand vector:
+array([10, 25, 30, 10])
+
+  Transportation matrix:
+array([[ 0.,  0., 20.,  0.],
+       [ 0., 20.,  0., 10.],
+       [10.,  5., 10.,  0.]])
+
+  Transportation Cost  145.0
+
+transportation_test()
+  Normal end of execution.
+Thu Apr  2 21:05:00 2026
