@@ -1,0 +1,25 @@
+Mon Aug 24 20:53:14 2026
+
+lbm_obstacle_test():
+  numpy version:  1.26.4
+  python version: 3.10.12
+  Read a file of boolean values defining an obstacle
+  for use by the lbm() Lattice Boltzmann Method code.
+  Reading data from "lbm_obstacle_map.txt"
+
+  Shape corresponds to Nx =  400 , Ny =  400
+
+  Partial display of data:
+
+[[False False False ... False False False]
+ [False False False ... False False False]
+ [False False False ... False False False]
+ ...
+ [False False False ... False False False]
+ [False False False ... False False False]
+ [False False False ... False False False]]
+  Created portable bit map image as "lbm_obstacle_map.pbm"
+
+lbm_obstacle_test():
+  Normal end of execution.
+Mon Aug 24 20:53:14 2026

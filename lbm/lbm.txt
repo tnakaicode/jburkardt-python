@@ -1,0 +1,24 @@
+Wed Aug  5 07:58:56 2026
+
+lbm():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  lbm() demonstrates the Lattice Boltzmann Method.
+  Grid:  400 x 400
+tau       : 0.550  =>  nu = 0.0167  =>  Re = 480.0
+Steps     : 5000
+Output    : every 500 steps -> 'lbm_output'
+
+Step      0 / 5000
+Step    500 / 5000
+Step   1000 / 5000
+Step   1500 / 5000
+Step   2000 / 5000
+Step   2500 / 5000
+Step   3000 / 5000
+Step   3500 / 5000
+Step   4000 / 5000
+Step   4500 / 5000
+Done.
+Wed Aug  5 08:02:40 2026
