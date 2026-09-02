@@ -1,0 +1,163 @@
+<html>
+
+  <head>
+    <title>
+      prim
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      prim
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>prim</b>,
+      a Python code which
+      implements Prim's algorithm to compute a minimal spanning tree of a
+      weighted graph.
+    </p>
+
+    <p>
+      For a graph of VN nodes, the algorithm expects to work with a VNxVN
+      weight matrix W, with the properties that:
+      <pre>
+        W[i,i] = 0
+        W[i,j] = W[j,i] for all i, j
+        0 < W[i,j] for i and j distinct
+        W[i,j] = np.inf if there is no link from node i to node j
+      </pre>
+    </p>
+
+    <p>
+      The algorithm returns an NV-1x2 LINKS array, containing pairs (I,J)
+      representing the links in the spanning tree.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>prim</b> is available in
+      <a href = "../../py_src/prim/prim.html">a Python version</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/bellman_ford/bellman_ford.html">
+      bellman_ford</a>,
+      a Python code which
+      implements the Bellman-Ford algorithm for finding the shortest distance 
+      from a given node to all other nodes in a directed graph whose
+      edges have been assigned real-valued lengths.
+    </p>
+
+    <p>
+      <a href = "../../py_src/dijkstra/dijkstra.html">
+      dijkstra</a>,
+      a Python code which
+      implements the Dijkstra algorithm for finding the minimum distance
+      from a given node of a weighted graph to all the other nodes.
+    </p>
+
+    <p>
+      <a href = "../../py_src/floyd/floyd.html">
+      floyd</a>,
+      a Python code which
+      implements Floyd's algorithm for finding the shortest distance between pairs of
+      nodes on a directed graph.
+    </p>
+
+    <p>
+      <a href = "../../py_src/graph_adj/graph_adj.html">
+      graph_adj</a>,
+      a Python code which
+      carries out operations on abstract graphs, with undirected edges,
+      represented by an adjacency matrix.  Operations included breadth-first
+      search, the computation of a minimum spanning tree,
+      an Euler or Hamilton circuit, blocks, chromatic polynomial, 
+      or transitive closure.
+    </p>
+
+    <p>
+      <a href = "../../py_src/graph_dist/graph_dist.html">
+      graph_dist</a>,
+      a Python code which
+      carries out operations on abstract graphs, defined by undirected
+      edges with an associated distance matrix, including the
+      computation of the minimal spanning tree.
+    </p>
+
+    <p>
+      <a href = "../../py_src/toms097/toms097.html">
+      toms097</a>,
+      a Python code which
+      computes the distance between all pairs of nodes in a directed graph
+      with weighted edges, using Floyd's algorithm.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Robert Sedgewick, Kevin Wayne,<br>
+          Algorithms,<br>
+          Fourth Edition,<br>
+          Addison-Wesley, 2011,<br>
+          ISBN13: 978-0321573513.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "prim.py">prim.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "prim.sh">prim.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "prim.txt">prim.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 20 March 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>
