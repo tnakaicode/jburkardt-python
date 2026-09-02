@@ -1,0 +1,14 @@
+Tue Jul 28 20:03:16 2026
+
+tsp_display_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Display the cities and route solving a traveling
+  salesman problem (TSP).
+  Dataset is "dantzig42"
+  Graphics saved as "dantzig42.png"
+
+tsp_display_test():
+  Normal end of execution.
+Tue Jul 28 20:03:17 2026

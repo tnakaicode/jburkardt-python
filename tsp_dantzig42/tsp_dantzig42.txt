@@ -1,0 +1,60 @@
+Tue Jul 28 20:01:15 2026
+
+tsp_dantzig42_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test tsp_dantzig42(), which returns the Dantzig 42 city
+  traveling salesperson problem challenge data.
+
+  City coordinates:
+
+   0       170        85
+   1       166        88
+   2       133        73
+   3       140        70
+   4       142        55
+   5       126        53
+   6       125        60
+   7       119        68
+   8       117        74
+   9        99        83
+  10        73        79
+  11        72        91
+  12        37        94
+  13         6       106
+  14         3        97
+  15        21        82
+  16        33        67
+  17         4        66
+  18         3        42
+  19        27        33
+  20        52        41
+  21        57        59
+  22        58        66
+  23        88        65
+  24        99        67
+  25        95        55
+  26        89        55
+  27        83        38
+  28        85        25
+  29       104        35
+  30       112        37
+  31       112        24
+  32       113        13
+  33       125        30
+  34       135        32
+  35       147        18
+  36       147        36
+  37       154        45
+  38       157        54
+  39       158        61
+  40       172        82
+  41       174        87
+
+  Cost of round trip= 688.4491097164997
+  Graphics saved as "dantzig42.png"
+
+tsp_dantzig42_test():
+  Normal end of execution.
+Tue Jul 28 20:01:16 2026

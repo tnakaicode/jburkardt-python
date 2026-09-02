@@ -1,0 +1,77 @@
+Tue Jul 28 20:06:17 2026
+
+tsp_nearest_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  For the traveling salesperson problem, find a
+  solution by choosing a starting city, and then constructing
+  the tour by always moving to the nearest unvisited city.
+
+tsp_nearest():
+  For the traveling salesperson problem, find a
+  solution by choosing a starting city, and then constructing
+  the tour by always moving to the nearest unvisited city.
+  Tour starting at city 0  costs  40526.42105630374
+  Tour starting at city 1  costs  39236.884898455035
+  Tour starting at city 41  costs  39236.88489845503
+
+  The best itinerary found:
+
+  Step  From  To        Distance
+
+     1    41   9         936.385
+     2     9  23         921.434
+     3    23  44         1628.44
+     4    44  34         460.184
+     5    34  25         1374.48
+     6    25   3         319.845
+     7     3   1         2011.66
+     8     1  28         1203.18
+     9    28   4         893.067
+    10     4  47         303.784
+    11    47  38         999.645
+    12    38  31         532.632
+    13    31  20         1239.65
+    14    20  46         710.721
+    15    46  10         710.769
+    16    10  22         502.132
+    17    22  13         605.126
+    18    13  24         418.801
+    19    24  12         532.076
+    20    12  11         1298.34
+    21    11  14         405.295
+    22    14  32         496.328
+    23    32  45          421.38
+    24    45  43         743.855
+    25    43  17         354.133
+    26    17   6          167.92
+    27     6  27         266.925
+    28    27  35         355.883
+    29    35  29         734.401
+    30    29   5         260.461
+    31     5  36         206.119
+    32    36  18         131.469
+    33    18  26         201.358
+    34    26  42           286.4
+    35    42  16         436.791
+    36    16  19         2358.32
+    37    19  39         1473.47
+    38    39   8         675.003
+    39     8   0         462.082
+    40     0   7         562.304
+    41     7  37         984.228
+    42    37  30         577.631
+    43    30  21         2223.65
+    44    21  15         441.041
+    45    15   2         950.239
+    46     2  33         949.294
+    47    33  40         1123.16
+     0    40  41         3385.38
+  ----    --  --  --------------
+  Total:                 39236.9
+  Graphics saved as "tsp_nearest.png"
+
+tsp_nearest_test():
+  Normal end of execution.
+Tue Jul 28 20:06:18 2026

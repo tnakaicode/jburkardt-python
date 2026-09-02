@@ -1,0 +1,206 @@
+<html>
+
+  <head>
+    <title>
+      tsp_nearest
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      tsp_nearest
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>tsp_nearest</b>,
+      a Python code which
+      is given a list of city coordinates, and seeks the shortest round
+      trip for traveling salesperson problem (TSP) using the nearest neighbor 
+      algorithm.  It picks a starting city at random, and then successively 
+      visits the nearest unvisited city.
+    </p>
+
+    <p>
+      A tour of n cities can be represented as a permutation p on the integers
+      0 through n-1.  The cost of the tour, that is, the length, is the sum 
+      <pre>
+        cost = sum ( 0 <= i < n ) ( d(p(i),p(i+1)) )
+      </pre>
+      where p(n) is understood to mean p(0).
+    </p>
+
+    <p>
+      The algorithm starts at one of the cities, and then successively
+      moves to the nearest unvisited city, producing a tour.  The tour may
+      depend on the starting city, and so all n cities are tried.  At the end,
+      the shortest observed tour is reported.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>tsp_nearest</b> is available in
+      <a href = "../../c_src/tsp_nearest/tsp_nearest.html">a C version</a> and
+      <a href = "../../cpp_src/tsp_nearest/tsp_nearest.html">a C++ version</a> and
+      <a href = "../../f_src/tsp_nearest/tsp_nearest.html">a Fortran90 version</a> and
+      <a href = "../../m_src/tsp_nearest/tsp_nearest.html">a MATLAB version</a> and
+      <a href = "../../octave_src/tsp_nearest/tsp_nearest.html">an Octave version</a> and
+      <a href = "../../py_src/tsp_nearest/tsp_nearest.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../examples/concorde/concorde.html">
+      concorde</a>,
+      examples which
+      call concorde(), which
+      solves the traveling salesman problem (TSP), mixed integer programming,
+      and related network optimization problems.
+    </p>
+
+    <p>
+      <a href = "../../py_src/python_combinatorics/python_combinatorics.html">
+      python_combinatorics</a>,
+      a Python code which
+      considers a variety of problems in combinatorics involving
+      counting, combinations, permutations, and so on.
+    </p>
+
+    <p>
+      <a href = "../../datasets/tsp/tsp.html">
+      tsp</a>,
+      a dataset directory which
+      contains test data for the traveling salesperson problem (TSP)
+      including the AT&T 48 state capital test, and Dantzig's 42
+      city test;
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_anneal/tsp_anneal.html">
+      tsp_anneal</a>,
+      a Python code which
+      is given a table of city locations, and
+      solves the traveling salesperson problem (TSP) using simulated annealing.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_att48/tsp_att48.html">
+      tsp_att48</a>,
+      a Python code which
+      returns the (x,y) coordinates of the cities that 
+      constitute the AT&T 48 state challenge for the 
+      Traveling Salesman Problem (TSP).
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_brute/tsp_brute.html">
+      tsp_brute</a>,
+      a Python code which
+      is given a table of city locations, and solves a (small) 
+      traveling salesperson problem (TSP), using brute force.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_display/tsp_display.html">
+      tsp_display</a>,
+      a Python code which
+      displays the solution of a Traveling Salesman Problem (TSP).
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_moler/tsp_moler.html">
+      tsp_moler</a>,
+      a Python code which
+      tries to optimize the traveling salesperson problem (TSP),
+      written by Cleve Moler.
+    </p>
+
+    <p>
+      <a href = "../../py_src/tsp_random/tsp_random.html">
+      tsp_random</a>,
+      a Python code which
+      is given a table of city locations,
+      seeks a solution of the Traveling Salesperson Problem (TSP), by
+      randomly generating
+      round trips that visit every city, returning the tour of shortest length.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          William Cook,<br>
+          In Pursuit of the Traveling Salesman,<br>
+          Princeton University Press, 2012,<br>
+          ISBN13 978-0-691-16352-9.
+        </li>
+        <li>
+          Gerhard Reinelt,<br>
+          TSPLIB - A Traveling Salesman Problem Library,<br>
+          ORSA Journal on Computing,<br>
+          Volume 3, Number 4, Fall 1991, pages 376-384.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "tsp_nearest.py">tsp_nearest.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "tsp_nearest.sh">tsp_nearest.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "tsp_nearest.txt">tsp_nearest.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "tsp_nearest.png">tsp_nearest.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 08 July 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>
