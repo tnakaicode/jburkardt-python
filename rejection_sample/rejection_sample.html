@@ -1,0 +1,156 @@
+<html>
+
+  <head>
+    <title>
+      rejection_sample
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      rejection_sample
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>rejection_sample</b>,
+      a Python code which
+      demonstrates acceptance/rejection sampling.
+    </p>
+
+    <p>
+      We suppose that for A <= X <= B, we are given a probability
+      density function PDF(X), and wish to randomly sample X.
+      If it is not feasible to compute the cumulative density function
+      CDF(X) and invert it to X(CDF), then acceptance/rejection sampling
+      can provide an alternate way of carrying out the sampling.
+    </p>
+
+    <p>
+      Briefly, a comparison curve Z(X) must be determined, such that
+      PDF(X) <= Z(X) for all A <= X <= B, and with the property that
+      data can be uniformly sampled under the Z curve.
+    </p>
+
+    <p>
+      If that is the case, then we uniformly sample an X value under 
+      the Z curve.  Then we pick an R value uniformly between 0 and Z(X).
+      We accept X if R <= PDF(X); otherwise, we reject this X and
+      prepare to generate and test another value.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>rejection_sample</b> is available in
+      <a href = "../../m_src/rejection_sample/rejection_sample.html">a Matlab version</a> and
+      <a href = "../../octave_src/rejection_sample/rejection_sample.html">an Octave version</a> and
+      <a href = "../../py_src/rejection_sample/rejection_sample.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/pdflib/pdflib.html">
+      pdflib</a>,
+      a Python code which
+      evaluates Probability Density Functions (PDF's)
+      and produces random samples from them,
+      including beta, binomial, chi, exponential, gamma, inverse chi,
+      inverse gamma, multinomial, normal, scaled inverse chi, and uniform.
+    </p>
+
+    <p>
+      <a href = "../../py_src/prob/prob.html">
+      prob</a>,
+      a Python code which
+      evaluates, samples, inverts, and characterizes a number of 
+      Probability Density Functions (PDF's) 
+      and Cumulative Density Functions (CDF's), including anglit, arcsin,
+      benford, birthday, bernoulli, beta_binomial, beta, binomial, bradford,
+      burr, cardiod, cauchy, chi, chi squared, circular, cosine, deranged,
+      dipole, dirichlet mixture, discrete, empirical, english sentence and
+      word length, error, exponential, extreme values, f, fisk, folded normal,
+      frechet, gamma, generalized logistic, geometric, gompertz, gumbel,
+      half normal, hypergeometric, inverse gaussian, laplace, levy, logistic,
+      log normal, log series, log uniform, lorentz, maxwell, multinomial,
+      nakagami, negative binomial, normal, pareto, planck, poisson,
+      power, quasigeometric, rayleigh, reciprocal, runs, sech, semicircular,
+      student t, triangle, uniform, von mises, weibull, zipf.
+    </p>
+
+    <p>
+      <a href = "../../py_src/ranlib/ranlib.html">
+      ranlib</a>,
+      a Python code which
+      produces random samples from Probability Density Functions (PDF's), 
+      including Beta, Chi-square Exponential, F, Gamma, Multivariate normal,
+      Noncentral chi-square, Noncentral F, Univariate normal, 
+      random permutations, Real uniform, Binomial, Negative Binomial,
+      Multinomial, Poisson and Integer uniform,
+      by Barry Brown and James Lovato.
+    </p>
+
+    <p>
+      <a href = "../../py_src/walker_sample/walker_sample.html">
+      walker_sample</a>,
+      a Python code which
+      efficiently samples a discrete probability vector using
+      Walker sampling.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+          
+    <p>
+      <ul>
+        <li>
+          <a href = "rejection_sample.py">rejection_sample.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "rejection_sample.sh">rejection_sample.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "rejection_sample.txt">rejection_sample.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "chebyshev2_sample.png">chebyshev2_sample.png</a>
+        </li>
+      </ul>
+    </p>
+
+
+    <hr>
+
+    <i>
+      Last revised on 18 March 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

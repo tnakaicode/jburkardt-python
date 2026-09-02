@@ -1,0 +1,21 @@
+Wed Mar 18 12:20:21 2026
+
+rejection_sample_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test rejection_sample().
+
+chebyshev2_sample_test():
+  chebyshev2_sample() uses acceptance/rejection sampling
+  on the Chebyshev2 density 2/pi * sqrt(1-x^2)
+
+  Number of samples N =  100000
+  Number of trials N2 =  127423
+  N2/N =        1.27423
+  Area ratio =  1.2732395447351628
+  Graphics saved as "chebyshev2_sample.png"
+
+rejection_sample_test():
+  Normal end of execution.
+Wed Mar 18 12:20:22 2026
