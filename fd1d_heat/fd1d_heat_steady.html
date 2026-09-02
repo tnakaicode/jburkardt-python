@@ -1,0 +1,309 @@
+<html>
+
+  <head>
+    <title>
+      fd1d_heat_steady
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      fd1d_heat_steady
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>fd1d_heat_steady</b>,
+      a Python code which
+      applies the finite difference method (FDM) to estimate the solution of
+      the steady state heat equation over a one dimensional region, which
+      can be thought of as a thin metal rod.
+    </p>
+
+    <p>
+      We will assume the rod extends over the range A &lt;= X &lt;= B.
+    </p>
+
+    <p>
+      The quantity of interest is the temperature U(X) at each point in the rod.
+    </p>
+
+    <p>
+      We will assume that the temperature of the rod is fixed at known values
+      at the two endpoints.  Symbolically, we write the <i>boundary conditions</i>:
+      <pre>
+        U(A) = UA
+        U(B) = UB
+      </pre>
+    </p>
+
+    <p>
+      Inside the rod, we assume that a version of the steady (time independent)
+      heat equation applies.  This assumes that the situation in the rod has
+      "settled down", so that the temperature configuration has no further
+      tendency to change.  The equation we will consider is
+      <pre>
+        - d/dx ( K(X) * d/dx U(X) ) = F(X)
+      </pre>
+      Here, the right hand side term F(X) allows us to consider internal
+      heat sources in the metal - perhaps a portion of the rod is sitting
+      above a blow torch.  The coefficient K(X) is a measure of heat conductivity.
+      It measures the rate at which the heat from a local hot spot will spread out.
+    </p>
+
+    <p>
+      If the heat source function F(X) is zero everywhere, and if K(X) is
+      constant, then the solution U(X) will be the straight line function
+      that matches the two endpoint values.  Making F(X) positive over a small
+      interval will "heat up" that portion.  We simulate a rod that is
+      divided into regions of different materials by setting the function K(X)
+      to have a given value K1 over some subinteral of [A,B] and value K2 over
+      the rest of the region.
+    </p>
+
+    <p>
+      To estimate the value of the solution, we will pick a uniform mesh
+      of N points X(1) through X(N), from A to B.  At the I-th point, we will
+      compute an estimated temperature U(I).  To do this, we will need to
+      use the boundary conditions and the differential equation.
+    </p>
+
+    <p>
+      Since X(1) = A and X(N) = B, we can use the boundary conditions to
+      set U(1) = UA and U(N) = UB.
+    </p>
+
+    <p>
+      For the points in the interior, we need to approximate the differential
+      equation in a way that allows us to determine the solution values.
+      We will do this using a finite difference approximation.
+    </p>
+
+    <p>
+      Suppose we are working at node X(I), which is associated with U(I).
+      Then a centered difference approximation to
+      <pre>
+        - d/dx ( K(X) * d/dx U(X) )
+      </pre>
+      is
+      <pre>
+       - ( + K(X(I)+DX/2) * ( U(X(I+1)) - U(X(I))   ) / DX )
+           - K(X(I)-DX/2) * ( U(X(I))   - U(X(I-1)) ) / DX ) / DX
+      </pre>
+    </p>
+
+    <p>
+      If we rearrange the terms in this approximation, and set it equal to F(X(I)),
+      we get the finite difference approximation to the differential equation at X(I):
+      <pre>
+            - K(X(I)-DX/2)                   * U(X(I-1)
+        + (   K(X(I)-DX/2) + K(X(I)+DX(2)) ) * U(X(I))
+                           - K(X(I)+DX(2))   * U(X(I+1)) = DX * DX * F(X(I))
+      </pre>
+    </p>
+
+    <p>
+      This means that we have N-2 equations, each of which involves
+      an unknown U(I) and its left and right neighbors, plus the two boundary
+      conditions, which give us a total of N equations in N unknowns.
+    </p>
+
+    <p>
+      We can set up and solve these linear equations using a matrix A for
+      the coefficients, and a vector RHS for the right hand side terms,
+      and the simple MATLAB command <b>u = A \ rhs</b> will give us the solution!
+    </p>
+
+    <p>
+      Because finite differences are only an approximation to derivatives, this
+      process only produces estimates of the solution.  Usually, we can reduce
+      this error by decreasing DX.
+    </p>
+
+    <p>
+      This program assumes that the user will provide a calling program, and
+      functions to evaluate K(X) and F(X).
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <i>[ x, u ]</i> = <b>fd1d_steady_heat</b> ( <i>n, a, b, ta, tb, @k, @f</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>n</i>, the number of spatial points.
+        </li>
+        <li>
+          <i>a, b</i>, the left and right endpoints.
+        </li>
+        <li>
+          <i>ta, tb</i>, the temperature values at the left and right endpoints.
+        </li>
+        <li>
+          <i>@k</i>, the name of the function which evaluates K(X);
+        </li>
+        <li>
+          <i>@f</i>, the name of the function which evaluates the right hand side F(X).
+        </li>
+        <li>
+          <i>x</i>, output, the location of the nodes;
+        </li>
+        <li>
+          <i>u</i>, output, the computed value of the temperature at the nodes.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>fd1d_heat_steady</b> is available in
+      <a href = "../../c_src/fd1d_heat_steady/fd1d_heat_steady.html">a C version</a> and
+      <a href = "../../cpp_src/fd1d_heat_steady/fd1d_heat_steady.html">a C++ version</a> and
+      <a href = "../../f77_src/fd1d_heat_steady/fd1d_heat_steady.html">a Fortran77 version</a> and
+      <a href = "../../f_src/fd1d_heat_steady/fd1d_heat_steady.html">a Fortran90 version</a> and
+      <a href = "../../py_src/fd1d_heat_steady/fd1d_heat_steady.html">a MATLAB version</a> and
+      <a href = "../../octave_src/fd1d_heat_steady/fd1d_heat_steady.html">an Octave version</a> and
+      <a href = "../../py_src/fd1d_heat_steady/fd1d_heat_steady.html">a :ythoin version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/fd1d_burgers_lax_wendroff/fd1d_burgers_lax_wendroff.html">
+      fd1d_advection_lax_wendroff</a>,
+      a Python code which
+      applies the finite difference method (FDM) to solve the time-dependent
+      advection equation ut = - c * ux in one spatial dimension, with
+      a constant velocity, using the Lax-Wendroff method.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_bvp/fd1d_bvp.html">
+      fd1d_bvp</a>,
+      a Python code which
+      applies the finite difference method (FDM)
+      to a two point boundary value problem in one spatial dimension.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_heat_explicit/fd1d_heat_explicit.html">
+      fd1d_heat_explicit</a>,
+      a Python code which
+      uses the finite difference method (FDM) and explicit time stepping
+      to solve the time dependent heat equation in 1d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_heat_implicit/fd1d_heat_implicit.html">
+      fd1d_heat_implicit</a>,
+      a Python code which
+      uses the finite difference method (FDM) and implicit time stepping
+      to solve the time dependent heat equation in 1d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_poisson/fd1d_poisson.html">
+      fd1d_poisson</a>,
+      a Python code which
+      uses the finite difference method (FDM) and implicit time stepping
+      to solve the Poisson equation in 1d.
+    </p>
+
+    <p>
+      <a href = "../../py_src/fd1d_wave/fd1d_wave.html">
+      fd1d_wave</a>,
+      a Python code which
+      applies the finite difference method (FDM) to solve the time-dependent
+      wave equation in one spatial dimension.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          George Lindfield, John Penny,<br>
+          Numerical Methods Using MATLAB,<br>
+          Second Edition,<br>
+          Prentice Hall, 1999,<br>
+          ISBN: 0-13-012641-1,<br>
+          LC: QA297.P45.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "fd1d_heat_steady.py">fd1d_heat_steady.py</a>, 
+          the source code;
+        </li>
+        <li>
+          <a href = "fd1d_heat_steady.sh">fd1d_heat_steady.sh</a>, 
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "fd1d_heat_steady.txt">fd1d_heat_steady.txt</a>, 
+          the output file;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test1.png">test1.png</a>,
+          a PNG image of the solution.
+        </li>
+        <li>
+          <a href = "test2.png">test2.png</a>,
+          a PNG image of the solution.
+        </li>
+        <li>
+          <a href = "test3.png">test3.png</a>,
+          a PNG image of the solution.
+        </li>
+        <li>
+          <a href = "test4.png">test4.png</a>,
+          a PNG image of the solution.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 08 May 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

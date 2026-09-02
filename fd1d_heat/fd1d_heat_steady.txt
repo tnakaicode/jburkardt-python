@@ -1,0 +1,39 @@
+Sat May  9 15:49:54 2026
+
+fd1d_heat_steady_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test fd1d_heat_steady().
+
+  Finite difference solution of 
+  the steady 1D heat equation
+    - d/dx ( k(x) dUdx ) = F(x)
+  for space interval A <= X <= B with boundary conditions
+    U(A) = UA
+    U(B) = UB
+  A second order difference approximation is used.
+
+test1():
+  Test fd1d_heat_steady().
+  Simple linear solution.
+  Graphics saved as "test1.png"
+
+test2():
+  Test fd1d_heat_steady().
+  Low K, high K, moderate K.
+  Graphics saved as "test2.png"
+
+test3():
+  Test fd1d_heat_steady().
+  An interior heat source.
+  Graphics saved as "test3.png"
+
+test4():
+  Test fd1d_heat_steady().
+  A heat source and a heat sink.
+  Graphics saved as "test4.png"
+
+fd1d_heat_steady_test():
+  Normal end of execution.
+Sat May  9 15:49:56 2026
