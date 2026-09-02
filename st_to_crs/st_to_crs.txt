@@ -1,0 +1,47 @@
+Mon May 11 10:11:17 2026
+
+st_to_crs_test():
+  numpy version:      1.26.4
+  python version:     3.10.12
+  Test st_to_crs().
+
+st_to_crs_test01():
+  Convert a sparse matrix from st to crs format.
+  st:  sparse triplet,    I,  J, A.
+  crs: compressed row   , RR, J, A.
+
+The ST matrix:
+
+         0         3         2       -1.00000000
+         1         3         3       -3.00000000
+         2         3         4        2.00000000
+         3         2         1        3.00000000
+         4         2         3        4.00000000
+         5         2         5        6.00000000
+         6         4         3        1.00000000
+         7         1         1        2.00000000
+         8         1         2        3.00000000
+         9         5         2        4.00000000
+        10         5         3        2.00000000
+        11         5         5        1.00000000
+
+The crs matrix:
+     #     I     J       A
+  ----  ----  ----  --------------
+
+     0     0     0                 2
+     1     0     1                 3
+     2     1     0                 3
+     3     1     2                 4
+     4     1     4                 6
+     5     2     1                -1
+     6     2     2                -3
+     7     2     3                 2
+     8     3     2                 1
+     9     4     1                 4
+    10     4     2                 2
+    11     4     4                 1
+
+st_to_crs_test():
+  Normal end of execution.
+Mon May 11 10:11:17 2026

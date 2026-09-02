@@ -1,0 +1,13 @@
+Fri Mar 13 11:44:38 2026
+
+ge_to_ccs_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  ge_to_ccs() converts a matrix from GE to CCS format.
+
+ge_to_ccs_risk():
+  Convert Risk data from GE to CCS format.
+
+ge_to_ccs_test():
+  Normal end of execution.
+Fri Mar 13 11:44:39 2026

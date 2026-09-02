@@ -1,0 +1,47 @@
+Mon Mar 16 11:39:14 2026
+
+st_to_ge_test():
+  python version: 3.10.12
+  numpy version:  1.26.4
+  Test st_to_ge().
+
+st_to_ge_test01():
+  Convert a sparse matrix from ST to GE format.
+  ST: sparse triplet,    I, J,  AIJ.
+  GE: general,           A[1:M,1:N].
+
+The ST matrix:
+  Header information:
+  Minimum row index I_MIN =  0
+  Maximum row index I_MAX =  4
+  Minimum col index J_MIN =  0
+  Maximum col index J_MAX =  4
+  Number of rows        M =  5
+  Number of columns     N =  5
+  Number of nonzeros  NST =  12
+
+The ST matrix:
+
+         0         0         0        0.00000000
+         1         0         1        1.00000000
+         2         1         0       10.00000000
+         3         1         2       12.00000000
+         4         1         4       14.00000000
+         5         2         1       21.00000000
+         6         2         2       22.00000000
+         7         2         3       23.00000000
+         8         3         2       32.00000000
+         9         4         1       41.00000000
+        10         4         2       42.00000000
+        11         4         4       44.00000000
+
+  The GE matrix:
+array([[ 0.,  1.,  0.,  0.,  0.],
+       [10.,  0., 12.,  0., 14.],
+       [ 0., 21., 22., 23.,  0.],
+       [ 0.,  0., 32.,  0.,  0.],
+       [ 0., 41., 42.,  0., 44.]])
+
+st_to_ge_test():
+  Normal end of execution.
+Mon Mar 16 11:39:14 2026
