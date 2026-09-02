@@ -1,0 +1,192 @@
+<html>
+
+  <head>
+    <title>
+      chebyshev_series
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      chebyshev_series
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>chebyshev_series</b>,
+      a Python code which
+      evaluates a Chebyshev series approximating a function f(x),
+      while efficiently computing one, two, three or four derivatives of the
+      series, by Manfred Zimmer.
+    </p>
+
+    <p>
+      This library does not compute a Chebyshev series;
+      it assumes that the series has already been computed, and 
+      offers an efficient means of evaluating the series and its derivatives
+      simultaneously.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>chebyshev_series</b> is available in
+      <a href = "../../c_src/chebyshev_series/chebyshev_series.html">a C version</a> and
+      <a href = "../../cpp_src/chebyshev_series/chebyshev_series.html">a C++ version</a> and
+      <a href = "../../f77_src/chebyshev_series/chebyshev_series.html">a Fortran77 version</a> and
+      <a href = "../../f_src/chebyshev_series/chebyshev_series.html">a Fortran90 version</a> and
+      <a href = "../../m_src/chebyshev_series/chebyshev_series.html">a MATLAB version</a> and
+      <a href = "../../octave_src/chebyshev_series/chebyshev_series.html">an Octave version</a> and
+      <a href = "../../py_src/chebyshev_series/chebyshev_series.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/chebyshev/chebyshev.html">
+      chebyshev</a>,
+      a Python code which
+      computes the Chebyshev interpolant/approximant to a given function
+      over an interval.
+    </p>
+
+    <p>
+      <a href = "../../py_src/chebyshev_interp_1d/chebyshev_interp_1d.html">
+      chebyshev_interp_1d</a>,
+      a Python code which
+      determines the combination of Chebyshev polynomials which 
+      interpolates a set of data, so that p(x(i)) = y(i).
+    </p>
+
+    <p>
+      <a href = "../../py_src/chebyshev_polynomial/chebyshev_polynomial.html">
+      chebyshev_polynomial</a>,
+      a Python code which
+      considers the Chebyshev polynomials T(i,x), U(i,x), V(i,x) and W(i,x).
+      Functions are provided to evaluate the polynomials, determine their zeros, 
+      produce their polynomial coefficients, produce related quadrature rules,
+      project other functions onto these polynomial bases, and integrate
+      double and triple products of the polynomials.
+    </p>
+
+    <p>
+      <a href = "../../py_src/clausen/clausen.html">
+      clausen</a>,
+      a Python code which
+      evaluates a Chebyshev approximant to the Clausen function Cl2(x).
+    </p>
+
+    <p>
+      <a href = "../../py_src/fn/fn.html">
+      fn</a>,
+      a Python code which
+      approximates elementary and special functions using Chebyshev polynomials;
+      functions include Airy, Bessel I, J, K and Y, beta, 
+      confluent hypergeometric, error, gamma, log gamma, Pochhammer, Spence; 
+      integrals include hyperbolic cosine, cosine, Dawson, exponential, 
+      logarithmic, hyperbolic sine, sine; by Wayne Fullerton.
+    </p>
+
+    <p>
+      <a href = "../../py_src/polpak/polpak.html">
+      polpak</a>,
+      a Python code which
+      evaluates a variety of mathematical functions, including
+      Chebyshev, Gegenbauer, Hermite, Jacobi, Laguerre, Legendre polynomials,
+      and the Collatz sequence.
+    </p>
+
+    <p>
+      <a href = "../../py_src/toms446/toms446.html">
+      toms446</a>,
+      a Python code which
+      manipulates Chebyshev series for interpolation and approximation;
+      this is ACM TOMS algorithm 446,
+      by Roger Broucke.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Manfred Zimmer
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Charles Clenshaw,<br>
+          Mathematical Tables, Volume 5,<br>
+          Chebyshev series for mathematical functions,<br>
+          London, 1962.
+        </li>
+        <li>
+          Gerhard Maess,<br>
+          Vorlesungen ueber Numerische Mathematik II, Analysis,<br>
+          Berlin, Akademie_Verlag, 1984-1988,<br>
+          ISBN: 978-3764318840,<br>
+          LC: QA297.M325.  
+        </li>
+        <li>
+          Francis Smith,<br>
+          An algorithm for summing orthogonal polynomial series and their
+          derivatives with applications to curve-fitting and interpolation,<br>
+          Mathematics of Computation,<br>
+          Volume 19, Number 89, 1965, pages 33-36.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "chebyshev_series.py">chebyshev_series.py</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "chebyshev_series.sh">chebyshev_series.sh</a>,
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "chebyshev_series.txt">chebyshev_series.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 12 March 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>
