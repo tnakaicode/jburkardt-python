@@ -1,0 +1,275 @@
+<html>
+
+  <head>
+    <title>
+      blend
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      blend
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>blend</b>,
+      a Python code which 
+      "blends" multidimensional data, that is, performs a kind
+      of interpolation.  However, in this case, the data may be known at
+      points, or curves, or planes, and is to be extended to a 
+      higher-dimensional domain.
+    </p>
+
+    <p>
+      This is a common way of creating a smooth set of data based on
+      a small set of known values.  For instance, if we measure the
+      temperature every hour, we naturally assume that the temperature
+      at 2:15 can be approximated by "blending" 1/4 of the temperature
+      at 3:00 and 3/4 of the temperature at 2:00.
+    </p>
+
+    <p>
+      Now suppose that we take the temperature at evenly spaced points
+      on the floor of a room.  We can again see how to use blending so
+      that, in each little square, we take a blend of the values at the
+      four corners to get the value at any point within the square.
+      Similar ideas can be used with a cube.
+    </p>
+
+    <p>
+      More complicated cases might arise where we know the temperature
+      everywhere along lines, or along planes that cut through a cube.
+      Even then, it is possible to blend the data in a smooth and
+      sensible way.
+    </p>
+
+    <p>
+      blend() interpolates values based on a set of given data.
+      It can handle input data that is 1, 2, or 3 dimensional.
+      In the general, 3D case, the data can depend on smoothly varying 
+      space parameters (R,S,T) or on tabular indices (I,J,K).  The data 
+      may be given at the corners, edges, or faces of the unit cube.
+      In the (R,S,T) case, blend() can supply an interpolated value at
+      any point in the cube.  In the (I,J,K) case, it will fill in
+      tabular values for all intermediate indices.
+    </p>
+
+    <p>
+      In the simplest case, where BLEND is only given data values at the
+      endpoints of a line segment, the 4 corners of a square, or the 8
+      corners of a cube, BLEND is equivalent to linear, bilinear
+      or trilinear finite element interpolation of the data.  However,
+      in the more interesting cases where BLEND is given, say, a formula
+      for the data along the sides of the square, or the edges of the
+      cube, the interpolation is called "transfinite", since in theory
+      it samples the input data at more than a finite number of points.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The information on this web page is distributed under the MIT license.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>blend</b> is available in
+      <a href = "../../c_src/blend/blend.html">a C version</a> and
+      <a href = "../../cpp_src/blend/blend.html">a C++ version</a> and
+      <a href = "../../f77_src/blend/blend.html">a Fortran77 version</a> and
+      <a href = "../../f_src/blend/blend.html">a Fortran90 version</a> and
+      <a href = "../../m_src/blend/blend.html">a MATLAB version</a> and
+      <a href = "../../octave_src/blend/blend.html">an Octave version</a> and
+      <a href = "../../py_src/blend/blend.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../py_src/barycentric_interp_1d/barycentric_interp_1d.html">
+      barycentric_interp_1d</a>,
+      a Python code which
+      defines and evaluates the barycentric Lagrange polynomial p(x) 
+      which interpolates data, so that p(x(i)) = y(i).
+      The barycentric approach means that very high degree polynomials can
+      safely be used.
+    </p>
+
+    <p>
+      <a href = "../../py_src/chebyshev_interp_1d/chebyshev_interp_1d.html">
+      chebyshev_interp_1d</a>,
+      a Python code which
+      determines the combination of Chebyshev polynomials that 
+      interpolates data, so that p(x(i)) = y(i).
+    </p>
+
+    <p>
+      <a href = "../../py_src/interp/interp.html">
+      interp</a>,
+      a Python code which
+      parameterizes and interpolates data;
+    </p>
+
+    <p>
+      <a href = "../../datasets/interpolation/interpolation.html">
+      interpolation</a>,
+      a dataset directory which
+      contains datasets to be interpolated.
+    </p>
+
+    <p>
+      <a href = "../../py_src/lagrange_interp_1d/lagrange_interp_1d.html">
+      lagrange_interp_1d</a>,
+      a Python code which
+      defines and evaluates the Lagrange polynomial p(x) 
+      which interpolates data, so that p(x(i)) = y(i).
+    </p>
+
+    <p>
+      <a href = "../../py_src/nearest_interp_1d/nearest_interp_1d.html">
+      nearest_interp_1d</a>,
+      a Python code which
+      interpolates data using a piecewise constant (PWC) interpolant
+      defined by the nearest neighbor criterion.
+    </p>
+
+    <p>
+      <a href = "../../py_src/pwl_interp_1d/pwl_interp_1d.html">
+      pwl_interp_1d</a>,
+      a Python code which
+      interpolates data using a piecewise linear (PWL) function.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp/test_interp.html">
+      test_interp</a>,
+      a Python code which
+      defines test problems for interpolation, 
+      provided as (x,y) data.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp_1d/test_interp_1d.html">
+      test_interp_1d</a>,
+      a Python code which
+      defines test problems for interpolation of a function y(x),
+      depending on a 1D argument.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp_2d/test_interp_2d.html">
+      test_interp_2d</a>,
+      a Python code which
+      defines test problems for 
+      interpolation of regular or scattered data z(x,y),
+      depending on a 2D argument.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp_fun/test_interp_fun.html">
+      test_interp_fun</a>,
+      a Python code which
+      defines formulas for functions used to 
+      test interpolation algorithms at arbitrary arguments.
+    </p>
+
+    <p>
+      <a href = "../../py_src/test_interp_nd/test_interp_nd.html">
+      test_interp_nd</a>,
+      a Python code which
+      defines test problems for interpolation of data z(x),
+      depending on an M-dimensional argument.
+    </p>
+
+    <p>
+      <a href = "../../py_src/triangle_interpolate/triangle_interpolate.html">
+      triangle_interpolate</a>,
+      a Python code which
+      shows how vertex data can be interpolated at any point
+      in the interior of a triangle.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          William Gordon,<br>
+          Blending-Function Methods of Bivariate and Multivariate 
+          Interpolation and Approximation,<br>
+          SIAM Journal on Numerical Analysis,<br>
+          Volume 8, Number 1, March 1971, pages 158-177.
+        </li>
+        <li>
+          William Gordon, Charles Hall,<br>
+          Transfinite Element Methods: Blending-Function Interpolation over
+          Arbitrary Curved Element Domains,<br>
+          Numerische Mathematik,<br>
+          Volume 21, Number 1, 1973, pages 109-129.
+        </li>
+        <li>
+          William Gordon, Charles Hall,<br>
+          Construction of Curvilinear Coordinate Systems and Application to
+          Mesh Generation,<br>
+          International Journal of Numerical Methods in Engineering,<br>
+          Volume 7, pages 461-477, 1973.
+        </li>
+        <li>
+          Charles Hall, Thomas Porsching,<br>
+          Numerical Analysis of Partial Differential Equations,<br>
+          Prentice-Hall, 1990,<br>
+          ISBN: 013626557X,<br>
+          LC: QA374.H29.
+        </li>
+        <li>
+          Joe Thompson, Bharat Soni, Nigel Weatherill,<br>
+          Handbook of Grid Generation,<br>
+          CRC Press, 1999.
+        </li>
+      </ol> 
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "blend.py">blend.py</a>, 
+          the source code.
+        </li>
+        <li>
+          <a href = "blend.sh">blend.sh</a>, 
+          runs all the tests.
+        </li>
+        <li>
+          <a href = "blend.txt">blend.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 20 March 2026.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
