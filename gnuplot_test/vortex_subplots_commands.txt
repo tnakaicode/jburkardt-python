@@ -1,0 +1,33 @@
+# vortex_subplots_commands.txt
+#
+# Usage:
+#  gnuplot < vortex_subplots_commands.txt
+#
+set term png
+set output "vortex_subplots.png"
+set multiplot layout 1,2 title "Vortex pressure and velocity"
+#
+set xlabel "<--- X --->"
+set ylabel "<--- Y --->"
+set title "Pressure"
+set grid
+unset key
+unset surface
+set contour base
+set view map
+set pm3d
+set size ratio -1
+unset tics
+set view map scale 0.90
+splot "vortex_pressure_data.txt" with pm3d
+#
+set xlabel "<--- X --->"
+set ylabel "<--- Y --->"
+set title "Velocity"
+unset key
+set grid
+set size ratio -1
+plot "vortex_velocity_data.txt" using 1:2:5:6 with vectors head filled lt 2 linecolor rgb "blue"
+#
+unset multiplot
+quit

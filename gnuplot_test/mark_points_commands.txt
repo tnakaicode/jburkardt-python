@@ -1,0 +1,16 @@
+# mark_points_commands.txt
+#
+# Usage:
+#  gnuplot < mark_points_commands.txt
+#
+set term png
+set output "mark_points.png"
+set xlabel "Distance Rho"
+set ylabel "Correlation C(Rho)"
+set title "Marking points in gnuplot"
+set grid
+set style data lines
+plot "mark_points_data.txt" using 1:2 lw 3 linecolor rgb "blue", \
+     "mark_points_start_data.txt" using 1:2 with points pointtype 7 pointsize 3 linecolor rgb "green", \
+     "mark_points_end_data.txt" using 1:2 with points pointtype 7 pointsize 3 linecolor rgb "red"
+quit

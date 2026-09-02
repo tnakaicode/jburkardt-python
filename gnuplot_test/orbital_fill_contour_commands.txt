@@ -1,0 +1,18 @@
+# orbital_fill_contour_commands.txt
+#
+# Usage:
+#  gnuplot < orbital_fill_contour_commands.txt
+#
+set term png
+set output "orbital_fill_contour.png"
+set xlabel "<--- X --->"
+set ylabel "<--- Y --->"
+set title "Orbital Data"
+set grid
+unset surface
+unset key
+set contour base
+set view map
+set pm3d
+splot "orbital_gnuplot_data.txt" with pm3d
+quit
