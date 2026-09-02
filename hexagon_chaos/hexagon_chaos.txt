@@ -1,0 +1,13 @@
+Thu Apr 23 10:28:56 2026
+
+hexagon_chaos_test():
+  matplotlib version: 3.5.1
+  numpy version:      1.26.4
+  python version:     3.10.12
+  hexagon_chaos() uses an iterated map to plot a hexagon fractal.
+  Apply the map 5000  times.
+  Graphics saved as "hexagon_chaos.png"
+
+hexagon_chaos_test():
+  Normal end of execution.
+Thu Apr 23 10:28:59 2026
