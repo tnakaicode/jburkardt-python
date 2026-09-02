@@ -1,0 +1,53 @@
+Thu Mar 12 11:52:18 2026
+
+collocation_test():
+  matplotlib version: 3.5.1
+  python version:     3.10.12
+  numpy version:      1.26.4
+  Test collocation().
+
+collocation_test01():
+  Collocate the equation F(X)=SIN(X)
+  Let N be the number of collocation points.
+  Choose N points X in [0,2Pi].
+  Let G(X) be a polynomial of degree N-1.
+    G(X(1:N)) = SIN(X(1:N))
+  is N equations for the N unknown coefficients in G.
+  Graphics saved as "test01.png".
+
+collocation_test02():
+  Collocate a two point boundary value problem.
+  Let N be the number of collocation points.
+  Choose N points X in [0,2].
+  Let G(X) be a polynomial of degree N-1.
+    G(X(1)=0.0) = 1.0
+    G"(X(2:N-1)) = G(X(2:N-1))
+    G(X(N)=2.0) = exp(2.0)
+  is N equations for the N unknown coefficients in G.
+  Graphics saved as "test02.png".
+
+collocation_test03():
+  Collocate a two point boundary value problem.
+  Let N be the number of collocation points.
+  Choose N points X in [0,2].
+  Let G(X) be C1+C2*X+C(3:N)*SIN((1:N-2)*PI*X/(N-2)).
+    G(X(1)=0.0) = 1.0
+    G"(X(2:N-1)) = G(X(2:N-1))
+    G(X(N)=2.0) = exp(2.0)
+  is N equations for the N unknown coefficients in G.
+  Graphics saved as "test03.png".
+
+collocation_test04():
+  Collocate a second order initial value ODE.
+  Let N be the number of collocation points.
+  Choose N points X in [-3,2].
+  Let G(X) be a polynomial in X of degree N.
+    G(-3) = A
+    G(-3) = B
+    G"(X(I)) - 6 G(X(I) + 13 G(X(I)) = 0, I = 2...N
+  is N equations for the N unknown coefficients in G.
+  Graphics saved as "test04.png".
+
+collocation_test():
+  Normal end of execution.
+Thu Mar 12 11:52:20 2026
